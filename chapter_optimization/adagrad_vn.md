@@ -228,7 +228,7 @@ trong đó $\bar{\mathbf{x}}_0$ là nghiệm cực tiểu của $\bar{f}$.
 Do đó độ lớn của gradient phụ thuộc vào cả $\boldsymbol{\Lambda}$ và khoảng cách đến điểm tối ưu.
 Nếu $\bar{\mathbf{x}} - \bar{\mathbf{x}}_0$ không đổi thì đây chính là tất cả các giá trị ta cần tính.
 Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ thoả mãn.
-Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu.
+Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu. 
 Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện cho độ lớn của ma trận Hessian.
 Việc phân tích chi tiết nằm ngoài phạm vi của phần này (có thể lên đến nhiều trang).
 Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
