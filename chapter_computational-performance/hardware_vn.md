@@ -45,13 +45,17 @@ For an in-depth overview of computer architecture we refer the reader to :cite:`
 such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 -->
 
-*dịch đoạn phía trên*
+Bạn đọc có thể tham khảo nhanh thông tin tóm tắt trong :numref:`fig_latencynumbers`.
+Nội dung này được trích dẫn trong bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) chứa đựng thông tin tổng quan về những tiến bộ trong thập kỉ qua.
+Số liệu gốc được trích dẫn từ bài giảng của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
+Thảo luận dưới đây sẽ giải thích những cơ sở căn bản cho những con số trên và làm sao những số liệu này có thể gợi ý ta cách thiết kế các thuật toán.
+Thảo luận này khá trừu tượng và ngắn gọn.
 
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/latencynumbers.png)
+![Số liệu về độ trễ mà mỗi lập trình viên nên biết.](../img/latencynumbers.png)
 :label:`fig_latencynumbers`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -788,7 +792,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
