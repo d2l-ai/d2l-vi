@@ -28,8 +28,8 @@ to tune the hyperparameters in a targeted manner to improve the performance of d
 Tuy nhiên, để làm tốt thì ta cần những kiến thức chuyên sâu hơn.
 Những giải thuật tối ưu đóng vai trò quan trọng trong học sâu.
 Một mặt, việc huấn luyện một mô hình học sâu phức tạp có thể mất hàng giờ, hàng ngày, thậm chí là hàng tuần.
-Hoạt động của thuật toán tối ưu ảnh hưởng trực tiếp đến hiệu quả huấn luyện của mô hình. 
-Mặt khác, việc hiểu rõ nguyên lý của các thuật toán tối ưu khác nhau cùng vai trò của các tham số của chúng sẽ giúp ta điều chỉnh các siêu tham số một cách có chủ đích nhằm cải thiện hiệu suất của các mô hình học sâu.
+Chất lượng của thuật toán tối ưu ảnh hưởng trực tiếp đến độ hiệu quả của quá trình huấn luyện của mô hình. 
+Mặt khác, việc hiểu rõ nguyên lý của các thuật toán tối ưu khác nhau cùng vai trò của các tham số đi kèm sẽ giúp ta điều chỉnh các siêu tham số một cách có chủ đích nhằm cải thiện hiệu suất của các mô hình học sâu.
 
 <!--
 In this chapter, we explore common deep learning optimization algorithms in depth.
@@ -38,8 +38,8 @@ Nonetheless, the design and analysis of algorithms in the context of convex prob
 It is for that reason that this section includes a primer on convex optimization and the proof for a very simple stochastic gradient descent algorithm on a convex objective function.
 -->
 
-Trong chương này, chúng tôi đề cập sâu hơn đến các thuật toán tối ưu học sâu. Hầu hết tất cả các vấn đề tối ưu xuất hiện trong học sâu là *không lồi* (*nonconvex*). 
-Tuy nhiên, kiến thức từ việc thiết kế và phân tích các thuật toán giải quyết bài toán tối ưu lồi đã tỏ ra hữu ích khi áp dụng trong các bài toán không lồi.
+Trong chương này, chúng tôi sẽ mô tả sâu hơn các thuật toán tối ưu thông dụng trong học sâu. Hầu hết tất cả các bài toán tối ưu xuất hiện trong học sâu đều là *không lồi* (*nonconvex*). 
+Tuy nhiên, kiến thức từ việc thiết kế và phân tích các thuật toán giải quyết bài toán tối ưu lồi vẫn rất hữu ích.
 Do vậy, phần này sẽ tập trung vào giới thiệu tối ưu lồi và chứng minh một thuật toán hạ gradient ngẫu nhiên (*stochastic gradient descent*) đơn giản áp dụng cho hàm mục tiêu lồi.
 
 ```toc
