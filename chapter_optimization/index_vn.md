@@ -12,7 +12,7 @@ Indeed, anyone content with treating optimization as a black box device to minim
 with the knowledge that there exists an array of incantations of such a procedure (with names such as "Adam", "NAG", or "SGD").
 -->
 
-Chúng tôi tin rằng khi bạn đã theo dõi đến chương này của cuốn sách, hẳn là bạn đã kinh qua nhiều dạng thuật toán tối ưu tiên tiến để huấn luyện các mô hình học sâu.
+Chúng tôi tin rằng khi đã theo dõi đến chương này của cuốn sách, hẳn là bạn đã kinh qua nhiều dạng thuật toán tối ưu tiên tiến để huấn luyện các mô hình học sâu.
 Chúng là công cụ cho phép ta liên tục cập nhật các tham số của mô hình và cực tiểu hóa giá trị hàm mất mát khi đánh giá trên tập huấn luyện. 
 Sự thật là có nhiều người hài lòng với việc xem những thuật toán tối ưu như một hộp đen ma thuật (với các câu thần chú như "Adam", "NAG", hoặc "SGD") có tác dụng cực tiểu hóa hàm mục tiêu.
 
