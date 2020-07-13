@@ -252,8 +252,8 @@ Let us formalize the discussion from above.
 We use the variable $\mathbf{s}_t$ to accumulate past gradient variance as follows.
 -->
 
-Hãy cùng hình thức hoá phần thảo luận ở trên.
-Ta sử dụng biến $\mathbf{s}_t$ để tích luỹ phương sai của các gradient trước như sau:
+Hãy cùng công thức hoá phần thảo luận ở trên.
+Ta sử dụng biến $\mathbf{s}_t$ để tích luỹ phương sai của các gradient trong quá khứ như sau:
 
 
 $$\begin{aligned}
@@ -272,9 +272,9 @@ As before $\eta$ is the learning rate and $\epsilon$ is an additive constant tha
 Last, we initialize $\mathbf{s}_0 = \mathbf{0}$.
 -->
 
-Ở đây các phép toán được thực hiện theo từng toạ độ.
+Ở đây các phép toán được thực hiện theo từng tọa độ.
 Nghĩa là, $\mathbf{v}^2$ có các phần tử $v_i^2$.
-Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$.
+Tương tự, $\frac{1}{\sqrt{v}}$ cũng có các phần tử $\frac{1}{\sqrt{v_i}}$ và $\mathbf{u} \cdot \mathbf{v}$ có các phần tử $u_i v_i$. 
 Như phần trước $\eta$ là tốc độ học và $\epsilon$ là hằng số cộng thêm đảm bảo rằng ta không bị lỗi chia cho $0$.
 Cuối cùng, ta khởi tạo $\mathbf{s}_0 = \mathbf{0}$.
 
@@ -284,7 +284,7 @@ This does not increase the cost of Adagrad significantly relative to SGD, simply
 -->
 
 Tương tự như trường hợp sử dụng động lượng, ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
-Cách này không làm tăng chi phí của Adagrad so với SGD, đơn giản là chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó.
+Cách này không làm tăng chi phí của Adagrad so với SGD, đơn giản là chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó. 
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -296,11 +296,11 @@ For now let us see how it behaves in a quadratic convex problem.
 We use the same problem as before:
 -->
 
-Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu rằng $\mathbf{s}_t$ về cơ bản là tăng tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
+Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu về cơ bản $\mathbf{s}_t$ tăng một cách tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
 Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
 Đối với các bài toán lồi, như vậy là hoàn toàn đủ.
-Tuy nhiên trong học sâu, có lẽ ta muốn giảm dần tốc độ học chậm hơn một chút.
-Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận ở các phần tới.
+Tuy nhiên trong học sâu, có lẽ ta sẽ muốn giảm tốc độ học chậm hơn một chút.
+Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận trong các phần tới.
 Còn bây giờ hãy cùng xét cách thức hoạt động của Adagrad trong một bài toán lồi bậc hai.
 Ta vẫn giữ nguyên bài toán như cũ:
 
@@ -315,7 +315,7 @@ However, due to the cumulative effect of $\boldsymbol{s}_t$, the learning rate c
 -->
 
 Ta sẽ lập trình Adagrad với tốc độ học giữ nguyên như phần trước, tức $\eta = 0.4$.
-Ta có thể thấy quỹ đạo lặp của biến độc lập mượt hơn nhiều.
+Có thể thấy quỹ đạo của biến độc lập mượt hơn nhiều.
 Tuy nhiên, do ta tính tổng $\boldsymbol{s}_t$, tốc độ học liên tục suy giảm khiến cho các biến độc lập không thay đổi nhiều ở các giai đoạn về sau của vòng lặp.
 
 
@@ -349,7 +349,7 @@ This already indicates that the decrease in learning rate might be rather aggres
 -->
 
 Nếu tăng tốc độ học lên $2$, ta có thể thấy quá trình học tốt hơn nhiều.
-Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu, và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
+Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
 
 
 
@@ -372,7 +372,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(adagrad_2d))
 Just like the momentum method, Adagrad needs to maintain a state variable of the same shape as the parameters.
 -->
 
-Giống như phương pháp động lượng, Adagrad cần phải giữ nguyên kích thước biến trạng thái như các tham số.
+Giống như phương pháp động lượng, Adagrad cần thêm một biến trạng thái có cùng kích thước với các tham số.
 
 
 ```{.python .input  n=8}
@@ -439,7 +439,7 @@ d2l.train_gluon_ch11('adagrad', {'learning_rate': 0.1}, data_iter)
 
 * Adagrad liên tục giảm giá trị của tốc độ học theo từng toạ độ.
 * Thuật toán sử dụng độ lớn của gradient như một phương thức để điều chỉnh tiến độ học - các toạ độ với gradient lớn được cân bằng bởi tốc độ học nhỏ.
-* Tính chính xác đạo hàm bậc hai thường không khả thi trong các bài toán học sâu do hạn chế về bộ nhớ và khả năng tính toán. Gradient có thể trở thành một biến đại diện hữu ích.
+* Tính đạo hàm bậc hai một cách chính xác thường không khả thi trong các bài toán học sâu do hạn chế về bộ nhớ và khả năng tính toán. Do đó, gradient có thể trở thành một biến đại diện hữu ích.
 * Nếu bài toán tối ưu có cấu trúc không được đồng đều, Adagrad có thể làm giảm bớt sự biến dạng đó.
 * Adagrad thường khá hiệu quả đối với các đặc trưng thưa, trong đó tốc độ học cần giảm chậm hơn cho các tham số hiếm khi xảy ra.
 * Trong các bài toán học sâu, Adagrad đôi khi làm giảm tốc độ học quá mạnh. Ta sẽ thảo luận các chiến lược nhằm giảm bớt vấn đề này trong ngữ cảnh :numref:`sec_adam`.
@@ -467,7 +467,7 @@ Tại sao biểu thức trên lại biểu thị rằng độ nhiễu loạn kh�
 2. Thử áp dụng Adagrad đối với $f(\mathbf{x}) = 0.1 x_1^2 + 2 x_2^2$ và đối với hàm mục tiêu được quay 45 độ,
 tức là $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Adagrad có hoạt động khác đi hay không?
 3. Chứng minh [Định lý Gerschgorin](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem), định lý phát biểu rằng với các trị riêng $\lambda_i$ của
-ma trận $\mathbf{M}$, tồn tại $j$ thoả mãn $|\lambda_i - \mathbf{M}_{jj}| \leq \sum_{k \neq j} |\mathbf{M}_{jk}|$.
+ma trận $\mathbf{M}$, tồn tại $j$ thoả mãn $|\lambda_i - \mathbf{M}_{jj}| \leq \sum_{k \neq j} |\mathbf{M}_{jk}|$. 
 4. Từ định lý Gerschgorin, ta có thể chỉ ra điều gì về các trị riêng của ma trận đường chéo tiền điều kiện (*diagonally preconditioned matrix*) $\mathrm{diag}^{-\frac{1}{2}}(\mathbf{M}) \mathbf{M} \mathrm{diag}^{-\frac{1}{2}}(\mathbf{M})$?
 5. Hãy thử áp dụng Adagrad cho một mạng thực sự sâu như :numref:`sec_lenet` khi sử dụng Fashion MNIST.
 6. Bạn sẽ thay đổi Adagrad như thế nào để tốc độ học không suy giảm quá mạnh?
