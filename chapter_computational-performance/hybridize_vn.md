@@ -223,12 +223,12 @@ The single-threaded Python interpreter becomes the bottleneck here.
 Let's see how we can address this for significant parts of the code by replacing `Sequential` by `HybridSequential`. We begin by defining a simple MLP.
 -->
 
-Cách đơn giản nhất để hiểu cách hoạt động của lai hoá là hãy xem xét các mạng sâu đa tầng.
+Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là hãy xem xét các mạng sâu đa tầng.
 Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho tất cả các tầng để sinh một lệnh mà sau đó có thể được truyền tới CPU hoặc GPU.
-Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra bất kỳ vấn đề lớn.
-Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ một thực thể AWS P3dn.24xlarge, Python sẽ gặp khó khăn để tất cả GPU làm việc liên tục.
-Lúc này trình thông dịch Python đơn luồng trở thành nút cổ chai.
-Ta hãy xem làm thế nào để giải quyết vấn đề trên cho các phần quan trọng của mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng một mạng MLP đơn giản.
+Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
+Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ một thực thể AWS P3dn.24xlarge, Python sẽ gặp khó khăn để tất cả GPU làm việc cùng một lúc.
+Lúc này trình thông dịch Python đơn luồng trở thành nút thắt cổ chai.
+Ta hãy xem làm thế nào để giải quyết vấn đề trên cho các phần chính yếu của mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
 
 ```{.python .input  n=3}
 from d2l import mxnet as d2l
@@ -274,8 +274,8 @@ A layer will not be optimized if it inherits from the `Block` instead.
 Điều này có vẻ tốt đến mức khó tin: chỉ cần chỉ định một khối thành `HybridSequential`, sử dụng mã nguồn tương tự như trước và gọi hàm `hybridize`.
 Một khi điều này xảy ra, mạng sẽ được tối ưu hóa (chúng ta sẽ đánh giá hiệu năng dưới đây).
 Đáng tiếc là cách này không hoạt động tốt với mọi tầng.
-Có nghĩa là, các khối được tạo bởi Gluon mặc định là lớp con của `HybridBlock` và do đó có thể lai hoá được.
-Một tầng sẽ không được tối ưu hóa nếu nó được kế thừa từ `Block`.
+Có nghĩa là, các khối được tạo bởi Gluon mặc định là lớp con của `HybridBlock` và do đó có thể hybrid hoá được.
+Một tầng sẽ không được tối ưu hóa nếu nó kế thừa từ l`Block`.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
