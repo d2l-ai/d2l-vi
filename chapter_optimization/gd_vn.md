@@ -20,14 +20,14 @@ Likewise, preconditioning is a common technique in gradient descent and carries 
 Let us start with a simple special case.
 -->
 
-Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient.
-Nội dung cần thiết sẽ được trình bày ngắn gọn.
-Tham khảo :cite:`Boyd.Vandenberghe.2004` để có góc nhìn sâu về bài toán tối ưu lồi. 
-Mặc dù phần dưới đây rất hiếm khi được áp dụng trực tiếp trong học sâu, nhưng kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
-Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn.
-Hiện tượng này có thể quan sát được trong thuật toán hạ gradient.
-Tương tự, tiền điều kiện (*preconditioning*) là một kỹ thuật phổ biến trong thuật toán hạ gradient và được áp dụng trong các thuật toán tân tiến hơn.
-Chúng ta hãy bắt đầu với một trường hợp đặc biệt đơn giản.
+Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient. 
+Nội dung cần thiết sẽ được trình bày ngắn gọn. 
+Bạn đọc hãy tham khảo :cite:`Boyd.Vandenberghe.2004` để có góc nhìn sâu về bài toán tối ưu lồi.
+Mặc dù tối ưu lồi hiếm khi được áp dụng trực tiếp trong học sâu, kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên. 
+Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn. 
+Hiện tượng này có thể quan sát được trong thuật toán hạ gradient. 
+Tương tự, tiền điều kiện (*preconditioning*) là một kỹ thuật phổ biến trong thuật toán hạ gradient và nó cũng được áp dụng trong các thuật toán tân tiến hơn. 
+Hãy bắt đầu với một trường hợp đặc biệt và đơn giản. 
 
 
 <!--
@@ -47,11 +47,8 @@ Hạ gradient trong một chiều là ví dụ tuyệt vời để giải thích
 Hãy xem xét một hàm số thực khả vi liên tục $f: \mathbb{R} \rightarrow \mathbb{R}$.
 Áp dụng khai triển Taylor (:numref:`sec_single_variable_calculus`), ta có
 
-
-
 $$f(x + \epsilon) = f(x) + \epsilon f'(x) + \mathcal{O}(\epsilon^2).$$
 :eqlabel:`gd-taylor`
-
 
 <!--
 That is, in first approximation $f(x+\epsilon)$ is given by the function value $f(x)$ and the first derivative $f'(x)$ at $x$.
@@ -60,10 +57,10 @@ To keep things simple we pick a fixed step size $\eta > 0$ and choose $\epsilon 
 Plugging this into the Taylor expansion above we get
 -->
 
-Trong đó xấp xỉ bậc nhất $f(x+\epsilon)$ được cho bởi giá trị hàm $f(x)$ và đạo hàm bậc nhất $f'(x)$ tại $x$.
-Có lý khi giả sử rằng di chuyển theo hướng ngược chiều gradient với $\epsilon$ nhỏ sẽ làm suy giảm giá trị $f$.
-Để đơn giản, ta cố định sải bước cập nhật (tốc độ học) $\eta > 0$ và chọn $\epsilon = -\eta f'(x)$.
-Thay biểu thức này vào khai triển Taylor ở trên, ta thu được
+Trong đó xấp xỉ bậc nhất $f(x+\epsilon)$ được tính bằng giá trị hàm $f(x)$ và đạo hàm bậc nhất $f'(x)$ tại $x$. 
+Có lý khi giả sử rằng di chuyển theo hướng ngược chiều gradient với $\epsilon$ nhỏ sẽ làm suy giảm giá trị $f$. 
+Để đơn giản hoá vấn đề, ta cố định sải bước cập nhật (tốc độ học) $\eta > 0$ và chọn $\epsilon = -\eta f'(x)$. 
+Thay biểu thức này vào khai triển Taylor ở trên, ta thu được 
 
 $$f(x - \eta f'(x)) = f(x) - \eta f'^2(x) + \mathcal{O}(\eta^2 f'^2(x)).$$
 
@@ -74,9 +71,9 @@ Moreover, we can always choose $\eta$ small enough for the higher order terms to
 Hence we arrive at
 -->
 
-Nếu đạo hàm $f'(x) \neq 0$ không tiêu biến, cập nhật sẽ được thực hiện do $\eta f'^2(x)>0$. 
-Hơn nữa, chúng ta luôn có thể chọn $\eta$ đủ nhỏ để loại bỏ các hạng tử bậc cao hơn trong phép cập nhật.
-Do đó, ta có 
+Nếu đạo hàm $f'(x) \neq 0$ không tiêu biến, quá trình tối ưu sẽ có tiến triển do $\eta f'^2(x)>0$.  
+Hơn nữa, chúng ta luôn có thể chọn $\eta$ đủ nhỏ để loại bỏ các hạng tử bậc cao hơn trong phép cập nhật. 
+Do đó, ta có  
 
 $$f(x - \eta f'(x)) \lessapprox f(x).$$
 
@@ -89,8 +86,7 @@ $$f(x - \eta f'(x)) \lessapprox f(x).$$
 This means that, if we use
 -->
 
-Điều này có nghĩa là, nếu chúng ta áp dụng
-
+Điều này có nghĩa là, nếu chúng ta áp dụng 
 
 $$x \leftarrow x - \eta f'(x)$$
 
@@ -101,8 +97,8 @@ Therefore, in gradient descent we first choose an initial value $x$ and a consta
 for example, when the magnitude of the gradient $|f'(x)|$ is small enough or the number of iterations has reached a certain value.
 -->
 
-để cập nhật $x$, giá trị của hàm $f(x)$ có thể giảm.
-Do đó, trong thuật toán hạ gradient, đầu tiên chúng ta chọn giá trị khởi tạo cho $x$ và hằng số $\eta > 0$, từ đó cập nhật giá trị $x$ liên tục cho tới khi gặp điều kiện dừng, ví dụ, khi độ lớn của gradient $|f'(x)|$ đủ nhỏ hoặc số lần cập nhật tới một ngưỡng nào đó.
+để cập nhật $x$, giá trị của hàm $f(x)$ có thể giảm. 
+Do đó, trong thuật toán hạ gradient, đầu tiên chúng ta chọn giá trị khởi tạo cho $x$ và hằng số $\eta > 0$, từ đó cập nhật giá trị $x$ liên tục cho tới khi thỏa mãn điều kiện dừng, ví dụ như khi độ lớn của gradient $|f'(x)|$ đủ nhỏ hoặc số lần cập nhật đạt một ngưỡng nhất định. 
 
 
 <!--
@@ -111,9 +107,9 @@ Although we know that $x=0$ is the solution to minimize $f(x)$, we still use thi
 As always, we begin by importing all required modules.
 -->
 
-Để đơn giản chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách cài đặt thuật toán hạ gradient.
-Ta sử dụng ví dụ đơn giản này để quan sát $x$ thay đổi như thế nào, dù biết rằng $x=0$ là nghiệm để cực tiểu hóa $f(x)$.
-Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết.
+Để đơn giản hóa vấn đề, chúng ta chọn hàm mục tiêu $f(x)=x^2$ để minh họa cách lập trình thuật toán hạ gradient. 
+Ta sử dụng ví dụ đơn giản này để quan sát cách mà $x$ thay đổi, dù đã biết rằng $x=0$ là nghiệm để cực tiểu hóa $f(x)$. 
+Như mọi khi, chúng ta bắt đầu bằng cách nhập tất cả các mô-đun cần thiết. 
 
 ```{.python .input  n=3}
 %matplotlib inline
@@ -134,8 +130,8 @@ Next, we use $x=10$ as the initial value and assume $\eta=0.2$.
 Using gradient descent to iterate $x$ for 10 times we can see that, eventually, the value of $x$ approaches the optimal solution.
 -->
 
-Tiếp theo, chúng ta sử dụng $x=10$ là giá trị khởi tạo và giả sử $\eta=0.2$.
-Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu.
+Tiếp theo, chúng ta sử dụng $x=10$ làm giá trị khởi tạo và chọn $\eta=0.2$. 
+Áp dụng thuật toán hạ gradient để cập nhật $x$ trong 10 vòng lặp, chúng ta có thể thấy cuối cùng giá trị của $x$ cũng tiệm cận nghiệm tối ưu. 
 
 
 ```{.python .input  n=4}
@@ -189,10 +185,10 @@ To show what happens in such a case, consider the progress in the same optimizat
 As we can see, even after 10 steps we are still very far from the optimal solution.
 -->
 
-Tốc độ học $\eta$ có thể được thiết lập khi thiết kế thuật toán.
-Nếu ta sử dụng tốc độ học quá nhỏ thì $x$ sẽ được cập nhật rất chậm, đòi hỏi số bước cập nhật nhiều hơn để thu được nghiệm tốt hơn.
-Để minh hoạ, hãy xem xét quá trình học trong cùng bài toán tối ưu với $\eta = 0.05$.
-Như chúng ta có thể thấy, ngay cả sau 10 bước cập nhật mà chúng ta vẫn còn rất xa nghiệm tối ưu.
+Tốc độ học $\eta$ có thể được thiết lập khi thiết kế thuật toán. 
+Nếu ta sử dụng tốc độ học quá nhỏ thì $x$ sẽ được cập nhật rất chậm, đòi hỏi số bước cập nhật nhiều hơn để thu được nghiệm tốt hơn. 
+Để minh hoạ, hãy xem xét quá trình học trong cùng bài toán tối ưu ở phía trên với $\eta = 0.05$. 
+Như chúng ta có thể thấy, ngay cả sau 10 bước cập nhật, chúng ta vẫn còn ở rất xa nghiệm tối ưu. 
 
 
 ```{.python .input  n=6}
@@ -207,10 +203,10 @@ In this case, we cannot guarantee that the iteration of $x$ will be able to lowe
 For example, when we set the learning rate to $\eta=1.1$, $x$ overshoots the optimal solution $x=0$ and gradually diverges.
 -->
 
-Ngược lại, nếu chúng ta sử dụng tốc độ học quá cao, giá trị $\left|\eta f'(x)\right|$ có thể rất lớn trong khai triển Taylor bậc nhất.
-Khi đó, không thể bỏ qua giá trị của hạng tử $\mathcal{O}(\eta^2 f'^2(x))$ trong :eqref: `gd-taylor`.
-Trong trường hợp này, chúng ta không thể đảm bảo rằng cập nhật của $x$ sẽ có thể làm suy giảm giá trị của $f(x)$.
-Ví dụ, khi chúng ta thiết lập tốc độ học $\eta=1.1$, $x$ sẽ lệch rất xa so với nghiệm tối ưu $x=0$ và dần dần phân kì.
+Ngược lại, nếu chúng ta sử dụng tốc độ học quá cao, giá trị $\left|\eta f'(x)\right|$ có thể rất lớn trong khai triển Taylor bậc nhất. 
+Cụ thể, hạng tử $\mathcal{O}(\eta^2 f'^2(x))$ trong :eqref: `gd-taylor` sẽ có thể có giá trị lớn. 
+Trong trường hợp này, chúng ta không thể đảm bảo rằng việc cập nhật $x$ sẽ có thể làm suy giảm giá trị của $f(x)$. 
+Ví dụ, khi chúng ta thiết lập tốc độ học $\eta=1.1$, $x$ sẽ lệch rất xa so với nghiệm tối ưu $x=0$ và dần dần phân kì. 
 
 
 
@@ -233,10 +229,10 @@ Depending on our choice of learning rate and depending on how well conditioned t
 The example below illustrates how an (unrealistically) high learning rate will lead to a poor local minimum.
 -->
 
-Để minh họa quá trình học các hàm không lồi, ta xem xét trường hợp $f(x) = x \cdot \cos c x$.
-Những hàm này có vô số cực tiểu.
-Tùy thuộc vào tốc độ học được chọn và điều kiện của bài toán, chúng ta có thể thu được một trong  số rất nhiều nghiệm.
-Ví dụ dưới đây minh họa việc thiết lập tốc độ học quá cao (không thực tế) sẽ dẫn đến điểm cực tiểu địa phương xấu.
+Để minh họa quá trình học các hàm không lồi, ta xem xét trường hợp $f(x) = x \cdot \cos c x$. 
+Hàm này có vô số cực tiểu. 
+Tùy thuộc vào tốc độ học được chọn và điều kiện của bài toán, chúng ta có thể thu được một trong số rất nhiều nghiệm. 
+Ví dụ dưới đây minh họa việc thiết lập tốc độ học quá cao (không thực tế) sẽ dẫn đến điểm cực tiểu không tốt.
 
 
 ```{.python .input}
@@ -764,7 +760,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Quang
-
+* Nguyễn Lê Quang Nhật
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
 
