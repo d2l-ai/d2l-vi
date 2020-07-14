@@ -205,7 +205,7 @@ class SquareRootScheduler:
 Let us plot its behavior over a range of values.
 -->
 
-Tiếp theo hãy vẽ sự thay đổi của tốc độ học sử dụng bộ định thời trên với một dải giá trị. 
+Tiếp theo hãy biểu thị sự thay đổi của tốc độ học sử dụng bộ định thời trên với một dải giá trị. 
 
 
 ```{.python .input}
