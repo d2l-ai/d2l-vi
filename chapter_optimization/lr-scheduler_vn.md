@@ -46,7 +46,7 @@ Nếu duy trì tốc độ học lớn, thuật toán có thể chỉ dao độn
 :numref:`sec_gd` đã thảo luận về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. <!-- reference chỗ lr lớn nhỏ ở phần GD, phần minibatch không có thảo luận gì. -->
 Nói ngắn gọn, ta muốn tốc độ hội tụ suy giảm ở mức chậm hơn cả $\mathcal{O}(t^{-\frac{1}{2}})$, một mức đã có thể coi là tốt cho các bài toán lồi.
 * Một khía cạnh khác cũng quan trọng không kém là *khởi tạo*.
-Điều này liên quan đến cả cách thức các tham số được đặt lúc đầu (xem lại :numref:`sec_numerical_stability`) và cách chúng thay đổi lúc đầu.
+Điều này liên quan đến cả cách thức các tham số được khởi tạo (xem lại :numref:`sec_numerical_stability`) và cách chúng thay đổi lúc đầu.
 Có thể gọi đây là *khởi động (warmup)*, tức ta bắt đầu tối ưu nhanh như thế nào.
 Bước tối ưu lớn ban đầu có thể không có lợi, đặc biệt là khi bộ tham số ban đầu là ngẫu nhiên.
 Các hướng cập nhật ban đầu cũng có thể không quan trọng.
