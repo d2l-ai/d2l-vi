@@ -372,7 +372,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(adagrad_2d))
 Just like the momentum method, Adagrad needs to maintain a state variable of the same shape as the parameters.
 -->
 
-Giống như phương pháp động lượng, Adagrad cần bảo toàn một biến trạng thái có cùng kích thước với các tham số.
+Giống như phương pháp động lượng, Adagrad cần duy trì một biến trạng thái có cùng kích thước với các tham số.
 
 
 ```{.python .input  n=8}
