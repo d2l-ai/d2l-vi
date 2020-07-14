@@ -107,7 +107,7 @@ As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in t
 $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ to arrive at a much simplified problem where each coordinate can be solved individually:
 -->
 
-Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phép phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể kiếm lời giải cho từng tọa độ một:
+Như ta đã thấy ở :numref:`sec_momentum`, ta có thể biến đổi bài toán sử dụng phép phân tích trị riêng $\mathbf{Q} = \mathbf{U}^\top \boldsymbol{\Lambda} \mathbf{U}$ nhằm biến đổi nó về dạng đơn giản hơn mà ta có thể xử lý trên từng tọa độ một:
 
 
 $$f(\mathbf{x}) = \bar{f}(\bar{\mathbf{x}}) = \frac{1}{2} \bar{\mathbf{x}}^\top \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}}^\top \bar{\mathbf{x}} + b.$$
@@ -161,7 +161,7 @@ Computing eigenvalues and eigenvectors is in general *much more* expensive than 
 -->
 
 Nếu hệ số điều kiện $\kappa$ lớn, việc giải bài toán tối ưu một cách chính xác trở nên khá khó khăn.
-Ta cần đảm bảo việc lựa chọn phù hợp một khoảng động lớn các giá trị.
+Ta cần đảm bảo việc lựa chọn một khoảng động lớn các giá trị phù hợp.
 Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ rằng: liệu ta có thể "cố định" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng đều có giá trị bằng $1$.
 Điều này khá đơn giản trên lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm tái tỉ lệ bài toán 
 từ $\mathbf{x}$ sang $\mathbf{z} := \boldsymbol{\Lambda}^{\frac{1}{2}} \mathbf{U} \mathbf{x}$.
@@ -191,7 +191,7 @@ For instance, the cases we discussed previously, this would entirely eliminate t
 
 Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
 Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện. 
-Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học có các cạnh song song với trục toạ độ (*axis aligned*).
+Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học với các cạnh song song trục toạ độ (*axis aligned*).
 
 <!--
 Unfortunately we face yet another problem: in deep learning we typically do not even have access to the second derivative of the objective function: 
