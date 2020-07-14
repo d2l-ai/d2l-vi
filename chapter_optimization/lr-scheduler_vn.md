@@ -242,7 +242,7 @@ However, this does not explain the phenomenon entirely since we do not really st
 Kết quả thu được tốt hơn một chút. Hai điểm nổi bật là đồ thị quá trình học mượt hơn và mô hình ít quá khớp hơn.
 Không may là chưa có lời giải thích đáng cho câu hỏi tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết.
 Có một số ý kiến cho rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
-Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này vì chúng ta không hề dừng giải thuật sớm mà chỉ giảm từ từ tốc độ học. 
+Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng trên bởi chúng ta không hề dừng giải thuật sớm mà chỉ giảm từ từ tốc độ học. 
 
 <!--
 ## Policies
