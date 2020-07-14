@@ -205,7 +205,7 @@ For example, when we set the learning rate to $\eta=1.1$, $x$ overshoots the opt
 
 Ngược lại, nếu chúng ta sử dụng tốc độ học quá cao, giá trị $\left|\eta f'(x)\right|$ có thể rất lớn trong khai triển Taylor bậc nhất. 
 Cụ thể, hạng tử $\mathcal{O}(\eta^2 f'^2(x))$ trong :eqref: `gd-taylor` sẽ có thể có giá trị lớn. 
-Trong trường hợp này, chúng ta không thể đảm bảo rằng việc cập nhật của $x$ sẽ có thể làm suy giảm giá trị của $f(x)$. 
+Trong trường hợp này, chúng ta không thể đảm bảo rằng việc cập nhật $x$ sẽ có thể làm suy giảm giá trị của $f(x)$. 
 Ví dụ, khi chúng ta thiết lập tốc độ học $\eta=1.1$, $x$ sẽ lệch rất xa so với nghiệm tối ưu $x=0$ và dần dần phân kì. 
 
 
