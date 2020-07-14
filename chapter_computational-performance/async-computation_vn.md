@@ -112,13 +112,18 @@ Note that for this to work the backend must be able to keep track of the depende
 That is, it is not possible to parallelize operations that depend on each other.
 -->
 
-*dịch đoạn phía trên*
+Như ở :numref:`fig_frontends`, người dùng có thể viết chương trình MXNet bằng nhiều ngôn ngữ front-end như Python, R, Scala và C++.
+Dù sử dụng ngôn ngữ front-end nào, chương trình MXNet chủ yếu thực thi trên back-end lập trình bằng C++.
+Các thao tác đưa ra bởi ngôn ngữ front-end được truyền vào back-end để thực thi.
+Back-end tự quản lý các luồng xử lý bằng việc liên tục tập hợp và thực thi các tác vụ trong hàng đợi.
+Chú ý rằng, back-end cần phải có khả năng theo dõi quan hệ phụ thuộc giữa các bước trong đồ thị tính toán để có thể hoạt động.
+Nghĩa là ta không thể song song hoá các thao tác phụ thuộc lẫn nhau.
 
 <!--
 ![Programming Frontends.](../img/frontends.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/frontends.png)
+![Lập trình Front-end](../img/frontends.png)
 :width:`300px`
 :label:`fig_frontends`
 
@@ -127,7 +132,7 @@ That is, it is not possible to parallelize operations that depend on each other.
 Let us look at another toy example to understand the dependency graph a bit better.
 -->
 
-*dịch đoạn phía trên*
+Hãy xét một ví dụ đơn giản để có thể hiểu rõ hơn đồ thị quan hệ phụ thuộc (*dependency graph*).
 
 
 ```{.python .input  n=4}
@@ -141,7 +146,7 @@ z
 ![Dependencies.](../img/asyncgraph.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/asyncgraph.svg)
+![Quan hệ phụ thuộc](../img/asyncgraph.svg)
 :label:`fig_asyncgraph`
 
 
@@ -154,13 +159,18 @@ Thus, there is little impact on the program’s overall performance, regardless 
 :numref:`fig_threading` illustrates how frontend and backend interact.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã trên được mô tả trong :numref:`fig_asyncgraph`.
+Mỗi khi luồng front-end của Python thực thi một trong ba câu lệnh đầu tiên, tác vụ đó chỉ đơn giản là được đưa vào hàng chờ của back-end.
+Khi kết quả của câu lệnh cuối cùng cần được in ra, luồng front-end của Python sẽ chờ luồng xử lý nền C++ tính toán xong kết quả của biến `z`.
+Lợi ích của thiết kế này nằm ở việc luồng front-end Python không cần phải đích thân thực hiện việc tính toán.
+Hơn nữa nếu bỏ qua hiệu năng của Python, thiết kế này không ảnh hưởng nhiều đến hiệu năng chung của chương trình.
+:numref:`fig_threading` mô tả cách front-end và back-end tương tác với nhau.
 
 <!--
 ![Frontend and Backend.](../img/threading.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/threading.svg)
+![Front-end và Back-end](../img/threading.svg)
 :label:`fig_threading`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -473,7 +483,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
