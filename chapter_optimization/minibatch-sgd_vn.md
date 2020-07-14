@@ -259,7 +259,7 @@ We can increase the *computational* efficiency of this operation by applying it 
 That is, we replace the gradient $\mathbf{g}_t$ over a single observation by one over a small batch
 -->
 
-Ta có thể tăng hiệu suất *tính toán* của phép toán này bằng cách áp dụng vào từng minibatch dữ liệu.
+Ta có thể tăng hiệu suất *tính toán* của phép tính này bằng cách áp dụng nó trên mỗi minibatch dữ liệu.
 Tức là ta thay thế gradient $\mathbf{g}_t$ trên một điểm dữ liệu đơn lẻ bằng gradient trên một batch nhỏ.
 
 
