@@ -142,7 +142,7 @@ The gap between both curves indicates overfitting.
 -->
 
 Ta hãy xem điều gì sẽ xảy ra khi gọi thuật toán với các thiết lập mặc định, như huấn luyện trong $30$ epoch với tốc độ học $0.3$.
-Có thể thấy độ chính xác trên tập huấn luyện vẫn tiếp tục tăng trong khi độ chính xác trên tập kiểm tra không tăng thêm khi đạt đến một giá trị nào đó.
+Có thể thấy độ chính xác trên tập huấn luyện vẫn tiếp tục tăng trong khi độ chính xác trên tập kiểm tra không tăng thêm khi đạt đến một giá trị nhất định.
 Khoảng cách giữa hai đường cong cho thấy độ quá khớp của thuật toán.
 
 
