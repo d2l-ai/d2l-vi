@@ -54,13 +54,13 @@ such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 ## Computers
 -->
 
-## *dịch tiêu đề phía trên*
+## Máy tính
 
 <!--
 Most deep learning researchers have access to a computer with a fair amount of memory, compute, some form of an accelerator such as a GPU, or multiples thereof. It consists of several key components:
 -->
 
-*dịch đoạn phía trên*
+Hầu hết những nhà nghiên cứu học sâu đều được trang bị hệ thống máy tính có bộ nhớ và khả năng tính toán khá lớn với một hay nhiều GPU.
 
 
 <!--
@@ -73,8 +73,8 @@ often connected in an advanced topology, desktop systems have 1-2, depending on 
 provides efficient transfer of training data to the system and storage of intermediate checkpoints as needed.
 -->
 
-*dịch đoạn phía trên*
-
+* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 hoặc nhiều nhân (_core_).
+* Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, v 
 <!--
 ![Connectivity of components](../img/mobo-symbol.svg)
 -->
