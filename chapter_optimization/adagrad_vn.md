@@ -284,7 +284,7 @@ This does not increase the cost of Adagrad significantly relative to SGD, simply
 -->
 
 Tương tự như trường hợp sử dụng động lượng, ta cần phải theo dõi các biến bổ trợ để mỗi toạ độ có một tốc độ học độc lập.
-Cách này không làm tăng chi phí của Adagrad so với SGD, đơn giản là chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó. 
+Cách này không làm tăng chi phí của Adagrad so với SGD, lý do đơn giản là bởi chi phí chính yếu thường nằm ở bước tính $l(y_t, f(\mathbf{x}_t, \mathbf{w}))$ và đạo hàm của nó. 
 
 <!--
 Note that accumulating squared gradients in $\mathbf{s}_t$ means that $\mathbf{s}_t$ grows essentially at linear rate (somewhat slower than linearly in practice, since the gradients initially diminish).
@@ -348,7 +348,7 @@ As we increase the learning rate to $2$ we see much better behavior.
 This already indicates that the decrease in learning rate might be rather aggressive, even in the noise-free case and we need to ensure that parameters converge appropriately.
 -->
 
-Nếu tăng tốc độ học lên $2$, ta có thể thấy quá trình học tốt hơn nhiều.
+Nếu tăng tốc độ học lên $2$, ta có thể thấy quá trình học tốt hơn đáng kể.
 Điều này chứng tỏ rằng tốc độ học giảm khá mạnh, ngay cả trong trường hợp không có nhiễu và ta cần phải đảm bảo rằng các tham số hội tụ một cách thích hợp.
 
 
@@ -372,7 +372,7 @@ d2l.show_trace_2d(f_2d, d2l.train_2d(adagrad_2d))
 Just like the momentum method, Adagrad needs to maintain a state variable of the same shape as the parameters.
 -->
 
-Giống như phương pháp động lượng, Adagrad cần thêm một biến trạng thái có cùng kích thước với các tham số.
+Giống như phương pháp động lượng, Adagrad cần bảo toàn một biến trạng thái có cùng kích thước với các tham số.
 
 
 ```{.python .input  n=8}
