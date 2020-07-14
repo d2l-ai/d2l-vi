@@ -404,7 +404,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling with replacement         | lấy mẫu có hoàn lại      | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | sampling without replacement      | lấy mẫu không hoàn lại   | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | satisficing metric                | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| scale                             | phép tỉ lệ               |                                              |
+| scale                             | (phép) biến đổi tỉ lệ               |                                              |
 | scalar                            | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
