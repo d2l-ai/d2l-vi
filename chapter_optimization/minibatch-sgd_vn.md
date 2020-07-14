@@ -243,11 +243,11 @@ This applies both to evaluating a network when applied to data (often referred t
 That is, this applies whenever we perform $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ where
 -->
 
-Ở các phần trước ta cho rằng việc đọc dữ liệu theo *minibatch* thay vì từng điểm dữ liệu một để cập nhật các tham số là điều hiển nhiên.
-Giờ ta sẽ khẳng định lại điều này một cách ngắn gọn.
-Xử lý từng điểm dữ liệu một đòi hỏi ta phải thực hiện rất nhiều phép nhân ma trận với vector (hay ngay cả vector với vector).
-Điều này khá tốn kém và đồng thời phải chịu cả tổng chi phí khá lớn do framework học sâu bên dưới.
-Vấn đề này xảy ra ở cả lúc đánh giá một mạng khi áp dụng dữ liệu vào (thường được gọi là suy luận) và khi tính toán gradient để cập nhật các tham số.
+Ở các phần trước ta mặc nhiên đọc dữ liệu theo *minibatch* thay vì từng điểm dữ liệu đơn lẻ để cập nhật các tham số.
+Ta có thể giải thích ngắn gọn mục đích như sau.
+Xử lý từng điểm dữ liệu đơn lẻ đòi hỏi phải thực hiện rất nhiều phép nhân ma trận với vector (hay thậm chí vector với vector).
+Cách này khá tốn kém và đồng thời phải chịu thêm chi phí khá lớn đến từ các framework học sâu bên dưới.
+Vấn đề này xảy ra ở cả lúc đánh giá một mạng với dữ liệu mới (thường gọi là suy luận - *inference*) và khi tính toán gradient để cập nhật các tham số.
 Tức là vấn đề xảy ra mỗi khi ta thực hiện $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ trong đó
 
 
@@ -259,8 +259,8 @@ We can increase the *computational* efficiency of this operation by applying it 
 That is, we replace the gradient $\mathbf{g}_t$ over a single observation by one over a small batch
 -->
 
-Ta có thể tăng hiệu suất *tính toán* của phép toán này bằng cách áp dụng vào từng minibatch dữ liệu.
-Tức là ta thay thế gradient $\mathbf{g}_t$ trên một điểm dữ liệu duy nhất bằng gradient đó trên một batch nhỏ.
+Ta có thể tăng hiệu suất *tính toán* của phép tính này bằng cách áp dụng nó trên mỗi minibatch dữ liệu.
+Tức là ta thay thế gradient $\mathbf{g}_t$ trên một điểm dữ liệu đơn lẻ bằng gradient trên một batch nhỏ.
 
 
 $$\mathbf{g}_t = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w})$$
@@ -274,10 +274,10 @@ Since the minibatch gradient is composed of $b := |\mathcal{B}_t|$ independent g
 This, by itself, is a good thing, since it means that the updates are more reliably aligned with the full gradient.
 -->
 
-Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient được giữ nguyên.
+Hãy thử xem phương pháp trên tác động thế nào đến các tính chất thống kê của $\mathbf{g}_t$: do cả $\mathbf{x}_t$ và tất cả các phần tử trong minibatch $\mathcal{B}_t$ được lấy ra từ tập huấn luyện với xác suất như nhau, kỳ vọng của gradient là không đổi.
 Mặt khác, phương sai giảm một cách đáng kể.
-Do gradient của minibatch bao gồm các gradient $b := |\mathcal{B}_t|$ độc lập được lấy trung bình, độ lệch chuẩn của nó giảm đi theo hệ số $b^{-\frac{1}{2}}$.
-Đây là một điều tốt, cách cập nhật này có độ tin cậy gần bằng việc lấy gradient toàn bộ tập dữ liệu.
+Do gradient của minibatch là trung bình của $b := |\mathcal{B}_t|$ gradient độc lập, độ lệch chuẩn của nó giảm đi theo hệ số $b^{-\frac{1}{2}}$.
+Đây là một điều tốt, cách cập nhật này có độ tin cậy gần bằng việc lấy gradient trên toàn bộ tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -291,11 +291,11 @@ To illustrate the savings let us have a look at some code.
 In it we perform the same matrix-matrix multiplication, but this time broken up into "minibatches" of 64 columns at a time.
 -->
 
-Ý trên có thể hiểu theo một cách ngây thơ rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
-Tiếc rằng đến một mức nào đó, độ lệch chuẩn sẽ giảm không đáng kể so với chi phí tính toán tăng tuyến tính.
-Do đó trong thực tế, ta chọn minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn vừa đủ để đưa vào bộ nhớ của GPU.
-Để minh hoạ cho quá trình lưu trữ, hãy xem đoạn mã nguồn dưới đây.
-Trong đó ta vẫn thực hiện phép nhân ma trận với ma trận, tuy nhiên lần này ta tách thành từng minibatch 64 cột một.
+Từ ý trên, ta sẽ nhanh chóng cho rằng chọn minibatch $\mathcal{B}_t$ lớn luôn là tốt nhất.
+Tiếc rằng đến một mức độ nào đó, độ lệch chuẩn sẽ giảm không đáng kể so với chi phí tính toán tăng tuyến tính.
+Do đó trong thực tế, ta sẽ chọn kích thước minibatch đủ lớn để hiệu suất tính toán cao trong khi vẫn đủ để đưa vào bộ nhớ của GPU.
+Để minh hoạ quá trình lưu trữ này, hãy xem đoạn mã nguồn dưới đây.
+Trong đó ta vẫn thực hiện phép nhân ma trận với ma trận, tuy nhiên lần này ta tách thành từng minibatch 64 cột.
 
 
 ```{.python .input}
@@ -315,11 +315,11 @@ As we increase the latter, the variance decreases and with it the benefit of the
 See e.g., :cite:`Ioffe.2017` for details on how to rescale and compute the appropriate terms.
 -->
 
-Ở đây ta có thể thấy quá trình tính toán trên minibatch về cơ bản có hiệu suất gần bằng thực hiện trên toàn ma trận.
-Lưu ý thứ tự thực hiện.
+Có thể thấy quá trình tính toán trên minibatch về cơ bản có hiệu suất gần bằng thực hiện trên toàn ma trận.
+Tuy nhiên, cần lưu ý rằng
 Trong :numref:`sec_batch_norm` ta sử dụng một loại điều chuẩn phụ thuộc chặt chẽ vào phương sai của minibatch.
-Khi ta tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của việc thêm nhiễu (*noise-injection*) cũng giảm theo do chuẩn hóa theo batch.
-Đọc :cite:`Ioffe.2017` để xem thêm chi tiết về cách chuyển đổi giá trị và tính các số hạng phù hợp.
+khi tăng kích thước minibatch, phương sai giảm xuống và cùng với đó là lợi ích của việc thêm nhiễu (*noise-injection*) cũng giảm theo do phương pháp chuẩn hóa theo batch.
+Đọc :cite:`Ioffe.2017` để biết chi tiết cách chuyển đổi giá trị và tính các số hạng phù hợp.
 
 <!--
 ## Reading the Dataset
@@ -334,8 +334,8 @@ For convenience we only use the first $1,500$ examples.
 The data is whitened for preprocessing, i.e., we remove the mean and rescale the variance to $1$ per coordinate.
 -->
 
-Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả.
-Trong đoạn mã nguồn dưới ta sử dụng tập dữ liệu được phát triển bởi NASA để kiểm tra [tiếng ồn từ các máy bay khác nhau](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise) để so sánh các thuật toán tối ưu này.
+Hãy xem cách tạo các minibatch từ dữ liệu một cách hiệu quả như thế nào.
+Trong đoạn mã nguồn dưới ta sử dụng tập dữ liệu được phát triển bởi NASA để kiểm tra [tiếng ồn từ các máy bay khác nhau](https://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise) để so sánh các thuật toán tối ưu.
 Để thuận tiện ta chỉ sử dụng $1,500$ ví dụ đầu tiên.
 Tập dữ liệu được tẩy trắng (*whitened*) để xử lý, tức là với mỗi toạ độ ta trừ đi giá trị trung bình và chuyển đổi giá trị phương sai về $1$.
 
@@ -372,7 +372,7 @@ Specifically, we add the status input `states` and place the hyperparameter in d
 In addition, we will average the loss of each minibatch example in the training function, so the gradient in the optimization algorithm does not need to be divided by the batch size.
 -->
 
-Hãy nhớ lại cách lập trình SGD theo minibatch từ :numref:`sec_linear_scratch`.
+Hãy nhớ lại cách lập trình SGD theo minibatch trong :numref:`sec_linear_scratch`.
 Trong phần tiếp theo, chúng tôi sẽ trình bày cách lập trình tổng quát hơn một chút.
 Để thuận tiện, hàm lập trình SGD và các thuật toán tối ưu khác được giới thiệu sau trong chương này sẽ có danh sách tham số giống nhau.
 Cụ thể, chúng ta thêm trạng thái đầu vào `states` và đặt siêu tham số trong từ điển `hyperparams`.
@@ -392,7 +392,7 @@ It initializes a linear regression model and can be used to train the model with
 -->
 
 Tiếp theo, chúng ta lập trình một hàm huấn luyện tổng quát, sử dụng được cho cả các thuật toán tối ưu khác được giới thiệu sau trong chương này.
-Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với thuật toán hạ gradient ngẫu nhiên theo minibatch và các thuật toán khác.
+Hàm sẽ khởi tạo một mô hình hồi quy tuyến tính và có thể được sử dụng để huấn luyện mô hình với SGD theo minibatch và các thuật toán khác.
 
 
 ```{.python .input  n=3}
@@ -434,11 +434,11 @@ There is little progress.
 In fact, after 6 steps progress stalls.
 -->
 
-Hãy cùng quan sát quá trình tối ưu hóa của thuật toán hạ gradient theo toàn bộ batch.
+Hãy cùng quan sát quá trình tối ưu của thuật toán hạ gradient theo toàn bộ batch.
 Ta có thể sử dụng toàn bộ batch bằng cách thiết lập kích thước minibatch bằng 1500 (chính là tổng số mẫu).
 Kết quả là các tham số mô hình chỉ được cập nhật một lần duy nhất trong mỗi epoch.
-Có thể thấy không hề có tiến triển đáng kể.
-Trong thực tế, việc tối ưu vẫn dậm chân tại chỗ sau 6 epoch.
+Có thể thấy không có tiến triển đáng kể nào, 
+sau 6 epoch việc tối ưu bị ngừng trệ.
 
 
 ```{.python .input  n=4}
@@ -460,13 +460,13 @@ Although both the procedures processed 1500 examples within one epoch, SGD consu
 This is because SGD updated the parameters more frequently and since it is less efficient to process single observations one at a time.
 -->
 
-Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu hóa.
+Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu.
 Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
 Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
 Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
-Như chúng ta có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
-Mặc dù cả hai thuật toán cùng xử lý 1500 mẫu trong một epoch, thuật toán SGD tốn thời gian hơn thuật toán hạ gradient trong thí nghiệm trên.
-Điều này là do SGD cập nhật các tham số thường xuyên hơn và kém hiệu quả trong việc xử lý riêng lẻ từng mẫu quan sát một.
+Có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
+Mặc dù cả hai thuật toán cùng xử lý 1500 mẫu trong một epoch, SGD tốn thời gian hơn hạ gradient trong thí nghiệm trên.
+Điều này là do SGD cập nhật các tham số thường xuyên hơn và kém hiệu quả khi xử lý đơn lẻ từng mẫu.
 
 
 ```{.python .input  n=5}
@@ -482,26 +482,23 @@ Last, when the batch size equals 100, we use minibatch SGD for optimization.
 The time required per epoch is longer than the time needed for SGD and the time for batch gradient descent.
 -->
 
-Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD theo minibatch để tối ưu hóa.
-Thời gian cần thiết cho mỗi epoch ngắn hơn thời gian chạy của thuật toán SGD và thuật toán hạ gradient theo toàn bộ batch.
+Cuối cùng, khi kích thước batch bằng 100, chúng ta sử dụng thuật toán SGD theo minibatch để tối ưu.
+Thời gian cần thiết cho mỗi epoch ngắn hơn thời gian tương ứng của SGD và hạ gradient theo toàn bộ batch.
 
 
 ```{.python .input  n=6}
 mini1_res = train_sgd(.4, 100)
 ```
 
-
 <!--
 Reducing the batch size to 10, the time for each epoch increases because the workload for each batch is less efficient to execute.
 -->
 
-Giảm kích thước batch bằng 10, thời gian cho mỗi epoch tăng vì thực hiện tính toán trên từng batch kém hiệu quả hơn.
-
+Giảm kích thước batch bằng 10, thời gian cho mỗi epoch tăng vì thực thi tính toán trên mỗi batch kém hiệu quả hơn.
 
 ```{.python .input  n=7}
 mini2_res = train_sgd(.05, 10)
 ```
-
 
 <!--
 Finally, we compare the time versus loss for the preview four experiments.
@@ -511,9 +508,8 @@ Minibatch SGD is able to trade-off the convergence speed and computation efficie
 A minibatch size 10 is more efficient than SGD; a minibatch size 100 even outperforms GD in terms of runtime.
 -->
 
-Cuối cùng, chúng ta so sánh tương quan thời gian và giá trị mất mát trong bốn thí nghiệm trên.
-Như có thể thấy, mặc dù SGD hội tụ nhanh hơn GD về số mẫu được xử lý,
-nhưng SGD tốn nhiều thời gian hơn để đạt được cùng giá trị mất mát như GD vì thuật toán này tính toán gradient trên từng mẫu một.
+Cuối cùng, chúng ta so sánh tương quan thời gian và giá trị hàm mất mát trong bốn thí nghiệm trên.
+Có thể thấy, dù hội tụ nhanh hơn GD về số mẫu được xử lý, nhưng SGD tốn nhiều thời gian hơn để đạt được cùng giá trị mất mát như GD vì thuật toán này tính toán gradient trên từng mẫu một.
 Thuật toán SGD theo minibatch có thể cân bằng giữa tốc độ hội tụ và hiệu quả tính toán.
 Với kích thước minibatch bằng 10, thuật toán này hiệu quả hơn SGD; và với kích thước minibatch bằng 100, thời gian chạy của thuật toán này thậm chí nhanh hơn cả GD.
 
