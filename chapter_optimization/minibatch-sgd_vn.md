@@ -246,7 +246,7 @@ That is, this applies whenever we perform $\mathbf{w} \leftarrow \mathbf{w} - \e
 Ở các phần trước ta mặc nhiên đọc dữ liệu theo *minibatch* thay vì từng điểm dữ liệu đơn lẻ để cập nhật các tham số.
 Ta có thể giải thích ngắn gọn mục đích như sau.
 Xử lý từng điểm dữ liệu đơn lẻ đòi hỏi phải thực hiện rất nhiều phép nhân ma trận với vector (hay thậm chí vector với vector).
-Cách này khá tốn kém và đồng thời phải chịu cả tổng chi phí khá lớn của framework học sâu bên dưới.
+Cách này khá tốn kém và đồng thời phải chịu thêm chi phí khá lớn đến từ các framework học sâu bên dưới.
 Vấn đề này xảy ra ở cả lúc đánh giá một mạng với dữ liệu mới (thường gọi là suy luận - *inference*) và khi tính toán gradient để cập nhật các tham số.
 Tức là vấn đề xảy ra mỗi khi ta thực hiện $\mathbf{w} \leftarrow \mathbf{w} - \eta_t \mathbf{g}_t$ trong đó
 
