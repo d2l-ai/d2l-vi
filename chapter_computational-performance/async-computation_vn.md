@@ -226,8 +226,8 @@ To illustrate the benefit of doing this let us see what happens if we increment 
 We simulate synchronous execution by inserting a `wait_to_read()` barrier in between each addition.
 -->
 
-Trên một hệ thống đa luồng lớn (ngay cả laptop cũng có 4 luồng hoặc hơn, và trên các máy trạm đa điểm cuối (*multi-socket server*), số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
-Đây là lý do tại sao quá trình tính toán và định thời xảy ra bất đồng bộ và song song rất được ưa chuộng.
+Trên một hệ thống đa luồng lớn (ngay cả laptop thông thường cũng có 4 luồng hoặc hơn, và trên các máy trạm đa điểm cuối (*multi-socket server*), số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
+Đây là lý do tại sao quá trình tính toán và định thời xảy ra song song và bất đồng bộ rất được ưa chuộng.
 Để minh hoạ cho lợi ích của việc này, hãy cùng xem nếu ta cộng 1 vào một biến nhiều lần một cách liên tục hoặc bất đồng bộ, chuyện gì sẽ xảy ra.
 Ta mô phỏng quá trình thực thi đồng bộ bằng cách chèn một lớp cản `wait_to_read()` giữa mỗi phép cộng.
 
@@ -258,8 +258,8 @@ Ta có thể tổng kết ngắn gọn lại tương tác giữa luồng front-e
 3. The back-end then returns the computation results to the front-end.
 -->
 
-1. Front-end ra lệnh cho back-end đưa tác vụ tính `y = x + 1` vào hàng chờ.
-2. Back-end sau đó nhận các tác vụ tính toán từ hàng chờ và thực hiện các phép tính.
+1. Front-end ra lệnh cho back-end đưa tác vụ tính `y = x + 1` vào hàng đợi.
+2. Back-end sau đó nhận các tác vụ tính toán từ hàng đợi và thực hiện các phép tính.
 3. Back-end trả về kết quả tính toán cho front-end.
 
 <!--
@@ -269,7 +269,7 @@ If asynchronous programming is used, the total time taken to perform 1000 comput
 since the front-end does not have to wait for the back-end to return computation results for each loop.
 -->
 
-Giả sử khoảng thời gian của từng giai đoạn trên lần lượt là $t_1, t_2$ và $t_3$.
+Giả sử thời gian thực hiện mỗi giai đoạn trên lần lượt là $t_1, t_2$ và $t_3$.
 Nếu ta không áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính xấp xỉ bằng $1000 (t_1+ t_2 + t_3)$.
 Nếu ta áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính có thể giảm xuống $t_1 + 1000 t_2 + t_3$ (giả sử $1000 t_2 > 999t_1$),
 do front-end không cần phải chờ back-end trả về kết quả tính toán ở mỗi vòng lặp.
