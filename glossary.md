@@ -389,7 +389,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | relative loss                                      | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
 | reparameterization                                 | tái tham số hoá                           |                                              |
 | representation learning                            | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
-| rescale                                            | chuyển đổi giá trị                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| rescale                                            | (phép) tái tỉ lệ                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | reset gate                                         | cổng xóa                                  |                                              |
 | residual network                                   | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                                    | hàm điểm thưởng                           |                                              |
@@ -404,6 +404,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling with replacement         | lấy mẫu có hoàn lại      | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | sampling without replacement      | lấy mẫu không hoàn lại   | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | satisficing metric                | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| scale                             | (phép) biến đổi tỉ lệ               |                                              |
 | scalar                            | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
