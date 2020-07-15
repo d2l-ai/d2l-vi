@@ -248,7 +248,7 @@ Now the magnitude of the update no longer depends on the amount of deviation.
 This yields the Yogi updates
 -->
 
-Khi $\mathbf{g}_t^2$ có phương sai lớn hay các cập nhật trở nên thưa, khả năng cao là $\mathbf{s}_t$ sẽ nhanh chóng quên các giá trị quá khứ. 
+Khi $\mathbf{g}_t^2$ có phương sai lớn hay các cập nhật trở nên thưa, $\mathbf{s}_t$ sẽ có thể nhanh chóng quên mất các giá trị quá khứ. 
 Một cách giải quyết vấn đề trên đó là thay $\mathbf{g}_t^2 - \mathbf{s}_{t-1}$ bằng $\mathbf{g}_t^2 \odot \mathop{\mathrm{sgn}}(\mathbf{g}_t^2 - \mathbf{s}_{t-1})$. 
 Bây giờ, độ lớn của cập nhật không còn phụ thuộc vào giá trị độ lệch. 
 Từ đó ta có bước cập nhật Yogi sau: 
@@ -326,7 +326,7 @@ Yogi là một trong nhưng giải pháp như vậy.
 1. Hãy điều chỉnh tốc độ học, quan sát và phân tích kết quả thực nghiệm. 
 2. Bạn có thể viết lại các phương trình cập nhật cho động lượng và mô-men bậc hai mà không cần thực hiện phép hiệu chỉnh độ chệch (_bias correction_) không? 
 3. Tại sao ta cần phải giảm tốc độ học $\eta$ khi quá trình hội tụ diễn ra? 
-4. Hãy nghĩ một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ? 
+4. Hãy xây dựng một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ? 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
