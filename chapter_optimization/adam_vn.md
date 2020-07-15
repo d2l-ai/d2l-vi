@@ -29,8 +29,8 @@ This is the key to efficient multi-machine, multi-GPU and overall parallel proce
 * Chúng ta thấy rằng minibatch SGD trong :numref:`sec_minibatch_sgd` mang lại hiệu quả đáng kể nhờ việc vector hóa, tức xử lý nhiều mẫu quan sát hơn trong một minibatch. 
 Đây là chìa khóa để xử lý dữ liệu song song trên nhiều GPU và nhiều máy tính một cách hiệu quả. 
 * Phương pháp động lượng trong :numref:`sec_momentum` bổ sung cơ chế gộp các gradient quá khứ, giúp quá trình hội tụ diễn ra nhanh hơn. 
-* Adagrad trong :numref:`sec_adagrad` sử dụng phép chuyển đổi giá trị theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán. 
-* RMSprop trong :numref:`sec_rmsprop` tách rời phép chuyển đổi giá trị theo từng tọa độ và phép điều chỉnh tốc độ học. 
+* Adagrad trong :numref:`sec_adagrad` sử dụng phép biến đổi tỉ lệ theo từng tọa độ để tạo ra tiền điều kiện hiệu quả về mặt tính toán. 
+* RMSprop trong :numref:`sec_rmsprop` tách rời phép biến đổi tỉ lệ theo từng tọa độ khỏi phép điều chỉnh tốc độ học. 
 
 <!--
 Adam :cite:`Kingma.Ba.2014` combines all these techniques into one efficient learning algorithm.
@@ -114,8 +114,8 @@ Typically we pick $\epsilon = 10^{-6}$ for a good trade-off between numerical st
 
 Không giống như RMSProp, phương trình cập nhật sử dụng động lượng $\hat{\mathbf{v}}_t$ thay vì gradient. 
 Hơn nữa, có một sự khác biệt nhỏ ở đây: phép chuyển đổi được thực hiện bằng cách sử dụng $\frac{1}{\sqrt{\hat{\mathbf{s}}_t} + \epsilon}$ thay vì $\frac{1}{\sqrt{\hat{\mathbf{s}}_t + \epsilon}}$. 
-Trong thực tế, cách đầu tiên hoạt động tốt hơn một chút, dẫn đến một phiên bản khác của RMSProp. 
-Thông thường, ta chọn $\epsilon = 10^{-6}$ để cân bằng giữa tính ổn định số học và độ chính xác. 
+Trong thực tế, cách đầu tiên hoạt động tốt hơn một chút, dẫn đến sự khác biệt này so với RMSProp. 
+Thông thường, ta chọn $\epsilon = 10^{-6}$ để cân bằng giữa tính ổn định số học và độ tin cậy.
 
 <!--
 Now we have all the pieces in place to compute updates.
