@@ -163,9 +163,9 @@ For convenience we store the timestep counter $t$ in the `hyperparams` dictionar
 Beyond that all is straightforward.
 -->
 
-Lập trình Adam từ đầu không quá khó khăn.
-Để thuận tiện, chúng ta lưu trữ biến đếm bước thời gian $t$ trong từ điển `hyperparams`.
-Ngoài điều đó ra, mọi thứ khác khá đơn giản.
+Lập trình Adam từ đầu không quá khó khăn. 
+Để thuận tiện, chúng ta lưu trữ biến đếm bước thời gian $t$ trong từ điển `hyperparams`. 
+Ngoài điều đó ra, mọi thứ khác khá đơn giản. 
 
 
 ```{.python .input  n=2}
@@ -196,8 +196,8 @@ We are ready to use Adam to train the model.
 We use a learning rate of $\eta = 0.01$.
 -->
 
-Chúng ta đã sẵn sàng sử dụng Adam để huấn luyện mô hình.
-Chúng ta sử dụng tốc độ học $\eta = 0.01$.
+Chúng ta đã sẵn sàng sử dụng Adam để huấn luyện mô hình. 
+Chúng ta sử dụng tốc độ học $\eta = 0.01$. 
 
 
 ```{.python .input  n=5}
@@ -212,8 +212,8 @@ A more concise implementation is straightforward since `adam` is one of the algo
 Hence we only need to pass configuration parameters for an implementation in Gluon.
 -->
 
-Cách lập trình súc tích hơn là gọi trực tiếp `adam` được cung cấp sẵn trong thư viện tối ưu `trainer` của Gluon.
-Do đó ta chỉ cần truyền các tham số cấu hình để lập trình trong Gluon.
+Cách lập trình súc tích hơn là gọi trực tiếp `adam` được cung cấp sẵn trong thư viện tối ưu `trainer` của Gluon. 
+Do đó ta chỉ cần truyền các tham số cấu hình để lập trình trong Gluon. 
 
 
 ```{.python .input  n=11}
@@ -234,10 +234,9 @@ As a fix :cite:`Zaheer.Reddi.Sachan.ea.2018` proposed a refined update (and init
 To understand what's going on, let us rewrite the Adam update as follows:
 -->
 
-Một trong những vấn đề của Adam là nó có thể không hội tụ ngay cả trong các điều kiện lồi khi ước lượng mô-men bậc hai trong $\mathbf{s}_t$ tăng bùng nổ.
-:cite:`Zaheer.Reddi.Sachan.ea.2018` đề xuất phiên bản cải thiện của bước cập nhật (và khởi tạo) $\mathbf{s}_t$ để giải quyết vấn đề này.
-Để hiểu rõ hơn, chúng ta hãy viết lại bước cập nhật Adam như sau:
-
+Một trong những vấn đề của Adam là nó có thể không hội tụ ngay cả trong các điều kiện lồi khi ước lượng mô-men bậc hai trong $\mathbf{s}_t$ tăng đột biến. 
+:cite:`Zaheer.Reddi.Sachan.ea.2018` đề xuất phiên bản cải thiện của bước cập nhật (và khởi tạo) $\mathbf{s}_t$ để giải quyết vấn đề này. 
+Để hiểu rõ hơn, chúng ta hãy viết lại bước cập nhật Adam như sau: 
 
 $$\mathbf{s}_t \leftarrow \mathbf{s}_{t-1} + (1 - \beta_2) \left(\mathbf{g}_t^2 - \mathbf{s}_{t-1}\right).$$
 
@@ -249,10 +248,10 @@ Now the magnitude of the update no longer depends on the amount of deviation.
 This yields the Yogi updates
 -->
 
-Khi $\mathbf{g}_t^2$ có phương sai lớn hay các cập nhật trở nên thưa, có thể $\mathbf{s}_t$ sẽ quên các giá trị quá khứ quá nhanh.
-Một cách giải quyết vấn đề trên đó là thay $\mathbf{g}_t^2 - \mathbf{s}_{t-1}$ bằng $\mathbf{g}_t^2 \odot \mathop{\mathrm{sgn}}(\mathbf{g}_t^2 - \mathbf{s}_{t-1})$.
-Bây giờ, độ lớn của cập nhật không còn phụ thuộc vào giá trị độ lệch.
-Từ đó ta có bước cập nhật Yogi sau:
+Khi $\mathbf{g}_t^2$ có phương sai lớn hay các cập nhật trở nên thưa, $\mathbf{s}_t$ sẽ có thể nhanh chóng quên mất các giá trị quá khứ. 
+Một cách giải quyết vấn đề trên đó là thay $\mathbf{g}_t^2 - \mathbf{s}_{t-1}$ bằng $\mathbf{g}_t^2 \odot \mathop{\mathrm{sgn}}(\mathbf{g}_t^2 - \mathbf{s}_{t-1})$. 
+Bây giờ, độ lớn của cập nhật không còn phụ thuộc vào giá trị độ lệch. 
+Từ đó ta có bước cập nhật Yogi sau: 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -267,8 +266,8 @@ The authors furthermore advise to initialize the momentum on a larger initial ba
 We omit the details since they are not material to the discussion and since even without this convergence remains pretty good.
 -->
 
-Hơn nữa, các tác giả khuyên nên khởi tạo động lượng trên một batch ban đầu có kích thước lớn hơn thay vì ước lượng ban đầu theo điểm.
-Chúng ta không đi sâu vào điểm này, vì quá trình hội tụ vẫn diễn ra khá tốt ngay cả khi không áp dụng chúng.
+Hơn nữa, các tác giả khuyên nên khởi tạo động lượng trên một batch ban đầu có kích thước lớn hơn thay vì ước lượng ban đầu theo điểm. 
+Chúng ta không đi sâu vào điểm này, vì quá trình hội tụ vẫn diễn ra khá tốt ngay cả khi không áp dụng chúng. 
 
 
 ```{.python .input}
@@ -304,12 +303,12 @@ They can be amended by using larger minibatches or by switching to an improved e
 Yogi offers such an alternative.
 -->
 
-* Adam kết hợp các kỹ thuật của nhiều thuật toán tối ưu thành một quy tắc cập nhật khá mạnh mẽ.
-* Dựa trên RMSProp, Adam cũng sử dụng trung bình động trọng số mũ cho gradient ngẫu nhiên theo minibatch.
-* Adam sử dụng phép hiệu chỉnh độ chệch (_bias correction_) để điều chỉnh cho trường hợp khởi động chậm khi ước lượng động lượng và mô-men bậc hai.
-* Đối với gradient có phương sai đáng kể, chúng ta có thể gặp phải những vấn đề liên quan tới hội tụ.
-Những vấn đề này có thể được khắc phục bằng cách sử dụng các minibatch có kích thước lớn hơn hoặc bằng cách chuyển sang sử dụng ước lượng được cải tiến cho $\mathbf{s}_t$.
-Yogi cung cấp một giải pháp như vậy cho $\mathbf{s}_t$.
+* Adam kết hợp các kỹ thuật của nhiều thuật toán tối ưu thành một quy tắc cập nhật khá mạnh mẽ. 
+* Dựa trên RMSProp, Adam cũng sử dụng trung bình động trọng số mũ cho gradient ngẫu nhiên theo minibatch. 
+* Adam sử dụng phép hiệu chỉnh độ chệch (_bias correction_) để điều chỉnh cho trường hợp khởi động chậm khi ước lượng động lượng và mô-men bậc hai. 
+* Đối với gradient có phương sai đáng kể, chúng ta có thể gặp phải những vấn đề liên quan tới hội tụ. 
+Những vấn đề này có thể được khắc phục bằng cách sử dụng các minibatch có kích thước lớn hơn hoặc bằng cách chuyển sang sử dụng ước lượng được cải tiến cho $\mathbf{s}_t$. 
+Yogi là một trong nhưng giải pháp như vậy. 
 
 <!--
 ## Exercises
@@ -324,10 +323,10 @@ Yogi cung cấp một giải pháp như vậy cho $\mathbf{s}_t$.
 4. Try to construct a case for which Adam diverges and Yogi converges?
 -->
 
-1. Hãy điều chỉnh tốc độ học, quan sát và phân tích kết quả thực nghiệm.
-2. Bạn có thể viết lại các phương trình cập nhật cho động lượng và mô-men bậc hai mà không cần thực hiện phép hiệu chỉnh độ chệch (_bias correction_) không?
-3. Tại sao ta cần phải giảm tốc độ học $\eta$ khi quá trình hội tụ diễn ra?
-4. Hãy nghĩ một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ?
+1. Hãy điều chỉnh tốc độ học, quan sát và phân tích kết quả thực nghiệm. 
+2. Bạn có thể viết lại các phương trình cập nhật cho động lượng và mô-men bậc hai mà không cần thực hiện phép hiệu chỉnh độ chệch (_bias correction_) không? 
+3. Tại sao ta cần phải giảm tốc độ học $\eta$ khi quá trình hội tụ diễn ra? 
+4. Hãy xây dựng một trường hợp mà thuật toán Adam phân kì nhưng Yogi lại hội tụ? 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
