@@ -620,7 +620,7 @@ Rather than satisfying $c_i(\mathbf{x}) \leq 0$ we simply add $\alpha_i c_i(\mat
 This ensures that the constraints will not be violated too badly.
 -->
 
-Có một cách để thỏa mãn các bài toán tối ưu hóa bị ràng buộc một cách xấp xỉ là phỏng theo hàm Lagrange $L$. 
+Có một cách để thỏa mãn, ít nhất là theo xấp xỉ, các bài toán tối ưu hóa bị ràng buộc là phỏng theo hàm Lagrange $L$. 
 Thay vì thỏa mãn $c_i(\mathbf{x}) \leq 0$, chúng ta chỉ cần thêm $\alpha_i c_i(\mathbf{x})$ vào hàm mục tiêu $f(x)$. 
 Điều này sẽ đảm bảo rằng các ràng buộc không bị vi phạm quá mức. 
 
@@ -634,8 +634,8 @@ Adjusting the value of $\lambda$ allows us to vary the size of $\mathbf{w}$.
 
 Thực tế, chúng ta đã dùng thủ thuật này khá thường xuyên. 
 Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`. 
-Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng $\mathbf{w}$ không phát triển quá lớn. 
-Bằng cách sử dụng góc nhìn tối ưu hóa bị ràng buộc, ta có thể thấy nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với bán kính $r$ nào đó. 
+Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng giá trị $\mathbf{w}$ không trở nên quá lớn. 
+Dưới góc nhìn tối ưu hóa có ràng buộc, ta có thể thấy nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với giá trị bán kính $r$ nào đó. 
 Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi độ lớn của $\mathbf{w}$. 
 
 <!--
@@ -644,8 +644,8 @@ In practice this turns out to be much more robust than exact satisfaction.
 Furthermore, for nonconvex problems many of the properties that make the exact approach so appealing in the convex case (e.g., optimality) no longer hold.
 -->
 
-Nhìn chung, thêm các lượng phạt vào là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ. 
-Trong thực tế, điều này hoá ra ổn định hơn rất nhiều so với việc thỏa mãn chuẩn xác. 
+Nhìn chung, thêm các lượng phạt là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ. 
+Trong thực tế, hóa ra phương pháp này ổn định hơn rất nhiều so với trường hợp thỏa mãn chuẩn xác. 
 Hơn nữa, với các bài toán không lồi, những tính chất khiến phương án tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) không còn đảm bảo nữa. 
 
 <!--
@@ -660,8 +660,8 @@ Again, we encountered them before, e.g., when dealing with gradient clipping in 
 There we ensured that a gradient has length bounded by $c$ via
 -->
 
-Một chiến lược thay thế để thỏa mãn các ràng buộc là các phép chiếu. 
-Hơn nữa, chúng ta đã gặp chúng trước đây, ví dụ, khi giải quyết việc gọt gradient ở :numref:`sec_rnn_scratch`. 
+Một chiến lược khác để thỏa mãn các ràng buộc là các phép chiếu. 
+Chúng ta cũng đã gặp chúng trước đây, ví dụ như khi bàn về phương pháp gọt gradient ở :numref:`sec_rnn_scratch`. 
 Ở phần đó chúng ta đã đảm bảo rằng gradient có độ dài ràng buộc bởi $c$ thông qua 
 
 
@@ -672,7 +672,7 @@ $$\mathbf{g} \leftarrow \mathbf{g} \cdot \mathrm{min}(1, c/\|\mathbf{g}\|).$$
 This turns out to be a *projection* of $g$ onto the ball of radius $c$. More generally, a projection on a (convex) set $X$ is defined as
 -->
 
-Điều này hóa ra là một *phép chiếu* của $g$ lên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là 
+Hóa ra đây là một *phép chiếu* của $g$ lên khối cầu có bán kính $c$. Tổng quát hơn, một phép chiếu lên một tập (lồi) $X$ được định nghĩa là 
 
 
 $$\mathrm{Proj}_X(\mathbf{x}) = \mathop{\mathrm{argmin}}_{\mathbf{x}' \in X} \|\mathbf{x} - \mathbf{x}'\|_2.$$
@@ -694,7 +694,7 @@ Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$.
 Ở đó ta có hai tập lồi, một hình tròn và một hình thoi. 
 Các điểm nằm bên trong tập (màu vàng) giữ nguyên không đổi.
 Các điểm nằm bên ngoài tập (màu đen) được ánh xạ tới điểm gần nhất bên trong tập (màu đỏ). 
-Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này không nhất thiết vẫn đúng trong trường hợp tổng quát, như có thể thấy được trong trường hợp của hình thoi. 
+Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này có thể không đúng trong trường hợp tổng quát, như có thể thấy trong trường hợp của hình thoi. 
 
 <!--
 ![Convex Projections](../img/projections.svg)
@@ -709,7 +709,7 @@ In this case we project $\mathbf{w}$ onto an $\ell_1$ ball (the latter is a gene
 -->
 
 Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa. 
-Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (là phiên bản tổng quát của hình thoi ở hình minh họa phía trên). 
+Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (phiên bản tổng quát của hình thoi ở hình minh họa phía trên). 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -726,7 +726,7 @@ In the context of deep learning the main purpose of convex functions is to motiv
 In the following we will see how gradient descent and stochastic gradient descent can be derived accordingly.
 -->
 
-Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy các thuật toán tối ưu hóa và giúp chúng ta hiểu chúng một cách chi tiết. 
+Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy sự phát triển các thuật toán tối ưu hóa và giúp chúng ta hiểu chúng một cách chi tiết. 
 Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradient ngẫu nhiên có thể được suy ra từ đó.
 
 <!--
@@ -737,10 +737,10 @@ Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradie
 * Projections map to points in the (convex) set closest to the original point.
 -->
 
-* Giao của các tập lồi là lồi. Hợp của các tập lồi không bắt buộc phải là lồi. 
+* Giao của các tập lồi là tập lồi. Hợp của các tập lồi không bắt buộc phải là tập lồi. 
 * Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen). 
-* Hàm khả vi hai lần là lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi. 
-* Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực tế, ta chỉ việc thêm cho chúng một mức phạt vào hàm mục tiêu. 
+* Hàm khả vi hai lần là hàm lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi. 
+* Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực tế, ta chỉ việc thêm chúng cùng với một mức phạt vào hàm mục tiêu. 
 * Các phép chiếu ánh xạ đến các điểm trong tập (lồi) nằm gần nhất với điểm gốc.  
 
 <!--
@@ -765,18 +765,18 @@ Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradie
 9. Given a convex set $X$ and two vectors $\mathbf{x}$ and $\mathbf{y}$ prove that projections never increase distances, i.e., $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$.
 -->
 
-1. Giả sử chúng ta chỉ muốn xác minh độ lồi của tập hợp bằng cách vẽ mọi đoạn thẳng giữa các điểm bên trong tập hợp và kiểm tra liệu các đoạn thẳng có nằm trong tập hợp đó hay không. 
+1. Giả sử chúng ta muốn xác minh tính lồi của tập hợp bằng cách vẽ mọi đoạn thẳng giữa các điểm bên trong tập hợp và kiểm tra liệu các đoạn thẳng có nằm trong tập hợp đó hay không. 
     * Hãy chứng mình rằng ta chỉ cần kiểm tra các điểm ở biên là đủ. 
     * Hãy chứng minh rằng ta chỉ cần kiểm tra các đỉnh của tập hợp là đủ. 
 2. Ký hiệu khối cầu có bán kính $r$ sử dụng chuẩn $p$ là $B_p[r] := \{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_p \leq r\}$. Hãy chứng minh rằng $B_p[r]$ là lồi với mọi $p \geq 1$. 
-3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi. 
-4. Hãy chứng minh rằng chuẩn hóa của hàm softmax là lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$. 
+3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là hàm lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi. 
+4. Hãy chứng minh rằng hàm softmax được chuẩn hoá là là hàm lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$. 
 5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$. 
 6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó. 
-7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một vài $\xi \in [0, \epsilon]$. 
+7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một giá trị $\xi \in [0, \epsilon]$ nào đó. 
 8. Cho vector $\mathbf{w} \in \mathbb{R}^d$ với $\|\mathbf{w}\|_1 > 1$, hãy tính phép chiếu lên khối cầu đơn vị $\ell_1$. 
-    * Như một bước trung gian viết ra mục tiêu bị phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$. 
-    * Bạn có thể tìm ra giá trị 'chính xác' của $\lambda$ mà không cần đoán mò? 
+    * Như một bước trung gian, hãy viết ra mục tiêu có lượng phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$. 
+    * Bạn có thể tìm ra giá trị 'chính xác' của $\lambda$ mà không phải đoán mò quá nhiều lần không? 
 9. Cho tập lồi $X$ và hai vector $\mathbf{x}$, $\mathbf{y}$, hãy chứng minh rằng các phép chiếu không bao giờ làm tăng khoảng cách, ví dụ, $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$. 
     
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
