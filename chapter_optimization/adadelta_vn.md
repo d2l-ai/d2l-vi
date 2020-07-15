@@ -17,7 +17,7 @@ It is fairly straightforward, given the discussion of previous algorithms so far
 -->
 
 Adadelta là một biến thể khác của AdaGrad.
-Điểm khác biệt chính là Adadelta giảm mức độ thay đổi của tốc độ học theo toạ độ.
+Điểm khác biệt chính là Adadelta giảm mức độ mà tốc độ học sẽ thay đổi với các toạ độ.
 Hơn nữa, Adadelta thường được biết đến là thuật toán không sử dụng tốc độ học vì nó dựa trên chính lượng thay đổi hiện tại để căn chỉnh lượng thay đổi trong tương lai.
 Thuật toán Adadelta được đề xuất trong :cite:`Zeiler.2012`.
 Nó cũng khá đơn giản nếu bạn đã biết các thuật toán được thảo luận trước đây.
@@ -40,7 +40,7 @@ The parameter du jour is $\rho$. We obtain the following leaky updates:
 Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
 và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của lượng thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và các cách lập trình,
-chứ không có lý do nào để sử dụng các kí hiệu La Mã khác cho tham số có cùng mục đích trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta.
+chứ không có lý do đặc biệt gì để ký hiệu cùng một tham số trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta bằng các kí hiệu La Mã khác nhau.
 Tham số suy giảm là $\rho$.
 Chúng ta có được các bước cập nhật rò rỉ sau:
 
@@ -62,9 +62,9 @@ As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avo
 -->
 
 Điểm khác biệt so với trước là ta thực hiện các bước cập nhật với gradient $\mathbf{g}_t'$ được chuyển đổi giá trị bằng cách lấy căn bậc hai tỷ lệ giữa trung bình của tốc độ thay đổi bình phương và trung bình mô-men bậc hai của gradient.
-Việc sử dụng $\mathbf{g}_t'$ có mục đích đơn thuần là thuận tiện cho việc ký hiệu.
+Việc sử dụng $\mathbf{g}_t'$ có mục đích đơn thuần thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
-Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ có ý nghĩa, tức tránh việc kích thước bước bằng $0$ hoặc phương sai vô hạn. Thông thường chúng ta đặt $\epsilon = 10^{-5}$.
+Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ có ý nghĩa, tức tránh trường hợp kích thước bước bằng $0$ hoặc phương sai là vô hạn. Thông thường chúng ta đặt $\epsilon = 10^{-5}$.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -143,9 +143,9 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 * Adadelta uses leaky averages to keep a running estimate of the appropriate statistics.
 -->
 
-* Adadelta không sử dụng tham số tốc độ học. Thay vào đó, nó sử dụng tốc độ thay đổi của chính các tham số của nó để điều chỉnh tốc độ học.
+* Adadelta không sử dụng tham số tốc độ học. Thay vào đó, nó sử dụng tốc độ thay đổi của chính bản thân các tham số để điều chỉnh tốc độ học.
 * Adadelta cần sử dụng hai biến trạng thái để lưu trữ các mô-men bậc hai của gradient và của lượng thay đổi trong các tham số.
-* Adadelta sử dụng trung bình rò rỉ để lưu ước lượng động của các thống kê thích hợp.
+* Adadelta sử dụng trung bình rò rỉ để lưu ước lượng động của các giá trị thống kê cần thiết.
 
 <!--
 ## Exercises
@@ -160,7 +160,7 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 4. Compare Adadelta to Adagrad and RMS prop to discuss their convergence behavior.
 -->
 
-1. Điều gì xảy ra khi điều chỉnh giá trị của $\rho$?
+1. Điều gì xảy ra khi giá trị của $\rho$ thay đổi?
 2. Hãy lập trình thuật toán trên mà không cần dùng biến $\mathbf{g}_t'$. Giải thích tại sao đây có thể là một ý tưởng tốt?
 3. Adadelta có thực sự không cần tốc độ học? Hãy chỉ ra các bài toán tối ưu mà Adadelta không thể giải.
 4. Hãy so sánh Adadelta với Adagrad và RMSprop để thảo luận về sự hội tụ của từng thuật toán.
@@ -191,3 +191,5 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Cường
 * Nguyễn Văn Quang
 * Phạm Minh Đức
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
