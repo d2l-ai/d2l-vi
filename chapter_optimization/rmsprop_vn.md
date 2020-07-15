@@ -13,7 +13,7 @@ While this is generally appropriate for convex problems, it might not be ideal f
 Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
-Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$ một cách hiệu quả. 
+Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học thực tế được giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$.
 Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những bài toán không lồi, chẳng hạn những bài toán gặp phải trong học sâu. 
 Tuy vậy, khả năng thích ứng theo toạ độ của Adagrad là rất tuyệt vời cho một bộ tiền điều kiện (_preconditioner_). 
 
@@ -36,10 +36,10 @@ Keeping all other parts unchanged yields RMSProp.
 -->
 
 Vấn đề này có thể được giải quyết bằng cách sử dụng $\mathbf{s}_t / t$. 
-Đối với các phân phối hợp lý của $\mathbf{g}_t$, thuật toán sẽ hội tụ. 
-Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi trạng thái giới hạn được bắt đầu, bởi thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị. 
+Với phân phối $\mathbf{g}_t$ hợp lý, thuật toán sẽ hội tụ. 
+Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi các tính chất tại giới hạn bắt đầu có ảnh hưởng, bởi thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị. 
 Một cách khác là sử dụng trung bình rò rỉ tương tự như trong phương pháp động lượng, tức là $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ cho các tham số $\gamma > 0$. 
-Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp. 
+Giữ nguyên tất cả các phần khác và ta có thuật toán RMSProp. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -224,7 +224,7 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 * The coefficient $\gamma$ determines how long the history is when adjusting the per-coordinate scale.
 -->
 
-* Thuật toán RMSProp rất giống với Adagrad ở chỗ cả hai đều sử dụng bình phương của gradient để chuyển đổi hệ số. 
+* Thuật toán RMSProp rất giống với Adagrad ở chỗ cả hai đều sử dụng bình phương của gradient để thay đổi tỉ lệ hệ số. 
 * RMSProp có điểm chung với phương pháp động lượng là chúng đều sử dụng trung bình rò rỉ. Tuy nhiên, RMSProp sử dụng kỹ thuật này để điều chỉnh tiền điều kiện theo hệ số. 
 * Trong thực tế, tốc độ học cần được định thời bởi người lập trình.  
 * Hệ số $\gamma$ xác định độ dài thông tin quá khứ được sử dụng khi điều chỉnh tỉ lệ theo từng toạ độ. 
@@ -244,8 +244,8 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 
 1. Điều gì sẽ xảy ra nếu ta đặt $\gamma = 1$? Giải thích tại sao? 
 2. Biến đổi bài toán tối ưu thành cực tiểu hoá $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Sự hội tụ sẽ diễn ra như thế nào? 
-3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các cách điều chỉnh tốc độ học khác nhau. 
-4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu tiến triển không? Hãy cho biết độ nhạy của RMSProp với việc điều chỉnh này? 
+3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các tốc độ học khác nhau. 
+4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu đang tiến triển không? Hãy cho biết độ nhạy của RMSProp với việc điều chỉnh này? 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
