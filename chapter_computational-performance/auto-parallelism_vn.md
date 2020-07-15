@@ -186,13 +186,15 @@ It would be quite painful to schedule the parallel program resulting from this m
 This is where it is advantageous to have a graph based compute backend for optimization.
 -->
 
-*dịch đoạn phía trên*
+Để tổng kết phần này, ta xét một ví dụ minh hoạ đồ thị tính toán và các quan hệ phụ thuộc của nó trong một mạng MLP hai tầng đơn giản khi huấn luyện trên một CPU và hai GPU, như miêu tả trong :numref:`fig_twogpu`.
+Việc tự định thời chương trình tính toán song song từ mô tả trên là khá vất vả.
+Do đó, đây chính là cơ hội thuận lợi để sử dụng back-end tính toán dựa trên đồ thị để tối ưu.
 
 <!--
 ![Two layer MLP on a CPU and 2 GPUs.](../img/twogpu.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/twogpu.svg)
+![Mạng MLP hai tầng trên một CPU và hai GPU](../img/twogpu.svg)
 :label:`fig_twogpu`
 
 
@@ -205,7 +207,9 @@ This is where it is advantageous to have a graph based compute backend for optim
 * The backend can improve performance through through automatic parallel computation and communication. 
 -->
 
-*dịch đoạn phía trên*
+* Các hệ thống hiện đại thường bao gồm nhiều thiết bị, ví dụ như nhiều GPU và CPU. Các thiết bị này có thể được sử dụng song song, một cách bất đồng bộ.
+* Các hệ thống hiện đại thường cũng có nhiều phương pháp giao tiếp, ví dụ như cổng PCI Express, bộ nhớ (thường là SSD hoặc thông qua mạng), và băng thông mạng. Chúng có thể được sử dụng song song để đạt hiệu năng tối đa.
+* Back-end có thể cải thiện hiệu năng thông qua việc tự động tính toán song song và giao tiếp.
 
 
 ## Bài tập
@@ -219,7 +223,11 @@ This is where it is advantageous to have a graph based compute backend for optim
 5. Designing computation tasks that include more complex data dependencies, and run experiments to see if you can obtain the correct results while improving performance.
 -->
 
-*dịch đoạn phía trên*
+1. Có 10 thao tác được thực hiện trong hàm `run` đã được định nghĩa trong phần này. Giữa chúng không có bất cứ quan hệ phụ thuộc nào. Thiết kế một thí nghiệm để xem liệu MXNet có tự động thực thi các thao tác này một cách song song.
+2. Khi khối lượng công việc của một thao tác đủ nhỏ, song song hoá có thể hữu ích ngay cả khi chạy trên CPU hay GPU đơn. Thiết kế một thí nghiệm để kiểm chứng mệnh đề trên.
+3. Thiết kế một thí nghiệm sử dụng tính toán song song trên CPU, GPU và giao tiếp giữa cả hai thiết bị.
+4. Sử dụng một trình gỡ lỗi (*debugger*) như Nsight của NVIDIA để kiểm chứng rằng đoạn mã của bạn hoạt động hiệu quả.
+5. Thiết kế các tác vụ tính toán chứa nhiều dữ liệu có quan hệ phụ thuộc phức tạp hơn nữa, và thực hiện thí nghiệm để xem rằng liệu bạn có thể thu lại kết quả đúng trong khi vẫn cải thiện hiệu năng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -247,4 +255,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
