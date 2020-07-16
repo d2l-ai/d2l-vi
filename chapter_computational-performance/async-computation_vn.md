@@ -440,7 +440,7 @@ While this didn't cause any issues in the toy example above, it might well have 
 -->
 
 1. Như đã đề cập ở trên, sử dụng tính toán bất đồng bộ có thể giảm tổng thời gian cần thiết để thực hiện $1000$ phép tính xuống $t_1 + 1000 t_2 + t_3$. Tại sao ở đó ta lại phải giả sử $1000 t_2 > 999 t_1$?
-2. Bạn có thể chỉnh sửa vòng lặp huấn luyện như thế nào nếu bạn muốn mỗi batch chỉ có một batch khác chồng lên? Tức là nếu bạn muốn đảm bảo rằng batch $b_t$ hoàn thành trước khi $b_{t+2}$ bắt đầu?
+2. Bạn có thể chỉnh sửa vòng lặp huấn luyện như thế nào nếu muốn xử lý 2 batch cùng lúc? Tức bạn muốn đảm bảo rằng batch $b_t$ hoàn thành trước khi batch $b_{t+2}$ bắt đầu?
 3. Chuyện gì sẽ xảy ra nếu thực thi mã nguồn đồng thời trên cả CPU và GPU? Liệu có nên tiếp tục đồng bộ sau khi mỗi minibatch được đưa ra?
 4. So sánh sự khác nhau giữa `waitall` và `wait_to_read`. Gợi ý: thực hiện một số lệnh và đồng bộ theo kết quả trung gian.
 
