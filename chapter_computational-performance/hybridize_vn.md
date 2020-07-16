@@ -380,7 +380,7 @@ Về cơ bản việc hybrid hoá cần làm việc trực tiếp với luồng 
 Contrary to the Block instance, which needs to use the `forward` function, for a HybridBlock instance we need to use the `hybrid_forward` function.
 -->
 
-Hơn nữa, trong khi thực thể Block cần sử dụng hàm `forward`, thì thực thể HybridBlock lại sử dụng hàm `hybrid_forward`.
+Hơn nữa, trong khi thực thể của lớp Block cần sử dụng hàm `forward`, thì thực thể của lớp HybridBlock lại sử dụng hàm `hybrid_forward`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
