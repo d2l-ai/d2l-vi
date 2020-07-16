@@ -497,7 +497,7 @@ The benefit can range from small percentage points to more than twice the speed,
 
 1. Hãy thiết kế một mạng bằng cách sử dụng lớp `HybridConcurrent`. Ngoài ra, xem xét :ref: `sec_googlenet` cách xây dựng cho một mạng.
 2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet. Hãy thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
-3. Điều gì sẽ xảy ra nếu ta thêm dòng điều khiển, cụ thể là, các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
+3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là, các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
 4. Hãy lập trình các mô hình mà bạn quan tâm trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
