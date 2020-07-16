@@ -415,7 +415,7 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-Đoạn chương trình ở trên thực hiện một mạng đơn với 4 đơn vị ẩn và 2 đầu ra. 
+Đoạn mã ở trên thực hiện một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
 `hybrid_foward` lấy thêm một đối số  - mô-đun `F`.
 Điều này là cần thiết vì tùy vào chương trình có được lai hóa hay không, nó sẽ sử dụng một thư viện hơi khác (`ndarray` hoặc `symbol`) để xử lý.
 Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNET xác định biến số đầu vào một cách tự động. 
