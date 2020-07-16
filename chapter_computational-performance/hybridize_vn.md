@@ -360,7 +360,7 @@ The model is decomposed into a (large binary) parameter file and a JSON descript
 The files can be read by other front-end languages supported by Python or MXNet, such as C++, R, Scala, and Perl. Let's have a look at the model description.
 -->
 
-Mô hình này được chia ra thành một tập tin tham số (nhị phân) và tập tin đặc tả JSON cần thiết để thực hiện tính toán mô hình.
+Mô hình này được chia ra thành một tập tin (nhị phân) lớn chứa tham số và tập tin JSON mô tả cấu trúc mô hình.
 Các tập tin có thể được đọc bởi các ngôn ngữ front-end khác được hỗ trợ bởi Python hoặc MXNet, ví dụ C ++, R, Scala, và Perl. Ta hãy xem xét đặc tả mô hình như sau.
 
 ```{.python .input  n=7}
