@@ -34,7 +34,7 @@ Hãy tưởng tượng ta đang huấn luyện một mô hình ngôn ngữ.
 Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xuất hiện.
 Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*. 
 Tuy nhiên, đây cũng là vấn đề thường gặp trong nhiều mảng khác như quảng cáo điện toán (*computational advertising*) và lọc cộng tác (*collaborative filtering*).
-Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm người nhỏ chú ý đến.
+Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm nhỏ người chú ý đến.
 
 <!--
 Parameters associated with infrequent features only receive meaningful updates whenever these features occur.
@@ -162,8 +162,8 @@ Computing eigenvalues and eigenvectors is in general *much more* expensive than 
 
 Nếu hệ số điều kiện $\kappa$ lớn, việc giải bài toán tối ưu một cách chính xác trở nên khá khó khăn.
 Ta cần đảm bảo việc lựa chọn một khoảng động lớn các giá trị phù hợp.
-Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ rằng: liệu ta có thể "cố định" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng đều có giá trị bằng $1$.
-Điều này khá đơn giản trên lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm tái tỉ lệ bài toán 
+Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ rằng: chẳng phải ta có thể "sửa chữa" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng đều có giá trị bằng $1$.
+Điều này khá đơn giản trên lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm biến đổi bài toán 
 từ $\mathbf{x}$ sang $\mathbf{z} := \boldsymbol{\Lambda}^{\frac{1}{2}} \mathbf{U} \mathbf{x}$.
 Trong hệ toạ độ mới, $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$ có thể được đơn giản hoá thành $\|\mathbf{z}\|^2$.
 Tệ thay, hướng giải quyết này không thực tế chút nào.
@@ -191,7 +191,7 @@ For instance, the cases we discussed previously, this would entirely eliminate t
 
 Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
 Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện. 
-Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều mang dạng hình học với các cạnh song song trục toạ độ (*axis aligned*).
+Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều có cấu trúc hình học với các cạnh song song trục toạ độ (*axis aligned*).
 
 <!--
 Unfortunately we face yet another problem: in deep learning we typically do not even have access to the second derivative of the objective function: 
@@ -227,9 +227,9 @@ We refer the reader to :cite:`Duchi.Hazan.Singer.2011` for details.
 trong đó $\bar{\mathbf{x}}_0$ là nghiệm cực tiểu của $\bar{f}$.
 Do đó độ lớn của gradient phụ thuộc vào cả $\boldsymbol{\Lambda}$ và khoảng cách đến điểm tối ưu.
 Nếu $\bar{\mathbf{x}} - \bar{\mathbf{x}}_0$ không đổi thì đây chính là tất cả các giá trị ta cần tính.
-Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ thoả mãn.
+Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}})$ là đủ.
 Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu. 
-Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện cho độ lớn của ma trận Hessian.
+Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện dễ tính cho độ lớn của ma trận Hessian.
 Việc phân tích chi tiết nằm ngoài phạm vi của phần này (có thể lên đến nhiều trang).
 Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
 
