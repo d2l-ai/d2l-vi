@@ -770,7 +770,7 @@ Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradie
     * Hãy chứng minh rằng ta chỉ cần kiểm tra các đỉnh của tập hợp là đủ. 
 2. Ký hiệu khối cầu có bán kính $r$ sử dụng chuẩn $p$ là $B_p[r] := \{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_p \leq r\}$. Hãy chứng minh rằng $B_p[r]$ là lồi với mọi $p \geq 1$. 
 3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là hàm lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi. 
-4. Hãy chứng minh rằng hàm softmax được chuẩn hoá là là hàm lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$. 
+4. Hãy chứng minh rằng hàm softmax được chuẩn hoá là hàm lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$. 
 5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$. 
 6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó. 
 7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một giá trị $\xi \in [0, \epsilon]$ nào đó. 
