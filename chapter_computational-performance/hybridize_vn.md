@@ -309,7 +309,7 @@ class Benchmark:
 Now we can invoke the network twice, once with and once without hybridization.
 -->
 
-Bây giờ ta có thể gọi mạng hai lần tương ứng với việc áp dụng hoặc không áp dụng phép hybrid hoá.
+Bây giờ ta có thể gọi mạng hai lần tương ứng với việc có hoặc không hybrid hoá.
 
 ```{.python .input  n=5}
 net = get_net()
