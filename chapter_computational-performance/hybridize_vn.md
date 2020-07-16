@@ -387,7 +387,7 @@ Note, though that hybridization can affect model flexibility, in particular in t
 We will illustrate how to design more general models and also how compilation will remove spurious Python elements.
 -->
 
-Như phía trước chúng ta đã chứng minh, mô hình này có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn sau khi thực hiện gọi phương thức `hybridize`. 
+Trên đây chúng ta đã thấy rằng mô hình có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn khi gọi phương thức `hybridize`. 
 Lưu ý là mặc dù vậy, sự lai hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng. 
 Chúng ta sẽ minh họa việc làm thế nào để thiết kế các mô hình tổng quát hơn cũng như làm thế nào biên dịch sẽ loại bỏ các nhân tố có tính hình thức trong Phython. 
 
