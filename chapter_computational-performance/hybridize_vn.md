@@ -287,7 +287,7 @@ Let's define a function to measure this time first.
 It will come handy throughout the chapter as we set out to measure (and improve) performance.
 -->
 
-Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau phép  hybrid hoá.
+Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau phép hybrid hoá.
 Đầu tiên, ta hãy định nghĩa một hàm để đo thời gian trên.
 Sẽ rất thuận tiện trong suốt chương này khi chúng ta đo (và cải thiện) hiệu năng.
 
