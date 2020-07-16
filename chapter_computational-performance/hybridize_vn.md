@@ -470,7 +470,7 @@ The benefit can range from small percentage points to more than twice the speed,
 Tất cả các lệnh in, như định nghĩa trong `hybrid_forward` bị bỏ qua.
 Thật vậy, sau khi lai ghép hóa, việc thực thi lệnh `net(x)` không còn có bất kỳ liên hệ nào nữa với trình thông dịch của Python.
 Điều này có nghĩa rằng bất cứ một đoạn chương trình hình thức nào của Python sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
-Và như thế, MXNet gọi trực tiếp phần phụ trợ trên nền C++. 
+Và như thế, MXNet gọi trực tiếp back-end C++. 
 Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử gộp như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch các mô hình này đáng để thực hiện bất khi nào vấn đề tốc độ cần quan tâm.
 Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPUs.
