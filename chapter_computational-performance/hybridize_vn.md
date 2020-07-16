@@ -473,7 +473,7 @@ Thật vậy, sau khi lai ghép hóa, việc thực thi lệnh `net(x)` không c
 Và như thế, MXNet gọi trực tiếp back-end C++. 
 Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử gộp như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch các mô hình này đáng để thực hiện bất cứ khi nào ta cần quan tâm đến tốc độ.
-Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPUs.
+Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
