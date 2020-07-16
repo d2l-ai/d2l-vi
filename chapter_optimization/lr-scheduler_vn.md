@@ -373,7 +373,7 @@ This results in a cosine-like schedule with the following functional form for le
 -->
 
 Đây là một phương pháp khá phức tạp dựa trên thực nghiệm được đề xuất bởi :cite:`Loshchilov.Hutter.2016`.
-Phương pháp dựa trên quan sát rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu và hơn nữa muốn cải thiện nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học rất nhỏ.
+Phương pháp dựa trên thực nghiệm nói rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu. Hơn nữa, ta có thể muốn cải thiện nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học rất nhỏ.
 Từ đó ta thu được một định thời có dạng giống cô-sin với tốc độ học trong khoảng $t \in [0, T]$ có công thức như sau.
 
 
