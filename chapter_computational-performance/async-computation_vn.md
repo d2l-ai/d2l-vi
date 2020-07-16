@@ -474,6 +474,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 4 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
+* Phạm Minh Đức
 
 <!-- Phần 5 -->
 * 
