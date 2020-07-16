@@ -345,7 +345,7 @@ Let's see the `export` method in action.
 -->
 
 Một trong những lợi ích của việc biên dịch các mô hình là ta có thể chuỗi hoá (_serialize_) mô hình và các tham số mô hình để lưu trữ.
-Điều này cho phép ta có thể lưu trữ mô hình mà không phụ thuộc vào lưu chọn ngôn ngữ front-end.
+Điều này cho phép ta có thể lưu trữ mô hình mà không phụ thuộc vào ngôn ngữ front-end.
 Điều này cũng cho phép ta có thể sử dụng các mô hình đã huấn luyện trên các thiết bị khác và dễ dàng sử dụng các ngôn ngữ lập trình front-end khác.
 Đồng thời, mã nguồn này thường nhanh hơn so với mã nguồn sinh bởi lập trình mệnh lệnh.
 Hãy xem xét phương thức `export` sau.
