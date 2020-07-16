@@ -65,3 +65,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
+* Phạm Minh Đức

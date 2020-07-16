@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Adagrad
 -->
@@ -32,7 +29,7 @@ After all, there are many things that are of interest only for a small number of
 Hãy tưởng tượng ta đang huấn luyện một mô hình ngôn ngữ.
 Để đạt độ chính xác cao ta thường muốn giảm dần tốc độ học trong quá trình huấn luyện, thường là với tỉ lệ $\mathcal{O}(t^{-\frac{1}{2}})$ hoặc chậm hơn.
 Xét một mô hình huấn luyện dựa trên những đặc trưng thưa, tức là các đặc trưng hiếm khi xuất hiện.
-Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*. 
+Đây là điều thường gặp trong ngôn ngữ tự nhiên, ví dụ từ *preconditioning* hiếm gặp hơn nhiều so với *learning*.
 Tuy nhiên, đây cũng là vấn đề thường gặp trong nhiều mảng khác như quảng cáo điện toán (*computational advertising*) và lọc cộng tác (*collaborative filtering*).
 Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm nhỏ người chú ý đến.
 
@@ -40,7 +37,7 @@ Xét cho cùng, có rất nhiều thứ mà chỉ có một nhóm nhỏ người
 Parameters associated with infrequent features only receive meaningful updates whenever these features occur.
 Given a decreasing learning rate we might end up in a situation where the parameters for common features converge rather quickly to their optimal values, 
 whereas for infrequent features we are still short of observing them sufficiently frequently before their optimal values can be determined.
-In other words, the learning rate either decreases too quickly for frequent features or too slowly for infrequent ones.
+In other words, the learning rate either decreases too slowly for frequent features or too quickly for infrequent ones.
 -->
 
 Các tham số liên quan đến các đặc trưng thưa chỉ được cập nhật khi những đặc trưng này xuất hiện.
@@ -60,7 +57,7 @@ After all, it is unclear where one would draw the line between something that qu
 Một mẹo để khắc phục vấn đề này là đếm số lần ta gặp một đặc trưng nhất định và sử dụng nó để điều chỉnh tốc độ học.
 Tức là thay vì chọn tốc độ học theo công thức $\eta = \frac{\eta_0}{\sqrt{t + c}}$ ta có thể sử dụng $\eta_i = \frac{\eta_0}{\sqrt{s(i, t) + c}}$.
 Trong đó $s(i, t)$ là số giá trị khác không của đặc trưng $i$ ta quan sát được đến thời điểm $t$.
-Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức. 
+Công thức này khá dễ để lập trình và không tốn thêm bao nhiêu công sức.
 Tuy nhiên, cách này thất bại trong trường hợp khi đặc trưng không hẳn là thưa, chỉ là có gradient nhỏ và hiếm khi đạt giá trị lớn.
 Xét cho cùng, ta khó có thể phân định rõ ràng khi nào thì một đặc trưng là đã được quan sát hay chưa.
 
@@ -74,7 +71,7 @@ In practice this leads to a very effective optimization procedure for computatio
 But this hides some of the additional benefits inherent in Adagrad that are best understood in the context of preconditioning.
 -->
 
-Adagrad đề xuất bởi :cite:`Duchi.Hazan.Singer.2011` giải quyết vấn đề này bằng cách thay đổi bộ đếm thô $s(i, t)$ bởi tổng bình phương của tất cả các gradient được quan sát trước đó.
+Adagrad được đề xuất trong :cite:`Duchi.Hazan.Singer.2011` đã giải quyết vấn đề này bằng cách thay đổi bộ đếm thô $s(i, t)$ bởi tổng bình phương của tất cả các gradient được quan sát trước đó.
 Cụ thể, nó sử dụng $s(i, t+1) = s(i, t) + \left(\partial_i f(\mathbf{x})\right)^2$ làm công cụ để điều chỉnh tốc độ học.
 Việc này đem lại hai lợi ích: trước tiên ta không cần phải quyết định khi nào thì gradient được coi là đủ lớn.
 Thứ hai, nó tự động thay đổi giá trị tuỳ theo độ lớn của gradient.
@@ -82,9 +79,6 @@ Các tọa độ thường xuyên có gradient lớn bị giảm đi đáng kể
 Phương pháp này trong thực tế đưa ra một quy trình tối ưu hoạt động rất hiệu quả trong quảng cáo điện toán và các bài toán liên quan.
 Tuy nhiên, Adagrad vẫn còn ẩn chứa một vài lợi ích khác mà ta sẽ hiểu rõ nhất khi xét đến bối cảnh tiền điều kiện.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Preconditioning
@@ -144,11 +138,6 @@ Tỉ lệ giữa trị riêng lớn nhất và nhỏ nhất được gọi là h
 $$\kappa = \frac{\boldsymbol{\Lambda}_1}{\boldsymbol{\Lambda}_d}.$$
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-
 <!--
 If the condition number $\kappa$ is large, it is difficult to solve the optimization problem accurately.
 We need to ensure that we are careful in getting a large dynamic range of values right.
@@ -165,8 +154,8 @@ Ta cần đảm bảo việc lựa chọn một khoảng động lớn các giá
 Quá trình phân tích dẫn đến một câu hỏi hiển nhiên dù có phần ngây thơ rằng: chẳng phải ta có thể "sửa chữa" bài toán bằng cách biến đổi không gian sao cho tất cả các trị riêng đều có giá trị bằng $1$.
 Điều này khá đơn giản trên lý thuyết: ta chỉ cần tính các trị riêng và các vector riêng của $\mathbf{Q}$ nhằm biến đổi bài toán 
 từ $\mathbf{x}$ sang $\mathbf{z} := \boldsymbol{\Lambda}^{\frac{1}{2}} \mathbf{U} \mathbf{x}$.
-Trong hệ toạ độ mới, $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$ có thể được đơn giản hoá thành $\|\mathbf{z}\|^2$.
-Tệ thay, hướng giải quyết này không thực tế chút nào.
+Trong hệ toạ độ mới, $\mathbf{x}^\top \mathbf{Q} \mathbf{x}$ có thể được đơn giản hóa thành $\|\mathbf{z}\|^2$.
+Nhưng có vẻ hướng giải quyết này không thực tế.
 Việc tính toán các trị riêng và các vector riêng thường tốn kém hơn *rất nhiều* so với việc tìm lời giải cho bài toán thực tế.
 
 <!--
@@ -190,7 +179,7 @@ For instance, the cases we discussed previously, this would entirely eliminate t
 -->
 
 Trong trường hợp này ta có $\tilde{\mathbf{Q}}_{ij} = \mathbf{Q}_{ij} / \sqrt{\mathbf{Q}_{ii} \mathbf{Q}_{jj}}$ và cụ thể $\tilde{\mathbf{Q}}_{ii} = 1$ với mọi $i$.
-Trong đa số các trường hợp, cách làm này sẽ đơn giản hoá đáng kể hệ số điều kiện. 
+Trong đa số các trường hợp, cách làm này sẽ đơn giản hóa đáng kể hệ số điều kiện. 
 Ví dụ đối với các trường hợp ta đã thảo luận ở phần trước, việc này sẽ triệt tiêu hoàn toàn vấn đề đang có do các bài toán đều có cấu trúc hình học với các cạnh song song trục toạ độ (*axis aligned*).
 
 <!--
@@ -201,13 +190,13 @@ The ingenious idea of Adagrad is to use a proxy for that elusive diagonal of the
 
 Đáng tiếc rằng ta phải tiếp tục đối mặt với một vấn đề khác: trong học sâu, ta thường không tính được ngay cả đạo hàm bậc hai của hàm mục tiêu.
 Đối với $\mathbf{x} \in \mathbb{R}^d$, đạo hàm bậc hai thậm chí với một minibatch có thể yêu cầu không gian và độ phức tạp lên đến $\mathcal{O}(d^2)$ để tính toán, do đó khiến cho vấn đề không thể thực hiện được trong thực tế.
-Sự khéo léo của Adagrad nằm ở việc sử dụng một biến đại diện (*proxy*) để tính toán đường chéo của ma trận Hessian một cách hiệu quả và đơn giản--đó là độ lớn của chính gradient.
+Sự khéo léo của Adagrad nằm ở việc sử dụng một biến đại diện (*proxy*) để tính toán đường chéo của ma trận Hessian một cách hiệu quả và đơn giản---đó là độ lớn của chính gradient.
 
 <!--
 In order to see why this works, let us look at $\bar{f}(\bar{\mathbf{x}})$. We have that
 -->
 
-Để tìm hiểu tại sao cách này lại có hiệu quả, hãy cùng xét $\bar{f}(\bar{\mathbf{x}})$. Ta có
+Để tìm hiểu tại sao cách này lại có hiệu quả, hãy cùng xét $\bar{f}(\bar{\mathbf{x}})$. Ta có:
 
 
 $$\partial_{\bar{\mathbf{x}}} \bar{f}(\bar{\mathbf{x}}) = \boldsymbol{\Lambda} \bar{\mathbf{x}} + \bar{\mathbf{c}} = \boldsymbol{\Lambda} \left(\bar{\mathbf{x}} - \bar{\mathbf{x}}_0\right),$$
@@ -231,15 +220,8 @@ Suy cho cùng, trong trường hợp này độ lớn của gradient $\partial_{
 Do AdaGrad là một thuật toán hạ gradient ngẫu nhiên, ta sẽ thấy các gradient có phương sai khác không ngay cả tại điểm tối ưu. 
 Chính vì thế ta có thể yên tâm sử dụng phương sai của các gradient như một biến đại diện dễ tính cho độ lớn của ma trận Hessian.
 Việc phân tích chi tiết nằm ngoài phạm vi của phần này (có thể lên đến nhiều trang).
-Bạn đọc có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
+Độc giả có thể tham khảo :cite:`Duchi.Hazan.Singer.2011` để biết thêm chi tiết.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## The Algorithm
@@ -252,7 +234,7 @@ Let us formalize the discussion from above.
 We use the variable $\mathbf{s}_t$ to accumulate past gradient variance as follows.
 -->
 
-Hãy cùng công thức hoá phần thảo luận ở trên.
+Hãy cùng công thức hóa phần thảo luận ở trên.
 Ta sử dụng biến $\mathbf{s}_t$ để tích luỹ phương sai của các gradient trong quá khứ như sau:
 
 
@@ -296,8 +278,8 @@ For now let us see how it behaves in a quadratic convex problem.
 We use the same problem as before:
 -->
 
-Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu về cơ bản $\mathbf{s}_t$ tăng một cách tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
-Điều này dẫn đến tốc độ học $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
+Cần lưu ý, tổng bình phương các gradient trong $\mathbf{s}_t$ có thể hiểu là về cơ bản $\mathbf{s}_t$ tăng một cách tuyến tính (có phần chậm hơn so với tuyến tính trong thực tế, do gradient lúc ban đầu bị co lại).
+Điều này dẫn đến tốc độ học là $\mathcal{O}(t^{-\frac{1}{2}})$, mặc dù được điều chỉnh theo từng toạ độ một.
 Đối với các bài toán lồi, như vậy là hoàn toàn đủ.
 Tuy nhiên trong học sâu, có lẽ ta sẽ muốn giảm tốc độ học chậm hơn một chút.
 Việc này dẫn đến một số biến thể của Adagrad mà ta sẽ thảo luận trong các phần tới.
@@ -358,9 +340,6 @@ eta = 2
 d2l.show_trace_2d(f_2d, d2l.train_2d(adagrad_2d))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Implementation from Scratch
@@ -418,7 +397,7 @@ Sử dụng đối tượng `Trainer` trong thuật toán `adagrad`, ta có th�
 
 
 ```{.python .input  n=5}
-d2l.train_gluon_ch11('adagrad', {'learning_rate': 0.1}, data_iter)
+d2l.train_concise_ch11('adagrad', {'learning_rate': 0.1}, data_iter)
 ```
 
 
@@ -438,11 +417,11 @@ d2l.train_gluon_ch11('adagrad', {'learning_rate': 0.1}, data_iter)
 -->
 
 * Adagrad liên tục giảm giá trị của tốc độ học theo từng toạ độ.
-* Thuật toán sử dụng độ lớn của gradient như một phương thức để điều chỉnh tiến độ học - các toạ độ với gradient lớn được cân bằng bởi tốc độ học nhỏ.
+* Thuật toán sử dụng độ lớn của gradient như một phương thức để điều chỉnh tiến độ học - các tọa độ với gradient lớn được cân bằng bởi tốc độ học nhỏ.
 * Tính đạo hàm bậc hai một cách chính xác thường không khả thi trong các bài toán học sâu do hạn chế về bộ nhớ và khả năng tính toán. Do đó, gradient có thể trở thành một biến đại diện hữu ích.
 * Nếu bài toán tối ưu có cấu trúc không được đồng đều, Adagrad có thể làm giảm bớt sự biến dạng đó.
 * Adagrad thường khá hiệu quả đối với các đặc trưng thưa, trong đó tốc độ học cần giảm chậm hơn cho các tham số hiếm khi xảy ra.
-* Trong các bài toán học sâu, Adagrad đôi khi làm giảm tốc độ học quá mạnh. Ta sẽ thảo luận các chiến lược nhằm giảm bớt vấn đề này trong ngữ cảnh :numref:`sec_adam`.
+* Trong các bài toán học sâu, Adagrad đôi khi làm giảm tốc độ học quá mạnh. Ta sẽ thảo luận các chiến lược nhằm giảm bớt vấn đề này trong ngữ cảnh của :numref:`sec_adam`.
 
 <!--
 ## Exercises
@@ -473,26 +452,13 @@ ma trận $\mathbf{M}$, tồn tại $j$ thoả mãn $|\lambda_i - \mathbf{M}_{jj
 6. Bạn sẽ thay đổi Adagrad như thế nào để tốc độ học không suy giảm quá mạnh?
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2375)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/355)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang

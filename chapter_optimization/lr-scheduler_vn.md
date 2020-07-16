@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Learning Rate Scheduling
 -->
@@ -43,7 +40,7 @@ Ta biết rằng hệ số điều kiện (*condition number*) của bài toán 
 Theo trực giác, nó là tỷ lệ giữa mức độ thay đổi theo hướng ít nhạy cảm nhất và hướng nhạy cảm nhất.
 * Thứ hai, tốc độ suy giảm cũng quan trọng không kém.
 Nếu duy trì tốc độ học lớn, thuật toán có thể chỉ dao động xung quanh điểm cực tiểu và do đó không đạt được nghiệm tối ưu.
-:numref:`sec_gd` đã thảo luận về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. <!-- reference chỗ lr lớn nhỏ ở phần GD, phần minibatch không có thảo luận gì. -->
+:numref:`sec_gd` đã thảo luận về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ.
 Nói ngắn gọn, ta muốn tốc độ hội tụ suy giảm ở mức chậm hơn cả $\mathcal{O}(t^{-\frac{1}{2}})$, một mức đã có thể coi là tốt cho các bài toán lồi.
 * Một khía cạnh khác cũng quan trọng không kém là *khởi tạo*.
 Điều này liên quan đến cả cách thức các tham số được khởi tạo (xem lại :numref:`sec_numerical_stability`) và cách chúng thay đổi lúc đầu.
@@ -62,9 +59,6 @@ In the current chapter we will review the effects that different schedules have 
 Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ tự động cho việc này.
 Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khác nhau lên độ chính xác, cũng như xem cách quản lý hiệu quả tốc độ học thông qua một *bộ định thời tốc độ học*.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Toy Problem
@@ -197,9 +191,6 @@ class SquareRootScheduler:
         return self.lr * pow(num_update + 1.0, -0.5)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 Let us plot its behavior over a range of values.
@@ -262,9 +253,6 @@ Những lựa chọn phổ biến là định thời suy giảm theo đa thức 
 Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cô-sin làm việc tốt đối với một số bài toán.
 Sau cùng, với một số bài toán sẽ có lợi khi khởi động (*warmup*) bộ tối ưu trước khi sử dụng tốc độ học lớn. 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Factor Scheduler
@@ -309,9 +297,6 @@ Phương pháp này yêu cầu nhiều tham số hơn một chút, ví dụ như
 Trong các phần tiếp theo, ta sẽ sử dụng các bộ định thời tốc độ học được lập trình sẵn, ở đây chỉ giải thích cách thức hoạt động của chúng.
 Như minh họa, việc tự xây dựng một bộ định thời nếu cần khá đơn giản.
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Multi Factor Scheduler
@@ -354,9 +339,6 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd',
 train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Cosine Scheduler
@@ -412,9 +394,6 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd',
 train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ### Warmup
@@ -478,9 +457,6 @@ Việc khởi động có thể sử dụng trong bất kỳ bộ định thời
 Đặc biệt, các tác giả thấy rằng quá trình khởi động làm giảm độ phân kỳ của tham số trong các mạng rất sâu. 
 Điều này hợp lý về trực giác, vì ta thấy rằng phân kỳ mạnh là do khởi tạo ngẫu nhiên ở những phần mạng học lâu nhất vào lúc đầu.
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 <!--
 ## Summary
@@ -525,26 +501,13 @@ Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ h�
 4. Quá trình khởi động nên kéo dài bao lâu?
 5. Bạn có thể liên hệ tối ưu hoá và phép lấy mẫu được không? Hãy bắt đầu bằng cách sử dụng kết quả từ :cite:`Welling.Teh.2011` về động lực học Langevin của Gradient ngẫu nghiên (_Stochastic Gradient Langevin Dynamics_).
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/5183)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/359)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Trần Yến Thy
