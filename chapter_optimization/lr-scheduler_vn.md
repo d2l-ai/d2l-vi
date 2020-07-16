@@ -39,7 +39,7 @@ We recommend the reader to review details in :cite:`Izmailov.Podoprikhin.Garipov
 
 * Vấn đề rõ ràng nhất là *độ lớn* của tốc độ học có ảnh hưởng.
 Nếu tốc độ học quá lớn thì tối ưu phân kỳ, nếu quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc kết quả cuối cùng không đủ tốt.
-Ta biết rằng số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
+Ta biết rằng hệ số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
 Theo trực giác, nó là tỷ lệ giữa mức độ thay đổi theo hướng ít nhạy cảm nhất và hướng nhạy cảm nhất.
 * Thứ hai, tốc độ suy giảm cũng quan trọng không kém.
 Nếu duy trì tốc độ học lớn, thuật toán có thể chỉ dao động xung quanh điểm cực tiểu và do đó không đạt được nghiệm tối ưu.
