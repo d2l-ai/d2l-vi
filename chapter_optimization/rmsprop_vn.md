@@ -13,9 +13,9 @@ While this is generally appropriate for convex problems, it might not be ideal f
 Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
-Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$ một cách hiệu quả.
-Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những bài toán không lồi, chẳng hạn những bài toán gặp phải trong học sâu.
-Tuy vậy, khả năng thích ứng theo toạ độ của Adagrad là rất tuyệt vời cho một bộ tiền điều kiện (_preconditioner_).
+Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học thực tế được giảm theo một thời điểm được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$.
+Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những bài toán không lồi, chẳng hạn những bài toán gặp phải trong học sâu. 
+Tuy vậy, khả năng thích ứng theo toạ độ của Adagrad là rất tuyệt vời cho một bộ tiền điều kiện (_preconditioner_). 
 
 <!--
 :cite:`Tieleman.Hinton.2012` proposed the RMSProp algorithm as a simple fix to decouple rate scheduling from coordinate-adaptive learning rates.
@@ -23,9 +23,9 @@ The issue is that Adagrad accumulates the squares of the gradient $\mathbf{g}_t$
 As a result $\mathbf{s}_t$ keeps on growing without bound due to the lack of normalization, essentially linarly as the algorithm converges.
 -->
 
-:cite:`Tieleman.Hinton.2012` đề xuất thuật toán RMSProp như một bản vá đơn giản để tách rời tốc độ định thời ra khỏi tốc độ học thay đổi theo toạ độ (_coordinate-adaptive_).
-Vấn đề ở đây là Adagrad cộng dồn tổng bình phương của gradient $\mathbf{g}_t$ vào vector trạng thái $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$.
-Kết quả là, do không có phép chuẩn hoá, $\mathbf{s}_t$ vẫn tiếp tục tăng tuyến tính không ngừng trong quá trình hội tụ của thuật toán.
+:cite:`Tieleman.Hinton.2012` đề xuất thuật toán RMSProp như một bản vá đơn giản để tách rời tốc độ định thời ra khỏi tốc độ học thay đổi theo toạ độ (_coordinate-adaptive_). 
+Vấn đề ở đây là Adagrad cộng dồn tổng bình phương của gradient $\mathbf{g}_t$ vào vector trạng thái $\mathbf{s}_t = \mathbf{s}_{t-1} + \mathbf{g}_t^2$. 
+Kết quả là, do không có phép chuẩn hoá, $\mathbf{s}_t$ vẫn tiếp tục tăng tuyến tính không ngừng trong quá trình hội tụ của thuật toán. 
 
 <!--
 One way of fixing this problem would be to use $\mathbf{s}_t / t$.
@@ -35,11 +35,11 @@ An alternative is to use a leaky average in the same way we used in the momentum
 Keeping all other parts unchanged yields RMSProp.
 -->
 
-Vấn đề này có thể được giải quyết bằng cách sử dụng $\mathbf{s}_t / t$.
-Đối với các phân phối hợp lý của $\mathbf{g}_t$, thuật toán sẽ hội tụ.
-Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi giới hạn bắt đầu ảnh hưởng, vì thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị.
-Một cách khác là sử dụng trung bình rò rỉ tương tự như trong phương pháp động lượng, tức là $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ cho các tham số $\gamma > 0$.
-Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp.
+Vấn đề này có thể được giải quyết bằng cách sử dụng $\mathbf{s}_t / t$. 
+Với phân phối $\mathbf{g}_t$ hợp lý, thuật toán sẽ hội tụ. 
+Đáng tiếc là có thể mất rất nhiều thời gian cho đến khi các tính chất tại giới hạn bắt đầu có ảnh hưởng, bởi thuật toán này ghi nhớ toàn bộ quỹ đạo của các giá trị. 
+Một cách khác là sử dụng trung bình rò rỉ tương tự như trong phương pháp động lượng, tức là $\mathbf{s}_t \leftarrow \gamma \mathbf{s}_{t-1} + (1-\gamma) \mathbf{g}_t^2$ cho các tham số $\gamma > 0$. 
+Giữ nguyên tất cả các phần khác và ta có thuật toán RMSProp. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -55,7 +55,7 @@ Giữ nguyên tất cả các phần khác ta có thuật toán RMSProp.
 Let us write out the equations in detail.
 -->
 
-Chúng ta hãy viết các phương trình ra một cách chi tiết.
+Chúng ta hãy viết các phương trình ra một cách chi tiết. 
 
 
 $$\begin{aligned}
@@ -72,10 +72,10 @@ Expanding the definition of $\mathbf{s}_t$ yields
 -->
 
 
-Hằng số $\epsilon > 0$ thường được đặt bằng $10^{-6}$ để đảm bảo rằng chúng ta sẽ không gặp vấn đề chia cho 0 hoặc kích thước bước quá lớn.
-Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép chuyển đổi được áp dụng cho từng tọa độ.
-Về mặt trung bình rò rỉ, chúng ta có thể áp dụng các lập luận tương tự như trước trong phương pháp động lượng.
-Khai triển định nghĩa $\mathbf{s}_t$ ta có
+Hằng số $\epsilon > 0$ thường được đặt bằng $10^{-6}$ để đảm bảo rằng chúng ta sẽ không gặp vấn đề khi chia cho 0 hoặc kích thước bước quá lớn. 
+Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép biến đổi tỉ lệ được áp dụng cho từng tọa độ. 
+Về mặt trung bình rò rỉ, chúng ta có thể áp dụng các lập luận tương tự như trước trong phương pháp động lượng. 
+Khai triển định nghĩa $\mathbf{s}_t$ ta có 
 
 $$
 \begin{aligned}
@@ -91,9 +91,9 @@ Hence the sum of weights is normalized to $1$ with a half-life time of an observ
 Let us visualize the weights for the past 40 timesteps for various choices of $\gamma$.
 -->
 
-Tương tự như :numref:`sec_momentum`, ta có $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$.
-Do đó, tổng trọng số được chuẩn hóa bằng $1$ và chu kỳ bán rã của một quan sát là $\gamma^{-1}$.
-Hãy cùng minh họa trực quan các trọng số này trong vòng 40 bước thời gian trước đó với các giá trị $\gamma$ khác nhau.
+Tương tự như :numref:`sec_momentum`, ta có $1 + \gamma + \gamma^2 + \ldots, = \frac{1}{1-\gamma}$. 
+Do đó, tổng trọng số được chuẩn hóa bằng $1$ và chu kỳ bán rã của một quan sát là $\gamma^{-1}$. 
+Hãy cùng minh họa trực quan các trọng số này trong vòng 40 bước thời gian trước đó với các giá trị $\gamma$ khác nhau. 
 
 
 ```{.python .input  n=1}
@@ -126,10 +126,10 @@ the variables moved only very slowly in the later stages of the algorithm since 
 Since $\eta$ is controlled separately this does not happen with RMSProp.
 -->
 
-Như trước đây, chúng ta sử dụng hàm bậc hai $f(\mathbf{x})=0.1x_1^2+2x_2^2$ để quan sát quỹ đạo của RMSProp.
-Nhớ lại trong :numref:`sec_adagrad`, khi chúng ta sử dụng Adagrad với tốc độ học bằng 0.4,
-các biến di chuyển rất chậm trong các giai đoạn sau của thuật toán do tốc độ học giảm quá nhanh.
-Do $\eta$ được kiểm soát riêng biệt, nên điều này không xảy ra với RMSProp.
+Như trước đây, chúng ta sử dụng hàm bậc hai $f(\mathbf{x})=0.1x_1^2+2x_2^2$ để quan sát quỹ đạo của RMSProp. 
+Nhớ lại trong :numref:`sec_adagrad`, khi chúng ta sử dụng Adagrad với tốc độ học bằng 0.4, 
+các biến di chuyển rất chậm trong các giai đoạn sau của thuật toán do tốc độ học giảm quá nhanh. 
+Do $\eta$ được kiểm soát riêng biệt, nên điều này không xảy ra với RMSProp. 
 
 ```{.python .input}
 def rmsprop_2d(x1, x2, s1, s2):
@@ -153,8 +153,8 @@ Next, we implement RMSProp to be used in a deep network.
 This is equally straightforward.
 -->
 
-Tiếp theo, chúng ta hãy lập trình thuật toán RMSProp được sử dụng trong một mạng nơ-ron sâu.
-Cách lập trình không quá phức tạp.
+Tiếp theo, chúng ta hãy lập trình thuật toán RMSProp để sử dụng trong một mạng nơ-ron sâu. 
+Cách lập trình không quá phức tạp. 
 
 
 ```{.python .input  n=22}
@@ -176,8 +176,8 @@ We set the initial learning rate to 0.01 and the weighting term $\gamma$ to 0.9.
 That is, $\mathbf{s}$ aggregates on average over the past $1/(1-\gamma) = 10$ observations of the square gradient.
 -->
 
-Chúng ta khởi tạo tốc độ học ban đầu bằng 0.01 và trọng số $\gamma$ bằng 0.9.
-Nghĩa là, $\mathbf{s}$ là tổng trung bình của $1/(1-\gamma) = 10$ bình phương gradient trong quá khứ.
+Chúng ta khởi tạo tốc độ học ban đầu bằng 0.01 và trọng số $\gamma$ bằng 0.9. 
+Nghĩa là, $\mathbf{s}$ là tổng trung bình của $1/(1-\gamma) = 10$ quan sát bình phương gradient trong quá khứ.   
 
 
 ```{.python .input  n=24}
@@ -201,8 +201,8 @@ Since RMSProp is a rather popular algorithm it is also available in the `Trainer
 All we need to do is instantiate it using an algorithm named `rmsprop`, assigning $\gamma$ to the parameter `gamma1`.
 -->
 
-Do RMSProp là thuật toán khá phổ biến, nó cũng được tích hợp sẵn trong thực thể `Trainer`.
-Những gì ta cần phải làm là khởi tạo thuật toán có tên là `rmsprop`, với $\gamma$ được gán cho tham số `gamma1`.
+Do RMSProp là thuật toán khá phổ biến, nó cũng được tích hợp sẵn trong thực thể `Trainer`. 
+Những gì ta cần phải làm là khởi tạo thuật toán có tên là `rmsprop`, với $\gamma$ được gán cho tham số `gamma1`. 
 
 
 ```{.python .input  n=29}
@@ -224,10 +224,10 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 * The coefficient $\gamma$ determines how long the history is when adjusting the per-coordinate scale.
 -->
 
-* Thuật toán RMSProp rất giống với Adagrad ở chỗ cả hai đều sử dụng bình phương của gradient để chuyển đổi hệ số.
-* RMSProp có điểm chung với phương pháp động lượng là chúng đều sử dụng trung bình rò rỉ. Tuy nhiên, RMSProp sử dụng kỹ thuật này để điều chỉnh tiền điều kiện theo hệ số.
-* Trong thực tế, tốc độ học cần được định thời bởi người lập trình. 
-* Hệ số $\gamma$ xác định độ dài thông tin quá khứ được sử dụng khi điều chỉnh tỉ lệ theo từng toạ độ.
+* Thuật toán RMSProp rất giống với Adagrad ở chỗ cả hai đều sử dụng bình phương của gradient để thay đổi tỉ lệ hệ số. 
+* RMSProp có điểm chung với phương pháp động lượng là chúng đều sử dụng trung bình rò rỉ. Tuy nhiên, RMSProp sử dụng kỹ thuật này để điều chỉnh tiền điều kiện theo hệ số. 
+* Trong thực tế, tốc độ học cần được định thời bởi người lập trình.  
+* Hệ số $\gamma$ xác định độ dài thông tin quá khứ được sử dụng khi điều chỉnh tỉ lệ theo từng toạ độ. 
 
 <!--
 ## Exercises
@@ -242,10 +242,10 @@ d2l.train_gluon_ch11('rmsprop', {'learning_rate': 0.01, 'gamma1': 0.9},
 4. Would you want to adjust $\gamma$ as optimization progresses? How sensitive is RMSProp to this?
 -->
 
-1. Điều gì sẽ xảy ra nếu ta đặt $\gamma = 1$? Giải thích tại sao?
-2. Biến đổi bài toán tối ưu thành cực tiểu hoá $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Sự hội tụ sẽ diễn ra như thế nào?
-3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các cách điều chỉnh tốc độ học khác nhau.
-4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu tiến triển không? Hãy cho biết độ nhạy của RMSProp với việc điều chỉnh này?
+1. Điều gì sẽ xảy ra nếu ta đặt $\gamma = 1$? Giải thích tại sao? 
+2. Biến đổi bài toán tối ưu thành cực tiểu hoá $f(\mathbf{x}) = 0.1 (x_1 + x_2)^2 + 2 (x_1 - x_2)^2$. Sự hội tụ sẽ diễn ra như thế nào? 
+3. Hãy thử áp dụng RMSProp cho một bài toán học máy cụ thể, chẳng hạn như huấn luyện trên tập Fashion-MNIST. Hãy thí nghiệm với các tốc độ học khác nhau. 
+4. Bạn có muốn điều chỉnh $\gamma$ khi việc tối ưu đang tiến triển không? Hãy cho biết độ nhạy của RMSProp với việc điều chỉnh này? 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -270,6 +270,7 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
