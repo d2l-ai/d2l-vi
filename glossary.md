@@ -196,6 +196,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | hand-engineering        | thiết kế thủ công        |                                                                                            |
 | heuristic               | thực nghiệm              |                                                                                            |
+| hybrid(ize)             | hybrid (hóa)             |                                                                                            
 | hidden state            | trạng thái ẩn            |                                                                                            |
 | hidden state variable   | biến trạng thái ẩn       |                                                                                            |
 | hidden unit             | nút ẩn                   |                                                                                            |
