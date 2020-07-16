@@ -273,7 +273,7 @@ A layer will not be optimized if it inherits from the `Block` instead.
 
 Điều này có vẻ tốt đến mức khó tin: chỉ cần chỉ định một khối thành `HybridSequential`, sử dụng mã nguồn tương tự như trước và gọi hàm `hybridize`.
 Một khi điều này xảy ra, mạng sẽ được tối ưu hóa (chúng ta sẽ đánh giá hiệu năng dưới đây).
-Đáng tiếc là cách này không hoạt động tốt với mọi tầng.
+Đáng tiếc là cách này không hoạt động với mọi tầng.
 Có nghĩa là, các khối được tạo bởi Gluon mặc định là lớp con của `HybridBlock` và do đó có thể hybrid hoá được.
 Một tầng sẽ không được tối ưu hóa nếu nó kế thừa từ l`Block`.
 
