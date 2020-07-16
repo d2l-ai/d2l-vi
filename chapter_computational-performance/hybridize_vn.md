@@ -226,7 +226,7 @@ Let's see how we can address this for significant parts of the code by replacing
 Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là hãy xem xét các mạng sâu đa tầng.
 Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho tất cả các tầng để sinh một lệnh mà sau đó có thể được truyền tới CPU hoặc GPU.
 Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
-Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ một thực thể AWS P3dn.24xlarge, Python sẽ gặp khó khăn để tất cả GPU làm việc cùng một lúc.
+Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ như P3dn.24xlarge trên AWS, Python sẽ gặp khó khăn để tận dụng tất cả GPU cùng lúc.
 Lúc này trình thông dịch Python đơn luồng trở thành nút thắt cổ chai.
 Ta hãy xem làm thế nào để giải quyết vấn đề trên cho các phần chính yếu của mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
 
