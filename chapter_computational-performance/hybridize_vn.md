@@ -361,7 +361,7 @@ The files can be read by other front-end languages supported by Python or MXNet,
 -->
 
 Mô hình này được chia ra thành một tập tin (nhị phân) lớn chứa tham số và tập tin JSON mô tả cấu trúc mô hình.
-Các tập tin có thể được đọc bởi các ngôn ngữ front-end khác được hỗ trợ bởi Python hoặc MXNet, ví dụ C ++, R, Scala, và Perl. Ta hãy xem xét đặc tả mô hình như sau.
+Các tập tin có thể được đọc bởi các ngôn ngữ front-end khác được hỗ trợ bởi Python hoặc MXNet, ví dụ C ++, R, Scala, và Perl. Tập tin JSON có dạng như sau.
 
 ```{.python .input  n=7}
 !head my_mlp-symbol.json
