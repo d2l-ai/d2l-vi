@@ -476,7 +476,7 @@ The benefit can range from small percentage points to more than twice the speed,
 * Models constructed by the `HybridSequential` and `HybridBlock` classes are able to convert imperative programs into symbolic programs by calling the `hybridize` method.
 -->
 
-* Lập trình mệnh lệnh khiến việc thiết kế mô hình mới dễ dàng hơn vì ta có thể viết mã với dòng điều khiển và được sử dụng các hệ sinh thái phần mềm của Python.
+* Lập trình mệnh lệnh khiến việc thiết kế mô hình mới dễ dàng hơn vì ta có thể viết mã với luồng điều khiển và được sử dụng hệ sinh thái phần mềm của Python.
 * Lập trình ký hiệu đòi hỏi chúng ta định nghĩa và biên dịch chương trình trước khi thực thi nó. Lợi ích là hiệu năng được cải thiện.
 * MXNet có thể kết hợp những ưu điểm của cả hai phương pháp khi cần thiết.
 * Mô hình được xây dựng bởi các lớp `HybridSequential` và `HybridBlock` có thể chuyển đổi các chương trình mệnh lệnh thành các chương trình ký hiệu bằng cách gọi phương thức `hybridize`.
