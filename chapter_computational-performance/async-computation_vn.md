@@ -250,7 +250,7 @@ with d2l.Benchmark('asynchronous'):
 A slightly simplified interaction between the Python front-end thread and the C++ back-end thread can be summarized as follows:
 -->
 
-Ta có thể tổng kết ngắn gọn lại tương tác giữa luồng front-end Python và luồng back-end C++ như sau:
+Ta có thể tóm tắt đơn giản sự tương tác giữa luồng front-end Python và luồng back-end C++ như sau:
 
 <!--
 1. The front-end orders the back-end to insert the calculation task `y = x + 1` into the queue.
