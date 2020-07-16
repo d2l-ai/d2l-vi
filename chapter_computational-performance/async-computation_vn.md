@@ -202,11 +202,11 @@ since each such operation requires the compute graph to evaluate all intermediat
 -->
 
 Cả hai thao tác hoàn thành với thời gian xấp xỉ nhau.
-Ngoài các thao tác chặn (*blocking operation*) tường minh, bạn đọc cũng nên tìm hiểu về bộ chặn *ngầm*.
+Ngoài các thao tác chặn (*blocking operation*) tường minh, bạn đọc cũng nên biết về việc chặn *ngầm*.
 Rõ ràng việc in một biến ra yêu cầu biến đó phải sẵn sàng và do đó là một bộ chặn.
 Cuối cùng, ép kiểu sang NumPy bằng `z.asnumpy()` và ép kiểu sang số nguyên bằng `z.item()` cũng là bộ chặn, do trong NumPy không có khái niệm bất đồng bộ.
 Việc ép kiểu và hàm `print` cần truy cập giá trị.
-Việc thường xuyên sao chép một lượng nhỏ dữ liệu từ phạm vi của MXNet sang NumPy và ngược lại có thể làm giảm đáng kể hiệu năng của một đoạn mã đáng ra là có hiệu năng tốt,
+Việc thường xuyên sao chép một lượng nhỏ dữ liệu từ phạm vi của MXNet sang NumPy và ngược lại có thể làm giảm đáng kể hiệu năng của một đoạn mã đáng lẽ sẽ có hiệu năng tốt,
 do mỗi thao tác như vậy buộc đồ thị tính toán phải tính toàn bộ giá trị trung gian để suy ra các số hạng cần thiết *trước khi* làm bất cứ thao tác nào khác.
 
 
