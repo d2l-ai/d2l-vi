@@ -289,7 +289,7 @@ Some readers might have noticed that previous training routines made use of sync
 -->
 
 Hãy thử tưởng tượng trường hợp ta liên tục thêm các thao tác vào back-end bằng cách thực thi mã Python trên front-end.
-Ví dụ, trong một khoảng thời gian ngắn, front-end liên tục thêm vào một lượng lớn các tác vụ trên minibatch.
+Ví dụ, trong một khoảng thời gian rất ngắn, front-end liên tục thêm vào một lượng lớn các tác vụ trên minibatch.
 Xét cho cùng, công việc trên có thể hoàn thành nhanh chóng nếu không có phép tính nào thực sự diễn ra trên Python.
 Nếu tất cả tác vụ trên có thể bắt đầu nhanh chóng trong cùng một lúc thì có thể dẫn đến dung lượng bộ nhớ sử dụng tăng đột ngột.
 Do dung lượng bộ nhớ có sẵn trên GPU (và ngay cả CPU) là có hạn, điều này có thể gây ra sự tranh chấp tài nguyên hoặc thậm chí có thể làm sập chương trình.
@@ -302,7 +302,7 @@ Below is the mock data generator and deep network.
 -->
 
 Chúng tôi khuyến nghị nên sử dụng các thao tác này một cách cẩn thận cho từng minibatch, sao cho cân bằng giữa hiệu năng tính toán và mức chiếm dụng bộ nhớ (*memory footprint*).
-Để mô tả cho quá trình trên, hãy cùng lập trình một vòng lặp huấn luyện đơn giản, đo lượng bộ nhớ tiêu hao và thời gian thực thi,
+Để minh họa, hãy cùng lập trình một vòng lặp huấn luyện đơn giản, đo lượng bộ nhớ tiêu hao và thời gian thực thi,
 sử dụng hàm sinh dữ liệu và mạng học sâu dưới đây.
 
 
