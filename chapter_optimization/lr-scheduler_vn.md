@@ -5,7 +5,7 @@
 # Learning Rate Scheduling
 -->
 
-# Định thời Tốc độ Học 
+# Định thời Tốc độ Học
 :label:`sec_scheduler`
 
 <!--
@@ -14,9 +14,9 @@ Nonetheless, adjusting the learning rate is often just as important as the actua
 There are a number of aspects to consider:
 -->
 
-Cho đến nay ta tập trung chủ yếu vào *thuật toán* tối ưu ở cách cập nhật các vector trọng số thay vì *tốc độ* cập nhật các vector đó.
-Tuy nhiên, thường thì điều chỉnh tốc độ học cũng quan trọng như thuật toán.
-Có một vài khía cạnh để chúng ta xem xét:
+Đến nay, trong các *thuật toán* tối ưu ta tập trung chủ yếu ở cách cập nhật các vector trọng số thay vì *tốc độ* cập nhật các vector đó.
+Tuy nhiên, việc điều chỉnh tốc độ học thường cũng quan trọng như thuật toán.
+Có một vài điều ta cần quan tâm:
 
 <!--
 * Most obviously the *magnitude* of the learning rate matters. 
@@ -37,29 +37,29 @@ This is beyond the scope of the current chapter.
 We recommend the reader to review details in :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, e.g., how to obtain better solutions by averaging over an entire *path* of parameters.
 -->
 
-* Vấn đề rõ nhất là *độ lớn* của tốc độ học.
-Nếu quá lớn thì tối ưu phân kỳ, nếu quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc kết quả cuối cùng không đủ tốt.
-Trước đây ta đã thấy rằng số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
+* Vấn đề rõ ràng nhất là *độ lớn* của tốc độ học có ảnh hưởng.
+Nếu tốc độ học quá lớn thì tối ưu phân kỳ, nếu quá nhỏ thì việc huấn luyện mất quá nhiều thời gian hoặc kết quả cuối cùng không đủ tốt.
+Ta biết rằng hệ số điều kiện (*condition number*) của bài toán rất quan trọng (xem :numref:`sec_momentum` để biết thêm chi tiết).
 Theo trực giác, nó là tỷ lệ giữa mức độ thay đổi theo hướng ít nhạy cảm nhất và hướng nhạy cảm nhất.
-* Thứ hai, tốc độ suy giảm cũng quan trọng tương đương.
-Nếu tốc độ học còn lớn, ta có thể chỉ chạy xung quanh cực tiểu và do đó không đạt được nghiệm tối ưu.
-:numref:`sec_minibatch_sgd` đã thảo luận một số chi tiết về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. 
-Nói tóm lại, chúng ta muốn suy giảm tốc độ hội tụ, có thể chậm hơn $\mathcal{O}(t^{-\frac{1}{2}})$, một lựa chọn tốt cho các bài toán hàm lồi.
+* Thứ hai, tốc độ suy giảm cũng quan trọng không kém.
+Nếu duy trì tốc độ học lớn, thuật toán có thể chỉ dao động xung quanh điểm cực tiểu và do đó không đạt được nghiệm tối ưu.
+:numref:`sec_gd` đã thảo luận về vấn đề này và :numref:`sec_sgd` đã phân tích các đảm bảo hội tụ. <!-- reference chỗ lr lớn nhỏ ở phần GD, phần minibatch không có thảo luận gì. -->
+Nói ngắn gọn, ta muốn tốc độ hội tụ suy giảm ở mức chậm hơn cả $\mathcal{O}(t^{-\frac{1}{2}})$, một mức đã có thể coi là tốt cho các bài toán lồi.
 * Một khía cạnh khác cũng quan trọng không kém là *khởi tạo*.
-Điều này liên quan đến cả cách thức các tham số được đặt (xem lại :numref:`sec_numerical_stability`) và cả cách chúng thay đổi ban đầu.
+Điều này liên quan đến cả cách thức các tham số được khởi tạo (xem lại :numref:`sec_numerical_stability`) và cách chúng thay đổi lúc đầu.
 Có thể gọi đây là *khởi động (warmup)*, tức ta bắt đầu tối ưu nhanh như thế nào.
-Bước tối ưu lớn khi bắt đầu có thể không có lợi, cụ thể vì bộ tham số ban đầu là ngẫu nhiên.
+Bước tối ưu lớn ban đầu có thể không có lợi, đặc biệt là khi bộ tham số ban đầu là ngẫu nhiên.
 Các hướng cập nhật ban đầu cũng có thể không quan trọng.
 * Cuối cùng, có một số biến thể tối ưu hóa thực hiện điều chỉnh tốc độ học theo chu kỳ.
 Điều này nằm ngoài phạm vi của chương hiện tại.
-Độc giả có thể đọc thêm tại :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, ví dụ về làm thế nào để có các giải pháp tốt hơn bằng cách lấy trung bình trên toàn bộ *đường đi* của các tham số.
+Độc giả có thể đọc thêm :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`, về làm thế nào để có các giải pháp tốt hơn bằng cách lấy trung bình trên toàn bộ *đường đi* của các tham số.
 
 <!--
 Given the fact that there is a lot of detail needed to manage learning rates, most deep learning frameworks have tools to deal with this automatically.
 In the current chapter we will review the effects that different schedules have on accuracy and also show how this can be managed efficiently via a *learning rate scheduler*.
 -->
 
-Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ tự động giải quyết điều này.
+Vì việc quản lý tốc độ học khá vất vả, hầu hết các framework học sâu đều có các công cụ tự động cho việc này.
 Trong phần này ta sẽ xem xét ảnh hưởng của các định thời khác nhau lên độ chính xác, cũng như xem cách quản lý hiệu quả tốc độ học thông qua một *bộ định thời tốc độ học*.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -80,11 +80,10 @@ Since most of the code is standard we just introduce the basics without further 
 See :numref:`chap_cnn` for a refresher as needed.
 -->
 
-Hãy bắt đầu với một ví dụ đơn giản với ít chi phí tính toán nhưng đủ để minh họa một vài điểm cốt lõi.
-Ta sử dụng LeNet cải tiến (thay thế hàm kích hoạt `sigmoid` bằng `relu` và hàm gộp trung bình bằng hàm gộp cực đại) và áp dụng trên tập dữ liệu Fashion-MNIST.
+Hãy bắt đầu với một ví dụ đơn giản với chi phí tính toán ít nhưng đủ để minh họa một vài điểm cốt lõi.
+Ở đây ta sử dụng LeNet cải tiến (thay hàm kích hoạt `sigmoid` bằng `relu` và thay hàm gộp trung bình bằng hàm gộp cực đại) khi áp dụng trên tập dữ liệu Fashion-MNIST.
 Hơn nữa, để có hiệu năng tốt, ta hybrid hoá mạng.
-Vì hầu hết mã nguồn tương tự như trước, ta sẽ không thảo luận chi tiết.
-Xem lại :numref:`chap_cnn` để biết thêm chi tiết nếu cần.
+Vì hầu hết mã nguồn đều tương tự như trong :numref:`chap_cnn`, ta sẽ không thảo luận chi tiết.
 
 
 ```{.python .input}
@@ -142,8 +141,8 @@ Note how the training accuracy keeps on increasing while progress in terms of te
 The gap between both curves indicates overfitting.
 -->
 
-Ta hãy xem điều gì sẽ xảy ra khi ta gọi thuật toán với các thiết lập mặc định, chẳng hạn tốc độ học bằng $0.3$ và huấn luyện với $30$ epoch.
-Lưu ý rằng độ chính xác trên tập huấn luyện vẫn tiếp tục tăng trong khi độ chính xác trên tập kiểm tra không tăng thêm khi đạt giá trị nào đó.
+Ta hãy xem điều gì sẽ xảy ra khi gọi thuật toán với các thiết lập mặc định, như huấn luyện trong $30$ epoch với tốc độ học $0.3$.
+Có thể thấy độ chính xác trên tập huấn luyện vẫn tiếp tục tăng trong khi độ chính xác trên tập kiểm tra không tăng thêm khi đạt đến một giá trị nhất định.
 Khoảng cách giữa hai đường cong cho thấy độ quá khớp của thuật toán.
 
 
@@ -167,9 +166,9 @@ This is conveniently achieved by the `set_learning_rate` method.
 We could adjust it downward after every epoch (or even after every minibatch), e.g., in a dynamic manner in response to how optimization is progressing.
 -->
 
-Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học một cách tường minh ở mỗi bước lặp.
-Điều này có thể đạt được bằng phương thức `set_learning_rate`.
-Ta có thể hạ giá trị tốc độ học xuống sau mỗi epoch (hay thậm chí sau mỗi minibatch) như là một cách phản hồi khi quá trình tối ưu đang diễn ra.
+Một cách để điều chỉnh tốc độ học là thiết lập giá trị của tốc độ học một cách tường minh ở mỗi bước.
+Có thể dùng phương thức `set_learning_rate` để làm điều này.
+Ta có thể giảm tốc độ học sau mỗi epoch (hay thậm chí sau mỗi minibatch) như một cách phản hồi khi quá trình tối ưu đang diễn ra.
 
 
 ```{.python .input}
@@ -186,7 +185,7 @@ Let us define a simple one that sets the learning rate to $\eta = \eta_0 (t + 1)
 
 Tổng quát hơn, ta muốn định nghĩa một bộ định thời.
 Khi được gọi bằng cách truyền số bước cập nhật, bộ định thời trả về giá trị tương ứng của tốc độ học.
-Ta hãy định nghĩa một bộ định thời đơn giản có tốc độ học $\eta = \eta_0 (t + 1)^{-\frac{1}{2}}$.
+Hãy định nghĩa một bộ định thời đơn giản biểu diễn tốc độ học $\eta = \eta_0 (t + 1)^{-\frac{1}{2}}$.
 
 
 ```{.python .input}
@@ -206,7 +205,7 @@ class SquareRootScheduler:
 Let us plot its behavior over a range of values.
 -->
 
-Chúng ta hãy vẽ hành vi của bộ định thời trên một dải giá trị. 
+Tiếp theo hãy biểu thị sự thay đổi của tốc độ học sử dụng bộ định thời trên với một dải giá trị. 
 
 
 ```{.python .input}
@@ -221,7 +220,7 @@ We simply provide the scheduler as an additional argument to the training algori
 -->
 
 Giờ hãy xem bộ định thời này hoạt động thế nào khi huấn luyện trên Fashion-MNIST.
-Chúng ta đơn giản đưa bộ định thời vào giải thuật huấn luyện như một đối số bổ sung.
+Ta đơn giản đưa bộ định thời vào giải thuật huấn luyện như một đối số bổ sung.
 
 
 ```{.python .input}
@@ -240,10 +239,10 @@ There is some argument that a smaller stepsize will lead to parameters that are 
 However, this does not explain the phenomenon entirely since we do not really stop early but simply reduce the learning rate gently.
 -->
 
-Phương pháp này làm việc tốt hơn một chút so với phương pháp trước. Nổi bật hơn là đồ thị quá trình học mượt hơn và ít quá khớp hơn.
-Không may là chưa có lời giải thích ổn thỏa nào cho câu hỏi liên quan tới việc tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết.
-Có một số nhận định rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
-Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng này vì chúng ta thật sự không hề dừng giải thuật sớm mà đơn giản chỉ giảm từ từ tốc độ học. 
+Kết quả thu được tốt hơn một chút. Hai điểm nổi bật là đồ thị quá trình học mượt hơn và mô hình ít quá khớp hơn.
+Không may là chưa có lời giải thích đáng cho câu hỏi tại sao những chiến lược như vậy lại dẫn đến việc giảm quá khớp về mặt lý thuyết.
+Có một số ý kiến cho rằng kích thước bước nhỏ hơn sẽ đưa các tham số tới gần giá trị không hơn và do đó đơn giản hơn.
+Tuy nhiên, điều này không giải thích hoàn toàn hiện tượng trên bởi chúng ta không hề dừng giải thuật sớm mà chỉ giảm từ từ tốc độ học. 
 
 <!--
 ## Policies
@@ -258,10 +257,10 @@ Beyond that, cosine learning rate schedules have been found to work well empiric
 Lastly, on some problems it is beneficial to warm up the optimizer prior to using large learning rates.
 -->
 
-Vì không đủ khả năng xem xét toàn bộ các loại bộ định thời tốc độ học, chúng tôi cố gắng để đưa ra một bản tóm lược khái quát về các chiến lược phổ biến dưới đây.
-Những lựa chọn thông thường là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng. 
+Vì không đủ khả năng xem xét toàn bộ các loại định thời tốc độ học, chúng tôi cố gắng tóm tắt các chiến lược phổ biến dưới đây.
+Những lựa chọn phổ biến là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng. 
 Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cô-sin làm việc tốt đối với một số bài toán.
-Sau cùng, với một số bài toán sẽ có lợi khi ta từ từ nâng dần tốc độ học cho bộ tối ưu trước khi sử dụng các tốc độ học lớn. 
+Sau cùng, với một số bài toán sẽ có lợi khi khởi động (*warmup*) bộ tối ưu trước khi sử dụng tốc độ học lớn. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -279,7 +278,7 @@ To prevent the learning rate from decaying beyond a reasonable lower bound the u
 -->
 
 Một giải pháp thay thế cho suy giảm đa thức đó là sử dụng thừa số nhân $\alpha \in (0, 1)$, lúc này $\eta_{t+1} \leftarrow \eta_t \cdot \alpha$.
-Để tránh trường hợp tốc độ học suy giảm thấp hơn cả biên chặn dưới, phương trình cập nhật thường được sửa lại thành $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
+Để tránh trường hợp tốc độ học giảm quá thấp, ta thường thêm cận dưới vào phương trình cập nhật $\eta_{t+1} \leftarrow \mathop{\mathrm{max}}(\eta_{\mathrm{min}}, \eta_t \cdot \alpha)$.
 
 
 ```{.python .input}
@@ -306,9 +305,9 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 -->
 
 Cách trên cũng có thể được thực hiện bằng một bộ định thời có sẵn trong MXNet `lr_scheduler.FactorScheduler`.
-Cách này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (_warmup period_), chế độ khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
-Ở các phần tiếp theo, chúng ta sẽ sử dụng các bộ định thời tốc độ học được lập trình sẵn, ở đây chỉ giải thích cách thức hoạt động của chúng.
-Như minh họa, khá đơn giản để xây dựng một định thời của riêng bạn nếu cần thiết.
+Phương pháp này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (_warmup period_), chế độ khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
+Trong các phần tiếp theo, ta sẽ sử dụng các bộ định thời tốc độ học được lập trình sẵn, ở đây chỉ giải thích cách thức hoạt động của chúng.
+Như minh họa, việc tự xây dựng một bộ định thời nếu cần khá đơn giản.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
