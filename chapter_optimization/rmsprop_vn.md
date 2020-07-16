@@ -13,7 +13,7 @@ While this is generally appropriate for convex problems, it might not be ideal f
 Yet, the coordinate-wise adaptivity of Adagrad is highly desirable as a preconditioner.
 -->
 
-Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học thực tế được giảm theo một định thời được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$.
+Một trong những vấn đề then chốt trong :numref:`sec_adagrad` là tốc độ học thực tế được giảm theo một thời điểm được định nghĩa sẵn $\mathcal{O}(t^{-\frac{1}{2}})$.
 Nhìn chung, cách này thích hợp với các bài toán lồi nhưng có thể không phải giải pháp lý tưởng cho những bài toán không lồi, chẳng hạn những bài toán gặp phải trong học sâu. 
 Tuy vậy, khả năng thích ứng theo toạ độ của Adagrad là rất tuyệt vời cho một bộ tiền điều kiện (_preconditioner_). 
 
@@ -73,7 +73,7 @@ Expanding the definition of $\mathbf{s}_t$ yields
 
 
 Hằng số $\epsilon > 0$ thường được đặt bằng $10^{-6}$ để đảm bảo rằng chúng ta sẽ không gặp vấn đề khi chia cho 0 hoặc kích thước bước quá lớn. 
-Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép chuyển đổi được áp dụng cho từng tọa độ. 
+Với khai triển này, bây giờ chúng ta có thể tự do kiểm soát tốc độ học $\eta$ độc lập với phép biến đổi tỉ lệ được áp dụng cho từng tọa độ. 
 Về mặt trung bình rò rỉ, chúng ta có thể áp dụng các lập luận tương tự như trước trong phương pháp động lượng. 
 Khai triển định nghĩa $\mathbf{s}_t$ ta có 
 
