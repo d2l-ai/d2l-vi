@@ -279,7 +279,7 @@ A layer will not be optimized if it inherits from the `Block` instead.
 ### Acceleration by Hybridization
 -->
 
-### Tăng tốc bởi Phép Hybrid hoá
+### Tăng tốc bằng Hybrid hoá
 
 <!--
 To demonstrate the performance improvement gained by compilation we compare the time needed to evaluate `net(x)` before and after hybridization. 
