@@ -223,7 +223,7 @@ The single-threaded Python interpreter becomes the bottleneck here.
 Let's see how we can address this for significant parts of the code by replacing `Sequential` by `HybridSequential`. We begin by defining a simple MLP.
 -->
 
-Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là hãy xem xét các mạng sâu đa tầng.
+Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là xem xét trường hợp các mạng sâu đa tầng.
 Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho tất cả các tầng để sinh một lệnh mà sau đó có thể được truyền tới CPU hoặc GPU.
 Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
 Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ như P3dn.24xlarge trên AWS, Python sẽ gặp khó khăn để tận dụng tất cả GPU cùng lúc.
