@@ -30,7 +30,7 @@ mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đ
 Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ).
 Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
 Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
-Cuối cùng, ta hãy quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trung tâm server hay trên cloud.
+Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
 Đây không phải là hướng dẫn mua card GPU. 
 Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
 
