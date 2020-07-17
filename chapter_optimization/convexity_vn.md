@@ -515,7 +515,7 @@ Một trong những tính chất hữu ích của tối ưu hóa lồi là nó c
 Nó cho phép ta giải quyết các bài toán dưới dạng:
 
 
-$$\begin{aligned} \mathop{\mathrm{cực~tiểu~hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+$$\begin{aligned} \mathop{\mathrm{~cực~tiểu~hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
     \text{~theo~} & c_i(\mathbf{x}) \leq 0 \text{~với~mọi~} i \in \{1, \ldots, N\}.
 \end{aligned}$$
 

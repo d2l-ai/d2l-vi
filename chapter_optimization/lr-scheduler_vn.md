@@ -76,7 +76,7 @@ See :numref:`chap_cnn` for a refresher as needed.
 
 Hãy bắt đầu với một ví dụ đơn giản với chi phí tính toán ít nhưng đủ để minh họa một vài điểm cốt lõi.
 Ở đây ta sử dụng LeNet cải tiến (thay hàm kích hoạt `sigmoid` bằng `relu` và thay hàm gộp trung bình bằng hàm gộp cực đại) khi áp dụng trên tập dữ liệu Fashion-MNIST.
-Hơn nữa, để có hiệu năng tốt, ta hybrid hoá mạng.
+Hơn nữa, để có hiệu năng tốt, ta hybrid hóa mạng.
 Vì hầu hết mã nguồn đều tương tự như trong :numref:`chap_cnn`, ta sẽ không thảo luận chi tiết.
 
 
@@ -102,7 +102,7 @@ ctx = d2l.try_gpu()
 batch_size = 256
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size=batch_size)
 
-# The code is almost identical to "d2l.train_ch6" that defined in the lenet
+# The code is almost identical to `d2l.train_ch6` that defined in the lenet
 # section of chapter convolutional neural networks
 def train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx):
     net.initialize(force_reinit=True, ctx=ctx, init=init.Xavier())
@@ -118,14 +118,15 @@ def train(net, train_iter, test_iter, num_epochs, loss, trainer, ctx):
             l.backward()
             trainer.step(X.shape[0])
             metric.add(l.sum(), d2l.accuracy(y_hat, y), X.shape[0])
-            train_loss, train_acc = metric[0]/metric[2], metric[1]/metric[2]
-            if (i+1) % 50 == 0:
-                animator.add(epoch + i/len(train_iter),
+            train_loss = metric[0] / metric[2]
+            train_acc = metric[1] / metric[2]
+            if (i + 1) % 50 == 0:
+                animator.add(epoch + i / len(train_iter),
                              (train_loss, train_acc, None))
         test_acc = d2l.evaluate_accuracy_gpu(net, test_iter)
-        animator.add(epoch+1, (None, None, test_acc))
-    print('train loss %.3f, train acc %.3f, test acc %.3f' % (
-        train_loss, train_acc, test_acc))
+        animator.add(epoch + 1, (None, None, test_acc))
+    print(f'train loss {train_loss:.3f}, train acc {train_acc:.3f}, '
+          f'test acc {test_acc:.3f}')
 ```
 
 
@@ -249,9 +250,9 @@ Lastly, on some problems it is beneficial to warm up the optimizer prior to usin
 -->
 
 Vì không đủ khả năng xem xét toàn bộ các loại định thời tốc độ học, chúng tôi cố gắng tóm tắt các chiến lược phổ biến dưới đây.
-Những lựa chọn phổ biến là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng. 
+Những lựa chọn phổ biến là định thời suy giảm theo đa thức và định thời hằng số theo từng khoảng.
 Xa hơn nữa, thực nghiệm cho thấy các bộ định thời theo hàm cô-sin làm việc tốt đối với một số bài toán.
-Sau cùng, với một số bài toán sẽ có lợi khi khởi động (*warmup*) bộ tối ưu trước khi sử dụng tốc độ học lớn. 
+Sau cùng, với một số bài toán sẽ có lợi khi khởi động (*warmup*) bộ tối ưu trước khi sử dụng tốc độ học lớn.
 
 
 <!--
@@ -293,7 +294,7 @@ As illustrated, it is fairly straightforward to build your own scheduler if need
 -->
 
 Cách trên cũng có thể được thực hiện bằng một bộ định thời có sẵn trong MXNet `lr_scheduler.FactorScheduler`.
-Phương pháp này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (_warmup period_), chế độ khởi động (_warmup mode_), số bước cập nhật tối đa, v.v.
+Phương pháp này yêu cầu nhiều tham số hơn một chút, ví dụ như thời gian khởi động (*warmup period*), chế độ khởi động (*warmup mode*), số bước cập nhật tối đa, v.v.
 Trong các phần tiếp theo, ta sẽ sử dụng các bộ định thời tốc độ học được lập trình sẵn, ở đây chỉ giải thích cách thức hoạt động của chúng.
 Như minh họa, việc tự xây dựng một bộ định thời nếu cần khá đơn giản.
 
@@ -354,7 +355,8 @@ This results in a cosine-like schedule with the following functional form for le
 -->
 
 Đây là một phương pháp khá phức tạp dựa trên thực nghiệm được đề xuất bởi :cite:`Loshchilov.Hutter.2016`.
-Phương pháp dựa trên thực nghiệm nói rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu. Hơn nữa, ta có thể muốn cải thiện nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học rất nhỏ.
+Phương pháp dựa trên thực nghiệm nói rằng ta có thể không muốn giảm tốc độ học quá nhanh ở giai đoạn đầu.
+Hơn nữa, ta có thể muốn cải thiện nghiệm thu được ở giai đoạn cuối của quá trình tối ưu bằng cách sử dụng tốc độ học rất nhỏ.
 Từ đó ta thu được một định thời có dạng giống cô-sin với tốc độ học trong khoảng $t \in [0, T]$ có công thức như sau.
 
 
@@ -409,9 +411,9 @@ Unfortunately this means that progress is slow.
 Conversely, a large learning rate initially leads to divergence.
 -->
 
-Trong một số trường hợp, khởi tạo tham số không đủ để đảm bảo sẽ có kết quả tốt. 
-Đặc biệt đây là vấn đề đối với các cấu trúc mạng tiên tiến, trong đó việc tối ưu hóa có thể không ổn định. 
-Ta có thể giải quyết vấn đề này bằng cách chọn tốc độ học đủ nhỏ để ngăn phân kỳ lúc bắt đầu. Tuy nhiên, tiến trình học sẽ chậm. 
+Trong một số trường hợp, khởi tạo tham số không đủ để đảm bảo sẽ có kết quả tốt.
+Đặc biệt đây là vấn đề đối với các cấu trúc mạng tiên tiến, trong đó việc tối ưu hóa có thể không ổn định.
+Ta có thể giải quyết vấn đề này bằng cách chọn tốc độ học đủ nhỏ để ngăn phân kỳ lúc bắt đầu. Tuy nhiên, tiến trình học sẽ chậm.
 Ngược lại, tốc độ học lớn ban đầu lại gây ra phân kỳ.
 
 <!--
@@ -421,7 +423,7 @@ This leads to a schedule of the form indicated below.
 -->
 
 Một giải pháp đơn giản cho vấn đề trên là dùng quá trình khởi động (*warmup*), trong thời gian đó tốc độ học *tăng* tới giá trị lớn nhất, sau đó giảm dần tới khi kết thúc quá trình tối ưu.
-Để đơn giản, ta có thể khởi động bằng hàm tăng tuyến tính. 
+Để đơn giản, ta có thể khởi động bằng hàm tăng tuyến tính.
 Kết quả, ta có bộ định thời dưới đây.
 
 
@@ -454,7 +456,7 @@ This makes intuitively sense since we would expect significant divergence due to
 
 Việc khởi động có thể sử dụng trong bất kỳ bộ định thời nào (không chỉ cô-sin).
 Để biết chi tiết thảo luận và các thí nghiệm về định thời tốc độ học, có thể đọc thêm :cite:`Gotmare.Keskar.Xiong.ea.2018`.
-Đặc biệt, các tác giả thấy rằng quá trình khởi động làm giảm độ phân kỳ của tham số trong các mạng rất sâu. 
+Đặc biệt, các tác giả thấy rằng quá trình khởi động làm giảm độ phân kỳ của tham số trong các mạng rất sâu.
 Điều này hợp lý về trực giác, vì ta thấy rằng phân kỳ mạnh là do khởi tạo ngẫu nhiên ở những phần mạng học lâu nhất vào lúc đầu.
 
 
@@ -475,11 +477,11 @@ different choices of optimization algorithms and learning rate scheduling can le
 -->
 
 * Giảm tốc độ học trong huấn luyện có thể cải thiện độ chính xác và giảm tính quá khớp của mô hình.
-* Một cách rất hiệu quả trong thực tế đó là giảm tốc độ học theo khoảng bất cứ khi nào quá trình tối ưu không có tiến bộ đáng kể (_plateau_).
+* Một cách rất hiệu quả trong thực tế đó là giảm tốc độ học theo khoảng bất cứ khi nào quá trình tối ưu không có tiến bộ đáng kể (*plateau*).
 Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ hội tụ đến nghiệm phù hợp và chỉ sau đó mới giảm phương sai vốn có của các tham số bằng cách giảm tốc độ học.
 * Định thời cô-sin khá phổ biến trong các bài toán thị giác máy tính. Xem ví dụ [GluonCV](http://gluon-cv.mxnet.io) để biết thêm chi tiết về định thời này.
 * Quá trình khởi động trước khi tối ưu có thể giúp tránh phân kỳ.
-* Tối ưu hóa phục vụ nhiều mục đích trong việc học sâu. Bên cạnh việc cực tiểu hoá hàm mục tiêu trên tập huấn luyện, các thuật toán tối ưu và các định thời tốc độ học khác nhau có thể thay đổi tính khái quát hoá và tính quá khớp trên tập kiểm tra (đối với cùng một giá trị lỗi trên tập huấn luyện).
+* Tối ưu hóa phục vụ nhiều mục đích trong việc học sâu. Bên cạnh việc cực tiểu hóa hàm mục tiêu trên tập huấn luyện, các thuật toán tối ưu và các định thời tốc độ học khác nhau có thể thay đổi tính khái quát hóa và tính quá khớp trên tập kiểm tra (đối với cùng một giá trị lỗi trên tập huấn luyện).
 
 <!--
 ## Exercises
@@ -499,7 +501,7 @@ Về cơ bản, định thời trên đảm bảo quá trình tối ưu sẽ h�
 2. Quá trình hội tụ thay đổi như thế nào nếu bạn thay đổi lũy thừa giảm trong tốc độ học? Để thuận tiện, hãy sử dụng `PolyScheduler`.
 3. Hãy áp dụng định thời cô-sin cho nhiều bài toán thị giác máy tính, ví dụ, huấn luyện trên tập ImageNet. Hãy so sánh chất lượng mô hình khi dùng phương pháp này so với các loại định thời khác.
 4. Quá trình khởi động nên kéo dài bao lâu?
-5. Bạn có thể liên hệ tối ưu hoá và phép lấy mẫu được không? Hãy bắt đầu bằng cách sử dụng kết quả từ :cite:`Welling.Teh.2011` về động lực học Langevin của Gradient ngẫu nghiên (_Stochastic Gradient Langevin Dynamics_).
+5. Bạn có thể liên hệ tối ưu hóa và phép lấy mẫu được không? Hãy bắt đầu bằng cách sử dụng kết quả từ :cite:`Welling.Teh.2011` về động lực học Langevin của Gradient ngẫu nghiên (*Stochastic Gradient Langevin Dynamics*).
 
 
 ## Thảo luận

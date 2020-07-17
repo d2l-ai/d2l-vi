@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Momentum
 -->
@@ -24,7 +21,7 @@ Nếu tốc độ học giảm chậm, sẽ khó hội tụ tại một kết qu
 ## Basics
 -->
 
-## Kiến thức cơ bản
+## Kiến thức Cơ bản
 
 <!--
 In this section, we will explore more effective optimization algorithms, especially for certain types of optimization problems that are common in practice.
@@ -36,7 +33,7 @@ Trong phần này, ta sẽ cùng khám phá những thuật toán tối ưu hi�
 ### Leaky Averages
 -->
 
-### Giá trị trung bình rò rỉ
+### Giá trị Trung bình Rò rỉ
 
 <!--
 The previous section saw us discussing minibatch SGD as a means for accelerating computation.
@@ -48,9 +45,8 @@ Trong phần trước, ta đã thảo luận về hạ gradient ngẫu nhiên th
 Đồng thời, kỹ thuật này cũng có một tác dụng phụ tốt là giúp giảm phương sai.
 
 
-$$\mathbf{g}{t, t-1} = \partial{\mathbf{w}} \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} f(\mathbf{x}{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}t|} \sum{i \in \mathcal{B}t} \mathbf{h}{i, t-1}. $$
-
-<!-- sửa công thức từ PR gốc https://github.com/d2l-ai/d2l-en/pull/1104 -->
+$$\mathbf{g}_{t, t-1} = \partial_{\mathbf{w}} \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} f(\mathbf{x}_{i}, \mathbf{w}_{t-1}) = \frac{1}{|\mathcal{B}_t|} \sum_{i \in \mathcal{B}_t} \mathbf{h}_{i, t-1}.
+$$
 
 <!--
 To keep the notation simple, here we used $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ as the SGD for sample $i$ using the weights updated at time $t-1$.
@@ -58,7 +54,7 @@ It would be nice if we could benefit from the effect of variance reduction even 
 One option to accomplish this task is to replace the gradient computation by a "leaky average":
 -->
 
-Ở đây để đơn giản ký hiệu, ta đặt $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ là gradient của mẫu $i$ với trọng số tại bước thời gian $t-1$.
+Ở đây để đơn giản kí hiệu, ta đặt $\mathbf{h}_{i, t-1} = \partial_{\mathbf{w}} f(\mathbf{x}_i, \mathbf{w}_{t-1})$ là gradient của mẫu $i$ với trọng số tại bước thời gian $t-1$.
 Sẽ rất tốt nếu ta có thể tận dụng hơn nữa lợi ích từ việc giảm phương sai, hơn là chỉ lấy trung bình gradient trên minibatch.
 Một phương pháp để đạt được điều này đó là thay thế việc tính toán gradient bằng một giá trị "trung bình rò rỉ" (*leaky average*): 
 
@@ -77,11 +73,6 @@ với $\beta \in (0, 1)$. Phương pháp này thay thế gradient tức thời b
 $\mathbf{v}$ được gọi là *động lượng (momentum)*.
 Động lượng tích luỹ các gradient trong quá khứ tương tự như cách một quả bóng nặng lăn xuống ngọn đồi sẽ tích hợp hết tất cả các lực tác động lên nó từ lúc bắt đầu.
 Để hiểu rõ hơn, hãy khai triển đệ quy $\mathbf{v}_t$ thành
-
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 $$\begin{aligned}
@@ -110,7 +101,7 @@ Furthermore, they allow us to average over subsequent gradients to obtain more s
 Indeed, the aspect of acceleration even for noise-free convex problems is one of the key reasons why momentum works and why it works so well.
 -->
 
-Các lập luận trên là cơ sở hình thành các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
+Các lập luận trên là cơ sở để hình thành các phương pháp *tăng tốc* gradient, chẳng hạn như gradient với động lượng.
 Một lợi ích phụ là chúng hiệu quả hơn rất nhiều trong các trường hợp bài toán tối ưu có điều kiện xấu (ví dụ: khi một vài hướng có tiến trình tối ưu chậm hơn nhiều so với các hướng khác, giống như ở trong một hẻm núi hẹp).
 Hơn nữa, cách này cho phép lấy trung bình các gradient liền kề để đạt được hướng đi xuống ổn định hơn.
 Thật vậy, việc tăng tốc ngay cả đối với bài toán lồi không nhiễu là một trong những nguyên nhân chính lý giải vì sao động lượng hoạt động và có hiệu quả rất tốt.
@@ -125,20 +116,13 @@ Momentum in deep learning has been known to be beneficial for a long time.
 See e.g., the discussion by :cite:`Sutskever.Martens.Dahl.ea.2013` for details.
 -->
 
-Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hoá cho học sâu và hơn thế nữa.
+Do tính hiệu quả của nó, động lượng là một chủ đề đã được nghiên cứu kỹ trong tối ưu hóa cho học sâu và hơn thế nữa.
 [Bài báo rất đẹp này](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` cung cấp phân tích chuyên sâu và minh hoạ sinh động về phương pháp động lượng.
 Động lượng được đề xuất bởi :cite:`Polyak.1964`.
-:cite:`Nesterov.2018` có một thảo luận chi tiết về lý thuyết động lượng trong ngữ cảnh tối ưu hoá lồi.
+:cite:`Nesterov.2018` có một thảo luận chi tiết về lý thuyết động lượng trong ngữ cảnh tối ưu hóa lồi.
 Động lượng trong học sâu đã được biết đến từ lâu vì lợi ích mà nó mang lại.
 Tham khảo :cite:`Sutskever.Martens.Dahl.ea.2013` để biết thêm chi tiết.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### An Ill-conditioned Problem
@@ -209,9 +193,6 @@ eta = 0.6
 d2l.show_trace_2d(f_2d, d2l.train_2d(gd_2d))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### The Momentum Method
@@ -289,13 +270,10 @@ Let us look at what leaky averaging actually does to the updates.
 -->
 
 Ta cũng có thể kết hợp động lượng với SGD và đặc biệt là SGD theo minibatch.
-Thay đổi duy nhất trong trường hợp đó là các gradient $\mathbf{g}_{t, t-1}$ được thay bằng $\mathbf{g}_t$. <!-- không hiểu sao lại bỏ `t-1`, ai thông não giúp với. -->
+Thay đổi duy nhất trong trường hợp đó là các gradient $\mathbf{g}_{t, t-1}$ được thay bằng $\mathbf{g}_t$.
 Cuối cùng, để thuận tiện ta khởi tạo $\mathbf{v}_0 = 0$ tại thời điểm $t=0$.
 Hãy xem phép trung bình rò rỉ thực sự làm gì khi cập nhật.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Effective Sample Weight
@@ -313,7 +291,7 @@ To illustrate how weighting behaves for different choices of $\beta$ consider th
 
 Hãy nhớ lại rằng $\mathbf{v}_t = \sum_{\tau = 0}^{t-1} \beta^{\tau} \mathbf{g}_{t-\tau, t-\tau-1}$.
 Tại giới hạn, tổng các số hạng là $\sum_{\tau=0}^\infty \beta^\tau = \frac{1}{1-\beta}$.
-Nói cách khác, thay vì kích thước bước $\eta$ trong GD hoặc SGD, ta thực hiện bước dài hơn $$\frac{\eta}{1-\beta}$, đồng thời hướng giảm gradient nhiều khả năng cũng tốt hơn.
+Nói cách khác, thay vì kích thước bước $\eta$ trong GD hoặc SGD, ta thực hiện bước dài hơn $\frac{\eta}{1-\beta}$, đồng thời hướng giảm gradient nhiều khả năng cũng tốt hơn.
 Đây là hai lợi ích trong một.
 Để minh họa ảnh hưởng của trọng số với các giá trị $\beta$ khác nhau, hãy xem minh họa dưới đây.
 
@@ -327,12 +305,6 @@ for beta in betas:
 d2l.plt.xlabel('time')
 d2l.plt.legend();
 ```
-
-<!-- đổi gamma -> beta theo PR https://github.com/d2l-ai/d2l-en/pull/1100/files -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Practical Experiments
@@ -422,15 +394,11 @@ Giảm còn $0.005$ đem lại các đặc tính hội tụ tốt.
 train_momentum(0.005, 0.9)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
-
 <!--
 ### Concise Implementation
 -->
 
-### Lập trình súc tích
+### Lập trình Súc tích
 
 <!--
 There is very little to do in Gluon since the standard `sgd` solver already had momentum built in.
@@ -442,8 +410,8 @@ Với cùng các tham số, ta có quỹ đạo rất giống khi lập trình t
 
 
 ```{.python .input  n=9}
-d2l.train_gluon_ch11('sgd', {'learning_rate': 0.005, 'momentum': 0.9},
-                     data_iter)
+d2l.train_concise_ch11('sgd', {'learning_rate': 0.005, 'momentum': 0.9},
+                       data_iter)
 ```
 
 
@@ -451,7 +419,7 @@ d2l.train_gluon_ch11('sgd', {'learning_rate': 0.005, 'momentum': 0.9},
 ## Theoretical Analysis
 -->
 
-## Phân tích lý thuyết
+## Phân tích Lý thuyết
 
 <!--
 So far the 2D example of $f(x) = 0.1 x_1^2 + 2 x_2^2$ seemed rather contrived.
@@ -466,7 +434,7 @@ Thực tế, hàm này khá tiêu biểu cho các dạng bài toán có thể g�
 ### Quadratic Convex Functions
 -->
 
-### Hàm lồi bậc hai
+### Hàm lồi bậc Hai
 
 <!--
 Consider the function
@@ -480,13 +448,13 @@ $$h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}
 
 <!--
 This is a general quadratic function.
-For positive semidefinite matrices $\mathbf{Q} \succ 0$, i.e., for matrices with positive eigenvalues 
+For positive definite matrices $\mathbf{Q} \succ 0$, i.e., for matrices with positive eigenvalues 
 this has a minimizer at $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ with minimum value $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$.
 Hence we can rewrite $h$ as
 -->
 
 Đây là một hàm bậc hai tổng quát.
-Với ma trận xác định dương $\mathbf{Q} \succ 0$, tức ma trận có trị riêng dương, <!-- chỗ này phải là `positive definite` thì trị riêng mới dương và có nghịch đảo -->
+Với ma trận xác định dương $\mathbf{Q} \succ 0$, tức ma trận có trị riêng dương,
 hàm có nghiệm cực tiểu tại $\mathbf{x}^* = -\mathbf{Q}^{-1} \mathbf{c}$ với giá trị cực tiểu $b - \frac{1}{2} \mathbf{c}^\top \mathbf{Q}^{-1} \mathbf{c}$. 
 Do đó ta có thể viết lại $h$ như sau
 
@@ -512,10 +480,6 @@ This allows us to perform a change of variables from $\mathbf{x}$ to $\mathbf{z}
 
 Vì $\mathbf{Q}$ là xác định dương nên nó có thể được phân tích thành hệ riêng thông qua $\mathbf{Q} = \mathbf{O}^\top \boldsymbol{\Lambda} \mathbf{O}$, với $\mathbf{O}$ là ma trận trực giao (xoay vòng) và $\boldsymbol{\Lambda}$ là ma trận đường chéo của các trị riêng dương.
 Điều này cho phép ta đổi biến $\mathbf{x}$ thành $\mathbf{z} := \mathbf{O} (\mathbf{x} - \mathbf{Q}^{-1} \mathbf{c})$ để có biểu thức đơn giản hơn nhiều:
-
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 
 $$h(\mathbf{z}) = \frac{1}{2} \mathbf{z}^\top \boldsymbol{\Lambda} \mathbf{z} + b'.$$
@@ -560,10 +524,6 @@ into coordinate-wise optimization in the direction of the eigenvectors of the qu
 
 Khi thực hiện điều này, ta đã chứng minh định lý sau: Hạ Gradient có và không có động lượng cho hàm lồi bậc hai có thể được phân tích thành bài toán tối ưu theo hướng các vector riêng của ma trận bậc hai theo từng trục tọa độ.
 
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
-
 <!--
 ### Scalar Functions
 -->
@@ -597,7 +557,7 @@ eta = 0.1
 d2l.set_figsize((6, 4))
 for lam in lambdas:
     t = np.arange(20).asnumpy()
-    d2l.plt.plot(t, (1 - eta * lam) ** t, label='lambda = %.2f' % lam)
+    d2l.plt.plot(t, (1 - eta * lam) ** t, label=f'lambda = {lam:.2f}')
 d2l.plt.xlabel('time')
 d2l.plt.legend();
 ```
@@ -616,10 +576,6 @@ $$
 \begin{bmatrix} v_{t} \\ x_{t} \end{bmatrix} = \mathbf{R}(\beta, \eta, \lambda) \begin{bmatrix} v_{t} \\ x_{t} \end{bmatrix}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
-
 <!--
 We used $\mathbf{R}$ to denote the $2 \times 2$ governing convergence behavior.
 After $t$ steps the initial choice $[v_0, x_0]$ becomes $\mathbf{R}(\beta, \eta, \lambda)^t [v_0, x_0]$.
@@ -631,10 +587,10 @@ It also suggests that in general large values of $\beta$ are desirable.
 Further details require a fair amount of technical detail and we suggest that the interested reader consult the original publications.
 -->
 
-Ta ký hiệu $\mathbf{R}$ là ma trận chi phối hội tụ, kích thước $2 \times 2$.
+Ta kí hiệu $\mathbf{R}$ là ma trận chi phối hội tụ, kích thước $2 \times 2$.
 Sau $t$ bước thì giá trị ban đầu $[v_0, x_0]$ sẽ là $\mathbf{R}(\ beta, \eta, \lambda)^t [v_0, x_0]$.
 Do đó, các trị riêng của $\mathbf{R}$ sẽ quyết định tốc độ hội tụ.
-Độc giả có thể xem hình ảnh động tại [Distill post](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc thêm :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
+Độc giả có thể xem hình ảnh động tại [bài viết của Distill](https://distill.pub/2017/momentum/) của :cite:`Goh.2017` và đọc thêm :cite:`Flammarion.Bach.2015` để biết phân tích chi tiết.
 Có thể chỉ ra rằng phương pháp động lượng hội tụ với $0 < \eta \lambda < 2 + 2 \beta$,
 có khoảng tham số khả thi lớn hơn khoảng $0 < \eta \lambda <2$ của hạ gradient.
 Điều này cũng gợi ý rằng nhìn chung ta mong muốn $\beta$ có giá trị lớn.
@@ -656,7 +612,7 @@ Chi tiết kỹ thuật đòi hỏi nền tảng kiến thức sâu hơn, bạn 
 -->
 
 * Phương pháp động lượng thay thế gradient bằng trung bình rò rỉ của các gradient trong quá khứ, giúp tăng tốc độ hội tụ đáng kể.
-* Phương pháp này có thể sử dụng cho cả hạ gradient không nhiễu và hạ gradient ngẫu nhiên (có nhiễu). 
+* Phương pháp này có thể sử dụng cho cả hạ gradient không nhiễu và hạ gradient ngẫu nhiên (có nhiễu).
 * Phương pháp động lượng giúp tránh việc tối ưu bị ngưng trệ, điều nhiều khả năng xảy ra đối với hạ gradient ngẫu nhiên.
 * Số lượng gradient hiệu dụng là $\frac{1}{1-\beta}$, được tính bằng giới hạn của tổng cấp số nhân.
 * Trong trường hợp các bài toán lồi bậc hai, hạ gradient (có và không có động lượng) có thể được phân tích chi tiết một cách tường minh.
@@ -682,28 +638,16 @@ Vẽ đồ thị biểu diễn sự giảm của $x$ khi khởi tạo $x_i = 1$.
 3. Tính giá trị và nghiệm cực tiểu của $h(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{x}^\top \mathbf{c} + b$.
 4. Điều gì thay đổi khi ta thực hiện SGD và SGD theo minibatch có động lượng? Thử nghiệm với các tham số.
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2374)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/354)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-* Nguyễn Thanh Hoà
+* Nguyễn Thanh Hòa
 * Nguyễn Văn Quang
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc

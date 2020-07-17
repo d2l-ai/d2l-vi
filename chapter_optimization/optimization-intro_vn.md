@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Optimization and Deep Learning
 -->
@@ -37,7 +34,7 @@ For instance, training error and generalization error generally differ: since th
 based on the training dataset, the goal of optimization is to reduce the training error.
 However, the goal of statistical inference (and thus of deep learning) is to reduce the generalization error. 
 To accomplish the latter we need to pay attention to overfitting in addition to using the optimization algorithm to reduce the training error.
-We begin by importing a few libraries with a function to annotate in a figure.
+We begin by importing a few libraries for this chapter.
 -->
 
 Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
@@ -47,21 +44,52 @@ Chẳng hạn như là sự khác biệt giữa lỗi huấn luyện và lỗi k
 Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyện nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
 Tuy nhiên, mục đích của suy luận thống kê (*statistical inference*) và học sâu nói riêng là giảm thiểu lỗi khái quát.
 Để thực hiện điều này, bên cạnh việc giảm thiểu lỗi huấn luyện, ta cần chú ý đến hiện tượng quá khớp.
-Hãy bắt đầu bằng việc nhập một số thư viện và hàm để đưa chú thích vào đồ thị.
+Hãy bắt đầu bằng việc nhập một số thư viện sử dụng trong chương này.
 
 
-```{.python .input  n=1}
+```{.python .input}
 %matplotlib inline
 from d2l import mxnet as d2l
 from mpl_toolkits import mplot3d
 from mxnet import np, npx
 npx.set_np()
-
-#@save
-def annotate(text, xy, xytext):
-    d2l.plt.gca().annotate(text, xy=xy, xytext=xytext,
-                           arrowprops=dict(arrowstyle='->'))
 ```
+
+<!--
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+import numpy as np
+from mpl_toolkits import mplot3d
+import torch
+```
+
+```{.python .input}
+#@tab tensorflow
+%matplotlib inline
+from d2l import tensorflow as d2l
+import numpy as np
+from mpl_toolkits import mplot3d
+import tensorflow as tf
+```
+-->
+
+<!--
+Next we define two functions, the expected function $f$ and the empirical function $g$, to illustrate this issue.
+Here the $g$ is less smooth than $f$ since we have only a finite amount of data.
+-->
+
+Tiếp theo, ta định nghĩa hai hàm: hàm kỳ vọng $f$ và hàm thực nghiệm $g$ để minh họa vấn đề này.
+Ở đây, $g$ kém mượt hơn $f$ vì ta chỉ có một lượng dữ liệu hữu hạn.
+
+
+```{.python .input}
+#@tab all
+def f(x): return x * d2l.cos(np.pi * x)
+def g(x): return f(x) + 0.2 * d2l.cos(5 * np.pi * x)
+```
+
 
 <!--
 The graph below illustrates the issue in some more detail.
@@ -69,23 +97,22 @@ Since we have only a finite amount of data the minimum of the training error may
 -->
 
 Đồ thị phía dưới mô tả chi tiết hơn về vấn đề trên.
-Do ta chỉ có một lượng dữ liệu hữu hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kì vọng của lỗi (lỗi trên tập kiểm tra).
+Do ta chỉ có một lượng dữ liệu hữu hạn, cực tiểu của lỗi huấn luyện có thể khác so với cực tiểu kỳ vọng của lỗi (lỗi trên tập kiểm tra).
 
 
-```{.python .input  n=2}
-def f(x): return x * np.cos(np.pi * x)
-def g(x): return f(x) + 0.2 * np.cos(5 * np.pi * x)
+```{.python .input}
+#@tab all
+def annotate(text, xy, xytext):  #@save
+    d2l.plt.gca().annotate(text, xy=xy, xytext=xytext,
+                           arrowprops=dict(arrowstyle='->'))
 
+x = d2l.arange(0.5, 1.5, 0.01)
 d2l.set_figsize((4.5, 2.5))
-x = np.arange(0.5, 1.5, 0.01)
 d2l.plot(x, [f(x), g(x)], 'x', 'risk')
 annotate('empirical risk', (1.0, -1.2), (0.5, -1.1))
 annotate('expected risk', (1.1, -1.05), (0.95, -0.5))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Optimization Challenges in Deep Learning
@@ -147,8 +174,9 @@ we can approximate the local minimum and global minimum of this function.
 ta có thể tính xấp xỉ cực tiểu và giá trị nhỏ nhất của hàm này.
 
 
-```{.python .input  n=3}
-x = np.arange(-1.0, 2.0, 0.01)
+```{.python .input}
+#@tab all
+x = d2l.arange(-1.0, 2.0, 0.01)
 d2l.plot(x, [f(x), ], 'x', 'f(x)')
 annotate('local minimum', (-0.3, -0.25), (-0.77, -1.0))
 annotate('global minimum', (1.1, -0.95), (0.6, 0.8))
@@ -168,13 +196,6 @@ Khi nghiệm xấp xỉ của một bài toán tối ưu đang ở gần giá tr
 Chỉ với một mức độ nhiễu nhất định thì mới có thể đẩy tham số ra khỏi vùng cực tiểu.
 Trên thực tế, nhiễu là một trong những tính chất có lợi của hạ gradient ngẫu nhiên khi sự biến động của gradient qua từng minibatch có thể đẩy các tham số ra khỏi các vùng cực tiểu.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Saddle Points
@@ -196,8 +217,9 @@ Xét hàm $f(x) = x^3$, đạo hàm bậc một và bậc hai của hàm này b�
 Việc tối ưu có thể bị ngưng trệ tại điểm này, cho dù đó không phải là điểm cực tiểu.
 
 
-```{.python .input  n=4}
-x = np.arange(-2.0, 2.0, 0.01)
+```{.python .input}
+#@tab all
+x = d2l.arange(-2.0, 2.0, 0.01)
 d2l.plot(x, [x**3], 'x', 'f(x)')
 annotate('saddle point', (0, -0.2), (-0.52, -5.0))
 ```
@@ -218,10 +240,9 @@ Hàm này tồn tại một điểm yên ngựa tại $(0, 0)$.
 Tên gọi của tính chất toán học này bắt nguồn từ chính việc đồ thị tại đó có hình dạng giống một cái yên ngựa.
 
 
-```{.python .input  n=5}
-x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
-                   indexing='ij')
-
+```{.python .input}
+#@tab all
+x, y = d2l.meshgrid(d2l.linspace(-1.0, 1.0, 101), d2l.linspace(-1.0, 1.0, 101))
 z = x**2 - y**2
 
 ax = d2l.plt.figure().add_subplot(111, projection='3d')
@@ -271,10 +292,6 @@ Nhưng không may, đa số bài toán học sâu đều không thuộc loại n
 Dù sao thì tính lồi vẫn là một công cụ tốt để học về các thuật toán tối ưu.
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
 <!--
 ### Vanishing Gradients
 -->
@@ -297,9 +314,11 @@ Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
 Đây hoá ra lại là lý do tại sao việc huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
 
-```{.python .input  n=6}
-x = np.arange(-2.0, 5.0, 0.01)
-d2l.plot(x, [np.tanh(x)], 'x', 'f(x)')
+
+```{.python .input}
+#@tab all
+x = d2l.arange(-2.0, 5.0, 0.01)
+d2l.plot(x, [d2l.tanh(x)], 'x', 'f(x)')
 annotate('vanishing gradient', (4, 1), (2, 0.0))
 ```
 
@@ -348,38 +367,26 @@ Furthermore assume that $p_{ij}(x) = p_{ij}(-x)$, i.e., that the distribution is
 -->
 
 1. Xét một mạng perceptron đa tầng đơn giản với một tầng ẩn $d$ chiều và một đầu ra duy nhất.
-Chỉ ra rằng bất kì cực tiểu nào cũng có ít nhất $d!$ nghiệm tương đương khiến mạng vận hành giống nhau.
-2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, trong đó mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$.
-Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem :cite:`Wigner.1958` để biết thêm chi tiết).
-    * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng,
-    tức với mọi vector riêng $\mathbf{v}$, trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
+Chỉ ra rằng bất kỳ cực tiểu nào cũng có ít nhất $d!$ nghiệm tương đương khiến mạng vận hành giống nhau.
+2. Giả sử ta có một ma trận đối xứng $\mathbf{M}$ ngẫu nhiên, trong đó mỗi phần tử $M_{ij} = M_{ji}$ tuân theo phân phối xác suất $p_{ij}$. Ngoài ra, giả sử $p_{ij}(x) = p_{ij}(-x)$, tức phân phối là đối xứng (xem :cite:`Wigner.1958` để biết thêm chi tiết).
+    * Chứng minh rằng phân phối của các trị riêng cũng là đối xứng, tức với mọi vector riêng $\mathbf{v}$, trị riêng $\lambda$ tương ứng thoả mãn $P(\lambda > 0) = P(\lambda < 0)$.
     * Tại sao điều trên *không* có nghĩa là $P(\lambda > 0) = 0.5$?
-3. Liệu còn thử thách tối ưu nào trong học sâu không?
-4. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
+1. Liệu còn thử thách tối ưu nào trong học sâu không?
+2. Giả sử bạn muốn cân bằng một quả bóng (thật) trên một chiếc yên ngựa (thật).
     * Tại sao điều này lại khó khăn?
     * Hãy vận dụng kết quả trên vào các thuật toán tối ưu.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2371)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/349)
+* [Tiếng Anh - Pytorch](https://discuss.d2l.ai/t/487)
+* [Tiếng Anh - Tensorflow](https://discuss.d2l.ai/t/489)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
@@ -387,3 +394,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Nguyễn Văn Quang
 * Phạm Minh Đức
 * Nguyễn Văn Cường
+* Phạm Hồng Vinh

@@ -623,7 +623,7 @@ Tiền điều kiện một cách hiệu quả cùng hạ gradient giúp chọn 
 ### Gradient Descent with Line Search
 -->
 
-### Hạ gradient cùng tìm kiếm đường thẳng
+### Hạ gradient cùng Tìm kiếm Đường thẳng
 
 <!--
 One of the key problems in gradient descent was that we might overshoot the goal or make insufficient progress.

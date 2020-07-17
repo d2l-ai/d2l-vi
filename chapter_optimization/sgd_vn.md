@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Stochastic Gradient Descent
 -->
@@ -14,13 +11,25 @@ In this section, we are going to introduce the basic principles of stochastic gr
 
 Trong phần này chúng tôi sẽ giới thiệu các nguyên tắc cơ bản của hạ gradient ngẫu nhiên.
 
-```{.python .input  n=2}
+
+```{.python .input}
 %matplotlib inline
 from d2l import mxnet as d2l
 import math
 from mxnet import np, npx
 npx.set_np()
 ```
+
+<!--
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+import math
+import torch
+```
+-->
+
 
 <!--
 ## Stochastic Gradient Updates
@@ -64,7 +73,7 @@ At each iteration of stochastic gradient descent, we uniformly sample an index $
 and compute the gradient $\nabla f_i(\mathbf{x})$ to update $\mathbf{x}$:
 -->
 
-Hạ gradient ngẫu nhiên (_stochastic gradient descent_ - SGD) giúp giảm chi phí tính toán ở mỗi vòng lặp.
+Hạ gradient ngẫu nhiên (*stochastic gradient descent* - SGD) giúp giảm chi phí tính toán ở mỗi vòng lặp.
 Ở mỗi vòng lặp, ta lấy ngẫu nhiên một mẫu dữ liệu có chỉ số $i\in\{1,\ldots, n\}$ theo phân phối đều, và chỉ cập nhật $\mathbf{x}$ bằng gradient $\nabla f_i(\mathbf{x})$:
 
 
@@ -76,6 +85,7 @@ Here, $\eta$ is the learning rate.
 We can see that the computing cost for each iteration drops from $\mathcal{O}(n)$ of the gradient descent to the constant $\mathcal{O}(1)$.
 We should mention that the stochastic gradient $\nabla f_i(\mathbf{x})$ is the unbiased estimate of gradient $\nabla f(\mathbf{x})$.
 -->
+
 
 Ở đây, $\eta$ là tốc độ học.
 Ta có thể thấy rằng chi phí tính toán cho mỗi vòng lặp giảm từ $\mathcal{O}(n)$ của hạ gradient xuống còn hằng số $\mathcal{O}(1)$.
@@ -92,23 +102,23 @@ This means that, on average, the stochastic gradient is a good estimate of the g
 Do đó, trên trung bình, gradient ngẫu nhiên là một ước lượng gradient tốt.
 
 <!--
-Now, we will compare it to gradient descent by adding random noise with a mean of 0 to the gradient to simulate a SGD.
+Now, we will compare it to gradient descent by adding random noise with a mean of 0 and a variance of 1 to the gradient to simulate a SGD.
 -->
 
-Bây giờ, ta mô phỏng hạ gradient ngẫu nhiên bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 vào gradient và so sánh với phương pháp hạ gradient.
+Bây giờ, ta mô phỏng hạ gradient ngẫu nhiên bằng cách thêm nhiễu ngẫu nhiên với trung bình bằng 0 và phương sai bằng 1 vào gradient và so sánh với phương pháp hạ gradient.
 
 
-```{.python .input  n=3}
-def f(x1, x2):
-    return x1 ** 2 + 2 * x2 ** 2  # Objective
+```{.python .input}
+#@tab all
+f = lambda x1, x2: x1 ** 2 + 2 * x2 ** 2  # Objective
+gradf = lambda x1, x2: (2 * x1, 4 * x2)  # Gradient
 
-def gradf(x1, x2):
-    return (2 * x1, 4 * x2)  # Gradient
-
-def sgd(x1, x2, s1, s2):  # Simulate noisy gradient
+def sgd(x1, x2, s1, s2):
     global lr  # Learning rate scheduler
-    (g1, g2) = gradf(x1, x2)  # Compute gradient
-    (g1, g2) = (g1 + np.random.normal(0.1), g2 + np.random.normal(0.1))
+    (g1, g2) = gradf(x1, x2)
+    # Simulate noisy gradient
+    g1 += d2l.normal(0.0, 1, (1,))
+    g2 += d2l.normal(0.0, 1, (1,))
     eta_t = eta * lr()  # Learning rate at time t
     return (x1 - eta_t * g1, x2 - eta_t * g2, 0, 0)  # Update variables
 
@@ -117,10 +127,6 @@ lr = (lambda: 1)  # Constant learning rate
 d2l.show_trace_2d(f, d2l.train_2d(sgd, steps=50))
 ```
 
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 As we can see, the trajectory of the variables in the SGD is much more noisy than the one we observed in gradient descent in the previous section.
@@ -175,12 +181,12 @@ Có một vài chiến lược cơ bản được sử dụng để điều ch�
 
 $$
 \begin{aligned}
-    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{hằng số theo khoảng} \\
-    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{lũy thừa} \\
-    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{đa thức}
+    \eta(t) & = \eta_i \text{ if } t_i \leq t \leq t_{i+1}  && \mathrm{~hằng~số~theo~khoảng~} \\
+    \eta(t) & = \eta_0 \cdot e^{-\lambda t} && \mathrm{~lũy~thừa~} \\
+    \eta(t) & = \eta_0 \cdot (\beta t + 1)^{-\alpha} && \mathrm{~đa~thức~}
 \end{aligned}
 $$
-<!-- dịch piecewise~constant, exponential và polynomial -->
+
 
 <!--
 In the first scenario we decrease the learning rate, e.g., whenever progress in optimization has stalled.
@@ -201,7 +207,8 @@ Trong trường hợp tối ưu lồi, có các chứng minh cho thấy giá tr�
 Hãy cùng xem nó hoạt động như thế nào trong thực tế.
 
 
-```{.python .input  n=4}
+```{.python .input}
+#@tab all
 def exponential():
     global ctr
     ctr += 1
@@ -212,10 +219,6 @@ lr = exponential  # Set up learning rate
 d2l.show_trace_2d(f, d2l.train_2d(sgd, steps=1000))
 ```
 
-
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 As expected, the variance in the parameters is significantly reduced.
@@ -229,9 +232,11 @@ Như dự đoán, giá trị phương sai của các tham số giảm đáng k�
 Tuy nhiên, suy giảm lũy thừa không hội tụ tới nghiệm tối ưu $\mathbf{x} = (0, 0)$.
 Thậm chí sau 1000 vòng lặp, nghiệm tìm được vẫn cách nghiệm tối ưu rất xa. 
 Trên thực tế, thuật toán này không hội tụ được.
-Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương thời gian, thuật toán hội tụ tốt. <!-- chỗ này bản gốc có gì đó sai sai, `ctr` trong code là thời gian chứ nhỉ, số bước là `steps=50` đâu liên quan. -->
+Mặt khác, nếu ta sử dụng suy giảm đa thức trong đó tốc độ học suy giảm tỉ lệ nghịch với căn bình phương thời gian, thuật toán hội tụ tốt.
 
-```{.python .input  n=5}
+
+```{.python .input}
+#@tab all
 def polynomial():
     global ctr
     ctr += 1
@@ -261,9 +266,6 @@ Bây giờ, chúng ta hãy tập trung vào thiết lập tốc độ học tron
 Với bài toán không lồi tổng quát, rất khó để đảm bảo được mức hội tụ có ý nghĩa, vì nói chung các bài toán tối ưu phi tuyến không lồi đều thuộc dạng NP-hard.
 Để tìm hiểu thêm, tham khảo các ví dụ trong [tập bài giảng](https://www.stat.cmu.edu/~ryantibs/convexopt-F15/lectures/26-nonconvex.pdf) của Tibshirani năm 2015.
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Convergence Analysis for Convex Objectives
@@ -302,15 +304,11 @@ Last denote by
 -->
 
 Cụ thể, ta giả sử $\mathbf{x}_t$ được lấy từ phân phối $P(\mathbf{x})$ và $l(\mathbf{x}, \mathbf{w})$ là hàm lồi theo biến $\mathbf{w}$ với mọi $\mathbf{x}$.
-Cuối cùng, ta ký hiệu
+Cuối cùng, ta kí hiệu
 
 
 $$R(\mathbf{w}) = E_{\mathbf{x} \sim P}[l(\mathbf{x}, \mathbf{w})]$$
 
-
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 the expected risk and by $R^*$ its minimum with regard to $\mathbf{w}$.
@@ -319,7 +317,7 @@ In this case we can track the distance between the current parameter $\mathbf{w}
 -->
 
 là giá trị mất mát kỳ vọng và $R^*$ là cực tiểu của hàm mất mát theo $\mathbf{w}$.
-Ta ký hiệu $\mathbf{w}^*$ là nghiệm tại cực tiểu (_minimizer_) với giả định giá trị này tồn tại trong miền xác định.
+Ta kí hiệu $\mathbf{w}^*$ là nghiệm tại cực tiểu (_minimizer_) với giả định giá trị này tồn tại trong miền xác định.
 Trong trường hợp này, chúng ta lần theo khoảng cách giữa tham số hiện tại $\mathbf{w}_t$ và nghiệm cực tiểu $\mathbf{w}^*$, và xem liệu giá trị này có cải thiện theo thời gian không:
 
 
@@ -421,9 +419,6 @@ Plugging this into the above inequality yields the bound
 Thay vào bất đẳng thức ở trên, ta tìm được cận
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 $$
 \left[E[\bar{\mathbf{w}}]\right] - R^* \leq \frac{r^2 + L^2 \sum_{t=1}^T \eta_t^2}{2 \sum_{t=1}^T \eta_t}.
@@ -473,13 +468,6 @@ $l(\mathbf{x}, \mathbf{w}') \geq l(\mathbf{x}, \mathbf{w}) + \langle \mathbf{w}'
 ta có thể thiết kế quy trình tối ưu nhằm tăng tốc độ hội tụ nhanh hơn nữa.
 Thực tế, sự suy giảm theo cấp số mũ của $\eta$ dẫn đến giới hạn có dạng $\mathcal{O}(\log T / T)$.
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Stochastic Gradients and Finite Samples
@@ -507,7 +495,7 @@ To see why this is preferable consider the converse, namely that we are sampling
 The probability of choosing an element $i$ at random is $N^{-1}$. Thus to choose it at least once is
 -->
 
-Tuy nhiên, đó thực ra không phải là cách ta đã làm.
+Tuy nhiên, đó thật ra không phải là cách ta đã làm.
 Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào gradient không ngẫu nhiên, tức giả sử đang có sẵn các cặp giá trị $(x_i, y_i)$.
 Hoá ra cách làm đó khá hợp lý (xem phần bài tập để thảo luận chi tiết).
 Vấn đề là ở tất cả các thảo luận trước, ta không hề làm thế.
@@ -516,7 +504,7 @@ Thay vào đó ta duyệt qua tất cả các đối tượng đúng một lần
 Xác suất phần tử $i$ được chọn ngẫu nhiên là $N^{-1}$.
 Do đó xác suất chọn $i$ ít nhất một lần là
 
-$$P(\mathrm{chọn~} i) = 1 - P(\mathrm{loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
+$$P(\mathrm{~chọn~} i) = 1 - P(\mathrm{~loại~} i) = 1 - (1-N^{-1})^N \approx 1-e^{-1} \approx 0.63.$$
 
 <!--
 A similar reasoning shows that the probability of picking a sample exactly once is given by ${N \choose 1} N^{-1} (1-N^{-1})^{N-1} = \frac{N-1}{N} (1-N^{-1})^{N} \approx e^{-1} \approx 0.37$.
@@ -530,9 +518,6 @@ Tương tự, ta có thể chỉ ra rằng xác suất chọn một mẫu đúng
 Do đó trong thực tế, ta thực hiện lấy mẫu không hoàn lại (và đây cũng là lựa chọn mặc định trong quyển sách này).
 Điều cuối cùng cần chú ý là mỗi lần duyệt lại tập dữ liệu, ta sẽ duyệt theo một thứ tự ngẫu nhiên *khác*.
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 <!--
 ## Summary
@@ -576,32 +561,19 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với số vòng lặp khác nhau.
 Cụ thể, hãy vẽ biểu đồ khoảng cách tới nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
 2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
-    * Suy ra kì vọng và phương sai của $\mathbf{x}$.
+    * Suy ra kỳ vọng và phương sai của $\mathbf{x}$.
     * Chỉ ra rằng tính chất này có thể áp dụng tổng quát cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ với $Q \succeq 0$.
 3. So sánh sự hội tụ của SGD khi lấy mẫu không hoàn lại từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ và khi lấy mẫu có hoàn lại.
 4. Bạn sẽ thay đổi SGD thế nào nếu như một số gradient (hoặc một số toạ độ liên kết với nó) liên tục lớn hơn tất cả các gradient khác?
 5. Giả sử $f(x) = x^2 (1 + \sin x)$. $f$ có bao nhiêu cực tiểu? Thay đổi hàm $f$ sao cho để cực tiểu hóa giá trị hàm này, ta cần xét tất cả các điểm cực tiểu?
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2372)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/352)
+* [Tiếng Anh - Pytorch](https://discuss.d2l.ai/t/497)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
-Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Duy Du
