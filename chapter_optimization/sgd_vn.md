@@ -497,7 +497,7 @@ The probability of choosing an element $i$ at random is $N^{-1}$. Thus to choose
 
 Tuy nhiên, đó thật ra không phải là cách ta đã làm.
 Trong các ví dụ đơn giản ở phần này ta chỉ thêm nhiễu vào gradient không ngẫu nhiên, tức giả sử đang có sẵn các cặp giá trị $(x_i, y_i)$.
-Hoá ra cách làm đó khá hợp lý (xem phần bài tập để thảo luận chi tiết).
+hóa ra cách làm đó khá hợp lý (xem phần bài tập để thảo luận chi tiết).
 Vấn đề là ở tất cả các thảo luận trước, ta không hề làm thế.
 Thay vào đó ta duyệt qua tất cả các đối tượng đúng một lần.
 Để hiểu tại sao quá trình này được ưa chuộng, hãy xét trường hợp ngược lại khi ta lấy có hoàn lại $N$ mẫu từ một phân phối rời rạc.
@@ -560,7 +560,7 @@ In particular, plot the distance from the optimal solution $(0, 0)$ as a functio
 
 1. Hãy thử nghiệm với nhiều bộ định thời tốc độ học khác nhau trong SGD và với số vòng lặp khác nhau.
 Cụ thể, hãy vẽ biểu đồ khoảng cách tới nghiệm tối ưu $(0, 0)$ theo số vòng lặp.
-2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hoá hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
+2. Chứng minh rằng với hàm $f(x_1, x_2) = x_1^2 + 2 x_2^2$, việc thêm nhiễu Gauss (*normal noise*) vào gradient tương đương với việc cực tiểu hóa hàm mất mát $l(\mathbf{x}, \mathbf{w}) = (x_1 - w_1)^2 + 2 (x_2 - w_2)^2$ trong đó $x$ tuân theo phân phối chuẩn.
     * Suy ra kỳ vọng và phương sai của $\mathbf{x}$.
     * Chỉ ra rằng tính chất này có thể áp dụng tổng quát cho hàm mục tiêu $f(\mathbf{x}) = \frac{1}{2} (\mathbf{x} - \mathbf{\mu})^\top Q (\mathbf{x} - \mathbf{\mu})$ với $Q \succeq 0$.
 3. So sánh sự hội tụ của SGD khi lấy mẫu không hoàn lại từ $\{(x_1, y_1), \ldots, (x_m, y_m)\}$ và khi lấy mẫu có hoàn lại.

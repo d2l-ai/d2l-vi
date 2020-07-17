@@ -18,14 +18,14 @@ This suggests that there might be a happy medium, and in fact, that's what we ha
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
 Mỗi phương pháp đều có mặt hạn chế riêng.
 Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đối giống nhau.
-Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không được khai thác hết khả năng vector hoá.
+Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không được khai thác hết khả năng vector hóa.
 Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, ta đã sử dụng phương pháp đó trong các ví dụ đã thảo luận.
 
 <!--
 ## Vectorization and Caches
 -->
 
-## Vector Hoá và Vùng nhớ đệm
+## Vector hóa và Vùng nhớ đệm
 
 <!--
 At the heart of the decision to use minibatches is computational efficiency.
@@ -66,7 +66,7 @@ A detailed discussion of this is beyond the scope of this section.
 See e.g., this [Wikipedia article](https://en.wikipedia.org/wiki/Cache_hierarchy) for a more in-depth discussion.
 -->
 
-* Một CPU tốc độ 2GHz với 16 lõi và phép vector hoá AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
+* Một CPU tốc độ 2GHz với 16 lõi và phép vector hóa AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
 Khả năng của GPU dễ dàng vượt qua con số này cả trăm lần.
 Mặt khác, trong vi xử lý của máy chủ cỡ trung bình, băng thông có lẽ không vượt quá 100 GB/s, tức là chưa bằng một phần mười băng thông yêu cầu để đưa dữ liệu vào bộ xử lý.
 Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: 
@@ -443,7 +443,7 @@ This is because SGD updated the parameters more frequently and since it is less 
 -->
 
 Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu.
-Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
+Để đơn giản hóa việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
 Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
 Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
 Có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
@@ -573,10 +573,10 @@ train_concise_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 -->
 
 
-* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
+* Vector hóa tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
 * Tồn tại sự đánh đổi giữa hiệu quả về mặt thống kê của SGD và hiệu quả tính toán của việc xử lý các batch dữ liệu kích thước lớn cùng một lúc.
 * Thuật toán SGD theo minibatch kết hợp cả hai lợi ích trên: hiệu quả tính toán và thống kê.
-* Trong thuật toán đó ta xử lý các batch thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi mẫu được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
+* Trong thuật toán đó ta xử lý các batch thu được từ hóan vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi mẫu được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
 * Suy giảm tốc độ học trong quá trình huấn luyện được khuyến khích sử dụng.
 * Nhìn chung, SGD theo minibatch nhanh hơn SGD và hạ gradient về thời gian hội tụ.
 

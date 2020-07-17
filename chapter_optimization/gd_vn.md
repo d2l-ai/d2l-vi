@@ -19,7 +19,7 @@ Let us start with a simple special case.
 Trong phần này chúng tôi sẽ giới thiệu các khái niệm cơ bản trong thuật toán hạ gradient.
 Nội dung cần thiết sẽ được trình bày ngắn gọn.
 Độc giả có thể tham khảo :cite:`Boyd.Vandenberghe.2004` để có góc nhìn sâu về bài toán tối ưu lồi.
-Mặc dù tối ưu lồi hiếm khi được áp dụng trực tiếp trong học sâu, kiến thức về thuật toán hạ gradient là chìa khoá để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
+Mặc dù tối ưu lồi hiếm khi được áp dụng trực tiếp trong học sâu, kiến thức về thuật toán hạ gradient là chìa khóa để hiểu rõ hơn về thuật toán hạ gradient ngẫu nhiên.
 Ví dụ, bài toán tối ưu có thể phân kỳ do tốc độ học quá lớn.
 Hiện tượng này có thể quan sát được trong thuật toán hạ gradient.
 Tương tự, tiền điều kiện (*preconditioning*) là một kỹ thuật phổ biến trong thuật toán hạ gradient và nó cũng được áp dụng trong các thuật toán tân tiến hơn.
@@ -55,7 +55,7 @@ Plugging this into the Taylor expansion above we get
 
 Trong đó xấp xỉ bậc nhất $f(x+\epsilon)$ được tính bằng giá trị hàm $f(x)$ và đạo hàm bậc nhất $f'(x)$ tại $x$. 
 Có lý khi giả sử rằng di chuyển theo hướng ngược chiều gradient với $\epsilon$ nhỏ sẽ làm suy giảm giá trị $f$. 
-Để đơn giản hoá vấn đề, ta cố định sải bước cập nhật (tốc độ học) $\eta > 0$ và chọn $\epsilon = -\eta f'(x)$. 
+Để đơn giản hóa vấn đề, ta cố định sải bước cập nhật (tốc độ học) $\eta > 0$ và chọn $\epsilon = -\eta f'(x)$. 
 Thay biểu thức này vào khai triển Taylor ở trên, ta thu được 
 
 $$f(x - \eta f'(x)) = f(x) - \eta f'^2(x) + \mathcal{O}(\eta^2 f'^2(x)).$$

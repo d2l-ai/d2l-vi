@@ -15,10 +15,10 @@ If we ever need to maximize an objective there is a simple solution: just flip t
 
 Trong phần này, ta sẽ thảo luận mối quan hệ giữa tối ưu và học sâu, cũng như những thách thức khi áp dụng các thuật toán tối ưu trong học sâu.
 Đối với một bài toán học sâu, đầu tiên chúng ta thường định nghĩa hàm mất mát, 
-sau đó sử dụng một thuật toán tối ưu nhằm cực tiểu hoá hàm mất mát đó.
+sau đó sử dụng một thuật toán tối ưu nhằm cực tiểu hóa hàm mất mát đó.
 Hàm mất mát trong học sâu thường được xem là hàm mục tiêu của bài toán tối ưu.
-Thông thường, đa số các thuật toán tối ưu thường giải quyết bài toán *cực tiểu hoá*.
-Tuy nhiên, nếu ta cần cực đại hoá, có một cách khá đơn giản là đổi dấu hàm mục tiêu.
+Thông thường, đa số các thuật toán tối ưu thường giải quyết bài toán *cực tiểu hóa*.
+Tuy nhiên, nếu ta cần cực đại hóa, có một cách khá đơn giản là đổi dấu hàm mục tiêu.
 
 <!--
 ## Optimization and Estimation
@@ -37,8 +37,8 @@ To accomplish the latter we need to pay attention to overfitting in addition to 
 We begin by importing a few libraries for this chapter.
 -->
 
-Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hoá hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
-Mối quan tâm của tối ưu chủ yếu là cực tiểu hoá một mục tiêu nào đó, trong khi đối với học sâu là tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
+Mặc dù các phương pháp tối ưu thường được sử dụng để cực tiểu hóa hàm mất mát trong học sâu, nhưng mục đích của tối ưu và học sâu về bản chất là khác nhau.
+Mối quan tâm của tối ưu chủ yếu là cực tiểu hóa một mục tiêu nào đó, trong khi đối với học sâu là tìm kiếm một mô hình phù hợp với một lượng dữ liệu hữu hạn.
 Trong :numref:`sec_model_selection`, ta đã thảo luận chi tiết về sự khác biệt giữa các mục đích trên.
 Chẳng hạn như là sự khác biệt giữa lỗi huấn luyện và lỗi khái quát.
 Do hàm mục tiêu của thuật toán tối ưu thường là hàm mất mát trên tập huấn luyện nên mục đích của tối ưu là giảm thiểu lỗi huấn luyện.
@@ -312,7 +312,7 @@ Ví dụ, giả sử ta muốn cực tiểu hóa hàm $f(x) = \tanh(x)$ và ta b
 Như ta có thể thấy, gradient của $f$ gần như là bằng 0.
 Cụ thể, $f'(x) = 1 - \tanh^2(x)$ và do đó $f'(4) = 0.0013$.
 Hậu quả là quá trình tối ưu sẽ bị trì trệ khá lâu trước khi có tiến triển.
-Đây hoá ra lại là lý do tại sao việc huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
+Đây hóa ra lại là lý do tại sao việc huấn luyện các mô hình học sâu khá khó khăn trước khi hàm kích hoạt ReLU xuất hiện.
 
 
 ```{.python .input}
@@ -347,7 +347,7 @@ Các cực tiểu và ngay cả nghiệm xấp xỉ cũng đã rất hữu dụn
 * Cực tiểu hóa lỗi huấn luyện *không* đảm bảo việc ta sẽ tìm ra tập tham số tốt nhất để cực tiểu hóa lỗi khái quát.
 * Các bài toán tối ưu thường có nhiều vùng cực tiểu.
 * Và do các bài toán thường không có tính lồi, số lượng điểm yên ngựa thậm chí có thể nhiều hơn.
-* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hoá bài toán (*reparameterization*) và khởi tạo tham số cẩn thận cũng sẽ giúp ích.
+* Tiêu biến gradient có thể khiến cho quá trình tối ưu bị đình trệ. Thường thì việc tái tham số hóa bài toán (*reparameterization*) và khởi tạo tham số cẩn thận cũng sẽ giúp ích.
 
 
 ## Bài tập

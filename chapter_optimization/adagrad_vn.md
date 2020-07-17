@@ -94,7 +94,7 @@ Let us look at the problem of minimizing $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}
 
 Các bài toán tối ưu lồi rất phù hợp để phân tích đặc tính của các thuật toán.
 Suy cho cùng, với đa số các bài toán không lồi ta khó có thể tìm được các chứng minh lý thuyết vững chắc. Tuy nhiên, *trực giác* và *ý nghĩa hàm chứa* suy ra từ các bài toán tối ưu lồi vẫn có thể được áp dụng.
-Xét bài toán cực tiểu hoá $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
+Xét bài toán cực tiểu hóa $f(\mathbf{x}) = \frac{1}{2} \mathbf{x}^\top \mathbf{Q} \mathbf{x} + \mathbf{c}^\top \mathbf{x} + b$.
 
 <!--
 As we saw in :numref:`sec_momentum`, it is possible to rewrite this problem in terms of its eigendecomposition 
