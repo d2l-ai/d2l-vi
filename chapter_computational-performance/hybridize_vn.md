@@ -388,7 +388,7 @@ We will illustrate how to design more general models and also how compilation wi
 -->
 
 Trên đây chúng ta đã thấy rằng mô hình có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn khi gọi phương thức `hybridize`. 
-Lưu ý là mặc dù vậy, sự hybrid hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng. 
+Lưu ý là mặc dù vậy, sự hybrid hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng điều khiển. 
 Chúng ta sẽ minh họa việc thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
 
 
