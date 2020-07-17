@@ -29,7 +29,7 @@ Nội dung trong phần này không thể thay thế một khóa học đầy đ
 mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
 Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt về độ lớn, giữa khả năng có thể huấn luyện một mô hình (ví dụ, trong khoảng một tuần) và không thể huấn luyện (ví dụ, mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ).
 Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
-Tiếp theo, ta hãy lại gần và xem xét CPU và GPU một cách chi tiết hơn.
+Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
 Cuối cùng, ta hãy quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trung tâm server hay trên cloud.
 Đây không phải là hướng dẫn mua card GPU. 
 Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
