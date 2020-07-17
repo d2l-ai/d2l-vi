@@ -226,7 +226,7 @@ To illustrate the benefit of doing this let us see what happens if we increment 
 We simulate synchronous execution by inserting a `wait_to_read()` barrier in between each addition.
 -->
 
-Trên một hệ thống đa luồng lớn (ngay cả laptop thông thường cũng có 4 luồng hoặc hơn, và trên các máy trạm đa điểm cuối (*multi-socket server*), số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
+Trên một hệ thống đa luồng lớn (ngay cả laptop thông thường cũng có 4 luồng hoặc hơn, và trên các máy trạm đa socket, số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
 Đây là lý do tại sao hai quá trình tính toán và định thời nên xảy ra song song và bất đồng bộ.
 Để minh hoạ cho lợi ích của việc này, hãy so sánh khi cộng 1 vào một biến nhiều lần một cách đồng bộ và bất đồng bộ.
 Ta mô phỏng quá trình thực thi đồng bộ bằng cách chèn một lớp cản `wait_to_read()` giữa mỗi phép cộng.
