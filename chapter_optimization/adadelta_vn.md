@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Adadelta
 -->
@@ -17,7 +14,7 @@ It is fairly straightforward, given the discussion of previous algorithms so far
 -->
 
 Adadelta là một biến thể khác của AdaGrad.
-Điểm khác biệt chính là Adadelta giảm mức độ mà tốc độ học sẽ thay đổi với các toạ độ.
+Điểm khác biệt chính là Adadelta giảm mức độ mà tốc độ học sẽ thay đổi với các tọa độ.
 Hơn nữa, Adadelta thường được biết đến là thuật toán không sử dụng tốc độ học vì nó dựa trên chính lượng thay đổi hiện tại để căn chỉnh lượng thay đổi trong tương lai.
 Thuật toán Adadelta được đề xuất trong :cite:`Zeiler.2012`.
 Nó cũng khá đơn giản nếu bạn đã biết các thuật toán được thảo luận trước đây.
@@ -40,9 +37,9 @@ The parameter du jour is $\rho$. We obtain the following leaky updates:
 Nói ngắn gọn, Adadelta sử dụng hai biến trạng thái, $\mathbf{s}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của gradient
 và $\Delta\mathbf{x}_t$ để lưu trữ trung bình rò rỉ mô-men bậc hai của lượng thay đổi của các tham số trong mô hình.
 Lưu ý rằng chúng ta sử dụng các ký hiệu và cách đặt tên nguyên bản của chính tác giả để nhất quán với các nghiên cứu khác và các cách lập trình,
-chứ không có lý do đặc biệt gì để ký hiệu cùng một tham số trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta bằng các kí hiệu La Mã khác nhau.
+chứ không có lý do gì đặc biệt để ký hiệu cùng một tham số trong các thuật toán động lượng, Adagrad, RMSProp, và Adadelta bằng các kí hiệu La Mã khác nhau.
 Tham số suy giảm là $\rho$.
-Chúng ta có được các bước cập nhật rò rỉ sau:
+Chúng ta có được các bước cập nhật rò rỉ như sau:
 
 
 $$\begin{aligned}
@@ -58,17 +55,14 @@ The difference to before is that we perform updates with the rescaled gradient $
 the average squared rate of change and the average second moment of the gradient.
 The use of $\mathbf{g}_t'$ is purely for notational convenience.
 In practice we can implement this algorithm without the need to use additional temporary space for $\mathbf{g}_t'$.
-As before $\eta$ is a parameter ensuring nontrivial numerical results, i.e., avoiding zero step size or infinite variance. Typically we set this to $\eta = 10^{-5}$.
+As before $\epsilon$ is a parameter ensuring nontrivial numerical results, i.e., avoiding zero step size or infinite variance. Typically we set this to $\epsilon = 10^{-5}$.
 -->
 
 Điểm khác biệt so với trước là ta thực hiện các bước cập nhật với gradient $\mathbf{g}_t'$ được tái tỉ lệ bằng cách lấy căn bậc hai thương của trung bình tốc độ thay đổi bình phương và trung bình mô-men bậc hai của gradient.
-Việc sử dụng $\mathbf{g}_t'$ có mục đích đơn thuần thuận tiện cho việc ký hiệu.
+Việc sử dụng $\mathbf{g}_t'$ có mục đích đơn thuần là thuận tiện cho việc ký hiệu.
 Trong thực tế chúng ta có thể lập trình thuật toán này mà không cần phải sử dụng thêm bộ nhớ tạm cho $\mathbf{g}_t'$.
-Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ có ý nghĩa, tức tránh trường hợp kích thước bước bằng $0$ hoặc phương sai là vô hạn. Thông thường chúng ta đặt $\epsilon = 10^{-5}$.
+Như trước đây $\epsilon$ là tham số đảm bảo kết quả xấp xỉ có ý nghĩa, tức tránh trường hợp kích thước bước bằng $0$ hoặc phương sai là vô hạn. Thông thường ta đặt $\epsilon = 10^{-5}$.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Implementation
@@ -127,7 +121,7 @@ For a concise implementation we simply use the `adadelta` algorithm from the `Tr
 
 
 ```{.python .input  n=9}
-d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
+d2l.train_concise_ch11('adadelta', {'rho': 0.9}, data_iter)
 ```
 
 
@@ -165,27 +159,13 @@ d2l.train_gluon_ch11('adadelta', {'rho': 0.9}, data_iter)
 3. Adadelta có thực sự không cần tốc độ học? Hãy chỉ ra các bài toán tối ưu mà Adadelta không thể giải.
 4. Hãy so sánh Adadelta với Adagrad và RMSprop để thảo luận về sự hội tụ của từng thuật toán.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC =================================== -->
-
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2377)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/357)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Cường
@@ -193,3 +173,4 @@ với dấu `@` ở đầu. Ví dụ: @aivivn.
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
+* Nguyễn Cảnh Thướng

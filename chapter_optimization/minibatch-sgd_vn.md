@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Minibatch Stochastic Gradient Descent
 -->
@@ -21,14 +18,14 @@ This suggests that there might be a happy medium, and in fact, that's what we ha
 Ngược lại, :numref:`sec_sgd` xử lý từng điểm dữ liệu một để cập nhật các tham số.
 Mỗi phương pháp đều có mặt hạn chế riêng.
 Hạ Gradient có *hiệu suất dữ liệu* (*data efficiency*) thấp khi dữ liệu tương đối giống nhau.
-Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không được khai thác hết khả năng vector hoá.
+Hạ Gradient Ngẫu nhiên có *hiệu suất tính toán* (*computational efficiency*) thấp do CPU và GPU không được khai thác hết khả năng vector hóa.
 Điều này gợi ý rằng có thể có một phương pháp thích hợp ở giữa, và thực tế, ta đã sử dụng phương pháp đó trong các ví dụ đã thảo luận.
 
 <!--
 ## Vectorization and Caches
 -->
 
-## Vector Hoá và Vùng nhớ đệm
+## Vector hóa và Vùng nhớ đệm
 
 <!--
 At the heart of the decision to use minibatches is computational efficiency.
@@ -69,7 +66,7 @@ A detailed discussion of this is beyond the scope of this section.
 See e.g., this [Wikipedia article](https://en.wikipedia.org/wiki/Cache_hierarchy) for a more in-depth discussion.
 -->
 
-* Một CPU tốc độ 2GHz với 16 lõi và phép vector hoá AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
+* Một CPU tốc độ 2GHz với 16 lõi và phép vector hóa AVX-512 có thể xử lý lên lới $2 \cdot 10^9 \cdot 16 \cdot 32 = 10^{12}$ byte mỗi giây.
 Khả năng của GPU dễ dàng vượt qua con số này cả trăm lần.
 Mặt khác, trong vi xử lý của máy chủ cỡ trung bình, băng thông có lẽ không vượt quá 100 GB/s, tức là chưa bằng một phần mười băng thông yêu cầu để đưa dữ liệu vào bộ xử lý.
 Vấn đề còn tồi tệ hơn khi ta xét đến việc không phải khả năng truy cập bộ nhớ nào cũng như nhau: 
@@ -80,9 +77,6 @@ Có rất nhiều điều cần lưu ý, ví dụ như lưu trữ đệm khi ta 
 Việc thảo luận chi tiết vấn đề trên nằm ngoài phạm vi của phần này.
 Bạn có thể tham khảo [bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để hiểu sâu hơn.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 The way to alleviate these constraints is to use a hierarchy of CPU caches which are actually fast enough to supply the processor with data.
@@ -137,10 +131,11 @@ Hãy xem xét hiệu suất của từng phương pháp trong thực tế.
 
 <!--
 Beyond computational efficiency, the overhead introduced by Python and by the deep learning framework itself is considerable.
-Recall that each time we execute a command the Python interpreter sends a command to the MXNet engine which needs to insert it into the compute graph and deal with it during scheduling.
+Recall that each time we execute a command the Python interpreter sends a command to the MXNet engine which needs to insert it into the computational graph and deal with it during scheduling.
 Such overhead can be quite detrimental.
 In short, it is highly advisable to use vectorization (and matrices) whenever possible.
 -->
+
 
 Ngoài hiệu suất tính toán, chi phí tính toán phát sinh đến từ Python và framework học sâu cũng đáng cân nhắc.
 Mỗi lần ta thực hiện một câu lệnh, bộ thông dịch Python gửi một câu lệnh đến MXNet để chèn câu lệnh đó vào đồ thị tính toán và thực thi nó theo đúng lịnh trình.
@@ -170,7 +165,7 @@ Phép nhân theo từng phần tử chỉ đơn giản là duyệt qua tất c�
 
 
 ```{.python .input  n=2}
-# Compute A = B C one element at a time
+# Compute A = BC one element at a time
 timer.start()
 for i in range(256):
     for j in range(256):
@@ -179,9 +174,6 @@ A.wait_to_read()
 timer.stop()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 A faster strategy is to perform column-wise assignment.
@@ -191,7 +183,7 @@ Một cách nhanh hơn là nhân theo từng cột.
 
 
 ```{.python .input  n=3}
-# Compute A = B C one column at a time
+# Compute A = BC one column at a time
 timer.start()
 for j in range(256):
     A[:, j] = np.dot(B, C[:, j])
@@ -210,7 +202,7 @@ Hãy thử xem tốc độ tương ứng của phương pháp này là bao nhiê
 
 
 ```{.python .input  n=4}
-# Compute A = B C in one go
+# Compute A = BC in one go
 timer.start()
 A = np.dot(B, C)
 A.wait_to_read()
@@ -218,20 +210,16 @@ timer.stop()
 
 # Multiply and add count as separate operations (fused in practice)
 gigaflops = [2/i for i in timer.times]
-print("Performance in Gigaflops: element {:.3f}, \
-      column {:.3f}, full {:.3f}".format(*gigaflops))
+print(f'performance in Gigaflops: element {gigaflops[0]:.3f}, '
+      f'column {gigaflops[1]:.3f}, full {gigaflops[2]:.3f}')
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Minibatches
 -->
 
 ## Minibatch
-
 :label:`sec_minibatches`
 
 <!--
@@ -279,9 +267,6 @@ Mặt khác, phương sai giảm một cách đáng kể.
 Do gradient của minibatch là trung bình của $b := |\mathcal{B}_t|$ gradient độc lập, độ lệch chuẩn của nó giảm đi theo hệ số $b^{-\frac{1}{2}}$.
 Đây là một điều tốt, cách cập nhật này có độ tin cậy gần bằng việc lấy gradient trên toàn bộ tập dữ liệu.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 Naively this would indicate that choosing a large minibatch $\mathcal{B}_t$ would be universally desirable.
@@ -303,7 +288,7 @@ timer.start()
 for j in range(0, 256, 64):
     A[:, j:j+64] = np.dot(B, C[:, j:j+64])
 timer.stop()
-print("Performance in Gigaflops: block {:.3f}".format(2/timer.times[3]))
+print(f'performance in Gigaflops: block {2 / timer.times[3]:.3f}')
 ```
 
 
@@ -354,9 +339,6 @@ def get_data_ch11(batch_size=10, n=1500):
     return data_iter, data.shape[1]-1
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Implementation from Scratch
@@ -421,7 +403,7 @@ def train_ch11(trainer_fn, states, hyperparams, data_iter,
                 animator.add(n/X.shape[0]/len(data_iter),
                              (d2l.evaluate_loss(net, data_iter, loss),))
                 timer.start()
-    print('loss: %.3f, %.3f sec/epoch' % (animator.Y[0][-1], timer.avg()))
+    print(f'loss: {animator.Y[0][-1]:.3f}, {timer.avg():.3f} sec/epoch')
     return timer.cumsum(), animator.Y[0]
 ```
 
@@ -461,7 +443,7 @@ This is because SGD updated the parameters more frequently and since it is less 
 -->
 
 Khi kích thước batch bằng 1, chúng ta sử dụng thuật toán SGD để tối ưu.
-Để đơn giản hoá việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
+Để đơn giản hóa việc lập trình, chúng ta cố định tốc độ học bằng một hằng số (có giá trị nhỏ).
 Trong SGD, các tham số mô hình được cập nhật bất cứ khi nào một mẫu huấn luyện được xử lý.
 Trong trường hợp này, sẽ có 1500 lần cập nhật trong mỗi epoch.
 Có thể thấy, sự suy giảm giá trị của hàm mục tiêu chậm lại sau một epoch.
@@ -473,9 +455,6 @@ Mặc dù cả hai thuật toán cùng xử lý 1500 mẫu trong một epoch, SG
 sgd_res = train_sgd(0.005, 1)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 Last, when the batch size equals 100, we use minibatch SGD for optimization.
@@ -522,9 +501,6 @@ d2l.plot(*list(map(list, zip(gd_res, sgd_res, mini1_res, mini2_res))),
 d2l.plt.gca().set_xscale('log')
 ```
 
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Concise Implementation
@@ -546,7 +522,7 @@ Chúng ta sẽ sử dụng hàm này xuyên suốt các phần tiếp theo của
 
 ```{.python .input  n=9}
 #@save
-def train_gluon_ch11(tr_name, hyperparams, data_iter, num_epochs=2):
+def train_concise_ch11(tr_name, hyperparams, data_iter, num_epochs=2):
     # Initialization
     net = nn.Sequential()
     net.add(nn.Dense(1))
@@ -568,7 +544,7 @@ def train_gluon_ch11(tr_name, hyperparams, data_iter, num_epochs=2):
                 animator.add(n/X.shape[0]/len(data_iter),
                              (d2l.evaluate_loss(net, data_iter, loss),))
                 timer.start()
-    print('loss: %.3f, %.3f sec/epoch' % (animator.Y[0][-1], timer.avg()))
+    print(f'loss: {animator.Y[0][-1]:.3f}, {timer.avg():.3f} sec/epoch')
 ```
 
 
@@ -581,12 +557,8 @@ Lặp lại thí nghiệm với kích thước batch bằng 10 sử dụng Gluon
 
 ```{.python .input  n=10}
 data_iter, _ = get_data_ch11(10)
-train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
+train_concise_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 ```
-
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 
 ## Tóm tắt
@@ -600,10 +572,11 @@ train_gluon_ch11('sgd', {'learning_rate': 0.05}, data_iter)
 * In general, minibatch SGD is faster than SGD and gradient descent for convergence to a smaller risk, when measured in terms of clock time.  
 -->
 
-* Vector hoá tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
+
+* Vector hóa tính toán sẽ giúp mã nguồn hiệu quả hơn vì nó giảm chi phí phát sinh từ framework học sâu và tận dụng tính cục bộ của bộ nhớ và vùng nhớ đệm trên CPU và GPU tốt hơn.
 * Tồn tại sự đánh đổi giữa hiệu quả về mặt thống kê của SGD và hiệu quả tính toán của việc xử lý các batch dữ liệu kích thước lớn cùng một lúc.
 * Thuật toán SGD theo minibatch kết hợp cả hai lợi ích trên: hiệu quả tính toán và thống kê.
-* Trong thuật toán đó ta xử lý các batch thu được từ hoán vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi mẫu được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
+* Trong thuật toán đó ta xử lý các batch thu được từ hóan vị ngẫu nhiên của dữ liệu huấn luyện (cụ thể, mỗi mẫu được xử lý chỉ một lần mỗi epoch theo thứ tự ngẫu nhiên).
 * Suy giảm tốc độ học trong quá trình huấn luyện được khuyến khích sử dụng.
 * Nhìn chung, SGD theo minibatch nhanh hơn SGD và hạ gradient về thời gian hội tụ.
 
@@ -624,25 +597,13 @@ How does the behavior of SGD, minibatch SGD and that of gradient descent change?
 4. Một ác thần đã sao chép tập dữ liệu của bạn mà không nói cho bạn biết (cụ thể, mỗi quan sát bị lặp lại hai lần và kích thước tập dữ liệu tăng gấp đôi so với ban đầu).
 Cách hoạt động của các thuật toán hạ gradient, SGD và SGD theo minibatch sẽ thay đổi như thế nào?
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2373)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/353)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang

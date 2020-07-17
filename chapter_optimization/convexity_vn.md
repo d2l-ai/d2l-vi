@@ -17,7 +17,7 @@ This can lead to exciting new optimization variants such as :cite:`Izmailov.Podo
 -->
 
 Tính lồi đóng vai trò then chốt trong việc thiết kế các thuật toán tối ưu.
-Điều này phần lớn là do tính lồi giúp việc phân tích và kiểm tra thuật toán trở nên dễ dàng hơn. 
+Điều này phần lớn là do tính lồi giúp việc phân tích và kiểm tra thuật toán trở nên dễ dàng hơn.
 Nói cách khác, nếu thuật toán hoạt động kém ngay cả khi có tính lồi thì ta không nên kì vọng rằng sẽ thu được kết quả tốt trong trường hợp khác.
 Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần là không lồi, chúng lại thường thể hiện một số tính chất lồi gần các cực tiểu.
 Điều này dẫn đến các biến thể tối ưu hóa thú vị mới như :cite:`Izmailov.Podoprikhin.Garipov.ea.2018`.
@@ -26,13 +26,13 @@ Hơn nữa, mặc dù các bài toán tối ưu hóa trong học sâu đa phần
 ## Basics
 -->
 
-## Kiến thức căn bản
+## Kiến thức Cơ bản
 
 <!--
 Let us begin with the basics.
 -->
 
-Chúng ta hãy bắt đầu với các kiến thức căn bản trước.
+Chúng ta hãy bắt đầu với các kiến thức cơ bản trước.
 
 <!--
 ### Sets
@@ -82,8 +82,8 @@ To see this, consider any $a, b \in X \cap Y$. Since $X$ and $Y$ are convex, the
 Given that, they also need to be contained in $X \cap Y$, thus proving our first theorem.
 -->
 
-Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ phi bạn có thể làm gì đó với chúng.
-Trong trường hợp này, chúng ta có thể nhìn vào phép hợp và phép giao trong :numref:`fig_convex_intersect`.
+Chỉ một mình định nghĩa thôi thì sẽ không có tác dụng gì trừ khi bạn có thể làm gì đó với chúng.
+Trong trường hợp này, ta có thể nhìn vào phép hợp và phép giao trong :numref:`fig_convex_intersect`.
 Giả sử $X$ và $Y$ là các tập hợp lồi, khi đó $X \cap Y$ cũng sẽ lồi.
 Để thấy được điều này, hãy xét bất kì $a, b \in X \cap Y$. Vì $X$ và $Y$ lồi, khi đó đoạn thẳng nối $a$ và $b$ sẽ nằm trong cả $X$ và $Y$.
 Do đó, chúng cũng cần phải thuộc $X \cap Y$, từ đó chứng minh được định lý đầu tiên của chúng ta.
@@ -126,19 +126,18 @@ Thông thường, các bài toán trong học sâu đều được định nghĩ
 Ví dụ $\mathbb{R}^d$ là tập lồi (xét cho cùng, đoạn thẳng nối hai điểm bất kỳ thuộc $\mathbb{R}^d$ vẫn thuộc $\mathbb{R}^d$).
 Trong một vài trường hợp, chúng ta sẽ làm việc với các biến có biên, ví dụ như khối cầu có bán kính $r$ được định nghĩa bằng $\{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_2 \leq r\}$.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Functions
 -->
 
 ### Hàm số
+
 <!--
 Now that we have convex sets we can introduce convex functions $f$.
 Given a convex set $X$ a function defined on it $f: X \to \mathbb{R}$ is convex if for all $x, x' \in X$ and for all $\lambda \in [0, 1]$ we have
 -->
+
 
 Giờ ta đã biết về tập hợp lồi, ta sẽ làm việc tiếp với các hàm số lồi $f$.
 Cho một tập hợp lồi $X$, một hàm số được định nghĩa trên tập đó $f: X \to \mathbb{R}$ là hàm lồi nếu với mọi $x, x' \in X$ và mọi $\lambda \in [0, 1]$, ta có
@@ -153,10 +152,10 @@ We need to import a few  libraries.
 -->
 
 Để minh họa cho điều này, chúng ta sẽ vẽ đồ thị của một vài hàm số và kiểm tra xem hàm số nào thỏa mãn điều kiện trên.
-Chúng ta sẽ cần phải nhập một vài gói thư viện.
+Ta sẽ cần phải nhập một vài gói thư viện.
 
 
-```{.python .input  n=1}
+```{.python .input}
 %matplotlib inline
 from d2l import mxnet as d2l
 from mpl_toolkits import mplot3d
@@ -164,6 +163,16 @@ from mxnet import np, npx
 npx.set_np()
 ```
 
+<!--
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+import numpy as np
+from mpl_toolkits import mplot3d
+import torch
+```
+-->
 
 <!--
 Let us define a few functions, both convex and nonconvex.
@@ -173,19 +182,14 @@ Hãy định nghĩa một vài hàm số, cả lồi lẫn không lồi.
 
 
 ```{.python .input}
-def f(x):
-    return 0.5 * x**2  # Convex
+#@tab all
+f = lambda x: 0.5 * x**2  # Convex
+g = lambda x: d2l.cos(np.pi * x)  # Nonconvex
+h = lambda x: d2l.exp(0.5 * x)  # Convex
 
-def g(x):
-    return np.cos(np.pi * x)  # Nonconvex
-
-def h(x):
-    return np.exp(0.5 * x)  # Convex
-
-x, segment = np.arange(-2, 2, 0.01), np.array([-1.5, 1])
+x, segment = d2l.arange(-2, 2, 0.01), d2l.tensor([-1.5, 1])
 d2l.use_svg_display()
 _, axes = d2l.plt.subplots(1, 3, figsize=(9, 3))
-
 for ax, func in zip(axes, [f, g, h]):
     d2l.plot([x, segment], [func(x), func(segment)], axes=ax)
 ```
@@ -198,7 +202,7 @@ Otherwise the outcome of $f(\lambda x + (1-\lambda) x')$ might not be well defin
 Convex functions have a number of desirable properties.
 -->
 
-Như dự đoán, hàm cos là hàm không lồi, trong khi hàm parabol và hàm số mũ là hàm lồi.
+Như dự đoán, hàm cô-sin là hàm không lồi, trong khi hàm parabol và hàm số mũ là hàm lồi.
 Lưu ý rằng để điều kiện trên có ý nghĩa thì $X$ cần phải là tập hợp lồi.
 Nếu không, kết quả của $f(\lambda x + (1-\lambda) x')$ sẽ không được định nghĩa rõ.
 Các hàm lồi có một số tính chất mong muốn sau.
@@ -219,7 +223,7 @@ Nó là sự tổng quát hóa của định nghĩa về tính lồi:
 
 $$\begin{aligned}
     \sum_i \alpha_i f(x_i) & \geq f\left(\sum_i \alpha_i x_i\right)
-    \text{ and }
+    \text{ và }
     E_x[f(x)] & \geq f\left(E_x[x]\right),
 \end{aligned}$$
 
@@ -230,6 +234,8 @@ In other words, the expectation of a convex function is larger than the convex f
 To prove the first inequality we repeatedly apply the definition of convexity to one term in the sum at a time.
 The expectation can be proven by taking the limit over finite segments.
 -->
+
+
 với $\alpha_i$ là các số thực không âm sao cho $\sum_i \alpha_i = 1$.
 Nói cách khác, kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng.
 Để chứng minh bất đẳng thức đầu tiên này, chúng ta áp dụng định nghĩa của tính lồi cho từng số hạng của tổng.
@@ -306,10 +312,9 @@ Tuy nhiên nó lại không phải là cực tiểu toàn cục.
 
 
 ```{.python .input}
-def f(x):
-    return (x-1)**2 * (x+1)
-
-d2l.set_figsize((3.5, 2.5))
+#@tab all
+f = lambda x: (x-1)**2 * (x+1)
+d2l.set_figsize()
 d2l.plot([x, segment], [f(x), f(segment)], 'x', 'f(x)')
 ```
 
@@ -329,14 +334,6 @@ Dù vậy, hãy lưu ý rằng điều này không có nghĩa là hàm số khô
 Ví dụ, hàm $f(x) = \mathrm{max}(|x|-1, 0)$ đạt giá trị nhỏ nhất trên khoảng $[-1, 1]$.
 Ngược lại, hàm $f(x) = \exp(x)$ không có giá trị nhỏ nhất trên $\mathbb{R}$.
 Với $x \to -\infty$ nó sẽ tiệm cận tới $0$, tuy nhiên không tồn tại giá trị $x$ mà tại đó $f(x) = 0$.
-
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Convex Functions and Sets
@@ -361,10 +358,9 @@ Remember that for any $x, x' \in S_b$ we need to show that $\lambda x + (1-\lamb
 But this follows directly from the definition of convexity since $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$.
 -->
 
-<!-- mình không dịch câu này vì nó lặp đi lặp lại-->
 Ta hãy chứng minh nó một cách vắn tắt.
-Hãy nhớ rằng với mọi $x, x' \in S_b$, ta cần chứng minh $\lambda x + (1-\lambda) x' \in S_b$ với mọi $\lambda \in [0, 1]$. 
-Nhưng điều này lại trực tiếp tuân theo định nghĩa về tính lồi vì $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$. 
+Hãy nhớ rằng với mọi $x, x' \in S_b$, ta cần chứng minh $\lambda x + (1-\lambda) x' \in S_b$ với mọi $\lambda \in [0, 1]$.
+Nhưng điều này lại trực tiếp tuân theo định nghĩa về tính lồi vì $f(\lambda x + (1-\lambda) x') \leq \lambda f(x) + (1-\lambda) f(x') \leq b$.
 
 <!--
 Have a look at the function $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ below.
@@ -373,16 +369,17 @@ The level sets are correspondingly nonconvex.
 In fact, they are typically composed of disjoint sets.
 -->
 
-Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới. 
-Nó rõ ràng là không lồi. 
-Các tập mức tương ứng cũng không lồi. 
-Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc. 
+Hãy nhìn vào đồ thị hàm $f(x, y) = 0.5 x^2 + \cos(2 \pi y)$ bên dưới.
+Nó rõ ràng là không lồi.
+Các tập mức tương ứng cũng không lồi.
+Thực tế, chúng thường được cấu thành từ các tập hợp rời rạc.
+
+
 
 ```{.python .input}
-x, y = np.meshgrid(np.linspace(-1, 1, 101), np.linspace(-1, 1, 101),
-                   indexing='ij')
-
-z = x**2 + 0.5 * np.cos(2 * np.pi * y)
+#@tab all
+x, y = d2l.meshgrid(d2l.linspace(-1, 1, 101), d2l.linspace(-1, 1, 101))
+z = x**2 + 0.5 * d2l.cos(2 * np.pi * y)
 
 # Plot the 3D surface
 d2l.set_figsize((6, 4))
@@ -401,7 +398,7 @@ for func in [d2l.plt.xticks, d2l.plt.yticks, ax.set_zticks]:
 ### Derivatives and Convexity
 -->
 
-### Đạo hàm và tính lồi
+### Đạo hàm và tính Lồi
 
 <!--
 Whenever the second derivative of a function exists it is very easy to check for convexity.
@@ -409,9 +406,11 @@ All we need to do is check whether $\partial_x^2 f(x) \succeq 0$, i.e., whether 
 For instance, the function $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ is convex since $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, i.e., its derivative is the identity matrix.
 -->
 
-Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản. 
-Tất cả những gì cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không. 
-Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị. 
+
+Bất cứ khi nào đạo hàm bậc hai của một hàm số tồn tại, việc kiểm tra tính lồi của hàm số là rất đơn giản.
+Tất cả những gì cần làm là kiểm tra liệu $\partial_x^2 f(x) \succeq 0$, tức là liệu toàn bộ trị riêng của nó đều không âm hay không.
+Chẳng hạn, hàm $f(\mathbf{x}) = \frac{1}{2} \|\mathbf{x}\|^2_2$ là lồi vì $\partial_{\mathbf{x}}^2 f = \mathbf{1}$, tức là đạo hàm của nó là ma trận đơn vị.
+
 
 <!--
 The first thing to realize is that we only need to prove this property for one-dimensional functions.
@@ -421,11 +420,13 @@ In particular, $g'' \geq 0$ for all $\mathbf{v}$ whenever the Hessian of $f$ is 
 Hence back to the scalar case.
 -->
 
-Có thể nhận ra rằng chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều. 
-Xét cho cùng, ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$. 
-Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$. 
-Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không. 
-Do đó quay về lại trường hợp vô hướng. 
+
+Có thể nhận ra rằng chúng ta chỉ cần chứng minh tính chất này cho các hàm số một chiều.
+Xét cho cùng, ta luôn có thể định nghĩa một hàm số $g(z) = f(\mathbf{x} + z \cdot \mathbf{v})$.
+Hàm số này có đạo hàm bậc một và bậc hai lần lượt là $g' = (\partial_{\mathbf{x}} f)^\top \mathbf{v}$ và $g'' = \mathbf{v}^\top (\partial^2_{\mathbf{x}} f) \mathbf{v}$.
+Cụ thể, $g'' \geq 0$ với mọi $\mathbf{v}$ mỗi khi ma trận Hessian của $f$ là nửa xác định dương, tức là tất cả các trị riêng của ma trận đều lớn hơn hoặc bằng không.
+Do đó quay về lại trường hợp vô hướng.
+
 
 <!--
 To see that $f''(x) \geq 0$ for convex functions we use the fact that
@@ -483,27 +484,21 @@ By geometry it follows that $f(x)$ is below the line connecting $f(a)$ and $f(b)
 We omit a more formal derivation in favor of a graph below.
 -->
 
-Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi. 
-Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới. 
+Theo hình học, nó dẫn đến $f(x)$ nằm dưới đường thẳng nối $f(a)$ và $f(b)$, do đó chứng minh được tính lồi.
+Ta sẽ bỏ qua việc chứng minh một cách chính quy và thay bằng đồ thị bên dưới.
 
 
 ```{.python .input}
-def f(x):
-    return 0.5 * x**2
-
-x = np.arange(-2, 2, 0.01)
-axb, ab = np.array([-1.5, -0.5, 1]), np.array([-1.5, 1])
-
-d2l.set_figsize((3.5, 2.5))
+#@tab all
+f = lambda x: 0.5 * x**2
+x = d2l.arange(-2, 2, 0.01)
+axb, ab = d2l.tensor([-1.5, -0.5, 1]), d2l.tensor([-1.5, 1])
+d2l.set_figsize()
 d2l.plot([x, axb, ab], [f(x) for x in [x, axb, ab]], 'x', 'f(x)')
 d2l.annotate('a', (-1.5, f(-1.5)), (-1.5, 1.5))
 d2l.annotate('b', (1, f(1)), (1, 1.5))
 d2l.annotate('x', (-0.5, f(-0.5)), (-1.5, f(-0.5)))
 ```
-
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Constraints
@@ -516,18 +511,12 @@ One of the nice properties of convex optimization is that it allows us to handle
 That is, it allows us to solve problems of the form:
 -->
 
-Một trong những tính chất hữu ích của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả. 
+Một trong những tính chất hữu ích của tối ưu hóa lồi là nó cho phép chúng ta xử lý các ràng buộc một cách hiệu quả.
 Nó cho phép ta giải quyết các bài toán dưới dạng:
 
-<!--
-$$\begin{aligned} \mathop{\mathrm{minimize~}}_{\mathbf{x}} & f(\mathbf{x}) \\
-    \text{ subject to } & c_i(\mathbf{x}) \leq 0 \text{ for all } i \in \{1, \ldots, N\}.
-\end{aligned}$$
--->
-<!-- dịch for all, subject to và minimize -->
 
-$$\begin{aligned} \mathop{\mathrm{cực tiểu hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
-    \text{ theo } & c_i(\mathbf{x}) \leq 0 \text{ với mọi } i \in \{1, \ldots, N\}.
+$$\begin{aligned} \mathop{\mathrm{~cực~tiểu~hóa~}}_{\mathbf{x}} & f(\mathbf{x}) \\
+    \text{~theo~} & c_i(\mathbf{x}) \leq 0 \text{~với~mọi~} i \in \{1, \ldots, N\}.
 \end{aligned}$$
 
 <!--
@@ -556,7 +545,7 @@ One way of addressing it stems from physics with a rather simple intuition.
 Imagine a ball inside a box.
 The ball will roll to the place that is lowest and the forces of gravity will be balanced out with the forces that the sides of the box can impose on the ball.
 In short, the gradient of the objective function (i.e., gravity) will be offset by the gradient of the constraint function (need to remain inside the box by virtue of the walls "pushing back")
- Note that any constraint that is not active (i.e., the ball does not touch the wall) will not be able to exert any force on the ball.
+Note that any constraint that is not active (i.e., the ball does not touch the wall) will not be able to exert any force on the ball.
 -->
 
 Nhìn chung, giải quyết một bài toán tối ưu hóa bị ràng buộc là tương đối khó khăn. 
@@ -588,21 +577,12 @@ There is a rich body of literature explaining how to arrive at the function $L(\
 For our purposes it is sufficient to know that the saddlepoint of $L$ is where the original constrained optimization problem is solved optimally.
 -->
 
-Các biến  $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng. 
-Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$. 
-Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$. 
-Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$. 
-Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$. 
-Đối với mục đích của chúng ta, sẽ là đủ khi biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu. 
-
-
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
+Các biến $\alpha_i$ ở đây được gọi là *nhân tử Lagrange* (*Lagrange Multipliers*), chúng đảm bảo rằng các ràng buộc sẽ được tuân thủ đàng hoàng.
+Chúng được chọn vừa đủ lớn để đảm bảo rằng $c_i(\mathbf{x}) \leq 0$ với mọi $i$.
+Ví dụ, với mọi $\mathbf{x}$ mà $c_i(\mathbf{x}) < 0$ một cách tự nhiên, chúng ta rốt cuộc sẽ chọn $\alpha_i = 0$.
+Hơn nữa, đây là bài toán tối ưu hóa *điểm yên ngựa*, nơi ta muốn *cực đại hóa* $L$ theo $\alpha$ và đồng thời *cực tiểu hóa* nó theo $\mathbf{x}$.
+Có rất nhiều tài liệu giải thích về cách đưa đến hàm $L(\mathbf{x}, \alpha)$.
+Đối với mục đích của chúng ta, sẽ là đủ khi biết rằng điểm yên ngựa của $L$ là nơi bài toán tối ưu hóa bị ràng buộc ban đầu được giải quyết một cách tối ưu.
 
 <!--
 ### Penalties
@@ -628,11 +608,11 @@ Using the constrained optimization point of view we can see that this will ensur
 Adjusting the value of $\lambda$ allows us to vary the size of $\mathbf{w}$.
 -->
 
-Thực tế, chúng ta đã dùng thủ thuật này khá thường xuyên. 
-Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`. 
-Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng giá trị $\mathbf{w}$ không trở nên quá lớn. 
-Dưới góc nhìn tối ưu hóa có ràng buộc, ta có thể thấy nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với giá trị bán kính $r$ nào đó. 
-Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi độ lớn của $\mathbf{w}$. 
+Thực tế, chúng ta đã dùng thủ thuật này khá thường xuyên.
+Hãy xét đến suy giảm trọng số trong :numref:`sec_weight_decay`.
+Ở đó chúng ta thêm $\frac{\lambda}{2} \|\mathbf{w}\|^2$ vào hàm mục tiêu để đảm bảo rằng giá trị $\mathbf{w}$ không trở nên quá lớn.
+Dưới góc nhìn tối ưu hóa có ràng buộc, ta có thể thấy nó sẽ đảm bảo $\|\mathbf{w}\|^2 - r^2 \leq 0$ với giá trị bán kính $r$ nào đó.
+Điều chỉnh giá trị của $\lambda$ cho phép chúng ta thay đổi độ lớn của $\mathbf{w}$.
 
 <!--
 In general, adding penalties is a good way of ensuring approximate constraint satisfaction.
@@ -640,9 +620,9 @@ In practice this turns out to be much more robust than exact satisfaction.
 Furthermore, for nonconvex problems many of the properties that make the exact approach so appealing in the convex case (e.g., optimality) no longer hold.
 -->
 
-Nhìn chung, thêm các lượng phạt là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ. 
-Trong thực tế, hóa ra phương pháp này ổn định hơn rất nhiều so với trường hợp thỏa mãn chuẩn xác. 
-Hơn nữa, với các bài toán không lồi, những tính chất khiến phương án tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) không còn đảm bảo nữa. 
+Nhìn chung, thêm các lượng phạt là một cách tốt để đảm bảo việc thỏa mãn ràng buộc xấp xỉ.
+Trong thực tế, hóa ra phương pháp này ổn định hơn rất nhiều so với trường hợp thỏa mãn chuẩn xác.
+Hơn nữa, với các bài toán không lồi, những tính chất khiến phương án tiếp cận chuẩn xác trở nên rất thu hút trong trường hợp lồi (ví dụ như tính tối ưu) không còn đảm bảo nữa.
 
 <!--
 ### Projections
@@ -656,8 +636,8 @@ Again, we encountered them before, e.g., when dealing with gradient clipping in 
 There we ensured that a gradient has length bounded by $c$ via
 -->
 
-Một chiến lược khác để thỏa mãn các ràng buộc là các phép chiếu. 
-Chúng ta cũng đã gặp chúng trước đây, ví dụ như khi bàn về phương pháp gọt gradient ở :numref:`sec_rnn_scratch`. 
+Một chiến lược khác để thỏa mãn các ràng buộc là các phép chiếu.
+Chúng ta cũng đã gặp chúng trước đây, ví dụ như khi bàn về phương pháp gọt gradient ở :numref:`sec_rnn_scratch`.
 Ở phần đó chúng ta đã đảm bảo rằng gradient có độ dài ràng buộc bởi $c$ thông qua 
 
 
@@ -684,13 +664,13 @@ Points outside the set (black) are mapped to the closest point inside the set (r
 While for $\ell_2$ balls this leaves the direction unchanged, this need not be the case in general, as can be seen in the case of the diamond.
 -->
 
-Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$. 
-Điều này nghe có vẻ hơi trừu tượng. 
-:numref:`fig_projections` sẽ giải thích nó một cách rõ ràng hơn. 
-Ở đó ta có hai tập lồi, một hình tròn và một hình thoi. 
+Do đó đây là điểm gần nhất trong $X$ tới $\mathbf{x}$.
+Điều này nghe có vẻ hơi trừu tượng.
+:numref:`fig_projections` sẽ giải thích nó một cách rõ ràng hơn.
+Ở đó ta có hai tập lồi, một hình tròn và một hình thoi.
 Các điểm nằm bên trong tập (màu vàng) giữ nguyên không đổi.
-Các điểm nằm bên ngoài tập (màu đen) được ánh xạ tới điểm gần nhất bên trong tập (màu đỏ). 
-Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này có thể không đúng trong trường hợp tổng quát, như có thể thấy trong trường hợp của hình thoi. 
+Các điểm nằm bên ngoài tập (màu đen) được ánh xạ tới điểm gần nhất bên trong tập (màu đỏ).
+Trong khi với các khối cầu $\ell_2$ hướng của phép chiếu được giữ nguyên không đổi, điều này có thể không đúng trong trường hợp tổng quát, như có thể thấy trong trường hợp của hình thoi.
 
 <!--
 ![Convex Projections](../img/projections.svg)
@@ -704,12 +684,9 @@ One of the uses for convex projections is to compute sparse weight vectors.
 In this case we project $\mathbf{w}$ onto an $\ell_1$ ball (the latter is a generalized version of the diamond in the picture above).
 -->
 
-Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa. 
-Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (phiên bản tổng quát của hình thoi ở hình minh họa phía trên). 
+Một trong những ứng dụng của các phép chiếu lồi là để tính toán các vector trọng số thưa.
+Trong trường hợp này chúng ta chiếu $\mathbf{w}$ lên khối cầu $\ell_1$ (phiên bản tổng quát của hình thoi ở hình minh họa phía trên).
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Summary
@@ -722,7 +699,7 @@ In the context of deep learning the main purpose of convex functions is to motiv
 In the following we will see how gradient descent and stochastic gradient descent can be derived accordingly.
 -->
 
-Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy sự phát triển các thuật toán tối ưu hóa và giúp chúng ta hiểu chúng một cách chi tiết. 
+Trong bối cảnh học sâu, mục đích chính của các hàm lồi là để thúc đẩy sự phát triển các thuật toán tối ưu hóa và giúp ta hiểu chúng một cách chi tiết.
 Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradient ngẫu nhiên có thể được suy ra từ đó.
 
 <!--
@@ -733,11 +710,11 @@ Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradie
 * Projections map to points in the (convex) set closest to the original point.
 -->
 
-* Giao của các tập lồi là tập lồi. Hợp của các tập lồi không bắt buộc phải là tập lồi. 
-* Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen). 
-* Hàm khả vi hai lần là hàm lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi. 
-* Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực tế, ta chỉ việc thêm chúng cùng với một mức phạt vào hàm mục tiêu. 
-* Các phép chiếu ánh xạ đến các điểm trong tập (lồi) nằm gần nhất với điểm gốc.  
+* Giao của các tập lồi là tập lồi. Hợp của các tập lồi không bắt buộc phải là tập lồi.
+* Kỳ vọng của hàm lồi lớn hơn hàm lồi của kỳ vọng (Bất đẳng thức Jensen).
+* Hàm khả vi hai lần là hàm lồi khi và chỉ khi đạo hàm bậc hai của nó chỉ có các trị riêng không âm ở mọi nơi.
+* Các ràng buộc lồi có thể được thêm vào hàm Lagrange. Trong thực tế, ta chỉ việc thêm chúng cùng với một mức phạt vào hàm mục tiêu.
+* Các phép chiếu ánh xạ đến các điểm trong tập (lồi) nằm gần nhất với điểm gốc.
 
 <!--
 ## Exercises
@@ -761,58 +738,33 @@ Phần tiếp theo chúng ta sẽ thấy cách mà hạ gradient và hạ gradie
 9. Given a convex set $X$ and two vectors $\mathbf{x}$ and $\mathbf{y}$ prove that projections never increase distances, i.e., $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$.
 -->
 
-1. Giả sử chúng ta muốn xác minh tính lồi của tập hợp bằng cách vẽ mọi đoạn thẳng giữa các điểm bên trong tập hợp và kiểm tra liệu các đoạn thẳng có nằm trong tập hợp đó hay không. 
-    * Hãy chứng mình rằng ta chỉ cần kiểm tra các điểm ở biên là đủ. 
-    * Hãy chứng minh rằng ta chỉ cần kiểm tra các đỉnh của tập hợp là đủ. 
+1. Giả sử chúng ta muốn xác minh tính lồi của tập hợp bằng cách vẽ mọi đoạn thẳng giữa các điểm bên trong tập hợp và kiểm tra liệu các đoạn thẳng có nằm trong tập hợp đó hay không.
+    * Hãy chứng mình rằng ta chỉ cần kiểm tra các điểm ở biên là đủ.
+    * Hãy chứng minh rằng ta chỉ cần kiểm tra các đỉnh của tập hợp là đủ.
 2. Ký hiệu khối cầu có bán kính $r$ sử dụng chuẩn $p$ là $B_p[r] := \{\mathbf{x} | \mathbf{x} \in \mathbb{R}^d \text{ và } \|\mathbf{x}\|_p \leq r\}$. Hãy chứng minh rằng $B_p[r]$ là lồi với mọi $p \geq 1$. 
-3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là hàm lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi. 
-4. Hãy chứng minh rằng hàm softmax được chuẩn hoá là hàm lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$. 
-5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$. 
-6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó. 
-7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một giá trị $\xi \in [0, \epsilon]$ nào đó. 
-8. Cho vector $\mathbf{w} \in \mathbb{R}^d$ với $\|\mathbf{w}\|_1 > 1$, hãy tính phép chiếu lên khối cầu đơn vị $\ell_1$. 
-    * Như một bước trung gian, hãy viết ra mục tiêu có lượng phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$. 
-    * Bạn có thể tìm ra giá trị 'chính xác' của $\lambda$ mà không phải đoán mò quá nhiều lần không? 
-9. Cho tập lồi $X$ và hai vector $\mathbf{x}$, $\mathbf{y}$, hãy chứng minh rằng các phép chiếu không bao giờ làm tăng khoảng cách, ví dụ, $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$. 
-    
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
+3. Cho các hàm lồi $f$ và $g$ sao cho $\mathrm{max}(f, g)$ cũng là hàm lồi. Hãy chứng minh rằng $\mathrm{min}(f, g)$ không lồi.
+4. Hãy chứng minh rằng hàm softmax được chuẩn hóa là hàm lồi. Cụ thể hơn, chứng minh tính lồi của $f(x) = \log \sum_i \exp(x_i)$.
+5. Hãy chứng minh rằng các không gian con tuyến tính là các tập lồi. Ví dụ, $X = \{\mathbf{x} | \mathbf{W} \mathbf{x} = \mathbf{b}\}$.
+6. Hãy chứng minh rằng trong trường hợp của các không gian con tuyến tính với $\mathbf{b} = 0$, phép chiếu $\mathrm{Proj}_X$ có thể được viết dưới dạng $\mathbf{M} \mathbf{x}$ với một ma trận $\mathbf{M}$ nào đó.
+7. Hãy chỉ ra rằng với các hàm số khả vi hai lần $f$, ta có thể viết $f(x + \epsilon) = f(x) + \epsilon f'(x) + \frac{1}{2} \epsilon^2 f''(x + \xi)$ với một giá trị $\xi \in [0, \epsilon]$ nào đó.
+8. Cho vector $\mathbf{w} \in \mathbb{R}^d$ với $\|\mathbf{w}\|_1 > 1$, hãy tính phép chiếu lên khối cầu đơn vị $\ell_1$.
+    * Như một bước trung gian, hãy viết ra mục tiêu có lượng phạt $\|\mathbf{w} - \mathbf{w}'\|_2^2 + \lambda \|\mathbf{w}'\|_1$ và tính ra đáp án với $\lambda > 0$.
+    * Bạn có thể tìm ra giá trị 'chính xác' của $\lambda$ mà không phải đoán mò quá nhiều lần không?
+9. Cho tập lồi $X$ và hai vector $\mathbf{x}$, $\mathbf{y}$, hãy chứng minh rằng các phép chiếu không bao giờ làm tăng khoảng cách, ví dụ, $\|\mathbf{x} - \mathbf{y}\| \geq \|\mathrm{Proj}_X(\mathbf{x}) - \mathrm{Proj}_X(\mathbf{y})\|$.
+
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/4368)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/350)
+* [Tiếng Anh - Pytorch](https://discuss.d2l.ai/t/488)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Võ Tấn Phát
+* Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 2 -->
-* Võ Tấn Phát
-
-<!-- Phần 3 -->
-* Võ Tấn Phát
-
-<!-- Phần 4 -->
-* Võ Tấn Phát
-
-<!-- Phần 5 -->
-* Võ Tấn Phát
-
-<!-- Phần 6 -->
+* Phạm Minh Đức
 * Võ Tấn Phát
