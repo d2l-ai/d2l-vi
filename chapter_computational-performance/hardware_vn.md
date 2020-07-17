@@ -61,7 +61,7 @@ Most deep learning researchers have access to a computer with a fair amount of m
 -->
 
 Hầu hết những nhà nghiên cứu học sâu đều được trang bị hệ thống máy tính có bộ nhớ và khả năng tính toán khá lớn với một hay nhiều GPU.
-
+Những máy tính này thường có những thành phần chính sau:
 
 <!--
 * A processor, also referred to as CPU which is able to execute the programs we give it (in addition to running an operating system and many other things), typically consisting of 8 or more cores.
@@ -74,12 +74,16 @@ provides efficient transfer of training data to the system and storage of interm
 -->
 
 * Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 hoặc nhiều nhân (_core_).
-* Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, v 
+* Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, và dữ liệu huấn luyện.
+* Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các kết nối tốc độ cao trong các server tân tiến).
+* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống server thường có tới 8 GPU được kết nối với topology phức tạp, các hệ thống máy tính thường có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
+* Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian khi cần một cách hiệu quả. 
+
 <!--
 ![Connectivity of components](../img/mobo-symbol.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/mobo-symbol.svg)
+![Kết nối các thành phần máy tính](../img/mobo-symbol.svg)
 :label:`fig_mobo-symbol`
 
 
@@ -90,7 +94,10 @@ For instance AMD's Threadripper 3 has 64 PCIe 4.0 lanes, each of which is capabl
 The memory is directly attached to the CPU with a total bandwidth of up to 100 GB/s.
 -->
 
-*dịch đoạn phía trên*
+Hình :numref:`fig_mobo-symbol` cho thấy, hầu hết các thành phần (mạng, GPU, ổ lưu trữ) được kết nối tới GPU thông qua đường bus PCI mở rộng.
+Đường truyền này gồm nhiều làn kết nối trực tiếp tới CPU.
+Ví dụ, Threadripper 3 của AMD có 64 làn PCIe 4.0, mỗi làn có khả năng truyền dẫn 16 Gbit/s dữ liệu trên cả hai chiều.
+Bộ nhớ được gắn tới CPU với băng thông lên đến 100 GB/s.
 
 
 <!--
@@ -102,7 +109,12 @@ Finally, if we want to synchronize multiple computers across the network, the la
 Let us have a look at the various components in more detail.
 -->
 
-*dịch đoạn phía trên*
+Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở các bộ xử lý (CPU hay GPU), thực hiện tính toán và sau đó truyền kết quả tới RAM hay ổ lưu trữ.
+Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà ngay cả khi một trong các hệ thống bị tắc nghẽn.
+Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
+Tương tự, nếu ta không thể truyền ma trận đủ nhanh tới CPU (hay GPU), bộ xử lý sẽ thiếu dữ liệu để hoạt động.
+Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm tính toán. Một lựa chọn đó là xen kẽ giao tiếp và tính toán giữa các máy tính.
+Bây giờ ta hãy xem xét các thành phần trên một cách chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
