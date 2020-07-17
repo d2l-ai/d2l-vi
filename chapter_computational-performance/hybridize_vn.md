@@ -212,7 +212,7 @@ Chúng tôi sẽ minh hoạ lợi ích của việc này ở ví dụ bên dư�
 ## HybridSequential
 -->
 
-## *dịch tiêu đề phía trên*
+## HybridSequential
 
 <!--
 The easiest way to get a feel for how hybridization works is to consider deep networks with multiple layers. 
@@ -223,7 +223,12 @@ The single-threaded Python interpreter becomes the bottleneck here.
 Let's see how we can address this for significant parts of the code by replacing `Sequential` by `HybridSequential`. We begin by defining a simple MLP.
 -->
 
-*dịch đoạn phía trên*
+Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là xem xét trường hợp các mạng sâu đa tầng.
+Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho tất cả các tầng để sinh một lệnh mà sau đó có thể được truyền tới CPU hoặc GPU.
+Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
+Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ như P3dn.24xlarge trên AWS, Python sẽ gặp khó khăn để tận dụng tất cả GPU cùng lúc.
+Lúc này trình thông dịch Python đơn luồng trở thành nút thắt cổ chai.
+Hãy xem làm thế nào để giải quyết vấn đề trên cho phần lớn đoạn mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
 
 ```{.python .input  n=3}
 from d2l import mxnet as d2l
@@ -250,7 +255,8 @@ By calling the `hybridize` function, we are able to compile and optimize the com
 The model’s computation result remains unchanged.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách gọi hàm `hybridize`, ta có thể biên dịch và tối ưu hóa các tính toán trong MLP.
+Kết quả tính toán của mô hình vẫn không thay đổi.
 
 ```{.python .input  n=4}
 net.hybridize()
@@ -265,7 +271,11 @@ That said, the blocks provided by Gluon are by default subclasses of `HybridBloc
 A layer will not be optimized if it inherits from the `Block` instead.
 -->
 
-*dịch đoạn phía trên*
+Điều này có vẻ tốt đến mức khó tin: chỉ cần chỉ định một khối thành `HybridSequential`, sử dụng mã nguồn tương tự như trước và gọi hàm `hybridize`.
+Một khi điều này xảy ra, mạng sẽ được tối ưu hóa (chúng ta sẽ đánh giá hiệu năng dưới đây).
+Đáng tiếc là cách này không hoạt động với mọi tầng.
+Tuy vậy, các khối được cung cấp sẵn bởi Gluon mặc định được kế thừa từ lớp `HybridBlock` và do đó có thể hybrid hoá được.
+Tầng kế thừa từ lớp `Block` sẽ không thể tối ưu hoá được.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -536,7 +546,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
