@@ -467,7 +467,7 @@ The benefit can range from small percentage points to more than twice the speed,
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Imperative programming makes it easy to design new models since it is possible to write code with control flow and the ability to use a large amount of the Python software ecosystem.
@@ -476,14 +476,17 @@ The benefit can range from small percentage points to more than twice the speed,
 * Models constructed by the `HybridSequential` and `HybridBlock` classes are able to convert imperative programs into symbolic programs by calling the `hybridize` method.
 -->
 
-*dịch đoạn phía trên*
+* Lập trình mệnh lệnh khiến việc thiết kế mô hình mới dễ dàng hơn vì ta có thể viết mã với luồng điều khiển và được sử dụng hệ sinh thái phần mềm của Python.
+* Lập trình ký hiệu đòi hỏi chúng ta định nghĩa và biên dịch chương trình trước khi thực thi nó. Lợi ích là hiệu năng được cải thiện.
+* MXNet có thể kết hợp những ưu điểm của cả hai phương pháp khi cần thiết.
+* Mô hình được xây dựng bởi các lớp `HybridSequential` và `HybridBlock` có thể chuyển đổi các chương trình mệnh lệnh thành các chương trình ký hiệu bằng cách gọi phương thức `hybridize`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Design a network using the `HybridConcurrent` class. Alternatively look at :ref:`sec_googlenet` for a network to compose.
@@ -492,7 +495,10 @@ The benefit can range from small percentage points to more than twice the speed,
 4. Review the models that interest you in the previous chapters and use the HybridBlock class or HybridSequential class to implement them.
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thiết kế một mạng bằng cách sử dụng lớp `HybridConcurrent`, có thể thử với GoogleNet trong :ref: `sec_googlenet`.
+2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet. Hãy thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
+3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là, các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
+4. Hãy lập trình các mô hình mà bạn quan tâm trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -531,4 +537,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Quang
