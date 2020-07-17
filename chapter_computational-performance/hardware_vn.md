@@ -31,7 +31,7 @@ Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, 
 Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
 Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
 Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
-Đây không phải là hướng dẫn mua card GPU. 
+Cần lưu ý, phần này sẽ không hướng dẫn cách lựa chọn card GPU. 
 Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
 
 <!--
