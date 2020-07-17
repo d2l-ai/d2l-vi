@@ -25,8 +25,8 @@ An introduction to cloud computing with AWS can be found in :numref:`sec_aws`.
 
 Để xây dựng các hệ thống có hiệu năng cao, ta cần nắm chắc kiến thức về các thuật toán và mô hình để có thể biểu diễn được những khía cạnh thống kê của bài toán.
 Đồng thời, ta cũng cần có chút kiến thức về phần cứng cơ bản.
-Phần này không có mục đích cung cấp kiến thức đầy đủ về phần cứng và thiết kế hệ thống.
-Thay vào đó, phần này sẽ đóng vai trò là điểm bắt đầu để hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
+Nội dung trong phần này không thể thay thế một khóa học đầy đủ về phần cứng và thiết kế hệ thống,
+mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
 Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt về độ lớn, giữa khả năng có thể huấn luyện một mô hình (ví dụ, trong khoảng một tuần) và không thể huấn luyện (ví dụ, mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ).
 Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
 Tiếp theo, ta hãy lại gần và xem xét CPU và GPU một cách chi tiết hơn.
