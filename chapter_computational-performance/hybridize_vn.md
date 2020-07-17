@@ -472,7 +472,7 @@ Thật vậy, sau khi lai ghép hóa, việc thực thi lệnh `net(x)` không c
 Điều này có nghĩa rằng bất cứ đoạn chương trình nào của Python không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
 Và như thế, MXNet gọi trực tiếp back-end C++. 
 Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
-Tuy nhiên, việc biên dịch các mô hình này đáng để thực hiện bất cứ khi nào ta cần quan tâm đến tốc độ.
+Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
 Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
