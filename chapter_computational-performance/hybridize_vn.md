@@ -279,7 +279,7 @@ A layer will not be optimized if it inherits from the `Block` instead.
 ### Acceleration by Hybridization
 -->
 
-### *dịch tiêu đề phía trên*
+### Tăng tốc bằng Hybrid hoá
 
 <!--
 To demonstrate the performance improvement gained by compilation we compare the time needed to evaluate `net(x)` before and after hybridization. 
@@ -287,7 +287,9 @@ Let's define a function to measure this time first.
 It will come handy throughout the chapter as we set out to measure (and improve) performance.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau phép hybrid hoá.
+Đầu tiên, ta hãy định nghĩa một hàm để đo thời gian trên.
+Hàm này sẽ hữu ích trong suốt chương này khi chúng ta đo (và cải thiện) hiệu năng.
 
 ```{.python .input}
 #@save
@@ -307,7 +309,7 @@ class Benchmark:
 Now we can invoke the network twice, once with and once without hybridization.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể gọi mạng hai lần tương ứng với việc có hoặc không hybrid hoá.
 
 ```{.python .input  n=5}
 net = get_net()
@@ -325,14 +327,14 @@ with Benchmark('With hybridization'):
 As is observed in the above results, after a HybridSequential instance calls the `hybridize` function, computing performance is improved through the use of symbolic programming.
 -->
 
-*dịch đoạn phía trên*
-
+Như quan sát được trong các kết quả trên, sau khi thực thể HybridSequential gọi hàm `hybridize`, hiệu năng tính toán được cải thiện thông qua việc sử dụng lập trình ký hiệu.
 
 <!--
 ### Serialization
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuỗi hoá 
+<!--https://itviec.com/blog/wp-content/uploads/download-manager-files/OOP_2013.pdf-->
 
 <!--
 One of the benefits of compiling the models is that we can serialize (save) the model and its parameters to disk. 
@@ -342,7 +344,11 @@ At the same time the code is often faster than what can be achieved in imperativ
 Let's see the `export` method in action.
 -->
 
-*dịch đoạn phía trên*
+Một trong những lợi ích của việc biên dịch các mô hình là ta có thể chuỗi hoá (_serialize_) mô hình và các tham số mô hình để lưu trữ.
+Điều này cho phép ta có thể lưu trữ mô hình mà không phụ thuộc vào ngôn ngữ front-end.
+Điều này cũng cho phép ta có thể sử dụng các mô hình đã huấn luyện trên các thiết bị khác và dễ dàng sử dụng các ngôn ngữ lập trình front-end khác.
+Đồng thời, mã nguồn này thường thực thi nhanh hơn so với khi lập trình mệnh lệnh.
+Hãy xem xét phương thức `export` sau.
 
 ```{.python .input  n=13}
 net.export('my_mlp')
@@ -354,7 +360,8 @@ The model is decomposed into a (large binary) parameter file and a JSON descript
 The files can be read by other front-end languages supported by Python or MXNet, such as C++, R, Scala, and Perl. Let's have a look at the model description.
 -->
 
-*dịch đoạn phía trên*
+Mô hình này được chia ra thành một tập tin (nhị phân) lớn chứa tham số và tập tin JSON mô tả cấu trúc mô hình.
+Các tập tin có thể được đọc bởi các ngôn ngữ front-end khác được hỗ trợ bởi Python hoặc MXNet, ví dụ C ++, R, Scala, và Perl. Tập tin JSON có dạng như sau.
 
 ```{.python .input  n=7}
 !head my_mlp-symbol.json
@@ -365,16 +372,17 @@ Things are slightly more tricky when it comes to models that resemble code more 
 Basically hybridization needs to deal with control flow and Python overhead in a much more immediate manner. Moreover,
 -->
 
-*dịch đoạn phía trên*
+Mọi thứ phức tạp hơn một chút khi nói đến các mô hình gần với mã nguồn.
+Về cơ bản việc hybrid hoá cần làm việc trực tiếp với luồng điều khiển và các chi phí tính toán của Python.
+
 
 <!--
 Contrary to the Block instance, which needs to use the `forward` function, for a HybridBlock instance we need to use the `hybrid_forward` function.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, trong khi thực thể của lớp Block cần sử dụng hàm `forward`, thì thực thể của lớp HybridBlock lại sử dụng hàm `hybrid_forward`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -531,7 +539,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 5 -->
 * 
