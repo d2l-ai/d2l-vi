@@ -33,6 +33,7 @@ Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết
 Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
 Cần lưu ý, phần này sẽ không hướng dẫn cách lựa chọn card GPU. 
 Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
+Giới thiệu về điện toán đám mây trên AWS có thể tìm thấy tại :numref:`sec_aws`.
 
 <!--
 Impatient readers may be able to get by with :numref:`fig_latencynumbers`.
@@ -794,6 +795,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * 
