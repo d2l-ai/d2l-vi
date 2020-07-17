@@ -34,7 +34,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## B
 | English                                | Tiếng Việt                     | Thảo luận tại                                |
 |----------------------------------------|--------------------------------|----------------------------------------------|
-| backend                                | back-end                   |                                              |
+| backend                                | back-end                       |                                              |
 | background noise                       | nhiễu nền                      | [https://git.io/JvQxm](https://git.io/JvQxm) |
 | backpropagation                        | lan truyền ngược               |                                              |
 | backpropagation through time           | lan truyền ngược qua thời gian |                                              |
@@ -166,7 +166,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | flatten                    | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
 | forward pass               | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework                  | framework            |                                              |
-| frontend                   | front-end      |                                              |
+| frontend                   | front-end            |                                              |
 | functional analysis        | giải tích hàm        |                                              |
 | fully-connected            | kết nối đầy đủ       | [https://git.io/JvohR](https://git.io/JvohR) |
 
@@ -264,7 +264,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | locality                           | tính cục bộ                    |                                              |
 | log-likelihood function            | hàm log hợp lý                 | [https://git.io/Jvopx](https://git.io/Jvopx) |
 | logistic regression                | hồi quy logistic               |                                              |
-| logit (softmax)              | logit                          | [https://git.io/JvohR](https://git.io/JvohR) |
+| logit (softmax)                    | logit                          | [https://git.io/JvohR](https://git.io/JvohR) |
 | loss function                      | hàm mất mát                    | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | loss landscape                     | cảnh quan mất mát              |                                              |
 | loss surface                       | bề mặt mất mát                 |                                              |
@@ -389,9 +389,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regularization                                     | điều chuẩn                                |                                              |
 | reinforcement learning                             | học tăng cường                            |                                              |
 | relative loss                                      | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
-| reparameterization                                 | tái tham số hoá                           |                                              |
+| reparameterization                                 | tái tham số hóa                           |                                              |
 | representation learning                            | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
-| rescale                                            | (phép) tái tỉ lệ                        | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| rescale                                            | (phép) tái tỉ lệ                          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | reset gate                                         | cổng xóa                                  |                                              |
 | residual network                                   | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
 | reward function                                    | hàm điểm thưởng                           |                                              |
@@ -406,11 +406,11 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sampling with replacement         | lấy mẫu có hoàn lại      | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | sampling without replacement      | lấy mẫu không hoàn lại   | [https://git.io/JvQxu](https://git.io/JvQxu) |
 | satisficing metric                | phép đo thỏa mãn         | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| scale                             | (phép) biến đổi tỉ lệ               |                                              |
+| scale                             | (phép) biến đổi tỉ lệ    |                                              |
 | scalar                            | số vô hướng              | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
-| serialization (programming)       | chuỗi hoá                |                                              |
+| serialization (programming)       | chuỗi hóa                |                                              |
 | sentiment classification          | phân loại cảm xúc        |                                              |
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
@@ -488,7 +488,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | variance (of an estimator) | phương sai         | [https://git.io/JvQxO](https://git.io/JvQxO) |
 | variational                | biến phân          |                                              |
 | vector                     | vector             |                                              |
-| vectorization              | vector hoá         |                                              |
+| vectorization              | vector hóa         |                                              |
 
 ## W
 | English                                   | Tiếng Việt        | Thảo luận tại                                |
