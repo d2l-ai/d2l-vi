@@ -433,7 +433,7 @@ Repeating the forward computation will lead to the same output (we omit details)
 Now let's see what happens if we invoke the `hybridize` method.
 -->
 
-Thực hiện lặp lại việc tính toán lan truyền thuận sẽ đưa tới cùng kết quả (ta bỏ qua chi tiết).
+Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (bỏ qua chi tiết).
 Bây giờ ta hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
 
 ```{.python .input  n=10}
