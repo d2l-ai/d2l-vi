@@ -414,7 +414,9 @@ This forces the forward pass to complete before a new forward pass is commenced.
 Note that a (possibly more elegant) alternative would have been to track the loss in a scalar variable and to force a barrier via the `item` call.
 -->
 
-*dịch đoạn phía trên*
+Để đảm bảo bộ đệm tác vụ tại back-end không bị tràn, ta chèn phương thức `wait_to_read` vào back-end cho hàm mất mát ở cuối mỗi vòng lặp.
+Điều này buộc một lượt truyền xuôi phải hoàn thành trước khi lượt truyền xuối tiếp theo được bắt đầu.
+Chú ý rằng có một phương án thay thế khác (có lẽ tinh tế hơn) là theo dõi lượng mất mát ở biến vô hướng và buộc đi qua một lớp cản (*barrier*) qua việc gọi phương thức `item`.
 
 
 ```{.python .input  n=14}
@@ -437,7 +439,9 @@ Moreover, memory footprint only increases slightly.
 Now let us see what happens if we drop the barrier at the end of each minibatch.
 -->
 
-*dịch đoạn phía trên*
+Như ta có thể thấy, thời gian thực hiện từng minibatch khá khớp so với tổng thời gian chạy của đoạn mã tối ưu.
+Hơn nữa, lượng bộ nhớ sử dụng tăng không đáng kể.
+Giờ hãy cùng xem chuyện gì sẽ xảy ra nếu ta bỏ lớp chặn ở cuối mỗi minibatch.
 
 
 ```{.python .input  n=14}
@@ -459,7 +463,9 @@ Consequently a large amount of intermediate results cannot be released and may p
 While this didn't cause any issues in the toy example above, it might well have resulted in out of memory situations when left unchecked in real world scenarios.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù thời gian để đưa ra chỉ dẫn cho back-end nhỏ hơn đến hàng chục lần, ta vẫn cần thực hiện các bước tính toán.
+Hậu quả là một lượng lớn các kết quả trung gian không được đưa ra sử dụng và có thể chất đống trong bộ nhớ.
+Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ nhỏ trên, nó có thể dẫn đến tình trạng cạn kiệt bộ nhớ nếu không được kiểm tra trong viễn cảnh thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -530,7 +536,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 7 -->
 * 
