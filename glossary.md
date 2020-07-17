@@ -116,6 +116,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | differentiable            | khả vi                          | [https://git.io/JvKee](https://git.io/JvKee) |
 | dimension                 | chiều                           |                                              |
 | dimensionality            | kích thước chiều                |                                              |
+| distributed               | phân tán                        |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
