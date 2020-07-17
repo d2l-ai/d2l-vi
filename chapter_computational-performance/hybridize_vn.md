@@ -228,7 +228,7 @@ Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho t�
 Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
 Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ như P3dn.24xlarge trên AWS, Python sẽ gặp khó khăn để tận dụng tất cả GPU cùng lúc.
 Lúc này trình thông dịch Python đơn luồng trở thành nút thắt cổ chai.
-Ta hãy xem làm thế nào để giải quyết vấn đề trên cho các phần chính yếu của mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
+Hãy xem làm thế nào để giải quyết vấn đề trên cho phần lớn đoạn mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
 
 ```{.python .input  n=3}
 from d2l import mxnet as d2l
@@ -274,8 +274,8 @@ A layer will not be optimized if it inherits from the `Block` instead.
 Điều này có vẻ tốt đến mức khó tin: chỉ cần chỉ định một khối thành `HybridSequential`, sử dụng mã nguồn tương tự như trước và gọi hàm `hybridize`.
 Một khi điều này xảy ra, mạng sẽ được tối ưu hóa (chúng ta sẽ đánh giá hiệu năng dưới đây).
 Đáng tiếc là cách này không hoạt động với mọi tầng.
-Có nghĩa là, các khối được tạo bởi Gluon mặc định là lớp con của `HybridBlock` và do đó có thể hybrid hoá được.
-Một tầng sẽ không được tối ưu hóa nếu nó kế thừa từ lớp `Block`.
+Tuy vậy, các khối được cung cấp sẵn bởi Gluon mặc định được kế thừa từ lớp `HybridBlock` và do đó có thể hybrid hoá được.
+Tầng kế thừa từ lớp `Block` sẽ không thể tối ưu hoá được.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
