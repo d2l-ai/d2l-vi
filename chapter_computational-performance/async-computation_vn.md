@@ -483,7 +483,12 @@ Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ
 * Chip vendors offer sophisticated performance analysis tools to obtain a much more fine-grained insight into the efficiency of deep learning.
 -->
 
-*dịch đoạn phía trên*
+* MXNet tách riêng khối front-end Python khỏi khối back-end thực thi. Điều này cho phép nhanh chóng chèn các câu lệnh một cách bất đồng bộ vào khối back-end và kết hợp song song hóa.
+* Sự bất đồng bộ làm front-end phản ứng nhanh hơn. Tuy nhiên, cần phải áp dụng cẩn thận sao cho không làm đầy hàng đợi tác vụ, gây tốn bộ nhớ.
+* Nên đồng bộ theo từng minibatch một để giữ cho front-end và back-end được đồng bộ xấp xỉ nhau.
+* Nên nhớ rằng việc chuyển quản lý bộ nhớ từ MXNet sang Python sẽ buộc back-end phải chờ cho đến khi biến đó sẵn sàng.
+`print`, `asnumpy` và `item` đều thực hiện hành động này. Điều này có thể có ích đôi lúc, tuy nhiên việc sử dụng không cẩn thận có thể làm giảm sút hiệu năng.
+* Nhà sản xuất vi xử lý cung cấp các công cụ phân tích hiệu năng tinh vi giúp đánh giá chi tiết hơn rất nhiều về hiệu năng của học sâu.
 
 
 ## Bài tập
@@ -495,7 +500,10 @@ Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ
 4. Measure the difference between `waitall` and `wait_to_read`. Hint: perform a number of instructions and synchronize for an intermediate result.
 -->
 
-*dịch đoạn phía trên*
+1. Như đã đề cập ở trên, sử dụng tính toán bất đồng bộ có thể giảm tổng thời gian cần thiết để thực hiện $1000$ phép tính xuống $t_1 + 1000 t_2 + t_3$. Tại sao ở đó ta lại phải giả sử $1000 t_2 > 999 t_1$?
+2. Bạn có thể chỉnh sửa vòng lặp huấn luyện như thế nào nếu muốn xử lý 2 batch cùng lúc? Tức bạn muốn đảm bảo rằng batch $b_t$ hoàn thành trước khi batch $b_{t+2}$ bắt đầu?
+3. Chuyện gì sẽ xảy ra nếu thực thi mã nguồn đồng thời trên cả CPU và GPU? Liệu có nên tiếp tục đồng bộ sau khi mỗi minibatch được đưa ra?
+4. So sánh sự khác nhau giữa `waitall` và `wait_to_read`. Gợi ý: thực hiện một số lệnh và đồng bộ theo kết quả trung gian.
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -540,4 +548,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
