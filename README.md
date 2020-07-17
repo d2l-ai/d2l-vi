@@ -14,6 +14,13 @@ Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 ## Bảng thuật ngữ
 Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
 
+<!--
+## Lời cảm ơn
+
+[acknowledgments](acknowledgments.md)
+
+-->
+
 ## Mục lục
 
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
@@ -31,15 +38,15 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 * [x] 3. [Mạng nơ-ron Tuyến tính](chapter_linear-networks/index_vn.md)
     * [x] 3.1. [Hồi quy Tuyến tính](chapter_linear-networks/linear-regression_vn.md)
     * [x] 3.2. [Lập trình Hồi quy Tuyến tính từ đầu](chapter_linear-networks/linear-regression-scratch_vn.md)
-    * [x] 3.3. [Cách lập trình súc tích Hồi quy Tuyến tính](chapter_linear-networks/linear-regression-gluon_vn.md)
+    * [x] 3.3. [Cách lập trình Súc tích Hồi quy Tuyến tính](chapter_linear-networks/linear-regression-gluon_vn.md)
     * [x] 3.4. [Hồi quy Softmax](chapter_linear-networks/softmax-regression_vn.md)
     * [x] 3.5. [Bộ dữ liệu Phân loại Ảnh (Fashion-MNIST)](chapter_linear-networks/fashion-mnist_vn.md)
     * [x] 3.6. [Lập trình Hồi quy Sofmax từ đầu](chapter_linear-networks/softmax-regression-scratch_vn.md)
-    * [x] 3.7. [Cách lập trình súc tích Hồi quy Softmax](chapter_linear-networks/softmax-regression-gluon_vn.md)
+    * [x] 3.7. [Cách lập trình Súc tích Hồi quy Softmax](chapter_linear-networks/softmax-regression-gluon_vn.md)
 * [x] 4. [Perceptron Đa tầng](chapter_multilayer-perceptrons/index_vn.md)
     * [x] 4.1. [Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp_vn.md)
     * [x] 4.2. [Lập trình Perceptron Đa tầng từ đầu](chapter_multilayer-perceptrons/mlp-scratch_vn.md)
-    * [x] 4.3. [Cách lập trình súc tích Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
+    * [x] 4.3. [Cách lập trình Súc tích Perceptron Đa tầng](chapter_multilayer-perceptrons/mlp-gluon_vn.md)
     * [x] 4.4. [Lựa chọn Mô hình, Dưới khớp và Quá khớp](chapter_multilayer-perceptrons/underfit-overfit_vn.md)
     * [x] 4.5. [Suy giảm Trọng số](chapter_multilayer-perceptrons/weight-decay_vn.md)
     * [x] 4.6. [Dropout](chapter_multilayer-perceptrons/dropout_vn.md)
@@ -75,7 +82,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 8.3. [Mô hình Ngôn ngữ và Tập dữ liệu](chapter_recurrent-neural-networks/language-models-and-dataset_vn.md)
     * [x] 8.4. [Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/rnn_vn.md)
     * [x] 8.5. [Lập trình Mạng nơ-ron Hồi tiếp từ đầu](chapter_recurrent-neural-networks/rnn-scratch_vn.md)
-    * [x] 8.6. [Cách lập trình súc tích Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/rnn-gluon_vn.md)
+    * [x] 8.6. [Cách lập trình Súc tích Mạng nơ-ron Hồi tiếp](chapter_recurrent-neural-networks/rnn-gluon_vn.md)
     * [x] 8.7. [Lan truyền Ngược qua Thời gian](chapter_recurrent-neural-networks/bptt_vn.md)
 * [x] 9. [Mạng Hồi tiếp Hiện đại](chapter_recurrent-modern/index_vn.md)
     * [x] 9.1. [Nút Hồi tiếp có Cổng (GRU)](chapter_recurrent-modern/gru_vn.md)
@@ -106,10 +113,10 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [-] 12.1. [Trình biên dịch và Trình thông dịch](chapter_computational-performance/hybridize_vn.md)
     * [-] 12.2. [Tính toán Bất đồng bộ](chapter_computational-performance/async-computation_vn.md)
     * [-] 12.3. [Song song hóa Tự động](chapter_computational-performance/auto-parallelism_vn.md)
-    * [-] 12.4. [Hardware](chapter_computational-performance/hardware_vn.md)
-    * [-] 12.5. [Training on Multiple GPUs](chapter_computational-performance/multiple-gpus_vn.md)
-    * [-] 12.6. [Concise Implementation for Multiple GPUs](chapter_computational-performance/multiple-gpus-gluon_vn.md)
-    * [-] 12.7. [Parameter Servers](chapter_computational-performance/parameterserver_vn.md)
+    * [-] 12.4. [Phần cứng](chapter_computational-performance/hardware_vn.md)
+    * [-] 12.5. [Huấn luyện đa GPU](chapter_computational-performance/multiple-gpus_vn.md)
+    * [-] 12.6. [Cách lập trình Súc tích đa GPU](chapter_computational-performance/multiple-gpus-gluon_vn.md)
+    * [-] 12.7. [Tham số Máy chủ](chapter_computational-performance/parameterserver_vn.md)
 * [ ] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
     * [ ] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
     * [ ] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)
@@ -178,3 +185,10 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [ ] 19.5. [Lựa chọn Máy chủ & GPU](chapter_appendix-tools-for-deep-learning/selecting-servers-gpus_vn.md)
     * [ ] 19.6. [Đóng góp cho Quyển sách](chapter_appendix-tools-for-deep-learning/contributing_vn.md)
     * [ ] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
+
+
+## Giấy phép
+
+Cuốn sách này được cung cấp dưới giấy phép **[Creative Commons Attribution-ShareAlike 4.0 International Public License](LICENSE)**.
+
+Mã nguồn mẫu và tham chiếu trong cuốn sách này được cung cấp theo **[MIT License](LICENSE-SAMPLECODE)** đã có sự điều chỉnh.
