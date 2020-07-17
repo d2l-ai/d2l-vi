@@ -449,7 +449,7 @@ Repeating the function call leads to a surprising outcome:
 
 Thay vì sử dụng `ndarray` ta lúc này sử dụng mô-đun `symbol` cho `F`.
 Thêm vào đó, thậm chí với đầu vào thuộc kiểu `ndarray`, luồng dữ liệu qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
-Thực hiện lặp lại gọi hàm `net` dẫn tới một kết quả đáng kinh ngạc:
+Thực hiện gọi hàm `net` nhiều lần dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
 net(x)
