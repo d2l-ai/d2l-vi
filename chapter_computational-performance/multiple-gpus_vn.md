@@ -47,7 +47,7 @@ In a nutshell, we have a number of choices, given a minibatch of training data t
 
 Ta hãy bắt đầu bằng một bài toán thị giác máy tính đơn giản cùng một kiến trúc mạng hơi cổ lỗ xỉ, như là nhiều tầng tích chập, tầng gộp và có thể thêm vài tầng dày đặc ở cuối.
 Như vậy, ta sẽ bắt đầu với một mạng trông khá tương tự như LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
-Với nhiều GPUS (máy chủ để bàn thường có 2, máy chủ g4dn.12xlarge thì có 4, AWS p3.16xlarge có 8, hoặc là 16 trên p2.16xlarge),
+Với nhiều GPU (máy chủ để bàn thường có 2, máy chủ g4dn.12xlarge thì có 4, AWS p3.16xlarge có 8, hoặc là 16 trên p2.16xlarge),
 ta muốn phân chia việc huấn luyện theo một cách mà vừa tăng tốc độ lại tận hưởng được lợi ích từ các lựa chọn thiết kế đơn giản và tái diễn được.
 Nhiều GPU, sau tất cả, là để tăng cả *bộ nhớ* và năng lực *tính toán*.
 Tóm lại, với một minibatch dữ liệu huấn luyện để phân loại, ta có một vài phương án phân tách khác nhau.
