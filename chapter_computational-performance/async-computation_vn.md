@@ -181,7 +181,7 @@ Hơn nữa nếu bỏ qua hiệu năng của Python, thiết kế này không �
 ## Barriers and Blockers
 -->
 
-## *dịch tiêu đề phía trên*
+## Lớp cản và Bộ chặn
 
 <!--
 There are a number of operations that will force Python to wait for completion:
@@ -191,13 +191,18 @@ In practice it is a bad idea to use this operator unless absolutely necessary si
 In this case MXNet blocks return to Python until the variable `z` has been computed. Other computation may well continue afterwards.
 -->
 
-*dịch đoạn phía trên*
+Có khá nhiều thao tác buộc Python phải chờ cho đến khi nó hoàn thành:
+* Điển hình nhất là `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn thành, bất chấp thời điểm câu lệnh tính toán được đưa ra.
+Trong thực tế, trừ khi thực sự cần thiết, việc sử dụng thao tác này là một ý tưởng tồi do nó có thể gây giảm hiệu năng.
+* Nếu ta chỉ muốn chờ đến khi một biến cụ thể nào đó sẵn sàng, ta có thể gọi `z.wait_to_read()`.
+Trong trường hợp này MXNet chặn việc trả luồng điều khiển về Python cho đến khi biến `z` đã được tính xong. Các thao tác khác sau đó mới có thể tiếp tục.
+
 
 <!--
 Let us see how this works in practice:
 -->
 
-*dịch đoạn phía trên*
+Hãy xem cách các lệnh chờ trên hoạt động trong thực tế:
 
 
 ```{.python .input  n=5}
@@ -221,7 +226,13 @@ Copying small amounts of data frequently from MXNet's scope to NumPy and back ca
 since each such operation requires the compute graph to evaluate all intermediate results needed to get the relevant term *before* anything else can be done.
 -->
 
-*dịch đoạn phía trên*
+Cả hai thao tác hoàn thành với thời gian xấp xỉ nhau.
+Ngoài các thao tác chặn (*blocking operation*) tường minh, bạn đọc cũng nên biết về việc chặn *ngầm*.
+Rõ ràng việc in một biến ra yêu cầu biến đó phải sẵn sàng và do đó nó là một bộ chặn.
+Cuối cùng, ép kiểu sang NumPy bằng `z.asnumpy()` và ép kiểu sang số vô hướng bằng `z.item()` cũng là bộ chặn, do trong NumPy không có khái niệm bất đồng bộ.
+Có thể thấy việc ép kiểu cũng cần truy cập giá trị, giống như hàm `print`.
+Việc thường xuyên sao chép một lượng nhỏ dữ liệu từ phạm vi của MXNet sang NumPy và ngược lại có thể làm giảm đáng kể hiệu năng của một đoạn mã đáng lẽ sẽ có hiệu năng tốt,
+do mỗi thao tác như vậy buộc đồ thị tính toán phải tính toàn bộ giá trị trung gian để suy ra các số hạng cần thiết *trước khi* thực hiện bất cứ thao tác nào khác.
 
 
 ```{.python .input  n=7}
@@ -486,7 +497,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 * 
