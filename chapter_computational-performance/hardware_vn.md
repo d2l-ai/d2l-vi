@@ -50,7 +50,8 @@ Nội dung này được trích dẫn trong bài viết của [Colin Scott](http
 Số liệu gốc được trích dẫn từ bài giảng của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
 Thảo luận dưới đây sẽ giải thích những cơ sở căn bản cho những con số trên và làm sao những số liệu này có thể gợi ý ta cách thiết kế các thuật toán.
 Thảo luận này khá trừu tượng và ngắn gọn.
-
+Rõ ràng phần thảo luận này không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho các bạn làm thống kê có thể đưa ra lựa chọn thiết kế phù hợp.
+Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây như [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
