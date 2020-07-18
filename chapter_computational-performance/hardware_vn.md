@@ -57,7 +57,7 @@ Rõ ràng phần thảo luận này không thể thay thế một khóa học đ
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
 
-![Số liệu về độ trễ mà mỗi lập trình viên nên biết.](../img/latencynumbers.png)
+![Số liệu về độ trễ mà mọi lập trình viên nên biết.](../img/latencynumbers.png)
 :label:`fig_latencynumbers`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
