@@ -190,7 +190,7 @@ Chúng dùng một loại giao tiếp rất khác và kết nối trực tiếp 
 Không quá ngạc nhiên kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
 Đối với các mục tiêu của chúng ta, các đặc tính hiệu năng của chúng là xem xem nhau và đơn giản là nhanh hơn nhiều .
 Ta có thể bỏ qua chi tiết mà không vấn đề gì đối với mục đích của cuốn sách này.
-Chúng chỉ là vấn đề khi ta cần điều chỉnh các kernel GPU để đạt được lượng dữ liệu xử lý qua hệ thống cao.  
+Chúng chỉ là vấn đề khi ta cần điều chỉnh các kernel GPU để đạt được thông lượng xử lý cao hơn.  
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
