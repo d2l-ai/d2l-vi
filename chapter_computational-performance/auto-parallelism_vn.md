@@ -130,8 +130,8 @@ This occurs e.g., when we want to perform distributed optimization where we need
 Let us simulate this by computing on the GPU and then copying the results back to the CPU.
 -->
 
-Trong nhiều trường hợp ta cần di chuyển dữ liệu giữa các thiết bị, ở đây là CPU và GPU, hoặc giữa các GPU với nhau.
-Điều này xảy ra, chẳng hạn như ở nơi mà ta cần phải tổng hợp các gradient trên nhiều card tăng tốc khi ta muốn thực hiện tối ưu hóa phân tán.
+Trong nhiều trường hợp ta cần di chuyển dữ liệu giữa các thiết bị, CPU và GPU, hoặc giữa các GPU với nhau.
+Điều này xảy ra, chẳng hạn như khi cần phải tổng hợp các gradient trên nhiều GPU khi ta muốn thực hiện tối ưu hóa phân tán.
 Ta hãy mô phỏng điều này bằng việc tính toán trên GPU sau đó sao chép kết quả trở lại CPU.
 
 
@@ -157,10 +157,10 @@ Hence it works to our advantage to start using PCI-Express bus bandwidth while t
 Removing `waitall` between both parts allows us to simulate this scenario.
 -->
 
-Điều này hơi thiếu hiệu quả một chút. Lưu ý rằng ta có thể bắt đầu sao chép các phần của `y` đến CPU trong khi phần còn lại của danh sách đang được tính toán.
+Điều này hơi thiếu hiệu quả một chút. Lưu ý rằng ta có thể bắt đầu sao chép một vài phần đã tính xong của `y` đến CPU trong khi các phần còn lại của `y` đang được tính toán.
 Tình huống này xảy ra, ví dụ như khi ta tính toán gradient (lan truyền ngược) trên một minibatch.
 Gradient của một vài tham số sẽ có sớm hơn so với các tham số khác.
-Do đó ta sẽ có lợi nếu bắt đầu sử dụng bus băng thông PCI-Express trong khi GPU vẫn còn đang chạy.
+Do đó ta sẽ có lợi nếu bắt đầu truyền dữ liệu về bằng bus băng thông PCI-Express trong khi GPU vẫn còn đang chạy.
 Việc bỏ đi `waitall` giữa các phần cho phép ta mô phỏng kịch bản này.
 
 
@@ -180,8 +180,8 @@ As noted above, there is a dependency between computation and communication: `y[
 Fortunately, the system can copy `y[i-1]` while computing `y[i]` to reduce the total running time.
 -->
 
-Tổng thời gian cần cho cả hai thao tác thì ít hơn hẳn (như mong đợi) so với tổng của các phần.
-Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một nguồn khác: bus giữa CPU và GPU.
+Thời gian cần cho cả hai thao tác thì ít hơn hẳn (như mong đợi) so với tổng thời gian thực hiện từng thao tác đơn lẻ.
+Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một tài nguyên khác: bus giữa CPU và GPU.
 Thực tế, ta có thể vừa tính toán và giao tiếp trên cả hai thiết bị, tất cả cùng một lúc.
 Như đã lưu ý phía trên, có một sự phụ thuộc giữa việc tính toán và giao tiếp: `y[i]` phải được tính trước khi sao chép qua CPU.
 May mắn thay, hệ thống có thể sao chép `y[i-1]` trong khi tính toán `y[i]` để giảm thiểu tổng thời gian chạy.
