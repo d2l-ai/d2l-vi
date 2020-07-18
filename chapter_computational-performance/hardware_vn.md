@@ -670,7 +670,7 @@ Sự khác biệt hàng chục lần hoặc hơn là lý do cần quan tâm.
 ## More Latency Numbers
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ trễ
 
 
 <!--
@@ -678,14 +678,14 @@ The summary in :numref:`table_latency_numbers` and :numref:`table_latency_number
 who maintains an updated version of the numbers as a [GitHub Gist](https://gist.github.com/eshelman/343a1c46cb3fba142c1afdcdeec17646).
 -->
 
-*dịch đoạn phía trên*
+Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency_numbers_tesla` được [Eliot Eshelman](https://gist.github.com/eshelman) cập nhật thường xuyên trên [GitHub Gist](https://gist.github.com/eshelman/343a1c46cb3fba142c1afdcdeec17646).
 
 
 <!--
 :Common Latency Numbers.
 -->
 
-*dịch đoạn phía trên*
+:Các độ trễ thường gặp
 
 
 <!--
@@ -724,7 +724,39 @@ who maintains an updated version of the numbers as a [GitHub Gist](https://gist.
 | Send packet CA->Netherlands->CA            | 150 ms |                                                 |
 -->
 
-*dịch bảng phía trên*
+| Hoạt động                                  | Thời gian trễ   | Lưu ý                                           |
+| :----------------------------------------- | -----: | :---------------------------------------------- |
+| L1 cache reference/hit                     | 1.5 ns | 4 chu kỳ                                        |
+| Floating-point add/mult/FMA                | 1.5 ns | 4 chu kỳ                                        |
+| L2 cache reference/hit                     |   5 ns | 12 ~ 17 chu kỳ                                  |
+| Branch mispredict                          |   6 ns | 15 ~ 20 chu kỳ                                  |
+| L3 cache hit (unshared cache)              |  16 ns | 42 chu kỳ                                       |
+| L3 cache hit (shared in another core)      |  25 ns | 65 chu kỳ                                       |
+| Mutex lock/unlock                          |  25 ns |                                                 |
+| L3 cache hit (modified in another core)    |  29 ns | 75 chu kỳ                                       |
+| L3 cache hit (on a remote CPU socket)      |  40 ns | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
+| QPI hop to a another CPU (per hop)         |  40 ns |                                                 |
+| 64MB memory ref. (local CPU)               |  46 ns | TinyMemBench on Broadwell E5-2690v4             |
+| 64MB memory ref. (remote CPU)              |  70 ns | TinyMemBench on Broadwell E5-2690v4             |
+| 256MB memory ref. (local CPU)              |  75 ns | TinyMemBench on Broadwell E5-2690v4             |
+| Intel Optane random write                  |  94 ns | UCSD Non-Volatile Systems Lab                   |
+| 256MB memory ref. (remote CPU)             | 120 ns | TinyMemBench on Broadwell E5-2690v4             |
+| Intel Optane random read                   | 305 ns | UCSD Non-Volatile Systems Lab                   |
+| Send 4KB over 100 Gbps HPC fabric          |   1 μs | MVAPICH2 over Intel Omni-Path                   |
+| Compress 1KB with Google Snappy            |   3 μs |                                                 |
+| Send 4KB over 10 Gbps ethernet             |  10 μs |                                                 |
+| Write 4KB randomly to NVMe SSD             |  30 μs | DC P3608 NVMe SSD (QOS 99% is 500μs)            |
+| Transfer 1MB to/from NVLink GPU            |  30 μs | ~33GB/s on NVIDIA 40GB NVLink                   |
+| Transfer 1MB to/from PCI-E GPU             |  80 μs | ~12GB/s on PCIe 3.0 x16 link                    |
+| Read 4KB randomly from NVMe SSD            | 120 μs | DC P3608 NVMe SSD (QOS 99%)                     |
+| Read 1MB sequentially from NVMe SSD        | 208 μs | ~4.8GB/s DC P3608 NVMe SSD                      |
+| Write 4KB randomly to SATA SSD             | 500 μs | DC S3510 SATA SSD (QOS 99.9%)                   |
+| Read 4KB randomly from SATA SSD            | 500 μs | DC S3510 SATA SSD (QOS 99.9%)                   |
+| Round trip within same datacenter          | 500 μs | One-way ping is ~250μs                          |
+| Read 1MB sequentially from SATA SSD        |   2 ms | ~550MB/s DC S3510 SATA SSD                      |
+| Read 1MB sequentially from disk            |   5 ms | ~200MB/s server HDD                             |
+| Random Disk Access (seek+rotation)         |  10 ms |                                                 |
+| Send packet CA->Netherlands->CA            | 150 ms |                                                 |
 :label:`table_latency_numbers`
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
