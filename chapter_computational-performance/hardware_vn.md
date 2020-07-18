@@ -223,7 +223,7 @@ One of their many downsides are their typically catastrophic failure modes and t
 **Các ổ cứng** đã được sử dụng hơn nửa thế kỷ nay.
 Một cách ngắn gọn, chúng chứa một số đĩa quay với những đầu có thể xác định vị trí để đọc/ghi ở bất cứ rãnh nào cho trước.
 Các ổ đĩa cao cấp có thể lưu tới 16TB trên 9 đĩa.
-Một trong những lợi ích chính của ổ đĩa cứng HDD là chúng tương đối khá rẻ.
+Một trong những lợi ích chính của ổ đĩa cứng HDD là chúng tương đối rẻ.
 Một trong những nhược điểm của chúng là chúng có thể xảy ra một số sự cố thảm họa gây mất hoặc không thể đọc dữ liệu và có độ đọc trễ tương đối cao.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
