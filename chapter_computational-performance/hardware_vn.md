@@ -649,7 +649,22 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 * Training and inference hardware have different sweet spots in terms of price / performance.
 -->
 
-*dịch đoạn phía trên*
+* Các thiết bị đều có chi phí cho các phép toán. 
+Do đó nên tính toán để di chuyển lượng lớn dữ liệu trong một lần hơn là nhiều lần di chuyển lượng dữ liệu nhỏ. 
+Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
+* Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh của thiết bị.
+Ví dụ, một vài CPU Intel Xeon cực kì hiệu quả cho phép toán với dữ liệu kiểu INT8, 
+GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16, 
+còn NVIDIA Turing chạy tốt cho cả các phép toán với dữ liệu kiểu FP16, INT8, INT4.
+* Hiện tượng tràn số học do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
+* Việc đặt tên khác có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
+Trên GPU, tốt hơn là nên giữ kích thước tích chập đồng bộ, với TensorCores chẳng hạn.
+* Sử dụng thuật toán phù hợp với phần cứng (về mức chiếm dụng bộ nhớ, băng thông, v.v).
+Thời gian thực thi có thể giảm rất nhiều (theo cấp số nhân) khi đưa các tham số vào bộ đệm.
+* Chúng tôi khuyến khích bạn đọc tính toán trước hiệu năng của một thuật toán mới trước khi kiểm tra bằng thực nghiệm.
+Sự khác biệt hàng chục lần hoặc hơn là lý do cần quan tâm.
+* Sử dụng các công cụ phân tích hiệu năng để tìm điểm nghẽ (*bottlenecks*) của hệ thống.
+* Phần cứng sử dụng cho huấn luyện và suy luận có các cấu hình hiệu quả khác nhau để cân đối giá tiền và hiệu năng.
 
 <!--
 ## More Latency Numbers
