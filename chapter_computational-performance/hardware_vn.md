@@ -177,7 +177,7 @@ We can safely ignore the details for the purpose of this book.
 They only matter when tuning GPU kernels for high throughput.
 -->
 
-Bộ nhớ GPU ràng buộc đối với các yêu cầu cần băng thông thậm chí cao hơn vì chúng có nhiều phần tử xử lý hơn CPU.
+Bộ nhớ GPU còn có yêu cầu băng thông thậm chí còn cao hơn nữa vì chúng có nhiều phần tử xử lý hơn CPU.
 Nhìn chung có hai lựa chọn để định địa chỉ chúng. 
 Một là cần tạo bus bộ nhớ có kích thước lớn hơn đáng kể.
 Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có độ rộng 352 bit.
