@@ -208,7 +208,7 @@ We saw that some of the key characteristics of RAM were *bandwidth* and *latency
 The same is true for storage devices, just that the differences can be even more extreme.
 -->
 
-Chúng ta đã thấy một số đặc tính then chốt của RAM là *băng thông* và *độ trễ*.
+Chúng ta đã thấy đặc tính then chốt của RAM là *băng thông* và *độ trễ*.
 Điều này cũng đúng đối với các thiết bị lưu trữ, sự khác biệt chỉ có thể là các đặc tính trên lớn hơn nhiều lần.
 
 
