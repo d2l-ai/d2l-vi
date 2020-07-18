@@ -73,7 +73,7 @@ often connected in an advanced topology, desktop systems have 1-2, depending on 
 provides efficient transfer of training data to the system and storage of intermediate checkpoints as needed.
 -->
 
-* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 hoặc nhiều nhân (_core_).
+* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 nhân (_core_) hoặc nhiều hơn.
 * Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, và dữ liệu huấn luyện.
 * Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các kết nối tốc độ cao trong các server tân tiến).
 * Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống server thường có tới 8 GPU được kết nối với topology phức tạp, các hệ thống máy tính thường có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
