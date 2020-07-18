@@ -56,7 +56,7 @@ on the device of our choosing using data allocated into two variables, `x_cpu` a
 -->
 
 Ta hãy bắt đầu bằng việc định nghĩa một khối lượng công việc tham khảo để kiểm thử. 
-Hàm `run` dưới đây biểu diễn 10 phép nhân ma trận trên thiết bị mà chúng ta lựa chọn sử dụng dữ liệu được phân bổ ở hai biến, `x_cpu` và `x_gpu`.
+Hàm `run` dưới đây thực hiện 10 phép nhân ma trận trên thiết bị mà chúng ta lựa chọn bằng cách sử dụng dữ liệu được lưu ở hai biến `x_cpu` và `x_gpu`.
 
 
 ```{.python .input}
@@ -73,8 +73,8 @@ Now we apply the function to the data.
 To ensure that caching does not play a role in the results we warm up the devices by performing a single pass on each of them prior to measuring.
 -->
 
-Bây giờ ta áp dụng hàm vào dữ liệu.
-Để chắc chắn rằng bộ nhớ đệm không ảnh hưởng đến kết quả, ta khởi động các thiết bị bằng việc thực hiện một lượt truyền đơn cho từng biến một trước khi đo lường.
+Bây giờ ta sẽ gọi hàm với dữ liệu.
+Để chắc chắn rằng bộ nhớ đệm không ảnh hưởng đến kết quả, ta khởi động các thiết bị bằng việc thực hiện một lượt tính cho mỗi biến trước khi bắt đầu đo lường.
 
 ```{.python .input}
 run(x_cpu)  # Warm-up both devices
@@ -95,7 +95,7 @@ with d2l.Benchmark('GPU time'):
 If we remove the `waitall()` between both tasks the system is free to parallelize computation on both devices automatically.
 -->
 
-Nếu ta bỏ `waitall()` giữa hai tác vụ thì hệ thống được tự do song song tính toán trên cả hai thiết bị một cách tự động.
+Nếu ta bỏ `waitall()` giữa hai tác vụ thì hệ thống sẽ tự động song song hóa việc tính toán trên cả hai thiết bị.
 
 
 ```{.python .input}
@@ -111,7 +111,7 @@ In the above case the total execution time is less than the sum of its parts, si
 both CPU and GPU devices without the need for sophisticated code on behalf of the user. 
 -->
 
-Trong trường hợp phía trên thời gian thi hành toàn bộ tác vụ thì ít hơn tổng của các thành phần, bởi vì MXNet tự động định thời tính toán trên cả thiết bị CPU và GPU mà không cần người dùng cung cấp các đoạn mã phức tạp.
+Trong trường hợp phía trên, thời gian thi hành toàn bộ các tác vụ ít hơn tổng thời gian thi hành từng tác vụ riêng lẻ, bởi vì MXNet tự động định thời việc tính toán trên cả CPU và GPU mà không đòi hỏi người dùng phải cung cấp các đoạn mã phức tạp.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
