@@ -5,7 +5,7 @@
 # Hardware
 -->
 
-# *dịch tiêu đề phía trên*
+# Phần cứng
 :label:`sec_hardware`
 
 <!--
@@ -23,8 +23,17 @@ For this review :numref:`sec_buy_gpu`.
 An introduction to cloud computing with AWS can be found in :numref:`sec_aws`.
 -->
 
-*dịch đoạn phía trên*
-
+Để xây dựng các hệ thống có hiệu năng cao, ta cần nắm chắc kiến thức về các thuật toán và mô hình để có thể biểu diễn được những khía cạnh thống kê của bài toán.
+Đồng thời, ta cũng cần có một chút kiến thức cơ bản về phần cứng.
+Nội dung trong phần này không thể thay thế một khóa học đầy đủ về phần cứng và thiết kế hệ thống,
+mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
+Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ).
+Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
+Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
+Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
+Cần lưu ý, phần này sẽ không hướng dẫn cách lựa chọn card GPU. 
+Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
+Phần giới thiệu về điện toán đám mây trên AWS có thể tìm thấy tại :numref:`sec_aws`.
 
 <!--
 Impatient readers may be able to get by with :numref:`fig_latencynumbers`.
@@ -37,13 +46,18 @@ For an in-depth overview of computer architecture we refer the reader to :cite:`
 such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 -->
 
-*dịch đoạn phía trên*
-
+Bạn đọc có thể tham khảo nhanh thông tin tóm tắt trong :numref:`fig_latencynumbers`.
+Nội dung này được trích dẫn trong bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) chứa đựng thông tin tổng quan về những tiến bộ trong thập kỉ qua.
+Số liệu gốc được trích dẫn từ bài giảng của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
+Thảo luận dưới đây sẽ giải thích những cơ sở căn bản cho những con số trên và làm sao những số liệu này có thể gợi ý ta cách thiết kế các thuật toán.
+Thảo luận này khá trừu tượng và ngắn gọn.
+Rõ ràng phần thảo luận này không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho các bạn làm thống kê có thể đưa ra lựa chọn thiết kế phù hợp.
+Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây như [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/latencynumbers.png)
+![Số liệu về độ trễ mà mọi lập trình viên nên biết.](../img/latencynumbers.png)
 :label:`fig_latencynumbers`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -780,7 +794,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * 
