@@ -69,6 +69,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | channel (in computer vision)    | kênh                    |                                              |
 | classifier                      | bộ phân loại            |                                              |
 | closed-form solution            | biểu thức dạng đóng     | [https://git.io/Jvopd](https://git.io/Jvopd) |
+| cloud computing                 | điện toán đám mây       |  |
 | clustering                      | phân cụm                | [https://git.io/JvojD](https://git.io/JvojD) |
 | code (noun)                     | mã nguồn                |                                              |
 | code (verb)                     | viết mã                 |                                              |
