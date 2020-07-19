@@ -288,7 +288,7 @@ We recommend that the user increase the provisioned number of IOPs whenever late
 ## CPUs
 -->
 
-## *dịch tiêu đề phía trên*
+## CPUs
 
 
 <!--
@@ -299,13 +299,15 @@ and caches to allow for higher bandwidth and lower latency memory access than wh
 Lastly, almost all modern CPUs contain vector processing units to aid with high performance linear algebra and convolutions, as they are common in media processing and machine learning.
 -->
 
-*dịch đoạn phía trên*
+Đơn vị xử lý trung tâm (Central Processing Units - CPUs) là trung tâm của máy tính (ở phần trước, chúng tôi đã miêu tả chi tiết về những nhân tố quyết định cho những mô hình học sâu hiệu quả).
+CPUs gồm một số thành tố quan trọng: nhân xử lý thực thi mã nguồn của máy, phương tiện kết nối các nhân xử lý (cấu trúc kết nối kết cụ thể khác biệt lớn giữa các mô hình xử lý, đời máy và nhà sản xuất) và bộ nhớ cache cho phép băng thông cao hơn và truy cập bộ nhớ có độ trễ thấp hơn mức có thể bằng cách đọc từ bộ nhớ chính.
+Cuối cùng, hầu hết CPUs hiện đại chứa những đơn vị xử lý vector để hỗ trợ tính toán đại số tuyến tính và tích chập với tốc độ cao vì chúng phổ biến xử lý phương tiện và học máy.
 
 <!--
 ![Intel Skylake consumer quad-core CPU](../img/skylake.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/skylake.svg)
+![CPU lõi tứ của bộ xử lý Intel Skylake](../img/skylake.svg)
 :label:`fig_skylake`
 
 
@@ -315,13 +317,15 @@ It has an integrated GPU, caches, and a ringbus connecting the four cores.
 Peripherals (Ethernet, WiFi, Bluetooth, SSD controller, USB, etc.) are either part of the chipset or directly attached (PCIe) to the CPU.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_skylake` minh hoạ bộ xử lý Intel Skylake với CPU lõi tứ.
+Nó có một GPU tích hợp, bộ nhớ cache và phương tiện kết nối bốn nhân.
+Thiết bị ngoại vi (Ethernet, WiFi, Bluetooth, bộ điều khiển SSD, USB, v.v.) là một phần của chipset hoặc được đính kèm trực tiếp (PCIe) với CPU.
 
 <!--
 ### Microarchitecture
 -->
 
-## *dịch tiêu đề phía trên*
+## Vi cấu trúc (Microarchitecture)
 
 
 <!--
@@ -336,13 +340,21 @@ Often the latter is capable of performing many operations simultaneously.
 For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perform up to 8 operations simultaneously.
 -->
 
-*dịch đoạn phía trên*
+Mỗi nhân xử lý bao gồm các thành phần rất tinh vi.
+Mặc dù chi tiết khác nhau giữa đời máy và nhà sản xuất, chức năng cơ bản của chúng tương đối đã được chuẩn hoá.
+Front-end tải các hướng dẫn và dự đoán đường dẫn nào sẽ được thực hiện (ví dụ: cho luồng điều khiển).
+Các hướng dẫn tiếp đó được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
+Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
+Thay và đó, các hướng dẫn phức tạp có thể được giải mã thành một tập hợp các hoạt động cấp thấp hơn.
+Tiếp đó chúng được xử lý bằng một nhân thực thi thực tế.
+Thông thường bộ xử lý sau có khả năng thực hiện đồng thời nhiều thao tác.
+Ví dụ, nhân ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hiện lên đến 8 thao tác cùng một lúc.
 
 <!--
 ![ARM Cortex A77 Microarchitecture Overview](../img/a77.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/a77.svg)
+![Tổng quan về vi cấu trúc ARM Cortex A77](../img/a77.svg)
 :label:`fig_cortexa77`
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -810,7 +822,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 7 -->
 * 
