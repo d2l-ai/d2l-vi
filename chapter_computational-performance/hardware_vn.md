@@ -113,7 +113,7 @@ Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở 
 Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà ngay cả khi một trong các hệ thống bị tắc nghẽn.
 Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
 Tương tự, nếu ta không thể truyền ma trận đủ nhanh tới CPU (hay GPU), bộ xử lý sẽ thiếu dữ liệu để hoạt động.
-Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm tính toán. Một lựa chọn đó là xen kẽ giao tiếp và tính toán giữa các máy tính.
+Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm tính toán. Một lựa chọn đó là xen kẽ việc giao tiếp và tính toán giữa các máy tính.
 Bây giờ ta hãy xem xét các thành phần trên một cách chi tiết.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
