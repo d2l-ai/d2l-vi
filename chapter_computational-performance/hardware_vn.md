@@ -535,13 +535,13 @@ Thông tin chi tiết được mô tả trong :numref:`fig_turing`.
 Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm hoặc loại bỏ tuỳ theo nhu cầu để có thể tạo thành một vi xử lý thu gọn và giải quyết một số vấn đề liên quan đến sản xuất (các mô-đun lỗi có thể không được kích hoạt).
 May mắn thay, việc lập trình cho các thiết bị này được ẩn giấu kĩ khỏi nhà nghiên cứu học sâu bình thường dưới nhiều lớp CUDA và mã nguồn framework.
 Cụ thể, có thể có nhiều hơn một chương trình được thực thi đồng thời trên GPU, với điều kiện là còn đủ tài nguyên.
-Tuy nhiên cũng cần để cảnh giác đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
+Tuy nhiên ta cũng cần phải cảnh giác đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
 
 <!--
 ![NVIDIA Turing Architecture (image courtesy of NVIDIA)](../img/turing.png)
 -->
 
-![Kiến trúc Turing của NVIDIA](../img/turing.png)
+![Kiến trúc Turing của NVIDIA (hình ảnh được sự cho phép của NVIDIA)](../img/turing.png)
 :width:`350px`
 :label:`fig_turing`
 
@@ -587,7 +587,7 @@ Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng ho
 Trừ một số ngoại lệ đáng chú ý, ví dụ như [Gunrock](https://github.com/gunrock/gunrock) :cite:`Wang.Davidson.Pan.ea.2016`,
 mô hình truy cập ma trận thưa và vector không phù hợp với các thao tác đọc đột ngột khi băng thông cao, trường hợp mà GPU trội hơn.
 Phối hợp cả hai mục tiêu là một lĩnh vực tích cực trong hoạt động nghiên cứu.
-Đọc [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
+Tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
