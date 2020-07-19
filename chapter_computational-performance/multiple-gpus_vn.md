@@ -5,7 +5,7 @@
 # Training on Multiple GPUs
 -->
 
-# *dịch tiêu đề phía trên*
+# Huấn luyện trên nhiều GPUs
 :label:`sec_multi_gpu`
 
 <!--
@@ -20,13 +20,20 @@ Details on how to take advantage of functionality in Gluon is relegated to :numr
 We assume that the reader is familiar with minibatch SGD algorithms such as the ones described in :numref:`sec_minibatch_sgd`.
 -->
 
-*dịch đoạn phía trên*
+Đến lúc này chúng ta đã bàn về việc làm thế nào để huấn luyện mô hình một cách hiệu quả trên CPU và GPU. 
+Chúng ta thậm chí đã chỉ ra cách làm thế nào các framework học sâu như  MXNet ( và TensorFlow) cho phép ta thực hiện tính toán song song hoá và truyền thông tin tự động giữa các bộ xử lý trong :numref:`sec_auto_para`.
+Sau cùng, chúng ta đã thể hiện trong :numref:`sec_use_gpu` làm thế nào liệt kê tất cả các GPU sẵn có trên một máy tính dùng `nividia-smi`.
+Điều chúng ta chưa bàn là làm thế nào thực sự song song hóa việc huấn luyện học sâu (ta bỏ qua bất cứ thảo luận nào về *suy diễn* trên nhiều GPU ở đây vì hiếm khi được sử dụng và chủ đề chuyên sâu như vậy vượt ngoài phạm vi giới thiệu của cuốn sách này).
+Thay vì vậy, chúng ta đã ngầm định trong việc bỏ qua này đó là ta sẽ bằng cách nào đó chia dữ liệu truyền qua nhiều thiết bị và cho phép chúng hoạt động.
+Việc giới thiệu của mục này là bổ sung chi tiết và chỉ ra cách làm sao để huấn luyện một mạng thực hiện song song khi ta bắt đầu từ sơ khai.
+Chi tiết về việc làm thế nào để tận dụng tính năng có trong Gluon được chỉ định đến :numref:`sec_multi_gpu_gluon`.
+Chúng tôi giả định rằng người đọc đã quen với các giải thuật minibatch SGD như các hàm đã được mô tả trong :numref:`sec_minibatch_sgd`.
 
 <!--
 ## Splitting the Problem
 -->
 
-## *dịch tiêu đề phía trên*
+## Thực hiện phân chia bài toán
 
 
 <!--
@@ -38,7 +45,11 @@ Multiple GPUs, after all, increase both *memory* and *compute* ability.
 In a nutshell, we have a number of choices, given a minibatch of training data that we want to classify.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy bắt đầu với một bài toán thị giác máy tính đơn giản và một mạng hơi lỗi thời, cụ thể gồm có mạng tích chập nhiều lớp, tầng gộp, và có thể có một vài tầng kết nối dày đặc ở đầu ra.
+Như vậy ta sẽ có được một mạng khá giống với mạng LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc mạng AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
+Với số GPU cho trước ( là 2 nếu là máy chủ để bàn, 4 nếu trên g4dn.12xlarge, 8 nếu trên AWS p3.16xlarge, hoặc 16 cho p2.16xlarge), ta muốn phân chia việc huấn luyện theo cách để đạt được việc tăng tốc tốt trong khi đồng thời thu được lợi ích từ việc chọn lựa tính đơn giản và tái sử dụng thiết kế.
+Sau tất cả, nhiều GPU sẽ tăng cả *bộ nhớ* và khả năng *tính toán*.
+Một cách ngắn gọn, chúng ta có một số lựa chọn với một minibatch của tập dữ liệu cần huấn luyện cho trước mà chúng ta cần phân loại.   
 
 <!--
 ![Model parallelism in the original AlexNet design due to limited GPU memory.](../img/alexnet-original.svg)
@@ -80,13 +91,39 @@ The figure is taken from :cite:`Krizhevsky.Sutskever.Hinton.2012` where this str
     * Large numbers of GPUs lead to very large minibatch sizes, thus reducing training efficiency.
 -->
 
-*dịch đoạn phía trên*
-
+* Chúng ta có thể phân tách các tầng mạng truyền qua nhiều GPU.
+Đó là nhờ mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầng xác định, xử lý dữ liệu truyền qua một số tầng kế tiếp nhau và rồi gửi dữ liệu tới GPU kế tiếp. 
+   * Điều này cho phép ta xử lý dữ liệu với các mạng lớn hơn khi so sánh với những gì một GPU có thể làm được.
+   * Bộ nhớ bị chiếm dụng trên mỗi GPU có thể kiểm soát dễ dàng (nó sẽ chiếm khoảng một phân số của tổng dung lượng bộ nhớ của mạng này)
+   * Giao tiếp giữa các tầng (cũng như cho các GPU) đòi hỏi động bộ chặt chẽ.
+   Điều này có thể sẽ rất khó, cụ thể là nếu khối lượng tính toán không phối hợp hợp lý giữa các tầng. 
+   Vấn đề sẽ trở nên nghiêm trọng với một số lượng lớn GPU.
+   * Giao tiếp giữa các tầng yêu cầu một lượng lớn việc truyền dữ liệu (các hàm kích hoạt, các gradient). Điều này có thể vượt quá mức băng thông các bus của GPU.
+   * Các phép tính toán phức tạp mà việc phân chia thành các bước tuần tự chưa thỏa đáng.
+   Cụ thể xem :cite:`Mirhoseini.Pham.Le.ea.2017` với một cố gắng tốt nhất cho vấn đề này.
+   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu việc thay đổi kích thước (một cách tuyến tính) có thể đạt được đủ tốt đối với một số bài toán quan trọng. 
+   Chúng tôi không khuyến khích cách làm này trừ phi có một framework xuất sắc hay hệ điều hành hỗ trợ cho việc xâu chuỗi nhiều GPU lại với nhau.
+* Chúng ta có thể phân chia công việc với điều kiện các tầng riêng rẽ.
+Chẳng hạn, thay vì tính toán 64 kênh trên một GPU, ta có thể tách công việc này cho 4 GPU, mỗi con sẽ sinh dữ liệu từ 16 kênh. 
+Tương tự, với một tầng kết nối đặc ta có thể tách số neuron đầu ra.
+:numref:`fig_alexnet_original` mô tả thiết kế kiểu này. 
+Hình này lấy từ :cite:`Krizhevsky.Sutskever.Hinton.2012` ở đây chiến lược này được sử dụng để làm việc với nhiều GPU mà có bộ nhớ chiếm dụng rất nhỏ (2GB ở thời điểm đó).
+   * Điều này cho phép việc thay đổi kích thước ổn thỏa ở khía cạnh về tính toán, với điều kiện là số kênh (hay số nơ-rôn) không quá nhỏ.
+   * Dùng nhiều GPU có thể xử lý nhiều mạng ngày một lớn hơn vì dung lượng bộ nhớ sẽ nâng lên một tỉ lệ tuyến tính.
+   * Chúng ta cần một số *rất lớn* đồng bộ hóa/ hay các hoạt động hành lang vì mỗi tầng tùy thuộc vào các kết quả từ tất cả các tầng khác.
+   * Lượng dữ liệu cần được truyền có khả năng tăng lớn hơn khi phân phối tới nhiều tầng qua các GPU.
+   Chúng tôi không khuyến khích cách tiếp cần này do phải đánh đổi với băng thông và tính phức tạp của nó.
+* Sau cùng, ta có thể phân tách dữ liệu qua nhiều GPU. Cách này cho phép tất cả GPU thực hiện cùng một công việc, mặc dù từ các vùng quan sát khác nhau. Các gradient được sắp xếp giữa các GPU sau mỗi minibatch.
+   * Đây là phương pháp đơn giản nhất và có thể sử dụng cho bất cứ tình huống nào.
+   * Gắn thêm nhiều GPU không cho phép chúng ta huấn luyện mô hình lớn hơn.
+   * Chúng ta chỉ cần đồng bộ hóa sau mỗi minibatch. Như đã nói, có một nhu cầu cao là bắt đầu thực hiện trao đổi các tham số gradient đã sẵn sàng trong khi các tham số khác vẫn đang trong quá trình tính toán.
+   * Số lượng GPU lớn dẫn tới kích thước minibatch rất lớn, do đó giảm hiểu quả việc huấn luyện.
+   
 <!--
 ![Parallelization on multiple GPUs. From left to right - original problem, network partitioning, layer partitioning, data parallelism.](../img/splitting.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/splitting.svg)
+![Song song hóa trên nhiều GPU. Từ trái sang phải - bài toán ban đầu, phân tách mạng, phân tách tầng, song song hóa dữ liệu](../img/splitting.svg)
 :label:`fig_splitting`
 
 
@@ -98,7 +135,11 @@ By now this issue has been resolved for all but the most unusual cases.
 We focus on data parallelism in what follows.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung việc song song hóa dữ liệu là cách thuận tiện nhất để xử lý, với điều kiện là ta có thể truy xuất tới các GPU với bộ nhớ đủ lớn.
+Xem thêm ở:cite:` Li.Andersen.Park.ea.2014` mô ta chi tiết việc phân chia cho việc huấn luyện phân tán.
+Bộ nhớ GPU từng là một vấn đề trong những ngày đầu của việc học sâu.
+Đến thời điểm này thì vấn đề đã được giải quyết cho hầu hết trừ một số trường hợp không phổ biến nhất.
+Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế tiếp sau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
