@@ -127,7 +127,7 @@ Let us have a look at the various components in more detail.
 ## Memory
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ nhớ
 
 
 <!--
@@ -139,8 +139,12 @@ CPUs have between 2 and 4 memory channels, i.e., they have between 40GB/s and 10
 Often there are two banks per channel. For instance AMD's Zen 3 Threadripper has 8 slots.
 -->
 
-*dịch đoạn phía trên*
-
+Bộ nhớ cơ bản nhất được sử dụng để lưu trữ dữ liệu khi cần truy cập một cách dễ dàng.
+Hiện tại bộ nhớ RAM CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM) mà mỗi mô-đun có băng thông 20-25GB/s.
+Mỗi mô-đun có đường truyền bus rộng 64 bit.
+Thông thường, các cặp mô-đun bộ nhớ cho phép sử dụng nhiều kênh.
+CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là, chúng có băng thông bộ nhớ tối đa từ 40GB/s đến 100GB/s.
+Thường có hai dải (_bank_) trên mỗi kênh. Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
 
 <!--
 While these numbers are impressive, indeed, they only tell part of the story.
@@ -155,8 +159,16 @@ We could perform up to $10,000,000$ random reads per second.
 This suggests that we avoid random memory access as far as possible and use burst reads (and writes) instead.
 -->
 
-*dịch đoạn phía trên*
-
+Trong khi những con số trên khá ấn tượng, thực tế, chúng chỉ nói một phần nào đó.
+Khi ta muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ dẫn cho mô-đun bộ nhớ nơi thông tin có thể được tìm thấy.
+Nghĩa là, trước tiên chúng ta cần gửi *địa chỉ* đến RAM.
+Khi thực hiện xong, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi các bản ghi dài.
+Cách sau được gọi là *đọc nhanh* (_burst read_).
+Tóm lại, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp (_transfer_) sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
+mỗi lần chuyển tiếp sau chỉ mất 0.2ns.
+Nói ngắn gọn, lần đọc đầu tiên tốn thời gian gấp 500 lần những lần sau!
+Ta có thể đọc ngẫu nhiên tối đa $10,000,000$ lần mỗi giây.
+Điều này cho thấy rằng ta nên hạn chế truy cập bộ nhớ ngẫu nhiên và thay vào đó hãy sử dụng cách đọc (và ghi) nhanh (_burst read_, và _burst write_).
 
 <!--
 Matters are a bit more complex when we take into account that we have multiple banks.
@@ -168,7 +180,14 @@ Compilers do this pretty much [automatically](https://en.wikipedia.org/wiki/Data
 Curious readers are encouraged to review a lecture on DRAMs such as the one by [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 -->
 
-*dịch đoạn phía trên*
+Các vấn đề phức tạp hơn một chút khi ta tính đến việc có nhiều dải (_bank_).
+Mỗi một dải có thể đọc bộ nhớ một cách độc lập.
+Điều này có hai ý sau. 
+Thứ nhất, số lần đọc ngẫu nhiên hiệu quả cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
+Điều đó cũng có nghĩa là thực hiện các lệnh đọc ngẫu nhiên không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
+Thứ hai, do căn chỉnh bộ nhớ theo biên 64 bit, nên căn chỉnh bất kỳ cơ sở dữ liệu nào có cùng biên sẽ là một ý hay.
+Trình biên dịch thực hiện việc này một cách khá [tự động] (https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
+Độc giả có thể tham khảo thêm bài giảng về DRAM ví dụ như [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
