@@ -157,7 +157,7 @@ Hence it works to our advantage to start using PCI-Express bus bandwidth while t
 Removing `waitall` between both parts allows us to simulate this scenario.
 -->
 
-Điều này hơi kém hiệu quả một chút. Lưu ý rằng ta có thể bắt đầu sao chép một vài phần đã tính xong của `y` đến CPU trong khi các phần còn lại của `y` đang được tính toán.
+Điều này hơi kém hiệu quả một chút. Lưu ý rằng ta có thể bắt đầu sao chép một vài phần đã tính xong của `y` đến CPU trong khi các phần còn lại của `y` vẫn đang được tính toán.
 Tình huống này có thể xảy ra khi ta tính toán gradient (lan truyền ngược) trên một minibatch.
 Gradient của một vài tham số sẽ được tính xong sớm hơn so với các tham số khác.
 Do đó sẽ có lợi nếu ta bắt đầu truyền dữ liệu về bằng bus băng thông PCI-Express trong khi GPU vẫn còn đang chạy.
@@ -180,7 +180,7 @@ As noted above, there is a dependency between computation and communication: `y[
 Fortunately, the system can copy `y[i-1]` while computing `y[i]` to reduce the total running time.
 -->
 
-Thời gian cần cho cả hai thao tác thì ít hơn hẳn (như mong đợi) so với tổng thời gian thực hiện từng thao tác đơn lẻ.
+Thời gian cần cho cả hai thao tác thì (như mong đợi) ít hơn hẳn so với tổng thời gian thực hiện từng thao tác đơn lẻ.
 Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một tài nguyên khác: bus giữa CPU và GPU.
 Thực tế, ta có thể vừa tính toán và giao tiếp trên cả hai thiết bị cùng một lúc.
 Như đã lưu ý phía trên, có một sự phụ thuộc giữa việc tính toán và giao tiếp: `y[i]` phải được tính xong trước khi ta có thể sao chép nó qua CPU.
