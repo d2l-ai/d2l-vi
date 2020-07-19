@@ -584,7 +584,7 @@ See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 ## Networks and Buses
 -->
 
-## *dịch tiêu đề phía trên*
+## Mạng máy tính và Bus
 
 
 <!--
@@ -596,7 +596,12 @@ No machine learning researcher within their right mind would use it to build a c
 In what follows we focus on interconnects that are suitable for deep learning.
 -->
 
-*dịch đoạn phía trên*
+Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và khỏi nó để đồng bộ hoá quá trình xử lý.
+Đây chính là lúc mà mạng máy tính và bus trở nên hữu dụng.
+Ta có một số tham số thiết kế: băng thông, chi phí, khoảng cách và tính linh hoạt.
+Một mặt, ta có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao thì cũng không có dây), rẻ nhưng lại có băng thông khá tầm thường và độ trẽ lớn.
+Sẽ không có bất cứ nhà nghiên cứu học máy nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
+Theo đó, ta sẽ tập trung vào các cách liên kết phù hợp cho học sâu.
 
 
 <!--
@@ -626,7 +631,30 @@ Server GPUs (Volta V100) have 6 links whereas consumer grade GPUs (RTX 2080 Ti) 
 We recommend to use [NCCL](https://github.com/NVIDIA/nccl) to achieve high data transfer between GPUs.
 -->
 
-*dịch đoạn phía trên*
+* **PCIe** là một bus riêng chỉ phục vụ cho kết nối điểm đến điểm với băng thông rất lớn (lên đến 16Gbs trên PCIe 4.0) mỗi luồng.
+Độ trễ thường có giá trị khoảng dưới 10 micro giây (5 μs).
+Các luồng PCIe khá đáng quý.
+Vi xử lý chỉ có một số lượng luồng PCIe nhất định: EPYC 3 của AMD có 128 luồng, Xeon của Intel có lên đến 48 luồng mỗi chip; trên loại CPU dùng cho máy tính cây, số lượng này lần lượt là 20 (Ryzen 9) và 16 (Core i9).
+Do GPU thường có 16 luồng nên số lượng GPU có thể kết nối với CPU bị giới hạn tại băng thông tối đa.
+Xét cho cùng, chúng cần chia sẻ kết nối với các thiết bị ngoại vi khác như bộ nhớ và Ethernet.
+Giống như việc truy cập RAM, việc truyền lượng lớn dữ liệu thường được ưa chuộng hơn nhằm giảm tổng chi phí theo gói tin.
+* **Ethernet** là cách phổ biến nhất để kết nối máy tính với nhau.
+Dù nó chậm hơn đáng kể so với PCIe, nó rất rẻ và dễ cài đặt, bao phủ khoảng cách lớn hơn nhiều.
+Băng thông đặc trưng đối với máy chủ mức kém là 1 GBit/s.
+Thiết bị cao cấp hơn (ví dụ như [C5 instances](https://aws.amazon.com/ec2/instance-types/c5/) trên đám mây) cung cấp băng thông từ 10 đến 100 GBit/s.
+Cũng như các trường hợp trước, việc truyền dữ liệu có tổng chi phí đáng kể.
+Chú ý rằng ta hầu như không bao giờ sử dụng trực tiếp Ethernet thuần mà tốt hơn là sử dụng một giao thức được thực thi ở tầng trên của kết nối vật lý (ví dụ như UDP hay TCP/IP).
+Việc này làm tăng tổng chi phí.
+Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một thiết bị chuyển đổi (*switch*).
+* **Thiết bị chuyển đổi**  cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm với điểm cùng lúc.
+Ví dụ, thiết bị chuyển đổi Ethernet có thể kết nối 40 máy chủ với băng thông cao giữa các vùng.
+Chú ý rằng thiết bị chuyển đổi không phải là duy nhất trong mạng máy tính truyền thống.
+Ngay cả luồng PCIe cũng có thể [chuyển đổi](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
+Điều này xảy ra khi kết nối một lượng lớn GPU tới vi xử lý chính, như đối với trường hợp [P2 instances](https://aws.amazon.com/ec2/instance-types/p2/).
+* **NVLink** là một phương pháp thay thế PCIe khi ta cần liên kết với băng thông rất lớn.
+NVLink cung cấp tốc độ truyền dữ liệu lên đến 300 Gbit/s mỗi đường dẫn.
+GPU máy chủ (Volta V100) có 6 đường dẫn trong khi GPU tiêu dùng (RTX 2080 Ti) chỉ có một đường dẫn, hoạt động ở tốc độ thấp 100 Gbit/s.
+Chúng tôi kiến nghị nên sử dụng [NCCL](https://github.com/NVIDIA/nccl) để có thể đạt được tốc độ truyền dữ liệu cao giữa các GPU.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
@@ -810,7 +838,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 11 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 12 -->
 * 
