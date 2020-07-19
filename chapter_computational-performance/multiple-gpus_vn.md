@@ -5,7 +5,7 @@
 # Training on Multiple GPUs
 -->
 
-# Huấn luyện trên nhiều GPUs
+# *dịch tiêu đề phía trên*
 :label:`sec_multi_gpu`
 
 <!--
@@ -20,20 +20,13 @@ Details on how to take advantage of functionality in Gluon is relegated to :numr
 We assume that the reader is familiar with minibatch SGD algorithms such as the ones described in :numref:`sec_minibatch_sgd`.
 -->
 
-Đến lúc này chúng ta đã bàn về việc làm thế nào để huấn luyện mô hình một cách hiệu quả trên CPU và GPU. 
-Chúng ta thậm chí đã chỉ ra cách làm thế nào các framework học sâu như  MXNet ( và TensorFlow) cho phép ta thực hiện tính toán song song hoá và truyền thông tin tự động giữa các bộ xử lý trong :numref:`sec_auto_para`.
-Sau cùng, chúng ta đã thể hiện trong :numref:`sec_use_gpu` làm thế nào liệt kê tất cả các GPU sẵn có trên một máy tính dùng `nividia-smi`.
-Điều chúng ta chưa bàn là làm thế nào thực sự song song hóa việc huấn luyện học sâu (ta bỏ qua bất cứ thảo luận nào về *suy diễn* trên nhiều GPU ở đây vì hiếm khi được sử dụng và chủ đề chuyên sâu như vậy vượt ngoài phạm vi giới thiệu của cuốn sách này).
-Thay vì vậy, chúng ta đã ngầm định trong việc bỏ qua này đó là ta sẽ bằng cách nào đó chia dữ liệu truyền qua nhiều thiết bị và cho phép chúng hoạt động.
-Việc giới thiệu của mục này là bổ sung chi tiết và chỉ ra cách làm sao để huấn luyện một mạng thực hiện song song khi ta bắt đầu từ sơ khai.
-Chi tiết về việc làm thế nào để tận dụng tính năng có trong Gluon được chỉ định đến :numref:`sec_multi_gpu_gluon`.
-Chúng tôi giả định rằng người đọc đã quen với các giải thuật minibatch SGD như các hàm đã được mô tả trong :numref:`sec_minibatch_sgd`.
+*dịch đoạn phía trên*
 
 <!--
 ## Splitting the Problem
 -->
 
-## Thực hiện phân chia bài toán
+## *dịch tiêu đề phía trên*
 
 
 <!--
@@ -45,11 +38,7 @@ Multiple GPUs, after all, increase both *memory* and *compute* ability.
 In a nutshell, we have a number of choices, given a minibatch of training data that we want to classify.
 -->
 
-Chúng ta hãy bắt đầu với một bài toán thị giác máy tính đơn giản và một mạng hơi lỗi thời, cụ thể gồm có mạng tích chập nhiều lớp, tầng gộp, và có thể có một vài tầng kết nối dày đặc ở đầu ra.
-Như vậy ta sẽ có được một mạng khá giống với mạng LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc mạng AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
-Với số GPU cho trước ( là 2 nếu là máy chủ để bàn, 4 nếu trên g4dn.12xlarge, 8 nếu trên AWS p3.16xlarge, hoặc 16 cho p2.16xlarge), ta muốn phân chia việc huấn luyện theo cách để đạt được việc tăng tốc tốt trong khi đồng thời thu được lợi ích từ việc chọn lựa tính đơn giản và tái sử dụng thiết kế.
-Sau tất cả, nhiều GPU sẽ tăng cả *bộ nhớ* và khả năng *tính toán*.
-Một cách ngắn gọn, chúng ta có một số lựa chọn với một minibatch của tập dữ liệu cần huấn luyện cho trước mà chúng ta cần phân loại.   
+*dịch đoạn phía trên*
 
 <!--
 ![Model parallelism in the original AlexNet design due to limited GPU memory.](../img/alexnet-original.svg)
