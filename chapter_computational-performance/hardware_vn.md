@@ -110,7 +110,7 @@ Let us have a look at the various components in more detail.
 -->
 
 Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở các bộ xử lý (CPU hay GPU), thực hiện tính toán và sau đó truyền kết quả tới RAM hay ổ lưu trữ.
-Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà ngay cả khi một trong các hệ thống bị tắc nghẽn.
+Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà, không có phần nào trong hệ thống bị tắc nghẽn.
 Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
 Tương tự, nếu ta không thể truyền ma trận đủ nhanh tới CPU (hay GPU), bộ xử lý sẽ thiếu dữ liệu để hoạt động.
 Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm tính toán. Một lựa chọn đó là xen kẽ việc giao tiếp và tính toán giữa các máy tính.
