@@ -76,7 +76,7 @@ provides efficient transfer of training data to the system and storage of interm
 * Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 nhân (_core_) hoặc nhiều hơn.
 * Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, và dữ liệu huấn luyện.
 * Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các kết nối tốc độ cao trong các server tân tiến).
-* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống server thường có tới 8 GPU được kết nối với cấu trúc liên kết phức tạp, các hệ thống máy tính thường có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
+* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
 * Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian khi cần một cách hiệu quả. 
 
 <!--
