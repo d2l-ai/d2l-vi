@@ -599,9 +599,9 @@ In what follows we focus on interconnects that are suitable for deep learning.
 Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và khỏi nó để đồng bộ hoá quá trình xử lý.
 Đây chính là lúc mà mạng máy tính và bus trở nên hữu dụng.
 Ta có một số tham số thiết kế: băng thông, chi phí, khoảng cách và tính linh hoạt.
-Một mặt, ta có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao thì cũng không có dây), rẻ nhưng lại có băng thông khá tầm thường và độ trẽ lớn.
+Theo một khía cạnh, ta có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao thì cũng không có dây), rẻ nhưng lại có băng thông khá tầm thường và độ trẽ lớn.
 Sẽ không có bất cứ nhà nghiên cứu học máy nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
-Theo đó, ta sẽ tập trung vào các cách liên kết phù hợp cho học sâu.
+Theo đó, ta sẽ chỉ tập trung vào các cách liên kết phù hợp cho học sâu.
 
 
 <!--
@@ -636,13 +636,13 @@ We recommend to use [NCCL](https://github.com/NVIDIA/nccl) to achieve high data 
 Các luồng PCIe khá đáng quý.
 Vi xử lý chỉ có một số lượng luồng PCIe nhất định: EPYC 3 của AMD có 128 luồng, Xeon của Intel có lên đến 48 luồng mỗi chip; trên loại CPU dùng cho máy tính cây, số lượng này lần lượt là 20 (Ryzen 9) và 16 (Core i9).
 Do GPU thường có 16 luồng nên số lượng GPU có thể kết nối với CPU bị giới hạn tại băng thông tối đa.
-Xét cho cùng, chúng cần chia sẻ kết nối với các thiết bị ngoại vi khác như bộ nhớ và Ethernet.
+Xét cho cùng, chúng cần chia sẻ liên kết với các thiết bị ngoại vi khác như bộ nhớ và Ethernet.
 Giống như việc truy cập RAM, việc truyền lượng lớn dữ liệu thường được ưa chuộng hơn nhằm giảm tổng chi phí theo gói tin.
 * **Ethernet** là cách phổ biến nhất để kết nối máy tính với nhau.
 Dù nó chậm hơn đáng kể so với PCIe, nó rất rẻ và dễ cài đặt, bao phủ khoảng cách lớn hơn nhiều.
-Băng thông đặc trưng đối với máy chủ mức kém là 1 GBit/s.
-Thiết bị cao cấp hơn (ví dụ như [C5 instances](https://aws.amazon.com/ec2/instance-types/c5/) trên đám mây) cung cấp băng thông từ 10 đến 100 GBit/s.
-Cũng như các trường hợp trước, việc truyền dữ liệu có tổng chi phí đáng kể.
+Băng thông đặc trưng đối với máy chủ cấp thấp là 1 GBit/s.
+Các thiết bị cao cấp hơn (ví dụ như [C5 instances](https://aws.amazon.com/ec2/instance-types/c5/) trên đám mây) cung cấp băng thông từ 10 đến 100 GBit/s.
+Cũng như các trường hợp trên, việc truyền dữ liệu có tổng chi phí đáng kể.
 Chú ý rằng ta hầu như không bao giờ sử dụng trực tiếp Ethernet thuần mà tốt hơn là sử dụng một giao thức được thực thi ở tầng trên của kết nối vật lý (ví dụ như UDP hay TCP/IP).
 Việc này làm tăng tổng chi phí.
 Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một thiết bị chuyển đổi (*switch*).
