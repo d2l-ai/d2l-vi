@@ -37,7 +37,7 @@ Thông thường, một toán tử đơn sẽ sử dụng toàn bộ tài nguyê
 Chẳng hạn như toán tử `dot` sẽ sử dụng tất cả các nhân (và các luồng) của toàn bộ các CPUs, thậm chí là nhiều bộ vi xử lý trên một máy tính nếu có.
 Điều tương tự cũng xảy ra trên một bộ GPU đơn.
 Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn xử lý. 
-VỚi các thiết bị đa xử lý thì nó lại thật sự có giá trị hơn nhiều.
+Với các thiết bị đa xử lý thì nó lại thật sự có giá trị hơn nhiều.
 Trong khi xử lý song song thường liên quan đến các GPU, sử dụng thêm các vi xử lý CPU cục bộ trên máy sẽ tăng hiệu năng tính toán lên chút đỉnh.
 Tham khảo :cite:`Hadjis.Zhang.Motliagkas.ea.2016`, một bài báo tập trung về việc huấn luyện mô hình thị giác máy tính kết hợp một GPU và một CPU.
 Với sự thuận tiện từ một framework cho phép song song hóa một cách tự động, ta có thể thực hiện việc đó chỉ với vài dòng mã lệnh Python.
