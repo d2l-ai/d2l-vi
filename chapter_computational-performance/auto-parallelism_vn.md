@@ -5,7 +5,7 @@
 # Automatic Parallelism
 -->
 
-# *dịch tiêu đề phía trên*
+# Song song hóa Tự động
 :label:`sec_auto_para`
 
 <!--
@@ -15,8 +15,10 @@ For instance, :numref:`fig_asyncgraph` in :numref:`sec_async` initializes two va
 Consequently the system can choose to execute them in parallel.
 -->
 
-*dịch đoạn phía trên*
-
+MXNet tự động xây dựng các đồ thị tính toán ở back-end.
+Sử dụng đồ thị tính toán, hệ thống biết được tất cả các thành phần phụ thuộc và có thể thực hiện song song có chọn lọc các tác vụ không liên quan đến nhau để cải thiện tốc độ.
+Chẳng hạn, :numref:`fig_asyncgraph` trong :numref:`sec_async` khởi tạo hai biến độc lập.
+Do đó hệ thống có thể chọn để thực hiện chúng song song với nhau.
 
 <!--
 Typically, a single operator will use all the computational resources on all CPUs or on a single GPU.
@@ -31,8 +33,16 @@ More broadly, our discussion of automatic parallel computation focuses on parall
 We begin by importing the required packages and modules. Note that we need at least one GPU to run the experiments in this section.
 -->
 
-*dịch đoạn phía trên*
-
+Thông thường, một toán tử đơn sẽ sử dụng toàn bộ tài nguyên tính toán trên tất cả các CPU hoặc trên một CPU đơn.
+Chẳng hạn như toán tử `dot` sẽ sử dụng tất cả các nhân (và các luồng) của toàn bộ các CPUs, thậm chí là nhiều bộ vi xử lý trên một máy tính nếu có.
+Điều tương tự cũng xảy ra trên một bộ GPU đơn.
+Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn xử lý. 
+Với các thiết bị đa xử lý thì nó lại thật sự có giá trị hơn nhiều.
+Trong khi xử lý song song thường liên quan đến các GPU, sử dụng thêm các vi xử lý CPU cục bộ trên máy sẽ tăng hiệu năng tính toán lên chút đỉnh.
+Tham khảo :cite:`Hadjis.Zhang.Motliagkas.ea.2016`, một bài báo tập trung về việc huấn luyện mô hình thị giác máy tính kết hợp một GPU và một CPU.
+Với sự thuận tiện từ một framework cho phép song song hóa một cách tự động, ta có thể thực hiện việc đó chỉ với vài dòng mã lệnh Python.
+Mở rộng hơn, thảo luận của chúng ta về tính toán song song tự động tập trung vào tính toán song song sử dụng cả CPUs và GPUs, cũng như tính toán và giao tiếp song song.
+Chúng ta bắt đầu bằng việc nhập các gói thư viện và mô-đun cần thiết. Lưu ý rằng chúng ta cần ít nhất một GPU để chạy các thử nghiệm trong phần này.
 
 ```{.python .input}
 from d2l import mxnet as d2l
@@ -257,7 +267,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Trần Yến Thy
