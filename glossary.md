@@ -54,11 +54,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | blackbox dev set                       | tập phát triển blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box                           | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast                              | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
+| bus                                    | bus                    |                                              |
 
 ## C
 
 | English                         | Tiếng Việt              | Thảo luận tại                                |
 |---------------------------------|-------------------------|----------------------------------------------|
+| cache                           | bộ nhớ đệm              |
 | (strictly) convex function      | hàm lồi (chặt)          | [https://git.io/JvohV](https://git.io/JvohV) |
 | candidate hidden state          | trạng thái ẩn tiềm năng |                                              |
 | candidate memory                | ô nhớ tiềm năng         |                                              |
