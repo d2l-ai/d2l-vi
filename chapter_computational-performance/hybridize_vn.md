@@ -416,7 +416,7 @@ To understand what is going on we print the arguments as part of the function in
 -->
 
 Đoạn mã ở trên thực hiện một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
-`hybrid_foward` lấy thêm một đối số  - mô-đun `F`.
+`hybrid_foward` lấy thêm một đối số - mô-đun `F`.
 Điều này là cần thiết vì tùy vào chương trình có được hybrid hóa hay không để xử lý bằng thư viện phù hợp (`ndarray` hoặc `symbol`).
 Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNET xác định đối số đầu vào một cách tự động. 
 Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các đối số đầu vào khi gọi hàm. 
@@ -448,7 +448,7 @@ Repeating the function call leads to a surprising outcome:
 -->
 
 Thay vì sử dụng `ndarray` ta lúc này sử dụng mô-đun `symbol` cho `F`.
-Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, luồng dữ liệu qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
+Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, dữ liệu truyền qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
 Thực hiện gọi hàm `net` nhiều lần dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
@@ -471,7 +471,7 @@ Tất cả các lệnh in, như định nghĩa trong `hybrid_forward` bị bỏ 
 Thật vậy, sau khi hybrid hóa, việc thực thi lệnh `net(x)` không còn liên quan gì tới trình thông dịch của Python nữa.
 Điều này có nghĩa rằng bất cứ đoạn chương trình nào của Python không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
 Và thay vì gọi Python, MXNet gọi trực tiếp back-end C++. 
-Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
+Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
 Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
@@ -545,6 +545,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
 * 
