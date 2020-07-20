@@ -238,7 +238,15 @@ After all, each head reads a track of bits, hence the bit rate only scales with 
 As a result HDDs are quickly becoming relegated to archival storage and low-grade storage for very large datasets.
 -->
 
-*dịch đoạn phía trên*
+Để hiểu điều thứ hai, hãy xem xét thực tế rằng ổ cứng quay với tốc độ khoảng 7,200 vòng/phút.
+Nếu chúng nhanh hơn nhiều, chúng sẽ vỡ tan do lực ly tâm tác dụng lên các đĩa.
+Điều này có một nhược điểm lớn khi truy cập vào một khu vực cụ thể trên đĩa: chúng ta cần đợi cho đến khi đĩa quay đúng vị trí (chúng ta có thể di chuyển đầu nhưng không tăng tốc các đĩa thực tế).
+Do đó, có thể mất hơn 8 mili-giây cho đến khi dữ liệu được yêu cầu sẵn sàng.
+Một cách phổ biến mà điều này được thể hiện là nói rằng ổ cứng có thể hoạt động ở mức xấp xỉ 100 IOP.
+Con số này về cơ bản vẫn không thay đổi trong hai thập kỷ qua.
+Tệ hơn nữa, việc tăng băng thông cũng khó khăn không kém (theo thứ tự 100-200 MB/giây).
+Rốt cuộc, mỗi đầu đọc một rãnh bit, do đó tốc độ bit chỉ chia tỷ lệ với căn bậc hai của mật độ thông tin.
+Kết quả là các ổ cứng đang nhanh chóng bị chuyển sang lưu trữ lưu trữ và lưu trữ cấp thấp cho các bộ dữ liệu rất lớn.
 
 
 <!--
@@ -250,8 +258,12 @@ These improvements sound almost too good to be true.
 Indeed, they come with a number of caveats, due to the way SSDs are designed.
 -->
 
-*dịch đoạn phía trên*
-
+**Ổ đĩa thể rắn (SSD)** sử dụng bộ nhớ Flash để liên tục lưu trữ thông tin.
+Điều này cho phép truy cập *nhanh hơn nhiều* vào các bản ghi đã được lưu trữ.
+SSD hiện đại có thể hoạt động ở mức 100,000 đến 500,000 IOP, tức là, nhanh hơn gấp 10 lũy thừa 3 so với ổ cứng.
+Hơn nữa, băng thông của chúng có thể đạt tới 1-3GB/giây nghĩa là nhanh hơn 10 lần so với ổ cứng.
+Những cải tiến này nghe có vẻ tốt đến mức khó tin.
+Thật vậy, chúng đi kèm với một số cảnh báo chủ yếu do cách mà các ổ cứng SSD được thiết kế.
 
 <!--
 * SSDs store information in blocks (256 KB or larger).
@@ -269,8 +281,19 @@ The drives capable of handling this, referred to as NVMe (Non Volatile Memory en
 This amounts to up to 8GB/s on PCIe 4.0.
 -->
 
-*dịch đoạn phía trên*
-
+* Các ổ SSD lưu trữ thông tin theo block (256 KB trở lên).
+Chúng chỉ có thể được ghi dữ liệu một cách tổng thể vì thế mất thời gian đáng kể.
+Do đó việc ghi ngẫu nhiên theo bit trên SSD có hiệu suất rất tệ.
+Tương tự như vậy, việc ghi dữ liệu nói chung mất thời gian đáng kể vì khối phải được đọc, xóa và sau đó viết lại với thông tin mới.
+Cho đến nay, bộ điều khiển và firmware của SSD đã phát triển các thuật toán để giảm thiểu điều này.
+Tuy nhiên ghi có thể chậm hơn nhiều, đặc biệt là đối với SSD QLC (tế bào bốn cấp).
+Chìa khóa để cải thiện hiệu suất là duy trì *hàng đợi* các hoạt động, để ưu tiên đọc và để ghi thành các khối lớn nếu có thể.
+* Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường đã có sau vài nghìn lần ghi).
+Các thuật toán bảo vệ mức hao mòn có thể lan truyền sự xuống cấp trên nhiều ô.
+Điều đó nói rằng, không nên sử dụng SSD cho các tệp hoán đổi hoặc cho các tập hợp lớn các tệp nhật ký.
+* Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
+Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động được tăng cường), có thể sử dụng tối đa 4 làn PCIe.
+Số lượng này lên tới 8GB/giây trên PCIe 4.0.
 
 <!--
 **Cloud Storage** provides a configurable range of performance.
@@ -278,7 +301,9 @@ That is, the assignment of storage to virtual machines is dynamic, both in terms
 We recommend that the user increase the provisioned number of IOPs whenever latency is too high, e.g., during training with many small records.
 -->
 
-*dịch đoạn phía trên*
+**Lưu trữ đám mây** cung cấp một phạm vi hiệu suất mà phạm vi ấy có thể tùy chỉnh.
+Nghĩa là, việc chỉ định lưu trữ cho các máy ảo là động, cả về số lượng và tốc độ, như người dùng đã chọn.
+Chúng tôi khuyên người dùng nên tăng số lượng IOP được cung cấp bất cứ khi nào độ trễ quá cao, ví dụ như trong quá trình đào tạo với nhiều bản ghi nhỏ.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
