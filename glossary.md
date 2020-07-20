@@ -392,6 +392,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | regularization                                     | điều chuẩn                                |                                              |
 | reinforcement learning                             | học tăng cường                            |                                              |
 | relative loss                                      | mất mát tương đối                         | [https://git.io/JvQAH](https://git.io/JvQAH) |
+| remote                                             | từ xa                                     |                                              |
 | reparameterization                                 | tái tham số hóa                           |                                              |
 | representation learning                            | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
 | rescale                                            | (phép) tái tỉ lệ                          | [https://git.io/JfeXx](https://git.io/JfeXx) |
