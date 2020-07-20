@@ -21,10 +21,11 @@ We assume that the reader is familiar with minibatch SGD algorithms such as the 
 -->
 
 Tới giờ ta đã thảo luận về cách huấn luyện mô hình trên CPU và GPU một cách hiệu quả.
-Trong :numref:`sec_auto_para`, ta còn xem cách mà các framework học sâu như MXNet (và Tensorflow) cho phép ta tự động song song hoá việc tính toán và giao tiếp giữa chúng.
+Trong :numref:`sec_auto_para`, ta còn xem cách mà các framework học sâu như MXNet (và TensorFlow) cho phép ta tự động song song hoá việc tính toán và giao tiếp giữa chúng.
 Cuối cùng, :numref:`sec_use_gpu` chỉ cách liệt kê toàn bộ các GPU có trong máy bằng lệnh `nvidia-smi`.
 Điều mà ta *không* thảo luận là cách để thực sự song song hoá việc huấn luyện mô hình học sâu.
-(Ta bỏ qua vấn để thực hiện *suy luận* trên nhiều GPU ở đây vì nó khá ít khi được sử dụng và là một chủ đề cao cấp nằm ngoài phạm vi của cuốn sách này.)
+(Ta bỏ qua vấn để thực hiện *suy luận* trên nhiều GPU ở đây vì nó khá ít khi được sử dụng và là một chủ đề nâng cao nằm ngoài phạm vi của cuốn sách này.)
+Chúng ta mới chỉ ngầm hiểu rằng bằng cách nào đó có thể chia dữ liệu cho các thiết bị khác nhau và huấn luyện mạng.
 Phần này sẽ bổ sung những chi tiết còn thiếu ấy và chỉ cách huấn luyện song song một mạng học sâu từ đầu.
 Chi tiết về cách tận dụng các tính năng của Gluon sẽ nằm ở :numref:`sec_multi_gpu_gluon`.
 Chúng tôi giả định rằng bạn đọc đã quen với các thuật toán SGD minibatch được mô tả ở :numref:`sec_minibatch_sgd`.
@@ -45,10 +46,10 @@ Multiple GPUs, after all, increase both *memory* and *compute* ability.
 In a nutshell, we have a number of choices, given a minibatch of training data that we want to classify.
 -->
 
-Ta hãy bắt đầu bằng một bài toán thị giác máy tính đơn giản cùng một kiến trúc mạng hơi cổ lỗ xỉ, như là nhiều tầng tích chập, tầng gộp và có thể thêm vài tầng dày đặc ở cuối.
-Như vậy, ta sẽ bắt đầu với một mạng trông khá tương tự như LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
+Ta hãy bắt đầu bằng một bài toán thị giác máy tính đơn giản cùng một kiến trúc mạng cổ xưa, với vài tầng tích chập, tầng gộp và có thể thêm vài tầng dày đặc ở cuối.
+Như vậy, mạng này sẽ trông khá tương tự như LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
 Với nhiều GPU (máy chủ để bàn thường có 2, máy chủ g4dn.12xlarge thì có 4, AWS p3.16xlarge có 8, hoặc là 16 trên p2.16xlarge),
-ta muốn phân chia việc huấn luyện theo một cách mà vừa tăng tốc độ lại tận hưởng được lợi ích từ các lựa chọn thiết kế đơn giản và tái diễn được.
+ta muốn phân chia việc huấn luyện theo một cách mà vừa tăng tốc độ lại tận dụng được lợi ích từ các thiết kế đơn giản và tái tạo được.
 Nhiều GPU, sau tất cả, là để tăng cả *bộ nhớ* và năng lực *tính toán*.
 Tóm lại, với một minibatch dữ liệu huấn luyện để phân loại, ta có một vài phương án phân tách khác nhau.
 
@@ -499,6 +500,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
