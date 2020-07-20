@@ -17,7 +17,7 @@ Consequently the system can choose to execute them in parallel.
 
 MXNet tự động xây dựng các đồ thị tính toán ở back-end.
 Sử dụng đồ thị tính toán, hệ thống biết được tất cả các thành phần phụ thuộc và có thể thực hiện song song có chọn lọc các tác vụ không liên quan đến nhau để cải thiện tốc độ.
-Chẳng hạn, :numref:`fig_asyncgraph` in :numref:`sec_async` khởi tạo hai biến độc lập.
+Chẳng hạn, :numref:`fig_asyncgraph` trong :numref:`sec_async` khởi tạo hai biến độc lập.
 Do đó hệ thống có thể chọn để thực hiện chúng song song với nhau.
 
 <!--
