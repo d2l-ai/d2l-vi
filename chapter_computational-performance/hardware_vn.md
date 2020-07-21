@@ -203,7 +203,20 @@ We can safely ignore the details for the purpose of this book.
 They only matter when tuning GPU kernels for high throughput.
 -->
 
-*dịch đoạn phía trên*
+Bộ nhớ GPU còn có yêu cầu băng thông thậm chí còn cao hơn nữa vì chúng có nhiều phần tử xử lý hơn CPU.
+Nhìn chung có hai phương án tiếp cận đối với vấn đề này.
+Một là cần tạo bus bộ nhớ có kích thước lớn hơn đáng kể.
+Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có độ rộng 352 bit.
+Điều này cho phép nhiều thông tin được truyền đi cùng lúc.
+Thứ hai là các GPU sử dụng loại bộ nhớ chuyên biệt có hiệu năng cao.
+Các thiết bị hạng phổ thông, điển hình như dòng RTX và Titan của NVIDIA, dùng các chip [GDDR6](https://en.wikipedia.org/wiki/GDDR6_SDRAM) với băng thông tổng hợp 500 GB/s.
+Một dạng khác là cần dùng các mô-đun HBM (bộ nhớ băng thông rộng).
+Chúng dùng một loại giao tiếp rất khác và kết nối trực tiếp với GPU trên một vùng chuyên biệt của vật liệu chế tạo chip bán dẫn.
+Điều này làm chúng rất đắt và việc sử dụng chúng chủ yếu hạn chế cho các chip máy chủ cao cấp như các dòng tăng tốc NVIDIA Volta V100.
+Không quá ngạc nhiên kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
+Đối với các mục tiêu của chúng ta, các đặc tính hiệu năng của chúng là xem xem nhau và đơn giản là nhanh hơn nhiều .
+Ta có thể bỏ qua chi tiết mà không vấn đề gì đối với mục đích của cuốn sách này.
+Chúng chỉ là vấn đề khi ta cần điều chỉnh các kernel GPU để đạt được thông lượng xử lý cao hơn.  
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -213,7 +226,7 @@ They only matter when tuning GPU kernels for high throughput.
 ## Storage
 -->
 
-## *dịch tiêu đề phía trên*
+## Lưu trữ
 
 
 <!--
@@ -221,7 +234,8 @@ We saw that some of the key characteristics of RAM were *bandwidth* and *latency
 The same is true for storage devices, just that the differences can be even more extreme.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta đã thấy đặc tính then chốt của RAM là *băng thông* và *độ trễ*.
+Điều này cũng đúng đối với các thiết bị lưu trữ, sự khác biệt chỉ có thể là các đặc tính trên lớn hơn nhiều lần.
 
 
 <!--
@@ -232,7 +246,11 @@ One of the key benefits of HDDs is that they are relatively inexpensive.
 One of their many downsides are their typically catastrophic failure modes and their relatively high read latency.
 -->
 
-*dịch đoạn phía trên*
+**Các ổ cứng** đã được sử dụng hơn nửa thế kỷ nay.
+Một cách ngắn gọn, chúng chứa một số đĩa quay với những đầu có thể xác định vị trí để đọc/ghi ở bất cứ rãnh nào cho trước.
+Các ổ đĩa cao cấp có thể lưu tới 16TB trên 9 đĩa.
+Một trong những lợi ích chính của ổ đĩa cứng HDD là chúng tương đối rẻ.
+Nhược điểm của chúng là có độ đọc trễ tương đối cao và hay bị hư hỏng nặng gây mất hoặc không thể đọc dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -816,7 +834,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 5 -->
 * 
