@@ -306,7 +306,7 @@ Below, we implement a batch normalization layer with `ndarray`s from scratch:
 Dưới đây, chúng ta lập trình tầng chuẩn hoá theo batch chỉ dùng `ndarray`.
 
 ```{.python .input  n=72}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx, init
 from mxnet.gluon import nn
 npx.set_np()

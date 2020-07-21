@@ -235,7 +235,7 @@ Chúng ta sẽ xây dựng bộ từ vựng dựa trên tập dữ liệu "cỗ 
 
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 import random
 npx.set_np()

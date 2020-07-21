@@ -330,7 +330,7 @@ Thông thường, như trong mục này, các hàm kích hoạt không chỉ đ�
 
 ```{.python .input  n=1}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx
 npx.set_np()
 ```

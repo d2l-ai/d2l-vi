@@ -19,7 +19,7 @@ Sau khi tự lập trình lại mọi thứ thì ta cũng sẽ dùng Gluon để
 Để bắt đầu, chúng ta nhập các thư viện quen thuộc vào.
 
 ```{.python .input  n=2}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx, gluon
 from IPython import display
 npx.set_np()

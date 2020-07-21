@@ -217,7 +217,7 @@ Một điều may mắn là, nếu bạn đang sử dụng Jupyter, bạn có th
 # !pip install pandas
 
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, init, np, npx
 from mxnet.gluon import nn
 import pandas as pd

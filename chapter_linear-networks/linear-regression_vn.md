@@ -500,7 +500,7 @@ Chúng ta sẽ sử dụng vòng lặp `for` trong Python ở phương pháp th�
 
 ```{.python .input}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 import math
 from mxnet import np
 import time

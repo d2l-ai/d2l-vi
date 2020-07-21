@@ -48,7 +48,7 @@ Trong phần này chúng ta sẽ tìm hiểu và lập trình mô hình seq2seq 
 
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx, init, gluon, autograd
 from mxnet.gluon import nn, rnn
 npx.set_np()

@@ -134,7 +134,7 @@ Bắt đầu, ta nhập các gói lệnh cần thiết.
 
 ```{.python .input  n=1}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 import random
 npx.set_np()

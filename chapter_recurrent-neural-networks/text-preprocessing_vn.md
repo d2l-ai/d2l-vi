@@ -58,7 +58,7 @@ Chúng ta bỏ qua dấu câu và chữ viết hoa.
 
 ```{.python .input}
 import collections
-import d2l
+from d2l import mxnet as d2l
 import re
 
 # Saved in the d2l package for later use

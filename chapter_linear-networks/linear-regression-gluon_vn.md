@@ -38,7 +38,7 @@ To start, we will generate the same dataset as in the previous section.
 Chúng ta bắt đầu bằng việc tạo một tập dữ liệu như ở mục trước.
 
 ```{.python .input  n=2}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, gluon, np, npx
 npx.set_np()
 

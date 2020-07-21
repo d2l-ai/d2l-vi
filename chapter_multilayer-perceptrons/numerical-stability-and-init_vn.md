@@ -101,7 +101,7 @@ Hãy cùng xem xét hàm sigmoid kỹ lưỡng hơn để thấy tại sao nó c
 
 ```{.python .input}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx
 npx.set_np()
 
