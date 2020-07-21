@@ -98,7 +98,7 @@ Although the RNN layer hidden state also contains history information from decod
 the attention output explicitly selects the encoder outputs based on `enc_valid_len`, so that the attention output suspends other irrelevant information.
 -->
 
-Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng đầu ra của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
+Ở mỗi bước thời gian trong quá trình giải mã, ta sử dụng trạng thái ẩn của tầng RNN cuối cùng làm câu truy vấn cho tầng tập trung.
 Đầu ra của mô hình tập trung sau đó được ghép nối với vector embedding đầu vào để đưa vào tầng RNN. 
 Mặc dù trạng thái ẩn của tầng RNN cũng chứa thông tin từ bộ giải mã ở các bước thời gian trước đó nhưng đầu ra của tầng tập trung sẽ lựa chọn các đầu ra của bộ mã hóa một cách tường minh dựa vào `enc_valid_len`nhằm loại bỏ những thông tin không liên quan.
 
