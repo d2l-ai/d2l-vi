@@ -12,7 +12,7 @@ Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
 
 ## Bảng thuật ngữ
-Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
+Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](glossary.md)**.
 
 <!--
 ## Lời cảm ơn
@@ -109,20 +109,20 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
     * [x] 11.10. [Adam](chapter_optimization/adam_vn.md)
     * [x] 11.11. [Định thời Tốc độ Học](chapter_optimization/lr-scheduler_vn.md)
-* [ ] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
-    * [-] 12.1. [Trình biên dịch và Trình thông dịch](chapter_computational-performance/hybridize_vn.md)
-    * [-] 12.2. [Tính toán Bất đồng bộ](chapter_computational-performance/async-computation_vn.md)
-    * [-] 12.3. [Song song hóa Tự động](chapter_computational-performance/auto-parallelism_vn.md)
-    * [-] 12.4. [Phần cứng](chapter_computational-performance/hardware_vn.md)
+* [-] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
+    * [x] 12.1. [Trình biên dịch và Trình thông dịch](chapter_computational-performance/hybridize_vn.md)
+    * [x] 12.2. [Tính toán Bất đồng bộ](chapter_computational-performance/async-computation_vn.md)
+    * [x] 12.3. [Song song hóa Tự động](chapter_computational-performance/auto-parallelism_vn.md)
+    * [x] 12.4. [Phần cứng](chapter_computational-performance/hardware_vn.md)
     * [-] 12.5. [Huấn luyện đa GPU](chapter_computational-performance/multiple-gpus_vn.md)
     * [-] 12.6. [Cách lập trình Súc tích đa GPU](chapter_computational-performance/multiple-gpus-gluon_vn.md)
     * [-] 12.7. [Tham số Máy chủ](chapter_computational-performance/parameterserver_vn.md)
 * [ ] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
-    * [ ] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
-    * [ ] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)
-    * [ ] 13.3. [Object Detection and Bounding Boxes](chapter_computer-vision/bounding-box_vn.md)
-    * [ ] 13.4. [Anchor Boxes](chapter_computer-vision/anchor_vn.md)
-    * [ ] 13.5. [Multiscale Object Detection](chapter_computer-vision/multiscale-object-detection_vn.md)
+    * [-] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
+    * [-] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)
+    * [-] 13.3. [Object Detection and Bounding Boxes](chapter_computer-vision/bounding-box_vn.md)
+    * [-] 13.4. [Anchor Boxes](chapter_computer-vision/anchor_vn.md)
+    * [-] 13.5. [Multiscale Object Detection](chapter_computer-vision/multiscale-object-detection_vn.md)
     * [ ] 13.6. [The Object Detection Dataset](chapter_computer-vision/object-detection-dataset_vn.md)
     * [ ] 13.7. [Single Shot Multibox Detection (SSD)](chapter_computer-vision/ssd_vn.md)
     * [ ] 13.8. [Region-based CNNs (R-CNNs)](chapter_computer-vision/rcnn_vn.md)
@@ -189,6 +189,4 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 
 ## Giấy phép
 
-Cuốn sách này được cung cấp dưới giấy phép **[Creative Commons Attribution-ShareAlike 4.0 International Public License](LICENSE)**.
-
-Mã nguồn mẫu và tham chiếu trong cuốn sách này được cung cấp theo **[MIT License](LICENSE-SAMPLECODE)** đã có sự điều chỉnh.
+Cuốn sách này được cung cấp dưới giấy phép **[Creative Commons Attribution-ShareAlike 4.0 International Public License](LICENSE)**. Mã nguồn mẫu và nội dung tham chiếu trong cuốn sách này được cung cấp theo **[MIT License](LICENSE-SAMPLECODE)** với nội dung đã có sự cập nhật.
