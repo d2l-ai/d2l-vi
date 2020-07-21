@@ -50,11 +50,11 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Recurrent Neural Networks (**Đã hoàn thành**)
 * Modern Recurrent Neural Networks (**Đã hoàn thành**)
 * Attention Mechanisms (**Đã hoàn thành**)
-* Optimization Algorithms (*Đang tiến hành*)
-* Computational Performance (*Đang tiến hành*)
+* Optimization Algorithms (**Đã hoàn thành**)
+* Computational Performance (**Đã hoàn thành**)
 * Computer Vision (*Đang tiến hành*)
-* Natural Language Processing: Pretraining
-* Natural Language Processing: Applications
+* Natural Language Processing: Pretraining (*Đang tiến hành*)
+* Natural Language Processing: Applications (*Đang tiến hành*)
 * Recommender Systems
 * Generative Adversarial Networks
 * Appendix: Mathematics for Deep Learning
