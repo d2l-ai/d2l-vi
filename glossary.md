@@ -69,6 +69,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | causality                       | quan hệ nhân quả        |                                              |
 | chain rule                      | quy tắc dây chuyền      | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | channel (in computer vision)    | kênh                    |                                              |
+| (model) checkpoint              | checkpoint (của mô hình) |                                              |
 | classifier                      | bộ phân loại            |                                              |
 | closed-form solution            | biểu thức dạng đóng     | [https://git.io/Jvopd](https://git.io/Jvopd) |
 | cloud computing                 | điện toán đám mây       | [https://git.io/JJn3b](https://git.io/JJn3b) |
