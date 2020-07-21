@@ -15,7 +15,7 @@ As you might expect, by relying on the Gluon library, we can implement MLPs even
 Như bạn đã có thể đoán trước, ta có thể dựa vào thư viện Gluon để lập trình MLP một cách súc tích hơn.
 
 ```{.python .input}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import gluon, init, npx
 from mxnet.gluon import nn
 npx.set_np()

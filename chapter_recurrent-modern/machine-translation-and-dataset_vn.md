@@ -35,7 +35,7 @@ Phần này được dành riêng để trình bày cách tiền xử lý và n�
 
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx, gluon
 import os
 npx.set_np()

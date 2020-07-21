@@ -311,7 +311,7 @@ Sau khi đề cập nhiều về lý thuyết, bây giờ chúng ta hãy thử l
 
 ```{.python .input}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx, gluon, init
 from mxnet.gluon import nn
 npx.set_np()

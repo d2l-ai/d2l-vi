@@ -21,7 +21,7 @@ Cũng như trước, ta bắt đầu với việc đọc tập dữ liệu đư�
 
 ```{.python .input  n=14}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 import math
 from mxnet import autograd, np, npx, gluon
 npx.set_np()

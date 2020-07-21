@@ -398,7 +398,7 @@ Chúng tôi sử dụng đoạn mã dưới đây như một ví dụ cảnh bá
 
 
 ```{.python .input}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import npx
 from mxnet.gluon import rnn
 npx.set_np()

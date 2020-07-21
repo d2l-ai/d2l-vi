@@ -59,7 +59,7 @@ Trong mã nguồn dưới đây, ta định nghĩa một hàm tên `vgg_block` �
 Hàm này nhận hai đối số `num_convs` và `num_channels` tương ứng lần lượt với số tầng tích chập và số kênh đầu ra. 
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn
 npx.set_np()

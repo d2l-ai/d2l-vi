@@ -102,7 +102,7 @@ Như một ví dụ, bên dưới là mật độ của phân phối Gauss với
 Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn. 
 
 ```{.python .input}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 import random
 npx.set_np()

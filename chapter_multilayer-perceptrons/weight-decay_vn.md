@@ -230,7 +230,7 @@ lựa chọn nhãn là một hàm tuyến tính của các đầu vào, bị bi�
 
 ```{.python .input  n=1}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
 npx.set_np()

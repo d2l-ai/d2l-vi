@@ -141,7 +141,7 @@ Hãy bắt đầu bằng cách nhập các mô-đun thích hợp và nạp dữ 
 
 
 ```{.python .input  n=17}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import npx
 from mxnet.gluon import rnn
 npx.set_np()
