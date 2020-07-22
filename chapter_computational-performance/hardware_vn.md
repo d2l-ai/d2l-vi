@@ -320,7 +320,7 @@ Peripherals (Ethernet, WiFi, Bluetooth, SSD controller, USB, etc.) are either pa
 -->
 
 :numref:`fig_skylake` minh hoạ bộ xử lý Intel Skylake với CPU lõi tứ.
-Nó có một GPU tích hợp, bộ nhớ cache và phương tiện kết nối bốn nhân.
+Nó có một GPU tích hợp, bộ nhớ cache và phương tiện kết nối bốn lõi.
 Thiết bị ngoại vi (Ethernet, WiFi, Bluetooth, bộ điều khiển SSD, USB, v.v.) là một phần của chipset hoặc được đính kèm trực tiếp (PCIe) với CPU.
 
 <!--
