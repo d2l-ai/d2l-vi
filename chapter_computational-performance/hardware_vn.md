@@ -327,7 +327,7 @@ Thiết bị ngoại vi (Ethernet, WiFi, Bluetooth, bộ điều khiển SSD, US
 ### Microarchitecture
 -->
 
-## Vi cấu trúc (Microarchitecture)
+## Vi kiến trúc (Microarchitecture)
 
 
 <!--
