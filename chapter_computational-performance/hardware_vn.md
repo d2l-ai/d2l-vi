@@ -409,11 +409,11 @@ Commonly the following names / concepts are used:
 -->
 
 Xét tình huống sau: ta sử dụng một CPU bình thường với 4 lõi như được mô tả trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
-Thêm nữa, hãy giả sử ta sử dụng một bộ IPC (*instruction per clock* - số lệnh mỗi xung nhịp) đếm từ 1 và mỗi bộ đều có AVX2 được đưa vào hoạt động với độ rộng 256bit.
-Ngoài ra, giả sử rằng có ít nhất một thanh ghi được sử dụng trong các thao tác AVX2 cần phải gọi ra từ bộ nhớ.
+Thêm nữa, hãy giả sử ta sử dụng một số IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi bộ đều có AVX2 được đưa vào hoạt động với độ rộng 256bit.
+Ngoài ra, giả sử rằng cần truy cập từ bộ nhớ ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
 Điều này có nghĩa rằng CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
 Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các đơn vị xử lý sẽ thiếu dữ liệu để xử lý.
-Tiếc thay giao diện bộ nhớ của một con vi xử lý như vậy chỉ hỗ trợ tốc độ truyền dữ liệu 20-40 GB/s, nghĩa là thấp hơn 10 lần.
+Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
 Để điều chỉnh vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ có khoảng cách xa, tốt hơn hết là lưu trong bộ nhớ đệm nội bộ của CPU.
 Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
 Một số tên gọi / khái niệm sau thường được sử dụng:
@@ -435,9 +435,9 @@ AMD's Epyc 3 server CPUs have a whopping 256MB of cache spread across multiple c
 More typical numbers are in the 4-8MB range.
 -->
 
-* **Thanh ghi** hoàn toàn không phải là một bộ phận của bộ nhớ đệm. Nó chỉ hỗ trợ sắp xếp các câu lệnh.
+* **Thanh ghi** đúng ra mà nói không phải là một bộ phận của bộ nhớ đệm. Nó chỉ hỗ trợ sắp xếp các câu lệnh.
 Nhưng dù sao thì thanh ghi trong CPU cũng là một vùng bộ nhớ mà CPU có thể truy cập theo đúng tốc độ xung nhịp mà không có độ trễ.
-Các CPU có 10 loại thanh ghi. Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào bộ biên dịch (hay lập trình viên).
+Các CPU thường có hàng chục thanh ghi. Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
 Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register`.
 * Bộ nhớ đệm **L1** là lớp bảo vệ đầu tiên khi nhu cầu băng thông bộ nhớ quá cao.
 Bộ nhớ đệm L1 khá nhỏ (kích thước điển hình khoảng 32-64kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
@@ -467,8 +467,8 @@ This is one more reason for why there is a practical limit to cache sizes (besid
 -->
 
 Việc dự đoán ta sẽ cần phần tử bộ nhớ nào tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
-Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán lưu trữ sẽ cố gắng *đọc phía trước* hơn là phía sau.
-Cũng như vậy, việc giữ khuôn mẫu truy cập bộ nhớ địa phương là một cách tốt nhằm cải thiện hiệu năng.
+Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán ghi đệm (*caching algorithms*) sẽ cố gắng *đọc phía trước* hơn là phía sau.
+Cũng như vậy, việc giữ hành vi truy cập bộ nhớ ở mức cục bộ là một cách tốt nhằm cải thiện hiệu năng.
 Tăng số lượng bộ nhớ đệm là một con dao hai lưỡi.
 Một mặt nó đảm bảo các lõi của vi xử lý không bị thiếu dữ liệu.
 Mặt khác nó tăng kích thước vi xử lý, lấn chiếm phần diện tích mà đáng ra có thể được sử dụng vào việc tăng khả năng xử lý.
