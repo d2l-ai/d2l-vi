@@ -343,7 +343,7 @@ For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perf
 -->
 
 Mỗi nhân xử lý bao gồm các thành phần rất tinh vi.
-Mặc dù chi tiết khác nhau giữa đời máy và nhà sản xuất, chức năng cơ bản của chúng tương đối đã được chuẩn hoá.
+Mặc dù chi tiết khác nhau giữa đời chip và nhà sản xuất, chức năng cơ bản của chúng đã được chuẩn hoá tương đối.
 Front-end tải các lệnh và dự đoán nhánh nào sẽ được thực hiện (ví dụ: cho luồng điều khiển).
 Các lệnh tiếp đó được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
