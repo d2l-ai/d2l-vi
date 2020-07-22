@@ -556,7 +556,7 @@ They are optimized for small operations involving between 4x4 and 16x16 matrices
 :numref:`fig_tensorcore` gives an overview of the optimizations.
 -->
 
-Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (* TensorCore*).
+Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (*TensorCore*).
 Đây là một ví dụ của xu hướng gần đây sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
 Ví dụ, TPU có thêm một mảng tâm thu (*systolic array*) :cite:`Kung.1988` để tăng tốc độ nhân ma trận.
 Thiết kế TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
@@ -585,7 +585,7 @@ See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 Đương nhiên khi tối ưu cho quá trình tính toán, ta bắt buộc phải có một số đánh đổi nhất định.
 Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa thớt.
 Trừ một số ngoại lệ đáng chú ý, ví dụ như [Gunrock](https://github.com/gunrock/gunrock) :cite:`Wang.Davidson.Pan.ea.2016`,
-mô hình truy cập ma trận thưa và vector không phù hợp với các thao tác đọc theo cụm (*burst read*) khi băng thông cao mà GPU trội hơn.
+việc truy cập vector và ma trận thưa không phù hợp với các thao tác đọc theo cụm (*burst read*) với băng thông cao của GPU.
 Phối hợp cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
 Tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
