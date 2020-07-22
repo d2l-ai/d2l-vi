@@ -456,14 +456,14 @@ def train(num_gpus, batch_size, lr):
 ## Experiment
 -->
 
-## *dịch tiêu đề phía trên*
+## Thí nghiệm
 
 
 <!--
 Let us see how well this works on a single GPU. We use a batch size of 256 and a learning rate of 0.2.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem hàm trên hoạt động như thế nào trên một GPU. Ta sử dụng kích thước batch 256 và tốc độ học 0.2.
 
 
 ```{.python .input  n=62}
@@ -479,8 +479,13 @@ moreover we only have a small dataset, where our slightly unsophisticated approa
 We will encounter more complex models and more sophisticated ways of parallelization going forward. Let us see what happens nonetheless for MNIST.
 -->
 
-*dịch đoạn phía trên*
-
+Giữ nguyên kích thước batch và tốc độ học, tăng số GPU lên 2,
+ta có thể thấy sự cải thiện về độ chính xác trên tập kiểm tra xấp xỉ bằng thí nghiệm trước.
+Về các thuật toán tối ưu, hai thí nghiệm giống hệt nhau.
+Không may, ta không đạt được sự tăng tốc đáng kể nào: đơn giản vì mô hình quá nhỏ;
+hơn nữa tập dữ liệu cũng nhỏ, do đó cách huấn luyện trên nhiều GPU có chút không tinh vi của chúng ta sẽ chịu chi phí đáng kể do Python.
+Về sau ta sẽ gặp các mô hình phức tạp hơn và các cách tinh vi hơn để song song hóa.
+Hiện giờ hãy xem thí nghiệm trên Fashion-MNIST cho kết quả như thế nào. <!-- trong code là `load_data_fashion_mnist` -->
 
 ```{.python .input  n=13}
 train(num_gpus=2, batch_size=256, lr=0.2)
@@ -499,7 +504,13 @@ Data parallelism is the simplest strategy.
 * Large minibatches may require a slightly increased learning rate.
 -->
 
-*dịch đoạn phía trên*
+* Có nhiều cách để chia việc huấn luyện mạng học sâu cho nhiều GPU.
+Có thể chia các tầng cho một GPU, dùng nhiều GPU cho một tầng, hoặc nhiều GPU cho dữ liệu.
+Hai cách đầu yêu cầu điều khiển việc truyền dữ liệu chặt chẽ.
+Song song hóa dữ liệu là cách đơn giản nhất.
+* Không khó để huấn luyện bằng song song hóa dữ liệu. Tuy nhiên, cách này cần tăng kích thước hiệu dụng của minibatch để đạt hiệu quả.
+* Dữ liệu được chia cho nhiều GPU, mỗi GPU thực thi các lượt truyền xuôi và ngược, sau đó các gradient được tổng hợp lại và truyền kết quả về các GPU.
+* Minibatch lớn có thể yêu cầu tốc độ học cao hơn một chút.
 
 
 ## Bài tập
@@ -511,7 +522,10 @@ Data parallelism is the simplest strategy.
 4. Implement multi-GPU test accuracy computation.
 -->
 
-*dịch đoạn phía trên*
+1. Khi huấn luyện trên nhiều GPU, thay đổi kích thước minibatch từ $b$ thành $k \cdot b$, tức là nhân thêm số lượng GPU.
+2. So sánh độ chính xác với các tốc độ học khác nhau. Tốc độ học thay đổi theo số lượng GPU như thế nào?
+3. Lập trình hàm `allreduce` hiệu quả hơn để tổng hợp các tham số trên các GPU khác nhau (tại sao cách ban đầu không hiệu quả)?
+4. Lập trình tính độ chính xác trên tập kiểm tra với nhiều GPU.
 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -549,4 +563,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Cường
