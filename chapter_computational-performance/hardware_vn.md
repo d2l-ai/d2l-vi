@@ -300,7 +300,9 @@ Lastly, almost all modern CPUs contain vector processing units to aid with high 
 -->
 
 Bộ xử lý trung tâm (Central Processing Units - CPU) là trung tâm của mọi máy tính (như ở phần trước, chúng tôi đã mô tả tổng quan về những phần cứng quan trọng cho các mô hình học sâu hiệu quả).
-CPUs gồm một số thành tố quan trọng: nhân xử lý thực thi mã nguồn của máy, phương tiện kết nối các nhân xử lý (cấu trúc kết nối cụ thể có sự khác biệt lớn giữa các mô hình xử lý, đời máy và nhà sản xuất) và bộ nhớ cache cho phép băng thông cao hơn và truy cập bộ nhớ có độ trễ thấp hơn mức có thể bằng cách đọc từ bộ nhớ chính.
+CPU gồm một số thành tố quan trọng: lõi xử lý (*core*) thực thi mã nguồn của máy, 
+bus kết nối các lõi (cấu trúc kết nối cụ thể có sự khác biệt lớn giữa các mô hình xử lý, đời chip và nhà sản xuất)
+và bộ nhớ đệm (*cache*) cho phép truy cập với băng thông cao hơn và độ trễ thấp hơn so với truy cập từ bộ nhớ chính.
 Cuối cùng, hầu hết CPUs hiện đại chứa những đơn vị xử lý vector để hỗ trợ tính toán đại số tuyến tính và tích chập với tốc độ cao vì chúng phổ biến xử lý phương tiện và học máy.
 
 <!--
