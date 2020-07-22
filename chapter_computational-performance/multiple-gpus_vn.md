@@ -341,7 +341,7 @@ print('after allreduce:\n', data[0], '\n', data[1])
 ## Distributing Data
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân phối Dữ liệu
 
 
 <!--
@@ -350,7 +350,9 @@ For instance, on 2 GPUs we'd like to have half of the data to be copied to each 
 Since it is more convenient and more concise, we use the built-in split and load function in Gluon (to try it out on a $4 \times 5$ matrix).
 -->
 
-*dịch đoạn phía trên*
+Ta cần một hàm hỗ trợ phân phối đều dữ liệu trong minibatch trên nhiều GPU.
+Ví dụ, trên 2 GPU ta muốn sao chép một nửa dữ liệu tới mỗi GPU.
+Ta sẽ sử dụng hàm lập trình sẵn trong Gluon để chia và nạp dữ liệu (kiểm thử với ma trận $4 \times 5$).
 
 
 ```{.python .input  n=8}
@@ -367,7 +369,7 @@ print('output:', split)
 For later reuse we define a `split_batch` function which splits both data and labels.
 -->
 
-*dịch đoạn phía trên*
+Để sử dụng về sau, ta định nghĩa hàm `split_batch` để chia cả dữ liệu và nhãn.
 
 
 ```{.python .input  n=9}
@@ -383,7 +385,7 @@ def split_batch(X, y, ctx_list):
 ## Training 
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
@@ -394,7 +396,11 @@ Note that we do not need to write any specific code to achieve parallelism.
 Since the compute graph does not have any dependencies across devices within a minibatch, it is executed in parallel *automatically*.
 -->
 
-*dịch đoạn phía trên*
+Giờ chúng ta có thể lập trình việc huấn luyện với một minibatch trên nhiều GPU.
+Đoạn mã chủ yếu dựa trên phương pháp song song hóa dữ liệu trong chương này.
+Ta sẽ dùng các hàm phụ trợ `allreduce` và `split_and_load` ở trên để đồng bộ dữ liệu trên nhiều GPU.
+Lưu ý rằng ta không cần viết bất cứ đoạn mã cụ thể nào để song song hóa.
+Vì đồ thị tính toán không có phụ thuộc nào xuyên suốt các thiết bị trong một minibatch, chúng được thực thi song song *một cách tự động*.
 
 
 ```{.python .input  n=10}
@@ -421,7 +427,11 @@ Obviously each batch is processed using `train_batch` to deal with multiple GPUs
 For convenience (and conciseness of code) we compute the accuracy on a single GPU (this is *inefficient* since the other GPUs are idle).
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể khai báo hàm huấn luyện.
+Có một chút khác biệt với hàm huấn luyện trong các chương trước: 
+ta cần cấp phát GPU và sao chép các tham số mô hình tới tất cả thiết bị.
+Mỗi batch được xử lý bằng `train_batch` nhằm tận dụng nhiều GPU.
+Để thuận tiện (và để mã nguồn ngắn gọn), ta tính độ chính xác trên một GPU (cách này *không hiệu quả* vì các GPU khác không được tận dụng).
 
 
 ```{.python .input  n=61}
