@@ -139,9 +139,9 @@ CPUs have between 2 and 4 memory channels, i.e., they have between 40GB/s and 10
 Often there are two banks per channel. For instance AMD's Zen 3 Threadripper has 8 slots.
 -->
 
-Bộ nhớ cơ bản nhất được sử dụng để lưu trữ dữ liệu khi cần truy cập một cách dễ dàng.
+Về cơ bản, bộ nhớ được sử dụng để lưu trữ dữ liệu khi cần sẵn sàng truy cập.
 Hiện tại bộ nhớ RAM CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM) mà mỗi mô-đun có băng thông 20-25GB/s.
-Mỗi mô-đun có đường truyền bus rộng 64 bit.
+Mỗi mô-đun có độ rộng bus 64 bit.
 Thông thường, các cặp mô-đun bộ nhớ cho phép sử dụng nhiều kênh.
 CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là, chúng có băng thông bộ nhớ tối đa từ 40GB/s đến 100GB/s.
 Thường có hai dải (_bank_) trên mỗi kênh. Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
@@ -185,7 +185,7 @@ Mỗi một dải có thể đọc bộ nhớ một cách độc lập.
 Điều này có hai ý sau. 
 Thứ nhất, số lần đọc ngẫu nhiên hiệu quả cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
 Điều đó cũng có nghĩa là thực hiện các lệnh đọc ngẫu nhiên không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
-Thứ hai, do căn chỉnh bộ nhớ theo biên 64 bit, nên căn chỉnh bất kỳ cơ sở dữ liệu nào có cùng biên sẽ là một ý hay.
+Thứ hai, do căn chỉnh bộ nhớ theo biên 64 bit, nên căn chỉnh bất kỳ cấu trúc dữ liệu nào có cùng biên sẽ là một ý hay.
 Trình biên dịch thực hiện việc này một cách khá [tự động] (https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
 Độc giả có thể tham khảo thêm bài giảng về DRAM ví dụ như [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 
