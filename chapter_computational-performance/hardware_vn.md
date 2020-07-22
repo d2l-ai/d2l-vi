@@ -361,7 +361,7 @@ This is why branch prediction units matter (on the frontend) such that only the 
 Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kì xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
 Không phải tất cả các bộ xử lý đều được tạo ra như nhau.
 Một số được chuyên môn hoá cho các lệnh về số nguyên trong khi đó một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động.
-Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều bộ mã trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
+Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều nhánh trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
 Đây là lý do vì sao đơn vị dự đoán nhánh quan trọng (trên front-end) sao cho chỉ những nhánh quan trong nhất được đi theo.
 
 <!--
