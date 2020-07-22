@@ -834,6 +834,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 9 -->
 * 
