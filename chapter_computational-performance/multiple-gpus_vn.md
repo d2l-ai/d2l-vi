@@ -108,7 +108,7 @@ Các gradient được tổng hợp lại trên các GPU sau mỗi minibatch.
    * Đây là phương pháp đơn giản nhất và có thể sử dụng cho bất cứ tình huống nào.
    * Gắn thêm nhiều GPU không cho phép chúng ta huấn luyện mô hình lớn hơn.
    * Chúng ta chỉ cần đồng bộ hóa sau mỗi minibatch. 
-   Như đã nói, ta có thể bắt đầu thực hiện trao đổi các gradient đã tính xong trong khi các gradient khác vẫn đang trong quá trình tính toán.
+   Như đã nói, ta có thể bắt đầu thực hiện trao đổi các gradient đã tính xong trong khi vẫn đang tính các gradient khác.
    * Số lượng GPU lớn dẫn tới kích thước minibatch rất lớn, do đó giảm hiệu quả huấn luyện.
    
 <!--
@@ -130,7 +130,7 @@ We focus on data parallelism in what follows.
 Nhìn chung việc song song hóa dữ liệu là cách thuận tiện nhất để xử lý, với điều kiện là ta có thể truy xuất tới các GPU với bộ nhớ đủ lớn.
 Xem thêm :cite:` Li.Andersen.Park.ea.2014` để biết chi tiết cách phân chia cho việc huấn luyện phân tán.
 Bộ nhớ GPU từng là một vấn đề trong những ngày đầu của học sâu.
-Đến thời điểm này thì vấn đề đã được giải quyết cho hầu hết trừ một số trường hợp không phổ biến nhất.
+Đến thời điểm này thì vấn đề đã được giải quyết cho hầu hết trừ một số trường hợp ít gặp nhất.
 Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế tiếp sau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
