@@ -451,7 +451,7 @@ For instance, NVIDIA's RTX 2080 Ti has 4,352 CUDA cores, each of which is capabl
 ### Cache
 -->
 
-## *dịch tiêu đề phía trên*
+## Bộ nhớ đệm
 
 
 <!--
@@ -466,7 +466,15 @@ This is where caches come in handy (see this [Wikipedia article](https://en.wiki
 Commonly the following names / concepts are used:
 -->
 
-*dịch đoạn phía trên*
+Xét tình huống sau: ta sử dụng một CPU bình thường với 4 lõi như được mô tả trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
+Thêm nữa, hãy giả sử ta sử dụng một số IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi bộ đều có AVX2 được đưa vào hoạt động với độ rộng 256bit.
+Ngoài ra, giả sử rằng cần truy cập từ bộ nhớ ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
+Điều này có nghĩa rằng CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
+Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các đơn vị xử lý sẽ thiếu dữ liệu để xử lý.
+Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
+Để điều chỉnh vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ có khoảng cách xa, tốt hơn hết là lưu trong bộ nhớ đệm nội bộ của CPU.
+Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
+Một số tên gọi / khái niệm sau thường được sử dụng:
 
 <!--
 * **Registers** are strictly speaking not part of the cache. They help stage instructions. 
@@ -485,7 +493,20 @@ AMD's Epyc 3 server CPUs have a whopping 256MB of cache spread across multiple c
 More typical numbers are in the 4-8MB range.
 -->
 
-*dịch đoạn phía trên*
+* **Thanh ghi** đúng ra mà nói không phải là một bộ phận của bộ nhớ đệm. Nó chỉ hỗ trợ sắp xếp các câu lệnh.
+Nhưng dù sao thì thanh ghi trong CPU cũng là một vùng bộ nhớ mà CPU có thể truy cập theo đúng tốc độ xung nhịp mà không có độ trễ.
+Các CPU thường có hàng chục thanh ghi. Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
+Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register`.
+* Bộ nhớ đệm **L1** là lớp bảo vệ đầu tiên khi nhu cầu băng thông bộ nhớ quá cao.
+Bộ nhớ đệm L1 khá nhỏ (kích thước điển hình khoảng 32-64kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
+Nếu dữ liệu được tìm thấy trong bộ nhớ đệm L1, việc truy cập diễn ra rất nhanh chóng. Tuy nhiên nếu không thể tìm thấy dữ liệu ở đây, việc tìm kiếm sẽ tiếp tục theo hệ thống phân cấp bộ nhớ đệm (*cache hierarchy*).
+* Bộ nhớ đệm **L2** là điểm dừng tiếp theo. Vùng nhớ này có thể chuyên biệt tuỳ theo kiến trúc thiết kế và kích thước vi xử lý.
+Nó có thể chỉ được truy cập từ một lõi nhất định hoặc được phân phối giữa nhiều lõi khác nhau.
+Bộ nhớ L2 có kích thước lớn hơn (điển hình là 256-512kB mỗi lõi) và chậm hơn L1.
+Hơn nữa, để truy cập vào dữ liệu trong L2, đầu tiên ta cần kiểm tra để chắc rằng dữ liệu đó không nằm trong L1, việc này làm tăng độ trễ lên một chút.
+* Bộ nhớ đệm **L3** được phân phối giữa nhiều lõi khác nhau và có thể khá lớn.
+CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm 256MB lớn đến khác thường và được chia đều giữa nhiều chiplet.
+Con số đặc trưng thường nằm trong khoảng 4-8MB.
 
 <!--
 Predicting which memory elements will be needed next is one of the key optimization parameters in chip design.
@@ -503,13 +524,24 @@ Quite potentially such code runs *more slowly* on multiple processors when compa
 This is one more reason for why there is a practical limit to cache sizes (besides their physical size).
 -->
 
-*dịch đoạn phía trên*
+Việc dự đoán ta sẽ cần phần tử bộ nhớ nào tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
+Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán ghi đệm (*caching algorithms*) sẽ cố gắng *đọc phía trước* hơn là phía sau.
+Cũng như vậy, việc giữ hành vi truy cập bộ nhớ ở mức cục bộ là một cách tốt nhằm cải thiện hiệu năng.
+Tăng số lượng bộ nhớ đệm là một con dao hai lưỡi.
+Một mặt nó đảm bảo các lõi của vi xử lý không bị thiếu dữ liệu.
+Mặt khác nó tăng kích thước vi xử lý, lấn chiếm phần diện tích mà đáng ra có thể được sử dụng vào việc tăng khả năng xử lý.
+Xét trường hợp tệ nhất như mô tả trong :numref:`fig_falsesharing`.
+Một địa chỉ bộ nhớ được lưu trữ tại vi xử lý 0 trong khi một luồng của vi xử lý 1 yêu cầu dữ liệu đó.
+Để có thể lấy dữ liệu, vi xử lý 0 cần dừng công việc đang thực hiện lại, ghi thông tin vào bộ nhớ chính và cho phép vi xử lý 1 đọc dữ liệu từ bộ nhớ.
+Trong suốt quá trình này, cả hai vi xử lý đều ở trong trạng thái chờ.
+Một đoạn mã như vậy khả năng cao là sẽ chạy *chậm hơn* trên một hệ đa vi xử lý so với một vi xử lý đơn được lập trình hiệu quả.
+Đây là một lý do nữa cho việc tại sao lại có giới hạn thực tế cho kích thước bộ nhớ đệm (ngoài kích thước vật lý của bộ nhớ).
 
 <!--
 ![False sharing (image courtesy of Intel)](../img/falsesharing.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/falsesharing.svg)
+![Chia sẻ dữ liệu lỗi (hình ảnh được sự cho phép của Intel)](../img/falsesharing.svg)
 :label:`fig_falsesharing`
 
 
@@ -860,7 +892,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 8 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 9 -->
 * 
