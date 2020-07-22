@@ -529,13 +529,13 @@ In particular, more than one of the programs might well be executed simultaneous
 Nonetheless it pays to be aware of the limitations of the devices to avoid picking models that do not fit into device memory.
 -->
 
-12 hệ vi xử lý luồng sau đó được nhóm vào một cụm xử lý đồ hoạ và tạo nên vi xử lý cao cấp TU102.
+12 hệ vi xử lý luồng sau đó được nhóm vào một cụm xử lý đồ hoạ tạo nên vi xử lý cao cấp TU102.
 Số lượng kênh bộ nhớ phong phú và bộ nhớ đệm L2 được bổ sung vào cấu trúc.
 Thông tin chi tiết được mô tả trong :numref:`fig_turing`.
-Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm hoặc loại bỏ tuỳ theo nhu cầu để có thể tạo thành một vi xử lý thu gọn và giải quyết một số vấn đề liên quan đến sản xuất (các mô-đun lỗi có thể không được kích hoạt).
-May mắn thay, việc lập trình cho các thiết bị này được ẩn giấu kĩ khỏi nhà nghiên cứu học sâu bình thường dưới nhiều lớp CUDA và mã nguồn framework.
+Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm hoặc loại bỏ tuỳ theo nhu cầu để có thể tạo thành một vi xử lý nhỏ gọn và giải quyết một số vấn đề phát sinh (các mô-đun lỗi có thể không được kích hoạt).
+May mắn thay, các nhà nghiên cứu học sâu bình thường không cần lập trình cho các thiết bị này do đã có các lớp mã nguồn framework CUDA.
 Cụ thể, có thể có nhiều hơn một chương trình được thực thi đồng thời trên GPU, với điều kiện là còn đủ tài nguyên.
-Tuy nhiên ta cũng cần phải cảnh giác đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
+Tuy nhiên ta cũng cần để ý đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
 
 <!--
 ![NVIDIA Turing Architecture (image courtesy of NVIDIA)](../img/turing.png)
@@ -556,12 +556,12 @@ They are optimized for small operations involving between 4x4 and 16x16 matrices
 :numref:`fig_tensorcore` gives an overview of the optimizations.
 -->
 
-Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor.
-Đây là một ví dụ của xu hướng sử dụng thêm nhiều mạch đã được tối ưu hơn gần đây, mà cụ thể là tăng hiệu năng cho học sâu.
+Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (* TensorCore*).
+Đây là một ví dụ của xu hướng gần đây sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
 Ví dụ, TPU có thêm một mảng tâm thu (*systolic array*) :cite:`Kung.1988` để tăng tốc độ nhân ma trận.
-Trong đó thiết kế có mục đích hỗ trợ một lượng nhỏ (một trong những thế hệ TPU đầu tiên) trong số rất nhiều thao tác.
+Thiết kế TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
 Lõi Tensor thì ngược lại.
-Nó được tối ưu cho lượng nhỏ thao tác bao gồm các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học của chúng.
+Nó được tối ưu cho các phép tính kích thước nhỏ bao gồm các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học của chúng.
 :numref:`fig_tensorcore` mô tả tổng quan quá trình tối ưu.
 
 <!--
@@ -582,11 +582,11 @@ Matching both goals is an area of active research.
 See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 -->
 
-Đương nhiên khi tối ưu cho quá trình tính toán, ta bắt buộc phải có một số thoả hiệp nhất định.
+Đương nhiên khi tối ưu cho quá trình tính toán, ta bắt buộc phải có một số đánh đổi nhất định.
 Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa thớt.
 Trừ một số ngoại lệ đáng chú ý, ví dụ như [Gunrock](https://github.com/gunrock/gunrock) :cite:`Wang.Davidson.Pan.ea.2016`,
-mô hình truy cập ma trận thưa và vector không phù hợp với các thao tác đọc đột ngột khi băng thông cao, trường hợp mà GPU trội hơn.
-Phối hợp cả hai mục tiêu là một lĩnh vực tích cực trong hoạt động nghiên cứu.
+mô hình truy cập ma trận thưa và vector không phù hợp với các thao tác đọc theo cụm (*burst read*) khi băng thông cao mà GPU trội hơn.
+Phối hợp cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
 Tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
