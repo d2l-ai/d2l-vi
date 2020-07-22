@@ -349,8 +349,8 @@ Các lệnh tiếp đó được giải mã từ mã nguồn hợp ngữ (assemb
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
 Thay vào đó, các lệnh phức tạp có thể được giải mã thành một tập hợp các phép tính cấp thấp hơn.
 Tiếp đó chúng được xử lý bằng một lõi thực.
-Thông thường bộ xử lý sau có khả năng thực hiện đồng thời nhiều thao tác.
-Ví dụ, nhân ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hiện lên đến 8 thao tác cùng một lúc.
+Các bộ xử lý đời mới thường có khả năng thực hiện đồng thời nhiều câu lệnh.
+Ví dụ, lõi ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hiện lên đến 8 phép tính cùng một lúc.
 
 <!--
 ![ARM Cortex A77 Microarchitecture Overview](../img/a77.svg)
