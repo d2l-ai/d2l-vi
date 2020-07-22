@@ -356,7 +356,7 @@ Ví dụ, lõi ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hi�
 ![ARM Cortex A77 Microarchitecture Overview](../img/a77.svg)
 -->
 
-![Tổng quan về vi cấu trúc ARM Cortex A77](../img/a77.svg)
+![Tổng quan về vi kiến trúc ARM Cortex A77](../img/a77.svg)
 :label:`fig_cortexa77`
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
