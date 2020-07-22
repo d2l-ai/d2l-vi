@@ -299,7 +299,7 @@ and caches to allow for higher bandwidth and lower latency memory access than wh
 Lastly, almost all modern CPUs contain vector processing units to aid with high performance linear algebra and convolutions, as they are common in media processing and machine learning.
 -->
 
-Đơn vị xử lý trung tâm (Central Processing Units - CPUs) là trung tâm của máy tính (ở phần trước, chúng tôi đã miêu tả chi tiết về những nhân tố quyết định cho các mô hình học sâu hiệu quả).
+Bộ xử lý trung tâm (Central Processing Units - CPU) là trung tâm của mọi máy tính (như ở phần trước, chúng tôi đã mô tả tổng quan về những phần cứng quan trọng cho các mô hình học sâu hiệu quả).
 CPUs gồm một số thành tố quan trọng: nhân xử lý thực thi mã nguồn của máy, phương tiện kết nối các nhân xử lý (cấu trúc kết nối cụ thể có sự khác biệt lớn giữa các mô hình xử lý, đời máy và nhà sản xuất) và bộ nhớ cache cho phép băng thông cao hơn và truy cập bộ nhớ có độ trễ thấp hơn mức có thể bằng cách đọc từ bộ nhớ chính.
 Cuối cùng, hầu hết CPUs hiện đại chứa những đơn vị xử lý vector để hỗ trợ tính toán đại số tuyến tính và tích chập với tốc độ cao vì chúng phổ biến xử lý phương tiện và học máy.
 
