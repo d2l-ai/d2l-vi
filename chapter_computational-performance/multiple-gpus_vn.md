@@ -81,10 +81,10 @@ The figure is taken from :cite:`Krizhevsky.Sutskever.Hinton.2012` where this str
 -->
 
 * Chúng ta có thể phân chia các tầng mạng cho các GPU.
-Cụ thể, mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầng xác định, xử lý dữ liệu truyền qua một số tầng kế tiếp nhau và rồi gửi dữ liệu tới GPU kế tiếp. 
+Cụ thể, mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầng xác định, xử lý dữ liệu truyền qua một số tầng kế tiếp nhau rồi gửi dữ liệu tới GPU kế tiếp. 
    * Điều này cho phép ta xử lý dữ liệu với các mạng lớn hơn khi so sánh với những gì một GPU có thể làm được.
-   * Bộ nhớ bị chiếm dụng trên mỗi GPU có thể kiểm soát dễ dàng (mỗi GPU sẽ chỉ chiếm một phần tổng dung lượng bộ nhớ cấp phát cho cả mạng)
-   * Giao tiếp giữa các tầng (cũng như giữa các GPU) đòi hỏi đồng bộ chặt chẽ.
+   * Bộ nhớ bị chiếm dụng trên mỗi GPU có thể được kiểm soát dễ dàng (mỗi GPU sẽ chỉ chiếm một phần tổng dung lượng bộ nhớ cấp phát cho cả mạng).
+   * Giao tiếp giữa các tầng (cũng như giữa các GPU) đòi hỏi tính đồng bộ chặt chẽ.
    Điều này có thể sẽ rất khó, đặc biệt nếu khối lượng tính toán không được phân chia hợp lý cho các tầng. 
    Vấn đề sẽ trở nên nghiêm trọng với một số lượng lớn GPU.
    * Giao tiếp giữa các tầng yêu cầu một lượng lớn việc truyền dữ liệu (các hàm kích hoạt, các gradient). Điều này có thể vượt quá mức băng thông các bus của GPU.
@@ -99,7 +99,7 @@ Tương tự, với một tầng kết nối đặc ta có thể tách số neur
 Hình này lấy từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, ở đây chiến lược này được sử dụng để làm việc với nhiều GPU mà có mức chiếm dụng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
    * Điều này cho phép việc điều chỉnh kích thước tính toán tốt, với điều kiện là số kênh (hoặc số nơ-ron) không quá nhỏ.
    * Dùng nhiều GPU có thể xử lý nhiều mạng ngày một lớn hơn vì dung lượng bộ nhớ khả dụng cũng tăng tuyến tính.
-   * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ/ rào cản vì mỗi tầng tùy thuộc vào các kết quả từ tất cả các tầng khác.
+   * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / rào cản vì mỗi tầng tùy thuộc vào các kết quả từ tất cả các tầng khác.
    * Lượng dữ liệu cần được truyền thậm chí có thể lớn hơn khi chia các tầng cho các GPU.
    Chúng tôi không khuyến khích cách tiếp cận này do tính phức tạp và chiếm dụng băng thông của nó.
 * Sau cùng, ta có thể phân chia dữ liệu cho nhiều GPU. 
