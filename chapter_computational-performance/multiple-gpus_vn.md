@@ -212,14 +212,14 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## *dịch tiêu đề phía trên*
+## Ví dụ đơn giản
 
 
 <!--
 We use LeNet as introduced in :numref:`sec_lenet`. We define it from scratch to illustrate parameter exchange and synchronization in detail.
 -->
 
-*dịch đoạn phía trên*
+Ta lập trình từ đầu LeNet trong :numref:`sec_lenet` để minh họa cách trao đổi tham số và đồng bộ một cách chi tiết.
 
 
 ```{.python .input  n=10}
@@ -265,7 +265,7 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Data Synchronization
 -->
 
-## *dịch tiêu đề phía trên*
+## Đồng bộ Dữ liệu
 
 
 <!--
@@ -274,8 +274,10 @@ Without parameters it is impossible to evaluate the network on a GPU.
 Secondly, we need the ability to sum parameters across multiple devices, i.e., we need an `allreduce` function.
 -->
 
-*dịch đoạn phía trên*
-
+Để huấn luyện hiệu quả trên nhiều GPU, ta cần hai thao tác cơ bản: 
+thứ nhất là phân phối danh sách tham số đến nhiều thiết bị và gắn gradient, được định nghĩa trong hàm `get_params` dưới đây.
+Nếu không có các tham số, ta không thể đánh giá mạng trên GPU.
+Thứ hai, ta cần tính tổng các tham số trên nhiều thiết bị, khai báo ở hàm `allreduce`.
 
 ```{.python .input  n=12}
 def get_params(params, ctx):
@@ -290,7 +292,7 @@ def get_params(params, ctx):
 Let us try it out by copying the model parameters of lenet to gpu(0).
 -->
 
-*dịch đoạn phía trên*
+Hãy thử sao chép các tham số mô hình của LeNet tới gpu(0).
 
 
 ```{.python .input  n=13}
@@ -307,8 +309,10 @@ The following allreduce function adds up all vectors and broadcasts the result b
 Note that for this to work we need to copy the data to the device accumulating the results.
 -->
 
-*dịch đoạn phía trên*
-
+Vì chưa thực hiện tính toán nào, gradient ứng với hệ số điều chỉnh vẫn là $0$.
+Bây giờ giả sử ta có các vector được phân phối trên nhiều GPU.
+Hàm `allreduce` dưới đây cộng các vector đó và truyền kết quả về tất cả GPU.
+Chú ý, để hàm này hoạt động, ta cần sao chép dữ liệu đến thiết bị đang cộng dồn kết quả.
 
 ```{.python .input  n=14}
 def allreduce(data):
@@ -323,7 +327,7 @@ def allreduce(data):
 Let us test this by creating vectors with different values on different devices and aggregate them.
 -->
 
-*dịch đoạn phía trên*
+Hãy kiểm tra bằng cách tạo các vector với giá trị khác nhau trên các thiết bị khác nhau và tổng hợp chúng.
 
 
 ```{.python .input  n=16}
