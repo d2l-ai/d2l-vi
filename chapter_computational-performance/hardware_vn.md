@@ -288,7 +288,7 @@ We recommend that the user increase the provisioned number of IOPs whenever late
 ## CPUs
 -->
 
-## CPUs
+## CPU
 
 
 <!--
