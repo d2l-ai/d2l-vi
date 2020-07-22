@@ -383,7 +383,7 @@ Học sâu cực kỳ tốn năng lượng tính toán.
 Vì vậy, CPU phù hợp với học máy cần thực hiện được nhiều thao tác trong một chu kỳ xung nhịp.
 Điều này đạt được thông qua các đơn vị vector.
 Chúng có những cái tên khác nhau: trên chíp ARM chúng được gọi là NEON, trên x86 thế hệ mới nhất được gọi là đơn vị [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
-Một khía cạnh chung là chúng có thể thực hiện thao tác SIMD (lệnh đơn đa dữ liệu - single instruction multiple data).
+Một khía cạnh chung là chúng có thể thực hiện SIMD (lệnh đơn đa dữ liệu - *single instruction multiple data*).
 :numref:`fig_neon128` cho thấy cách cộng 8 số nguyên ngắn trong một chu kỳ xung nhịp trên ARM.
 
 <!--
