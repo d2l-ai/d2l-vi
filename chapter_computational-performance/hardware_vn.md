@@ -404,7 +404,7 @@ For instance, NVIDIA's RTX 2080 Ti has 4,352 CUDA cores, each of which is capabl
 
 Phụ thuộc vào các lựa chọn kiến trúc, các thanh ghi như vậy dài tới 512 bit, cho phép tổ hợp tối đa 64 cặp số.
 Chẳng hạn, chúng ta có thể nhân hai số và cộng chúng với số thứ ba, cách này còn được biết đến như phép nhân-cộng hợp nhất (*fused multiply-add*).
-[OpenVino](https://01.org/openvinotoolkit) của Intel sử dụng những điều này để đạt được thông lượng đáng nể cho học sâu ttreen CPUs máy chủ.
+[OpenVino](https://01.org/openvinotoolkit) của Intel sử dụng các cách này để đạt được thông lượng đáng nể cho học sâu trên CPU máy chủ.
 Tuy nhiên, xin lưu ý rằng tốc độ này hoàn toàn không đáng kể so với khả năng của GPU.
 Ví dụ, RTX 2080 Ti của NVIDIA có 4,352 nhân CUDA, mỗi nhân có khả năng xử lý thao tác như vậy tại mọi thời điểm.
 
