@@ -93,13 +93,42 @@ The figure is taken from :cite:`Krizhevsky.Sutskever.Hinton.2012` where this str
     * Large numbers of GPUs lead to very large minibatch sizes, thus reducing training efficiency.
 -->
 
-*dịch đoạn phía trên*
-
+* Chúng ta có thể phân chia các tầng mạng cho các GPU.
+Cụ thể, mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầng xác định, xử lý dữ liệu truyền qua một số tầng kế tiếp nhau rồi gửi dữ liệu tới GPU kế tiếp. 
+   * Điều này cho phép ta xử lý dữ liệu với các mạng lớn hơn khi so sánh với những gì một GPU có thể làm được.
+   * Bộ nhớ bị chiếm dụng trên mỗi GPU có thể được kiểm soát dễ dàng (mỗi GPU sẽ chỉ chiếm một phần tổng dung lượng bộ nhớ cấp phát cho cả mạng).
+   * Giao tiếp giữa các tầng (cũng như giữa các GPU) đòi hỏi tính đồng bộ chặt chẽ.
+   Điều này có thể sẽ rất khó, đặc biệt nếu khối lượng tính toán không được phân chia hợp lý cho các tầng. 
+   Vấn đề sẽ trở nên nghiêm trọng với một số lượng lớn GPU.
+   * Giao tiếp giữa các tầng yêu cầu một lượng lớn việc truyền dữ liệu (các hàm kích hoạt, các gradient). Điều này có thể vượt quá mức băng thông các bus của GPU.
+   * Các phép toán phức tạp nhưng tuần tự cũng sẽ tốn công sức nhất định để phân chia.
+   :cite:`Mirhoseini.Pham.Le.ea.2017` là một cố gắng tốt nhất cho vấn đề này.
+   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu có thể mở rộng tốt (tuyến tính) cho các bài toán không tầm thường. 
+   Chúng tôi không khuyến khích cách làm này trừ phi có một framework xuất sắc hay hệ điều hành hỗ trợ cho việc xâu chuỗi nhiều GPU lại với nhau.
+* Chúng ta có thể phân chia công việc của các tầng đơn lẻ.
+Chẳng hạn, thay vì tính toán 64 kênh trên một GPU, ta có thể tách công việc này cho 4 GPU, mỗi GPU sẽ sinh dữ liệu cho 16 kênh. 
+Tương tự, với một tầng kết nối đặc ta có thể tách số neuron đầu ra.
+:numref:`fig_alexnet_original` mô tả thiết kế kiểu này. 
+Hình này lấy từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, ở đây chiến lược này được sử dụng để làm việc với nhiều GPU mà có mức chiếm dụng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
+   * Điều này cho phép việc điều chỉnh kích thước tính toán tốt, với điều kiện là số kênh (hoặc số nơ-ron) không quá nhỏ.
+   * Dùng nhiều GPU có thể xử lý nhiều mạng ngày một lớn hơn vì dung lượng bộ nhớ khả dụng cũng tăng tuyến tính.
+   * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / rào cản vì mỗi tầng tùy thuộc vào các kết quả từ tất cả các tầng khác.
+   * Lượng dữ liệu cần được truyền thậm chí có thể lớn hơn khi chia các tầng cho các GPU.
+   Chúng tôi không khuyến khích cách tiếp cận này do tính phức tạp và chiếm dụng băng thông của nó.
+* Sau cùng, ta có thể phân chia dữ liệu cho nhiều GPU. 
+Cách này cho phép tất cả GPU thực hiện cùng một công việc, mặc dù từ các vùng quan sát khác nhau. 
+Các gradient được tổng hợp lại trên các GPU sau mỗi minibatch.
+   * Đây là phương pháp đơn giản nhất và có thể sử dụng cho bất cứ tình huống nào.
+   * Gắn thêm nhiều GPU không cho phép chúng ta huấn luyện mô hình lớn hơn.
+   * Chúng ta chỉ cần đồng bộ hóa sau mỗi minibatch. 
+   Như đã nói, ta có thể bắt đầu thực hiện trao đổi các gradient đã tính xong trong khi vẫn đang tính các gradient khác.
+   * Số lượng GPU lớn dẫn tới kích thước minibatch rất lớn, do đó giảm hiệu quả huấn luyện.
+   
 <!--
 ![Parallelization on multiple GPUs. From left to right - original problem, network partitioning, layer partitioning, data parallelism.](../img/splitting.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/splitting.svg)
+![Song song hóa trên nhiều GPU. Từ trái sang phải - bài toán ban đầu, phân tách mạng, phân tách tầng, song song hóa dữ liệu](../img/splitting.svg)
 :label:`fig_splitting`
 
 
@@ -111,7 +140,11 @@ By now this issue has been resolved for all but the most unusual cases.
 We focus on data parallelism in what follows.
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung việc song song hóa dữ liệu là cách thuận tiện nhất để xử lý, với điều kiện là ta có thể truy xuất tới các GPU với bộ nhớ đủ lớn.
+Xem thêm :cite:` Li.Andersen.Park.ea.2014` để biết chi tiết cách phân chia cho việc huấn luyện phân tán.
+Bộ nhớ GPU từng là một vấn đề trong những ngày đầu của học sâu.
+Đến thời điểm này thì vấn đề đã được giải quyết cho hầu hết trừ một số trường hợp ít gặp nhất.
+Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế tiếp sau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -503,7 +536,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
