@@ -268,7 +268,15 @@ After all, each head reads a track of bits, hence the bit rate only scales with 
 As a result HDDs are quickly becoming relegated to archival storage and low-grade storage for very large datasets.
 -->
 
-*dịch đoạn phía trên*
+Để hiểu điều thứ hai, hãy xem xét thực tế rằng ổ cứng quay với tốc độ khoảng 7,200 vòng/phút.
+Nếu nhanh hơn quá nhiều, chúng sẽ vỡ tan do lực ly tâm tác dụng lên các đĩa.
+Điều này có một nhược điểm lớn khi truy cập vào một khu vực cụ thể trên đĩa: chúng ta cần đợi cho đến khi đĩa quay đúng vị trí (chúng ta có thể di chuyển đầu nhưng không tăng tốc các đĩa thực tế).
+Do đó, có thể mất hơn 8 mili-giây cho đến khi dữ liệu được yêu cầu sẵn sàng.
+Do đó ta hay nói ổ cứng có thể hoạt động ở mức xấp xỉ 100 IOP.
+Con số này về cơ bản vẫn không thay đổi trong hai thập kỷ qua.
+Tệ hơn nữa, việc tăng băng thông cũng khó khăn không kém (ở mức độ 100-200 MB/giây).
+Rốt cuộc, mỗi đầu đọc một rãnh bit, do đó tốc độ bit chỉ tăng theo tỷ lệ căn bậc hai của mật độ thông tin.
+Kết quả là các ổ cứng đang nhanh chóng biến thành nơi lưu trữ cấp thấp cho các bộ dữ liệu rất lớn.
 
 
 <!--
@@ -280,8 +288,12 @@ These improvements sound almost too good to be true.
 Indeed, they come with a number of caveats, due to the way SSDs are designed.
 -->
 
-*dịch đoạn phía trên*
-
+**Ổ cứng thể rắn (SSD)** sử dụng bộ nhớ Flash để liên tục lưu trữ thông tin.
+Điều này cho phép truy cập *nhanh hơn nhiều* vào các bản ghi đã được lưu trữ.
+SSD hiện đại có thể hoạt động ở mức 100,000 đến 500,000 IOP, tức là, nhanh hơn gấp 1000 lần so với ổ cứng HDD.
+Hơn nữa, băng thông của chúng có thể đạt tới 1-3GB/giây nghĩa là nhanh hơn 10 lần so với ổ cứng.
+Những cải tiến này nghe có vẻ tốt đến mức khó tin.
+Thật vậy, SSD đi kèm với một số lưu ý do cách mà chúng được thiết kế.
 
 <!--
 * SSDs store information in blocks (256 KB or larger).
@@ -299,8 +311,19 @@ The drives capable of handling this, referred to as NVMe (Non Volatile Memory en
 This amounts to up to 8GB/s on PCIe 4.0.
 -->
 
-*dịch đoạn phía trên*
-
+* Các ổ SSD lưu trữ thông tin theo block (256 KB trở lên).
+Dữ liệu chỉ có thể được ghi theo khối, mất thêm thời gian đáng kể.
+Do đó việc ghi ngẫu nhiên theo bit trên SSD có hiệu suất rất tệ.
+Tương tự như vậy, việc ghi dữ liệu nói chung mất thời gian đáng kể vì khối phải được đọc, xóa và sau đó viết lại với thông tin mới.
+Cho đến nay, bộ điều khiển và firmware của SSD đã phát triển các thuật toán để giảm thiểu điều này.
+Tuy nhiên tốc độ ghi vẫn có thể chậm hơn nhiều, đặc biệt là đối với SSD QLC (tế bào bốn cấp).
+Chìa khóa để cải thiện hiệu suất là sử dụng một *hàng đợi* các hành động, để ưu tiên việc đọc trước và chỉ ghi theo các khối lớn nếu có thể.
+* Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường đã bị sau vài nghìn lần ghi).
+Các thuật toán bảo vệ mức hao mòn có thể phân bổ đều sự xuống cấp trên nhiều ô.
+Do đó, không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho các tập hợp lớn các tệp nhật ký (*log file*).
+* Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
+Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động tăng cường - *Non Volatile Memory enhanced*), có thể sử dụng lên tới 4 làn PCIe.
+Băng thông có thể lên tới 8GB/giây trên PCIe 4.0.
 
 <!--
 **Cloud Storage** provides a configurable range of performance.
@@ -308,7 +331,9 @@ That is, the assignment of storage to virtual machines is dynamic, both in terms
 We recommend that the user increase the provisioned number of IOPs whenever latency is too high, e.g., during training with many small records.
 -->
 
-*dịch đoạn phía trên*
+**Lưu trữ đám mây** cung cấp nhiều lựa chọn hiệu suất có thể tùy chỉnh.
+Nghĩa là, việc chỉ định bộ lưu trữ cho các máy ảo là tùy chỉnh, cả về số lượng và tốc độ, do người dùng quyết định.
+Chúng tôi khuyên người dùng nên tăng số lượng IOP được cung cấp bất cứ khi nào độ trễ quá cao, ví dụ như trong quá trình huấn luyện với dữ liệu gồm nhiều bản ghi nhỏ.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -929,7 +954,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 5 -->
-* 
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 6 -->
 * Nguyễn Thanh Hoà
