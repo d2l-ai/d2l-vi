@@ -523,6 +523,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
