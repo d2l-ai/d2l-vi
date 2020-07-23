@@ -427,13 +427,17 @@ To increase throughput the processor might also follow  multiple codepaths simul
 This is why branch prediction units matter (on the frontend) such that only the most promising paths are pursued.
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kì xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
+Không phải tất cả các bộ xử lý đều được tạo ra như nhau.
+Một số được chuyên môn hoá cho các lệnh về số nguyên trong khi đó một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động.
+Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều nhánh trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
+Đây là lý do vì sao đơn vị dự đoán nhánh quan trọng (trên front-end) sao cho chỉ những nhánh quan trong nhất được đi theo.
 
 <!--
 ### Vectorization
 -->
 
-## *dịch tiêu đề phía trên*
+## Vector hoá (Vectorization)
 
 <!--
 Deep learning is extremely compute hungry.
@@ -444,13 +448,18 @@ A common aspect is that they are able to perform SIMD (single instruction multip
 :numref:`fig_neon128` shows how 8 short integers can be added in one clock cycle on ARM.
 -->
 
-*dịch đoạn phía trên*
+Học sâu cực kỳ tốn năng lượng tính toán.
+Vì vậy, CPU phù hợp với học máy cần thực hiện được nhiều thao tác trong một chu kỳ xung nhịp.
+Điều này đạt được thông qua các đơn vị vector.
+Trên chip ARM chúng được gọi là NEON, trên x86 thế hệ đơn vị vector mới nhất được gọi là [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
+Một khía cạnh chung là chúng có thể thực hiện SIMD (lệnh đơn đa dữ liệu - *single instruction multiple data*).
+:numref:`fig_neon128` cho thấy cách cộng 8 số nguyên ngắn trong một chu kỳ xung nhịp trên ARM.
 
 <!--
 ![128 bit NEON vectorization](../img/neon128.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/neon128.svg)
+![Vector hoá NEON 128 bit](../img/neon128.svg)
 :label:`fig_neon128`
 
 
@@ -462,7 +471,11 @@ Note, though, that this number is entirely dwarved by what GPUs are capable of a
 For instance, NVIDIA's RTX 2080 Ti has 4,352 CUDA cores, each of which is capable of processing such an operation at any time.
 -->
 
-*dịch đoạn phía trên*
+Phụ thuộc vào các lựa chọn kiến trúc, các thanh ghi như vậy dài tới 512 bit, cho phép tổ hợp tối đa 64 cặp số.
+Chẳng hạn, chúng ta có thể nhân hai số và cộng chúng với số thứ ba, cách này còn được biết đến như phép nhân-cộng hợp nhất (*fused multiply-add*).
+[OpenVino](https://01.org/openvinotoolkit) của Intel sử dụng các cách này để đạt được thông lượng đáng nể cho học sâu trên CPU máy chủ.
+Tuy nhiên, xin lưu ý rằng tốc độ này hoàn toàn không đáng kể so với khả năng của GPU.
+Ví dụ, RTX 2080 Ti của NVIDIA có 4,352 nhân CUDA, mỗi nhân có khả năng xử lý một phép tính như vậy tại bất cứ thời điểm nào.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -961,7 +974,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thanh Hoà
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 8 -->
 * Đỗ Trường Giang
