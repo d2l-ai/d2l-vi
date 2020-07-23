@@ -129,7 +129,11 @@ In fact, the parameters do not even exist on the device.
 We can verify this by printing out the parameters and observing any errors that might arise.
 -->
 
-*dịch đoạn phía trên*
+Khi dữ liệu được truyền vào mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu được truyền vào*.
+Điều này có nghĩa là việc khởi tạo xảy ra theo từng thiết bị.
+Do ta lựa chọn GPU 0 và GPU 1 để khởi tạo, mạng chỉ được khởi tạo trên hai thiết bị này chứ không phải trên CPU.
+Trong thực tế, các tham số này thậm chí còn không tồn tại trên thiết bị.
+Ta có thể kiểm chứng điều này bằng cách in ra các tham số và theo dõi xem liệu có xảy ra lỗi nào hay không.
 
 
 ```{.python .input  n=5}
@@ -150,7 +154,10 @@ The main difference is that we split a batch before invoking the network.
 All else is essentially identical.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, hãy cùng thay đổi đoạn mã ta sử dụng để có thể đánh giá độ chính xác bằng một đoạn mã có thể chạy song song trên nhiều thiết bị.
+Đây chính là hàm được viết lại của hàm `evaluate_accuracy_gpu` ở :numref:`sec_lenet`.
+Điểm khác biệt lớn nhất nằm ở việc ta tách một batch ra trước khi gọi đến mạng.
+Các phần còn lại gần như là giống hệt.
 
 
 ```{.python .input  n=6}
@@ -174,14 +181,14 @@ def evaluate_accuracy_gpus(net, data_iter, split_f=d2l.split_batch):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
 As before, the training code needs to perform a number of basic functions for efficient parallelism:
 -->
 
-*dịch đoạn phía trên*
+Như phần trên, đoạn mã huấn luyện cần thực hiện một số hàm cơ bản để quá trình song song hoá đạt hiệu quả:
 
 
 <!--
@@ -191,7 +198,10 @@ As before, the training code needs to perform a number of basic functions for ef
 * Losses are aggregated (by the trainer method) and parameters are updated accordingly. 
 -->
 
-*dịch đoạn phía trên*
+* Các tham số của mạng cần được khởi tạo trên tất cả các thiết bị.
+* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch cần được phân chia đều cho tất cả các thiết bị.
+* Ta tính toán song song hàm mất mát và gradient của nó trên tất cả các thiết bị.
+* Mất mát được tích luỹ (bởi phương thức huấn luyện) và các tham số tương ứng được cập nhật.
 
 
 <!--
@@ -199,7 +209,8 @@ In the end we compute the accuracy (again in parallel) to report the final value
 The training routine is quite similar to implementations in previous chapters, except that we need to split and aggregate data.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng ta tính toán (một lần nữa theo một cách song song) độ chính xác và báo cáo giá trị cuối cùng của mạng.
+Quá trình huấn luyện ở đây khá giống với quá trình ở chương trước, trừ việc ta cần chia nhỏ và tổng hợp lại dữ liệu.
 
 
 
@@ -311,7 +322,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
