@@ -1,20 +1,23 @@
 # Hướng dẫn dịch các từ trong hình
 
-### 1. Mở issue các từ cần được dịch trong hình tương ứng dưới dạng bảng như sau:
+### 1. Nhận issue dịch hình
+
+Sẽ có các issue được mở ra để dịch một nhóm hình nhất định. Nếu thấy hứng thú, bạn có thể nhận issue này bằng cách yêu cầu được assign. Bạn có thể kiếm những issue này
+bằng cách tìm theo nhãn `type:figure`
+
+### 2. Comment vào issue các từ cần được dịch trong hình tương ứng dưới dạng bảng như sau:
 
 |Tiếng Anh|Tiếng Việt|
 | :---:   | :---:    |
 | (từ gốc)| (từ đề xuất dịch) |
 
-**Lưu ý**: Mỗi issue chỉ được dịch một hình vẽ hoặc một nhóm hình vẽ có liên quan với nhau để giữ cho thảo luận trong issue liên quan tới nhau. Tên issue nên rõ ràng về những hình mà issue đó dịch.
-
 **Ví dụ**: Tham khảo [#66](https://github.com/aivivn/d2l-vn/issues/66)
 
-### 2. Review và thảo luận
+### 3. Review và thảo luận
 
 Ở bước này, các contributor sẽ đánh giá từ đề xuất và thảo luận, chỉnh sửa cho phù hợp.
 
-### 3. Chỉnh sửa trong hình (Optional)
+### 4. Chỉnh sửa trong hình (Optional)
 
 Khi đã thống nhất những từ cần dịch, bước này sẽ trực tiếp đưa những từ đã dịch vào trong ảnh. Đây là bước không bắt buộc. Tuy nhiên:
 
