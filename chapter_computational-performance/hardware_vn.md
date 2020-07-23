@@ -159,7 +159,7 @@ We could perform up to $10,000,000$ random reads per second.
 This suggests that we avoid random memory access as far as possible and use burst reads (and writes) instead.
 -->
 
-Trong khi những con số trên khá ấn tượng, thực tế, chúng chỉ nói một phần nào đó.
+Trong khi những con số trên khá ấn tượng, trên thực tế chúng chỉ nói lên một phần nào đó.
 Khi ta muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ dẫn cho mô-đun bộ nhớ nơi thông tin có thể được tìm thấy.
 Nghĩa là, trước tiên chúng ta cần gửi *địa chỉ* đến RAM.
 Khi thực hiện xong, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
