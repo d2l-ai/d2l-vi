@@ -180,8 +180,8 @@ Compilers do this pretty much [automatically](https://en.wikipedia.org/wiki/Data
 Curious readers are encouraged to review a lecture on DRAMs such as the one by [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 -->
 
-Các vấn đề phức tạp hơn một chút khi ta tính đến việc có nhiều dải (_bank_).
-Mỗi một dải có thể đọc bộ nhớ một cách độc lập.
+Các vấn đề phức tạp hơn một chút khi ta tính đến việc có nhiều bank.
+Mỗi bank có thể đọc bộ nhớ một cách độc lập.
 Điều này có hai ý sau. 
 Thứ nhất, số lần đọc ngẫu nhiên hiệu quả cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
 Điều đó cũng có nghĩa là thực hiện các lệnh đọc ngẫu nhiên không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
