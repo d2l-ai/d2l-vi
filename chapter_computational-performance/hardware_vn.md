@@ -186,7 +186,7 @@ Mỗi bank có thể đọc bộ nhớ một cách độc lập.
 Thứ nhất, số lần đọc ngẫu nhiên hiệu quả cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
 Điều đó cũng có nghĩa là thực hiện các lệnh đọc ngẫu nhiên không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
 Thứ hai, do căn chỉnh bộ nhớ theo biên 64 bit, nên căn chỉnh bất kỳ cấu trúc dữ liệu nào có cùng biên sẽ là một ý hay.
-Trình biên dịch thực hiện việc này một cách khá [tự động] (https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
+Trình biên dịch thực hiện việc này một cách [tự động](https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
 Độc giả có thể tham khảo thêm bài giảng về DRAM ví dụ như [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
