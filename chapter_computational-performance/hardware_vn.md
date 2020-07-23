@@ -162,7 +162,7 @@ This suggests that we avoid random memory access as far as possible and use burs
 Trong khi những con số trên khá ấn tượng, thực tế, chúng chỉ nói một phần nào đó.
 Khi ta muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ dẫn cho mô-đun bộ nhớ nơi thông tin có thể được tìm thấy.
 Nghĩa là, trước tiên chúng ta cần gửi *địa chỉ* đến RAM.
-Khi thực hiện xong, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi các bản ghi dài.
+Khi thực hiện xong, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
 Cách sau được gọi là *đọc nhanh* (_burst read_).
 Tóm lại, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp (_transfer_) sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
 mỗi lần chuyển tiếp sau chỉ mất 0.2ns.
