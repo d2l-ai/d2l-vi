@@ -653,17 +653,17 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 Do đó nên tính toán để di chuyển lượng lớn dữ liệu trong vài lần thay vì di chuyển lượng dữ liệu nhỏ nhiều lần. 
 Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
 * Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh của thiết bị.
-Ví dụ, một vài CPU Intel Xeon cực kì hiệu quả cho phép toán với dữ liệu kiểu INT8, 
+Ví dụ, một vài CPU Intel Xeon thực hiện cực kì hiệu quả phép toán với dữ liệu kiểu INT8, 
 GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16, 
 còn NVIDIA Turing chạy tốt cho cả các phép toán với dữ liệu kiểu FP16, INT8, INT4.
-* Hiện tượng tràn số học do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
+* Hiện tượng tràn số trên do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
 * Việc đặt tên khác có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
 Trên GPU, tốt hơn là nên giữ kích thước tích chập đồng bộ, với TensorCores chẳng hạn.
 * Sử dụng thuật toán phù hợp với phần cứng (về mức chiếm dụng bộ nhớ, băng thông, v.v).
 Thời gian thực thi có thể giảm rất nhiều (theo cấp số nhân) khi đưa các tham số vào bộ đệm.
 * Chúng tôi khuyến khích bạn đọc tính toán trước hiệu năng của một thuật toán mới trước khi kiểm tra bằng thực nghiệm.
 Sự khác biệt hàng chục lần hoặc hơn là lý do cần quan tâm.
-* Sử dụng các công cụ phân tích hiệu năng để tìm điểm nghẽ (*bottlenecks*) của hệ thống.
+* Sử dụng các công cụ phân tích hiệu năng để tìm điểm nghẽn cổ chai (*bottlenecks*) của hệ thống.
 * Phần cứng sử dụng cho huấn luyện và suy luận có các cấu hình hiệu quả khác nhau để cân đối giá tiền và hiệu năng.
 
 <!--
@@ -731,10 +731,10 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Truy xuất bộ đệm L2                        |   5 ns | 12 ~ 17 chu kỳ                                  |
 | Rẽ nhánh sai                               |   6 ns | 15 ~ 20 chu kỳ                                  |
 | Truy xuất bộ đệm L3 (không chia sẻ)        |  16 ns | 42 chu kỳ                                       |
-| Truy xuất bộ đệm L3 (chia sẻ với lõi khác) |  25 ns | 65 chu kỳ                                       |
+| Truy xuất bộ đệm L3 (chia sẻ với nhân khác) |  25 ns | 65 chu kỳ                                       |
 | Khóa/mở đèn báo lập trình (*mutex*)        |  25 ns |                                                 |
-| Truy xuất bộ đệm L3 (được điều chỉnh ở lõi khác)    |  29 ns | 75 chu kỳ                              |
-| Truy xuất bộ đệm L3 (tại remote CPU socket)|  40 ns | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
+| Truy xuất bộ đệm L3 (được nhân khác thay đổi)    |  29 ns | 75 chu kỳ                              |
+| Truy xuất bộ đệm L3 (tại CPU socket từ xa)|  40 ns | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
 | QPI hop đến CPU khác (cho mỗi hop)         |  40 ns |                                                 |
 | Truy xuất 64MB (CPU cục bộ)                |  46 ns | TinyMemBench trên Broadwell E5-2690v4           |
 | Truy xuất 64MB (CPU từ xa)                 |  70 ns | TinyMemBench trên Broadwell E5-2690v4           |
@@ -745,17 +745,17 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Truyền 4KB trên sợi HPC 100 Gbps           |   1 μs | MVAPICH2 trên Intel Omni-Path                   |
 | Nén 1KB với Google Snappy                  |   3 μs |                                                 |
 | Truyền 4KB trên cáp mạng 10 Gbps           |  10 μs |                                                 |
-| Ghi ngẫu nhiên 4KB vào SSD NVMe            |  30 μs | DC P3608 SSD NVMe (QOS 99% is 500μs)            |
+| Ghi ngẫu nhiên 4KB vào SSD NVMe            |  30 μs | DC P3608 SSD NVMe (QOS 99% khoảng 500μs)            |
 | Truyền 1MB từ/đến NVLink GPU               |  30 μs | ~33GB/s trên NVIDIA 40GB NVLink                 |
-| Transfer 1MB to/from PCI-E GPU             |  80 μs | ~12GB/s trên PCIe 3.0 x16 link                  |
-| Đọc ngẫu nhiên 4KB từ SSD NVMe             | 120 μs | DC P3608 SSD NVMe  (QOS 99%)                    |
+| Truyền 1MB từ/đến PCI-E GPU             |  80 μs | ~12GB/s trên PCIe 3.0 x16 link                  |
+| Đọc ngẫu nhiên 4KB từ SSD NVMe             | 120 μs | DC P3608 SSD NVMe (QOS 99%)                    |
 | Đọc tuần tự 1MB từ SSD NVMe                | 208 μs | ~4.8GB/s DC P3608 SSD NVMe                      |
 | Ghi ngẫu nhiên 4KB vào SSD SATA            | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
 | Đọc ngẫu nhiên 4KB từ SSD SATA             | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
 | Truyền 2 chiều trong cùng trung tâm dữ liệu| 500 μs | Ping một chiều ~250μs                          |
 | Đọc tuần tự 1MB từ SSD SATA                |   2 ms | ~550MB/s DC S3510 SSD SATA                      |
-| Đọc tuần tự 1MB từ đĩa                     |   5 ms | ~200MB/s server HDD                             |
-| Truy cập ngẫu nhiên đĩa (tìm+xoay)         |  10 ms |                                                 |
+| Đọc tuần tự 1MB từ ổ đĩa                     |   5 ms | ~200MB/s server HDD                             |
+| Truy cập ngẫu nhiên ổ đĩa (tìm+xoay)         |  10 ms |                                                 |
 | Gửi packet CA->Netherlands->CA             | 150 ms |                                                 |
 :label:`table_latency_numbers`
 
