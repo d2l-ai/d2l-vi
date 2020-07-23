@@ -129,11 +129,11 @@ In fact, the parameters do not even exist on the device.
 We can verify this by printing out the parameters and observing any errors that might arise.
 -->
 
-Khi dữ liệu được truyền vào mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu được truyền vào*.
+Khi dữ liệu được truyền vào mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu đó được truyền vào*.
 Điều này có nghĩa là việc khởi tạo xảy ra theo từng thiết bị.
 Do ta lựa chọn GPU 0 và GPU 1 để khởi tạo, mạng chỉ được khởi tạo trên hai thiết bị này chứ không phải trên CPU.
 Trong thực tế, các tham số này thậm chí còn không tồn tại trên thiết bị.
-Ta có thể kiểm chứng điều này bằng cách in ra các tham số và theo dõi xem liệu có xảy ra lỗi nào hay không.
+Ta có thể kiểm chứng điều này bằng cách in ra các tham số và theo dõi xem liệu có lỗi nào xảy ra hay không.
 
 
 ```{.python .input  n=5}
@@ -199,7 +199,7 @@ Như phần trên, đoạn mã huấn luyện cần thực hiện một số hà
 -->
 
 * Các tham số của mạng cần được khởi tạo trên tất cả các thiết bị.
-* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch cần được phân chia đều cho tất cả các thiết bị.
+* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch cần được chia đều cho tất cả các thiết bị.
 * Ta tính toán song song hàm mất mát và gradient của nó trên tất cả các thiết bị.
 * Mất mát được tích luỹ (bởi phương thức huấn luyện) và các tham số tương ứng được cập nhật.
 
