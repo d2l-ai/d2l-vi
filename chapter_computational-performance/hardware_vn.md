@@ -650,7 +650,7 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 -->
 
 * Các thiết bị đều có chi phí cho các phép toán. 
-Do đó nên tính toán để di chuyển lượng lớn dữ liệu trong một lần hơn là nhiều lần di chuyển lượng dữ liệu nhỏ. 
+Do đó nên tính toán để di chuyển lượng lớn dữ liệu trong vài lần thay vì di chuyển lượng dữ liệu nhỏ nhiều lần. 
 Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
 * Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh của thiết bị.
 Ví dụ, một vài CPU Intel Xeon cực kì hiệu quả cho phép toán với dữ liệu kiểu INT8, 
