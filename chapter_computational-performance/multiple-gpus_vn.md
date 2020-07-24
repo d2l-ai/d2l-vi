@@ -351,8 +351,8 @@ Since it is more convenient and more concise, we use the built-in split and load
 -->
 
 Ta cần một hàm hỗ trợ phân phối đều dữ liệu trong minibatch trên nhiều GPU.
-Ví dụ, trên 2 GPU ta muốn sao chép một nửa dữ liệu tới mỗi GPU.
-Ta sẽ sử dụng hàm lập trình sẵn trong Gluon để chia và nạp dữ liệu (kiểm thử với ma trận $4 \times 5$).
+Ví dụ với 2 GPU, có thể ta sẽ muốn sao chép một nửa dữ liệu tới mỗi GPU.
+Ta sẽ sử dụng hàm có sẵn trong Gluon để chia và nạp dữ liệu (kiểm thử với ma trận $4 \times 5$).
 
 
 ```{.python .input  n=8}
@@ -428,7 +428,7 @@ For convenience (and conciseness of code) we compute the accuracy on a single GP
 -->
 
 Bây giờ ta có thể khai báo hàm huấn luyện.
-Có một chút khác biệt với hàm huấn luyện trong các chương trước: 
+Hàm này có một chút khác biệt so với hàm huấn luyện trong các chương trước: 
 ta cần cấp phát GPU và sao chép các tham số mô hình tới tất cả thiết bị.
 Mỗi batch được xử lý bằng `train_batch` nhằm tận dụng nhiều GPU.
 Để thuận tiện (và để mã nguồn ngắn gọn), ta tính độ chính xác trên một GPU (cách này *không hiệu quả* vì các GPU khác không được tận dụng).
