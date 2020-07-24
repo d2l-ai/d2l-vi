@@ -481,10 +481,10 @@ We will encounter more complex models and more sophisticated ways of paralleliza
 
 Giữ nguyên kích thước batch và tốc độ học, tăng số GPU lên 2,
 ta có thể thấy sự cải thiện về độ chính xác trên tập kiểm tra xấp xỉ bằng thí nghiệm trước.
-Về các thuật toán tối ưu, hai thí nghiệm giống hệt nhau.
+Dưới góc nhìn thuật toán tối ưu, hai thí nghiệm là giống hệt nhau.
 Không may, ta không đạt được sự tăng tốc đáng kể nào: đơn giản vì mô hình quá nhỏ;
 hơn nữa tập dữ liệu cũng nhỏ, do đó cách huấn luyện trên nhiều GPU có chút không tinh vi của chúng ta sẽ chịu chi phí đáng kể do Python.
-Về sau ta sẽ gặp các mô hình phức tạp hơn và các cách tinh vi hơn để song song hóa.
+Về sau ta sẽ gặp các mô hình phức tạp hơn và các cách song song hóa tinh vi hơn.
 Hiện giờ hãy xem thí nghiệm trên Fashion-MNIST cho kết quả như thế nào. <!-- trong code là `load_data_fashion_mnist` -->
 
 ```{.python .input  n=13}
