@@ -475,9 +475,9 @@ Hence it pays to understand the specific benefits that GPUs and related accelera
 -->
 
 Nếu nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU, thì cũng không phải là phóng đại.
-Vì lẽ ấy, ta có thể lý luận rằng nhờ có học sâu mà gia sản của các công ty sản suất GPU tăng trưởng đáng kể.
+Vì lẽ ấy, ta có thể lý luận rằng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
 Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể hậu quả ra sao.
-Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị liên quan như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
+Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị tăng tốc khác như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
 
 
 <!--
