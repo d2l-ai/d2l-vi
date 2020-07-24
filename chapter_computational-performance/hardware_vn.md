@@ -649,21 +649,21 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 * Training and inference hardware have different sweet spots in terms of price / performance.
 -->
 
-* Các thiết bị đều có chi phí cho các phép toán. 
-Do đó nên tính toán để di chuyển lượng lớn dữ liệu trong vài lần thay vì di chuyển lượng dữ liệu nhỏ nhiều lần. 
+* Các thiết bị đều có chi phí phụ trợ trên mỗi hành động. 
+Do đó ta nên nhắm tới việc di chuyển ít lần các lượng dữ liệu lớn thay vì di chuyển nhiều lần các lượng dữ liệu nhỏ. 
 Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
-* Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh của thiết bị.
+* Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh đặc thù của thiết bị tăng tốc mình đang có.
 Ví dụ, một vài CPU Intel Xeon thực hiện cực kì hiệu quả phép toán với dữ liệu kiểu INT8, 
 GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16, 
 còn NVIDIA Turing chạy tốt cho cả các phép toán với dữ liệu kiểu FP16, INT8, INT4.
 * Hiện tượng tràn số trên do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
-* Việc đặt tên khác có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
+* Việc cùng dữ liệu nhưng có nhiều địa chỉ (*aliasing*) có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
 Trên GPU, tốt hơn là nên giữ kích thước tích chập đồng bộ, với TensorCores chẳng hạn.
 * Sử dụng thuật toán phù hợp với phần cứng (về mức chiếm dụng bộ nhớ, băng thông, v.v).
-Thời gian thực thi có thể giảm rất nhiều (theo cấp số nhân) khi đưa các tham số vào bộ đệm.
+Thời gian thực thi có thể giảm hàng trăm ngàn lần khi tất cả tham số đều được chứa trong bộ đệm.
 * Chúng tôi khuyến khích bạn đọc tính toán trước hiệu năng của một thuật toán mới trước khi kiểm tra bằng thực nghiệm.
-Sự khác biệt hàng chục lần hoặc hơn là lý do cần quan tâm.
-* Sử dụng các công cụ phân tích hiệu năng để tìm điểm nghẽn cổ chai (*bottlenecks*) của hệ thống.
+Sự khác biệt lên tới hàng chục lần hoặc hơn là dấu hiệu cần quan tâm.
+* Sử dụng các công cụ phân tích hiệu năng (*profiler*) để tìm điểm nghẽn cổ chai của hệ thống.
 * Phần cứng sử dụng cho huấn luyện và suy luận có các cấu hình hiệu quả khác nhau để cân đối giá tiền và hiệu năng.
 
 <!--
@@ -724,7 +724,7 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Send packet CA->Netherlands->CA            | 150 ms |                                                 |
 -->
 
-| Hoạt động                                  | Thời gian trễ   | Lưu ý                                  |
+| Hoạt động                                  | Thời gian     | Chú thích                                  |
 | :----------------------------------------- | -----: | :---------------------------------------------- |
 | Truy xuất bộ đệm L1                        | 1.5 ns | 4 chu kỳ                                        |
 | Cộng, nhân, cộng kết hợp nhân (*FMA*) số thực dấu phẩy động | 1.5 ns | 4 chu kỳ                       |
@@ -756,7 +756,7 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Đọc tuần tự 1MB từ SSD SATA                |   2 ms | ~550MB/s DC S3510 SSD SATA                      |
 | Đọc tuần tự 1MB từ ổ đĩa                     |   5 ms | ~200MB/s server HDD                             |
 | Truy cập ngẫu nhiên ổ đĩa (tìm+xoay)         |  10 ms |                                                 |
-| Gửi packet CA->Netherlands->CA             | 150 ms |                                                 |
+| Gửi gói dữ liệu từ California -> Hà Lan -> California             | 150 ms |                                                 |
 :label:`table_latency_numbers`
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
