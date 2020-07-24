@@ -405,9 +405,9 @@ Note, though that hybridization can affect model flexibility, in particular in t
 We will illustrate how to design more general models and also how compilation will remove spurious Python elements.
 -->
 
-Trên đây chúng ta đã thấy rằng mô hình có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn khi gọi phương thức `hybridize`. 
-Lưu ý là mặc dù vậy, sự hybrid hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng điều khiển. 
-Chúng ta sẽ minh họa việc thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
+Trên đây chúng ta thấy rằng phương thức `hybridize` có thể giúp mô hình đạt được hiệu năng tính toán và tính cơ động vượt trội hơn. 
+Dù vậy, sự hybrid hóa có thể ảnh hưởng tới tính linh hoạt của mô hình, đặc biệt là trong điều khiển luồng. 
+Ta sẽ minh họa cách thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
 
 
 ```{.python .input  n=8}
@@ -433,10 +433,10 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-Đoạn mã ở trên thực hiện một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
-`hybrid_foward` lấy thêm một đối số - mô-đun `F`.
-Điều này là cần thiết vì tùy vào chương trình có được hybrid hóa hay không để xử lý bằng thư viện phù hợp (`ndarray` hoặc `symbol`).
-Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNET xác định đối số đầu vào một cách tự động. 
+Đoạn mã trên biểu diễn một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
+Phương thức `hybrid_foward` lấy thêm một đối số - mô-đun `F`.
+Đối số này là cần thiết để xử lý bằng thư viện phù hợp (`ndarray` hoặc `symbol`) tùy vào chương trình có được hybrid hóa hay không.
+Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNet tự động xác định đối số đầu vào. 
 Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các đối số đầu vào khi gọi hàm. 
 
 ```{.python .input  n=9}
@@ -451,8 +451,8 @@ Repeating the forward computation will lead to the same output (we omit details)
 Now let's see what happens if we invoke the `hybridize` method.
 -->
 
-Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (bỏ qua chi tiết).
-Bây giờ ta hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
+Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (ta bỏ qua chi tiết).
+Bây giờ hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
 
 ```{.python .input  n=10}
 net.hybridize()
@@ -465,7 +465,7 @@ Moreover, even though the input is of `ndarray` type, the data flowing through t
 Repeating the function call leads to a surprising outcome:
 -->
 
-Thay vì sử dụng `ndarray` ta lúc này sử dụng mô-đun `symbol` cho `F`.
+Thay vì `ndarray`, lúc này ta sử dụng mô-đun `symbol` cho `F`.
 Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, dữ liệu truyền qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
 Thực hiện gọi hàm `net` nhiều lần dẫn tới một kết quả đáng kinh ngạc:
 
@@ -485,13 +485,13 @@ The benefit can range from small percentage points to more than twice the speed,
 -->
 
 Điều này khá khác biệt so với những gì ta đã thấy trước đó.
-Tất cả các lệnh in, như định nghĩa trong `hybrid_forward` bị bỏ qua.
+Tất cả các lệnh in định nghĩa trong `hybrid_forward` bị bỏ qua.
 Thật vậy, sau khi hybrid hóa, việc thực thi lệnh `net(x)` không còn liên quan gì tới trình thông dịch của Python nữa.
-Điều này có nghĩa rằng bất cứ đoạn chương trình nào của Python không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
+Nghĩa là bất cứ đoạn mã Python nào không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để việc thực thi trôi chảy hơn và kết quả tốt hơn.
 Và thay vì gọi Python, MXNet gọi trực tiếp back-end C++. 
 Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
-Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
+Lợi ích về tốc độ này có thể tăng từ vài phần trăm tới hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -530,9 +530,9 @@ Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ
 -->
 
 1. Hãy thiết kế một mạng bằng cách sử dụng lớp `HybridConcurrent`, có thể thử với GoogleNet trong :ref: `sec_googlenet`.
-2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet. Hãy thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
-3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là, các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
-4. Hãy lập trình các mô hình mà bạn quan tâm trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
+2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet, rồi thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
+3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
+4. Hãy lập trình các mô hình bạn thích trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -560,17 +560,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Tâm
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
 * Nguyễn Văn Cường
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
