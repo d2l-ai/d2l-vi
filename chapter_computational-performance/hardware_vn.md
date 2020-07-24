@@ -861,13 +861,28 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 * Training and inference hardware have different sweet spots in terms of price / performance.
 -->
 
-*dịch đoạn phía trên*
+* Các thiết bị đều có chi phí phụ trợ trên mỗi hành động. 
+Do đó ta nên nhắm tới việc di chuyển ít lần các lượng dữ liệu lớn thay vì di chuyển nhiều lần các lượng dữ liệu nhỏ. 
+Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
+* Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh đặc thù của thiết bị tăng tốc mình đang có.
+Ví dụ, một vài CPU Intel Xeon thực hiện cực kì hiệu quả phép toán với dữ liệu kiểu INT8, 
+GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16, 
+còn NVIDIA Turing chạy tốt cho cả các phép toán với dữ liệu kiểu FP16, INT8, INT4.
+* Hiện tượng tràn số trên do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
+* Việc cùng dữ liệu nhưng có nhiều địa chỉ (*aliasing*) có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
+Trên GPU, tốt hơn là nên giữ kích thước tích chập đồng bộ, với TensorCores chẳng hạn.
+* Sử dụng thuật toán phù hợp với phần cứng (về mức chiếm dụng bộ nhớ, băng thông, v.v).
+Thời gian thực thi có thể giảm hàng trăm ngàn lần khi tất cả tham số đều được chứa trong bộ đệm.
+* Chúng tôi khuyến khích bạn đọc tính toán trước hiệu năng của một thuật toán mới trước khi kiểm tra bằng thực nghiệm.
+Sự khác biệt lên tới hàng chục lần hoặc hơn là dấu hiệu cần quan tâm.
+* Sử dụng các công cụ phân tích hiệu năng (*profiler*) để tìm điểm nghẽn cổ chai của hệ thống.
+* Phần cứng sử dụng cho huấn luyện và suy luận có các cấu hình hiệu quả khác nhau để cân đối giá tiền và hiệu năng.
 
 <!--
 ## More Latency Numbers
 -->
 
-## *dịch tiêu đề phía trên*
+## Độ trễ
 
 
 <!--
@@ -875,14 +890,14 @@ The summary in :numref:`table_latency_numbers` and :numref:`table_latency_number
 who maintains an updated version of the numbers as a [GitHub Gist](https://gist.github.com/eshelman/343a1c46cb3fba142c1afdcdeec17646).
 -->
 
-*dịch đoạn phía trên*
+Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency_numbers_tesla` được [Eliot Eshelman](https://gist.github.com/eshelman) duy trì cập nhật trên [GitHub Gist](https://gist.github.com/eshelman/343a1c46cb3fba142c1afdcdeec17646).
 
 
 <!--
 :Common Latency Numbers.
 -->
 
-*dịch đoạn phía trên*
+:Các độ trễ thường gặp
 
 
 <!--
@@ -921,7 +936,39 @@ who maintains an updated version of the numbers as a [GitHub Gist](https://gist.
 | Send packet CA->Netherlands->CA            | 150 ms |                                                 |
 -->
 
-*dịch bảng phía trên*
+| Hoạt động                                  | Thời gian     | Chú thích                                  |
+| :----------------------------------------- | -----: | :---------------------------------------------- |
+| Truy xuất bộ đệm L1                        | 1.5 ns | 4 chu kỳ                                        |
+| Cộng, nhân, cộng kết hợp nhân (*FMA*) số thực dấu phẩy động | 1.5 ns | 4 chu kỳ                       |
+| Truy xuất bộ đệm L2                        |   5 ns | 12 ~ 17 chu kỳ                                  |
+| Rẽ nhánh sai                               |   6 ns | 15 ~ 20 chu kỳ                                  |
+| Truy xuất bộ đệm L3 (không chia sẻ)        |  16 ns | 42 chu kỳ                                       |
+| Truy xuất bộ đệm L3 (chia sẻ với nhân khác) |  25 ns | 65 chu kỳ                                       |
+| Khóa/mở đèn báo lập trình (*mutex*)        |  25 ns |                                                 |
+| Truy xuất bộ đệm L3 (được nhân khác thay đổi)    |  29 ns | 75 chu kỳ                              |
+| Truy xuất bộ đệm L3 (tại CPU socket từ xa)|  40 ns | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
+| QPI hop đến CPU khác (cho mỗi hop)         |  40 ns |                                                 |
+| Truy xuất 64MB (CPU cục bộ)                |  46 ns | TinyMemBench trên Broadwell E5-2690v4           |
+| Truy xuất 64MB (CPU từ xa)                 |  70 ns | TinyMemBench trên Broadwell E5-2690v4           |
+| Truy xuất 256MB (CPU cục bộ)               |  75 ns | TinyMemBench trên Broadwell E5-2690v4           |
+| Ghi ngẫu nhiên vào Intel Optane            |  94 ns | UCSD Non-Volatile Systems Lab                   |
+| Truy xuất 256MB (CPU từ xa)                | 120 ns | TinyMemBench trên Broadwell E5-2690v4           |
+| Đọc ngẫu nhiên từ Intel Optane             | 305 ns | UCSD Non-Volatile Systems Lab                   |
+| Truyền 4KB trên sợi HPC 100 Gbps           |   1 μs | MVAPICH2 trên Intel Omni-Path                   |
+| Nén 1KB với Google Snappy                  |   3 μs |                                                 |
+| Truyền 4KB trên cáp mạng 10 Gbps           |  10 μs |                                                 |
+| Ghi ngẫu nhiên 4KB vào SSD NVMe            |  30 μs | DC P3608 SSD NVMe (QOS 99% khoảng 500μs)            |
+| Truyền 1MB từ/đến NVLink GPU               |  30 μs | ~33GB/s trên NVIDIA 40GB NVLink                 |
+| Truyền 1MB từ/đến PCI-E GPU             |  80 μs | ~12GB/s trên PCIe 3.0 x16 link                  |
+| Đọc ngẫu nhiên 4KB từ SSD NVMe             | 120 μs | DC P3608 SSD NVMe (QOS 99%)                    |
+| Đọc tuần tự 1MB từ SSD NVMe                | 208 μs | ~4.8GB/s DC P3608 SSD NVMe                      |
+| Ghi ngẫu nhiên 4KB vào SSD SATA            | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
+| Đọc ngẫu nhiên 4KB từ SSD SATA             | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
+| Truyền 2 chiều trong cùng trung tâm dữ liệu| 500 μs | Ping một chiều ~250μs                          |
+| Đọc tuần tự 1MB từ SSD SATA                |   2 ms | ~550MB/s DC S3510 SSD SATA                      |
+| Đọc tuần tự 1MB từ ổ đĩa                     |   5 ms | ~200MB/s server HDD                             |
+| Truy cập ngẫu nhiên ổ đĩa (tìm+xoay)         |  10 ms |                                                 |
+| Gửi gói dữ liệu từ California -> Hà Lan -> California             | 150 ms |                                                 |
 :label:`table_latency_numbers`
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
@@ -1033,7 +1080,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 12 -->
-* 
-
+* Nguyễn Văn Cường
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 <!-- Phần 13 -->
 * 
