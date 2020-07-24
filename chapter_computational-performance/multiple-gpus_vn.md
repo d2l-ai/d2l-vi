@@ -277,7 +277,7 @@ Secondly, we need the ability to sum parameters across multiple devices, i.e., w
 Để huấn luyện hiệu quả trên nhiều GPU, ta cần hai thao tác cơ bản: 
 thứ nhất là phân phối danh sách tham số đến nhiều GPU và gắn gradient, được định nghĩa trong hàm `get_params` dưới đây.
 Nếu không có các tham số, ta không thể đánh giá mạng trên GPU.
-Thứ hai, ta cần tính tổng các tham số trên nhiều thiết bị, khai báo ở hàm `allreduce`.
+Thứ hai, ta cần tính tổng giá trị các tham số trên nhiều thiết bị, khai báo ở hàm `allreduce`.
 
 ```{.python .input  n=12}
 def get_params(params, ctx):
