@@ -341,7 +341,7 @@ print('after allreduce:\n', data[0], '\n', data[1])
 ## Distributing Data
 -->
 
-## Phân phối Dữ liệu
+## Phân bổ Dữ liệu
 
 
 <!--
