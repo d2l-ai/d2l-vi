@@ -611,7 +611,7 @@ Một đoạn mã như vậy khả năng cao là sẽ chạy *chậm hơn* trên
 ## GPUs and other Accelerators
 -->
 
-## *dịch tiêu đề phía trên*
+## GPU và các Thiết bị tăng tốc khác
 
 
 <!--
@@ -621,7 +621,10 @@ This co-evolution of hardware and algorithms has led to a situation where for be
 Hence it pays to understand the specific benefits that GPUs and related accelerators such as the TPU :cite:`Jouppi.Young.Patil.ea.2017` offer.
 -->
 
-*dịch đoạn phía trên*
+Nếu nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU, thì cũng không phải là phóng đại.
+Vì lẽ ấy, ta có thể lý luận rằng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
+Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể hậu quả ra sao.
+Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị tăng tốc khác như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
 
 
 <!--
@@ -636,7 +639,15 @@ All of this necessitates faster and larger memory (HBM2 vs. GDDR6) and more proc
 For instance, NVIDIA's [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 GPUs are optimized for inference whereas the V100 GPUs are preferable for training.
 -->
 
-*dịch đoạn phía trên*
+Ta cần chú ý đến hai đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
+Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi của mạng,
+không cần sử dụng bộ nhớ để lưu dữ liệu trung gian ở bước lan truyền ngược.
+Hơn nữa, ta có lẽ không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
+Mặt khác trong quá trình huấn luyện, tất cả kết quả trung gian đều cần phải lưu lại để tính gradient.
+Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới.
+Điều này có nghĩa là bước huấn luyện yêu cầu tối thiểu FP16 (hoặc kết hợp độ chính xác với FP32).
+Tất cả các yếu tố trên đòi hỏi bộ nhớ nhanh hơn và lớn hơn (HBM2 hoặc GDDR6) và nhiều khả năng xử lý hơn.
+Ví dụ, GPU [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 của NVIDIA được tối ưu cho bước suy luận trong khi GPU V100 phù hợp cho quá trình huấn luyện.
 
 
 <!--
@@ -651,13 +662,21 @@ In addition to that, two Tensor Cores accelerate a narrow subset of additional o
 Each Streaming Multiprocessor (SM) consists of four such blocks.
 -->
 
-*dịch đoạn phía trên*
+Xem lại :numref:`fig_neon128`. Việc thêm các đơn vị vector vào lõi vi xử lý cho phép ta tăng đáng kể thông lượng xử lý (ở ví dụ trong hình ta có thể thực hiện 16 thao tác cùng lúc).
+Chuyện gì sẽ xảy ra nếu ta không chỉ thêm các đơn vị được tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
+Chiến lược này dẫn tới Lõi Tensor (chi tiết về phần này sẽ sớm được bàn luận).
+Thứ hai, chuyện gì sẽ xảy ra nếu ta tăng số lượng lõi?
+Nói tóm lại, hai chiến lược trên tổng kết lại cách quyết định thiết kế của GPU.
+:numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản.
+Khối bao gồm 16 đơn vị số nguyên và 16 đơn vị dấu phẩy động.
+Thêm vào đó, hai Lõi Tensor xử lý một tập nhỏ các thao thác liên quan cho học sâu được thêm vào.
+Mỗi Hệ vi xử lý Luồng (*Streaming Multiprocessor* - SM) bao gồm bốn khối như vậy.
 
 <!--
 ![NVIDIA Turing Processing Block (image courtesy of NVIDIA)](../img/turing_processing_block.png)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/turing_processing_block.png)
+![Khối Xử lý của NVIDIA Turing](../img/turing_processing_block.png)
 :width:`150px`
 :label:`fig_turing_processing_block`
 
@@ -1002,7 +1021,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 9 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 10 -->
 * Đỗ Trường Giang
