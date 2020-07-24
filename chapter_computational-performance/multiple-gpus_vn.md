@@ -219,7 +219,7 @@ npx.set_np()
 We use LeNet as introduced in :numref:`sec_lenet`. We define it from scratch to illustrate parameter exchange and synchronization in detail.
 -->
 
-Ta lập trình từ đầu LeNet trong :numref:`sec_lenet` để minh họa cách trao đổi tham số và đồng bộ một cách chi tiết.
+Ta lập trình từ đầu LeNet trong :numref:`sec_lenet` để minh họa chi tiết cách trao đổi tham số và đồng bộ.
 
 
 ```{.python .input  n=10}
@@ -309,7 +309,7 @@ The following allreduce function adds up all vectors and broadcasts the result b
 Note that for this to work we need to copy the data to the device accumulating the results.
 -->
 
-Vì chưa thực hiện tính toán nào, gradient ứng với hệ số điều chỉnh vẫn là $0$.
+Vì chưa thực hiện tính toán nào, gradient ứng với hệ số điều chỉnh vẫn mang giá trị $0$.
 Bây giờ giả sử ta có các vector được phân phối trên nhiều GPU.
 Hàm `allreduce` dưới đây cộng các vector đó và truyền kết quả về tất cả GPU.
 Chú ý, để hàm này hoạt động, ta cần sao chép dữ liệu đến GPU đang cộng dồn kết quả.
