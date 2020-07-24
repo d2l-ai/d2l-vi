@@ -747,7 +747,7 @@ who maintains an updated version of the numbers as a [GitHub Gist](https://gist.
 | Transfer 1MB to/from PCI-E GPU  |  80 μs | ~12GB/s on PCI-Express x16 link           |
 -->
 
-| Hoạt động                       | Thời gian trễ  | Lưu ý                             |
+| Hoạt động                       | Thời gian    | Chú thích                             |
 | :------------------------------ | -----: | :---------------------------------------- |
 | Truy cập bộ nhớ chung của GPU   |  30 ns | 30~90 chu kỳ (tính cả xung đột của các bank)|
 | Truy cập bộ nhớ toàn cục của GPU| 200 ns | 200~800 chu kỳ                            |
@@ -781,12 +781,12 @@ Is there a difference between the inner and outer tracks?
 
 1. Viết đoạn mã C để so sánh tốc độ khi truy cập bộ nhớ được sắp xếp theo khối (*aligned memory*) với khi truy cập bộ nhớ không được sắp xếp như vậy (một cách tương đối so với bộ nhớ ngoài).
 Gợi ý: hãy loại bỏ hiệu ứng của bộ đệm.
-2. So sánh tốc độ khi truy cập bộ nhớ tuần tự với khi truy cập với sải bước cho trước.
+2. So sánh tốc độ khi truy cập bộ nhớ tuần tự với khi truy cập theo sải bước cho trước.
 3. Làm thế nào để đo kích thước bộ đệm trên CPU?
 4. Bạn sẽ sắp xếp dữ liệu trên nhiều bộ nhớ như thế nào để có băng thông tối đa? 
 Sắp xếp như thế nào nếu bạn có nhiều luồng nhỏ?
 5. Tốc độ quay của một ổ cứng HDD dùng cho công nghiệp là 10,000 rpm. 
-Thời gian tối thiểu mà HDD đó cần (trong trường hợp tệ nhất) trước khi có thể đọc dữ liệu là bao nhiêu (có thể giả sử các đầu đọc ổ đĩa di chuyển cùng lúc)?
+Thời gian tối thiểu mà HDD đó cần (trong trường hợp tệ nhất) trước khi có thể đọc dữ liệu là bao nhiêu (có thể giả sử các đầu đọc ổ đĩa di chuyển tức thời)?
 6. Giả sử nhà sản xuất HDD tăng sức chứa bộ nhớ từ 1 Tbit mỗi inch vuông lên 5 Tbit mỗi inch vuông.
 Có thể lưu bao nhiêu dữ liệu trên một đĩa từ của một HDD 2.5"?
 Có sự khác biệt nào giữa track trong và track ngoài không?
@@ -795,7 +795,7 @@ Sử dụng lệnh `lspci` trên một máy p2.16xlarge và một máy p2.8xlarg
 Gợi ý: để ý đến chip cầu nối PLX cho chuẩn kết nối PCI.
 8. Chuyển từ kiểu dữ liệu 8 bit sang 16 bit cần lượng silicon gấp 4 lần. Tại sao?
 Tại sao NVIDIA thêm các phép toán cho kiểu dữ liệu INT4 vào GPU Turing?
-9. Có 6 đường truyền tốc độ cao giữa các GPU (chẳng hạn GPU Volta V100), bạn sẽ kết nối 8 GPU đó như thế nào?
+9. Có 6 đường truyền tốc độ cao giữa các GPU (như GPU Volta V100 chẳng hạn), bạn sẽ kết nối 8 GPU đó như thế nào?
 Tham khảo cách kết nối cho máy chủ p3.16xlarge trên AWS.
 10. Đọc xuôi bộ nhớ nhanh gấp bao nhiêu lần đọc ngược?
 Sự chênh lệch này có khác nhau giữa các nhà sản xuất máy tính và CPU không? Tại sao?
@@ -803,13 +803,13 @@ Thí nghiệm với mã nguồn C.
 11. Bạn có thể đo kích thước bộ nhớ đệm trên ổ đĩa của mình không?
 Bộ nhớ đệm trên HDD là gì?
 SSD có cần bộ nhớ đệm không?
-12. Đo thời gian truyền một packet khi gửi tin nhắn qua cáp mạng (*Ethernet*).
+12. Chi phí bộ nhớ phụ trợ khi gửi một gói dữ liệu khi gửi qua cáp mạng (*Ethernet*) là bao nhiêu.
 So sánh các giao thức UDP và TCP/IP.
 13. Truy cập Bộ nhớ Trực tiếp (*Direct Memory Access*) cho phép các thiết bị khác ngoài CPU ghi (và đọc) trực tiếp vào (từ) bộ nhớ.
 Tại sao đây là một ý tưởng hay?
 14. Nhìn vào thông số hiệu năng của GPU Turing T4.
 Tại sao hiệu năng *chỉ* tăng gấp đôi khi chuyển từ phép toán với kiểu dữ liệu FP16 sang INT8 và INT4?
-15. Thời gian truyền một packet 2 chiều giữa San Francisco và Amsterdam là bao nhiêu?
+15. Thời gian truyền một gói dữ liệu hai chiều giữa San Francisco và Amsterdam là bao nhiêu?
 Gợi ý: giả sử khoảng cách giữa 2 thành phố là 10,000km.
 
 
