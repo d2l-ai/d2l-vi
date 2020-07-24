@@ -245,7 +245,7 @@ def train(num_gpus, batch_size, lr):
 Let us see how this works in practice. As a warmup we train the network on a single GPU.
 -->
 
-Hãy cùng xem cách hoạt động trong thực tế. Giống như phần khởi động, ta huấn luyện mạng này trên một GPU đơn.
+Hãy cùng xem cách hoạt động trong thực tế. Để khởi động, ta huấn luyện mạng này trên một GPU đơn.
 
 
 ```{.python .input  n=8}
@@ -259,10 +259,10 @@ The time for computation is meaningfully larger than the time for synchronizing 
 This improves scalability since the overhead for parallelization is less relevant.
 -->
 
-Tiếp theo, ta sử dụng 2 GPU để huấn luyện. Mô hình của ResNet-18 phức tạp hơn đáng kể so với LeNet.
-Đây chính là cơ hội để song song hoá bộc lộ lợi thế của nó.
-Thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hoá các tham số.
-Điều này cải thiện khả năng mở rộng do tổng chi phí song song hoá ít liên quan đến tổng chi phí của toàn hệ thống.
+Tiếp theo, ta sử dụng 2 GPU để huấn luyện. Mô hình ResNet-18 phức tạp hơn đáng kể so với LeNet.
+Đây chính là cơ hội để song song hoá bộc lộ lợi thế của nó,
+vì thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hoá các tham số.
+Điều này cải thiện khả năng mở rộng do tổng chi phí song song hoá ít quan trọng.
 
 
 ```{.python .input  n=9}
@@ -282,7 +282,7 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 * Gluon cung cấp các hàm để khởi tạo mô hình trên nhiều thiết bị bằng cách cung cấp danh sách ngữ cảnh.
 * Dữ liệu được tự động đánh giá trên các thiết bị mà dữ liệu đó được lưu trữ.
 * Chú ý việc khởi tạo mạng trên mỗi thiết bị trước khi thử truy cập vào các tham số trên thiết bị đó. Nếu không bạn sẽ gặp phải lỗi.
-* Các thuật toán tối ưu tự động tích luỹ trên nhiều GPU.
+* Các thuật toán tối ưu tự động tổng hợp kết quả trên nhiều GPU.
 
 
 ## Bài tập
@@ -295,7 +295,7 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 
 1. Phần này ta sử dụng ResNet-18. Hãy thử với số epoch, kích thước batch và tốc độ học khác. Hãy sử dụng nhiều GPU hơn để tính toán. Chuyện gì sẽ xảy ra nếu bạn chạy mô hình này trên máy chủ p2.16xlarge với 16 GPU?
 2. Đôi khi mỗi thiết bị khác nhau cung cấp khả năng tính toán khác nhau. Ta có thể sử dụng GPU và CPU cùng lúc. Vậy ta nên phân chia công việc thế nào? Liệu việc phân chia có đáng hay không? Tại sao? Tại sao không?
-3. Chuyện gì sẽ xảy ra nếu ta bỏ hàm `npx.waitall()`? Bạn sẽ thay đổi quá trình huẩn luyện thế nào để có thể xử lý song song lên đến 2 bước nữa?
+3. Chuyện gì sẽ xảy ra nếu ta bỏ hàm `npx.waitall()`? Bạn sẽ thay đổi quá trình huấn luyện thế nào để có thể xử lý song song tối đa 2 bước cùng lúc?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
