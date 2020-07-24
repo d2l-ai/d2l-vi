@@ -312,7 +312,7 @@ Note that for this to work we need to copy the data to the device accumulating t
 Vì chưa thực hiện tính toán nào, gradient ứng với hệ số điều chỉnh vẫn là $0$.
 Bây giờ giả sử ta có các vector được phân phối trên nhiều GPU.
 Hàm `allreduce` dưới đây cộng các vector đó và truyền kết quả về tất cả GPU.
-Chú ý, để hàm này hoạt động, ta cần sao chép dữ liệu đến thiết bị đang cộng dồn kết quả.
+Chú ý, để hàm này hoạt động, ta cần sao chép dữ liệu đến GPU đang cộng dồn kết quả.
 
 ```{.python .input  n=14}
 def allreduce(data):
