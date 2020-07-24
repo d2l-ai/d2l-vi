@@ -803,7 +803,7 @@ Thí nghiệm với mã nguồn C.
 11. Bạn có thể đo kích thước bộ nhớ đệm trên ổ đĩa của mình không?
 Bộ nhớ đệm trên HDD là gì?
 SSD có cần bộ nhớ đệm không?
-12. Chi phí bộ nhớ phụ trợ khi gửi một gói dữ liệu khi gửi qua cáp mạng (*Ethernet*) là bao nhiêu.
+12. Chi phí bộ nhớ phụ trợ khi gửi một gói dữ liệu qua cáp mạng (*Ethernet*) là bao nhiêu.
 So sánh các giao thức UDP và TCP/IP.
 13. Truy cập Bộ nhớ Trực tiếp (*Direct Memory Access*) cho phép các thiết bị khác ngoài CPU ghi (và đọc) trực tiếp vào (từ) bộ nhớ.
 Tại sao đây là một ý tưởng hay?
