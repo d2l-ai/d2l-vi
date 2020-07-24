@@ -132,7 +132,7 @@ We can verify this by printing out the parameters and observing any errors that 
 Khi dữ liệu được truyền vào mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu đó được truyền vào*.
 Điều này có nghĩa là việc khởi tạo xảy ra theo từng thiết bị.
 Do ta lựa chọn GPU 0 và GPU 1 để khởi tạo, mạng chỉ được khởi tạo trên hai thiết bị này chứ không phải trên CPU.
-Trong thực tế, các tham số này thậm chí còn không tồn tại trên thiết bị.
+Trong thực tế, các tham số này thậm chí còn không tồn tại trên CPU.
 Ta có thể kiểm chứng điều này bằng cách in ra các tham số và theo dõi xem liệu có lỗi nào xảy ra hay không.
 
 
@@ -154,9 +154,9 @@ The main difference is that we split a batch before invoking the network.
 All else is essentially identical.
 -->
 
-Cuối cùng, hãy cùng thay đổi đoạn mã ta sử dụng để có thể đánh giá độ chính xác bằng một đoạn mã có thể chạy song song trên nhiều thiết bị.
+Cuối cùng, hãy cùng thay đổi đoạn mã đánh giá độ chính xác để có thể chạy song song trên nhiều thiết bị.
 Đây chính là hàm được viết lại của hàm `evaluate_accuracy_gpu` ở :numref:`sec_lenet`.
-Điểm khác biệt lớn nhất nằm ở việc ta tách một batch ra trước khi gọi đến mạng.
+Điểm khác biệt lớn nhất nằm ở việc ta tách một batch ra trước khi truyền vào mạng.
 Các phần còn lại gần như là giống hệt.
 
 
@@ -199,9 +199,9 @@ Như phần trên, đoạn mã huấn luyện cần thực hiện một số hà
 -->
 
 * Các tham số của mạng cần được khởi tạo trên tất cả các thiết bị.
-* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch cần được chia đều cho tất cả các thiết bị.
+* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch sẽ được chia cho tất cả các thiết bị.
 * Ta tính toán song song hàm mất mát và gradient của nó trên tất cả các thiết bị.
-* Mất mát được tích luỹ (bởi phương thức huấn luyện) và các tham số tương ứng được cập nhật.
+* Mất mát được tích luỹ (bởi phương thức huấn luyện) và các tham số được cập nhật tương ứng.
 
 
 <!--
