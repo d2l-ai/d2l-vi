@@ -780,9 +780,9 @@ Is there a difference between the inner and outer tracks?
 -->
 
 1. Viết đoạn mã C để so sánh tốc độ khi truy cập bộ nhớ được sắp xếp theo khối (*aligned memory*) với khi truy cập bộ nhớ không được sắp xếp như vậy (một cách tương đối so với bộ nhớ ngoài).
-Gợi ý: hãy loại bỏ hiệu ứng của bộ đệm.
+Gợi ý: hãy loại bỏ hiệu ứng của bộ nhớ đệm.
 2. So sánh tốc độ khi truy cập bộ nhớ tuần tự với khi truy cập theo sải bước cho trước.
-3. Làm thế nào để đo kích thước bộ đệm trên CPU?
+3. Làm thế nào để đo kích thước bộ nhớ đệm trên CPU?
 4. Bạn sẽ sắp xếp dữ liệu trên nhiều bộ nhớ như thế nào để có băng thông tối đa? 
 Sắp xếp như thế nào nếu bạn có nhiều luồng nhỏ?
 5. Tốc độ quay của một ổ cứng HDD dùng cho công nghiệp là 10,000 rpm. 
