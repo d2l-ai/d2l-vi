@@ -523,15 +523,15 @@ This is where caches come in handy (see this [Wikipedia article](https://en.wiki
 Commonly the following names / concepts are used:
 -->
 
-Xét tình huống sau: ta sử dụng một CPU bình thường với 4 lõi như được mô tả trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
-Thêm nữa, hãy giả sử ta sử dụng một số IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi bộ đều có AVX2 được đưa vào hoạt động với độ rộng 256bit.
-Ngoài ra, giả sử rằng cần truy cập từ bộ nhớ ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
-Điều này có nghĩa rằng CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
-Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các đơn vị xử lý sẽ thiếu dữ liệu để xử lý.
+Xét tình huống sau: ta có một CPU bình thường với 4 nhân như trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
+Thêm nữa, hãy giả sử IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi nhân đều đã kích hoạt AVX2 rộng 256bit.
+Ngoài ra, giả sử bộ nhớ cần truy cập ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
+Điều này có nghĩa CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
+Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các nhân sẽ thiếu dữ liệu để xử lý.
 Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
-Để điều chỉnh vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ có khoảng cách xa, tốt hơn hết là lưu trong bộ nhớ đệm nội bộ của CPU.
+Để khắc phục vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ ngoài, và tốt hơn hết là lưu trong bộ nhớ cục bộ trên CPU.
 Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
-Một số tên gọi / khái niệm sau thường được sử dụng:
+Một số tên gọi/khái niệm thường gặp:
 
 <!--
 * **Registers** are strictly speaking not part of the cache. They help stage instructions. 
