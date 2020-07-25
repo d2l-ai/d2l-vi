@@ -219,7 +219,7 @@ npx.set_np()
 We use LeNet as introduced in :numref:`sec_lenet`. We define it from scratch to illustrate parameter exchange and synchronization in detail.
 -->
 
-Ta lập trình từ đầu LeNet trong :numref:`sec_lenet` để minh họa chi tiết cách trao đổi tham số và đồng bộ.
+Ta lập trình từ đầu LeNet trong :numref:`sec_lenet` để minh họa chi tiết cách trao đổi và đồng bộ tham số.
 
 
 ```{.python .input  n=10}
