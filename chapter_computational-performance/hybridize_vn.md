@@ -433,10 +433,10 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-Đoạn mã trên biểu diễn một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
+Đoạn mã trên biểu diễn một mạng đơn giản với 4 nút ẩn và 2 đầu ra. 
 Phương thức `hybrid_foward` lấy thêm một đối số - mô-đun `F`.
-Đối số này là cần thiết để xử lý bằng thư viện phù hợp (`ndarray` hoặc `symbol`) tùy vào chương trình có được hybrid hóa hay không.
-Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNet tự động xác định đối số đầu vào. 
+Đối số này là cần thiết để chọn thư viện xử lý phù hợp (`ndarray` hoặc `symbol`) tùy vào việc chương trình có được hybrid hóa hay không.
+Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNet sẽ tự động xác định đối số đầu vào. 
 Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các đối số đầu vào khi gọi hàm. 
 
 ```{.python .input  n=9}
@@ -467,7 +467,7 @@ Repeating the function call leads to a surprising outcome:
 
 Thay vì `ndarray`, lúc này ta sử dụng mô-đun `symbol` cho `F`.
 Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, dữ liệu truyền qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
-Thực hiện gọi hàm `net` nhiều lần dẫn tới một kết quả đáng kinh ngạc:
+Việc gọi lại hàm `net` dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
 net(x)
@@ -485,11 +485,11 @@ The benefit can range from small percentage points to more than twice the speed,
 -->
 
 Điều này khá khác biệt so với những gì ta đã thấy trước đó.
-Tất cả các lệnh in định nghĩa trong `hybrid_forward` bị bỏ qua.
+Tất cả các lệnh in được định nghĩa trong `hybrid_forward` đều bị bỏ qua.
 Thật vậy, sau khi hybrid hóa, việc thực thi lệnh `net(x)` không còn liên quan gì tới trình thông dịch của Python nữa.
-Nghĩa là bất cứ đoạn mã Python nào không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để việc thực thi trôi chảy hơn và kết quả tốt hơn.
+Nghĩa là bất cứ đoạn mã Python nào không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để việc thực thi trôi chảy hơn và hiệu năng tốt hơn.
 Và thay vì gọi Python, MXNet gọi trực tiếp back-end C++. 
-Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
+Cũng nên lưu ý rằng một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
 Lợi ích về tốc độ này có thể tăng từ vài phần trăm tới hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
