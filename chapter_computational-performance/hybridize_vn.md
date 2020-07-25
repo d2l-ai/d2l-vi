@@ -320,7 +320,7 @@ Now we can invoke the network twice, once with and once without hybridization.
 -->
 
 
-Bây giờ ta có thể gọi mạng hai lần tương ứng với việc có hoặc không hybrid hoá.
+Bây giờ ta có thể gọi mạng hai lần với có hybrid hóa và không hybrid hoá.
 
 ```{.python .input  n=5}
 net = get_net()
