@@ -81,7 +81,7 @@ It usually involves the following steps:
 -->
 
 Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ có thể thực hiện một khi chương trình được định nghĩa đầy đủ.
-Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh).
+Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh). 
 Lập trình ký hiệu thường gồm những bước sau:
 
 <!--
@@ -91,7 +91,7 @@ Lập trình ký hiệu thường gồm những bước sau:
 -->
 
 1. Khai báo các hành động sẽ được thực thi.
-2. Biên dịch các hành động thành chương trình có thể chạy được.
+2. Biên dịch các hành động thành chương trình có thể chạy được. 
 3. Thực thi bằng cách cung cấp đầu vào và gọi chương trình đã được biên dịch.
 
 <!--
@@ -105,12 +105,12 @@ To get a better idea consider the following simulation of imperative programming
 -->
 
 Quy trình trên cho phép chúng ta tối ưu hóa chương trình một cách đáng kể.
-Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU.
+Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU. 
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
 Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
-Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến.
+Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến. 
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
-Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python).
+Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python). 
 
 
 ```{.python .input  n=2}
@@ -156,11 +156,11 @@ This allows the program to be run in a non-Python environment, thus avoiding any
 -->
 
 * Lập trình mệnh lệnh dễ viết hơn.
-Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
+Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết. 
 Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
-Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
+Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python. 
 * Lập trình ký hiệu thì hiệu quả hơn và dễ sử dụng được trên nền tảng khác.
-Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
+Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
