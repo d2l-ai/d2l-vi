@@ -13,8 +13,8 @@ So far, this book has focused on imperative programming, which makes use of stat
 Consider the following example of a simple imperative program.
 -->
 
-Tới giờ, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như là `print`, `+` hay `if` để thay đổi trạng thái chương trình.
-Xét ví dụ đơn giản sau về lập trình mệnh lệnh.
+Cho đến nay, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như `print`, `+` hay `if` để thay đổi trạng thái chương trình.
+Hãy cùng xét ví dụ đơn giản sau về lập trình mệnh lệnh.
 
 ```{.python .input  n=1}
 def add(a, b):
@@ -38,8 +38,8 @@ The next two statements `f = add(c, d)` and `g = add(e, f)` will be excecuted si
 -->
 
 Python là một ngôn ngữ thông dịch.
-Khi thực hiện hàm `fancy_func` nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
-Như vậy, nó sẽ chạy lệnh `e = add(a, b)` sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
+Khi thực hiện hàm `fancy_func`, nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
+Như vậy, nó sẽ chạy lệnh `e = add(a, b)` rồi sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
 Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được thực thi tương tự, thực hiện phép cộng và lưu kết quả vào các biến.
 :numref:`fig_compute_graph` minh họa luồng hoạt động.
 
@@ -47,7 +47,7 @@ Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được th
 ![Data flow in an imperative program.](../img/computegraph.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/computegraph.svg)
+![Luồng dữ liệu trong lập trình mệnh lệnh.](../img/computegraph.svg)
 :label:`fig_compute_graph`
 
 <!--
@@ -58,11 +58,11 @@ Moreover, it will need to save the variable values of `e` and `f` until all the 
 This is because we do not know whether the variables `e` and `f` will be used by other parts of the program after the statements `e = add(a, b)` and `f = add(c, d)` have been executed.
 -->
 
-Mặc dù lập trình mệnh lệnh rất thuận tiện, nhưng nó không được hiệu quả cho lắm.
+Mặc dù lập trình mệnh lệnh rất thuận tiện, nhưng lại không quá hiệu quả. 
 Thậm chí nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực thi ba lần gọi hàm độc lập.
-Nếu điều này xảy ra, giả sử, trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
+Nếu điều này xảy ra, giả sử trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
 Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
-Vì ta không biết liệu biến `e` và `f` có được sử dụng bởi các phần chương trình khác sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
+Vì vậy ta sẽ không biết liệu biến `e` và `f` có được sử dụng bởi các phần chương trình khác sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
