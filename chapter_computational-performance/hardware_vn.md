@@ -27,7 +27,7 @@ An introduction to cloud computing with AWS can be found in :numref:`sec_aws`.
 Đồng thời, ta cũng cần có một chút kiến thức cơ bản về phần cứng.
 Nội dung trong phần này không thể thay thế một khóa học đầy đủ về phần cứng và thiết kế hệ thống,
 mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
-Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ).
+Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ). 
 Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
 Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
 Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
@@ -47,11 +47,11 @@ such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 -->
 
 Bạn đọc có thể tham khảo nhanh thông tin tóm tắt trong :numref:`fig_latencynumbers`.
-Nội dung này được trích dẫn trong bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) chứa đựng thông tin tổng quan về những tiến bộ trong thập kỉ qua.
+Nội dung này được trích dẫn từ bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) chứa đựng thông tin tổng quan về những tiến bộ trong thập kỉ qua.
 Số liệu gốc được trích dẫn từ bài giảng của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
-Thảo luận dưới đây sẽ giải thích những cơ sở căn bản cho những con số trên và làm sao những số liệu này có thể gợi ý ta cách thiết kế các thuật toán.
-Thảo luận này khá trừu tượng và ngắn gọn.
-Rõ ràng phần thảo luận này không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho các bạn làm thống kê có thể đưa ra lựa chọn thiết kế phù hợp.
+Phần thảo luận dưới đây sẽ giải thích cơ sở cho những con số trên và cách mà chúng dẫn dắt ta trong quá trình thiết kế thuật toán.
+Phần thảo luận này cũng sẽ khá trừu tượng và ngắn gọn,
+nên nó không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho những người làm mô hình thống kê để có thể đưa ra lựa chọn thiết kế phù hợp.
 Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây như [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
@@ -88,10 +88,10 @@ provides efficient transfer of training data to the system and storage of interm
 -->
 
 * Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 nhân (_core_) hoặc nhiều hơn.
-* Bộ nhớ (RAM) được sử dụng để lưu trữ truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt, và dữ liệu huấn luyện.
+* Bộ nhớ (RAM) được sử dụng để lưu trữ và truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt và dữ liệu huấn luyện.
 * Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các kết nối tốc độ cao trong các máy chủ tân tiến).
-* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
-* Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian khi cần một cách hiệu quả. 
+* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với nhau theo cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
+* Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian một cách hiệu quả. 
 
 <!--
 ![Connectivity of components](../img/mobo-symbol.svg)
@@ -110,8 +110,8 @@ The memory is directly attached to the CPU with a total bandwidth of up to 100 G
 
 Hình :numref:`fig_mobo-symbol` cho thấy, hầu hết các thành phần (mạng, GPU, ổ lưu trữ) được kết nối tới GPU thông qua đường bus PCI mở rộng.
 Đường truyền này gồm nhiều làn kết nối trực tiếp tới CPU.
-Ví dụ, Threadripper 3 của AMD có 64 làn PCIe 4.0, mỗi làn có khả năng truyền dẫn 16 Gbit/s dữ liệu trên cả hai chiều.
-Bộ nhớ được gắn tới CPU với băng thông lên đến 100 GB/s.
+Ví dụ, Threadripper 3 của AMD có 64 làn PCIe 4.0, mỗi làn có khả năng truyền dẫn 16 Gbit/s dữ liệu theo cả hai chiều.
+Bộ nhớ được kết nối trực tiếp tới CPU với tổng băng thông lên đến 100 GB/s.
 
 
 <!--
@@ -127,8 +127,8 @@ Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở 
 Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà, không có phần nào trong hệ thống bị tắc nghẽn.
 Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
 Tương tự, nếu ta không thể truyền ma trận đủ nhanh tới CPU (hay GPU), bộ xử lý sẽ thiếu dữ liệu để hoạt động.
-Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm tính toán. Một lựa chọn đó là xen kẽ việc giao tiếp và tính toán giữa các máy tính.
-Bây giờ ta hãy xem xét các thành phần trên một cách chi tiết.
+Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm việc tính toán. Một lựa chọn đó là xen kẽ việc giao tiếp và tính toán giữa các máy tính.
+Giờ hãy xem xét các thành phần trên một cách chi tiết hơn.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -152,11 +152,11 @@ Often there are two banks per channel. For instance AMD's Zen 3 Threadripper has
 -->
 
 Về cơ bản, bộ nhớ được sử dụng để lưu trữ dữ liệu khi cần sẵn sàng truy cập.
-Hiện tại bộ nhớ RAM CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM) mà mỗi mô-đun có băng thông 20-25GB/s.
-Mỗi mô-đun có độ rộng bus 64 bit.
-Thông thường, các cặp mô-đun bộ nhớ cho phép sử dụng nhiều kênh.
-CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là, chúng có băng thông bộ nhớ tối đa từ 40GB/s đến 100GB/s.
-Thường có hai dải (_bank_) trên mỗi kênh. Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
+Hiện tại bộ nhớ RAM của CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM), trong đó mỗi mô-đun có băng thông 20-25GB/s và
+độ rộng bus 64 bit.
+Thông thường, các cặp mô-đun bộ nhớ cho phép sử dụng đa kênh.
+CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là chúng có băng thông bộ nhớ tối đa từ 40GB/s đến 100GB/s.
+Thường thì mỗi kênh có hai dải (_bank_). Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
 
 <!--
 While these numbers are impressive, indeed, they only tell part of the story.
@@ -171,16 +171,16 @@ We could perform up to $10,000,000$ random reads per second.
 This suggests that we avoid random memory access as far as possible and use burst reads (and writes) instead.
 -->
 
-Trong khi những con số trên khá ấn tượng, trên thực tế chúng chỉ nói lên một phần nào đó.
+Dù những con số trên trông khá ấn tượng, trên thực tế chúng chỉ nói lên một phần của câu chuyện.
 Khi ta muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ dẫn cho mô-đun bộ nhớ nơi thông tin có thể được tìm thấy.
 Nghĩa là, trước tiên chúng ta cần gửi *địa chỉ* đến RAM.
-Khi thực hiện xong, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
-Cách sau được gọi là *đọc nhanh* (_burst read_).
-Tóm lại, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp (_transfer_) sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
-mỗi lần chuyển tiếp sau chỉ mất 0.2ns.
-Nói ngắn gọn, lần đọc đầu tiên tốn thời gian gấp 500 lần những lần sau!
+Khi thực hiện xong việc này, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
+Lựa chọn thứ hai được gọi là *đọc nhanh* (_burst read_).
+Nói ngắn gọn, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp (_transfer_) sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
+mỗi lần chuyển tiếp sau đó chỉ mất 0.2ns.
+Có thể thấy lần đọc đầu tiên tốn thời gian gấp 500 lần những lần sau!
 Ta có thể đọc ngẫu nhiên tối đa $10,000,000$ lần mỗi giây.
-Điều này cho thấy rằng ta nên hạn chế truy cập bộ nhớ ngẫu nhiên và thay vào đó hãy sử dụng cách đọc (và ghi) nhanh (_burst read_, và _burst write_).
+Điều này cho thấy rằng ta nên hạn chế tối đa việc truy cập bộ nhớ ngẫu nhiên và thay vào đó nên sử dụng cách đọc (và ghi) nhanh (_burst read_, và _burst write_).
 
 <!--
 Matters are a bit more complex when we take into account that we have multiple banks.
@@ -192,12 +192,12 @@ Compilers do this pretty much [automatically](https://en.wikipedia.org/wiki/Data
 Curious readers are encouraged to review a lecture on DRAMs such as the one by [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 -->
 
-Các vấn đề phức tạp hơn một chút khi ta tính đến việc có nhiều bank.
+Mọi thứ trở nên phức tạp hơn một chút khi ta tính đến việc có nhiều bank.
 Mỗi bank có thể đọc bộ nhớ một cách độc lập.
 Điều này có hai ý sau. 
-Thứ nhất, số lần đọc ngẫu nhiên hiệu quả cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
-Điều đó cũng có nghĩa là thực hiện các lệnh đọc ngẫu nhiên không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
-Thứ hai, do căn chỉnh bộ nhớ theo biên 64 bit, nên căn chỉnh bất kỳ cấu trúc dữ liệu nào có cùng biên sẽ là một ý hay.
+Thứ nhất, số lần đọc ngẫu nhiên thực sự cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
+Điều đó cũng có nghĩa là việc thực hiện các lệnh đọc ngẫu nhiên vẫn không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
+Thứ hai, do việc căn chỉnh bộ nhớ theo biên 64 bit, ta nên căn chỉnh mọi cấu trúc dữ liệu theo cùng biên đó.
 Trình biên dịch thực hiện việc này một cách [tự động](https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
 Độc giả có thể tham khảo thêm bài giảng về DRAM ví dụ như [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 
@@ -222,20 +222,20 @@ We can safely ignore the details for the purpose of this book.
 They only matter when tuning GPU kernels for high throughput.
 -->
 
-Bộ nhớ GPU còn có yêu cầu băng thông thậm chí còn cao hơn nữa vì chúng có nhiều phần tử xử lý hơn CPU.
+Bộ nhớ GPU còn yêu cầu băng thông cao hơn nữa vì chúng có nhiều phần tử xử lý hơn CPU.
 Nhìn chung có hai phương án tiếp cận đối với vấn đề này.
-Một là cần tạo bus bộ nhớ có kích thước lớn hơn đáng kể.
-Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có độ rộng 352 bit.
-Điều này cho phép nhiều thông tin được truyền đi cùng lúc.
+Một phương án là tạo bus bộ nhớ có kích thước lớn hơn đáng kể.
+Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có kích thước 352 bit.
+Điều này cho phép truyền đi lượng thông tin lớn hơn cùng lúc.
 Thứ hai là các GPU sử dụng loại bộ nhớ chuyên biệt có hiệu năng cao.
-Các thiết bị hạng phổ thông, điển hình như dòng RTX và Titan của NVIDIA, dùng các chip [GDDR6](https://en.wikipedia.org/wiki/GDDR6_SDRAM) với băng thông tổng hợp 500 GB/s.
-Một dạng khác là cần dùng các mô-đun HBM (bộ nhớ băng thông rộng).
-Chúng dùng một loại giao tiếp rất khác và kết nối trực tiếp với GPU trên một vùng chuyên biệt của vật liệu chế tạo chip bán dẫn.
-Điều này làm chúng rất đắt và việc sử dụng chúng chủ yếu hạn chế cho các chip máy chủ cao cấp như các dòng tăng tốc NVIDIA Volta V100.
-Không quá ngạc nhiên kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
-Đối với các mục tiêu của chúng ta, các đặc tính hiệu năng của chúng là xem xem nhau và đơn giản là nhanh hơn nhiều .
-Ta có thể bỏ qua chi tiết mà không vấn đề gì đối với mục đích của cuốn sách này.
-Chúng chỉ là vấn đề khi ta cần điều chỉnh các kernel GPU để đạt được thông lượng xử lý cao hơn.  
+Các thiết bị hạng phổ thông, điển hình như dòng RTX và Titan của NVIDIA, dùng các chip [GDDR6](https://en.wikipedia.org/wiki/GDDR6_SDRAM) với băng thông tổng hợp hơn 500 GB/s.
+Một lựa chọn khác là mô-đun HBM (bộ nhớ băng thông rộng).
+Chúng dùng phương thức giao tiếp rất khác và kết nối trực tiếp với GPU trên một tấm bán dẫn silic chuyên biệt.
+Điều này dẫn đến giá thành rất cao và chúng chỉ được sử dụng chủ yếu cho các chip máy chủ cao cấp, ví dụ như dòng GPU NVIDIA Volta V100.
+Không quá ngạc nhiên, kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
+Đối với mục tiêu của chúng ta, nhìn chung các đặc tính hiệu năng của chúng khá giống nhau, chỉ là nhanh hơn nhiều.
+Ta hoàn toàn có thể bỏ qua các chi tiết sâu hơn trong cuốn sách này.
+Chúng chỉ trở nên quan trọng khi điều chỉnh các kernel GPU để đạt được thông lượng xử lý cao hơn.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
