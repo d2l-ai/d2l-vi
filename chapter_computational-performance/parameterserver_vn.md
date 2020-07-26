@@ -306,14 +306,19 @@ This similarity to (key,value) stores, such as the one introduced in Dynamo :cit
 They, too, satisfy many similar characteristics, in particular when it comes to distributing the parameters across multiple servers.
 -->
 
-*dịch đoạn phía trên*
+Điều này cho phép ta định nghĩa hai phép toán sau: đẩy, để cộng dồn gradient, và kéo, để lấy lại gradient được cộng dồn.
+Vì có nhiều tập gradient (do có nhiều tầng), ta cần gán chỉ số cho gradient bằng khóa $i$.
+Việc này tương tự như lưu trữ (khóa, giá trị), ví dụ, phương pháp được giới thiệu trong Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` không phải là ngẫu nhiên.
+Chúng thỏa mãn rất nhiều tính chất, đặc biệt khi phân bổ các tham số cho nhiều máy chủ.
 
 <!--
 * **push(key, value)** sends a particular gradient (the value) from a worker to a common storage. There the parameter is aggregated, e.g., by summing it up.
 * **pull(key, value)** retrieves an aggregate parameter from common storage, e.g., after combining the gradients from all workers.
 -->
 
-*dịch đoạn phía trên*
+* **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ worker đến thiết bị lưu trữ.
+Tại đây các tham số được tổng hợp lại, ví dụ bằng cách lấy tổng.
+* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả worker. 
 
 <!--
 By hiding all the complexity about synchronization behind a simple push and pull operation we can decouple the concerns of the statistical modeler 
@@ -321,7 +326,9 @@ who wants to be able to express optimization in simple terms and the systems eng
 In the next section we will experiment with such a (key,value) store in practice.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách ẩn đi tất cả độ phức tạp khi đồng bộ sau các phép toán đơn giản là đẩy và kéo, ta có thể giảm thiểu sự lo âu của các nhà mô hình thống kê,
+những người muốn thể hiện việc tối ưu một cách đơn giản, và các kỹ sư hệ thống, những người cần giản quyết sự phức tạp sẵn có khi đồng bộ hóa phân tán.
+Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, giá trị) trên thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -393,7 +400,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Cường
 
 <!-- Phần 7 -->
 * 
