@@ -259,20 +259,31 @@ In particular, ensuring that multiple machines work without unreasonable delays 
 We omit details on barriers and will only briefly touch on synchronous and asynchronous updates below.
 -->
 
-*dịch đoạn phía trên*
+Mỗi một thao tác trên nhìn qua thì có vẻ khá dễ hiểu.
+Và, quả thực, chúng có thể được thực hiện một cách hiệu quả *trong* một máy tính đơn.
+Tuy nhiên khi xét trên nhiều máy tính, ta có thể thấy rằng chính máy chủ tham số trung tâm trở thành nút thắt cổ chai (*bottleneck*).
+Suy cho cùng, băng thông của mỗi máy chủ là có hạn, do đó đối với $m$ worker thời gian để truyền toàn bộ gradient đến máy chủ là $O(m)$.
+Ta có thể phá bỏ rào cản này bằng cách tăng số lượng máy chủ lên $n$.
+Khi đó mỗi máy chủ chỉ cần lưu trữ $O(1/n)$ trên tổng số các tham số, do đó tổng thời gian cần để cập nhật và tối ưu trở thành $O(m/n)$.
+Để chọn hai con số này sao cho phù hợp, ta buộc phải thay đổi tỉ lệ hằng số bất kể số lượng worker ta sử dụng là bao nhiêu.
+Trong thực tế các máy tính ta sử dụng vừa đóng vai trò là worker, vừa đóng vai trò là máy chủ.
+:numref:`fig_ps_multips` minh hoạ thiết kế này.
+Bạn đọc có thể đọc :cite:`Li.Andersen.Park.ea.2014` để biết thêm chi tiết.
+Cụ thể, việc đảm bảo các máy tính hoạt động với độ trễ không quá lớn không phải là một chuyện dễ dàng.
+Ta bỏ qua chi tiết về các rào cản và chỉ đề cập ngắn gọn về việc cập nhật đồng bộ và bất đồng bộ ở dưới.
 
 <!--
 ![Top - a single parameter server is a bottleneck since its bandwidth is finite. Bottom - multiple parameter servers store parts of the parameters with aggregate bandwidth.](../img/ps-multips.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ps-multips.svg)
+![Trên - một máy chủ tham số đơn là một nút thắt cổ chai do băng thông của nó là có hạn. Dưới - nhiều máy chủ tham số lưu trữ từng phần các tham số với băng thông tổng.](../img/ps-multips.svg)
 :label:`fig_ps_multips`
 
 <!--
 ## (key,value) Stores
 -->
 
-## *dịch tiêu đề phía trên*
+## Lưu trữ cặp (khoá, giá trị)
 
 <!--
 Implementing the steps required for distributed multi-GPU training in practice is nontrivial.
@@ -281,7 +292,10 @@ This is why it pays to use a common abstraction, namely that of a (key,value) st
 Across many servers and many GPUs the gradient computation can be defined as
 -->
 
-*dịch đoạn phía trên*
+Lập trình các bước cần thiết trên cho việc huấn luyện phân tán trên nhiều GPU trong thực tế không hề đơn giản.
+Cụ thể, ta có thể phải đối mặt với rất nhiều lựa chọn khác nhau.
+Đây chính là lý do ta cần phải sử dụng một cách trừu tượng hoá khá phổ biến, ấy là lưu trữ cặp (khoá, giá trị) với cách cập nhật cần phải được định nghĩa lại.
+Trên nhiều máy chủ và nhiều GPU, việc tính toán gradient có thể được định nghĩa là
 
 
 $$\mathbf{g}_{i} = \sum_{k \in \mathrm{workers}} \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ijk}.$$
@@ -293,7 +307,10 @@ Note that it is possible for us to perform the reduction stagewise.
 Furthermore, note that this operation is independent between blocks $i$ pertaining to different parameters (and gradients).
 -->
 
-*dịch đoạn phía trên*
+Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hoán*, tức là nó biến đổi nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
+Thao tác này hết sức phù hợp đối với mục đích của ta do ta không (cần phải) kiểm soát chi tiết từng chút một mỗi khi nhận được một gradient.
+Chú ý rằng ta có thể thực hiện phép rút gọn theo từng bước.
+Thêm nữa, chú ý rằng thao tác này là độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -390,7 +407,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
 * 
