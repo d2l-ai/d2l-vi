@@ -13,7 +13,7 @@ So far, this book has focused on imperative programming, which makes use of stat
 Consider the following example of a simple imperative program.
 -->
 
-Cho đến nay, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như `print`, `+` hay `if` để thay đổi trạng thái chương trình.
+Cho đến nay, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như `print`, `+` hay `if` để thay đổi trạng thái của chương trình.
 Hãy cùng xét ví dụ đơn giản sau về lập trình mệnh lệnh.
 
 ```{.python .input  n=1}
