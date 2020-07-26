@@ -623,9 +623,9 @@ This co-evolution of hardware and algorithms has led to a situation where for be
 Hence it pays to understand the specific benefits that GPUs and related accelerators such as the TPU :cite:`Jouppi.Young.Patil.ea.2017` offer.
 -->
 
-Nếu nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU, thì cũng không phải là phóng đại.
-Vì lẽ ấy, ta có thể lý luận rằng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
-Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể hậu quả ra sao.
+Không hề phóng đại khi nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU.
+Và cũng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
+Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể có hiệu quả hay không.
 Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị tăng tốc khác như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
 
 
@@ -641,13 +641,13 @@ All of this necessitates faster and larger memory (HBM2 vs. GDDR6) and more proc
 For instance, NVIDIA's [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 GPUs are optimized for inference whereas the V100 GPUs are preferable for training.
 -->
 
-Ta cần chú ý đến hai đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
+Ta cần chú ý đến đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
 Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi của mạng,
 không cần sử dụng bộ nhớ để lưu dữ liệu trung gian ở bước lan truyền ngược.
-Hơn nữa, ta có lẽ không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
+Hơn nữa, ta có thể không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
 Mặt khác trong quá trình huấn luyện, tất cả kết quả trung gian đều cần phải lưu lại để tính gradient.
-Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới.
-Điều này có nghĩa là bước huấn luyện yêu cầu tối thiểu FP16 (hoặc kết hợp độ chính xác với FP32).
+Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới,
+do đó bước huấn luyện yêu cầu tối thiểu độ chính xác FP16 (hoặc thậm chí FP32).
 Tất cả các yếu tố trên đòi hỏi bộ nhớ nhanh hơn và lớn hơn (HBM2 hoặc GDDR6) và nhiều khả năng xử lý hơn.
 Ví dụ, GPU [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 của NVIDIA được tối ưu cho bước suy luận trong khi GPU V100 phù hợp cho quá trình huấn luyện.
 
@@ -665,20 +665,20 @@ Each Streaming Multiprocessor (SM) consists of four such blocks.
 -->
 
 Xem lại :numref:`fig_neon128`. Việc thêm các đơn vị vector vào lõi vi xử lý cho phép ta tăng đáng kể thông lượng xử lý (ở ví dụ trong hình ta có thể thực hiện 16 thao tác cùng lúc).
-Chuyện gì sẽ xảy ra nếu ta không chỉ thêm các đơn vị được tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
-Chiến lược này dẫn tới Lõi Tensor (chi tiết về phần này sẽ sớm được bàn luận).
-Thứ hai, chuyện gì sẽ xảy ra nếu ta tăng số lượng lõi?
-Nói tóm lại, hai chiến lược trên tổng kết lại cách quyết định thiết kế của GPU.
-:numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản.
-Khối bao gồm 16 đơn vị số nguyên và 16 đơn vị dấu phẩy động.
-Thêm vào đó, hai Lõi Tensor xử lý một tập nhỏ các thao thác liên quan cho học sâu được thêm vào.
+Chuyện gì sẽ xảy ra nếu ta không chỉ tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
+Chiến lược này dẫn tới Lõi Tensor (chi tiết sẽ được thảo luận sau đây).
+Thứ hai, nếu tăng số lượng lõi thì sao?
+Nói tóm lại, hai chiến lược trên tóm tắt việc quyết định thiết kế của GPU.
+:numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản,
+bao gồm 16 đơn vị số nguyên và 16 đơn vị dấu phẩy động.
+Thêm vào đó, hai Lõi Tensor xử lý một tập nhỏ các thao thác liên quan đến học sâu được thêm vào.
 Mỗi Hệ vi xử lý Luồng (*Streaming Multiprocessor* - SM) bao gồm bốn khối như vậy.
 
 <!--
 ![NVIDIA Turing Processing Block (image courtesy of NVIDIA)](../img/turing_processing_block.png)
 -->
 
-![Khối Xử lý của NVIDIA Turing](../img/turing_processing_block.png)
+![Khối Xử lý Turing của NVIDIA](../img/turing_processing_block.png)
 :width:`150px`
 :label:`fig_turing_processing_block`
 
@@ -700,8 +700,8 @@ Nonetheless it pays to be aware of the limitations of the devices to avoid picki
 12 hệ vi xử lý luồng sau đó được nhóm vào một cụm xử lý đồ hoạ tạo nên vi xử lý cao cấp TU102.
 Số lượng kênh bộ nhớ phong phú và bộ nhớ đệm L2 được bổ sung vào cấu trúc.
 Thông tin chi tiết được mô tả trong :numref:`fig_turing`.
-Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm hoặc loại bỏ tuỳ theo nhu cầu để có thể tạo thành một vi xử lý nhỏ gọn và giải quyết một số vấn đề phát sinh (các mô-đun lỗi có thể không được kích hoạt).
-May mắn thay, các nhà nghiên cứu học sâu bình thường không cần lập trình cho các thiết bị này do đã có các lớp mã nguồn framework CUDA.
+Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm vào hoặc bỏ đi tuỳ theo nhu cầu để có thể tạo thành một vi xử lý nhỏ gọn và giải quyết một số vấn đề phát sinh (các mô-đun lỗi có thể không được kích hoạt).
+May mắn thay, các nhà nghiên cứu học sâu bình thường không cần lập trình cho các thiết bị này do đã có các lớp mã nguồn framework CUDA ở tầng thấp.
 Cụ thể, có thể có nhiều hơn một chương trình được thực thi đồng thời trên GPU, với điều kiện là còn đủ tài nguyên.
 Tuy nhiên ta cũng cần để ý đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
 
@@ -725,11 +725,11 @@ They are optimized for small operations involving between 4x4 and 16x16 matrices
 -->
 
 Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (*TensorCore*).
-Đây là một ví dụ của xu hướng gần đây sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
+Đây là một ví dụ của xu hướng gần đây là sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
 Ví dụ, TPU có thêm một mảng tâm thu (*systolic array*) :cite:`Kung.1988` để tăng tốc độ nhân ma trận.
-Thiết kế TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
-Lõi Tensor thì ngược lại.
-Nó được tối ưu cho các phép tính kích thước nhỏ bao gồm các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học của chúng.
+Thiết kế của TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
+Lõi Tensor thì ngược lại,
+được tối ưu cho các phép tính kích thước nhỏ cho các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học.
 :numref:`fig_tensorcore` mô tả tổng quan quá trình tối ưu.
 
 <!--
@@ -750,12 +750,12 @@ Matching both goals is an area of active research.
 See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 -->
 
-Đương nhiên khi tối ưu cho quá trình tính toán, ta bắt buộc phải có một số đánh đổi nhất định.
-Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa thớt.
+Đương nhiên khi tối ưu cho quá trình tính toán, ta buộc phải có một số đánh đổi nhất định.
+Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa.
 Trừ một số ngoại lệ đáng chú ý, ví dụ như [Gunrock](https://github.com/gunrock/gunrock) :cite:`Wang.Davidson.Pan.ea.2016`,
 việc truy cập vector và ma trận thưa không phù hợp với các thao tác đọc theo cụm (*burst read*) với băng thông cao của GPU.
-Phối hợp cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
-Tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
+Đạt được cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
+Ví dụ, tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
