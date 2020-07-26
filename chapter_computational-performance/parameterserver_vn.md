@@ -187,7 +187,7 @@ This is quite an astonishing result.
 ![Ring synchronization across 4 nodes. Each node starts transmitting parts of gradients to its left neighbor until the assembled gradient can be found in its right neighbor.](../img/ringsync.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ringsync.svg)
+![Đồng bộ vòng trên 4 nút. Mỗi nút truyền một phần gradient sang nút liền kề bên trái cho đến khi gradient đầy đủ có thể được tìm thấy tại nút liền kề bên phải nó.](../img/ringsync.svg)
 :label:`fig_ringsync`
 
 <!--
@@ -198,7 +198,12 @@ Note that there is a common misconception that ring synchronization is fundament
 The only difference is that the synchronization path is somewhat more elaborate when compared to a simple tree.
 -->
 
-*dịch đoạn phía trên*
+Nếu vẫn sử dụng ví dụ đồng bộ 160MB trên 8 GPU V100, ta có thể đạt xấp xỉ $2 \cdot 160 \mathrm{MB} / (3 \cdot 18 \mathrm{GB/s}) \approx 6 \mathrm{ms}$.
+Kết quả này tốt hơn so với sử dụng bus PCIe một chút, mặc dù lúc này ta sử dụng đến 8 GPU.
+Chú ý rằng trong thực tế những con số này sẽ không được tốt như vậy, do các framework học sâu thường gặp khó khăn trong việc tổng hợp các giao tiếp thành cụm thông tin lớn hơn để truyền đi.
+Vả lại, thời gian là cực kì quan trọng.
+Chú ý rằng mọi người thường hiểu nhầm rằng đồng bộ vòng về bản chất là khác hẳn so với các thuật toán đồng bộ khác.
+Thực ra điểm khác biệt duy nhất nằm ở lộ trình đồng bộ có phần tinh vi hơn so với thuật toán cây cơ bản.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -208,7 +213,7 @@ The only difference is that the synchronization path is somewhat more elaborate 
 ## Multi-Machine Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện trên Nhiều Máy tính
 
 <!--
 Distributed training on multiple machines adds a further challenge: 
@@ -219,7 +224,12 @@ Hence we need to *synchronize* them if we want to use synchronous distributed op
 :numref:`fig_ps_multimachine` illustrates how distributed parallel training occurs.
 -->
 
-*dịch đoạn phía trên*
+Huấn luyện phân tán trên nhiều máy tính tạo nên một thử thách mới:
+ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp mà trong một số trường hợp tốc độ thậm chí có thể chậm hơn đến quá 10 lần.
+Đồng bộ nhiều thiết bị khá phức tạp.
+Suy cho cùng, mỗi máy tính khác nhau chạy đoạn mã huấn luyện với tốc độ khác nhau đôi chút.
+Do đó ta cần *đồng bộ* chúng nếu ta muốn áp dụng tối ưu bằng cách đồng bộ phân tán.
+:numref:`fig_ps_multimachine` mô tả cách quá trình huấn luyện phân tán song song diễn ra.
 
 <!--
 1. A (different) batch of data is read on each machine, split across multiple GPUs and transferred to GPU memory. There predictions and gradients are computed on each GPU batch separately.
@@ -231,13 +241,19 @@ Hence we need to *synchronize* them if we want to use synchronous distributed op
 7. The updated weight vectors are spread across all GPUs.
 -->
 
-*dịch đoạn phía trên*
+1. Một batch dữ liệu (khác nhau) được đọc trên mỗi máy tính, được chia đều cho các GPU và được truyền đến bộ nhớ của GPU. Trong đó các dự đoán và gradient được tính toán riêng rẽ theo batch trên từng GPU.
+2. Các gradient trên tất cả các GPU nội bộ được tổng hợp trên một GPU (hoặc các phần khác nhau của nó được tổng hợp trên nhiều GPU khác nhau).
+3. Các gradient được truyền đến CPU.
+4. CPU truyền các gradient đến máy chủ tham số trung tâm để tổng hợp tất cả các gradient.
+5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số và các vector trọng số sau đó được truyền lại cho từng CPU đơn một.
+6. Thông tin cập nhật được truyền cho một (hoặc nhiều) GPU.
+7. Các vector trọng số đã được cập nhật sau đó được phân bố lại cho tất cả các GPU.
 
 <!--
 ![Multi-machine multi-GPU distributed parallel training.](../img/ps-multimachine.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ps-multimachine.svg)
+![Huấn luyện song song phân tán trên nhiều máy tính đa GPU](../img/ps-multimachine.svg)
 :label:`fig_ps_multimachine`
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -387,7 +403,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
 * 
