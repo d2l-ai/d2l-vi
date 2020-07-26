@@ -164,7 +164,7 @@ Training proceeds as follows (see :numref:`fig_data_parallel` for details on dat
 -->
 
 Giả sử ta có một máy tính có $k$ GPU.
-Với một mô hình cho trước cần được huấn luyện, mỗi GPU duy trì một tập đầy đủ các tham số mô hình một cách độc lập nhau.
+Với một mô hình cần được huấn luyện, mỗi GPU duy trì một tập đầy đủ các tham số mô hình độc lập với nhau.
 Việc huấn luyện diễn ra như sau (xem :numref:`fig_data_parallel` để rõ hơn về việc huấn luyện song song với hai GPU):
 
 <!--
@@ -178,8 +178,8 @@ Việc huấn luyện diễn ra như sau (xem :numref:`fig_data_parallel` để 
 Ở bất cứ vòng huấn luyện nào, với một tập minibatch ngẫu nhiên cho trước, ta tách các mẫu từ batch ban đầu này thành $k$ phần và chia đều cho các GPU.
 Mỗi GPU sẽ tính mất mát và gradient của các tham số mô hình dựa trên tập mimibatch con mà nó được cấp và các tham số mô hình nó lưu trữ. 
 Các gradient cục bộ từ $k$ GPU được gom lại để thu được gradient ngẫu nhiên cho minibatch hiện tại.
-Gradient tổng hợp này lại phân phối trở lại cho các GPU.
-Mỗi GPU dùng gradient ngẫu nhiên cho minibatch này để cập nhật tập hoành chỉnh các tham số mô hình mà nó lưu trữ. 
+Gradient tổng hợp này lại được phân phối trở lại cho các GPU.
+Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật tập hoành chỉnh các tham số mô hình mà nó lưu trữ. 
 
 <!--
 ![Calculation of minibatch stochastic gradient using data parallelism and two GPUs. ](../img/data-parallel.svg)
@@ -197,10 +197,10 @@ Also note that :numref:`sec_batch_norm` needs to be adjusted (e.g., by keeping a
 In what follows we will use :numref:`sec_lenet` as the toy network to illustrate multi-GPU training. As always we begin by importing the relevant packages and modules.
 -->
 
-Một sự so sánh về các cách khác nhau của việc song song hóa trên nhiều GPU được trích từ :numref:`fig_splitting`.
-Lưu ý rằng trong thực tế ta *tăng* kích thước minibatch $k$-gập khi việc huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện giống như ta đang huấn luyện cho một GPU duy nhất.
-Trên một server có 16 GPU, điều này có thể tăng kích thứơc minibatch đáng kể và ta có thể phải tăng tốc độ học tương ứng.
-Trong phần tiếp theo ta sẽ dùng :numref:`sec_lenet` như một mạng thử nghiệm để minh họa việc huấn luyện đa-GPU. Như bất cứ khi nào bắt đầu, ta nạp các gói thư viện và mô-đun liên quan. 
+:numref:`fig_splitting` so sánh các cách song song hóa khác nhau trên nhiều GPU.
+Lưu ý rằng trong thực tế ta *tăng* kích thước minibatch $k$-lần khi huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện giống như khi ta chỉ huấn luyện trên một GPU duy nhất.
+Trên một server có 16 GPU có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học tương ứng.
+Trong phần tiếp theo ta sẽ dùng :numref:`sec_lenet` như một mạng thử nghiệm để minh họa việc huấn luyện đa-GPU. Như mọi khi, ta bắt đầu bằng cách nạp các gói thư viện và mô-đun liên quan. 
 
 ```{.python .input  n=2}
 %matplotlib inline
