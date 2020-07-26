@@ -54,50 +54,50 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | blackbox dev set                       | tập phát triển blackbox        | [https://git.io/JvQx3](https://git.io/JvQx3) |
 | bounding box                           | khung chứa                     | [https://git.io/JvQxs](https://git.io/JvQxs) |
 | broadcast                              | lan truyền                     | [https://git.io/Jvoj3](https://git.io/Jvoj3) |
-| bus                                    | bus                    |                                              |
+| bus                                    | bus                            |                                              |
 
 ## C
 
-| English                         | Tiếng Việt              | Thảo luận tại                                |
-|---------------------------------|-------------------------|----------------------------------------------|
-| cache                           | bộ nhớ đệm              |
-| (strictly) convex function      | hàm lồi (chặt)          | [https://git.io/JvohV](https://git.io/JvohV) |
-| candidate hidden state          | trạng thái ẩn tiềm năng |                                              |
-| candidate memory                | ô nhớ tiềm năng         |                                              |
-| categorical variable            | biến hạng mục           | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| category (in classification)    | lớp                     | [https://git.io/JvohG](https://git.io/JvohG) |
-| causality                       | quan hệ nhân quả        |                                              |
-| chain rule                      | quy tắc dây chuyền      | [https://git.io/Jvojk](https://git.io/Jvojk) |
-| channel (in computer vision)    | kênh                    |                                              |
+| English                         | Tiếng Việt               | Thảo luận tại                                |
+|---------------------------------|--------------------------|----------------------------------------------|
+| cache                           | bộ nhớ đệm               |
+| (strictly) convex function      | hàm lồi (chặt)           | [https://git.io/JvohV](https://git.io/JvohV) |
+| candidate hidden state          | trạng thái ẩn tiềm năng  |                                              |
+| candidate memory                | ô nhớ tiềm năng          |                                              |
+| categorical variable            | biến hạng mục            | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| category (in classification)    | lớp                      | [https://git.io/JvohG](https://git.io/JvohG) |
+| causality                       | quan hệ nhân quả         |                                              |
+| chain rule                      | quy tắc dây chuyền       | [https://git.io/Jvojk](https://git.io/Jvojk) |
+| channel (in computer vision)    | kênh                     |                                              |
 | (model) checkpoint              | checkpoint (của mô hình) |                                              |
-| classifier                      | bộ phân loại            |                                              |
-| closed-form solution            | biểu thức dạng đóng     | [https://git.io/Jvopd](https://git.io/Jvopd) |
-| cloud computing                 | điện toán đám mây       | [https://git.io/JJn3b](https://git.io/JJn3b) |
-| clustering                      | phân cụm                | [https://git.io/JvojD](https://git.io/JvojD) |
-| code (noun)                     | mã nguồn                |                                              |
-| code (verb)                     | viết mã                 |                                              |
-| coefficient                     | hệ số                   |                                              |
-| collaborative filtering         | lọc cộng tác            | [https://git.io/JfjST](https://git.io/JfjST) |
-| command line (interface)        | cửa sổ dòng lệnh        |                                              |
-| computational graph             | đồ thị tính toán        | [https://git.io/JvohQ](https://git.io/JvohQ) |
-| computer vision                 | thị giác máy tính       |                                              |
-| computing (in computer science) | điện toán               | [https://git.io/JvojH](https://git.io/JvojH) |
-| conditional distribution        | phân phối có điều kiện  | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| confidence interval             | khoảng tin cậy          |                                              |
-| confusion matrix                | ma trận nhầm lẫn        | [https://git.io/JvQAy](https://git.io/JvQAy) |
-| constrain                       | ràng buộc               |                                              |
-| convex combination              | tổ hợp lồi              |                                              |
-| convex optimization             | tối ưu lồi              |                                              |
-| convex set                      | tập lồi                 | [https://git.io/JvohV](https://git.io/JvohV) |
-| convolutional neural network    | mạng nơ-ron tích chập   |                                              |
-| corpus                          | kho ngữ liệu            |                                              |
-| correlation coefficient         | hệ số tương quan        |                                              |
-| cosine                          | cô-sin                  |                                              |
-| cost function                   | hàm chi phí             | [https://git.io/Jvojp](https://git.io/Jvojp) |
-| covariate                       | hiệp biến               | [https://git.io/JvohK](https://git.io/JvohK) |
-| cross correlation               | tương quan chéo         |                                              |
-| cross entropy                   | entropy chéo            |                                              |
-| cross validation                | kiểm định chéo          |                                              |
+| classifier                      | bộ phân loại             |                                              |
+| closed-form solution            | biểu thức dạng đóng      | [https://git.io/Jvopd](https://git.io/Jvopd) |
+| cloud computing                 | điện toán đám mây        | [https://git.io/JJn3b](https://git.io/JJn3b) |
+| clustering                      | phân cụm                 | [https://git.io/JvojD](https://git.io/JvojD) |
+| code (noun)                     | mã nguồn                 |                                              |
+| code (verb)                     | viết mã                  |                                              |
+| coefficient                     | hệ số                    |                                              |
+| collaborative filtering         | lọc cộng tác             | [https://git.io/JfjST](https://git.io/JfjST) |
+| command line (interface)        | cửa sổ dòng lệnh         |                                              |
+| computational graph             | đồ thị tính toán         | [https://git.io/JvohQ](https://git.io/JvohQ) |
+| computer vision                 | thị giác máy tính        |                                              |
+| computing (in computer science) | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
+| conditional distribution        | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| confidence interval             | khoảng tin cậy           |                                              |
+| confusion matrix                | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| constrain                       | ràng buộc                |                                              |
+| convex combination              | tổ hợp lồi               |                                              |
+| convex optimization             | tối ưu lồi               |                                              |
+| convex set                      | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
+| convolutional neural network    | mạng nơ-ron tích chập    |                                              |
+| corpus                          | kho ngữ liệu             |                                              |
+| correlation coefficient         | hệ số tương quan         |                                              |
+| cosine                          | cô-sin                   |                                              |
+| cost function                   | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
+| covariate                       | hiệp biến                | [https://git.io/JvohK](https://git.io/JvohK) |
+| cross correlation               | tương quan chéo          |                                              |
+| cross entropy                   | entropy chéo             |                                              |
+| cross validation                | kiểm định chéo           |                                              |
 
 ## D
 | English                   | Tiếng Việt                      | Thảo luận tại                                |

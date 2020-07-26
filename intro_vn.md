@@ -25,7 +25,8 @@ Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi
 
 Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản 0.8.0 mới nhất. 
 Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
-chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Trong tương lai, chúng tôi có thể cập nhật thêm thư viện `Pytorch` cho bản dịch này.
+chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Và chúng tôi cũng đang cập nhật dần những thư viện khác như `Pytorch` và `TensorFlow` vào nhằm đa dạng hóa
+lựa chọn hơn cho độc giả.
 
 Để có thể thực hiện dự án dịch cuốn sách gần 1.000 trang này, chúng tôi rất cần sự chung tay từ cộng đồng. 
 Mọi sự đóng góp đều đáng trân quý và được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. 
