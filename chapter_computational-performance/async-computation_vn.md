@@ -94,10 +94,7 @@ Note that for this to work the backend must be able to keep track of the depende
 Hence it is ony possible to parallelize operations that do not depend on each other.
 -->
 
-Nhìn chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
-Back-end có các luồng xử lý riêng liên tục tập hợp và thực thi các tác vụ trong hàng đợi.
-Chú ý rằng, back-end cần có khả năng theo dõi quan hệ phụ thuộc giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
-Do đó ta chỉ có thể song song hoá các thao tác không phụ thuộc lẫn nhau.
+<!-- Đoạn này bản gốc đã xoá vì trùng với đoạn dưới. -->
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -111,7 +108,7 @@ The backend manages its own threads that continuously collect and execute queued
 Note that for this to work the backend must be able to keep track of the dependencies between various steps in the computational graph.
 That is, it is not possible to parallelize operations that depend on each other.
 -->
-<!-- Đoạn này với đoạn trên nói cùng một ý -->
+
 Như ở :numref:`fig_frontends`, người dùng có thể viết chương trình MXNet bằng nhiều ngôn ngữ front-end như Python, R, Scala và C++.
 Dù sử dụng ngôn ngữ front-end nào, chương trình MXNet chủ yếu thực thi trên back-end lập trình bằng C++.
 Các thao tác đưa ra bởi ngôn ngữ front-end được truyền vào back-end để thực thi.
