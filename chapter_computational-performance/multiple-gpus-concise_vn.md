@@ -18,9 +18,9 @@ As before we begin by importing the required modules (quite unsurprisingly you w
 -->
 
 Lập trình từ đầu việc song song hoá cho từng mô hình mới thì không vui tí nào.
-Hơn nữa, có lợi ích đáng kể trong việc tối ưu hóa các công cụ đồng bộ hóa cho hiệu suất cao.
+Hơn nữa, việc tối ưu các công cụ đồng bộ hóa sẽ cho hiệu suất cao.
 Sau đây chúng tôi sẽ giới thiệu cách thực hiện điều này bằng Gluon.
-Phần toán học và các thuật toán là giống như trong :numref:`sec_multi_gpu`.
+Phần lý thuyết toán và các thuật toán giống trong :numref:`sec_multi_gpu`.
 Như trước đây, ta bắt đầu bằng cách nhập các mô-đun cần thiết (không ngạc nhiên lắm khi ta sẽ cần ít nhất hai GPU để chạy notebook này).
 
 
@@ -37,7 +37,7 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## Mạng đồ chơi
+## Ví dụ đơn giản
 
 
 <!--
@@ -88,7 +88,7 @@ def resnet18(num_classes):
 ## Parameter Initialization and Logistics
 -->
 
-## Khởi tạo tham số và Công việc Tổ chức
+## Khởi tạo tham số và Công việc phụ trợ
 
 
 <!--
@@ -98,10 +98,10 @@ What is particularly convenient is that it also lets us initialize the network o
 Let us try how this works in practice.
 -->
 
-Phương thức `initialize` cho phép ta đặt mặc định ban đầu cho các tham số trên thiết bị mà ta chọn.
+Phương thức `initialize` cho phép ta đặt giá trị mặc định ban đầu cho các tham số trên thiết bị được chọn.
 Để ôn lại, hãy xem :numref:`sec_numerical_stability`.
 Điều đặc biệt thuận tiện là nó cũng cho phép ta khởi tạo mạng trên *nhiều* thiết bị cùng một lúc.
-Ta hãy thử xem cách mà nó hoạt động trong thực tế.
+Hãy thử xem cách nó hoạt động trong thực tế.
 
 
 ```{.python .input  n=3}
@@ -119,9 +119,9 @@ The network object *automatically* uses the appropriate GPU to compute the value
 As before we generate 4 observations and split them over the GPUs.
 -->
 
-Sử dụng hàm `split_and_load` được giới thiệu trong phần trước, chúng ta có thể chia một minibatch dữ liệu và sao chép các phần vào danh sách các thiết bị được cung cấp bởi biến bối cảnh.
+Sử dụng hàm `split_and_load` được giới thiệu trong phần trước, chúng ta có thể chia một minibatch dữ liệu và sao chép các phần dữ liệu vào danh sách các thiết bị được cung cấp bởi biến ngữ cảnh.
 Đối tượng mạng *tự động* sử dụng GPU thích hợp để tính giá trị của lượt truyền xuôi.
-Như trước đây ta tạo ra 4 quan sát và phân chia chúng trên các GPU.
+Như trước đây ta tạo ra 4 mẫu dữ liệu và phân chia chúng trên các GPU.
 
 
 ```{.python .input  n=4}
