@@ -62,7 +62,11 @@ Provided that the optimization algorithm supports this, there is no real reason 
 For instance, if we have four parameter vectors $\mathbf{v}_1, \ldots, \mathbf{v}_4$ with associated gradients $\mathbf{g}_1, \ldots, \mathbf{g}_4$ we could aggregate the gradients on one GPU each.
 -->
 
-*dịch đoạn phía trên*
+Nhìn lại, quyết định tổng hợp gradient trên GPU0 khá là đặc biệt.
+Dù sao thì, ta cũng có thể quyết định tổng hợp gradient trên CPU.
+Ta thực tế còn có thể quyết định tổng hợp một số tham số trên một GPU và phần còn lại được tổng hợp trên một GPU khác.
+Biết được rằng thuật toán tối ưu hỗ trợ làm việc này, không có lý do gì để ta không thực hiện nó cả.
+Ví dụ, neesy ta có bốn vector tham số $\mathbf{v}_1, \ldots, \mathbf{v}_4$ với các gradient tương ứng là $\mathbf{g}_1, \ldots, \mathbf{g}_4$, ta có thể tổng hợp gradient của mỗi tham số về một GPU.
 
 
 $$\mathbf{g}_{i} = \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ij}$$
@@ -81,13 +85,22 @@ The bandwidth from the CPU on a 16x Gen3 link is 16GB/s.
 This is also the speed at which *each* of the GPUs is connected to the switch. This means that it is more effective to communicate between the
 -->
 
-*dịch đoạn phía trên*
+Cách lý luận này có thể rất tùy tiện và phù phiếm.
+Sau cùng thì, phần toán xuyên suốt bên dưới vẫn không thay đổi.
+Nhưng ở đây, chúng ta đang làm việc với các thiết bị phần cứng vật lý với các bus có những băng thông khác nhau như đã thảo luận trong :numref:`sec_hardware`.
+Xét một máy chủ GPU 4-chiều như miêu tả trong :numref:`fig_bw_hierarchy`.
+Nếu nó được kết nối cực kỳ tốt, nó có thể sở hữu một card mạng với 100 GbE.
+Con số chi tiết hơn là ở trong khoảng 1-10 GbE với băng thông hiệu dụng từ 100MB/s đến 1GB/s.
+Vì các CPU thường có quá ít làn PCIe để kết nối với toàn bộ GPU một cách trực tiếp
+(ví dụ, CPU thông dụng của Intel có 24 làn) ta cần một [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches) (mạch đa hợp, mạch dồn kênh).
+Băng thông của một CPU với một 16x Gen3 là 16GB/s.
+Đây cũng là tốc độ mà *mỗi* GPU được kết nối với bộ chuyển mạch. Điều này có nghĩa là việc truyền tin giữa CPU và các GPU sẽ hiệu quả hơn.
 
 <!--
 ![A 4-way GPU server.](../img/bw-hierarchy.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/bw-hierarchy.svg)
+![Một máy chủ GPU 4-chiều](../img/bw-hierarchy.svg)
 :label:`fig_bw_hierarchy`
 
 <!--
@@ -102,13 +115,21 @@ In short, depending on how we synchronize parameters the same operation can take
 :numref:`fig_ps_distributed` depicts the different strategies for exchanging parameters.
 -->
 
-*dịch đoạn phía trên*
+Để tiếp tục, hãy giả định rằng ta cần 160MB để lưu trữ các gradient.
+Trong trường hợp này, sẽ tốn 30ms để gửi các giá trị gradient này từ 3 thiết bị GPU đến chiếc GPU còn lại (mỗi đợt truyền tin tốn 10ms = 160MB / 16GB/s).
+Và thêm 30ms nữa để truyền lại các vector trọng số, tổng cộng tốn 60ms.
+Nếu ta gửi toàn bộ dữ liệu đến CPU sẽ phát sinh thêm 40ms với *mỗi* GPU cần gửi dữ liệu đến CPU, khiến bốn GPU sẽ tốn lên tới 80ms.
+Sau cùng, giả định rằng ta có thể chia nhỏ các giá trị gradient thành bốn phần, mỗi phần 40MB.
+Giờ ta có thể tổng hợp mỗi phần trên một GPU riêng biệt *một cách đồng thời* vì bộ chuyển mạch PCIe cho phép sử dụng toàn bộ băng thông cho mỗi kết nối.
+Thay vì 30ms như trước, quá trình này chỉ tốn 7.5ms và 15ms cho toàn bộ quá trình đồng bộ.
+Nói ngắn gọn, phụ thuộc vào cách các tham số được đồng bộ với nhau khiến cho quá trình này có thể chiếm từ 15ms đến 80ms.
+:numref:`fig_ps_distributed` minh họa sự khác biệt giữa các chiến lượt trao đổi tham số khác nhau.
 
 <!--
 ![Synchronization strategies.](../img/ps-distributed.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ps-distributed.svg)
+![Các chiến lược đồng bộ](../img/ps-distributed.svg)
 :label:`fig_ps_distributed`
 
 <!--
@@ -117,7 +138,9 @@ We can begin synchronizing gradients for some parameter groups even while we are
 See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horovod](https://github.com/horovod/horovod).
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng ta còn một công cụ nữa để sử dụng khi nhắc tới việc cải thiện hiệu suất: trong một mạng sâu sẽ cần một khoảng thời gian để tính toán toàn bộ gradient từ trên xuống dưới.
+Ta có thể bắt đầu đồng bộ gradient cho một vài nhóm tham số kể cả khi chúng ta đang bận tính gradient cho những nhóm khác (chi tiết kỹ thuật cho nó cũng khá liên quan).
+Xem qua :cite:`Sergeev.Del-Balso.2018` để biết chi tiết cách làm điều này trong [Horovod](https://github.com/horovod/horovod).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
