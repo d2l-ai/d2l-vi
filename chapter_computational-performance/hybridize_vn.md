@@ -41,7 +41,7 @@ Python là một ngôn ngữ thông dịch.
 Khi thực hiện hàm `fancy_func`, nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
 Như vậy, nó sẽ chạy lệnh `e = add(a, b)` rồi sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
 Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được thực thi tương tự, thực hiện phép cộng và lưu kết quả vào các biến.
-:numref:`fig_compute_graph` minh họa luồng hoạt động.
+:numref:`fig_compute_graph` sẽ minh họa luồng dữ liệu.
 
 <!--
 ![Data flow in an imperative program.](../img/computegraph.svg)
@@ -58,10 +58,10 @@ Moreover, it will need to save the variable values of `e` and `f` until all the 
 This is because we do not know whether the variables `e` and `f` will be used by other parts of the program after the statements `e = add(a, b)` and `f = add(c, d)` have been executed.
 -->
 
-Mặc dù lập trình mệnh lệnh rất thuận tiện, nhưng lại không quá hiệu quả. 
+Mặc dù lập trình mệnh lệnh rất thuận tiện, nó lại không quá hiệu quả. 
 Ví dụ như nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực thi ba lần gọi hàm độc lập.
 Nếu điều này xảy ra, giả sử trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
-Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
+Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` cho tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
 Điều này là do ta không biết liệu biến `e` và `f` có được sử dụng bởi các phần chương trình khác sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -80,7 +80,7 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ có thể thực hiện một khi chương trình được định nghĩa đầy đủ. 
+Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ được thực hiện một khi chương trình đã được định nghĩa đầy đủ.
 Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh).
 Lập trình ký hiệu thường gồm những bước sau:
 
@@ -90,8 +90,8 @@ Lập trình ký hiệu thường gồm những bước sau:
 3. Provide the required inputs and call the compiled program for execution.
 -->
 
-1. Khai báo các hành động sẽ được thực thi. 
-2. Biên dịch các hành động thành chương trình có thể chạy được.
+1. Khai báo các thao tác sẽ được thực thi.
+2. Biên dịch các thao tác thành chương trình có thể chạy được.
 3. Thực thi bằng cách cung cấp đầu vào và gọi chương trình đã được biên dịch.
 
 <!--
@@ -108,7 +108,7 @@ Quy trình trên cho phép chúng ta tối ưu hóa chương trình một cách 
 Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU.
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
 Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
-Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến. 
+Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn được dùng đến.
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
 Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python).
 
@@ -155,12 +155,13 @@ It makes it easier to optimize the code during compilation, while also having th
 This allows the program to be run in a non-Python environment, thus avoiding any potential performance issues related to the Python interpreter.
 -->
 
-* Lập trình mệnh lệnh dễ viết hơn. 
+* Lập trình mệnh lệnh dễ hơn.
 Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
 Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
 Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
-* Lập trình ký hiệu thì hiệu quả hơn và dễ sử dụng được trên nền tảng khác. 
-Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
+* Lập trình ký hiệu lại hiệu quả hơn và dễ sử dụng trên nền tảng khác. 
+Nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, đồng thời cho phép ta chuyển đổi chương trình sang một định dạng khác không phụ thuộc vào Python.
+Do đó chương trình có thể chạy trong các môi trường khác ngoài Python, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
