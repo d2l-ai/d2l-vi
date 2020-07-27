@@ -20,7 +20,7 @@ Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ �
 Điều này khiến các giải thuật huấn luyện phân tán và song song trở nên phức tạp hơn nhiều. 
 Cụ thể vấn đề là vì các kết nối khác nhau có băng thông rất khác nhau.
 (chẳng hạn, NVLink có thể cung cấp tới 100GB/s qua 6 đường kết nối với cách thiết lập thích hợp, PCIe 3.0 16x làn cung cấp 16GB/s, trong khi ngay cả Ethernet 100GbE tốc độ cao chỉ đạt 10GB/s).
-Thật không hợp lý để hy vọng rằng một nhà xây dựng mô hình thống kê đồng thời cũng là một chuyên gia về kết nối mạng và hệ thống.
+Khó có thể hy vọng rằng một nhà xây dựng mô hình thống kê đồng thời cũng là một chuyên gia về kết nối mạng và hệ thống.
 
 <!--
 The core idea of the parameter server was introduced in :cite:`Smola.Narayanamurthy.2010` in the context of distributed latent variable models.
