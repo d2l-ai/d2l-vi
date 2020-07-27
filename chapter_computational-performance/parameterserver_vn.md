@@ -30,7 +30,7 @@ In the following we will motivate the components needed for efficiency.
 
 Ý tưởng cốt lõi của máy chủ tham số được đề xuất từ :cite:`Smola.Narayanamurthy.2010` trong ngữ cảnh các mô hình biến ẩn phân tán. 
 Kế tiếp, một bản mô tả các ngữ nghĩa đẩy vào và lấy ra được giới thiệu trong :cite:`Ahmed.Aly.Gonzalez.ea.2012` và một mô tả về hệ thống này cùng với thư viện mã nguồn mở được công bố trong :cite:`Li.Andersen.Park.ea.2014`.
-Trong phần kế tiếp, ta sẽ kích hoạt các thành phần cần thiết để đạt được hiệu quả.
+Trong phần kế tiếp, ta sẽ tìm hiểu lý do phát triển của các thành phần cần thiết để đạt được hiệu suất cao.
 
 <!--
 ## Data Parallel Training
