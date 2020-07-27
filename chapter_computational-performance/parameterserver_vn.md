@@ -50,7 +50,7 @@ Chúng ta hãy xem xét tổng quan phương pháp huấn luyện song song dữ
 Ta sẽ dùng cách này để bỏ qua tất cả các cách khác trong phần này vì nó thật sự đơn giản hơn trong triển khai thực tế.
 Gần như không có những trường hợp cụ thể nào (ngoại trừ phương pháp học sâu trên đồ thị) mà bất cứ một chiến thuật nào khác thích hợp hơn để thực hiện song song hóa vì ngày nay các GPU có nhiều bộ nhớ.
 :numref:`fig_parameterserver` mô tả biến thể của việc song song hóa dữ liệu mà ta thực hiện ở phần trước.
-Khía cạnh then chốt ở dạng này là việc tích luỹ gradient diễn ra trên GPU0 trước khi các tham số cập nhật được phát tán tới tất cả GPU.
+Khía cạnh then chốt ở dạng này là việc tổng hợp gradient diễn ra trên GPU0 trước khi các tham số cập nhật được phân phát tới tất cả GPU.
 
 <!--
 ![Left: single GPU training; Right: a variant of multi-GPU training. It proceeds as follows. (1) we compute loss and gradient, (2) all gradients are aggregated on one GPU, (3) parameter update happens and the parameters are re-distributed to all GPUs.](../img/ps.svg)
