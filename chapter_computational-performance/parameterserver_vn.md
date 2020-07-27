@@ -16,7 +16,8 @@ Details matter since different interconnects have very different bandwidth
 At the same time it is unreasonable to expect that a statistical modeler be an expert in networking and systems.
 -->
 
-Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ có chứa đa GPU, có khả năng tất cả thiết bị này dàn trải qua nhiều khay và mạng khiến các giải thuật chúng ta cần huấn luyện phân tán và song song trở nên phức tạp hơn nhiều. 
+Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ có chứa đa GPU, có khả năng tất cả thiết bị này được dàn trải qua nhiều khay chứa và bộ chuyển mạng. 
+Điều này khiến các giải thuật huấn luyện phân tán và song song trở nên phức tạp hơn nhiều. 
 Cụ thể vấn đề là vì các kết nối khác nhau có băng thông rất khác nhau.
 (chẳng hạn, NVLink có thể cung cấp tới 100GB/s qua 6 đường kết nối với cách thiết lập thích hợp, PCIe 3.0 16x làn cung cấp 16GB/s trong khi với Ethernet 100GbE tốc độ cao chỉ có thể đem lại một lượng 10GB/s).
 Thật không hợp lý để hy vọng rằng một nhà xây dựng mô hình thống kê đồng thời cũng là một chuyên gia về kết nối mạng và hệ thống.
