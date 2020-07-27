@@ -5,7 +5,7 @@
 # Fine-Tuning
 -->
 
-# *dịch tiêu đề phía trên*
+# Tinh Chỉnh
 :label:`sec_fine_tuning`
 
 
@@ -15,7 +15,9 @@ We also described ImageNet, the most widely used large-scale image dataset in th
 However, the size of datasets that we often deal with is usually larger than the first, but smaller than the second.
 -->
 
-*dịch đoạn phía trên*
+Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, chỉ có 60 000 ảnh.
+Chúng ta cũng đã điểm qua ImageNet, bộ dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
+Tuy nhiên, kích thước những bộ dữ liệu ta hay gặp thường sẽ ở đâu đó giữa hai bộ này, lớn hơn bộ MNIST nhưng nhỏ hơn ImageNet.
 
 
 <!--
