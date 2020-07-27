@@ -369,7 +369,7 @@ Nếu ta mất liên lạc với một máy chủ thì sao?
 Đây có phải vấn đề nghiêm trọng không?
 4. Lưu checkpoint như thế nào?
 5. Có thể tăng tốc thêm việc tổng hợp dạng cây (*tree aggregation*) không?
-6. Tìm hiểu các cách tăng tốc khác (giao hoán bán vành *commutative semiring*). <!-- mình không hiểu đoạn này lắm :( -->
+6. Tìm hiểu các cách rút gọn khác (như giao hoán bán vành *commutative semiring*).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
