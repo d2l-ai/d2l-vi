@@ -228,7 +228,7 @@ Huấn luyện phân tán trên nhiều máy tính tạo nên một thử thách
 ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp mà trong một số trường hợp tốc độ thậm chí có thể chậm hơn đến quá 10 lần.
 Đồng bộ nhiều thiết bị khá phức tạp.
 Suy cho cùng, mỗi máy tính khác nhau chạy đoạn mã huấn luyện với tốc độ khác nhau đôi chút.
-Do đó ta cần *đồng bộ* chúng nếu ta muốn áp dụng tối ưu bằng cách đồng bộ phân tán.
+Do đó ta cần *đồng bộ* chúng nếu muốn sử dụng tối ưu phân tán đồng bộ.
 :numref:`fig_ps_multimachine` mô tả cách quá trình huấn luyện phân tán song song diễn ra.
 
 <!--
@@ -242,7 +242,7 @@ Do đó ta cần *đồng bộ* chúng nếu ta muốn áp dụng tối ưu bằ
 -->
 
 1. Một batch dữ liệu (khác nhau) được đọc trên mỗi máy tính, được chia đều cho các GPU và được truyền đến bộ nhớ của GPU. Trong đó các dự đoán và gradient được tính toán riêng rẽ theo batch trên từng GPU.
-2. Các gradient trên tất cả các GPU nội bộ được tổng hợp trên một GPU (hoặc các phần khác nhau của nó được tổng hợp trên nhiều GPU khác nhau).
+2. Các gradient trên tất cả các GPU cục bộ được tổng hợp trên một GPU (hoặc các phần khác nhau được tổng hợp trên nhiều GPU khác nhau).
 3. Các gradient được truyền đến CPU.
 4. CPU truyền các gradient đến máy chủ tham số trung tâm để tổng hợp tất cả các gradient.
 5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số và các vector trọng số sau đó được truyền lại cho từng CPU đơn một.
