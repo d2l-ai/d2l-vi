@@ -109,7 +109,7 @@
         </g>
         <g>
             <g id="glyph0-20" transform="matrix(1,0,0,1,178.212,38.2)">
-                <rect x="0.281" y="-2.734" width="2.438" height="0.797" style="fill-rule:nonzero;"/>
+                <rect x="0.281" y="-2.734" width="2.438" height="0.797"/>
             </g>
             <g id="glyph0-181" serif:id="glyph0-18" transform="matrix(1,0,0,1,181.209,38.2)">
                 <path d="M3.359,0L2.563,0L2.563,-5.047C2.375,-4.859 2.125,-4.672 1.813,-4.484C1.5,-4.305 1.223,-4.176 0.984,-4.094L0.984,-4.859C1.422,-5.055 1.805,-5.301 2.141,-5.594C2.473,-5.895 2.707,-6.188 2.844,-6.469L3.359,-6.469L3.359,0Z" style="fill-rule:nonzero;"/>
@@ -150,7 +150,7 @@
         </g>
         <g>
             <g id="glyph0-201" serif:id="glyph0-20" transform="matrix(1,0,0,1,177.214,48.4944)">
-                <rect x="0.281" y="-2.734" width="2.438" height="0.797" style="fill-rule:nonzero;"/>
+                <rect x="0.281" y="-2.734" width="2.438" height="0.797"/>
             </g>
             <g id="glyph0-183" serif:id="glyph0-18" transform="matrix(1,0,0,1,180.21,48.4944)">
                 <path d="M3.359,0L2.563,0L2.563,-5.047C2.375,-4.859 2.125,-4.672 1.813,-4.484C1.5,-4.305 1.223,-4.176 0.984,-4.094L0.984,-4.859C1.422,-5.055 1.805,-5.301 2.141,-5.594C2.473,-5.895 2.707,-6.188 2.844,-6.469L3.359,-6.469L3.359,0Z" style="fill-rule:nonzero;"/>
@@ -192,7 +192,7 @@
         </g>
         <g transform="matrix(1,0,0,1,178.954,115.4)">
             <g id="glyph0-5">
-                <rect x="0.844" y="-6.438" width="0.844" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.844" y="-6.438" width="0.844" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,181.454,115.4)">
@@ -207,7 +207,7 @@
         </g>
         <g transform="matrix(1,0,0,1,193.966,115.4)">
             <g id="glyph0-28">
-                <rect x="0.813" y="-0.906" width="0.906" height="0.906" style="fill-rule:nonzero;"/>
+                <rect x="0.813" y="-0.906" width="0.906" height="0.906"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,196.466,115.4)">
@@ -284,7 +284,7 @@
         </g>
         <g transform="matrix(1,0,0,1,184.957,154.115)">
             <g id="glyph0-51" serif:id="glyph0-5">
-                <rect x="0.844" y="-6.438" width="0.844" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.844" y="-6.438" width="0.844" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,187.457,154.115)">
@@ -299,7 +299,7 @@
         </g>
         <g transform="matrix(1,0,0,1,199.969,154.115)">
             <g id="glyph0-281" serif:id="glyph0-28">
-                <rect x="0.813" y="-0.906" width="0.906" height="0.906" style="fill-rule:nonzero;"/>
+                <rect x="0.813" y="-0.906" width="0.906" height="0.906"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,202.469,154.115)">
@@ -356,11 +356,11 @@
                 <path d="M1.109,1.891L0.547,1.891C1.422,0.484 1.859,-0.922 1.859,-2.328C1.859,-2.879 1.797,-3.426 1.672,-3.969C1.566,-4.406 1.426,-4.828 1.25,-5.234C1.133,-5.492 0.898,-5.93 0.547,-6.547L1.109,-6.547C1.66,-5.816 2.066,-5.082 2.328,-4.344C2.555,-3.695 2.672,-3.023 2.672,-2.328C2.672,-1.535 2.52,-0.77 2.219,-0.031C1.914,0.695 1.547,1.336 1.109,1.891Z" style="fill-rule:nonzero;"/>
             </g>
         </g>
-        <g transform="matrix(0.600898,0,0,0.600898,-5.05479,-10.1977)">
-            <text x="30.567px" y="54.52px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">bộ chuyển mạng</text>
+        <g transform="matrix(0.710689,0,0,0.710689,12.6645,29.3628)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">bộ chuyển mạng</text>
         </g>
-        <g transform="matrix(0.600898,0,0,0.600898,-9.96083,108.162)">
-            <text x="30.567px" y="54.52px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">bộ chuyển PCIe</text>
+        <g transform="matrix(0.694828,0,0,0.694828,12.7916,143.591)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">bộ chuyển PCIe</text>
         </g>
     </g>
 </svg>

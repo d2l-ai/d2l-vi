@@ -27,19 +27,19 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="28.426" y="331.59" width="54.574" height="24" style="fill:rgb(177,216,254);fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-dasharray:4,4;"/>
+            <rect x="28.426" y="331.59" width="54.574" height="24" style="fill:rgb(177,216,254);stroke:black;stroke-width:1px;stroke-dasharray:4,4;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="27.926" y="331.539" width="55.305" height="48" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="27.926" y="331.539" width="55.305" height="48" style="fill:none;stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="120.078" y="245.5" width="55.305" height="24" style="fill:rgb(101,190,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="120.078" y="245.5" width="55.305" height="24" style="fill:rgb(101,190,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="303.5" y="302.273" width="56.031" height="36.816" style="fill:rgb(101,190,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="303.5" y="302.273" width="56.031" height="36.816" style="fill:rgb(101,190,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="120.078" y="281.797" width="56.031" height="24" style="fill:rgb(177,216,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="120.078" y="281.797" width="56.031" height="24" style="fill:rgb(177,216,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,232.496,14.2384)">
             <g id="glyph0-11" serif:id="glyph0-1">
@@ -66,7 +66,7 @@
             <path d="M124.156,306.699L120.637,308.598M119.926,307.277L124.156,306.699L121.348,309.918" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="120.809" y="378.691" width="55.301" height="24" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="120.809" y="378.691" width="55.301" height="24" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
             <path d="M83.23,366.004L115.289,378.137" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
@@ -75,13 +75,13 @@
             <path d="M119.031,379.555L115.289,378.137M115.82,376.734L119.031,379.555L114.758,379.539" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="28.426" y="280" width="54.574" height="24" style="fill:rgb(101,190,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="28.426" y="280" width="54.574" height="24" style="fill:rgb(101,190,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="120.809" y="343.191" width="54.574" height="24" style="fill:rgb(101,190,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="120.809" y="343.191" width="54.574" height="24" style="fill:rgb(101,190,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="190" y="263.387" width="48" height="24" style="fill:rgb(177,216,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="190" y="263.387" width="48" height="24" style="fill:rgb(177,216,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
             <path d="M287.277,312.906C291.574,317.199 291.574,324.164 287.277,328.461C282.98,332.758 276.02,332.758 271.723,328.461C267.426,324.164 267.426,317.199 271.723,312.906C276.02,308.609 282.98,308.609 287.277,312.906" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
@@ -104,7 +104,7 @@
             <path d="M128.984,342.117L125.684,339.859M126.527,338.621L128.984,342.117L124.836,341.098" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
-            <rect x="190" y="363" width="48" height="24" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="190" y="363" width="48" height="24" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,32,-235)">
             <path d="M231.352,287.387L265.598,311.07" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
@@ -148,39 +148,65 @@
         <g transform="matrix(1,0,0,1,32,-235)">
             <path d="M188.152,381.188L184.262,382.121M183.914,380.66L188.152,381.188L184.613,383.578" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,-5.67956,32.2374)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
+        <g transform="matrix(0.756896,0,0,0.756896,7.42562,59.5562)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,145.599,-2.98118)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
+        <g transform="matrix(0.756896,0,0,0.756896,162.609,25.4981)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,146.218,94.5604)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
+        <g transform="matrix(0.756896,0,0,0.756896,162.873,123.827)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mô hình</text>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,-8.47981,91.2075)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mini-batch</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ngẫu nhiên</text>
+        <g transform="matrix(0.756896,0,0,0.756896,-8.53576,91.2239)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Mini-batch</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ngẫu nhiên</text>
+            </g>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,137.886,29.6961)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Tập con của</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
+        <g transform="matrix(0.756896,0,0,0.756896,138.728,29.2249)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Tập con của</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
+            </g>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,138.424,126.662)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Tập con của</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
+        <g transform="matrix(0.756896,0,0,0.756896,139.087,126.443)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Tập con của</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
+            </g>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,210.791,110.569)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">cục bộ</text>
+        <g transform="matrix(0.756896,0,0,0.756896,212.24,110.057)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">cục bộ</text>
+            </g>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,209.921,10.9988)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">cục bộ</text>
+        <g transform="matrix(0.756896,0,0,0.756896,211.62,9.96366)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">cục bộ</text>
+            </g>
         </g>
-        <g transform="matrix(0.756896,0,0,0.756896,321.181,51.8964)">
-            <text x="21.369px" y="37.164px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient của</text>
-            <text x="21.369px" y="49.557px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
-            <text x="21.369px" y="61.949px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ngẫu nhiên</text>
+        <g transform="matrix(0.756896,0,0,0.756896,321.308,51.0718)">
+            <g transform="matrix(1,0,0,1,21.369,37.164)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Gradient của</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,49.557)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">mini-batch</text>
+            </g>
+            <g transform="matrix(1,0,0,1,21.369,61.949)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ngẫu nhiên</text>
+            </g>
         </g>
     </g>
 </svg>

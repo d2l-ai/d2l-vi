@@ -619,14 +619,14 @@
                 <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">các tham số</text>
             </g>
         </g>
-        <g transform="matrix(0.776038,0,0,0.776038,124.449,178.716)">
-            <text x="243.483px" y="34.429px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số tại GPU 0</text>
+        <g transform="matrix(0.776038,0,0,0.776038,313.401,205.434)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số tại GPU 0</text>
         </g>
-        <g transform="matrix(0.776038,0,0,0.776038,315.571,178.789)">
-            <text x="243.483px" y="34.429px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số phân tán trên toàn bộ GPU</text>
+        <g transform="matrix(0.776038,0,0,0.776038,504.523,205.507)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số phân tán trên toàn bộ GPU</text>
         </g>
-        <g transform="matrix(0.776038,0,0,0.776038,-96.7164,179.176)">
-            <text x="243.483px" y="34.429px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số tại GPU</text>
+        <g transform="matrix(0.776038,0,0,0.776038,92.2357,205.894)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">Máy chủ tham số tại CPU</text>
         </g>
         <g transform="matrix(1,0,0,1,12.4231,178.605)">
             <g id="glyph0-28">
