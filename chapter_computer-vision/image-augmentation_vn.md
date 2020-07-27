@@ -87,7 +87,7 @@ def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
 ### Flipping and Cropping
 -->
 
-### *dịch tiêu đề phía trên*
+### Lật và Cắt ảnh
 
 
 <!--
@@ -96,7 +96,9 @@ This is one of the earliest and most widely used methods of image augmentation.
 Next, we use the `transforms` module to create the `RandomFlipLeftRight` instance, which introduces a 50% chance that the image is flipped left and right.
 -->
 
-*dịch đoạn phía trên*
+Lật hình ảnh sang trái và phải thường không thay đổi thể loại của đối tượng.
+Đây là một trong những phương pháp hiệu chỉnh hình ảnh sớm nhất và được sử dụng rộng rãi nhất.
+Tiếp theo, chúng tôi sử dụng mô-đun `transforms` để tạo cá thể `RandomFlipLeftRight`, đem ra một khả năng 50% khả năng hình ảnh được lật sang trái và phải.
 
 
 
@@ -111,8 +113,9 @@ However, at least for this example image, flipping up and down does not hinder r
 Next, we create a `RandomFlipTopBottom` instance for a 50% chance of flipping the image up and down.
 -->
 
-*dịch đoạn phía trên*
-
+Lật lên xuống không được sử dụng phổ biến như lật trái và phải.
+Tuy nhiên, ít nhất là đối với hình ảnh ví dụ này, lật lên xuống không gây trở ngại cho việc nhận dạng.
+Tiếp theo, chúng tôi tạo một cá thể `RandomFlipTopBottom` để có 50% cơ hội lật hình ảnh lên và xuống.
 
 
 ```{.python .input  n=5}
@@ -127,8 +130,10 @@ In addition, we can make objects appear at different positions in the image in d
 This can also reduce the sensitivity of the model to the target position.
 -->
 
-*dịch đoạn phía trên*
-
+Trong hình ảnh ví dụ chúng tôi sử dụng, con mèo ở giữa hình ảnh, nhưng điều này có thể không phải là trường hợp cho tất cả các hình ảnh.
+Trong :numref:`sec_pooling`, chúng tôi đã giải thích rằng tầng gộp có thể làm giảm độ nhạy của tầng chập với vị trí đích.
+Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt ngẫu nhiên hình ảnh.
+Điều này cũng có thể làm giảm độ nhạy của mô hình với vị trí mục tiêu.
 
 
 <!--
@@ -137,7 +142,9 @@ Then, the width and height of the region are both scaled to 200 pixels.
 Unless otherwise stated, the random number between $a$ and $b$ in this section refers to a continuous value obtained by uniform sampling in the interval $[a, b]$.
 -->
 
-*dịch đoạn phía trên*
+Trong đoạn mã sau, chúng tôi cắt ngẫu nhiên một vùng có diện tích từ 10% đến 100% diện tích ban đầu và tỷ lệ giữa chiều rộng và chiều cao của vùng được chọn ngẫu nhiên trong khoảng từ 0.5 đến 2.
+Sau đó, cả chiều rộng và chiều cao của vùng đều được biến đổi tỉ lệ thành 200 pixel.
+Trừ khi có quy định khác, số ngẫu nhiên giữa $a$ và $b$ trong phần này đề cập đến một giá trị liên tục thu được bằng cách lấy mẫu đồng nhất trong khoảng $[a, b]$.
 
 
 
