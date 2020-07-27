@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 522 258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
-    <g id="surface1">
+<svg width="100%" height="100%" viewBox="0 0 572 283" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+    <g id="surface1" transform="matrix(1.05838,0,0,1.05838,9.13741,6.99515)">
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="567.5" y="-23" width="54" height="237" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="567.5" y="-23" width="54" height="237" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="509" y="-23" width="54" height="237" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="509" y="-23" width="54" height="237" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,423.548,15.584)">
             <g id="glyph0-1">
@@ -27,28 +27,28 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="424" y="-23" width="67" height="205" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="424" y="-23" width="67" height="205" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="354" y="-23" width="67" height="205" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="354" y="-23" width="67" height="205" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="211" y="29" width="127.969" height="25" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="211" y="29" width="127.969" height="25" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="211" y="-3" width="127.969" height="25" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="211" y="-3" width="127.969" height="25" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="211" y="61" width="127.969" height="57" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="211" y="61" width="127.969" height="57" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="211" y="125" width="127.969" height="57" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="211" y="125" width="127.969" height="57" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="192.094" width="95.063" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="192.094" width="95.063" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="160.031" width="95.063" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="160.031" width="95.063" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,15.9304,196.334)">
             <g id="glyph0-16">
@@ -112,7 +112,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="127.969" width="95.063" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="127.969" width="95.063" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,22.5178,164.272)">
             <g id="glyph0-11">
@@ -153,11 +153,11 @@
         </g>
         <g transform="matrix(1,0,0,1,72.547,164.272)">
             <g id="glyph0-251" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="95.906" width="95.063" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="95.906" width="95.063" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,17.7651,132.209)">
             <g id="glyph0-26">
@@ -216,7 +216,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="64.125" width="95.063" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="64.125" width="95.063" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,22.5178,100.428)">
             <g id="glyph0-112" serif:id="glyph0-11">
@@ -257,7 +257,7 @@
         </g>
         <g transform="matrix(1,0,0,1,72.547,100.428)">
             <g id="glyph0-252" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
@@ -291,7 +291,7 @@
             <path d="M148.531,20.801L148.531,24.801M147.031,24.801L148.531,20.801L150.031,24.801" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="32.063" width="95.063" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="32.063" width="95.063" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,35.5234,68.3653)">
             <g id="glyph0-271" serif:id="glyph0-27">
@@ -317,7 +317,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="101" y="0" width="95.063" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="101" y="0" width="95.063" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,35.5234,36.3028)">
             <g id="glyph0-272" serif:id="glyph0-27">
@@ -349,10 +349,10 @@
             <path d="M148.531,52.863L148.531,56.863M147.031,56.863L148.531,52.863L150.031,56.863" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="192.094" width="95.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="192.094" width="95.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="160.031" width="95.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="160.031" width="95.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,155.321,196.334)">
             <g id="glyph0-164" serif:id="glyph0-16">
@@ -416,7 +416,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="127.969" width="95.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="127.969" width="95.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,161.908,164.272)">
             <g id="glyph0-114" serif:id="glyph0-11">
@@ -457,11 +457,11 @@
         </g>
         <g transform="matrix(1,0,0,1,211.938,164.272)">
             <g id="glyph0-253" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="95.906" width="95.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="95.906" width="95.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,157.156,132.209)">
             <g id="glyph0-263" serif:id="glyph0-26">
@@ -520,7 +520,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="64.125" width="95.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="64.125" width="95.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,161.908,100.428)">
             <g id="glyph0-116" serif:id="glyph0-11">
@@ -561,11 +561,11 @@
         </g>
         <g transform="matrix(1,0,0,1,211.938,100.428)">
             <g id="glyph0-254" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="32.063" width="95.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="32.063" width="95.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,174.914,68.3653)">
             <g id="glyph0-273" serif:id="glyph0-27">
@@ -591,7 +591,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="239.969" y="0" width="95.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="239.969" y="0" width="95.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,174.914,36.3028)">
             <g id="glyph0-274" serif:id="glyph0-27">
@@ -725,10 +725,10 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="192.094" width="127.969" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="192.094" width="127.969" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="160.031" width="59.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="160.031" width="59.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,337.793,192.252)">
             <g id="glyph2-1">
@@ -792,7 +792,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="127.969" width="59.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="127.969" width="59.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,335.721,163.804)">
             <g id="glyph2-121" serif:id="glyph2-12">
@@ -833,11 +833,11 @@
         </g>
         <g transform="matrix(1,0,0,1,374.632,163.804)">
             <g id="glyph2-16">
-                <rect x="0.453" y="-5.016" width="0.609" height="5.016" style="fill-rule:nonzero;"/>
+                <rect x="0.453" y="-5.016" width="0.609" height="5.016"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="95.906" width="59.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="95.906" width="59.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,332.024,131.742)">
             <g id="glyph2-17">
@@ -896,7 +896,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="64.125" width="59.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="64.125" width="59.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,335.721,99.9605)">
             <g id="glyph2-123" serif:id="glyph2-12">
@@ -937,7 +937,7 @@
         </g>
         <g transform="matrix(1,0,0,1,374.632,99.9605)">
             <g id="glyph2-161" serif:id="glyph2-16">
-                <rect x="0.453" y="-5.016" width="0.609" height="5.016" style="fill-rule:nonzero;"/>
+                <rect x="0.453" y="-5.016" width="0.609" height="5.016"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
@@ -971,7 +971,7 @@
             <path d="M455.953,20.801L455.953,24.801M454.453,24.801L455.953,20.801L457.453,24.801" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="32.063" width="59.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="32.063" width="59.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,342.945,68.3653)">
             <g id="glyph0-275" serif:id="glyph0-27">
@@ -997,7 +997,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="426" y="0" width="59.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="426" y="0" width="59.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,342.945,36.3028)">
             <g id="glyph0-276" serif:id="glyph0-27">
@@ -1029,7 +1029,7 @@
             <path d="M455.953,52.863L455.953,56.863M454.453,56.863L455.953,52.863L457.453,56.863" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="160.031" width="59.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="160.031" width="59.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,269.793,192.252)">
             <g id="glyph2-19" serif:id="glyph2-1">
@@ -1093,7 +1093,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="127.969" width="59.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="127.969" width="59.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,267.721,163.804)">
             <g id="glyph2-125" serif:id="glyph2-12">
@@ -1134,11 +1134,11 @@
         </g>
         <g transform="matrix(1,0,0,1,306.632,163.804)">
             <g id="glyph2-162" serif:id="glyph2-16">
-                <rect x="0.453" y="-5.016" width="0.609" height="5.016" style="fill-rule:nonzero;"/>
+                <rect x="0.453" y="-5.016" width="0.609" height="5.016"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="95.906" width="59.906" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="95.906" width="59.906" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,264.024,131.742)">
             <g id="glyph2-172" serif:id="glyph2-17">
@@ -1197,7 +1197,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="64.125" width="59.906" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="64.125" width="59.906" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,267.721,99.9605)">
             <g id="glyph2-127" serif:id="glyph2-12">
@@ -1238,11 +1238,11 @@
         </g>
         <g transform="matrix(1,0,0,1,306.632,99.9605)">
             <g id="glyph2-163" serif:id="glyph2-16">
-                <rect x="0.453" y="-5.016" width="0.609" height="5.016" style="fill-rule:nonzero;"/>
+                <rect x="0.453" y="-5.016" width="0.609" height="5.016"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="32.063" width="59.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="32.063" width="59.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,274.945,68.3653)">
             <g id="glyph0-277" serif:id="glyph0-27">
@@ -1268,7 +1268,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="358" y="0" width="59.906" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="358" y="0" width="59.906" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,274.945,36.3028)">
             <g id="glyph0-278" serif:id="glyph0-27">
@@ -1402,10 +1402,10 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="192.094" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="192.094" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="160.031" width="48.094" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="160.031" width="48.094" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,417.887,195.867)">
             <g id="glyph2-118" serif:id="glyph2-1">
@@ -1451,7 +1451,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="127.969" width="48.094" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="127.969" width="48.094" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g>
             <g id="glyph0-244" serif:id="glyph0-24" transform="matrix(1,0,0,1,418.539,164.272)">
@@ -1479,11 +1479,11 @@
         </g>
         <g transform="matrix(1,0,0,1,451.557,164.272)">
             <g id="glyph0-255" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="95.906" width="48.094" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="95.906" width="48.094" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,417.036,132.209)">
             <g id="glyph0-266" serif:id="glyph0-26">
@@ -1519,7 +1519,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="64.125" width="48.094" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="64.125" width="48.094" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g>
             <g id="glyph0-245" serif:id="glyph0-24" transform="matrix(1,0,0,1,418.539,100.428)">
@@ -1547,7 +1547,7 @@
         </g>
         <g transform="matrix(1,0,0,1,451.557,100.428)">
             <g id="glyph0-256" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
@@ -1581,7 +1581,7 @@
             <path d="M536.047,20.801L536.047,24.801M534.547,24.801L536.047,20.801L537.547,24.801" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="32.063" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="32.063" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,423.039,68.3653)">
             <g id="glyph0-279" serif:id="glyph0-27">
@@ -1607,7 +1607,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="512" y="0" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="512" y="0" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,423.039,36.3028)">
             <g id="glyph0-2710" serif:id="glyph0-27">
@@ -1639,10 +1639,10 @@
             <path d="M536.047,52.863L536.047,56.863M534.547,56.863L536.047,52.863L537.547,56.863" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="192.094" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="192.094" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="160.031" width="48.094" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="160.031" width="48.094" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,475.887,195.867)">
             <g id="glyph2-130" serif:id="glyph2-1">
@@ -1688,7 +1688,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="127.969" width="48.094" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="127.969" width="48.094" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g>
             <g id="glyph0-246" serif:id="glyph0-24" transform="matrix(1,0,0,1,476.539,164.272)">
@@ -1716,11 +1716,11 @@
         </g>
         <g transform="matrix(1,0,0,1,509.557,164.272)">
             <g id="glyph0-257" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="95.906" width="48.094" height="18.898" style="fill:rgb(178,217,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="95.906" width="48.094" height="18.898" style="fill:rgb(178,217,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,475.036,132.209)">
             <g id="glyph0-268" serif:id="glyph0-26">
@@ -1756,7 +1756,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="64.125" width="48.094" height="18.898" style="fill:rgb(101,191,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="64.125" width="48.094" height="18.898" style="fill:rgb(101,191,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g>
             <g id="glyph0-247" serif:id="glyph0-24" transform="matrix(1,0,0,1,476.539,100.428)">
@@ -1784,7 +1784,7 @@
         </g>
         <g transform="matrix(1,0,0,1,509.557,100.428)">
             <g id="glyph0-258" serif:id="glyph0-25">
-                <rect x="0.578" y="-6.438" width="0.781" height="6.438" style="fill-rule:nonzero;"/>
+                <rect x="0.578" y="-6.438" width="0.781" height="6.438"/>
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
@@ -1818,7 +1818,7 @@
             <path d="M594.047,20.801L594.047,24.801M592.547,24.801L594.047,20.801L595.547,24.801" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;"/>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="32.063" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="32.063" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,481.039,68.3653)">
             <g id="glyph0-2711" serif:id="glyph0-27">
@@ -1844,7 +1844,7 @@
             </g>
         </g>
         <g transform="matrix(1,0,0,1,-100,24)">
-            <rect x="570" y="0" width="48.094" height="18.898" style="fill:rgb(254,254,254);fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            <rect x="570" y="0" width="48.094" height="18.898" style="fill:rgb(254,254,254);stroke:black;stroke-width:1px;"/>
         </g>
         <g transform="matrix(1,0,0,1,481.039,36.3028)">
             <g id="glyph0-2712" serif:id="glyph0-27">
@@ -1893,32 +1893,32 @@
                 <path d="M3.359,0L2.563,0L2.563,-5.047C2.375,-4.859 2.125,-4.672 1.813,-4.484C1.5,-4.305 1.223,-4.176 0.984,-4.094L0.984,-4.859C1.422,-5.055 1.805,-5.301 2.141,-5.594C2.473,-5.895 2.707,-6.188 2.844,-6.469L3.359,-6.469L3.359,0Z" style="fill-rule:nonzero;"/>
             </g>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,81.3051,236.813)">
-            <text x="92.94px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia mạng</text>
+        <g transform="matrix(0.765565,0,0,0.765565,152.457,249.254)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia mạng</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,-51.6393,236.903)">
-            <text x="110.36px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">GPU đơn</text>
+        <g transform="matrix(0.765565,0,0,0.765565,32.8485,249.344)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">GPU đơn</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,67.6788,216.019)">
-            <text x="111.494px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
+        <g transform="matrix(0.765565,0,0,0.765565,153.035,228.46)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,203.603,216.066)">
-            <text x="111.494px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
+        <g transform="matrix(0.765565,0,0,0.765565,288.959,228.507)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,356.903,216.242)">
-            <text x="95.214px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh</text>
+        <g transform="matrix(0.765565,0,0,0.765565,429.796,228.683)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,414.507,216.128)">
-            <text x="95.214px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh</text>
+        <g transform="matrix(0.765565,0,0,0.765565,487.4,228.569)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh</text>
         </g>
-        <g transform="matrix(0.765565,0,0,0.765565,-72.9856,216.054)">
-            <text x="111.494px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
+        <g transform="matrix(0.765565,0,0,0.765565,12.3703,228.495)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">ảnh (3x224x224)</text>
         </g>
-        <g transform="matrix(0.759607,0,0,0.759607,211.544,236.78)">
-            <text x="84.317px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia theo tầng</text>
+        <g transform="matrix(0.759607,0,0,0.759607,275.592,249.124)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia theo tầng</text>
         </g>
-        <g transform="matrix(0.692666,0,0,0.692666,352.389,237.781)">
-            <text x="84.317px" y="16.251px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia song song dữ liệu</text>
+        <g transform="matrix(0.692666,0,0,0.692666,410.793,249.038)">
+            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;">phân chia song song dữ liệu</text>
         </g>
     </g>
 </svg>
