@@ -11,7 +11,9 @@ In recent years, deep learning technology has greatly enhanced computer vision s
 It can be said that the most advanced computer vision applications are nearly inseparable from deep learning.
 -->
 
-*dịch đoạn phía trên*
+Nhiều ứng dụng trong lĩnh vực thị giác máy tính có liên quan mật thiết đến cuộc sống hàng ngày của chúng ta, hiện tại và trong tương lai, cho dù là chẩn đoán y tế, xe không người lái, camera giám sát hay bộ lọc thông minh.
+Trong những năm gần đây, công nghệ học sâu đã nâng cao đáng kể hiệu năng của hệ thống thị giác máy tính.
+Có thể nói rằng các ứng dụng thị giác máy tính tiên tiến nhất gần như không thể tách rời khỏi học sâu.
 
 <!--
 We have introduced deep learning models commonly used in the area of computer vision in the chapter "Convolutional Neural Networks" and have practiced simple image classification tasks.
@@ -22,7 +24,12 @@ Then, we explain how to use style transfer technology to generate images that lo
 Finally, we will perform practice exercises on two important computer vision datasets to review the content of this chapter and the previous chapters.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã giới thiệu các mô hình học tập sâu thường được sử dụng trong lĩnh vực thị giác máy tính trong chương "Mạng nơ-ron tích chập" và đã thực hành một số nhiệm vụ phân loại hình ảnh đơn giản.
+Trong chương này, chúng tôi sẽ giới thiệu các phương pháp tăng cường hình ảnh và các phương pháp tinh chỉnh và áp dụng chúng vào phân loại hình ảnh.
+Sau đó, ta sẽ khám phá các phương pháp khác nhau cho việc phát hiện đối tượng.
+Sau đó nữa, ta sẽ tìm hiểu cách sử dụng các mạng chập hoàn toàn để thực hiện phân vùng ngữ nghĩa trên hình ảnh.
+Sau đó, chúng tôi giải thích cách sử dụng công nghệ chuyển phong cách để tạo ra hình ảnh trông giống như bìa của cuốn sách này.
+Cuối cùng, chúng tôi sẽ thực hiện các bài tập thực hành trên hai bộ dữ liệu thị giác máy tính quan trọng để xem lại nội dung của chương này và các chương trước.
 
 
 ```toc
@@ -55,4 +62,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-* 
+* Trần Yến Thy
