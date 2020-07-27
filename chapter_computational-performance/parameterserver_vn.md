@@ -48,7 +48,7 @@ The key aspect in it is that the aggregation of gradients occurs on GPU0 before 
 
 Chúng ta hãy xem xét tổng quan phương pháp huấn luyện song song dữ liệu cho việc huấn luyện phân tán.
 Ta sẽ dùng cách này để bỏ qua tất cả các cách khác trong phần này vì nó thật sự đơn giản hơn trong triển khai thực tế.
-Gần như không có những trường hợp cụ thể nào (ngoại trừ phương pháp học sâu trên đồ thị) mà bất cứ một chiến thuật nào khác thích hợp hơn để thực hiện song song hóa vì ngày nay các GPU có nhiều bộ nhớ.
+Gần như không có một trường hợp đặc biệt nào (ngoại trừ phương pháp học sâu trên đồ thị) mà một chiến thuật song song hoá nào khác lại thích hợp hơn vì ngày nay các GPU có khá nhiều bộ nhớ.
 :numref:`fig_parameterserver` mô tả biến thể của việc song song hóa dữ liệu mà ta thực hiện ở phần trước.
 Khía cạnh then chốt ở dạng này là việc tổng hợp gradient diễn ra trên GPU0 trước khi các tham số cập nhật được phân phát tới tất cả GPU.
 
