@@ -127,7 +127,7 @@ See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horov
 ## Ring Synchronization
 -->
 
-## *dịch tiêu đề phía trên*
+## Đồng bộ dạng vòng
 
 <!--
 When it comes to synchronization on modern deep learning hardware we often encounter significantly bespoke network connectivity.
@@ -139,13 +139,19 @@ In short, the aggregate NVLink bandwidth is significantly higher than the PCIe b
 The question is how to use it most efficiently.
 -->
 
-*dịch đoạn phía trên*
+Khi nói tới đồng bộ hóa trên các phần cứng học sâu tiên tiến, ta thường gặp những cách kết nối mạng rất riêng.
+Ví dụ, instance AWS P3.16xlarge và NVIDIA DGX-2 cùng sử dụng kết cấu kết nối của :numref:`fig_nvlink`.
+Mỗi GPU kết nối với một host CPU thông qua kết nối PCIe có tốc độ tối đa là 16 GB/s.
+Thêm nữa, mỗi GPU có 6 kết nối NVLink có khả năng truyền đến 300 Gbit/s theo cả hai hướng.
+Có nghĩa là với mỗi hướng sẽ có tốc độ khoảng 18 GB/s.
+Một cách ngắn gọn, băng thông tổng hợp của NVLink là lớn hơn đáng kể so với băng thông của PCIe.
+Câu hỏi đặt ra là làm sao để tận dụng triệt để điều đó.
 
 <!--
 ![NVLink connectivity on 8GPU V100 servers (image courtesy of NVIDIA).](../img/nvlink.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/nvlink.svg)
+![Kết nối NVLink trên các máy chủ 8GPU V100](../img/nvlink.svg)
 :label:`fig_nvlink`
 
 <!--
@@ -154,13 +160,15 @@ It turns out :cite:`Wang.Li.Liberty.ea.2018` that the optimal synchronization st
 Designing an efficient synchronization protocol in this case is nontrivial.
 -->
 
-*dịch đoạn phía trên*
+Hóa ra :cite:`Wang.Li.Liberty.ea.2018` chiến thuật đồng bộ tối ưu là phân tách mạng thành hai kết nối dạng vòng và sử dụng chúng để đồng bộ dữ liệu một cách trực tiếp.
+:numref:`fig_nvlink_twoloop` minh họa mạng có thể phân tách thành một kết nối dạng vòng (1-2-3-4-5-6-7-8-1) với băng thông NVLink gấp đôi và một kết nối dạng vòng khác (1-4-6-3-5-8-2-7-1) với băng thông bình thường.
+Thiết kế một giao thức đồng bộ hóa hiệu quả trong trường hợp này không tầm thường.
 
 <!--
 ![Decomposition of the NVLink network into two rings.](../img/nvlink-twoloop.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/nvlink-twoloop.svg)
+![Phân tách mạng NVLink thành hai kết nối dạng vòng](../img/nvlink-twoloop.svg)
 :label:`fig_nvlink_twoloop`
 
 <!--
@@ -177,7 +185,17 @@ This is quite an astonishing result.
 :numref:`fig_ringsync` illustrates the sequence of steps on $n=4$ nodes.
 -->
 
-*dịch đoạn phía trên*
+Xét một thí nghiệm tưởng tượng như sau: cho một kết nối dạng vòng có $n$ đơn vị tính toán (hoặc GPU) ta có thể truyền các giá trị gradient từ thiết bị thứ nhất đến thiết bị thứ hai.
+Ở đó nó sẽ được thêm vào gradient cục bộ và truyền đến thiết bị thứ ba, và tiếp tục vậy.
+Sau $n-1$ bước, gradient được tổng hợp có thể được tìm thấy tại thiết bị cuối cùng được truyền tới.
+Thế là, thời gian để tổng hợp gradient sẽ tăng tuyến tính theo số lượng thiết bị trong mạng.
+Nhưng nếu ta làm vậy, thuật toán sẽ khá không hiệu quả.
+Dù sao thì, tại mọi thời điểm chỉ có một thiết bị thực hiện việc truyền tin.
+Chuyện gì sẽ xảy ra nếu ta chia các giá trị gradient thành $n$ khúc và bắt đầu đồng bộ khúc thứ $i$ tại thiết bị $i$.
+Vì mỗi khối có kích thước $1/n$ thời gian tổng cộng giờ sẽ là $(n-1)/n \approx 1$.
+Nói cách khác, thời gian dùng để tổng hợp gradient *không tăng* khi ta tăng số thiết bị trong mạng.
+Quả là một kết quả kinh ngạc.
+:numref:`fig_ringsync` minh họa cho chuỗi các bước với số thiết bị $n=4$.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
