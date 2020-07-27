@@ -17,7 +17,7 @@ The math and the algorithms are the same as in :numref:`sec_multi_gpu`.
 As before we begin by importing the required modules (quite unsurprisingly you will need at least two GPUs to run this notebook).
 -->
 
-Lập trình từ đầu việc song song hoá cho từng mô hình mới thì không vui tí nào.
+Lập trình từ đầu việc song song hoá cho từng mô hình mới khá phiền toái.
 Hơn nữa, việc tối ưu các công cụ đồng bộ hóa sẽ cho hiệu suất cao.
 Sau đây chúng tôi sẽ giới thiệu cách thực hiện điều này bằng Gluon.
 Phần lý thuyết toán và các thuật toán giống trong :numref:`sec_multi_gpu`.
