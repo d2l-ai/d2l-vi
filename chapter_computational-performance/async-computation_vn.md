@@ -25,7 +25,7 @@ Nói ngắn gọn, ta có thể xử lý nhiều tác vụ cùng một lúc, th�
 Tiếc thay, Python không phải là một ngôn ngữ phù hợp để viết mã tính toán song song và bất đồng bộ, nhất là khi không có sự trợ giúp từ bên ngoài.
 Xét cho cùng, Python là ngôn ngữ đơn luồng, và có lẽ trong tương lai sẽ không có gì thay đổi.
 Các framework học sâu như MXNet và TensorFlow tận dụng mô hình lập trình bất đồng bộ để cải thiện hiệu năng (PyTorch sử dụng bộ định thời của chính Python nên có tiêu chí đánh đổi hiệu năng khác).
-Do đó, hiểu cách lập trình bất đồng bộ hoạt động giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các quan hệ phụ thuộc tương hỗ.
+Do đó, việc hiểu rõ cách lập trình bất đồng bộ giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các quan hệ phụ thuộc tương hỗ.
 Việc này cho phép ta giảm chi phí tính toán phụ trợ và tăng khả năng tận dụng vi xử lý.
 Ta bắt đầu bằng việc nhập các thư viện cần thiết.
 
