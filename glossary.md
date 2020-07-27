@@ -420,6 +420,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
 | sequential partitioning           | phân tách tuần tự        |                                              |
+| server                            | máy chủ                  |                                              |
 | sensitivity                       | độ nhạy                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | shape (in linear algebra)         | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn) |
 | significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
@@ -502,4 +503,5 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | weight decay                              | suy giảm trọng số | [https://git.io/JvQxK](https://git.io/JvQxK) |
 | well-behaved function (analytic function) | hàm khả vi vô hạn | [https://git.io/JvojL](https://git.io/JvojL) |
 | whitening data                            | tẩy trắng dữ liệu |                                              |
+| worker (in distributed system)            | máy thợ           |                                              |
 | wrapper function (in programming)         | hàm wrapper       | [https://git.io/Jvohm](https://git.io/Jvohm) |
