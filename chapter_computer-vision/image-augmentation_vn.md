@@ -5,7 +5,7 @@
 # Image Augmentation
 -->
 
-# *dịch tiêu đề phía trên*
+# Tăng cường ảnh
 :label:`sec_image_augmentation`
 
 
@@ -20,15 +20,19 @@ It can be said that image augmentation technology contributed greatly to the suc
 In this section, we will discuss this technology, which is widely used in computer vision.
 -->
 
-*dịch đoạn phía trên*
-
-
+Chúng ta đã từng đề cập  tới việc các bộ dữ liệu lớn và điều kiện tiên quyết cho sự áp dụng thành công của các mạng nở-rôn ở in :numref:`sec_alexnet`.
+Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc tạo ra một loạt thay đổi ngẫu nhiên từ bộ ảnh dùng cho việc huấn luyện để tạo ra các ảnh mẫu tương tự nhưng có sự khác biệt.
+Một cách khác để giải thích việc tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc vào một số thuộc tính nhất định của mô hình. do đó cải thiện năng lực của mô hình trở nên khái quát hóa. 
+Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
+Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy với màu của mô hình. 
+Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
+Trong phần này, chúng ta sẽ thảo luận về kỹ thuật được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này.
 
 <!--
 First, import the packages or modules required for the experiment in this section.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, thực hiện nhập các gói và mô-đun cần cho thử nghiệm trong mục này.
 
 
 
@@ -46,14 +50,12 @@ npx.set_np()
 ## Common Image Augmentation Method
 -->
 
-## *dịch tiêu đề phía trên*
-
-
+## Phương pháp tăng cường ảnh thông dụng
 <!--
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
 
-*dịch đoạn phía trên*
+Trong phần thử nghiệm này, ta sẽ dùng một ảnh có kích thước $400\time 500$ làm ví dụ.
 
 
 ```{.python .input  n=2}
@@ -69,9 +71,9 @@ To make it easier for us to observe the effect of image augmentation, we next de
 This function runs the image augmentation method `aug` multiple times on the input image `img` and shows all results.
 -->
 
-*dịch đoạn phía trên*
-
-
+Hầu hết các phương pháp tăng cường ảnh có một độ ngẫu nhiên nhất định.
+Để giúp quan sát dễ hơn hiệu quả của việc này, kế tiếp ta định nghĩa hàm bổ trợ `apply`.
+Hàm này thực hiện phương thức tăng cường ảnh `aug` nhiều lần từ ảnh đầu vào `img` và hiển thị tất cả kết quả.
 
 ```{.python .input  n=3}
 def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
@@ -445,7 +447,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
