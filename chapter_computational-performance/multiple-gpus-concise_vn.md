@@ -5,7 +5,7 @@
 # Concise Implementation for Multiple GPUs
 -->
 
-# *dịch tiêu đề phía trên*
+# Lập trình ngắn gọn cho đa GPU
 :label:`sec_multi_gpu_gluon`
 
 
@@ -17,7 +17,11 @@ The math and the algorithms are the same as in :numref:`sec_multi_gpu`.
 As before we begin by importing the required modules (quite unsurprisingly you will need at least two GPUs to run this notebook).
 -->
 
-*dịch đoạn phía trên*
+Lập trình từ đầu việc song song hoá cho từng mô hình mới khá phiền toái.
+Hơn nữa, việc tối ưu các công cụ đồng bộ hóa sẽ cho hiệu suất cao.
+Sau đây chúng tôi sẽ giới thiệu cách thực hiện điều này bằng Gluon.
+Phần lý thuyết toán và các thuật toán giống trong :numref:`sec_multi_gpu`.
+Như trước đây, ta bắt đầu bằng cách nhập các mô-đun cần thiết (không ngạc nhiên lắm khi ta sẽ cần ít nhất hai GPU để chạy notebook này).
 
 
 
@@ -33,7 +37,7 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## *dịch tiêu đề phía trên*
+## Ví dụ đơn giản
 
 
 <!--
@@ -44,7 +48,11 @@ In particular, the difference to :numref:`sec_resnet` is that we use a smaller c
 Moreover, we remove the max-pooling layer.
 -->
 
-*dịch đoạn phía trên*
+Hãy sử dụng một mạng có ý nghĩa hơn một chút so với LeNet ở phần trước mà vẫn có thể huấn luyện dễ dàng và nhanh chóng.
+Chúng tôi chọn một biến thể của ResNet-18 :cite:`He.Zhang.Ren.ea.2016`.
+Vì hình ảnh đầu vào rất nhỏ nên ta sửa đổi nó một chút.
+Cụ thể, điểm khác biệt so với ở :numref:`sec_resnet` là ta sử dụng hạt nhân tích chập, sải bước và đệm nhỏ hơn ở phần đầu.
+Hơn nữa, ta cũng loại bỏ tầng gộp cực đại.
 
 
 
@@ -80,7 +88,7 @@ def resnet18(num_classes):
 ## Parameter Initialization and Logistics
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo tham số và Công việc phụ trợ
 
 
 <!--
@@ -90,7 +98,10 @@ What is particularly convenient is that it also lets us initialize the network o
 Let us try how this works in practice.
 -->
 
-*dịch đoạn phía trên*
+Phương thức `initialize` cho phép ta đặt giá trị mặc định ban đầu cho các tham số trên thiết bị được chọn.
+Để ôn lại, hãy xem :numref:`sec_numerical_stability`.
+Điều đặc biệt thuận tiện là nó cũng cho phép ta khởi tạo mạng trên *nhiều* thiết bị cùng một lúc.
+Hãy thử xem cách nó hoạt động trong thực tế.
 
 
 ```{.python .input  n=3}
@@ -108,7 +119,9 @@ The network object *automatically* uses the appropriate GPU to compute the value
 As before we generate 4 observations and split them over the GPUs.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng hàm `split_and_load` được giới thiệu trong phần trước, chúng ta có thể chia một minibatch dữ liệu và sao chép các phần dữ liệu vào danh sách các thiết bị được cung cấp bởi biến ngữ cảnh.
+Đối tượng mạng *tự động* sử dụng GPU thích hợp để tính giá trị của lượt truyền xuôi.
+Như trước đây ta tạo ra 4 mẫu dữ liệu và phân chia chúng trên các GPU.
 
 
 ```{.python .input  n=4}
@@ -327,7 +340,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
