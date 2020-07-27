@@ -56,7 +56,7 @@ Khía cạnh then chốt ở dạng này là việc tổng hợp gradient diễn
 ![Left: single GPU training; Right: a variant of multi-GPU training. It proceeds as follows. (1) we compute loss and gradient, (2) all gradients are aggregated on one GPU, (3) parameter update happens and the parameters are re-distributed to all GPUs.](../img/ps.svg)
 -->
 
-![Trái: việc huấn luyện trên một GPU; Phải: dạng biến thể của việc huấn luyện trên nhiều GPU. Quá trình diễn ra như sau. (1) Ta tính mất mát và gradient, (2) tất cả gradient được tích luỹ trên một GPU, (3) Cập nhật tham số xảy ra và các tham số đó được phân phối lại tới tất cả GPU.](../img/ps.svg)
+![Trái: việc huấn luyện trên một GPU; Phải: dạng biến thể của việc huấn luyện trên nhiều GPU. Quá trình diễn ra như sau. (1) Ta tính mất mát và gradient, (2) tất cả gradient được tổng hợp trên một GPU, (3) Cập nhật tham số xảy ra và các tham số đó được phân phối lại tới tất cả GPU.](../img/ps.svg)
 :label:`fig_parameterserver`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
