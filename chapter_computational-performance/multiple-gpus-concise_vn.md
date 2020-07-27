@@ -342,6 +342,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 1 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
