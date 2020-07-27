@@ -318,7 +318,7 @@ Chúng thỏa mãn rất nhiều tính chất, đặc biệt khi phân bổ các
 
 * **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ worker đến thiết bị lưu trữ.
 Tại đây các tham số được tổng hợp lại, ví dụ bằng cách lấy tổng.
-* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả worker. 
+* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả máy thợ (*worker*). 
 
 <!--
 By hiding all the complexity about synchronization behind a simple push and pull operation we can decouple the concerns of the statistical modeler 
