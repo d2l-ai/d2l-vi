@@ -266,10 +266,10 @@ One of their many downsides are their typically catastrophic failure modes and t
 -->
 
 **Các ổ cứng** đã được sử dụng hơn nửa thế kỷ.
-Một cách ngắn gọn, chúng chứa một số đĩa quay với những đầu kim có thể xác định vị trí để đọc/ghi ở bất cứ rãnh nào cho trước.
+Một cách ngắn gọn, chúng chứa một số đĩa quay với những đầu kim có thể di chuyển để đọc/ghi ở bất cứ rãnh nào.
 Các ổ đĩa cao cấp có thể lưu trữ lên tới 16 TB trên 9 đĩa.
-Một trong những lợi ích chính của ổ đĩa cứng HDD là chúng tương đối rẻ.
-Nhược điểm của chúng là có độ trễ khi đọc dữ liệu tương đối cao và hay bị hư hỏng nặng dẫn đến không thể đọc dữ liệu, thậm chí là mất dữ liệu.
+Một trong những lợi ích chính của ổ đĩa cứng là chúng tương đối rẻ.
+Nhược điểm của chúng là độ trễ tương đối cao khi đọc dữ liệu và hay bị hư hỏng nặng dẫn đến không thể đọc dữ liệu, thậm chí là mất dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -288,8 +288,8 @@ As a result HDDs are quickly becoming relegated to archival storage and low-grad
 -->
 
 Để hiểu điều thứ hai, hãy xem xét thực tế rằng ổ cứng quay với tốc độ khoảng 7,200 vòng/phút.
-Nếu nhanh hơn quá nhiều, chúng sẽ vỡ tan do lực ly tâm tác dụng lên các đĩa.
-Điều này có một nhược điểm lớn khi truy cập vào một khu vực cụ thể trên đĩa: chúng ta cần đợi cho đến khi đĩa quay đúng vị trí (chúng ta có thể di chuyển đầu kim nhưng không tăng tốc các đĩa thực tế).
+Nếu tốc độ này cao hơn nhiều, các đĩa sẽ vỡ tan do tác dụng của lực ly tâm.
+Điều này dẫn đến một nhược điểm lớn khi truy cập vào một khu vực cụ thể trên đĩa: chúng ta cần đợi cho đến khi đĩa quay đúng vị trí (chúng ta có thể di chuyển đầu kim nhưng không được tăng tốc các đĩa).
 Do đó, có thể mất hơn 8 mili-giây cho đến khi dữ liệu được yêu cầu sẵn sàng.
 Vì thế mà ta hay nói ổ cứng có thể hoạt động ở mức xấp xỉ 100 IOP.
 Con số này về cơ bản vẫn không thay đổi trong hai thập kỷ qua.
@@ -309,10 +309,10 @@ Indeed, they come with a number of caveats, due to the way SSDs are designed.
 
 **Ổ cứng thể rắn (SSD)** sử dụng bộ nhớ Flash để liên tục lưu trữ thông tin.
 Điều này cho phép truy cập *nhanh hơn nhiều* vào các bản ghi đã được lưu trữ.
-SSD hiện đại có thể hoạt động ở mức 100,000 đến 500,000 IOP, tức là nhanh hơn gấp 1000 lần so với ổ cứng HDD.
+SSD hiện đại có thể hoạt động ở mức 100.000 đến 500.000 IOP, tức là nhanh hơn gấp 1000 lần so với ổ cứng HDD.
 Hơn nữa, băng thông của chúng có thể đạt tới 1-3GB/giây nghĩa là nhanh hơn 10 lần so với ổ cứng.
 Những cải tiến này nghe có vẻ tốt đến mức khó tin.
-Thật vậy, và SSD cũng đi kèm với một số lưu ý do cách mà chúng được thiết kế.
+Thật vậy, và SSD cũng đi kèm với một số hạn chế do cách mà chúng được thiết kế.
 
 <!--
 * SSDs store information in blocks (256 KB or larger).
@@ -330,16 +330,16 @@ The drives capable of handling this, referred to as NVMe (Non Volatile Memory en
 This amounts to up to 8GB/s on PCIe 4.0.
 -->
 
-* Các ổ SSD lưu trữ thông tin theo block (256 KB trở lên). 
-Dữ liệu chỉ có thể được ghi theo khối, mất thêm thời gian đáng kể.
+* Các ổ SSD lưu trữ thông tin theo khối (256 KB trở lên). 
+Ta sẽ phải ghi cả khối cùng một lúc, mất thêm thời gian đáng kể.
 Do đó việc ghi ngẫu nhiên theo bit trên SSD có hiệu suất rất tệ. 
 Tương tự như vậy, việc ghi dữ liệu nói chung mất thời gian đáng kể vì khối phải được đọc, xóa và sau đó viết lại với thông tin mới.
-Cho đến nay, bộ điều khiển và firmware của SSD đã phát triển các thuật toán để giảm thiểu điều này. 
-Tuy nhiên tốc độ ghi vẫn có thể chậm hơn nhiều, đặc biệt là đối với SSD QLC (tế bào bốn cấp).
-Chìa khóa để cải thiện hiệu suất là sử dụng một *hàng đợi* các hành động, để ưu tiên việc đọc trước và chỉ ghi theo các khối lớn nếu có thể. 
-* Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường đã bị sau vài nghìn lần ghi).
+Cho đến nay, bộ điều khiển và firmware của SSD đã phát triển các thuật toán để giảm thiểu vấn đề này. 
+Tuy nhiên tốc độ ghi vẫn có thể chậm hơn nhiều, đặc biệt là đối với SSD QLC (ô bốn cấp).
+Chìa khóa để cải thiện hiệu suất là đưa các thao tác vào một *hàng đợi* để ưu tiên việc đọc trước và chỉ ghi theo các khối lớn nếu có thể. 
+* Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường sau vài nghìn lần ghi).
 Các thuật toán bảo vệ mức hao mòn có thể phân bổ đều sự xuống cấp trên nhiều ô. 
-Do đó, không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho các tập hợp lớn các tệp nhật ký (*log file*).
+Dù vậy, vẫn không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
 * Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
 Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động tăng cường - *Non Volatile Memory enhanced*), có thể sử dụng lên tới 4 làn PCIe. 
 Băng thông có thể lên tới 8GB/giây trên PCIe 4.0.
@@ -374,10 +374,10 @@ Lastly, almost all modern CPUs contain vector processing units to aid with high 
 -->
 
 Bộ xử lý trung tâm (Central Processing Units - CPU) là trung tâm của mọi máy tính (như ở phần trước, chúng tôi đã mô tả tổng quan về những phần cứng quan trọng cho các mô hình học sâu hiệu quả).
-CPU gồm một số thành tố quan trọng: lõi xử lý (*core*) thực thi mã nguồn của máy,  
+CPU gồm một số thành tố quan trọng: lõi xử lý (*core*) với khả năng thực thi mã máy,  
 bus kết nối các lõi (cấu trúc kết nối cụ thể có sự khác biệt lớn giữa các mô hình xử lý, đời chip và nhà sản xuất)
-và bộ nhớ đệm (*cache*) cho phép truy cập với băng thông cao hơn và độ trễ thấp hơn so với truy cập từ bộ nhớ chính. 
-Cuối cùng, hầu hết CPU hiện đại chứa những đơn vị xử lý vector để hỗ trợ tính toán đại số tuyến tính và tích chập với tốc độ cao vì chúng phổ biến xử lý phương tiện và học máy.
+và bộ nhớ đệm (*cache*) cho phép truy cập với băng thông cao hơn và độ trễ thấp hơn so với việc đọc từ bộ nhớ chính. 
+Cuối cùng, hầu hết CPU hiện đại chứa những đơn vị xử lý vector để hỗ trợ tính toán đại số tuyến tính và tích chập với tốc độ cao vì chúng khá phổ biến trong xử lý phương tiện và học máy.
 
 <!--
 ![Intel Skylake consumer quad-core CPU](../img/skylake.svg)
@@ -419,7 +419,7 @@ For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perf
 Mỗi nhân xử lý bao gồm các thành phần rất tinh vi.
 Mặc dù chi tiết khác nhau giữa đời chip và nhà sản xuất, chức năng cơ bản của chúng đã được chuẩn hoá tương đối.
 Front-end tải các lệnh và dự đoán nhánh nào sẽ được thực hiện (ví dụ: cho luồng điều khiển). 
-Các lệnh tiếp đó được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
+Sau đó các lệnh được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
 Thay vào đó, các lệnh phức tạp có thể được giải mã thành một tập hợp các phép tính cấp thấp hơn.
 Tiếp đó chúng được xử lý bằng một lõi thực. 
@@ -448,9 +448,9 @@ This is why branch prediction units matter (on the frontend) such that only the 
 
 Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kì xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
 Không phải tất cả các bộ xử lý đều được tạo ra như nhau.
-Một số được chuyên môn hoá cho các lệnh về số nguyên trong khi đó một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động. 
+Một số được thiết kế chuyên biệt cho các lệnh về số nguyên, trong khi một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động. 
 Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều nhánh trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
-Đây là lý do vì sao đơn vị dự đoán nhánh quan trọng (trên front-end) sao cho chỉ những nhánh quan trong nhất được đi theo.
+Đây là lý do vì sao đơn vị dự đoán nhánh có vai trò quan trọng (trên front-end), bởi chúng chỉ chọn những nhánh có khả năng cao được rẽ.
 
 <!--
 ### Vectorization
@@ -467,11 +467,11 @@ A common aspect is that they are able to perform SIMD (single instruction multip
 :numref:`fig_neon128` shows how 8 short integers can be added in one clock cycle on ARM.
 -->
 
-Học sâu cực kỳ tốn năng lượng tính toán.
-Vì vậy, CPU phù hợp với học máy cần thực hiện được nhiều thao tác trong một chu kỳ xung nhịp. 
-Điều này đạt được thông qua các đơn vị vector.
+Học sâu đòi hỏi sức mạnh tính toán cực kỳ lớn.
+Vì vậy, CPU phù hợp với học máy cần phải thực hiện được nhiều thao tác trong một chu kỳ xung nhịp. 
+Ta có thể đạt được điều này thông qua các đơn vị vector.
 Trên chip ARM chúng được gọi là NEON, trên x86 thế hệ đơn vị vector mới nhất được gọi là [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
-Một khía cạnh chung là chúng có thể thực hiện SIMD (lệnh đơn đa dữ liệu - *single instruction multiple data*). 
+Một khía cạnh chung là chúng có thể thực hiện SIMD (đơn lệnh đa dữ liệu - *single instruction multiple data*). 
 :numref:`fig_neon128` cho thấy cách cộng 8 số nguyên ngắn trong một chu kỳ xung nhịp trên ARM.
 
 <!--
@@ -492,7 +492,7 @@ For instance, NVIDIA's RTX 2080 Ti has 4,352 CUDA cores, each of which is capabl
 
 Phụ thuộc vào các lựa chọn kiến trúc, các thanh ghi như vậy có thể dài tới 512 bit, cho phép tổ hợp tối đa 64 cặp số.
 Chẳng hạn, ta có thể nhân hai số và cộng chúng với số thứ ba, cách này còn được biết đến như phép nhân-cộng hợp nhất (*fused multiply-add*).
-[OpenVino](https://01.org/openvinotoolkit) của Intel sử dụng các cách này để đạt được thông lượng đáng nể cho học sâu trên CPU máy chủ.
+[OpenVino](https://01.org/openvinotoolkit) của Intel sử dụng thao tác này để đạt được thông lượng đáng nể cho học sâu trên CPU máy chủ.
 Tuy nhiên, xin lưu ý rằng tốc độ này hoàn toàn không đáng kể so với khả năng của GPU.
 Ví dụ, RTX 2080 Ti của NVIDIA có 4,352 nhân CUDA, mỗi nhân có khả năng xử lý một phép tính như vậy tại bất cứ thời điểm nào.
 
