@@ -13,8 +13,8 @@ So far, this book has focused on imperative programming, which makes use of stat
 Consider the following example of a simple imperative program.
 -->
 
-Tới giờ, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như là `print`, `+` hay `if` để thay đổi trạng thái chương trình.
-Xét ví dụ đơn giản sau về lập trình mệnh lệnh.
+Cho đến nay, ta mới chỉ tập trung vào lập trình mệnh lệnh, kiểu lập trình sử dụng các câu lệnh như `print`, `+` hay `if` để thay đổi trạng thái của chương trình.
+Hãy cùng xét ví dụ đơn giản sau về lập trình mệnh lệnh.
 
 ```{.python .input  n=1}
 def add(a, b):
@@ -38,16 +38,16 @@ The next two statements `f = add(c, d)` and `g = add(e, f)` will be excecuted si
 -->
 
 Python là một ngôn ngữ thông dịch.
-Khi thực hiện hàm `fancy_func` nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
-Như vậy, nó sẽ chạy lệnh `e = add(a, b)` sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
+Khi thực hiện hàm `fancy_func`, nó thực thi các lệnh trong thân hàm một cách *tuần tự*.
+Như vậy, nó sẽ chạy lệnh `e = add(a, b)` rồi sau đó lưu kết quả vào biến `e`, làm cho trạng thái chương trình thay đổi.
 Hai câu lệnh tiếp theo `f = add(c, d)` và `g = add(e, f)` sẽ được thực thi tương tự, thực hiện phép cộng và lưu kết quả vào các biến.
-:numref:`fig_compute_graph` minh họa luồng hoạt động.
+:numref:`fig_compute_graph` sẽ minh họa luồng dữ liệu.
 
 <!--
 ![Data flow in an imperative program.](../img/computegraph.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/computegraph.svg)
+![Luồng dữ liệu trong lập trình mệnh lệnh.](../img/computegraph.svg)
 :label:`fig_compute_graph`
 
 <!--
@@ -58,11 +58,11 @@ Moreover, it will need to save the variable values of `e` and `f` until all the 
 This is because we do not know whether the variables `e` and `f` will be used by other parts of the program after the statements `e = add(a, b)` and `f = add(c, d)` have been executed.
 -->
 
-Mặc dù lập trình mệnh lệnh rất thuận tiện, nhưng nó không được hiệu quả cho lắm.
-Thậm chí nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực thi ba lần gọi hàm độc lập.
-Nếu điều này xảy ra, giả sử, trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
-Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
-Vì ta không biết liệu biến `e` và `f` có được sử dụng bởi các phần chương trình khác sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
+Mặc dù lập trình mệnh lệnh rất thuận tiện, nó lại không quá hiệu quả. 
+Ví dụ như nếu hàm `add` được gọi nhiều lần trong `fancy_func`, Python cũng sẽ thực thi ba lần gọi hàm độc lập.
+Nếu điều này xảy ra, giả sử trên một GPU (hay thậm chí nhiều GPU), chi phí phát sinh từ trình thông dịch Python có thể sẽ rất lớn.
+Hơn nữa, nó sẽ cần phải lưu giá trị các biến `e` và `f` cho tới khi tất cả các lệnh trong `fancy_func` thực thi xong.
+Điều này là do ta không biết liệu biến `e` và `f` có được sử dụng bởi các phần chương trình khác sau hai lệnh `e = add(a, b)` và `f = add(c, d)` nữa hay không.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -80,8 +80,8 @@ This strategy is used by multiple deep learning frameworks, including Theano, Ke
 It usually involves the following steps:
 -->
 
-Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ có thể thực hiện một khi chương trình được định nghĩa đầy đủ.
-Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh). 
+Lập trình ký hiệu là kiểu lập trình mà ở đó các tính toán thường chỉ được thực hiện một khi chương trình đã được định nghĩa đầy đủ.
+Cơ chế này được sử dụng trong nhiều framework, bao gồm: Theano, Keras và TensorFlow (hai framework sau đã hỗ trợ lập trình mệnh lệnh).
 Lập trình ký hiệu thường gồm những bước sau:
 
 <!--
@@ -90,8 +90,8 @@ Lập trình ký hiệu thường gồm những bước sau:
 3. Provide the required inputs and call the compiled program for execution.
 -->
 
-1. Khai báo các hành động sẽ được thực thi.
-2. Biên dịch các hành động thành chương trình có thể chạy được. 
+1. Khai báo các thao tác sẽ được thực thi.
+2. Biên dịch các thao tác thành chương trình có thể chạy được.
 3. Thực thi bằng cách cung cấp đầu vào và gọi chương trình đã được biên dịch.
 
 <!--
@@ -108,7 +108,7 @@ Quy trình trên cho phép chúng ta tối ưu hóa chương trình một cách 
 Đầu tiên, ta có thể bỏ qua trình thông dịch Python trong nhiều trường hợp, từ đó loại bỏ được vấn đề nghẽn cổ chai có thể ảnh hưởng nghiêm trọng tới tốc độ tính toán khi sử dụng nhiều GPU tốc độ cao với một luồng Python duy nhất trên CPU. 
 Thứ hai, trình biên dịch có thể tối ưu và viết lại mã nguồn thành `print((1 + 2) + (3 + 4))` hoặc thậm chí `print(10)`.
 Điều này hoàn toàn khả thi bởi trình biên dịch có thể thấy toàn bộ mã nguồn rồi mới dịch sang mã máy.
-Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn dùng đến. 
+Ví dụ, nó có thể giải phóng bộ nhớ (hoặc không cấp phát) bất cứ khi nào một biến không còn được dùng đến.
 Hoặc nó có thể chuyển toàn bộ mã nguồn thành một đoạn tương đương.
 Để hiểu rõ hơn vấn đề, dưới đây ta sẽ thử mô phỏng quá trình lập trình mệnh lệnh (dựa trên Python). 
 
@@ -155,12 +155,13 @@ It makes it easier to optimize the code during compilation, while also having th
 This allows the program to be run in a non-Python environment, thus avoiding any potential performance issues related to the Python interpreter.
 -->
 
-* Lập trình mệnh lệnh dễ viết hơn.
-Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết. 
+* Lập trình mệnh lệnh dễ hơn.
+Khi lập trình mệnh lệnh được sử dụng trong Python, mã nguồn trông rất trực quan và dễ viết.
 Mã nguồn của lập trình mệnh lệnh cũng dễ gỡ lỗi hơn.
-Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python. 
-* Lập trình ký hiệu thì hiệu quả hơn và dễ sử dụng được trên nền tảng khác.
-Do đó, nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python. 
+Điều này là do ta có thể dễ dàng lấy và in ra giá trị của các biến trung gian liên quan, hoặc sử dụng công cụ gỡ lỗi có sẵn của Python.
+* Lập trình ký hiệu lại hiệu quả hơn và dễ sử dụng trên nền tảng khác. 
+Nó giúp việc tối ưu mã nguồn trong quá trình biên dịch trở nên dễ dàng hơn, đồng thời cho phép ta chuyển đổi chương trình sang một định dạng khác không phụ thuộc vào Python.
+Do đó chương trình có thể chạy trong các môi trường khác ngoài Python, từ đó tránh được mọi vấn đề tiềm ẩn về hiệu năng liên quan tới trình thông dịch Python.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -405,9 +406,9 @@ Note, though that hybridization can affect model flexibility, in particular in t
 We will illustrate how to design more general models and also how compilation will remove spurious Python elements.
 -->
 
-Trên đây chúng ta đã thấy rằng mô hình có thể đạt được hiệu năng tính toán và tính cơ động vượt trội hơn khi gọi phương thức `hybridize`. 
-Lưu ý là mặc dù vậy, sự hybrid hóa này có thể ảnh hưởng tới tính linh hoạt của mô hình cụ thể là trong việc kiểm soát các luồng điều khiển. 
-Chúng ta sẽ minh họa việc thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
+Trên đây chúng ta thấy rằng phương thức `hybridize` có thể giúp mô hình đạt được hiệu năng tính toán và tính cơ động vượt trội hơn. 
+Dù vậy, sự hybrid hóa có thể ảnh hưởng tới tính linh hoạt của mô hình, đặc biệt là trong điều khiển luồng. 
+Ta sẽ minh họa cách thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
 
 
 ```{.python .input  n=8}
@@ -433,10 +434,10 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-Đoạn mã ở trên thực hiện một mạng đơn giản với 4 đơn vị ẩn và 2 đầu ra. 
-`hybrid_foward` lấy thêm một đối số - mô-đun `F`.
-Điều này là cần thiết vì tùy vào chương trình có được hybrid hóa hay không để xử lý bằng thư viện phù hợp (`ndarray` hoặc `symbol`).
-Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNET xác định đối số đầu vào một cách tự động. 
+Đoạn mã trên biểu diễn một mạng đơn giản với 4 nút ẩn và 2 đầu ra. 
+Phương thức `hybrid_foward` lấy thêm một đối số - mô-đun `F`.
+Đối số này là cần thiết để chọn thư viện xử lý phù hợp (`ndarray` hoặc `symbol`) tùy vào việc chương trình có được hybrid hóa hay không.
+Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNet sẽ tự động xác định đối số đầu vào. 
 Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các đối số đầu vào khi gọi hàm. 
 
 ```{.python .input  n=9}
@@ -451,8 +452,8 @@ Repeating the forward computation will lead to the same output (we omit details)
 Now let's see what happens if we invoke the `hybridize` method.
 -->
 
-Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (bỏ qua chi tiết).
-Bây giờ ta hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
+Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (ta bỏ qua chi tiết).
+Bây giờ hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
 
 ```{.python .input  n=10}
 net.hybridize()
@@ -465,9 +466,9 @@ Moreover, even though the input is of `ndarray` type, the data flowing through t
 Repeating the function call leads to a surprising outcome:
 -->
 
-Thay vì sử dụng `ndarray` ta lúc này sử dụng mô-đun `symbol` cho `F`.
+Thay vì `ndarray`, lúc này ta sử dụng mô-đun `symbol` cho `F`.
 Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, dữ liệu truyền qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
-Thực hiện gọi hàm `net` nhiều lần dẫn tới một kết quả đáng kinh ngạc:
+Việc gọi lại hàm `net` dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
 net(x)
@@ -485,13 +486,13 @@ The benefit can range from small percentage points to more than twice the speed,
 -->
 
 Điều này khá khác biệt so với những gì ta đã thấy trước đó.
-Tất cả các lệnh in, như định nghĩa trong `hybrid_forward` bị bỏ qua.
+Tất cả các lệnh in được định nghĩa trong `hybrid_forward` đều bị bỏ qua.
 Thật vậy, sau khi hybrid hóa, việc thực thi lệnh `net(x)` không còn liên quan gì tới trình thông dịch của Python nữa.
-Điều này có nghĩa rằng bất cứ đoạn chương trình nào của Python không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để ưu tiên cho việc thực thi trôi chảy hơn nhiều và kết quả thực hiện tốt hơn.
+Nghĩa là bất cứ đoạn mã Python nào không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để việc thực thi trôi chảy hơn và hiệu năng tốt hơn.
 Và thay vì gọi Python, MXNet gọi trực tiếp back-end C++. 
-Cũng nên lưu ý là một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
+Cũng nên lưu ý rằng một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
 Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
-Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ vài phần trăm tới hơn hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
+Lợi ích về tốc độ này có thể tăng từ vài phần trăm tới hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -530,9 +531,9 @@ Lợi ích về tốc độ này có thể thay đổi từ một lượng nhỏ
 -->
 
 1. Hãy thiết kế một mạng bằng cách sử dụng lớp `HybridConcurrent`, có thể thử với GoogleNet trong :ref: `sec_googlenet`.
-2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet. Hãy thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
-3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là, các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
-4. Hãy lập trình các mô hình mà bạn quan tâm trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
+2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet, rồi thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
+3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
+4. Hãy lập trình các mô hình bạn thích trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -560,17 +561,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Tâm
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
+* Phạm Minh Đức
 * Nguyễn Văn Cường
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang

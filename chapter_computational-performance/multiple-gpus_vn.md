@@ -154,7 +154,7 @@ Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế ti�
 ## Data Parallelism
 -->
 
-## *dịch tiêu đề phía trên*
+## Song song hóa dữ liệu
 
 
 <!--
@@ -163,8 +163,9 @@ Given the model to be trained, each GPU will maintain a complete set of model pa
 Training proceeds as follows (see :numref:`fig_data_parallel` for details on data parallel training on two GPUs):
 -->
 
-*dịch đoạn phía trên*
-
+Giả sử ta có một máy tính có $k$ GPU.
+Với một mô hình cần được huấn luyện, mỗi GPU duy trì một tập đầy đủ các tham số mô hình độc lập với nhau.
+Việc huấn luyện diễn ra như sau (xem :numref:`fig_data_parallel` để rõ hơn về việc huấn luyện song song với hai GPU):
 
 <!--
 * In any iteration of training, given a random minibatch, we split the examples in the batch into $k$ portions and distribute them evenly across the GPUs. 
@@ -174,13 +175,17 @@ Training proceeds as follows (see :numref:`fig_data_parallel` for details on dat
 * Each GPU uses this minibatch stochastic gradient to update the complete set of model parameters that it maintains. 
 -->
 
-*dịch đoạn phía trên*
+Ở bất cứ vòng huấn luyện nào, với một tập minibatch ngẫu nhiên cho trước, ta tách các mẫu từ batch ban đầu này thành $k$ phần và chia đều cho các GPU.
+Mỗi GPU sẽ tính mất mát và gradient của các tham số mô hình dựa trên tập mimibatch con mà nó được cấp và các tham số mô hình nó lưu trữ. 
+Các gradient cục bộ từ $k$ GPU được gom lại để thu được gradient ngẫu nhiên cho minibatch hiện tại.
+Gradient tổng hợp này lại được phân phối trở lại cho các GPU.
+Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật tập hoành chỉnh các tham số mô hình mà nó lưu trữ. 
 
 <!--
 ![Calculation of minibatch stochastic gradient using data parallelism and two GPUs. ](../img/data-parallel.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/data-parallel.svg)
+![Tính toán gradient ngẫu nhiên trên tập minibatch dùng song song hóa dữ liệu với hai GPU.](../img/data-parallel.svg)
 :label:`fig_data_parallel`
 
 
@@ -192,8 +197,10 @@ Also note that :numref:`sec_batch_norm` needs to be adjusted (e.g., by keeping a
 In what follows we will use :numref:`sec_lenet` as the toy network to illustrate multi-GPU training. As always we begin by importing the relevant packages and modules.
 -->
 
-*dịch đoạn phía trên*
-
+:numref:`fig_splitting` so sánh các cách song song hóa khác nhau trên nhiều GPU.
+Lưu ý rằng trong thực tế ta *tăng* kích thước minibatch $k$-lần khi huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện giống như khi ta chỉ huấn luyện trên một GPU duy nhất.
+Trên một server có 16 GPU có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học tương ứng.
+Trong phần tiếp theo ta sẽ dùng :numref:`sec_lenet` như một mạng thử nghiệm để minh họa việc huấn luyện đa-GPU. Như mọi khi, ta bắt đầu bằng cách nạp các gói thư viện và mô-đun liên quan. 
 
 ```{.python .input  n=2}
 %matplotlib inline
@@ -201,7 +208,6 @@ from d2l import mxnet as d2l
 from mxnet import autograd, gluon, np, npx
 npx.set_np()
 ```
-
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -568,7 +574,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 4 -->
 * Nguyễn Văn Cường
