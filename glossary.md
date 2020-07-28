@@ -215,6 +215,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                            | Tiếng Việt                   | Thảo luận tại                                |
 |------------------------------------|------------------------------|----------------------------------------------|
 | ill-conditioned                    | (có) điều kiện xấu           |                                              |
+| image segmentation                 | phân vùng ảnh                |   |
 | implement                          | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | implementation                     | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
 | implicit feedback                  | phản hồi gián tiếp           |                                              |
@@ -416,6 +417,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
 | serialization (programming)       | chuỗi hóa                |                                              |
+| semantic segmentation             | phân tách theo ngữ nghĩa |                                              |
 | sentiment classification          | phân loại cảm xúc        |                                              |
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
