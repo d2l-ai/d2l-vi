@@ -19,14 +19,14 @@ This allows us to reduce memory overhead and increase processor utilization.
 We begin by importing the necessary libraries.
 -->
 
-Máy tính ngày nay là các hệ thống song song, bao gồm nhiều lõi CPU (mỗi lõi thường có nhiều luồng),
-mỗi GPU chứa nhiều thành phần xử lý và mỗi máy thường bao gồm nhiều GPU.
-Nói ngắn gọn, ta có thể xử lý nhiều việc cùng một lúc, trên nhiều thiết bị khác nhau.
-Tiếc thay, Python không phải là một ngôn ngữ phù hợp để viết mã tính toán song song và bất đồng bộ khi không có sự trợ giúp từ bên ngoài.
+Máy tính ngày nay là các hệ thống có tính song song cao, được cấu thành từ nhiều lõi CPU (mỗi lõi thường có nhiều luồng),
+nhiều phần tử xử lý trong mỗi GPU và thường có nhiều GPU trong mỗi máy.
+Nói ngắn gọn, ta có thể xử lý nhiều tác vụ cùng một lúc, thường là trên nhiều thiết bị khác nhau.
+Tiếc thay, Python không phải là một ngôn ngữ phù hợp để viết mã tính toán song song và bất đồng bộ, nhất là khi không có sự trợ giúp từ bên ngoài.
 Xét cho cùng, Python là ngôn ngữ đơn luồng, và có lẽ trong tương lai sẽ không có gì thay đổi.
-Các framework học sâu như MXNet và TensorFlow tận dụng mô hình lập trình bất đồng bộ để cải thiện hiệu năng (PyTorch sử dụng tính năng định thời của chính Python, dẫn tới việc đánh đổi hiệu năng).
-Do đó, hiểu cách lập trình bất đồng bộ hoạt động giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các quan hệ phụ thuộc tương hỗ.
-Việc này cho phép ta giảm tổng chi phí và tăng khả năng tận dụng vi xử lý.
+Các framework học sâu như MXNet và TensorFlow tận dụng mô hình lập trình bất đồng bộ để cải thiện hiệu năng (PyTorch sử dụng bộ định thời của chính Python nên có tiêu chí đánh đổi hiệu năng khác).
+Do đó, việc hiểu rõ cách lập trình bất đồng bộ giúp ta phát triển các chương trình hiệu quả hơn bằng cách chủ động giảm thiểu yêu cầu tính toán và các quan hệ phụ thuộc tương hỗ.
+Việc này cho phép ta giảm chi phí tính toán phụ trợ và tăng khả năng tận dụng vi xử lý.
 Ta bắt đầu bằng việc nhập các thư viện cần thiết.
 
 
@@ -50,7 +50,7 @@ Let us do that both in NumPy and in MXNet NP to see the difference.
 -->
 
 Để khởi động, hãy cùng xét một bài toán nhỏ - ta muốn sinh ra một ma trận ngẫu nhiên và nhân nó lên nhiều lần.
-Hãy thực hiện trên cả Numpy và trên MXNet NP để xem xét sự khác nhau.
+Hãy thực hiện việc này bằng cả NumPy và NumPy của MXNet để xem xét sự khác nhau.
 
 
 ```{.python .input  n=2}
@@ -73,10 +73,10 @@ Since both are executed on the same processor something else must be going on.
 Forcing MXNet to finish all computation prior to returning shows what happened previously: computation is being executed by the backend while the frontend returns control to Python.
 -->
 
-Kết quả trên được sắp xếp theo tốc độ.
-Ít nhất có vẻ là như vậy.
-Do cả hai thư viện đều được thực hiện trên một bộ xử lý, chắc hẳn phải có gì đó ảnh hướng đến kết quả.
-Nếu bắt buộc MXNet phải hoàn thành toàn bộ tính toán trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi back-end trong khi front-end trả lại quyền điều khiển cho Python.
+NumPy của MXNet nhanh hơn tới cả hàng trăm hàng ngàn lần.
+Ít nhất là có vẻ là như vậy.
+Do cả hai thư viện đều được thực hiện trên cùng một bộ xử lý, chắc hẳn phải có gì đó ảnh hướng đến kết quả.
+Nếu ta ép MXNet phải hoàn thành tất cả phép tính trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi back-end trong khi front-end đã trả lại quyền điều khiển cho Python.
 
 ```{.python .input  n=3}
 with d2l.Benchmark():
@@ -94,10 +94,7 @@ Note that for this to work the backend must be able to keep track of the depende
 Hence it is ony possible to parallelize operations that do not depend on each other.
 -->
 
-Nhìn chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
-Back-end có các luồng xử lý riêng liên tục tập hợp và thực hiện các tác vụ trong hàng đợi.
-Chú ý rằng, back-end cần có khả năng theo dõi quan hệ phụ thuộc giữa nhiều bước khác nhau trong đồ thị tính toán để có thể hoạt động.
-Do đó ta chỉ có thể song song hoá các thao tác không phụ thuộc lẫn nhau.
+<!-- Đoạn này bản gốc đã xoá vì trùng với đoạn dưới. -->
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -159,11 +156,11 @@ Thus, there is little impact on the program’s overall performance, regardless 
 :numref:`fig_threading` illustrates how frontend and backend interact.
 -->
 
-Đoạn mã trên được mô tả trong :numref:`fig_asyncgraph`.
-Mỗi khi luồng front-end của Python thực thi một trong ba câu lệnh đầu tiên, tác vụ đó chỉ đơn giản là được đưa vào hàng chờ của back-end.
-Khi kết quả của câu lệnh cuối cùng cần được in ra, luồng front-end của Python sẽ chờ luồng xử lý nền C++ tính toán xong kết quả của biến `z`.
+Đoạn mã trên cũng được mô tả trong :numref:`fig_asyncgraph`.
+Mỗi khi luồng front-end của Python thực thi một trong ba câu lệnh đầu tiên, nó sẽ chỉ đưa tác vụ đó vào hàng chờ của back-end.
+Khi kết quả của câu lệnh cuối cùng cần được in ra, luồng front-end của Python sẽ chờ luồng xử lý back-end C++ tính toán xong kết quả của biến `z`.
 Lợi ích của thiết kế này nằm ở việc luồng front-end Python không cần phải đích thân thực hiện việc tính toán.
-Hơn nữa nếu bỏ qua hiệu năng của Python, thiết kế này không ảnh hưởng nhiều đến hiệu năng chung của chương trình.
+Do đó, hiệu năng tổng thể của chương trình cũng ít bị ảnh hưởng bởi hiệu năng của Python.
 :numref:`fig_threading` mô tả cách front-end và back-end tương tác với nhau.
 
 <!--
@@ -192,8 +189,8 @@ In this case MXNet blocks return to Python until the variable `z` has been compu
 -->
 
 Có khá nhiều thao tác buộc Python phải chờ cho đến khi nó hoàn thành:
-* Điển hình nhất là `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn thành, bất chấp thời điểm câu lệnh tính toán được đưa ra.
-Trong thực tế, trừ khi thực sự cần thiết, việc sử dụng thao tác này là một ý tưởng tồi do nó có thể gây giảm hiệu năng.
+* Hiển nhiên nhất là lệnh `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn thành, bất chấp thời điểm câu lệnh tính toán được đưa ra.
+Trong thực tế, trừ khi thực sự cần thiết, việc sử dụng thao tác này là một ý tưởng tồi do nó có thể làm giảm hiệu năng.
 * Nếu ta chỉ muốn chờ đến khi một biến cụ thể nào đó sẵn sàng, ta có thể gọi `z.wait_to_read()`.
 Trong trường hợp này MXNet chặn việc trả luồng điều khiển về Python cho đến khi biến `z` đã được tính xong. Các thao tác khác sau đó mới có thể tiếp tục.
 
@@ -230,9 +227,9 @@ Cả hai thao tác hoàn thành với thời gian xấp xỉ nhau.
 Ngoài các thao tác chặn (*blocking operation*) tường minh, bạn đọc cũng nên biết về việc chặn *ngầm*.
 Rõ ràng việc in một biến ra yêu cầu biến đó phải sẵn sàng và do đó nó là một bộ chặn.
 Cuối cùng, ép kiểu sang NumPy bằng `z.asnumpy()` và ép kiểu sang số vô hướng bằng `z.item()` cũng là bộ chặn, do trong NumPy không có khái niệm bất đồng bộ.
-Có thể thấy việc ép kiểu cũng cần truy cập giá trị, giống như hàm `print`.
+Có thể thấy việc ép kiểu cũng cần truy cập giá trị, giống như hàm `print`. 
 Việc thường xuyên sao chép một lượng nhỏ dữ liệu từ phạm vi của MXNet sang NumPy và ngược lại có thể làm giảm đáng kể hiệu năng của một đoạn mã đáng lẽ sẽ có hiệu năng tốt,
-do mỗi thao tác như vậy buộc đồ thị tính toán phải tính toàn bộ giá trị trung gian để suy ra các số hạng cần thiết *trước khi* thực hiện bất cứ thao tác nào khác.
+do mỗi thao tác như vậy buộc đồ thị tính toán phải tính toàn bộ các giá trị trung gian để suy ra các số hạng cần thiết *trước khi* thực hiện bất cứ thao tác nào khác.
 
 
 ```{.python .input  n=7}
@@ -253,7 +250,7 @@ with d2l.Benchmark('scalar conversion'):
 ## Improving Computation
 -->
 
-## Cải thiện khả năng Tính toán
+## Cải thiện Năng lực Tính toán
 
 <!--
 On a heavily multithreaded system (even regular laptops have 4 threads or more and on multi-socket servers this number can exceed 256) the overhead of scheduling operations can become significant.
@@ -262,9 +259,9 @@ To illustrate the benefit of doing this let us see what happens if we increment 
 We simulate synchronous execution by inserting a `wait_to_read()` barrier in between each addition.
 -->
 
-Trên một hệ thống đa luồng lớn (ngay cả laptop thông thường cũng có 4 luồng hoặc hơn, và trên các máy trạm đa socket, số luồng có thể vượt quá 256) tổng chi phí định thời các thao tác có thể khá lớn.
+Trong một hệ thống đa luồng lớn (ngay cả laptop phổ thông cũng có 4 luồng hoặc hơn, và trên các máy trạm đa socket, số luồng có thể vượt quá 256), chi phí phụ trợ từ việc định thời các thao tác có thể trở nên khá lớn.
 Đây là lý do tại sao hai quá trình tính toán và định thời nên xảy ra song song và bất đồng bộ.
-Để minh hoạ cho lợi ích của việc này, hãy so sánh khi cộng 1 vào một biến nhiều lần một cách đồng bộ và bất đồng bộ.
+Để minh hoạ cho lợi ích của việc này, hãy so sánh khi liên tục cộng 1 vào một biến theo cách đồng bộ và bất đồng bộ.
 Ta mô phỏng quá trình thực thi đồng bộ bằng cách chèn một lớp cản `wait_to_read()` giữa mỗi phép cộng.
 
 
@@ -286,7 +283,7 @@ with d2l.Benchmark('asynchronous'):
 A slightly simplified interaction between the Python front-end thread and the C++ back-end thread can be summarized as follows:
 -->
 
-Ta có thể tóm tắt đơn giản sự tương tác giữa luồng front-end Python và luồng back-end C++ như sau:
+Ta có thể tóm tắt đơn giản sự tương tác giữa luồng front-end Python và luồng back-end C++ như sau: 
 
 <!--
 1. The front-end orders the back-end to insert the calculation task `y = x + 1` into the queue.
@@ -296,7 +293,7 @@ Ta có thể tóm tắt đơn giản sự tương tác giữa luồng front-end 
 
 1. Front-end ra lệnh cho back-end đưa tác vụ tính `y = x + 1` vào hàng đợi.
 2. Back-end sau đó nhận các tác vụ tính toán từ hàng đợi và thực hiện các phép tính.
-3. Back-end trả về kết quả tính toán cho front-end.
+3. Back-end trả kết quả tính toán về cho front-end.
 
 <!--
 Assume that the durations of these three stages are $t_1, t_2$ and $t_3$, respectively.
@@ -307,8 +304,8 @@ since the front-end does not have to wait for the back-end to return computation
 
 Giả sử thời gian thực hiện mỗi giai đoạn trên lần lượt là $t_1, t_2$ và $t_3$.
 Nếu ta không áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính xấp xỉ bằng $1000 (t_1+ t_2 + t_3)$.
-Nếu ta áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính có thể giảm xuống $t_1 + 1000 t_2 + t_3$ (giả sử $1000 t_2 > 999t_1$),
-do front-end không cần phải chờ back-end trả về kết quả tính toán ở mỗi vòng lặp.
+Còn nếu ta áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính có thể giảm xuống còn $t_1 + 1000 t_2 + t_3$ (giả sử $1000 t_2 > 999t_1$),
+do front-end không cần phải chờ back-end trả về kết quả tính toán sau mỗi vòng lặp.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -550,3 +547,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 7 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
+
+* Lê Khắc Hồng Phúc
