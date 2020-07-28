@@ -164,6 +164,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature extraction         | trích xuất đặc trưng |                                              |
 | feature map (in CNN)       | ánh xạ đặc trưng     |                                              |
 | feed-forward network (FNN) | mạng truyền xuôi     |                                              |
+| fine-tuning                | tinh chỉnh           |  |
 | filter (in CNN)            | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                        | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle            | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
@@ -466,6 +467,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
 | transcribe                             | phiên thoại                               | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription                          | bản ghi thoại                             |                                              |
+| transfer learning                      | học truyền tải                            |                                              |
 | transformer                            | transformer                               |                                              |
 | transition layer                       | tầng chuyển tiếp                          |                                              |
 | translation invariant                  | bất biến tịnh tiến                        | [https://git.io/Jftwj](https://git.io/Jftwj) |
