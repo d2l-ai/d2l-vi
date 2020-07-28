@@ -262,11 +262,11 @@ We omit details on barriers and will only briefly touch on synchronous and async
 Mỗi một thao tác trên nhìn qua thì có vẻ khá dễ hiểu.
 Và, quả thực, chúng có thể được thực hiện một cách hiệu quả *trong* một máy tính đơn.
 Tuy nhiên khi xét trên nhiều máy tính, ta có thể thấy rằng chính máy chủ tham số trung tâm trở thành nút thắt cổ chai (*bottleneck*).
-Suy cho cùng, băng thông của mỗi máy chủ là có hạn, do đó đối với $m$ worker thời gian để truyền toàn bộ gradient đến máy chủ là $O(m)$.
+Suy cho cùng, băng thông của mỗi máy chủ là có hạn, do đó đối với $m$ máy thợ thời gian để truyền toàn bộ gradient đến máy chủ là $O(m)$.
 Ta có thể phá bỏ rào cản này bằng cách tăng số lượng máy chủ lên $n$.
 Khi đó mỗi máy chủ chỉ cần lưu trữ $O(1/n)$ trên tổng số các tham số, do đó tổng thời gian cần để cập nhật và tối ưu trở thành $O(m/n)$.
-Để chọn hai con số này sao cho phù hợp, ta buộc phải thay đổi tỉ lệ hằng số bất kể số lượng worker ta sử dụng là bao nhiêu.
-Trong thực tế các máy tính ta sử dụng vừa đóng vai trò là worker, vừa đóng vai trò là máy chủ.
+Để chọn hai con số này sao cho phù hợp, ta buộc phải thay đổi tỉ lệ hằng số bất kể số lượng máy thợ ta sử dụng là bao nhiêu.
+Trong thực tế các máy tính ta sử dụng vừa đóng vai trò là máy thợ, vừa đóng vai trò là máy chủ.
 :numref:`fig_ps_multips` minh hoạ thiết kế này.
 Bạn đọc có thể đọc :cite:`Li.Andersen.Park.ea.2014` để biết thêm chi tiết.
 Cụ thể, việc đảm bảo các máy tính hoạt động với độ trễ không quá lớn không phải là một chuyện dễ dàng.
