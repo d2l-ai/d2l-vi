@@ -294,7 +294,7 @@ Chúng ta bắt đầu bằng việc đọc kho ngữ liệu *Cỗ máy Thời g
 Dưới đây là mã nguồn đọc dữ liệu:
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import rnn
 npx.set_np()

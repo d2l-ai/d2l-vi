@@ -102,7 +102,7 @@ In the rest of this section, we will equip you with each new component introduce
 Tiếp theo, chúng ta sẽ tìm hiểu từng thành phần trong Transformer để có thể xây dựng một mô hình dịch máy.
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 import math
 from mxnet import autograd, np, npx
 from mxnet.gluon import nn

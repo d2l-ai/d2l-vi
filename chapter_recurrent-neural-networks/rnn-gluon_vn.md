@@ -19,7 +19,7 @@ Phần này sẽ hướng dẫn cách lập trình cùng một mô hình ngôn n
 Như trước, ta cũng bắt đầu với việc đọc kho ngữ liệu "Cỗ máy Thời gian".
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn, rnn
 npx.set_np()

@@ -212,7 +212,7 @@ Chúng tôi sẽ minh hoạ lợi ích của việc này ở ví dụ bên dư�
 ## HybridSequential
 -->
 
-## *dịch tiêu đề phía trên*
+## HybridSequential
 
 <!--
 The easiest way to get a feel for how hybridization works is to consider deep networks with multiple layers. 
@@ -223,7 +223,12 @@ The single-threaded Python interpreter becomes the bottleneck here.
 Let's see how we can address this for significant parts of the code by replacing `Sequential` by `HybridSequential`. We begin by defining a simple MLP.
 -->
 
-*dịch đoạn phía trên*
+Cách đơn giản nhất để hiểu cách hoạt động của phép hybrid hoá là xem xét trường hợp các mạng sâu đa tầng.
+Thông thường, trình thông dịch Python sẽ thực thi mã nguồn cho tất cả các tầng để sinh một lệnh mà sau đó có thể được truyền tới CPU hoặc GPU.
+Đối với thiết bị tính toán đơn (và nhanh), quá trình trên không gây ra vấn đề lớn nào cả.
+Mặt khác, nếu ta sử dụng một máy chủ 8-GPU tiên tiến, ví dụ như P3dn.24xlarge trên AWS, Python sẽ gặp khó khăn để tận dụng tất cả GPU cùng lúc.
+Lúc này trình thông dịch Python đơn luồng trở thành nút thắt cổ chai.
+Hãy xem làm thế nào để giải quyết vấn đề trên cho phần lớn đoạn mã nguồn bằng cách thay `Sequential` bằng `HybridSequential`. Chúng ta hãy bắt đầu bằng cách định nghĩa một mạng MLP đơn giản.
 
 ```{.python .input  n=3}
 from d2l import mxnet as d2l
@@ -250,7 +255,8 @@ By calling the `hybridize` function, we are able to compile and optimize the com
 The model’s computation result remains unchanged.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách gọi hàm `hybridize`, ta có thể biên dịch và tối ưu hóa các tính toán trong MLP.
+Kết quả tính toán của mô hình vẫn không thay đổi.
 
 ```{.python .input  n=4}
 net.hybridize()
@@ -265,7 +271,11 @@ That said, the blocks provided by Gluon are by default subclasses of `HybridBloc
 A layer will not be optimized if it inherits from the `Block` instead.
 -->
 
-*dịch đoạn phía trên*
+Điều này có vẻ tốt đến mức khó tin: chỉ cần chỉ định một khối thành `HybridSequential`, sử dụng mã nguồn tương tự như trước và gọi hàm `hybridize`.
+Một khi điều này xảy ra, mạng sẽ được tối ưu hóa (chúng ta sẽ đánh giá hiệu năng dưới đây).
+Đáng tiếc là cách này không hoạt động với mọi tầng.
+Tuy vậy, các khối được cung cấp sẵn bởi Gluon mặc định được kế thừa từ lớp `HybridBlock` và do đó có thể hybrid hoá được.
+Tầng kế thừa từ lớp `Block` sẽ không thể tối ưu hoá được.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -279,7 +289,7 @@ A layer will not be optimized if it inherits from the `Block` instead.
 ### Acceleration by Hybridization
 -->
 
-### *dịch tiêu đề phía trên*
+### Tăng tốc bằng Hybrid hoá
 
 <!--
 To demonstrate the performance improvement gained by compilation we compare the time needed to evaluate `net(x)` before and after hybridization. 
@@ -287,7 +297,9 @@ Let's define a function to measure this time first.
 It will come handy throughout the chapter as we set out to measure (and improve) performance.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ những cải thiện đạt được từ quá trình biên dịch, ta hãy so sánh thời gian cần thiết để đánh giá `net(x)` trước và sau phép hybrid hoá.
+Đầu tiên, ta hãy định nghĩa một hàm để đo thời gian trên.
+Hàm này sẽ hữu ích trong suốt chương này khi chúng ta đo (và cải thiện) hiệu năng.
 
 ```{.python .input}
 #@save
@@ -307,7 +319,7 @@ class Benchmark:
 Now we can invoke the network twice, once with and once without hybridization.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể gọi mạng hai lần tương ứng với việc có hoặc không hybrid hoá.
 
 ```{.python .input  n=5}
 net = get_net()
@@ -325,14 +337,14 @@ with Benchmark('With hybridization'):
 As is observed in the above results, after a HybridSequential instance calls the `hybridize` function, computing performance is improved through the use of symbolic programming.
 -->
 
-*dịch đoạn phía trên*
-
+Như quan sát được trong các kết quả trên, sau khi thực thể HybridSequential gọi hàm `hybridize`, hiệu năng tính toán được cải thiện thông qua việc sử dụng lập trình ký hiệu.
 
 <!--
 ### Serialization
 -->
 
-### *dịch tiêu đề phía trên*
+### Chuỗi hoá 
+<!--https://itviec.com/blog/wp-content/uploads/download-manager-files/OOP_2013.pdf-->
 
 <!--
 One of the benefits of compiling the models is that we can serialize (save) the model and its parameters to disk. 
@@ -342,7 +354,11 @@ At the same time the code is often faster than what can be achieved in imperativ
 Let's see the `export` method in action.
 -->
 
-*dịch đoạn phía trên*
+Một trong những lợi ích của việc biên dịch các mô hình là ta có thể chuỗi hoá (_serialize_) mô hình và các tham số mô hình để lưu trữ.
+Điều này cho phép ta có thể lưu trữ mô hình mà không phụ thuộc vào ngôn ngữ front-end.
+Điều này cũng cho phép ta có thể sử dụng các mô hình đã huấn luyện trên các thiết bị khác và dễ dàng sử dụng các ngôn ngữ lập trình front-end khác.
+Đồng thời, mã nguồn này thường thực thi nhanh hơn so với khi lập trình mệnh lệnh.
+Hãy xem xét phương thức `export` sau.
 
 ```{.python .input  n=13}
 net.export('my_mlp')
@@ -354,7 +370,8 @@ The model is decomposed into a (large binary) parameter file and a JSON descript
 The files can be read by other front-end languages supported by Python or MXNet, such as C++, R, Scala, and Perl. Let's have a look at the model description.
 -->
 
-*dịch đoạn phía trên*
+Mô hình này được chia ra thành một tập tin (nhị phân) lớn chứa tham số và tập tin JSON mô tả cấu trúc mô hình.
+Các tập tin có thể được đọc bởi các ngôn ngữ front-end khác được hỗ trợ bởi Python hoặc MXNet, ví dụ C ++, R, Scala, và Perl. Tập tin JSON có dạng như sau.
 
 ```{.python .input  n=7}
 !head my_mlp-symbol.json
@@ -365,16 +382,17 @@ Things are slightly more tricky when it comes to models that resemble code more 
 Basically hybridization needs to deal with control flow and Python overhead in a much more immediate manner. Moreover,
 -->
 
-*dịch đoạn phía trên*
+Mọi thứ phức tạp hơn một chút khi nói đến các mô hình gần với mã nguồn.
+Về cơ bản việc hybrid hoá cần làm việc trực tiếp với luồng điều khiển và các chi phí tính toán của Python.
+
 
 <!--
 Contrary to the Block instance, which needs to use the `forward` function, for a HybridBlock instance we need to use the `hybrid_forward` function.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, trong khi thực thể của lớp Block cần sử dụng hàm `forward`, thì thực thể của lớp HybridBlock lại sử dụng hàm `hybrid_forward`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -387,7 +405,9 @@ Note, though that hybridization can affect model flexibility, in particular in t
 We will illustrate how to design more general models and also how compilation will remove spurious Python elements.
 -->
 
-*dịch đoạn phía trên*
+Trên đây chúng ta thấy rằng phương thức `hybridize` có thể giúp mô hình đạt được hiệu năng tính toán và tính cơ động vượt trội hơn. 
+Dù vậy, sự hybrid hóa có thể ảnh hưởng tới tính linh hoạt của mô hình, đặc biệt là trong điều khiển luồng. 
+Ta sẽ minh họa cách thiết kế các mô hình tổng quát hơn cũng như cách trình biên dịch loại bỏ các thành phần thừa trong Python. 
 
 
 ```{.python .input  n=8}
@@ -413,7 +433,11 @@ Both classes perform very similar functions and MXNet automatically determines t
 To understand what is going on we print the arguments as part of the function invocation.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã trên biểu diễn một mạng đơn giản với 4 nút ẩn và 2 đầu ra. 
+Phương thức `hybrid_foward` lấy thêm một đối số - mô-đun `F`.
+Đối số này là cần thiết để chọn thư viện xử lý phù hợp (`ndarray` hoặc `symbol`) tùy vào việc chương trình có được hybrid hóa hay không.
+Cả hai lớp này thực hiện các chức năng rất giống nhau và MXNet sẽ tự động xác định đối số đầu vào. 
+Để hiểu chuyện gì đang diễn ra chúng ta sẽ in các đối số đầu vào khi gọi hàm. 
 
 ```{.python .input  n=9}
 net = HybridNet()
@@ -427,7 +451,8 @@ Repeating the forward computation will lead to the same output (we omit details)
 Now let's see what happens if we invoke the `hybridize` method.
 -->
 
-*dịch đoạn phía trên*
+Lặp lại nhiều lần việc tính lượt truyền xuôi sẽ cho ra cùng kết quả (ta bỏ qua chi tiết).
+Bây giờ hãy xem chuyện gì xảy ra nếu ta kích hoạt phương thức `hybridize`. 
 
 ```{.python .input  n=10}
 net.hybridize()
@@ -440,7 +465,9 @@ Moreover, even though the input is of `ndarray` type, the data flowing through t
 Repeating the function call leads to a surprising outcome:
 -->
 
-*dịch đoạn phía trên*
+Thay vì `ndarray`, lúc này ta sử dụng mô-đun `symbol` cho `F`.
+Thêm vào đó, mặc dù đầu vào thuộc kiểu `ndarray`, dữ liệu truyền qua mạng bây giờ được chuyển thành kiểu `symbol` như một phần của quá trình biên dịch.
+Việc gọi lại hàm `net` dẫn tới một kết quả đáng kinh ngạc:
 
 ```{.python .input  n=11}
 net(x)
@@ -457,7 +484,14 @@ Nonetheless, compilation of models is worth the effort whenever speed matters.
 The benefit can range from small percentage points to more than twice the speed, depending on the complexity of the model, the speed of the CPU and the speed and number of GPUs.
 -->
 
-*dịch đoạn phía trên*
+Điều này khá khác biệt so với những gì ta đã thấy trước đó.
+Tất cả các lệnh in được định nghĩa trong `hybrid_forward` đều bị bỏ qua.
+Thật vậy, sau khi hybrid hóa, việc thực thi lệnh `net(x)` không còn liên quan gì tới trình thông dịch của Python nữa.
+Nghĩa là bất cứ đoạn mã Python nào không cần thiết cho tính toán sẽ bị bỏ qua (chẳng hạn như các lệnh in) để việc thực thi trôi chảy hơn và hiệu năng tốt hơn.
+Và thay vì gọi Python, MXNet gọi trực tiếp back-end C++. 
+Cũng nên lưu ý rằng một số hàm không được hỗ trợ trong mô-đun `symbol` (như `asnumpy`) và các toán tử thực thi tại chỗ (*in-place*) như `a += b` và `a[:] = a + b` phải được viết lại là `a = a + b`.
+Tuy nhiên, việc biên dịch mô hình vẫn đáng để thực hiện bất cứ khi nào ta quan tâm đến tốc độ.
+Lợi ích về tốc độ này có thể tăng từ vài phần trăm tới hơn hai lần, tùy thuộc vào sự phức tạp của mô hình, tốc độ của CPU, tốc độ và số lượng GPU.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -467,7 +501,7 @@ The benefit can range from small percentage points to more than twice the speed,
 ## Summary
 -->
 
-## *dịch tiêu đề phía trên*
+## Tóm tắt
 
 <!--
 * Imperative programming makes it easy to design new models since it is possible to write code with control flow and the ability to use a large amount of the Python software ecosystem.
@@ -476,14 +510,17 @@ The benefit can range from small percentage points to more than twice the speed,
 * Models constructed by the `HybridSequential` and `HybridBlock` classes are able to convert imperative programs into symbolic programs by calling the `hybridize` method.
 -->
 
-*dịch đoạn phía trên*
+* Lập trình mệnh lệnh khiến việc thiết kế mô hình mới dễ dàng hơn vì ta có thể viết mã với luồng điều khiển và được sử dụng hệ sinh thái phần mềm của Python.
+* Lập trình ký hiệu đòi hỏi chúng ta định nghĩa và biên dịch chương trình trước khi thực thi nó. Lợi ích là hiệu năng được cải thiện.
+* MXNet có thể kết hợp những ưu điểm của cả hai phương pháp khi cần thiết.
+* Mô hình được xây dựng bởi các lớp `HybridSequential` và `HybridBlock` có thể chuyển đổi các chương trình mệnh lệnh thành các chương trình ký hiệu bằng cách gọi phương thức `hybridize`.
 
 
 <!--
 ## Exercises
 -->
 
-## *dịch tiêu đề phía trên*
+## Bài tập
 
 <!--
 1. Design a network using the `HybridConcurrent` class. Alternatively look at :ref:`sec_googlenet` for a network to compose.
@@ -492,7 +529,10 @@ The benefit can range from small percentage points to more than twice the speed,
 4. Review the models that interest you in the previous chapters and use the HybridBlock class or HybridSequential class to implement them.
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thiết kế một mạng bằng cách sử dụng lớp `HybridConcurrent`, có thể thử với GoogleNet trong :ref: `sec_googlenet`.
+2. Hãy thêm `x.asnumpy()` vào dòng đầu tiên của hàm `hybrid_forward` trong lớp HybridNet, rồi thực thi mã nguồn và quan sát các lỗi bạn gặp phải. Tại sao các lỗi này xảy ra?
+3. Điều gì sẽ xảy ra nếu ta thêm luồng điều khiển, cụ thể là các lệnh Python `if` và `for` trong hàm `hybrid_forward`?
+4. Hãy lập trình các mô hình bạn thích trong các chương trước bằng cách sử dụng lớp HybridBlock hoặc HybridSequential.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -520,15 +560,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Tâm
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
-* 
-
-<!-- Phần 4 -->
-* 
-
-<!-- Phần 5 -->
-* 
-
-<!-- Phần 6 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Mai Hoàng Long
+* Phạm Minh Đức
+* Nguyễn Văn Cường

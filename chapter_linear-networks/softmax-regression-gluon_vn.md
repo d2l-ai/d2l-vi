@@ -18,7 +18,7 @@ Giống như cách Gluon giúp việc lập trình hồi quy tuyến tính ở :
 Một lần nữa, chúng ta bắt đầu bằng việc nhập các gói thư viện.
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import gluon, init, npx
 from mxnet.gluon import nn
 npx.set_np()

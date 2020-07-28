@@ -154,7 +154,7 @@ Nếu muốn thay đổi số lượng kênh hoặc sải bước trong khối p
 Hãy cùng xem đoạn mã bên dưới.
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn
 npx.set_np()

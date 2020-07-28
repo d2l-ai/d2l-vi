@@ -29,6 +29,8 @@ chapter_convolutional-modern/index_vn
 chapter_recurrent-neural-networks/index_vn
 chapter_recurrent-modern/index_vn
 chapter_attention-mechanisms/index_vn
+chapter_optimization/index_vn
+chapter_computational-performance/index_vn
 ```
 
 ```toc

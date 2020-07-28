@@ -66,7 +66,7 @@ Các tham số thường được tinh chỉnh của khối Inception là số l
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn
 npx.set_np()

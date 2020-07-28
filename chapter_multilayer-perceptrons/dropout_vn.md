@@ -291,7 +291,7 @@ rescaling the remainder as described above (dividing the survivors by `1.0-dropo
 Trong đoạn mã nguồn bên dưới, ta lập trình hàm `dropout_layer` có chức năng bỏ đi các phần tử trong mảng `ndarray` đầu vào `X` với xác suất `dropout`, rồi chia các phần tử còn lại cho `1.0-dropout` như đã mô tả bên trên. 
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
 npx.set_np()

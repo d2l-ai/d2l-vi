@@ -69,7 +69,7 @@ Kích thước cửa sổ tích chập của tầng thứ nhất thường đư�
 Kích thước cửa sổ tích chập ở các tầng tiếp theo được cố định bằng $1 \times 1$. 
 
 ```{.python .input  n=2}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import nn
 npx.set_np()

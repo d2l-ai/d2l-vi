@@ -25,7 +25,8 @@ Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi
 
 Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản 0.8.0 mới nhất. 
 Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
-chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Trong tương lai, chúng tôi có thể cập nhật thêm thư viện `Pytorch` cho bản dịch này.
+chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Và chúng tôi cũng đang cập nhật dần những thư viện khác như `Pytorch` và `TensorFlow` vào nhằm đa dạng hóa
+lựa chọn hơn cho độc giả.
 
 Để có thể thực hiện dự án dịch cuốn sách gần 1.000 trang này, chúng tôi rất cần sự chung tay từ cộng đồng. 
 Mọi sự đóng góp đều đáng trân quý và được ghi nhận. Chúng tôi hy vọng cuốn sách sẽ được hoàn thành trong năm 2020. 
@@ -50,11 +51,11 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Recurrent Neural Networks (**Đã hoàn thành**)
 * Modern Recurrent Neural Networks (**Đã hoàn thành**)
 * Attention Mechanisms (**Đã hoàn thành**)
-* Optimization Algorithms (*Đang tiến hành*)
-* Computational Performance (*Đang tiến hành*)
+* Optimization Algorithms (**Đã hoàn thành**)
+* Computational Performance (**Đã hoàn thành**)
 * Computer Vision (*Đang tiến hành*)
-* Natural Language Processing: Pretraining
-* Natural Language Processing: Applications
+* Natural Language Processing: Pretraining (*Đang tiến hành*)
+* Natural Language Processing: Applications (*Đang tiến hành*)
 * Recommender Systems
 * Generative Adversarial Networks
 * Appendix: Mathematics for Deep Learning

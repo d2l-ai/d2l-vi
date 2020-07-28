@@ -136,7 +136,7 @@ bạn có thể thấy bên dưới đây việc lập trình Lenet bằng thư 
 Một lần nữa, ta sẽ dựa vào lớp Sequential.
 
 ```{.python .input}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, gluon, init, np, npx
 from mxnet.gluon import nn
 npx.set_np()

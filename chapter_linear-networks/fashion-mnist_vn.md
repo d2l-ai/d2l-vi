@@ -25,7 +25,7 @@ Ngày nay, MNIST được dùng trong các phép kiểm tra sơ bộ hơn là d�
 
 ```{.python .input  n=7}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import gluon
 import sys
 

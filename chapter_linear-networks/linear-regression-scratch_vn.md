@@ -28,7 +28,7 @@ Sau đó, chúng tôi sẽ giới thiệu một phương pháp triển khai ch�
 
 ```{.python .input  n=1}
 %matplotlib inline
-import d2l
+from d2l import mxnet as d2l
 from mxnet import autograd, np, npx
 import random
 npx.set_np()

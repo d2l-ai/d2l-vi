@@ -262,7 +262,7 @@ Bây giờ ta sẽ lập trình một LSTM từ đầu.
 Giống như các thử nghiệm trong các phần trước, đầu tiên ta sẽ nạp tập dữ liệu *The Time Machine*.
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import np, npx
 from mxnet.gluon import rnn
 npx.set_np()

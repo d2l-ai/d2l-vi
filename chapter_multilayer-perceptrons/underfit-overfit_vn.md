@@ -578,7 +578,7 @@ Bây giờ ta có thể khám phá một cách tương tác những khái ni�
 Để bắt đầu ta sẽ nhập các gói thư viện thường dùng.
 
 ```{.python .input  n=1}
-import d2l
+from d2l import mxnet as d2l
 from mxnet import gluon, np, npx
 from mxnet.gluon import nn
 npx.set_np()
