@@ -5,7 +5,7 @@
 # Parameter Servers
 -->
 
-# *dịch tiêu đề phía trên*
+# Máy chủ tham số
 :label:`sec_parameterserver`
 
 <!--
@@ -16,7 +16,11 @@ Details matter since different interconnects have very different bandwidth
 At the same time it is unreasonable to expect that a statistical modeler be an expert in networking and systems.
 -->
 
-*dịch đoạn phía trên*
+Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ đa GPU, có khả năng tất cả thiết bị này được dàn trải qua nhiều khay chứa và bộ chuyển mạng. 
+Điều này khiến các giải thuật huấn luyện phân tán và song song trở nên phức tạp hơn nhiều. 
+Cụ thể vấn đề là vì các kết nối khác nhau có băng thông rất khác nhau.
+(chẳng hạn, NVLink có thể cung cấp tới 100GB/s qua 6 đường kết nối với cách thiết lập thích hợp, PCIe 3.0 16x làn cung cấp 16GB/s, trong khi ngay cả Ethernet 100GbE tốc độ cao chỉ đạt 10GB/s).
+Khó có thể hy vọng rằng một nhà xây dựng mô hình thống kê đồng thời cũng là một chuyên gia về kết nối mạng và hệ thống.
 
 <!--
 The core idea of the parameter server was introduced in :cite:`Smola.Narayanamurthy.2010` in the context of distributed latent variable models.
@@ -24,13 +28,15 @@ A description of the push and pull semantics then followed in :cite:`Ahmed.Aly.G
 In the following we will motivate the components needed for efficiency.
 -->
 
-*dịch đoạn phía trên*
+Ý tưởng cốt lõi của máy chủ tham số được đề xuất từ :cite:`Smola.Narayanamurthy.2010` trong ngữ cảnh các mô hình biến ẩn phân tán. 
+Kế tiếp, một bản mô tả các ngữ nghĩa đẩy và kéo (*push and pull*) được giới thiệu trong :cite:`Ahmed.Aly.Gonzalez.ea.2012` và một mô tả về hệ thống này cùng với thư viện mã nguồn mở được công bố trong :cite:`Li.Andersen.Park.ea.2014`.
+Trong phần kế tiếp, ta sẽ tìm hiểu các thành phần cần thiết để đạt được hiệu suất cao.
 
 <!--
 ## Data Parallel Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện song song dữ liệu
 
 <!--
 Let us review the data parallel training approach to distributed training.
@@ -40,13 +46,17 @@ There are virtually no use cases (besides deep learning on graphs) where any oth
 The key aspect in it is that the aggregation of gradients occurs on GPU0 before the updated parameters are rebroadcast to all GPUs.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta hãy xem xét tổng quan phương pháp huấn luyện song song dữ liệu cho việc huấn luyện phân tán.
+Ta bắt đầu bằng cách này vì nó đơn giản hơn nhiều so với các cách khác khi triển khai thực tế.
+Gần như không có một trường hợp đặc biệt nào (ngoại trừ phương pháp học sâu trên đồ thị) mà một chiến thuật song song hoá nào khác lại thích hợp hơn vì ngày nay các GPU có khá nhiều bộ nhớ.
+:numref:`fig_parameterserver` mô tả biến thể của việc song song hóa dữ liệu mà ta thực hiện ở phần trước.
+Khía cạnh then chốt ở dạng này là việc tổng hợp gradient diễn ra trên GPU0 trước khi các tham số cập nhật được phân phát tới tất cả GPU.
 
 <!--
 ![Left: single GPU training; Right: a variant of multi-GPU training. It proceeds as follows. (1) we compute loss and gradient, (2) all gradients are aggregated on one GPU, (3) parameter update happens and the parameters are re-distributed to all GPUs.](../img/ps.svg)
 -->
 
-![*dịch chú thích ảnh phía trên*](../img/ps.svg)
+![Trái: việc huấn luyện trên một GPU; Phải: dạng biến thể của việc huấn luyện trên nhiều GPU. Quá trình diễn ra như sau. (1) Ta tính mất mát và gradient, (2) tất cả gradient được tổng hợp trên một GPU, (3) Cập nhật tham số xảy ra và các tham số đó được phân phối lại tới tất cả GPU.](../img/ps.svg)
 :label:`fig_parameterserver`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -378,7 +388,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
