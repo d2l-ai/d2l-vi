@@ -28,7 +28,11 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn tìm ra những loại ghế khác nhau trong ảnh rồi đẩy link mua ghế đó tới người dùng.
+Một phương pháp khả dĩ là đầu tiên tìm khoảng một trăm chiếc ghế nói chung, lấy một nghìn bức ảnh khác nhau chụp các góc cạnh của từng ghế, rồi huấn luyện mô hình phân loại trên bộ dữ liệu ảnh đó.
+Dù bộ dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
+Việc này dẫn tới việc overfitting với các mô hình phức tạp dựa trên Imagenet khi huấn luyện trên bộ dữ liệu nhỏ này.
+Cùng lúc đó, bởi vì lượng dữ liệu có hạn, điểm accuracy - độ chính xác của mô hình đã huấn luyện có thể không đạt như kỳ vọng.
 
 
 <!--
@@ -38,7 +42,10 @@ For example, in order to collect the ImageNet datasets, researchers have spent m
 Although, recently, data collection costs have dropped significantly, the costs still cannot be ignored.
 -->
 
-*dịch đoạn phía trên*
+Để xử lý vấn đề này, giải pháp rõ ràng là phải thu thập thêm dữ liệu.
+Tuy nhiên, thu thập và gán nhãn dữ liệu sẽ tốn tiền và thời gian.
+Ví dụ, để thu thập được bộ ImageNet, những nhà nghiên cứu đã phải chi hàng triệu đô la.
+Dù vậy, gần đây, chi phí thu thập dữ liệu đã giảm mạnh, nhưng vẫn không thể bỏ qua được.
 
 
 <!--
@@ -48,7 +55,7 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-*dịch đoạn phía trên*
+Một giải pháp khác để áp dụng transfer learning 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
