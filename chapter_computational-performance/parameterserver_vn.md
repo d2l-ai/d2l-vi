@@ -140,8 +140,8 @@ The question is how to use it most efficiently.
 -->
 
 Khi nói tới đồng bộ hóa trên các phần cứng học sâu tiên tiến, ta thường gặp những cách kết nối mạng rất riêng.
-Ví dụ, instance AWS P3.16xlarge và NVIDIA DGX-2 cùng sử dụng kết cấu kết nối của :numref:`fig_nvlink`.
-Mỗi GPU kết nối với một host CPU thông qua kết nối PCIe có tốc độ tối đa là 16 GB/s.
+Ví dụ, máy P3.16xlarge trên AWS và NVIDIA DGX-2 cùng sử dụng cấu trúc kết nối của :numref:`fig_nvlink`.
+Mỗi GPU kết nối với một CPU chủ thông qua kết nối PCIe có tốc độ tối đa là 16 GB/s.
 Thêm nữa, mỗi GPU có 6 kết nối NVLink có khả năng truyền đến 300 Gbit/s theo cả hai hướng.
 Có nghĩa là với mỗi hướng sẽ có tốc độ khoảng 18 GB/s.
 Một cách ngắn gọn, băng thông tổng hợp của NVLink là lớn hơn đáng kể so với băng thông của PCIe.
@@ -160,7 +160,7 @@ It turns out :cite:`Wang.Li.Liberty.ea.2018` that the optimal synchronization st
 Designing an efficient synchronization protocol in this case is nontrivial.
 -->
 
-Hóa ra :cite:`Wang.Li.Liberty.ea.2018` chiến thuật đồng bộ tối ưu là phân tách mạng thành hai kết nối dạng vòng và sử dụng chúng để đồng bộ dữ liệu một cách trực tiếp.
+Hóa ra theo :cite:`Wang.Li.Liberty.ea.2018`, chiến thuật đồng bộ tối ưu là phân tách mạng thành hai kết nối dạng vòng và sử dụng chúng để đồng bộ dữ liệu một cách trực tiếp.
 :numref:`fig_nvlink_twoloop` minh họa mạng có thể phân tách thành một kết nối dạng vòng (1-2-3-4-5-6-7-8-1) với băng thông NVLink gấp đôi và một kết nối dạng vòng khác (1-4-6-3-5-8-2-7-1) với băng thông bình thường.
 Thiết kế một giao thức đồng bộ hóa hiệu quả trong trường hợp này không tầm thường.
 
@@ -186,7 +186,7 @@ This is quite an astonishing result.
 -->
 
 Xét một thí nghiệm tưởng tượng như sau: cho một kết nối dạng vòng có $n$ đơn vị tính toán (hoặc GPU) ta có thể truyền các giá trị gradient từ thiết bị thứ nhất đến thiết bị thứ hai.
-Ở đó nó sẽ được thêm vào gradient cục bộ và truyền đến thiết bị thứ ba, và tiếp tục vậy.
+Ở đó nó sẽ được cộng thêm vào gradient cục bộ và rồi truyền tiếp đến thiết bị thứ ba, và tiếp tục vậy.
 Sau $n-1$ bước, gradient được tổng hợp có thể được tìm thấy tại thiết bị cuối cùng được truyền tới.
 Thế là, thời gian để tổng hợp gradient sẽ tăng tuyến tính theo số lượng thiết bị trong mạng.
 Nhưng nếu ta làm vậy, thuật toán sẽ khá không hiệu quả.
