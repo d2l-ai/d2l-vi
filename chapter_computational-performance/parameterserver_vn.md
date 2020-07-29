@@ -309,16 +309,16 @@ They, too, satisfy many similar characteristics, in particular when it comes to 
 Điều này cho phép ta định nghĩa hai phép toán sau: đẩy, để cộng dồn gradient, và kéo, để lấy lại gradient được cộng dồn.
 Vì có nhiều tập gradient (do có nhiều tầng), ta cần gán chỉ số cho gradient bằng khóa $i$.
 Việc này tương tự như lưu trữ (khóa, giá trị), ví dụ, phương pháp được giới thiệu trong Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` không phải là ngẫu nhiên.
-Chúng thỏa mãn rất nhiều tính chất, đặc biệt khi phân bổ các tham số cho nhiều máy chủ.
+Chúng thỏa mãn rất nhiều tính chất, đặc biệt khi phân phối các tham số cho nhiều máy chủ.
 
 <!--
 * **push(key, value)** sends a particular gradient (the value) from a worker to a common storage. There the parameter is aggregated, e.g., by summing it up.
 * **pull(key, value)** retrieves an aggregate parameter from common storage, e.g., after combining the gradients from all workers.
 -->
 
-* **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ worker đến thiết bị lưu trữ.
+* **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ máy thợ đến thiết bị lưu trữ.
 Tại đây các tham số được tổng hợp lại, ví dụ bằng cách lấy tổng.
-* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả máy thợ (*worker*). 
+* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả máy thợ. 
 
 <!--
 By hiding all the complexity about synchronization behind a simple push and pull operation we can decouple the concerns of the statistical modeler 
