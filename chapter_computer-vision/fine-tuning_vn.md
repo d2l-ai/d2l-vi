@@ -232,7 +232,7 @@ test_augs = gluon.data.vision.transforms.Compose([
 ### Defining and Initializing the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa và Khởi tạo Mô hình
 
 
 <!--
@@ -241,7 +241,9 @@ Here, we specify `pretrained=True` to automatically download and load the pre-tr
 The first time they are used, the model parameters need to be downloaded from the Internet.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng ResNet-18 đã được huấn luyện trước trên tập dữ liệu ImageNet làm mô hình gốc.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện trước.
+Ở lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 
 
@@ -258,7 +260,11 @@ The member variable `output` of source model is given below.
 As a fully connected layer, it transforms ResNet's final global average pooling layer output into 1000 class output on the ImageNet dataset.
 -->
 
-*dịch đoạn phía trên*
+Mô hình gốc được huấn luyện trước bao gồm hai biến thành viên: `features` và `output`.
+`features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
+Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
+Biến thành viên `output` của mô hình gốc được xác định như ở dưới.
+Giống như một tầng liên kết đầy đủ, nó biến đổi tầng gộp trung bình toàn cục ở cuối đầu ra của ResNet thành một lớp đầu ra có 1000 hạng mục trên tập dữ liệu ImageNet.
 
 
 ```{.python .input  n=7}
@@ -276,7 +282,13 @@ In contrast, model parameters in the member variable `output` are randomly initi
 Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning rate of $10\eta$ to update the model parameters in the member variable `output`.
 -->
 
-*dịch đoạn phía trên*
+Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình mục tiêu.
+Mạng này được định nghĩa giống như mô hình gốc được huấn luyện trước, tuy nhiên số đầu ra cuối cùng bằng với số hạng mục trong tập dữ liệu mục tiêu.
+Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
+Do các tham số mô hình trong `features` được tính trong quá trình huấn luyện trước trên tập dữ liệu ImageNet, chúng đủ để thoả mãn nhu cầu sử dụng của ta.
+Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
+Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
+Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ và ta sử dụng tốc độ học $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
 
 
 
@@ -435,7 +447,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
 * 
