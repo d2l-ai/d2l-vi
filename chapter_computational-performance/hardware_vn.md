@@ -287,13 +287,13 @@ After all, each head reads a track of bits, hence the bit rate only scales with 
 As a result HDDs are quickly becoming relegated to archival storage and low-grade storage for very large datasets.
 -->
 
-Để hiểu điều thứ hai, hãy xem xét thực tế rằng ổ cứng quay với tốc độ khoảng 7,200 vòng/phút.
-Nếu tốc độ này cao hơn nhiều, các đĩa sẽ vỡ tan do tác dụng của lực ly tâm.
+Để hiểu về nhược điểm thứ hai, hãy xem xét thực tế rằng ổ cứng quay với tốc độ khoảng 7,200 vòng/phút.
+Nếu tốc độ này cao hơn, các đĩa sẽ vỡ tan do tác dụng của lực ly tâm.
 Điều này dẫn đến một nhược điểm lớn khi truy cập vào một khu vực cụ thể trên đĩa: chúng ta cần đợi cho đến khi đĩa quay đúng vị trí (chúng ta có thể di chuyển đầu kim nhưng không được tăng tốc các đĩa).
-Do đó, có thể mất hơn 8 mili-giây cho đến khi dữ liệu được yêu cầu sẵn sàng.
+Do đó, có thể mất hơn 8ms cho đến khi truy cập được dữ liệu yêu cầu.
 Vì thế mà ta hay nói ổ cứng có thể hoạt động ở mức xấp xỉ 100 IOP.
 Con số này về cơ bản vẫn không thay đổi trong hai thập kỷ qua.
-Tệ hơn nữa, việc tăng băng thông cũng khó khăn không kém (ở mức độ 100-200 MB/giây). 
+Tệ hơn nữa, việc tăng băng thông cũng khó khăn không kém (ở mức độ 100-200 MB/s). 
 Rốt cuộc, mỗi đầu đọc một rãnh bit, do đó tốc độ bit chỉ tăng theo tỷ lệ căn bậc hai của mật độ thông tin.
 Kết quả là các ổ cứng đang nhanh chóng biến thành nơi lưu trữ cấp thấp cho các bộ dữ liệu rất lớn. 
 
@@ -309,8 +309,8 @@ Indeed, they come with a number of caveats, due to the way SSDs are designed.
 
 **Ổ cứng thể rắn (SSD)** sử dụng bộ nhớ Flash để liên tục lưu trữ thông tin.
 Điều này cho phép truy cập *nhanh hơn nhiều* vào các bản ghi đã được lưu trữ.
-SSD hiện đại có thể hoạt động ở mức 100.000 đến 500.000 IOP, tức là nhanh hơn gấp 1000 lần so với ổ cứng HDD.
-Hơn nữa, băng thông của chúng có thể đạt tới 1-3GB/giây nghĩa là nhanh hơn 10 lần so với ổ cứng.
+SSD hiện đại có thể hoạt động ở mức 100,000 đến 500,000 IOP, tức là nhanh hơn gấp 1000 lần so với ổ cứng HDD.
+Hơn nữa, băng thông của chúng có thể đạt tới 1-3GB/s nghĩa là nhanh hơn 10 lần so với ổ cứng.
 Những cải tiến này nghe có vẻ tốt đến mức khó tin.
 Thật vậy, và SSD cũng đi kèm với một số hạn chế do cách mà chúng được thiết kế.
 
@@ -342,7 +342,7 @@ Các thuật toán bảo vệ mức hao mòn có thể phân bổ đều sự xu
 Dù vậy, vẫn không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
 * Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
 Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động tăng cường - *Non Volatile Memory enhanced*), có thể sử dụng lên tới 4 làn PCIe. 
-Băng thông có thể lên tới 8GB/giây trên PCIe 4.0.
+Băng thông có thể lên tới 8GB/s trên PCIe 4.0.
 
 <!--
 **Cloud Storage** provides a configurable range of performance.
@@ -422,7 +422,7 @@ Front-end tải các lệnh và dự đoán nhánh nào sẽ được thực hi�
 Sau đó các lệnh được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
 Thay vào đó, các lệnh phức tạp có thể được giải mã thành một tập hợp các phép tính cấp thấp hơn.
-Tiếp đó chúng được xử lý bằng một lõi thực. 
+Tiếp đó chúng được xử lý bằng một lõi thực thi. 
 Các bộ xử lý đời mới thường có khả năng thực hiện đồng thời nhiều câu lệnh.
 Ví dụ, lõi ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hiện lên đến 8 phép tính cùng một lúc.
 
