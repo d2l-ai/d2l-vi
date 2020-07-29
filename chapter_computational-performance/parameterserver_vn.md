@@ -94,7 +94,7 @@ Con số thường thấy hơn là ở trong khoảng 1-10 GbE với băng thôn
 Vì các CPU thường có quá ít làn PCIe để kết nối với toàn bộ GPU một cách trực tiếp
 (ví dụ, CPU thông dụng của Intel có 24 làn) ta cần một [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches) (mạch đa hợp, mạch dồn kênh).
 Băng thông tới CPU qua cổng PCIe làn 16x thế hệ 3 là 16GB/s.
-Đây cũng là tốc độ mà *mỗi* GPU được kết nối với bộ chuyển mạch. Điều này có nghĩa là việc truyền tin giữa CPU và các GPU sẽ hiệu quả hơn.
+Đây cũng là tốc độ mà *mỗi* GPU được kết nối với bộ chuyển mạch. Điều này có nghĩa là việc truyền tin trực tiếp giữa các GPU sẽ hiệu quả hơn.
 
 <!--
 ![A 4-way GPU server.](../img/bw-hierarchy.svg)
@@ -115,7 +115,7 @@ In short, depending on how we synchronize parameters the same operation can take
 :numref:`fig_ps_distributed` depicts the different strategies for exchanging parameters.
 -->
 
-Để tiếp tục, hãy giả định rằng ta cần 160MB để lưu trữ các gradient.
+Để minh họa luận điểm trên, giả sử ta cần 160MB để lưu trữ các gradient.
 Trong trường hợp này, sẽ tốn 30ms để gửi các giá trị gradient này từ 3 thiết bị GPU đến chiếc GPU còn lại (mỗi đợt truyền tin tốn 10ms = 160MB / 16GB/s).
 Và thêm 30ms nữa để truyền lại các vector trọng số, tổng cộng tốn 60ms.
 Nếu ta gửi toàn bộ dữ liệu đến CPU sẽ phát sinh thêm 40ms vì *mỗi* GPU cần gửi dữ liệu đến CPU, và tính cả thời gian truyền lại các vector trọng số sẽ tốn 80ms.
