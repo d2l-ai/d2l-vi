@@ -66,7 +66,7 @@ Nhìn lại, ta không có lý do gì đặc biệt khi quyết định tổng h
 Dù sao thì, ta cũng có thể quyết định tổng hợp gradient trên CPU.
 Ta thực tế còn có thể quyết định tổng hợp một số tham số trên một GPU và phần còn lại được tổng hợp trên một GPU khác.
 Miễn là thuật toán tối ưu hỗ trợ điều này, không có lý do gì mà ta không thể thực hiện nó cả.
-Ví dụ, giả sử ta có bốn vector tham số $\mathbf{v}_1, \ldots, \mathbf{v}_4$ với các gradient tương ứng là $\mathbf{g}_1, \ldots, \mathbf{g}_4$, ta có thể tổng hợp gradient của mỗi tham số về một GPU.
+Ví dụ, giả sử ta có bốn vector tham số $\mathbf{v}_1, \ldots, \mathbf{v}_4$ với các gradient tương ứng là $\mathbf{g}_1, \ldots, \mathbf{g}_4$, ta có thể tổng hợp gradient của mỗi tham số trên một GPU.
 
 
 $$\mathbf{g}_{i} = \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ij}$$
@@ -89,7 +89,7 @@ Cách lý luận này có thể rất tùy tiện và phù phiếm.
 Sau cùng thì, phần toán xuyên suốt bên dưới vẫn không thay đổi.
 Nhưng ở đây, chúng ta đang làm việc với các thiết bị phần cứng vật lý với các bus có những băng thông khác nhau như đã thảo luận trong :numref:`sec_hardware`.
 Xét một máy chủ GPU 4-chiều như miêu tả trong :numref:`fig_bw_hierarchy`.
-Nếu nó được kết nối cực kỳ tốt, nó có thể sở hữu một card mạng với 100 GbE.
+Nếu nó được kết nối cực kỳ tốt, nó có thể sở hữu một card mạng tốc độ 100 GbE.
 Con số thường thấy hơn là ở trong khoảng 1-10 GbE với băng thông hiệu dụng từ 100MB/s đến 1GB/s.
 Vì các CPU thường có quá ít làn PCIe để kết nối với toàn bộ GPU một cách trực tiếp
 (ví dụ, CPU thông dụng của Intel có 24 làn) ta cần một [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches) (mạch đa hợp, mạch dồn kênh).
@@ -139,7 +139,7 @@ See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horov
 -->
 
 Lưu ý rằng ta còn một công cụ nữa để sử dụng khi nhắc tới việc cải thiện hiệu suất: trong một mạng sâu sẽ cần một khoảng thời gian để tính toán toàn bộ gradient từ trên xuống dưới.
-Ta có thể bắt đầu đồng bộ gradient cho một vài nhóm tham số kể cả khi chúng ta đang bận tính gradient cho những nhóm khác (các chi tiết kỹ thuật để thực hiện việc này khá là rườm rà).
+Ta có thể bắt đầu đồng bộ gradient cho một vài nhóm tham số kể cả khi chúng ta đang bận tính gradient cho những nhóm khác (các chi tiết kỹ thuật để thực hiện việc này khá phức tạp).
 Xem qua :cite:`Sergeev.Del-Balso.2018` để biết chi tiết cách làm điều này trong [Horovod](https://github.com/horovod/horovod).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
