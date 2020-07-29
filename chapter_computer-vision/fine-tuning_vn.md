@@ -297,14 +297,14 @@ finetune_net.output.collect_params().setattr('lr_mult', 10)
 ### Fine Tuning the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Tinh chỉnh Mô hình
 
 
 <!--
 We first define a training function `train_fine_tuning` that uses fine tuning so it can be called multiple times.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta định nghĩa hàm huấn luyện `train_fine_tuning` sử dụng phương thức tinh chỉnh để có thể được gọi nhiều lần.
 
 
 ```{.python .input  n=9}
@@ -329,7 +329,8 @@ We set the learning rate in the `Trainer` instance to a smaller value, such as 0
 Based on the previous settings, we will train the output layer parameters of the target model from scratch using a learning rate ten times greater.
 -->
 
-*dịch đoạn phía trên*
+Ta gán giá trị tốc độ học nhỏ cho đối tượng `Trainer`, ví dụ như 0.01, để có thể tinh chỉnh các tham số mô hình thu được trong quá trình huấn luyện trước.
+Dựa vào các sự điều chỉnh từ trước, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện các tham số của tầng đầu ra của mô hình mục tiêu từ đầu.
 
 
 
@@ -343,7 +344,8 @@ For comparison, we define an identical model, but initialize all of its model pa
 Since the entire model needs to be trained from scratch, we can use a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+Để so sánh, ta định nghĩa một mô hình y hệt, tuy nhiên tất cả các tham số mô hình của nó được khởi tạo một cách ngẫu nhiên.
+Do toàn bộ mô hình cần được huấn luyện từ đầu, ta có thể sử dụng tốc độ học lớn hơn.
 
 
 ```{.python .input  n=12}
@@ -357,7 +359,7 @@ train_fine_tuning(scratch_net, 0.1)
 As you can see, the fine-tuned model tends to achieve higher precision in the same epoch because the initial values of the parameters are better.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, với số epoch như nhau, giá trị precision của mô hình tinh chỉnh có xu hướng cao hơn do giá trị ban đầu của các tham số tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -438,7 +440,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
 * 
