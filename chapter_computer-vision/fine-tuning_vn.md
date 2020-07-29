@@ -330,7 +330,7 @@ Based on the previous settings, we will train the output layer parameters of the
 -->
 
 Ta gán giá trị tốc độ học nhỏ cho đối tượng `Trainer`, ví dụ như 0.01, để có thể tinh chỉnh các tham số mô hình thu được trong quá trình huấn luyện trước.
-Dựa vào các sự điều chỉnh từ trước, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện các tham số của tầng đầu ra của mô hình mục tiêu từ đầu.
+Dựa vào các quyết định ở trên, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện các tham số của tầng đầu ra của mô hình mục tiêu từ đầu.
 
 
 
