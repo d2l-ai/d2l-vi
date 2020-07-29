@@ -118,7 +118,7 @@ In short, depending on how we synchronize parameters the same operation can take
 Để tiếp tục, hãy giả định rằng ta cần 160MB để lưu trữ các gradient.
 Trong trường hợp này, sẽ tốn 30ms để gửi các giá trị gradient này từ 3 thiết bị GPU đến chiếc GPU còn lại (mỗi đợt truyền tin tốn 10ms = 160MB / 16GB/s).
 Và thêm 30ms nữa để truyền lại các vector trọng số, tổng cộng tốn 60ms.
-Nếu ta gửi toàn bộ dữ liệu đến CPU sẽ phát sinh thêm 40ms với *mỗi* GPU cần gửi dữ liệu đến CPU, khiến bốn GPU sẽ tốn lên tới 80ms.
+Nếu ta gửi toàn bộ dữ liệu đến CPU sẽ phát sinh thêm 40ms vì *mỗi* GPU cần gửi dữ liệu đến CPU, và tính cả thời gian truyền lại các vector trọng số sẽ tốn 80ms.
 Sau cùng, giả định rằng ta có thể chia nhỏ các giá trị gradient thành bốn phần, mỗi phần 40MB.
 Giờ ta có thể tổng hợp mỗi phần trên một GPU riêng biệt *một cách đồng thời* vì bộ chuyển mạch PCIe cho phép sử dụng toàn bộ băng thông cho mỗi kết nối.
 Thay vì 30ms như trước, quá trình này chỉ tốn 7.5ms và 15ms cho toàn bộ quá trình đồng bộ.
