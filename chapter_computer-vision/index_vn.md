@@ -11,7 +11,7 @@ In recent years, deep learning technology has greatly enhanced computer vision s
 It can be said that the most advanced computer vision applications are nearly inseparable from deep learning.
 -->
 
-Nhiều ứng dụng trong lĩnh vực thị giác máy tính có liên quan mật thiết đến cuộc sống hàng ngày của chúng ta, trong hiện tại và tương lai, từ chẩn đoán y tế, xe không người lái, camera giám sát tới bộ lọc thông minh.
+Nhiều ứng dụng trong lĩnh vực thị giác máy tính có liên quan mật thiết đến cuộc sống hàng ngày của chúng ta trong hiện tại và tương lai, từ chẩn đoán y tế, xe không người lái, camera giám sát tới bộ lọc thông minh.
 Trong những năm gần đây, công nghệ học sâu đã nâng cao đáng kể hiệu năng của hệ thống thị giác máy tính.
 Có thể nói rằng các ứng dụng thị giác máy tính tiên tiến nhất gần như không thể tách rời khỏi học sâu.
 
