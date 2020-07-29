@@ -143,7 +143,7 @@ Khi nói tới đồng bộ hóa trên các phần cứng học sâu tiên tiế
 Ví dụ, máy P3.16xlarge trên AWS và NVIDIA DGX-2 cùng sử dụng cấu trúc kết nối của :numref:`fig_nvlink`.
 Mỗi GPU kết nối với một CPU chủ thông qua kết nối PCIe có tốc độ tối đa là 16 GB/s.
 Thêm nữa, mỗi GPU có 6 kết nối NVLink có khả năng truyền đến 300 Gbit/s theo cả hai hướng.
-Có nghĩa là với mỗi hướng sẽ có tốc độ khoảng 18 GB/s.
+Có nghĩa là với mỗi kết nối sẽ có tốc độ khoảng 18 GB/s mỗi hướng.
 Một cách ngắn gọn, băng thông tổng hợp của NVLink là lớn hơn đáng kể so với băng thông của PCIe.
 Câu hỏi đặt ra là làm sao để tận dụng triệt để điều đó.
 
@@ -185,11 +185,11 @@ This is quite an astonishing result.
 :numref:`fig_ringsync` illustrates the sequence of steps on $n=4$ nodes.
 -->
 
-Xét một thí nghiệm tưởng tượng như sau: cho một kết nối dạng vòng có $n$ đơn vị tính toán (hoặc GPU) ta có thể truyền các giá trị gradient từ thiết bị thứ nhất đến thiết bị thứ hai.
+Xét một thí nghiệm tưởng tượng như sau: cho một kết nối dạng vòng có $n$ đơn vị tính toán (GPU) ta có thể truyền các giá trị gradient từ thiết bị thứ nhất đến thiết bị thứ hai.
 Ở đó nó sẽ được cộng thêm vào gradient cục bộ và rồi truyền tiếp đến thiết bị thứ ba, và tiếp tục vậy.
 Sau $n-1$ bước, gradient được tổng hợp có thể được tìm thấy tại thiết bị cuối cùng được truyền tới.
 Thế là, thời gian để tổng hợp gradient sẽ tăng tuyến tính theo số lượng thiết bị trong mạng.
-Nhưng nếu ta làm vậy, thuật toán sẽ khá không hiệu quả.
+Nhưng nếu ta làm vậy, thuật toán sẽ không được hiệu quả.
 Dù sao thì, tại mọi thời điểm chỉ có một thiết bị thực hiện việc truyền tin.
 Chuyện gì sẽ xảy ra nếu ta chia các giá trị gradient thành $n$ khúc và bắt đầu đồng bộ khúc thứ $i$ tại thiết bị $i$.
 Vì mỗi khối có kích thước $1/n$ thời gian tổng cộng giờ sẽ là $(n-1)/n \approx 1$.
