@@ -15,8 +15,8 @@ For instance, :numref:`fig_asyncgraph` in :numref:`sec_async` initializes two va
 Consequently the system can choose to execute them in parallel.
 -->
 
-MXNet tự động xây dựng các đồ thị tính toán ở back-end.
-Sử dụng đồ thị tính toán, hệ thống biết được tất cả các thành phần phụ thuộc và có thể thực hiện song song có chọn lọc các tác vụ không liên quan đến nhau để cải thiện tốc độ.
+MXNet tự động xây dựng các đồ thị tính toán (*computational graph*) ở back-end.
+Sử dụng đồ thị tính toán, hệ thống nhận biết được tất cả thành phần phụ thuộc, từ đó thực hiện song song có chọn lọc các tác vụ không liên quan đến nhau để cải thiện tốc độ.
 Chẳng hạn, :numref:`fig_asyncgraph` trong :numref:`sec_async` khởi tạo hai biến độc lập.
 Do đó hệ thống có thể chọn để thực hiện chúng song song với nhau.
 
@@ -36,8 +36,8 @@ We begin by importing the required packages and modules. Note that we need at le
 Thông thường, một toán tử đơn sẽ sử dụng toàn bộ tài nguyên tính toán trên tất cả các CPU hoặc trên một CPU đơn.
 Chẳng hạn như toán tử `dot` sẽ sử dụng tất cả các nhân (và các luồng) của toàn bộ các CPUs, thậm chí là nhiều bộ vi xử lý trên một máy tính nếu có.
 Điều tương tự cũng xảy ra trên một bộ GPU đơn.
-Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn xử lý. 
-Với các thiết bị đa xử lý thì nó lại thật sự có giá trị hơn nhiều.
+Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn nhân/đơn luồng. 
+Với các thiết bị đa xử lý thì nó lại có giá trị hơn rất nhiều.
 Trong khi xử lý song song thường liên quan đến các GPU, sử dụng thêm các vi xử lý CPU cục bộ trên máy sẽ tăng hiệu năng tính toán lên chút đỉnh.
 Tham khảo :cite:`Hadjis.Zhang.Motliagkas.ea.2016`, một bài báo tập trung về việc huấn luyện mô hình thị giác máy tính kết hợp một GPU và một CPU.
 Với sự thuận tiện từ một framework cho phép song song hóa một cách tự động, ta có thể thực hiện việc đó chỉ với vài dòng mã lệnh Python.
@@ -142,7 +142,7 @@ Let us simulate this by computing on the GPU and then copying the results back t
 -->
 
 Trong nhiều trường hợp ta cần di chuyển dữ liệu giữa các thiết bị như CPU và GPU, hoặc giữa các GPU với nhau.
-Điều này xảy ra, chẳng hạn như khi cần phải tổng hợp các gradient trên nhiều GPU khi ta muốn thực hiện tối ưu hóa phân tán.
+Điều này xảy ra, chẳng hạn như khi ta cần tổng hợp gradient trên các thẻ tăng tốc (*multiple accelerator cards*) khi cần thực hiện tối ưu hóa phân tán.
 Hãy cùng mô phỏng điều này bằng việc tính toán trên GPU và sau đó sao chép kết quả trở lại CPU.
 
 
@@ -168,8 +168,8 @@ Hence it works to our advantage to start using PCI-Express bus bandwidth while t
 Removing `waitall` between both parts allows us to simulate this scenario.
 -->
 
-Điều này hơi kém hiệu quả một chút. Lưu ý rằng ta có thể bắt đầu sao chép một vài phần đã tính xong của `y` đến CPU trong khi các phần còn lại của `y` vẫn đang được tính toán.
-Tình huống này có thể xảy ra khi ta tính toán gradient (lan truyền ngược) trên một minibatch.
+Điều này có phần không hiệu quả. Lưu ý rằng ta có thể bắt đầu sao chép một vài phần đã tính xong của `y` đến CPU trong khi các phần còn lại của `y` vẫn đang được tính toán.
+Tình huống này có thể xảy ra khi ta tính gradient (lan truyền ngược) trên một minibatch.
 Gradient của một vài tham số sẽ được tính xong sớm hơn so với các tham số khác.
 Do đó sẽ có lợi nếu ta bắt đầu truyền dữ liệu về bằng bus băng thông PCI-Express trong khi GPU vẫn còn đang chạy.
 Việc bỏ đi `waitall` giữa các phần cho phép ta mô phỏng tình huống này.
@@ -191,7 +191,7 @@ As noted above, there is a dependency between computation and communication: `y[
 Fortunately, the system can copy `y[i-1]` while computing `y[i]` to reduce the total running time.
 -->
 
-Thời gian cần cho cả hai thao tác thì (như mong đợi) ít hơn hẳn so với tổng thời gian thực hiện từng thao tác đơn lẻ.
+Thời gian cần cho cả hai thao tác ít hơn hẳn (như mong đợi) so với tổng thời gian thực hiện từng thao tác đơn lẻ.
 Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một tài nguyên khác: bus giữa CPU và GPU.
 Thực tế, ta có thể vừa tính toán và giao tiếp trên cả hai thiết bị cùng một lúc.
 Như đã lưu ý phía trên, có một sự phụ thuộc giữa việc tính toán và giao tiếp: `y[i]` phải được tính xong trước khi ta có thể sao chép nó qua CPU.
@@ -208,8 +208,8 @@ This is where it is advantageous to have a graph based compute backend for optim
 -->
 
 Để tổng kết phần này, ta xét một ví dụ minh hoạ đồ thị tính toán và các quan hệ phụ thuộc của nó trong một mạng MLP hai tầng đơn giản khi huấn luyện trên một CPU và hai GPU, như miêu tả trong :numref:`fig_twogpu`.
-Việc tự định thời chương trình tính toán song song từ mô tả trên là khá vất vả.
-Do đó, đây chính là cơ hội thuận lợi để sử dụng back-end tính toán dựa trên đồ thị để tối ưu.
+Có thể thấy tự định thời chương trình tính toán song song từ mô tả trên sẽ khá phức tạp.
+Do đó, việc sử dụng back-end tính toán dựa trên đồ thị là một lợi thế để tối ưu hóa hiệu năng.
 
 <!--
 ![Two layer MLP on a CPU and 2 GPUs.](../img/twogpu.svg)
@@ -229,7 +229,7 @@ Do đó, đây chính là cơ hội thuận lợi để sử dụng back-end tí
 -->
 
 * Các hệ thống hiện đại thường bao gồm nhiều thiết bị, ví dụ như nhiều GPU và CPU. Các thiết bị này có thể được sử dụng song song, một cách bất đồng bộ.
-* Các hệ thống hiện đại thường cũng có nhiều tài nguyên để giao tiếp, ví dụ như kết nối PCI Express, bộ nhớ (thường là SSD hoặc thông qua mạng), và băng thông mạng. Chúng có thể được sử dụng song song để đạt hiệu năng tối đa.
+* Các hệ thống hiện đại cũng có nhiều nguồn tài nguyên phục vụ cho giao tiếp, ví dụ như kết nối PCI Express, bộ nhớ (thường là SSD hoặc thông qua mạng), và băng thông mạng. Chúng có thể được sử dụng song song để đạt hiệu năng tối đa.
 * Back-end có thể cải thiện hiệu năng thông qua việc tự động tính toán và giao tiếp song song.
 
 
@@ -248,7 +248,7 @@ Do đó, đây chính là cơ hội thuận lợi để sử dụng back-end tí
 2. Khi khối lượng công việc của một thao tác đủ nhỏ, song song hoá có thể hữu ích ngay cả khi chạy trên CPU hay GPU đơn. Thiết kế một thí nghiệm để kiểm chứng.
 3. Thiết kế một thí nghiệm sử dụng tính toán song song trên CPU, GPU và giao tiếp giữa cả hai thiết bị.
 4. Sử dụng một trình gỡ lỗi (*debugger*) như Nsight của NVIDIA để kiểm chứng rằng đoạn mã của bạn hoạt động hiệu quả.
-5. Thiết kế các tác vụ tính toán chứa nhiều dữ liệu có quan hệ phụ thuộc phức tạp hơn nữa, và thực hiện thí nghiệm để xem rằng liệu bạn có thể thu lại kết quả đúng trong khi vẫn cải thiện hiệu năng.
+5. Thiết kế các tác vụ tính toán chứa nhiều dữ liệu có quan hệ phụ thuộc phức tạp hơn, và thực hiện các thí nghiệm để xem liệu bạn có thể thu lại kết quả chính xác trong khi vẫn cải thiện hiệu năng.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -271,6 +271,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 2 -->
 * Trần Yến Thy
