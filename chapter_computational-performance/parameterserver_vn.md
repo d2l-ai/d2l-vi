@@ -62,11 +62,11 @@ Provided that the optimization algorithm supports this, there is no real reason 
 For instance, if we have four parameter vectors $\mathbf{v}_1, \ldots, \mathbf{v}_4$ with associated gradients $\mathbf{g}_1, \ldots, \mathbf{g}_4$ we could aggregate the gradients on one GPU each.
 -->
 
-Nhìn lại, quyết định tổng hợp gradient trên GPU0 khá là đặc biệt.
+Nhìn lại, ta không có lý do gì đặc biệt khi quyết định tổng hợp gradient trên GPU0.
 Dù sao thì, ta cũng có thể quyết định tổng hợp gradient trên CPU.
 Ta thực tế còn có thể quyết định tổng hợp một số tham số trên một GPU và phần còn lại được tổng hợp trên một GPU khác.
-Biết được rằng thuật toán tối ưu hỗ trợ làm việc này, không có lý do gì để ta không thực hiện nó cả.
-Ví dụ, neesy ta có bốn vector tham số $\mathbf{v}_1, \ldots, \mathbf{v}_4$ với các gradient tương ứng là $\mathbf{g}_1, \ldots, \mathbf{g}_4$, ta có thể tổng hợp gradient của mỗi tham số về một GPU.
+Miễn là thuật toán tối ưu hỗ trợ điều này, không có lý do gì mà ta không thể thực hiện nó cả.
+Ví dụ, giả sử ta có bốn vector tham số $\mathbf{v}_1, \ldots, \mathbf{v}_4$ với các gradient tương ứng là $\mathbf{g}_1, \ldots, \mathbf{g}_4$, ta có thể tổng hợp gradient của mỗi tham số về một GPU.
 
 
 $$\mathbf{g}_{i} = \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ij}$$
@@ -90,10 +90,10 @@ Sau cùng thì, phần toán xuyên suốt bên dưới vẫn không thay đổi
 Nhưng ở đây, chúng ta đang làm việc với các thiết bị phần cứng vật lý với các bus có những băng thông khác nhau như đã thảo luận trong :numref:`sec_hardware`.
 Xét một máy chủ GPU 4-chiều như miêu tả trong :numref:`fig_bw_hierarchy`.
 Nếu nó được kết nối cực kỳ tốt, nó có thể sở hữu một card mạng với 100 GbE.
-Con số chi tiết hơn là ở trong khoảng 1-10 GbE với băng thông hiệu dụng từ 100MB/s đến 1GB/s.
+Con số thường thấy hơn là ở trong khoảng 1-10 GbE với băng thông hiệu dụng từ 100MB/s đến 1GB/s.
 Vì các CPU thường có quá ít làn PCIe để kết nối với toàn bộ GPU một cách trực tiếp
 (ví dụ, CPU thông dụng của Intel có 24 làn) ta cần một [multiplexer](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches) (mạch đa hợp, mạch dồn kênh).
-Băng thông của một CPU với một 16x Gen3 là 16GB/s.
+Băng thông tới CPU qua cổng PCIe làn 16x thế hệ 3 là 16GB/s.
 Đây cũng là tốc độ mà *mỗi* GPU được kết nối với bộ chuyển mạch. Điều này có nghĩa là việc truyền tin giữa CPU và các GPU sẽ hiệu quả hơn.
 
 <!--
@@ -123,7 +123,7 @@ Sau cùng, giả định rằng ta có thể chia nhỏ các giá trị gradient
 Giờ ta có thể tổng hợp mỗi phần trên một GPU riêng biệt *một cách đồng thời* vì bộ chuyển mạch PCIe cho phép sử dụng toàn bộ băng thông cho mỗi kết nối.
 Thay vì 30ms như trước, quá trình này chỉ tốn 7.5ms và 15ms cho toàn bộ quá trình đồng bộ.
 Nói ngắn gọn, phụ thuộc vào cách các tham số được đồng bộ với nhau khiến cho quá trình này có thể chiếm từ 15ms đến 80ms.
-:numref:`fig_ps_distributed` minh họa sự khác biệt giữa các chiến lượt trao đổi tham số khác nhau.
+:numref:`fig_ps_distributed` minh họa sự khác biệt giữa các chiến lược trao đổi tham số khác nhau.
 
 <!--
 ![Synchronization strategies.](../img/ps-distributed.svg)
@@ -139,7 +139,7 @@ See e.g., :cite:`Sergeev.Del-Balso.2018` for details on how to do this in [Horov
 -->
 
 Lưu ý rằng ta còn một công cụ nữa để sử dụng khi nhắc tới việc cải thiện hiệu suất: trong một mạng sâu sẽ cần một khoảng thời gian để tính toán toàn bộ gradient từ trên xuống dưới.
-Ta có thể bắt đầu đồng bộ gradient cho một vài nhóm tham số kể cả khi chúng ta đang bận tính gradient cho những nhóm khác (chi tiết kỹ thuật cho nó cũng khá liên quan).
+Ta có thể bắt đầu đồng bộ gradient cho một vài nhóm tham số kể cả khi chúng ta đang bận tính gradient cho những nhóm khác (các chi tiết kỹ thuật để thực hiện việc này khá là rườm rà).
 Xem qua :cite:`Sergeev.Del-Balso.2018` để biết chi tiết cách làm điều này trong [Horovod](https://github.com/horovod/horovod).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -405,6 +405,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 * 
