@@ -264,7 +264,7 @@ Mô hình gốc được huấn luyện trước bao gồm hai biến thành vi�
 `features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
 Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
 Biến thành viên `output` của mô hình gốc được xác định như ở dưới.
-Giống như một tầng liên kết đầy đủ, nó biến đổi tầng gộp trung bình toàn cục ở cuối đầu ra của ResNet thành một lớp đầu ra có 1000 hạng mục trên tập dữ liệu ImageNet.
+Giống như một tầng liên kết đầy đủ, nó biến đổi tầng gộp trung bình toàn cục ở cuối đầu ra của ResNet thành một lớp đầu ra có 1000 lớp trên tập dữ liệu ImageNet.
 
 
 ```{.python .input  n=7}
@@ -283,7 +283,7 @@ Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning 
 -->
 
 Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình mục tiêu.
-Mạng này được định nghĩa giống như mô hình gốc được huấn luyện trước, tuy nhiên số đầu ra cuối cùng bằng với số hạng mục trong tập dữ liệu mục tiêu.
+Mạng này được định nghĩa giống như mô hình gốc được huấn luyện trước, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu mục tiêu.
 Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
 Do các tham số mô hình trong `features` được tính trong quá trình huấn luyện trước trên tập dữ liệu ImageNet, chúng đủ để thoả mãn nhu cầu sử dụng của ta.
 Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
