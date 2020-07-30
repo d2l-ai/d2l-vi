@@ -327,7 +327,7 @@ In the next section we will experiment with such a (key,value) store in practice
 -->
 
 Bằng cách ẩn đi tất cả độ phức tạp khi đồng bộ sau các phép toán đơn giản là đẩy và kéo, ta có thể giảm thiểu sự lo âu của các nhà mô hình thống kê,
-những người muốn thể hiện việc tối ưu một cách đơn giản, và các kỹ sư hệ thống, những người cần giản quyết sự phức tạp sẵn có khi đồng bộ hóa phân tán.
+những người muốn thể hiện việc tối ưu một cách đơn giản, và các kỹ sư hệ thống, những người cần giải quyết sự phức tạp sẵn có trong đồng bộ hóa phân tán.
 Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, giá trị) trên thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
