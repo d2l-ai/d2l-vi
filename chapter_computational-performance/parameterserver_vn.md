@@ -341,7 +341,7 @@ In the next section we will experiment with such a (key,value) store in practice
 -->
 
 * Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và kết nối trong máy chủ.
-Điều này có thể tạo ra khác biệt đáng kể đến thời gian đồng bộ.
+Điều này có thể tạo ra khác biệt đáng kể trong thời gian đồng bộ.
 * Đồng bộ dạng vòng có thể là phương án tối ưu với các máy chủ P3 và DGX-2, với các loại máy chủ khác thì không quá tốt.
 * Chiến lược đồng bộ phân cấp rất tốt khi thêm nhiều máy chủ tham số để tăng băng thông.
 * Giao tiếp bất đồng bộ (khi việc tính toán vẫn đang diễn ra) có thể cải thiện hiệu năng.
@@ -369,7 +369,7 @@ Nếu ta mất liên lạc với một máy chủ thì sao?
 Đây có phải vấn đề nghiêm trọng không?
 4. Lưu checkpoint như thế nào?
 5. Có thể tăng tốc tổng hợp dạng cây (*tree aggregation*) không?
-6. Tìm hiểu các cách rút gọn khác (như bán vòng giao hoán *commutative semiring*).
+6. Tìm hiểu các cách rút gọn khác (như dạng bán vòng giao hoán - *commutative semiring*).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
