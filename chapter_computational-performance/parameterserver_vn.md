@@ -431,7 +431,11 @@ Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, g
 * Asynchronous communication (while computation is still ongoing) can improve performance.
 -->
 
-*dịch đoạn phía trên*
+* Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và với kết nối trong máy chủ.
+Điều này có thể tạo ra khác biệt đáng kể trong thời gian đồng bộ.
+* Đồng bộ dạng vòng có thể là phương án tối ưu với các máy chủ P3 và DGX-2, với các loại máy chủ khác thì không quá tốt.
+* Chiến lược đồng bộ phân cấp rất tốt khi thêm nhiều máy chủ tham số để tăng băng thông.
+* Giao tiếp bất đồng bộ (khi việc tính toán vẫn đang diễn ra) có thể cải thiện hiệu năng.
 
 <!--
 ## Exercises
@@ -448,7 +452,15 @@ Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, g
 6. Other reductions (commutative semiring).
 -->
 
-*dịch đoạn phía trên*
+1. Có thể cải thiện đồng bộ dạng vòng tốt hơn không? 
+Gợi ý: bạn có thể gửi thông tin theo cả hai chiều.
+2. Đồng bộ bất đối xứng hoàn toàn có độ trễ nào không?
+3. Nên để khả năng chịu lỗi (*fault tolerance*) như thế nào? 
+Nếu ta mất liên lạc với một máy chủ thì sao?
+Đây có phải vấn đề nghiêm trọng không?
+4. Lưu checkpoint như thế nào?
+5. Có thể tăng tốc tổng hợp dạng cây (*tree aggregation*) không?
+6. Tìm hiểu các cách rút gọn khác (như dạng bán vòng giao hoán - *commutative semiring*).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -491,4 +503,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Nguyễn Thanh Hòa
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Cường
