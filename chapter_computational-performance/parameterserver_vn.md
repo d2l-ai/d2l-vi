@@ -326,7 +326,7 @@ who wants to be able to express optimization in simple terms and the systems eng
 In the next section we will experiment with such a (key,value) store in practice.
 -->
 
-Bằng cách ẩn đi tất cả độ phức tạp khi đồng bộ sau các phép toán đơn giản là đẩy và kéo, ta có thể giảm thiểu sự lo âu của các nhà mô hình thống kê,
+Bằng cách ẩn đi sự phức tạp của việc đồng bộ sau các phép toán đơn giản là đẩy và kéo, ta có thể giảm đi mối bận tâm của các nhà mô hình thống kê,
 những người muốn thể hiện việc tối ưu một cách đơn giản, và các kỹ sư hệ thống, những người cần giải quyết sự phức tạp sẵn có trong đồng bộ hóa phân tán.
 Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, giá trị) trên thực tế.
 
@@ -402,5 +402,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 6 -->
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
+* Nguyễn Thanh Hòa
 <!-- Phần 7 -->
 * 
