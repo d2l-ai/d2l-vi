@@ -449,6 +449,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | support vector machine (SVM)      | Máy vector hỗ trợ        |                                              |
 | surprisal (in information theory) | lượng tin                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
 | surrogate objective               | mục tiêu thay thế        | [https://git.io/JvQxV](https://git.io/JvQxV) |
+| switch                            | switch                   |                                              |
 | symbolic graph                    | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
