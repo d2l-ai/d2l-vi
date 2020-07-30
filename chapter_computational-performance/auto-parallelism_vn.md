@@ -41,7 +41,7 @@ Với các thiết bị đa xử lý thì nó lại có giá trị hơn rất nh
 Trong khi xử lý song song thường liên quan đến các GPU, sử dụng thêm các vi xử lý CPU cục bộ trên máy sẽ tăng hiệu năng tính toán lên chút đỉnh.
 Tham khảo :cite:`Hadjis.Zhang.Motliagkas.ea.2016`, một bài báo tập trung về việc huấn luyện mô hình thị giác máy tính kết hợp một GPU và một CPU.
 Với sự thuận tiện từ một framework cho phép song song hóa một cách tự động, ta có thể thực hiện việc đó chỉ với vài dòng mã lệnh Python.
-Mở rộng hơn, thảo luận của chúng ta về tính toán song song tự động tập trung vào tính toán song song sử dụng cả CPUs và GPUs, cũng như tính toán và giao tiếp song song.
+Mở rộng hơn, thảo luận của chúng ta về tính toán song song tự động tập trung vào tính toán song song sử dụng cả CPU và GPU, cũng như tính toán và giao tiếp song song.
 Chúng ta bắt đầu bằng việc nhập các gói thư viện và mô-đun cần thiết. Lưu ý rằng chúng ta cần ít nhất một GPU để chạy các thử nghiệm trong phần này.
 
 ```{.python .input}
@@ -215,7 +215,7 @@ Do đó, việc sử dụng back-end tính toán dựa trên đồ thị là m�
 ![Two layer MLP on a CPU and 2 GPUs.](../img/twogpu.svg)
 -->
 
-![Mạng MLP hai tầng trên một CPU và hai GPU](../img/twogpu.svg)
+![Mạng Perceptron hai tầng trên một CPU và hai GPU](../img/twogpu.svg)
 :label:`fig_twogpu`
 
 
@@ -266,7 +266,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
