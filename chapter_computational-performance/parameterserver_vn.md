@@ -340,7 +340,7 @@ In the next section we will experiment with such a (key,value) store in practice
 * Asynchronous communication (while computation is still ongoing) can improve performance.
 -->
 
-* Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và kết nối trong máy chủ.
+* Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và với kết nối trong máy chủ.
 Điều này có thể tạo ra khác biệt đáng kể trong thời gian đồng bộ.
 * Đồng bộ dạng vòng có thể là phương án tối ưu với các máy chủ P3 và DGX-2, với các loại máy chủ khác thì không quá tốt.
 * Chiến lược đồng bộ phân cấp rất tốt khi thêm nhiều máy chủ tham số để tăng băng thông.
