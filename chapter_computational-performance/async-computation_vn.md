@@ -519,34 +519,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Đỗ Trường Giang
-* Đoàn Võ Duy Thanh
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-* Phạm Minh Đức
-
-<!-- Phần 5 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 6 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 7 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
 * Lê Khắc Hồng Phúc
