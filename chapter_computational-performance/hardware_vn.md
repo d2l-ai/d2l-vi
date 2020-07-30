@@ -781,9 +781,9 @@ In what follows we focus on interconnects that are suitable for deep learning.
 
 Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và đi khỏi nó để đồng bộ hoá quá trình xử lý.
 Đây chính là lúc mà mạng máy tính và bus trở nên hữu dụng.
-Ta có một số tham số thiết kế: băng thông, chi phí, khoảng cách và tính linh hoạt.
-Một mặt, ta có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao thì cũng là không dây), rẻ nhưng lại có băng thông không quá tốt và độ trễ lớn.
-Sẽ không có bất cứ nhà nghiên cứu học máy nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
+Ta có một vài tham số thiết kế gồm: băng thông, chi phí, khoảng cách và tính linh hoạt.
+Tuy ta cũng có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao cũng là không dây), rẻ nhưng lại có băng thông không quá tốt và độ trễ lớn.
+Sẽ không có bất cứ nhà nghiên cứu học máy tỉnh táo nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
 Sau đây, ta sẽ chỉ tập trung vào các cách kết nối phù hợp cho học sâu.
 
 
@@ -814,31 +814,31 @@ Server GPUs (Volta V100) have 6 links whereas consumer grade GPUs (RTX 2080 Ti) 
 We recommend to use [NCCL](https://github.com/NVIDIA/nccl) to achieve high data transfer between GPUs.
 -->
 
-* **PCIe** là một bus riêng chỉ phục vụ cho kết nối điểm - điểm với băng thông rất lớn (lên đến 16Gbs trên PCIe 4.0) mỗi làn (*lane*).
+* **PCIe** là một bus riêng chỉ phục vụ cho kết nối điểm – điểm với băng thông trên mỗi làn rất lớn (lên đến 16 GB/s trên PCIe 4.0).
 Độ trễ thường có giá trị cỡ vài micro giây (5 μs).
 Kết nối PCIe khá quan trọng.
-Vi xử lý chỉ có một số lượng làn PCIe nhất định: EPYC 3 của AMD có 128 làn, Xeon của Intel lên đến 48 làn mỗi chip; 
-trên CPU dùng cho máy tính cây, số lượng này lần lượt là 20 (Ryzen 9) và 16 (Core i9).
+Vi xử lý chỉ có một số lượng làn PCIe nhất định: EPYC 3 của AMD có 128 làn, Xeon của Intel lên đến 48 làn cho mỗi chip; 
+trên CPU dùng cho máy tính để bàn, số lượng này lần lượt là 20 (với Ryzen 9) và 16 (với Core i9).
 Do GPU thường có 16 luồng nên số lượng GPU có thể kết nối với CPU bị giới hạn tại băng thông tối đa.
-Xét cho cùng, chúng cần chia sẻ liên kết với các thiết bị ngoại vi khác như bộ nhớ và Ethernet.
+Xét cho cùng, chúng cần chia sẻ liên kết với các thiết bị ngoại vi khác như bộ nhớ và cổng Ethernet.
 Giống như việc truy cập RAM, việc truyền lượng lớn dữ liệu thường được ưa chuộng hơn nhằm giảm tổng chi phí theo gói tin.
 * **Ethernet** là cách phổ biến nhất để kết nối máy tính với nhau.
 Dù nó chậm hơn đáng kể so với PCIe, nó rất rẻ và dễ cài đặt, bao phủ khoảng cách lớn hơn nhiều.
 Băng thông đặc trưng đối với máy chủ cấp thấp là 1 GBit/s.
 Các thiết bị cao cấp hơn (ví dụ như [máy chủ loại C5](https://aws.amazon.com/ec2/instance-types/c5/) trên AWS) cung cấp băng thông từ 10 đến 100 GBit/s.
-Cũng như các trường hợp trên, việc truyền dữ liệu có tổng chi phí đáng kể.
+Cũng như các trường hợp trên, việc truyền dữ liệu có tổng chi phí đáng kể. 
 Chú ý rằng ta hầu như không bao giờ sử dụng trực tiếp Ethernet thuần mà sử dụng một giao thức được thực thi ở tầng trên của kết nối vật lý (ví dụ như UDP hay TCP/IP).
 Việc này làm tăng tổng chi phí.
 Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một thiết bị chuyển đổi (*switch*).
-* **Thiết bị chuyển đổi (*Switch*)** cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm - điểm cùng lúc.
+* **Bộ chuyển mạch** cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm – điểm cùng lúc.
 Ví dụ, thiết bị chuyển đổi Ethernet có thể kết nối 40 máy chủ với băng thông xuyên vùng (*cross-sectional bandwidth*) cao.
-Chú ý rằng thiết bị chuyển đổi không phải là duy nhất trong mạng máy tính truyền thống.
+Chú ý rằng thiết bị chuyển đổi không phải chỉ có trong mạng máy tính truyền thống.
 Ngay cả làn PCIe cũng có thể [chuyển đổi](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
 Điều này xảy ra khi kết nối một lượng lớn GPU tới vi xử lý chính, như với trường hợp [máy chủ loại P2](https://aws.amazon.com/ec2/instance-types/p2/).
 * **NVLink** là một phương pháp thay thế PCIe khi ta cần kết nối với băng thông rất lớn.
 NVLink cung cấp tốc độ truyền dữ liệu lên đến 300 Gbit/s mỗi đường dẫn (*link*).
 GPU máy chủ (Volta V100) có 6 đường dẫn, trong khi GPU thông dụng (RTX 2080 Ti) chỉ có một đường dẫn, hoạt động ở tốc độ thấp 100 Gbit/s.
-Chúng tôi kiến nghị nên sử dụng [NCCL](https://github.com/NVIDIA/nccl) để có thể đạt được tốc độ truyền dữ liệu cao giữa các GPU.
+Vì vậy, chúng tôi gợi ý sử dụng [NCCL](https://github.com/NVIDIA/nccl) để có thể đạt được tốc độ truyền dữ liệu cao giữa các GPU.
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 
@@ -862,7 +862,7 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 -->
 
 * Các thiết bị đều có chi phí phụ trợ trên mỗi hành động. 
-Do đó ta nên nhắm tới việc di chuyển ít lần các lượng dữ liệu lớn thay vì di chuyển nhiều lần các lượng dữ liệu nhỏ. 
+Do đó ta nên nhắm tới việc di chuyển ít lần các lượng dữ liệu lớn thay vì di chuyển nhiều lần các lượng dữ liệu nhỏ.
 Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
 * Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh đặc thù của thiết bị tăng tốc mình đang có.
 Ví dụ, một vài CPU Intel Xeon thực hiện cực kì hiệu quả phép toán với dữ liệu kiểu INT8, 
@@ -897,7 +897,7 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 :Common Latency Numbers.
 -->
 
-:Các độ trễ thường gặp
+:Các độ trễ thường gặp.
 
 
 <!--
@@ -936,39 +936,39 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Send packet CA->Netherlands->CA            | 150 ms |                                                 |
 -->
 
-| Hoạt động                                  | Thời gian     | Chú thích                                  |
-| :----------------------------------------- | -----: | :---------------------------------------------- |
-| Truy xuất bộ đệm L1                        | 1.5 ns | 4 chu kỳ                                        |
-| Cộng, nhân, cộng kết hợp nhân (*FMA*) số thực dấu phẩy động | 1.5 ns | 4 chu kỳ                       |
-| Truy xuất bộ đệm L2                        |   5 ns | 12 ~ 17 chu kỳ                                  |
-| Rẽ nhánh sai                               |   6 ns | 15 ~ 20 chu kỳ                                  |
-| Truy xuất bộ đệm L3 (không chia sẻ)        |  16 ns | 42 chu kỳ                                       |
-| Truy xuất bộ đệm L3 (chia sẻ với nhân khác) |  25 ns | 65 chu kỳ                                       |
-| Khóa/mở đèn báo lập trình (*mutex*)        |  25 ns |                                                 |
-| Truy xuất bộ đệm L3 (được nhân khác thay đổi)    |  29 ns | 75 chu kỳ                              |
-| Truy xuất bộ đệm L3 (tại CPU socket từ xa)|  40 ns | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
-| QPI hop đến CPU khác (cho mỗi hop)         |  40 ns |                                                 |
-| Truy xuất 64MB (CPU cục bộ)                |  46 ns | TinyMemBench trên Broadwell E5-2690v4           |
-| Truy xuất 64MB (CPU từ xa)                 |  70 ns | TinyMemBench trên Broadwell E5-2690v4           |
-| Truy xuất 256MB (CPU cục bộ)               |  75 ns | TinyMemBench trên Broadwell E5-2690v4           |
-| Ghi ngẫu nhiên vào Intel Optane            |  94 ns | UCSD Non-Volatile Systems Lab                   |
-| Truy xuất 256MB (CPU từ xa)                | 120 ns | TinyMemBench trên Broadwell E5-2690v4           |
-| Đọc ngẫu nhiên từ Intel Optane             | 305 ns | UCSD Non-Volatile Systems Lab                   |
-| Truyền 4KB trên sợi HPC 100 Gbps           |   1 μs | MVAPICH2 trên Intel Omni-Path                   |
-| Nén 1KB với Google Snappy                  |   3 μs |                                                 |
-| Truyền 4KB trên cáp mạng 10 Gbps           |  10 μs |                                                 |
-| Ghi ngẫu nhiên 4KB vào SSD NVMe            |  30 μs | DC P3608 SSD NVMe (QOS 99% khoảng 500μs)            |
-| Truyền 1MB từ/đến NVLink GPU               |  30 μs | ~33GB/s trên NVIDIA 40GB NVLink                 |
-| Truyền 1MB từ/đến PCI-E GPU             |  80 μs | ~12GB/s trên PCIe 3.0 x16 link                  |
-| Đọc ngẫu nhiên 4KB từ SSD NVMe             | 120 μs | DC P3608 SSD NVMe (QOS 99%)                    |
-| Đọc tuần tự 1MB từ SSD NVMe                | 208 μs | ~4.8GB/s DC P3608 SSD NVMe                      |
-| Ghi ngẫu nhiên 4KB vào SSD SATA            | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
-| Đọc ngẫu nhiên 4KB từ SSD SATA             | 500 μs | DC S3510 SSD SATA (QOS 99.9%)                   |
-| Truyền 2 chiều trong cùng trung tâm dữ liệu| 500 μs | Ping một chiều ~250μs                          |
-| Đọc tuần tự 1MB từ SSD SATA                |   2 ms | ~550MB/s DC S3510 SSD SATA                      |
-| Đọc tuần tự 1MB từ ổ đĩa                     |   5 ms | ~200MB/s server HDD                             |
-| Truy cập ngẫu nhiên ổ đĩa (tìm+xoay)         |  10 ms |                                                 |
-| Gửi gói dữ liệu từ California -> Hà Lan -> California             | 150 ms |                                                 |
+| Hoạt động                                                   | Thời gian | Chú thích                                       |
+| :---------------------------------------------------------- | --------: | :---------------------------------------------- |
+| Truy xuất bộ đệm L1                                         | 1.5 ns    | 4 chu kỳ                                        |
+| Cộng, nhân, cộng kết hợp nhân (*FMA*) số thực dấu phẩy động | 1.5 ns    | 4 chu kỳ                                        |
+| Truy xuất bộ đệm L2                                         |   5 ns    | 12 ~ 17 chu kỳ                                  |
+| Rẽ nhánh sai                                                |   6 ns    | 15 ~ 20 chu kỳ                                  |
+| Truy xuất bộ đệm L3 (không chia sẻ)                         |  16 ns    | 42 chu kỳ                                       |
+| Truy xuất bộ đệm L3 (chia sẻ với nhân khác)                 |  25 ns    | 65 chu kỳ                                       |
+| Khóa/mở đèn báo lập trình (*mutex*)                         |  25 ns    |                                                 |
+| Truy xuất bộ đệm L3 (được nhân khác thay đổi)               |  29 ns    | 75 chu kỳ                                       |
+| Truy xuất bộ đệm L3 (tại CPU socket từ xa)                  |  40 ns    | 100 ~ 300 chu kỳ (40 ~ 116 ns)                  |
+| QPI hop đến CPU khác (cho mỗi hop)                          |  40 ns    |                                                 |
+| Truy xuất 64MB (CPU cục bộ)                                 |  46 ns    | TinyMemBench trên Broadwell E5-2690v4           |
+| Truy xuất 64MB (CPU từ xa)                                  |  70 ns    | TinyMemBench trên Broadwell E5-2690v4           |
+| Truy xuất 256MB (CPU cục bộ)                                |  75 ns    | TinyMemBench trên Broadwell E5-2690v4           |
+| Ghi ngẫu nhiên vào Intel Optane                             |  94 ns    | UCSD Non-Volatile Systems Lab                   |
+| Truy xuất 256MB (CPU từ xa)                                 | 120 ns    | TinyMemBench trên Broadwell E5-2690v4           |
+| Đọc ngẫu nhiên từ Intel Optane                              | 305 ns    | UCSD Non-Volatile Systems Lab                   |
+| Truyền 4KB trên sợi HPC 100 Gbps                            |   1 μs    | MVAPICH2 trên Intel Omni-Path                   |
+| Nén 1KB với Google Snappy                                   |   3 μs    |                                                 |
+| Truyền 4KB trên cáp mạng 10 Gbps                            |  10 μs    |                                                 |
+| Ghi ngẫu nhiên 4KB vào SSD NVMe                             |  30 μs    | DC P3608 SSD NVMe (QOS 99% khoảng 500μs)        |
+| Truyền 1MB từ/đến NVLink GPU                                |  30 μs    | ~33GB/s trên NVIDIA 40GB NVLink                 |
+| Truyền 1MB từ/đến PCI-E GPU                                 |  80 μs    | ~12GB/s trên PCIe 3.0 x16 link                  |
+| Đọc ngẫu nhiên 4KB từ SSD NVMe                              | 120 μs    | DC P3608 SSD NVMe (QOS 99%)                     |
+| Đọc tuần tự 1MB từ SSD NVMe                                 | 208 μs    | ~4.8GB/s DC P3608 SSD NVMe                      |
+| Ghi ngẫu nhiên 4KB vào SSD SATA                             | 500 μs    | DC S3510 SSD SATA (QOS 99.9%)                   |
+| Đọc ngẫu nhiên 4KB từ SSD SATA                              | 500 μs    | DC S3510 SSD SATA (QOS 99.9%)                   |
+| Truyền 2 chiều trong cùng trung tâm dữ liệu                 | 500 μs    | Ping một chiều ~250μs                           |
+| Đọc tuần tự 1MB từ SSD SATA                                 |   2 ms    | ~550MB/s DC S3510 SSD SATA                      |
+| Đọc tuần tự 1MB từ ổ đĩa                                    |   5 ms    | ~200MB/s server HDD                             |
+| Truy cập ngẫu nhiên ổ đĩa (tìm + xoay)                      |  10 ms    |                                                 |
+| Gửi gói dữ liệu từ California -> Hà Lan -> California       | 150 ms    |                                                 |
 :label:`table_latency_numbers`
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
@@ -979,7 +979,7 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 :Latency Numbers for NVIDIA Tesla GPUs.
 -->
 
-:Độ trễ của GPU NVIDIA Tesla
+:Độ trễ của GPU NVIDIA Tesla.
 
 
 <!--
@@ -992,13 +992,13 @@ Các thông tin trong :numref:`table_latency_numbers` và :numref:`table_latency
 | Transfer 1MB to/from PCI-E GPU  |  80 μs | ~12GB/s on PCI-Express x16 link           |
 -->
 
-| Hoạt động                       | Thời gian    | Chú thích                             |
-| :------------------------------ | -----: | :---------------------------------------- |
-| Truy cập bộ nhớ chung của GPU   |  30 ns | 30~90 chu kỳ (tính cả xung đột của các bank)|
-| Truy cập bộ nhớ toàn cục của GPU| 200 ns | 200~800 chu kỳ                            |
-| Khởi chạy nhân CUDA trên GPU    |  10 μs | CPU host ra lệnh cho GPU khởi chạy nhân   |
-| Truyền 1MB từ/đến GPU NVLink    |  30 μs | ~33GB/s trên NVIDIA NVLink 40GB           |
-| Truyền 1MB từ/đến GPU PCI-E     |  80 μs | ~12GB/s trên  PCI-Express link x16        |
+| Hoạt động                        | Thời gian  | Chú thích                              |
+| :------------------------------- | ---------: | :------------------------------------------- |
+| Truy cập bộ nhớ chung của GPU    |  30 ns     | 30~90 chu kỳ (tính cả xung đột của các bank) |
+| Truy cập bộ nhớ toàn cục của GPU | 200 ns     | 200~800 chu kỳ                               |
+| Khởi chạy nhân CUDA trên GPU     |  10 μs     | CPU host ra lệnh cho GPU khởi chạy nhân      |
+| Truyền 1MB từ/đến GPU NVLink     |  30 μs     | ~33GB/s trên NVIDIA NVLink 40GB              |
+| Truyền 1MB từ/đến GPU PCI-E      |  80 μs     | ~12GB/s trên  PCI-Express link x16           |
 :label:`table_latency_numbers_tesla`
 
 ## Bài tập
@@ -1025,29 +1025,29 @@ Is there a difference between the inner and outer tracks?
 -->
 
 1. Viết đoạn mã C để so sánh tốc độ khi truy cập bộ nhớ được sắp xếp theo khối (*aligned memory*) với khi truy cập bộ nhớ không được sắp xếp như vậy (một cách tương đối so với bộ nhớ ngoài).
-Gợi ý: hãy loại bỏ hiệu ứng của bộ nhớ đệm.
+**Gợi ý:** hãy loại bỏ hiệu ứng của bộ nhớ đệm.
 2. So sánh tốc độ khi truy cập bộ nhớ tuần tự với khi truy cập theo sải bước cho trước.
 3. Làm thế nào để đo kích thước bộ nhớ đệm trên CPU?
-4. Bạn sẽ sắp xếp dữ liệu trên nhiều bộ nhớ như thế nào để có băng thông tối đa? 
+4. Bạn sẽ sắp xếp dữ liệu trên nhiều bộ nhớ như thế nào để có băng thông tối đa?
 Sắp xếp như thế nào nếu bạn có nhiều luồng nhỏ?
-5. Tốc độ quay của một ổ cứng HDD dùng cho công nghiệp là 10,000 rpm. 
+5. Tốc độ quay của một ổ cứng HDD dùng cho công nghiệp là 10,000 rpm.
 Thời gian tối thiểu mà HDD đó cần (trong trường hợp tệ nhất) trước khi có thể đọc dữ liệu là bao nhiêu (có thể giả sử các đầu đọc ổ đĩa di chuyển tức thời)?
 6. Giả sử nhà sản xuất HDD tăng sức chứa bộ nhớ từ 1 Tbit mỗi inch vuông lên 5 Tbit mỗi inch vuông.
 Có thể lưu bao nhiêu dữ liệu trên một đĩa từ của một HDD 2.5"?
-Có sự khác biệt nào giữa track trong và track ngoài không?
+Có sự khác biệt nào giữa track trong và track ngoài không? 
 7. Một máy chủ loại P2 trên AWS có 16 GPU K80 Kepler. 
 Sử dụng lệnh `lspci` trên một máy p2.16xlarge và một máy p2.8xlarge để hiểu cách các GPU được kết nối với các CPU.
-Gợi ý: để ý đến chip cầu nối PLX cho chuẩn kết nối PCI.
+**Gợi ý:** để ý đến chip cầu nối PLX cho chuẩn kết nối PCI.
 8. Chuyển từ kiểu dữ liệu 8 bit sang 16 bit cần lượng silicon gấp 4 lần. Tại sao?
-Tại sao NVIDIA thêm các phép toán cho kiểu dữ liệu INT4 vào GPU Turing?
+Tại sao NVIDIA thêm các phép toán cho kiểu dữ liệu INT4 vào GPU Turing? 
 9. Có 6 đường truyền tốc độ cao giữa các GPU (như GPU Volta V100 chẳng hạn), bạn sẽ kết nối 8 GPU đó như thế nào?
 Tham khảo cách kết nối cho máy chủ p3.16xlarge trên AWS.
 10. Đọc xuôi bộ nhớ nhanh gấp bao nhiêu lần đọc ngược?
 Sự chênh lệch này có khác nhau giữa các nhà sản xuất máy tính và CPU không? Tại sao?
-Thí nghiệm với mã nguồn C.
+Thí nghiệm với mã nguồn C. 
 11. Bạn có thể đo kích thước bộ nhớ đệm trên ổ đĩa của mình không?
 Bộ nhớ đệm trên HDD là gì?
-SSD có cần bộ nhớ đệm không?
+SSD có cần bộ nhớ đệm không? 
 12. Chi phí bộ nhớ phụ trợ khi gửi một gói dữ liệu qua cáp mạng (*Ethernet*) là bao nhiêu.
 So sánh các giao thức UDP và TCP/IP.
 13. Truy cập Bộ nhớ Trực tiếp (*Direct Memory Access*) cho phép các thiết bị khác ngoài CPU ghi (và đọc) trực tiếp vào (từ) bộ nhớ.
@@ -1055,11 +1055,8 @@ Tại sao đây là một ý tưởng hay?
 14. Nhìn vào thông số hiệu năng của GPU Turing T4.
 Tại sao hiệu năng *chỉ* tăng gấp đôi khi chuyển từ phép toán với kiểu dữ liệu FP16 sang INT8 và INT4?
 15. Thời gian truyền một gói dữ liệu hai chiều giữa San Francisco và Amsterdam là bao nhiêu?
-Gợi ý: giả sử khoảng cách giữa 2 thành phố là 10,000km.
+**Gợi ý:** giả sử khoảng cách giữa 2 thành phố là 10,000km.
 
-
-<!-- ===================== Kết thúc dịch Phần 13 ===================== -->
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
 
 ## Thảo luận
@@ -1068,58 +1065,14 @@ Gợi ý: giả sử khoảng cách giữa 2 thành phố là 10,000km.
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
+
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
-* 
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 5 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
-* Nguyễn Thanh Hoà
-
-<!-- Phần 7 -->
-* Nguyễn Thanh Hoà
-
-<!-- Phần 8 -->
+* Nguyễn Thanh Hòa
 * Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 9 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 10 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 11 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 12 -->
-* Nguyễn Văn Cường
-* Phạm Minh Đức
-* Lê Khắc Hồng Phúc
-<!-- Phần 13 -->
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
