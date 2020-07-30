@@ -782,8 +782,8 @@ In what follows we focus on interconnects that are suitable for deep learning.
 Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và đi khỏi nó để đồng bộ hoá quá trình xử lý.
 Đây chính là lúc mà mạng máy tính và bus trở nên hữu dụng.
 Ta có một vài tham số thiết kế gồm: băng thông, chi phí, khoảng cách và tính linh hoạt.
-Và ta cũng có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao cũng là không dây), rẻ nhưng lại có băng thông không quá tốt và độ trễ lớn.
-Sẽ không có bất cứ nhà nghiên cứu học máy nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
+Tuy ta cũng có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao cũng là không dây), rẻ nhưng lại có băng thông không quá tốt và độ trễ lớn.
+Sẽ không có bất cứ nhà nghiên cứu học máy tỉnh táo nào lại nghĩ đến việc sử dụng Wifi để xây dựng một cụm máy chủ.
 Sau đây, ta sẽ chỉ tập trung vào các cách kết nối phù hợp cho học sâu.
 
 
@@ -830,7 +830,7 @@ Cũng như các trường hợp trên, việc truyền dữ liệu có tổng ch
 Chú ý rằng ta hầu như không bao giờ sử dụng trực tiếp Ethernet thuần mà sử dụng một giao thức được thực thi ở tầng trên của kết nối vật lý (ví dụ như UDP hay TCP/IP).
 Việc này làm tăng tổng chi phí.
 Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một thiết bị chuyển đổi (*switch*).
-* **Thiết bị chuyển đổi** cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm – điểm cùng lúc.
+* **Bộ chuyển mạch** cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm – điểm cùng lúc.
 Ví dụ, thiết bị chuyển đổi Ethernet có thể kết nối 40 máy chủ với băng thông xuyên vùng (*cross-sectional bandwidth*) cao.
 Chú ý rằng thiết bị chuyển đổi không phải chỉ có trong mạng máy tính truyền thống.
 Ngay cả làn PCIe cũng có thể [chuyển đổi](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
