@@ -21,12 +21,12 @@ We assume that the reader is familiar with minibatch SGD algorithms such as the 
 -->
 
 Tới giờ ta đã thảo luận về cách huấn luyện mô hình trên CPU và GPU một cách hiệu quả.
-Trong :numref:`sec_auto_para`, ta còn xem cách mà các framework học sâu như MXNet (và TensorFlow) cho phép ta tự động song song hoá việc tính toán và giao tiếp giữa chúng.
+Trong :numref:`sec_auto_para`, ta biết được cách mà các framework học sâu như MXNet (và TensorFlow) thực hiện song song hoá việc tính toán và giao tiếp giữa chúng một cách tự động.
 Cuối cùng, :numref:`sec_use_gpu` chỉ cách liệt kê toàn bộ các GPU có trong máy bằng lệnh `nvidia-smi`.
 Điều mà ta *không* thảo luận là cách để thực sự song song hoá việc huấn luyện mô hình học sâu.
-(Ta bỏ qua vấn để thực hiện *suy luận* trên nhiều GPU ở đây vì nó khá ít khi được sử dụng và là một chủ đề nâng cao nằm ngoài phạm vi của cuốn sách này.)
-Chúng ta mới chỉ ngầm hiểu rằng bằng cách nào đó có thể chia dữ liệu cho các thiết bị khác nhau và huấn luyện mạng.
-Phần này sẽ bổ sung những chi tiết còn thiếu ấy và chỉ cách huấn luyện song song một mạng học sâu từ đầu.
+(Ta bỏ qua các vấn đề về *nội suy (inference)* trên nhiều GPU vì nó ít khi được sử dụng và là một chủ đề nâng cao nằm ngoài phạm vi của cuốn sách này.)
+Chúng ta mới chỉ ngầm hiểu rằng bằng cách nào đó dữ liệu có thể được chia ra cho các thiết bị khác nhau.
+Phần này sẽ bổ sung những chi tiết còn thiếu ấy và mô tả cách huấn luyện song song một mạng học sâu từ đầu.
 Chi tiết về cách tận dụng các tính năng của Gluon sẽ nằm ở :numref:`sec_multi_gpu_gluon`.
 Chúng tôi giả định rằng bạn đọc đã quen với các thuật toán SGD minibatch được mô tả ở :numref:`sec_minibatch_sgd`.
 
@@ -34,7 +34,7 @@ Chúng tôi giả định rằng bạn đọc đã quen với các thuật toán
 ## Splitting the Problem
 -->
 
-## Chia vấn đề
+## Chia nhỏ vấn đề
 
 
 <!--
@@ -93,7 +93,7 @@ The figure is taken from :cite:`Krizhevsky.Sutskever.Hinton.2012` where this str
     * Large numbers of GPUs lead to very large minibatch sizes, thus reducing training efficiency.
 -->
 
-* Chúng ta có thể phân chia các tầng mạng cho các GPU.
+* Chúng ta có thể phân chia các tầng mạng trên nhiều GPU.
 Cụ thể, mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầng xác định, xử lý dữ liệu truyền qua một số tầng kế tiếp nhau rồi gửi dữ liệu tới GPU kế tiếp. 
    * Điều này cho phép ta xử lý dữ liệu với các mạng lớn hơn khi so sánh với những gì một GPU có thể làm được.
    * Bộ nhớ bị chiếm dụng trên mỗi GPU có thể được kiểm soát dễ dàng (mỗi GPU sẽ chỉ chiếm một phần tổng dung lượng bộ nhớ cấp phát cho cả mạng).
@@ -103,16 +103,16 @@ Cụ thể, mỗi GPU lấy một luồng dữ liệu đưa vào từ một tầ
    * Giao tiếp giữa các tầng yêu cầu một lượng lớn việc truyền dữ liệu (các hàm kích hoạt, các gradient). Điều này có thể vượt quá mức băng thông các bus của GPU.
    * Các phép toán phức tạp nhưng tuần tự cũng sẽ tốn công sức nhất định để phân chia.
    :cite:`Mirhoseini.Pham.Le.ea.2017` là một cố gắng tốt nhất cho vấn đề này.
-   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu có thể mở rộng tốt (tuyến tính) cho các bài toán không tầm thường. 
-   Chúng tôi không khuyến khích cách làm này trừ phi có một framework xuất sắc hay hệ điều hành hỗ trợ cho việc xâu chuỗi nhiều GPU lại với nhau.
+   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu có thể mở rộng tốt (tuyến tính) cho các bài toán không tầm thường (*nontrivial problems*). 
+   Chúng tôi không khuyến khích cách làm này trừ phi có một framework xuất sắc hay một hệ điều hành hỗ trợ cho việc xâu chuỗi nhiều GPU lại với nhau.
 * Chúng ta có thể phân chia công việc của các tầng đơn lẻ.
 Chẳng hạn, thay vì tính toán 64 kênh trên một GPU, ta có thể tách công việc này cho 4 GPU, mỗi GPU sẽ sinh dữ liệu cho 16 kênh. 
-Tương tự, với một tầng kết nối đặc ta có thể tách số neuron đầu ra.
+Tương tự, với một tầng kết nối dày đặc ta có thể tách số neuron đầu ra.
 :numref:`fig_alexnet_original` mô tả thiết kế kiểu này. 
 Hình này lấy từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, ở đây chiến lược này được sử dụng để làm việc với nhiều GPU mà có mức chiếm dụng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
    * Điều này cho phép việc điều chỉnh kích thước tính toán tốt, với điều kiện là số kênh (hoặc số nơ-ron) không quá nhỏ.
    * Dùng nhiều GPU có thể xử lý nhiều mạng ngày một lớn hơn vì dung lượng bộ nhớ khả dụng cũng tăng tuyến tính.
-   * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / rào cản vì mỗi tầng tùy thuộc vào các kết quả từ tất cả các tầng khác.
+   * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / rào cản vì mỗi tầng phụ thuộc vào các kết quả từ tất cả các tầng khác.
    * Lượng dữ liệu cần được truyền thậm chí có thể lớn hơn khi chia các tầng cho các GPU.
    Chúng tôi không khuyến khích cách tiếp cận này do tính phức tạp và chiếm dụng băng thông của nó.
 * Sau cùng, ta có thể phân chia dữ liệu cho nhiều GPU. 
@@ -143,7 +143,7 @@ We focus on data parallelism in what follows.
 Nhìn chung việc song song hóa dữ liệu là cách thuận tiện nhất để xử lý, với điều kiện là ta có thể truy xuất tới các GPU với bộ nhớ đủ lớn.
 Xem thêm :cite:` Li.Andersen.Park.ea.2014` để biết chi tiết cách phân chia cho việc huấn luyện phân tán.
 Bộ nhớ GPU từng là một vấn đề trong những ngày đầu của học sâu.
-Đến thời điểm này thì vấn đề đã được giải quyết cho hầu hết trừ một số trường hợp ít gặp nhất.
+Đến thời điểm này thì hầu hết các vấn đề đã được giải quyết trừ một số trường hợp rất ít gặp.
 Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế tiếp sau.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -154,7 +154,7 @@ Chúng ta tập trung vào việc song song hóa dữ liệu ở phần kế ti�
 ## Data Parallelism
 -->
 
-## Song song hóa dữ liệu
+## Song song hóa Dữ liệu
 
 
 <!--
@@ -175,11 +175,11 @@ Việc huấn luyện diễn ra như sau (xem :numref:`fig_data_parallel` để 
 * Each GPU uses this minibatch stochastic gradient to update the complete set of model parameters that it maintains. 
 -->
 
-Ở bất cứ vòng huấn luyện nào, với một tập minibatch ngẫu nhiên cho trước, ta tách các mẫu từ batch ban đầu này thành $k$ phần và chia đều cho các GPU.
-Mỗi GPU sẽ tính mất mát và gradient của các tham số mô hình dựa trên tập mimibatch con mà nó được cấp và các tham số mô hình nó lưu trữ. 
-Các gradient cục bộ từ $k$ GPU được gom lại để thu được gradient ngẫu nhiên cho minibatch hiện tại.
-Gradient tổng hợp này lại được phân phối trở lại cho các GPU.
-Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật tập hoành chỉnh các tham số mô hình mà nó lưu trữ. 
+* Ở bất cứ vòng huấn luyện nào, với một tập minibatch ngẫu nhiên cho trước, ta tách các mẫu từ batch ban đầu này thành $k$ phần và chia đều cho các GPU.
+* Mỗi GPU sẽ tính mất mát và gradient của các tham số mô hình dựa trên tập mimibatch con mà nó được cấp và các tham số mô hình nó lưu trữ. 
+* Các gradient cục bộ từ $k$ GPU được gom lại để thu được gradient ngẫu nhiên cho minibatch hiện tại.
+* Gradient tổng hợp này lại được phân phối trở lại cho các GPU.
+* Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật một tập đầy đủ các tham số mô hình mà nó lưu trữ. 
 
 <!--
 ![Calculation of minibatch stochastic gradient using data parallelism and two GPUs. ](../img/data-parallel.svg)
@@ -198,8 +198,9 @@ In what follows we will use :numref:`sec_lenet` as the toy network to illustrate
 -->
 
 :numref:`fig_splitting` so sánh các cách song song hóa khác nhau trên nhiều GPU.
-Lưu ý rằng trong thực tế ta *tăng* kích thước minibatch $k$-lần khi huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện giống như khi ta chỉ huấn luyện trên một GPU duy nhất.
-Trên một server có 16 GPU có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học tương ứng.
+Lưu ý rằng trong thực tế ta *tăng* kích thước minibatch $k$-lần khi huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện giống như khi chỉ huấn luyện trên một GPU duy nhất.
+Điều này, trên một server có 16 GPU, có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học một cách tương ứng.
+Chú ý rằng :numref:`sec_batch_norm` cũng cần được chỉnh sửa (ví dụ như là sử dụng các hệ số chuẩn hóa batch (*batch norm*) độc lập trên mỗi GPU).
 Trong phần tiếp theo ta sẽ dùng :numref:`sec_lenet` như một mạng thử nghiệm để minh họa việc huấn luyện đa-GPU. Như mọi khi, ta bắt đầu bằng cách nạp các gói thư viện và mô-đun liên quan. 
 
 ```{.python .input  n=2}
