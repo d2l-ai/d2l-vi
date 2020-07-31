@@ -234,7 +234,7 @@ apply(img, augs)
 ## Using an Image Augmentation Training Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Sử dụng một mô hình huấn luyện tăng cường 
 
 
 <!--
@@ -244,7 +244,10 @@ This is because the position and size of the objects in the Fashion-MNIST datase
 The first 32 training images in the CIFAR-10 dataset are shown below.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xem xét làm thế nào để áp dụng tăng cường hình ảnh trong huấn luyện thực tế.
+Ở đây, chúng tôi sử dụng bộ dữ liệu CIFAR-10, thay vì bộ dữ liệu Fashion-MNIST mà chúng tôi đang sử dụng.
+Điều này là do vị trí và kích thước của các đối tượng trong bộ dữ liệu Fashion-MNIST đã được chuẩn hóa và sự khác biệt về màu sắc và kích thước của các đối tượng trong bộ dữ liệu CIFAR-10 có ý nghĩa hơn.
+32 hình ảnh đào tạo đầu tiên trong bộ dữ liệu CIFAR-10 được hiển thị bên dưới.
 
 
 
@@ -261,7 +264,10 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-*dịch đoạn phía trên*
+Để có được kết quả dứt khoát trong dự đoán, chúng tôi thường chỉ áp dụng tăng cường hình ảnh cho ví dụ đào tạo và không sử dụng tăng cường hình ảnh với các thao tác ngẫu nhiên trong dự đoán.
+Ở đây, chúng tôi chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
+Ngoài ra, chúng tôi sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
+tức là, số thực dấu phẩy động 32-bit có hình dạng (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
 
 
 
@@ -281,7 +287,9 @@ The `transform_first` function provided by Gluon's dataset applies image augment
 For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng tôi xác định một chức năng phụ trợ để giúp đọc hình ảnh dễ dàng hơn và áp dụng tính năng tăng cường hình ảnh.
+Hàm `transform_first` được cung cấp bởi bộ dữ liệu của Gluon áp dụng tăng cường hình ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là, phần tử ở đầu hình ảnh.
+Để biết mô tả chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
 
