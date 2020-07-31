@@ -33,10 +33,10 @@ More broadly, our discussion of automatic parallel computation focuses on parall
 We begin by importing the required packages and modules. Note that we need at least one GPU to run the experiments in this section.
 -->
 
-Thông thường, một toán tử đơn sẽ sử dụng toàn bộ tài nguyên tính toán trên tất cả các CPU hoặc trên một CPU đơn.
-Chẳng hạn như toán tử `dot` sẽ sử dụng tất cả các nhân (và các luồng) của toàn bộ các CPUs, thậm chí là nhiều bộ vi xử lý trên một máy tính nếu có.
-Điều tương tự cũng xảy ra trên một bộ GPU đơn.
-Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn nhân/đơn luồng. 
+Thông thường, một toán tử đơn sẽ sử dụng toàn bộ tài nguyên tính toán trên tất cả các CPU hoặc trên một GPU đơn.
+Chẳng hạn như toán tử `dot` sẽ sử dụng tất cả các lõi (và các luồng) của toàn bộ CPU trên một máy tính đơn.
+Điều tương tự cũng xảy ra trên một GPU đơn.
+Do đó việc song song hóa không thật sự hữu dụng mấy với các máy tính đơn lõi/đơn luồng. 
 Với các thiết bị đa xử lý thì nó lại có giá trị hơn rất nhiều.
 Trong khi xử lý song song thường liên quan đến các GPU, sử dụng thêm các vi xử lý CPU cục bộ trên máy sẽ tăng hiệu năng tính toán lên chút đỉnh.
 Tham khảo :cite:`Hadjis.Zhang.Motliagkas.ea.2016`, một bài báo tập trung về việc huấn luyện mô hình thị giác máy tính kết hợp một GPU và một CPU.
@@ -192,7 +192,7 @@ Fortunately, the system can copy `y[i-1]` while computing `y[i]` to reduce the t
 -->
 
 Thời gian cần cho cả hai thao tác ít hơn hẳn (như mong đợi) so với tổng thời gian thực hiện từng thao tác đơn lẻ.
-Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một tài nguyên khác: bus giữa CPU và GPU.
+Lưu ý rằng tác vụ này khác với việc tính toán song song bởi nó sử dụng một tài nguyên khác: bus giữa CPU và các GPU.
 Thực tế, ta có thể vừa tính toán và giao tiếp trên cả hai thiết bị cùng một lúc.
 Như đã lưu ý phía trên, có một sự phụ thuộc giữa việc tính toán và giao tiếp: `y[i]` phải được tính xong trước khi ta có thể sao chép nó qua CPU.
 May mắn thay, hệ thống có thể sao chép `y[i-1]` trong khi tính toán `y[i]` để giảm thiểu tổng thời gian chạy.
@@ -207,8 +207,8 @@ It would be quite painful to schedule the parallel program resulting from this m
 This is where it is advantageous to have a graph based compute backend for optimization.
 -->
 
-Để tổng kết phần này, ta xét một ví dụ minh hoạ đồ thị tính toán và các quan hệ phụ thuộc của nó trong một mạng MLP hai tầng đơn giản khi huấn luyện trên một CPU và hai GPU, như miêu tả trong :numref:`fig_twogpu`.
-Có thể thấy tự định thời chương trình tính toán song song từ mô tả trên sẽ khá phức tạp.
+Để tổng kết phần này, ta xét một ví dụ minh hoạ đồ thị tính toán và các quan hệ phụ thuộc của nó trong một mạng Perceptron hai tầng đơn giản khi huấn luyện trên một CPU và hai GPU, như miêu tả trong :numref:`fig_twogpu`.
+Có thể thấy tự mình định thời chương trình tính toán song song từ mô tả trên sẽ khá phức tạp.
 Do đó, việc sử dụng back-end tính toán dựa trên đồ thị là một lợi thế để tối ưu hóa hiệu năng.
 
 <!--
@@ -271,6 +271,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Trần Yến Thy
