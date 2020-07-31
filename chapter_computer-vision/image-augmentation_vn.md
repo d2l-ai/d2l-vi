@@ -155,7 +155,7 @@ apply(img, shape_aug)
 ### Changing the Color
 -->
 
-### *dịch tiêu đề phía trên*
+### Đổi màu
 
 
 <!--
@@ -164,7 +164,9 @@ We can change four aspects of the image color: brightness, contrast, saturation,
 In the example below, we randomly change the brightness of the image to a value between 50% ($1-0.5$) and 150% ($1+0.5$) of the original image.
 -->
 
-*dịch đoạn phía trên*
+Một phương pháp tăng cường khác là thay đổi màu sắc.
+Chúng ta có thể thay đổi bốn khía cạnh của màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
+Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) của ảnh gốc.
 
 
 
@@ -177,7 +179,7 @@ apply(img, gluon.data.vision.transforms.RandomBrightness(0.5))
 Similarly, we can randomly change the hue of the image.
 -->
 
-*dịch đoạn phía trên*
+Tương tự vậy, ta có thể ngẫu nhiên thay đổi tông màu của ảnh.
 
 
 ```{.python .input  n=8}
@@ -189,8 +191,8 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-*dịch đoạn phía trên*
-
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập cách để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
+ 
 
 
 ```{.python .input  n=9}
@@ -204,7 +206,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### *dịch tiêu đề phía trên*
+### Chồng nhiều phương pháp tăng cường ảnh
 
 
 <!--
@@ -212,7 +214,8 @@ In practice, we will overlay multiple image augmentation methods.
 We can overlay the different image augmentation methods defined above and apply them to each image by using a `Compose` instance.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng tôi sẽ phủ nhiều phương pháp tăng cường hình ảnh.
+Ta có thể chồng các phương pháp tăng cường hình ảnh khác nhau được xác định ở trên và áp dụng chúng cho từng hình ảnh bằng cách sử dụng một thực thể `Compose`.
 
 
 
