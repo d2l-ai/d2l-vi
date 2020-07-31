@@ -564,8 +564,8 @@ Nó có thể chỉ được truy cập từ một lõi nhất định hoặc đ
 Bộ nhớ đệm L2 có kích thước lớn hơn (thường là 256-512kB mỗi lõi) và chậm hơn L1.
 Hơn nữa, để truy cập vào dữ liệu trong L2, đầu tiên ta cần kiểm tra để chắc rằng dữ liệu đó không nằm trong L1, việc này làm tăng độ trễ lên một chút.
 * Bộ nhớ đệm **L3** được sử dụng chung cho nhiều lõi khác nhau và có thể khá lớn.
-CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm cực lớn 256MB cho nhiều chiplet.
-Thông thường kich thước L3 nằm trong khoảng 4-8MB.
+CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm 256MB cực lớn được phân bổ trên nhiều vi xử lý con (*chiplet*).
+Thường thì kích thước của L3 nằm trong khoảng 4-8MB.
 
 <!--
 Predicting which memory elements will be needed next is one of the key optimization parameters in chip design.
@@ -583,7 +583,7 @@ Quite potentially such code runs *more slowly* on multiple processors when compa
 This is one more reason for why there is a practical limit to cache sizes (besides their physical size).
 -->
 
-Việc dự đoán ta sẽ cần phần tử bộ nhớ nào tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
+Việc dự đoán phần tử bộ nhớ nào sẽ cần tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
 Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán ghi đệm (*caching algorithms*) sẽ cố gắng *đọc về trước* hơn là về sau.
 Tương tự, việc giữ hành vi truy cập bộ nhớ ở mức cục bộ là một cách tốt để cải thiện hiệu năng.
 Tăng số lượng bộ nhớ đệm là một con dao hai lưỡi.
@@ -642,12 +642,12 @@ For instance, NVIDIA's [Turing](https://devblogs.nvidia.com/nvidia-turing-archit
 -->
 
 Ta cần chú ý đến đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
-Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi của mạng,
+Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi qua mạng,
 không cần sử dụng bộ nhớ để lưu dữ liệu trung gian ở bước lan truyền ngược.
 Hơn nữa, ta có thể không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
 Mặt khác trong quá trình huấn luyện, tất cả kết quả trung gian đều cần phải lưu lại để tính gradient.
 Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới,
-do đó bước huấn luyện yêu cầu tối thiểu độ chính xác FP16 (hoặc thậm chí FP32).
+do đó bước huấn luyện yêu cầu tối thiểu độ chính xác FP16 (hoặc độ chính xác hỗn hợp khi kết hợp với FP32).
 Tất cả các yếu tố trên đòi hỏi bộ nhớ nhanh hơn và lớn hơn (HBM2 hoặc GDDR6) và nhiều khả năng xử lý hơn.
 Ví dụ, GPU [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 của NVIDIA được tối ưu cho bước suy luận trong khi GPU V100 phù hợp cho quá trình huấn luyện.
 
@@ -666,7 +666,7 @@ Each Streaming Multiprocessor (SM) consists of four such blocks.
 
 Xem lại :numref:`fig_neon128`. Việc thêm các đơn vị vector vào lõi vi xử lý cho phép ta tăng đáng kể thông lượng xử lý (ở ví dụ trong hình ta có thể thực hiện 16 thao tác cùng lúc).
 Chuyện gì sẽ xảy ra nếu ta không chỉ tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
-Chiến lược này dẫn tới Lõi Tensor (chi tiết sẽ được thảo luận sau đây).
+Chiến lược này dẫn tới sự ra đời của Lõi Tensor (chi tiết sẽ được thảo luận sau đây).
 Thứ hai, nếu tăng số lượng lõi thì sao?
 Nói tóm lại, hai chiến lược trên tóm tắt việc quyết định thiết kế của GPU.
 :numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản,
@@ -727,7 +727,7 @@ They are optimized for small operations involving between 4x4 and 16x16 matrices
 Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (*TensorCore*).
 Đây là một ví dụ của xu hướng gần đây là sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
 Ví dụ, TPU có thêm một mảng tâm thu (*systolic array*) :cite:`Kung.1988` để tăng tốc độ nhân ma trận.
-Thiết kế của TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
+Thiết kế của TPU chỉ hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
 Lõi Tensor thì ngược lại,
 được tối ưu cho các phép tính kích thước nhỏ cho các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học.
 :numref:`fig_tensorcore` mô tả tổng quan quá trình tối ưu.
