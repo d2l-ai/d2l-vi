@@ -24,13 +24,13 @@ An introduction to cloud computing with AWS can be found in :numref:`sec_aws`.
 -->
 
 Để xây dựng các hệ thống có hiệu năng cao, ta cần nắm chắc kiến thức về các thuật toán và mô hình để có thể biểu diễn được những khía cạnh thống kê của bài toán.
-Đồng thời, ta cũng cần có một chút kiến thức cơ bản về phần cứng.
+Đồng thời, ta cũng cần có một chút kiến thức cơ bản về phần cứng thực thi ở bên dưới.
 Nội dung trong phần này không thể thay thế một khóa học đầy đủ về phần cứng và thiết kế hệ thống,
 mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
 Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ). 
-Ta sẽ bắt đầu bằng cách nhìn vào bên trong máy tính.
-Tiếp theo, ta sẽ lại gần và xem xét CPU và GPU một cách chi tiết hơn.
-Cuối cùng, ta sẽ quan sát tổng thể và xem xét cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
+Ta sẽ bắt đầu bằng việc quan sát tổng thể một hệ thống máy tính.
+Tiếp theo, ta sẽ đi sâu hơn và xem xét chi tiết về CPU và GPU.
+Cuối cùng, ta sẽ tìm hiểu cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
 Cần lưu ý, phần này sẽ không hướng dẫn cách lựa chọn card GPU. 
 Nếu bạn cần gợi ý, hãy xem :numref:`sec_buy_gpu`. 
 Phần giới thiệu về điện toán đám mây trên AWS có thể tìm thấy tại :numref:`sec_aws`.
@@ -47,12 +47,12 @@ such as the one by [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 -->
 
 Bạn đọc có thể tham khảo nhanh thông tin tóm tắt trong :numref:`fig_latencynumbers`.
-Nội dung này được trích dẫn từ bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) chứa đựng thông tin tổng quan về những tiến bộ trong thập kỉ qua.
-Số liệu gốc được trích dẫn từ bài giảng của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
+Nội dung này được trích dẫn từ bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) trình bày tổng quan về những tiến bộ trong thập kỉ qua.
+Số liệu gốc được trích dẫn từ buổi thảo luận của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
 Phần thảo luận dưới đây sẽ giải thích cơ sở cho những con số trên và cách mà chúng dẫn dắt ta trong quá trình thiết kế thuật toán.
-Phần thảo luận này cũng sẽ khá trừu tượng và ngắn gọn,
+Phần thảo luận này cũng sẽ khá khái quát và ngắn gọn,
 nên nó không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho những người làm mô hình thống kê để có thể đưa ra lựa chọn thiết kế phù hợp.
-Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây như [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
+Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây của [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
@@ -87,10 +87,10 @@ often connected in an advanced topology, desktop systems have 1-2, depending on 
 provides efficient transfer of training data to the system and storage of intermediate checkpoints as needed.
 -->
 
-* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 nhân (_core_) hoặc nhiều hơn.
+* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 lõi (_core_) hoặc nhiều hơn.
 * Bộ nhớ (RAM) được sử dụng để lưu trữ và truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt và dữ liệu huấn luyện.
-* Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các kết nối tốc độ cao trong các máy chủ tân tiến).
-* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với nhau theo cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào ngân sách của người dùng và bộ nguồn điện của máy tính.
+* Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các máy chủ tân tiến còn có các phương phấp kết nối cao cấp hơn nữa).
+* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với nhau theo cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào túi tiền của người dùng và công suất nguồn điện.
 * Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian một cách hiệu quả. 
 
 <!--
@@ -124,10 +124,10 @@ Let us have a look at the various components in more detail.
 -->
 
 Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở các bộ xử lý (CPU hay GPU), thực hiện tính toán và sau đó truyền kết quả tới RAM hay ổ lưu trữ.
-Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà, không có phần nào trong hệ thống bị tắc nghẽn.
+Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà và hệ thống không có nút nghẽn cổ chai.
 Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
-Tương tự, nếu ta không thể truyền ma trận đủ nhanh tới CPU (hay GPU), bộ xử lý sẽ thiếu dữ liệu để hoạt động.
-Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm việc tính toán. Một lựa chọn đó là xen kẽ việc giao tiếp và tính toán giữa các máy tính.
+Tương tự, nếu ta không thể truyền các ma trận tới CPU (hay GPU) đủ nhanh, bộ xử lý sẽ thiếu dữ liệu để hoạt động.
+Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm việc tính toán. Xen kẽ việc giao tiếp và tính toán giữa các máy tính là một phương án cho vấn đề này.
 Giờ hãy xem xét các thành phần trên một cách chi tiết hơn.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -171,12 +171,12 @@ We could perform up to $10,000,000$ random reads per second.
 This suggests that we avoid random memory access as far as possible and use burst reads (and writes) instead.
 -->
 
-Dù những con số trên trông khá ấn tượng, trên thực tế chúng chỉ nói lên một phần của câu chuyện.
-Khi ta muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ dẫn cho mô-đun bộ nhớ nơi thông tin có thể được tìm thấy.
-Nghĩa là, trước tiên chúng ta cần gửi *địa chỉ* đến RAM.
+Dù những con số trên trông khá ấn tượng, trên thực tế chúng chỉ nói lên một phần nào đó.
+Khi muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ cho mô-đun bộ nhớ vị trí chứa thông tin,
+tức cần gửi *địa chỉ* đến RAM.
 Khi thực hiện xong việc này, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
 Lựa chọn thứ hai được gọi là *đọc nhanh* (_burst read_).
-Nói ngắn gọn, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp (_transfer_) sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
+Nói ngắn gọn, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
 mỗi lần chuyển tiếp sau đó chỉ mất 0.2ns.
 Có thể thấy lần đọc đầu tiên tốn thời gian gấp 500 lần những lần sau!
 Ta có thể đọc ngẫu nhiên tối đa $10,000,000$ lần mỗi giây.
@@ -192,8 +192,8 @@ Compilers do this pretty much [automatically](https://en.wikipedia.org/wiki/Data
 Curious readers are encouraged to review a lecture on DRAMs such as the one by [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 -->
 
-Mọi thứ trở nên phức tạp hơn một chút khi ta tính đến việc có nhiều bank.
-Mỗi bank có thể đọc bộ nhớ một cách độc lập.
+Mọi thứ trở nên phức tạp hơn một chút khi ta tính đến việc có nhiều dải bộ nhớ.
+Mỗi dải có thể đọc bộ nhớ gần như là độc lập với nhau.
 Điều này có hai ý sau. 
 Thứ nhất, số lần đọc ngẫu nhiên thực sự cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
 Điều đó cũng có nghĩa là việc thực hiện các lệnh đọc ngẫu nhiên vẫn không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
@@ -224,18 +224,18 @@ They only matter when tuning GPU kernels for high throughput.
 
 Bộ nhớ GPU còn yêu cầu băng thông cao hơn nữa vì chúng có nhiều phần tử xử lý hơn CPU.
 Nhìn chung có hai phương án tiếp cận đối với vấn đề này.
-Một phương án là tạo bus bộ nhớ có kích thước lớn hơn đáng kể.
+Một cách là mở rộng bus bộ nhớ.
 Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có kích thước 352 bit.
 Điều này cho phép truyền đi lượng thông tin lớn hơn cùng lúc.
-Thứ hai là các GPU sử dụng loại bộ nhớ chuyên biệt có hiệu năng cao.
+Một cách khác là sử dụng loại bộ nhớ chuyên biệt có hiệu năng cao cho GPU.
 Các thiết bị hạng phổ thông, điển hình như dòng RTX và Titan của NVIDIA, dùng các chip [GDDR6](https://en.wikipedia.org/wiki/GDDR6_SDRAM) với băng thông tổng hợp hơn 500 GB/s.
 Một lựa chọn khác là mô-đun HBM (bộ nhớ băng thông rộng).
 Chúng dùng phương thức giao tiếp rất khác và kết nối trực tiếp với GPU trên một tấm bán dẫn silic chuyên biệt.
 Điều này dẫn đến giá thành rất cao và chúng chỉ được sử dụng chủ yếu cho các chip máy chủ cao cấp, ví dụ như dòng GPU NVIDIA Volta V100.
 Không quá ngạc nhiên, kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
-Đối với mục tiêu của chúng ta, nhìn chung các đặc tính hiệu năng của chúng khá giống nhau, chỉ là nhanh hơn nhiều.
-Ta hoàn toàn có thể bỏ qua các chi tiết sâu hơn trong cuốn sách này.
-Chúng chỉ trở nên quan trọng khi điều chỉnh các kernel GPU để đạt được thông lượng xử lý cao hơn.
+Nhìn chung các đặc tính hiệu năng của bộ nhớ GPU khá giống bộ nhớ CPU, nhưng nhanh hơn nhiều.
+Ta có thể bỏ qua các chi tiết sâu hơn trong cuốn sách này,
+do chúng chỉ quan trọng khi cần điều chỉnh các nhân (*kernel*) GPU để đạt thông lượng xử lý cao hơn.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
