@@ -142,7 +142,7 @@ Let us simulate this by computing on the GPU and then copying the results back t
 -->
 
 Trong nhiều trường hợp ta cần di chuyển dữ liệu giữa các thiết bị như CPU và GPU, hoặc giữa các GPU với nhau.
-Điều này xảy ra, chẳng hạn như khi ta cần tổng hợp gradient trên các thẻ tăng tốc (*multiple accelerator cards*) khi cần thực hiện tối ưu hóa phân tán.
+Điều này xảy ra, chẳng hạn như khi ta cần tổng hợp gradient trên các thẻ tăng tốc (*accelerator card*) khi cần thực hiện tối ưu hóa phân tán.
 Hãy cùng mô phỏng điều này bằng việc tính toán trên GPU và sau đó sao chép kết quả trở lại CPU.
 
 
