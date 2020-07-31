@@ -413,7 +413,7 @@ Note that a (possibly more elegant) alternative would have been to track the los
 
 Để đảm bảo bộ đệm tác vụ tại back-end không bị tràn, ta chèn phương thức `wait_to_read` vào back-end cho hàm mất mát ở cuối mỗi vòng lặp.
 Điều này buộc mỗi lượt truyền xuôi phải hoàn thành trước khi lượt truyền xuôi tiếp theo được bắt đầu.
-Chú ý rằng có một phương án thay thế khác (có lẽ tinh tế hơn) là theo dõi lượng mất mát ở biến vô hướng và buộc đi qua một lớp cản (*barrier*) qua việc gọi phương thức `item`.
+Chú ý rằng có một phương án thay thế khác (có lẽ tinh tế hơn) là theo dõi lượng mất mát ở biến vô hướng và buộc đi qua một lớp chặn (*barrier*) qua việc gọi phương thức `item`.
 
 
 ```{.python .input  n=14}
@@ -480,9 +480,9 @@ Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ
 * Chip vendors offer sophisticated performance analysis tools to obtain a much more fine-grained insight into the efficiency of deep learning.
 -->
 
-* MXNet tách riêng khối front-end Python khỏi khối back-end thực thi. Điều này cho phép nhanh chóng chèn các câu lệnh một cách bất đồng bộ vào khối back-end và kết hợp tính toán đa luồng.
+* MXNet tách riêng khối front-end Python khỏi khối back-end thực thi. Điều này cho phép nhanh chóng chèn các câu lệnh một cách bất đồng bộ vào khối back-end và kết hợp tính toán song song.
 * Sự bất đồng bộ giúp front-end phản ứng nhanh hơn. Tuy nhiên, cần phải áp dụng cẩn thận để không làm tràn các tác vụ ở trạng thái đợi, gây chiếm dụng bộ nhớ.
-* Nên đồng bộ theo từng minibatch một để giữ cho front-end và back-end được đồng bộ tương đương nhau.
+* Nên đồng bộ theo từng minibatch một để giữ cho front-end và back-end được đồng bộ tương đối.
 * Nên nhớ rằng việc chuyển quản lý bộ nhớ từ MXNet sang Python sẽ buộc back-end phải chờ cho đến khi biến đó sẵn sàng.
 `print`, `asnumpy` và `item` đều gây ra hiệu ứng trên. Điều này có thể có ích đôi lúc, tuy nhiên lạm dụng chúng có thể làm giảm sút hiệu năng.
 * Nhà sản xuất vi xử lý cung cấp các công cụ phân tích hiệu năng tinh vi, cho phép đánh giá hiệu năng của học sâu một cách chi tiết hơn rất nhiều.
@@ -523,4 +523,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
