@@ -229,7 +229,7 @@ Chẳng hạn NVIDIA's RTX 2080 Ti dùng bus có kích thước 352 bit.
 Điều này cho phép truyền đi lượng thông tin lớn hơn cùng lúc.
 Một cách khác là sử dụng loại bộ nhớ chuyên biệt có hiệu năng cao cho GPU.
 Các thiết bị hạng phổ thông, điển hình như dòng RTX và Titan của NVIDIA, dùng các chip [GDDR6](https://en.wikipedia.org/wiki/GDDR6_SDRAM) với băng thông tổng hợp hơn 500 GB/s.
-Một lựa chọn khác là mô-đun HBM (bộ nhớ băng thông rộng).
+Một loại bộ nhớ chuyên biệt khác là mô-đun HBM (bộ nhớ băng thông rộng).
 Chúng dùng phương thức giao tiếp rất khác và kết nối trực tiếp với GPU trên một tấm bán dẫn silic chuyên biệt.
 Điều này dẫn đến giá thành rất cao và chúng chỉ được sử dụng chủ yếu cho các chip máy chủ cao cấp, ví dụ như dòng GPU NVIDIA Volta V100.
 Không quá ngạc nhiên, kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
