@@ -119,7 +119,7 @@ Hình này lấy từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, ở đây chiế
 Cách này cho phép tất cả GPU thực hiện cùng một công việc, mặc dù từ các vùng quan sát khác nhau. 
 Các gradient được tổng hợp lại trên các GPU sau mỗi minibatch.
    * Đây là phương pháp đơn giản nhất và có thể sử dụng cho bất cứ tình huống nào.
-   * Gắn thêm nhiều GPU không cho phép chúng ta huấn luyện mô hình lớn hơn.
+   * Gắn thêm nhiều GPU không cho phép chúng ta huấn luyện mô hình lớn hơn. 
    * Chúng ta chỉ cần đồng bộ hóa sau mỗi minibatch. 
    Như đã nói, ta có thể bắt đầu thực hiện trao đổi các gradient đã tính xong trong khi vẫn đang tính các gradient khác.
    * Số lượng GPU lớn dẫn tới kích thước minibatch rất lớn, do đó giảm hiệu quả huấn luyện.
