@@ -76,11 +76,14 @@ Vì vậy, bạn hãy dịch dựa trên nội dung mà nhóm đã cung cấp tr
 
 ## Dành cho nhóm Cộng tác (Collaborators)
 
-
 ### Tôi có thể merge PR của mình không?
 
 Không, chúng tôi khuyến khích các thành viên tham gia dự án chỉ nên tập trung vào phần dịch thuật và trao đổi dịch thuật mà thôi. Nhóm điều phối sẽ kiểm tra các PR và tiến hành merge khi đã đạt yêu cầu.
 
 
-### 
+### Khi là Collaborator, tôi có thể làm những gì?
+
+Bạn có thể có gần như tất cả các quyền mà những thành viên khác trong nhóm có. Bạn có thể tự assign mình vào một issue, bạn có thể gắn label cho các pull request, bạn có thể approve các pull request...
+
+Tuy nhiên, để loại bỏ những bận tâm không đáng có, chúng tôi chỉ khuyến nghị bạn tập trung vào phần nội dung mà thôi: dịch những nội dung đã nhận, phản biện những nội dung của các thành viên khác, nêu quan điểm trong các thảo luận về thuật ngữ; đó là tất cả những gì dự án cần (và hạn chế mọi điều ở trên chúng tôi có liệt kê).
 
