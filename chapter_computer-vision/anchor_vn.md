@@ -183,7 +183,7 @@ show_bboxes(fig.axes, boxes[250, 250, :, :] * bbox_scale,
 ## Intersection over Union
 -->
 
-## *dịch tiêu đề phía trên*
+## Giao lộ trên liên minh
 
 
 <!--
@@ -193,8 +193,10 @@ We know that the Jaccard index can measure the similarity between two sets.
 Given sets $\mathcal{A}$ and $\mathcal{B}$, their Jaccard index is the size of their intersection divided by the size of their union:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta chỉ mới đề cập rằng khung neo bao phủ tốt hình ảnh con chó.
+Nếu như khung chứa chuẩn của đối tượng đã được xác định, thì làm thế nào để định lượng được "mức độ tốt" ở đây? Một phương pháp trực quan ở đây chính là đo lường sự tương đồng giữa các khung neo và khung chứa chuẩn.
+Chúng ta biết rằng hệ số Jaccard có thể đo lường sự tương đồng giữa hai tập dữ liệu.
+Các tập đã cho $\mathcal{A}$ and $\mathcal{B}$, có chỉ số Jaccard được đo bằng là kích thước của miền giao của chúng chia cho kích thước của miền hợp:
 
 
 $$J(\mathcal{A},\mathcal{B}) = \frac{\left|\mathcal{A} \cap \mathcal{B}\right|}{\left| \mathcal{A} \cup \mathcal{B}\right|}.$$
@@ -208,14 +210,17 @@ which is the ratio of the intersecting area to the union area of the two boundin
 The value range of IoU is between 0 and 1: 0 means that there are no overlapping pixels between the two bounding boxes, while 1 indicates that the two bounding boxes are equal.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta có thể coi vùng pixel trong khung chứa là tập hợp hữu hạn các pixels.
+Theo cách này, chúng ta có thể đo lường được tính tương đồng của hai khung chứa bằng hệ số Jacccard của các trong pixels trong chúng.
+Khi chúng ta đo lường sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được xem như là Giao lộ trên liên minh (IoU), đó là tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, điều đó được thể hiện trong :numref:`fig_iou`.
+Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: 0 có nghĩa là không có pixel nào giao nhau giữa hai khung chứa, trong khi đó 1 chỉ ra rằng hai khung chứa ấy trùng nhau.
 
 
 <!--
 ![IoU is the ratio of the intersecting area to the union area of two bounding boxes.](../img/iou.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/iou.svg)
+![*IoU là tỷ lệ của khu vực giao nhau với khu vực kết hợp của hai khung chứa*](../img/iou.svg)
 :label:`fig_iou`
 
 
@@ -223,7 +228,7 @@ The value range of IoU is between 0 and 1: 0 means that there are no overlapping
 For the remainder of this section, we will use IoU to measure the similarity between anchor boxes and ground-truth bounding boxes, and between different anchor boxes.
 -->
 
-*dịch đoạn phía trên*
+Trong phần còn lại của chương này, ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa chuẩn, và giữa các khung neo với nhau. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -643,7 +648,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 4 -->
 * 
