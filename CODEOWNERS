@@ -1,7 +1,12 @@
-@aivivn
-@tiepvupsu
-@ngcthuong
-@duythanhvn
 
-/img/ @rootonchair @duythanhvn
-glossary.md @lkhphuc @minhduc0711 @davidnvq @duythanhvn
+# Default owners
+@aivivn @tiepvupsu @ngcthuong @duythanhvn
+
+# Active owners
+* @duythanhvn
+
+# The group owns files in /img/ directory
+/img/ @rootonchair
+
+# The group owns the glossary.md file
+glossary.md @lkhphuc @minhduc0711 @davidnvq
