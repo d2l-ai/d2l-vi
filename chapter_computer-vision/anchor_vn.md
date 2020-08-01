@@ -237,7 +237,7 @@ For the remainder of this section, we will use IoU to measure the similarity bet
 ## Labeling Training Set Anchor Boxes
 -->
 
-## *dịch tiêu đề phía trên*
+## Gán nhãn các khung neo trong tập huấn luyện
 
 
 <!--
@@ -249,7 +249,9 @@ adjust the anchor box position according to the predicted offset to obtain the b
 and finally filter out the prediction bounding boxes that need to be output.
 -->
 
-*dịch đoạn phía trên*
+Trong tập huấn luyện, chúng ta xem mỗi khung neo như là một mẩu ví dụ huấn luyện.
+Để huấn luyện mô hình nhận dạng đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là danh mục của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa chuẩn so với khung neo.
+Trong lĩnh vực nhận dạng đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các danh mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là lọc ra các khung chứa xuất kết quả dự đoán.
 
 
 <!--
@@ -274,8 +276,8 @@ We assign ground-truth bounding box $B_{j_2}$ to anchor box $A_{i_2}$ and then d
 At this point, elements in two rows and two columns in the matrix $\mathbf{X}$ have been discarded.
 -->
 
-*dịch đoạn phía trên*
-
+Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa chuẩn là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
+Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó các 
 
 <!--
 We proceed until all elements in the $n_b$ column in the matrix $\mathbf{X}$ are discarded.
