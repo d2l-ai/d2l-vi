@@ -10,3 +10,6 @@
 
 # The group owns the glossary.md file
 glossary.md @lkhphuc @minhduc0711 @davidnvq
+
+# The group owns chapter directories, for the content review
+/chapter_computer-vision/ @lkhphuc 
