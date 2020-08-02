@@ -215,7 +215,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                            | Tiếng Việt                   | Thảo luận tại                                |
 |------------------------------------|------------------------------|----------------------------------------------|
-| inference (applying a trained model to new inputs) | suy ra | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| inference (in model training and inference) | dự đoán / suy luận | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| (statistical) inference | suy luận (thống kê) | [https://git.io/JJVT2](https://git.io/JJVT2) |
 | ill-conditioned                    | (có) điều kiện xấu           |                                              |
 | image segmentation                 | phân vùng ảnh                |   |
 | implement                          | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
