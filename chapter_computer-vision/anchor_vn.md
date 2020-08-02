@@ -251,7 +251,7 @@ and finally filter out the prediction bounding boxes that need to be output.
 
 Trong tập huấn luyện, chúng ta xem mỗi khung neo như là một mẩu ví dụ huấn luyện.
 Để huấn luyện mô hình nhận dạng đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là danh mục của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa chuẩn so với khung neo.
-Trong lĩnh vực nhận dạng đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các danh mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là lọc ra các khung chứa xuất kết quả dự đoán.
+Trong lĩnh vực nhận dạng đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các danh mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là chọn lọc ra các khung chứa dự đoán cần thiết để xuất ra.
 
 
 <!--
@@ -260,7 +260,9 @@ After the anchor boxes are generated, we primarily label anchor boxes based on t
 So how do we assign ground-truth bounding boxes to anchor boxes similar to them?
 -->
 
-*dịch đoạn phía trên*
+Chúng ta biết rằng, trong tập huấn luyện dùng để phát hiện đối tượng, mỗi hình ảnh được gán nhãn với  vị trí của khung chứa chuẩn và danh mục của đối tượng.
+Sau khi các khung neo được tạo, chúng ta ưu tiên gắn nhãn cho chúng dựa vào thông tin của vị trí và danh mục trong khung chứa chuẩn tương tự như các khung neo.
+Vậy làm thế nào để chúng ta có thể gán các khung chứa chuẩn cho những khung neo tương đồng với chúng?
 
 
 <!--
@@ -277,7 +279,15 @@ At this point, elements in two rows and two columns in the matrix $\mathbf{X}$ h
 -->
 
 Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa chuẩn là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
-Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó các 
+Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó mỗi phần tử $x_{ij}$ trong hàng $i^\mathrm{th}$ và cột $j^\mathrm{th}$ là hệ số IoU của khung neo $A_i$ so với khung chứa chuẩn $B_j$.
+Đầu tiên, chúng ta tìm ra phần tử lớn nhất trong ma trận $\mathbf{X}$ rồi lưu lại chỉ mục hàng và cột của phần tử đó là $i_1,j_1$.
+Chúng ta gán khung chứa chuẩn $B_{j_1}$ cho khung neo $A_{i_1}$.
+Ta thấy rõ ràng rằng, khung neo $A_{i_1}$ và khung chứa chuẩn $B_{j_1}$ có độ tương đồng cao nhất trong số tất cả các cặp "khung neo--khung chứa chuẩn".
+Tiếp theo, loại bỏ các phần tử trong hàng $i_1$th và cột $j_1$th trong ma trận $\mathbf{X}$.
+Tìm ra phần tử lớn nhất còn lại trong ma trận $\mathbf{X}$ rồi cũng lưu lại chỉ mục hàng và cột của phần tử đó là $i_2,j_2$.
+Chúng ta gán khung chứa chuẩn $B_{j_2}$ cho khung neo $A_{i_2}$ và sau đó loại bỏ mọi phần tử tại hàng $i_2$th và cột $j_2$th trong ma trận $\mathbf{X}$.
+Như vậy, tại thời điểm này thì các phần tử trong hai hàng và hai cột vừa rồi của ma trận $\mathbf{X}$ đã bị loại bỏ.
+
 
 <!--
 We proceed until all elements in the $n_b$ column in the matrix $\mathbf{X}$ are discarded.
@@ -287,7 +297,11 @@ Given anchor box $A_i$, find the bounding box $B_j$ with the largest IoU with $A
 and only assign ground-truth bounding box $B_j$ to anchor box $A_i$ when the IoU is greater than the predetermined threshold.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tiến hành việc này cho đến khi các phần tử ở cột $n_b$ trong ma trận $\mathbf{X}$ đều bị loại bỏ.
+Tại thời điểm này, chúng ta đều đã gán một khung chứa chuẩn cho mỗi khung neo $n_b$.
+Tiếp đến, chúng ta chỉ việc duyệt qua các khung neo $n_a - n_b$ còn lại.
+Nhận đầu vào là khung neo $A_i$, ta cần tìm ra khung chứa $B_j$ sao cho khung chứa ấy có hệ số IoU so với $A_i$ là giá trị lớn nhất, dựa trên mỗi hàng $i^\mathrm{th}$ của ma trận $\mathbf{X}$,
+và chỉ gán khung chứa chuẩn $B_j$ cho khung neo $A_i$ khi mà hệ số IoU lớn hơn một ngưỡng đã được định sẵn.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -648,7 +662,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
