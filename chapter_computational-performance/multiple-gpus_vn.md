@@ -101,15 +101,15 @@ Cụ thể, mỗi GPU sẽ nhận một luồng dữ liệu đưa vào từ mộ
    Điều này có thể sẽ rất khó, đặc biệt nếu khối lượng tính toán không được phân chia hợp lý cho các tầng. 
    Vấn đề sẽ trở nên nghiêm trọng với một số lượng lớn GPU.
    * Giao tiếp giữa các tầng yêu cầu một lượng lớn các thao tác truyền dữ liệu (các hàm kích hoạt, các gradient). Điều này có thể vượt quá mức băng thông các bus của GPU.
-   * Các phép toán phức tạp nhưng tuần tự không hề dễ phân chia.
+   * Các phép tính tuần tự nhưng nặng về mặt tính toán lại không hề dễ phân chia.
    :cite:`Mirhoseini.Pham.Le.ea.2017` là nỗ lực tốt nhất để giải quyết vấn đề này.
-   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu có thể mở rộng tốt (tuyến tính) cho các bài toán không tầm thường (*nontrivial problems*). 
+   Nó vẫn còn là một vấn đề khó và chưa rõ ràng liệu có thể đạt được khả năng mở rộng tốt (tăng theo tuyến tính) cho các bài toán không quá đơn giản không. 
    Chúng tôi không khuyến khích cách làm này trừ phi có một framework xuất sắc hay một hệ điều hành hỗ trợ cho việc xâu chuỗi nhiều GPU lại với nhau.
 * Chúng ta có thể phân chia công việc của các tầng đơn lẻ.
 Chẳng hạn, thay vì tính toán 64 kênh trên một GPU, ta có thể chia công việc này cho 4 GPU, mỗi GPU sẽ sinh dữ liệu cho 16 kênh. 
 Tương tự, với một tầng kết nối dày đặc ta có thể chia nhỏ số nơ-ron đầu ra.
 :numref:`fig_alexnet_original` mô tả thiết kế kiểu này. 
-Hình này được trích từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, khi chiến lược này được sử dụng để làm việc với nhiều GPU có mức chiếm dụng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
+Hình này được trích từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, khi chiến lược này được sử dụng để làm việc với nhiều GPU có dung lượng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
    * Điều này cho phép việc điều chỉnh kích thước tính toán tốt, với điều kiện là số kênh (hoặc số nơ-ron) không quá nhỏ.
    * Dùng nhiều GPU có thể xử lý các mạng ngày một lớn hơn vì dung lượng bộ nhớ khả dụng cũng tăng tuyến tính.
    * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / lớp chặn vì mỗi tầng phụ thuộc vào các kết quả từ tất cả các tầng khác.
