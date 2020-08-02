@@ -351,7 +351,7 @@ print('after allreduce:\n', data[0], '\n', data[1])
 ## Distributing Data
 -->
 
-## Phân bổ Dữ liệu
+## Phân phối Dữ liệu
 
 
 <!--
@@ -437,9 +437,9 @@ Obviously each batch is processed using `train_batch` to deal with multiple GPUs
 For convenience (and conciseness of code) we compute the accuracy on a single GPU (this is *inefficient* since the other GPUs are idle).
 -->
 
-Bây giờ ta có thể khai báo hàm huấn luyện.
+Bây giờ ta có thể định nghĩa hàm huấn luyện.
 Hàm này có một chút khác biệt so với hàm huấn luyện trong các chương trước: 
-ta cần cấp phát GPU và sao chép các tham số mô hình tới tất cả thiết bị.
+ta cần chỉ định GPU và sao chép các tham số mô hình tới tất cả thiết bị.
 Mỗi batch được xử lý bằng `train_batch` nhằm tận dụng nhiều GPU.
 Để thuận tiện (và để mã nguồn ngắn gọn), ta tính độ chính xác trên một GPU (cách này *không hiệu quả* vì các GPU khác không được tận dụng).
 
@@ -503,7 +503,7 @@ Giữ nguyên kích thước batch và tốc độ học, tăng số GPU lên 2,
 ta có thể thấy sự cải thiện về độ chính xác trên tập kiểm tra xấp xỉ bằng thí nghiệm trước.
 Dưới góc nhìn thuật toán tối ưu, hai thí nghiệm là giống hệt nhau.
 Không may, ta không đạt được sự tăng tốc đáng kể nào: đơn giản vì mô hình quá nhỏ;
-hơn nữa tập dữ liệu cũng nhỏ, do đó cách huấn luyện trên nhiều GPU có chút không tinh vi của chúng ta sẽ chịu chi phí đáng kể do Python.
+hơn nữa tập dữ liệu cũng nhỏ, do đó cách huấn luyện không quá tinh vi của chúng ta trên nhiều GPU sẽ chịu chi phí đáng kể do Python.
 Về sau ta sẽ gặp các mô hình phức tạp hơn và các cách song song hóa tinh vi hơn.
 Hiện giờ hãy xem thí nghiệm trên Fashion-MNIST cho kết quả như thế nào. <!-- trong code là `load_data_fashion_mnist` -->
 
@@ -529,7 +529,7 @@ Có thể chia các tầng cho một GPU, dùng nhiều GPU cho một tầng, ho
 Hai cách đầu yêu cầu điều khiển việc truyền dữ liệu chặt chẽ.
 Song song hóa dữ liệu là cách đơn giản nhất.
 * Không khó để huấn luyện bằng song song hóa dữ liệu. Tuy nhiên, cách này cần tăng kích thước hiệu dụng của minibatch để đạt hiệu quả.
-* Dữ liệu được chia cho nhiều GPU, mỗi GPU thực thi các lượt truyền xuôi và ngược, sau đó các gradient được tổng hợp lại và truyền kết quả về các GPU.
+* Dữ liệu được chia cho nhiều GPU, mỗi GPU thực thi các lượt truyền xuôi và ngược, sau đó các gradient được tổng hợp lại và kết quả được truyền về các GPU.
 * Minibatch lớn có thể yêu cầu tốc độ học cao hơn một chút.
 
 
@@ -542,7 +542,7 @@ Song song hóa dữ liệu là cách đơn giản nhất.
 4. Implement multi-GPU test accuracy computation.
 -->
 
-1. Khi huấn luyện trên nhiều GPU, thay đổi kích thước minibatch từ $b$ thành $k \cdot b$, tức là nhân thêm số lượng GPU.
+1. Khi huấn luyện trên nhiều GPU, thử thay đổi kích thước minibatch từ $b$ thành $k \cdot b$, tức là nhân thêm số lượng GPU.
 2. So sánh độ chính xác với các tốc độ học khác nhau. Tốc độ học thay đổi theo số lượng GPU như thế nào?
 3. Lập trình hàm `allreduce` hiệu quả hơn để tổng hợp các tham số trên các GPU khác nhau (tại sao cách ban đầu không hiệu quả)?
 4. Lập trình tính độ chính xác trên tập kiểm tra với nhiều GPU.
@@ -587,3 +587,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 6 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
