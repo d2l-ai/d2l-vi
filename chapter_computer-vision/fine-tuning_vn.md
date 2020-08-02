@@ -15,9 +15,9 @@ We also described ImageNet, the most widely used large-scale image dataset in th
 However, the size of datasets that we often deal with is usually larger than the first, but smaller than the second.
 -->
 
-Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, chỉ có 60 000 ảnh.
-Chúng ta cũng đã điểm qua ImageNet, bộ dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
-Tuy nhiên, kích thước những bộ dữ liệu ta hay gặp thường sẽ ở đâu đó giữa hai bộ này, lớn hơn bộ MNIST nhưng nhỏ hơn ImageNet.
+Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60 000 ảnh.
+Chúng ta cũng đã nói về ImageNet, bộ dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
+Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai bộ này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
 <!--
@@ -28,11 +28,11 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-Giả sử ta muốn tìm ra những loại ghế khác nhau trong ảnh rồi đẩy link mua ghế đó tới người dùng.
-Một phương pháp khả dĩ là đầu tiên tìm khoảng một trăm chiếc ghế nói chung, lấy một nghìn bức ảnh khác nhau chụp các góc cạnh của từng ghế, rồi huấn luyện mô hình phân loại trên bộ dữ liệu ảnh đó.
-Dù bộ dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
-Việc này dẫn tới việc overfitting với các mô hình phức tạp dựa trên Imagenet khi huấn luyện trên bộ dữ liệu nhỏ này.
-Cùng lúc đó, bởi vì lượng dữ liệu có hạn, điểm accuracy - độ chính xác của mô hình đã huấn luyện có thể không đạt như kỳ vọng.
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi link thanh toán chiếc ghế đó tới người dùng.
+Một cách khả dĩ là, đầu tiên ta tìm lấy khoảng một trăm chiếc ghế, chụp một nghìn bức ảnh từ các góc cạnh khác của từng chiếc, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
+Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
+Điều này dẫn tới việc các mô hình cấu trúc phức tạp có thể chạy tốt trên Imagenet thì bị quá khớp khi huấn luyện trên tập dữ liệu nhỏ này.
+Đồng thời, vì số lượng dữ liệu hạn chế, độ chính xác của mô hình sau huấn luyện có thể không đạt như kỳ vọng.
 
 
 <!--
@@ -42,10 +42,10 @@ For example, in order to collect the ImageNet datasets, researchers have spent m
 Although, recently, data collection costs have dropped significantly, the costs still cannot be ignored.
 -->
 
-Để xử lý vấn đề này, giải pháp rõ ràng là phải thu thập thêm dữ liệu.
-Tuy nhiên, thu thập và gán nhãn dữ liệu sẽ tốn tiền và thời gian.
-Ví dụ, để thu thập được bộ ImageNet, những nhà nghiên cứu đã phải chi hàng triệu đô la.
-Dù vậy, gần đây, chi phí thu thập dữ liệu đã giảm mạnh, nhưng vẫn không thể bỏ qua được.
+Để giải quyết vấn đề này, một giải pháp dễ thấy là đi thu thập thêm dữ liệu.
+Tuy nhiên, thu thập và gán nhãn dữ liệu thì tốn tiền và thời gian.
+Ví dụ, để thu thập được bộ ImageNet, những nhà nghiên cứu đã tốn đến hàng triệu đô la.
+Dù gần đây, chi phí thu thập dữ liệu đã giảm mạnh, nhưng vẫn cần lưu ý.
 
 
 <!--
@@ -55,7 +55,9 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-Một giải pháp khác để áp dụng transfer learning 
+Một giải pháp khác là áp dụng học truyền tải, để chuyển kiến thức đã học được từ mô hình đã học từ tập dữ liệu nguồn sang mô hình làm viêc với dữ liệu đích.
+Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, chất liệu, hình đáng, và các thành phần của vật thể.
+Các đặc trưng tương đồng này sẽ có ích trong bài toán nhận diện ghế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -435,7 +437,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Mai Sơn Hải
 
 <!-- Phần 2 -->
 * 
