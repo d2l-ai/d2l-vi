@@ -275,12 +275,12 @@ Hence we need to *synchronize* them if we want to use synchronous distributed op
 :numref:`fig_ps_multimachine` illustrates how distributed parallel training occurs.
 -->
 
-Huấn luyện phân tán trên nhiều máy tính tạo nên một thử thách mới:
-ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp mà trong một số trường hợp tốc độ thậm chí có thể chậm hơn đến quá 10 lần.
-Đồng bộ nhiều thiết bị khá phức tạp.
+Việc huấn luyện phân tán trên nhiều máy tính tạo nên một thử thách mới:
+ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp. Trong một số trường hợp tốc độ thậm chí có thể chậm gấp hơn 10 lần.
+Đồng bộ nhiều thiết bị là công việc khá phức tạp.
 Suy cho cùng, mỗi máy tính khác nhau chạy đoạn mã huấn luyện với tốc độ khác nhau đôi chút.
 Do đó ta cần *đồng bộ* chúng nếu muốn sử dụng tối ưu phân tán đồng bộ.
-:numref:`fig_ps_multimachine` mô tả cách quá trình huấn luyện phân tán song song diễn ra.
+:numref:`fig_ps_multimachine` mô tả quá trình huấn luyện phân tán song song.
 
 <!--
 1. A (different) batch of data is read on each machine, split across multiple GPUs and transferred to GPU memory. There predictions and gradients are computed on each GPU batch separately.
@@ -292,13 +292,13 @@ Do đó ta cần *đồng bộ* chúng nếu muốn sử dụng tối ưu phân 
 7. The updated weight vectors are spread across all GPUs.
 -->
 
-1. Một batch dữ liệu (khác nhau) được đọc trên mỗi máy tính, được chia đều cho các GPU và được truyền đến bộ nhớ của GPU. Trong đó các dự đoán và gradient được tính toán riêng rẽ theo batch trên từng GPU.
+1. Một batch dữ liệu (khác nhau) được đọc trên mỗi máy tính, chia đều cho các GPU và truyền đến bộ nhớ của GPU. Ở đó các dự đoán và gradient được tính toán riêng biệt theo từng batch trên các GPU khác nhau.
 2. Các gradient trên tất cả các GPU cục bộ được tổng hợp trên một GPU (hoặc các phần khác nhau được tổng hợp trên nhiều GPU khác nhau).
 3. Các gradient được truyền đến CPU.
 4. CPU truyền các gradient đến máy chủ tham số trung tâm để tổng hợp tất cả các gradient.
-5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số và các vector trọng số sau đó được truyền lại cho từng CPU đơn một.
-6. Thông tin cập nhật được truyền cho một (hoặc nhiều) GPU.
-7. Các vector trọng số đã được cập nhật sau đó được phân bố lại cho tất cả các GPU.
+5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số. Tiếp đó thì các vector trọng số mới được phân phát cho các CPU.
+6. Thông tin cập nhật được truyền tới một (hoặc nhiều) GPU.
+7. Các vector trọng số đã được cập nhật sau đó được phân bố đều cho tất cả các GPU.
 
 <!--
 ![Multi-machine multi-GPU distributed parallel training.](../img/ps-multimachine.svg)
@@ -326,24 +326,24 @@ In particular, ensuring that multiple machines work without unreasonable delays 
 We omit details on barriers and will only briefly touch on synchronous and asynchronous updates below.
 -->
 
-Mỗi một thao tác trên nhìn qua thì có vẻ khá dễ hiểu.
-Quả thực, chúng có thể được thực hiện một cách hiệu quả *trong* một máy tính đơn.
-Tuy nhiên khi xét trên nhiều máy tính, ta có thể thấy rằng chính máy chủ tham số trung tâm trở thành nút thắt cổ chai (*bottleneck*).
-Suy cho cùng, băng thông của mỗi máy chủ là có hạn, do đó đối với $m$ máy thợ thời gian để truyền toàn bộ gradient đến máy chủ là $O(m)$.
-Ta có thể phá bỏ rào cản này bằng cách tăng số lượng máy chủ lên $n$.
-Khi đó mỗi máy chủ chỉ cần lưu trữ $O(1/n)$ trên tổng số các tham số, do đó tổng thời gian cần để cập nhật và tối ưu trở thành $O(m/n)$.
-Tỉ lệ này cần là hằng số bất kể số lượng máy thợ ta sử dụng là bao nhiêu.
-Trong thực tế máy chủ và máy thợ thường giống nhau.
+Các thao tác trên nhìn qua thì có vẻ khá dễ hiểu.
+Quả thực, chúng có thể được thực hiện một cách hiệu quả *trong* một máy tính.
+Tuy nhiên khi xét trên nhiều máy tính, ta có thể thấy rằng chính máy chủ tham số trung tâm đã trở thành nút nghẽn cổ chai (*bottleneck*).
+Suy cho cùng, băng thông của mỗi máy chủ là có hạn, do đó đối với $m$ máy thợ, thời gian để truyền toàn bộ gradient đến máy chủ là $O(m)$.
+Ta có thể vượt qua rào cản này bằng cách tăng số lượng máy chủ lên $n$.
+Khi đó mỗi máy chủ chỉ cần lưu trữ $O(1/n)$ tham số, do đó tổng thời gian cần để cập nhật và tối ưu trở thành $O(m/n)$.
+Tổng thời gian này sẽ tăng lên theo hằng số bất kể số lượng máy thợ ta sử dụng là bao nhiêu.
+Trong thực tế, các máy tính sẽ vừa là máy chủ và máy thợ.
 :numref:`fig_ps_multips` minh hoạ thiết kế này.
-Bạn đọc có thể đọc :cite:`Li.Andersen.Park.ea.2014` để biết thêm chi tiết.
+Bạn đọc có thể tham khảo :cite:`Li.Andersen.Park.ea.2014` để biết thêm chi tiết.
 Đặc biệt, việc đảm bảo các máy tính hoạt động với độ trễ không quá lớn không phải là một chuyện dễ dàng.
-Ta bỏ qua chi tiết về các rào cản và chỉ đề cập ngắn gọn về cập nhật đồng bộ và bất đồng bộ dưới đây.
+Chúng tôi sẽ bỏ qua chi tiết về các rào cản và chỉ đề cập ngắn gọn tới việc cập nhật đồng bộ và bất đồng bộ dưới đây.
 
 <!--
 ![Top - a single parameter server is a bottleneck since its bandwidth is finite. Bottom - multiple parameter servers store parts of the parameters with aggregate bandwidth.](../img/ps-multips.svg)
 -->
 
-![Trên - một máy chủ tham số đơn là một nút thắt cổ chai do băng thông của nó là có hạn. Dưới - nhiều máy chủ tham số lưu trữ từng phần các tham số với băng thông tổng.](../img/ps-multips.svg)
+![Trên - một máy chủ tham số là một nút nghẽn cổ chai do băng thông của nó có hạn. Dưới - nhiều máy chủ tham số lưu trữ từng phần các tham số với băng thông tổng.](../img/ps-multips.svg)
 :label:`fig_ps_multips`
 
 <!--
@@ -360,9 +360,9 @@ Across many servers and many GPUs the gradient computation can be defined as
 -->
 
 Lập trình các bước cần thiết trên cho việc huấn luyện phân tán trên nhiều GPU trong thực tế không hề đơn giản.
-Đặc biệt, ta có thể sẽ gặp rất nhiều trường hợp khác nhau.
-Do đó, rất đáng để sử dụng một cách trừu tượng hoá khá phổ biến là lưu trữ cặp (khoá, giá trị) với cách cập nhật được định nghĩa lại.
-Trên nhiều máy chủ và nhiều GPU, việc tính toán gradient có thể được định nghĩa là
+Cụ thể, có khả năng ta sẽ gặp rất nhiều lựa chọn khác nhau.
+Do đó, rất đáng để sử dụng một phép trừu tượng hoá khá phổ biến là lưu trữ cặp (khoá, giá trị) với cách cập nhật được định nghĩa lại.
+Trên nhiều máy chủ và nhiều GPU, việc tính toán gradient có thể được định nghĩa như sau
 
 
 $$\mathbf{g}_{i} = \sum_{k \in \mathrm{workers}} \sum_{j \in \mathrm{GPU}} \mathbf{g}_{ijk}.$$
@@ -374,10 +374,10 @@ Note that it is possible for us to perform the reduction stagewise.
 Furthermore, note that this operation is independent between blocks $i$ pertaining to different parameters (and gradients).
 -->
 
-Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hoán*, tức là gộp nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
-Thao tác này hết sức phù hợp đối với mục đích của ta do ta không cần (phải) kiểm soát chi tiết từng chút một mỗi khi gradient được nhận.
-Chú ý rằng ta có thể thực hiện phép rút gọn theo từng bước.
-Thêm nữa, chú ý rằng thao tác này là độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
+Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hoán*, tức nó gộp nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
+Vì không cần (phải) kiểm soát chi tiết thời điểm gradient được nhận, thao tác này rất phù hợp với mục đích của chúng ta.
+Lưu ý rằng ta có thể thực hiện phép rút gọn theo từng bước.
+Thêm nữa, chú ý rằng thao tác này độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -390,19 +390,19 @@ This similarity to (key,value) stores, such as the one introduced in Dynamo :cit
 They, too, satisfy many similar characteristics, in particular when it comes to distributing the parameters across multiple servers.
 -->
 
-Điều này cho phép ta định nghĩa hai phép toán sau: đẩy, để cộng dồn gradient, và kéo, để lấy lại gradient được cộng dồn.
-Vì có nhiều tập gradient (do có nhiều tầng), ta cần gán chỉ số cho gradient bằng khóa $i$.
-Việc này tương tự như lưu trữ (khóa, giá trị), ví dụ, phương pháp được giới thiệu trong Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` không phải là ngẫu nhiên.
-Chúng thỏa mãn rất nhiều tính chất, đặc biệt khi phân phối các tham số cho nhiều máy chủ.
+Điều này cho phép ta định nghĩa hai thao tác sau: đẩy, để cộng dồn gradient, và kéo, để lấy lại gradient được cộng dồn.
+Vì ta có nhiều tập gradient (do có nhiều tầng), ta cần gán chỉ số cho gradient bằng khóa $i$.
+Sự giống nhau giữa phương pháp này và việc lưu trữ (khóa, giá trị) như phương pháp được giới thiệu trong Dynamo :cite:`DeCandia.Hastorun.Jampani.ea.2007` không phải là ngẫu nhiên.
+Chúng thỏa mãn rất nhiều tính chất, cụ thể là khi phân phối các tham số cho nhiều máy chủ.
 
 <!--
 * **push(key, value)** sends a particular gradient (the value) from a worker to a common storage. There the parameter is aggregated, e.g., by summing it up.
 * **pull(key, value)** retrieves an aggregate parameter from common storage, e.g., after combining the gradients from all workers.
 -->
 
-* **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ máy thợ đến thiết bị lưu trữ.
+* **đẩy(khóa, giá trị)** gửi một gradient cụ thể (giá trị) từ máy thợ đến thiết bị lưu trữ chung.
 Tại đây các tham số được tổng hợp lại, ví dụ bằng cách lấy tổng.
-* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ, ví dụ, lấy lại gradient đã được kết hợp từ tất cả máy thợ. 
+* **kéo(khóa, giá trị)** lấy lại tham số đã được tổng hợp từ thiết bị lưu trữ chung, sau khi đã kết hợp gradient từ tất cả máy thợ. 
 
 <!--
 By hiding all the complexity about synchronization behind a simple push and pull operation we can decouple the concerns of the statistical modeler 
@@ -410,9 +410,9 @@ who wants to be able to express optimization in simple terms and the systems eng
 In the next section we will experiment with such a (key,value) store in practice.
 -->
 
-Bằng cách ẩn đi sự phức tạp của việc đồng bộ sau các phép toán đơn giản là đẩy và kéo, ta có thể giảm đi mối bận tâm của các nhà mô hình thống kê,
-những người muốn thể hiện việc tối ưu một cách đơn giản, và các kỹ sư hệ thống, những người cần giải quyết sự phức tạp sẵn có trong đồng bộ hóa phân tán.
-Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, giá trị) trên thực tế.
+Bằng cách ẩn đi sự phức tạp của việc đồng bộ sau các thao tác đơn giản là đẩy và kéo, ta có thể tách những mối bận tâm theo hai hướng: của các nhà mô hình thống kê,
+những người muốn biểu diễn việc tối ưu một cách đơn giản và các kỹ sư hệ thống, những người cần giải quyết sự phức tạp sẵn có trong việc đồng bộ hóa phân tán.
+Trong phần tiếp theo ta sẽ thử nghiệm việc lưu trữ (khóa, giá trị) trong thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -431,9 +431,9 @@ Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, g
 * Asynchronous communication (while computation is still ongoing) can improve performance.
 -->
 
-* Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và với kết nối trong máy chủ.
+* Việc đồng bộ cần có độ thích ứng cao với hạ tầng mạng cụ thể và kết nối trong máy chủ.
 Điều này có thể tạo ra khác biệt đáng kể trong thời gian đồng bộ.
-* Đồng bộ dạng vòng có thể là phương án tối ưu với các máy chủ P3 và DGX-2, với các loại máy chủ khác thì không quá tốt.
+* Đồng bộ dạng vòng có thể là phương án tối ưu với các máy chủ P3 và DGX-2, còn với các loại máy chủ khác thì không hẳn.
 * Chiến lược đồng bộ phân cấp rất tốt khi thêm nhiều máy chủ tham số để tăng băng thông.
 * Giao tiếp bất đồng bộ (khi việc tính toán vẫn đang diễn ra) có thể cải thiện hiệu năng.
 
@@ -452,14 +452,11 @@ Trong phần tiếp theo ta sẽ thí nghiệm với việc lưu trữ (khóa, g
 6. Other reductions (commutative semiring).
 -->
 
-1. Có thể cải thiện đồng bộ dạng vòng tốt hơn không? 
-Gợi ý: bạn có thể gửi thông tin theo cả hai chiều.
+1. Bạn có thể cải thiện đồng bộ dạng vòng hơn nữa không? Gợi ý: bạn có thể gửi thông tin theo cả hai chiều.
 2. Đồng bộ bất đối xứng hoàn toàn có độ trễ nào không?
-3. Nên để khả năng chịu lỗi (*fault tolerance*) như thế nào? 
-Nếu ta mất liên lạc với một máy chủ thì sao?
-Đây có phải vấn đề nghiêm trọng không?
+3. Nên để khả năng chịu lỗi (*fault tolerance*) như thế nào?  Nếu một máy chủ gặp trục trặc thì sao?  Đây có phải vấn đề nghiêm trọng không?
 4. Lưu checkpoint như thế nào?
-5. Có thể tăng tốc tổng hợp dạng cây (*tree aggregation*) không?
+5. Bạn có thể tăng tốc việc tổng hợp dạng cây (*tree aggregation*) không?
 6. Tìm hiểu các cách rút gọn khác (như dạng bán vòng giao hoán - *commutative semiring*).
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -504,3 +501,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thanh Hòa
 <!-- Phần 7 -->
 * Nguyễn Văn Cường
+
+* Phạm Minh Đức
+* Nguyễn Lê Quang Nhật
