@@ -29,7 +29,7 @@ In the following we will motivate the components needed for efficiency.
 -->
 
 Ý tưởng cốt lõi của máy chủ tham số được đề xuất từ :cite:`Smola.Narayanamurthy.2010` trong ngữ cảnh các mô hình biến ẩn phân tán. 
-Kế tiếp, một bản mô tả về ý nghĩa của việc đẩy và kéo (*push and pull*) được giới thiệu trong :cite:`Ahmed.Aly.Gonzalez.ea.2012` và một bản mô tả về hệ thống này cùng với thư viện mã nguồn mở được công bố trong :cite:`Li.Andersen.Park.ea.2014`.
+Kế tiếp, một bản mô tả về ý nghĩa của tác vụ đẩy và kéo (*push and pull*) được giới thiệu trong :cite:`Ahmed.Aly.Gonzalez.ea.2012` và một bản mô tả về hệ thống này cùng với thư viện mã nguồn mở được công bố trong :cite:`Li.Andersen.Park.ea.2014`.
 Trong phần kế tiếp, ta sẽ tìm hiểu các thành phần cần thiết để đạt được hiệu suất cao.
 
 <!--
@@ -48,7 +48,7 @@ The key aspect in it is that the aggregation of gradients occurs on GPU0 before 
 
 Hãy cùng xem xét tổng quan phương pháp huấn luyện song song dữ liệu cho việc huấn luyện phân tán.
 Ta bắt đầu bằng cách này vì việc lập trình sẽ đơn giản hơn nhiều so với các cách khác. 
-Gần như không có một trường hợp đặc biệt nào (ngoại trừ phương pháp học sâu trên đồ thị) mà một phương pháp song song hoá nào khác lại thích hợp hơn vì ngày nay các GPU có khá nhiều bộ nhớ.
+Vì các GPU ngày nay có khá nhiều bộ nhớ, gần như không có một trường hợp đặc biệt nào (ngoại trừ phương pháp học sâu trên đồ thị) mà một phương pháp song song hoá khác lại thích hợp hơn.
 :numref:`fig_parameterserver` mô tả biến thể của việc song song hóa dữ liệu mà ta đã lập trình ở phần trước.
 Khía cạnh then chốt ở dạng này là việc tổng hợp gradient diễn ra trên GPU0 trước khi các tham số cập nhật được phân phát tới tất cả GPU.
 
@@ -95,7 +95,7 @@ The bandwidth from the CPU on a 16x Gen3 link is 16GB/s.
 This is also the speed at which *each* of the GPUs is connected to the switch. This means that it is more effective to communicate between the
 -->
 
-Cách lý luận này trông có vẻ rất tùy tiện và phù phiếm.
+Cách lý luận này trông có vẻ rất tùy tiện và vô nghĩa.
 Sau cùng, phần toán xuyên suốt bên dưới vẫn không thay đổi.
 Nhưng ở đây chúng ta đang làm việc với các thiết bị phần cứng vật lý với các bus có băng thông khác nhau như đã thảo luận trong :numref:`sec_hardware`.
 Xét một máy chủ GPU 4-chiều được mô tả trong :numref:`fig_bw_hierarchy`.
@@ -222,7 +222,7 @@ Xét một thí nghiệm tưởng tượng như sau: cho một kết nối dạn
 Ở đó nó sẽ được cộng thêm vào gradient cục bộ và rồi truyền tiếp đến thiết bị thứ ba, và tiếp tục như vậy với các thiết bị sau.
 Sau $n-1$ bước, gradient tổng hợp sẽ nằm ở thiết bị cuối cùng.
 Điều này có nghĩa là thời gian tổng hợp gradient sẽ tăng tuyến tính theo số lượng thiết bị trong mạng.
-Nhưng nếu ta làm vậy, thuật toán sẽ không được hiệu quả cho lắm.
+Nhưng nếu ta làm vậy, thuật toán sẽ hoạt động kém hiệu quả.
 Dù sao, tại mọi thời điểm chỉ có một thiết bị thực hiện việc truyền tin.
 Chuyện gì sẽ xảy ra nếu ta chia các giá trị gradient thành $n$ khúc và bắt đầu đồng bộ khúc thứ $i$ tại thiết bị $i$?
 Vì mỗi khúc có kích thước $1/n$, tổng thời gian giờ sẽ là $(n-1)/n \approx 1$.
@@ -252,7 +252,7 @@ The only difference is that the synchronization path is somewhat more elaborate 
 Nếu vẫn sử dụng ví dụ đồng bộ 160MB trên 8 GPU V100, ta có thể đạt xấp xỉ $2 \cdot 160 \mathrm{MB} / (3 \cdot 18 \mathrm{GB/s}) \approx 6 \mathrm{ms}$.
 Kết quả này tốt hơn so với việc sử dụng bus PCIe một chút, mặc dù lúc này ta sử dụng đến 8 GPU.
 Chú ý rằng trong thực tế những con số này sẽ không được tốt như vậy, do các framework học sâu thường gặp khó khăn trong việc tổng hợp thông tin thành cụm lớn hơn để truyền đi.
-Hơn nữa, việc căn thời gian là cực kì quan trọng.
+Hơn nữa, việc định thời là cực kì quan trọng.
 Lưu ý, mọi người thường hiểu nhầm rằng đồng bộ vòng có bản chất khác hẳn so với các thuật toán đồng bộ khác.
 Thực ra điểm khác biệt duy nhất nằm ở đường đi đồng bộ có phần tinh vi hơn so với cây đơn giản.
 
