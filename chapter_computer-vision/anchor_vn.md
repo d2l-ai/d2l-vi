@@ -82,16 +82,16 @@ That is, the number of anchor boxes centered on the same pixel is $n+m-1$.
 For the entire input image, we will generate a total of $wh(n+m-1)$ anchor boxes.
 -->
 
-*dịch đoạn phía trên*
-
+Ở trên, số khung neo có tâm trên cùng một điểm ảnh là $n+m-1$.
+Đối với toàn bộ bức ảnh đầu vào, ta sẽ tạo ra tổng cộng $wh(n+m-1)$ khung neo.
 
 <!--
 The above method of generating anchor boxes has been implemented in the `multibox_prior` function.
 We specify the input, a set of sizes, and a set of aspect ratios, and this function will return all the anchor boxes entered.
 -->
 
-*dịch đoạn phía trên*
-
+Phương pháp sinh ra các khung neo ở trên được sử dụng trong hàm `multibox_prior`.
+Ta mô tả đầu vào, tập các kích thước, và tập các tỉ số cạnh, và hàm này sẽ trả về tất cả các khung neo đưa vào.
 
 
 ```{.python .input  n=2}
@@ -114,8 +114,11 @@ It has four elements: the $x, y$ axis coordinates in the upper-left corner and t
 The coordinate values of the $x$ and $y$ axis are divided by the width and height of the image, respectively, so the value range is between 0 and 1.
 -->
 
-*dịch đoạn phía trên*
-
+Ta có thể thấy là kích thước của khung neo trả về, biến `y`, là (kích thước nhóm, số khung neo, 4).
+Sau khi thay đổi kích thước của `y` thành (độ cao ảnh, độ rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta có thể có được tất cả các khung neo với tâm ở vị trí điểm ảnh xác định.
+Trong phần ví dụ dưới đây, ta truy xuất khung neo đầu tiên có tâm tại vị trí (250, 250).
+Nó có bốn phần tử: các trục tọa độ $x, y$ ở góc trên bên trái và các trục tọa độ $x, y$ ở góc dưới bên phải của hộp neo.
+Các giá trị tọa độ của các trục $x$ và $y$ được chia lần lượt bởi độ rộng và độ cao của hình, do đó dải giá trị sẽ nằm trong khoảng 0 và 1.
 
 
 ```{.python .input  n=4}
@@ -128,8 +131,7 @@ boxes[250, 250, 0, :]
 In order to describe all anchor boxes centered on one pixel in the image, we first define the `show_bboxes` function to draw multiple bounding boxes on the image.
 -->
 
-*dịch đoạn phía trên*
-
+Để mô tả tất cả các khung neo có tâm trên cùng một điểm của bức ảnh, ta trước hết định nghĩa hàm `show_bboxes` để thực hiện vẽ nhóm khung chứa trên hình này.
 
 
 ```{.python .input  n=5}
@@ -163,7 +165,10 @@ Now, we can draw all the anchor boxes centered on (250, 250) in the image.
 As you can see, the blue anchor box with a size of 0.75 and an aspect ratio of 1 covers the dog in the image well.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta vừa thấy, các giá trị tọa độ của trục $x$ và $y$ trong biến `boxes` đã được chia lần lượt bởi độ rộng và độ cao của ảnh.
+Khi vẽ ảnh, ta cần khôi phục các giá trị tọa độ gốc của các khung neo và do đó xác định biến `bbox_scale`.
+Lúc này, ta có thể vẽ tất cả các khung neo có tâm tại vị trí (250, 250) của bức ảnh này.
+Như bạn có thể thấy, khung neo màu xanh dương với kích thước 0.75 và tỉ số cạnh 1 sẽ bao quanh khá tốt hình chú chó trong hình này.
 
 
 ```{.python .input  n=7}
@@ -640,7 +645,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * 
