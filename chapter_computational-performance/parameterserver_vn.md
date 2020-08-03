@@ -276,8 +276,8 @@ Hence we need to *synchronize* them if we want to use synchronous distributed op
 -->
 
 Việc huấn luyện phân tán trên nhiều máy tính tạo nên một thử thách mới:
-ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp mà trong một số trường hợp tốc độ thậm chí có thể chậm gấp hơn 10 lần.
-Việc đồng bộ nhiều thiết bị khá phức tạp.
+ta cần phải giao tiếp với các máy chủ chỉ được liên kết với nhau qua loại cáp có băng thông tương đối thấp. Trong một số trường hợp tốc độ thậm chí có thể chậm gấp hơn 10 lần.
+Đồng bộ nhiều thiết bị là công việc khá phức tạp.
 Suy cho cùng, mỗi máy tính khác nhau chạy đoạn mã huấn luyện với tốc độ khác nhau đôi chút.
 Do đó ta cần *đồng bộ* chúng nếu muốn sử dụng tối ưu phân tán đồng bộ.
 :numref:`fig_ps_multimachine` mô tả quá trình huấn luyện phân tán song song.
@@ -296,7 +296,7 @@ Do đó ta cần *đồng bộ* chúng nếu muốn sử dụng tối ưu phân 
 2. Các gradient trên tất cả các GPU cục bộ được tổng hợp trên một GPU (hoặc các phần khác nhau được tổng hợp trên nhiều GPU khác nhau).
 3. Các gradient được truyền đến CPU.
 4. CPU truyền các gradient đến máy chủ tham số trung tâm để tổng hợp tất cả các gradient.
-5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số và sau đó các vector trọng số mới được phân phát cho các CPU.
+5. Các gradient tổng sau đó được sử dụng để cập nhật các vector trọng số. Tiếp đó thì các vector trọng số mới được phân phát cho các CPU.
 6. Thông tin cập nhật được truyền tới một (hoặc nhiều) GPU.
 7. Các vector trọng số đã được cập nhật sau đó được phân bố đều cho tất cả các GPU.
 
@@ -375,9 +375,9 @@ Furthermore, note that this operation is independent between blocks $i$ pertaini
 -->
 
 Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hoán*, tức nó gộp nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
-Thao tác này rất phù hợp đối với mục đích của ta do ta không cần (phải) kiểm soát chi tiết thời điểm gradient được nhận.
+Vì không cần (phải) kiểm soát chi tiết thời điểm gradient được nhận, thao tác này rất phù hợp với mục đích của chúng ta.
 Lưu ý rằng ta có thể thực hiện phép rút gọn theo từng bước.
-Thêm nữa, cần lưu ý thao tác này độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
+Thêm nữa, chú ý rằng thao tác này độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -503,3 +503,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 * Phạm Minh Đức
+* Nguyễn Lê Quang Nhật
