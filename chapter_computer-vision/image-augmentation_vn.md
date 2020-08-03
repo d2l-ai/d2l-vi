@@ -20,7 +20,7 @@ It can be said that image augmentation technology contributed greatly to the suc
 In this section, we will discuss this technology, which is widely used in computer vision.
 -->
 
-Chúng ta đã từng đề cập  tới việc các bộ dữ liệu lớn và điều kiện tiên quyết cho sự áp dụng thành công của các mạng nở-rôn ở in :numref:`sec_alexnet`.
+Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ dữ liệu lớn là điều kiện tiên quyết để ứng dụng thành công các mạng nơ-ron sâu.
 Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc tạo ra một loạt thay đổi ngẫu nhiên từ bộ ảnh dùng cho việc huấn luyện để tạo ra các ảnh mẫu tương tự nhưng có sự khác biệt.
 Một cách khác để giải thích việc tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc vào một số thuộc tính nhất định của mô hình. do đó cải thiện năng lực của mô hình trở nên khái quát hóa. 
 Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
@@ -460,5 +460,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
