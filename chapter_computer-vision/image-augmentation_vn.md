@@ -55,7 +55,7 @@ npx.set_np()
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
 
-Trong phần thử nghiệm này, ta sẽ dùng một ảnh có kích thước $400\time 500$ làm ví dụ.
+Trong phần thử nghiệm này, ta sẽ dùng một ảnh có kích thước $400\times 500$ làm ví dụ.
 
 
 ```{.python .input  n=2}
