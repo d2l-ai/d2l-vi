@@ -24,7 +24,7 @@ Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ d�
 Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc tạo ra một loạt thay đổi ngẫu nhiên từ bộ ảnh dùng cho việc huấn luyện để tạo ra các ảnh mẫu tương tự nhưng có sự khác biệt.
 Một cách khác để giải thích việc tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định, do đó cải thiện năng lực khái quát hóa của mô hình
 Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
-Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy với màu của mô hình. 
+Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
 Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
 Trong phần này, chúng ta sẽ thảo luận về kỹ thuật được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này.
 
