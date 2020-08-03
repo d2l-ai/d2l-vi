@@ -21,7 +21,7 @@ In this section, we will discuss this technology, which is widely used in comput
 -->
 
 Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ dữ liệu lớn là điều kiện tiên quyết để ứng dụng thành công các mạng nơ-ron sâu.
-Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc tạo ra một loạt thay đổi ngẫu nhiên từ bộ ảnh dùng cho việc huấn luyện để tạo ra các ảnh mẫu tương tự nhưng có sự khác biệt.
+Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên từ trên các ảnh để tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
 Một cách khác để giải thích việc tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định, do đó cải thiện năng lực khái quát hóa của mô hình
 Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
 Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
