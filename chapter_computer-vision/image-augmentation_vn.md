@@ -98,7 +98,7 @@ Next, we use the `transforms` module to create the `RandomFlipLeftRight` instanc
 
 Lật hình ảnh sang trái và phải thường không thay đổi thể loại của đối tượng.
 Đây là một trong những phương pháp hiệu chỉnh hình ảnh sớm nhất và được sử dụng rộng rãi nhất.
-Tiếp theo, chúng tôi sử dụng mô-đun `transforms` để tạo thực thể `RandomFlipLeftRight`, đem ra một khả năng 50% khả năng hình ảnh được lật sang trái và phải.
+Tiếp theo, chúng tôi sử dụng mô-đun `transforms` để tạo thực thể `RandomFlipLeftRight`, với 50% khả năng hình ảnh sẽ được lật sang trái hoặc phải.
 
 
 
@@ -115,7 +115,7 @@ Next, we create a `RandomFlipTopBottom` instance for a 50% chance of flipping th
 
 Lật lên xuống không được sử dụng phổ biến như lật trái và phải.
 Tuy nhiên, ít nhất là đối với hình ảnh ví dụ này, lật lên xuống không gây trở ngại cho việc nhận dạng.
-Tiếp theo, chúng tôi tạo thực thể `RandomFlipTopBottom` để có 50% cơ hội lật hình ảnh lên và xuống.
+Tiếp theo, chúng tôi tạo thực thể `RandomFlipTopBottom` để có 50% khả năng lật hình ảnh lên và xuống.
 
 
 ```{.python .input  n=5}
@@ -130,7 +130,7 @@ In addition, we can make objects appear at different positions in the image in d
 This can also reduce the sensitivity of the model to the target position.
 -->
 
-Trong hình ảnh ví dụ chúng tôi sử dụng, con mèo ở giữa hình ảnh, nhưng điều này có thể không phải là trường hợp cho tất cả các hình ảnh.
+Trong hình ảnh ví dụ chúng tôi sử dụng, con mèo ở giữa hình ảnh, nhưng không phải tất cả các ảnh mèo khác đều sẽ như vậy.
 Trong :numref:`sec_pooling`, chúng tôi đã giải thích rằng tầng gộp có thể làm giảm độ nhạy của tầng chập với vị trí đích.
 Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt ngẫu nhiên hình ảnh.
 Điều này cũng có thể làm giảm độ nhạy của mô hình với vị trí mục tiêu.
@@ -465,5 +465,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
