@@ -254,7 +254,7 @@ Kết quả này tốt hơn so với việc sử dụng bus PCIe một chút, m�
 Chú ý rằng trong thực tế những con số này sẽ không được tốt như vậy, do các framework học sâu thường gặp khó khăn trong việc tổng hợp thông tin thành cụm lớn hơn để truyền đi.
 Hơn nữa, việc định thời là cực kì quan trọng.
 Lưu ý, mọi người thường hiểu nhầm rằng đồng bộ vòng có bản chất khác hẳn so với các thuật toán đồng bộ khác.
-Thực ra điểm khác biệt duy nhất nằm ở đường đi đồng bộ có phần tinh vi hơn so với cây đơn giản.
+Thực ra điểm khác biệt duy nhất nằm ở đường đi đồng bộ có phần tinh vi hơn so với phương pháp cây đơn giản.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
