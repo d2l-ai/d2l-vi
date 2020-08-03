@@ -460,7 +460,7 @@ labels[0]
 ## Bounding Boxes for Prediction
 -->
 
-Các khung chứa dành cho việc dự đoán
+## Các khung chứa dành cho việc dự đoán
 
 
 <!--
@@ -677,5 +677,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
