@@ -130,7 +130,7 @@ npx.set_np()
 ### Obtaining the Dataset
 -->
 
-### Thu thập bộ dữ liệu
+### Lấy dữ liệu
 
 
 <!--
