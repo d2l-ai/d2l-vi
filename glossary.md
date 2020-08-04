@@ -164,6 +164,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature extraction         | trích xuất đặc trưng |                                              |
 | feature map (in CNN)       | ánh xạ đặc trưng     |                                              |
 | feed-forward network (FNN) | mạng truyền xuôi     |                                              |
+| fine-tuning                | tinh chỉnh           |  |
 | filter (in CNN)            | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                        | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle            | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
@@ -214,7 +215,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                            | Tiếng Việt                   | Thảo luận tại                                |
 |------------------------------------|------------------------------|----------------------------------------------|
+| inference (in model training and inference) | dự đoán / suy luận | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| (statistical) inference | suy luận (thống kê) | [https://git.io/JJVT2](https://git.io/JJVT2) |
 | ill-conditioned                    | (có) điều kiện xấu           |                                              |
+| image segmentation                 | phân vùng ảnh                |   |
 | implement                          | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
 | implementation                     | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
 | implicit feedback                  | phản hồi gián tiếp           |                                              |
@@ -416,6 +420,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
 | serialization (programming)       | chuỗi hóa                |                                              |
+| semantic segmentation             | phân vùng theo ngữ nghĩa |                                              |
 | sentiment classification          | phân loại cảm xúc        |                                              |
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
@@ -446,6 +451,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | support vector machine (SVM)      | Máy vector hỗ trợ        |                                              |
 | surprisal (in information theory) | lượng tin                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
 | surrogate objective               | mục tiêu thay thế        | [https://git.io/JvQxV](https://git.io/JvQxV) |
+| switch                            | bộ chuyển mạch                   |                                              |
 | symbolic graph                    | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
@@ -466,6 +472,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
 | transcribe                             | phiên thoại                               | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription                          | bản ghi thoại                             |                                              |
+| transfer learning                      | học truyền tải                            |                                              |
 | transformer                            | transformer                               |                                              |
 | transition layer                       | tầng chuyển tiếp                          |                                              |
 | translation invariant                  | bất biến tịnh tiến                        | [https://git.io/Jftwj](https://git.io/Jftwj) |
