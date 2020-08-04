@@ -72,7 +72,7 @@ We also assume that the output layer of the source model is closely related to t
 We will train the output layer from scratch, while the parameters of all remaining layers are fine-tuned based on the parameters of the source model.
 -->
 
-1. Tiền huấn luyện một mô hình mạng nơ-rôn, cụ thể là mô hình nguồn, trên tập dữ liệu nguồn (chẳng hạn tập dữ liệu ImageNet).
+1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình nguồn, trên tập dữ liệu nguồn (chẳng hạn tập dữ liệu ImageNet).
 2. Tạo mô hình mạng nơ-rôn mới gọi là mô hình đích.
 Việc làm này là sao chép tất cả các thiết kế mô hình và các tham số của chúng trên mô hình nguồn, ngoại trừ tầng ngõ ra.
 Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu nguồn và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu đích.
@@ -449,5 +449,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
 
