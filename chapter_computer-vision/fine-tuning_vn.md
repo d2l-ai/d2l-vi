@@ -69,8 +69,8 @@ In this section, we introduce a common technique in transfer learning: fine tuni
 As shown in :numref:`fig_finetune`, fine tuning consists of the following four steps:
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học truyền tải, đó là tinh chỉnh (*fine tuning*).
+Như minh họa trong hình :numref:`fig_finetune`, việc tinh chỉnh được tiến hành theo bốn bước sau đây:
 
 <!--
 1. Pre-train a neural network model, i.e., the source model, on a source dataset (e.g., the ImageNet dataset).
@@ -83,15 +83,20 @@ We also assume that the output layer of the source model is closely related to t
 We will train the output layer from scratch, while the parameters of all remaining layers are fine-tuned based on the parameters of the source model.
 -->
 
-*dịch đoạn phía trên*
-
-
+1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình gốc, trên tập dữ liệu gốc (chẳng hạn tập dữ liệu ImageNet).
+2. Tạo mô hình mạng nơ-ron mới gọi là mô hình mục tiêu.
+Mô hình này sao chép tất cả các thiết kế cũng như các tham số của mô hình gốc, ngoại trừ tầng đầu ra.
+Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu gốc và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu mục tiêu.
+Ta cũng giả định là tầng đầu ra của mô hình gốc có liên hệ mật thiết với các nhãn của tập dữ liệu gốc và do đó không được sử dụng trong mô hình mục tiêu.
+3. Thêm vào một tầng đầu ra cho mô hình mục tiêu mà kích thước của nó là số lớp của dữ liệu mục tiêu, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
+4. Huấn luyện mô hình mục tiêu trên tập dữ liệu mục tiêu, chẳng hạn như tập dữ liệu ghế.
+Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình gốc.
 
 <!--
 ![Fine tuning.](../img/finetune.svg)
 -->
 
-![*dịch mô tả hình ảnh trên*](../img/finetune.svg)
+![Thực hiện tinh chỉnh](../img/finetune.svg)
 :label:`fig_finetune`
 
 
@@ -100,7 +105,7 @@ We will train the output layer from scratch, while the parameters of all remaini
 ## Hot Dog Recognition
 -->
 
-## *dịch tiêu đề phía trên*
+## Nhận dạng món bánh xúc xích
 
 
 <!--
@@ -110,9 +115,10 @@ This small dataset contains thousands of images, some of which contain hot dogs.
 We will use the model obtained by fine tuning to identify whether an image contains a hot dog.
 -->
 
-*dịch đoạn phía trên*
-
-
+Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món bánh xúc xích.
+Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
+Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, một số có chứa các ảnh món bánh này.
+Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món bánh này hay không.
 
 <!--
 First, import the packages and modules required for the experiment.
@@ -120,8 +126,9 @@ Gluon's `model_zoo` package provides a common pre-trained model.
 If you want to get more pre-trained models for computer vision, you can use the [GluonCV Toolkit](https://gluon-cv.mxnet.io).
 -->
 
-*dịch đoạn phía trên*
-
+Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
+Gói `model_zoo` trong Gluon cung cấp một mô hình huấn luyện sẵn thông dụng.
+Nếu bạn muốn lấy thêm các mô hình huấn luyện sẵn cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
 
 ```{.python .input  n=1}
 %matplotlib inline
