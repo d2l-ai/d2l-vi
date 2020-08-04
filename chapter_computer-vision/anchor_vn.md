@@ -529,7 +529,7 @@ cls_probs = np.array([[0] * 4,  # Predicted probability for background
 Print prediction bounding boxes and their confidence levels on the image.
 -->
 
-*dịch đoạn phía trên*
+Xuất các khung chứa dự đoán kèm với độ tin cậy trên ảnh
 
 
 
@@ -552,7 +552,14 @@ The remaining four elements are the $x, y$ axis coordinates of the upper-left co
 of the prediction bounding box (the value range is between 0 and 1).
 -->
 
-*dịch đoạn phía trên*
+Ta dùng hàm `multibox_detection` để thực hiện phương pháp NMS và đặt ngưỡng cho nó là 0,5.
+Điều này tạo thêm một chiều ví dụ cho tensor đầu vào.
+Ta có thể thấy rằng kích thước của kết quả trả về là (kích thước batch, số lượng khung neo, 6).
+Mỗi 6 phần tử của từng hàng biểu thị thông tin đầu ra cho cùng một khung chứa dự đoán.
+Phần tử đầu là chỉ mục của đối tượng dự đoán, bắt đầu từ 0 (0 là chó, 1 là mèo).
+Giá trị -1 cho biết đó là background hoặc là phần bị loại bỏ bởi NMS.
+Phần tử thứ hai chính là độ tin cậy của khung chứa dự đoán.
+Bốn phần tử còn lại là toạ độ trục $x, y$ của góc trên bên trái và toạ độ trục $x, y$ của góc dưới bên phải của khung chứa dự đoán (miền giá trị rơi vào đoạn 0 đến 1).
 
 
 ```{.python .input  n=13}
@@ -569,8 +576,7 @@ output
 We remove the prediction bounding boxes of category -1 and visualize the results retained by NMS.
 -->
 
-*dịch đoạn phía trên*
-
+Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại bởi NMS.
 
 
 ```{.python .input  n=14}
@@ -588,7 +594,8 @@ In practice, we can remove prediction bounding boxes with lower confidence level
 We can also filter the output of NMS, for example, by only retaining results with higher confidence levels as the final output.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, ta có thể loại bỏ các khung chứa dự đoán có mức độ tin cậy thấp hơn trước khi thực hiện NMS, do đó bớt đi chi phí tính toán cho NMS.
+Ta cũng có thể lọc các đầu ra của NMS, ví dụ, bằng cách giữ lại những kết quả có độ tin cậy cao hơn để làm đầu ra cuối cùng.
 
 
 ## Tóm tắt
@@ -602,7 +609,11 @@ one is the category of the target contained in the anchor box and the other is t
 * When predicting, we can use non-maximum suppression (NMS) to remove similar prediction bounding boxes, thereby simplifying the results.
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta tạo ra nhiều khung neo với nhiều kích thước và tỉ lệ khung hình khác nhau, tập trung chính vào từng pixel.
+* IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao nhau với phần kết hợp của hai khung chứa.
+* Trong tập huấn luyện, ta đánh dấu hai loại nhãn cho mỗi khung neo:
+một là danh mục của đối tượng chứa trong khung neo và loại còn lại là độ dời của khung chứa chuẩn so với khung neo.
+* Khi dự đoán, ta có thể dùng non-maximum suppression (NMS) để loại bỏ các khung chứa dự đoán tương tự, để rồi từ đó đơn giản hoá kết quả.
 
 
 ## Bài tập
@@ -615,7 +626,10 @@ one is the category of the target contained in the anchor box and the other is t
 4. Modify the variable `anchors` in the "Labeling Training Set Anchor Boxes" and "Output Bounding Boxes for Prediction" sections. How do the results change?
 -->
 
-*dịch đoạn phía trên*
+1. Hiệu chỉnh giá trị `size` và `ratios` trong hàm `multibox_prior` và quan sát những thay đổi đối với các khung neo vừa được tạo.
+2. Tạo hai khung chứa với giá trị IoU là 0,5 và quan sát sự trùng hợp với nhau giữa chúng.
+3. Xác thực kết quả đầu ra của độ dời (offset) `labels[0]` bằng cách đánh dấu các độ dời (offsets) của khung neo như đã được định nghĩa trong phần này (hằng số là một giá trị mặc định).
+4. Biến đổi biến `anchors` trong phần "Labeling Training Set Anchor Boxes" and "Output Bounding Boxes for Prediction". Kết quả thay đổi như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -658,6 +672,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 8 -->
-* 
+* Phạm Đăng Khoa
 
 
