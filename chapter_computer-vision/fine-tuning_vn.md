@@ -182,7 +182,7 @@ The first 8 positive examples and the last 8 negative images are shown below.
 As you can see, the images vary in size and aspect ratio.
 -->
 
-Dưới đây là 8 ví dụ "positive" đầu tiên và 8 ví dụ "negative" cuối cùng.
+Dưới đây là 8 mẫu dương đầu tiên và 8 mẫu âm cuối cùng.
 Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
 
 
