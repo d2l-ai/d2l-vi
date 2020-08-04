@@ -242,7 +242,7 @@ The first time they are used, the model parameters need to be downloaded from th
 -->
 
 Ta sử dụng ResNet-18 đã được huấn luyện trước trên tập dữ liệu ImageNet làm mô hình gốc.
-Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện trước.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện sẵn.
 Ở lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 
@@ -263,8 +263,8 @@ As a fully connected layer, it transforms ResNet's final global average pooling 
 Mô hình gốc được huấn luyện trước bao gồm hai biến thành viên: `features` và `output`.
 `features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
 Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
-Biến thành viên `output` của mô hình gốc được xác định như ở dưới.
-Giống như một tầng liên kết đầy đủ, nó biến đổi tầng gộp trung bình toàn cục ở cuối đầu ra của ResNet thành một lớp đầu ra có 1000 lớp trên tập dữ liệu ImageNet.
+Biến thành viên `output` của mô hình gốc được minh họa dưới đây.
+Là một tầng kết nối đầy đủ, nó biến đổi đầu ra của tầng gộp trung bình toàn cục thành đầu ra cuối cùng của 1000 lớp trên tập dữ liệu ImageNet.
 
 
 ```{.python .input  n=7}
@@ -282,7 +282,7 @@ In contrast, model parameters in the member variable `output` are randomly initi
 Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning rate of $10\eta$ to update the model parameters in the member variable `output`.
 -->
 
-Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình mục tiêu.
+Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình đích.
 Mạng này được định nghĩa giống như mô hình gốc được huấn luyện trước, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu mục tiêu.
 Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
 Do các tham số mô hình trong `features` được tính trong quá trình huấn luyện trước trên tập dữ liệu ImageNet, chúng đủ để thoả mãn nhu cầu sử dụng của ta.
@@ -454,5 +454,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
 
