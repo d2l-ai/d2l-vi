@@ -138,7 +138,7 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh "positive" chứa bánh mì kẹp xúc xích và $1,400$ ảnh "negative" chứa các loại thức ăn khác.
+Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa bánh mì kẹp xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
 $1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
@@ -448,4 +448,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
