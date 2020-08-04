@@ -84,7 +84,7 @@ The origin of the coordinates in the above image is the upper left corner of the
 -->
 
 Trong nhận diện vật thể, ta thường sử dụng khung chứa để mô tả vị trí của mục tiêu.
-Khung chứa là một khung hình chữ nhật có thể được xác định bởi toạ độ $x$ và $y$ của góc trên bên trái và toạ độ $x$ và $y$ của góc dưới bên phải của khung hình chữ nhật.
+Khung chứa là một khung hình chữ nhật có thể được xác định bởi hai toạ độ: tọa độ $x$, $y$ góc trên bên trái và toạ độ $x$, $y$ góc dưới bên phải của khung hình chữ nhật.
 Ta có thể định nghĩa các khung chứa của con chó và con mèo trong ảnh dựa vào thông tin toạ độ của ảnh trên.
 Gốc toạ độ của ảnh trên là góc trên bên trái của ảnh, chiều sang phải và xuống dưới lần lượt là chiều dương của trục $x$ và trục $y$.
 
@@ -143,7 +143,7 @@ In object detection, we not only need to identify all the objects of interest in
 The positions are generally represented by a rectangular bounding box.
 -->
 
-Trong nhận diện vật thể, ta không chỉ cần phải nhận dạng tất cả đối tượng theo đúng yêu cầu trong ảnh, mà còn cả vị trí của chúng.
+Trong nhận diện vật thể, ta không chỉ nhận dạng trong ảnh tất cả đối tượng mong muốn, mà còn cả vị trí của chúng.
 Các vị trí thường được biểu diễn qua các khung chứa hình chữ nhật.
 
 
@@ -181,5 +181,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
-
 
