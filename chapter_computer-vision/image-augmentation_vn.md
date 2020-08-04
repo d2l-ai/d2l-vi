@@ -381,7 +381,7 @@ It then applies image augmentation to the training dataset, and finally calls th
 
 Giờ ta có thể định nghĩa hàm `train_with_data_aug` để áp dụng tăng cường ảnh vào huấn luyện mô hình.
 Hàm này tìm tất cả các GPU có sẵn và sử dụng Adam làm thuật toán tối ưu cho quá trình huấn luyện.
-Sau đó nó áp dụng tăng cường ảnh vào tập huấn luyện, và cuối cùng gọi đến hàm `train` được định nghĩa ở trên để huấn luyện và đánh giá mô hình.
+Sau đó nó áp dụng tăng cường ảnh vào tập huấn luyện, và cuối cùng gọi đến hàm `train_ch13` được định nghĩa ở trên để huấn luyện và đánh giá mô hình.
 
 
 
@@ -417,8 +417,8 @@ train_with_data_aug(train_augs, test_augs, net)
 -->
 
 * Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
-* Để có thể thu được kết quả cuối cùng trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên ví dụ để huấn luyện, không áp dụng các thao tác ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
-*  Từ mô-đun `transforms` của Gluon, ta có thể tìm được các lớp liên quan đến tăng cường ảnh.
+* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên ví dụ để huấn luyện, không áp dụng các thao tác ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
+* Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
 
 ## Bài tập
@@ -434,7 +434,7 @@ Can this comparative experiment support the argument that image augmentation can
 1. Huấn luyện mô hình mà không áp dụng tăng cường ảnh: `train_with_data_aug(no_aug, no_aug)`.
 So sánh độ chính xác trong huấn luyện và kiểm tra khi áp dụng và không áp dụng tăng cường ảnh.
 Liệu thí nghiệm so sánh này có thể hỗ trợ cho luận điểm rằng tăng cường ảnh có thể làm giảm hiện tượng quá khớp? Tại sao?
-2. Sử dụng thêm các phương thức tăng cường ảnh khác vào huấn luyện cho mô hình dựa trên tập dữ liệu CIFAR-10. Theo dõi kết quả.
+2. Sử dụng thêm các phương thức tăng cường ảnh khác trên tập dữ liệu CIFAR-10 khi huấn luyện mô hình. Theo dõi kết quả.
 3. Tham khảo tài liệu của MXNet và cho biết mô-đun `transforms` của Gluon còn cung cấp các phương thức tăng cường ảnh nào khác?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -470,5 +470,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
-
 
