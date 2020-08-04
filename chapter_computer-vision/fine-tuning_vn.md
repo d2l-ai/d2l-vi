@@ -16,8 +16,8 @@ However, the size of datasets that we often deal with is usually larger than the
 -->
 
 Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60 000 ảnh.
-Chúng ta cũng đã nói về ImageNet, bộ dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
-Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai bộ này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
+Chúng ta cũng đã nói về ImageNet, tập ảnh dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
+Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
 <!--
@@ -28,11 +28,11 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi link thanh toán chiếc ghế đó tới người dùng.
-Một cách khả dĩ là, đầu tiên ta tìm lấy khoảng một trăm chiếc ghế, chụp một nghìn bức ảnh từ các góc cạnh khác của từng chiếc, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn thanh toán chiếc ghế đó tới người dùng.
+Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
 Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
-Điều này dẫn tới việc các mô hình cấu trúc phức tạp có thể chạy tốt trên Imagenet thì bị quá khớp khi huấn luyện trên tập dữ liệu nhỏ này.
-Đồng thời, vì số lượng dữ liệu hạn chế, độ chính xác của mô hình sau huấn luyện có thể không đạt như kỳ vọng.
+Điều này dẫn tới việc các mô hình phức tạp bị quá khớp khi huấn luyện trên tập dữ liệu này, dù chúng hoạt động tốt với Imagenet.
+Đồng thời, vì lượng dữ liệu khá hạn chế, độ chính xác của mô hình sau khi huấn luyện xong có thể không đạt mức kỳ vọng.
 
 
 <!--
@@ -43,9 +43,9 @@ Although, recently, data collection costs have dropped significantly, the costs 
 -->
 
 Để giải quyết vấn đề này, một giải pháp dễ thấy là đi thu thập thêm dữ liệu.
-Tuy nhiên, thu thập và gán nhãn dữ liệu thì tốn tiền và thời gian.
-Ví dụ, để thu thập được bộ ImageNet, những nhà nghiên cứu đã tốn đến hàng triệu đô la.
-Dù gần đây, chi phí thu thập dữ liệu đã giảm mạnh, nhưng vẫn cần lưu ý.
+Tuy nhiên, việc thu thập và gán nhãn dữ liệu có thể tốn rất nhiều tiền và thời gian.
+Ví dụ, để xây dựng được tập ImageNet, những nhà nghiên cứu đã tiêu hàng triệu đô la từ nguồn tài trợ nghiên cứu.
+Dù vậy, gần đây chi phí thu thập dữ liệu đã giảm mạnh, nhưng điều này vẫn rất đáng lưu ý.
 
 
 <!--
@@ -55,9 +55,9 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-Một giải pháp khác là áp dụng học truyền tải, để chuyển kiến thức đã học được từ mô hình đã học từ tập dữ liệu nguồn sang mô hình làm viêc với dữ liệu đích.
+Một giải pháp khác là áp dụng học truyền tải, chuyển đổi kiến thức đã học từ tập dữ liệu nguồn để làm việc tập dữ liệu đích.
 Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, chất liệu, hình đáng, và các thành phần của vật thể.
-Các đặc trưng tương đồng này sẽ có ích trong bài toán nhận diện ghế.
+Các đặc trưng tương đồng này có thể sẽ có ích trong bài toán nhận diện ghế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -438,6 +438,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Mai Sơn Hải
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * 
@@ -453,5 +455,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
 
