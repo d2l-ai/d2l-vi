@@ -72,14 +72,14 @@ We also assume that the output layer of the source model is closely related to t
 We will train the output layer from scratch, while the parameters of all remaining layers are fine-tuned based on the parameters of the source model.
 -->
 
-1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình nguồn, trên tập dữ liệu nguồn (chẳng hạn tập dữ liệu ImageNet).
-2. Tạo mô hình mạng nơ-ron mới gọi là mô hình đích.
-Mô hình này sao chép tất cả các thiết kế cũng như các tham số của mô hình nguồn, ngoại trừ tầng đầu ra.
-Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu nguồn và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu đích.
-Ta cũng giả định là tầng đầu ra của mô hình nguồn có liên hệ mật thiết với các nhãn của tập dữ liệu nguồn và dó đó không được sử dụng trong mô hình đích.
-3. Thêm vào một tầng đầu ra cho mô hình đích mà kích thước của nó là số lớp của dữ liệu đích, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
-4. Huấn luyện mô hình đích trên tập dữ liệu đích, chẳng hạn như tập dữ liệu ghế.
-Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình nguồn.
+1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình gốc, trên tập dữ liệu gốc (chẳng hạn tập dữ liệu ImageNet).
+2. Tạo mô hình mạng nơ-ron mới gọi là mô hình mục tiêu.
+Mô hình này sao chép tất cả các thiết kế cũng như các tham số của mô hình gốc, ngoại trừ tầng đầu ra.
+Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu gốc và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu mục tiêu.
+Ta cũng giả định là tầng đầu ra của mô hình gốc có liên hệ mật thiết với các nhãn của tập dữ liệu gốc và do đó không được sử dụng trong mô hình mục tiêu.
+3. Thêm vào một tầng đầu ra cho mô hình mục tiêu mà kích thước của nó là số lớp của dữ liệu mục tiêu, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
+4. Huấn luyện mô hình mục tiêu trên tập dữ liệu mục tiêu, chẳng hạn như tập dữ liệu ghế.
+Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình gốc.
 
 <!--
 ![Fine tuning.](../img/finetune.svg)
