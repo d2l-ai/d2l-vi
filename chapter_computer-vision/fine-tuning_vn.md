@@ -304,7 +304,7 @@ finetune_net.output.collect_params().setattr('lr_mult', 10)
 We first define a training function `train_fine_tuning` that uses fine tuning so it can be called multiple times.
 -->
 
-Đầu tiên, ta định nghĩa hàm huấn luyện `train_fine_tuning` sử dụng phương thức tinh chỉnh để có thể được gọi nhiều lần.
+Đầu tiên, ta định nghĩa hàm huấn luyện tinh chỉnh `train_fine_tuning` để có thể gọi nhiều lần.
 
 
 ```{.python .input  n=9}
@@ -329,8 +329,8 @@ We set the learning rate in the `Trainer` instance to a smaller value, such as 0
 Based on the previous settings, we will train the output layer parameters of the target model from scratch using a learning rate ten times greater.
 -->
 
-Ta gán giá trị tốc độ học nhỏ cho đối tượng `Trainer`, ví dụ như 0.01, để có thể tinh chỉnh các tham số mô hình thu được trong quá trình huấn luyện trước.
-Dựa vào các quyết định ở trên, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện các tham số của tầng đầu ra của mô hình mục tiêu từ đầu.
+Ta gán giá trị tốc độ học nhỏ cho đối tượng `Trainer`, ví dụ như 0.01, để tinh chỉnh các tham số mô hình huấn luyện sẵn.
+Như đề cập phía trên, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện từ đầu các tham số của tầng đầu ra mô hình đích.
 
 
 
@@ -444,5 +444,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
 
