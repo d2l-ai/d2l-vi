@@ -58,7 +58,7 @@ In this section, we introduce a common technique in transfer learning: fine tuni
 As shown in :numref:`fig_finetune`, fine tuning consists of the following four steps:
 -->
 
-Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học kế thừa đó là: thực hiện tinh chỉnh.
+Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học truyền tải, đó là tinh chỉnh (*fine tuning*).
 Như minh họa trong hình :numref:`fig_finetune`, thực hiện tinh chỉnh được tiến hành theo bốn bước sau đây:
 
 <!--
