@@ -59,7 +59,7 @@ As shown in :numref:`fig_finetune`, fine tuning consists of the following four s
 -->
 
 Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học truyền tải, đó là tinh chỉnh (*fine tuning*).
-Như minh họa trong hình :numref:`fig_finetune`, thực hiện tinh chỉnh được tiến hành theo bốn bước sau đây:
+Như minh họa trong hình :numref:`fig_finetune`, việc tinh chỉnh được tiến hành theo bốn bước sau đây:
 
 <!--
 1. Pre-train a neural network model, i.e., the source model, on a source dataset (e.g., the ImageNet dataset).
