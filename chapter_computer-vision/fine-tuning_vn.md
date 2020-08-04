@@ -74,7 +74,7 @@ We will train the output layer from scratch, while the parameters of all remaini
 
 1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình nguồn, trên tập dữ liệu nguồn (chẳng hạn tập dữ liệu ImageNet).
 2. Tạo mô hình mạng nơ-ron mới gọi là mô hình đích.
-Việc làm này là sao chép tất cả các thiết kế mô hình và các tham số của chúng trên mô hình nguồn, ngoại trừ tầng ngõ ra.
+Mô hình này sao chép tất cả các thiết kế mô hình cũng như các tham số của mô hình nguồn, ngoại trừ tầng đầu ra.
 Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu nguồn và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu đích.
 Ta cũng giả định là tầng đầu ra của mô hình nguồn có liên hệ mật thiết với các nhãn của tập dữ liệu nguồn và dó đó không được sử dụng trong mô hình đích.
 3. Thêm vào một tầng ngõ ra mà kích thước của nó là số các nhóm dữ liệu đích cho mô hình đích, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
