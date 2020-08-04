@@ -215,6 +215,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## I
 | English                            | Tiếng Việt                   | Thảo luận tại                                |
 |------------------------------------|------------------------------|----------------------------------------------|
+| inference (in model training and inference) | dự đoán / suy luận | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| (statistical) inference | suy luận (thống kê) | [https://git.io/JJVT2](https://git.io/JJVT2) |
 | ill-conditioned                    | (có) điều kiện xấu           |                                              |
 | image segmentation                 | phân vùng ảnh                |   |
 | implement                          | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
@@ -390,6 +392,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recognition                                        | nhận dạng                                 |                                              |
 | rectified linear unit (ReLU)                       | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | recurrent neural network                           | mạng nơ-ron hồi tiếp                      |                                              |
+| region of interest                                 | vùng quan tâm                             | [https://git.io/JJokG](https://git.io/JJokG) |
 | region of rejection                                | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | regressor                                          | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
 | regularization                                     | điều chuẩn                                |                                              |
@@ -449,6 +452,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | support vector machine (SVM)      | Máy vector hỗ trợ        |                                              |
 | surprisal (in information theory) | lượng tin                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
 | surrogate objective               | mục tiêu thay thế        | [https://git.io/JvQxV](https://git.io/JvQxV) |
+| switch                            | bộ chuyển mạch                   |                                              |
 | symbolic graph                    | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
