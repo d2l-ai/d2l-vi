@@ -77,7 +77,15 @@ the function will conduct uniform sampling for `fmap_h` rows and `fmap_w` column
 to generate anchor boxes with size `s` (we assume that the length of list `s` is 1) and different aspect ratios (`ratios`).
 -->
 
-*dịch đoạn phía trên*
+Hàm `display_anchors` được định nghĩa như ở dưới.
+Ta tạo các khung neo `anchors` có tâm được đặt theo từng đơn vị (điểm ảnh) trong tập ánh xạ đặc trưng `fmap`.
+Do các toạ độ $x$ và $y$ trong các khung neo `anchors` đã được chia cho chiều rộng và chiều cao của tập ánh xạ đặc trưng `fmap`,
+ta sử dụng các giá trị trong khoảng từ 0 đến 1 để biểu diễn vị trí tương đối của các khung neo trong tập ánh xạ đặc trưng.
+Do tâm điểm của các khung neo `anchors` trùng với tất cả các đơn vị của tập ánh xạ đặc trưng `fmap`,
+vị trí tương đối trong không gian của tâm điểm của `anchors` trên bất kì ảnh nào bắt buộc phhải tuân theo một phân phối đều.
+Cụ thể, khi chiều rộng và chiều cao của một ánh xạ đặc trưng lần lượt được đặt là `fmap_w` và `fmap_h`,
+hàm này sẽ tạo ra mẫu phân phối đều cho các hàng `fmap_h` và các cột `fmap_w` cho các điểm ảnh và sử dụng chúng làm tâm điểm
+để sinh các khung neo với kích thước `s` (ta giả sử rằng độ dài của mảng `s` là 1) và tỉ lệ các cạnh khác (`ratios`).
 
 
 ```{.python .input  n=2}
@@ -98,7 +106,9 @@ We assume that the size of the anchor boxes is 0.15 and the height and width of 
 We can see that the midpoints of anchor boxes from the 4 rows and 4 columns on the image are uniformly distributed.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên ta tập trung vào việc phát hiện các đối tượng nhỏ. Để dễ dàng phân biệt trong lúc hiển thị, các khung neo với các tâm điểm khác nhau ở ví dụ này sẽ không chồng chéo lên nhau.
+Ta giả sử rằng kích thước của các khung neo là 0.15 và chiều cao và chiều rộng của tập ánh xạ đặc trưng đều bằng 4.
+Ta có thể thấy rằng tâm điểm của các khung neo từ 4 hàng và 4 cột trong ảnh tuân theo phân phối đều.
 
 
 ```{.python .input  n=3}
@@ -111,7 +121,8 @@ We are going to reduce the height and width of the feature map by half and use a
 When the size is set to 0.4, overlaps will occur between regions of some anchor boxes.
 -->
 
-*dịch đoạn phía trên*
+Ta giảm chiều cao và chiều rộng của tập ánh xạ đặc trưng đi một nửa và sử dụng khung neo lớn hơn để phát hiện đối tượng kích thước lớn hơn.
+Khi kích thước được đặt bằng 0.4, hiện tượng chồng chéo giữa một số khung neo giữa các vùng sẽ xảy ra.
 
 
 
@@ -125,7 +136,8 @@ Finally, we are going to reduce the height and width of the feature map by half 
 Now the midpoint of the anchor box is the center of the image.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta tiếp tục giảm chiều cao và chiều rộng của tập ánh xạ đặc trưng đi một nửa và tăng kích thước khung neo lên 0.8.
+Giờ tâm điểm của khung neo chính là tâm của ảnh.
 
 
 
@@ -139,7 +151,8 @@ Since we have generated anchor boxes of different sizes on multiple scales, we w
 Now we are going to introduce a method based on convolutional neural networks (CNNs).
 -->
 
-*dịch đoạn phía trên*
+Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều tỉ lệ khác nhau.
+Bây giờ chúng tôi sẽ giới thiệu một phương pháp dựa vào mạng nơ-ron tích chập (CNNs).
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -231,7 +244,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
