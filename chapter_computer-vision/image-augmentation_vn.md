@@ -310,7 +310,7 @@ def load_cifar10(is_train, augs, batch_size):
 ### Using a Multi-GPU Training Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Sử dụng Mô hình Huấn luyện Đa GPU
 
 
 <!--
@@ -319,14 +319,16 @@ CIFAR-10 dataset. We will also apply the methods described in
 :numref:`sec_multi_gpu_concise` and use a multi-GPU training model.
 -->
 
-*dịch đoạn phía trên*
+Ta huấn luyện mô hình ResNet-18 như mô tả ở :numref:`sec_resnet` trên
+tập dữ liệu CIFAR-10. Cùng với đó ta áp dụng các phương pháp được mô tả trong
+:numref:`sec_multi_gpu_concise` và sử dụng mô hình huấn luyện đa GPU.
 
 
 <!--
 Next, we define the training function to train and evaluate the model using multiple GPUs.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa hàm huấn luyện để huấn luyện và đánh giá mô hình sử dụng nhiều GPU.
 
 
 ```{.python .input  n=14}
@@ -386,7 +388,9 @@ This function obtains all available GPUs and uses Adam as the optimization algor
 It then applies image augmentation to the training dataset, and finally calls the `train` function just defined to train and evaluate the model.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể định nghĩa hàm `train_with_data_aug` để áp dụng tăng cường ảnh vào huấn luyện mô hình.
+Hàm này tìm tất cả các GPU có sẵn và sử dụng Adam làm thuật toán tối ưu cho quá trình huấn luyện.
+Sau đó nó áp dụng tăng cường ảnh vào tập huấn luyện, và cuối cùng gọi đến hàm `train_ch13` được định nghĩa ở trên để huấn luyện và đánh giá mô hình.
 
 
 
@@ -403,7 +407,9 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
     train_ch13(net, train_iter, test_iter, loss, trainer, 10, devices)
 ```
 
-Now we train the model using image augmentation of random flipping left and right.
+<!-- Now we train the model using image augmentation of random flipping left and right. -->
+
+Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải.
 
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
@@ -419,7 +425,9 @@ train_with_data_aug(train_augs, test_augs, net)
 * We can obtain classes related to image augmentation from Gluon's `transforms` module.
 -->
 
-*dịch đoạn phía trên*
+* Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
+* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên ví dụ để huấn luyện, không áp dụng các thao tác ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
+* Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
 
 ## Bài tập
@@ -432,7 +440,11 @@ Can this comparative experiment support the argument that image augmentation can
 3. With reference to the MXNet documentation, what other image augmentation methods are provided in Gluon's `transforms` module?
 -->
 
-*dịch đoạn phía trên*
+1. Huấn luyện mô hình mà không áp dụng tăng cường ảnh: `train_with_data_aug(no_aug, no_aug)`.
+So sánh độ chính xác trong huấn luyện và kiểm tra khi áp dụng và không áp dụng tăng cường ảnh.
+Liệu thí nghiệm so sánh này có thể hỗ trợ cho luận điểm rằng tăng cường ảnh có thể làm giảm hiện tượng quá khớp? Tại sao?
+2. Sử dụng thêm các phương thức tăng cường ảnh khác trên tập dữ liệu CIFAR-10 khi huấn luyện mô hình. Theo dõi kết quả.
+3. Tham khảo tài liệu của MXNet và cho biết mô-đun `transforms` của Gluon còn cung cấp các phương thức tăng cường ảnh nào khác?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -469,4 +481,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
