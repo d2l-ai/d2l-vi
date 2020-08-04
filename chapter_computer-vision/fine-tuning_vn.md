@@ -116,8 +116,8 @@ If you want to get more pre-trained models for computer vision, you can use the 
 -->
 
 Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
-Gói `model_zoo` trong Gluon cung cấp một mô hình tiền huấn luyện thông dụng.
-Nếu bạn muốn lấy thêm các mô hình tiền huấn luyện cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
+Gói `model_zoo` trong Gluon cung cấp một mô hình huấn luyện sẵn thông dụng.
+Nếu bạn muốn lấy thêm các mô hình huấn luyện sẵn cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
 
 ```{.python .input  n=1}
 %matplotlib inline
