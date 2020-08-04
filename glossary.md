@@ -392,6 +392,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recognition                                        | nhận dạng                                 |                                              |
 | rectified linear unit (ReLU)                       | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | recurrent neural network                           | mạng nơ-ron hồi tiếp                      |                                              |
+| region of interest                                 | vùng quan tâm                             | [https://git.io/JJokG](https://git.io/JJokG) |
 | region of rejection                                | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | regressor                                          | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
 | regularization                                     | điều chuẩn                                |                                              |
