@@ -104,7 +104,7 @@ This small dataset contains thousands of images, some of which contain hot dogs.
 We will use the model obtained by fine tuning to identify whether an image contains a hot dog.
 -->
 
-Tiếp theo, ta sẽ dùng một ví dụ cụ thể để thực tập đó là: nhận dạng món bánh xúc xích.
+Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món bánh xúc xích.
 Ta sẽ thực hiện tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
 Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, một số có chứa các ảnh món bánh này.
 Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món bánh này hay không.
