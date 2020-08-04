@@ -330,7 +330,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## O
 | English                | Tiếng Việt         | Thảo luận tại                                |
 |------------------------|--------------------|----------------------------------------------|
-| object detection       | nhận diện vật thể  |                                              |
+| object detection       | phát hiện vật thể  |                                              |
+| object recognition     | nhận diện vật thể  |                                              |
 | objective function     | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | offline learning       | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
 | offset                 | độ dời             | [https://git.io/JfwX5](https://git.io/JfwX5) |
