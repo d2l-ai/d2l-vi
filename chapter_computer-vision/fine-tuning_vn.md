@@ -202,7 +202,7 @@ The average of all values of the channel is subtracted from each value and then 
 -->
 
 Trong quá trình huấn luyện, chúng ta cắt (*crop*) ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó phóng ảnh (*scale*) để có chiều dài và chiều rộng 224 pixel.
-Trong khi kiểm tra, chúng ta lấy tỉ lệ chiều rộng và dài của ảnh là 256 pixels, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Khi kiểm tra, ta phóng ảnh về kích thước 256 pixel cả hai chiều, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
 Thêm vào đó, chung ta chuẩn hoá (*normalize*) các giá trị của ba kênh màu RGB (red, green, blue).
 Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh được xử lý.
 
