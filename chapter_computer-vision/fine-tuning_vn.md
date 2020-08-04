@@ -260,7 +260,7 @@ The member variable `output` of source model is given below.
 As a fully connected layer, it transforms ResNet's final global average pooling layer output into 1000 class output on the ImageNet dataset.
 -->
 
-Mô hình gốc được huấn luyện trước bao gồm hai biến thành viên: `features` và `output`.
+Mô hình gốc được huấn luyện sẵn bao gồm hai biến thành viên: `features` và `output`.
 `features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
 Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
 Biến thành viên `output` của mô hình gốc được minh họa dưới đây.
@@ -283,9 +283,9 @@ Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning 
 -->
 
 Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình đích.
-Mạng này được định nghĩa giống như mô hình gốc được huấn luyện trước, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu mục tiêu.
+Mạng này được định nghĩa giống như mô hình gốc được huấn luyện sẵn, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu đích.
 Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
-Do các tham số mô hình trong `features` được tính trong quá trình huấn luyện trước trên tập dữ liệu ImageNet, chúng đủ để thoả mãn nhu cầu sử dụng của ta.
+Các tham số mô hình trong `features` được tính trong quá trình huấn luyện trước trên tập dữ liệu ImageNet là đủ tốt.
 Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
 Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
 Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ và ta sử dụng tốc độ học $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
@@ -454,4 +454,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * 
-
