@@ -77,7 +77,7 @@ We will train the output layer from scratch, while the parameters of all remaini
 Mô hình này sao chép tất cả các thiết kế mô hình cũng như các tham số của mô hình nguồn, ngoại trừ tầng đầu ra.
 Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu nguồn và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu đích.
 Ta cũng giả định là tầng đầu ra của mô hình nguồn có liên hệ mật thiết với các nhãn của tập dữ liệu nguồn và dó đó không được sử dụng trong mô hình đích.
-3. Thêm vào một tầng ngõ ra mà kích thước của nó là số các nhóm dữ liệu đích cho mô hình đích, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
+3. Thêm vào một tầng đầu ra cho mô hình đích mà kích thước của nó là số lớp của dữ liệu đích, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
 4. Huấn luyện mô hình đích trên tập dữ liệu đích, chẳng hạn như tập dữ liệu ghế.
 Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình nguồn.
 
