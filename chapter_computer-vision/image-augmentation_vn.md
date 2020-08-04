@@ -166,7 +166,7 @@ In the example below, we randomly change the brightness of the image to a value 
 
 Một phương pháp tăng cường khác là thay đổi màu sắc.
 Chúng ta có thể thay đổi bốn khía cạnh của màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
-Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) của ảnh gốc.
+Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) độ sáng của ảnh gốc.
 
 
 
@@ -191,7 +191,7 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập cách để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
  
 
 
@@ -206,7 +206,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### Chồng nhiều phương pháp tăng cường ảnh
+### Kết hợp nhiều phương pháp tăng cường ảnh
 
 
 <!--
@@ -214,8 +214,8 @@ In practice, we will overlay multiple image augmentation methods.
 We can overlay the different image augmentation methods defined above and apply them to each image by using a `Compose` instance.
 -->
 
-Trong thực tế, chúng tôi sẽ phủ nhiều phương pháp tăng cường hình ảnh.
-Ta có thể chồng các phương pháp tăng cường hình ảnh khác nhau được xác định ở trên và áp dụng chúng cho từng hình ảnh bằng cách sử dụng một thực thể `Compose`.
+Trong thực tế, chúng ta sẽ kết hợp nhiều phương pháp tăng cường ảnh.
+Ta có thể kết hợp các phương pháp trên và áp dụng chúng cho từng hình ảnh bằng cách sử dụng thực thể `Compose`.
 
 
 
@@ -461,5 +461,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
