@@ -523,15 +523,15 @@ This is where caches come in handy (see this [Wikipedia article](https://en.wiki
 Commonly the following names / concepts are used:
 -->
 
-Xét tình huống sau: ta sử dụng một CPU bình thường với 4 lõi như được mô tả trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
-Thêm nữa, hãy giả sử ta sử dụng một số IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi bộ đều có AVX2 được đưa vào hoạt động với độ rộng 256bit.
-Ngoài ra, giả sử rằng cần truy cập từ bộ nhớ ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
-Điều này có nghĩa rằng CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
-Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các đơn vị xử lý sẽ thiếu dữ liệu để xử lý.
+Xét tình huống sau: ta có một CPU bình thường với 4 nhân như trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
+Thêm nữa, hãy giả sử IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi nhân đều đã kích hoạt AVX2 rộng 256bit.
+Ngoài ra, giả sử bộ nhớ cần truy cập ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
+Điều này có nghĩa CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
+Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các nhân sẽ thiếu dữ liệu để xử lý.
 Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
-Để điều chỉnh vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ có khoảng cách xa, tốt hơn hết là lưu trong bộ nhớ đệm nội bộ của CPU.
+Để khắc phục vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ ngoài, và tốt hơn hết là lưu trong bộ nhớ cục bộ trên CPU.
 Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
-Một số tên gọi / khái niệm sau thường được sử dụng:
+Một số tên gọi/khái niệm thường gặp:
 
 <!--
 * **Registers** are strictly speaking not part of the cache. They help stage instructions. 
@@ -550,20 +550,22 @@ AMD's Epyc 3 server CPUs have a whopping 256MB of cache spread across multiple c
 More typical numbers are in the 4-8MB range.
 -->
 
-* **Thanh ghi** đúng ra mà nói không phải là một bộ phận của bộ nhớ đệm. Nó chỉ hỗ trợ sắp xếp các câu lệnh.
-Nhưng dù sao thì thanh ghi trong CPU cũng là một vùng bộ nhớ mà CPU có thể truy cập theo đúng tốc độ xung nhịp mà không có độ trễ.
-Các CPU thường có hàng chục thanh ghi. Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
-Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register`.
+* **Thanh ghi** nói đúng ra không phải là một bộ phận của bộ nhớ đệm. Chúng hỗ trợ sắp xếp các câu lệnh cho CPU.
+Nhưng dù sao thanh ghi cũng là một vùng nhớ mà CPU có thể truy cập với tốc độ xung nhịp mà không có độ trễ.
+Các CPU thường có hàng chục thanh ghi. 
+Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
+Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register` để lưu các biến vào thanh ghi thay vì bộ nhớ.
 * Bộ nhớ đệm **L1** là lớp bảo vệ đầu tiên khi nhu cầu băng thông bộ nhớ quá cao.
-Bộ nhớ đệm L1 khá nhỏ (kích thước điển hình khoảng 32-64kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
-Nếu dữ liệu được tìm thấy trong bộ nhớ đệm L1, việc truy cập diễn ra rất nhanh chóng. Tuy nhiên nếu không thể tìm thấy dữ liệu ở đây, việc tìm kiếm sẽ tiếp tục theo hệ thống phân cấp bộ nhớ đệm (*cache hierarchy*).
-* Bộ nhớ đệm **L2** là điểm dừng tiếp theo. Vùng nhớ này có thể chuyên biệt tuỳ theo kiến trúc thiết kế và kích thước vi xử lý.
-Nó có thể chỉ được truy cập từ một lõi nhất định hoặc được phân phối giữa nhiều lõi khác nhau.
-Bộ nhớ L2 có kích thước lớn hơn (điển hình là 256-512kB mỗi lõi) và chậm hơn L1.
+Bộ nhớ đệm L1 rất nhỏ (kích thước điển hình khoảng 32-64kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
+Nếu dữ liệu được tìm thấy trong bộ nhớ đệm L1, việc truy cập diễn ra rất nhanh chóng. Nếu không, việc tìm kiếm sẽ tiếp tục theo hệ thống phân cấp bộ nhớ đệm (*cache hierarchy*).
+* Bộ nhớ đệm **L2** là điểm dừng tiếp theo. 
+Vùng nhớ này có thể chuyên biệt tuỳ theo kiến trúc thiết kế và kích thước vi xử lý.
+Nó có thể chỉ được truy cập từ một lõi nhất định hoặc được chia sẻ với nhiều lõi khác nhau.
+Bộ nhớ đệm L2 có kích thước lớn hơn (thường là 256-512kB mỗi lõi) và chậm hơn L1.
 Hơn nữa, để truy cập vào dữ liệu trong L2, đầu tiên ta cần kiểm tra để chắc rằng dữ liệu đó không nằm trong L1, việc này làm tăng độ trễ lên một chút.
-* Bộ nhớ đệm **L3** được phân phối giữa nhiều lõi khác nhau và có thể khá lớn.
-CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm 256MB lớn đến khác thường và được chia đều giữa nhiều chiplet.
-Con số đặc trưng thường nằm trong khoảng 4-8MB.
+* Bộ nhớ đệm **L3** được sử dụng chung cho nhiều lõi khác nhau và có thể khá lớn.
+CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm 256MB cực lớn được phân bổ trên nhiều vi xử lý con (*chiplet*).
+Thường thì kích thước của L3 nằm trong khoảng 4-8MB.
 
 <!--
 Predicting which memory elements will be needed next is one of the key optimization parameters in chip design.
@@ -581,18 +583,18 @@ Quite potentially such code runs *more slowly* on multiple processors when compa
 This is one more reason for why there is a practical limit to cache sizes (besides their physical size).
 -->
 
-Việc dự đoán ta sẽ cần phần tử bộ nhớ nào tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
-Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán ghi đệm (*caching algorithms*) sẽ cố gắng *đọc phía trước* hơn là phía sau.
-Cũng như vậy, việc giữ hành vi truy cập bộ nhớ ở mức cục bộ là một cách tốt nhằm cải thiện hiệu năng.
+Việc dự đoán phần tử bộ nhớ nào sẽ cần tiếp theo là một trong những tham số tối ưu chính trong thiết kế vi xử lý.
+Ví dụ, việc duyệt *xuôi* bộ nhớ được coi là thích hợp do đa số các thuật toán ghi đệm (*caching algorithms*) sẽ cố gắng *đọc về trước* hơn là về sau.
+Tương tự, việc giữ hành vi truy cập bộ nhớ ở mức cục bộ là một cách tốt để cải thiện hiệu năng.
 Tăng số lượng bộ nhớ đệm là một con dao hai lưỡi.
-Một mặt nó đảm bảo các lõi của vi xử lý không bị thiếu dữ liệu.
+Một mặt việc này đảm bảo các nhân vi xử lý không bị thiếu dữ liệu.
 Mặt khác nó tăng kích thước vi xử lý, lấn chiếm phần diện tích mà đáng ra có thể được sử dụng vào việc tăng khả năng xử lý.
 Xét trường hợp tệ nhất như mô tả trong :numref:`fig_falsesharing`.
 Một địa chỉ bộ nhớ được lưu trữ tại vi xử lý 0 trong khi một luồng của vi xử lý 1 yêu cầu dữ liệu đó.
-Để có thể lấy dữ liệu, vi xử lý 0 cần dừng công việc đang thực hiện lại, ghi thông tin vào bộ nhớ chính và cho phép vi xử lý 1 đọc dữ liệu từ bộ nhớ.
+Để có thể lấy dữ liệu, vi xử lý 0 phải dừng công việc đang thực hiện, ghi lại thông tin vào bộ nhớ chính để vi xử lý 1 đọc dữ liệu từ đó.
 Trong suốt quá trình này, cả hai vi xử lý đều ở trong trạng thái chờ.
 Một đoạn mã như vậy khả năng cao là sẽ chạy *chậm hơn* trên một hệ đa vi xử lý so với một vi xử lý đơn được lập trình hiệu quả.
-Đây là một lý do nữa cho việc tại sao lại có giới hạn thực tế cho kích thước bộ nhớ đệm (ngoài kích thước vật lý của bộ nhớ).
+Đây là một lý do nữa cho việc tại sao thực tế phải giới hạn kích thước bộ nhớ đệm (ngoài việc chiếm diện tích vật lý).
 
 <!--
 ![False sharing (image courtesy of Intel)](../img/falsesharing.svg)
@@ -621,9 +623,9 @@ This co-evolution of hardware and algorithms has led to a situation where for be
 Hence it pays to understand the specific benefits that GPUs and related accelerators such as the TPU :cite:`Jouppi.Young.Patil.ea.2017` offer.
 -->
 
-Nếu nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU, thì cũng không phải là phóng đại.
-Vì lẽ ấy, ta có thể lý luận rằng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
-Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể hậu quả ra sao.
+Không hề phóng đại khi nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU.
+Và cũng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
+Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể có hiệu quả hay không.
 Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị tăng tốc khác như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
 
 
@@ -639,13 +641,13 @@ All of this necessitates faster and larger memory (HBM2 vs. GDDR6) and more proc
 For instance, NVIDIA's [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 GPUs are optimized for inference whereas the V100 GPUs are preferable for training.
 -->
 
-Ta cần chú ý đến hai đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
-Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi của mạng,
+Ta cần chú ý đến đặc thù thường được sử dụng trong thực tế: thiết bị tăng tốc được tối ưu hoặc cho bước huấn luyện hoặc cho bước suy luận.
+Đối với bước suy luận, ta chỉ cần tính toán lượt truyền xuôi qua mạng,
 không cần sử dụng bộ nhớ để lưu dữ liệu trung gian ở bước lan truyền ngược.
-Hơn nữa, ta có lẽ không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
+Hơn nữa, ta có thể không cần đến phép tính quá chính xác (thường thì FP16 hoặc INT8 là đủ)
 Mặt khác trong quá trình huấn luyện, tất cả kết quả trung gian đều cần phải lưu lại để tính gradient.
-Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới.
-Điều này có nghĩa là bước huấn luyện yêu cầu tối thiểu FP16 (hoặc kết hợp độ chính xác với FP32).
+Hơn nữa, việc tích luỹ gradient yêu cầu độ chính xác cao hơn nhằm tránh lỗi tràn số trên hoặc dưới,
+do đó bước huấn luyện yêu cầu tối thiểu độ chính xác FP16 (hoặc độ chính xác hỗn hợp khi kết hợp với FP32).
 Tất cả các yếu tố trên đòi hỏi bộ nhớ nhanh hơn và lớn hơn (HBM2 hoặc GDDR6) và nhiều khả năng xử lý hơn.
 Ví dụ, GPU [Turing](https://devblogs.nvidia.com/nvidia-turing-architecture-in-depth/) T4 của NVIDIA được tối ưu cho bước suy luận trong khi GPU V100 phù hợp cho quá trình huấn luyện.
 
@@ -663,20 +665,20 @@ Each Streaming Multiprocessor (SM) consists of four such blocks.
 -->
 
 Xem lại :numref:`fig_neon128`. Việc thêm các đơn vị vector vào lõi vi xử lý cho phép ta tăng đáng kể thông lượng xử lý (ở ví dụ trong hình ta có thể thực hiện 16 thao tác cùng lúc).
-Chuyện gì sẽ xảy ra nếu ta không chỉ thêm các đơn vị được tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
-Chiến lược này dẫn tới Lõi Tensor (chi tiết về phần này sẽ sớm được bàn luận).
-Thứ hai, chuyện gì sẽ xảy ra nếu ta tăng số lượng lõi?
-Nói tóm lại, hai chiến lược trên tổng kết lại cách quyết định thiết kế của GPU.
-:numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản.
-Khối bao gồm 16 đơn vị số nguyên và 16 đơn vị dấu phẩy động.
-Thêm vào đó, hai Lõi Tensor xử lý một tập nhỏ các thao thác liên quan cho học sâu được thêm vào.
+Chuyện gì sẽ xảy ra nếu ta không chỉ tối ưu cho phép tính giữa các vector mà còn tối ưu cho các ma trận?
+Chiến lược này dẫn tới sự ra đời của Lõi Tensor (chi tiết sẽ được thảo luận sau đây).
+Thứ hai, nếu tăng số lượng lõi thì sao?
+Nói tóm lại, hai chiến lược trên tóm tắt việc quyết định thiết kế của GPU.
+:numref:`fig_turing_processing_block` mô tả tổng quan một khối xử lý đơn giản,
+bao gồm 16 đơn vị số nguyên và 16 đơn vị dấu phẩy động.
+Thêm vào đó, hai Lõi Tensor xử lý một tập nhỏ các thao thác liên quan đến học sâu được thêm vào.
 Mỗi Hệ vi xử lý Luồng (*Streaming Multiprocessor* - SM) bao gồm bốn khối như vậy.
 
 <!--
 ![NVIDIA Turing Processing Block (image courtesy of NVIDIA)](../img/turing_processing_block.png)
 -->
 
-![Khối Xử lý của NVIDIA Turing](../img/turing_processing_block.png)
+![Khối Xử lý Turing của NVIDIA](../img/turing_processing_block.png)
 :width:`150px`
 :label:`fig_turing_processing_block`
 
@@ -698,8 +700,8 @@ Nonetheless it pays to be aware of the limitations of the devices to avoid picki
 12 hệ vi xử lý luồng sau đó được nhóm vào một cụm xử lý đồ hoạ tạo nên vi xử lý cao cấp TU102.
 Số lượng kênh bộ nhớ phong phú và bộ nhớ đệm L2 được bổ sung vào cấu trúc.
 Thông tin chi tiết được mô tả trong :numref:`fig_turing`.
-Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm hoặc loại bỏ tuỳ theo nhu cầu để có thể tạo thành một vi xử lý nhỏ gọn và giải quyết một số vấn đề phát sinh (các mô-đun lỗi có thể không được kích hoạt).
-May mắn thay, các nhà nghiên cứu học sâu bình thường không cần lập trình cho các thiết bị này do đã có các lớp mã nguồn framework CUDA.
+Một trong những lý do để thiết kế một thiết bị như vậy là từng khối riêng biệt có thể được thêm vào hoặc bỏ đi tuỳ theo nhu cầu để có thể tạo thành một vi xử lý nhỏ gọn và giải quyết một số vấn đề phát sinh (các mô-đun lỗi có thể không được kích hoạt).
+May mắn thay, các nhà nghiên cứu học sâu bình thường không cần lập trình cho các thiết bị này do đã có các lớp mã nguồn framework CUDA ở tầng thấp.
 Cụ thể, có thể có nhiều hơn một chương trình được thực thi đồng thời trên GPU, với điều kiện là còn đủ tài nguyên.
 Tuy nhiên ta cũng cần để ý đến giới hạn của các thiết bị nhằm tránh việc lựa chọn mô hình quá lớn so với bộ nhớ của thiết bị.
 
@@ -723,11 +725,11 @@ They are optimized for small operations involving between 4x4 and 16x16 matrices
 -->
 
 Khía cạnh cuối cùng đáng để bàn luận chi tiết là Lõi Tensor (*TensorCore*).
-Đây là một ví dụ của xu hướng gần đây sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
+Đây là một ví dụ của xu hướng gần đây là sử dụng thêm nhiều mạch đã được tối ưu để tăng hiệu năng cho học sâu.
 Ví dụ, TPU có thêm một mảng tâm thu (*systolic array*) :cite:`Kung.1988` để tăng tốc độ nhân ma trận.
-Thiết kế TPU có mục đích hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
-Lõi Tensor thì ngược lại.
-Nó được tối ưu cho các phép tính kích thước nhỏ bao gồm các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học của chúng.
+Thiết kế của TPU chỉ hỗ trợ một số lượng rất ít các phép tính kích thước lớn (thế hệ TPU đầu tiên hỗ trợ một phép tính).
+Lõi Tensor thì ngược lại,
+được tối ưu cho các phép tính kích thước nhỏ cho các ma trận kích thước 4x4 đến 16x16, tuỳ vào độ chính xác số học.
 :numref:`fig_tensorcore` mô tả tổng quan quá trình tối ưu.
 
 <!--
@@ -748,12 +750,12 @@ Matching both goals is an area of active research.
 See e.g., [DGL](http://dgl.ai), a library tuned for deep learning on graphs.
 -->
 
-Đương nhiên khi tối ưu cho quá trình tính toán, ta bắt buộc phải có một số đánh đổi nhất định.
-Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa thớt.
+Đương nhiên khi tối ưu cho quá trình tính toán, ta buộc phải có một số đánh đổi nhất định.
+Một trong số đó là GPU không xử lý tốt dữ liệu ngắt quãng hoặc thưa.
 Trừ một số ngoại lệ đáng chú ý, ví dụ như [Gunrock](https://github.com/gunrock/gunrock) :cite:`Wang.Davidson.Pan.ea.2016`,
 việc truy cập vector và ma trận thưa không phù hợp với các thao tác đọc theo cụm (*burst read*) với băng thông cao của GPU.
-Phối hợp cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
-Tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
+Đạt được cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
+Ví dụ, tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
