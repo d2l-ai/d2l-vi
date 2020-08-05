@@ -285,7 +285,7 @@ Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning 
 Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình đích.
 Mạng này được định nghĩa giống như mô hình gốc được huấn luyện sẵn, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu đích.
 Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
-Các tham số mô hình trong `features` được huấn luyện trước trên tập dữ liệu ImageNet như vậy là đủ tốt.
+Các tham số mô hình trong `features` được huấn luyện trước đó trên tập dữ liệu ImageNet như vậy là đủ tốt.
 Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
 Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
 Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ thì ta sử dụng tốc độ học là $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
