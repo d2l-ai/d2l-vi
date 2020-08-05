@@ -167,7 +167,7 @@ In the example below, we randomly change the brightness of the image to a value 
 -->
 
 Một phương pháp tăng cường khác là thay đổi màu sắc.
-Chúng ta có thể thay đổi bốn khía cạnh của màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
+Chúng ta có thể thay đổi bốn khía cạnh màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
 Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) độ sáng của ảnh gốc.
 
 
@@ -464,4 +464,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
