@@ -43,7 +43,7 @@ First, import the packages and modules required for the experiment.
 
 Trong một số phần tiếp theo, chúng tôi sẽ giới thiệu nhiều mô hình học sâu dùng để phát hiện vật thể.
 Trước hết, ta nên bàn qua về khái niệm vị trí vật thể.
-Đầu tiên, hãy thực hiện nhập các gói và mô-đun cần thiết cho việc thử nghiệm.
+Đầu tiên, ta hãy nhập các gói và mô-đun cần thiết cho việc thử nghiệm.
 
 ```{.python .input}
 %matplotlib inline
