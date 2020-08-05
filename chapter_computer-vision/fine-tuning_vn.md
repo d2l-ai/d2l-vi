@@ -256,7 +256,7 @@ test_augs = gluon.data.vision.transforms.Compose([
 ### Defining and Initializing the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa và Khởi tạo Mô hình
 
 
 <!--
@@ -265,7 +265,9 @@ Here, we specify `pretrained=True` to automatically download and load the pre-tr
 The first time they are used, the model parameters need to be downloaded from the Internet.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng ResNet-18 đã được huấn luyện trước trên tập dữ liệu ImageNet làm mô hình gốc.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện sẵn.
+Ở lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 
 
@@ -282,7 +284,11 @@ The member variable `output` of source model is given below.
 As a fully connected layer, it transforms ResNet's final global average pooling layer output into 1000 class output on the ImageNet dataset.
 -->
 
-*dịch đoạn phía trên*
+Mô hình gốc được huấn luyện sẵn bao gồm hai biến thành viên: `features` và `output`.
+`features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
+Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
+Biến thành viên `output` của mô hình gốc được minh họa dưới đây.
+Là một tầng kết nối đầy đủ, nó biến đổi đầu ra của tầng gộp trung bình toàn cục thành 1000 lớp đầu ra trên tập dữ liệu ImageNet.
 
 
 ```{.python .input  n=7}
@@ -300,7 +306,13 @@ In contrast, model parameters in the member variable `output` are randomly initi
 Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning rate of $10\eta$ to update the model parameters in the member variable `output`.
 -->
 
-*dịch đoạn phía trên*
+Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình đích.
+Mạng này được định nghĩa giống như mô hình gốc được huấn luyện sẵn, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu đích.
+Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
+Các tham số mô hình trong `features` được huấn luyện trước đó trên tập dữ liệu ImageNet như vậy là đủ tốt.
+Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
+Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
+Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ thì ta sử dụng tốc độ học là $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
 
 
 
@@ -397,7 +409,9 @@ Như bạn có thể thấy, với số epoch như nhau, giá trị precision c�
 * Generally, fine tuning parameters use a smaller learning rate, while training the output layer from scratch can use a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+* Học truyền tải chuyển kiến thức học được từ tập dữ liệu gốc sang tập dữ liệu mục tiêu. Tinh chỉnh là một kĩ thuật phổ biến trong học truyền tải.
+* Mô hình mục tiêu tái tạo toàn bộ thiết kế mô hình và các tham số của mô hình gốc, ngoại trừ tầng đầu ra, và tinh chỉnh các tham số này dựa vào tập dữ liệu mục tiêu. Ngược lại, tầng đầu ra của mô hình mục tiêu cần được huấn luyện lại từ đầu.
+* Thông thường việc tinh chỉnh các tham số sử dụng tốc độ học nhỏ, trong khi việc huấn luyện lại tầng đầu ra từ đầu có thể sử dụng tốc độ học lớn hơn nhiều.
 
 
 ## Bài tập
@@ -408,7 +422,9 @@ Như bạn có thể thấy, với số epoch như nhau, giá trị precision c�
 3. Set the parameters in `finetune_net.features` to the parameters of the source model and do not update them during training. What will happen? You can use the following code.
 -->
 
-*dịch đoạn phía trên*
+1. Liên tục tăng tốc độ học của `finetune_net`. Giá trị precision của mô hình thay đổi như thế nào?
+2. Tiếp tục điều chỉnh các siêu tham số của `finetune_net` và `scratch_net` trong thí nghiệm so sánh ở trên. Liệu giá trị precision của chúng vẫn khác nhau hay không?
+3. Gán các tham số của `finetune_net.features` bằng các tham số của mô hình gốc và không cập nhật chúng suốt quá trình huấn luyện. Điều gì sẽ xảy ra? Bạn có thể sử dụng đoạn mã sau.
 
 
 ```{.python .input}
@@ -422,7 +438,9 @@ Its corresponding weight parameter at the output layer can be obtained by using 
 How can we use this parameter?
 -->
 
-*dịch đoạn phía trên*
+4. Thực ra thì cũng có lớp "hotdog" trong tập dữ liệu `ImageNet`.
+Các trọng số tương ứng của nó trong tầng đầu ra có thể thu được thông qua việc sử dụng đoạn mã sau.
+Ta có thể sử dụng các tham số này như thế nào?
 
 
 ```{.python .input  n=13}
@@ -463,10 +481,12 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thanh Hoà
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+
