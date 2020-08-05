@@ -18,7 +18,7 @@ In computer vision, we refer to such tasks as object detection (or object recogn
 -->
 
 Ở phần trước, chúng ta đã giới thiệu nhiều loại mô hình dùng cho phân loại ảnh.
-Trong nhiệm vụ phân loại ảnh, ta giả sử là chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
+Trong nhiệm vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
 Tuy nhiên, trong nhiều tình huống, có nhiều đối tượng trong ảnh mà ta quan tâm.
 Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng trong ảnh.
 Trong lĩnh vực thị giác máy tính, ta gọi những việc như vậy là phát hiện vật thể (hay nhận dạng vật thể).
@@ -179,5 +179,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * 
-
 
