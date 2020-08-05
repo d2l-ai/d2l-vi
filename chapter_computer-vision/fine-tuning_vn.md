@@ -403,7 +403,9 @@ Như bạn có thể thấy, với số epoch như nhau, giá trị precision c�
 * Generally, fine tuning parameters use a smaller learning rate, while training the output layer from scratch can use a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+* Học truyền tải chuyển kiến thức học được từ tập dữ liệu gốc sang tập dữ liệu mục tiêu. Tinh chỉnh là một kĩ thuật phổ biến trong học truyền tải.
+* Mô hình mục tiêu tái tạo toàn bộ thiết kế mô hình và các tham số của mô hình gốc, ngoại trừ tầng đầu ra, và tinh chỉnh các tham số này dựa vào tập dữ liệu mục tiêu. Ngược lại, tầng đầu ra của mô hình mục tiêu cần được huấn luyện lại từ đầu.
+* Thông thường việc tinh chỉnh các tham số sử dụng tốc độ học nhỏ, trong khi việc huấn luyện lại tầng đầu ra từ đầu có thể sử dụng tốc độ học lớn hơn nhiều.
 
 
 ## Bài tập
@@ -414,7 +416,9 @@ Như bạn có thể thấy, với số epoch như nhau, giá trị precision c�
 3. Set the parameters in `finetune_net.features` to the parameters of the source model and do not update them during training. What will happen? You can use the following code.
 -->
 
-*dịch đoạn phía trên*
+1. Liên tục tăng tốc độ học của `finetune_net`. Giá trị precision của mô hình thay đổi như thế nào?
+2. Tiếp tục điều chỉnh các siêu tham số của `finetune_net` và `scratch_net` trong thí nghiệm so sánh ở trên. Liệu giá trị precision của chúng vẫn khác nhau hay không?
+3. Gán các tham số của `finetune_net.features` bằng các tham số của mô hình gốc và không cập nhật chúng suốt quá trình huấn luyện. Điều gì sẽ xảy ra? Bạn có thể sử dụng đoạn mã sau.
 
 
 ```{.python .input}
@@ -428,7 +432,9 @@ Its corresponding weight parameter at the output layer can be obtained by using 
 How can we use this parameter?
 -->
 
-*dịch đoạn phía trên*
+4. Thực ra thì cũng có lớp "hotdog" trong tập dữ liệu `ImageNet`.
+Các trọng số tương ứng của nó trong tầng đầu ra có thể thu được thông qua việc sử dụng đoạn mã sau.
+Ta có thể sử dụng các tham số này như thế nào?
 
 
 ```{.python .input  n=13}
@@ -476,5 +482,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
