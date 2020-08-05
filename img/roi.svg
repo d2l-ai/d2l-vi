@@ -589,11 +589,11 @@
          id="tspan288"
          x="131.3952"
          y="33.809753"
-         style="stroke-width:0.75">Gộp vùng</tspan><tspan
+         style="stroke-width:0.75">Gộp RoI</tspan><tspan
          sodipodi:role="line"
          x="131.3952"
          y="45.059753"
          style="stroke-width:0.75"
-         id="tspan292">quan tâm 2 x 2</tspan></text>
+         id="tspan292">2 x 2</tspan></text>
   </g>
 </svg>

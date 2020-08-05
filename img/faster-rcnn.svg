@@ -682,7 +682,7 @@
          id="tspan1333"
          x="84.690483"
          y="90.795891"
-         style="stroke-width:0.75">Gộp vùng quan tâm</tspan></text>
+         style="stroke-width:0.75">Gộp RoI</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:center;text-anchor:middle;stroke-width:0.75"
