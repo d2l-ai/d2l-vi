@@ -22,6 +22,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance               | chất lượng thuật toán     |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
+| anchor box                            | khung neo                 |                                              |
 | argument (in programming)             | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
