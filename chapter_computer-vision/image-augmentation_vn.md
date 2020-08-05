@@ -246,7 +246,7 @@ apply(img, augs)
 ## Using an Image Augmentation Training Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mô hình dùng tăng cường ảnh
 
 
 <!--
@@ -256,7 +256,10 @@ This is because the position and size of the objects in the Fashion-MNIST datase
 The first 32 training images in the CIFAR-10 dataset are shown below.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xem xét làm thế nào để áp dụng tăng cường hình ảnh trong huấn luyện thực tế.
+Ở đây, ta sử dụng bộ dữ liệu CIFAR-10, thay vì Fashion-MNIST trước đây.
+Điều này là do vị trí và kích thước của các đối tượng trong bộ dữ liệu Fashion-MNIST đã được chuẩn hóa và sự khác biệt về màu sắc và kích thước của các đối tượng trong bộ dữ liệu CIFAR-10 đáng kể hơn.
+32 hình ảnh huấn luyện đầu tiên trong bộ dữ liệu CIFAR-10 được hiển thị bên dưới.
 
 
 
@@ -273,7 +276,10 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-*dịch đoạn phía trên*
+Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện mà không sử dụng với các thao tác ngẫu nhiên trong dự đoán.
+Ở đây, chúng ta chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
+Ngoài ra, chúng ta sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
+tức là, tensor số thực dấu phẩy động 32-bit có kích thước (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
 
 
 
@@ -293,7 +299,9 @@ The `transform_first` function provided by Gluon's dataset applies image augment
 For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa một chức năng phụ trợ để giúp đọc hình ảnh và áp dụng tăng cường ảnh dễ dàng hơn.
+Hàm `transform_first` được cung cấp bởi các bộ dữ liệu cung cấp sẵn trong Gluon áp dụng tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
+Để biết mô tả chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
 
@@ -482,8 +490,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
+
