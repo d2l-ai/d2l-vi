@@ -69,7 +69,7 @@ First, we need to discuss the implementation of category prediction and bounding
 ### Category Prediction Layer
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng Dự đoán Danh mục
 
 
 <!--
@@ -81,7 +81,12 @@ Recall how we used convolutional layer channels to output category predictions i
 SSD uses the same method to reduce the model complexity.
 -->
 
-*dịch đoạn phía trên*
+Đặt số danh mục cho vật thể là $q$. Đối với trường hợp này, số danh mục cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
+Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là  $h$ và $w$.
+Nếu ta sử dụng từng phần tử làm tâm điểm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số sẽ quá dư thừa.
+Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán danh mục trong :numref:`sec_nin`.
+SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
 
 <!--
@@ -93,7 +98,12 @@ Therefore, there are $a(q+1)$ output channels, with the output channels indexed 
 ($0 \leq j \leq q$) representing the predictions of the category index $j$ for the anchor box index $i$.
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, tầng dự đoán danh mục sử dụng một tầng tích chập giữ nguyên chiều cao và chiều rộng của đầu vào.
+Do đó, toạ độ trong không gian của đầu ra và đầu vào quan hệ một-một với nhau dọc theo cả chiều cao và chiều rộng của ánh xạ đặc trưng.
+Giả sử rằng đầu ra và đầu vào này có cùng toạ độ $(x, y)$ trong không gian, kênh cho toạ độ $(x, y)$ trên
+ánh xạ đặc trưng ở đầu ra bao gồm danh mục dự đoán cho tất cả các khung neo được sinh ra khi sử dụng ánh xạ đặc trưng đầu vào có toạ độ $(x, y)$ làm tâm điểm.
+Bởi lẽ đó, có tất cả $a(q+1)$ kênh đầu ra, với các kênh đầu ra được đánh chỉ số theo $i(q+1) + j$
+($0 \leq j \leq q$) biểu diễn dự đoán danh mục chỉ số $j$ cho khung neo chỉ số $i$.
 
 
 <!--
@@ -102,7 +112,9 @@ After we specify the parameters $a$ and $q$, it uses a $3\times3$ convolutional 
 The heights and widths of the input and output of this convolutional layer remain unchanged.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta định nghĩa một tầng dự đoán danh mục theo dạng này.
+Sau khi ta xác định các tham số $a$ và $q$, tầng này sử dụng một tầng tích chập $3\times3$ với đệm bằng 1.
+Chiều cao và chiều rộng của đầu ra và đầu vào của tầng tích chập này không đổi.
 
 
 
@@ -816,7 +828,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
