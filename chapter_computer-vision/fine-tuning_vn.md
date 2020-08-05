@@ -148,7 +148,7 @@ npx.set_np()
 ### Obtaining the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Lấy dữ liệu
 
 
 <!--
@@ -156,7 +156,8 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-*dịch đoạn phía trên*
+Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa bánh mì kẹp xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
+$1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
 <!--
@@ -164,7 +165,8 @@ We first download the compressed dataset and get two folders `hotdog/train` and 
 Both folders have `hotdog` and `not-hotdog` category subfolders, each of which has corresponding image files.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên ta tải bộ dữ liệu được nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
+Cả hai đều có hai tập tin phụ `hotdog` và `not-hotdog` chứa các ảnh với phân loại tương ứng.
 
 
 
@@ -181,7 +183,7 @@ data_dir = d2l.download_extract('hotdog')
 We create two `ImageFolderDataset` instances to read all the image files in the training dataset and testing dataset, respectively.
 -->
 
-*dịch đoạn phía trên*
+Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các files ảnh trong bộ huấn luyện và bộ kiểm tra.
 
 
 
@@ -198,7 +200,8 @@ The first 8 positive examples and the last 8 negative images are shown below.
 As you can see, the images vary in size and aspect ratio.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là 8 mẫu dương đầu tiên và 8 mẫu âm cuối cùng.
+Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
 
 
 
@@ -216,7 +219,10 @@ In addition, we normalize the values of the three RGB (red, green, and blue) col
 The average of all values of the channel is subtracted from each value and then the result is divided by the standard deviation of all values of the channel to produce the output.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình huấn luyện, chúng ta cắt (*crop*) ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỷ lệ (*scale*) để có chiều dài và chiều rộng 224 pixel.
+Khi kiểm tra, ta biến đổi tỷ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Thêm vào đó, chúng ta chuẩn hoá (*normalize*) các giá trị của ba kênh màu RGB (red, green, blue).
+Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh được xử lý.
 
 
 ```{.python .input  n=5}
@@ -472,7 +478,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 4 -->
 * Đỗ Trường Giang
