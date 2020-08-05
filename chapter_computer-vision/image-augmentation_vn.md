@@ -288,7 +288,7 @@ For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
 Tiếp theo, ta định nghĩa một chức năng phụ trợ để giúp đọc hình ảnh và áp dụng tăng cường ảnh dễ dàng hơn.
-Hàm `transform_first` được cung cấp bởi các bộ dữ liệu cung cấp sẵn trong Gluon áp dụng tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là, phần tử ở đầu hình ảnh.
+Hàm `transform_first` được cung cấp bởi các bộ dữ liệu cung cấp sẵn trong Gluon áp dụng tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
 Để biết mô tả chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
@@ -467,4 +467,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
