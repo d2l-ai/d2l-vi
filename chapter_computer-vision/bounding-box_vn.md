@@ -60,7 +60,7 @@ We can see there is a dog on the left side of the image and a cat on the right.
 They are the two main targets in this image.
 -->
 
-Kế tiếp, ta sẽ nạp các ảnh mẫu cần cho việc sử dụng cho phần này.
+Kế tiếp, ta sẽ nạp các ảnh mẫu cần để sử dụng trong phần này.
 Ta có thể thấy ở đây có một con chó ở bên trái của bức ảnh và một con mèo nằm bên phải.
 Chúng là hai đối tượng chính trong ảnh này.
 
