@@ -31,7 +31,7 @@ Systems in the security field need to detect abnormal targets, such as intruders
 -->
 
 Phát hiện vật thể được sử dụng rộng rãi trong nhiều lĩnh vực.
-Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện, người đi đường, đường xác và các vật cản từ các ảnh video thu về.
+Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản từ các ảnh được video thu về.
 Những robot thường thực hiện kiểu công việc này nhờ phát hiện các mục tiêu cần quan tâm.
 Hay các hệ thống anh ninh cần phát hiện các mục tiêu bất thường như các đối tượng xâm nhập bất hợp pháp hoặc bom mìn.
 
@@ -179,4 +179,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * 
-
