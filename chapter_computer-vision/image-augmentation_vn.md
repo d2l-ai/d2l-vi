@@ -5,7 +5,7 @@
 # Image Augmentation
 -->
 
-# *dịch tiêu đề phía trên*
+# Tăng cường ảnh
 :label:`sec_image_augmentation`
 
 
@@ -20,15 +20,19 @@ It can be said that image augmentation technology contributed greatly to the suc
 In this section, we will discuss this technology, which is widely used in computer vision.
 -->
 
-*dịch đoạn phía trên*
-
-
+Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ dữ liệu lớn là điều kiện tiên quyết cho sự thành công của các mạng nơ-ron sâu.
+Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên từ trên các ảnh để tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
+Cũng có thể giải thích tác dụng của tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định, do đó cải thiện năng lực khái quát hóa của mô hình.
+Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
+Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
+Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
+Trong phần này, chúng ta sẽ thảo luận về kỹ thuật được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này.
 
 <!--
 First, import the packages or modules required for the experiment in this section.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, thực hiện nhập các gói và mô-đun cần cho thử nghiệm trong mục này.
 
 
 
@@ -46,14 +50,12 @@ npx.set_np()
 ## Common Image Augmentation Method
 -->
 
-## *dịch tiêu đề phía trên*
-
-
+## Phương pháp tăng cường ảnh thông dụng
 <!--
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
 
-*dịch đoạn phía trên*
+Trong phần thử nghiệm này, ta sẽ dùng một ảnh có kích thước $400\times 500$ làm ví dụ.
 
 
 ```{.python .input  n=2}
@@ -69,9 +71,9 @@ To make it easier for us to observe the effect of image augmentation, we next de
 This function runs the image augmentation method `aug` multiple times on the input image `img` and shows all results.
 -->
 
-*dịch đoạn phía trên*
-
-
+Hầu hết các phương pháp tăng cường ảnh có một độ ngẫu nhiên nhất định.
+Để giúp quan sát dễ hơn hiệu quả của việc này, kế tiếp ta định nghĩa hàm bổ trợ `apply`.
+Hàm này thực hiện phương thức tăng cường ảnh `aug` nhiều lần từ ảnh đầu vào `img` và hiển thị tất cả kết quả.
 
 ```{.python .input  n=3}
 def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
@@ -87,7 +89,7 @@ def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
 ### Flipping and Cropping
 -->
 
-### *dịch tiêu đề phía trên*
+### Lật và Cắt ảnh
 
 
 <!--
@@ -96,7 +98,9 @@ This is one of the earliest and most widely used methods of image augmentation.
 Next, we use the `transforms` module to create the `RandomFlipLeftRight` instance, which introduces a 50% chance that the image is flipped left and right.
 -->
 
-*dịch đoạn phía trên*
+Lật hình ảnh sang trái và phải thường không thay đổi thể loại đối tượng.
+Đây là một trong những phương pháp tăng cường ảnh được sử dụng sớm nhất và rộng rãi nhất.
+Tiếp theo, chúng ta sử dụng mô-đun `transforms` để tạo thực thể `RandomFlipLeftRight`, ngẫu nhiên lật hình ảnh sang trái hoặc phải với xác suất 50%.
 
 
 
@@ -111,8 +115,9 @@ However, at least for this example image, flipping up and down does not hinder r
 Next, we create a `RandomFlipTopBottom` instance for a 50% chance of flipping the image up and down.
 -->
 
-*dịch đoạn phía trên*
-
+Lật lên và xuống không được sử dụng phổ biến như lật trái và phải.
+Tuy nhiên, ít nhất là đối với hình ảnh ví dụ này, lật lên xuống không gây trở ngại cho việc nhận dạng.
+Tiếp theo, chúng tôi tạo thực thể `RandomFlipTopBottom` để lật hình ảnh lên và xuống với xác suất 50%.
 
 
 ```{.python .input  n=5}
@@ -127,8 +132,10 @@ In addition, we can make objects appear at different positions in the image in d
 This can also reduce the sensitivity of the model to the target position.
 -->
 
-*dịch đoạn phía trên*
-
+Trong ví dụ chúng ta sử dụng, con mèo ở giữa hình ảnh, nhưng không phải tất cả các ảnh mèo khác đều sẽ như vậy.
+:numref:`sec_pooling` có đề cập rằng tầng gộp có thể làm giảm độ nhạy của tầng tích chập với vị trí đích.
+Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt (*crop*) ngẫu nhiên hình ảnh.
+Điều này cũng có thể làm giảm độ nhạy của mô hình với vị trí mục tiêu.
 
 
 <!--
@@ -137,7 +144,9 @@ Then, the width and height of the region are both scaled to 200 pixels.
 Unless otherwise stated, the random number between $a$ and $b$ in this section refers to a continuous value obtained by uniform sampling in the interval $[a, b]$.
 -->
 
-*dịch đoạn phía trên*
+Trong đoạn mã sau, chúng tôi cắt ngẫu nhiên một vùng có diện tích từ 10% đến 100% diện tích ban đầu và tỷ lệ giữa chiều rộng và chiều cao của vùng được chọn ngẫu nhiên trong khoảng từ 0.5 đến 2.
+Sau đó, cả chiều rộng và chiều cao của vùng đều được biến đổi tỉ lệ thành 200 pixel.
+Trừ khi có quy định khác, giá trị ngẫu nhiên liên tục giữa $a$ và $b$ thu được bằng cách lấy mẫu đồng nhất trong khoảng $[a, b]$.
 
 
 
@@ -301,7 +310,7 @@ def load_cifar10(is_train, augs, batch_size):
 ### Using a Multi-GPU Training Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Sử dụng Mô hình Huấn luyện Đa GPU
 
 
 <!--
@@ -310,14 +319,16 @@ CIFAR-10 dataset. We will also apply the methods described in
 :numref:`sec_multi_gpu_concise` and use a multi-GPU training model.
 -->
 
-*dịch đoạn phía trên*
+Ta huấn luyện mô hình ResNet-18 như mô tả ở :numref:`sec_resnet` trên
+tập dữ liệu CIFAR-10. Cùng với đó ta áp dụng các phương pháp được mô tả trong
+:numref:`sec_multi_gpu_concise` và sử dụng mô hình huấn luyện đa GPU.
 
 
 <!--
 Next, we define the training function to train and evaluate the model using multiple GPUs.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa hàm huấn luyện để huấn luyện và đánh giá mô hình sử dụng nhiều GPU.
 
 
 ```{.python .input  n=14}
@@ -377,7 +388,9 @@ This function obtains all available GPUs and uses Adam as the optimization algor
 It then applies image augmentation to the training dataset, and finally calls the `train` function just defined to train and evaluate the model.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể định nghĩa hàm `train_with_data_aug` để áp dụng tăng cường ảnh vào huấn luyện mô hình.
+Hàm này tìm tất cả các GPU có sẵn và sử dụng Adam làm thuật toán tối ưu cho quá trình huấn luyện.
+Sau đó nó áp dụng tăng cường ảnh vào tập huấn luyện, và cuối cùng gọi đến hàm `train_ch13` được định nghĩa ở trên để huấn luyện và đánh giá mô hình.
 
 
 
@@ -394,7 +407,9 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
     train_ch13(net, train_iter, test_iter, loss, trainer, 10, devices)
 ```
 
-Now we train the model using image augmentation of random flipping left and right.
+<!-- Now we train the model using image augmentation of random flipping left and right. -->
+
+Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải.
 
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
@@ -410,7 +425,9 @@ train_with_data_aug(train_augs, test_augs, net)
 * We can obtain classes related to image augmentation from Gluon's `transforms` module.
 -->
 
-*dịch đoạn phía trên*
+* Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
+* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên ví dụ để huấn luyện, không áp dụng các thao tác ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
+* Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
 
 ## Bài tập
@@ -423,7 +440,11 @@ Can this comparative experiment support the argument that image augmentation can
 3. With reference to the MXNet documentation, what other image augmentation methods are provided in Gluon's `transforms` module?
 -->
 
-*dịch đoạn phía trên*
+1. Huấn luyện mô hình mà không áp dụng tăng cường ảnh: `train_with_data_aug(no_aug, no_aug)`.
+So sánh độ chính xác trong huấn luyện và kiểm tra khi áp dụng và không áp dụng tăng cường ảnh.
+Liệu thí nghiệm so sánh này có thể hỗ trợ cho luận điểm rằng tăng cường ảnh có thể làm giảm hiện tượng quá khớp? Tại sao?
+2. Sử dụng thêm các phương thức tăng cường ảnh khác trên tập dữ liệu CIFAR-10 khi huấn luyện mô hình. Theo dõi kết quả.
+3. Tham khảo tài liệu của MXNet và cho biết mô-đun `transforms` của Gluon còn cung cấp các phương thức tăng cường ảnh nào khác?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -445,10 +466,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
@@ -457,6 +481,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
-
-
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
