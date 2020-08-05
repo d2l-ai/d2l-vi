@@ -5,7 +5,7 @@
 # Single Shot Multibox Detection (SSD)
 -->
 
-# *dịch tiêu đề phía trên*
+# Phát hiện Nhiều khung trong Một lần Thực hiện (SSD)
 
 
 <!--
@@ -15,14 +15,17 @@ This quick and easy model is already widely used.
 Some of the design concepts and implementation details of this model are also applicable to other object detection models.
 -->
 
-*dịch đoạn phía trên*
+Ở một số phần trước, chúng tôi đã giới thiệu về khung chứa, khung neo, phát hiện vật thể đa tỉ lệ và tập dữ liệu.
+Giờ ta sẽ sử dụng phần kiến thức nền này để xây dựng một mô hình phát hiện vật thể: phát hiện nhiều khung trong một lần thực hiện (Single Shot Multibox Detection - SSD) :cite:`Liu.Anguelov.Erhan.ea.2016`.
+Mô hình  này đang được sử dụng rộng rãi nhờ tốc độ và tính đơn giản của nó.
+Một số khái niệm trong thiết kế và một số chi tiết trong phần lập trình của mô hình này cũng có thể áp dụng cho các mô hình phát hiện vật thể khác.
 
 
 <!--
 ## Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 
 <!--
@@ -42,14 +45,26 @@ nd each multiscale feature block and then predicts the categories and offsets (i
 of the anchor boxes in order to detect objects of different sizes, SSD is a multiscale object detection model.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_ssd` mô tả thiết kế của một mô hình SSD.
+Các thành phần chính của mô hình gồm có một khối mạng cơ sở và các khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi.
+Trong đó khối mạng cơ sở được sử dụng để tách các đặc trưng của các ảnh gốc, và nó thường có dạng một mạng nơ-ron tích chập sâu.
+Bài báo về SSD chọn dùng mạng VGG bị cắt xén trước tầng phân loại :cite:`Liu.Anguelov.Erhan.ea.2016`, tuy nhiên gần đây nó thường bị thay thế bởi ResNet.
+Ta có thể thiết kế mạng cơ sở sao cho đầu ra của nó có chiều cao và chiều rộng lớn hơn.
+Bằng cách này, sẽ có nhiều khung neo được sinh ra bởi ánh xạ đặc trưng này hơn,
+cho phép ta phát hiện các vật thể nhỏ hơn.
+Tiếp theo, mỗi khối đặc trưng đa tỉ lệ giảm chiều cao và chiều rộng của ánh xạ đặc trưng ở tầng trước đi (ví dụ, nó có thể giảm kích thước này đi một nửa).
+Các khối này sau đó sử dụng từng phần tử trong ánh xạ đặc trưng để mở rộng vùng tiếp nhận trên ảnh đầu vào.
+Bằng cách này, khối đặc trưng đa tỉ lệ cầng gần đỉnh mô hình trong :numref:`fig_ssd` thì có ánh xạ đặc trưng ở đầu ra càng nhỏ, và số khung neo được sinh ra bởi ánh xạ đầu ra đó càng ít.
+Hơn nữa, khối đặc trưng càng gần đỉnh mô hình thì vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng càng lớn và càng phù hợp để phát hiện những vật thể lớn.
+Do SSD sinh ra các tập khung neo với số lượng khác nhau và kích thước khác nhau dựa trên khối mạng cơ sở
+và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán danh mục và độ dời (ví dụ như dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, SSD là một mô hình phát hiện vật thể đa tỉ lệ.
 
 
 <!--
 ![The SSD is composed of a base network block and several multiscale feature blocks connected in a series.](../img/ssd.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/ssd.svg)
+![SSD được cấu thành bởi một khối mạng cơ sở và nhiều khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi](../img/ssd.svg)
 :label:`fig_ssd`
 
 
@@ -58,7 +73,8 @@ Next, we will describe the implementation of the modules in :numref:`fig_ssd`.
 First, we need to discuss the implementation of category prediction and bounding box prediction.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ mô tả phần lập trình cho các mô-đun trong :numref:`fig_ssd`.
+Đầu tiên, ta cần phải thảo luận về việc lập trình cho phần dự đoán danh mục và dự đoán khung chứa.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -813,7 +829,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
