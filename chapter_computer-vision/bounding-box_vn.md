@@ -21,7 +21,7 @@ In computer vision, we refer to such tasks as object detection (or object recogn
 Trong nhiệm vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
 Tuy nhiên, trong nhiều tình huống, có nhiều đối tượng trong ảnh mà ta quan tâm.
 Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng trong ảnh.
-Trong lĩnh vực thị giác máy tính, ta gọi những việc như vậy là phát hiện vật thể (hay nhận dạng vật thể).
+Trong lĩnh vực thị giác máy tính, ta gọi những tác vụ như vậy là phát hiện vật thể (hay nhận dạng vật thể).
 
 <!--
 Object detection is widely used in many fields.
