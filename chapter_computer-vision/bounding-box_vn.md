@@ -83,7 +83,7 @@ We will define the bounding boxes of the dog and the cat in the image based on t
 The origin of the coordinates in the above image is the upper left corner of the image, and to the right and down are the positive directions of the $x$ axis and the $y$ axis, respectively.
 -->
 
-Trong nhận diện vật thể, ta thường sử dụng khung chứa để mô tả vị trí của mục tiêu.
+Để phát hiện vật thể, ta thường sử dụng khung chứa để mô tả vị trí của mục tiêu.
 Khung chứa là một khung hình chữ nhật có thể được xác định bởi hai toạ độ: tọa độ $x$, $y$ góc trên bên trái và toạ độ $x$, $y$ góc dưới bên phải của khung hình chữ nhật.
 Ta có thể định nghĩa các khung chứa của con chó và con mèo trong ảnh dựa vào thông tin toạ độ của ảnh trên.
 Gốc toạ độ của ảnh trên là góc trên bên trái của ảnh, chiều sang phải và xuống dưới lần lượt là chiều dương của trục $x$ và trục $y$.
@@ -102,7 +102,7 @@ It represents the bounding box in the bounding box format of `matplotlib`.
 -->
 
 Ta có thể vẽ khung chứa ngay trên ảnh để kiểm tra tính chính xác của nó.
-Trước khi vẽ khung, ta định nghĩa hàm trợ giúp `bbox_to_rect`.
+Trước khi vẽ khung, ta định nghĩa hàm hỗ trợ `bbox_to_rect`.
 Nó biểu diễn khung chứa theo đúng định dạng khung chứa của `matplotlib`.
 
 
@@ -143,7 +143,7 @@ In object detection, we not only need to identify all the objects of interest in
 The positions are generally represented by a rectangular bounding box.
 -->
 
-Trong nhận diện vật thể, ta không chỉ nhận dạng trong ảnh tất cả đối tượng mong muốn, mà còn cả vị trí của chúng.
+Để phát hiện vật thể, ta không chỉ cần xác định tất cả đối tượng mong muốn trong ảnh mà còn cả vị trí của chúng.
 Các vị trí thường được biểu diễn qua các khung chứa hình chữ nhật.
 
 
@@ -156,7 +156,7 @@ Compare the difference between the time it takes to label the bounding box and l
 -->
 
 Tìm một vài ảnh và thử dán nhãn một khung chứa bao quanh mục tiêu.
-So sánh sự khác nhau giữa thời gian cần để dán nhãn các khung chứa và dán nhãn các lớp.
+So sánh sự khác nhau giữa thời gian cần để dán nhãn các khung chứa và dán nhãn các lớp hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -181,4 +181,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
-
