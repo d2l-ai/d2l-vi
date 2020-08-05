@@ -5,7 +5,7 @@
 # Multiscale Object Detection
 -->
 
-# *dịch tiêu đề phía trên*
+# Phát hiện vật thể nhiều tỉ lệ
 
 
 <!--
@@ -16,8 +16,11 @@ For example, we assume that the input image has a height and a width of 561 and 
 If five different shapes of anchor boxes are generated centered on each pixel, over two million anchor boxes ($561 \times 728 \times 5$) need to be predicted and labeled on the image.
 -->
 
-*dịch đoạn phía trên*
-
+Trong :numref:`sec_anchor`, ta đã tạo ra nhiều khung neo có tâm tại từng điểm của ảnh đầu vào.
+Các khung neo đó được sử dụng để lấy mẫu trên các vùng khác nhau của ảnh đầu vào này.
+Tuy nhiên, nếu các khung neo sinh ra từ mọi điểm trên ảnh thì chẳng mấy chốc sẽ có quá nhiều khung neo để ta phải xử lý.
+Chẳng hạn, ta giả định rằng ảnh đầu vào này có độ cao và độ rộng lần lượt là 561 và 728.
+Nếu mỗi điểm ảnh ta tạo ra 5 khung neo kích thước khác nhau có cùng tâm trên đó, thì sẽ có hơn hai triệu khung neo ($561 \times 728 \times 5$) cần phải kiểm tra và dán nhãn trên ảnh này.
 
 <!--
 It is not difficult to reduce the number of anchor boxes.
@@ -28,17 +31,19 @@ Here, we will use a simple example: Objects with shapes of $1 \times 1$, $1 \tim
 Therefore, when using smaller anchor boxes to detect smaller objects, we can sample more regions; when using larger anchor boxes to detect larger objects, we can sample fewer regions.
 -->
 
-*dịch đoạn phía trên*
-
+Việc giảm số lượng khung neo không phải là quá khó.
+Một cách dễ dàng là lẫy mẫu đều trên một phần nhỏ điểm từ ảnh đầu vào và tạo ra các khung neo có tâm trên các điểm được chọn đó.
+Thêm vào đó, ta có thể tạo ra những khung neo có số lượng và kích thước thay đổi với nhiều tỉ lệ.
+Lưu ý rằng các vật thể nhỏ hơn có thể định vị dễ hơn so với các vật thể lớn hơn.
+Ở đây, ta sẽ dùng một ví dụ đơn giản: Các vật thể có kích thước $1 \times 1$, $1 \times 2$, and $2 \times 2$ sẽ có thể có 4, 2, và 1 vị trí trên một bức ảnh có kích thước $2 \times 2$.
+Do đó, khi sử dụng những khung neo nhỏ hơn để phát hiện các vật thể nhỏ hơn, ta có thể lấy mẫu nhiều vùng hơn; khi dùng những khung neo để phát hiện các vật thể lớn hơn, ta có thể lấy mẫu ít vùng hơn.
 
 <!--
 To demonstrate how to generate anchor boxes on multiple scales, let us read an image first.
 It has a height and width of $561 \times 728$ pixels.
 -->
 
-*dịch đoạn phía trên*
-
-
+Để minh họa cách làm thế nào sinh ra các khung neo với nhiều tỉ lệ, trước hết ta hãy đọc một ảnh.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -58,7 +63,8 @@ In :numref:`sec_conv_layer`, the 2D array output of the convolutional neural net
 We can determine the midpoints of anchor boxes uniformly sampled on any image by defining the shape of the feature map.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_conv_layer`, mảng đầu ra 2D của mạng nơ-ron tích chập (CNN) được gọi là một ánh xạ đặc trưng.
+Ta có thể xác định các tâm điểm của các khung neo được lấy mẫu đồng đều trên một ảnh bằng cách mô tả kích thước của ánh xạ đặc trưng này.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
