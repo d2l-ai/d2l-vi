@@ -400,7 +400,7 @@ Its corresponding weight parameter at the output layer can be obtained by using 
 How can we use this parameter?
 -->
 
-4. Trong thực thế, có lớp "hotdog" trong tập dữ liệu `ImageNet`.
+4. Thực ra thì cũng có lớp "hotdog" trong tập dữ liệu `ImageNet`.
 Các trọng số tương ứng của nó trong tầng đầu ra có thể thu được thông qua việc sử dụng đoạn mã sau.
 Ta có thể sử dụng các tham số này như thế nào?
 
@@ -448,5 +448,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * Đỗ Trường Giang
-
 
