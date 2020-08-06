@@ -286,7 +286,7 @@ Ta thấy rõ ràng rằng, khung neo $A_{i_1}$ và khung chứa chuẩn $B_{j_1
 Tiếp theo, loại bỏ các phần tử trong hàng $i_1$th và cột $j_1$th trong ma trận $\mathbf{X}$.
 Tìm ra phần tử lớn nhất còn lại trong ma trận $\mathbf{X}$ rồi cũng lưu lại chỉ mục hàng và cột của phần tử đó là $i_2,j_2$.
 Chúng ta gán khung chứa chuẩn $B_{j_2}$ cho khung neo $A_{i_2}$ và sau đó loại bỏ mọi phần tử tại hàng $i_2$th và cột $j_2$th trong ma trận $\mathbf{X}$.
-Như vậy, tại thời điểm này thì các phần tử trong hai hàng và hai cột vừa rồi của ma trận $\mathbf{X}$ đã bị loại bỏ.
+Như vậy, tại thời điểm này thì các phần tử trong hai hàng và hai cột của ma trận $\mathbf{X}$ đã bị loại bỏ.
 
 
 <!--
