@@ -227,7 +227,7 @@ MIền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 c
 For the remainder of this section, we will use IoU to measure the similarity between anchor boxes and ground-truth bounding boxes, and between different anchor boxes.
 -->
 
-Trong phần còn lại của chương này, chúng ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa chuẩn, và giữa các khung neo với nhau. 
+Trong phần còn lại của phần này, chúng ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa nhãn gốc, và giữa các khung neo với nhau. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
