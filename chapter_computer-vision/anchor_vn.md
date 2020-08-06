@@ -219,7 +219,7 @@ MIền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 c
 ![IoU is the ratio of the intersecting area to the union area of two bounding boxes.](../img/iou.svg)
 -->
 
-![*IoU là tỷ lệ của khu vực giao nhau với khu vực kết hợp của hai khung chứa*](../img/iou.svg)
+![IoU là tỷ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa](../img/iou.svg)
 :label:`fig_iou`
 
 
