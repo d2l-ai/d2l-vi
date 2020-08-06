@@ -131,7 +131,7 @@ boxes[250, 250, 0, :]
 In order to describe all anchor boxes centered on one pixel in the image, we first define the `show_bboxes` function to draw multiple bounding boxes on the image.
 -->
 
-Để mô tả tất cả các khung neo có tâm trên cùng một điểm của bức ảnh, ta trước hết định nghĩa hàm `show_bboxes` để thực hiện vẽ nhóm khung chứa trên hình này.
+Để mô tả tất cả các khung neo có tâm trên cùng một điểm của bức ảnh, trước hết ta sẽ định nghĩa hàm `show_bboxes` để vẽ nhóm khung chứa trên ảnh này.
 
 
 ```{.python .input  n=5}
