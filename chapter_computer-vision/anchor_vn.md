@@ -168,7 +168,7 @@ As you can see, the blue anchor box with a size of 0.75 and an aspect ratio of 1
 Như chúng ta vừa thấy, các giá trị tọa độ của trục $x$ và $y$ trong biến `boxes` đã được chia lần lượt cho chiều rộng và chiều cao của ảnh.
 Khi vẽ ảnh, ta cần khôi phục các giá trị tọa độ gốc của các khung neo và do đó xác định biến `bbox_scale`.
 Lúc này, ta có thể vẽ tất cả các khung neo có tâm tại vị trí (250, 250) của bức ảnh này.
-Như bạn có thể thấy, khung neo màu xanh dương với kích thước 0.75 và tỉ số cạnh 1 sẽ bao quanh khá tốt hình chú chó trong hình này.
+Như bạn có thể thấy, khung neo màu xanh dương với kích thước 0.75 và tỉ số cạnh 1 sẽ bao quanh khá tốt chú chó trong hình này.
 
 
 ```{.python .input  n=7}
