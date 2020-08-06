@@ -183,7 +183,7 @@ show_bboxes(fig.axes, boxes[250, 250, :, :] * bbox_scale,
 ## Intersection over Union
 -->
 
-## Giao lộ trên liên minh
+## Giao trên Hợp
 
 <!--
 We just mentioned that the anchor box covers the dog in the image well.
@@ -663,5 +663,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
