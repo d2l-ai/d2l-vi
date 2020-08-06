@@ -85,6 +85,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computing (in computer science) | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
 | conditional distribution        | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | confidence interval             | khoảng tin cậy           |                                              |
+| confidence level                | mức tin cậy              |                                              |
 | confusion matrix                | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                       | ràng buộc                |                                              |
 | convex combination              | tổ hợp lồi               |                                              |
