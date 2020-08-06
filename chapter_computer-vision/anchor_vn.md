@@ -278,7 +278,7 @@ We assign ground-truth bounding box $B_{j_2}$ to anchor box $A_{i_2}$ and then d
 At this point, elements in two rows and two columns in the matrix $\mathbf{X}$ have been discarded.
 -->
 
-Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa chuẩn là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
+Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa nhãn gốc là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
 Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó mỗi phần tử $x_{ij}$ trong hàng $i^\mathrm{th}$ và cột $j^\mathrm{th}$ là hệ số IoU của khung neo $A_i$ so với khung chứa chuẩn $B_j$.
 Đầu tiên, chúng ta tìm ra phần tử lớn nhất trong ma trận $\mathbf{X}$ rồi lưu lại chỉ mục hàng và cột của phần tử đó là $i_1,j_1$.
 Chúng ta gán khung chứa chuẩn $B_{j_1}$ cho khung neo $A_{i_1}$.
