@@ -209,7 +209,7 @@ which is the ratio of the intersecting area to the union area of the two boundin
 The value range of IoU is between 0 and 1: 0 means that there are no overlapping pixels between the two bounding boxes, while 1 indicates that the two bounding boxes are equal.
 -->
 
-Trong thực tế, chúng ta có thể coi vùng pixel của khung chứa là tập hợp hữu hạn các pixels.
+Trong thực tế, chúng ta có thể coi khung chứa là tập hợp hữu hạn các điểm ảnh.
 Theo cách này, chúng ta có thể đo lường được tính tương đồng của hai khung chứa bằng hệ số Jacccard của các trong pixels trong chúng.
 Khi chúng ta đo lường sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được xem như là Giao lộ trên liên minh (IoU), đó là tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, điều đó được thể hiện trong :numref:`fig_iou`.
 MIền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 có nghĩa là không có pixel nào giao nhau giữa hai khung chứa, trong khi đó giá trị 1 chỉ ra rằng hai khung chứa ấy trùng nhau.
