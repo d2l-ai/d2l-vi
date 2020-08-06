@@ -165,7 +165,7 @@ Now, we can draw all the anchor boxes centered on (250, 250) in the image.
 As you can see, the blue anchor box with a size of 0.75 and an aspect ratio of 1 covers the dog in the image well.
 -->
 
-Như chúng ta vừa thấy, các giá trị tọa độ của trục $x$ và $y$ trong biến `boxes` đã được chia lần lượt bởi độ rộng và độ cao của ảnh.
+Như chúng ta vừa thấy, các giá trị tọa độ của trục $x$ và $y$ trong biến `boxes` đã được chia lần lượt cho chiều rộng và chiều cao của ảnh.
 Khi vẽ ảnh, ta cần khôi phục các giá trị tọa độ gốc của các khung neo và do đó xác định biến `bbox_scale`.
 Lúc này, ta có thể vẽ tất cả các khung neo có tâm tại vị trí (250, 250) của bức ảnh này.
 Như bạn có thể thấy, khung neo màu xanh dương với kích thước 0.75 và tỉ số cạnh 1 sẽ bao quanh khá tốt hình chú chó trong hình này.
