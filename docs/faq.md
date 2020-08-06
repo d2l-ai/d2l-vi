@@ -72,7 +72,8 @@ Vì vậy, bạn hãy dịch dựa trên nội dung mà nhóm đã cung cấp tr
 
 ### Tôi thấy hình ảnh ở phần tôi dịch chưa được chuyển ngữ, tôi cần phải làm gì?
 
-Ở mỗi chương, chúng tôi có tập hợp lại những hình ảnh cần chuyển ngữ vào một Github Issue để cả nhóm có thể nắm và thực hiện. Khi bạn dịch và thấy hình ảnh ở phần mình dịch chưa được chuyển ngữ, bạn có thể tham gia vào việc chuyển ngữ những hình ảnh này. Hướng dẫn chi tiết bạn có thể xem tại đây.
+Ở mỗi chương, chúng tôi có tập hợp lại những hình ảnh cần chuyển ngữ vào một Github Issue để cả nhóm có thể nắm và thực hiện. Bạn có thể tham gia vào hoạt động này (hoặc không). Nếu bạn mong muốn tham gia, vui lòng xem qua hướng dẫn chi tiết **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/img/README.md)**.
+
 
 ## Dành cho nhóm Cộng tác (Collaborators)
 
