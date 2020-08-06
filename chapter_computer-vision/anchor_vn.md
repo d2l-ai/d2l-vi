@@ -300,7 +300,7 @@ and only assign ground-truth bounding box $B_j$ to anchor box $A_i$ when the IoU
 Chúng ta tiến hành việc này cho đến khi các phần tử ở cột $n_b$ trong ma trận $\mathbf{X}$ đều bị loại bỏ.
 Tại thời điểm này, chúng ta đều đã gán $n_b$ khung chứa nhãn gốc cho $n_b$ khung neo.
 Tiếp đến, chúng ta chỉ việc duyệt qua $n_a - n_b$ khung neo còn lại.
-Nhận đầu vào là khung neo $A_i$, ta cần tìm ra khung chứa $B_j$ sao cho khung chứa ấy có hệ số IoU so với $A_i$ là giá trị lớn nhất, dựa trên mỗi hàng $i^\mathrm{th}$ của ma trận $\mathbf{X}$,
+Với khung neo $A_i$, ta cần tìm ra khung chứa nhãn gốc $B_j$ sao cho khung chứa ấy có hệ số IoU so với $A_i$ là lớn nhất trên mỗi hàng $i^\mathrm{th}$ của ma trận $\mathbf{X}$,
 và chỉ gán khung chứa nhãn gốc $B_j$ cho khung neo $A_i$ khi mà hệ số IoU lớn hơn một ngưỡng cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
