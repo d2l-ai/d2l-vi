@@ -324,7 +324,7 @@ Tuy nhiên tốc độ ghi vẫn có thể chậm hơn nhiều, đặc biệt l�
 Chìa khóa để cải thiện hiệu suất là đưa các thao tác vào một *hàng đợi* để ưu tiên việc đọc trước và chỉ ghi theo các khối lớn nếu có thể. 
 * Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường sau vài nghìn lần ghi).
 Các thuật toán bảo vệ mức hao mòn có thể phân bổ đều sự xuống cấp trên nhiều ô. 
-Dù vậy, vẫn không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
+Dù vậy, vẫn không nên sử dụng SSD cho các tệp hóan đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
 * Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
 Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động tăng cường - *Non Volatile Memory enhanced*), có thể sử dụng lên tới 4 làn PCIe. 
 Băng thông có thể lên tới 8GB/s trên PCIe 4.0.
@@ -399,7 +399,7 @@ For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perf
 -->
 
 Mỗi nhân xử lý bao gồm các thành phần rất tinh vi.
-Mặc dù chi tiết khác nhau giữa đời chip và nhà sản xuất, chức năng cơ bản của chúng đã được chuẩn hoá tương đối.
+Mặc dù chi tiết khác nhau giữa đời chip và nhà sản xuất, chức năng cơ bản của chúng đã được chuẩn hóa tương đối.
 Front-end tải các lệnh và dự đoán nhánh nào sẽ được thực hiện (ví dụ: cho luồng điều khiển). 
 Sau đó các lệnh được giải mã từ mã nguồn hợp ngữ (*assembly code*) thành vi lệnh.
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
@@ -428,7 +428,7 @@ This is why branch prediction units matter (on the frontend) such that only the 
 
 Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kỳ xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
 Không phải tất cả các bộ xử lý đều được tạo ra như nhau.
-Một số được thiết kế chuyên biệt cho các lệnh về số nguyên, trong khi một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động.
+Một số được thiết kế chuyên biệt cho các lệnh về số nguyên, trong khi một số khác được tối ưu hóa cho việc tính toán số thực dấu phẩy động.
 Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều nhánh trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
 Đây là lý do vì sao đơn vị dự đoán nhánh có vai trò quan trọng (trên front-end), bởi chúng chỉ chọn những nhánh có khả năng cao được rẽ.
 
@@ -436,7 +436,7 @@ Một số được thiết kế chuyên biệt cho các lệnh về số nguyê
 ### Vectorization
 -->
 
-## Vector hoá (Vectorization)
+## Vector hóa (Vectorization)
 
 <!--
 Deep learning is extremely compute hungry.
@@ -500,7 +500,7 @@ Commonly the following names / concepts are used:
 Xét tình huống sau: ta có một CPU bình thường với 4 nhân như trong :numref:`fig_skylake` trên, hoạt động ở tần số 2 GHz.
 Thêm nữa, hãy giả sử IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi nhân đều đã kích hoạt AVX2 rộng 256 bit.
 Ngoài ra, giả sử bộ nhớ cần truy cập ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
-Điều này có nghĩa CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kỳ xung nhịp.
+Điều này có nghĩa CPU xử lý 4 x 256 bit = 1 kbit dữ liệu mỗi chu kỳ xung nhịp.
 Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các nhân sẽ thiếu dữ liệu để xử lý.
 Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
 Để khắc phục vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ ngoài, và tốt hơn hết là lưu trong bộ nhớ cục bộ trên CPU.
@@ -528,7 +528,7 @@ More typical numbers are in the 4-8MB range.
 Nhưng dù sao thanh ghi cũng là một vùng nhớ mà CPU có thể truy cập với tốc độ xung nhịp mà không có độ trễ.
 Các CPU thường có hàng chục thanh ghi. 
 Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
-Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register` để lưu các biến vào thanh ghi thay vì bộ nhớ.
+Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khóa `register` để lưu các biến vào thanh ghi thay vì bộ nhớ.
 * Bộ nhớ đệm **L1** là lớp bảo vệ đầu tiên khi nhu cầu băng thông bộ nhớ quá cao.
 Bộ nhớ đệm L1 rất nhỏ (kích thước điển hình khoảng 32-64 kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
 Nếu dữ liệu được tìm thấy trong bộ nhớ đệm L1, việc truy cập diễn ra rất nhanh chóng. Nếu không, việc tìm kiếm sẽ tiếp tục theo hệ thống phân cấp bộ nhớ đệm (*cache hierarchy*).
@@ -595,7 +595,7 @@ Hence it pays to understand the specific benefits that GPUs and related accelera
 
 Không hề phóng đại khi nói rằng học sâu có lẽ sẽ không thành công nếu không có GPU.
 Và cũng nhờ có học sâu mà tài sản của các công ty sản suất GPU tăng trưởng đáng kể.
-Sự đồng tiến hoá giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể có hiệu quả hay không.
+Sự đồng tiến hóa giữa phần cứng và các thuật toán dẫn tới tình huống mà học sâu trở thành mẫu mô hình thống kê được ưa thích bất kể có hiệu quả hay không.
 Do đó, ta cần phải hiểu rõ ràng lợi ích mà GPU và các thiết bị tăng tốc khác như TPU :cite:`Jouppi.Young.Patil.ea.2017` mang lại.
 
 
@@ -740,7 +740,7 @@ No machine learning researcher within their right mind would use it to build a c
 In what follows we focus on interconnects that are suitable for deep learning.
 -->
 
-Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và đi khỏi nó để đồng bộ hoá quá trình xử lý.
+Mỗi khi một thiết bị đơn không đủ cho quá trình tối ưu, ta cần chuyển dữ liệu đến và đi khỏi nó để đồng bộ hóa quá trình xử lý.
 Đây chính là lúc mà mạng máy tính và bus trở nên hữu dụng.
 Ta có một vài tham số thiết kế gồm: băng thông, chi phí, khoảng cách và tính linh hoạt.
 Tuy ta cũng có Wifi với phạm vi hoạt động tốt, dễ dàng để sử dụng (dù sao cũng là không dây), rẻ nhưng lại có băng thông không quá tốt và độ trễ lớn.

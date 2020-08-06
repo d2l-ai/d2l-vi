@@ -208,7 +208,7 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## Ví dụ đơn giản
+## Ví dụ Đơn giản
 
 
 <!--

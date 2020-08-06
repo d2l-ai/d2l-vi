@@ -293,7 +293,7 @@ do front-end không cần phải chờ back-end trả về kết quả tính to�
 ## Improving Memory Footprint
 -->
 
-## Cải thiện mức chiếm dụng bộ nhớ
+## Cải thiện Mức chiếm dụng Bộ nhớ
 
 <!--
 Imagine a situation where we keep on inserting operations into the backend by executing Python code on the frontend.

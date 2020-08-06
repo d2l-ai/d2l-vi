@@ -52,7 +52,7 @@ npx.set_np()
 ## Parallel Computation on CPUs and GPUs
 -->
 
-## Tính toán song song trên CPU và GPU
+## Tính toán Song song trên CPU và GPU
 
 <!--
 Let us start by defining a reference workload to test - the `run` function below performs 10 matrix-matrix multiplications 
