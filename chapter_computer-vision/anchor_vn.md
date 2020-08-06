@@ -115,7 +115,7 @@ The coordinate values of the $x$ and $y$ axis are divided by the width and heigh
 -->
 
 Ta có thể thấy rằng kích thước của khung neo được trả về ở biến `y` là (kích thước batch, số khung neo, 4).
-Sau khi thay đổi kích thước của `y` thành (độ cao ảnh, độ rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta có thể có được tất cả các khung neo với tâm ở vị trí điểm ảnh xác định.
+Sau khi thay đổi kích thước của `y` thành (chiều cao ảnh, chiều rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta sẽ thu được tất cả các khung neo với tâm ở một vị trí điểm ảnh nhất định.
 Trong phần ví dụ dưới đây, ta truy xuất khung neo đầu tiên có tâm tại vị trí (250, 250).
 Nó có bốn phần tử: các trục tọa độ $x, y$ ở góc trên bên trái và các trục tọa độ $x, y$ ở góc dưới bên phải của hộp neo.
 Các giá trị tọa độ của các trục $x$ và $y$ được chia lần lượt bởi độ rộng và độ cao của hình, do đó dải giá trị sẽ nằm trong khoảng 0 và 1.
