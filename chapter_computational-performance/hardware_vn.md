@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Hardware
 -->
@@ -27,7 +24,8 @@ An introduction to cloud computing with AWS can be found in :numref:`sec_aws`.
 Đồng thời, ta cũng cần có một chút kiến thức cơ bản về phần cứng thực thi ở bên dưới.
 Nội dung trong phần này không thể thay thế một khóa học đầy đủ về phần cứng và thiết kế hệ thống,
 mà sẽ chỉ đóng vai trò như điểm bắt đầu để giúp người đọc hiểu tại sao một số thuật toán lại hiệu quả hơn các thuật toán khác và làm thế nào để đạt được thông lượng cao.
-Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ). 
+Thiết kế tốt có thể dễ dàng tạo ra sự khác biệt rất lớn, giữa việc có thể huấn luyện một mô hình (ví dụ trong khoảng một tuần) 
+và không thể huấn luyện (ví dụ mất 3 tháng để huấn luyện xong, từ đó không kịp tiến độ). 
 Ta sẽ bắt đầu bằng việc quan sát tổng thể một hệ thống máy tính.
 Tiếp theo, ta sẽ đi sâu hơn và xem xét chi tiết về CPU và GPU.
 Cuối cùng, ta sẽ tìm hiểu cách các máy tính được kết nối với nhau trong trạm máy chủ hay trên đám mây.
@@ -50,9 +48,10 @@ Bạn đọc có thể tham khảo nhanh thông tin tóm tắt trong :numref:`fi
 Nội dung này được trích dẫn từ bài viết của [Colin Scott](https://people.eecs.berkeley.edu/~rcs/research/interactive_latency.html) trình bày tổng quan về những tiến bộ trong thập kỉ qua.
 Số liệu gốc được trích dẫn từ buổi thảo luận của Jeff Dean tại [trường Stanford năm 2010](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/Stanford-DL-Nov-2010.pdf).
 Phần thảo luận dưới đây sẽ giải thích cơ sở cho những con số trên và cách mà chúng dẫn dắt ta trong quá trình thiết kế thuật toán.
-Phần thảo luận này cũng sẽ khá khái quát và ngắn gọn,
-nên nó không thể thay thế một khóa học đầy đủ nhưng sẽ cung cấp đủ thông tin cho những người làm mô hình thống kê để có thể đưa ra lựa chọn thiết kế phù hợp.
+Nội dung khái quát và ngắn gọn nên nó không thể thay thế một khóa học đầy đủ, nhưng sẽ cung cấp đủ thông tin cho những người làm mô hình thống kê để có thể đưa ra lựa chọn thiết kế phù hợp.
 Để có cái nhìn tổng quan chuyên sâu về kiến trúc máy tính, bạn đọc có thể tham khảo :cite:`Hennessy.Patterson.2011` hay một khóa học gần đây của [Arste Asanovic](http://inst.eecs.berkeley.edu/~cs152/sp19/).
+
+
 <!--
 ![Latency Numbers every Programmer should know.](../img/latencynumbers.png)
 -->
@@ -60,9 +59,6 @@ nên nó không thể thay thế một khóa học đầy đủ nhưng sẽ cung
 ![Số liệu về độ trễ mà mọi lập trình viên nên biết.](../img/latencynumbers.png)
 :label:`fig_latencynumbers`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Computers
@@ -87,10 +83,11 @@ often connected in an advanced topology, desktop systems have 1-2, depending on 
 provides efficient transfer of training data to the system and storage of intermediate checkpoints as needed.
 -->
 
-* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 lõi (_core_) hoặc nhiều hơn.
+* Bộ xử lý, thường được gọi là CPU, có khả năng thực thi các chương trình được nhập bởi người dùng (bên cạnh chức năng chạy hệ điều hành và các tác vụ khác), thường có 8 lõi (*core*) hoặc nhiều hơn.
 * Bộ nhớ (RAM) được sử dụng để lưu trữ và truy xuất các kết quả tính toán như vector trọng số, giá trị kích hoạt và dữ liệu huấn luyện.
-* Một hay nhiều kết nối Enthernet với tốc độ đường truyền từ 1Gbit/s tới 100Gbit/s (các máy chủ tân tiến còn có các phương thức kết nối cao cấp hơn nữa).
-* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với nhau theo cấu trúc liên kết phức tạp. Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào túi tiền của người dùng và công suất nguồn điện.
+* Một hay nhiều kết nối Ethernet với tốc độ đường truyền từ 1 Gbit/s tới 100 Gbit/s (các máy chủ tân tiến còn có các phương thức kết nối cao cấp hơn nữa).
+* Cổng giao tiếp bus mở rộng tốc độ cao (PCIe) kết nối hệ thống với một hay nhiều GPU. Các hệ thống máy chủ thường có tới 8 GPU được kết nối với nhau theo cấu trúc liên kết phức tạp.
+Còn các hệ thống máy tính thông thường thì có 1-2 GPU, phụ thuộc vào túi tiền của người dùng và công suất nguồn điện.
 * Bộ lưu trữ tốt, thường là ổ cứng từ (HDD) hay ổ cứng thể rắn (SSD), được kết nối bằng bus PCIe giúp truyền dữ liệu huấn luyện tới hệ thống và sao lưu các checkpoint trung gian một cách hiệu quả. 
 
 <!--
@@ -127,12 +124,9 @@ Khi ta chạy chương trình trên máy tính, ta cần trộn dữ liệu ở 
 Do đó, để có hiệu năng tốt, ta cần đảm bảo rằng chương trình chạy mượt mà và hệ thống không có nút nghẽn cổ chai.
 Ví dụ, nếu ta không thể tải ảnh đủ nhanh, bộ xử lý sẽ không có có dữ liệu để chạy.
 Tương tự, nếu ta không thể truyền các ma trận tới CPU (hay GPU) đủ nhanh, bộ xử lý sẽ thiếu dữ liệu để hoạt động.
-Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm việc tính toán. Xen kẽ việc giao tiếp và tính toán giữa các máy tính là một phương án cho vấn đề này.
+Cuối cùng, nếu ta muốn đồng bộ nhiều máy tính trong một mạng, kết nối mạng không nên làm chậm việc tính toán.
+Xen kẽ việc giao tiếp và tính toán giữa các máy tính là một phương án cho vấn đề này.
 Giờ hãy xem xét các thành phần trên một cách chi tiết hơn.
-
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 
 <!--
@@ -152,11 +146,10 @@ Often there are two banks per channel. For instance AMD's Zen 3 Threadripper has
 -->
 
 Về cơ bản, bộ nhớ được sử dụng để lưu trữ dữ liệu khi cần sẵn sàng truy cập.
-Hiện tại bộ nhớ RAM của CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM), trong đó mỗi mô-đun có băng thông 20-25GB/s và
-độ rộng bus 64 bit.
+Hiện tại bộ nhớ RAM của CPU thường thuộc loại [DDR4](https://en.wikipedia.org/wiki/DDR4_SDRAM), trong đó mỗi mô-đun có băng thông 20-25GB/s và độ rộng bus 64 bit.
 Thông thường, các cặp mô-đun bộ nhớ cho phép sử dụng đa kênh.
-CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là chúng có băng thông bộ nhớ tối đa từ 40GB/s đến 100GB/s.
-Thường thì mỗi kênh có hai dải (_bank_). Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
+CPU có từ 2 đến 4 kênh bộ nhớ, nghĩa là chúng có băng thông bộ nhớ tối đa từ 40 GB/s đến 100 GB/s.
+Thường thì mỗi kênh có hai dải (*bank*). Ví dụ, Zen 3 Threadripper của AMD có 8 khe cắm.
 
 <!--
 While these numbers are impressive, indeed, they only tell part of the story.
@@ -172,15 +165,14 @@ This suggests that we avoid random memory access as far as possible and use burs
 -->
 
 Dù những con số trên trông khá ấn tượng, trên thực tế chúng chỉ nói lên một phần nào đó.
-Khi muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ cho mô-đun bộ nhớ vị trí chứa thông tin,
-tức cần gửi *địa chỉ* đến RAM.
+Khi muốn đọc một phần nào đó từ bộ nhớ, trước tiên ta cần chỉ cho mô-đun bộ nhớ vị trí chứa thông tin, tức cần gửi *địa chỉ* đến RAM.
 Khi thực hiện xong việc này, ta có thể chọn chỉ đọc một bản ghi 64 bit hoặc một chuỗi dài các bản ghi.
-Lựa chọn thứ hai được gọi là *đọc nhanh* (_burst read_).
+Lựa chọn thứ hai được gọi là *đọc nhanh* (*burst read*).
 Nói ngắn gọn, việc gửi một địa chỉ vào bộ nhớ và thiết lập chuyển tiếp sẽ mất khoảng 100ns (thời gian cụ thể phụ thuộc vào hệ số thời gian của từng chip bộ nhớ được sử dụng),
 mỗi lần chuyển tiếp sau đó chỉ mất 0.2ns.
 Có thể thấy lần đọc đầu tiên tốn thời gian gấp 500 lần những lần sau!
 Ta có thể đọc ngẫu nhiên tối đa $10,000,000$ lần mỗi giây.
-Điều này cho thấy rằng ta nên hạn chế tối đa việc truy cập bộ nhớ ngẫu nhiên và thay vào đó nên sử dụng cách đọc (và ghi) nhanh (_burst read_, và _burst write_).
+Điều này cho thấy rằng ta nên hạn chế tối đa việc truy cập bộ nhớ ngẫu nhiên và thay vào đó nên sử dụng cách đọc (và ghi) nhanh (*burst read*, và *burst write*).
 
 <!--
 Matters are a bit more complex when we take into account that we have multiple banks.
@@ -196,14 +188,12 @@ Mọi thứ trở nên phức tạp hơn một chút khi ta tính đến việc 
 Mỗi dải có thể đọc bộ nhớ gần như là độc lập với nhau.
 Điều này có hai ý sau. 
 Thứ nhất, số lần đọc ngẫu nhiên thực sự cao hơn tới 4 lần, miễn là chúng được trải đều trên bộ nhớ.
-Điều đó cũng có nghĩa là việc thực hiện các lệnh đọc ngẫu nhiên vẫn không phải là một ý hay vì các lệnh đọc nhanh (_burst read_) cũng nhanh hơn gấp 4 lần.
+Điều đó cũng có nghĩa là việc thực hiện các lệnh đọc ngẫu nhiên vẫn không phải là một ý hay vì các lệnh đọc nhanh (*burst read*) cũng nhanh hơn gấp 4 lần.
 Thứ hai, do việc căn chỉnh bộ nhớ theo biên 64 bit, ta nên căn chỉnh mọi cấu trúc dữ liệu theo cùng biên đó.
 Trình biên dịch thực hiện việc này một cách [tự động](https://en.wikipedia.org/wiki/Data_structure_alocation) khi các cờ thích hợp được đặt.
 Độc giả có thể tham khảo thêm bài giảng về DRAM ví dụ như [Zeshan Chishti](http://web.cecs.pdx.edu/~zeshan/ece585_lec5.pdf).
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 GPU memory is subject to even higher bandwidth requirements since they have many more processing elements than CPUs.
@@ -235,11 +225,8 @@ Chúng dùng phương thức giao tiếp rất khác và kết nối trực ti�
 Không quá ngạc nhiên, kích thước bộ nhớ GPU nhỏ hơn nhiều so với bộ nhớ CPU do giá thành cao của nó.
 Nhìn chung các đặc tính hiệu năng của bộ nhớ GPU khá giống bộ nhớ CPU, nhưng nhanh hơn nhiều.
 Ta có thể bỏ qua các chi tiết sâu hơn trong cuốn sách này,
-do chúng chỉ quan trọng khi cần điều chỉnh các nhân (*kernel*) GPU để đạt thông lượng xử lý cao hơn.
+do chúng chỉ quan trọng khi cần điều chỉnh các hạt nhân GPU để đạt thông lượng xử lý cao hơn.
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Storage
@@ -271,9 +258,7 @@ Các ổ đĩa cao cấp có thể lưu trữ lên tới 16 TB trên 9 đĩa.
 Một trong những lợi ích chính của ổ đĩa cứng là chúng tương đối rẻ.
 Nhược điểm của chúng là độ trễ tương đối cao khi đọc dữ liệu và hay bị hư hỏng nặng dẫn đến không thể đọc dữ liệu, thậm chí là mất dữ liệu.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 To understand the latter, consider the fact that HDDs spin at around 7,200 RPM.
@@ -354,9 +339,6 @@ We recommend that the user increase the provisioned number of IOPs whenever late
 Nghĩa là, việc chỉ định bộ lưu trữ cho các máy ảo là tùy chỉnh, cả về số lượng và tốc độ, do người dùng quyết định.
 Chúng tôi khuyên người dùng nên tăng số lượng IOP được cung cấp bất cứ khi nào độ trễ quá cao, ví dụ như trong quá trình huấn luyện với dữ liệu gồm nhiều bản ghi nhỏ.
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## CPUs
@@ -419,10 +401,10 @@ For instance, the ARM Cortex A77 core of :numref:`fig_cortexa77` is able to perf
 Mỗi nhân xử lý bao gồm các thành phần rất tinh vi.
 Mặc dù chi tiết khác nhau giữa đời chip và nhà sản xuất, chức năng cơ bản của chúng đã được chuẩn hoá tương đối.
 Front-end tải các lệnh và dự đoán nhánh nào sẽ được thực hiện (ví dụ: cho luồng điều khiển). 
-Sau đó các lệnh được giải mã từ mã nguồn hợp ngữ (assembly code) thành vi lệnh.
+Sau đó các lệnh được giải mã từ mã nguồn hợp ngữ (*assembly code*) thành vi lệnh.
 Mã nguồn hợp ngữ thường chưa phải là mã nguồn cấp thấp nhất mà bộ xử lý thực thi.
 Thay vào đó, các lệnh phức tạp có thể được giải mã thành một tập hợp các phép tính cấp thấp hơn.
-Tiếp đó chúng được xử lý bằng một lõi thực thi. 
+Tiếp đó chúng được xử lý bằng một lõi thực thi.
 Các bộ xử lý đời mới thường có khả năng thực hiện đồng thời nhiều câu lệnh.
 Ví dụ, lõi ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hiện lên đến 8 phép tính cùng một lúc.
 
@@ -433,9 +415,7 @@ Ví dụ, lõi ARM Cortex A77 trong :numref:`fig_cortexa77` có thể thực hi�
 ![Tổng quan về vi kiến trúc ARM Cortex A77](../img/a77.svg)
 :label:`fig_cortexa77`
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 
 <!--
@@ -446,9 +426,9 @@ To increase throughput the processor might also follow  multiple codepaths simul
 This is why branch prediction units matter (on the frontend) such that only the most promising paths are pursued.
 -->
 
-Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kì xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
+Điều này có nghĩa là các chương trình hiệu quả có thể thực hiện nhiều hơn một lệnh trên một chu kỳ xung nhịp, *giả sử* rằng chúng có thể được thực hiện một cách độc lập.
 Không phải tất cả các bộ xử lý đều được tạo ra như nhau.
-Một số được thiết kế chuyên biệt cho các lệnh về số nguyên, trong khi một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động. 
+Một số được thiết kế chuyên biệt cho các lệnh về số nguyên, trong khi một số khác được tối ưu hoá cho việc tính toán số thực dấu phẩy động.
 Để tăng thông lượng, bộ xử lý cũng có thể theo đồng thời nhiều nhánh trong một lệnh rẽ nhánh và sau đó loại bỏ các kết quả của nhánh không được thực hiện.
 Đây là lý do vì sao đơn vị dự đoán nhánh có vai trò quan trọng (trên front-end), bởi chúng chỉ chọn những nhánh có khả năng cao được rẽ.
 
@@ -496,13 +476,7 @@ Chẳng hạn, ta có thể nhân hai số và cộng chúng với số thứ ba
 Tuy nhiên, xin lưu ý rằng tốc độ này hoàn toàn không đáng kể so với khả năng của GPU.
 Ví dụ, RTX 2080 Ti của NVIDIA có 4,352 nhân CUDA, mỗi nhân có khả năng xử lý một phép tính như vậy tại bất cứ thời điểm nào.
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Cache
@@ -523,14 +497,14 @@ This is where caches come in handy (see this [Wikipedia article](https://en.wiki
 Commonly the following names / concepts are used:
 -->
 
-Xét tình huống sau: ta có một CPU bình thường với 4 nhân như trong :numref:`fig_skylake` trên, hoạt động ở tần số 2GHz.
-Thêm nữa, hãy giả sử IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi nhân đều đã kích hoạt AVX2 rộng 256bit.
+Xét tình huống sau: ta có một CPU bình thường với 4 nhân như trong :numref:`fig_skylake` trên, hoạt động ở tần số 2 GHz.
+Thêm nữa, hãy giả sử IPC (*instruction per clock* - số lệnh mỗi xung nhịp) là 1 và mỗi nhân đều đã kích hoạt AVX2 rộng 256 bit.
 Ngoài ra, giả sử bộ nhớ cần truy cập ít nhất một thanh ghi được sử dụng trong các lệnh AVX2.
-Điều này có nghĩa CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kì xung nhịp.
+Điều này có nghĩa CPU xử lý 4x256bit = 1kbit dữ liệu mỗi chu kỳ xung nhịp.
 Trừ khi ta có thể truyền $2 \cdot 10^9 \cdot 128 = 256 \cdot 10^9$ byte đến vi xử lý mỗi giây, các nhân sẽ thiếu dữ liệu để xử lý.
 Tiếc thay giao diện bộ nhớ của bộ vi xử lý như trên chỉ hỗ trợ tốc độ truyền dữ liệu khoảng 20-40 GB/s, nghĩa là thấp hơn 10 lần.
 Để khắc phục vấn đề này, ta cần tránh nạp dữ liệu *mới* từ bộ nhớ ngoài, và tốt hơn hết là lưu trong bộ nhớ cục bộ trên CPU.
-Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [Bài viết Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
+Đây chính là lúc bộ nhớ đệm trở nên hữu ích (xem [bài viết trên Wikipedia](https://en.wikipedia.org/wiki/Cache_hierarchy) này để bắt đầu).
 Một số tên gọi/khái niệm thường gặp:
 
 <!--
@@ -550,18 +524,18 @@ AMD's Epyc 3 server CPUs have a whopping 256MB of cache spread across multiple c
 More typical numbers are in the 4-8MB range.
 -->
 
-* **Thanh ghi** nói đúng ra không phải là một bộ phận của bộ nhớ đệm. Chúng hỗ trợ sắp xếp các câu lệnh cho CPU.
+* **Thanh ghi** không phải là một bộ phận của bộ nhớ đệm. Chúng hỗ trợ sắp xếp các câu lệnh cho CPU.
 Nhưng dù sao thanh ghi cũng là một vùng nhớ mà CPU có thể truy cập với tốc độ xung nhịp mà không có độ trễ.
 Các CPU thường có hàng chục thanh ghi. 
 Việc sử dụng các thanh ghi sao cho hiệu quả hoàn toàn phụ thuộc vào trình biên dịch (hoặc lập trình viên).
 Ví dụ như trong ngôn ngữ C, ta có thể sử dụng từ khoá `register` để lưu các biến vào thanh ghi thay vì bộ nhớ.
 * Bộ nhớ đệm **L1** là lớp bảo vệ đầu tiên khi nhu cầu băng thông bộ nhớ quá cao.
-Bộ nhớ đệm L1 rất nhỏ (kích thước điển hình khoảng 32-64kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
+Bộ nhớ đệm L1 rất nhỏ (kích thước điển hình khoảng 32-64 kB) và thường được chia thành bộ nhớ đệm dữ liệu và câu lệnh.
 Nếu dữ liệu được tìm thấy trong bộ nhớ đệm L1, việc truy cập diễn ra rất nhanh chóng. Nếu không, việc tìm kiếm sẽ tiếp tục theo hệ thống phân cấp bộ nhớ đệm (*cache hierarchy*).
 * Bộ nhớ đệm **L2** là điểm dừng tiếp theo. 
 Vùng nhớ này có thể chuyên biệt tuỳ theo kiến trúc thiết kế và kích thước vi xử lý.
 Nó có thể chỉ được truy cập từ một lõi nhất định hoặc được chia sẻ với nhiều lõi khác nhau.
-Bộ nhớ đệm L2 có kích thước lớn hơn (thường là 256-512kB mỗi lõi) và chậm hơn L1.
+Bộ nhớ đệm L2 có kích thước lớn hơn (thường là 256-512 kB mỗi lõi) và chậm hơn L1.
 Hơn nữa, để truy cập vào dữ liệu trong L2, đầu tiên ta cần kiểm tra để chắc rằng dữ liệu đó không nằm trong L1, việc này làm tăng độ trễ lên một chút.
 * Bộ nhớ đệm **L3** được sử dụng chung cho nhiều lõi khác nhau và có thể khá lớn.
 CPU máy chủ Epyc 3 của AMD có bộ nhớ đệm 256MB cực lớn được phân bổ trên nhiều vi xử lý con (*chiplet*).
@@ -604,16 +578,12 @@ Một đoạn mã như vậy khả năng cao là sẽ chạy *chậm hơn* trên
 :label:`fig_falsesharing`
 
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
-
 
 <!--
 ## GPUs and other Accelerators
 -->
 
-## GPU và các Thiết bị tăng tốc khác
+## GPU và các Thiết bị Tăng tốc khác
 
 
 <!--
@@ -681,10 +651,6 @@ Mỗi Hệ vi xử lý Luồng (*Streaming Multiprocessor* - SM) bao gồm bốn
 ![Khối Xử lý Turing của NVIDIA](../img/turing_processing_block.png)
 :width:`150px`
 :label:`fig_turing_processing_block`
-
-<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
 
 
 <!--
@@ -757,13 +723,6 @@ việc truy cập vector và ma trận thưa không phù hợp với các thao t
 Đạt được cả hai mục tiêu là một lĩnh vực đang được đẩy mạnh nghiên cứu.
 Ví dụ, tham khảo [DGL](http://dgl.ai), một thư viện được điều chỉnh cho phù hợp với học sâu trên đồ thị.
 
-<!-- ===================== Kết thúc dịch Phần 10 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 11 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Networks and Buses
@@ -842,9 +801,6 @@ NVLink cung cấp tốc độ truyền dữ liệu lên đến 300 Gbit/s mỗi 
 GPU máy chủ (Volta V100) có 6 đường dẫn, trong khi GPU thông dụng (RTX 2080 Ti) chỉ có một đường dẫn, hoạt động ở tốc độ thấp 100 Gbit/s.
 Vì vậy, chúng tôi gợi ý sử dụng [NCCL](https://github.com/NVIDIA/nccl) để có thể đạt được tốc độ truyền dữ liệu cao giữa các GPU.
 
-<!-- ===================== Kết thúc dịch Phần 11 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 12 ===================== -->
 
 
 ## Tóm tắt
@@ -867,8 +823,8 @@ On GPUs it is a good idea to keep convolution sizes aligned e.g., to TensorCores
 Do đó ta nên nhắm tới việc di chuyển ít lần các lượng dữ liệu lớn thay vì di chuyển nhiều lần các lượng dữ liệu nhỏ.
 Điều này đúng với RAM, SSD, các thiết bị mạng và GPU.
 * Vector hóa rất quan trọng để tăng hiệu năng. Hãy đảm bảo bạn hiểu các điểm mạnh đặc thù của thiết bị tăng tốc mình đang có.
-Ví dụ, một vài CPU Intel Xeon thực hiện cực kì hiệu quả phép toán với dữ liệu kiểu INT8, 
-GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16, 
+Ví dụ, một vài CPU Intel Xeon thực hiện cực kỳ hiệu quả phép toán với dữ liệu kiểu INT8, 
+GPU NVIDIA Volta rất phù hợp với các phép toán với ma trận dữ liệu kiểu FP16; 
 còn NVIDIA Turing chạy tốt cho cả các phép toán với dữ liệu kiểu FP16, INT8, INT4.
 * Hiện tượng tràn số trên do kiểu dữ liệu không đủ số bit để biểu diễn giá trị có thể là một vấn đề khi huấn luyện (và cả khi suy luận, dù ít nghiêm trọng hơn).
 * Việc cùng dữ liệu nhưng có nhiều địa chỉ (*aliasing*) có thể làm giảm đáng kể hiệu năng. Ví dụ, việc sắp xếp dữ liệu trong bộ nhớ (*memory alignment*) trên CPU 64 bit nên được thực hiện theo từng khối 64 bit.
@@ -1062,7 +1018,7 @@ Tại sao hiệu năng *chỉ* tăng gấp đôi khi chuyển từ phép toán v
 
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/5320)
+* [Tiếng Anh](https://discuss.d2l.ai/t/363)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
@@ -1078,3 +1034,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Trần Yến Thy
 * Nguyễn Thanh Hòa
 * Đỗ Trường Giang
+* Phạm Hồng Vinh

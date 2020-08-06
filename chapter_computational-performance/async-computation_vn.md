@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Asynchronous Computation
 -->
@@ -78,6 +75,7 @@ NumPy của MXNet nhanh hơn tới cả hàng trăm hàng ngàn lần.
 Do cả hai thư viện đều được thực hiện trên cùng một bộ xử lý, chắc hẳn phải có gì đó ảnh hướng đến kết quả.
 Nếu ta ép MXNet phải hoàn thành tất cả phép tính trước khi trả về kết quả, ta có thể thấy rõ điều gì đã xảy ra ở trên: phần tính toán được thực hiện bởi back-end trong khi front-end đã trả lại quyền điều khiển cho Python.
 
+
 ```{.python .input  n=3}
 with d2l.Benchmark():
     for _ in range(10):
@@ -89,32 +87,21 @@ with d2l.Benchmark():
 
 <!--
 Broadly speaking, MXNet has a frontend for direct interaction with the users, e.g., via Python, as well as a backend used by the system to perform the computation.
-The backend possesses its own threads that continuously collect and execute queued tasks.
-Note that for this to work the backend must be able to keep track of the dependencies between various steps in the computational graph.
-Hence it is ony possible to parallelize operations that do not depend on each other.
--->
-
-<!-- Đoạn này bản gốc đã xoá vì trùng với đoạn dưới. -->
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
-<!--
-As shown in :numref:`fig_frontends`, users can write MXNet programs in various frontend languages, such as Python, R, Scala and C++.
-Regardless of the front-end programming language used, the execution of MXNet programs occurs primarily in the back-end of C++ implementations.
+As shown in :numref:`fig_frontends`, users can write MXNet programs in various frontend languages, such as Python, R, Scala, and C++.
+Regardless of the frontend programming language used, the execution of MXNet programs occurs primarily in the backend of C++ implementations.
 Operations issued by the frontend language are passed on to the backend for execution.
 The backend manages its own threads that continuously collect and execute queued tasks.
 Note that for this to work the backend must be able to keep track of the dependencies between various steps in the computational graph.
 That is, it is not possible to parallelize operations that depend on each other.
 -->
 
+Nhìn chung, MXNet có front-end cho phép tương tác trực tiếp với người dùng thông qua Python, cũng như back-end được sử dụng bởi hệ thống nhằm thực hiện nhiệm vụ tính toán.
 Như ở :numref:`fig_frontends`, người dùng có thể viết chương trình MXNet bằng nhiều ngôn ngữ front-end như Python, R, Scala và C++.
 Dù sử dụng ngôn ngữ front-end nào, chương trình MXNet chủ yếu thực thi trên back-end lập trình bằng C++.
 Các thao tác đưa ra bởi ngôn ngữ front-end được truyền vào back-end để thực thi.
 Back-end tự quản lý các luồng xử lý bằng việc liên tục tập hợp và thực thi các tác vụ trong hàng đợi.
 Chú ý rằng, back-end cần phải có khả năng theo dõi quan hệ phụ thuộc giữa các bước trong đồ thị tính toán để có thể hoạt động.
-Nghĩa là ta không thể song song hoá các thao tác phụ thuộc lẫn nhau.
+Nghĩa là ta không thể song song hóa các thao tác phụ thuộc lẫn nhau.
 
 <!--
 ![Programming Frontends.](../img/frontends.png)
@@ -170,9 +157,6 @@ Do đó, hiệu năng tổng thể của chương trình cũng ít bị ảnh h�
 ![Front-end và Back-end](../img/threading.svg)
 :label:`fig_threading`
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Barriers and Blockers
@@ -187,6 +171,7 @@ In practice it is a bad idea to use this operator unless absolutely necessary si
 * If we just want to wait until a specific variable is available we can call `z.wait_to_read()`.
 In this case MXNet blocks return to Python until the variable `z` has been computed. Other computation may well continue afterwards.
 -->
+
 
 Có khá nhiều thao tác buộc Python phải chờ cho đến khi nó hoàn thành:
 * Hiển nhiên nhất là lệnh `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn thành, bất chấp thời điểm câu lệnh tính toán được đưa ra.
@@ -242,10 +227,6 @@ with d2l.Benchmark('scalar conversion'):
     b.sum().item()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
 <!--
 ## Improving Computation
 -->
@@ -260,7 +241,7 @@ We simulate synchronous execution by inserting a `wait_to_read()` barrier in bet
 -->
 
 Trong một hệ thống đa luồng lớn (ngay cả laptop phổ thông cũng có 4 luồng hoặc hơn, và trên các máy trạm đa socket, số luồng có thể vượt quá 256), chi phí phụ trợ từ việc định thời các thao tác có thể trở nên khá lớn.
-Đây là lý do tại sao hai quá trình tính toán và định thời nên xảy ra song song và bất đồng bộ.
+Đó là lý do tại sao hai quá trình tính toán và định thời nên xảy ra song song và bất đồng bộ.
 Để minh hoạ cho lợi ích của việc này, hãy so sánh khi liên tục cộng 1 vào một biến theo cách đồng bộ và bất đồng bộ.
 Ta mô phỏng quá trình thực thi đồng bộ bằng cách chèn một lớp cản `wait_to_read()` giữa mỗi phép cộng.
 
@@ -280,15 +261,15 @@ with d2l.Benchmark('asynchronous'):
 
 
 <!--
-A slightly simplified interaction between the Python front-end thread and the C++ back-end thread can be summarized as follows:
+A slightly simplified interaction between the Python frontend thread and the C++ backend thread can be summarized as follows:
 -->
 
 Ta có thể tóm tắt đơn giản sự tương tác giữa luồng front-end Python và luồng back-end C++ như sau: 
 
 <!--
-1. The front-end orders the back-end to insert the calculation task `y = x + 1` into the queue.
-2. The back-end then receives the computation tasks from the queue and performs the actual computations.
-3. The back-end then returns the computation results to the front-end.
+1. The frontend orders the backend to insert the calculation task `y = x + 1` into the queue.
+2. The backend then receives the computation tasks from the queue and performs the actual computations.
+3. The backend then returns the computation results to the frontend.
 -->
 
 1. Front-end ra lệnh cho back-end đưa tác vụ tính `y = x + 1` vào hàng đợi.
@@ -307,13 +288,6 @@ Nếu ta không áp dụng lập trình bất đồng bộ, tổng thời gian �
 Còn nếu ta áp dụng lập trình bất đồng bộ, tổng thời gian để thực hiện 1000 phép tính có thể giảm xuống còn $t_1 + 1000 t_2 + t_3$ (giả sử $1000 t_2 > 999t_1$),
 do front-end không cần phải chờ back-end trả về kết quả tính toán sau mỗi vòng lặp.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Improving Memory Footprint
@@ -330,12 +304,12 @@ Given a finite amount of memory available on GPUs (and even on CPUs) this can le
 Some readers might have noticed that previous training routines made use of synchronization methods such as `item` or even `asnumpy`.
 -->
 
-Hãy thử tưởng tượng trường hợp ta liên tục thêm các tính toán vào back-end bằng cách thực thi mã Python trên front-end.
+Cùng hình dung với trường hợp ta liên tục thêm các tính toán vào back-end bằng cách thực thi mã Python trên front-end.
 Ví dụ, trong một khoảng thời gian rất ngắn, front-end liên tục thêm vào một lượng lớn các tác vụ trên minibatch.
-Xét cho cùng, công việc trên có thể hoàn thành nhanh chóng nếu không có phép tính nào thực sự diễn ra trên Python.
+Xét cho cùng, công việc trên có thể hoàn thành nhanh chóng nếu không có phép tính nào thật sự diễn ra trên Python.
 Nếu tất cả tác vụ trên cùng được khởi động một cách nhanh chóng thì có thể dẫn đến dung lượng bộ nhớ sử dụng tăng đột ngột.
 Do dung lượng bộ nhớ có sẵn trên GPU (và ngay cả CPU) là có hạn, điều này có thể gây ra sự tranh chấp tài nguyên hoặc thậm chí làm sập chương trình.
-Vài bạn đọc có lẽ đã nhận ra rằng ở các quy trình huấn luyện trước, ta áp dụng các thao tác đồng bộ như `item` hay ngay cả `asnumpy`.
+Độc giả có lẽ đã nhận ra rằng ở các quy trình huấn luyện trước, ta áp dụng các thao tác đồng bộ như `item` hay ngay cả `asnumpy`.
 
 <!--
 We recommend to use these operations carefully, e.g., for each minibatch, such as to balance computational efficiency and memory footprint.
@@ -373,7 +347,7 @@ Next we need a tool to measure the memory footprint of our code. We use a relati
 For a much more detailed analysis of what is going on here use e.g., Nvidia's [Nsight](https://developer.nvidia.com/nsight-compute-2019_5) or Intel's [vTune](https://software.intel.com/en-us/vtune).
 -->
 
-Tiếp theo, ta cần công cụ để đo lường mức chiếm dụng bộ nhớ của đoạn mã trên. Để có thể xây dựng công cụ này, ta sử dụng lệnh `ps` của hệ điều hành (chỉ hoạt động trên Linux và MacOS).
+Tiếp theo, ta cần công cụ để đo lường mức chiếm dụng bộ nhớ của đoạn mã trên. Để có thể xây dựng công cụ này, ta sử dụng lệnh `ps` của hệ điều hành (chỉ hoạt động trên Linux và macOS).
 Để phân tích chi tiết hoạt động của đoạn mã trên, bạn có thể sử dụng [Nsight](https://developer.nvidia.com/nsight-compute-2019_5) của Nvidia hoặc [vTune](https://software.intel.com/en-us/vtune) của Intel.
 
 
@@ -401,9 +375,6 @@ for X, y in data_iter():
 loss(y, net(X)).wait_to_read()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 To ensure that we do not overflow the task buffer on the backend we insert a `wait_to_read` call for the loss function at the end of each loop.
@@ -464,9 +435,6 @@ Mặc dù thời gian để đưa ra chỉ dẫn cho back-end nhỏ hơn đến 
 Hậu quả là một lượng lớn các kết quả trung gian không được đưa ra sử dụng và có thể chất đống trong bộ nhớ.
 Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ nhỏ trên, nó có thể dẫn đến tình trạng cạn kiệt bộ nhớ nếu không được kiểm tra trong viễn cảnh thực tế.
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 
 ## Tóm tắt
@@ -480,11 +448,12 @@ Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ
 * Chip vendors offer sophisticated performance analysis tools to obtain a much more fine-grained insight into the efficiency of deep learning.
 -->
 
+
 * MXNet tách riêng khối front-end Python khỏi khối back-end thực thi. Điều này cho phép nhanh chóng chèn các câu lệnh một cách bất đồng bộ vào khối back-end và kết hợp tính toán song song.
 * Sự bất đồng bộ giúp front-end phản ứng nhanh hơn. Tuy nhiên, cần phải áp dụng cẩn thận để không làm tràn các tác vụ ở trạng thái đợi, gây chiếm dụng bộ nhớ.
 * Nên đồng bộ theo từng minibatch một để giữ cho front-end và back-end được đồng bộ tương đối.
 * Nên nhớ rằng việc chuyển quản lý bộ nhớ từ MXNet sang Python sẽ buộc back-end phải chờ cho đến khi biến đó sẵn sàng.
-`print`, `asnumpy` và `item` đều gây ra hiệu ứng trên. Điều này có thể có ích đôi lúc, tuy nhiên lạm dụng chúng có thể làm giảm sút hiệu năng.
+`print`, `asnumpy` và `item` đều gây ra hiệu ứng trên. Điều này có thể có ích đôi lúc, tuy nhiên lạm dụng chúng có thể làm sụt giảm hiệu năng.
 * Nhà sản xuất vi xử lý cung cấp các công cụ phân tích hiệu năng tinh vi, cho phép đánh giá hiệu năng của học sâu một cách chi tiết hơn rất nhiều.
 
 
@@ -503,20 +472,13 @@ Dù rằng việc này không gây ra bất cứ vấn đề nào trong ví dụ
 4. So sánh sự khác nhau giữa `waitall` và `wait_to_read`. Gợi ý: thực hiện một số lệnh và đồng bộ theo kết quả trung gian.
 
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2381)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/361)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang

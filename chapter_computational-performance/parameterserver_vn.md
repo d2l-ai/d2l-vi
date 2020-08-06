@@ -212,7 +212,7 @@ That is, the time to aggregate gradients grows linearly with the number of nodes
 But if we do this the algorithm is quite inefficient.
 After all, at any time there is only one of the nodes communicating.
 What if we broke the gradients into $n$ chunks and started synchronizing chunk $i$ starting at node $i$.
-Since each chunk is of site $1/n$ the total time is now $(n-1)/n \approx 1$.
+Since each chunk is of size $1/n$ the total time is now $(n-1)/n \approx 1$.
 In other words, the time spent to aggregate gradients *does not grow* as we increase the size of the ring.
 This is quite an astonishing result.
 :numref:`fig_ringsync` illustrates the sequence of steps on $n=4$ nodes.
