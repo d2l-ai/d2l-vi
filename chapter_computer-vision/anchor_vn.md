@@ -260,7 +260,7 @@ After the anchor boxes are generated, we primarily label anchor boxes based on t
 So how do we assign ground-truth bounding boxes to anchor boxes similar to them?
 -->
 
-Chúng ta biết rằng, trong tập huấn luyện dùng để phát hiện đối tượng, mỗi hình ảnh được gán nhãn với  vị trí của khung chứa chuẩn và danh mục của đối tượng.
+Chúng ta biết rằng, trong tập huấn luyện phát hiện đối tượng, mỗi hình ảnh được gán nhãn với vị trí của khung chứa nhãn gốc và hạng mục của đối tượng.
 Sau khi các khung neo được tạo, chúng ta ưu tiên gắn nhãn cho chúng dựa vào thông tin của vị trí và danh mục trong khung chứa chuẩn tương tự như các khung neo.
 Vậy làm thế nào để chúng ta có thể gán các khung chứa chuẩn cho những khung neo tương đồng với chúng?
 
