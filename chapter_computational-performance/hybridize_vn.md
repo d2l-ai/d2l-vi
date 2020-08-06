@@ -530,7 +530,7 @@ Lợi ích về tốc độ này có thể tăng từ vài phần trăm tới h�
 
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2380)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/360)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ### Những người thực hiện
