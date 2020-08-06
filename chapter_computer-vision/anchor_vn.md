@@ -250,7 +250,7 @@ and finally filter out the prediction bounding boxes that need to be output.
 -->
 
 Trong tập huấn luyện, chúng ta xem mỗi khung neo là một mẫu ví dụ huấn luyện.
-Để huấn luyện mô hình nhận dạng đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là danh mục của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa chuẩn so với khung neo.
+Để huấn luyện mô hình phát hiện đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là hạng mục (*category*) của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa nhãn gốc so với khung neo.
 Trong phát hiện đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các hạng mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là chọn ra các khung chứa dự đoán tốt làm đầu ra.
 
 
