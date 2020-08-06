@@ -121,8 +121,6 @@ Sau khi bạn đã review qua hết lượt nội dung từng dòng một, hãy 
 
 Chúng tôi đưa ra những phản hồi cho những thắc mắc mà người tham gia có thể gặp phải. Nếu bạn chưa rõ bất kỳ thông tin gì, bạn có thể xem chi tiết **[tại đây](./docs/faq.md)**.
 
----
-
 Nếu bạn có bất kỳ câu hỏi nào trong quá trình tham gia dự án, vui lòng tạo một Issue mới và tag @duythanhvn hoặc liên hệ qua Slack để nhận được hỗ trợ từ dự án.
 
 Cảm ơn đóng góp của bạn.
