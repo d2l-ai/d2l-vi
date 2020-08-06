@@ -544,7 +544,7 @@ def bbox_eval(bbox_preds, bbox_labels, bbox_masks):
 ### Training the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện Mô hình
 
 
 <!--
@@ -554,7 +554,10 @@ Finally, we calculate the loss function using the predicted and labeled category
 To simplify the code, we do not evaluate the training dataset here.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt quá trình huấn luyện mô hình, ta buộc phải tạo ra các khung neo trên nhiều tỉ lệ (`anchors`) trong quá trình tính toán truyền xuôi rồi dự đoán danh mục (`cls_preds`) và độ dời (`bbox_preds`) cho mỗi khung neo.
+Sau đó, ta gán nhãn danh mục  (`cls_labels`) và độ dời (`bbox_labels`) cho từng khung neo được tạo ở trên dựa vào thông tinh nhãn `Y`.
+Cuối cùng, ta tính toán hàm mất mát sử dụng danh mục dự đoán và danh mục gán nhãn và giá trị độ dời.
+Để đơn giản hoá mã nguồn, ta sẽ không đánh giá tập huấn luyện ở đây.
 
 
 
@@ -600,7 +603,7 @@ print(f'{train_iter.num_image/timer.stop():.1f} examples/sec on '
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 
 <!--
@@ -609,7 +612,9 @@ Below, we read the test image and transform its size.
 Then, we convert it to the four-dimensional format required by the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Trong bước dự đoán, ta muốn phát hiện tất cả các vật thể trong vùng quan tâm trong ảnh.
+Ở đoạn mã dưới, ta đọc vào ảnh kiểm tra và biến đổi kích thước của nó.
+Sau đó ta chuyển nó thành dạng bốn chiều mà tầng tích chập yêu cầu.
 
 
 
@@ -625,7 +630,8 @@ Using the `MultiBoxDetection` function, we predict the bounding boxes based on t
 Then, we use non-maximum suppression to remove similar bounding boxes.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng hàm `MultiBoxDetection` để dự đoán các khung chứa dựa theo các khung neo và giá trị độ dời dự đoán của chúng.
+Sau đó ta sử dụng thuật toán triệt tiêu phi tối đa (*non-maximum suppression*) để loại bỏ các khung chứa giống nhau.
 
 
 
@@ -645,7 +651,7 @@ output = predict(X)
 Finally, we take all the bounding boxes with a confidence level of at least 0.3 and display them as the final output.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta lấy toàn bộ khung chứa có mức tin cậy tối thiểu là 0.3 và hiển thị chúng làm kết quả cuối cùng.
 
 
 ```{.python .input  n=22}
@@ -674,7 +680,9 @@ based on the base network block and each multiscale feature block and predicts t
 * During SSD model training, the loss function is calculated using the predicted and labeled category and offset values.
 -->
 
-*dịch đoạn phía trên*
+* SSD là một mô hình phát hiện vật thể đa tỉ lệ. Mô hình này sinh ra các tập khung neo với số lượng khác nhau và kích thước khác nhau 
+dựa trên khối mạng cơ sở và từng khối đặc trưng đa tỉ lệ rồi dự đoán danh mục và độ dời cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau.
+* Trong suốt quá trình huấn luyện mô hình SSD, hàm mất mát được tính bằng cách sử dụng danh mục dự đoán và danh mục được gán nhãn và giá trị độ dời.
 
 
 
@@ -686,7 +694,8 @@ Due to space limitations, we have ignored some of the implementation details of 
 Can you further improve the model in the following areas?
 -->
 
-*dịch đoạn phía trên*
+Do giới hạn về phạm vi, chúng tôi đã bỏ qua một số chi tiết phần lập trình cho mô hình SSD trong thí nghiệm này.
+Liệu bạn có thể cải thiện mô hình hơn nữa theo các hướng sau?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -831,7 +840,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 8 -->
 * 
