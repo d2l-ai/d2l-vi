@@ -90,7 +90,7 @@ The above method of generating anchor boxes has been implemented in the `multibo
 We specify the input, a set of sizes, and a set of aspect ratios, and this function will return all the anchor boxes entered.
 -->
 
-Phương pháp sinh ra các khung neo ở trên được sử dụng trong hàm `multibox_prior`.
+Phương pháp sinh khung neo ở trên được lập trình sẵn trong hàm `multibox_prior`.
 Ta mô tả đầu vào, tập các kích thước, và tập các tỉ số cạnh, và hàm này sẽ trả về tất cả các khung neo đưa vào.
 
 
@@ -664,4 +664,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
