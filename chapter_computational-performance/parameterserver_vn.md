@@ -364,7 +364,7 @@ Note that it is possible for us to perform the reduction stagewise.
 Furthermore, note that this operation is independent between blocks $i$ pertaining to different parameters (and gradients).
 -->
 
-Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hóan*, tức nó gộp nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
+Đặc điểm chính của thao tác này nằm ở việc nó là một *phép rút gọn có tính giao hoán*, tức nó gộp nhiều vector thành một vector và thứ tự áp dụng thao tác này không quan trọng.
 Vì không cần (phải) kiểm soát chi tiết thời điểm gradient được nhận, thao tác này rất phù hợp với mục đích của chúng ta.
 Lưu ý rằng ta có thể thực hiện phép rút gọn theo từng bước.
 Thêm nữa, chú ý rằng thao tác này độc lập giữa các khối $i$ gắn liền với các tham số (và các gradient) khác nhau.
@@ -441,7 +441,7 @@ Trong phần tiếp theo ta sẽ thử nghiệm việc lưu trữ (khóa, giá t
 3. Nên để khả năng chịu lỗi (*fault tolerance*) như thế nào?  Nếu một máy chủ gặp trục trặc thì sao? Đây có phải vấn đề nghiêm trọng không?
 4. Lưu checkpoint như thế nào?
 5. Bạn có thể tăng tốc việc tổng hợp dạng cây (*tree aggregation*) không?
-6. Tìm hiểu các cách rút gọn khác (như dạng bán vòng giao hóan - *commutative semiring*).
+6. Tìm hiểu các cách rút gọn khác (như dạng bán vòng giao hoán - *commutative semiring*).
 
 
 ## Thảo luận

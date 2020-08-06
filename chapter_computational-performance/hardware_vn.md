@@ -324,7 +324,7 @@ Tuy nhiên tốc độ ghi vẫn có thể chậm hơn nhiều, đặc biệt l�
 Chìa khóa để cải thiện hiệu suất là đưa các thao tác vào một *hàng đợi* để ưu tiên việc đọc trước và chỉ ghi theo các khối lớn nếu có thể. 
 * Các ô nhớ trong SSD bị hao mòn tương đối nhanh (thường sau vài nghìn lần ghi).
 Các thuật toán bảo vệ mức hao mòn có thể phân bổ đều sự xuống cấp trên nhiều ô. 
-Dù vậy, vẫn không nên sử dụng SSD cho các tệp hóan đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
+Dù vậy, vẫn không nên sử dụng SSD cho các tệp hoán đổi (*swap file*) hoặc cho tập hợp lớn các tệp nhật ký (*log file*).
 * Cuối cùng, sự gia tăng lớn về băng thông đã buộc các nhà thiết kế máy tính phải gắn SSD trực tiếp vào bus PCIe.
 Các ổ đĩa có khả năng xử lý việc này, được gọi là NVMe (Bộ nhớ không biến động tăng cường - *Non Volatile Memory enhanced*), có thể sử dụng lên tới 4 làn PCIe. 
 Băng thông có thể lên tới 8GB/s trên PCIe 4.0.
