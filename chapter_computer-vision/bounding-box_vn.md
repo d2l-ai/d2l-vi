@@ -5,7 +5,7 @@
 # Object Detection and Bounding Boxes
 -->
 
-# Phát hiện vật thể và khoanh vùng đối tượng (khung chứa)
+# Phát hiện Vật thể và Khoanh vùng Đối tượng (Khung chứa)
 :label:`sec_bbox`
 
 
@@ -183,7 +183,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
-
