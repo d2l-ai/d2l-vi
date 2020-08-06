@@ -83,7 +83,7 @@ For the entire input image, we will generate a total of $wh(n+m-1)$ anchor boxes
 -->
 
 Ở trên, số khung neo có tâm trên cùng một điểm ảnh là $n+m-1$.
-Đối với toàn bộ bức ảnh đầu vào, ta sẽ tạo ra tổng cộng $wh(n+m-1)$ khung neo.
+Đối với toàn bộ bức ảnh đầu vào, ta sẽ sinh ra tổng cộng $wh(n+m-1)$ khung neo.
 
 <!--
 The above method of generating anchor boxes has been implemented in the `multibox_prior` function.
@@ -664,5 +664,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
