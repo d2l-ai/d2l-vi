@@ -697,7 +697,7 @@ Can you further improve the model in the following areas?
 ### Loss Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát
 
 
 <!--
@@ -706,8 +706,9 @@ This loss function uses a square function around zero for greater smoothness.
 This is the regularized area controlled by the hyperparameter $\sigma$:
 -->
 
-*dịch đoạn phía trên*
-
+Để dự đoán độ dời, thay thế mất mát chuẩn $L_1$ bằng mất mát điều chuẩn $L_1$.
+Hàm mất mát này sử dụng hàm bình phương xung quanh giá trị không để tăng độ mượt.
+Đây chính là phương pháp được chuẩn hoá và được xác định bởi siêu tham số $\sigma$:
 
 $$
 f(x) =
@@ -723,7 +724,8 @@ When $\sigma$ is large, this loss is similar to the $L_1$ norm loss.
 When the value is small, the loss function is smoother.
 -->
 
-*dịch đoạn phía trên*
+Khi  $\sigma$ lớn, mất mát này tương đương với mất mát chuẩn $L_1$.
+Khi giá trị này nhỏ, hàm mất mát trở nên mượt hơn.
 
 
 
@@ -747,7 +749,10 @@ We can also use the focal loss :cite:`Lin.Goyal.Girshick.ea.2017`.
 Given the positive hyperparameters $\gamma$ and $\alpha$, this loss is defined as:
 -->
 
-*dịch đoạn phía trên*
+Trong thí nghiệm ở phần này, ta sử dụng hàm mất mát entropy chéo để dự đoán danh mục.
+Còn giờ, giả sử rằng xác suất dự đoán được đúng danh mục $j$ là $p_j$ và mất mát entropy chéo là $-\log p_j$.
+Ta cũng có thể sử dụng mất mát tiêu điểm (*focal loss*) :cite:`Lin.Goyal.Girshick.ea.2017`.
+Cho siêu tham số $\gamma$ and $\alpha$ dương, mất mát này được định nghĩa như sau:
 
 
 
@@ -759,7 +764,7 @@ $$ - \alpha (1-p_j)^{\gamma} \log p_j.$$
 As you can see, by increasing $\gamma$, we can effectively reduce the loss when the probability of predicting the correct category is high.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, bằng cách tăng $\gamma$, ta có thể giảm mất mát đi một cách hiệu quả khi xác suất dự đoán đúng danh mục là lớn.
 
 
 
@@ -779,7 +784,7 @@ d2l.plt.legend();
 ### Training and Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Dự đoán
 
 
 <!--
@@ -791,7 +796,12 @@ To do this, we can set the `MultiBoxTarget` function's `negative_mining_ratio` p
 4. Refer to the SSD paper. What methods can be used to evaluate the precision of object detection models :cite:`Liu.Anguelov.Erhan.ea.2016`?
 -->
 
-*dịch đoạn phía trên*
+1. Khi một vật thể có kích thước khá lớn so với ảnh, mô hình thường chấp nhận kích thước ảnh đầu vào lớn hơn.
+2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn danh mục cho khung neo.
+Ta có thể phân tích mẫu các khung neo âm để cân bằng các danh mục trong dữ liệu tốt hơn.
+Để thực hiện điều này, ta có thể đặt tham số `negative_mining_ratio` của hàm `MultiBoxTarget`.
+3. Gán các trọng số khác cho các siêu tham số của mất mát của danh mục khung neo và mất mát của độ dời khung neo dương trong hàm mất mát.
+4. Tham khảo bài báo SSD. Phương pháp nào có thể được sử dụng để đánh giá giá trị precision của các mô hình phát hiện vật thể :cite:`Liu.Anguelov.Erhan.ea.2016`?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
@@ -834,6 +844,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 8 -->
-* 
+* Đỗ Trường Giang
 
 
