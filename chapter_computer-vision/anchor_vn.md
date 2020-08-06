@@ -114,7 +114,7 @@ It has four elements: the $x, y$ axis coordinates in the upper-left corner and t
 The coordinate values of the $x$ and $y$ axis are divided by the width and height of the image, respectively, so the value range is between 0 and 1.
 -->
 
-Ta có thể thấy là kích thước của khung neo trả về, biến `y`, là (kích thước nhóm, số khung neo, 4).
+Ta có thể thấy rằng kích thước của khung neo được trả về ở biến `y` là (kích thước batch, số khung neo, 4).
 Sau khi thay đổi kích thước của `y` thành (độ cao ảnh, độ rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta có thể có được tất cả các khung neo với tâm ở vị trí điểm ảnh xác định.
 Trong phần ví dụ dưới đây, ta truy xuất khung neo đầu tiên có tâm tại vị trí (250, 250).
 Nó có bốn phần tử: các trục tọa độ $x, y$ ở góc trên bên trái và các trục tọa độ $x, y$ ở góc dưới bên phải của hộp neo.
