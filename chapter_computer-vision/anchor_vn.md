@@ -91,7 +91,7 @@ We specify the input, a set of sizes, and a set of aspect ratios, and this funct
 -->
 
 Phương pháp sinh khung neo ở trên được lập trình sẵn trong hàm `multibox_prior`.
-Ta mô tả đầu vào, tập các kích thước, và tập các tỉ số cạnh, và hàm này sẽ trả về tất cả các khung neo đưa vào.
+Ta chỉ cần thiết lập đầu vào, tập các kích thước và tập các tỉ số cạnh, rồi hàm này sẽ trả về tất cả các khung neo như mong muốn.
 
 
 ```{.python .input  n=2}
