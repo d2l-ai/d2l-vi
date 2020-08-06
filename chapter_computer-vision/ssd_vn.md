@@ -436,28 +436,28 @@ print('output bbox preds:', bbox_preds.shape)
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
 Now, we will explain, step by step, how to train the SSD model for object detection.
 -->
 
-*dịch đoạn phía trên*
+Ở bước này chúng tôi sẽ giải thích từng bước một, làm thế nào để huấn luyện mô hình SSD trong phát hiện vật thể.
 
 
 <!--
 ### Data Reading and Initialization
 -->
 
-### *dịch tiêu đề phía trên*
+### Đọc Dữ liệu và Khởi tạo
 
 
 <!--
 We read the Pikachu dataset we created in the previous section.
 -->
 
-*dịch đoạn phía trên*
+Ta đọc vào tập dữ liệu Pikachu được tạo ở phần trước.
 
 
 ```{.python .input  n=14}
@@ -472,7 +472,8 @@ There is 1 category in the Pikachu dataset.
 After defining the module, we need to initialize the model parameters and define the optimization algorithm.
 -->
 
-*dịch đoạn phía trên*
+Có 1 danh mục trong tập dữ liệu Pikachu.
+Sau khi định nghĩa mô-đun, ta cần khởi tạo các tham số của mô hình và định nghĩa thuật toán tối ưu.
 
 
 ```{.python .input  n=15}
@@ -487,7 +488,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd',
 ### Defining Loss and Evaluation Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Hàm mất mát và Hàm đánh giá
 
 
 <!--
@@ -501,7 +502,14 @@ The mask variable `bbox_masks` removes negative anchor boxes and padding anchor 
 Finally, we add the anchor box category and offset losses to find the final loss function for the model.
 -->
 
-*dịch đoạn phía trên*
+Phát hiện vật thể đưa ra hai loại mất mát. Đầu tiên là mất mát của danh mục khung neo.
+Đối với mất mát này, ta hoàn toàn có thể sử dụng lại hàm mất mát entropy chéo mà ta đã sử dụng trong phân loại ảnh.
+Loại mất mát thứ hai là mất mát của độ dời khung neo dương.
+Dự đoán độ dời là một bài toán chuẩn hoá.
+Tuy nhiên, ở đây ta không sử dụng hàm mất mát bình phương đã được giới thiệu từ trước.
+Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối sai phân của giá trị dự đoán và giá trị chuẩn.
+Biến mặt nạ `bbox_masks` loại bỏ các khung neo âm và khung neo đệm khỏi phép tính mất mát.
+Cuối cùng, ta thêm mất mát danh mục và độ dời của khung neo vào hàm mất mát cuối của mô hình.
 
 
 
@@ -520,7 +528,7 @@ def calc_loss(cls_preds, cls_labels, bbox_preds, bbox_labels, bbox_masks):
 We can use the accuracy rate to evaluate the classification results. As we use the $L_1$ norm loss, we will use the average absolute error to evaluate the bounding box prediction results.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng tỉ lệ độ chính xác để đánh giá kết quả phân loại. Do ta sử dụng mất mát chuẩn $L_1$, ta sẽ sử dụng trung bình sai số tuyệt đối (*average absolute error*) để đánh giá kết quả dự đoán khung chứa.
 
 
 
@@ -828,7 +836,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
