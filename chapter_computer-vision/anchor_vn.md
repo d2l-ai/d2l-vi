@@ -193,7 +193,7 @@ Given sets $\mathcal{A}$ and $\mathcal{B}$, their Jaccard index is the size of t
 -->
 
 Chúng ta chỉ mới đề cập rằng khung neo bao phủ tốt hình ảnh con chó.
-Nếu như khung chứa chuẩn của đối tượng đã được xác định, thì làm thế nào để định lượng được “mức độ tốt” ở đây? Một phương pháp dễ hiểu đó chính là đo lường độ tương đồng giữa các khung neo và khung chứa chuẩn.
+Nếu như khung chứa nhãn gốc của đối tượng đã được xác định, thì làm thế nào để định lượng được “mức độ tốt” ở đây? Một phương pháp đơn giản là đo độ tương đồng giữa các khung neo và khung chứa nhãn gốc.
 Chúng ta biết rằng hệ số Jaccard có thể đo lường sự tương đồng giữa hai tập dữ liệu.
 Các tập đã cho $\mathcal{A}$ and $\mathcal{B}$, có chỉ số Jaccard được đo bằng là kích thước của miền giao của chúng chia cho kích thước của miền hợp:
 
@@ -663,4 +663,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
