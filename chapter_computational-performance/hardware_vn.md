@@ -790,11 +790,11 @@ Các thiết bị cao cấp hơn (ví dụ như [máy chủ loại C5](https://a
 Cũng như các trường hợp trên, việc truyền dữ liệu có tổng chi phí đáng kể. 
 Chú ý rằng ta hầu như không bao giờ sử dụng trực tiếp Ethernet thuần mà sử dụng một giao thức được thực thi ở tầng trên của kết nối vật lý (ví dụ như UDP hay TCP/IP).
 Việc này làm tăng tổng chi phí.
-Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một thiết bị chuyển đổi (*switch*).
+Giống như PCIe, Ethernet được thiết kế để kết nối hai thiết bị, ví dụ như máy tính với một bộ chuyển mạch (*switch*).
 * **Bộ chuyển mạch** cho phép ta kết nối nhiều thiết bị theo cách mà bất cứ cặp thiết bị nào cũng có thể (thường là với băng thông tối đa) thực hiện kết nối điểm – điểm cùng lúc.
-Ví dụ, thiết bị chuyển đổi Ethernet có thể kết nối 40 máy chủ với băng thông xuyên vùng (*cross-sectional bandwidth*) cao.
-Chú ý rằng thiết bị chuyển đổi không phải chỉ có trong mạng máy tính truyền thống.
-Ngay cả làn PCIe cũng có thể [chuyển đổi](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
+Ví dụ, bộ chuyển mạch Ethernet có thể kết nối 40 máy chủ với băng thông xuyên vùng (*cross-sectional bandwidth*) cao.
+Chú ý rằng bộ chuyển mạch không phải chỉ có trong mạng máy tính truyền thống.
+Ngay cả làn PCIe cũng có thể [chuyển mạch](https://www.broadcom.com/products/pcie-switches-bridges/pcie-switches).
 Điều này xảy ra khi kết nối một lượng lớn GPU tới vi xử lý chính, như với trường hợp [máy chủ loại P2](https://aws.amazon.com/ec2/instance-types/p2/).
 * **NVLink** là một phương pháp thay thế PCIe khi ta cần kết nối với băng thông rất lớn.
 NVLink cung cấp tốc độ truyền dữ liệu lên đến 300 Gbit/s mỗi đường dẫn (*link*).
