@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Concise Implementation for Multiple GPUs
 -->
 
-# Lập trình ngắn gọn cho đa GPU
+# Cách lập trình Súc tích đa GPU
 :label:`sec_multi_gpu_gluon`
 
 
@@ -17,7 +14,7 @@ The math and the algorithms are the same as in :numref:`sec_multi_gpu`.
 As before we begin by importing the required modules (quite unsurprisingly you will need at least two GPUs to run this notebook).
 -->
 
-Lập trình từ đầu việc song song hoá cho từng mô hình mới khá phiền toái.
+Lập trình từ đầu việc song song hóa cho từng mô hình mới khá mất công.
 Hơn nữa, việc tối ưu các công cụ đồng bộ hóa sẽ cho hiệu suất cao.
 Sau đây chúng tôi sẽ giới thiệu cách thực hiện điều này bằng Gluon.
 Phần lý thuyết toán và các thuật toán giống trong :numref:`sec_multi_gpu`.
@@ -37,7 +34,7 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## Ví dụ đơn giản
+## Ví dụ Đơn giản
 
 
 <!--
@@ -87,7 +84,7 @@ def resnet18(num_classes):
 ## Parameter Initialization and Logistics
 -->
 
-## Khởi tạo tham số và Công việc phụ trợ
+## Khởi tạo Tham số và Công việc phụ trợ
 
 
 <!--
@@ -98,7 +95,7 @@ Let us try how this works in practice.
 -->
 
 Phương thức `initialize` cho phép ta thiết lập giá trị mặc định ban đầu cho các tham số trên thiết bị được chọn.
-Với bạn đọc mới, có thể tham khảo :numref:`sec_numerical_stability`.
+Với độc giả mới, có thể tham khảo :numref:`sec_numerical_stability`.
 Một điều rất thuận tiện là nó cũng cho phép ta khởi tạo mạng trên *nhiều* thiết bị cùng một lúc.
 Hãy thử xem cách nó hoạt động trong thực tế.
 
@@ -129,9 +126,6 @@ x_shards = gluon.utils.split_and_load(x, ctx)
 net(x_shards[0]), net(x_shards[1])
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 Once data passes through the network, the corresponding parameters are initialized *on the device the data passed through*.
@@ -200,7 +194,7 @@ def evaluate_accuracy_gpus(net, data_iter, split_f=d2l.split_batch):
 As before, the training code needs to perform a number of basic functions for efficient parallelism:
 -->
 
-Như phần trên, đoạn mã huấn luyện cần thực hiện một số hàm cơ bản để quá trình song song hoá đạt hiệu quả:
+Như phần trên, đoạn mã huấn luyện cần thực hiện một số hàm cơ bản để quá trình song song hóa đạt hiệu quả:
 
 
 <!--
@@ -253,9 +247,6 @@ def train(num_gpus, batch_size, lr):
           f'on {str(ctx)}')
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Experiments
@@ -283,9 +274,9 @@ This improves scalability since the overhead for parallelization is less relevan
 -->
 
 Tiếp theo, ta sử dụng 2 GPU để huấn luyện. Mô hình ResNet-18 phức tạp hơn đáng kể so với LeNet.
-Đây chính là cơ hội để song song hoá chứng tỏ lợi thế của nó,
-vì thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hoá các tham số.
-Điều này giúp cải thiện khả năng mở rộng do tổng chi phí song song hoá không quá đáng kể.
+Đây chính là cơ hội để song song hóa chứng tỏ lợi thế của nó,
+vì thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hóa các tham số.
+Điều này giúp cải thiện khả năng mở rộng do tổng chi phí song song hóa không quá đáng kể.
 
 
 ```{.python .input  n=9}
@@ -316,40 +307,25 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 3. What happens if we drop `npx.waitall()`? How would you modify training such that you have an overlap of up to two steps for parallelism? 
 -->
 
-1. Phần này ta sử dụng ResNet-18. Hãy thử với số epoch, kích thước batch và tốc độ học khác. Thử sử dụng nhiều GPU hơn để tính toán. Chuyện gì sẽ xảy ra nếu ta chạy mô hình này trên máy chủ p2.16xlarge với 16 GPU?
-2. Đôi khi mỗi thiết bị khác nhau cung cấp khả năng tính toán khác nhau. Ta có thể sử dụng GPU và CPU cùng lúc. Vậy ta nên phân chia công việc thế nào? Liệu việc phân chia có đáng hay không? Tại sao?
+1. Phần này ta sử dụng ResNet-18. Hãy thử với số epoch, kích thước batch và tốc độ học khác. Thử sử dụng nhiều GPU hơn để tính toán.
+Chuyện gì sẽ xảy ra nếu ta chạy mô hình này trên máy chủ p2.16xlarge với 16 GPU?
+2. Đôi khi mỗi thiết bị khác nhau cung cấp khả năng tính toán khác nhau. Ta có thể sử dụng GPU và CPU cùng lúc.
+Vậy ta nên phân chia công việc thế nào? Liệu việc phân chia có đáng hay không? Tại sao?
 3. Chuyện gì sẽ xảy ra nếu ta bỏ hàm `npx.waitall()`? Bạn sẽ thay đổi quá trình huấn luyện thế nào để có thể xử lý song song tối đa 2 bước cùng lúc?
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2384)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/365)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
-* Lê Khắc Hoàng Phúc
 * Phạm Hồng Vinh
