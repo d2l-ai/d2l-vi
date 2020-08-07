@@ -328,9 +328,7 @@ Ví dụ, `cu100` cho phiên bản CUDA 10.0 và `cu90` cho phiên bản CUDA 9.
 
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/23)
-* [Tiếng Anh - PyTorch](https://discuss.d2l.ai/t/24)
-* [Tiếng Anh - TensorFlow](https://discuss.d2l.ai/t/436)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/23), [PyTorch](https://discuss.d2l.ai/t/24), [TensorFlow](https://discuss.d2l.ai/t/436)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
