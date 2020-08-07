@@ -671,6 +671,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
 * 
@@ -680,4 +681,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
