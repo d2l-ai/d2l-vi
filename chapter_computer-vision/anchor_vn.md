@@ -246,7 +246,7 @@ Trong phần còn lại của phần này, chúng ta sẽ dùng IoU để đo s�
 ## Labeling Training Set Anchor Boxes
 -->
 
-## *dịch tiêu đề phía trên*
+## Gán nhãn các khung neo trong tập huấn luyện
 
 
 <!--
@@ -258,7 +258,9 @@ adjust the anchor box position according to the predicted offset to obtain the b
 and finally filter out the prediction bounding boxes that need to be output.
 -->
 
-*dịch đoạn phía trên*
+Trong tập huấn luyện, chúng ta xem mỗi khung neo là một mẫu ví dụ huấn luyện.
+Để huấn luyện mô hình phát hiện đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là hạng mục (*category*) của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa nhãn gốc so với khung neo.
+Trong phát hiện đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các hạng mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là chọn ra các khung chứa dự đoán tốt làm đầu ra.
 
 
 <!--
@@ -267,7 +269,9 @@ After the anchor boxes are generated, we primarily label anchor boxes based on t
 So how do we assign ground-truth bounding boxes to anchor boxes similar to them?
 -->
 
-*dịch đoạn phía trên*
+Chúng ta biết rằng, trong tập huấn luyện phát hiện đối tượng, mỗi hình ảnh được gán nhãn với vị trí của khung chứa nhãn gốc và hạng mục của đối tượng.
+Sau khi các khung neo được tạo, chúng ta chủ yếu gán nhãn cho chúng dựa vào thông tin của vị trí và danh mục trong khung chứa nhãn gốc tương đồng với các khung neo đó.
+Vậy làm thế nào để gán các khung chứa nhãn gốc cho những khung neo tương đồng với chúng?
 
 
 <!--
@@ -283,7 +287,15 @@ We assign ground-truth bounding box $B_{j_2}$ to anchor box $A_{i_2}$ and then d
 At this point, elements in two rows and two columns in the matrix $\mathbf{X}$ have been discarded.
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa nhãn gốc là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
+Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó mỗi phần tử $x_{ij}$ trong hàng $i^\mathrm{th}$ và cột $j^\mathrm{th}$ là hệ số IoU của khung neo $A_i$ so với khung chứa nhãn gốc $B_j$.
+Đầu tiên, chúng ta tìm ra phần tử lớn nhất trong ma trận $\mathbf{X}$ rồi lưu lại chỉ mục hàng và cột của phần tử đó là $i_1,j_1$.
+Chúng ta gán khung chứa nhãn gốc $B_{j_1}$ cho khung neo $A_{i_1}$.
+Ta thấy rõ ràng rằng, khung neo $A_{i_1}$ và khung chứa nhãn gốc $B_{j_1}$ có độ tương đồng cao nhất trong số tất cả các cặp "khung neo--khung chứa nhãn gốc".
+Tiếp theo, loại bỏ các phần tử trong hàng $i_1$th và cột $j_1$th trong ma trận $\mathbf{X}$.
+Tìm ra phần tử lớn nhất trong các phần tử còn lại trong ma trận $\mathbf{X}$ rồi cũng lưu lại chỉ mục hàng và cột của phần tử đó là $i_2,j_2$.
+Chúng ta gán khung chứa nhãn gốc $B_{j_2}$ cho khung neo $A_{i_2}$ và sau đó loại bỏ mọi phần tử tại hàng $i_2$th và cột $j_2$th trong ma trận $\mathbf{X}$.
+Như vậy, tại thời điểm này thì các phần tử trong hai hàng và hai cột của ma trận $\mathbf{X}$ đã bị loại bỏ.
 
 
 <!--
@@ -294,7 +306,11 @@ Given anchor box $A_i$, find the bounding box $B_j$ with the largest IoU with $A
 and only assign ground-truth bounding box $B_j$ to anchor box $A_i$ when the IoU is greater than the predetermined threshold.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tiến hành việc này cho đến khi các phần tử ở cột $n_b$ trong ma trận $\mathbf{X}$ đều bị loại bỏ.
+Tại thời điểm này, chúng ta đều đã gán $n_b$ khung chứa nhãn gốc cho $n_b$ khung neo.
+Tiếp đến, chúng ta chỉ việc duyệt qua $n_a - n_b$ khung neo còn lại.
+Với khung neo $A_i$, ta cần tìm ra khung chứa nhãn gốc $B_j$ sao cho khung chứa ấy có hệ số IoU so với $A_i$ là lớn nhất trên mỗi hàng $i^\mathrm{th}$ của ma trận $\mathbf{X}$,
+và chỉ gán khung chứa nhãn gốc $B_j$ cho khung neo $A_i$ khi mà hệ số IoU lớn hơn một ngưỡng cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -656,7 +672,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
