@@ -13,7 +13,7 @@ Details matter since different interconnects have very different bandwidth
 At the same time it is unreasonable to expect that a statistical modeler be an expert in networking and systems.
 -->
 
-Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ đa GPU, có khả năng các GPU được dàn trải qua nhiều khay chứa và bộ chuyển mạng. 
+Khi ta chuyển từ các GPU đơn sang đa GPU rồi sang nhiều máy chủ đa GPU, có khả năng các GPU được dàn trải qua nhiều khay chứa và bộ chuyển mạch mạng. 
 Điều này khiến các giải thuật huấn luyện phân tán và song song trở nên phức tạp hơn nhiều. 
 Các chi tiết nhỏ cũng trở nên quan trọng vì các phương thức kết nối khác nhau có băng thông rất khác nhau.
 Chẳng hạn, NVLink có băng thông lên tới 100GB/s qua 6 đường kết nối với cách thiết lập thích hợp, PCIe 3.0 16x làn có băng thông 16GB/s, trong khi ngay cả Ethernet 100GbE tốc độ cao chỉ đạt 10GB/s.
