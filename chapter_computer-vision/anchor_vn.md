@@ -303,12 +303,12 @@ After that, we only need to traverse the remaining anchor boxes of $A_1, A_3, A_
 and determine whether to assign ground-truth bounding boxes to the remaining anchor boxes according to the threshold.
 -->
 
-Như đã mô tả ở :numref:`fig_anchor_label` (trái), giả sử rằng giá trị lớn nhất của ma trận $\mathbf{X}$ là $x_{23}$, ta gán khung chứa chuẩn $B_3$ cho khung neo $A_2$.
-Tiếp theo ta loại bỏ tất cả các giá trị ở hàng 2 và cột 3 của ma trận, tìm phần tử lớn nhất $x_{71}$ của phần ma trận còn lại và gán khung chứa chuẩn $B_1$ cho khung neo $A_7$.
+Như đã mô tả ở :numref:`fig_anchor_label` (trái), giả sử rằng giá trị lớn nhất của ma trận $\mathbf{X}$ là $x_{23}$, ta gán khung chứa nhãn gốc $B_3$ cho khung neo $A_2$.
+Tiếp theo ta loại bỏ tất cả các giá trị ở hàng 2 và cột 3 của ma trận, tìm phần tử lớn nhất $x_{71}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_1$ cho khung neo $A_7$.
 Tiếp theo, như đã mô tả ở :numref:`fig_anchor_label` (giữa), ta loại bỏ tất cả các giá trị ở hàng 7 và cột 1 của ma trận, 
-tìm phần tử lớn nhất $x_{54}$ của phần ma trận còn lại và gán khung chứa chuẩn $B_4$ cho khung neo $A_5$.
+tìm phần tử lớn nhất $x_{54}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_4$ cho khung neo $A_5$.
 Cuối cùng, như đã mô tả ở :numref:`fig_anchor_label` (phải), ta loại bỏ tất cả các giá trị ở hàng 5 và cột 4 của ma trận, 
-tìm phần tử lớn nhất $x_{92}$ của phần ma trận còn lại và gán khung chứa chuẩn $B_2$ cho khung neo $A_9$.
+tìm phần tử lớn nhất $x_{92}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_2$ cho khung neo $A_9$.
 Sau đó ta chỉ cần phải quét các khung neo còn lại $A_1, A_3, A_4, A_6, A_8$ 
 và quyết định xem liệu có gán khung chứa cho các khung neo còn lại này không dựa vào mức ngưỡng.
 
@@ -317,7 +317,7 @@ và quyết định xem liệu có gán khung chứa cho các khung neo còn l�
 ![Assign ground-truth bounding boxes to anchor boxes.](../img/anchor-label.svg)
 -->
 
-![Gán khung chứa chuẩn cho các khung neo](../img/anchor-label.svg)
+![Gán khung chứa nhãn gốc cho các khung neo](../img/anchor-label.svg)
 :label:`fig_anchor_label`
 
 
@@ -332,12 +332,12 @@ the widths of $A$ and $B$ are $w_a, w_b$, and their heights are $h_a, h_b$, resp
 In this case, a common technique is to label the offset of $A$ as
 -->
 
-Giờ ta có thể dán nhãn danh mục và độ dời cho các khung neo.
-Nếu khung neo $A$ được gán khung chứa chuẩn $B$ thì khung neo $A$ có danh mục được đặt theo danh mục của $B$.
-Độ rời của khung neo $A$ được đặt dựa theo vị trí tương đối của toạ độ trung tâm giữa $B$ và $A$ và kích thước tương đối của hai khung.
+Giờ ta có thể gán nhãn danh mục và độ dời cho các khung neo.
+Nếu khung neo $A$ được gán khung chứa nhãn gốc $B$ thì khung neo $A$ có danh mục được đặt theo danh mục của $B$.
+Độ rời của khung neo $A$ được đặt dựa theo vị trí tương đối của toạ độ tâm của $B$ và $A$ và kích thước tương đối của hai khung.
 Do vị trí và kích thước của các khung khác nhau trong tập dữ liệu thường khác nhau,
 các vị trí và kích thước tương đối này thường yêu cầu một số phép biến đổi đặc biệt sao cho phân phối của giá trị độ dời trở nên đều hơn và dễ khớp hơn.
-Giả sử tâm của khung neo $A$ và khung chứa chuẩnđược gán cho nó $B$  là $(x_a, y_a), (x_b, y_b)$, 
+Giả sử tọa độ tâm của khung neo $A$ và khung chứa nhãn gốc $B$ được gán cho nó là $(x_a, y_a), (x_b, y_b)$, 
 chiều rộng của $A$ và $B$ lần lượt là $w_a, w_b$, và chiều cao lần lượt là $h_a, h_b$.
 Đối với trường hợp này có một kĩ thuật phổ biến, đó là gán nhãn độ dời của $A$ bằng
 
@@ -355,7 +355,7 @@ Anchor boxes whose category is background are often referred to as negative anch
 -->
 
 Giá trị mặc định của các hằng số là $\mu_x = \mu_y = \mu_w = \mu_h = 0, \sigma_x=\sigma_y=0.1, và \sigma_w=\sigma_h=0.2$.
-Nếu một khung neo không được gán cho một khung chứa chuẩn, ta chỉ cần đặt danh mục của khung neo này là nền.
+Nếu một khung neo không được gán cho một khung chứa nhãn gốc, ta chỉ cần đặt danh mục của khung neo này là nền.
 Các khung neo có danh mục là nền thường được gọi là khung neo âm (*negative anchor box*), và các khung neo còn lại được gọi là khung neo dương (*positive anchor box*).
 
 
@@ -369,11 +369,11 @@ First, draw the positions of these anchor boxes and the ground-truth bounding bo
 -->
 
 Dưới đây chúng tôi sẽ giải thích chi tiết một ví dụ.
-Ta định nghĩa các khung chứa chuẩn cho con mèo và con chó trong ảnh đọc được, trong đó phần tử đầu tiên là danh mục (0 là chó, 1 là mèo) 
+Ta định nghĩa các khung chứa chuẩn cho con mèo và con chó trong ảnh đã đọc, trong đó phần tử đầu tiên là danh mục (0 là chó, 1 là mèo) 
 và bốn phần tử còn lại là các toạ độ $x, y$ của góc trên bên trái và toạ độ $x, y$ của góc dưới bên phải (dải giá trị nằm trong khoảng từ 0 đến 1).
 Ở đây ta khởi tạo năm khung neo bằng toạ độ của góc trên bên trái và góc dưới bên phải để gán nhãn,
 được kí hiệu lần lượt là $A_0, \ldots, A_4$ (chỉ số trong chương trình bắt đầu từ 0).
-Đầu tiên, ta vẽ vị trí của các khung neo này và các khung chứa chuẩn vào ảnh.
+Đầu tiên, ta vẽ vị trí của các khung neo này và các khung chứa nhãn gốc vào ảnh.
 
 
 
@@ -680,5 +680,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
