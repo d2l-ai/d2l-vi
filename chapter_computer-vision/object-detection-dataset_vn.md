@@ -182,7 +182,7 @@ Tuy nhiên, sau khi ta giới thiệu các khung chứa, kích thước nhãn v�
 Referring to the MXNet documentation, what are the parameters for the constructors of the `image.ImageDetIter` and `image.CreateDetAugmenter` classes? What is their significance?
 -->
 
-Tham khảo tài liệu MXNet, tham số cho các hàm tạo (constructors) của lớp `image.ImageDetIter` và `image.CreateDetAugmenter` là gì? Ý nghĩa của chúng là gì?
+Tham khảo tài liệu MXNet, tham số các hàm tạo (constructors) của lớp `image.ImageDetIter` và `image.CreateDetAugmenter` là gì? Cho biết ý nghĩa của chúng?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -209,5 +209,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Đăng Khoa
-
 
