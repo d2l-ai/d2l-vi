@@ -499,7 +499,7 @@ Hãy cùng xem qua cách NMS hoạt động.
 Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng lớp.
 Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
 Ta cũng cần đề cập đến $p$ như là một mức độ tin cậy cho khung chứa (bounding box) $B$.
-Trên cùng một bức ảnh, ta sắp xếp lại các khung chứa dự đoán (prediction bounding box) kèm với các danh mục dự đoán dựa vào mức độ tin cậy được sắp xếp theo thứ tự giảm dần và từ đó có được danh sách $L$.
+Trên cùng một bức ảnh, ta sắp xếp các khung chứa dự đoán không phải là nền theo thứ tự giảm dần độ tin cậy, thu được danh sách $L$.
 Chọn ra khung chứa dự đoán $B_1$ có mức độ tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác khi các khung chứa ấy có hệ số IoU so với khung chứa $B_1$ lớn hơn một ngưỡng nhất định từ $L$.
 Ngưỡng ở đây là một siêu tham số đã được định trước.
 Tại thời điểm này, $L$ chỉ còn giữ lại khung chứa dự đoán có độ tin cậy cao nhất và loại đi những khung chứa tương tự nó.
