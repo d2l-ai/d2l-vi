@@ -379,10 +379,10 @@ We add example dimensions to the anchor boxes and ground-truth bounding boxes an
 with a shape of (batch size, number of categories including background, number of anchor boxes) by using the `expand_dims` function.
 -->
 
-Ta có thể gán nhãn danh mục và độ dời cho các khung neo này bằng cách sử dụng hàm `multibox_target`.
-Hàm này đặt danh mục nền bằng 0 và tăng chỉ số của mục tiêu lên 1 theo từng danh mục (1 là chó và 2 là mèo).
-Ta thêm vào kích thước của các khung neo và khung chứa nhãn gốc ở ví dụ trên và khởi tạo kết quả dự đoán ngẫu nhiên
-theo dạng (kích thước batch, số danh mục tính cả nền, số khung neo) bằng cách sử dụng hàm `expand_dims`.
+Ta có thể gán nhãn lớp và độ dời cho các khung neo này bằng cách sử dụng hàm `multibox_target`.
+Hàm này đặt lớp nền bằng 0 và tăng chỉ số lên 1 với mỗi lớp mục tiêu (1 là chó và 2 là mèo).
+Ta thêm chiều batch vào các tensor chứa khung neo và khung chứa nhãn gốc ở ví dụ trên và khởi tạo kết quả dự đoán ngẫu nhiên
+với kích thước (kích thước batch, số lớp tính cả nền, số khung neo) bằng cách sử dụng hàm `expand_dims`.
 
 
 
@@ -400,7 +400,7 @@ The third item is represented by the category labeled for the anchor box.
 -->
 
 Có ba phần tử trong kết quả trả về, tất cả đều theo định dạng tensor.
-Phần tử thứ ba biểu diễn các danh mục được gán nhãn cho khung neo.
+Phần tử thứ ba biểu diễn các lớp được gán nhãn cho khung neo.
 
 
 
@@ -437,7 +437,7 @@ Because we do not care about background detection, offsets of the negative class
 By multiplying by element, the 0 in the mask variable can filter out negative class offsets before calculating target function.
 -->
 
-Phần tử thứ hai trong giá trị trả về là một biến mặt nạ (*mask variable*), với kích thước (kích thước batch, bốn lần số khung neo).
+Phần tử thứ hai trong giá trị trả về là một biến mặt nạ (*mask variable*), với kích thước (kích thước batch, số khung neo nhân bốn).
 Các phần tử trong biến mặt nạ tương ứng một - một với bốn giá trị độ dời của mỗi khung neo.
 Do ta không cần quan tâm đến việc nhận diện nền nên độ dời thuộc lớp âm không ảnh hướng đến hàm mục tiêu.
 Qua phép nhân theo từng phần tử, các giá trị 0 trong biến mặt nạ có thể lọc ra các độ dời thuộc lớp âm trước khi tính hàm mục tiêu.
