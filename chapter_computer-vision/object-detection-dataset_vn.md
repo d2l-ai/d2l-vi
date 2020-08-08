@@ -5,7 +5,7 @@
 # The Object Detection Dataset
 -->
 
-# Tập dữ liệu phát hiện đối tượng
+# Tập dữ liệu Phát hiện Đối tượng
 
 
 <!--
