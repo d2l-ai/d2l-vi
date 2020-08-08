@@ -495,7 +495,7 @@ The threshold here is a preset hyperparameter.
 At this point, $L$ retains the prediction bounding box with the highest confidence level and removes other prediction bounding boxes similar to it.
 -->
 
-Hãy cùng nhìn qua cách thức mà NMS hoạt động như thế nào.
+Hãy cùng xem qua cách NMS hoạt động.
 Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng danh mục.
 Giả sử rằng xác suất dự đoán lớn nhất đạt $p$, thì danh mục đối tượng tương ứng với xác suất này là danh mục dự đoán $B$.
 Ta cũng cần đề cập đến $p$ như là một mức độ tin cậy cho khung chứa (bounding box) $B$.
