@@ -17,7 +17,7 @@ Some of the design concepts and implementation details of this model are also ap
 
 Ở một số phần trước, chúng tôi đã giới thiệu về khung chứa, khung neo, phát hiện vật thể đa tỉ lệ và tập dữ liệu.
 Giờ ta sẽ sử dụng phần kiến thức nền này để xây dựng một mô hình phát hiện vật thể: phát hiện nhiều khung trong một lần thực hiện (Single Shot Multibox Detection - SSD) :cite:`Liu.Anguelov.Erhan.ea.2016`.
-Mô hình  này đang được sử dụng rộng rãi nhờ tốc độ và tính đơn giản của nó.
+Mô hình này đang được sử dụng rộng rãi nhờ tốc độ và tính đơn giản của nó.
 Một số khái niệm trong thiết kế và một số chi tiết trong phần lập trình của mô hình này cũng có thể áp dụng cho các mô hình phát hiện vật thể khác.
 
 
@@ -57,7 +57,7 @@ Các khối này sau đó sử dụng từng phần tử trong ánh xạ đặc 
 Bằng cách này, khối đặc trưng đa tỉ lệ cầng gần đỉnh mô hình trong :numref:`fig_ssd` thì có ánh xạ đặc trưng ở đầu ra càng nhỏ, và số khung neo được sinh ra bởi ánh xạ đầu ra đó càng ít.
 Hơn nữa, khối đặc trưng càng gần đỉnh mô hình thì vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng càng lớn và càng phù hợp để phát hiện những vật thể lớn.
 Do SSD sinh ra các tập khung neo với số lượng khác nhau và kích thước khác nhau dựa trên khối mạng cơ sở
-và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán danh mục và độ dời (ví dụ như dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, SSD là một mô hình phát hiện vật thể đa tỉ lệ.
+và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán lớp và độ dời (ví dụ như dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, SSD là một mô hình phát hiện vật thể đa tỉ lệ.
 
 
 <!--
@@ -74,7 +74,7 @@ First, we need to discuss the implementation of category prediction and bounding
 -->
 
 Tiếp theo, ta sẽ mô tả phần lập trình cho các mô-đun trong :numref:`fig_ssd`.
-Đầu tiên, ta cần phải thảo luận về việc lập trình cho phần dự đoán danh mục và dự đoán khung chứa.
+Đầu tiên, ta cần phải thảo luận về việc lập trình cho phần dự đoán lớp và dự đoán khung chứa.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
