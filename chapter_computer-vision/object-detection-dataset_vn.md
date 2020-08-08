@@ -74,7 +74,7 @@ To ensure the certainty of the output, we will not randomly crop the images in t
 We also do not need to read the test dataset in random order.
 -->
 
-Chúng ta sẽ đọc tập dữ liệu phát hiện đối tượng bằng cách tạo ra hiện thân `ImageDetIter`.
+Chúng ta sẽ đọc tập dữ liệu phát hiện đối tượng bằng cách tạo ra thực thể `ImageDetIter`.
 Tên biến "Det" (viết tắt cho Detection), đề cập đến việc phát hiện.
 Ta sẽ đọc tập dữ liệu huấn luyện theo thứ tự ngẫu nhiên.
 Vì định dạng của dữ liệu là RecordIO, ta cần có `'train.idx'` để đọc những minibatch ngẫu nhiên.
