@@ -112,16 +112,16 @@ The Pikachu dataset here has only one bounding box per image, so $m=1$.
 -->
 
 Dưới đây, ta đọc một minibatch rồi xuất ra kích thước ảnh và nhãn.
-Kích thước ảnh bằng với ảnh trong thử nghiệm trước (kích thước batch, số kênh, chiều cao, độ rộng).
-Kích thước của nhãn là (kích thước batch, $m$, 5), trong đó $m$ bằng với số lượng khung chứa tối đa tại một bức ảnh trong một tập dữ liệu hình ảnh.
+Kích thước ảnh giống như trong trong thử nghiệm trước (kích thước batch, số kênh, chiều cao, độ rộng).
+Kích thước của nhãn là (kích thước batch, $m$, 5), trong đó $m$ bằng với số lượng khung chứa tối đa trên một bức ảnh trong một tập dữ liệu hình ảnh.
 Mặc dù việc tính toán với minibatch rất hiệu quả, nhưng nó lại yêu cầu mỗi hình ảnh phải cùng một lượng khung chứa để chúng có thể được đặt trong cùng một batch.
 Vì mỗi hình ảnh có thể có số lượng khung chứa khác nhau, ta có thể thêm các khung chứa bất hợp lệ vào hình ảnh có khung chứa bên dưới $m$ cho đến khi mỗi bức ảnh có được các khung chứa $m$.
 Do đó, chúng ta có thể đọc được một chuỗi các ảnh nhỏ mỗi lần.
 Nhãn của mỗi khung chứa trong bức ảnh được biểu diễn bằng một mảng có độ dài là 5.
 Phần tử đầu tiên trong mảng là hạng mục của đối tượng xuất hiện trong khung chứa.
-Khi giá trị là -1, khung chứa ấy chính là khung chứa bất hợp lệ cho mục đích lắp đầy khoảng trống.
-Bốn phần tử còn lại trong mảng đại diện cho toạ độ của trục $x, y$ của góc trên bên trái tại khung chứa và tọa độ trục $x, y$ của góc dưới bên phải tại khung chứa (miền giá trị từ 0 đến 1).
-Tập dữ liệu Pikachu ở đây chỉ có một khung chứa cho mỗi bức ảnh, vì thế $m=1$.
+Khi giá trị là -1, khung chứa ấy chính là khung chứa bất hợp lệ dùng cho mục đích lắp đầy khoảng trống.
+Bốn phần tử còn lại trong mảng đại diện cho toạ độ trục $x, y$ tại góc trên bên trái của khung chứa và tọa độ trục $x, y$ tại góc dưới bên phải của khung chứa (miền giá trị từ 0 đến 1).
+Tập dữ liệu Pikachu ở đây chỉ có một khung chứa cho mỗi ảnh, vì thế $m=1$.
 
 
 
@@ -209,6 +209,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Đăng Khoa
-
 
 
