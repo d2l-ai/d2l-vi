@@ -177,8 +177,8 @@ Ta giả sử rằng các ánh xạ đặc trưng $c_i$ là đầu ra trung gian
 Do mỗi ánh xạ đặc trưng có $h \times w$ vị trí khác nhau trong không gian, một vị trí sẽ có $c_i$ đơn vị.
 Theo định nghĩa của vùng tiếp nhận trong :numref:`sec_conv_layer`, các đơn vị $c_i$ của ánh xạ đặc trưng ở cùng một vị trí trong không gian sẽ có cùng vùng tiếp nhận trên ảnh đầu vào.
 Do đó, chúng biểu diễn thông tin của ảnh đầu vào trên cùng vùng tiếp nhận đó.
-Bởi vậy, ta có thể biến đổi các đơn vị $c_i$ của ánh xạ đặc trưng có cùng vị trí trong không gian thanh các lớp và độ dời cho khung neo $a$ được sinh ra bằng cách sử dụng vị trí đó làm tâm điểm.
-Không khó khăn để nhận ra rằng, về bản chất, ta sử dụng thông tin của ảnh đầu vào trong một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của khung neo gần với vùng đó trên ảnh đầu vào.
+Bởi vậy, ta có thể biến đổi các đơn vị $c_i$ của ánh xạ đặc trưng có cùng vị trí trong không gian thành các lớp và độ dời cho khung neo $a$ được sinh ra bằng cách sử dụng vị trí đó làm tâm điểm.
+Không khó để nhận ra rằng, về bản chất, ta sử dụng thông tin của ảnh đầu vào trong một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của khung neo gần với vùng đó trên ảnh đầu vào.
 
 
 <!--
@@ -208,7 +208,7 @@ Ta sẽ tiến hành lập trình mô hình phát hiện vật thể đa tỉ l�
 -->
 
 * Ta có thể sinh các khung neo với số lượng và kích thước khác nhau trên nhiều tỉ lệ để phát hiện vật thể có kích thước khác nhau trên nhiều tỉ lệ.
-* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm điểm của các khung neo được lấy mẫu đều trên bất kì ảnh nào.
+* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm điểm của các khung neo được lấy mẫu đều trên tất cả các ảnh.
 * Ta sử dụng thông tin của ảnh đầu vào từ một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của các khung neo gần với vùng đó trên ảnh.
 
 
@@ -221,7 +221,7 @@ What methods can you think of to convert this variable into the anchor box's cat
 -->
 
 Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng trong khi $c_i, h, w$ là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
-Bạn hãy nghĩ liệu có phương pháp nào chuyển đổi biến này thành lớp và độ dời của một khung neo? Kích thước của đầu ra là gì?
+Liệu có phương pháp nào chuyển đổi biến này thành lớp và độ dời của một khung neo? Kích thước của đầu ra là gì?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -249,5 +249,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Đỗ Trường Giang
-
 
