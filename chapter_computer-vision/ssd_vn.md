@@ -554,9 +554,9 @@ Finally, we calculate the loss function using the predicted and labeled category
 To simplify the code, we do not evaluate the training dataset here.
 -->
 
-Trong suốt quá trình huấn luyện mô hình, ta buộc phải tạo ra các khung neo trên nhiều tỉ lệ (`anchors`) trong quá trình tính toán truyền xuôi rồi dự đoán danh mục (`cls_preds`) và độ dời (`bbox_preds`) cho mỗi khung neo.
-Sau đó, ta gán nhãn danh mục  (`cls_labels`) và độ dời (`bbox_labels`) cho từng khung neo được tạo ở trên dựa vào thông tinh nhãn `Y`.
-Cuối cùng, ta tính toán hàm mất mát sử dụng danh mục dự đoán và danh mục gán nhãn và giá trị độ dời.
+Trong suốt quá trình huấn luyện mô hình, ta buộc phải tạo ra các khung neo trên nhiều tỉ lệ (`anchors`) trong quá trình tính toán truyền xuôi rồi dự đoán lớp (`cls_preds`) và độ dời (`bbox_preds`) cho mỗi khung neo.
+Sau đó, ta gán nhãn lớp (`cls_labels`) và độ dời (`bbox_labels`) cho từng khung neo được tạo ở trên dựa vào thông tinh nhãn `Y`.
+Cuối cùng, ta tính toán hàm mất mát sử dụng lớp dự đoán và lớp gán nhãn và giá trị độ dời.
 Để đơn giản hoá mã nguồn, ta sẽ không đánh giá tập huấn luyện ở đây.
 
 
@@ -681,8 +681,8 @@ based on the base network block and each multiscale feature block and predicts t
 -->
 
 * SSD là một mô hình phát hiện vật thể đa tỉ lệ. Mô hình này sinh ra các tập khung neo với số lượng khác nhau và kích thước khác nhau 
-dựa trên khối mạng cơ sở và từng khối đặc trưng đa tỉ lệ rồi dự đoán danh mục và độ dời cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau.
-* Trong suốt quá trình huấn luyện mô hình SSD, hàm mất mát được tính bằng cách sử dụng danh mục dự đoán và danh mục được gán nhãn và giá trị độ dời.
+dựa trên khối mạng cơ sở và từng khối đặc trưng đa tỉ lệ rồi dự đoán lớp và độ dời cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau.
+* Trong suốt quá trình huấn luyện mô hình SSD, hàm mất mát được tính bằng cách sử dụng lớp dự đoán và lớp được gán nhãn và giá trị độ dời.
 
 
 
