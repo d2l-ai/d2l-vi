@@ -749,8 +749,8 @@ We can also use the focal loss :cite:`Lin.Goyal.Girshick.ea.2017`.
 Given the positive hyperparameters $\gamma$ and $\alpha$, this loss is defined as:
 -->
 
-Trong thí nghiệm ở phần này, ta sử dụng hàm mất mát entropy chéo để dự đoán danh mục.
-Còn giờ, giả sử rằng xác suất dự đoán được đúng danh mục $j$ là $p_j$ và mất mát entropy chéo là $-\log p_j$.
+Trong thí nghiệm ở phần này, ta sử dụng hàm mất mát entropy chéo để dự đoán lớp.
+Còn giờ, giả sử rằng xác suất dự đoán được đúng lớp $j$ là $p_j$ và mất mát entropy chéo là $-\log p_j$.
 Ta cũng có thể sử dụng mất mát tiêu điểm (*focal loss*) :cite:`Lin.Goyal.Girshick.ea.2017`.
 Cho siêu tham số $\gamma$ and $\alpha$ dương, mất mát này được định nghĩa như sau:
 
@@ -764,7 +764,7 @@ $$ - \alpha (1-p_j)^{\gamma} \log p_j.$$
 As you can see, by increasing $\gamma$, we can effectively reduce the loss when the probability of predicting the correct category is high.
 -->
 
-Như bạn có thể thấy, bằng cách tăng $\gamma$, ta có thể giảm mất mát đi một cách hiệu quả khi xác suất dự đoán đúng danh mục là lớn.
+Như bạn có thể thấy, bằng cách tăng $\gamma$, ta có thể giảm mất mát đi một cách hiệu quả khi xác suất dự đoán đúng lớp là lớn.
 
 
 
@@ -797,10 +797,10 @@ To do this, we can set the `MultiBoxTarget` function's `negative_mining_ratio` p
 -->
 
 1. Khi một vật thể có kích thước khá lớn so với ảnh, mô hình thường chấp nhận kích thước ảnh đầu vào lớn hơn.
-2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn danh mục cho khung neo.
-Ta có thể phân tích mẫu các khung neo âm để cân bằng các danh mục trong dữ liệu tốt hơn.
+2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn lớp cho khung neo.
+Ta có thể phân tích mẫu các khung neo âm để cân bằng các lớp trong dữ liệu tốt hơn.
 Để thực hiện điều này, ta có thể đặt tham số `negative_mining_ratio` của hàm `MultiBoxTarget`.
-3. Gán các trọng số khác cho các siêu tham số của mất mát của danh mục khung neo và mất mát của độ dời khung neo dương trong hàm mất mát.
+3. Gán các trọng số khác cho các siêu tham số của mất mát của lớp khung neo và mất mát của độ dời khung neo dương trong hàm mất mát.
 4. Tham khảo bài báo SSD. Phương pháp nào có thể được sử dụng để đánh giá giá trị precision của các mô hình phát hiện vật thể :cite:`Liu.Anguelov.Erhan.ea.2016`?
 
 
