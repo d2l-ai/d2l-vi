@@ -472,7 +472,7 @@ There is 1 category in the Pikachu dataset.
 After defining the module, we need to initialize the model parameters and define the optimization algorithm.
 -->
 
-Có 1 danh mục trong tập dữ liệu Pikachu.
+Có 1 lớp trong tập dữ liệu Pikachu.
 Sau khi định nghĩa mô-đun, ta cần khởi tạo các tham số của mô hình và định nghĩa thuật toán tối ưu.
 
 
@@ -502,14 +502,14 @@ The mask variable `bbox_masks` removes negative anchor boxes and padding anchor 
 Finally, we add the anchor box category and offset losses to find the final loss function for the model.
 -->
 
-Phát hiện vật thể đưa ra hai loại mất mát. Đầu tiên là mất mát của danh mục khung neo.
+Phát hiện vật thể đưa ra hai loại mất mát. Đầu tiên là mất mát của lớp khung neo.
 Đối với mất mát này, ta hoàn toàn có thể sử dụng lại hàm mất mát entropy chéo mà ta đã sử dụng trong phân loại ảnh.
 Loại mất mát thứ hai là mất mát của độ dời khung neo dương.
 Dự đoán độ dời là một bài toán chuẩn hoá.
 Tuy nhiên, ở đây ta không sử dụng hàm mất mát bình phương đã được giới thiệu từ trước.
-Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối sai phân của giá trị dự đoán và giá trị chuẩn.
+Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối sai phân của giá trị dự đoán và giá trị nhãn gốc.
 Biến mặt nạ `bbox_masks` loại bỏ các khung neo âm và khung neo đệm khỏi phép tính mất mát.
-Cuối cùng, ta thêm mất mát danh mục và độ dời của khung neo vào hàm mất mát cuối của mô hình.
+Cuối cùng, ta thêm mất mát lớp và độ dời của khung neo vào hàm mất mát cuối của mô hình.
 
 
 
