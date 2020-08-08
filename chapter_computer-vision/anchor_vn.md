@@ -479,7 +479,7 @@ A commonly used method is called non-maximum suppression (NMS).
 Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán danh mục cho đối tượng và độ dời của từng khung neo đấy.
 Tiếp theo, ta thu được những khung chứa dự đoán dựa trên các khung neo và độ dời dự đoán của chúng.
 Khi tồn tại nhiều khung neo, thì nhiều khung chứa dự đoán tương tự có thể được xuất ra cho chùng một đối tượng mục tiêu.
-Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán tương tự nhau.
+Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán giống nhau.
 Một phương pháp thường được sử dụng cho việc này thường được gọi là non-maximum (NMS).
 
 
