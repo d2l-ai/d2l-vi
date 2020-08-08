@@ -497,7 +497,7 @@ At this point, $L$ retains the prediction bounding box with the highest confiden
 
 Hãy cùng xem qua cách NMS hoạt động.
 Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng danh mục.
-Giả sử rằng xác suất dự đoán lớn nhất đạt $p$, thì danh mục đối tượng tương ứng với xác suất này là danh mục dự đoán $B$.
+Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
 Ta cũng cần đề cập đến $p$ như là một mức độ tin cậy cho khung chứa (bounding box) $B$.
 Trên cùng một bức ảnh, ta sắp xếp lại các khung chứa dự đoán (prediction bounding box) kèm với các danh mục dự đoán dựa vào mức độ tin cậy được sắp xếp theo thứ tự giảm dần và từ đó có được danh sách $L$.
 Chọn ra khung chứa dự đoán $B_1$ có mức độ tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác khi các khung chứa ấy có hệ số IoU so với khung chứa $B_1$ lớn hơn một ngưỡng nhất định từ $L$.
