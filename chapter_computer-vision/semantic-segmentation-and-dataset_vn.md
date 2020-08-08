@@ -361,14 +361,14 @@ for X, Y in train_iter:
 ### Putting All Things Together
 -->
 
-### *dịch tiêu đề phía trên*
+### Tổng kết Tất cả các Thao tác
 
 
 <!--
 Finally, we define a function `load_data_voc` that  downloads and loads this dataset, and then returns the data iterators.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta định nghĩa hàm `load_data_voc` để tải xuống và nạp tập dữ liệu vào, sau đó trả về các iterator dữ liệu.
 
 
 ```{.python .input  n=12}
@@ -397,7 +397,9 @@ def load_data_voc(batch_size, crop_size):
 * Because the input images and labels in semantic segmentation have a one-to-one correspondence at the pixel level, we randomly crop them to a fixed size, rather than scaling them.
 -->
 
-*dịch đoạn phía trên*
+* Phân vùng theo ngữ nghĩa tập trung vào cách mà ảnh có thể được phân vùng thành các vùng với lớp ngữ nghĩa khác nhau.
+* Trong lĩnh vực phân vùng ảnh theo ngữ nghĩa, tập dữ liệu Pascal VOC2012 là một tập dữ liệu quan trọng.
+* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có quan hệ một - một ở cấp độ điểm ảnh, ta cắt chúng ngẫu nhiên theo kích thước cố định thay vì thay đổi tỉ lệ của chúng.
 
 
 ## Bài tập
@@ -408,7 +410,8 @@ Recall the content we covered in :numref:`sec_image_augmentation`.
 Which of the image augmentation methods used in image classification would be hard to use in semantic segmentation?
 -->
 
-*dịch đoạn phía trên*
+Xem lại nội dung chúng tôi đã đưa ra trong :numref:`sec_image_augmentation`.
+Phương pháp tăng cường ảnh nào được sử dụng trong phân loại ảnh mà khó có thể sử dụng được trong phân vùng ảnh theo ngữ nghĩa?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -440,6 +443,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 
