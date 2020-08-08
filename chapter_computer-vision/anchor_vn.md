@@ -425,7 +425,10 @@ We add example dimensions to the anchor boxes and ground-truth bounding boxes an
 with a shape of (batch size, number of categories including background, number of anchor boxes) by using the `expand_dims` function.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể gán nhãn lớp và độ dời cho các khung neo này bằng cách sử dụng hàm `multibox_target`.
+Hàm này đặt lớp nền bằng 0 và tăng chỉ số lên 1 với mỗi lớp mục tiêu (1 là chó và 2 là mèo).
+Ta thêm chiều batch vào các tensor chứa khung neo và khung chứa nhãn gốc ở ví dụ trên và khởi tạo kết quả dự đoán ngẫu nhiên
+với kích thước (kích thước batch, số lớp tính cả nền, số khung neo) bằng cách sử dụng hàm `expand_dims`.
 
 
 
@@ -442,7 +445,8 @@ There are three items in the returned result, all of which are in the tensor for
 The third item is represented by the category labeled for the anchor box.
 -->
 
-*dịch đoạn phía trên*
+Có ba phần tử trong kết quả trả về, tất cả đều theo định dạng tensor.
+Phần tử thứ ba biểu diễn các lớp được gán nhãn cho khung neo.
 
 
 
@@ -462,7 +466,14 @@ the category of the ground-truth bounding box with the largest IoU with anchor b
 the category of the ground-truth bounding box with the largest IoU with anchor box $A_3$ is cat, but the IoU is smaller than the threshold, so the category is labeled as background.
 -->
 
-*dịch đoạn phía trên*
+Ta phân tích các danh mục được gán nhãn này dựa theo vị trí của khung neo và khung chứa nhãn gốc trong ảnh.
+Đầu tiên, trong tất cả các cặp "khung neo - khung chứa nhãn gốc", giá trị IoU của khung neo $A_4$ đối với khung chứa nhãn gốc mèo là lớn nhất, do đó danh mục của khung neo $A_4$ được gán nhãn là mèo.
+Nếu ta không xét khung neo $A_4$ hoặc khung chứa nhãn gốc mèo, trong các cặp "khung neo - khung chứa nhãn gốc" còn lại, 
+cặp với giá trị IoU lớn nhất là khung neo $A_1$ và khung chứa nhãn gốc chó, do đó danh mục của khung neo $A_1$ được gán nhãn là chó.
+Tiếp theo ta xét ba khung neo còn lại chưa được gán nhãn.
+Danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_0$ là chó, tuy nhiên giá trị IoU này lại nhỏ hơn mức ngưỡng (mặc định là 0.5), do đó khung neo này được gán nhãn là nền;
+danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_2$ là mèo và giá trị IoU này lớn hơn mức ngưỡng, do đó khung neo này được gán nhãn là mèo;
+danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_3$ là mèo, tuy nhiên giá trị IoU này lại nhỏ hơn mức ngưỡng, do đó khung neo này được gán nhãn là nền.
 
 
 <!--
@@ -472,7 +483,10 @@ Because we do not care about background detection, offsets of the negative class
 By multiplying by element, the 0 in the mask variable can filter out negative class offsets before calculating target function.
 -->
 
-*dịch đoạn phía trên*
+Phần tử thứ hai trong giá trị trả về là một biến mặt nạ (*mask variable*), với kích thước (kích thước batch, số khung neo nhân bốn).
+Các phần tử trong biến mặt nạ tương ứng một - một với bốn giá trị độ dời của mỗi khung neo.
+Do ta không cần quan tâm đến việc nhận diện nền nên độ dời thuộc lớp âm không ảnh hướng đến hàm mục tiêu.
+Qua phép nhân theo từng phần tử, các giá trị 0 trong biến mặt nạ có thể lọc ra các độ dời thuộc lớp âm trước khi tính hàm mục tiêu.
 
 
 
@@ -486,7 +500,7 @@ labels[1]
 The first item returned is the four offset values labeled for each anchor box, with the offsets of negative class anchor boxes labeled as 0.
 -->
 
-*dịch đoạn phía trên*
+Phần tử đầu tiên trong giá trị trả về là bốn giá trị độ dời được gán nhãn cho mỗi khung neo, với giá trị độ dời của các khung neo thuộc lớp âm được gán nhãn là 0.
 
 
 
@@ -701,7 +715,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
 * 
