@@ -66,7 +66,7 @@ If an image contains two dogs, instance segmentation will distinguish which pixe
 ## The Pascal VOC2012 Semantic Segmentation Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tập dữ liệu Phân vùng theo Ngữ nghĩa Pascal VOC2012
 
 
 <!--
@@ -74,7 +74,8 @@ In the semantic segmentation field, one important dataset is [Pascal VOC2012](ht
 To better understand this dataset, we must first import the package or module needed for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Trong lĩnh vực phân vùng theo ngữ nghĩa, [Pascal VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/) là một tập dữ liệu quan trọng.
+Để có thể hiểu rõ hơn về tập dữ liệu này, đầu tiên ta cần phải nhập vào gói thư viện hoặc mô-đun cần cho thí nghiệm.
 
 
 ```{.python .input  n=1}
@@ -93,7 +94,9 @@ The archive is about 2 GB, so it will take some time to download.
 After you decompress the archive, the dataset is located in the `../data/VOCdevkit/VOC2012` path.
 -->
 
-*dịch đoạn phía trên*
+Trang gốc có thể không ổn định nên ta tải dữ liệu về từ một trang nhân bản.
+Tệp tin nặng khoảng 2 GB nên thời gian tải sẽ hơi lâu một chút.
+Sau khi giải nén tệp tin, tập dữ liệu được lưu tại đường dẫn `../data/VOCdevkit/VOC2012`.
 
 
 ```{.python .input  n=2}
@@ -114,7 +117,12 @@ In the labels, pixels with the same color belong to the same semantic category.
 The `read_voc_images` function defined below reads all input images and labels to the memory.
 -->
 
-*dịch đoạn phía trên*
+Truy cập `../data/VOCdevkit/VOC2012` để quan sát các phần khác nhau của tập dữ liệu.
+Đường dẫn `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví dụ để huấn luyện và kiểm tra.
+Đường dẫn `JPEGImages` và `SegmentationClass` lần lượt chứa ví dụ các ảnh đầu vào và nhãn.
+Các nhãn này cũng theo mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
+Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng lớp ngữ nghĩa.
+Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào và nhãn vào bộ nhớ.
 
 
 ```{.python .input  n=3}
@@ -143,7 +151,9 @@ In the label images, white represents borders and black represents the backgroun
 Other colors correspond to different categories.
 -->
 
-*dịch đoạn phía trên*
+Ta vẽ năm ảnh đầu vào đầu tiên và nhãn của chúng.
+Trong nhãn các ảnh, màu trắng biểu diễn viền và màu đen biểu diễn nền.
+Các màu khác tương ứng với các lớp khác nhau.
 
 
 ```{.python .input  n=4}
@@ -157,7 +167,7 @@ d2l.show_images(imgs, 2, n);
 Next, we list each RGB color value in the labels and the categories they label.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta liệt kê từng giá trị màu RGB của các nhãn và lớp của nhãn đó.
 
 
 ```{.python .input  n=5}
@@ -181,7 +191,7 @@ VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
 After defining the two constants above, we can easily find the category index for each pixel in the labels.
 -->
 
-*dịch đoạn phía trên*
+Sau khi khai báo hai biến hằng trên, ta có thể dễ dàng tìm chỉ số lớp cho mỗi điểm ảnh trong nhãn.
 
 
 ```{.python .input  n=6}
@@ -206,7 +216,7 @@ def voc_label_indices(colormap, colormap2label):
 For example, in the first example image, the category index for the front part of the airplane is 1 and the index for the background is 0.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, trong ảnh ví dụ đầu tiên, chỉ số lớp của phần đầu của máy bay là một và chỉ số của nền là 0.
 
 
 ```{.python .input  n=7}
@@ -434,7 +444,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
