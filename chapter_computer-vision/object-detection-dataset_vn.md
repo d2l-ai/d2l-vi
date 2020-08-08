@@ -80,7 +80,7 @@ Ta sẽ đọc tập dữ liệu huấn luyện theo thứ tự ngẫu nhiên.
 Vì định dạng của dữ liệu là RecordIO, ta cần có `'train.idx'` để đọc những minibatch ngẫu nhiên.
 Ngoài ra, đối với từng bức ảnh trong tập huấn luyện, ta sẽ cắt xén ngẫu nhiên nhưng vẫn đòi hỏi ảnh bị cắt phải bao phủ được ít nhất 95% mỗi đối tượng.
 Vì việc cắt xén là ngẫu nhiên, yêu cầu này dĩ nhiên không phải lúc nào cũng thoả mãn.
-Ta cho trước số lần tối đa cắt ảnh ngẫu nhiên là 200 lần. Nếu không có lần nào thoả yêu cầu, hình ảnh sẽ không bị cắt xén.
+Ta cho trước số lần cắt ảnh ngẫu nhiên tối đa là 200 lần. Nếu không có lần nào thoả yêu cầu, hình ảnh sẽ được giữ nguyên.
 Để đầu ra được đảm bảo, ta sẽ không cắt ngẫu nhiên các hình ảnh trong tập kiểm tra.
 Ta cũng không cần đọc dữ liệu trong tập kiểm tra theo thứ tự ngẫu nhiên.
 
@@ -208,4 +208,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * 
-
