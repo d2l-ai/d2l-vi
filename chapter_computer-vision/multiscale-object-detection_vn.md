@@ -82,10 +82,10 @@ Ta tạo các khung neo `anchors` có tâm được đặt theo từng đơn v�
 Do các toạ độ $x$ và $y$ trong các khung neo `anchors` đã được chia cho chiều rộng và chiều cao của ánh xạ đặc trưng `fmap`,
 ta sử dụng các giá trị trong khoảng từ 0 đến 1 để biểu diễn vị trí tương đối của các khung neo trong ánh xạ đặc trưng.
 Do tâm điểm của các khung neo `anchors` trùng với tất cả các đơn vị của ánh xạ đặc trưng `fmap`,
-vị trí tương đối trong không gian của tâm điểm của `anchors` trên bất kì ảnh nào bắt buộc phhải tuân theo một phân phối đều.
+vị trí tương đối trong không gian của tâm điểm của `anchors` trên một ảnh bất kì bắt buộc phải tuân theo phân phối đều.
 Cụ thể, khi chiều rộng và chiều cao của một ánh xạ đặc trưng lần lượt được đặt là `fmap_w` và `fmap_h`,
 hàm này sẽ tạo ra mẫu phân phối đều cho các hàng `fmap_h` và các cột `fmap_w` cho các điểm ảnh và sử dụng chúng làm tâm điểm
-để sinh các khung neo với kích thước `s` (ta giả sử rằng độ dài của mảng `s` là 1) và tỉ lệ các cạnh khác (`ratios`).
+để sinh các khung neo với kích thước `s` (ta giả sử rằng độ dài của mảng `s` là 1) và các tỉ lệ khung hình khác nhau (`ratios`).
 
 
 ```{.python .input  n=2}
@@ -108,7 +108,7 @@ We can see that the midpoints of anchor boxes from the 4 rows and 4 columns on t
 
 Đầu tiên ta tập trung vào việc phát hiện các vật thể nhỏ. Để dễ dàng phân biệt trong lúc hiển thị, các khung neo với các tâm điểm khác nhau ở ví dụ này sẽ không chồng chéo lên nhau.
 Ta giả sử rằng kích thước của các khung neo là 0.15 và chiều cao và chiều rộng của ánh xạ đặc trưng đều bằng 4.
-Ta có thể thấy rằng tâm điểm của các khung neo từ 4 hàng và 4 cột trong ảnh tuân theo phân phối đều.
+Ta có thể thấy rằng tâm điểm của các khung neo tuân theo phân phối đều trên 4 hàng và 4 cột trong ảnh .
 
 
 ```{.python .input  n=3}
@@ -151,7 +151,7 @@ Since we have generated anchor boxes of different sizes on multiple scales, we w
 Now we are going to introduce a method based on convolutional neural networks (CNNs).
 -->
 
-Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều tỉ lệ khác nhau.
+Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều quy mô khác nhau.
 Bây giờ chúng tôi sẽ giới thiệu một phương pháp dựa vào mạng nơ-ron tích chập (CNNs).
 
 
@@ -248,5 +248,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * 
-
 
