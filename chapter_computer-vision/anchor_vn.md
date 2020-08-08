@@ -528,7 +528,7 @@ Finally, we construct a predicted probability for each category.
 -->
 
 Tiếp theo, ta sẽ xem xét một ví dụ chi tiết.
-Trước tiên, tạo dựng bốn khung neo.
+Trước tiên ta tạo bốn khung neo.
 Để giản lược, ta giả định rằng độ dời dự kiến đều bằng 0.
 Điều này có nghĩa là các khung chứa dự đoán đều là các khung neo.
 Cuối cùng, ta định ra một xác suất dự đoán cho từng loại đối tượng.
