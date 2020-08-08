@@ -5,7 +5,7 @@
 # Anchor Boxes
 -->
 
-# *dịch tiêu đề phía trên*
+# Khung neo
 :label:`sec_anchor`
 
 
@@ -18,8 +18,11 @@ These bounding boxes are called anchor boxes.
 We will practice object detection based on anchor boxes in the following sections.
 -->
 
-*dịch đoạn phía trên*
-
+Các giải thuật phát hiện vật thể thường lấy mẫu ở rất nhiều vùng của ảnh đầu vào, rồi xác định các vùng đó có chứa đối tượng cần quan tâm hay không, và điều chỉnh các biên của vùng lấy mẫu này để dự đoán một cách chính xác các khung chứa chuẩn của đối tượng.
+Các mô hình khác nhau có thể dùng các phương pháp lấy mẫu vùng ảnh khác nhau.
+Ở đây, chúng tôi sẽ giới thiệu một phương pháp như vậy: nó tạo ra nhiều khung chứa với kích thước và tỉ lệ cạnh khác nhau với tâm trên mọi điểm ảnh.
+Các khung chứa đó được gọi là các khung neo.
+Chúng ta sẽ thực hành phát hiện vật thể dựa trên các khung neo trong các phần sau đây.
 
 <!--
 First, import the packages or modules required for this section.
@@ -27,9 +30,9 @@ Here, we have modified the printing accuracy of NumPy.
 Because printing tensors actually calls the print function of NumPy, the floating-point numbers in tensors printed in this section are more concise.
 -->
 
-*dịch đoạn phía trên*
-
-
+Trước tiên, hãy nhập các gói và mô-đun cần thiết cho mục này.
+Tại đây, ta đã chỉnh sửa độ chính xác khi in số thực của Numpy.
+Do thực chất ta đang gọi hàm in của Numpy khi in các tensor, trong phần này các số thực dấu phẩy động trong tensor được in ra sẽ chính xác hơn.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -40,12 +43,11 @@ np.set_printoptions(2)
 npx.set_np()
 ```
 
-
 <!--
 ## Generating Multiple Anchor Boxes
 -->
 
-## *dịch tiêu đề phía trên*
+## Sinh nhiều khung neo
 
 
 <!--
@@ -55,8 +57,10 @@ Assume the size is $s\in (0, 1]$, the aspect ratio is $r > 0$, and the width and
 When the center position is given, an anchor box with known width and height is determined.
 -->
 
-*dịch đoạn phía trên*
-
+Giả sử ảnh đầu vào có chiều cao $h$ và chiều rộng $w$.
+Ta sinh ra các khung neo với kích thước khác nhau với tâm tại mọi điểm của ảnh.
+Giả sử kích thước này $s\in (0, 1]$, tỉ lệ cạnh là $r >0$, chiều rộng và chiều cao của khung neo lần lượt là $ws\sqrt{r}$ and $hs/\sqrt{r}$.
+Với một vị trí tâm cho trước, ta xác định được khung neo với chiều cao và chiều rộng như trên.
 
 <!--
 Below we set a set of sizes $s_1,\ldots, s_n$ and a set of aspect ratios $r_1,\ldots, r_m$.
@@ -65,8 +69,10 @@ Although these anchor boxes may cover all ground-truth bounding boxes, the compu
 Therefore, we are usually only interested in a combination containing $s_1$ or $r_1$ sizes and aspect ratios, that is:
 -->
 
-*dịch đoạn phía trên*
-
+Dưới đây ta thiết lập một tập kích thước $s_1,\ldots, s_n$ và một tập tỉ lệ khung $r_1,\ldots, r_m$.
+Nếu ta dùng tổ hợp tất cả các kích thước và tỉ lệ khung với mỗi điểm ảnh làm một tâm, ảnh đầu vào sẽ có tổng cộng $whnm$ khung neo.
+Mặc dù các khung chứa chuẩn đối tượng có thể sẽ nằm trong số đó, độ phức tạp tính toán này thường quá cao.
+Do đó, ta thường chỉ chú ý tới tổ hợp chứa $s_1$ kích thước hoặc $r_1$ tỉ lệ khung như sau:
 
 
 $$(s_1, r_1), (s_1, r_2), \ldots, (s_1, r_m), (s_2, r_1), (s_3, r_1), \ldots, (s_n, r_1).$$
@@ -697,7 +703,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
