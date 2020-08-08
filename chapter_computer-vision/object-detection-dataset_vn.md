@@ -76,7 +76,7 @@ We also do not need to read the test dataset in random order.
 
 Chúng ta sẽ đọc tập dữ liệu phát hiện đối tượng bằng cách tạo ra hiện thân `ImageDetIter`.
 Tên biến "Det" (viết tắt cho Detection), đề cập đến việc phát hiện.
-Ta sẽ đọc tập dữ liệu huấn luyện theo thứ tụ ngẫu nhiên.
+Ta sẽ đọc tập dữ liệu huấn luyện theo thứ tự ngẫu nhiên.
 Vì định dạng của dữ liệu là RecordIO, ta cần có `'train.idx'` để đọc những minibatch ngẫu nhiên.
 Ngoài ra, đối với từng bức ảnh trong tập huấn luyện, ta sẽ cắt xén ngẫu nhiên và đòi hỏi ảnh bị cắt phải bao phủ được ít nhất 95% mỗi đối tượng.
 Vì việc cắt xén là ngẫu nhiên, yêu cầu này dĩ nhiên không phải lúc nào cũng thoả mãn.
@@ -208,6 +208,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * 
-
 
 
