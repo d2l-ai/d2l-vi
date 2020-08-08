@@ -513,7 +513,7 @@ At this time, the IoU of any pair of prediction bounding boxes in $L$ is less th
 Finally, output all prediction bounding boxes in the list $L$.
 -->
 
-Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ nhì trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác khi các khung chứa ấy có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
+Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
 Lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được lấy ra để dùng làm chuẩn so sánh.
 Ngay lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
 Cuối cùng, xuất ra mọi khung chứa dự đoán trong danh sách $L$.
