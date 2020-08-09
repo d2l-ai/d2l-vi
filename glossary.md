@@ -125,6 +125,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distributed               | phân tán                        |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
+| downsample        | giảm chiều                  |                                              |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
@@ -495,6 +496,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underflow (numerical)     | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning     | học không giám sát        |                                              |
+| upsample        | tăng chiều                  |                                              |
 
 ## V
 | English                    | Tiếng Việt         | Thảo luận tại                                |
