@@ -5,7 +5,7 @@
 # Region-based CNNs (R-CNNs)
 -->
 
-# *dịch tiêu đề phía trên*
+# CNN dựa trên vùng (R-CNNs)
 
 
 <!--
@@ -15,14 +15,16 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN :cite:`He.Gkioxari.
 Due to space limitations, we will confine our discussion to the designs of these models.
 -->
 
-*dịch đoạn phía trên*
+Các mạng tích chập theo vùng hay các vùng với đặc trưng CNN (R-CNNs) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
+Trong phần này, chúng ta sẽ thảo luận R-CNNs và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
+Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.Dollar.ea.2017`.
 
 
 <!--
 ## R-CNNs
 -->
 
-## *dịch tiêu đề phía trên*
+## R-CNNs
 
 
 <!--
@@ -32,14 +34,16 @@ Afterwards, we use the features of each proposed region to predict their categor
 :numref:`fig_r-cnn` shows an R-CNN model.
 -->
 
-*dịch đoạn phía trên*
-
+Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo là một dạng của phương pháp lựa chọn (_selection method_)) và sau đó gán lớp và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
+Tiếp đến, các mô hình này sử dụng CNN để thực hiện phép truyền xuôi nhằm trích xuất đặc trưng từ mỗi vùng đề xuất.
+Sau đó, ta sử dụng các đặc trưng của mỗi vùng được đề xuất để dự đoán lớp và khung chứa.
+:numref:`fig_r-cnn` mô tả một mô hình R-CNN.
 
 <!--
 ![R-CNN model.](../img/r-cnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/r-cnn.svg)
+![Mô hình R-CNN.](../img/r-cnn.svg)
 :label:`fig_r-cnn`
 
 
@@ -47,7 +51,7 @@ Afterwards, we use the features of each proposed region to predict their categor
 Specifically, R-CNNs are composed of four main parts:
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, R-CNNs có bốn phần chính sau:
 
 
 <!--
@@ -61,8 +65,15 @@ Here, each support vector machine is used to determine whether an example belong
 4. The features and labeled bounding box of each proposed region are combined as an example to train a linear regression model for ground-truth bounding box prediction.
 -->
 
-*dịch đoạn phía trên*
-
+1. Tìm kiếm lựa chọn (_selective search_) được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
+Các vùng đề xuất được lựa chọn chung cho nhiều tỷ lệ và có hình dạng và kích thước khác nhau.
+Lớp và khung chứa gốc cho từng vùng đề xuất được gán nhãn.
+2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
+Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để cho ra các đặc trích xuất cho các vùng đề xuất tương ứng.
+3. Các đặc trưng và lớp nhãn của từng vùng đề xuất được gói thành một mẫu để huấn luyện các máy tựa vector (multiple SVMs) cho 
+phép phân loại vật thể.
+Ở đây, mỗi máy tựa vector được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
+4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính cho phép dự khung chứa gốc. 
 
 <!--
 Although R-CNN models use pre-trained CNNs to effectively extract image features, the main downside is the slow speed.
@@ -70,7 +81,9 @@ As you can imagine, we can select thousands of proposed regions from a single im
 This massive computing load means that R-CNNs are not widely used in actual applications.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù các mô hình R-CNN sử dụng các mạng CNN đã được tiền huấn luyện để trích xuất các đặc trưng ảnh một cách hiệu quả, điểm hạn chế chính yếu đó là tốc độ chậm.
+Ta có thể hình dung, với hàng ngàn vùng đề xuất từ một ảnh, ta cần tới hàng ngàn phép tính truyền xuôi từ mạng CNN để phát hiện vật thể. 
+Phép tính toán cồng kềnh khiến các mô hình R-CNN không được sử dụng rộng rãi trong các ứng dụng thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -358,7 +371,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
