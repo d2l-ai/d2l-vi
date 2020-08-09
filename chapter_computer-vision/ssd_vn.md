@@ -239,6 +239,7 @@ Because $1\times 2+(3-1)+(3-1)=6$, each element in the output feature map has a 
 As you can see, the height and width downsample block enlarges the receptive field of each element in the output feature map.
 -->
 
+
 Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây, giảm chiều cao và chiều rộng 50%. 
 Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
 Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
@@ -262,6 +263,7 @@ def down_sample_blk(num_channels):
 By testing forward computation in the height and width downsample block, we can see that it changes the number of input channels and halves the height and width.
 -->
 
+
 Bằng phép kiểm tra tính toán truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
 
 
@@ -283,6 +285,7 @@ To simplify the computation, we will construct a small base network.
 This network consists of three height and width downsample blocks connected in a series, so it doubles the number of channels at each step.
 When we input an original image with the shape $256\times256$, the base network block outputs a feature map with the shape $32 \times 32$.
 -->
+
 
 Khối mạng cơ sở được sử dụng để trích xuất đặc trưng từ ảnh gốc ban đầu.
 Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ. 
@@ -841,3 +844,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
+
+
