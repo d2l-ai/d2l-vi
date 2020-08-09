@@ -83,6 +83,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computational graph             | đồ thị tính toán         | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | computer vision                 | thị giác máy tính        |                                              |
 | computing (in computer science) | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
+| concatenate        | nối | |
 | conditional distribution        | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | confidence interval             | khoảng tin cậy           |                                              |
 | confidence level                | mức tin cậy              |                                              |
