@@ -379,7 +379,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
