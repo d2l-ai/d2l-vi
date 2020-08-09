@@ -172,7 +172,7 @@ However, after we introduce bounding boxes, the label shape and image augmentati
 
 * Tập dữ liệu Pikachu mà ta tổng hợp có thể được dùng để kiểm tra các mô hình phát hiện đối tượng.
 * Việc đọc dữ liệu để phát hiện đối tượng tương đương với việc phân loại hình ảnh.
-Tuy nhiên, sau khi ta giới thiệu các khung chứa, kích thước nhãn và việc tăng cường ảnh (ví dụ, cắt xén ngẫu nhiên) đã được chỉnh sửa.
+Tuy nhiên, sau khi ta giới thiệu các khung chứa, kích thước nhãn và việc tăng cường ảnh (ví dụ, cắt xén ngẫu nhiên) được chỉnh sửa.
 
 
 ## Bài tập
@@ -209,4 +209,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Đăng Khoa
-
