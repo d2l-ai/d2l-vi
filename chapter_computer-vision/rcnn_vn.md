@@ -80,7 +80,7 @@ This massive computing load means that R-CNNs are not widely used in actual appl
 ## Fast R-CNN
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng Fast R-CNN
 
 
 <!--
@@ -89,15 +89,16 @@ As these regions have a high degree of overlap, independent feature extraction r
 Fast R-CNN improves on the R-CNN by only performing CNN forward computation on the image as a whole.
 -->
 
-*dịch đoạn phía trên*
-
+Điểm nghẽn cổ chai chính yếu về hiệu năng của mô hình R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
+Do các vùng đề xuất này có độ chồng lặp cao, nên việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến khối lượng lớn các phép tính lặp lại.
+Fast R-CNN cải thiện mô hình R-CNN chỉ bằng cách thực hiện tính toán truyền xuôi qua mạng CNN trên toàn bộ ảnh.
 
 
 <!--
 ![Fast R-CNN model.](../img/fast-rcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/fast-rcnn.svg)
+![Mô hình Fast R-CNN.](../img/fast-rcnn.svg)
 :label:`fig_fast_r-cnn`
 
 
@@ -106,7 +107,8 @@ Fast R-CNN improves on the R-CNN by only performing CNN forward computation on t
 It is primary computation steps are described below:
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_fast_r-cnn` mô tả mạng Fast R-CNN.
+Các bước tính toán chính yếu được mô tả như sau:
 
 
 <!--
@@ -123,7 +125,16 @@ During bounding box prediction, the shape of the fully connected layer output is
 This means that we predict the category and bounding box for each proposed region.
 -->
 
-*dịch đoạn phía trên*
+1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh là đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
+Hơn nữa, mạng này được huấn luyện chung cho toàn dữ liệu để cập nhật tham số mô hình.
+Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
+2. Giả sử thuật toán tìm kiếm lựa chọn sinh $n$ vùng đề xuất, mỗi vùng có kích thước khác nhau dẫn đến đầu ra CNN có vùng quan tâm (_RoI_) với kích thước khác nhau.
+Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm RoI (ở đây ta giả sử rằng chiều cao là $h_2$ và chiều rộng là $w_2$).
+Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra CNN và các vùng RoI làm đầu vào và cho ra các đặc trưng ghép nối được trích xuất từ mỗi vùng quan tâm với kích thước $n \times c \times h_2 \times w_2$.
+3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định bởi thiết kế mô hình.
+4. Khi dự đoán lớp, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số các lớp nhãn).
+Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
+Điều này có nghĩa với phép dự đoán lớp nhãn và khung chứa cho từng vùng đề xuất.
 
 
 <!--
@@ -136,7 +147,14 @@ The sub-window height and width must always be integers and the largest element 
 This allows the RoI pooling layer to extract features of the same shape from RoIs of different shapes.
 -->
 
-*dịch đoạn phía trên*
+Tầng gộp RoI trong mạng Fast R-CNN có phần khác với các tầng gộp mà ta đã thảo luận trước đó.
+Trong tầng gộp thông thường, ta thiết lập cửa sổ gộp, giá trị đêm, và sải bước để quyết định kích thước đầu ra.
+Trong tầng gộp RoI, ta có thể trực tiếp định rõ kích thước đầu ra của từng vùng, ví dụ chiều cao và chiều rộng của từng vùng sẽ là $h_2, w_2$.
+Giả sử rằng chiều cao và chiều rộng của cửa sổ RoI là $h$ và $w$, cửa sổ này được chia thành mạng (_grid_) các cửa sổ phụ (_sub-window_) với kích thước $h_2 \times w_2$.
+Cửa sổ phụ có kích thước là $(h/h_2) \times (w/w_2)$.
+Chiều cao và chiều rộng của cửa sổ phụ phải luôn là số nguyên và thành phần lớn nhất được sử dụng là đầu ra cho cửa sổ phụ đó.
+Điều này cho phép tầng gộp RoI trích xuất đặc trưng có cùng kích thước từ các vùng RoI có kích thước khác nhau.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -361,7 +379,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * 
