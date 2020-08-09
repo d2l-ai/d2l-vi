@@ -321,7 +321,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (in neural networks)         | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | noise-injection                   | thêm nhiễu                        |                                                                                            |
-| non-maximum suppression | non-maximum suppression | [https://git.io/JJXrQ](https://git.io/JJXrQ) |
+| non-maximum suppression | triệt phi cực đại | [https://git.io/JJXrQ](https://git.io/JJXrQ) |
 | non-squashing activation function | hàm kích hoạt không ép            |                                                                                            |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
 | nonparametric                     | phi tham số                       |                                                                                            |
