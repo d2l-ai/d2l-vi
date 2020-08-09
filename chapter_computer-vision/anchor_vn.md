@@ -526,7 +526,7 @@ labels[0]
 ## Bounding Boxes for Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Khung chứa khi Dự đoán
 
 
 <!--
@@ -537,7 +537,11 @@ To simplify the results, we can remove similar prediction bounding boxes.
 A commonly used method is called non-maximum suppression (NMS).
 -->
 
-*dịch đoạn phía trên*
+Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán lớp và độ dời của từng khung neo này.
+Tiếp theo, ta thu được những khung chứa dự đoán dựa trên các khung neo và độ dời dự đoán của chúng.
+Khi tồn tại nhiều khung neo, thì nhiều khung chứa dự đoán tương tự nhau có thể được tạo ra cho cùng một mục tiêu.
+Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán giống nhau.
+Một phương pháp thường được sử dụng cho việc này thường được gọi là triệt phi cực đại (*non-maximum suppression - NMS*).
 
 
 <!--
@@ -552,7 +556,14 @@ The threshold here is a preset hyperparameter.
 At this point, $L$ retains the prediction bounding box with the highest confidence level and removes other prediction bounding boxes similar to it.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xem qua cách NMS hoạt động.
+Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng lớp.
+Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
+Ta gọi $p$ là độ tin cậy (*confidence level*) của khung chứa dự đoán $B$.
+Trên cùng một bức ảnh, ta sắp xếp các khung chứa dự đoán không phải là nền theo thứ tự giảm dần độ tin cậy, thu được danh sách $L$.
+Ta sẽ chọn ra khung chứa dự đoán $B_1$ có mức tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" có hệ số IoU với khung chứa $B_1$ lớn hơn một ngưỡng nhất định khỏi danh sách $L$.
+Mức ngưỡng này là một siêu tham số đã được định trước.
+Tại thời điểm này, $L$ chỉ giữ lại khung chứa dự đoán có mức tin cậy cao nhất sau khi đã loại bỏ những khung chứa giống nó.
 
 
 <!--
@@ -563,7 +574,10 @@ At this time, the IoU of any pair of prediction bounding boxes in $L$ is less th
 Finally, output all prediction bounding boxes in the list $L$.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
+Ta sẽ lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được sử dụng làm chuẩn so sánh.
+Lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
+Cuối cùng, ta sẽ xuất ra mọi khung chứa dự đoán trong danh sách $L$.
 
 
 <!--
@@ -574,7 +588,11 @@ This means that the prediction bounding boxes are anchor boxes.
 Finally, we construct a predicted probability for each category.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xem xét một ví dụ chi tiết.
+Trước tiên ta tạo bốn khung neo.
+Để đơn giản hóa vấn đề, ta giả định rằng độ dời dự đoán đều bằng 0.
+Điều này có nghĩa là các khung chứa dự đoán đều là các khung neo.
+Cuối cùng, ta định ra một xác suất dự đoán cho từng lớp.
 
 
 
@@ -727,7 +745,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 
 <!-- Phần 7 -->
-* 
+* Phạm Đăng Khoa
+* Phạm Minh Đức
+* Nguyễn Văn Cường
 
 <!-- Phần 8 -->
 * 
