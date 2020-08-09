@@ -437,7 +437,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | speech recognition                | nhận dạng giọng nói      |                                              |
 | squashing function                | hàm ép                   | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | standard deviation                | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| standardize                       | chuẩn hóa                |                                              |
+| standardize                       | chuẩn tắc hóa                |                                              |
 | state-of-the-art                  | tân tiến nhất            |                                              |
 | stationary point                  | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
 | statistical inference             | suy luận thống kê        |                                              |
