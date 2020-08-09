@@ -5,7 +5,7 @@
 # Multiscale Object Detection
 -->
 
-# Phát hiện vật thể nhiều tỉ lệ
+# Phát hiện vật thể đa tỉ lệ
 
 
 <!--
@@ -241,5 +241,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * 
-
 
