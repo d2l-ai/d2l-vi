@@ -140,7 +140,7 @@ net.add(nn.Conv2D(num_classes, kernel_size=1),
 ## Initializing the Transposed Convolution Layer
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tầng Tích chập Chuyển vị
 
 
 <!--
@@ -156,8 +156,16 @@ Upsampling by bilinear interpolation can be implemented by transposed convolutio
 Due to space limitations, we only give the implementation of the `bilinear_kernel` function and will not discuss the principles of the algorithm.
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta đã biết tầng tích chập chuyển vị có thể phóng đại ánh xạ đặc trưng.
+Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, được biết đến là phép tăng chiều. 
+Có rất nhiều phương pháp tăng chiều, và một phương pháp phổ biến đó là ngoại suy song tuyến tính.
+Nói một cách đơn giản, để lấy điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$, đầu tiên toạ độ này sẽ được ánh xạ tới toạ độ $(x', y')$ trong ảnh đầu vào.
+Điều này có thể được thực hiện dựa trên tỷ lệ kích thước của ba đầu vào tới kích thước của đầu ra.
+Giá trị được ánh xạ $x'$ và $y'$ thường là các số thực.
+Sau đó, ta tìm bốn điểm ảnh gần toạ độ $(x', y')$ nhất trên ảnh đầu vào.
+Cuối cùng, các điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$ sẽ được tính toán dựa trên bốn điểm ảnh trên ảnh đầu vào vì khoảng cách tương đối tới $(x', y')$.
+Phép tăng chiều bằng ngoại suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị sử dụng hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
+Do giới hạn về số trang, ta chỉ lập trình hàm `bilinear_kernel` và sẽ không thảo luận các nguyên tắc cơ bản của thuật toán.
 
 
 ```{.python .input  n=9}
@@ -182,8 +190,7 @@ Now, we will experiment with bilinear interpolation upsampling implemented by tr
 Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta sẽ thí nghiệm với phép tăng chiều sử dụng phép ngoại suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào với thừa số bằng 2 và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
 
 
 ```{.python .input  n=11}
@@ -197,8 +204,8 @@ Read the image `X` and record the result of upsampling as `Y`.
 In order to print the image, we need to adjust the position of the channel dimension.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng chiều là `Y`.
+Để in ảnh, ta cần điều chỉnh vị trí của chiều kênh.
 
 
 ```{.python .input}
@@ -214,8 +221,8 @@ As you can see, the transposed convolution layer magnifies both the height and w
 It is worth mentioning that, besides to the difference in coordinate scale, the image magnified by bilinear interpolation and original image printed in :numref:`sec_bbox` look the same.
 -->
 
-*dịch đoạn phía trên*
-
+Như ta có thể thấy, tầng tích chập chuyển vị phóng đại cả chiều cao và chiều rộng của ảnh với thừa số bằng 2.
+Điểm đáng nói là bên cạnh điểm khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép ngoại suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
 
 ```{.python .input}
 d2l.set_figsize()
@@ -231,7 +238,7 @@ In a fully convolutional network, we initialize the transposed convolution layer
 For a $1\times 1$ convolution layer, we use Xavier for randomly initialization.
 -->
 
-*dịch đoạn phía trên*
+Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép tăng chiều ngoại suy song tuyến tính. Với tầng tích chập $1\times 1$, ta sử dụng Xavier để khởi tạo ngẫu nhiên.
 
 
 ```{.python .input  n=12}
@@ -420,7 +427,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * 
