@@ -1,5 +1,3 @@
-<!-- =================== Bắt đầu dịch Phần 1 ================================-->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU ===================================-->
 <!--
 # Installation
 -->
@@ -14,7 +12,7 @@ Jupyter notebooks, the relevant libraries,
 and the code needed to run the book itself.
 -->
 
-Để sẵn sàng cho việc thực hành, bạn cần một môi trường để chạy Python, Jupyter notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
+Để sẵn sàng cho việc thực hành, bạn cần một môi trường để chạy Python, Jupyter Notebook, các thư viện liên quan và mã nguồn cần thiết cho những bài tập trong cuốn sách này.
 
 <!--
 ## Installing Miniconda
@@ -97,7 +95,7 @@ Một cách khác, nếu bạn đã cài đặt sẵn `unzip` (nếu chưa, hãy
 
 ```bash
 mkdir d2l-en && cd d2l-en
-curl https://d2l.ai/d2l-en-0.7.0.zip -o d2l-en.zip
+curl https://d2l.ai/d2l-en.zip -o d2l-en.zip
 unzip d2l-en.zip && rm d2l-en.zip
 ```
 
@@ -116,47 +114,65 @@ conda install python=3.7 pip -y
 ```
 
 
-<!-- =================== Kết thúc dịch Phần 1 ================================-->
-
-<!-- =================== Bắt đầu dịch Phần 2 ================================-->
-
 <!--
-## Installing MXNet and the `d2l` Package
+## Installing the Framework and the `d2l` Package
 -->
 
-## Cài đặt MXNet và gói thư viện `d2l`
+## Cài đặt Framework và Gói thư viện `d2l`
 
 <!--
-Before installing MXNet, please first check
+:begin_tab:`mxnet,pytorch`
+Before installing the deep learning framework, please first check
 whether or not you have proper GPUs on your machine
 (the GPUs that power the display on a standard laptop
 do not count for our purposes).
 If you are installing on a GPU server,
-proceed to :ref:`sec_gpu` for instructions
-to install a GPU-supported MXNet.
+proceed to :ref:`subsec_gpu` for instructions
+to install a GPU-supported version.
 -->
 
-Trước khi cài đặt MXNet, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không (không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
-Nếu bạn đang cài đặt trên một máy chủ GPU, hãy tiến hành theo :ref:`sec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
+:begin_tab:`mxnet,pytorch`
+Trước khi cài đặt framework học sâu, hãy kiểm tra thiết bị của bạn xem có GPU (card màn hình) đúng chuẩn hay không 
+(không phải những GPU tích hợp hỗ trợ hiển thị trên các máy tính xách tay thông thường).
+Nếu bạn đang cài đặt trên một máy chủ GPU, hãy tiến hành theo :ref:`subsec_gpu` để cài đặt phiên bản MXNet có hỗ trợ GPU.
 
 <!--
 Otherwise, you can install the CPU version.
-That will be more than enough horsepower to get you
-through the first few chapters but you will want
-to access GPUs before running larger models.
+That will be more than enough horsepower to get you through the first few chapters but you will want to access GPUs before running larger models.
+:end_tab:
 -->
 
 Ngược lại, bạn có thể cài đặt phiên bản chỉ sử dụng CPU.
-Phiên bản này cũng thừa đủ để có thể tiến hành các chương đầu tiên nhưng bạn sẽ cần sử dụng GPU để có thể chạy những mô hình lớn hơn.
+Phiên bản này cũng đủ để có thể tiến hành các chương đầu tiên nhưng bạn sẽ cần sử dụng GPU để có thể chạy những mô hình lớn hơn.
+:end_tab:
+
+
+:begin_tab:`mxnet`
 
 ```bash
-# For Windows users
-pip install mxnet==1.6.0b20190926
-
-# For Linux and macOS users
-pip install mxnet==1.6.0b20191122
+pip install mxnet==1.6.0
 ```
 
+:end_tab:
+
+
+:begin_tab:`pytorch`
+
+```bash
+pip install torch==1.5.1 torchvision -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+:end_tab:
+
+
+:begin_tab:`tensorflow`
+You can install TensorFlow with both CPU and GPU support via the following:
+
+```bash
+pip install tensorflow==2.2.0 tensorflow-probability==0.10.0
+```
+
+:end_tab:
 
 <!--
 We also install the `d2l` package that encapsulates frequently used
@@ -165,26 +181,27 @@ functions and classes in this book.
 
 Ta cũng sẽ cài đặt gói thư viện `d2l` mà bao gồm các hàm và lớp thường xuyên được sử dụng trong cuốn sách này.
 
-```bash
-pip install d2l==0.11.0
-```
 
+```bash
+# -U: Upgrade all packages to the newest available version
+pip install -U d2l
+```
 
 <!--
 Once they are installed, we now open the Jupyter notebook by running:
 -->
 
-Một khi đã cài đặt xong, ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
+Khi đã cài đặt xong, ta mở notebook Jupyter lên bằng cách chạy lệnh sau:
 
 ```bash
 jupyter notebook
 ```
 
-
 <!--
-At this point, you can open http://localhost:8888 (it usually opens automatically) in your Web browser. Then we can run the code for each section of the book.
+At this point, you can open http://localhost:8888 (it usually opens automatically) in your Web browser.
+Then we can run the code for each section of the book.
 Please always execute `conda activate d2l` to activate the runtime environment
-before running the code of the book or updating MXNet or the `d2l` package.
+before running the code of the book or updating the deep learning framework or the `d2l` package.
 To exit the environment, run `conda deactivate`.
 -->
 
@@ -193,101 +210,113 @@ Sau đó ta đã có thể chạy mã nguồn trong từng phần của cuốn s
 Lưu ý là luôn luôn thực thi lệnh `conda activate d2l` để kích hoạt môi trường trước khi chạy mã nguồn trong sách cũng như khi cập nhật MXNet hoặc gói thư viện `d2l`.
 Thực thi lệnh `conda deactivate` để thoát khỏi môi trường.
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
-
-<!--
-## Upgrading to a New Version
--->
-
-## Nâng cấp lên Phiên bản Mới
-
-<!--
-Both this book and MXNet are keeping improving. Please check a new version from time to time.
--->
-
-Cả cuốn sách này và MXNet đều đang tiếp tục được cải thiện.
-Thỉnh thoảng, hãy kiểm tra xem đã có phiên bản mới hay chưa.
-
-<!--
-1. The URL https://d2l.ai/d2l-en.zip always points to the latest contents.
-2. Please upgrade the `d2l` package by `pip install d2l --upgrade`.
-3. For the CPU version, MXNet can be upgraded by `pip install -U --pre mxnet`.
--->
-
-1. Đường dẫn https://d2l.ai/d2l-en.zip luôn luôn trỏ đến phiên bản mới nhất.
-2. Để cập nhật gói thư viện `d2l` hãy sử dụng lệnh `pip install d2l --upgrade`.
-3. Đối với phiên bản CPU, MXNet có thể được cập nhật bằng lệnh `pip install -U --pre mxnet`.
-
-<!-- =================== Kết thúc dịch Phần 2 ================================-->
-
-<!-- =================== Bắt đầu dịch Phần 3 ================================-->
-
 <!--
 ## GPU Support
 -->
 
 ## Hỗ trợ GPU
-:label:`sec_gpu`
+:label:`subsec_gpu`
 
 <!--
-By default, MXNet is installed without GPU support
+:begin_tab:`mxnet,pytorch`
+By default, the deep learning framework is installed without GPU support
 to ensure that it will run on any computer (including most laptops).
 Part of this book requires or recommends running with GPU.
 If your computer has NVIDIA graphics cards and has installed [CUDA](https://developer.nvidia.com/cuda-downloads),
-then you should install a GPU-enabled MXNet.
+then you should install a GPU-enabled version.
 If you have installed the CPU-only version,
 you may need to remove it first by running:
+:end_tab:
 -->
 
-Phiên bản MXNet mặc định được cài đặt không hỗ trợ GPU để đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
+:begin_tab:`mxnet,pytorch`
+Mặc định framework học sâu được cài đặt không hỗ trợ GPU để đảm bảo có thể chạy trên bất kỳ máy tính nào (bao gồm phần lớn các máy tính xách tay).
 Một phần của cuốn sách này yêu cầu hoặc khuyến khích chạy trên GPU.
 Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads), thì bạn nên cài đặt bản MXNet có hỗ trợ GPU.
 Trong trường hợp bạn đã cài đặt phiên bản dành riêng cho CPU, bạn có thể cần xoá nó trước bằng cách chạy lệnh:
+:end_tab:
+
+<!--
+:begin_tab:`tensorflow`
+By default, TensorFlow is installed with GPU support.
+If your computer has NVIDIA graphics cards and has installed [CUDA](https://developer.nvidia.com/cuda-downloads),
+then you are all set.
+:end_tab:
+-->
+
+:begin_tab:`tensorflow`
+Mặc định, TensorFlow được cài đặt có sự hỗ trợ của GPU.
+Nếu máy tính của bạn có card đồ hoạ của NVIDIA và đã cài đặt [CUDA](https://developer.nvidia.com/cuda-downloads), vậy thì thiết lập của bạn đã hoàn tất.
+:end_tab:
+
+
+:begin_tab:`mxnet`
 
 ```bash
 pip uninstall mxnet
 ```
 
+:end_tab:
+
+
+:begin_tab:`pytorch`
+
+```bash
+pip uninstall torch
+```
+
+:end_tab:
+
 
 <!--
+:begin_tab:`mxnet,pytorch`
 Then we need to find the CUDA version you installed.
 You may check it through `nvcc --version` or `cat /usr/local/cuda/version.txt`.
 Assume that you have installed CUDA 10.1,
-then you can install MXNet
-with the following command:
+then you can install with the following command:
+:end_tab:
 -->
 
+:begin_tab:`mxnet,pytorch`
 Sau đó, ta cần tìm phiên bản CUDA mà bạn đã cài đặt.
 Bạn có thể kiểm tra thông qua lệnh `nvcc --version` hoặc `cat /usr/local/cuda/version.txt`.
-Giả sử, bạn đã cài đặt CUDA 10.1, bạn có thể cài đặt MXNet với lệnh sau:
+Giả sử, bạn đã cài đặt CUDA 10.1, bạn có thể cài đặt với lệnh sau:
+:end_tab:
+
+
+:begin_tab:`mxnet`
 
 ```bash
-# Dành cho người dùng Windows
+# For Windows users
 pip install mxnet-cu101==1.6.0b20190926
-
-# Dành cho người dùng Linux và macOS
-pip install mxnet-cu101==1.6.0b20191122
+# For Linux and macOS users
+pip install mxnet-cu101==1.6.0
 ```
 
+:end_tab:
 
-<!--
-Like the CPU version, the GPU-enabled MXNet can be upgraded by
-`pip install -U --pre mxnet-cu101`.
-You may change the last digits according to your CUDA version,
-e.g., `cu100` for CUDA 10.0 and `cu90` for CUDA 9.0.
-You can find all available MXNet versions via `pip search mxnet`.
--->
 
-Tương tự phiên bản CPU, MXNet hỗ trợ GPU có thể được nâng cấp bằng lệnh `pip install -U --pre mxnet-cu101`.
-Bạn có thể thay đổi các chữ số cuối theo phiên bản CUDA của bạn, ví dụ, `cu100` cho CUDA phiên bản 10.0 và `cu90` cho CUDA phiên bản 9.0.
-Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông qua lệnh `pip search mxnet`.
+:begin_tab:`pytorch`
+
+```bash
+pip install torch==1.5.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+:end_tab:
 
 
 <!--
-## Exercises
+:begin_tab:`mxnet,pytorch`
+You may change the last digits according to your CUDA version, e.g., `cu100` for
+CUDA 10.0 and `cu90` for CUDA 9.0.
+:end_tab:
 -->
+
+:begin_tab:`mxnet,pytorch`
+Bạn có thể thay đổi những chữ số cuối theo phiên bản CUDA của mình.
+Ví dụ, `cu100` cho phiên bản CUDA 10.0 và `cu90` cho phiên bản CUDA 9.0.
+:end_tab:
+
 
 ## Bài tập
 
@@ -298,37 +327,16 @@ Bạn có thể tìm thấy tất cả các phiên bản MXNet có sẵn thông 
 1. Tải xuống mã nguồn dành cho cuốn sách và cài đặt môi trường chạy.
 
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/2315)
--->
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2315)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/23), [PyTorch](https://discuss.d2l.ai/t/24), [TensorFlow](https://discuss.d2l.ai/t/436)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-<!--
-![](../img/qr_install.svg)
--->
 
-<!-- =================== Kết thúc dịch Phần 3 ================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên.
 
-Lưu ý:
-* Mỗi tên chỉ xuất hiện một lần: Nếu bạn đã dịch hoặc review phần 1 của trang này
-thì không cần điền vào các phần sau nữa.
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
--->
-
-<!-- Phần 1 -->
 * Phạm Hồng Vinh
-* Sâm Thế Hải
+* Sẩm Thế Hải
 * Nguyễn Cảnh Thướng
 * Lê Khắc Hồng Phúc
 * Đoàn Võ Duy Thanh

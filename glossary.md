@@ -22,6 +22,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance               | chất lượng thuật toán     |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
+| anchor box                            | khung neo                 |                                              |
 | argument (in programming)             | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
@@ -82,8 +83,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | computational graph             | đồ thị tính toán         | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | computer vision                 | thị giác máy tính        |                                              |
 | computing (in computer science) | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
+| concatenate        | nối | |
 | conditional distribution        | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | confidence interval             | khoảng tin cậy           |                                              |
+| confidence level                | mức tin cậy              |                                              |
 | confusion matrix                | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                       | ràng buộc                |                                              |
 | convex combination              | tổ hợp lồi               |                                              |
@@ -164,6 +167,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | feature extraction         | trích xuất đặc trưng |                                              |
 | feature map (in CNN)       | ánh xạ đặc trưng     |                                              |
 | feed-forward network (FNN) | mạng truyền xuôi     |                                              |
+| fine-tuning                | tinh chỉnh           |                                              |
 | filter (in CNN)            | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | fit                        | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
 | first principle            | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
@@ -212,21 +216,24 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | hypothesis test         | kiểm định giả thuyết     | [https://git.io/Jvoja](https://git.io/Jvoja)                                               |
 
 ## I
-| English                            | Tiếng Việt                   | Thảo luận tại                                |
-|------------------------------------|------------------------------|----------------------------------------------|
-| ill-conditioned                    | (có) điều kiện xấu           |                                              |
-| implement                          | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
-| implementation                     | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
-| implicit feedback                  | phản hồi gián tiếp           |                                              |
-| import (module, package)           | nhập (mô-đun, gói thư viện)  | [https://git.io/JvQxK](https://git.io/JvQxK) |
-| imputation (in data preprocessing) | quy buộc                     | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
-| independence assumption            | giả định độc lập             | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| indicator variable                 | biến chỉ định                | [https://git.io/JvQha](https://git.io/JvQha) |
-| inductive bias                     | thiên kiến quy nạp           |                                              |
-| initializer                        | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
-| internal covariate shift           | dịch chuyển hiệp biến nội bộ |                                              |
-| iteration                          | vòng lặp                     |                                              |
-| iterator                           | iterator                     | [https://git.io/JvohG](https://git.io/JvohG) |
+| English                                     | Tiếng Việt                   | Thảo luận tại                                |
+|---------------------------------------------|------------------------------|----------------------------------------------|
+| inference (in model training and inference) | dự đoán / suy luận           | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| (statistical) inference                     | suy luận (thống kê)          | [https://git.io/JJVT2](https://git.io/JJVT2) |
+| ill-conditioned                             | (có) điều kiện xấu           |                                              |
+| image segmentation                          | phân vùng ảnh                |                                              |
+| implement                                   | lập trình                    | [https://git.io/JvohG](https://git.io/JvohG) |
+| implementation                              | cách lập trình               | [https://git.io/JvohG](https://git.io/JvohG) |
+| implicit feedback                           | phản hồi gián tiếp           |                                              |
+| import (module, package)                    | nhập (mô-đun, gói thư viện)  | [https://git.io/JvQxK](https://git.io/JvQxK) |
+| imputation (in data preprocessing)          | quy buộc                     | [https://git.io/Jvoh9](https://git.io/Jvoh9) |
+| independence assumption                     | giả định độc lập             | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| indicator variable                          | biến chỉ định                | [https://git.io/JvQha](https://git.io/JvQha) |
+| inductive bias                              | thiên kiến quy nạp           |                                              |
+| initializer                                 | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
+| internal covariate shift                    | dịch chuyển hiệp biến nội bộ |                                              |
+| iteration                                   | vòng lặp                     |                                              |
+| iterator                                    | iterator                     | [https://git.io/JvohG](https://git.io/JvohG) |
 
 ## J
 | English            | Tiếng Việt          | Thảo luận tại                                |
@@ -315,18 +322,21 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | node (in neural networks)         | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | noise-injection                   | thêm nhiễu                        |                                                                                            |
+| non-maximum suppression | triệt phi cực đại | [https://git.io/JJXrQ](https://git.io/JJXrQ) |
 | non-squashing activation function | hàm kích hoạt không ép            |                                                                                            |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
 | nonparametric                     | phi tham số                       |                                                                                            |
 | norm                              | chuẩn                             | [https://git.io/JvKem](https://git.io/JvKem)                                               |
 | normal distribution               | phân phối chuẩn (phân phối Gauss) | [https://git.io/JvohV](https://git.io/JvohV)                                               |
+| normalize                         | chuẩn hóa                         |                                                                                            |
 | null hypothesis                   | giả thuyết gốc                    | [https://git.io/Jvoj1](https://git.io/Jvoj1)                                               |
 | numerical solution                | nghiệm xấp xỉ                     |                                                                                            |
 
 ## O
 | English                | Tiếng Việt         | Thảo luận tại                                |
 |------------------------|--------------------|----------------------------------------------|
-| object detection       | nhận diện vật thể  |                                              |
+| object detection       | phát hiện vật thể  |                                              |
+| object recognition     | nhận dạng vật thể  |                                              |
 | objective function     | hàm mục tiêu       | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | offline learning       | học ngoại tuyến    | [https://git.io/Jvojd](https://git.io/Jvojd) |
 | offset                 | độ dời             | [https://git.io/JfwX5](https://git.io/JfwX5) |
@@ -369,6 +379,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | principal component analysis (PCA) | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                              | tiên nghiệm                  | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | probability theory                 | lý thuyết xác suất           |                                              |
+| proposed region               | vùng đề xuất           |                                              |
 | proxy (in statistics)              | biến đại diện                |                                              |
 
 ## Q
@@ -388,6 +399,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | recognition                                        | nhận dạng                                 |                                              |
 | rectified linear unit (ReLU)                       | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | recurrent neural network                           | mạng nơ-ron hồi tiếp                      |                                              |
+| region of interest                                 | vùng quan tâm                             | [https://git.io/JJokG](https://git.io/JJokG) |
 | region of rejection                                | miền bác bỏ                               | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | regressor                                          | bộ hồi quy                                | [https://git.io/JvKee](https://git.io/JvKee) |
 | regularization                                     | điều chuẩn                                |                                              |
@@ -416,6 +428,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
 | serialization (programming)       | chuỗi hóa                |                                              |
+| semantic segmentation             | phân vùng theo ngữ nghĩa |                                              |
 | sentiment classification          | phân loại cảm xúc        |                                              |
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
@@ -430,6 +443,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | speech recognition                | nhận dạng giọng nói      |                                              |
 | squashing function                | hàm ép                   | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | standard deviation                | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| standardize                       | chuẩn tắc hóa                |                                              |
 | state-of-the-art                  | tân tiến nhất            |                                              |
 | stationary point                  | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
 | statistical inference             | suy luận thống kê        |                                              |
@@ -446,6 +460,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | support vector machine (SVM)      | Máy vector hỗ trợ        |                                              |
 | surprisal (in information theory) | lượng tin                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
 | surrogate objective               | mục tiêu thay thế        | [https://git.io/JvQxV](https://git.io/JvQxV) |
+| switch                            | bộ chuyển mạch           |                                              |
 | symbolic graph                    | đồ thị biểu tượng        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
@@ -466,6 +481,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
 | transcribe                             | phiên thoại                               | [https://git.io/JvojN](https://git.io/JvojN) |
 | transcription                          | bản ghi thoại                             |                                              |
+| transfer learning                      | học truyền tải                            |                                              |
 | transformer                            | transformer                               |                                              |
 | transition layer                       | tầng chuyển tiếp                          |                                              |
 | translation invariant                  | bất biến tịnh tiến                        | [https://git.io/Jftwj](https://git.io/Jftwj) |
