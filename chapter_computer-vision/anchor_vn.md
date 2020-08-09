@@ -465,7 +465,7 @@ labels[0]
 ## Bounding Boxes for Prediction
 -->
 
-## Các khung chứa dành cho việc dự đoán
+## Khung chứa khi Dự đoán
 
 
 <!--
@@ -476,11 +476,11 @@ To simplify the results, we can remove similar prediction bounding boxes.
 A commonly used method is called non-maximum suppression (NMS).
 -->
 
-Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán danh mục cho đối tượng và độ dời của từng khung neo đấy.
+Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán lớp và độ dời của từng khung neo này.
 Tiếp theo, ta thu được những khung chứa dự đoán dựa trên các khung neo và độ dời dự đoán của chúng.
 Khi tồn tại nhiều khung neo, thì nhiều khung chứa dự đoán tương tự nhau có thể được tạo ra cho cùng một mục tiêu.
 Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán giống nhau.
-Một phương pháp thường được sử dụng cho việc này thường được gọi là non-maximum (NMS).
+Một phương pháp thường được sử dụng cho việc này thường được gọi là triệt phi cực đại (*non-maximum suppression - NMS*).
 
 
 <!--
@@ -498,11 +498,11 @@ At this point, $L$ retains the prediction bounding box with the highest confiden
 Hãy cùng xem qua cách NMS hoạt động.
 Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng lớp.
 Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
-Ta cũng cần đề cập đến $p$ như là một mức độ tin cậy cho khung chứa (bounding box) $B$.
+Ta gọi $p$ là độ tin cậy (*confidence level*) của khung chứa dự đoán $B$.
 Trên cùng một bức ảnh, ta sắp xếp các khung chứa dự đoán không phải là nền theo thứ tự giảm dần độ tin cậy, thu được danh sách $L$.
-Chọn ra khung chứa dự đoán $B_1$ có mức độ tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác khi các khung chứa ấy có hệ số IoU so với khung chứa $B_1$ lớn hơn một ngưỡng nhất định từ $L$.
-Ngưỡng ở đây là một siêu tham số đã được định trước.
-Tại thời điểm này, $L$ chỉ còn giữ lại khung chứa dự đoán có độ tin cậy cao nhất và loại đi những khung chứa tương tự nó.
+Ta sẽ chọn ra khung chứa dự đoán $B_1$ có mức tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" có hệ số IoU với khung chứa $B_1$ lớn hơn một ngưỡng nhất định khỏi danh sách $L$.
+Mức ngưỡng này là một siêu tham số đã được định trước.
+Tại thời điểm này, $L$ chỉ giữ lại khung chứa dự đoán có mức tin cậy cao nhất sau khi đã loại bỏ những khung chứa giống nó.
 
 
 <!--
@@ -514,9 +514,9 @@ Finally, output all prediction bounding boxes in the list $L$.
 -->
 
 Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
-Lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được lấy ra để dùng làm chuẩn so sánh.
-Ngay lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
-Cuối cùng, xuất ra mọi khung chứa dự đoán trong danh sách $L$.
+Ta sẽ lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được sử dụng làm chuẩn so sánh.
+Lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
+Cuối cùng, ta sẽ xuất ra mọi khung chứa dự đoán trong danh sách $L$.
 
 
 <!--
