@@ -262,4 +262,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
