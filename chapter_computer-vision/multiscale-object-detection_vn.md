@@ -64,7 +64,7 @@ We can determine the midpoints of anchor boxes uniformly sampled on any image by
 -->
 
 Trong :numref:`sec_conv_layer`, mảng đầu ra 2D của mạng nơ-ron tích chập (CNN) được gọi là một ánh xạ đặc trưng.
-Ta có thể xác định các tâm điểm của các khung neo được lấy mẫu đồng đều trên một ảnh bằng cách mô tả kích thước của ánh xạ đặc trưng này.
+Ta có thể xác định tâm của các khung neo được lấy mẫu đều trên một ảnh bằng cách mô tả kích thước của ánh xạ đặc trưng này.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
