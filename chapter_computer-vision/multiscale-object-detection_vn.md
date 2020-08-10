@@ -43,7 +43,7 @@ To demonstrate how to generate anchor boxes on multiple scales, let us read an i
 It has a height and width of $561 \times 728$ pixels.
 -->
 
-Để minh họa cách làm thế nào sinh ra các khung neo với nhiều tỉ lệ, trước hết ta hãy đọc một ảnh.
+Để minh họa cách làm thế nào sinh ra các khung neo với nhiều tỉ lệ, trước hết ta hãy đọc một ảnh có kích thước $561 \times 728$ pixel.
 
 ```{.python .input  n=1}
 %matplotlib inline
