@@ -18,7 +18,7 @@ If five different shapes of anchor boxes are generated centered on each pixel, o
 
 Trong :numref:`sec_anchor`, ta đã tạo ra nhiều khung neo có tâm tại từng điểm ảnh đầu vào.
 Các khung neo đó được sử dụng để lấy mẫu các vùng khác nhau của ảnh đầu vào này.
-Tuy nhiên, nếu các khung neo sinh ra từ mọi điểm trên ảnh thì chẳng mấy chốc sẽ có quá nhiều khung neo để ta phải xử lý.
+Tuy nhiên, nếu các khung neo sinh ra từ mọi điểm trên ảnh thì chẳng mấy chốc sẽ có quá nhiều khung neo phải xử lý.
 Chẳng hạn, ta giả định rằng ảnh đầu vào này có độ cao và độ rộng lần lượt là 561 và 728.
 Nếu mỗi điểm ảnh ta tạo ra 5 khung neo kích thước khác nhau có cùng tâm trên đó, thì sẽ có hơn hai triệu khung neo ($561 \times 728 \times 5$) cần phải kiểm tra và dán nhãn trên ảnh này.
 
