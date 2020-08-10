@@ -169,12 +169,12 @@ Next, each anchor box is labeled with a category and offset based on the classif
 At the current scale, the object detection model needs to predict the category and offset of $h \times w$ sets of anchor boxes with different midpoints based on the input image.
 -->
 
-Ở một tỉ lệ nhất định, giả sử rằng ta sinh $h \times w$ tập hợp khung neo với các tâm điểm khác nhau dựa vào $c_i$ ánh xạ đặc trưng
+Ở một tỉ lệ nhất định, giả sử rằng ta sinh $h \times w$ tập hợp khung neo với các tâm khác nhau dựa vào $c_i$ ánh xạ đặc trưng
 có kích thước $h \times w$ và số khung neo của mỗi tập hợp là $a$.
 Ví dụ, đối với tỉ lệ đầu tiên trong thí nghiệm này, ta sinh 16 tập hợp khung neo với
-các tâm điểm khác nhau dựa vào 10 (số kênh) ánh xạ đặc trưng có kích thước $4 \times 4$, và mỗi tập hợp bao gồm 3 khung neo.
+các tâm khác nhau dựa vào 10 (số kênh) ánh xạ đặc trưng có kích thước $4 \times 4$, và mỗi tập hợp bao gồm 3 khung neo.
 Tiếp theo, mỗi khung neo được gán nhãn bằng một lớp và độ dời dựa vào quá trình phân loại và vị trí của khung chứa nhãn gốc.
-Với tỉ lệ hiện tại, mô hình phát hiện vật thể cần phải dự đoán lớp và độ dời của $h \times w$ tập hợp khung neo với các tâm điểm khác nhau dựa vào ảnh đầu vào.
+Với tỉ lệ hiện tại, mô hình phát hiện vật thể cần phải dự đoán lớp và độ dời của $h \times w$ tập hợp khung neo với các tâm khác nhau dựa vào ảnh đầu vào.
 
 
 <!--
@@ -186,11 +186,11 @@ Therefore, we can transform the $c_i$ units of the feature map at the same spati
 It is not hard to see that, in essence, we use the information of the input image in a certain receptive field to predict the category and offset of the anchor boxes close to the field on the input image.
 -->
 
-Ta giả sử rằng các ánh xạ đặc trưng $c_i$ là đầu ra trung gian của CNN dựa trên ảnh đầu vào.
+Ta giả sử rằng $c_i$ ánh xạ đặc trưng là đầu ra trung gian của CNN dựa trên ảnh đầu vào.
 Do mỗi ánh xạ đặc trưng có $h \times w$ vị trí khác nhau trong không gian, một vị trí sẽ có $c_i$ đơn vị.
 Theo định nghĩa của vùng tiếp nhận trong :numref:`sec_conv_layer`, các đơn vị $c_i$ của ánh xạ đặc trưng ở cùng một vị trí trong không gian sẽ có cùng vùng tiếp nhận trên ảnh đầu vào.
 Do đó, chúng biểu diễn thông tin của ảnh đầu vào trên cùng vùng tiếp nhận đó.
-Bởi vậy, ta có thể biến đổi các đơn vị $c_i$ của ánh xạ đặc trưng có cùng vị trí trong không gian thành các lớp và độ dời cho khung neo $a$ được sinh ra bằng cách sử dụng vị trí đó làm tâm điểm.
+Bởi vậy, ta có thể biến đổi $c_i$ đơn vị của ánh xạ đặc trưng tại cùng vị trí trong không gian thành các lớp và độ dời cho $a$ khung neo được sinh ra có tâm tại vị trí đó.
 Không khó để nhận ra rằng, về bản chất, ta sử dụng thông tin của ảnh đầu vào trong một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của khung neo gần với vùng đó trên ảnh đầu vào.
 
 
@@ -200,7 +200,7 @@ For example, we can design a network to have a wider receptive field for each un
 -->
 
 Khi các ánh xạ đặc trưng của các tầng khác nhau có các vùng tiếp nhận với kích thước khác nhau trong ảnh đầu vào, chúng được sử dụng để phát hiện vật thể với kích thước khác nhau.
-Ví dụ, ta có thể thiết kế một mạng để cho mỗi đơn vị trong ánh xạ đặc trưng có vùng tiếp nhận rộng hơn, tức là gần với tầng đầu ra hơn, để phát hiện các vật thể với kích thước lớn hơn trong ảnh đầu vào.
+Ví dụ, ta có thể thiết kế một mạng để cho mỗi đơn vị trong ánh xạ đặc trưng gần với tầng đầu ra hơn có vùng tiếp nhận rộng hơn, để phát hiện các vật thể với kích thước lớn hơn trong ảnh đầu vào.
 
 
 <!--
@@ -221,7 +221,7 @@ Ta sẽ tiến hành lập trình mô hình phát hiện vật thể đa tỉ l�
 -->
 
 * Ta có thể sinh các khung neo với số lượng và kích thước khác nhau trên nhiều tỉ lệ để phát hiện vật thể có kích thước khác nhau trên nhiều tỉ lệ.
-* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm điểm của các khung neo được lấy mẫu đều trên tất cả các ảnh.
+* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm của các khung neo được lấy mẫu đều trên tất cả các ảnh.
 * Ta sử dụng thông tin của ảnh đầu vào từ một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của các khung neo gần với vùng đó trên ảnh.
 
 
@@ -233,7 +233,7 @@ Given an input image, assume $1 \times c_i \times h \times w$ to be the shape of
 What methods can you think of to convert this variable into the anchor box's category and offset? What is the shape of the output?
 -->
 
-Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng trong khi $c_i, h, w$ là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
+Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng với $c_i, h, w$ là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
 Liệu có phương pháp nào chuyển đổi biến này thành lớp và độ dời của một khung neo? Kích thước của đầu ra là gì?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
