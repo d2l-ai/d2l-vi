@@ -529,7 +529,7 @@ cls_probs = np.array([[0] * 4,  # Predicted probability for background
 Print prediction bounding boxes and their confidence levels on the image.
 -->
 
-Xuất các khung chứa dự đoán kèm với độ tin cậy trên ảnh
+In các khung chứa dự đoán cùng với độ tin cậy trên ảnh
 
 
 
@@ -673,5 +673,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * Phạm Đăng Khoa
-
 
