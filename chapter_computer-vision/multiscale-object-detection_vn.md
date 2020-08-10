@@ -36,7 +36,7 @@ Một cách dễ dàng là lẫy mẫu đều trên một phần nhỏ điểm t
 Thêm vào đó, ta có thể tạo ra những khung neo có số lượng và kích thước thay đổi với nhiều tỉ lệ.
 Lưu ý rằng các vật thể nhỏ hơn có thể định vị dễ hơn so với các vật thể lớn hơn.
 Ở đây, ta sẽ dùng một ví dụ đơn giản: Các vật thể có kích thước $1 \times 1$, $1 \times 2$, and $2 \times 2$ sẽ có thể có 4, 2, và 1 vị trí trên một bức ảnh có kích thước $2 \times 2$.
-Do đó, khi sử dụng những khung neo nhỏ hơn để phát hiện các vật thể nhỏ hơn, ta có thể lấy mẫu nhiều vùng hơn; khi dùng những khung neo để phát hiện các vật thể lớn hơn, ta có thể lấy mẫu ít vùng hơn.
+Do đó, khi sử dụng những khung neo nhỏ hơn để phát hiện các vật thể nhỏ hơn, ta có thể lấy mẫu nhiều vùng hơn; và ngược lại.
 
 <!--
 To demonstrate how to generate anchor boxes on multiple scales, let us read an image first.
