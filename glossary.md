@@ -232,7 +232,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | inductive bias                              | thiên kiến quy nạp           |                                              |
 | initializer                                 | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
 | internal covariate shift                    | dịch chuyển hiệp biến nội bộ |                                              |
-| intersection over union (IoU) | tỷ lệ vùng giao trên vùng hợp | | 
+| intersection over union (IoU) | phần giao trên phần hợp | | 
 | iteration                                   | vòng lặp                     |                                              |
 | iterator                                    | iterator                     | [https://git.io/JvohG](https://git.io/JvohG) |
 
