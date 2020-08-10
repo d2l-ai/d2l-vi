@@ -109,7 +109,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 11.9. [Adadelta](chapter_optimization/adadelta_vn.md)
     * [x] 11.10. [Adam](chapter_optimization/adam_vn.md)
     * [x] 11.11. [Định thời Tốc độ Học](chapter_optimization/lr-scheduler_vn.md)
-* [-] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
+* [x] 12. [Hiệu năng Tính toán](chapter_computational-performance/index_vn.md)
     * [x] 12.1. [Trình biên dịch và Trình thông dịch](chapter_computational-performance/hybridize_vn.md)
     * [x] 12.2. [Tính toán Bất đồng bộ](chapter_computational-performance/async-computation_vn.md)
     * [x] 12.3. [Song song hóa Tự động](chapter_computational-performance/auto-parallelism_vn.md)
@@ -118,20 +118,20 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 12.6. [Cách lập trình Súc tích đa GPU](chapter_computational-performance/multiple-gpus-gluon_vn.md)
     * [x] 12.7. [Tham số Máy chủ](chapter_computational-performance/parameterserver_vn.md)
 * [ ] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
-    * [-] 13.1. [Image Augmentation](chapter_computer-vision/image-augmentation_vn.md)
-    * [-] 13.2. [Fine Tuning](chapter_computer-vision/fine-tuning_vn.md)
-    * [-] 13.3. [Object Detection and Bounding Boxes](chapter_computer-vision/bounding-box_vn.md)
-    * [-] 13.4. [Anchor Boxes](chapter_computer-vision/anchor_vn.md)
+    * [x] 13.1. [Tăng cường Ảnh](chapter_computer-vision/image-augmentation_vn.md)
+    * [x] 13.2. [Tinh chỉnh](chapter_computer-vision/fine-tuning_vn.md)
+    * [x] 13.3. [Phát hiện Vật thể và Khoanh vùng Đối tượng (Khung chứa)](chapter_computer-vision/bounding-box_vn.md)
+    * [-] 13.4. [Khung neo](chapter_computer-vision/anchor_vn.md)
     * [-] 13.5. [Multiscale Object Detection](chapter_computer-vision/multiscale-object-detection_vn.md)
     * [-] 13.6. [The Object Detection Dataset](chapter_computer-vision/object-detection-dataset_vn.md)
     * [-] 13.7. [Single Shot Multibox Detection (SSD)](chapter_computer-vision/ssd_vn.md)
     * [-] 13.8. [Region-based CNNs (R-CNNs)](chapter_computer-vision/rcnn_vn.md)
     * [-] 13.9. [Semantic Segmentation and the Dataset](chapter_computer-vision/semantic-segmentation-and-dataset_vn.md)
     * [-] 13.10. [Transposed Convolution](chapter_computer-vision/transposed-conv_vn.md)
-    * [ ] 13.11. [Fully Convolutional Networks (FCN)](chapter_computer-vision/fcn_vn.md)
-    * [ ] 13.12. [Neural Style Transfer](chapter_computer-vision/neural-style_vn.md)
-    * [ ] 13.13. [Image Classification (CIFAR-10) on Kaggle](chapter_computer-vision/kaggle-gluon-cifar10_vn.md)
-    * [ ] 13.14. [Dog Breed Identification (ImageNet Dogs) on Kaggle](chapter_computer-vision/kaggle-gluon-dog_vn.md)
+    * [-] 13.11. [Fully Convolutional Networks (FCN)](chapter_computer-vision/fcn_vn.md)
+    * [-] 13.12. [Neural Style Transfer](chapter_computer-vision/neural-style_vn.md)
+    * [-] 13.13. [Image Classification (CIFAR-10) on Kaggle](chapter_computer-vision/kaggle-gluon-cifar10_vn.md)
+    * [-] 13.14. [Dog Breed Identification (ImageNet Dogs) on Kaggle](chapter_computer-vision/kaggle-gluon-dog_vn.md)
 * [ ] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
     * [ ] 14.1. [Word Embedding (word2vec)](chapter_natural-language-processing-pretraining/word2vec_vn.md)
     * [ ] 14.2. [Approximate Training](chapter_natural-language-processing-pretraining/approx-training_vn.md)
@@ -189,4 +189,4 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 
 ## Giấy phép
 
-Cuốn sách này được cung cấp dưới giấy phép **[Creative Commons Attribution-ShareAlike 4.0 International Public License](LICENSE)**. Mã nguồn mẫu và nội dung tham chiếu trong cuốn sách này được cung cấp theo **[MIT License](LICENSE-SAMPLECODE)** với nội dung đã có sự cập nhật.
+Cuốn sách này được cung cấp dưới giấy phép **[Creative Commons Attribution-ShareAlike 4.0 International Public](LICENSE)**. Mã nguồn mẫu và nội dung tham chiếu trong cuốn sách này được cung cấp theo **[MIT License](LICENSE-SAMPLECODE)** với nội dung đã có sự cập nhật.

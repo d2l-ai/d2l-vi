@@ -5,7 +5,7 @@
 # Anchor Boxes
 -->
 
-# *dịch tiêu đề phía trên*
+# Khung neo
 :label:`sec_anchor`
 
 
@@ -18,8 +18,11 @@ These bounding boxes are called anchor boxes.
 We will practice object detection based on anchor boxes in the following sections.
 -->
 
-*dịch đoạn phía trên*
-
+Các giải thuật phát hiện vật thể thường lấy mẫu ở rất nhiều vùng của ảnh đầu vào, rồi xác định các vùng đó có chứa đối tượng cần quan tâm hay không, và điều chỉnh các biên của vùng lấy mẫu này để dự đoán một cách chính xác các khung chứa chuẩn của đối tượng.
+Các mô hình khác nhau có thể dùng các phương pháp lấy mẫu vùng ảnh khác nhau.
+Ở đây, chúng tôi sẽ giới thiệu một phương pháp như vậy: nó tạo ra nhiều khung chứa với kích thước và tỉ lệ cạnh khác nhau với tâm trên mọi điểm ảnh.
+Các khung chứa đó được gọi là các khung neo.
+Chúng ta sẽ thực hành phát hiện vật thể dựa trên các khung neo trong các phần sau đây.
 
 <!--
 First, import the packages or modules required for this section.
@@ -27,9 +30,9 @@ Here, we have modified the printing accuracy of NumPy.
 Because printing tensors actually calls the print function of NumPy, the floating-point numbers in tensors printed in this section are more concise.
 -->
 
-*dịch đoạn phía trên*
-
-
+Trước tiên, hãy nhập các gói và mô-đun cần thiết cho mục này.
+Tại đây, ta đã chỉnh sửa độ chính xác khi in số thực của Numpy.
+Do thực chất ta đang gọi hàm in của Numpy khi in các tensor, trong phần này các số thực dấu phẩy động trong tensor được in ra sẽ chính xác hơn.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -40,12 +43,11 @@ np.set_printoptions(2)
 npx.set_np()
 ```
 
-
 <!--
 ## Generating Multiple Anchor Boxes
 -->
 
-## *dịch tiêu đề phía trên*
+## Sinh nhiều khung neo
 
 
 <!--
@@ -55,8 +57,10 @@ Assume the size is $s\in (0, 1]$, the aspect ratio is $r > 0$, and the width and
 When the center position is given, an anchor box with known width and height is determined.
 -->
 
-*dịch đoạn phía trên*
-
+Giả sử ảnh đầu vào có chiều cao $h$ và chiều rộng $w$.
+Ta sinh ra các khung neo với kích thước khác nhau với tâm tại mọi điểm của ảnh.
+Giả sử kích thước này $s\in (0, 1]$, tỉ lệ cạnh là $r >0$, chiều rộng và chiều cao của khung neo lần lượt là $ws\sqrt{r}$ and $hs/\sqrt{r}$.
+Với một vị trí tâm cho trước, ta xác định được khung neo với chiều cao và chiều rộng như trên.
 
 <!--
 Below we set a set of sizes $s_1,\ldots, s_n$ and a set of aspect ratios $r_1,\ldots, r_m$.
@@ -65,8 +69,10 @@ Although these anchor boxes may cover all ground-truth bounding boxes, the compu
 Therefore, we are usually only interested in a combination containing $s_1$ or $r_1$ sizes and aspect ratios, that is:
 -->
 
-*dịch đoạn phía trên*
-
+Dưới đây ta thiết lập một tập kích thước $s_1,\ldots, s_n$ và một tập tỉ lệ khung $r_1,\ldots, r_m$.
+Nếu ta dùng tổ hợp tất cả các kích thước và tỉ lệ khung với mỗi điểm ảnh làm một tâm, ảnh đầu vào sẽ có tổng cộng $whnm$ khung neo.
+Mặc dù các khung chứa chuẩn đối tượng có thể sẽ nằm trong số đó, độ phức tạp tính toán này thường quá cao.
+Do đó, ta thường chỉ chú ý tới tổ hợp chứa $s_1$ kích thước hoặc $r_1$ tỉ lệ khung như sau:
 
 
 $$(s_1, r_1), (s_1, r_2), \ldots, (s_1, r_m), (s_2, r_1), (s_3, r_1), \ldots, (s_n, r_1).$$
@@ -82,16 +88,16 @@ That is, the number of anchor boxes centered on the same pixel is $n+m-1$.
 For the entire input image, we will generate a total of $wh(n+m-1)$ anchor boxes.
 -->
 
-*dịch đoạn phía trên*
-
+Ở trên, số khung neo có tâm trên cùng một điểm ảnh là $n+m-1$.
+Đối với toàn bộ bức ảnh đầu vào, ta sẽ sinh ra tổng cộng $wh(n+m-1)$ khung neo.
 
 <!--
 The above method of generating anchor boxes has been implemented in the `multibox_prior` function.
 We specify the input, a set of sizes, and a set of aspect ratios, and this function will return all the anchor boxes entered.
 -->
 
-*dịch đoạn phía trên*
-
+Phương pháp sinh khung neo ở trên được lập trình sẵn trong hàm `multibox_prior`.
+Ta chỉ cần thiết lập đầu vào, tập các kích thước và tập các tỉ số cạnh, rồi hàm này sẽ trả về tất cả các khung neo như mong muốn.
 
 
 ```{.python .input  n=2}
@@ -114,8 +120,11 @@ It has four elements: the $x, y$ axis coordinates in the upper-left corner and t
 The coordinate values of the $x$ and $y$ axis are divided by the width and height of the image, respectively, so the value range is between 0 and 1.
 -->
 
-*dịch đoạn phía trên*
-
+Ta có thể thấy rằng kích thước của khung neo được trả về ở biến `y` là (kích thước batch, số khung neo, 4).
+Sau khi thay đổi kích thước của `y` thành (chiều cao ảnh, chiều rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta sẽ thu được tất cả các khung neo với tâm ở một vị trí điểm ảnh nhất định.
+Trong phần ví dụ dưới đây, ta truy xuất khung neo đầu tiên có tâm tại vị trí (250, 250).
+Nó có bốn phần tử: các trục tọa độ $x, y$ ở góc trên bên trái và các trục tọa độ $x, y$ ở góc dưới bên phải của hộp neo.
+Tọa độ của các trục $x$ và $y$ được chia lần lượt cho chiều rộng và độ cao của ảnh, do đó giá trị của chúng sẽ nằm trong khoảng 0 và 1.
 
 
 ```{.python .input  n=4}
@@ -128,8 +137,7 @@ boxes[250, 250, 0, :]
 In order to describe all anchor boxes centered on one pixel in the image, we first define the `show_bboxes` function to draw multiple bounding boxes on the image.
 -->
 
-*dịch đoạn phía trên*
-
+Để mô tả tất cả các khung neo có tâm trên cùng một điểm của bức ảnh, trước hết ta sẽ định nghĩa hàm `show_bboxes` để vẽ nhóm khung chứa trên ảnh này.
 
 
 ```{.python .input  n=5}
@@ -163,7 +171,10 @@ Now, we can draw all the anchor boxes centered on (250, 250) in the image.
 As you can see, the blue anchor box with a size of 0.75 and an aspect ratio of 1 covers the dog in the image well.
 -->
 
-*dịch đoạn phía trên*
+Như chúng ta vừa thấy, các giá trị tọa độ của trục $x$ và $y$ trong biến `boxes` đã được chia lần lượt cho chiều rộng và chiều cao của ảnh.
+Khi vẽ ảnh, ta cần khôi phục các giá trị tọa độ gốc của các khung neo và do đó xác định biến `bbox_scale`.
+Lúc này, ta có thể vẽ tất cả các khung neo có tâm tại vị trí (250, 250) của bức ảnh này.
+Như bạn có thể thấy, khung neo màu xanh dương với kích thước 0.75 và tỉ số cạnh 1 sẽ bao quanh khá tốt chú chó trong hình này.
 
 
 ```{.python .input  n=7}
@@ -183,8 +194,7 @@ show_bboxes(fig.axes, boxes[250, 250, :, :] * bbox_scale,
 ## Intersection over Union
 -->
 
-## *dịch tiêu đề phía trên*
-
+## Giao trên Hợp
 
 <!--
 We just mentioned that the anchor box covers the dog in the image well.
@@ -193,8 +203,10 @@ We know that the Jaccard index can measure the similarity between two sets.
 Given sets $\mathcal{A}$ and $\mathcal{B}$, their Jaccard index is the size of their intersection divided by the size of their union:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta chỉ mới đề cập rằng khung neo bao phủ tốt hình ảnh con chó.
+Nếu như khung chứa nhãn gốc của đối tượng đã được xác định, thì làm thế nào để định lượng được “mức độ tốt” ở đây? Một phương pháp đơn giản là đo độ tương đồng giữa các khung neo và khung chứa nhãn gốc.
+Chúng ta biết rằng hệ số Jaccard có thể đo lường sự tương đồng giữa hai tập dữ liệu.
+Các tập đã cho $\mathcal{A}$ and $\mathcal{B}$, có chỉ số Jaccard được đo bằng là kích thước của miền giao của chúng chia cho kích thước của miền hợp:
 
 
 $$J(\mathcal{A},\mathcal{B}) = \frac{\left|\mathcal{A} \cap \mathcal{B}\right|}{\left| \mathcal{A} \cup \mathcal{B}\right|}.$$
@@ -208,14 +220,17 @@ which is the ratio of the intersecting area to the union area of the two boundin
 The value range of IoU is between 0 and 1: 0 means that there are no overlapping pixels between the two bounding boxes, while 1 indicates that the two bounding boxes are equal.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta có thể coi khung chứa là tập hợp hữu hạn các điểm ảnh.
+Theo cách này, chúng ta có thể đo lường được tính tương đồng của hai khung chứa bằng hệ số Jaccard của các tập điểm ảnh tương ứng.
+Khi đo sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được xem như là Giao trên Hợp (*Intersection over Union - IoU*), là tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, được thể hiện trong :numref:`fig_iou`.
+Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 có nghĩa là không có pixel nào giao nhau giữa hai khung chứa, trong khi đó giá trị 1 chỉ ra rằng hai khung chứa ấy trùng nhau.
 
 
 <!--
 ![IoU is the ratio of the intersecting area to the union area of two bounding boxes.](../img/iou.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/iou.svg)
+![IoU là tỷ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa](../img/iou.svg)
 :label:`fig_iou`
 
 
@@ -223,7 +238,7 @@ The value range of IoU is between 0 and 1: 0 means that there are no overlapping
 For the remainder of this section, we will use IoU to measure the similarity between anchor boxes and ground-truth bounding boxes, and between different anchor boxes.
 -->
 
-*dịch đoạn phía trên*
+Trong phần còn lại của phần này, chúng ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa nhãn gốc, và giữa các khung neo với nhau. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -237,7 +252,7 @@ For the remainder of this section, we will use IoU to measure the similarity bet
 ## Labeling Training Set Anchor Boxes
 -->
 
-## *dịch tiêu đề phía trên*
+## Gán nhãn các khung neo trong tập huấn luyện
 
 
 <!--
@@ -249,7 +264,9 @@ adjust the anchor box position according to the predicted offset to obtain the b
 and finally filter out the prediction bounding boxes that need to be output.
 -->
 
-*dịch đoạn phía trên*
+Trong tập huấn luyện, chúng ta xem mỗi khung neo là một mẫu ví dụ huấn luyện.
+Để huấn luyện mô hình phát hiện đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là hạng mục (*category*) của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa nhãn gốc so với khung neo.
+Trong phát hiện đối tượng, trước tiên chúng ta cần tạo ra nhiều khung neo, dự đoán các hạng mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dùng để dự đoán và sau cùng là chọn ra các khung chứa dự đoán tốt làm đầu ra.
 
 
 <!--
@@ -258,7 +275,9 @@ After the anchor boxes are generated, we primarily label anchor boxes based on t
 So how do we assign ground-truth bounding boxes to anchor boxes similar to them?
 -->
 
-*dịch đoạn phía trên*
+Chúng ta biết rằng, trong tập huấn luyện phát hiện đối tượng, mỗi hình ảnh được gán nhãn với vị trí của khung chứa nhãn gốc và hạng mục của đối tượng.
+Sau khi các khung neo được tạo, chúng ta chủ yếu gán nhãn cho chúng dựa vào thông tin của vị trí và danh mục trong khung chứa nhãn gốc tương đồng với các khung neo đó.
+Vậy làm thế nào để gán các khung chứa nhãn gốc cho những khung neo tương đồng với chúng?
 
 
 <!--
@@ -274,7 +293,15 @@ We assign ground-truth bounding box $B_{j_2}$ to anchor box $A_{i_2}$ and then d
 At this point, elements in two rows and two columns in the matrix $\mathbf{X}$ have been discarded.
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng những khung neo trên ảnh là $A_1, A_2, \ldots, A_{n_a}$ và những khung chứa nhãn gốc là $B_1, B_2, \ldots, B_{n_b}$ and $n_a \geq n_b$.
+Định nghĩa ma trận $\mathbf{X} \in \mathbb{R}^{n_a \times n_b}$, trong đó mỗi phần tử $x_{ij}$ trong hàng $i^\mathrm{th}$ và cột $j^\mathrm{th}$ là hệ số IoU của khung neo $A_i$ so với khung chứa nhãn gốc $B_j$.
+Đầu tiên, chúng ta tìm ra phần tử lớn nhất trong ma trận $\mathbf{X}$ rồi lưu lại chỉ mục hàng và cột của phần tử đó là $i_1,j_1$.
+Chúng ta gán khung chứa nhãn gốc $B_{j_1}$ cho khung neo $A_{i_1}$.
+Ta thấy rõ ràng rằng, khung neo $A_{i_1}$ và khung chứa nhãn gốc $B_{j_1}$ có độ tương đồng cao nhất trong số tất cả các cặp "khung neo--khung chứa nhãn gốc".
+Tiếp theo, loại bỏ các phần tử trong hàng $i_1$th và cột $j_1$th trong ma trận $\mathbf{X}$.
+Tìm ra phần tử lớn nhất trong các phần tử còn lại trong ma trận $\mathbf{X}$ rồi cũng lưu lại chỉ mục hàng và cột của phần tử đó là $i_2,j_2$.
+Chúng ta gán khung chứa nhãn gốc $B_{j_2}$ cho khung neo $A_{i_2}$ và sau đó loại bỏ mọi phần tử tại hàng $i_2$th và cột $j_2$th trong ma trận $\mathbf{X}$.
+Như vậy, tại thời điểm này thì các phần tử trong hai hàng và hai cột của ma trận $\mathbf{X}$ đã bị loại bỏ.
 
 
 <!--
@@ -285,7 +312,11 @@ Given anchor box $A_i$, find the bounding box $B_j$ with the largest IoU with $A
 and only assign ground-truth bounding box $B_j$ to anchor box $A_i$ when the IoU is greater than the predetermined threshold.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta tiến hành việc này cho đến khi các phần tử ở cột $n_b$ trong ma trận $\mathbf{X}$ đều bị loại bỏ.
+Tại thời điểm này, chúng ta đều đã gán $n_b$ khung chứa nhãn gốc cho $n_b$ khung neo.
+Tiếp đến, chúng ta chỉ việc duyệt qua $n_a - n_b$ khung neo còn lại.
+Với khung neo $A_i$, ta cần tìm ra khung chứa nhãn gốc $B_j$ sao cho khung chứa ấy có hệ số IoU so với $A_i$ là lớn nhất trên mỗi hàng $i^\mathrm{th}$ của ma trận $\mathbf{X}$,
+và chỉ gán khung chứa nhãn gốc $B_j$ cho khung neo $A_i$ khi mà hệ số IoU lớn hơn một ngưỡng cho trước.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -303,14 +334,21 @@ After that, we only need to traverse the remaining anchor boxes of $A_1, A_3, A_
 and determine whether to assign ground-truth bounding boxes to the remaining anchor boxes according to the threshold.
 -->
 
-*dịch đoạn phía trên*
+Như được mô tả ở :numref:`fig_anchor_label` (trái), giả sử rằng giá trị lớn nhất của ma trận $\mathbf{X}$ là $x_{23}$, ta gán khung chứa nhãn gốc $B_3$ cho khung neo $A_2$.
+Tiếp theo ta loại bỏ tất cả các giá trị ở hàng 2 và cột 3 của ma trận, tìm phần tử lớn nhất $x_{71}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_1$ cho khung neo $A_7$.
+Sau đó, như được mô tả ở :numref:`fig_anchor_label` (giữa), ta loại bỏ tất cả các giá trị ở hàng 7 và cột 1 của ma trận, 
+tìm phần tử lớn nhất $x_{54}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_4$ cho khung neo $A_5$.
+Cuối cùng, như được mô tả ở :numref:`fig_anchor_label` (phải), ta loại bỏ tất cả các giá trị ở hàng 5 và cột 4 của ma trận, 
+tìm phần tử lớn nhất $x_{92}$ của phần ma trận còn lại và gán khung chứa nhãn gốc $B_2$ cho khung neo $A_9$.
+Sau đó ta chỉ cần phải quét các khung neo còn lại $A_1, A_3, A_4, A_6, A_8$ 
+và dựa vào mức ngưỡng để quyết định xem liệu có gán khung chứa nhãn gốc cho các khung neo này không.
 
 
 <!--
 ![Assign ground-truth bounding boxes to anchor boxes.](../img/anchor-label.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/anchor-label.svg)
+![Gán khung chứa nhãn gốc cho các khung neo](../img/anchor-label.svg)
 :label:`fig_anchor_label`
 
 
@@ -325,7 +363,14 @@ the widths of $A$ and $B$ are $w_a, w_b$, and their heights are $h_a, h_b$, resp
 In this case, a common technique is to label the offset of $A$ as
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể gán nhãn lớp và độ dời cho các khung neo.
+Nếu khung neo $A$ được gán khung chứa nhãn gốc $B$ thì khung neo $A$ sẽ có cùng lớp với $B$.
+Độ dời của khung neo $A$ được đặt dựa theo vị trí tương đối của toạ độ tâm của $B$ và $A$ cũng như kích thước tương đối của hai khung.
+Do vị trí và kích thước của các khung trong tập dữ liệu thường khá đa dạng,
+các vị trí và kích thước tương đối này thường yêu cầu một số phép biến đổi đặc biệt sao cho phân phối của giá trị độ dời trở nên đều hơn và dễ khớp hơn.
+Giả sử tọa độ tâm của khung neo $A$ và khung chứa nhãn gốc $B$ được gán cho nó là $(x_a, y_a), (x_b, y_b)$, 
+chiều rộng của $A$ và $B$ lần lượt là $w_a, w_b$, và chiều cao lần lượt là $h_a, h_b$.
+Đối với trường hợp này, một kĩ thuật phổ biến là gán nhãn độ dời của $A$ như sau
 
 
 $$\left( \frac{ \frac{x_b - x_a}{w_a} - \mu_x }{\sigma_x},
@@ -340,7 +385,9 @@ If an anchor box is not assigned a ground-truth bounding box, we only need to se
 Anchor boxes whose category is background are often referred to as negative anchor boxes, and the rest are referred to as positive anchor boxes.
 -->
 
-*dịch đoạn phía trên*
+Giá trị mặc định của các hằng số là $\mu_x = \mu_y = \mu_w = \mu_h = 0, \sigma_x=\sigma_y=0.1, và \sigma_w=\sigma_h=0.2$.
+Nếu một khung neo không được gán cho một khung chứa nhãn gốc, ta chỉ cần đặt lớp của khung neo này là nền.
+Các khung neo có lớp là nền thường được gọi là khung neo âm, và tất cả các khung neo còn lại được gọi là khung neo dương.
 
 
 <!--
@@ -352,7 +399,12 @@ which are recorded as $A_0, \ldots, A_4$, respectively (the index in the program
 First, draw the positions of these anchor boxes and the ground-truth bounding boxes in the image.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây chúng tôi sẽ giải thích chi tiết một ví dụ.
+Ta định nghĩa các khung chứa nhãn gốc cho con mèo và con chó trong ảnh đã đọc, trong đó phần tử đầu tiên là lớp (0 là chó, 1 là mèo) 
+và bốn phần tử còn lại là các toạ độ $x, y$ của góc trên bên trái và toạ độ $x, y$ của góc dưới bên phải (dải giá trị nằm trong khoảng từ 0 đến 1).
+Ở đây ta khởi tạo năm khung neo bằng toạ độ của góc trên bên trái và góc dưới bên phải để gán nhãn,
+được kí hiệu lần lượt là $A_0, \ldots, A_4$ (chỉ số trong chương trình bắt đầu từ 0).
+Đầu tiên, ta vẽ vị trí của các khung neo này và các khung chứa nhãn gốc vào ảnh.
 
 
 
@@ -379,7 +431,10 @@ We add example dimensions to the anchor boxes and ground-truth bounding boxes an
 with a shape of (batch size, number of categories including background, number of anchor boxes) by using the `expand_dims` function.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể gán nhãn lớp và độ dời cho các khung neo này bằng cách sử dụng hàm `multibox_target`.
+Hàm này đặt lớp nền bằng 0 và tăng chỉ số lên 1 với mỗi lớp mục tiêu (1 là chó và 2 là mèo).
+Ta thêm chiều batch vào các tensor chứa khung neo và khung chứa nhãn gốc ở ví dụ trên và khởi tạo kết quả dự đoán ngẫu nhiên
+với kích thước (kích thước batch, số lớp tính cả nền, số khung neo) bằng cách sử dụng hàm `expand_dims`.
 
 
 
@@ -396,7 +451,8 @@ There are three items in the returned result, all of which are in the tensor for
 The third item is represented by the category labeled for the anchor box.
 -->
 
-*dịch đoạn phía trên*
+Có ba phần tử trong kết quả trả về, tất cả đều theo định dạng tensor.
+Phần tử thứ ba biểu diễn các lớp được gán nhãn cho khung neo.
 
 
 
@@ -416,7 +472,14 @@ the category of the ground-truth bounding box with the largest IoU with anchor b
 the category of the ground-truth bounding box with the largest IoU with anchor box $A_3$ is cat, but the IoU is smaller than the threshold, so the category is labeled as background.
 -->
 
-*dịch đoạn phía trên*
+Ta phân tích các danh mục được gán nhãn này dựa theo vị trí của khung neo và khung chứa nhãn gốc trong ảnh.
+Đầu tiên, trong tất cả các cặp "khung neo - khung chứa nhãn gốc", giá trị IoU của khung neo $A_4$ đối với khung chứa nhãn gốc mèo là lớn nhất, do đó danh mục của khung neo $A_4$ được gán nhãn là mèo.
+Nếu ta không xét khung neo $A_4$ hoặc khung chứa nhãn gốc mèo, trong các cặp "khung neo - khung chứa nhãn gốc" còn lại, 
+cặp với giá trị IoU lớn nhất là khung neo $A_1$ và khung chứa nhãn gốc chó, do đó danh mục của khung neo $A_1$ được gán nhãn là chó.
+Tiếp theo ta xét ba khung neo còn lại chưa được gán nhãn.
+Danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_0$ là chó, tuy nhiên giá trị IoU này lại nhỏ hơn mức ngưỡng (mặc định là 0.5), do đó khung neo này được gán nhãn là nền;
+danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_2$ là mèo và giá trị IoU này lớn hơn mức ngưỡng, do đó khung neo này được gán nhãn là mèo;
+danh mục của khung chứa nhãn gốc có giá trị IoU lớn nhất với khung neo $A_3$ là mèo, tuy nhiên giá trị IoU này lại nhỏ hơn mức ngưỡng, do đó khung neo này được gán nhãn là nền.
 
 
 <!--
@@ -426,7 +489,10 @@ Because we do not care about background detection, offsets of the negative class
 By multiplying by element, the 0 in the mask variable can filter out negative class offsets before calculating target function.
 -->
 
-*dịch đoạn phía trên*
+Phần tử thứ hai trong giá trị trả về là một biến mặt nạ (*mask variable*), với kích thước (kích thước batch, số khung neo nhân bốn).
+Các phần tử trong biến mặt nạ tương ứng một - một với bốn giá trị độ dời của mỗi khung neo.
+Do ta không cần quan tâm đến việc nhận diện nền nên độ dời thuộc lớp âm không ảnh hướng đến hàm mục tiêu.
+Qua phép nhân theo từng phần tử, các giá trị 0 trong biến mặt nạ có thể lọc ra các độ dời thuộc lớp âm trước khi tính hàm mục tiêu.
 
 
 
@@ -440,7 +506,7 @@ labels[1]
 The first item returned is the four offset values labeled for each anchor box, with the offsets of negative class anchor boxes labeled as 0.
 -->
 
-*dịch đoạn phía trên*
+Phần tử đầu tiên trong giá trị trả về là bốn giá trị độ dời được gán nhãn cho mỗi khung neo, với giá trị độ dời của các khung neo thuộc lớp âm được gán nhãn là 0.
 
 
 
@@ -460,7 +526,7 @@ labels[0]
 ## Bounding Boxes for Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Khung chứa khi Dự đoán
 
 
 <!--
@@ -471,7 +537,11 @@ To simplify the results, we can remove similar prediction bounding boxes.
 A commonly used method is called non-maximum suppression (NMS).
 -->
 
-*dịch đoạn phía trên*
+Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán lớp và độ dời của từng khung neo này.
+Tiếp theo, ta thu được những khung chứa dự đoán dựa trên các khung neo và độ dời dự đoán của chúng.
+Khi tồn tại nhiều khung neo, thì nhiều khung chứa dự đoán tương tự nhau có thể được tạo ra cho cùng một mục tiêu.
+Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán giống nhau.
+Một phương pháp thường được sử dụng cho việc này thường được gọi là triệt phi cực đại (*non-maximum suppression - NMS*).
 
 
 <!--
@@ -486,7 +556,14 @@ The threshold here is a preset hyperparameter.
 At this point, $L$ retains the prediction bounding box with the highest confidence level and removes other prediction bounding boxes similar to it.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xem qua cách NMS hoạt động.
+Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng lớp.
+Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
+Ta gọi $p$ là độ tin cậy (*confidence level*) của khung chứa dự đoán $B$.
+Trên cùng một bức ảnh, ta sắp xếp các khung chứa dự đoán không phải là nền theo thứ tự giảm dần độ tin cậy, thu được danh sách $L$.
+Ta sẽ chọn ra khung chứa dự đoán $B_1$ có mức tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" có hệ số IoU với khung chứa $B_1$ lớn hơn một ngưỡng nhất định khỏi danh sách $L$.
+Mức ngưỡng này là một siêu tham số đã được định trước.
+Tại thời điểm này, $L$ chỉ giữ lại khung chứa dự đoán có mức tin cậy cao nhất sau khi đã loại bỏ những khung chứa giống nó.
 
 
 <!--
@@ -497,7 +574,10 @@ At this time, the IoU of any pair of prediction bounding boxes in $L$ is less th
 Finally, output all prediction bounding boxes in the list $L$.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
+Ta sẽ lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được sử dụng làm chuẩn so sánh.
+Lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
+Cuối cùng, ta sẽ xuất ra mọi khung chứa dự đoán trong danh sách $L$.
 
 
 <!--
@@ -508,7 +588,11 @@ This means that the prediction bounding boxes are anchor boxes.
 Finally, we construct a predicted probability for each category.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xem xét một ví dụ chi tiết.
+Trước tiên ta tạo bốn khung neo.
+Để đơn giản hóa vấn đề, ta giả định rằng độ dời dự đoán đều bằng 0.
+Điều này có nghĩa là các khung chứa dự đoán đều là các khung neo.
+Cuối cùng, ta định ra một xác suất dự đoán cho từng lớp.
 
 
 
@@ -651,25 +735,33 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* 
+* Phạm Đăng Khoa
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Phạm Minh Đức
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Phạm Minh Đức
 
 <!-- Phần 7 -->
-* 
+* Phạm Đăng Khoa
+* Phạm Minh Đức
+* Nguyễn Văn Cường
 
 <!-- Phần 8 -->
-* Phạm Đăng Khoa
+* 

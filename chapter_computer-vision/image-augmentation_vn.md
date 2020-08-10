@@ -164,7 +164,7 @@ apply(img, shape_aug)
 ### Changing the Color
 -->
 
-### *dịch tiêu đề phía trên*
+### Đổi màu
 
 
 <!--
@@ -173,7 +173,9 @@ We can change four aspects of the image color: brightness, contrast, saturation,
 In the example below, we randomly change the brightness of the image to a value between 50% ($1-0.5$) and 150% ($1+0.5$) of the original image.
 -->
 
-*dịch đoạn phía trên*
+Một phương pháp tăng cường khác là thay đổi màu sắc.
+Chúng ta có thể thay đổi bốn khía cạnh màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
+Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) độ sáng của ảnh gốc.
 
 
 
@@ -186,7 +188,7 @@ apply(img, gluon.data.vision.transforms.RandomBrightness(0.5))
 Similarly, we can randomly change the hue of the image.
 -->
 
-*dịch đoạn phía trên*
+Tương tự vậy, ta có thể ngẫu nhiên thay đổi tông màu của ảnh.
 
 
 ```{.python .input  n=8}
@@ -198,8 +200,8 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-*dịch đoạn phía trên*
-
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
+ 
 
 
 ```{.python .input  n=9}
@@ -213,7 +215,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### *dịch tiêu đề phía trên*
+### Kết hợp nhiều phương pháp tăng cường ảnh
 
 
 <!--
@@ -221,7 +223,8 @@ In practice, we will overlay multiple image augmentation methods.
 We can overlay the different image augmentation methods defined above and apply them to each image by using a `Compose` instance.
 -->
 
-*dịch đoạn phía trên*
+Trong thực tế, chúng ta sẽ kết hợp nhiều phương pháp tăng cường ảnh.
+Ta có thể kết hợp các phương pháp trên và áp dụng chúng cho từng hình ảnh bằng cách sử dụng thực thể `Compose`.
 
 
 
@@ -243,7 +246,7 @@ apply(img, augs)
 ## Using an Image Augmentation Training Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện mô hình dùng tăng cường ảnh
 
 
 <!--
@@ -253,7 +256,10 @@ This is because the position and size of the objects in the Fashion-MNIST datase
 The first 32 training images in the CIFAR-10 dataset are shown below.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ xem xét làm thế nào để áp dụng tăng cường hình ảnh trong huấn luyện thực tế.
+Ở đây, ta sử dụng bộ dữ liệu CIFAR-10, thay vì Fashion-MNIST trước đây.
+Điều này là do vị trí và kích thước của các đối tượng trong bộ dữ liệu Fashion-MNIST đã được chuẩn hóa và sự khác biệt về màu sắc và kích thước của các đối tượng trong bộ dữ liệu CIFAR-10 đáng kể hơn.
+32 hình ảnh huấn luyện đầu tiên trong bộ dữ liệu CIFAR-10 được hiển thị bên dưới.
 
 
 
@@ -270,7 +276,10 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-*dịch đoạn phía trên*
+Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện mà không sử dụng với các thao tác ngẫu nhiên trong dự đoán.
+Ở đây, chúng ta chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
+Ngoài ra, chúng ta sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
+tức là, tensor số thực dấu phẩy động 32-bit có kích thước (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
 
 
 
@@ -290,7 +299,9 @@ The `transform_first` function provided by Gluon's dataset applies image augment
 For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa một chức năng phụ trợ để giúp đọc hình ảnh và áp dụng tăng cường ảnh dễ dàng hơn.
+Hàm `transform_first` được cung cấp bởi các bộ dữ liệu cung cấp sẵn trong Gluon áp dụng tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
+Để biết mô tả chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
 
@@ -475,11 +486,14 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 3 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
+

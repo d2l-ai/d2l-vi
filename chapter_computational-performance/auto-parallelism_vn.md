@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Automatic Parallelism
 -->
@@ -50,15 +47,12 @@ from mxnet import np, npx
 npx.set_np()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Parallel Computation on CPUs and GPUs
 -->
 
-## Tính toán song song trên CPU và GPU
+## Tính toán Song song trên CPU và GPU
 
 <!--
 Let us start by defining a reference workload to test - the `run` function below performs 10 matrix-matrix multiplications 
@@ -85,6 +79,7 @@ To ensure that caching does not play a role in the results we warm up the device
 
 Bây giờ ta sẽ gọi hàm với dữ liệu.
 Để chắc chắn rằng bộ nhớ đệm không ảnh hưởng đến kết quả, ta khởi động các thiết bị bằng việc thực hiện một lượt tính cho mỗi biến trước khi bắt đầu đo lường.
+
 
 ```{.python .input}
 run(x_cpu)  # Warm-up both devices
@@ -121,12 +116,10 @@ In the above case the total execution time is less than the sum of its parts, si
 both CPU and GPU devices without the need for sophisticated code on behalf of the user. 
 -->
 
-Trong trường hợp phía trên, thời gian thi hành toàn bộ các tác vụ ít hơn tổng thời gian thi hành từng tác vụ riêng lẻ, bởi vì MXNet tự động định thời việc tính toán trên cả CPU và GPU mà không đòi hỏi người dùng phải cung cấp các đoạn mã phức tạp.
+Trong trường hợp phía trên, thời gian thi hành toàn bộ các tác vụ ít hơn tổng thời gian thi hành từng tác vụ riêng lẻ, 
+bởi vì MXNet tự động định thời việc tính toán trên cả CPU và GPU mà không đòi hỏi người dùng phải cung cấp các đoạn mã phức tạp.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Parallel Computation and Communication
@@ -197,9 +190,7 @@ Thực tế, ta có thể vừa tính toán và giao tiếp trên cả hai thi�
 Như đã lưu ý phía trên, có một sự phụ thuộc giữa việc tính toán và giao tiếp: `y[i]` phải được tính xong trước khi ta có thể sao chép nó qua CPU.
 May mắn thay, hệ thống có thể sao chép `y[i-1]` trong khi tính toán `y[i]` để giảm thiểu tổng thời gian chạy.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 We conclude with an illustration of the computational graph and its dependencies for a simple two-layer MLP when training on a CPU and two GPUs, as depicted in :numref:`fig_twogpu`.
@@ -229,7 +220,8 @@ Do đó, việc sử dụng back-end tính toán dựa trên đồ thị là m�
 -->
 
 * Các hệ thống hiện đại thường bao gồm nhiều thiết bị, ví dụ như nhiều GPU và CPU. Các thiết bị này có thể được sử dụng song song, một cách bất đồng bộ.
-* Các hệ thống hiện đại cũng có nhiều nguồn tài nguyên phục vụ cho giao tiếp, ví dụ như kết nối PCI Express, bộ nhớ (thường là SSD hoặc thông qua mạng), và băng thông mạng. Chúng có thể được sử dụng song song để đạt hiệu năng tối đa.
+* Các hệ thống hiện đại cũng có nhiều nguồn tài nguyên phục vụ cho giao tiếp, ví dụ như kết nối PCI Express, bộ nhớ (thường là SSD hoặc thông qua mạng), và băng thông mạng.
+Chúng có thể được sử dụng song song để đạt hiệu năng tối đa.
 * Back-end có thể cải thiện hiệu năng thông qua việc tự động tính toán và giao tiếp song song.
 
 
@@ -244,26 +236,20 @@ Do đó, việc sử dụng back-end tính toán dựa trên đồ thị là m�
 5. Designing computation tasks that include more complex data dependencies, and run experiments to see if you can obtain the correct results while improving performance.
 -->
 
-1. Có 10 thao tác được thực hiện trong hàm `run` đã được định nghĩa trong phần này. Giữa chúng không có bất cứ quan hệ phụ thuộc nào. Thiết kế một thí nghiệm để xem liệu MXNet có tự động thực thi các thao tác này một cách song song.
-2. Khi khối lượng công việc của một thao tác đủ nhỏ, song song hoá có thể hữu ích ngay cả khi chạy trên CPU hay GPU đơn. Thiết kế một thí nghiệm để kiểm chứng.
+1. Có 10 thao tác được thực hiện trong hàm `run` đã được định nghĩa trong phần này. Giữa chúng không có bất cứ quan hệ phụ thuộc nào.
+Thiết kế một thí nghiệm để xem liệu MXNet có tự động thực thi các thao tác này một cách song song.
+2. Khi khối lượng công việc của một thao tác đủ nhỏ, song song hóa có thể hữu ích ngay cả khi chạy trên CPU hay GPU đơn. Thiết kế một thí nghiệm để kiểm chứng.
 3. Thiết kế một thí nghiệm sử dụng tính toán song song trên CPU, GPU và giao tiếp giữa cả hai thiết bị.
 4. Sử dụng một trình gỡ lỗi (*debugger*) như Nsight của NVIDIA để kiểm chứng rằng đoạn mã của bạn hoạt động hiệu quả.
 5. Thiết kế các tác vụ tính toán chứa nhiều dữ liệu có quan hệ phụ thuộc phức tạp hơn, và thực hiện các thí nghiệm để xem liệu bạn có thể thu lại kết quả chính xác trong khi vẫn cải thiện hiệu năng.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2382)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/362)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Mai Hoàng Long
@@ -271,18 +257,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
 * Trần Yến Thy
-* Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
-* Phạm Minh Đức
- 
-<!-- Phần 4 -->
 * Đỗ Trường Giang
