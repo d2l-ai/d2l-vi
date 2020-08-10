@@ -81,10 +81,10 @@ Recall how we used convolutional layer channels to output category predictions i
 SSD uses the same method to reduce the model complexity.
 -->
 
-Đặt số lớp cho vật thể là $q$. Đối với trường hợp này, số lớp cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
+Đặt số lớp cho vật thể là $q$. Trong trường hợp này, số lớp cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
 Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là  $h$ và $w$.
 Nếu ta sử dụng từng phần tử làm tâm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
-Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá dư thừa.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá lớn.
 Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán lớp trong :numref:`sec_nin`.
 SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
