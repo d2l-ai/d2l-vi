@@ -83,8 +83,8 @@ SSD uses the same method to reduce the model complexity.
 
 Đặt số lớp cho vật thể là $q$. Đối với trường hợp này, số lớp cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
 Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là  $h$ và $w$.
-Nếu ta sử dụng từng phần tử làm tâm điểm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
-Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số sẽ quá dư thừa.
+Nếu ta sử dụng từng phần tử làm tâm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá dư thừa.
 Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán lớp trong :numref:`sec_nin`.
 SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
@@ -100,8 +100,8 @@ Therefore, there are $a(q+1)$ output channels, with the output channels indexed 
 
 Cụ thể, tầng dự đoán lớp sử dụng một tầng tích chập giữ nguyên chiều cao và chiều rộng của đầu vào.
 Do đó, toạ độ trong không gian của đầu ra và đầu vào quan hệ một-một với nhau dọc theo cả chiều cao và chiều rộng của ánh xạ đặc trưng.
-Giả sử rằng đầu ra và đầu vào này có cùng toạ độ $(x, y)$ trong không gian, kênh cho toạ độ $(x, y)$ trên
-ánh xạ đặc trưng ở đầu ra bao gồm lớp được dự đoán cho tất cả các khung neo được sinh ra khi sử dụng ánh xạ đặc trưng đầu vào có toạ độ $(x, y)$ làm tâm điểm.
+Giả sử rằng đầu ra và đầu vào này có cùng toạ độ $(x, y)$ trong không gian, các kênh của ánh xạ đặc trưng đầu ra tại toạ độ $(x, y)$
+đại diện cho các dự đoán lớp của tất cả các khung neo được sinh ra khi sử dụng toạ độ $(x, y)$ của ánh xạ đặc trưng đầu vào làm trung tâm.
 Bởi lẽ đó, có tất cả $a(q+1)$ kênh đầu ra, với các kênh đầu ra được đánh chỉ số theo $i(q+1) + j$
 ($0 \leq j \leq q$) biểu diễn dự đoán lớp có chỉ số $j$ cho khung neo chỉ số $i$.
 
@@ -847,5 +847,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
