@@ -480,7 +480,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transformer                            | transformer                               |                                              |
 | transition layer                       | tầng chuyển tiếp                          |                                              |
 | translation invariant                  | bất biến tịnh tiến                        | [https://git.io/Jftwj](https://git.io/Jftwj) |
-| transposed convolution                 | tích chập đảo                             |                                              |
+| transposed convolution                 | tích chập chuyển vị                             | [https://git.io/JJ1HU](https://git.io/JJ1HU) |
 | true negative                          | âm tính thật                              |                                              |
 | true positive                          | dương tính thật                           |                                              |
 | truncated backpropagation through time | lan truyền ngược qua thời gian bị cắt xén |                                              |
