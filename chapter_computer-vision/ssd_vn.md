@@ -694,7 +694,7 @@ Due to space limitations, we have ignored some of the implementation details of 
 Can you further improve the model in the following areas?
 -->
 
-Do giới hạn về phạm vi, chúng tôi đã bỏ qua một số chi tiết phần lập trình cho mô hình SSD trong thí nghiệm này.
+Do giới hạn về độ dài bài viết, chúng tôi đã bỏ qua một số chi tiết phần lập trình cho mô hình SSD trong thí nghiệm này.
 Liệu bạn có thể cải thiện mô hình hơn nữa theo các hướng sau?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
