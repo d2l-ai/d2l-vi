@@ -20,10 +20,10 @@ If you want to learn more about how to read images, refer to the documentation f
 
 Không có bất kì bộ dữ liệu nhỏ nào, như là MNIST hay Fashion-MNIST, trong nhánh lĩnh vực phát hiện đối tượng.
 Để nhanh chóng kiểm định mô hình, chúng ta sẽ sử dụng một tập dữ liệu nhỏ.
-Đầu tiên, ta tạo 1000 bức ảnh Pikachu với các góc độ và kích thước khác nhau bằng mô hình 3D mã nguồn mở của Pikachu .
-Sau đó, ta thu thập một loại các ảnh nền và đặt ảnh Pikachu ở vị trí ngẫu nhiên trên mỗi bức ảnh.
-Ta dùng [im2rec tool](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyện đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
-Định dạng này có khả năng giảm chi phí lưu trữ của tập dữ liệu và cải thiện hiệu suất đọc dữ liệu.
+Đầu tiên, ta tạo 1000 bức ảnh Pikachu với các góc độ và kích thước khác nhau bằng mô hình Pikachu 3D mã nguồn mở.
+Sau đó, ta thu thập một loạt các ảnh nền và đặt ngẫu nhiên  ảnh Pikachu lên trên mỗi bức ảnh.
+Ta dùng [im2rec tool](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyển đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
+Định dạng này có khả năng giảm dung lượng lưu trữ và cải thiện hiệu suất đọc tập dữ liệu.
 Nếu các bạn muốn tìm hiểu thêm về cách đọc ảnh, hãy tham khảo tài liệu [GluonCV Toolkit](https://gluon-cv.mxnet.io/).
 
 
