@@ -125,7 +125,17 @@ and the $x, y$ axis coordinates of the lower-right corner of the bounding box (t
 The Pikachu dataset here has only one bounding box per image, so $m=1$.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta đọc một minibatch rồi xuất ra kích thước ảnh và nhãn.
+Kích thước ảnh giống như trong trong thử nghiệm trước (kích thước batch, số kênh, chiều cao, độ rộng).
+Kích thước của nhãn là (kích thước batch, $m$, 5), trong đó $m$ bằng với số lượng khung chứa tối đa trên một bức ảnh trong một tập dữ liệu hình ảnh.
+Mặc dù việc tính toán với minibatch rất hiệu quả, nhưng nó lại yêu cầu mỗi hình ảnh phải cùng một lượng khung chứa để chúng có thể được đặt trong cùng một batch.
+Vì mỗi hình ảnh có thể có số lượng khung chứa khác nhau, ta có thể thêm các khung chứa bất hợp lệ vào hình ảnh có khung chứa bên dưới $m$ cho đến khi mỗi bức ảnh có được các khung chứa $m$.
+Do đó, chúng ta có thể đọc được một chuỗi các ảnh nhỏ mỗi lần.
+Nhãn của mỗi khung chứa trong bức ảnh được biểu diễn bằng một mảng có độ dài là 5.
+Phần tử đầu tiên trong mảng là hạng mục của đối tượng xuất hiện trong khung chứa.
+Khi giá trị là -1, khung chứa ấy chính là khung chứa bất hợp lệ dùng cho mục đích lắp đầy khoảng trống.
+Bốn phần tử còn lại trong mảng đại diện cho toạ độ trục $x, y$ tại góc trên bên trái của khung chứa và tọa độ trục $x, y$ tại góc dưới bên phải của khung chứa (miền giá trị từ 0 đến 1).
+Tập dữ liệu Pikachu ở đây chỉ có một khung chứa cho mỗi ảnh, vì thế $m=1$.
 
 
 
@@ -141,7 +151,7 @@ batch.data[0].shape, batch.label[0].shape
 ## Demonstration
 -->
 
-## *dịch tiêu đề phía trên*
+## Minh hoạ
 
 
 <!--
@@ -151,7 +161,10 @@ Of course, this is a simple artificial dataset.
 In actual practice, the data are usually much more complicated.
 -->
 
-*dịch đoạn phía trên*
+Ta có mười bức ảnh kèm với các khung chứa trên chúng.
+Chúng ta có thể thấy rằng góc, kích thước và vị trí của Pikachu khác nhau trong mỗi bức ảnh.
+Dĩ nhiên, đây là một tập dữ liệu tự tạo đơn giản.
+Trong thực tế, dữ liệu thường phức tạp hơn nhiều.
 
 
 
@@ -171,7 +184,9 @@ for ax, label in zip(axes, batch.label[0][0:10]):
 However, after we introduce bounding boxes, the label shape and image augmentation (e.g., random cropping) are changed.
 -->
 
-*dịch đoạn phía trên*
+* Tập dữ liệu Pikachu mà ta tổng hợp có thể được dùng để kiểm tra các mô hình phát hiện đối tượng.
+* Việc đọc dữ liệu để phát hiện đối tượng tương đương với việc phân loại hình ảnh.
+Tuy nhiên, sau khi ta giới thiệu các khung chứa, kích thước nhãn và việc tăng cường ảnh (ví dụ, cắt xén ngẫu nhiên) được chỉnh sửa.
 
 
 ## Bài tập
@@ -181,7 +196,7 @@ However, after we introduce bounding boxes, the label shape and image augmentati
 Referring to the MXNet documentation, what are the parameters for the constructors of the `image.ImageDetIter` and `image.CreateDetAugmenter` classes? What is their significance?
 -->
 
-*dịch đoạn phía trên*
+Tham khảo tài liệu MXNet, tham số các hàm tạo (constructors) của lớp `image.ImageDetIter` và `image.CreateDetAugmenter` là gì? Cho biết ý nghĩa của chúng?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -207,4 +222,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Đăng Khoa
 
 <!-- Phần 2 -->
-* 
+* Phạm Đăng Khoa
+
