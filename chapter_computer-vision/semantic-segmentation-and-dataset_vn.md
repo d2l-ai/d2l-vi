@@ -238,7 +238,7 @@ Specifically, we use the random cropping method used in image augmentation to cr
 -->
 
 Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
-Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ lớp được dự đoán của điểm ảnh về kích thước gốc theo ảnh đầu vào.
+Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc theo ảnh đầu vào.
 Sẽ rất khó để có thể thực hiện việc này một cách chính xác, nhất là khi các vùng được phân vùng mang ngữ nghĩa khác nhau.
 Để tránh vấn đề này, ta cắt ảnh để xác định kích thước chứ không biến đổi tỉ lệ ảnh.
 Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên mà đã được sử dụng trong phân vùng ảnh để cắt vùng giống nhau từ các ảnh đầu vào và nhãn của ảnh chúng.
@@ -264,7 +264,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### Các lớp trong Tập dữ liệu cho Phân vùng theo Ngữ nghĩa được Tuỳ chỉnh
+### Các hạng mục trong Tập dữ liệu cho Phân vùng theo Ngữ nghĩa được Tuỳ chỉnh
 
 
 <!--
@@ -274,8 +274,8 @@ As some images in the dataset may be smaller than the output dimensions specifie
 In addition, we define the `normalize_image` function to normalize each of the three RGB channels of the input images.
 -->
 
-Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để điều chỉnh các lớp trong tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
-Với việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập ảnh đầu vào với chỉ số `idx` và các chỉ số của lớp của từng điểm ảnh trong ảnh đó từ tập dữ liệu.
+Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để điều chỉnh các hạng mục trong tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
+Với việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập ảnh đầu vào với chỉ số `idx` và các chỉ số của hạng mục của từng điểm ảnh trong ảnh đó từ tập dữ liệu.
 Do có một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra được chỉ định cho quá trình cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng cách sử dụng hàm `filter` được tuỳ chỉnh.
 Cộng với đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB một của các ảnh đầu vào.
 
@@ -348,8 +348,8 @@ In contrast to image classification and object recognition, labels here are thre
 -->
 
 Ta đặt kích thước batch là 64 và định nghĩa các iterator cho tập huấn luyện và tập kiểm tra.
-In ra kích thước của minibatch đầu tiên.
-Trái lại so với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây là một mảng ba chiều.
+Sau đó in ra kích thước của minibatch đầu tiên.
+Trái lại so với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây có dạng mảng ba chiều.
 
 
 
