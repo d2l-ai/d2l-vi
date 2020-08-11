@@ -357,7 +357,7 @@ Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 
 -->
 
 Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong hình :numref:`fig_ssd`, các vật thể nó phát hiện là lớn hơn và các khung neo nó tạo ra cũng lớn hơn.
-Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của cá khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
+Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
 Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định các kích thước của các khung neo lớn hơn ở các tỉ lê khác nhau.
 
 
