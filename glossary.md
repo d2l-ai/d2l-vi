@@ -89,7 +89,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confidence level                | mức tin cậy              |                                              |
 | confusion matrix                | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                       | ràng buộc                |                                              |
-| content loss (in style transfer) | mất mát nội dung |   |
+| content loss (in style transfer) | mất mát nội dung | [https://git.io/JJyeI](https://git.io/JJyeI) |
 | convex combination              | tổ hợp lồi               |                                              |
 | convex optimization             | tối ưu lồi               |                                              |
 | convex set                      | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
@@ -323,7 +323,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                            |                                                                                            |
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
-| neural style transfer | truyền tải phong cách nơ-ron |  |
+| neural style transfer | truyền tải phong cách nơ-ron | [https://git.io/JJyeI](https://git.io/JJyeI) |
 | node (in neural networks)         | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | noise-injection                   | thêm nhiễu                        |                                                                                            |
 | non-maximum suppression | triệt phi cực đại | [https://git.io/JJXrQ](https://git.io/JJXrQ) |
@@ -457,7 +457,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significant           | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent       | hạ gradient ngẫu nhiên   |                                              |
 | stop word                         | từ dừng                  |                                              |
-| style loss (in style transfer) | mất mát phong cách |  |
+| style loss (in style transfer) | mất mát phong cách | [https://git.io/JJyeI](https://git.io/JJyeI) |
 | stride                            | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                         | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation               | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
@@ -482,7 +482,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | timeseries analysis                    | phân tích dữ liệu chuỗi thời gian         |                                              |
 | timestep                               | bước thời gian                            | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | token                                  | token                                     |                                              |
-| total variation | biến thiên toàn phần |  |
+| total variation | biến thiên toàn phần | [https://git.io/JJyeI](https://git.io/JJyeI)  |
 | training dev set                       | tập phát triển huấn luyện                 |                                              |
 | training set                           | tập huấn luyện                            |                                              |
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
