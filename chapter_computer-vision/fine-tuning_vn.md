@@ -5,7 +5,7 @@
 # Fine-Tuning
 -->
 
-# *dịch tiêu đề phía trên*
+# Tinh Chỉnh
 :label:`sec_fine_tuning`
 
 
@@ -15,7 +15,9 @@ We also described ImageNet, the most widely used large-scale image dataset in th
 However, the size of datasets that we often deal with is usually larger than the first, but smaller than the second.
 -->
 
-*dịch đoạn phía trên*
+Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60 000 ảnh.
+Chúng ta cũng đã nói về ImageNet, tập ảnh dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
+Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
 <!--
@@ -26,7 +28,11 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn thanh toán chiếc ghế đó tới người dùng.
+Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
+Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
+Điều này dẫn tới việc các mô hình phức tạp bị quá khớp khi huấn luyện trên tập dữ liệu này, dù chúng hoạt động tốt với Imagenet.
+Đồng thời, vì lượng dữ liệu khá hạn chế, độ chính xác của mô hình sau khi huấn luyện xong có thể không đạt mức kỳ vọng.
 
 
 <!--
@@ -36,7 +42,10 @@ For example, in order to collect the ImageNet datasets, researchers have spent m
 Although, recently, data collection costs have dropped significantly, the costs still cannot be ignored.
 -->
 
-*dịch đoạn phía trên*
+Để giải quyết vấn đề này, một giải pháp dễ thấy là đi thu thập thêm dữ liệu.
+Tuy nhiên, việc thu thập và gán nhãn dữ liệu có thể tốn rất nhiều tiền và thời gian.
+Ví dụ, để xây dựng được tập ImageNet, những nhà nghiên cứu đã tiêu hàng triệu đô la từ nguồn tài trợ nghiên cứu.
+Dù vậy, gần đây chi phí thu thập dữ liệu đã giảm mạnh, nhưng điều này vẫn rất đáng lưu ý.
 
 
 <!--
@@ -46,7 +55,9 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-*dịch đoạn phía trên*
+Một giải pháp khác là áp dụng học truyền tải, chuyển đổi kiến thức đã học từ tập dữ liệu nguồn để làm việc tập dữ liệu đích.
+Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, chất liệu, hình đáng, và các thành phần của vật thể.
+Các đặc trưng tương đồng này có thể sẽ có ích trong bài toán nhận diện ghế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -58,8 +69,8 @@ In this section, we introduce a common technique in transfer learning: fine tuni
 As shown in :numref:`fig_finetune`, fine tuning consists of the following four steps:
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học truyền tải, đó là tinh chỉnh (*fine tuning*).
+Như minh họa trong hình :numref:`fig_finetune`, việc tinh chỉnh được tiến hành theo bốn bước sau đây:
 
 <!--
 1. Pre-train a neural network model, i.e., the source model, on a source dataset (e.g., the ImageNet dataset).
@@ -72,15 +83,20 @@ We also assume that the output layer of the source model is closely related to t
 We will train the output layer from scratch, while the parameters of all remaining layers are fine-tuned based on the parameters of the source model.
 -->
 
-*dịch đoạn phía trên*
-
-
+1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình gốc, trên tập dữ liệu gốc (chẳng hạn tập dữ liệu ImageNet).
+2. Tạo mô hình mạng nơ-ron mới gọi là mô hình mục tiêu.
+Mô hình này sao chép tất cả các thiết kế cũng như các tham số của mô hình gốc, ngoại trừ tầng đầu ra.
+Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu gốc và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu mục tiêu.
+Ta cũng giả định là tầng đầu ra của mô hình gốc có liên hệ mật thiết với các nhãn của tập dữ liệu gốc và do đó không được sử dụng trong mô hình mục tiêu.
+3. Thêm vào một tầng đầu ra cho mô hình mục tiêu mà kích thước của nó là số lớp của dữ liệu mục tiêu, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
+4. Huấn luyện mô hình mục tiêu trên tập dữ liệu mục tiêu, chẳng hạn như tập dữ liệu ghế.
+Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình gốc.
 
 <!--
 ![Fine tuning.](../img/finetune.svg)
 -->
 
-![*dịch mô tả hình ảnh trên*](../img/finetune.svg)
+![Thực hiện tinh chỉnh](../img/finetune.svg)
 :label:`fig_finetune`
 
 
@@ -89,7 +105,7 @@ We will train the output layer from scratch, while the parameters of all remaini
 ## Hot Dog Recognition
 -->
 
-## *dịch tiêu đề phía trên*
+## Nhận dạng món bánh xúc xích
 
 
 <!--
@@ -99,9 +115,10 @@ This small dataset contains thousands of images, some of which contain hot dogs.
 We will use the model obtained by fine tuning to identify whether an image contains a hot dog.
 -->
 
-*dịch đoạn phía trên*
-
-
+Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món bánh xúc xích.
+Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
+Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, một số có chứa các ảnh món bánh này.
+Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món bánh này hay không.
 
 <!--
 First, import the packages and modules required for the experiment.
@@ -109,8 +126,9 @@ Gluon's `model_zoo` package provides a common pre-trained model.
 If you want to get more pre-trained models for computer vision, you can use the [GluonCV Toolkit](https://gluon-cv.mxnet.io).
 -->
 
-*dịch đoạn phía trên*
-
+Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
+Gói `model_zoo` trong Gluon cung cấp một mô hình huấn luyện sẵn thông dụng.
+Nếu bạn muốn lấy thêm các mô hình huấn luyện sẵn cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -130,7 +148,7 @@ npx.set_np()
 ### Obtaining the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Lấy dữ liệu
 
 
 <!--
@@ -138,7 +156,8 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-*dịch đoạn phía trên*
+Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa bánh mì kẹp xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
+$1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
 <!--
@@ -146,7 +165,8 @@ We first download the compressed dataset and get two folders `hotdog/train` and 
 Both folders have `hotdog` and `not-hotdog` category subfolders, each of which has corresponding image files.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên ta tải bộ dữ liệu được nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
+Cả hai đều có hai tập tin phụ `hotdog` và `not-hotdog` chứa các ảnh với phân loại tương ứng.
 
 
 
@@ -163,7 +183,7 @@ data_dir = d2l.download_extract('hotdog')
 We create two `ImageFolderDataset` instances to read all the image files in the training dataset and testing dataset, respectively.
 -->
 
-*dịch đoạn phía trên*
+Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các files ảnh trong bộ huấn luyện và bộ kiểm tra.
 
 
 
@@ -180,7 +200,8 @@ The first 8 positive examples and the last 8 negative images are shown below.
 As you can see, the images vary in size and aspect ratio.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là 8 mẫu dương đầu tiên và 8 mẫu âm cuối cùng.
+Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
 
 
 
@@ -198,7 +219,10 @@ In addition, we normalize the values of the three RGB (red, green, and blue) col
 The average of all values of the channel is subtracted from each value and then the result is divided by the standard deviation of all values of the channel to produce the output.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình huấn luyện, chúng ta cắt (*crop*) ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỷ lệ (*scale*) để có chiều dài và chiều rộng 224 pixel.
+Khi kiểm tra, ta biến đổi tỷ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Thêm vào đó, chúng ta chuẩn hoá (*normalize*) các giá trị của ba kênh màu RGB (red, green, blue).
+Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh được xử lý.
 
 
 ```{.python .input  n=5}
@@ -232,7 +256,7 @@ test_augs = gluon.data.vision.transforms.Compose([
 ### Defining and Initializing the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa và Khởi tạo Mô hình
 
 
 <!--
@@ -241,7 +265,9 @@ Here, we specify `pretrained=True` to automatically download and load the pre-tr
 The first time they are used, the model parameters need to be downloaded from the Internet.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng ResNet-18 đã được huấn luyện trước trên tập dữ liệu ImageNet làm mô hình gốc.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện sẵn.
+Ở lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 
 
@@ -258,7 +284,11 @@ The member variable `output` of source model is given below.
 As a fully connected layer, it transforms ResNet's final global average pooling layer output into 1000 class output on the ImageNet dataset.
 -->
 
-*dịch đoạn phía trên*
+Mô hình gốc được huấn luyện sẵn bao gồm hai biến thành viên: `features` và `output`.
+`features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
+Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
+Biến thành viên `output` của mô hình gốc được minh họa dưới đây.
+Là một tầng kết nối đầy đủ, nó biến đổi đầu ra của tầng gộp trung bình toàn cục thành 1000 lớp đầu ra trên tập dữ liệu ImageNet.
 
 
 ```{.python .input  n=7}
@@ -276,7 +306,13 @@ In contrast, model parameters in the member variable `output` are randomly initi
 Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning rate of $10\eta$ to update the model parameters in the member variable `output`.
 -->
 
-*dịch đoạn phía trên*
+Sau đó ta xây dựng một mạng nơ-ron để sử dụng làm mô hình đích.
+Mạng này được định nghĩa giống như mô hình gốc được huấn luyện sẵn, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu đích.
+Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
+Các tham số mô hình trong `features` được huấn luyện trước đó trên tập dữ liệu ImageNet như vậy là đủ tốt.
+Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
+Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
+Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ thì ta sử dụng tốc độ học là $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
 
 
 
@@ -297,14 +333,14 @@ finetune_net.output.collect_params().setattr('lr_mult', 10)
 ### Fine Tuning the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Tinh chỉnh Mô hình
 
 
 <!--
 We first define a training function `train_fine_tuning` that uses fine tuning so it can be called multiple times.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta định nghĩa hàm huấn luyện tinh chỉnh `train_fine_tuning` để có thể gọi nhiều lần.
 
 
 ```{.python .input  n=9}
@@ -329,7 +365,8 @@ We set the learning rate in the `Trainer` instance to a smaller value, such as 0
 Based on the previous settings, we will train the output layer parameters of the target model from scratch using a learning rate ten times greater.
 -->
 
-*dịch đoạn phía trên*
+Ta gán giá trị tốc độ học nhỏ cho đối tượng `Trainer`, ví dụ như 0.01, để tinh chỉnh các tham số mô hình huấn luyện sẵn.
+Như đề cập phía trên, ta sẽ sử dụng tốc độ học gấp 10 lần để huấn luyện từ đầu các tham số của tầng đầu ra mô hình mục tiêu.
 
 
 
@@ -343,7 +380,8 @@ For comparison, we define an identical model, but initialize all of its model pa
 Since the entire model needs to be trained from scratch, we can use a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+Để so sánh, ta định nghĩa một mô hình y hệt, tuy nhiên tất cả các tham số mô hình của nó được khởi tạo một cách ngẫu nhiên.
+Do toàn bộ mô hình cần được huấn luyện từ đầu, ta có thể sử dụng tốc độ học lớn hơn.
 
 
 ```{.python .input  n=12}
@@ -357,7 +395,7 @@ train_fine_tuning(scratch_net, 0.1)
 As you can see, the fine-tuned model tends to achieve higher precision in the same epoch because the initial values of the parameters are better.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, với số epoch như nhau, giá trị precision của mô hình tinh chỉnh có xu hướng cao hơn do giá trị ban đầu của các tham số tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -371,7 +409,9 @@ As you can see, the fine-tuned model tends to achieve higher precision in the sa
 * Generally, fine tuning parameters use a smaller learning rate, while training the output layer from scratch can use a larger learning rate.
 -->
 
-*dịch đoạn phía trên*
+* Học truyền tải chuyển kiến thức học được từ tập dữ liệu gốc sang tập dữ liệu mục tiêu. Tinh chỉnh là một kĩ thuật phổ biến trong học truyền tải.
+* Mô hình mục tiêu tái tạo toàn bộ thiết kế mô hình và các tham số của mô hình gốc, ngoại trừ tầng đầu ra, và tinh chỉnh các tham số này dựa vào tập dữ liệu mục tiêu. Ngược lại, tầng đầu ra của mô hình mục tiêu cần được huấn luyện lại từ đầu.
+* Thông thường việc tinh chỉnh các tham số sử dụng tốc độ học nhỏ, trong khi việc huấn luyện lại tầng đầu ra từ đầu có thể sử dụng tốc độ học lớn hơn nhiều.
 
 
 ## Bài tập
@@ -382,7 +422,9 @@ As you can see, the fine-tuned model tends to achieve higher precision in the sa
 3. Set the parameters in `finetune_net.features` to the parameters of the source model and do not update them during training. What will happen? You can use the following code.
 -->
 
-*dịch đoạn phía trên*
+1. Liên tục tăng tốc độ học của `finetune_net`. Giá trị precision của mô hình thay đổi như thế nào?
+2. Tiếp tục điều chỉnh các siêu tham số của `finetune_net` và `scratch_net` trong thí nghiệm so sánh ở trên. Liệu giá trị precision của chúng vẫn khác nhau hay không?
+3. Gán các tham số của `finetune_net.features` bằng các tham số của mô hình gốc và không cập nhật chúng suốt quá trình huấn luyện. Điều gì sẽ xảy ra? Bạn có thể sử dụng đoạn mã sau.
 
 
 ```{.python .input}
@@ -396,7 +438,9 @@ Its corresponding weight parameter at the output layer can be obtained by using 
 How can we use this parameter?
 -->
 
-*dịch đoạn phía trên*
+4. Thực ra thì cũng có lớp "hotdog" trong tập dữ liệu `ImageNet`.
+Các trọng số tương ứng của nó trong tầng đầu ra có thể thu được thông qua việc sử dụng đoạn mã sau.
+Ta có thể sử dụng các tham số này như thế nào?
 
 
 ```{.python .input  n=13}
@@ -426,21 +470,23 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Mai Sơn Hải
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
-* 
-
+* Đỗ Trường Giang
 

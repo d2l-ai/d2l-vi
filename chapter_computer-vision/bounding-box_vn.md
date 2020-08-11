@@ -5,7 +5,7 @@
 # Object Detection and Bounding Boxes
 -->
 
-# *dịch tiêu đề phía trên*
+# Phát hiện Vật thể và Khoanh vùng Đối tượng (Khung chứa)
 :label:`sec_bbox`
 
 
@@ -17,8 +17,11 @@ We not only want to classify them, but also want to obtain their specific positi
 In computer vision, we refer to such tasks as object detection (or object recognition).
 -->
 
-*dịch đoạn phía trên*
-
+Ở phần trước, chúng ta đã giới thiệu nhiều loại mô hình dùng cho phân loại ảnh.
+Trong nhiệm vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
+Tuy nhiên, trong nhiều tình huống, có nhiều đối tượng trong ảnh mà ta quan tâm.
+Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng trong ảnh.
+Trong lĩnh vực thị giác máy tính, ta gọi những tác vụ như vậy là phát hiện vật thể (hay nhận dạng vật thể).
 
 <!--
 Object detection is widely used in many fields.
@@ -27,8 +30,10 @@ Robots often perform this type of task to detect targets of interest.
 Systems in the security field need to detect abnormal targets, such as intruders or bombs.
 -->
 
-*dịch đoạn phía trên*
-
+Phát hiện vật thể được sử dụng rộng rãi trong nhiều lĩnh vực.
+Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản từ các ảnh được video thu về.
+Những robot cần thực hiện kiểu tác vụ này để phát hiện các đối tượng chúng quan tâm.
+Hay các hệ thống anh ninh cần phát hiện các mục tiêu bất thường như các đối tượng xâm nhập bất hợp pháp hoặc bom mìn.
 
 <!--
 In the next few sections, we will introduce multiple deep learning models used for object detection.
@@ -36,9 +41,9 @@ Before that, we should discuss the concept of target location.
 First, import the packages and modules required for the experiment.
 -->
 
-*dịch đoạn phía trên*
-
-
+Trong một số phần tiếp theo, chúng tôi sẽ giới thiệu nhiều mô hình học sâu dùng để phát hiện vật thể.
+Trước hết, ta nên bàn qua về khái niệm vị trí vật thể.
+Đầu tiên, ta hãy nhập các gói và mô-đun cần thiết cho việc thử nghiệm.
 
 ```{.python .input}
 %matplotlib inline
@@ -55,9 +60,9 @@ We can see there is a dog on the left side of the image and a cat on the right.
 They are the two main targets in this image.
 -->
 
-*dịch đoạn phía trên*
-
-
+Kế tiếp, ta sẽ nạp các ảnh mẫu cần để sử dụng trong phần này.
+Ta có thể thấy ở đây có một con chó ở bên trái của bức ảnh và một con mèo nằm bên phải.
+Chúng là hai đối tượng chính trong ảnh này.
 
 ```{.python .input}
 d2l.set_figsize()
@@ -73,7 +78,7 @@ d2l.plt.imshow(img);
 ## Bounding Box
 -->
 
-## *dịch tiêu đề phía trên*
+## Khung chứa
 
 
 <!--
@@ -83,7 +88,10 @@ We will define the bounding boxes of the dog and the cat in the image based on t
 The origin of the coordinates in the above image is the upper left corner of the image, and to the right and down are the positive directions of the $x$ axis and the $y$ axis, respectively.
 -->
 
-*dịch đoạn phía trên*
+Để phát hiện vật thể, ta thường sử dụng khung chứa để mô tả vị trí của mục tiêu.
+Khung chứa là một khung hình chữ nhật có thể được xác định bởi hai toạ độ: tọa độ $x$, $y$ góc trên bên trái và toạ độ $x$, $y$ góc dưới bên phải của khung hình chữ nhật.
+Ta có thể định nghĩa các khung chứa của con chó và con mèo trong ảnh dựa vào thông tin toạ độ của ảnh trên.
+Gốc toạ độ của ảnh trên là góc trên bên trái của ảnh, chiều sang phải và xuống dưới lần lượt là chiều dương của trục $x$ và trục $y$.
 
 
 ```{.python .input  n=2}
@@ -98,7 +106,9 @@ Before drawing the box, we will define a helper function `bbox_to_rect`.
 It represents the bounding box in the bounding box format of `matplotlib`.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể vẽ khung chứa ngay trên ảnh để kiểm tra tính chính xác của nó.
+Trước khi vẽ khung, ta định nghĩa hàm hỗ trợ `bbox_to_rect`.
+Nó biểu diễn khung chứa theo đúng định dạng khung chứa của `matplotlib`.
 
 
 
@@ -119,7 +129,7 @@ def bbox_to_rect(bbox, color):
 After loading the bounding box on the image, we can see that the main outline of the target is basically inside the box.
 -->
 
-*dịch đoạn phía trên*
+Sau khi vẽ khung chứa lên ảnh, ta có thể thấy rằng các đường nét chính của mục tiêu về cơ bản là nằm trong khung này.
 
 
 ```{.python .input}
@@ -138,7 +148,8 @@ In object detection, we not only need to identify all the objects of interest in
 The positions are generally represented by a rectangular bounding box.
 -->
 
-*dịch đoạn phía trên*
+Để phát hiện vật thể, ta không chỉ cần xác định tất cả đối tượng mong muốn trong ảnh mà còn cả vị trí của chúng.
+Các vị trí thường được biểu diễn qua các khung chứa hình chữ nhật.
 
 
 ## Bài tập
@@ -149,7 +160,8 @@ Find some images and try to label a bounding box that contains the target.
 Compare the difference between the time it takes to label the bounding box and label the category.
 -->
 
-*dịch đoạn phía trên*
+Tìm một vài ảnh và thử dán nhãn một khung chứa bao quanh mục tiêu.
+So sánh sự khác nhau giữa thời gian cần để dán nhãn các khung chứa và dán nhãn các lớp hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -170,9 +182,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
-* 
-
-
+* Đỗ Trường Giang
