@@ -336,7 +336,7 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-Bây giờ, ta sẽ giải thích chi tiết quá trình tính toán xuôi cho từng mô-đun.
+Bây giờ, ta sẽ định nghĩa quá trình lan truyền xuôi cho từng mô-đun.
 Tương phản với các mạng nơ-ron chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tính chập, mà còn sinh ra cả các khung neo ở mức tỉ lệ hiện tại từ `Y` cùng với các lớp và độ lệch dự đoán.
 
 
