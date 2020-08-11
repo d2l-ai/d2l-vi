@@ -337,7 +337,7 @@ but also the anchor boxes of the current scale generated from `Y` and their pred
 -->
 
 Bây giờ, ta sẽ định nghĩa quá trình lan truyền xuôi cho từng mô-đun.
-Tương phản với các mạng nơ-ron chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tính chập, mà còn sinh ra cả các khung neo ở mức tỉ lệ hiện tại từ `Y` cùng với các lớp và độ lệch dự đoán.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra cả các khung neo ở tỉ lệ hiện tại từ `Y` cùng với các lớp và độ dời dự đoán.
 
 
 ```{.python .input  n=10}
