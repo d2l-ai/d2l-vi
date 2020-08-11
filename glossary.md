@@ -231,6 +231,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | indicator variable                          | biến chỉ định                | [https://git.io/JvQha](https://git.io/JvQha) |
 | inductive bias                              | thiên kiến quy nạp           |                                              |
 | initializer                                 | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
+| instance segmentation                       | phân vùng thực thể           |  |
 | internal covariate shift                    | dịch chuyển hiệp biến nội bộ |                                              |
 | intersection over union (IoU) | phần giao trên phần hợp | | 
 | iteration                                   | vòng lặp                     |                                              |
