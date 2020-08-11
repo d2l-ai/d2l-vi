@@ -66,7 +66,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | candidate hidden state          | trạng thái ẩn tiềm năng  |                                              |
 | candidate memory                | ô nhớ tiềm năng          |                                              |
 | categorical variable            | biến hạng mục            | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| category (in classification)    | lớp                      | [https://git.io/JvohG](https://git.io/JvohG) |
+| category                        | hạng mục                 | [https://git.io/JJDKV](https://git.io/JJDKV) |
 | causality                       | quan hệ nhân quả         |                                              |
 | chain rule                      | quy tắc dây chuyền       | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | channel (in computer vision)    | kênh                     |                                              |
