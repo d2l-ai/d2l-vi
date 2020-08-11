@@ -5,7 +5,7 @@
 # Single Shot Multibox Detection (SSD)
 -->
 
-# *dịch tiêu đề phía trên*
+# Phát hiện Nhiều khung trong Một lần Thực hiện (SSD)
 
 
 <!--
@@ -15,14 +15,17 @@ This quick and easy model is already widely used.
 Some of the design concepts and implementation details of this model are also applicable to other object detection models.
 -->
 
-*dịch đoạn phía trên*
+Ở một số phần trước, chúng tôi đã giới thiệu về khung chứa, khung neo, phát hiện vật thể đa tỉ lệ và tập dữ liệu.
+Giờ ta sẽ sử dụng phần kiến thức nền này để xây dựng một mô hình phát hiện vật thể: phát hiện nhiều khung trong một lần thực hiện (Single Shot Multibox Detection - SSD) :cite:`Liu.Anguelov.Erhan.ea.2016`.
+Mô hình này đang được sử dụng rộng rãi nhờ tốc độ và tính đơn giản của nó.
+Một số khái niệm thiết kế và chi tiết lập trình của mô hình này cũng có thể được áp dụng cho các mô hình phát hiện vật thể khác.
 
 
 <!--
 ## Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 
 <!--
@@ -42,14 +45,26 @@ nd each multiscale feature block and then predicts the categories and offsets (i
 of the anchor boxes in order to detect objects of different sizes, SSD is a multiscale object detection model.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_ssd` mô tả thiết kế của một mô hình SSD.
+Các thành phần chính của mô hình gồm có một khối mạng cơ sở và các khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi.
+Trong đó khối mạng cơ sở được sử dụng để tách các đặc trưng của ảnh gốc, thường dưới dạng một mạng nơ-ron tích chập sâu.
+Bài báo về SSD chọn dùng mạng VGG-16 trước tầng phân loại :cite:`Liu.Anguelov.Erhan.ea.2016`, tuy nhiên gần đây nó thường bị thay thế bởi ResNet.
+Ta có thể thiết kế mạng cơ sở để cho ra chiều cao và chiều rộng lớn hơn.
+Bằng cách này, sẽ có nhiều khung neo được sinh ra bởi ánh xạ đặc trưng này hơn,
+cho phép ta phát hiện các vật thể nhỏ hơn.
+Tiếp theo, mỗi khối đặc trưng đa tỉ lệ giảm chiều cao và chiều rộng của ánh xạ đặc trưng ở tầng trước (ví dụ, nó có thể giảm kích thước này đi một nửa).
+Các khối này sau đó sử dụng từng phần tử trong ánh xạ đặc trưng để mở rộng vùng tiếp nhận trên ảnh đầu vào.
+Bằng cách này, khối đặc trưng đa tỉ lệ càng gần đỉnh mô hình trong :numref:`fig_ssd` thì có ánh xạ đặc trưng ở đầu ra càng nhỏ, và số khung neo được sinh ra bởi ánh xạ đầu ra đó càng ít.
+Hơn nữa, khối đặc trưng càng gần đỉnh mô hình thì vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng càng lớn và càng phù hợp để phát hiện những vật thể lớn.
+Vì SSD sinh ra các tập khung neo với số lượng và kích thước khác nhau dựa trên mạng cơ sở
+và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán lớp và độ dời (ví dụ như dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, có thể nói SSD là một mô hình phát hiện vật thể đa tỉ lệ.
 
 
 <!--
 ![The SSD is composed of a base network block and several multiscale feature blocks connected in a series.](../img/ssd.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/ssd.svg)
+![SSD được cấu thành bởi một khối mạng cơ sở và nhiều khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi](../img/ssd.svg)
 :label:`fig_ssd`
 
 
@@ -58,7 +73,8 @@ Next, we will describe the implementation of the modules in :numref:`fig_ssd`.
 First, we need to discuss the implementation of category prediction and bounding box prediction.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ mô tả phần lập trình cho các mô-đun trong :numref:`fig_ssd`.
+Đầu tiên, ta cần phải thảo luận về việc lập trình cho phần dự đoán lớp và dự đoán khung chứa.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -69,7 +85,7 @@ First, we need to discuss the implementation of category prediction and bounding
 ### Category Prediction Layer
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng Dự đoán Lớp
 
 
 <!--
@@ -81,7 +97,12 @@ Recall how we used convolutional layer channels to output category predictions i
 SSD uses the same method to reduce the model complexity.
 -->
 
-*dịch đoạn phía trên*
+Đặt số lớp cho vật thể là $q$. Trong trường hợp này, số lớp cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
+Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là  $h$ và $w$.
+Nếu ta sử dụng từng phần tử làm tâm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá lớn.
+Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán lớp trong :numref:`sec_nin`.
+SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
 
 <!--
@@ -93,7 +114,12 @@ Therefore, there are $a(q+1)$ output channels, with the output channels indexed 
 ($0 \leq j \leq q$) representing the predictions of the category index $j$ for the anchor box index $i$.
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, tầng dự đoán lớp sử dụng một tầng tích chập giữ nguyên chiều cao và chiều rộng của đầu vào.
+Do đó, toạ độ trong không gian của đầu ra và đầu vào quan hệ một-một với nhau dọc theo cả chiều cao và chiều rộng của ánh xạ đặc trưng.
+Giả sử rằng đầu ra và đầu vào này có cùng toạ độ $(x, y)$ trong không gian, các kênh của ánh xạ đặc trưng đầu ra tại toạ độ $(x, y)$
+đại diện cho các dự đoán lớp của tất cả các khung neo được sinh ra khi sử dụng toạ độ $(x, y)$ của ánh xạ đặc trưng đầu vào làm trung tâm.
+Bởi lẽ đó, có tất cả $a(q+1)$ kênh đầu ra, với các kênh đầu ra được đánh chỉ số theo $i(q+1) + j$
+($0 \leq j \leq q$) biểu diễn dự đoán lớp có chỉ số $j$ cho khung neo chỉ số $i$.
 
 
 <!--
@@ -102,7 +128,9 @@ After we specify the parameters $a$ and $q$, it uses a $3\times3$ convolutional 
 The heights and widths of the input and output of this convolutional layer remain unchanged.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta định nghĩa một tầng dự đoán lớp theo dạng này.
+Sau khi ta xác định các tham số $a$ và $q$, tầng này sử dụng một tầng tích chập $3\times3$ với đệm bằng 1.
+Chiều cao và chiều rộng của đầu ra và đầu vào của tầng tích chập này không đổi.
 
 
 
@@ -823,10 +851,12 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
@@ -845,4 +875,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * Đỗ Trường Giang
-
