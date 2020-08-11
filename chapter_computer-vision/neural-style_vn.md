@@ -16,7 +16,7 @@ To create the ideal photo, you often need to try many different filter combinati
 This process is as complex as tuning the hyperparameters of a model.
 -->
 
-Nếu bạn có sử dụng các ứng dụng chia sẻ xã hội hoặc bạn là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với bộ lọc.
+Nếu bạn có sử dụng các ứng dụng chia sẻ xã hội hoặc bạn là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc.
 Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc mặt của những người trong ảnh trở nên trắng trẻo hơn.
 Tuy nhiên, thường kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
 Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm với nhiều cách kết hợp kính lọc khác nhau.
