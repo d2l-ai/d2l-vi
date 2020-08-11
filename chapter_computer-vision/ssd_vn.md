@@ -314,7 +314,7 @@ Therefore, modules two to five are all multiscale feature blocks shown in :numre
 -->
 
 Mô hình SSD chứa tất cả năm mô-đun.
-Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo và dự đoán hạng mục và độ lệch (offsets) của các khung neo đó.
+Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo và dự đoán lớp và độ dời của các khung neo đó.
 Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ hai tới bốn là các khối giảm lấy mẫu chiều rộng và chiều cao, và khối thứ năm là tần gộp cực đại toàn cục đưa tới giảm chiều rộng và chiều cao xuống còn 1.
 
 
@@ -841,4 +841,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
