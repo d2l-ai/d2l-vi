@@ -120,9 +120,9 @@ The `read_voc_images` function defined below reads all input images and labels t
 Truy cập `../data/VOCdevkit/VOC2012` để quan sát các phần khác nhau của tập dữ liệu.
 Đường dẫn `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví dụ để huấn luyện và kiểm tra.
 Đường dẫn `JPEGImages` và `SegmentationClass` lần lượt chứa ví dụ các ảnh đầu vào và nhãn.
-Các nhãn này cũng theo mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
-Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng lớp ngữ nghĩa.
-Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào và nhãn vào bộ nhớ.
+Các nhãn này cũng mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
+Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng hạng mục ngữ nghĩa.
+Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào cùng nhãn vào bộ nhớ.
 
 
 ```{.python .input  n=3}
@@ -152,8 +152,8 @@ Other colors correspond to different categories.
 -->
 
 Ta vẽ năm ảnh đầu vào đầu tiên và nhãn của chúng.
-Trong nhãn các ảnh, màu trắng biểu diễn viền và màu đen biểu diễn nền.
-Các màu khác tương ứng với các lớp khác nhau.
+Trong ảnh nhãn, màu trắng biểu diễn viền và màu đen biểu diễn nền.
+Các màu khác tương ứng với các hạng mục khác nhau.
 
 
 ```{.python .input  n=4}
@@ -167,7 +167,7 @@ d2l.show_images(imgs, 2, n);
 Next, we list each RGB color value in the labels and the categories they label.
 -->
 
-Tiếp theo, ta liệt kê từng giá trị màu RGB của các nhãn và lớp của nhãn đó.
+Tiếp theo, ta liệt kê từng giá trị màu RGB của các nhãn và hạng mục của nhãn đó.
 
 
 ```{.python .input  n=5}
@@ -216,7 +216,7 @@ def voc_label_indices(colormap, colormap2label):
 For example, in the first example image, the category index for the front part of the airplane is 1 and the index for the background is 0.
 -->
 
-Ví dụ, trong ảnh ví dụ đầu tiên, chỉ số lớp của phần đầu của máy bay là một và chỉ số của nền là 0.
+Ví dụ, trong ảnh ví dụ đầu tiên, phần đầu máy bay có chỉ số hạng mục là một và chỉ số của nền là 0.
 
 
 ```{.python .input  n=7}
@@ -451,5 +451,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
