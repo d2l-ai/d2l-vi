@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Training on Multiple GPUs
 -->
 
-# Huấn luyện trên nhiều GPU
+# Huấn luyện đa GPU
 :label:`sec_multi_gpu`
 
 <!--
@@ -20,21 +17,21 @@ Details on how to take advantage of functionality in Gluon is relegated to :numr
 We assume that the reader is familiar with minibatch SGD algorithms such as the ones described in :numref:`sec_minibatch_sgd`.
 -->
 
-Tới giờ ta đã thảo luận về cách huấn luyện mô hình trên CPU và GPU một cách hiệu quả.
-Trong :numref:`sec_auto_para`, ta biết được cách mà các framework học sâu như MXNet (và TensorFlow) thực hiện song song hoá việc tính toán và giao tiếp giữa các thiết bị một cách tự động.
+Đến nay ta đã thảo luận về cách huấn luyện mô hình trên CPU và GPU một cách hiệu quả.
+Trong :numref:`sec_auto_para`, ta biết được cách mà các framework học sâu như MXNet (và TensorFlow) thực hiện song song hóa việc tính toán và giao tiếp giữa các thiết bị một cách tự động.
 Cuối cùng, :numref:`sec_use_gpu` đã trình bày cách liệt kê toàn bộ các GPU có trong máy bằng lệnh `nvidia-smi`.
-Thứ mà ta *chưa* thảo luận là cách song song hoá quá trình huấn luyện mô hình học sâu.
+Thứ mà ta *chưa* thảo luận là cách song song hóa quá trình huấn luyện mô hình học sâu.
 (Ta bỏ qua việc *dự đoán* trên nhiều GPU vì nó ít khi được sử dụng và là một chủ đề nâng cao nằm ngoài phạm vi của cuốn sách này.)
 Chúng ta mới chỉ ngầm hiểu rằng bằng cách nào đó dữ liệu có thể được chia ra cho nhiều thiết bị khác nhau.
 Phần này sẽ bổ sung những chi tiết còn thiếu ấy và mô tả cách huấn luyện song song một mạng học sâu từ đầu.
 Chi tiết về cách tận dụng các tính năng của Gluon sẽ nằm ở :numref:`sec_multi_gpu_gluon`.
-Chúng tôi giả định rằng bạn đọc đã quen với thuật toán SGD theo minibatch được mô tả ở :numref:`sec_minibatch_sgd`.
+Vì vậy, chúng tôi xin giả định rằng độc giả đã quen với thuật toán SGD theo minibatch được mô tả ở :numref:`sec_minibatch_sgd`.
 
 <!--
 ## Splitting the Problem
 -->
 
-## Chia nhỏ vấn đề
+## Chia nhỏ Vấn đề
 
 
 <!--
@@ -46,7 +43,7 @@ Multiple GPUs, after all, increase both *memory* and *compute* ability.
 In a nutshell, we have a number of choices, given a minibatch of training data that we want to classify.
 -->
 
-Hãy bắt đầu bằng một bài toán thị giác máy tính đơn giản cùng một kiến trúc mạng cổ xưa chứa vài tầng tích chập, tầng gộp và có thể thêm vài tầng dày đặc ở cuối.
+Hãy bắt đầu bằng một bài toán thị giác máy tính đơn giản cùng một kiến trúc mạng lâu đời chứa vài tầng tích chập, tầng gộp và có thể thêm vài tầng dày đặc ở cuối.
 Như vậy, mạng này sẽ trông khá tương tự như LeNet :cite:`LeCun.Bottou.Bengio.ea.1998` hoặc AlexNet :cite:`Krizhevsky.Sutskever.Hinton.2012`.
 Với nhiều GPU (máy chủ để bàn thường có 2, máy chủ g4dn.12xlarge thì có 4, AWS p3.16xlarge có 8, hoặc là 16 trên p2.16xlarge), 
 ta muốn phân chia việc huấn luyện sao cho vừa tăng tốc độ lại vừa tận dụng được các thiết kế đơn giản và tái tạo được.
@@ -57,12 +54,9 @@ Nói ngắn gọn, với một minibatch dữ liệu huấn luyện, ta có mộ
 ![Model parallelism in the original AlexNet design due to limited GPU memory.](../img/alexnet-original.svg)
 -->
 
-![Song song hoá mô hình trong thiết kế AlexNet gốc do giới hạn bộ nhớ trên GPU.](../img/alexnet-original.svg)
+![Song song hóa mô hình trong thiết kế AlexNet gốc do giới hạn bộ nhớ trên GPU.](../img/alexnet-original.svg)
 :label:`fig_alexnet_original`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 <!--
@@ -109,7 +103,7 @@ Cụ thể, mỗi GPU sẽ nhận một luồng dữ liệu đưa vào từ mộ
 Chẳng hạn, thay vì tính toán 64 kênh trên một GPU, ta có thể chia công việc này cho 4 GPU, mỗi GPU sẽ sinh dữ liệu cho 16 kênh. 
 Tương tự, với một tầng kết nối dày đặc ta có thể chia nhỏ số nơ-ron đầu ra.
 :numref:`fig_alexnet_original` mô tả thiết kế kiểu này. 
-Hình này được trích từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, khi chiến lược này được sử dụng để làm việc với nhiều GPU có dung lượng bộ nhớ rất nhỏ (2GB ở thời điểm đó).
+Hình này được trích từ :cite:`Krizhevsky.Sutskever.Hinton.2012`, khi chiến lược này được sử dụng để làm việc với nhiều GPU có dung lượng bộ nhớ rất nhỏ (2 GB ở thời điểm đó).
    * Điều này cho phép việc điều chỉnh kích thước tính toán tốt, với điều kiện là số kênh (hoặc số nơ-ron) không quá nhỏ.
    * Dùng nhiều GPU có thể xử lý các mạng ngày một lớn hơn vì dung lượng bộ nhớ khả dụng cũng tăng tuyến tính.
    * Chúng ta cần một lượng *rất lớn* các phép toán đồng bộ / lớp chặn vì mỗi tầng phụ thuộc vào các kết quả từ tất cả các tầng khác.
@@ -134,21 +128,18 @@ Các gradient được tổng hợp lại trên các GPU sau mỗi minibatch.
 
 <!--
 By and large, data parallelism is the most convenient way to proceed, provided that we have access to GPUs with sufficiently large memory.
-See also :cite:` Li.Andersen.Park.ea.2014` for a detailed description of partitioning for distributed training.
+See also :cite:`Li.Andersen.Park.ea.2014` for a detailed description of partitioning for distributed training.
 GPU memory used to be a problem in the early days of deep learning.
 By now this issue has been resolved for all but the most unusual cases.
 We focus on data parallelism in what follows.
 -->
 
 Nhìn chung việc song song hóa dữ liệu là cách thuận tiện nhất, với điều kiện là ta sở hữu các GPU với bộ nhớ đủ lớn.
-Xem thêm :cite:` Li.Andersen.Park.ea.2014` để biết chi tiết cách phân chia cho việc huấn luyện phân tán.
+Xem thêm :cite:`Li.Andersen.Park.ea.2014` để biết chi tiết cách phân chia cho việc huấn luyện phân tán.
 Bộ nhớ GPU từng là một vấn đề trong những ngày đầu của học sâu.
 Đến thời điểm này thì hầu hết các vấn đề đã được giải quyết trừ một số trường hợp rất ít gặp.
- Ở phần kế tiếp, chúng ta sẽ tập trung vào việc song song hóa dữ liệu.
+Ở phần kế tiếp, chúng ta sẽ tập trung vào việc song song hóa dữ liệu.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Data Parallelism
@@ -179,7 +170,8 @@ Việc huấn luyện diễn ra như sau (xem :numref:`fig_data_parallel` để 
 * Mỗi GPU sẽ tính mất mát và gradient của các tham số mô hình dựa trên tập mimibatch con mà nó được cấp và các tham số mô hình nó lưu trữ. 
 * Các gradient cục bộ từ $k$ GPU được gom lại để thu được gradient ngẫu nhiên cho minibatch hiện tại.
 * Gradient tổng hợp này được phân phối trở lại cho các GPU.
-* Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật một tập đầy đủ các tham số mô hình mà nó lưu trữ. 
+* Mỗi GPU dùng gradient ngẫu nhiên của minibatch này để cập nhật một tập đầy đủ các tham số mô hình mà nó lưu trữ.
+
 
 <!--
 ![Calculation of minibatch stochastic gradient using data parallelism and two GPUs. ](../img/data-parallel.svg)
@@ -199,9 +191,10 @@ In what follows we will use :numref:`sec_lenet` as the toy network to illustrate
 
 :numref:`fig_splitting` so sánh các cách song song hóa khác nhau trên nhiều GPU.
 Lưu ý rằng trong thực tế ta cần *tăng* kích thước minibatch lên $k$ lần khi huấn luyện trên $k$ GPU để mỗi GPU có cùng khối lượng công việc cần thực hiện như khi ta huấn luyện trên một GPU đơn lẻ.
-Điều này, trên một server có 16 GPU, có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học một cách tương ứng.
+Trên một server có 16 GPU có thể tăng kích thước minibatch một cách đáng kể và ta cũng có thể sẽ phải tăng tốc độ học một cách tương ứng.
 Chú ý rằng :numref:`sec_batch_norm` cũng cần được điều chỉnh lại (ví dụ, ta có thể sử dụng các hệ số chuẩn hóa theo batch riêng cho mỗi GPU).
 Trong phần tiếp theo ta sẽ dùng :numref:`sec_lenet` như một mạng thử nghiệm để minh họa việc huấn luyện đa GPU. Như mọi khi, ta bắt đầu bằng cách nạp các gói thư viện và mô-đun liên quan. 
+
 
 ```{.python .input  n=2}
 %matplotlib inline
@@ -210,16 +203,12 @@ from mxnet import autograd, gluon, np, npx
 npx.set_np()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
 
 <!--
 ## A Toy Network
 -->
 
-## Ví dụ đơn giản
+## Ví dụ Đơn giản
 
 
 <!--
@@ -264,9 +253,6 @@ def lenet(X, params):
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Data Synchronization
@@ -286,9 +272,10 @@ thứ nhất là phân phối danh sách tham số đến nhiều GPU và gắn 
 Nếu không có các tham số, ta không thể đánh giá mạng trên GPU.
 Thứ hai, ta cần tính tổng giá trị các tham số trên nhiều thiết bị, khai báo ở hàm `allreduce`.
 
+
 ```{.python .input  n=12}
-def get_params(params, ctx):
-    new_params = [p.copyto(ctx) for p in params]
+def get_params(params, device):
+    new_params = [p.copyto(device) for p in params]
     for p in new_params:
         p.attach_grad()
     return new_params
@@ -321,6 +308,7 @@ Bây giờ giả sử ta có các vector được phân phối trên nhiều GPU
 Hàm `allreduce` dưới đây cộng các vector đó và truyền kết quả về tất cả GPU.
 Chú ý, để hàm này hoạt động, ta cần sao chép dữ liệu đến GPU đang cộng dồn kết quả.
 
+
 ```{.python .input  n=14}
 def allreduce(data):
     for i in range(1, len(data)):
@@ -344,9 +332,6 @@ allreduce(data)
 print('after allreduce:\n', data[0], '\n', data[1])
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Distributing Data
@@ -368,10 +353,10 @@ Ta sẽ sử dụng hàm có sẵn trong Gluon để chia và nạp dữ liệu 
 
 ```{.python .input  n=8}
 data = np.arange(20).reshape(4, 5)
-ctx = [npx.gpu(0), npx.gpu(1)]
-split = gluon.utils.split_and_load(data, ctx)
+devices = [npx.gpu(0), npx.gpu(1)]
+split = gluon.utils.split_and_load(data, devices)
 print('input :', data)
-print('load into', ctx)
+print('load into', devices)
 print('output:', split)
 ```
 
@@ -385,11 +370,11 @@ For later reuse we define a `split_batch` function which splits both data and la
 
 ```{.python .input  n=9}
 #@save
-def split_batch(X, y, ctx_list):
-    """Split X and y into multiple devices specified by ctx."""
+def split_batch(X, y, devices):
+    """Split `X` and `y` into multiple devices."""
     assert X.shape[0] == y.shape[0]
-    return (gluon.utils.split_and_load(X, ctx_list),
-            gluon.utils.split_and_load(y, ctx_list))
+    return (gluon.utils.split_and_load(X, devices),
+            gluon.utils.split_and_load(y, devices))
 ```
 
 <!--
@@ -415,21 +400,22 @@ Vì đồ thị tính toán không có phụ thuộc nào xuyên suốt các thi
 
 
 ```{.python .input  n=10}
-def train_batch(X, y, ctx_params, ctx_list, lr):
-    X_shards, y_shards = split_batch(X, y, ctx_list)
+def train_batch(X, y, device_params, devices, lr):
+    X_shards, y_shards = split_batch(X, y, devices)
     with autograd.record():  # Loss is calculated separately on each GPU
-        losses = [loss(lenet(X_shard, ctx_W), y_shard)
-                  for X_shard, y_shard, ctx_W in zip(
-                      X_shards, y_shards, ctx_params)]
+        losses = [loss(lenet(X_shard, device_W), y_shard)
+                  for X_shard, y_shard, device_W in zip(
+                      X_shards, y_shards, device_params)]
     for l in losses:  # Back Propagation is performed separately on each GPU
         l.backward()
     # Sum all gradients from each GPU and broadcast them to all GPUs
-    for i in range(len(ctx_params[0])):
-        allreduce([ctx_params[c][i].grad for c in range(len(ctx_list))])
+    for i in range(len(device_params[0])):
+        allreduce([device_params[c][i].grad for c in range(len(devices))])
     # The model parameters are updated separately on each GPU
-    for param in ctx_params:
+    for param in device_params:
         d2l.sgd(param, lr, X.shape[0])  # Here, we use a full-size batch
 ```
+
 
 <!--
 Now, we can define the training function.
@@ -448,9 +434,9 @@ Mỗi batch được xử lý bằng `train_batch` nhằm tận dụng nhiều G
 ```{.python .input  n=61}
 def train(num_gpus, batch_size, lr):
     train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
-    ctx_list = [d2l.try_gpu(i) for i in range(num_gpus)]
+    devices = [d2l.try_gpu(i) for i in range(num_gpus)]
     # Copy model parameters to num_gpus GPUs
-    ctx_params = [get_params(params, c) for c in ctx_list]
+    device_params = [get_params(params, d) for d in devices]
     # num_epochs, times, acces = 10, [], []
     num_epochs = 10
     animator = d2l.Animator('epoch', 'test acc', xlim=[1, num_epochs])
@@ -459,19 +445,16 @@ def train(num_gpus, batch_size, lr):
         timer.start()
         for X, y in train_iter:
             # Perform multi-GPU training for a single minibatch
-            train_batch(X, y, ctx_params, ctx_list, lr)
+            train_batch(X, y, device_params, devices, lr)
             npx.waitall()
         timer.stop()
         # Verify the model on GPU 0
         animator.add(epoch + 1, (d2l.evaluate_accuracy_gpu(
-            lambda x: lenet(x, ctx_params[0]), test_iter, ctx[0]),))
+            lambda x: lenet(x, device_params[0]), test_iter, devices[0]),))
     print(f'test acc: {animator.Y[0][-1]:.2f}, {timer.avg():.1f} sec/epoch '
-          f'on {str(ctx_list)}')
+          f'on {str(devices)}')
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Experiment
@@ -506,7 +489,8 @@ Dưới góc nhìn thuật toán tối ưu, hai thí nghiệm là giống hệt 
 Không may, ta không đạt được sự tăng tốc đáng kể nào: đơn giản vì mô hình quá nhỏ;
 hơn nữa tập dữ liệu cũng nhỏ, do đó cách huấn luyện không quá tinh vi của chúng ta trên nhiều GPU sẽ chịu chi phí đáng kể do Python.
 Về sau ta sẽ gặp các mô hình phức tạp hơn và các cách song song hóa tinh vi hơn.
-Hiện giờ hãy xem thí nghiệm trên Fashion-MNIST cho kết quả như thế nào. <!-- trong code là `load_data_fashion_mnist` -->
+Hiện giờ hãy xem thí nghiệm trên Fashion-MNIST cho kết quả như thế nào.
+
 
 ```{.python .input  n=13}
 train(num_gpus=2, batch_size=256, lr=0.2)
@@ -549,43 +533,19 @@ Song song hóa dữ liệu là cách đơn giản nhất.
 4. Lập trình tính độ chính xác trên tập kiểm tra với nhiều GPU.
 
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2383)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/364)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Nguyễn Mai Hoàng Long
-* Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 4 -->
-* Nguyễn Văn Cường
 * Nguyễn Cảnh Thướng
-<!-- Phần 5 -->
-* Nguyễn Văn Cường
 * Phạm Minh Đức
-<!-- Phần 6 -->
-* Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật

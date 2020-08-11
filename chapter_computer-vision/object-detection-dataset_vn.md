@@ -5,7 +5,7 @@
 # The Object Detection Dataset
 -->
 
-# *dịch tiêu đề phía trên*
+# Tập dữ liệu Phát hiện Đối tượng
 
 
 <!--
@@ -18,21 +18,27 @@ This format can reduce the storage overhead of the dataset on the disk and impro
 If you want to learn more about how to read images, refer to the documentation for the [GluonCV Toolkit](https://gluon-cv.mxnet.io/).
 -->
 
-*dịch đoạn phía trên*
+Không có bất kì bộ dữ liệu nhỏ nào, như là MNIST hay Fashion-MNIST, trong nhánh lĩnh vực phát hiện đối tượng.
+Để nhanh chóng kiểm định mô hình, chúng ta sẽ sử dụng một tập dữ liệu nhỏ.
+Đầu tiên, ta tạo 1000 bức ảnh Pikachu với các góc độ và kích thước khác nhau bằng mô hình Pikachu 3D mã nguồn mở.
+Sau đó, ta thu thập một loạt các ảnh nền và đặt ngẫu nhiên  ảnh Pikachu lên trên mỗi bức ảnh.
+Ta dùng [im2rec tool](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyển đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
+Định dạng này có khả năng giảm dung lượng lưu trữ và cải thiện hiệu suất đọc tập dữ liệu.
+Nếu các bạn muốn tìm hiểu thêm về cách đọc ảnh, hãy tham khảo tài liệu [GluonCV Toolkit](https://gluon-cv.mxnet.io/).
 
 
 <!--
 ## Downloading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tải xuống tập dữ liệu
 
 
 <!--
 The Pikachu dataset in RecordIO format can be downloaded directly from the Internet.
 -->
 
-*dịch đoạn phía trên*
+Tập dữ liệu Pikachu ở định dạng RecordIO có thể được tải xuống trực tiếp từ Internet.
 
 
 ```{.python .input  n=1}
@@ -53,7 +59,7 @@ d2l.DATA_HUB['pikachu'] = (d2l.DATA_URL + 'pikachu.zip',
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc dữ liệu
 
 
 <!--
@@ -68,7 +74,15 @@ To ensure the certainty of the output, we will not randomly crop the images in t
 We also do not need to read the test dataset in random order.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ đọc tập dữ liệu phát hiện đối tượng bằng cách tạo ra thực thể `ImageDetIter`.
+Tên biến "Det" (viết tắt cho Detection), đề cập đến việc phát hiện.
+Ta sẽ đọc tập dữ liệu huấn luyện theo thứ tự ngẫu nhiên.
+Vì định dạng của dữ liệu là RecordIO, ta cần có `'train.idx'` để đọc những minibatch ngẫu nhiên.
+Ngoài ra, đối với từng bức ảnh trong tập huấn luyện, ta sẽ cắt xén ngẫu nhiên nhưng vẫn đòi hỏi ảnh bị cắt phải bao phủ được ít nhất 95% mỗi đối tượng.
+Vì việc cắt xén là ngẫu nhiên, yêu cầu này dĩ nhiên không phải lúc nào cũng thoả mãn.
+Ta cho trước số lần cắt ảnh ngẫu nhiên tối đa là 200 lần. Nếu không có lần nào thoả yêu cầu, hình ảnh sẽ được giữ nguyên.
+Để đầu ra được đảm bảo, ta sẽ không cắt ngẫu nhiên các hình ảnh trong tập kiểm tra.
+Ta cũng không cần đọc dữ liệu trong tập kiểm tra theo thứ tự ngẫu nhiên.
 
 
 
@@ -205,7 +219,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 2 -->
 * Phạm Đăng Khoa
+
