@@ -413,7 +413,7 @@ Because modules two to four are height and width downsample blocks, module five 
 and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 -->
 
-Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện tính toán xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
+Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
 Như ta đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
 Bởi vì các mô-đun từ hai tới bốn là các khối giảm lấy mẫu chiều rộng và chiều cao, còn mô-đun thứ năm là tầng gộp toàn cục, 
 và mỗi phần tử trong ánh xạ đặc trưng này được dùng làm tâm cho bốn khung neo, tổng số khung neo $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ được tạo ra cho mỗi ảnh ở năm tỉ lệ đó.
