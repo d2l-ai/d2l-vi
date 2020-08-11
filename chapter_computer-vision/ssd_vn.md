@@ -708,7 +708,7 @@ This is the regularized area controlled by the hyperparameter $\sigma$:
 
 Để dự đoán độ dời, thay thế mất mát chuẩn $L_1$ bằng mất mát điều chuẩn $L_1$.
 Hàm mất mát này sử dụng hàm bình phương xung quanh giá trị không để tăng độ mượt.
-Đây chính là phương pháp được chuẩn hoá và được xác định bởi siêu tham số $\sigma$:
+Đây chính là vùng được điều chuẩn và được xác định bởi siêu tham số $\sigma$:
 
 $$
 f(x) =
@@ -764,7 +764,7 @@ $$ - \alpha (1-p_j)^{\gamma} \log p_j.$$
 As you can see, by increasing $\gamma$, we can effectively reduce the loss when the probability of predicting the correct category is high.
 -->
 
-Như bạn có thể thấy, bằng cách tăng $\gamma$, ta có thể giảm mất mát đi một cách hiệu quả khi xác suất dự đoán đúng lớp là lớn.
+Như bạn có thể thấy, bằng cách tăng $\gamma$, ta thực chất có thể giảm giá trị mất mát đi khi khả năng dự đoán đúng hạng mục là lớn.
 
 
 
@@ -797,10 +797,10 @@ To do this, we can set the `MultiBoxTarget` function's `negative_mining_ratio` p
 -->
 
 1. Khi một vật thể có kích thước khá lớn so với ảnh, mô hình thường chấp nhận kích thước ảnh đầu vào lớn hơn.
-2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn lớp cho khung neo.
-Ta có thể phân tích mẫu các khung neo âm để cân bằng các lớp trong dữ liệu tốt hơn.
+2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn hạng mục cho khung neo.
+Ta có thể lấy mẫu các khung neo âm để cân bằng các lớp trong dữ liệu tốt hơn.
 Để thực hiện điều này, ta có thể đặt tham số `negative_mining_ratio` của hàm `MultiBoxTarget`.
-3. Gán các trọng số khác cho các siêu tham số của mất mát của lớp khung neo và mất mát của độ dời khung neo dương trong hàm mất mát.
+3. Trong hàm mất mát, sử dụng các trọng số khác nhau cho mất mát hạng mục của các khung neo và mất mát độ dời cho các khung neo dương.
 4. Tham khảo bài báo SSD. Phương pháp nào có thể được sử dụng để đánh giá giá trị precision của các mô hình phát hiện vật thể :cite:`Liu.Anguelov.Erhan.ea.2016`?
 
 
@@ -845,5 +845,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * Đỗ Trường Giang
-
 
