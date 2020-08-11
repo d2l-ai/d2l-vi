@@ -457,7 +457,7 @@ Now, we will explain, step by step, how to train the SSD model for object detect
 We read the Pikachu dataset we created in the previous section.
 -->
 
-Ta đọc vào tập dữ liệu Pikachu được tạo ở phần trước.
+Ta đọc tập dữ liệu Pikachu được tạo ở phần trước.
 
 
 ```{.python .input  n=14}
@@ -502,14 +502,14 @@ The mask variable `bbox_masks` removes negative anchor boxes and padding anchor 
 Finally, we add the anchor box category and offset losses to find the final loss function for the model.
 -->
 
-Phát hiện vật thể đưa ra hai loại mất mát. Đầu tiên là mất mát của lớp khung neo.
-Đối với mất mát này, ta hoàn toàn có thể sử dụng lại hàm mất mát entropy chéo mà ta đã sử dụng trong phân loại ảnh.
+Phát hiện vật thể có hai loại mất mát. Đầu tiên là mất mát khi phân loại lớp của khung neo.
+Đối với mất mát này, ta hoàn toàn có thể sử dụng lại hàm mất mát entropy chéo trong phân loại ảnh.
 Loại mất mát thứ hai là mất mát của độ dời khung neo dương.
 Dự đoán độ dời là một bài toán chuẩn hoá.
 Tuy nhiên, ở đây ta không sử dụng hàm mất mát bình phương đã được giới thiệu từ trước.
-Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối sai phân của giá trị dự đoán và giá trị nhãn gốc.
+Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối hiệu của giá trị dự đoán và giá trị nhãn gốc.
 Biến mặt nạ `bbox_masks` loại bỏ các khung neo âm và khung neo đệm khỏi phép tính mất mát.
-Cuối cùng, ta thêm mất mát lớp và độ dời của khung neo vào hàm mất mát cuối của mô hình.
+Cuối cùng, ta cộng mất mát lớp và mất mát độ dời của khung neo để có hàm mất mát cuối cùng cho mô hình.
 
 
 
@@ -843,5 +843,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
