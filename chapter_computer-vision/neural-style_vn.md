@@ -94,7 +94,7 @@ Next, we will perform an experiment to help us better understand the technical d
 ## Reading the Content and Style Images
 -->
 
-## *dịch tiêu đề phía trên*
+## Thực hiện đọc ảnh nội dung và ảnh phong cách
 
 
 <!--
@@ -102,7 +102,8 @@ First, we read the content and style images.
 By printing out the image coordinate axes, we can see that they have different dimensions.
 -->
 
-*dịch đoạn phía trên*
+Trước hết, ta đọc các ảnh nội dung và ảnh phong cachs.
+Bằng cách in ra các trục tọa độ ảnh, ta có thể thấy rằng chúng có các chiều khác nhau.
 
 
 ```{.python .input  n=1}
@@ -128,7 +129,7 @@ d2l.plt.imshow(style_img.asnumpy());
 ## Preprocessing and Postprocessing
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiền xử lý và hậu xử lý
 
 <!--
 Below, we define the functions for image preprocessing and postprocessing. 
@@ -138,7 +139,11 @@ Because the image printing function requires that each pixel has a floating poin
 we use the `clip` function to replace values smaller than 0 or greater than 1 with 0 or 1, respectively.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta định nghĩa các hàm tiền xử lý và hậu xử lý ảnh.
+Hàm `preprocess` chuẩn hóa các kênh RGB của ảnh đầu vào và chuyển kết quả sang định dạng có thể đưa vào mạng CNN.
+Hàm `postprocess` khôi phục các giá trị điểm ảnh của ảnh đầu ra về các giá trị gốc của nó trước khi chuẩn hóa.
+Bởi vì hàm in ảnh đòi hỏi mỗi điểm ảnh có giá trị thực từ 0 tới 1.
+Ta sử dụng hàm `clip` để thay thế các giá trị nhỏ hơn 0 hoặc lớn hơn 1 lần lượt bằng 0 hoặc 1.
 
 
 ```{.python .input  n=3}
@@ -163,14 +168,14 @@ def postprocess(img):
 ## Extracting Features
 -->
 
-## *dịch tiêu đề phía trên*
+## Trích xuất đặc trưng
 
 
 <!--
 We use the VGG-19 model pre-trained on the ImageNet dataset to extract image features[1].
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng mô hình VGG-19 tiền huấn luyện trên tập dữ liệu ImagNet để trích các đặc trưng của ảnh[1].
 
 
 ```{.python .input  n=4}
@@ -191,8 +196,16 @@ In this experiment, we select the last convolutional layer of the fourth convolu
 We can obtain the indexes for these layers by printing the `pretrained_net` instance.
 -->
 
-*dịch đoạn phía trên*
-
+Để trích các đặc trưng của ảnh nội dung và ảnh phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
+Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông tin chi tiết của ảnh càng dễ hơn.
+Trong khi  đầu ra xa hơn thì dễ dàng để trích các thông tin chung hơn.
+Để ngăn ảnh được tổng hợp không giữ quá nhiều chi tiết của ảnh nội dụng, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
+Tầng này được gọi là tầng nội dung.
+Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách chung và cục bộ.
+Các tầng đó được gọi là các tầng phong cách.
+Như ta đã đề cập trong :numref:`sec_vgg`, mạng VGG có năm khối chập.
+Trong thử nghiệm này, ta chọn tầng chập cuối của khối chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
+Ta có thể nhận được các chỉ số ở các tầng đó thông qua việc in thử `pretrained_net`.
 
 ```{.python .input  n=5}
 style_layers, content_layers = [0, 5, 10, 19, 28], [25]
