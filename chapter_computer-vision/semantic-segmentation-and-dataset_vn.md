@@ -20,7 +20,7 @@ As you can see, compared to object detection, semantic segmentation labels areas
 Trong thảo luận ở những phần trước của chúng ta về các vấn đề liên quan tới nhận dạng vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để dán nhãn và dự đoán các vật thể trong ảnh.
 Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa, đây là việc thực hiện phân đoạn ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
 Các vùng ngữ nghĩa đó được dán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
-:numref:`fig_segmentation` thể hiện một ảnh đã được phân vùng ngữ nghĩa, với các vùng được dán nhãn "dog", "cat" và "background".
+:numref:`fig_segmentation` thể hiện một ảnh đã được phân vùng ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "hậu cảnh".
 Như bạn có thể thấy, so với việc nhận dạng vật thể, phân vùng theo ngữ nghĩa dán nhãn các vùng với các đường biên ở mức điểm ảnh đem lại độ chính xác lớn hơn đáng kể.
 
 <!--
@@ -455,5 +455,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
