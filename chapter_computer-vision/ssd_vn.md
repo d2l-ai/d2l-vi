@@ -136,7 +136,7 @@ The only difference is that, here, we need to predict 4 offsets for each anchor 
 -->
 
 Thiết kế của tầng dự đoán khung chứa tương tự như tầng dự đoán hạng mục.
-Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời (offset) cho từng khung neo, thay vì $q+1$  hạng mục.
+Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời (offset) cho từng khung neo, thay vì $q+1$ hạng mục.
 
 
 
