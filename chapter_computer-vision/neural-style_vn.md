@@ -485,7 +485,7 @@ Because we only call the `asscalar` synchronization function every 50 epochs, th
 Therefore, we call the `waitall` synchronization function during every epoch.
 -->
 
-Trong suốt quá trình huấn luyện mô hình, ta liên tục tách nội dụng và các đặc trưng phong cách của ảnh tổng hợp ra và tính toán hàm mất mát.
+Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
 Nhắc lại cuộc thảo luận của ta về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
 Do ta chỉ gọi hàm đồng bộ hoá `asscalar` sau mỗi 50 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ.
 Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
@@ -575,7 +575,7 @@ The composite image not only has large blocks of color like the style image, but
 -->
 
 Như bạn có thể thấy, mỗi epoch cần nhiều thời gian hơn do kích thước ảnh lớn hơn.
-Như được chỉ ra trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
+Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
 Ảnh tổng hợp không những có các khối màu giống như ảnh phong cách, mà các khối này còn có hoa văn phảng phất nét vẽ bút lông.
 
 
