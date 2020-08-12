@@ -73,7 +73,7 @@ Mạng này biến đổi từng vùng đề xuất thành các đầu vào có 
 3. Các đặc trưng và lớp nhãn của từng vùng đề xuất được gói thành một mẫu để huấn luyện các máy tựa vector (multiple SVMs) cho 
 phép phân loại vật thể.
 Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
-4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính cho phép dự khung chứa gốc. 
+4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính để dự đoán khung chứa gốc. 
 
 <!--
 Although R-CNN models use pre-trained CNNs to effectively extract image features, the main downside is the slow speed.
