@@ -399,7 +399,7 @@ def load_data_voc(batch_size, crop_size):
 
 * Phân vùng theo ngữ nghĩa tập trung vào việc phân vùng ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
 * Trong lĩnh vực phân vùng ảnh theo ngữ nghĩa, tập dữ liệu Pascal VOC2012 là một tập dữ liệu quan trọng.
-* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có quan hệ một - một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì thay đổi tỉ lệ của chúng.
+* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì thay đổi tỉ lệ của chúng.
 
 
 ## Bài tập
