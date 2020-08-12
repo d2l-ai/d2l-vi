@@ -364,8 +364,8 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-Bây giờ, ta sẽ định nghĩa quá trình lan truyền xuôi cho từng mô-đun.
-Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra cả các khung neo ở tỉ lệ hiện tại từ `Y` cùng với các lớp và độ dời dự đoán.
+Bây giờ, ta sẽ định nghĩa luợt tính xuôi cho từng mô-đun.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -384,7 +384,7 @@ Here, we first divide the interval from 0.2 to 1.05 into five equal parts to det
 Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447$, and similar formulas, we determine the sizes of larger anchor boxes at the different scales.
 -->
 
-Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong hình :numref:`fig_ssd`, các vật thể nó phát hiện là lớn hơn và các khung neo nó tạo ra cũng lớn hơn.
+Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong :numref:`fig_ssd`, các vật thể nó phát hiện và các khung neo nó tạo ra càng lớn.
 Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
 Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định kích thước của các khung neo lớn hơn ở các tỉ lệ khác nhau.
 
