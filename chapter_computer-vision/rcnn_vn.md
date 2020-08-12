@@ -228,7 +228,7 @@ Faster R-CNN replaces selective search with a region proposal network. This redu
 -->
 
 Để có được kết quả phát hiện đối tượng chính xác, Fast R-CNN thường đòi hỏi tạo ra nhiều vùng đề xuất kĩ thuật tìm kiếm chọn lọc.
-Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất khu vực. Điều này làm giảm số lượng số vùng đề xuất, đồng thời cũng đảm bảo phát hiện đối tượng chính xác.
+Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất vùng. Điều này làm giảm số vùng đề xuất, trong khi vẫn đảm bảo phát hiện chính xác đối tượng.
 
 
 <!--
@@ -248,9 +248,9 @@ The detailed region proposal network computation process is described below:
 -->
 
 :numref:`fig_faster_r-cnn` minh hoạ cho một mô hình Faster R-CNN.
-So với Fast R-CNN, Faster R-CNN chỉ chuyển đổi phương pháp tạo các vùng đề xuất từ kĩ thuật stìm kiếm chọn lọc sang mạng đề xuất khu vực.
+So với Fast R-CNN, Faster R-CNN chỉ chuyển đổi phương pháp tạo các vùng đề xuất từ kĩ thuật tìm kiếm chọn lọc sang mạng đề xuất vùng.
 Những phần còn lại trong mô hình không đổi.
-Quy trình tính toán mạng đề xuất khu vực được mô tả chi tiết dưới đây:
+Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
 
 
 <!--
@@ -265,9 +265,9 @@ Finally, we output the predicted bounding boxes as the proposed regions required
 1. Ta dùng một lớp tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
 Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
 2. Ta lấy mỗi phần tử trong ánh xạ đặc trưng làm trung tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khung khác nhau, sau đó là gán nhãn cho chúng.
-3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (đối tượng hay là nền) và dự đoán khung chứa cho các khung neo tương ứng với chúng.
-4. Sau đó, ta sử dụng phương pháp non-maximum suppression để loại bỏ các khung chứa có kết quả giống nhau tương ứng với lớp đối tượng.
-Cuối cùng, ta xuất ra các khung chứa dự đoán dưới dạng các vùng đề xuất được yêu cầu bởi lớp tổng hợp RoI.
+3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (vật thể hay là nền) và dự đoán khung chứa cho các khung neo tương ứng với chúng.
+4. Sau đó, ta sử dụng phương pháp triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau tương ứng hạng mục dự đoán của "vật thể".
+Cuối cùng, ta xuất ra các khung chứa dự đoán dưới dạng các vùng đề xuất theo yêu cầu của tầng tổng hợp RoI.
 
 
 
@@ -279,9 +279,9 @@ Finally, the region proposal network can learn how to generate high-quality prop
 -->
 
 Đáng lưu ý rằng, vì là một phần của mô hình Faster R-CNN, nên mạng đề xuất khu vực được huấn luyện cùng với phần còn lại trong mô hình.
-Ngoài ra, các chức năng đối tượng trong Faster R-CNN bao gồm lớp và khung chứa dự đoán trong phát hiện đối tượng,
-cũng như là phân loại nhị phân và dự đoán các khung chứa cho các khung neo nằm trong mạng đề xuất khu vực.
-Sau cùng, mạng đề xuất khu vực có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, nhằm giảm đi số lượng vùng đề xuất trong khi vẫn giữ được precision của việc phát hiện đối tượng
+Ngoài ra, trong đối tượng Faster R-CNN còn chứa các hàm dự đoán hạng mục và khung chứa của bài toán phát hiện vật thể,
+và cả các hàm dự đoán hạng mục nhị phân và khung chứa cho các khung neo nằm trong mạng đề xuất vùng.
+Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, nhằm giảm đi số lượng vùng đề xuất trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -383,5 +383,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
