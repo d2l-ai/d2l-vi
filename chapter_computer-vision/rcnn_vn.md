@@ -36,7 +36,7 @@ Afterwards, we use the features of each proposed region to predict their categor
 
 Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một dạng phương pháp lựa chọn) và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
 Tiếp đến, các mô hình này sử dụng CNN để thực hiện phép truyền xuôi nhằm trích xuất đặc trưng từ mỗi vùng đề xuất.
-Sau đó, ta sử dụng các đặc trưng của mỗi vùng được đề xuất để dự đoán lớp và khung chứa.
+Sau đó, ta sử dụng các đặc trưng của từng vùng được đề xuất để dự đoán hạng mục và khung chứa.
 :numref:`fig_r-cnn` mô tả một mô hình R-CNN.
 
 <!--
