@@ -236,7 +236,7 @@ y[105:115, 130:140], VOC_CLASSES[1]
 ### Data Preprocessing
 -->
 
-### *dịch tiêu đề phía trên*
+### Tiền xử lý Dữ liệu
 
 
 <!--
@@ -247,7 +247,11 @@ To avoid this problem, we crop the images to set dimensions and do not scale the
 Specifically, we use the random cropping method used in image augmentation to crop the same region from input images and their labels.
 -->
 
-*dịch đoạn phía trên*
+Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
+Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc theo ảnh đầu vào.
+Sẽ rất khó để có thể thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
+Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỉ lệ ảnh.
+Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên mà đã được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
 
 
 
@@ -270,7 +274,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### *dịch tiêu đề phía trên*
+### Lớp Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
 
 
 <!--
@@ -280,7 +284,10 @@ As some images in the dataset may be smaller than the output dimensions specifie
 In addition, we define the `normalize_image` function to normalize each of the three RGB channels of the input images.
 -->
 
-*dịch đoạn phía trên*
+Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để tuỳ chỉnh lớp tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
+Với việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập từ tập dữ liệu ảnh đầu vào với chỉ số `idx` và các chỉ số hạng mục của từng điểm ảnh trong ảnh đó.
+Do có một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra được chỉ định trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng cách tuỳ chỉnh hàm `filter`.
+Cộng với đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB một của các ảnh đầu vào.
 
 
 ```{.python .input  n=9}
@@ -322,7 +329,7 @@ class VOCSegDataset(gluon.data.Dataset):
 ### Reading the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Đọc Tập dữ liệu
 
 
 <!--
@@ -331,7 +338,9 @@ We assume the random cropping operation output images in the shape $320\times 48
 Below, we can see the number of examples retained in the training and testing sets.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng lớp `VOCSegDataset` được tuỳ chỉnh ở trên, ta có thể khởi tạo đối tượng tập huấn luyện và tập kiểm tra.
+Ta giả sử rằng thao tác cắt ngẫu nhiên sản sinh ra ảnh có kích thước $320\times 480$.
+Dưới đây ta có thể quan sát số lượng ảnh được giữ lại trong tập huấn luyện và tập kiểm tra.
 
 
 
@@ -348,7 +357,9 @@ Print the shape of the first minibatch.
 In contrast to image classification and object recognition, labels here are three-dimensional arrays.
 -->
 
-*dịch đoạn phía trên*
+Ta đặt kích thước batch là 64 và định nghĩa các iterator cho tập huấn luyện và tập kiểm tra.
+Sau đó ta sẽ in ra kích thước của minibatch đầu tiên.
+Trái lại so với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây có dạng mảng ba chiều.
 
 
 
@@ -448,7 +459,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 * 
