@@ -177,7 +177,7 @@ Therefore, we must transform them into a consistent format and concatenate the p
 
 Trong ví dụ dưới đây, ta sử dụng cùng một batch dữ liệu để xây dựng ánh xạ đặc trưng `Y1` và `Y2` của hai tỷ lệ khác nhau.
 Trong đó, `Y2` có chiều cao và chiều rộng bằng một nửa `Y1`.
-Lấy ví dụ về dự đoán  hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
+Lấy ví dụ về dự đoán hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
 Với 10  hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
 Định dạng của đầu ra dự đoán sẽ là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
 Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
