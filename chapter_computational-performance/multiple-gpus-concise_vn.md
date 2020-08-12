@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Concise Implementation for Multiple GPUs
 -->
 
-# Lập trình ngắn gọn cho đa GPU
+# Cách lập trình Súc tích đa GPU
 :label:`sec_multi_gpu_gluon`
 
 
@@ -17,11 +14,11 @@ The math and the algorithms are the same as in :numref:`sec_multi_gpu`.
 As before we begin by importing the required modules (quite unsurprisingly you will need at least two GPUs to run this notebook).
 -->
 
-Lập trình từ đầu việc song song hoá cho từng mô hình mới khá phiền toái.
+Lập trình từ đầu việc song song hóa cho từng mô hình mới khá mất công.
 Hơn nữa, việc tối ưu các công cụ đồng bộ hóa sẽ cho hiệu suất cao.
 Sau đây chúng tôi sẽ giới thiệu cách thực hiện điều này bằng Gluon.
 Phần lý thuyết toán và các thuật toán giống trong :numref:`sec_multi_gpu`.
-Như trước đây, ta bắt đầu bằng cách nhập các mô-đun cần thiết (không ngạc nhiên lắm khi ta sẽ cần ít nhất hai GPU để chạy notebook này).
+Như trước đây, ta bắt đầu bằng cách nhập các mô-đun cần thiết (tất nhiên là ta sẽ cần ít nhất hai GPU để chạy notebook này).
 
 
 
@@ -37,7 +34,7 @@ npx.set_np()
 ## A Toy Network
 -->
 
-## Ví dụ đơn giản
+## Ví dụ Đơn giản
 
 
 <!--
@@ -51,8 +48,7 @@ Moreover, we remove the max-pooling layer.
 Hãy sử dụng một mạng có ý nghĩa hơn một chút so với LeNet ở phần trước mà vẫn có thể huấn luyện dễ dàng và nhanh chóng.
 Chúng tôi chọn một biến thể của ResNet-18 :cite:`He.Zhang.Ren.ea.2016`.
 Vì hình ảnh đầu vào rất nhỏ nên ta sửa đổi nó một chút.
-Cụ thể, điểm khác biệt so với ở :numref:`sec_resnet` là ta sử dụng hạt nhân tích chập, sải bước và đệm nhỏ hơn ở phần đầu.
-Hơn nữa, ta cũng loại bỏ tầng gộp cực đại.
+Cụ thể, điểm khác biệt so với ở :numref:`sec_resnet` là ở phần đầu, ta sử dụng hạt nhân tích chập có kích thước, sải bước và đệm nhỏ hơn, và cũng loại bỏ đi tầng gộp cực đại.
 
 
 
@@ -88,7 +84,7 @@ def resnet18(num_classes):
 ## Parameter Initialization and Logistics
 -->
 
-## Khởi tạo tham số và Công việc phụ trợ
+## Khởi tạo Tham số và Công việc phụ trợ
 
 
 <!--
@@ -98,9 +94,9 @@ What is particularly convenient is that it also lets us initialize the network o
 Let us try how this works in practice.
 -->
 
-Phương thức `initialize` cho phép ta đặt giá trị mặc định ban đầu cho các tham số trên thiết bị được chọn.
-Để ôn lại, hãy xem :numref:`sec_numerical_stability`.
-Điều đặc biệt thuận tiện là nó cũng cho phép ta khởi tạo mạng trên *nhiều* thiết bị cùng một lúc.
+Phương thức `initialize` cho phép ta thiết lập giá trị mặc định ban đầu cho các tham số trên thiết bị được chọn.
+Với độc giả mới, có thể tham khảo :numref:`sec_numerical_stability`.
+Một điều rất thuận tiện là nó cũng cho phép ta khởi tạo mạng trên *nhiều* thiết bị cùng một lúc.
 Hãy thử xem cách nó hoạt động trong thực tế.
 
 
@@ -119,9 +115,9 @@ The network object *automatically* uses the appropriate GPU to compute the value
 As before we generate 4 observations and split them over the GPUs.
 -->
 
-Sử dụng hàm `split_and_load` được giới thiệu trong phần trước, chúng ta có thể chia một minibatch dữ liệu và sao chép các phần dữ liệu vào danh sách các thiết bị được cung cấp bởi biến ngữ cảnh.
-Đối tượng mạng *tự động* sử dụng GPU thích hợp để tính giá trị của lượt truyền xuôi.
-Như trước đây ta tạo ra 4 mẫu dữ liệu và phân chia chúng trên các GPU.
+Sử dụng hàm `split_and_load` được giới thiệu trong phần trước, chúng ta có thể phân chia một minibatch dữ liệu và sao chép các phần dữ liệu vào danh sách các thiết bị được cung cấp bởi biến ngữ cảnh.
+Mạng sẽ *tự động* sử dụng GPU thích hợp để tính giá trị của lượt truyền xuôi.
+Ta tạo ra 4 mẫu dữ liệu và phân chia chúng trên các GPU như trước đây.
 
 
 ```{.python .input  n=4}
@@ -130,9 +126,6 @@ x_shards = gluon.utils.split_and_load(x, ctx)
 net(x_shards[0]), net(x_shards[1])
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 Once data passes through the network, the corresponding parameters are initialized *on the device the data passed through*.
@@ -142,11 +135,11 @@ In fact, the parameters do not even exist on the device.
 We can verify this by printing out the parameters and observing any errors that might arise.
 -->
 
-Khi dữ liệu được truyền vào mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu đó được truyền vào*.
+Khi dữ liệu được truyền qua mạng, các tham số tương ứng sẽ được khởi tạo *trên thiết bị mà dữ liệu được truyền qua*.
 Điều này có nghĩa là việc khởi tạo xảy ra theo từng thiết bị.
-Do ta lựa chọn GPU 0 và GPU 1 để khởi tạo, mạng chỉ được khởi tạo trên hai thiết bị này chứ không phải trên CPU.
+Do ta lựa chọn việc khởi tạo trên GPU 0 và GPU 1, mạng chỉ được khởi tạo trên hai thiết bị này chứ trên CPU thì không.
 Trong thực tế, các tham số này thậm chí còn không tồn tại trên CPU.
-Ta có thể kiểm chứng điều này bằng cách in ra các tham số và theo dõi xem liệu có lỗi nào xảy ra hay không.
+Ta có thể kiểm chứng điều này bằng cách in các tham số ra và theo dõi xem liệu có lỗi nào xảy ra hay không.
 
 
 ```{.python .input  n=5}
@@ -168,7 +161,7 @@ All else is essentially identical.
 -->
 
 Cuối cùng, hãy cùng thay đổi đoạn mã đánh giá độ chính xác để có thể chạy song song trên nhiều thiết bị.
-Đây chính là hàm được viết lại của hàm `evaluate_accuracy_gpu` ở :numref:`sec_lenet`.
+Hàm này được viết lại từ hàm `evaluate_accuracy_gpu` ở :numref:`sec_lenet`.
 Điểm khác biệt lớn nhất nằm ở việc ta tách một batch ra trước khi truyền vào mạng.
 Các phần còn lại gần như là giống hệt.
 
@@ -201,7 +194,7 @@ def evaluate_accuracy_gpus(net, data_iter, split_f=d2l.split_batch):
 As before, the training code needs to perform a number of basic functions for efficient parallelism:
 -->
 
-Như phần trên, đoạn mã huấn luyện cần thực hiện một số hàm cơ bản để quá trình song song hoá đạt hiệu quả:
+Như phần trên, đoạn mã huấn luyện cần thực hiện một số hàm cơ bản để quá trình song song hóa đạt hiệu quả:
 
 
 <!--
@@ -212,9 +205,9 @@ Như phần trên, đoạn mã huấn luyện cần thực hiện một số hà
 -->
 
 * Các tham số của mạng cần được khởi tạo trên tất cả các thiết bị.
-* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch sẽ được chia cho tất cả các thiết bị.
+* Trong suốt quá trình lặp trên tập dữ liệu, các minibatch được chia nhỏ cho tất cả các thiết bị.
 * Ta tính toán song song hàm mất mát và gradient của nó trên tất cả các thiết bị.
-* Mất mát được tích luỹ (bởi phương thức huấn luyện) và các tham số được cập nhật tương ứng.
+* Mất mát được tích luỹ (bởi phương thức huấn luyện `trainer`) và các tham số được cập nhật tương ứng.
 
 
 <!--
@@ -222,8 +215,8 @@ In the end we compute the accuracy (again in parallel) to report the final value
 The training routine is quite similar to implementations in previous chapters, except that we need to split and aggregate data.
 -->
 
-Cuối cùng ta tính toán (một lần nữa theo một cách song song) độ chính xác và báo cáo giá trị cuối cùng của mạng.
-Quá trình huấn luyện ở đây khá giống với quá trình ở chương trước, trừ việc ta cần chia nhỏ và tổng hợp lại dữ liệu.
+Cuối cùng ta tính toán (vẫn song song) độ chính xác và báo cáo giá trị cuối cùng của mạng.
+Quá trình huấn luyện ở đây khá giống với chương trước, trừ việc ta cần chia nhỏ và tổng hợp lại dữ liệu.
 
 
 
@@ -254,9 +247,6 @@ def train(num_gpus, batch_size, lr):
           f'on {str(ctx)}')
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Experiments
@@ -284,9 +274,9 @@ This improves scalability since the overhead for parallelization is less relevan
 -->
 
 Tiếp theo, ta sử dụng 2 GPU để huấn luyện. Mô hình ResNet-18 phức tạp hơn đáng kể so với LeNet.
-Đây chính là cơ hội để song song hoá bộc lộ lợi thế của nó,
-vì thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hoá các tham số.
-Điều này cải thiện khả năng mở rộng do tổng chi phí song song hoá ít quan trọng.
+Đây chính là cơ hội để song song hóa chứng tỏ lợi thế của nó,
+vì thời gian dành cho việc tính toán lớn hơn đáng kể so với thời gian đồng bộ hóa các tham số.
+Điều này giúp cải thiện khả năng mở rộng do tổng chi phí song song hóa không quá đáng kể.
 
 
 ```{.python .input  n=9}
@@ -303,9 +293,9 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 * The optimization algorithms automatically aggregate over multiple GPUs.
 -->
 
-* Gluon cung cấp các hàm để khởi tạo mô hình trên nhiều thiết bị bằng cách cung cấp danh sách ngữ cảnh.
-* Dữ liệu được tự động đánh giá trên các thiết bị mà dữ liệu đó được lưu trữ.
-* Chú ý việc khởi tạo mạng trên mỗi thiết bị trước khi thử truy cập vào các tham số trên thiết bị đó. Nếu không bạn sẽ gặp phải lỗi.
+* Gluon cung cấp các hàm để khởi tạo mô hình trên nhiều thiết bị bằng cách cung cấp một danh sách ngữ cảnh.
+* Dữ liệu được tự động đánh giá trên các thiết bị mà nó được lưu trữ.
+* Chú ý việc khởi tạo mạng trên mỗi thiết bị trước khi thử truy cập vào các tham số trên thiết bị đó. Nếu không khả năng cao sẽ có lỗi xảy ra.
 * Các thuật toán tối ưu tự động tổng hợp kết quả trên nhiều GPU.
 
 
@@ -317,37 +307,25 @@ train(num_gpus=2, batch_size=512, lr=0.2)
 3. What happens if we drop `npx.waitall()`? How would you modify training such that you have an overlap of up to two steps for parallelism? 
 -->
 
-1. Phần này ta sử dụng ResNet-18. Hãy thử với số epoch, kích thước batch và tốc độ học khác. Hãy sử dụng nhiều GPU hơn để tính toán. Chuyện gì sẽ xảy ra nếu bạn chạy mô hình này trên máy chủ p2.16xlarge với 16 GPU?
-2. Đôi khi mỗi thiết bị khác nhau cung cấp khả năng tính toán khác nhau. Ta có thể sử dụng GPU và CPU cùng lúc. Vậy ta nên phân chia công việc thế nào? Liệu việc phân chia có đáng hay không? Tại sao? Tại sao không?
+1. Phần này ta sử dụng ResNet-18. Hãy thử với số epoch, kích thước batch và tốc độ học khác. Thử sử dụng nhiều GPU hơn để tính toán.
+Chuyện gì sẽ xảy ra nếu ta chạy mô hình này trên máy chủ p2.16xlarge với 16 GPU?
+2. Đôi khi mỗi thiết bị khác nhau cung cấp khả năng tính toán khác nhau. Ta có thể sử dụng GPU và CPU cùng lúc.
+Vậy ta nên phân chia công việc thế nào? Liệu việc phân chia có đáng hay không? Tại sao?
 3. Chuyện gì sẽ xảy ra nếu ta bỏ hàm `npx.waitall()`? Bạn sẽ thay đổi quá trình huấn luyện thế nào để có thể xử lý song song tối đa 2 bước cùng lúc?
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/2384)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/365)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh

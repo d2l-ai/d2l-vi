@@ -5,7 +5,7 @@
 # Region-based CNNs (R-CNNs)
 -->
 
-# *dịch tiêu đề phía trên*
+# CNN theo vùng (*Region-based CNNs* -- R-CNN)
 
 
 <!--
@@ -15,14 +15,16 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN :cite:`He.Gkioxari.
 Due to space limitations, we will confine our discussion to the designs of these models.
 -->
 
-*dịch đoạn phía trên*
+CNN theo vùng, hay các vùng với đặc trưng CNN (R-CNN) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
+Trong phần này, chúng ta sẽ thảo luận R-CNN và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
+Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.Dollar.ea.2017`.
 
 
 <!--
 ## R-CNNs
 -->
 
-## *dịch tiêu đề phía trên*
+## R-CNN
 
 
 <!--
@@ -32,14 +34,16 @@ Afterwards, we use the features of each proposed region to predict their categor
 :numref:`fig_r-cnn` shows an R-CNN model.
 -->
 
-*dịch đoạn phía trên*
-
+Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một dạng phương pháp lựa chọn) và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
+Tiếp đến, các mô hình này sử dụng CNN để thực hiện lượt truyền xuôi nhằm trích xuất đặc trưng từ từng vùng đề xuất.
+Sau đó, ta sử dụng các đặc trưng của từng vùng được đề xuất để dự đoán hạng mục và khung chứa.
+:numref:`fig_r-cnn` mô tả một mô hình R-CNN.
 
 <!--
 ![R-CNN model.](../img/r-cnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/r-cnn.svg)
+![Mô hình R-CNN.](../img/r-cnn.svg)
 :label:`fig_r-cnn`
 
 
@@ -47,7 +51,7 @@ Afterwards, we use the features of each proposed region to predict their categor
 Specifically, R-CNNs are composed of four main parts:
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, R-CNN có bốn phần chính sau:
 
 
 <!--
@@ -61,8 +65,15 @@ Here, each support vector machine is used to determine whether an example belong
 4. The features and labeled bounding box of each proposed region are combined as an example to train a linear regression model for ground-truth bounding box prediction.
 -->
 
-*dịch đoạn phía trên*
-
+1. Việc tìm kiếm chọn lọc được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
+Các vùng đề xuất thông thường được lựa chọn để có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
+Nhãn gốc hạng mục và khung chứa sẽ được gán cho từng vùng được đề xuất.
+2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
+Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để trích xuất đặc trưng cho các vùng đề xuất tương ứng.
+3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được gói thành một mẫu để huấn luyện nhiều máy vector hỗ trợ cho 
+phép phân loại vật thể.
+Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
+4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính để dự đoán khung chứa gốc. 
 
 <!--
 Although R-CNN models use pre-trained CNNs to effectively extract image features, the main downside is the slow speed.
@@ -70,7 +81,9 @@ As you can imagine, we can select thousands of proposed regions from a single im
 This massive computing load means that R-CNNs are not widely used in actual applications.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù các mô hình R-CNN sử dụng các mạng CNN đã được tiền huấn luyện để trích xuất các đặc trưng ảnh một cách hiệu quả, điểm hạn chế chính yếu đó là tốc độ chậm.
+Ta có thể hình dung, với hàng ngàn vùng đề xuất từ một ảnh, ta cần tới hàng ngàn phép tính truyền xuôi từ mạng CNN để phát hiện vật thể. 
+Phép tính toán cồng kềnh khiến các mô hình R-CNN không được sử dụng rộng rãi trong các ứng dụng thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -149,15 +162,16 @@ For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a single $2\times
 When we divide the region into four sub-windows, they respectively contain the elements 0, 1, 4, and 5 (5 is the largest); 2 and 6 (6 is the largest); 8 and 9 (9 is the largest); and 10.
 -->
 
-*dịch đoạn phía trên*
-
+Trong hình :numref:`fig_roi`, ta chọn một vùng $3\times 3$ làm ROI của một đầu vào $4 \times 4$.
+Với ROI này, ta sử dụng một tầng gộp ROI $2\times 2$ để thu được một đầu ra đơn $2\times 2$.
+Khi ta chia vùng này thành bốn cửa sổ con, chúng lần lượt chứa các phần tử 0, 1, 4 và 5 (5 là lớn nhất); 2 và 6 (6 là lớn nhất); 8 và 9 (9 là lớn nhất); và 10.
 
 <!--
 ![$2\times 2$ RoI pooling layer.](../img/roi.svg)
 -->
 
 
-![*dịch mô tả phía trên*](../img/roi.svg)
+![Tầng gộp ROI $2\times 2$](../img/roi.svg)
 :label:`fig_roi`
 
 
@@ -166,8 +180,8 @@ We use the `ROIPooling` function to demonstrate the RoI pooling layer computatio
 Assume that the CNN extracts the feature `X` with both a height and width of 4 and only a single channel.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sử dụng hàm `ROIPooling` để thực hiện việc tính toán tầng gộp ROI.
+Giả sử rằng CNN trích đặc trưng `X` với chiều rộng và chiều cao là 4 và một kênh đơn duy nhất.
 
 
 ```{.python .input  n=4}
@@ -185,7 +199,8 @@ Assume that the height and width of the image are both 40 pixels and that select
 Each region is expressed as five elements: the region's object category and the $x, y$ coordinates of its upper-left and bottom-right corners.
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng chiều rộng và chiều cao của ảnh là 40 điểm ảnh và tìm kiếm chọn lọc (selective search) sinh ra hai vùng đề xuất trên ảnh này.
+Mỗi vùng được biểu thị gồm 5 phần tử: hạng mục của đối tượng trong vùng đó và các tọa độ $x, y$ của các góc trên-bên trái và dưới-bên phải.
 
 
 ```{.python .input  n=5}
@@ -199,8 +214,9 @@ and then the RoIs are labeled on `X` as `X[:, :, 0:3, 0:3]` and `X[:, :, 1:4, 0:
 Finally, we divide the two RoIs into a sub-window grid and extract features with a height and width of 2.
 -->
 
-*dịch đoạn phía trên*
-
+Bởi vì chiều cao và chiều rộng của `X` là $1/10$ chiều cao và chiều rộng của ảnh, các tọa độ của hai vùng được đề xuất sẽ nhân với 0.1 dựa theo `spatial_scale`,
+rồi các ROI này được gắn nhãn lên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
+Sau cùng, ta chia hai ROI thành một lưới cửa sổ con và trích xuất các đặc trưng với chiều cao và chiều rộng là 2.
 
 
 ```{.python .input  n=6}
@@ -358,18 +374,18 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
 * 
-
-
