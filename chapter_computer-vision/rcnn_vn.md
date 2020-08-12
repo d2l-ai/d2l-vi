@@ -132,7 +132,7 @@ Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thư�
 Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm RoI (ở đây ta giả sử rằng chiều cao là $h_2$ và chiều rộng là $w_2$).
 Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng RoI làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định bởi thiết kế mô hình.
-4. Khi dự đoán lớp, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số các lớp nhãn).
+4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số lượng hạng mục).
 Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
 Điều này có nghĩa với phép dự đoán lớp nhãn và khung chứa cho từng vùng đề xuất.
 
