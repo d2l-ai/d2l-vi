@@ -5,7 +5,7 @@
 # Region-based CNNs (R-CNNs)
 -->
 
-# CNN dựa trên vùng (R-CNNs)
+# CNN theo vùng (*Region-based CNNs* -- R-CNN)
 
 
 <!--
@@ -384,5 +384,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
