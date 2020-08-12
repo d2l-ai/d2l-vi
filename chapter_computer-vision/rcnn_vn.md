@@ -149,15 +149,16 @@ For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a single $2\times
 When we divide the region into four sub-windows, they respectively contain the elements 0, 1, 4, and 5 (5 is the largest); 2 and 6 (6 is the largest); 8 and 9 (9 is the largest); and 10.
 -->
 
-*dịch đoạn phía trên*
-
+Trong hình :numref:`fig_roi`, ta chọn một vùng $3\times 3$ làm ROI của một đầu vào $4 \times 4$.
+Với ROI này, ta sử dụng một tầng gộp ROI $2\times 2$ để thu được một đầu ra đơn $2\times 2$.
+Khi ta chia vùng này thành bốn cửa sổ con, chúng lần lượt chứa các phần tử 0, 1, 4 và 5 (5 là lớn nhất); 2 và 6 (6 là lớn nhất); 8 và 9 (9 là lớn nhất); và 10.
 
 <!--
 ![$2\times 2$ RoI pooling layer.](../img/roi.svg)
 -->
 
 
-![*dịch mô tả phía trên*](../img/roi.svg)
+![Tầng gộp ROI $2\times 2$](../img/roi.svg)
 :label:`fig_roi`
 
 
@@ -166,8 +167,8 @@ We use the `ROIPooling` function to demonstrate the RoI pooling layer computatio
 Assume that the CNN extracts the feature `X` with both a height and width of 4 and only a single channel.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sử dụng hàm `ROIPooling` để thực hiện việc tính toán tầng gộp ROI.
+Giả sử rằng CNN trích đặc trưng `X` với chiều rộng và chiều cao là 4 và một kênh đơn duy nhất.
 
 
 ```{.python .input  n=4}
@@ -185,7 +186,8 @@ Assume that the height and width of the image are both 40 pixels and that select
 Each region is expressed as five elements: the region's object category and the $x, y$ coordinates of its upper-left and bottom-right corners.
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng chiều rộng và chiều cao của ảnh là 40 điểm ảnh và tìm kiếm chọn lọc (selective search) sinh ra hai vùng đề xuất trên ảnh này.
+Mỗi vùng được biểu thị gồm 5 phần tử: hạng mục của đối tượng trong vùng đó và các tọa độ $x, y$ của các góc trên-bên trái và dưới-bên phải.
 
 
 ```{.python .input  n=5}
@@ -199,8 +201,9 @@ and then the RoIs are labeled on `X` as `X[:, :, 0:3, 0:3]` and `X[:, :, 1:4, 0:
 Finally, we divide the two RoIs into a sub-window grid and extract features with a height and width of 2.
 -->
 
-*dịch đoạn phía trên*
-
+Bởi vì chiều cao và chiều rộng của `X` là $1/10$ chiều cao và chiều rộng của ảnh, các tọa độ của hai vùng được đề xuất sẽ nhân với 0.1 dựa theo `spatial_scale`,
+rồi các ROI này được gắn nhãn lên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
+Sau cùng, ta chia hai ROI thành một lưới cửa sổ con và trích xuất các đặc trưng với chiều cao và chiều rộng là 2.
 
 
 ```{.python .input  n=6}
@@ -364,12 +367,11 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
 * 
-
 
