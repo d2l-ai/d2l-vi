@@ -187,7 +187,7 @@ Each region is expressed as five elements: the region's object category and the 
 -->
 
 Giả sử rằng chiều rộng và chiều cao của ảnh là 40 điểm ảnh và tìm kiếm chọn lọc (selective search) sinh ra hai vùng đề xuất trên ảnh này.
-Mỗi vùng biểu thị gồm 5 phần tử:  hạng mục của đối tượng trên vùng đó và các tọa độ $x, y$ của các góc trên-bên trái và dưới-bên phải.
+Mỗi vùng được biểu thị gồm 5 phần tử: hạng mục của đối tượng trong vùng đó và các tọa độ $x, y$ của các góc trên-bên trái và dưới-bên phải.
 
 
 ```{.python .input  n=5}
@@ -374,5 +374,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
