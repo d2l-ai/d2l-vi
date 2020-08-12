@@ -357,7 +357,7 @@ def style_loss(Y_hat, gram_Y):
 ### Total Variance Loss
 -->
 
-### Tổng Mất mát Biến thiên
+### Mất mát Biến thiên Toàn phần
 
 
 <!--
@@ -367,8 +367,8 @@ We assume that $x_{i, j}$ represents the pixel value at the coordinate $(i, j)$,
 -->
 
 Đôi khi các ảnh tổng hợp mà ta học có tấn suất nhiễu khá cao, cụ thể là các điểm ảnh sáng hoặc tối.
-Khử nhiễu tổng biến thiên (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
-Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, tổng mất mát biến thiên bằng:
+Khử nhiễu biến thiên toàn phần (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
+Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, mất mát biến thiên toàn phần bằng:
 
 
 $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\right|.$$
@@ -400,7 +400,7 @@ The loss function for style transfer is the weighted sum of the content loss, st
 By adjusting these weight hyperparameters, we can balance the retained content, transferred style, and noise reduction in the composite image according to their relative importance.
 -->
 
-Hàm mất mát trong truyền tải phong cách bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và tổng mất mát biến thiên.
+Hàm mất mát trong truyền tải phong cách bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
 Thông qua việc điều chỉnh các siêu tham số trọng số này, ta có thể cân bằng giữa phần nội dung giữ lại, phong cách truyền tải và mức giảm nhiễu trong ảnh tổng hợp dựa theo từng giá trị tương ứng của chúng.
 
 
