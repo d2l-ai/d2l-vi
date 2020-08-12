@@ -227,7 +227,7 @@ concat_preds([Y1, Y2]).shape
 ### Height and Width Downsample Block
 -->
 
-### Chiều Cao và chiều Rộng của Khối Giảm Chiều
+### Khối giảm chiều cao và chiều rộng
 
 
 <!--
@@ -844,5 +844,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
