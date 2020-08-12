@@ -129,7 +129,7 @@ This means that we predict the category and bounding box for each proposed regio
 Hơn nữa, mạng này được huấn luyện như bình thường để cập nhật tham số mô hình.
 Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
 2. Giả sử thuật toán tìm kiếm lựa chọn sinh $n$ vùng đề xuất, mỗi vùng có kích thước khác nhau dẫn đến đầu ra CNN có vùng quan tâm (_regions of interests - RoI_) với kích thước khác nhau.
-Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm RoI (ở đây ta giả sử rằng chiều cao là $h_2$ và chiều rộng là $w_2$).
+Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
 Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng RoI làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định bởi thiết kế mô hình.
 4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số lượng hạng mục).
