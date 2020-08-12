@@ -331,7 +331,7 @@ forward(np.zeros((2, 3, 256, 256)), base_net()).shape
 ### The Complete Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình hoàn chỉnh
 
 
 <!--
@@ -341,8 +341,9 @@ The first module is the base network block, modules two to four are height and w
 Therefore, modules two to five are all multiscale feature blocks shown in :numref:`fig_ssd`.
 -->
 
-*dịch đoạn phía trên*
-
+Mô hình SSD chứa tất cả năm mô-đun.
+Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
+Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ hai tới bốn là các khối giảm chiều cao và chiều rộng, và khối thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
 
 
 ```{.python .input  n=9}
@@ -363,7 +364,8 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ định nghĩa luợt tính xuôi cho từng mô-đun.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -382,7 +384,9 @@ Here, we first divide the interval from 0.2 to 1.05 into five equal parts to det
 Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447$, and similar formulas, we determine the sizes of larger anchor boxes at the different scales.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong :numref:`fig_ssd`, các vật thể nó phát hiện và các khung neo nó tạo ra càng lớn.
+Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
+Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định kích thước của các khung neo lớn hơn ở các tỉ lệ khác nhau.
 
 
 
@@ -398,8 +402,7 @@ num_anchors = len(sizes[0]) + len(ratios[0]) - 1
 Now, we can define the complete model, `TinySSD`.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta có thể định nghĩa mô hình hoàn chỉnh, `TinySSD`.
 
 
 ```{.python .input  n=12}
@@ -438,7 +441,10 @@ Because modules two to four are height and width downsample blocks, module five 
 and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
+Như ta đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
+Bởi vì các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, còn mô-đun thứ năm là tầng gộp toàn cục, 
+và mỗi phần tử trong ánh xạ đặc trưng này được dùng làm tâm cho bốn khung neo, tổng cộng $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ khung neo được tạo ra cho mỗi ảnh ở năm tỉ lệ đó.
 
 
 ```{.python .input  n=13}
@@ -882,7 +888,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 6 -->
 * Đỗ Trường Giang
