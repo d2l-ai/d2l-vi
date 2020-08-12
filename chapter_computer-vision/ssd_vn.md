@@ -240,7 +240,7 @@ As you can see, the height and width downsample block enlarges the receptive fie
 -->
 
 
-Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây, giảm chiều cao và chiều rộng 50%. 
+Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm chiều cao và chiều rộng 50%. 
 Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
 Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
 Tuy nhiên, tầng gộp cực đại tiếp theo giảm kích thước đặc trưng còn một nửa.
@@ -844,4 +844,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
