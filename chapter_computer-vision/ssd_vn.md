@@ -829,7 +829,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
-* Nguyễn Văn Quang
 * Nguyễn Văn Cường
 <!-- Phần 4 -->
 * 
