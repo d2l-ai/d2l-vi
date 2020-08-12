@@ -220,7 +220,7 @@ def concat_preds(preds):
 Thus, regardless of the different shapes of `Y1` and `Y2`, we can still concatenate the prediction results for the two different scales of the same batch.
 -->
 
-Do đó, ta có thể ghép nối kết quả dự đoán cho hai tỷ lệ khác nhau trên cùng một batch bất kể `Y1` và `Y2` có hình dạng khác nhau.
+Do đó, ta có thể ghép nối kết quả dự đoán cho hai tỷ lệ khác nhau trên cùng một batch dù `Y1` và `Y2` có kích thước khác nhau.
 
 
 ```{.python .input  n=5}
