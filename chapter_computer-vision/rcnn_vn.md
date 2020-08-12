@@ -66,7 +66,7 @@ Here, each support vector machine is used to determine whether an example belong
 -->
 
 1. Việc tìm kiếm chọn lọc được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
-Các vùng đề xuất được lựa chọn chung cho nhiều tỷ lệ và có hình dạng và kích thước khác nhau.
+Các vùng đề xuất thông thường được lựa chọn để có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
 Lớp và khung chứa gốc cho từng vùng đề xuất được gán nhãn.
 2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
 Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để cho ra các đặc trích xuất cho các vùng đề xuất tương ứng.
