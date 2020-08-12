@@ -162,7 +162,7 @@ Because the shapes and number of anchor boxes centered on the same element diffe
 -->
 
 Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán  hạng mục và độ dời tương ứng.
-Bởi vì hình dạng và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có hình dạng khác nhau.
+Vì kích thước và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có kích thước khác nhau.
 
 
 <!--
@@ -844,5 +844,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
 
