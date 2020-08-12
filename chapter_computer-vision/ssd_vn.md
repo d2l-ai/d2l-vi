@@ -203,7 +203,7 @@ to facilitate subsequent concatenation on the $1^{\mathrm{st}}$ dimension.
 
 Chiều kênh bao gồm dự đoán cho tất cả các khung neo có cùng tâm.
 Đầu tiên, ta sẽ chuyển chiều kênh thành chiều cuối cùng.
-Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng nhị phân (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều $1^{\mathrm{st}}$ dễ dàng hơn.
+Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng nhị phân (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều  thứ $1^{\mathrm{st}}$ dễ dàng hơn.
 
 
 
