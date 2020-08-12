@@ -69,7 +69,7 @@ Here, each support vector machine is used to determine whether an example belong
 Các vùng đề xuất thông thường được lựa chọn để có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
 Lớp và khung chứa gốc cho từng vùng đề xuất được gán nhãn.
 2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
-Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để cho ra các đặc trích xuất cho các vùng đề xuất tương ứng.
+Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để trích xuất đặc trưng cho các vùng đề xuất tương ứng.
 3. Các đặc trưng và lớp nhãn của từng vùng đề xuất được gói thành một mẫu để huấn luyện các máy tựa vector (multiple SVMs) cho 
 phép phân loại vật thể.
 Ở đây, mỗi máy tựa vector được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
