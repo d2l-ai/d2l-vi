@@ -479,7 +479,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | timeseries analysis                    | phân tích dữ liệu chuỗi thời gian         |                                              |
 | timestep                               | bước thời gian                            | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | token                                  | token                                     |                                              |
-| total variation denoising              | khử nhiễu tổng biến thiên                 |                                              |
+| total variation denoising              | khử nhiễu biến thiên toàn phần                |                                              |
 | training dev set                       | tập phát triển huấn luyện                 |                                              |
 | training set                           | tập huấn luyện                            |                                              |
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
