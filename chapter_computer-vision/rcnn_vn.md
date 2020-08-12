@@ -65,7 +65,7 @@ Here, each support vector machine is used to determine whether an example belong
 4. The features and labeled bounding box of each proposed region are combined as an example to train a linear regression model for ground-truth bounding box prediction.
 -->
 
-1. Tìm kiếm lựa chọn (_selective search_) được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
+1. Việc tìm kiếm chọn lọc được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
 Các vùng đề xuất được lựa chọn chung cho nhiều tỷ lệ và có hình dạng và kích thước khác nhau.
 Lớp và khung chứa gốc cho từng vùng đề xuất được gán nhãn.
 2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
