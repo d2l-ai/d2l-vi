@@ -181,7 +181,7 @@ Lấy ví dụ về dự đoán  hạng mục, ta giả sử rằng mỗi điể
 Với 10  hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
 Định dạng của đầu ra dự đoán sẽ là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
 Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
-
+Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để tính toán về sau.
 
 ```{.python .input  n=3}
 def forward(x, block):
