@@ -161,7 +161,7 @@ As we mentioned, SSD uses feature maps based on multiple scales to generate anch
 Because the shapes and number of anchor boxes centered on the same element differ for the feature maps of different scales, the prediction outputs at different scales may have different shapes.
 -->
 
-Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán  hạng mục và độ dời tương ứng.
+Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán hạng mục và độ dời tương ứng.
 Vì kích thước và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có kích thước khác nhau.
 
 
