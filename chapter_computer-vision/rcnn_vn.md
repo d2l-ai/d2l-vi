@@ -51,7 +51,7 @@ Sau đó, ta sử dụng các đặc trưng của từng vùng được đề xu
 Specifically, R-CNNs are composed of four main parts:
 -->
 
-Cụ thể, R-CNNs có bốn phần chính sau:
+Cụ thể, R-CNN có bốn phần chính sau:
 
 
 <!--
