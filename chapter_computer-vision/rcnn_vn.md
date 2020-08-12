@@ -89,7 +89,7 @@ As these regions have a high degree of overlap, independent feature extraction r
 Fast R-CNN improves on the R-CNN by only performing CNN forward computation on the image as a whole.
 -->
 
-Điểm nghẽn cổ chai chính yếu về hiệu năng của mô hình R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
+Điểm nghẽn cổ chai chính về hiệu năng của mô hình R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
 Do các vùng đề xuất này có độ chồng lặp cao, nên việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến khối lượng lớn các phép tính lặp lại.
 Fast R-CNN cải thiện mô hình R-CNN chỉ bằng cách thực hiện tính toán truyền xuôi qua mạng CNN trên toàn bộ ảnh.
 
@@ -389,5 +389,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
