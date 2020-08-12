@@ -72,7 +72,7 @@ Nhãn gốc hạng mục và khung chứa sẽ được gán cho từng vùng đ
 Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để trích xuất đặc trưng cho các vùng đề xuất tương ứng.
 3. Các đặc trưng và lớp nhãn của từng vùng đề xuất được gói thành một mẫu để huấn luyện các máy tựa vector (multiple SVMs) cho 
 phép phân loại vật thể.
-Ở đây, mỗi máy tựa vector được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
+Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
 4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính cho phép dự khung chứa gốc. 
 
 <!--
