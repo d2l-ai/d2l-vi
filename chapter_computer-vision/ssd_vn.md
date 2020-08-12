@@ -135,8 +135,8 @@ The design of the bounding box prediction layer is similar to that of the catego
 The only difference is that, here, we need to predict 4 offsets for each anchor box, rather than $q+1$ categories.
 -->
 
-Thiết kế của tầng dự đoán khung chứa tương tự như tầng dự đoán lớp nhãn.
-Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời (offset) cho từng khung neo, thay vì $q+1$ lớp.
+Thiết kế của tầng dự đoán khung chứa tương tự như tầng dự đoán hạng mục.
+Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời (offset) cho từng khung neo, thay vì $q+1$  hạng mục.
 
 
 
@@ -161,7 +161,7 @@ As we mentioned, SSD uses feature maps based on multiple scales to generate anch
 Because the shapes and number of anchor boxes centered on the same element differ for the feature maps of different scales, the prediction outputs at different scales may have different shapes.
 -->
 
-Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán lớp và độ dời tương ứng.
+Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán  hạng mục và độ dời tương ứng.
 Bởi vì hình dạng và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có hình dạng khác nhau.
 
 
@@ -177,8 +177,8 @@ Therefore, we must transform them into a consistent format and concatenate the p
 
 Trong ví dụ dưới đây, ta sử dụng cùng batch dữ liệu để xây dựng ánh xạ đặc trưng của hai tỷ lệ khác nhau, `Y1` và `Y2`.
 Trong đó, `Y2` có chiều cao và chiều rộng bằng một nửa `Y1`.
-Lấy ví dụ về dự đoán lớp, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
-Với 10 lớp vật thể, số lượng kênh đầu ra của tầng dự đoán lớp sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
+Lấy ví dụ về dự đoán  hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
+Với 10  hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
 Định dạng của đầu ra dự đoán sẽ là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
 Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
 
