@@ -483,6 +483,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | timestep                               | bước thời gian                            | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | token                                  | token                                     |                                              |
 | total variation | biến thiên toàn phần | [https://git.io/JJyeI](https://git.io/JJyeI)  |
+| total variation denoising              | khử nhiễu biến thiên toàn phần            |                                              |
 | training dev set                       | tập phát triển huấn luyện                 |                                              |
 | training set                           | tập huấn luyện                            |                                              |
 | training set performance               | chất lượng trên tập huấn luyện            |                                              |
