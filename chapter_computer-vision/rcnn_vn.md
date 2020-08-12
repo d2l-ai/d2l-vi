@@ -24,7 +24,7 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.
 ## R-CNNs
 -->
 
-## R-CNNs
+## R-CNN
 
 
 <!--
