@@ -264,7 +264,7 @@ concat_preds([Y1, Y2]).shape
 ### Height and Width Downsample Block
 -->
 
-### *dịch tiêu đề phía trên*
+### Khối giảm chiều cao và chiều rộng
 
 
 <!--
@@ -276,8 +276,13 @@ Because $1\times 2+(3-1)+(3-1)=6$, each element in the output feature map has a 
 As you can see, the height and width downsample block enlarges the receptive field of each element in the output feature map.
 -->
 
-*dịch đoạn phía trên*
 
+Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm chiều cao và chiều rộng 50%. 
+Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
+Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
+Tuy nhiên, tầng gộp cực đại tiếp theo giảm kích thước đặc trưng còn một nửa.
+Do $1\times 2+(3-1)+(3-1)=6$, mỗi điểm trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
+Ta có thể thấy, khối giảm chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi điểm trong ánh xạ đặc trưng đầu ra.
 
 
 ```{.python .input  n=6}
@@ -295,7 +300,8 @@ def down_sample_blk(num_channels):
 By testing forward computation in the height and width downsample block, we can see that it changes the number of input channels and halves the height and width.
 -->
 
-*dịch đoạn phía trên*
+
+Bằng phép kiểm tra tính toán truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
 
 
 ```{.python .input  n=7}
@@ -307,7 +313,7 @@ forward(np.zeros((2, 3, 20, 20)), down_sample_blk(10)).shape
 ### Base Network Block
 -->
 
-### *dịch tiêu đề phía trên*
+### Khối Mạng Cơ sở
 
 
 <!--
@@ -317,8 +323,11 @@ This network consists of three height and width downsample blocks connected in a
 When we input an original image with the shape $256\times256$, the base network block outputs a feature map with the shape $32 \times 32$.
 -->
 
-*dịch đoạn phía trên*
 
+Khối mạng cơ sở được sử dụng để trích xuất đặc trưng từ ảnh gốc ban đầu.
+Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ. 
+Mạng này bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi tầng.
+Khi ta truyền ảnh đầu vào với kích thước $256\times256$, khối mạng cơ sở sẽ cho ra ánh xạ đặc trưng có kích thước $32 \times 32$.
 
 
 ```{.python .input  n=8}
@@ -894,7 +903,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
