@@ -175,7 +175,7 @@ As you can see, except for the batch size, the sizes of the other dimensions are
 Therefore, we must transform them into a consistent format and concatenate the predictions of the multiple scales to facilitate subsequent computation.
 -->
 
-Trong ví dụ dưới đây, ta sử dụng cùng batch dữ liệu để xây dựng ánh xạ đặc trưng của hai tỷ lệ khác nhau, `Y1` và `Y2`.
+Trong ví dụ dưới đây, ta sử dụng cùng một batch dữ liệu để xây dựng ánh xạ đặc trưng `Y1` và `Y2` của hai tỷ lệ khác nhau.
 Trong đó, `Y2` có chiều cao và chiều rộng bằng một nửa `Y1`.
 Lấy ví dụ về dự đoán  hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
 Với 10  hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
@@ -844,4 +844,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * 
-
