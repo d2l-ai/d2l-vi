@@ -148,7 +148,7 @@ This allows the RoI pooling layer to extract features of the same shape from RoI
 -->
 
 Tầng gộp RoI trong mạng Fast R-CNN có phần khác với các tầng gộp mà ta đã thảo luận trước đó.
-Trong tầng gộp thông thường, ta thiết lập cửa sổ gộp, giá trị đêm, và sải bước để quyết định kích thước đầu ra.
+Trong tầng gộp thông thường, ta thiết lập cửa sổ gộp, giá trị đệm, và sải bước để quyết định kích thước đầu ra.
 Trong tầng gộp RoI, ta có thể trực tiếp định rõ kích thước đầu ra của từng vùng, ví dụ chiều cao và chiều rộng của từng vùng sẽ là $h_2, w_2$.
 Giả sử rằng chiều cao và chiều rộng của cửa sổ RoI là $h$ và $w$, cửa sổ này được chia thành mạng (_grid_) các cửa sổ phụ (_sub-window_) với kích thước $h_2 \times w_2$.
 Cửa sổ phụ có kích thước là $(h/h_2) \times (w/w_2)$.
