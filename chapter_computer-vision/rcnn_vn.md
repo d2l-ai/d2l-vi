@@ -134,7 +134,7 @@ Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định bởi thiết kế mô hình.
 4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số lượng hạng mục).
 Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
-Điều này có nghĩa với phép dự đoán lớp nhãn và khung chứa cho từng vùng đề xuất.
+Nghĩa là ta dự đoán hạng mục và khung chứa cho từng vùng đề xuất.
 
 
 <!--
