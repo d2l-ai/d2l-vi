@@ -15,7 +15,7 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN :cite:`He.Gkioxari.
 Due to space limitations, we will confine our discussion to the designs of these models.
 -->
 
-Các mạng tích chập theo vùng hay các vùng với đặc trưng CNN (R-CNNs) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
+CNN theo vùng, hay các vùng với đặc trưng CNN (R-CNN) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
 Trong phần này, chúng ta sẽ thảo luận R-CNNs và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
 Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.Dollar.ea.2017`.
 
