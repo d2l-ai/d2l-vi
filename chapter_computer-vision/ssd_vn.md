@@ -5,7 +5,7 @@
 # Single Shot Multibox Detection (SSD)
 -->
 
-# *dịch tiêu đề phía trên*
+# Phát hiện Nhiều khung trong Một lần Thực hiện (SSD)
 
 
 <!--
@@ -15,14 +15,17 @@ This quick and easy model is already widely used.
 Some of the design concepts and implementation details of this model are also applicable to other object detection models.
 -->
 
-*dịch đoạn phía trên*
+Ở một số phần trước, chúng tôi đã giới thiệu về khung chứa, khung neo, phát hiện vật thể đa tỉ lệ và tập dữ liệu.
+Giờ ta sẽ sử dụng phần kiến thức nền này để xây dựng một mô hình phát hiện vật thể: phát hiện nhiều khung trong một lần thực hiện (Single Shot Multibox Detection - SSD) :cite:`Liu.Anguelov.Erhan.ea.2016`.
+Mô hình này đang được sử dụng rộng rãi nhờ tốc độ và tính đơn giản của nó.
+Một số khái niệm thiết kế và chi tiết lập trình của mô hình này cũng có thể được áp dụng cho các mô hình phát hiện vật thể khác.
 
 
 <!--
 ## Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Mô hình
 
 
 <!--
@@ -42,14 +45,26 @@ nd each multiscale feature block and then predicts the categories and offsets (i
 of the anchor boxes in order to detect objects of different sizes, SSD is a multiscale object detection model.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_ssd` mô tả thiết kế của một mô hình SSD.
+Các thành phần chính của mô hình gồm có một khối mạng cơ sở và các khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi.
+Trong đó khối mạng cơ sở được sử dụng để tách các đặc trưng của ảnh gốc, thường dưới dạng một mạng nơ-ron tích chập sâu.
+Bài báo về SSD chọn dùng mạng VGG-16 trước tầng phân loại :cite:`Liu.Anguelov.Erhan.ea.2016`, tuy nhiên gần đây nó thường bị thay thế bởi ResNet.
+Ta có thể thiết kế mạng cơ sở để cho ra chiều cao và chiều rộng lớn hơn.
+Bằng cách này, sẽ có nhiều khung neo được sinh ra bởi ánh xạ đặc trưng này hơn,
+cho phép ta phát hiện các vật thể nhỏ hơn.
+Tiếp theo, mỗi khối đặc trưng đa tỉ lệ giảm chiều cao và chiều rộng của ánh xạ đặc trưng ở tầng trước (ví dụ, nó có thể giảm kích thước này đi một nửa).
+Các khối này sau đó sử dụng từng phần tử trong ánh xạ đặc trưng để mở rộng vùng tiếp nhận trên ảnh đầu vào.
+Bằng cách này, khối đặc trưng đa tỉ lệ càng gần đỉnh mô hình trong :numref:`fig_ssd` thì có ánh xạ đặc trưng ở đầu ra càng nhỏ, và số khung neo được sinh ra bởi ánh xạ đầu ra đó càng ít.
+Hơn nữa, khối đặc trưng càng gần đỉnh mô hình thì vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng càng lớn và càng phù hợp để phát hiện những vật thể lớn.
+Vì SSD sinh ra các tập khung neo với số lượng và kích thước khác nhau dựa trên mạng cơ sở
+và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán lớp và độ dời (ví dụ như dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, có thể nói SSD là một mô hình phát hiện vật thể đa tỉ lệ.
 
 
 <!--
 ![The SSD is composed of a base network block and several multiscale feature blocks connected in a series.](../img/ssd.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/ssd.svg)
+![SSD được cấu thành bởi một khối mạng cơ sở và nhiều khối đặc trưng đa tỉ lệ được liên kết thành một chuỗi](../img/ssd.svg)
 :label:`fig_ssd`
 
 
@@ -58,7 +73,8 @@ Next, we will describe the implementation of the modules in :numref:`fig_ssd`.
 First, we need to discuss the implementation of category prediction and bounding box prediction.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ mô tả phần lập trình cho các mô-đun trong :numref:`fig_ssd`.
+Đầu tiên, ta cần phải thảo luận về việc lập trình cho phần dự đoán lớp và dự đoán khung chứa.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -69,7 +85,7 @@ First, we need to discuss the implementation of category prediction and bounding
 ### Category Prediction Layer
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng Dự đoán Lớp
 
 
 <!--
@@ -81,7 +97,12 @@ Recall how we used convolutional layer channels to output category predictions i
 SSD uses the same method to reduce the model complexity.
 -->
 
-*dịch đoạn phía trên*
+Đặt số lớp cho vật thể là $q$. Trong trường hợp này, số lớp cho khung neo là $q+1$, với 0 kí hiệu khung neo chỉ chứa nền.
+Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là  $h$ và $w$.
+Nếu ta sử dụng từng phần tử làm tâm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá lớn.
+Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán lớp trong :numref:`sec_nin`.
+SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
 
 <!--
@@ -93,7 +114,12 @@ Therefore, there are $a(q+1)$ output channels, with the output channels indexed 
 ($0 \leq j \leq q$) representing the predictions of the category index $j$ for the anchor box index $i$.
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, tầng dự đoán lớp sử dụng một tầng tích chập giữ nguyên chiều cao và chiều rộng của đầu vào.
+Do đó, toạ độ trong không gian của đầu ra và đầu vào quan hệ một-một với nhau dọc theo cả chiều cao và chiều rộng của ánh xạ đặc trưng.
+Giả sử rằng đầu ra và đầu vào này có cùng toạ độ $(x, y)$ trong không gian, các kênh của ánh xạ đặc trưng đầu ra tại toạ độ $(x, y)$
+đại diện cho các dự đoán lớp của tất cả các khung neo được sinh ra khi sử dụng toạ độ $(x, y)$ của ánh xạ đặc trưng đầu vào làm trung tâm.
+Bởi lẽ đó, có tất cả $a(q+1)$ kênh đầu ra, với các kênh đầu ra được đánh chỉ số theo $i(q+1) + j$
+($0 \leq j \leq q$) biểu diễn dự đoán lớp có chỉ số $j$ cho khung neo chỉ số $i$.
 
 
 <!--
@@ -102,7 +128,9 @@ After we specify the parameters $a$ and $q$, it uses a $3\times3$ convolutional 
 The heights and widths of the input and output of this convolutional layer remain unchanged.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta định nghĩa một tầng dự đoán lớp theo dạng này.
+Sau khi ta xác định các tham số $a$ và $q$, tầng này sử dụng một tầng tích chập $3\times3$ với đệm bằng 1.
+Chiều cao và chiều rộng của đầu ra và đầu vào của tầng tích chập này không đổi.
 
 
 
@@ -312,7 +340,7 @@ forward(np.zeros((2, 3, 256, 256)), base_net()).shape
 ### The Complete Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình hoàn chỉnh
 
 
 <!--
@@ -322,8 +350,9 @@ The first module is the base network block, modules two to four are height and w
 Therefore, modules two to five are all multiscale feature blocks shown in :numref:`fig_ssd`.
 -->
 
-*dịch đoạn phía trên*
-
+Mô hình SSD chứa tất cả năm mô-đun.
+Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
+Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ hai tới bốn là các khối giảm chiều cao và chiều rộng, và khối thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
 
 
 ```{.python .input  n=9}
@@ -344,7 +373,8 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ định nghĩa luợt tính xuôi cho từng mô-đun.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -363,7 +393,9 @@ Here, we first divide the interval from 0.2 to 1.05 into five equal parts to det
 Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447$, and similar formulas, we determine the sizes of larger anchor boxes at the different scales.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong :numref:`fig_ssd`, các vật thể nó phát hiện và các khung neo nó tạo ra càng lớn.
+Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
+Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định kích thước của các khung neo lớn hơn ở các tỉ lệ khác nhau.
 
 
 
@@ -379,8 +411,7 @@ num_anchors = len(sizes[0]) + len(ratios[0]) - 1
 Now, we can define the complete model, `TinySSD`.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta có thể định nghĩa mô hình hoàn chỉnh, `TinySSD`.
 
 
 ```{.python .input  n=12}
@@ -419,7 +450,10 @@ Because modules two to four are height and width downsample blocks, module five 
 and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
+Như ta đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
+Bởi vì các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, còn mô-đun thứ năm là tầng gộp toàn cục, 
+và mỗi phần tử trong ánh xạ đặc trưng này được dùng làm tâm cho bốn khung neo, tổng cộng $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ khung neo được tạo ra cho mỗi ảnh ở năm tỉ lệ đó.
 
 
 ```{.python .input  n=13}
@@ -445,28 +479,28 @@ print('output bbox preds:', bbox_preds.shape)
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
 Now, we will explain, step by step, how to train the SSD model for object detection.
 -->
 
-*dịch đoạn phía trên*
+Ở bước này chúng tôi sẽ giải thích từng bước một, làm thế nào để huấn luyện mô hình SSD trong phát hiện vật thể.
 
 
 <!--
 ### Data Reading and Initialization
 -->
 
-### *dịch tiêu đề phía trên*
+### Đọc Dữ liệu và Khởi tạo
 
 
 <!--
 We read the Pikachu dataset we created in the previous section.
 -->
 
-*dịch đoạn phía trên*
+Ta đọc tập dữ liệu Pikachu được tạo ở phần trước.
 
 
 ```{.python .input  n=14}
@@ -481,7 +515,8 @@ There is 1 category in the Pikachu dataset.
 After defining the module, we need to initialize the model parameters and define the optimization algorithm.
 -->
 
-*dịch đoạn phía trên*
+Có 1 lớp trong tập dữ liệu Pikachu.
+Sau khi định nghĩa mô-đun, ta cần khởi tạo các tham số của mô hình và định nghĩa thuật toán tối ưu.
 
 
 ```{.python .input  n=15}
@@ -496,7 +531,7 @@ trainer = gluon.Trainer(net.collect_params(), 'sgd',
 ### Defining Loss and Evaluation Functions
 -->
 
-### *dịch tiêu đề phía trên*
+### Định nghĩa Hàm mất mát và Hàm đánh giá
 
 
 <!--
@@ -510,7 +545,14 @@ The mask variable `bbox_masks` removes negative anchor boxes and padding anchor 
 Finally, we add the anchor box category and offset losses to find the final loss function for the model.
 -->
 
-*dịch đoạn phía trên*
+Phát hiện vật thể có hai loại mất mát. Đầu tiên là mất mát khi phân loại lớp của khung neo.
+Đối với mất mát này, ta hoàn toàn có thể sử dụng lại hàm mất mát entropy chéo trong phân loại ảnh.
+Loại mất mát thứ hai là mất mát của độ dời khung neo dương.
+Dự đoán độ dời là một bài toán chuẩn hoá.
+Tuy nhiên, ở đây ta không sử dụng hàm mất mát bình phương đã được giới thiệu từ trước.
+Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối hiệu của giá trị dự đoán và giá trị nhãn gốc.
+Biến mặt nạ `bbox_masks` loại bỏ các khung neo âm và khung neo đệm khỏi phép tính mất mát.
+Cuối cùng, ta cộng mất mát lớp và mất mát độ dời của khung neo để có hàm mất mát cuối cùng cho mô hình.
 
 
 
@@ -529,7 +571,7 @@ def calc_loss(cls_preds, cls_labels, bbox_preds, bbox_labels, bbox_masks):
 We can use the accuracy rate to evaluate the classification results. As we use the $L_1$ norm loss, we will use the average absolute error to evaluate the bounding box prediction results.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng tỉ lệ độ chính xác để đánh giá kết quả phân loại. Do ta sử dụng mất mát chuẩn $L_1$, ta sẽ sử dụng trung bình sai số tuyệt đối (*average absolute error*) để đánh giá kết quả dự đoán khung chứa.
 
 
 
@@ -553,7 +595,7 @@ def bbox_eval(bbox_preds, bbox_labels, bbox_masks):
 ### Training the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện Mô hình
 
 
 <!--
@@ -563,7 +605,10 @@ Finally, we calculate the loss function using the predicted and labeled category
 To simplify the code, we do not evaluate the training dataset here.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt quá trình huấn luyện mô hình, ta phải tạo ra các khung neo trên nhiều tỉ lệ (`anchors`) trong quá trình tính toán lượt truyền xuôi rồi dự đoán lớp (`cls_preds`) và độ dời (`bbox_preds`) cho mỗi khung neo.
+Sau đó, ta gán nhãn lớp (`cls_labels`) và độ dời (`bbox_labels`) cho từng khung neo được tạo ở trên dựa vào thông tin nhãn `Y`.
+Cuối cùng, ta tính toán hàm mất mát sử dụng lớp dự đoán và lớp gán nhãn và giá trị độ dời.
+Để đơn giản hoá mã nguồn, ta sẽ không đánh giá tập huấn luyện ở đây.
 
 
 
@@ -609,7 +654,7 @@ print(f'{train_iter.num_image/timer.stop():.1f} examples/sec on '
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 
 <!--
@@ -618,7 +663,9 @@ Below, we read the test image and transform its size.
 Then, we convert it to the four-dimensional format required by the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Trong bước dự đoán, ta muốn phát hiện tất cả các vật thể trong vùng quan tâm trong ảnh.
+Ở đoạn mã dưới, ta đọc vào ảnh kiểm tra và biến đổi kích thước của nó.
+Sau đó ta chuyển nó thành dạng bốn chiều mà tầng tích chập yêu cầu.
 
 
 
@@ -634,7 +681,8 @@ Using the `MultiBoxDetection` function, we predict the bounding boxes based on t
 Then, we use non-maximum suppression to remove similar bounding boxes.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng hàm `MultiBoxDetection` để dự đoán các khung chứa dựa theo các khung neo và giá trị độ dời dự đoán của chúng.
+Sau đó ta sử dụng thuật toán triệt tiêu phi tối đa (*non-maximum suppression*) để loại bỏ các khung chứa giống nhau.
 
 
 
@@ -654,7 +702,7 @@ output = predict(X)
 Finally, we take all the bounding boxes with a confidence level of at least 0.3 and display them as the final output.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta lấy toàn bộ khung chứa có độ tin cậy tối thiểu là 0.3 và hiển thị chúng làm kết quả cuối cùng.
 
 
 ```{.python .input  n=22}
@@ -683,7 +731,9 @@ based on the base network block and each multiscale feature block and predicts t
 * During SSD model training, the loss function is calculated using the predicted and labeled category and offset values.
 -->
 
-*dịch đoạn phía trên*
+* SSD là một mô hình phát hiện vật thể đa tỉ lệ. Mô hình này sinh ra các tập khung neo với số lượng và kích thước khác nhau 
+dựa trên khối mạng cơ sở và từng khối đặc trưng đa tỉ lệ rồi dự đoán lớp và độ dời cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau.
+* Trong suốt quá trình huấn luyện mô hình SSD, hàm mất mát được tính bằng giá trị dự đoán và nhãn của lớp và độ dời.
 
 
 
@@ -695,7 +745,8 @@ Due to space limitations, we have ignored some of the implementation details of 
 Can you further improve the model in the following areas?
 -->
 
-*dịch đoạn phía trên*
+Do giới hạn về độ dài bài viết, chúng tôi đã bỏ qua một số chi tiết phần lập trình cho mô hình SSD trong thí nghiệm này.
+Liệu bạn có thể cải thiện mô hình hơn nữa theo các hướng sau?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -706,7 +757,7 @@ Can you further improve the model in the following areas?
 ### Loss Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm mất mát
 
 
 <!--
@@ -715,8 +766,9 @@ This loss function uses a square function around zero for greater smoothness.
 This is the regularized area controlled by the hyperparameter $\sigma$:
 -->
 
-*dịch đoạn phía trên*
-
+Để dự đoán độ dời, thay thế mất mát chuẩn $L_1$ bằng mất mát điều chuẩn $L_1$.
+Hàm mất mát này sử dụng hàm bình phương xung quanh giá trị không để tăng độ mượt.
+Đây chính là vùng được điều chuẩn và được xác định bởi siêu tham số $\sigma$:
 
 $$
 f(x) =
@@ -732,7 +784,8 @@ When $\sigma$ is large, this loss is similar to the $L_1$ norm loss.
 When the value is small, the loss function is smoother.
 -->
 
-*dịch đoạn phía trên*
+Khi  $\sigma$ lớn, mất mát này tương đương với mất mát chuẩn $L_1$.
+Khi giá trị này nhỏ, hàm mất mát trở nên mượt hơn.
 
 
 
@@ -756,7 +809,10 @@ We can also use the focal loss :cite:`Lin.Goyal.Girshick.ea.2017`.
 Given the positive hyperparameters $\gamma$ and $\alpha$, this loss is defined as:
 -->
 
-*dịch đoạn phía trên*
+Trong thí nghiệm ở phần này, ta sử dụng hàm mất mát entropy chéo để dự đoán lớp.
+Còn giờ, giả sử rằng xác suất dự đoán được đúng lớp $j$ là $p_j$ và mất mát entropy chéo là $-\log p_j$.
+Ta cũng có thể sử dụng mất mát tiêu điểm (*focal loss*) :cite:`Lin.Goyal.Girshick.ea.2017`.
+Cho siêu tham số $\gamma$ and $\alpha$ dương, mất mát này được định nghĩa như sau:
 
 
 
@@ -768,7 +824,7 @@ $$ - \alpha (1-p_j)^{\gamma} \log p_j.$$
 As you can see, by increasing $\gamma$, we can effectively reduce the loss when the probability of predicting the correct category is high.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, bằng cách tăng $\gamma$, ta thực chất có thể giảm giá trị mất mát đi khi khả năng dự đoán đúng hạng mục là lớn.
 
 
 
@@ -788,7 +844,7 @@ d2l.plt.legend();
 ### Training and Prediction
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện và Dự đoán
 
 
 <!--
@@ -800,7 +856,12 @@ To do this, we can set the `MultiBoxTarget` function's `negative_mining_ratio` p
 4. Refer to the SSD paper. What methods can be used to evaluate the precision of object detection models :cite:`Liu.Anguelov.Erhan.ea.2016`?
 -->
 
-*dịch đoạn phía trên*
+1. Khi một vật thể có kích thước khá lớn so với ảnh, mô hình thường chấp nhận kích thước ảnh đầu vào lớn hơn.
+2. Điều này thường sản sinh lượng lớn các khung neo âm khi gán nhãn hạng mục cho khung neo.
+Ta có thể lấy mẫu các khung neo âm để cân bằng các lớp trong dữ liệu tốt hơn.
+Để thực hiện điều này, ta có thể đặt tham số `negative_mining_ratio` của hàm `MultiBoxTarget`.
+3. Trong hàm mất mát, sử dụng các trọng số khác nhau cho mất mát hạng mục của các khung neo và mất mát độ dời cho các khung neo dương.
+4. Tham khảo bài báo SSD. Phương pháp nào có thể được sử dụng để đánh giá giá trị precision của các mô hình phát hiện vật thể :cite:`Liu.Anguelov.Erhan.ea.2016`?
 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
@@ -822,10 +883,12 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
@@ -834,13 +897,15 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 8 -->
-* 
+* Đỗ Trường Giang
