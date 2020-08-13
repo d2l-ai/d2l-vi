@@ -16,9 +16,9 @@ To create the ideal photo, you often need to try many different filter combinati
 This process is as complex as tuning the hyperparameters of a model.
 -->
 
-Nếu bạn có sử dụng các ứng dụng chia sẻ xã hội hoặc bạn là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc.
+Nếu có sử dụng các ứng dụng mạng xã hội hoặc là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc (*filter*).
 Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc mặt của những người trong ảnh trở nên trắng trẻo hơn.
-Tuy nhiên, thường kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
+Tuy nhiên, thường một kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
 Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm với nhiều cách kết hợp kính lọc khác nhau.
 Quá trình này phức tạp ngang với việc tinh chỉnh siêu tham số của mô hình.
 
@@ -37,7 +37,7 @@ Trong phần này, ta sẽ thảo luận cách sử dụng mạng nơ-ron tích 
 Ở đây ta sẽ cần hai ảnh đầu vào, một ảnh nội dung và một ảnh phong cách.
 Ta sẽ dùng mạng nơ-ron để biến đổi ảnh nội dung sao cho phong cách của nó giống như ảnh phong cách đã cho.
 Trong :numref:`fig_style_transfer`, ảnh nội dung là một bức ảnh phong cảnh được tác giả chụp ở công viên quốc gia Mount Rainier, gần Seattle.
-Ảnh phong cảnh là một bức tranh sơn dầu vẽ cây gỗ sồi vào mùa thu.
+Ảnh phong cách là một bức tranh sơn dầu vẽ cây gỗ sồi vào mùa thu.
 Đầu ra là một ảnh kết hợp giữ lại được các hình dạng tổng thể của các vật trong ảnh nội dung, nhưng được áp dụng phong cách tranh sơn dầu của ảnh phong cách và giúp cho màu sắc trở nên sống động hơn.
 
 <!--
@@ -652,6 +652,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Phạm Minh Đức
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
@@ -670,4 +671,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
