@@ -125,7 +125,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distributed               | phân tán                        |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
-| downsample        | giảm chiều                  |                                              |
+| downsample        | giảm mẫu                  |  [https://git.io/JvohC](https://git.io/JvohC)                          |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
