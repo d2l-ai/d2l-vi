@@ -253,7 +253,7 @@ npx.roi_pooling(X, rois, pooled_size=(2, 2), spatial_scale=0.1)
 ## Faster R-CNN
 -->
 
-## *dịch tiêu đề phía trên*
+## Faster R-CNN
 
 
 <!--
@@ -261,14 +261,15 @@ In order to obtain precise object detection results, Fast R-CNN generally requir
 Faster R-CNN replaces selective search with a region proposal network. This reduces the number of proposed regions generated, while ensuring precise object detection.
 -->
 
-*dịch đoạn phía trên*
+Để có được kết quả phát hiện đối tượng chính xác, Fast R-CNN thường đòi hỏi tạo ra nhiều vùng đề xuất kĩ thuật tìm kiếm chọn lọc.
+Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất vùng. Điều này làm giảm số vùng đề xuất, trong khi vẫn đảm bảo phát hiện chính xác đối tượng.
 
 
 <!--
 ![Faster R-CNN model.](../img/faster-rcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/faster-rcnn.svg)
+![*Mô hình Faster R-CNN*](../img/faster-rcnn.svg)
 :label:`fig_faster_r-cnn`
 
 
@@ -280,7 +281,10 @@ The other parts of the model remain unchanged.
 The detailed region proposal network computation process is described below:
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_faster_r-cnn` minh hoạ một mô hình Faster R-CNN.
+So với Fast R-CNN, Faster R-CNN chỉ chuyển đổi phương pháp tạo các vùng đề xuất từ kĩ thuật tìm kiếm chọn lọc sang mạng đề xuất vùng.
+Những phần còn lại trong mô hình không đổi.
+Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
 
 
 <!--
@@ -292,7 +296,12 @@ This way, each element in the feature map the CNN extracts from the image is a n
 Finally, we output the predicted bounding boxes as the proposed regions required by the RoI pooling layer.
 -->
 
-*dịch đoạn phía trên*
+1. Ta dùng một tầng tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
+Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
+2. Ta lấy mỗi phần tử trong ánh xạ đặc trưng làm trung tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khung khác nhau, sau đó gán nhãn cho chúng.
+3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
+4. Sau đó, ta sử dụng phương pháp triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
+Cuối cùng, ta xuất ra các khung chứa dự đoán dưới dạng các vùng đề xuất theo yêu cầu của tầng tổng hợp RoI.
 
 
 
@@ -303,7 +312,10 @@ as well as the binary category and bounding box predictions for the anchor boxes
 Finally, the region proposal network can learn how to generate high-quality proposed regions, which reduces the number of proposed regions while maintaining the precision of object detection.
 -->
 
-*dịch đoạn phía trên*
+Đáng lưu ý rằng, vì là một phần của mô hình Faster R-CNN, nên mạng đề xuất khu vực được huấn luyện cùng với phần còn lại trong mô hình.
+Ngoài ra, trong đối tượng Faster R-CNN còn chứa các hàm dự đoán hạng mục và khung chứa của bài toán phát hiện vật thể,
+và cả các hàm dự đoán hạng mục nhị phân và khung chứa cho các khung neo nằm trong mạng đề xuất vùng.
+Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, nhằm giảm đi số lượng vùng đề xuất trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -405,7 +417,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
