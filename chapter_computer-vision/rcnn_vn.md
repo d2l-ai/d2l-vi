@@ -326,7 +326,7 @@ Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra nh�
 ## Mask R-CNN
 -->
 
-## *dịch tiêu đề phía trên*
+## Mask R-CNN
 
 
 <!--
@@ -334,14 +334,14 @@ If training data is labeled with the pixel-level positions of each object in an 
 a Mask R-CNN model can effectively use these detailed labels to further improve the precision of object detection.
 -->
 
-*dịch đoạn phía trên*
+Nếu dữ liệu huấn luyện được gán nhãn với các vị trí ở cấp độ từng điểm ảnh trong bức hình, thì mô hình Mask R-CNN có thể sử dụng hiệu quả các nhãn chi tiết này để cải thiện độ chính xác của việc phát hiện đối tượng.
 
 
 <!--
 ![Mask R-CNN model.](../img/mask-rcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/mask-rcnn.svg)
+![Mô hình Mask R-CNN.](../img/mask-rcnn.svg)
 :label:`fig_mask_r-cnn`
 
 
@@ -354,7 +354,12 @@ This not only predicts the categories and bounding boxes of RoIs, but allows us 
 We will describe how to use fully convolutional networks to predict pixel-level semantics in images later in this chapter.
 -->
 
-*dịch đoạn phía trên*
+Như được trình bày tại :numref:`fig_mask_r-cnn`, có thể thấy Mask R-CNN là một sự hiệu chỉnh của Faster R-CNN.
+Mô hình Mask R-CNN thay thế tầng tổng hợp RoI bằng tầng căn chỉnh RoI (*RoI alignment layer*).
+Điều này cho phép sử dụng phép nội suy song tuyến tính (*bilinear interpolation*) để giữ lại thông tin không gian trong ánh xạ đặc trưng, làm cho Mask R-CNN trở nên phù hợp hơn với các dự báo cấp điểm ảnh.
+Lớp căn chỉnh RoI xuất ra các ánh xạ đặc trưng có cùng kích thước cho mọi RoI.
+Điều này không những dự đoán các lớp và khung chứa của RoI, mà còn cho phép chúng ta bổ sung một mạng nơ-ron tích chập đầy đủ để dự đoán những vị trí cấp điểm ảnh của các đối tượng.
+Chúng tôi sẽ mô tả cách sử dụng mạng nơ-ron tích chập đầy đủ để dự đoán ngữ nghĩa cấp điểm ảnh trong những ảnh ở phần sau tại chương này. 
 
 
 
@@ -371,7 +376,13 @@ This reduces the number of proposed regions generated, while ensuring precise ob
 * Mask R-CNN uses the same basic structure as Faster R-CNN, but adds a fully convolution layer to help locate objects at the pixel level and further improve the precision of object detection.
 -->
 
-*dịch đoạn phía trên*
+Một mô hình R-CNN chọn ra nhiều vùng đề xuất và sử dụng CNN để thực hiện tính toán truyền xuôi rồi trích xuất đặc trưng từ mỗi vùng đề xuất.
+Sau đó dùng các đặc trưng này để dự đoán hạng mục và khung chứa của những vùng đề xuất.
+* Fast R-CNN cải thiện R-CNN bằng cách chỉ thực hiện tính toán truyền xuôi CNN trên toàn bộ bức ảnh.
+Nó giới thiệu một lớp tổng hợp RoI để trích xuất các đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
+* Faster R-CNN thay thế cách tìm kiếm chọn lọc, được dùng trong Fast R-CNN bằng mạng đề xuất vùng.
+Điều này làm giảm số lượng vùng đề xuất tạo ra, và vẫn đảm bảo độ chính xác khi phát hiện đối tượng.
+* Mask R-CNN dùng cấu trúc cơ bản giống như Faster R-CNN, nhưng có bổ sung một mạng nơ-ron tích chập đầy đủ giúp định vị đối tượng ở cấp điểm ảnh và cải thiện hơn nữa độ chính xác của việc phát hiện đối tượng.
 
 
 
@@ -382,7 +393,7 @@ This reduces the number of proposed regions generated, while ensuring precise ob
 Study the implementation of each model in the [GluonCV toolkit](https://github.com/dmlc/gluon-cv/) related to this section.
 -->
 
-*dịch đoạn phía trên*
+Tìm hiểu cách thực thi từng mô hình trong [GluonCV toolkit](https://github.com/dmlc/gluon-cv/) liên quan đến phần này.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
