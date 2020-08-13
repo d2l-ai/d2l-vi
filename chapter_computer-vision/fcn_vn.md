@@ -78,7 +78,7 @@ These layers are not required for a fully convolutional network.
 -->
 
 Dưới đây, ta sử dụng mô hình ResNet-18 được tiền huấn luyện trên ImageNet để trích xuất đặc trưng và lưu thực thể mô hình là `pretrained_net`.
-Như ta thấy, hai tầng cuối của mô hình trong tham số thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
+Như ta thấy, hai tầng cuối của mô hình nằm trong biến thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
 Mô-đun `output` chứa tầng kết nối đầy đủ được sử dụng cho đầu ra.
 Các tầng này không bắt buộc phải có trong mạng tích chập đầy đủ.
 
