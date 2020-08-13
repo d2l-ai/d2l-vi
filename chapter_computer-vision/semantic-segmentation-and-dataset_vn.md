@@ -66,7 +66,7 @@ If an image contains two dogs, instance segmentation will distinguish which pixe
 ## The Pascal VOC2012 Semantic Segmentation Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Tập dữ liệu Phân vùng theo Ngữ nghĩa Pascal VOC2012
 
 
 <!--
@@ -74,7 +74,8 @@ In the semantic segmentation field, one important dataset is [Pascal VOC2012](ht
 To better understand this dataset, we must first import the package or module needed for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Trong lĩnh vực phân vùng theo ngữ nghĩa, [Pascal VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/) là một tập dữ liệu quan trọng.
+Để có thể hiểu rõ hơn về tập dữ liệu này, đầu tiên ta cần phải nhập vào gói thư viện hoặc mô-đun cần cho thí nghiệm.
 
 
 ```{.python .input  n=1}
@@ -93,7 +94,9 @@ The archive is about 2 GB, so it will take some time to download.
 After you decompress the archive, the dataset is located in the `../data/VOCdevkit/VOC2012` path.
 -->
 
-*dịch đoạn phía trên*
+Trang gốc có thể không ổn định nên ta tải dữ liệu về từ một trang nhân bản.
+Tệp tin nặng khoảng 2 GB nên thời gian tải sẽ hơi lâu một chút.
+Sau khi giải nén tệp tin, tập dữ liệu được lưu tại đường dẫn `../data/VOCdevkit/VOC2012`.
 
 
 ```{.python .input  n=2}
@@ -114,7 +117,12 @@ In the labels, pixels with the same color belong to the same semantic category.
 The `read_voc_images` function defined below reads all input images and labels to the memory.
 -->
 
-*dịch đoạn phía trên*
+Truy cập `../data/VOCdevkit/VOC2012` để quan sát các phần khác nhau của tập dữ liệu.
+Đường dẫn `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví dụ để huấn luyện và kiểm tra.
+Đường dẫn `JPEGImages` và `SegmentationClass` lần lượt chứa ví dụ các ảnh đầu vào và nhãn.
+Các nhãn này cũng mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
+Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng hạng mục ngữ nghĩa.
+Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào cùng nhãn vào bộ nhớ.
 
 
 ```{.python .input  n=3}
@@ -143,7 +151,9 @@ In the label images, white represents borders and black represents the backgroun
 Other colors correspond to different categories.
 -->
 
-*dịch đoạn phía trên*
+Ta vẽ năm ảnh đầu vào đầu tiên và nhãn của chúng.
+Trong ảnh nhãn, màu trắng biểu diễn viền và màu đen biểu diễn nền.
+Các màu khác tương ứng với các hạng mục khác nhau.
 
 
 ```{.python .input  n=4}
@@ -157,7 +167,7 @@ d2l.show_images(imgs, 2, n);
 Next, we list each RGB color value in the labels and the categories they label.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta liệt kê từng giá trị màu RGB của các nhãn và hạng mục của nhãn đó.
 
 
 ```{.python .input  n=5}
@@ -181,7 +191,7 @@ VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
 After defining the two constants above, we can easily find the category index for each pixel in the labels.
 -->
 
-*dịch đoạn phía trên*
+Sau khi khai báo hai biến hằng trên, ta có thể dễ dàng tìm chỉ số lớp cho mỗi điểm ảnh trong nhãn.
 
 
 ```{.python .input  n=6}
@@ -206,7 +216,7 @@ def voc_label_indices(colormap, colormap2label):
 For example, in the first example image, the category index for the front part of the airplane is 1 and the index for the background is 0.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, trong ảnh ví dụ đầu tiên, phần đầu máy bay có chỉ số hạng mục là một và chỉ số của nền là 0.
 
 
 ```{.python .input  n=7}
@@ -226,7 +236,7 @@ y[105:115, 130:140], VOC_CLASSES[1]
 ### Data Preprocessing
 -->
 
-### *dịch tiêu đề phía trên*
+### Tiền xử lý Dữ liệu
 
 
 <!--
@@ -237,7 +247,11 @@ To avoid this problem, we crop the images to set dimensions and do not scale the
 Specifically, we use the random cropping method used in image augmentation to crop the same region from input images and their labels.
 -->
 
-*dịch đoạn phía trên*
+Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
+Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc theo ảnh đầu vào.
+Sẽ rất khó để có thể thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
+Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỉ lệ ảnh.
+Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên mà đã được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
 
 
 
@@ -260,7 +274,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### *dịch tiêu đề phía trên*
+### Lớp Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
 
 
 <!--
@@ -270,7 +284,10 @@ As some images in the dataset may be smaller than the output dimensions specifie
 In addition, we define the `normalize_image` function to normalize each of the three RGB channels of the input images.
 -->
 
-*dịch đoạn phía trên*
+Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để tuỳ chỉnh lớp tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
+Với việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập từ tập dữ liệu ảnh đầu vào với chỉ số `idx` và các chỉ số hạng mục của từng điểm ảnh trong ảnh đó.
+Do có một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra được chỉ định trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng cách tuỳ chỉnh hàm `filter`.
+Cộng với đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB một của các ảnh đầu vào.
 
 
 ```{.python .input  n=9}
@@ -312,7 +329,7 @@ class VOCSegDataset(gluon.data.Dataset):
 ### Reading the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Đọc Tập dữ liệu
 
 
 <!--
@@ -321,7 +338,9 @@ We assume the random cropping operation output images in the shape $320\times 48
 Below, we can see the number of examples retained in the training and testing sets.
 -->
 
-*dịch đoạn phía trên*
+Sử dụng lớp `VOCSegDataset` được tuỳ chỉnh ở trên, ta có thể khởi tạo đối tượng tập huấn luyện và tập kiểm tra.
+Ta giả sử rằng thao tác cắt ngẫu nhiên sản sinh ra ảnh có kích thước $320\times 480$.
+Dưới đây ta có thể quan sát số lượng ảnh được giữ lại trong tập huấn luyện và tập kiểm tra.
 
 
 
@@ -338,7 +357,9 @@ Print the shape of the first minibatch.
 In contrast to image classification and object recognition, labels here are three-dimensional arrays.
 -->
 
-*dịch đoạn phía trên*
+Ta đặt kích thước batch là 64 và định nghĩa các iterator cho tập huấn luyện và tập kiểm tra.
+Sau đó ta sẽ in ra kích thước của minibatch đầu tiên.
+Trái lại so với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây có dạng mảng ba chiều.
 
 
 
@@ -361,14 +382,14 @@ for X, Y in train_iter:
 ### Putting All Things Together
 -->
 
-### *dịch tiêu đề phía trên*
+### Kết hợp tất cả lại với nhau
 
 
 <!--
 Finally, we define a function `load_data_voc` that  downloads and loads this dataset, and then returns the data iterators.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta định nghĩa hàm `load_data_voc` để tải xuống và nạp tập dữ liệu, sau đó trả về các iterator dữ liệu.
 
 
 ```{.python .input  n=12}
@@ -397,7 +418,9 @@ def load_data_voc(batch_size, crop_size):
 * Because the input images and labels in semantic segmentation have a one-to-one correspondence at the pixel level, we randomly crop them to a fixed size, rather than scaling them.
 -->
 
-*dịch đoạn phía trên*
+* Phân vùng theo ngữ nghĩa tập trung vào việc phân vùng ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
+* Trong lĩnh vực phân vùng ảnh theo ngữ nghĩa, tập dữ liệu Pascal VOC2012 là một tập dữ liệu quan trọng.
+* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì thay đổi tỉ lệ của chúng.
 
 
 ## Bài tập
@@ -408,7 +431,8 @@ Recall the content we covered in :numref:`sec_image_augmentation`.
 Which of the image augmentation methods used in image classification would be hard to use in semantic segmentation?
 -->
 
-*dịch đoạn phía trên*
+Xem lại nội dung chúng tôi đã đưa ra trong :numref:`sec_image_augmentation`.
+Phương pháp tăng cường ảnh nào được sử dụng trong phân loại ảnh mà khó có thể sử dụng được trong phân vùng ảnh theo ngữ nghĩa?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -434,12 +458,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 * 
-
-
