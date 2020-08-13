@@ -378,7 +378,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | positional encoding                | biểu diễn vị trí             |                                              |
 | positive sample/example            | mẫu dương                    |                                              |
 | posterior                          | hậu nghiệm                   | [https://git.io/JvQA6](https://git.io/JvQA6) |
-| precision                          | precision                    |                                              |
+| precision (vs accuracy metric)     | precision                    | [https://git.io/JJ9sl](https://git.io/JJ9sl)         |
 | preconditioning                    | tiền điều kiện               |                                              |
 | pre-train                        | tiền huấn luyện                    | [https://git.io/JJ1HO](https://git.io/JJ1HO) |
 | principal component analysis (PCA) | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
