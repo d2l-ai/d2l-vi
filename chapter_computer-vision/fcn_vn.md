@@ -57,7 +57,7 @@ The model output has the same height and width as the input image and has a one-
 The final output channel contains the category prediction of the pixel of the corresponding spatial position.
 -->
 
-Ở đây, ta biểu diễn thiết kế cơ bản nhất của một mô hình tích chập đầy đủ.
+Ở đây, chúng tôi sẽ trình bày một thiết kế cơ bản nhất của mô hình tích chập đầy đủ.
 Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng lớp nhãn thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và rộng của ánh xạ đặc trưng thành kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
 Đầu ra của mạng có cùng chiều cao và chiều rộng như ảnh gốc và có sự tương ứng một-một trong vị trí không gian.
 Kênh đầu ra cuối cùng bao gồm dự đoán lớp của từng điểm ảnh tương ứng với vị trí không gian. 
