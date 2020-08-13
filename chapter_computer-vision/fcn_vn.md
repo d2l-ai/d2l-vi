@@ -124,7 +124,7 @@ It is not difficult to see that, if the stride is $s$, the padding is $s/2$ (ass
 the transposed convolution kernel will magnify both the height and width of the input by a factor of $s$.
 -->
 
-Tiếp đến, ta chuyển đổi số lượng kênh đầu ra thành số lượng lớp của dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
+Tiếp đến, ta chuyển đổi số lượng kênh đầu ra bằng số lượng hạng mục trong bộ dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
 Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng với thừa số 32 để thay đổi kích thước thành chiều cao và chiều rộng của ảnh đầu vào.
 Nhắc lại phương pháp tính kích thước đầu ra của tầng tích chập được mô tả trong :numref:`sec_padding`.
 Vì $(320-64+16\times2+32)/32=10$ và $(480-64+16\times2+32)/32=15$, nên ta sẽ xây dựng một tầng tích chập chuyển vị với sải bước 32, đặt chiều dài và chiều rộng của hạt nhân tích chập bằng 64, và kích thước đệm bằng 16.
@@ -433,6 +433,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
 
