@@ -341,7 +341,7 @@ Nếu dữ liệu huấn luyện được gán nhãn với các vị trí ở c�
 ![Mask R-CNN model.](../img/mask-rcnn.svg)
 -->
 
-![*Mô hình Mask R-CNN*](../img/mask-rcnn.svg)
+![Mô hình Mask R-CNN.](../img/mask-rcnn.svg)
 :label:`fig_mask_r-cnn`
 
 
