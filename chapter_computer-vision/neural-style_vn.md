@@ -97,7 +97,7 @@ Cuối cùng, sau khi huấn luyện xong, ta sẽ có tham số của mô hình
 ![CNN-based style transfer process. Solid lines show the direction of forward propagation and dotted lines show backward propagation.](../img/neural-style.svg)
 -->
 
-![Quá trình truyền tải phong cách dựa trên CNN. Các đường nét liền thể hiện hướng của lan truyền xuôi và các đường chấm thể hiện hướng của lan truyền ngược](../img/neural-style.svg)
+![Quá trình truyền tải phong cách dựa trên CNN. Các đường nét liền thể hiện hướng của lan truyền xuôi và các đường nét đứt thể hiện hướng của lan truyền ngược](../img/neural-style.svg)
 :label:`fig_style_transfer_model`
 
 
