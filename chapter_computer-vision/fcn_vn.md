@@ -125,7 +125,7 @@ the transposed convolution kernel will magnify both the height and width of the 
 -->
 
 Tiếp đến, ta chuyển đổi số lượng kênh đầu ra bằng số lượng hạng mục trong bộ dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
-Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng với thừa số 32 để thay đổi kích thước thành chiều cao và chiều rộng của ảnh đầu vào.
+Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng lên gấp 32 lần để bằng với kích thước thành chiều cao và chiều rộng của ảnh đầu vào.
 Nhắc lại phương pháp tính kích thước đầu ra của tầng tích chập được mô tả trong :numref:`sec_padding`.
 Vì $(320-64+16\times2+32)/32=10$ và $(480-64+16\times2+32)/32=15$, nên ta sẽ xây dựng một tầng tích chập chuyển vị với sải bước 32, đặt chiều dài và chiều rộng của hạt nhân tích chập bằng 64, và kích thước đệm bằng 16.
 Không khó để nhận ra rằng nếu sải bước bằng $s$, kích thước đệm là $s/2$ (giả sử $s/2$ là số nguyên) và hạt nhân tích chập có chiều dài và chiều rộng bằng $2s$, thì hạt nhân tích chập chuyển vị sẽ phóng đại chiều cao và rộng của đầu vào với thừa số $s$.
@@ -433,4 +433,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
