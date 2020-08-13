@@ -281,7 +281,7 @@ The other parts of the model remain unchanged.
 The detailed region proposal network computation process is described below:
 -->
 
-:numref:`fig_faster_r-cnn` minh hoạ cho một mô hình Faster R-CNN.
+:numref:`fig_faster_r-cnn` minh hoạ một mô hình Faster R-CNN.
 So với Fast R-CNN, Faster R-CNN chỉ chuyển đổi phương pháp tạo các vùng đề xuất từ kĩ thuật tìm kiếm chọn lọc sang mạng đề xuất vùng.
 Những phần còn lại trong mô hình không đổi.
 Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
@@ -296,11 +296,11 @@ This way, each element in the feature map the CNN extracts from the image is a n
 Finally, we output the predicted bounding boxes as the proposed regions required by the RoI pooling layer.
 -->
 
-1. Ta dùng một lớp tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
+1. Ta dùng một tầng tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
 Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
-2. Ta lấy mỗi phần tử trong ánh xạ đặc trưng làm trung tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khung khác nhau, sau đó là gán nhãn cho chúng.
-3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (vật thể hay là nền) và dự đoán khung chứa cho các khung neo tương ứng với chúng.
-4. Sau đó, ta sử dụng phương pháp triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau tương ứng hạng mục dự đoán của "vật thể".
+2. Ta lấy mỗi phần tử trong ánh xạ đặc trưng làm trung tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khung khác nhau, sau đó gán nhãn cho chúng.
+3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
+4. Sau đó, ta sử dụng phương pháp triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
 Cuối cùng, ta xuất ra các khung chứa dự đoán dưới dạng các vùng đề xuất theo yêu cầu của tầng tổng hợp RoI.
 
 
