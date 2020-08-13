@@ -80,8 +80,8 @@ Mô hình truyền tải phong cách dựa trên CNN được biểu diễn tron
 có thể bằng cách sử dụng ảnh nội dung.
 Ảnh kết hợp này là biến (tức tham số mô hình) duy nhất cần được cập nhật trong quá trình truyền tải phong cách.
 Sau đó, ta sẽ chọn một CNN đã được tiền huấn luyện để thực hiện trích xuất đặc trưng của ảnh.
-Ta không cần phải cập nhật tham số của mô hình này trong quá trình huấn luyện.
-Mạng CNN sâu này sử dụng nhiều tầng nơ-ron liên tiếp để trích xuất đặc trưng của ảnh.
+Ta không cần phải cập nhật tham số của mạng CNN này trong quá trình huấn luyện.
+Mạng CNN sâu sử dụng nhiều tầng nơ-ron liên tiếp để trích xuất đặc trưng của ảnh.
 Ta có thể chọn đầu ra của một vài tầng nhất định làm đặc trưng nội dung hoặc đặc trưng phong cách.
 Nếu ta sử dụng cấu trúc trong :numref:`fig_style_transfer_model`, mạng nơ-ron đã tiền huấn luyện sẽ chứa ba tầng tích chập.
 Đầu ra của tầng thứ hai là đặc trưng nội dung ảnh, trong khi đầu ra của tầng thứ nhất và thứ ba được sử dụng làm đặc trưng phong cách.
@@ -670,5 +670,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
 
