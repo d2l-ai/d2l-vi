@@ -128,11 +128,11 @@ This means that we predict the category and bounding box for each proposed regio
 1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh là đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
 Hơn nữa, mạng này được huấn luyện như bình thường để cập nhật tham số mô hình.
 Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
-2. Giả sử thuật toán tìm kiếm lựa chọn sinh $n$ vùng đề xuất, mỗi vùng có kích thước khác nhau dẫn đến đầu ra CNN có vùng quan tâm (_regions of interests - RoI_) với kích thước khác nhau.
+2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, mỗi vùng có kích thước khác nhau dẫn đến đầu ra CNN có vùng quan tâm (_regions of interests - RoI_) với kích thước khác nhau.
 Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
 Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng RoI làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
-3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định bởi thiết kế mô hình.
-4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và ta sử phép hồi quy softmax ($q$ là số lượng hạng mục).
+3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định khi thiết kế mô hình.
+4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và áp dụng phép hồi quy softmax ($q$ là số lượng hạng mục).
 Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
 Nghĩa là ta dự đoán hạng mục và khung chứa cho từng vùng đề xuất.
 
@@ -152,7 +152,7 @@ Trong tầng gộp thông thường, ta thiết lập cửa sổ gộp, giá tr�
 Trong tầng gộp RoI, ta có thể trực tiếp định rõ kích thước đầu ra của từng vùng, ví dụ chiều cao và chiều rộng của từng vùng sẽ là $h_2, w_2$.
 Giả sử rằng chiều cao và chiều rộng của cửa sổ RoI là $h$ và $w$, cửa sổ này được chia thành một lưới các cửa sổ phụ với kích thước $h_2 \times w_2$.
 Mỗi cửa sổ phụ có kích thước xấp xỉ $(h/h_2) \times (w/w_2)$.
-Chiều cao và chiều rộng của cửa sổ phụ phải luôn là số nguyên và thành phần lớn nhất được sử dụng là đầu ra cho cửa sổ phụ đó.
+Chiều cao và chiều rộng của cửa sổ con phải luôn là số nguyên và thành phần lớn nhất được sử dụng là đầu ra cho cửa sổ con đó.
 Điều này cho phép tầng gộp RoI trích xuất đặc trưng có cùng kích thước từ các vùng RoI có kích thước khác nhau.
 
 
@@ -381,6 +381,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 * 
