@@ -379,7 +379,7 @@ test_iter = gluon.data.DataLoader(
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Mô hình
 
 
 <!--
@@ -387,7 +387,8 @@ Here, we build the residual blocks based on the `HybridBlock` class, which is sl
 This is done to improve execution efficiency.
 -->
 
-*dịch đoạn phía trên*
+Ở phần này, ta xây dựng các khối phần dư dựa trên lớp `HybridBlock`, lớp này có đôi chút khác biệt so với cách lập trình được mô tả trong :numref:`sec_resnet`.
+Sự thay đổi này nhằm cải thiện hiệu suất thực thi.
 
 
 ```{.python .input  n=11}
@@ -418,7 +419,7 @@ class Residual(nn.HybridBlock):
 Next, we define the ResNet-18 model.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa mô hình ResNet-18.
 
 
 ```{.python .input}
@@ -450,7 +451,8 @@ The CIFAR-10 image classification challenge uses 10 categories.
 We will perform Xavier random initialization on the model before training begins.
 -->
 
-*dịch đoạn phía trên*
+Thử thách phân loại ảnh CIFAR-10 bao gồm 10 hạng mục.
+Ta sẽ thực hiện khởi tạo ngẫu nhiên Xavier trên mô hình trước khi bắt đầu huấn luyện.
 
 
 ```{.python .input}
@@ -471,7 +473,7 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Defining the Training Functions
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Huấn luyện
 
 
 <!--
@@ -480,7 +482,9 @@ Next, we define the model training function `train`.
 We record the training time of each epoch, which helps us compare the time costs of different models.
 -->
 
-*dịch đoạn phía trên*
+Ta tiến hành lựa chọn mô hình và điều chỉnh các siêu tham số tuỳ theo kết quả của mô hình trên tập kiểm định.
+Tiếp theo, ta định nghĩa hàm huấn luyện mô hình `train`.
+Ta ghi lại thời gian huấn luyện mỗi epoch nhằm giúp so sánh thời gian mà các mô hình khác nhau yêu cầu.
 
 
 ```{.python .input}
@@ -525,7 +529,7 @@ def train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Training and Validating the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện và Kiểm định Mô hình
 
 
 <!--
@@ -536,7 +540,11 @@ Because `lr_period` and `lr_decay` are set to 80 and 0.1 respectively, the learn
 For simplicity, we only train one epoch here.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể huấn luyện và kiểm định mô hình.
+Các siêu tham số sau có thể được điều chỉnh.
+Ví dụ, ta có thể tăng số epoch.
+Do `lr_period` và `lr_decay` được đặt lần lượt bằng 80 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 80 epoch.
+Để đơn giản hoá, ở đây ta chỉ huấn luyện một epoch.
 
 
 ```{.python .input  n=13}
@@ -640,7 +648,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
 * 
