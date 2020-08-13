@@ -1,33 +1,3 @@
-Cập nhật tiến độ hoàn thành chương **Natural Language Processing: Pre-training**.
-
-## Giai đoạn 1 ` parts`
-* [ ] 14.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 part`
-* [ ] 14.01. [Word Embedding (word2vec)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word2vec_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.02. [Approximate Training](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+approx-training_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.03. [The Dataset for Pretraining Word Embedding](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word-embedding-dataset_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.04. [Pretraining word2vec](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word2vec-pretraining_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.05. [Word Embedding with Global Vectors (GloVe)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+glove_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.06. [Subword Embedding](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+subword-embedding_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.07. [Finding Synonyms and Analogies](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+similarity-analogy_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.08. [Bidirectional Encoder Representations from Transformers (BERT)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.09. [The Dataset for Pretraining BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert-dataset_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.10. [Pretraining BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert-pretraining_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-
-## Giai đoạn 2 ` parts`
-* [ ] 14.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 part`
-* [ ] 14.01. [Word Embedding (word2vec)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word2vec_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.02. [Approximate Training](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+approx-training_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.03. [The Dataset for Pretraining Word Embedding](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word-embedding-dataset_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.04. [Pretraining word2vec](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+word2vec-pretraining_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.05. [Word Embedding with Global Vectors (GloVe)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+glove_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.06. [Subword Embedding](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+subword-embedding_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.07. [Finding Synonyms and Analogies](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+similarity-analogy_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.08. [Bidirectional Encoder Representations from Transformers (BERT)](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.09. [The Dataset for Pretraining BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert-dataset_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-* [ ] 14.10. [Pretraining BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+bert-pretraining_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-pre%22) `0 parts`
-
----
-
 Cập nhật tiến độ hoàn thành chương **Natural Language Processing: Applications**.
 
 ## Giai đoạn 1 ` parts`

@@ -155,7 +155,7 @@ def cls_predictor(num_anchors, num_classes):
 ### Bounding Box Prediction Layer
 -->
 
-### *dịch tiêu đề phía trên*
+### Tầng Dự đoán Khung chứa
 
 
 <!--
@@ -163,7 +163,8 @@ The design of the bounding box prediction layer is similar to that of the catego
 The only difference is that, here, we need to predict 4 offsets for each anchor box, rather than $q+1$ categories.
 -->
 
-*dịch đoạn phía trên*
+Thiết kế của tầng dự đoán khung chứa tương tự như tầng dự đoán hạng mục.
+Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời (offset) cho từng khung neo, thay vì $q+1$ hạng mục.
 
 
 
@@ -180,7 +181,7 @@ def bbox_predictor(num_anchors):
 ### Concatenating Predictions for Multiple Scales
 -->
 
-### *dịch tiêu đề phía trên*
+### Ghép nối các Dự đoán Đa Tỷ lệ
 
 
 <!--
@@ -188,7 +189,8 @@ As we mentioned, SSD uses feature maps based on multiple scales to generate anch
 Because the shapes and number of anchor boxes centered on the same element differ for the feature maps of different scales, the prediction outputs at different scales may have different shapes.
 -->
 
-*dịch đoạn phía trên*
+Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán hạng mục và độ dời tương ứng.
+Vì kích thước và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có kích thước khác nhau.
 
 
 <!--
@@ -201,8 +203,13 @@ As you can see, except for the batch size, the sizes of the other dimensions are
 Therefore, we must transform them into a consistent format and concatenate the predictions of the multiple scales to facilitate subsequent computation.
 -->
 
-*dịch đoạn phía trên*
-
+Trong ví dụ dưới đây, ta sử dụng cùng một batch dữ liệu để xây dựng ánh xạ đặc trưng `Y1` và `Y2` của hai tỷ lệ khác nhau.
+Trong đó, `Y2` có chiều cao và chiều rộng bằng một nửa `Y1`.
+Lấy ví dụ về dự đoán hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
+Với 10 hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
+Định dạng của đầu ra dự đoán sẽ là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
+Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
+Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để tính toán về sau.
 
 ```{.python .input  n=3}
 def forward(x, block):
@@ -222,7 +229,9 @@ Because the batch size is the same for all scales, we can convert the prediction
 to facilitate subsequent concatenation on the $1^{\mathrm{st}}$ dimension.
 -->
 
-*dịch đoạn phía trên*
+Chiều kênh bao gồm dự đoán cho tất cả các khung neo có cùng tâm.
+Đầu tiên, ta sẽ chuyển chiều kênh thành chiều cuối cùng.
+Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng nhị phân (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều thứ $1^{\mathrm{st}}$ dễ dàng hơn.
 
 
 
@@ -239,7 +248,7 @@ def concat_preds(preds):
 Thus, regardless of the different shapes of `Y1` and `Y2`, we can still concatenate the prediction results for the two different scales of the same batch.
 -->
 
-*dịch đoạn phía trên*
+Do đó, ta có thể ghép nối kết quả dự đoán cho hai tỷ lệ khác nhau trên cùng một batch dù `Y1` và `Y2` có kích thước khác nhau.
 
 
 ```{.python .input  n=5}
@@ -255,7 +264,7 @@ concat_preds([Y1, Y2]).shape
 ### Height and Width Downsample Block
 -->
 
-### *dịch tiêu đề phía trên*
+### Khối giảm chiều cao và chiều rộng
 
 
 <!--
@@ -267,8 +276,13 @@ Because $1\times 2+(3-1)+(3-1)=6$, each element in the output feature map has a 
 As you can see, the height and width downsample block enlarges the receptive field of each element in the output feature map.
 -->
 
-*dịch đoạn phía trên*
 
+Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm chiều cao và chiều rộng 50%. 
+Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
+Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
+Tuy nhiên, tầng gộp cực đại tiếp theo giảm kích thước đặc trưng còn một nửa.
+Do $1\times 2+(3-1)+(3-1)=6$, mỗi điểm trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
+Ta có thể thấy, khối giảm chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi điểm trong ánh xạ đặc trưng đầu ra.
 
 
 ```{.python .input  n=6}
@@ -286,7 +300,8 @@ def down_sample_blk(num_channels):
 By testing forward computation in the height and width downsample block, we can see that it changes the number of input channels and halves the height and width.
 -->
 
-*dịch đoạn phía trên*
+
+Bằng phép kiểm tra tính toán truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
 
 
 ```{.python .input  n=7}
@@ -298,7 +313,7 @@ forward(np.zeros((2, 3, 20, 20)), down_sample_blk(10)).shape
 ### Base Network Block
 -->
 
-### *dịch tiêu đề phía trên*
+### Khối Mạng Cơ sở
 
 
 <!--
@@ -308,8 +323,11 @@ This network consists of three height and width downsample blocks connected in a
 When we input an original image with the shape $256\times256$, the base network block outputs a feature map with the shape $32 \times 32$.
 -->
 
-*dịch đoạn phía trên*
 
+Khối mạng cơ sở được sử dụng để trích xuất đặc trưng từ ảnh gốc ban đầu.
+Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ. 
+Mạng này bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi tầng.
+Khi ta truyền ảnh đầu vào với kích thước $256\times256$, khối mạng cơ sở sẽ cho ra ánh xạ đặc trưng có kích thước $32 \times 32$.
 
 
 ```{.python .input  n=8}
@@ -331,7 +349,7 @@ forward(np.zeros((2, 3, 256, 256)), base_net()).shape
 ### The Complete Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Mô hình hoàn chỉnh
 
 
 <!--
@@ -341,8 +359,9 @@ The first module is the base network block, modules two to four are height and w
 Therefore, modules two to five are all multiscale feature blocks shown in :numref:`fig_ssd`.
 -->
 
-*dịch đoạn phía trên*
-
+Mô hình SSD chứa tất cả năm mô-đun.
+Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
+Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ hai tới bốn là các khối giảm chiều cao và chiều rộng, và khối thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
 
 
 ```{.python .input  n=9}
@@ -363,7 +382,8 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ định nghĩa luợt tính xuôi cho từng mô-đun.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -382,7 +402,9 @@ Here, we first divide the interval from 0.2 to 1.05 into five equal parts to det
 Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447$, and similar formulas, we determine the sizes of larger anchor boxes at the different scales.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong :numref:`fig_ssd`, các vật thể nó phát hiện và các khung neo nó tạo ra càng lớn.
+Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
+Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định kích thước của các khung neo lớn hơn ở các tỉ lệ khác nhau.
 
 
 
@@ -398,8 +420,7 @@ num_anchors = len(sizes[0]) + len(ratios[0]) - 1
 Now, we can define the complete model, `TinySSD`.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta có thể định nghĩa mô hình hoàn chỉnh, `TinySSD`.
 
 
 ```{.python .input  n=12}
@@ -438,7 +459,10 @@ Because modules two to four are height and width downsample blocks, module five 
 and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
+Như ta đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
+Bởi vì các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, còn mô-đun thứ năm là tầng gộp toàn cục, 
+và mỗi phần tử trong ánh xạ đặc trưng này được dùng làm tâm cho bốn khung neo, tổng cộng $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ khung neo được tạo ra cho mỗi ảnh ở năm tỉ lệ đó.
 
 
 ```{.python .input  n=13}
@@ -580,7 +604,7 @@ def bbox_eval(bbox_preds, bbox_labels, bbox_masks):
 ### Training the Model
 -->
 
-### *dịch tiêu đề phía trên*
+### Huấn luyện Mô hình
 
 
 <!--
@@ -590,7 +614,10 @@ Finally, we calculate the loss function using the predicted and labeled category
 To simplify the code, we do not evaluate the training dataset here.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt quá trình huấn luyện mô hình, ta phải tạo ra các khung neo trên nhiều tỉ lệ (`anchors`) trong quá trình tính toán lượt truyền xuôi rồi dự đoán lớp (`cls_preds`) và độ dời (`bbox_preds`) cho mỗi khung neo.
+Sau đó, ta gán nhãn lớp (`cls_labels`) và độ dời (`bbox_labels`) cho từng khung neo được tạo ở trên dựa vào thông tin nhãn `Y`.
+Cuối cùng, ta tính toán hàm mất mát sử dụng lớp dự đoán và lớp gán nhãn và giá trị độ dời.
+Để đơn giản hoá mã nguồn, ta sẽ không đánh giá tập huấn luyện ở đây.
 
 
 
@@ -636,7 +663,7 @@ print(f'{train_iter.num_image/timer.stop():.1f} examples/sec on '
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 
 <!--
@@ -645,7 +672,9 @@ Below, we read the test image and transform its size.
 Then, we convert it to the four-dimensional format required by the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Trong bước dự đoán, ta muốn phát hiện tất cả các vật thể trong vùng quan tâm trong ảnh.
+Ở đoạn mã dưới, ta đọc vào ảnh kiểm tra và biến đổi kích thước của nó.
+Sau đó ta chuyển nó thành dạng bốn chiều mà tầng tích chập yêu cầu.
 
 
 
@@ -661,7 +690,8 @@ Using the `MultiBoxDetection` function, we predict the bounding boxes based on t
 Then, we use non-maximum suppression to remove similar bounding boxes.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng hàm `MultiBoxDetection` để dự đoán các khung chứa dựa theo các khung neo và giá trị độ dời dự đoán của chúng.
+Sau đó ta sử dụng thuật toán triệt tiêu phi tối đa (*non-maximum suppression*) để loại bỏ các khung chứa giống nhau.
 
 
 
@@ -681,7 +711,7 @@ output = predict(X)
 Finally, we take all the bounding boxes with a confidence level of at least 0.3 and display them as the final output.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta lấy toàn bộ khung chứa có độ tin cậy tối thiểu là 0.3 và hiển thị chúng làm kết quả cuối cùng.
 
 
 ```{.python .input  n=22}
@@ -710,7 +740,9 @@ based on the base network block and each multiscale feature block and predicts t
 * During SSD model training, the loss function is calculated using the predicted and labeled category and offset values.
 -->
 
-*dịch đoạn phía trên*
+* SSD là một mô hình phát hiện vật thể đa tỉ lệ. Mô hình này sinh ra các tập khung neo với số lượng và kích thước khác nhau 
+dựa trên khối mạng cơ sở và từng khối đặc trưng đa tỉ lệ rồi dự đoán lớp và độ dời cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau.
+* Trong suốt quá trình huấn luyện mô hình SSD, hàm mất mát được tính bằng giá trị dự đoán và nhãn của lớp và độ dời.
 
 
 
@@ -722,7 +754,8 @@ Due to space limitations, we have ignored some of the implementation details of 
 Can you further improve the model in the following areas?
 -->
 
-*dịch đoạn phía trên*
+Do giới hạn về độ dài bài viết, chúng tôi đã bỏ qua một số chi tiết phần lập trình cho mô hình SSD trong thí nghiệm này.
+Liệu bạn có thể cải thiện mô hình hơn nữa theo các hướng sau?
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -867,20 +900,21 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 3 -->
-* 
-
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 6 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 8 -->
 * Đỗ Trường Giang
