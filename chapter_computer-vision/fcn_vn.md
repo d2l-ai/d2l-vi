@@ -356,7 +356,8 @@ For the sake of simplicity, we only read a few large test images and crop an are
 Only this area is used for prediction. For the input image, we print the cropped area first, then print the predicted result, and finally print the labeled category.
 -->
 
-*dịch đoạn phía trên*
+Để đơn giản, ta chỉ đọc một vài ảnh kiểm tra và cắt các vùng với kích thước $320\times480$ từ góc trái trên cùng của ảnh.
+Chỉ vùng này được sử dụng để dự đoán. Với ảnh đầu vào, đầu tiên ta in ra vùng được cắt, sau đó in ra kết quả dự đoán, và cuối cùng in ra hạng mục nhãn.
 
 
 ```{.python .input  n=15}
@@ -380,7 +381,8 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 * In a fully convolutional network, we initialize the transposed convolution layer for upsampled bilinear interpolation.
 -->
 
-*dịch đoạn phía trên*
+* Đầu tiên, mạng tích chập đầy đủ sử dụng một mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng các hạng mục thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng thành kích thước ban đầu của ảnh bằng cách sử dụng tầng tích chập chuyển vị để cho ra hạng mục của từng điểm ảnh.
+* Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép ngoại suy song tuyến tính tăng mẫu.
 
 
 ## Bài tập
@@ -392,7 +394,10 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 4. The outputs of some intermediate layers of the convolutional neural network are also used in the paper on fully convolutional networks[1]. Try to implement this idea.
 -->
 
-*dịch đoạn phía trên*
+1. Nếu ta sử dụng Xavier để khởi tạo ngẫu nhiên tầng tích chập chuyển vị, kết quả có thay đổi gì không?
+2. Bạn có thể cải thiện độ chính xác của mô hình bằng cách điều chỉnh các siêu tham số không?
+3. Hãy dự đoán các hạng mục của tất cả các điểm ảnh trong ảnh kiểm tra.
+4. Đầu ra của một số tầng trung gian của mạng nơ-ron tích chập cũng được sử trung trong bài báo về mạng tích chập đầy đủ [1]. Hãy thử lập trình lại ý tưởng này.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -426,7 +431,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
 
 
 
