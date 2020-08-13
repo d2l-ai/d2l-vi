@@ -18,7 +18,7 @@ so that the predictions have a one-to-one correspondence with input image in spa
 Given a position on the spatial dimension, the output of the channel dimension will be a category prediction of the pixel corresponding to the location.
 -->
 
-Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa sử dụng từng điểm ảnh cho dự đoán lớp.
+Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
 Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các nhãn điểm ảnh.
 Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian thành kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng 1-1 với ảnh đầu vào theo chiều không gian (chiều cao và rộng).
 Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là dự đoán lớp nhãn của từng điểm ảnh tương ứng với vị trí của nó.
@@ -435,6 +435,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
 
