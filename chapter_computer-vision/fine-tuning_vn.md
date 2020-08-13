@@ -16,7 +16,7 @@ However, the size of datasets that we often deal with is usually larger than the
 -->
 
 Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60 000 ảnh.
-Chúng ta cũng đã nói về ImageNet, tập ảnh dữ liệu cỡ lớn được ưa dùng trong giới học thuật, với hơn 10 triệu tấm ảnh và 1000 nhãn các loại.
+Chúng ta cũng đã nói về ImageNet, tập dữ liệu ảnh quy mô lớn được sử dụng phổ biến trong giới học thuật, với hơn 10 triệu tấm ảnh vật thể thuộc hơn 1000 hạng mục.
 Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
@@ -28,11 +28,11 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn thanh toán chiếc ghế đó tới người dùng.
-Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn tới trang bán chiếc ghế đó cho người dùng.
+Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế phổ biến, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
 Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
 Điều này dẫn tới việc các mô hình phức tạp bị quá khớp khi huấn luyện trên tập dữ liệu này, dù chúng hoạt động tốt với Imagenet.
-Đồng thời, vì lượng dữ liệu khá hạn chế, độ chính xác của mô hình sau khi huấn luyện xong có thể không đạt mức kỳ vọng.
+Đồng thời, vì lượng dữ liệu khá hạn chế, độ chính xác của mô hình sau khi huấn luyện xong có thể không thoả mãn được mức yêu cầu trong thực tiễn.
 
 
 <!--
@@ -44,7 +44,7 @@ Although, recently, data collection costs have dropped significantly, the costs 
 
 Để giải quyết vấn đề này, một giải pháp dễ thấy là đi thu thập thêm dữ liệu.
 Tuy nhiên, việc thu thập và gán nhãn dữ liệu có thể tốn rất nhiều tiền và thời gian.
-Ví dụ, để xây dựng được tập ImageNet, những nhà nghiên cứu đã tiêu hàng triệu đô la từ nguồn tài trợ nghiên cứu.
+Ví dụ, để xây dựng được tập ImageNet, các nhà nghiên cứu đã tiêu hàng triệu đô la từ nguồn tài trợ nghiên cứu.
 Dù vậy, gần đây chi phí thu thập dữ liệu đã giảm mạnh, nhưng điều này vẫn rất đáng lưu ý.
 
 
@@ -55,9 +55,9 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-Một giải pháp khác là áp dụng học truyền tải, chuyển đổi kiến thức đã học từ tập dữ liệu nguồn để làm việc tập dữ liệu đích.
-Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, chất liệu, hình đáng, và các thành phần của vật thể.
-Các đặc trưng tương đồng này có thể sẽ có ích trong bài toán nhận diện ghế.
+Một giải pháp khác là áp dụng kỹ thuật học truyền tải (*transfer learning*), mang kiến thức đã học được từ tập dữ liệu gốc áp dụng sang tập dữ liệu đích.
+Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, bề mặt, hình dáng, và các kết cấu của vật thể.
+Các đặc trưng tương đồng này cũng sẽ có ích trong bài toán nhận diện ghế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -83,14 +83,14 @@ We also assume that the output layer of the source model is closely related to t
 We will train the output layer from scratch, while the parameters of all remaining layers are fine-tuned based on the parameters of the source model.
 -->
 
-1. Tiền huấn luyện một mô hình mạng nơ-ron, cụ thể là mô hình gốc, trên tập dữ liệu gốc (chẳng hạn tập dữ liệu ImageNet).
+1. Tiền huấn luyện một mô hình mạng nơ-ron, tức là là mô hình gốc, trên tập dữ liệu gốc (chẳng hạn tập dữ liệu ImageNet).
 2. Tạo mô hình mạng nơ-ron mới gọi là mô hình mục tiêu.
 Mô hình này sao chép tất cả các thiết kế cũng như các tham số của mô hình gốc, ngoại trừ tầng đầu ra.
 Ta giả định rằng các tham số mô hình chứa tri thức đã học từ tập dữ liệu gốc và tri thức này sẽ áp dụng tương tự đối với tập dữ liệu mục tiêu.
 Ta cũng giả định là tầng đầu ra của mô hình gốc có liên hệ mật thiết với các nhãn của tập dữ liệu gốc và do đó không được sử dụng trong mô hình mục tiêu.
-3. Thêm vào một tầng đầu ra cho mô hình mục tiêu mà kích thước của nó là số lớp của dữ liệu mục tiêu, và khởi tạo ngẫu nhiên cho các tham số mô hình của tầng này.
+3. Thêm vào một tầng đầu ra cho mô hình mục tiêu mà kích thước của nó là số lớp của dữ liệu mục tiêu, và khởi tạo ngẫu nhiên các tham số mô hình của tầng này.
 4. Huấn luyện mô hình mục tiêu trên tập dữ liệu mục tiêu, chẳng hạn như tập dữ liệu ghế.
-Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại đã được tinh chỉnh dựa trên các tham số của mô hình gốc.
+Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại được tinh chỉnh từ các tham số của mô hình gốc.
 
 <!--
 ![Fine tuning.](../img/finetune.svg)
@@ -105,7 +105,7 @@ Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham 
 ## Hot Dog Recognition
 -->
 
-## Nhận dạng món bánh xúc xích
+## Nhận dạng Xúc xích
 
 
 <!--
@@ -115,10 +115,10 @@ This small dataset contains thousands of images, some of which contain hot dogs.
 We will use the model obtained by fine tuning to identify whether an image contains a hot dog.
 -->
 
-Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món bánh xúc xích.
+Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món ăn xúc xích.
 Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
-Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, một số có chứa các ảnh món bánh này.
-Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món bánh này hay không.
+Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, trong đó sẽ có các ảnh có chứa xúc xích.
+Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món ăn này hay không.
 
 <!--
 First, import the packages and modules required for the experiment.
@@ -127,8 +127,8 @@ If you want to get more pre-trained models for computer vision, you can use the 
 -->
 
 Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
-Gói `model_zoo` trong Gluon cung cấp một mô hình huấn luyện sẵn thông dụng.
-Nếu bạn muốn lấy thêm các mô hình huấn luyện sẵn cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
+Gói `model_zoo` trong Gluon cung cấp một mô hình đã được huấn luyện sẵn phổ biến.
+Nếu bạn muốn lấy thêm các mô hình đã được tiền huấn luyện cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -156,7 +156,7 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa bánh mì kẹp xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
+Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
 $1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
@@ -165,7 +165,7 @@ We first download the compressed dataset and get two folders `hotdog/train` and 
 Both folders have `hotdog` and `not-hotdog` category subfolders, each of which has corresponding image files.
 -->
 
-Đầu tiên ta tải bộ dữ liệu được nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
+Đầu tiên ta tải bộ dữ liệu nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
 Cả hai đều có hai tập tin phụ `hotdog` và `not-hotdog` chứa các ảnh với phân loại tương ứng.
 
 
@@ -183,7 +183,7 @@ data_dir = d2l.download_extract('hotdog')
 We create two `ImageFolderDataset` instances to read all the image files in the training dataset and testing dataset, respectively.
 -->
 
-Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các files ảnh trong bộ huấn luyện và bộ kiểm tra.
+Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các tệp ảnh trong bộ huấn luyện và bộ kiểm tra.
 
 
 
@@ -200,7 +200,7 @@ The first 8 positive examples and the last 8 negative images are shown below.
 As you can see, the images vary in size and aspect ratio.
 -->
 
-Dưới đây là 8 mẫu dương đầu tiên và 8 mẫu âm cuối cùng.
+Dưới đây là 8 mẫu dương tính đầu tiên và 8 mẫu âm  cuối cùng.
 Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
 
 
@@ -219,10 +219,10 @@ In addition, we normalize the values of the three RGB (red, green, and blue) col
 The average of all values of the channel is subtracted from each value and then the result is divided by the standard deviation of all values of the channel to produce the output.
 -->
 
-Trong quá trình huấn luyện, chúng ta cắt (*crop*) ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỷ lệ (*scale*) để có chiều dài và chiều rộng 224 pixel.
-Khi kiểm tra, ta biến đổi tỷ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
-Thêm vào đó, chúng ta chuẩn hoá (*normalize*) các giá trị của ba kênh màu RGB (red, green, blue).
-Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh được xử lý.
+Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỉ lệ để có chiều dài và chiều rộng 224 pixel.
+Khi kiểm tra, ta biến đổi tỉ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Thêm vào đó, chúng ta chuẩn hoá các giá trị của ba kênh màu RGB (red, green, blue).
+Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh đã qua xử lý.
 
 
 ```{.python .input  n=5}
