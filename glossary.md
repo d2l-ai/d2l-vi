@@ -178,6 +178,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | frontend                   | front-end            |                                              |
 | functional analysis        | giải tích hàm        |                                              |
 | fully-connected            | kết nối đầy đủ       | [https://git.io/JvohR](https://git.io/JvohR) |
+| fully convolutional network | mạng tích chập đầy đủ | |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
