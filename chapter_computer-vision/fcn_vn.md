@@ -89,7 +89,7 @@ It duplicates all the neural layers except the last two layers of the instance m
 -->
 
 Tiếp theo, ta khởi tạo một thực thể mạng tích chập đầy đủ `net`.
-Thực thể này sao lặp tất cả các tầng nơ-ron ngoại trừ hai tầng cuối cùng trong các tham số thành viên `features` của `pretrained_net` và các tham số mô hình thu được từ bước tiền huấn luyện.
+Thực thể này sao lặp tất cả các tầng nơ-ron ngoại trừ hai tầng cuối cùng của biến thành viên `features` trong `pretrained_net` và các tham số mô hình thu được từ bước tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -433,5 +433,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
