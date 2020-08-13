@@ -28,7 +28,7 @@ Với một vị trí trên chiều không gian, đầu ra của chiều kênh s
 We will first import the package or module needed for the experiment and then explain the transposed convolution layer.
 -->
 
-Đầu tiên, ta sẽ nhập gói thư viện hay module cần thiết cho thí nghiệm và sau đó sẽ giải thích tầng tích chập hoán vị.
+Đầu tiên, ta sẽ nhập gói thư viện và mô-đun cần thiết cho thí nghiệm này và sau đó sẽ giải thích về tầng tích chập hoán vị.
 
 
 ```{.python .input  n=2}
