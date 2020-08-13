@@ -99,6 +99,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | cosine                          | cô-sin                   |                                              |
 | cost function                   | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                       | hiệp biến                | [https://git.io/JvohK](https://git.io/JvohK) |
+| crop (image)            | cắt (ảnh)          |                                              |
 | cross correlation               | tương quan chéo          |                                              |
 | cross entropy                   | entropy chéo             |                                              |
 | cross validation                | kiểm định chéo           |                                              |
