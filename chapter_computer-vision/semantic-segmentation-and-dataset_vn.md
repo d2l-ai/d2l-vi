@@ -19,15 +19,15 @@ As you can see, compared to object detection, semantic segmentation labels areas
 
 Trong thảo luận ở những phần trước của chúng ta về các vấn đề liên quan tới nhận dạng vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để dán nhãn và dự đoán các vật thể trong ảnh.
 Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa, đây là việc thực hiện phân đoạn ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
-Các vùng ngữ nghĩa đó được dán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
-:numref:`fig_segmentation` thể hiện một ảnh đã được phân vùng ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "hậu cảnh".
-Như bạn có thể thấy, so với việc nhận dạng vật thể, phân vùng theo ngữ nghĩa dán nhãn các vùng với các đường biên ở mức điểm ảnh đem lại độ chính xác lớn hơn đáng kể.
+Các vùng ngữ nghĩa đó dán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
+:numref:`fig_segmentation` thể hiện một ảnh đã được phân vùng ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "nền".
+Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ dán nhãn các vùng bằng các đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
 
 <!--
 ![Semantically-segmented image, with areas labeled "dog", "cat", and "background".](../img/segmentation.svg)
 -->
 
-![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được dán nhãn "dog", "cat" và "background"](../img/segmentation.svg)
+![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "nền"](../img/segmentation.svg)
 :label:`fig_segmentation`
 
 
@@ -35,7 +35,7 @@ Như bạn có thể thấy, so với việc nhận dạng vật thể, phân v�
 ## Image Segmentation and Instance Segmentation
 -->
 
-## Phân vùng ảnh và phân vùng cụ thể
+## Phân vùng ảnh và phân vùng thực thể
 
 
 <!--
@@ -43,8 +43,8 @@ In the computer vision field, there are two important methods related to semanti
 Here, we will distinguish these concepts from semantic segmentation as follows:
 -->
 
-Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới việc phân vùng theo ngữ nghĩa đó là: phân vùng ảnh và phân vùng cụ thể.
-Ở đây, chúng ta sẽ phân biệt các khái niệm này từ việc phân vùng theo ngữ nghĩa như sau:
+Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới việc phân vùng theo ngữ nghĩa đó là: phân vùng ảnh và phân vùng thực thể.
+Ở đây, chúng ta sẽ phân biệt các khái niệm này với việc phân vùng theo ngữ nghĩa như sau:
 
 
 <!--
@@ -60,16 +60,16 @@ In contrast to semantic segmentation, instance segmentation not only distinguish
 If an image contains two dogs, instance segmentation will distinguish which pixels belong to which dog.
 -->
 
-* Phân vùng ảnh chia một bức ảnh thành một bức ảnh được tạo thành từ một số vùng.
-Phương pháp này nhìn chung sử dụng tương quan giữa các điểm ảnh trên ảnh.
-Trong suốt quá trình huấn luyện, các nhãn không cần cho các điểm ảnh của ảnh.
+* Phân vùng ảnh chia một bức ảnh thành các vùng thành phần.
+Phương pháp này thường sử dụng độ tương quan giữa các điểm ảnh trên ảnh.
+Trong suốt quá trình huấn luyện, nhãn cho các điểm ảnh là không cần thiết.
 Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân đoạn có ngữ nghĩa mà ta mong muốn.
-Nếu ta đưa vaò bức ảnh ở 9.10, phân vùng ảnh có thể chia con cho thành hai vùng,
-một vùng bao phủ trên miệng và cặp mắt nơi ở đó màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú cho nơi màu vàng chiếm ưu thế.
-* Phân vùng cụ thể còn được gọi là phát hiện và phân vùng đồng thời.
-Phương pháp này cố gắng xác định các vùng ở mức điểm ảnh của mỗi đối tượng cụ thể ngay trong ảnh.
-Tương phản với phân vùng theo ngữ nghĩa, phân vùng cụ thể không chỉ phân biệt ngữ nghĩa mà còn cả các trường hợp đối tượng khác nhau.
-Nếu một ảnh có chứa hai chú chó, phân vùng cụ thể sẽ phân biệt các điểm ảnh thuộc về con nào. 
+Nếu ta đưa vào bức ảnh ở 9.10, phân vùng ảnh có thể chia con chó thành hai vùng,
+một vùng bao phủ trên miệng và cặp mắt nơi màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú chó nơi màu vàng chiếm ưu thế.
+* Phân vùng thực thể còn được gọi là phát hiện và phân vùng đồng thời.
+Phương pháp này cố gắng xác định các vùng ở mức điểm ảnh theo từng đối tượng riêng biệt ngay trong ảnh.
+Tương phản với phân vùng theo ngữ nghĩa, phân vùng thực thể không chỉ phân biệt ngữ nghĩa mà còn cả các thực thể khác nhau.
+Nếu một ảnh có chứa hai chú chó, phân vùng thực thể sẽ phân biệt những điểm ảnh thuộc về từng con nào. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -470,6 +470,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
