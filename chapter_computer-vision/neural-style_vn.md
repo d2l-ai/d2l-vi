@@ -86,7 +86,7 @@ Ta có thể chọn đầu ra của một vài tầng nhất định làm đặc
 Nếu ta sử dụng cấu trúc trong :numref:`fig_style_transfer_model`, mạng nơ-ron đã tiền huấn luyện sẽ chứa ba tầng tích chập.
 Đầu ra của tầng thứ hai là đặc trưng nội dung ảnh, trong khi đầu ra của tầng thứ nhất và thứ ba được sử dụng làm đặc trưng phong cách.
 Tiếp theo, ta thực hiện lan truyền xuôi (theo hướng của các đường nét liền) để tính hàm mất mát truyền tải phong cách
-và lan truyền ngược (theo hướng của các đường chấm) để liên tục cập nhật tham số mô hình (ảnh kết hợp).
+và lan truyền ngược (theo hướng của các đường nét đứt) để liên tục cập nhật ảnh kết hợp.
 Hàm mất mát được sử dụng trong việc truyền tải phong cách thường có ba phần:
 1. Mất mát nội dung giúp ảnh kết hợp có đặc trưng nội dung xấp xỉ với ảnh nội dung.
 2. Mất mát phong cách giúp ảnh kết hợp có đặc trưng phong cách xấp xỉ với ảnh phong cách.
