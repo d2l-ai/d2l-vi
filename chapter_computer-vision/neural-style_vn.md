@@ -196,7 +196,7 @@ In this experiment, we select the last convolutional layer of the fourth convolu
 We can obtain the indexes for these layers by printing the `pretrained_net` instance.
 -->
 
-Để trích các đặc trưng của ảnh nội dung và ảnh phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
+Để trích các đặc trưng nội dung và phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
 Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông tin chi tiết của ảnh càng dễ hơn.
 Trong khi đầu ra xa hơn thì dễ trích các thông tin toàn cục hơn.
 Để ngăn ảnh tổng hợp không giữ quá nhiều chi tiết của ảnh nội dung, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
