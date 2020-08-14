@@ -94,7 +94,7 @@ Next, we will perform an experiment to help us better understand the technical d
 ## Reading the Content and Style Images
 -->
 
-## Thực hiện đọc ảnh nội dung và ảnh phong cách
+## Đọc ảnh nội dung và ảnh phong cách
 
 
 <!--
@@ -661,4 +661,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
