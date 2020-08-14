@@ -486,7 +486,7 @@ Therefore, we call the `waitall` synchronization function during every epoch.
 -->
 
 Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
-Nhắc lại cuộc thảo luận của ta về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
+Nhớ lại thảo luận về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
 Do ta chỉ gọi hàm đồng bộ hoá `asscalar` sau mỗi 50 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ.
 Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
 
@@ -544,7 +544,7 @@ As you can see, the composite image retains the scenery and objects of the conte
 Because the image is relatively small, the details are a bit fuzzy.
 -->
 
-Như bạn có thể thấy, ảnh tổng hợp giữ lại bối cảnh và vật thể trong ảnh nội dung, trong khi đưa vào màu sắc của ảnh phong cách.
+Như bạn có thể thấy, ảnh tổng hợp giữ lại phong cảnh và vật thể trong ảnh nội dung, trong khi đưa vào màu sắc của ảnh phong cách.
 Do ảnh này khá nhỏ, các chi tiết có hơi mờ một chút.
 
 
@@ -553,7 +553,7 @@ To obtain a clearer composite image, we train the model using a larger image siz
 We increase the height and width of the image used before by a factor of four and initialize a larger composite image.
 -->
 
-Để thu được ảnh tổng hợp rõ ràng hơn, ta sử dụng ảnh có kích cỡ lớn hơn: $900 \times 600$, để huẩn luyện mô hình.
+Để thu được ảnh tổng hợp rõ ràng hơn, ta sử dụng ảnh có kích cỡ lớn hơn: $900 \times 600$, để huấn luyện mô hình.
 Ta tăng chiều cao và chiều rộng của ảnh vừa sử dụng lên bốn lần và khởi tạo ảnh tổng hợp lớn hơn.
 
 
@@ -657,5 +657,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
 
