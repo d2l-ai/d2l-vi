@@ -272,7 +272,7 @@ def get_styles(image_shape, device):
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Mất mát
 
 
 <!--
@@ -280,14 +280,15 @@ Next, we will look at the loss function used for style transfer.
 The loss function includes the content loss, style loss, and total variation loss.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ chuyển sang hàm mất mát được sử dụng trong truyền tải phong cách.
+Hàm mất mát gồm có mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
 
 
 <!--
 ### Content Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Nội dung
 
 
 <!--
@@ -295,7 +296,8 @@ Similar to the loss function used in linear regression, content loss uses a squa
 The two inputs of the square error function are both content layer outputs obtained from the `extract_features` function.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như hàm mất mát được sử dụng trong hồi quy tuyến tính, mất mát nội dụng sử dụng hàm bình phương sai số để đo sự khác biệt về đặc trưng nội dung giữa ảnh kết hợp và ảnh nội dung.
+Hai đầu vào của hàm bình phương sai số bao gồm cả hai đầu ra của tầng nội dung thu được từ hàm `extract_features`.
 
 
 ```{.python .input  n=10}
@@ -308,7 +310,7 @@ def content_loss(Y_hat, Y):
 ### Style Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Phong cách
 
 
 <!--
@@ -325,7 +327,17 @@ In addition, the height and width of the Gram matrix are both the number of chan
 To ensure that the style loss is not affected by the size of these values, we define the `gram` function below to divide the Gram matrix by the number of its elements, i.e., $c \cdot h \cdot w$.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như mất mát nội dung, mất mát phong cách sử dụng hàm bình phương sai số để đo sự khác biệt về đặc trưng phong cách giữa ảnh kết hợp và ảnh phong cách.
+Để biểu diễn đầu ra phong cách của các tầng phong cách, đầu tiên ta sử dụng hàm `extract_features` để tính toán đầu ra tầng phong cách.
+Giả sử đầu ra có một mẫu, $c$ kênh, và có chiều cao và chiều rộng là $h$ và $w$, ta có thể chuyển đổi đầu ra thành ma trận $\mathbf{X}$ có $c$ hàng và $h \cdot w$ cột.
+Bạn có thể coi ma trận $\mathbf{X}$ là tổ hợp của $c$ vector $\mathbf{x}_1, \ldots, \mathbf{x}_c$, có độ dài là $hw$.
+Ở đây, vector $\mathbf{x}_i$ biểu diễn đặc trưng phong cách của kênh $i$.
+Trong ma trận Gram $\mathbf{X}\mathbf{X}^\top \in \mathbb{R}^{c \times c}$ của các vector trên, phần tử $x_{ij}$ nằm trên hàng $i$ cột $j$ là tích vô hướng của hai vector $\mathbf{x}_i$ và $\mathbf{x}_j$.
+Phần tử này biểu thị sự tương quan đặc trưng phong cách của hai kênh $i$ và $j$.
+Ta sử dụng ma trận Gram này để biểu diễn đầu ra phong cách của các tầng phong cách.
+Bạn đọc chú ý rằng khi giá trị $h \cdot w$ lớn, thì thường dẫn đến ma trận Gram cũng có các giá trị lớn.
+Hơn nữa, chiều cao và chiều rộng của ma trận Gram đều là số kênh $c$.
+Để đảm bảo rằng mất mát phong cách không bị ảnh hưởng bởi các giá trị kích thước, ta định nghĩa hàm `gram` dưới đây thực hiện phép chia ma trận Gram cho số các phần tử của nó, đó là, $c \cdot h \cdot w$.
 
 
 ```{.python .input  n=11}
@@ -341,7 +353,8 @@ Naturally, the two Gram matrix inputs of the square error function for style los
 Here, we assume that the Gram matrix of the style image, `gram_Y`, has been computed in advance.
 -->
 
-*dịch đoạn phía trên*
+Một cách tự nhiên, hai đầu vào ma trận Gram của hàm bình phương sai số cho mất mát phong cách được lấy từ đầu ra tầng phong cách của ảnh ảnh kết hợp và ảnh phong cách.
+Ở đây, ta giả sử ma trận Gram của ảnh phong cách, `gram_Y`, có thể được tính toán trước.
 
 
 ```{.python .input  n=12}
@@ -638,7 +651,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * 
