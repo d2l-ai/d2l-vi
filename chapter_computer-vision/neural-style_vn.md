@@ -201,7 +201,7 @@ Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông
 Trong khi đầu ra xa hơn thì dễ trích các thông tin toàn cục hơn.
 Để ngăn ảnh tổng hợp không giữ quá nhiều chi tiết của ảnh nội dung, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
 Tầng này được gọi là tầng nội dung.
-Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách chung và cục bộ.
+Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách cục bộ và toàn cục.
 Các tầng đó được gọi là các tầng phong cách.
 Như ta đã đề cập trong :numref:`sec_vgg`, mạng VGG có năm khối chập.
 Trong thử nghiệm này, ta chọn tầng chập cuối của khối chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
