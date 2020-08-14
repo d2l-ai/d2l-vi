@@ -222,7 +222,7 @@ It is worth mentioning that, besides to the difference in coordinate scale, the 
 -->
 
 Như ta có thể thấy, tầng tích chập chuyển vị phóng đại cả chiều cao và chiều rộng của ảnh với thừa số bằng 2.
-Điểm đáng nói là bên cạnh điểm khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép ngoại suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
+Điểm đáng nói là bên cạnh điểm khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép nội suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
 
 ```{.python .input}
 d2l.set_figsize()
@@ -434,5 +434,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
