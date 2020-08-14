@@ -142,8 +142,8 @@ we use the `clip` function to replace values smaller than 0 or greater than 1 wi
 Dưới đây, ta định nghĩa các hàm tiền xử lý và hậu xử lý ảnh.
 Hàm `preprocess` chuẩn hóa các kênh RGB của ảnh đầu vào và chuyển kết quả sang định dạng có thể đưa vào mạng CNN.
 Hàm `postprocess` khôi phục các giá trị điểm ảnh của ảnh đầu ra về các giá trị gốc của nó trước khi chuẩn hóa.
-Bởi vì hàm in ảnh đòi hỏi mỗi điểm ảnh có giá trị thực từ 0 tới 1.
-Ta sử dụng hàm `clip` để thay thế các giá trị nhỏ hơn 0 hoặc lớn hơn 1 lần lượt bằng 0 hoặc 1.
+Vì hàm in ảnh đòi hỏi mỗi điểm ảnh có giá trị thực từ 0 tới 1,
+ta sử dụng hàm `clip` để thay thế các giá trị nhỏ hơn 0 hoặc lớn hơn 1 lần lượt bằng 0 hoặc 1.
 
 
 ```{.python .input  n=3}
@@ -661,5 +661,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
 
