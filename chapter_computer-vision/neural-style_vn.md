@@ -102,7 +102,7 @@ First, we read the content and style images.
 By printing out the image coordinate axes, we can see that they have different dimensions.
 -->
 
-Trước hết, ta đọc các ảnh nội dung và ảnh phong cachs.
+Trước hết, ta đọc các ảnh nội dung và ảnh phong cách.
 Bằng cách in ra các trục tọa độ ảnh, ta có thể thấy rằng chúng có các chiều khác nhau.
 
 
