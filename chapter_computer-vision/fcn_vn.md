@@ -5,7 +5,7 @@
 # Fully Convolutional Networks (FCN)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng Tích Chập Đầy đủ
 :label:`sec_fcn`
 
 
@@ -18,14 +18,17 @@ so that the predictions have a one-to-one correspondence with input image in spa
 Given a position on the spatial dimension, the output of the channel dimension will be a category prediction of the pixel corresponding to the location.
 -->
 
-*dịch đoạn phía trên*
+Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
+Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các nhãn điểm ảnh.
+Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
+Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
 
 
 <!--
 We will first import the package or module needed for the experiment and then explain the transposed convolution layer.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta sẽ nhập gói thư viện và mô-đun cần thiết cho thí nghiệm này và sau đó sẽ giải thích về tầng tích chập chuyển vị.
 
 
 ```{.python .input  n=2}
@@ -42,7 +45,7 @@ npx.set_np()
 ## Constructing a Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Xây dựng Mô hình
 
 
 <!--
@@ -54,13 +57,16 @@ The model output has the same height and width as the input image and has a one-
 The final output channel contains the category prediction of the pixel of the corresponding spatial position.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng tôi sẽ trình bày một thiết kế cơ bản nhất của mô hình tích chập đầy đủ.
+Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng lớp nhãn thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và rộng của ánh xạ đặc trưng bằng với kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
+Đầu ra của mạng có cùng chiều cao và chiều rộng như ảnh gốc và có sự tương ứng một-một theo vị trí không gian.
+Kênh đầu ra cuối cùng chứa lớp dự đoán của từng điểm ảnh tương ứng với vị trí không gian. 
 
 <!--
 ![Fully convolutional network.](../img/fcn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/fcn.svg)
+![Mạng tích chập đầy đủ.](../img/fcn.svg)
 :label:`fig_fcn`
 
 
@@ -71,8 +77,10 @@ The `output` module contains the fully connected layer used for output.
 These layers are not required for a fully convolutional network.
 -->
 
-*dịch đoạn phía trên*
-
+Dưới đây, ta sử dụng mô hình ResNet-18 được tiền huấn luyện trên ImageNet để trích xuất đặc trưng và lưu thực thể mô hình là `pretrained_net`.
+Như ta thấy, hai tầng cuối của mô hình nằm trong biến thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
+Mô-đun `output` chứa tầng kết nối đầy đủ được sử dụng cho đầu ra.
+Các tầng này không bắt buộc phải có trong mạng tích chập đầy đủ.
 
 ```{.python .input  n=5}
 pretrained_net = gluon.model_zoo.vision.resnet18_v2(pretrained=True)
@@ -420,7 +428,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
