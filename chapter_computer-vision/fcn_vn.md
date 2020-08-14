@@ -20,15 +20,15 @@ Given a position on the spatial dimension, the output of the channel dimension w
 
 Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
 Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các nhãn điểm ảnh.
-Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo chiều không gian (chiều cao và rộng).
-Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục dự đoán tương ứng với điểm ảnh tại vị trí đó.
+Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
+Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
 
 
 <!--
 We will first import the package or module needed for the experiment and then explain the transposed convolution layer.
 -->
 
-Đầu tiên, ta sẽ nhập gói thư viện và mô-đun cần thiết cho thí nghiệm này và sau đó sẽ giải thích về tầng tích chập hoán vị.
+Đầu tiên, ta sẽ nhập gói thư viện và mô-đun cần thiết cho thí nghiệm này và sau đó sẽ giải thích về tầng tích chập chuyển vị.
 
 
 ```{.python .input  n=2}
