@@ -174,8 +174,16 @@ In this case MXNet blocks return to Python until the variable `z` has been compu
 
 
 Có khá nhiều thao tác buộc Python phải chờ cho đến khi nó hoàn thành:
-* Hiển nhiên nhất là lệnh `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn thành, bất chấp thời điểm câu lệnh tính toán được đưa ra. Trong thực tế, trừ khi thực sự cần thiết, việc sử dụng thao tác này là một ý tưởng tồi do nó có thể làm giảm hiệu năng.
-* Nếu ta chỉ muốn chờ đến khi một biến cụ thể nào đó sẵn sàng, ta có thể gọi `z.wait_to_read()`. Trong trường hợp này MXNet chặn việc trả luồng điều khiển về Python cho đến khi biến `z` đã được tính xong. Các thao tác khác sau đó mới có thể tiếp tục.
+
+* Hiển nhiên nhất là lệnh `npx.waitall()` chờ đến khi toàn bộ phép toán đã hoàn
+  thành, bất chấp thời điểm câu lệnh tính toán được đưa ra. Trong thực tế, trừ
+  khi thực sự cần thiết, việc sử dụng thao tác này là một ý tưởng tồi do nó có
+  thể làm giảm hiệu năng.
+ 
+* Nếu ta chỉ muốn chờ đến khi một biến cụ thể nào đó sẵn sàng, ta có thể gọi
+  `z.wait_to_read()`. Trong trường hợp này MXNet chặn việc trả luồng điều khiển
+  về Python cho đến khi biến `z` đã được tính xong. Các thao tác khác sau đó
+  mới có thể tiếp tục.
 
 
 <!--
