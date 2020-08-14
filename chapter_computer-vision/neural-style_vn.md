@@ -366,7 +366,7 @@ One common noise reduction method is total variation denoising.
 We assume that $x_{i, j}$ represents the pixel value at the coordinate $(i, j)$, so the total variance loss is:
 -->
 
-Đôi khi các ảnh tổng hợp mà ta học có tấn suất nhiễu khá cao, cụ thể là các điểm ảnh sáng hoặc tối.
+Đôi khi các ảnh tổng hợp mà ta học có nhiều nhiễu tần số cao, cụ thể là các điểm ảnh sáng hoặc tối.
 Khử nhiễu biến thiên toàn phần (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
 Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, mất mát biến thiên toàn phần bằng:
 
@@ -438,7 +438,7 @@ In the model, forward computation only returns the model parameter.
 
 Trong truyền tải phong cách, ảnh tổng hợp là biến số duy nhất mà ta cần cập nhật.
 Do đó, ta có thể định nghĩa một mô hình đơn giản, `GeneratedImage`, và coi ảnh tổng hợp như một tham số mô hình.
-Trong mô hình này, lượt tính xuôi chỉ trả về tham số mô hình.
+Trong mô hình này, lượt truyền xuôi chỉ trả về tham số mô hình.
 
 
 
@@ -654,5 +654,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
 
