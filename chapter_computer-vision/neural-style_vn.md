@@ -204,7 +204,7 @@ Tầng này được gọi là tầng nội dung.
 Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách cục bộ và toàn cục.
 Các tầng đó được gọi là các tầng phong cách.
 Như ta đã đề cập trong :numref:`sec_vgg`, mạng VGG có năm khối chập.
-Trong thử nghiệm này, ta chọn tầng chập cuối của khối chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
+Trong thử nghiệm này, ta chọn tầng cuối của khối tích chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
 Ta có thể nhận được các chỉ số ở các tầng đó thông qua việc in thử `pretrained_net`.
 
 ```{.python .input  n=5}
