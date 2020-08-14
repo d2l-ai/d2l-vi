@@ -164,7 +164,7 @@ Nói một cách đơn giản, để lấy điểm ảnh của ảnh đầu ra t
 Giá trị được ánh xạ $x'$ và $y'$ thường là các số thực.
 Sau đó, ta tìm bốn điểm ảnh gần toạ độ $(x', y')$ nhất trên ảnh đầu vào.
 Cuối cùng, các điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$ sẽ được tính toán dựa trên bốn điểm ảnh trên ảnh đầu vào vì khoảng cách tương đối tới $(x', y')$.
-Phép tăng chiều bằng ngoại suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị sử dụng hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
+Phép tăng chiều bằng nội suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị sử dụng hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
 Do giới hạn về số trang, ta chỉ lập trình hàm `bilinear_kernel` và sẽ không thảo luận các nguyên tắc cơ bản của thuật toán.
 
 
