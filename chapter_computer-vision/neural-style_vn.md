@@ -198,7 +198,7 @@ We can obtain the indexes for these layers by printing the `pretrained_net` inst
 
 Để trích các đặc trưng của ảnh nội dung và ảnh phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
 Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông tin chi tiết của ảnh càng dễ hơn.
-Trong khi  đầu ra xa hơn thì dễ dàng để trích các thông tin chung hơn.
+Trong khi đầu ra xa hơn thì dễ trích các thông tin toàn cục hơn.
 Để ngăn ảnh được tổng hợp không giữ quá nhiều chi tiết của ảnh nội dụng, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
 Tầng này được gọi là tầng nội dung.
 Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách chung và cục bộ.
