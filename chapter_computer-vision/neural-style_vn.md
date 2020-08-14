@@ -5,7 +5,7 @@
 # Neural Style Transfer
 -->
 
-# *dịch tiêu đề phía trên*
+# Truyền tải Phong cách Nơ-ron
 
 
 <!--
@@ -16,8 +16,11 @@ To create the ideal photo, you often need to try many different filter combinati
 This process is as complex as tuning the hyperparameters of a model.
 -->
 
-*dịch đoạn phía trên*
-
+Nếu có sử dụng các ứng dụng mạng xã hội hoặc là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc (*filter*).
+Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc mặt của những người trong ảnh trở nên trắng trẻo hơn.
+Tuy nhiên, thường một kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
+Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm với nhiều cách kết hợp kính lọc khác nhau.
+Quá trình này phức tạp ngang với việc tinh chỉnh siêu tham số của mô hình.
 
 <!--
 In this section, we will discuss how we can use convolution neural networks (CNNs) to automatically apply the style of one image to another image, 
@@ -30,14 +33,18 @@ The output composite image retains the overall shapes of the objects in the cont
 but applies the oil painting brushwork of the style image and makes the overall color more vivid.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, ta sẽ thảo luận cách sử dụng mạng nơ-ron tích chập (CNN) để tự động áp dụng phong cách của ảnh này cho ảnh khác. Thao tác này được gọi là truyền tải phong cách (*style transfer*) :cite:`Gatys.Ecker.Bethge.2016`.
+Ở đây ta sẽ cần hai ảnh đầu vào, một ảnh nội dung và một ảnh phong cách.
+Ta sẽ dùng mạng nơ-ron để biến đổi ảnh nội dung sao cho phong cách của nó giống như ảnh phong cách đã cho.
+Trong :numref:`fig_style_transfer`, ảnh nội dung là một bức ảnh phong cảnh được tác giả chụp ở công viên quốc gia Mount Rainier, gần Seattle.
+Ảnh phong cách là một bức tranh sơn dầu vẽ cây gỗ sồi vào mùa thu.
+Đầu ra là một ảnh kết hợp giữ lại được các hình dạng tổng thể của các vật trong ảnh nội dung, nhưng được áp dụng phong cách tranh sơn dầu của ảnh phong cách và giúp cho màu sắc trở nên sống động hơn.
 
 <!--
 ![Content and style input images and composite image produced by style transfer.](../img/style-transfer.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/style-transfer.svg)
+![Ảnh nội dung và ảnh phong cách đầu vào cùng với ảnh kết hợp được tạo ra từ việc truyền tải phong cách](../img/style-transfer.svg)
 :label:`fig_style_transfer`
 
 
@@ -45,7 +52,7 @@ but applies the oil painting brushwork of the style image and makes the overall 
 ## Technique
 -->
 
-## *dịch tiêu đề phía trên*
+## Kĩ thuật
 
 
 <!--
@@ -68,14 +75,29 @@ The loss functions used in style transfer generally have three parts:
 Finally, after we finish training the model, we output the style transfer model parameters to obtain the final composite image.
 -->
 
-*dịch đoạn phía trên*
-
+Mô hình truyền tải phong cách dựa trên CNN được biểu diễn trong :numref:`fig_style_transfer_model`.
+Đầu tiên ta sẽ khởi tạo ảnh kết hợp,
+có thể bằng cách sử dụng ảnh nội dung.
+Ảnh kết hợp này là biến (tức tham số mô hình) duy nhất cần được cập nhật trong quá trình truyền tải phong cách.
+Sau đó, ta sẽ chọn một CNN đã được tiền huấn luyện để thực hiện trích xuất đặc trưng của ảnh.
+Ta không cần phải cập nhật tham số của mạng CNN này trong quá trình huấn luyện.
+Mạng CNN sâu sử dụng nhiều tầng nơ-ron liên tiếp để trích xuất đặc trưng của ảnh.
+Ta có thể chọn đầu ra của một vài tầng nhất định làm đặc trưng nội dung hoặc đặc trưng phong cách.
+Nếu ta sử dụng cấu trúc trong :numref:`fig_style_transfer_model`, mạng nơ-ron đã tiền huấn luyện sẽ chứa ba tầng tích chập.
+Đầu ra của tầng thứ hai là đặc trưng nội dung ảnh, trong khi đầu ra của tầng thứ nhất và thứ ba được sử dụng làm đặc trưng phong cách.
+Tiếp theo, ta thực hiện lan truyền xuôi (theo hướng của các đường nét liền) để tính hàm mất mát truyền tải phong cách
+và lan truyền ngược (theo hướng của các đường nét đứt) để liên tục cập nhật ảnh kết hợp.
+Hàm mất mát được sử dụng trong việc truyền tải phong cách thường có ba phần:
+1. Mất mát nội dung giúp ảnh kết hợp có đặc trưng nội dung xấp xỉ với ảnh nội dung.
+2. Mất mát phong cách giúp ảnh kết hợp có đặc trưng phong cách xấp xỉ với ảnh phong cách.
+3. Mất mát biến thiên toàn phần giúp giảm nhiễu trong ảnh kết hợp.
+Cuối cùng, sau khi huấn luyện xong, ta sẽ có tham số của mô hình truyền tải phong cách và từ đó thu được ảnh kết hợp cuối.
 
 <!--
 ![CNN-based style transfer process. Solid lines show the direction of forward propagation and dotted lines show backward propagation.](../img/neural-style.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/neural-style.svg)
+![Quá trình truyền tải phong cách dựa trên CNN. Các đường nét liền thể hiện hướng của lan truyền xuôi và các đường nét đứt thể hiện hướng của lan truyền ngược](../img/neural-style.svg)
 :label:`fig_style_transfer_model`
 
 
@@ -83,7 +105,7 @@ Finally, after we finish training the model, we output the style transfer model 
 Next, we will perform an experiment to help us better understand the technical details of style transfer.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ thực hiện một thí nghiệm để giúp hiểu rõ hơn các chi tiết kỹ thuật của truyền tải phong cách.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -629,7 +651,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Phạm Minh Đức
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
@@ -648,5 +671,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
-
