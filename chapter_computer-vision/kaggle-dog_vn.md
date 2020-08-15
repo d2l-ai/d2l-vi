@@ -182,7 +182,7 @@ reorg_dog_data(data_dir, valid_ratio)
 ## Image Augmentation
 -->
 
-## *dịch tiêu đề phía trên*
+## Tăng cường Dữ liệu Ảnh
 
 
 
@@ -191,7 +191,8 @@ The size of the images in this section are larger than the images in the previou
 Here are some more image augmentation operations that might be useful.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này , kích thước ảnh lớn hơn phần trước.
+Dưới đây là một số kĩ thuật tăng cường dữ liệu ảnh có thể sẽ hữu dụng.
 
 
 ```{.python .input  n=4}
@@ -220,7 +221,7 @@ transform_train = gluon.data.vision.transforms.Compose([
 During testing, we only use definite image preprocessing operations.
 -->
 
-*dịch đoạn phía trên*
+Trong pha kiểm tra, ta chỉ sử dụng một số bước tiền xử lý ảnh nhất định.
 
 
 ```{.python .input}
@@ -241,14 +242,14 @@ transform_test = gluon.data.vision.transforms.Compose([
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Dữ liệu
 
 
 <!--
 As in the previous section, we can create an `ImageFolderDataset` instance to read the dataset containing the original image files.
 -->
 
-*dịch đoạn phía trên*
+Như trong phần trước, ta có thể tạo thực thể `ImageFolderDataset` để đọc dữ liệu chứa các tệp ảnh gốc.
 
 
 ```{.python .input  n=5}
@@ -263,7 +264,7 @@ train_ds, valid_ds, train_valid_ds, test_ds = [
 Here, we create `DataLoader` instances, just like in :numref:`sec_kaggle_cifar10`.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, ta tạo các thực thể `DataLoader` giống như trong :numref:`sec_kaggle_cifar10`.
 
 
 ```{.python .input}
@@ -285,7 +286,7 @@ test_iter = gluon.data.DataLoader(
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Mô hình 
 
 
 <!--
@@ -300,7 +301,15 @@ Different from the experiment in :numref:`sec_fine_tuning`, here, we do not retr
 This reduces the training time and the memory required to store model parameter gradients.
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu cho cuộc thi này là một phần của dữ liệu ImageNet.
+Do đó, ta có thể sử dụng cách tiếp cận được thảo luận trong :numref:`sec_fine_tuning` để lựa chọn mô hình đã được tiền huấn luyện trên toàn bộ dữ liệu ImageNet 
+và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho mạng tuỳ biến cỡ nhỏ.
+Gluon cung cấp một số các các mô hình đã được tiền huấn luyện.
+Ở đây, ta sử dụng mô hình ResNet-34 đã được tiền huấn luyện.
+Do dữ liệu của cuộc thi là tập con của tập dữ liệu tiền huấn luyện, ta đơn thuần sử dụng lại đầu vào của tầng đầu ra mô hình đã được tiền huấn luyện làm đặc trưng được được trích xuất.
+Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ tuần tự.
+Khác với thí nghiệm trong :numref:`sec_fine_tuning`, ở đây ta không huấn luyện lại mô hình trích xuất đặc trưng đã được tiền huấn luyện.
+Điều này giúp giảm thời gian huấn luyện và bộ nhớ cần thiết để lưu trữ gradient của tham số mô hình.
 
 
 <!--
@@ -308,7 +317,8 @@ You must note that, during image augmentation, we use the mean values and standa
 This is consistent with the normalization of the pre-trained model.
 -->
 
-*dịch đoạn phía trên*
+Bạn đọc lựu ý trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hoá.
+Điều này nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -332,7 +342,8 @@ When calculating the loss, we first use the member variable `features` to obtain
 Then, we use this feature as the input for our small custom output network and compute the output.
 -->
 
-*dịch đoạn phía trên*
+Khi tính toán mất mát, đầu tiên ta sử biến thành viên `features` để lấy đầu vào của tầng đầu ra mô hình được tiền huấn luyện làm đặc trưng trích xuất.
+Sau đó, ta sử dụng đặc trưng này làm đầu vào cho mạng đầu ra tuỳ biến cỡ nhỏ và tính toán đầu ra.
 
 
 ```{.python .input}
@@ -529,7 +540,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * 
