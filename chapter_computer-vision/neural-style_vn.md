@@ -516,7 +516,7 @@ def get_inits(X, device, lr, styles_Y):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
@@ -526,7 +526,10 @@ Because we only call the `asscalar` synchronization function every 50 epochs, th
 Therefore, we call the `waitall` synchronization function during every epoch.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
+Nhớ lại thảo luận về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
+Do ta chỉ gọi hàm đồng bộ hoá `asnumpy` sau mỗi 10 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ. <!-- bản gốc sai, sửa lại theo code phía dưới https://github.com/d2l-ai/d2l-en/pull/1350/files -->
+Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
 
 
 
@@ -563,7 +566,9 @@ First, we set the height and width of the content and style images to 150 by 225
 We use the content image to initialize the composite image.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta bắt đầu huấn luyện mô hình.
+Đầu tiên, ta đặt chiều cao và chiều rộng của ảnh nội dung và ảnh phong cách bằng 150 nhân 225 pixel.
+Ta sử dụng chính ảnh nội dung để khởi tạo cho ảnh tổng hợp.
 
 
 ```{.python .input  n=18}
@@ -580,7 +585,8 @@ As you can see, the composite image retains the scenery and objects of the conte
 Because the image is relatively small, the details are a bit fuzzy.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, ảnh tổng hợp giữ lại phong cảnh và vật thể trong ảnh nội dung, trong khi đưa vào màu sắc của ảnh phong cách.
+Do ảnh này khá nhỏ, các chi tiết có hơi mờ một chút.
 
 
 <!--
@@ -588,7 +594,8 @@ To obtain a clearer composite image, we train the model using a larger image siz
 We increase the height and width of the image used before by a factor of four and initialize a larger composite image.
 -->
 
-*dịch đoạn phía trên*
+Để thu được ảnh tổng hợp rõ ràng hơn, ta sử dụng ảnh có kích cỡ lớn hơn: $900 \times 600$, để huấn luyện mô hình.
+Ta tăng chiều cao và chiều rộng của ảnh vừa sử dụng lên bốn lần và khởi tạo ảnh tổng hợp lớn hơn.
 
 
 
@@ -608,14 +615,16 @@ As shown in :numref:`fig_style_transfer_large`, the composite image produced ret
 The composite image not only has large blocks of color like the style image, but these blocks even have the subtle texture of brush strokes.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, mỗi epoch cần nhiều thời gian hơn do kích thước ảnh lớn hơn.
+Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
+Ảnh tổng hợp không những có các khối màu giống như ảnh phong cách, mà các khối này còn có hoa văn phảng phất nét vẽ bút lông.
 
 
 <!--
 ![$900 \times 600$ composite image.](../img/neural-style.jpg)
 -->
 
-![*dịch mô tả phía trên*](../img/neural-style.jpg)
+![Ảnh tổng hợp kích thước $900 \times 600$](../img/neural-style.jpg)
 :width:`500px`
 :label:`fig_style_transfer_large`
 
@@ -687,7 +696,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
