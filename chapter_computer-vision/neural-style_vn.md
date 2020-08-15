@@ -242,7 +242,8 @@ During feature extraction, we only need to use all the VGG layers from the input
 Below, we build a new network, `net`, which only retains the layers in the VGG network we need to use. We then use `net` to extract features.
 -->
 
-*dịch đoạn phía trên*
+Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung hoặc phong cách gần tầng đầu ra nhất. 
+Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng ta cần trong mạng VGG. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
 
 
 ```{.python .input  n=6}
@@ -257,7 +258,8 @@ Given input `X`, if we simply call the forward computation `net(X)`, we can only
 Because we also need the outputs of the intermediate layers, we need to perform layer-by-layer computation and retain the content and style layer outputs.
 -->
 
-*dịch đoạn phía trên*
+Với đầu vào `X`, nếu ta chỉ đơn thuần thực hiện lượt truyền xuôi `net(X)`, ta chỉ có thể thu được đầu ra của tầng cuối cùng.
+Bởi vì ta cũng cần đầu ra của các tầng trung gian, nên ta phải thực hiện phép tính theo từng tầng và giữ lại đầu ra của tầng nội dung và phong cách.
 
 
 ```{.python .input  n=7}
@@ -283,8 +285,13 @@ As the composite image is the model parameter that must be updated during style 
 we can only call the `extract_features` function during training to extract the content and style features of the composite image.
 -->
 
-*dịch đoạn phía trên*
-
+Tiếp theo, ta định nghĩa hai hàm đó là: 
+Hàm `get_contents` để lấy đặc trưng nội dung trích xuất từ ảnh nội dung,
+và hàm `get_styles` để lấy đặc trưng phong cách trích xuất từ ảnh phong cách.
+Do trong lúc huấn luyện, ta không cần thay đổi các tham số của của mô hình VGG đã được tiền huấn luyện,
+nên ta có thể trích xuất đặc trưng nội dung từ ảnh nội dung và đặc trưng phong cách từ ảnh phong cách trước khi bắt đầu huấn luyện. 
+Bởi vì ảnh kết hợp là các tham số mô hình sẽ được cập nhật trong quá trình truyền tải phong cách,
+ta có thể chỉ cần gọi hàm `extract_features` trong lúc huấn luyện để trích xuất đặc trưng nội dung và phong cách của ảnh kết hợp.
 
 
 ```{.python .input  n=8}
@@ -686,7 +693,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * 
