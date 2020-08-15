@@ -197,7 +197,7 @@ In the example below, we define a $3\times$ input $X$ with a $2\times 2$ kernel 
 -->
 
 Tên của tích chập chuyển vị có xuất phát từ phép chuyển vị ma trận.
-Thật vậy, phép tính chập có thể tính thông quan phép nhân ma trận.
+Thật vậy, phép tính chập có thể tính thông qua phép nhân ma trận.
 Trong ví dụ dưới đây, ta định nghĩa một biến đầu vào $X$ $3\times 3$ với một kernel $K$ $2\times 2$, rồi dùng `corr2d` để tính ra tích chập.
 
 
