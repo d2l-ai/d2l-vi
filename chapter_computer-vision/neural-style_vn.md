@@ -208,7 +208,7 @@ Below, we build a new network, `net`, which only retains the layers in the VGG n
 -->
 
 Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung và phong cách gần tầng đầu ra nhất. 
-Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng nói trên trong mạng VGG mà ta cần. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
+Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng ta cần trong mạng VGG. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
 
 
 ```{.python .input  n=6}
