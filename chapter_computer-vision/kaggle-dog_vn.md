@@ -191,7 +191,7 @@ The size of the images in this section are larger than the images in the previou
 Here are some more image augmentation operations that might be useful.
 -->
 
-Trong phần này , kích thước ảnh lớn hơn phần trước.
+Trong phần này, kích thước ảnh lớn hơn phần trước.
 Dưới đây là một số kĩ thuật tăng cường dữ liệu ảnh có thể sẽ hữu dụng.
 
 
@@ -544,7 +544,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
 
 
