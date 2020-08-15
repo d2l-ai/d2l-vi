@@ -46,7 +46,7 @@ Hình :numref:`fig_kaggle_cifar10` cho biết thông tin trên  trang web của 
 ![CIFAR-10 image classification competition webpage information. The dataset for the competition can be accessed by clicking the "Data" tab.](../img/kaggle_cifar10.png)
 -->
 
-![Thông tin trang web cuộc thi đấu phân loại ảnh CIFAR-10. Tập dữ liệu cho cuộc thi có thể truy xuất bằng cách chọn vào tab "Data".](../img/kaggle_cifar10.png)
+![Thông tin trang web cuộc thi phân loại ảnh CIFAR-10. Tập dữ liệu cho cuộc thi có thể truy xuất bằng cách chọn vào bảng "Data".](../img/kaggle_cifar10.png)
 :width:`600px`
 :label:`fig_kaggle_cifar10`
 
@@ -653,4 +653,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
