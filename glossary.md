@@ -447,7 +447,6 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | skip-gram (model) | (mô hình) skip-gram | |
 | significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | slicing (an array)                | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH) |
 | source data / distribution        | dữ liệu / phân phối gốc  | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | spam email                        | email rác                |                                              |
