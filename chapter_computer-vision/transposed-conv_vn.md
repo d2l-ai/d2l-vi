@@ -234,7 +234,7 @@ W
 Then the convolution operator can be implemented by matrix multiplication with proper reshaping.
 -->
 
-Rồi toán tử chập có thể được thực hiền nhờ phép nhân ma trận với việc chỉnh lại kích thước phù hợp.
+Rồi toán tử chập có thể được thực hiện nhờ phép nhân ma trận với việc chỉnh lại kích thước phù hợp.
 
 
 ```{.python .input}
