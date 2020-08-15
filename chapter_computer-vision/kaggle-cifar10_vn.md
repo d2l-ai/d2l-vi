@@ -5,7 +5,7 @@
 # Image Classification (CIFAR-10) on Kaggle
 -->
 
-# *dịch tiêu đề phía trên*
+# Phân loại ảnh (CIFAR-10) trên Kaggle
 :label:`sec_kaggle_cifar10`
 
 
@@ -15,8 +15,9 @@ In practice, however, image datasets often exist in the format of image files.
 In this section, we will start with the original image files and organize, read, and convert the files to the tensor format step by step.
 -->
 
-*dịch đoạn phía trên*
-
+Cho đến lúc này, ta đã và đang sử dụng  gói `data` của Gluon để lấy trực tiếp các tập dữ liệu dưới định dạng tensor.
+Tuy nhiên, trong thực tế thì các dữ liệu ảnh thường tồn tại ở định dạng các tập tin ảnh.
+Trong phần này, ta sẽ bắt đầu với các tập tin ảnh gốc và từng bước một tổ chức, đọc và chuyển đổi các ảnh này sang định dạng tensor. 
 
 <!--
 We performed an experiment on the CIFAR-10 dataset in :numref:`sec_image_augmentation`.
@@ -25,8 +26,10 @@ Now, we will apply the knowledge we learned in the previous sections in order to
 The competition's web address is
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta thực hiện thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
+Đây là một tập dữ liệu quan trọng trong lĩnh vực thị giác máy tính.
+Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi trên Kaggle nhắm tới các bài toán phân loại tập ảnh CIFAR-10.
+Địa chỉ trang web  của cuộc thi tại 
 
 > https://www.kaggle.com/c/cifar-10
 
@@ -36,14 +39,14 @@ The competition's web address is
 In order to submit the results, please register an account on the Kaggle website first.
 -->
 
-*dịch đoạn phía trên*
-
+Hình :numref:`fig_kaggle_cifar10` cho biết thông tin trên  trang web của cuộc thi.
+Để có thể tham gia nộp kết quả, vui lòng đăng ký một tài khoản trên trang Kaggle trước tiên.
 
 <!--
 ![CIFAR-10 image classification competition webpage information. The dataset for the competition can be accessed by clicking the "Data" tab.](../img/kaggle_cifar10.png)
 -->
 
-![*dịch mô tả phía trên*](../img/kaggle_cifar10.png)
+![Thông tin trang web cuộc thi phân loại ảnh CIFAR-10. Tập dữ liệu cho cuộc thi có thể truy xuất bằng cách chọn vào bảng "Data".](../img/kaggle_cifar10.png)
 :width:`600px`
 :label:`fig_kaggle_cifar10`
 
@@ -52,7 +55,7 @@ In order to submit the results, please register an account on the Kaggle website
 First, import the packages or modules required for the competition.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, nạp các gói và mô-đun cần cho cuộc thi này.
 
 
 ```{.python .input  n=14}
@@ -74,7 +77,7 @@ npx.set_np()
 ## Obtaining and Organizing the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Tải và tổ chức tập dữ liệu
 
 
 <!--
@@ -87,7 +90,13 @@ The images cover $10$ categories: planes, cars, birds, cats, deer, dogs, frogs, 
 The upper-left corner of Figure 9.16 shows some images of planes, cars, and birds in the dataset.
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu thi đấu được chia thành tập dữ liệu huấn luyện và tập kiểm thử.
+Tập huấn luyện chứa $50,000$ ảnh.
+Tập kiểm thử chứa $300,000$ ảnh, trong đó có $10,000$ ảnh được sử dụng để tính điểm,
+trong khi $290,000$ không được dùng tính điểm được đưa vào để ngăn ngừa việc dán nhãn thủ công vào tập kiểm thử và rồi nộp kết quả đã dán nhãn.
+Định dạng ảnh trong cả hai tập dữ liệu là dạng PNG, với chiều cao và chiều rộng là 32 điểm ảnh với ba kênh màu (RGB).
+Các ảnh được phân thành $10$ nhóm: máy bay, xe hơi, chim, mèo, nai, chó, ếch, ngựa, thuyền và xe tải.
+Góc trên-bên trái của Hình 9.16 hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -631,7 +640,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
@@ -644,6 +653,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
-
-

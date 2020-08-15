@@ -5,7 +5,7 @@
 # Neural Style Transfer
 -->
 
-# *dịch tiêu đề phía trên*
+# Truyền tải Phong cách Nơ-ron
 
 
 <!--
@@ -16,8 +16,11 @@ To create the ideal photo, you often need to try many different filter combinati
 This process is as complex as tuning the hyperparameters of a model.
 -->
 
-*dịch đoạn phía trên*
-
+Nếu có sử dụng các ứng dụng mạng xã hội hoặc là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc (*filter*).
+Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc mặt của những người trong ảnh trở nên trắng trẻo hơn.
+Tuy nhiên, thường một kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
+Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm với nhiều cách kết hợp kính lọc khác nhau.
+Quá trình này phức tạp ngang với việc tinh chỉnh siêu tham số của mô hình.
 
 <!--
 In this section, we will discuss how we can use convolution neural networks (CNNs) to automatically apply the style of one image to another image, 
@@ -30,14 +33,18 @@ The output composite image retains the overall shapes of the objects in the cont
 but applies the oil painting brushwork of the style image and makes the overall color more vivid.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, ta sẽ thảo luận cách sử dụng mạng nơ-ron tích chập (CNN) để tự động áp dụng phong cách của ảnh này cho ảnh khác. Thao tác này được gọi là truyền tải phong cách (*style transfer*) :cite:`Gatys.Ecker.Bethge.2016`.
+Ở đây ta sẽ cần hai ảnh đầu vào, một ảnh nội dung và một ảnh phong cách.
+Ta sẽ dùng mạng nơ-ron để biến đổi ảnh nội dung sao cho phong cách của nó giống như ảnh phong cách đã cho.
+Trong :numref:`fig_style_transfer`, ảnh nội dung là một bức ảnh phong cảnh được tác giả chụp ở công viên quốc gia Mount Rainier, gần Seattle.
+Ảnh phong cách là một bức tranh sơn dầu vẽ cây gỗ sồi vào mùa thu.
+Đầu ra là một ảnh kết hợp giữ lại được các hình dạng tổng thể của các vật trong ảnh nội dung, nhưng được áp dụng phong cách tranh sơn dầu của ảnh phong cách và giúp cho màu sắc trở nên sống động hơn.
 
 <!--
 ![Content and style input images and composite image produced by style transfer.](../img/style-transfer.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/style-transfer.svg)
+![Ảnh nội dung và ảnh phong cách đầu vào cùng với ảnh kết hợp được tạo ra từ việc truyền tải phong cách](../img/style-transfer.svg)
 :label:`fig_style_transfer`
 
 
@@ -45,7 +52,7 @@ but applies the oil painting brushwork of the style image and makes the overall 
 ## Technique
 -->
 
-## *dịch tiêu đề phía trên*
+## Kĩ thuật
 
 
 <!--
@@ -68,14 +75,29 @@ The loss functions used in style transfer generally have three parts:
 Finally, after we finish training the model, we output the style transfer model parameters to obtain the final composite image.
 -->
 
-*dịch đoạn phía trên*
-
+Mô hình truyền tải phong cách dựa trên CNN được biểu diễn trong :numref:`fig_style_transfer_model`.
+Đầu tiên ta sẽ khởi tạo ảnh kết hợp,
+có thể bằng cách sử dụng ảnh nội dung.
+Ảnh kết hợp này là biến (tức tham số mô hình) duy nhất cần được cập nhật trong quá trình truyền tải phong cách.
+Sau đó, ta sẽ chọn một CNN đã được tiền huấn luyện để thực hiện trích xuất đặc trưng của ảnh.
+Ta không cần phải cập nhật tham số của mạng CNN này trong quá trình huấn luyện.
+Mạng CNN sâu sử dụng nhiều tầng nơ-ron liên tiếp để trích xuất đặc trưng của ảnh.
+Ta có thể chọn đầu ra của một vài tầng nhất định làm đặc trưng nội dung hoặc đặc trưng phong cách.
+Nếu ta sử dụng cấu trúc trong :numref:`fig_style_transfer_model`, mạng nơ-ron đã tiền huấn luyện sẽ chứa ba tầng tích chập.
+Đầu ra của tầng thứ hai là đặc trưng nội dung ảnh, trong khi đầu ra của tầng thứ nhất và thứ ba được sử dụng làm đặc trưng phong cách.
+Tiếp theo, ta thực hiện lan truyền xuôi (theo hướng của các đường nét liền) để tính hàm mất mát truyền tải phong cách
+và lan truyền ngược (theo hướng của các đường nét đứt) để liên tục cập nhật ảnh kết hợp.
+Hàm mất mát được sử dụng trong việc truyền tải phong cách thường có ba phần:
+1. Mất mát nội dung giúp ảnh kết hợp có đặc trưng nội dung xấp xỉ với ảnh nội dung.
+2. Mất mát phong cách giúp ảnh kết hợp có đặc trưng phong cách xấp xỉ với ảnh phong cách.
+3. Mất mát biến thiên toàn phần giúp giảm nhiễu trong ảnh kết hợp.
+Cuối cùng, sau khi huấn luyện xong, ta sẽ có tham số của mô hình truyền tải phong cách và từ đó thu được ảnh kết hợp cuối.
 
 <!--
 ![CNN-based style transfer process. Solid lines show the direction of forward propagation and dotted lines show backward propagation.](../img/neural-style.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/neural-style.svg)
+![Quá trình truyền tải phong cách dựa trên CNN. Các đường nét liền thể hiện hướng của lan truyền xuôi và các đường nét đứt thể hiện hướng của lan truyền ngược](../img/neural-style.svg)
 :label:`fig_style_transfer_model`
 
 
@@ -83,7 +105,7 @@ Finally, after we finish training the model, we output the style transfer model 
 Next, we will perform an experiment to help us better understand the technical details of style transfer.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ thực hiện một thí nghiệm để giúp hiểu rõ hơn các chi tiết kỹ thuật của truyền tải phong cách.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -94,7 +116,7 @@ Next, we will perform an experiment to help us better understand the technical d
 ## Reading the Content and Style Images
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc ảnh nội dung và ảnh phong cách
 
 
 <!--
@@ -102,7 +124,8 @@ First, we read the content and style images.
 By printing out the image coordinate axes, we can see that they have different dimensions.
 -->
 
-*dịch đoạn phía trên*
+Trước hết, ta đọc các ảnh nội dung và ảnh phong cách.
+Bằng cách in ra các trục tọa độ ảnh, ta có thể thấy rằng chúng có các chiều khác nhau.
 
 
 ```{.python .input  n=1}
@@ -128,7 +151,7 @@ d2l.plt.imshow(style_img.asnumpy());
 ## Preprocessing and Postprocessing
 -->
 
-## *dịch tiêu đề phía trên*
+## Tiền xử lý và hậu xử lý
 
 <!--
 Below, we define the functions for image preprocessing and postprocessing. 
@@ -138,7 +161,11 @@ Because the image printing function requires that each pixel has a floating poin
 we use the `clip` function to replace values smaller than 0 or greater than 1 with 0 or 1, respectively.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta định nghĩa các hàm tiền xử lý và hậu xử lý ảnh.
+Hàm `preprocess` chuẩn hóa các kênh RGB của ảnh đầu vào và chuyển kết quả sang định dạng có thể đưa vào mạng CNN.
+Hàm `postprocess` khôi phục các giá trị điểm ảnh của ảnh đầu ra về các giá trị gốc của nó trước khi chuẩn hóa.
+Vì hàm in ảnh đòi hỏi mỗi điểm ảnh có giá trị thực từ 0 tới 1,
+ta sử dụng hàm `clip` để thay thế các giá trị nhỏ hơn 0 hoặc lớn hơn 1 lần lượt bằng 0 hoặc 1.
 
 
 ```{.python .input  n=3}
@@ -163,14 +190,14 @@ def postprocess(img):
 ## Extracting Features
 -->
 
-## *dịch tiêu đề phía trên*
+## Trích xuất đặc trưng
 
 
 <!--
 We use the VGG-19 model pre-trained on the ImageNet dataset to extract image features[1].
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng mô hình VGG-19 tiền huấn luyện trên tập dữ liệu ImagNet để trích các đặc trưng của ảnh[1].
 
 
 ```{.python .input  n=4}
@@ -191,8 +218,16 @@ In this experiment, we select the last convolutional layer of the fourth convolu
 We can obtain the indexes for these layers by printing the `pretrained_net` instance.
 -->
 
-*dịch đoạn phía trên*
-
+Để trích các đặc trưng nội dung và phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
+Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông tin chi tiết của ảnh càng dễ hơn.
+Trong khi đầu ra xa hơn thì dễ trích các thông tin toàn cục hơn.
+Để ngăn ảnh tổng hợp không giữ quá nhiều chi tiết của ảnh nội dung, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
+Tầng này được gọi là tầng nội dung.
+Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách cục bộ và toàn cục.
+Các tầng đó được gọi là các tầng phong cách.
+Như ta đã đề cập trong :numref:`sec_vgg`, mạng VGG có năm khối tích chập.
+Trong thử nghiệm này, ta chọn tầng cuối của khối tích chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
+Ta có thể nhận được các chỉ số ở các tầng đó thông qua việc in thử `pretrained_net`.
 
 ```{.python .input  n=5}
 style_layers, content_layers = [0, 5, 10, 19, 28], [25]
@@ -207,7 +242,8 @@ During feature extraction, we only need to use all the VGG layers from the input
 Below, we build a new network, `net`, which only retains the layers in the VGG network we need to use. We then use `net` to extract features.
 -->
 
-*dịch đoạn phía trên*
+Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung hoặc phong cách gần tầng đầu ra nhất. 
+Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng ta cần trong mạng VGG. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
 
 
 ```{.python .input  n=6}
@@ -222,7 +258,8 @@ Given input `X`, if we simply call the forward computation `net(X)`, we can only
 Because we also need the outputs of the intermediate layers, we need to perform layer-by-layer computation and retain the content and style layer outputs.
 -->
 
-*dịch đoạn phía trên*
+Với đầu vào `X`, nếu ta chỉ đơn thuần thực hiện lượt truyền xuôi `net(X)`, ta chỉ có thể thu được đầu ra của tầng cuối cùng.
+Bởi vì ta cũng cần đầu ra của các tầng trung gian, nên ta phải thực hiện phép tính theo từng tầng và giữ lại đầu ra của tầng nội dung và phong cách.
 
 
 ```{.python .input  n=7}
@@ -248,8 +285,13 @@ As the composite image is the model parameter that must be updated during style 
 we can only call the `extract_features` function during training to extract the content and style features of the composite image.
 -->
 
-*dịch đoạn phía trên*
-
+Tiếp theo, ta định nghĩa hai hàm đó là: 
+Hàm `get_contents` để lấy đặc trưng nội dung trích xuất từ ảnh nội dung,
+và hàm `get_styles` để lấy đặc trưng phong cách trích xuất từ ảnh phong cách.
+Do trong lúc huấn luyện, ta không cần thay đổi các tham số của của mô hình VGG đã được tiền huấn luyện,
+nên ta có thể trích xuất đặc trưng nội dung từ ảnh nội dung và đặc trưng phong cách từ ảnh phong cách trước khi bắt đầu huấn luyện. 
+Bởi vì ảnh kết hợp là các tham số mô hình sẽ được cập nhật trong quá trình truyền tải phong cách,
+ta có thể chỉ cần gọi hàm `extract_features` trong lúc huấn luyện để trích xuất đặc trưng nội dung và phong cách của ảnh kết hợp.
 
 
 ```{.python .input  n=8}
@@ -370,7 +412,7 @@ def style_loss(Y_hat, gram_Y):
 ### Total Variance Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Biến thiên Toàn phần
 
 
 <!--
@@ -379,7 +421,9 @@ One common noise reduction method is total variation denoising.
 We assume that $x_{i, j}$ represents the pixel value at the coordinate $(i, j)$, so the total variance loss is:
 -->
 
-*dịch đoạn phía trên*
+Đôi khi các ảnh tổng hợp mà ta học có nhiều nhiễu tần số cao, cụ thể là các điểm ảnh sáng hoặc tối.
+Khử nhiễu biến thiên toàn phần (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
+Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, mất mát biến thiên toàn phần bằng:
 
 
 $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\right|.$$
@@ -389,7 +433,7 @@ $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\r
 We try to make the values of neighboring pixels as similar as possible.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ cố làm cho giá trị của các điểm ảnh lân cận càng giống nhau càng tốt.
 
 
 ```{.python .input  n=13}
@@ -403,7 +447,7 @@ def tv_loss(Y_hat):
 ### The Loss Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Mất mát
 
 
 <!--
@@ -411,7 +455,8 @@ The loss function for style transfer is the weighted sum of the content loss, st
 By adjusting these weight hyperparameters, we can balance the retained content, transferred style, and noise reduction in the composite image according to their relative importance.
 -->
 
-*dịch đoạn phía trên*
+Hàm mất mát trong truyền tải phong cách bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
+Thông qua việc điều chỉnh các siêu tham số trọng số này, ta có thể cân bằng giữa phần nội dung giữ lại, phong cách truyền tải và mức giảm nhiễu trong ảnh tổng hợp dựa theo từng giá trị tương ứng của chúng.
 
 
 ```{.python .input  n=14}
@@ -437,7 +482,7 @@ def compute_loss(X, contents_Y_hat, styles_Y_hat, contents_Y, styles_Y_gram):
 ## Creating and Initializing the Composite Image
 -->
 
-## *dịch tiêu đề phía trên*
+## Khai báo và Khởi tạo Ảnh Tổng hợp
 
 
 <!--
@@ -446,7 +491,9 @@ Therefore, we can define a simple model, `GeneratedImage`, and treat the composi
 In the model, forward computation only returns the model parameter.
 -->
 
-*dịch đoạn phía trên*
+Trong truyền tải phong cách, ảnh tổng hợp là biến số duy nhất mà ta cần cập nhật.
+Do đó, ta có thể định nghĩa một mô hình đơn giản, `GeneratedImage`, và coi ảnh tổng hợp như một tham số mô hình.
+Trong mô hình này, lượt truyền xuôi chỉ trả về tham số mô hình.
 
 
 
@@ -466,7 +513,8 @@ Next, we define the `get_inits` function. This function creates a composite imag
 The Gram matrix for the various style layers of the style image, `styles_Y_gram`, is computed prior to training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa hàm `get_inits`. Hàm này khai báo một đối tượng mô hình ảnh tổng hợp và khởi tạo đối tượng theo ảnh `X`.
+Ma trận Gram cho các tầng phong cách khác nhau của ảnh phong cách, `styles_Y_gram`, được tính trước khi huấn luyện.
 
 
 
@@ -488,7 +536,7 @@ def get_inits(X, device, lr, styles_Y):
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
@@ -498,7 +546,10 @@ Because we only call the `asscalar` synchronization function every 50 epochs, th
 Therefore, we call the `waitall` synchronization function during every epoch.
 -->
 
-*dịch đoạn phía trên*
+Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
+Nhớ lại thảo luận về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
+Do ta chỉ gọi hàm đồng bộ hoá `asnumpy` sau mỗi 10 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ. <!-- bản gốc sai, sửa lại theo code phía dưới https://github.com/d2l-ai/d2l-en/pull/1350/files -->
+Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
 
 
 
@@ -535,7 +586,9 @@ First, we set the height and width of the content and style images to 150 by 225
 We use the content image to initialize the composite image.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta bắt đầu huấn luyện mô hình.
+Đầu tiên, ta đặt chiều cao và chiều rộng của ảnh nội dung và ảnh phong cách bằng 150 nhân 225 pixel.
+Ta sử dụng chính ảnh nội dung để khởi tạo cho ảnh tổng hợp.
 
 
 ```{.python .input  n=18}
@@ -552,7 +605,8 @@ As you can see, the composite image retains the scenery and objects of the conte
 Because the image is relatively small, the details are a bit fuzzy.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, ảnh tổng hợp giữ lại phong cảnh và vật thể trong ảnh nội dung, trong khi đưa vào màu sắc của ảnh phong cách.
+Do ảnh này khá nhỏ, các chi tiết có hơi mờ một chút.
 
 
 <!--
@@ -560,7 +614,8 @@ To obtain a clearer composite image, we train the model using a larger image siz
 We increase the height and width of the image used before by a factor of four and initialize a larger composite image.
 -->
 
-*dịch đoạn phía trên*
+Để thu được ảnh tổng hợp rõ ràng hơn, ta sử dụng ảnh có kích cỡ lớn hơn: $900 \times 600$, để huấn luyện mô hình.
+Ta tăng chiều cao và chiều rộng của ảnh vừa sử dụng lên bốn lần và khởi tạo ảnh tổng hợp lớn hơn.
 
 
 
@@ -580,14 +635,16 @@ As shown in :numref:`fig_style_transfer_large`, the composite image produced ret
 The composite image not only has large blocks of color like the style image, but these blocks even have the subtle texture of brush strokes.
 -->
 
-*dịch đoạn phía trên*
+Như bạn có thể thấy, mỗi epoch cần nhiều thời gian hơn do kích thước ảnh lớn hơn.
+Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
+Ảnh tổng hợp không những có các khối màu giống như ảnh phong cách, mà các khối này còn có hoa văn phảng phất nét vẽ bút lông.
 
 
 <!--
 ![$900 \times 600$ composite image.](../img/neural-style.jpg)
 -->
 
-![*dịch mô tả phía trên*](../img/neural-style.jpg)
+![Ảnh tổng hợp kích thước $900 \times 600$](../img/neural-style.jpg)
 :width:`500px`
 :label:`fig_style_transfer_large`
 
@@ -642,23 +699,24 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Phạm Minh Đức
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
-
