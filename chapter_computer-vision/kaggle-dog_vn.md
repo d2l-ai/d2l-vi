@@ -359,7 +359,7 @@ def evaluate_loss(data_iter, net, devices):
 ## Defining the Training Functions
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Huấn luyện
 
 
 <!--
@@ -367,7 +367,8 @@ We will select the model and tune hyperparameters according to the model's perfo
 The model training function `train` only trains the small custom output network.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lựa chọn mô hình và điều chỉnh siêu tham số dựa trên chất lượng mô hình trên tập kiểm định.
+Hàm huấn luyện mô hình `train` chỉ huấn luyện mạng đầu ra tuỳ biến cỡ nhỏ.
 
 
 ```{.python .input}
@@ -416,7 +417,7 @@ def train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Training and Validating the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện và Kiểm định Mô hình
 
 
 <!--
@@ -425,7 +426,10 @@ For example, we can increase the number of epochs.
 Because `lr_period` and `lr_decay` are set to 10 and 0.1 respectively, the learning rate of the optimization algorithm will be multiplied by 0.1 after every 10 epochs.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta có thể huấn luyện và kiểm định mô hình. Các siêu tham số dưới đây có thể được điều chỉnh.
+Ví dụ, ta có thể tăng số lượng epoch.
+Do `lr_period` và `lr_decay` được thiết lập bằng 10 và 0.1, tốc độ học của thuật toán tối ưu sẽ được nhân với 0.1 sau mỗi 10 epoch.
+
 
 
 ```{.python .input  n=9}
@@ -441,7 +445,7 @@ train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Classifying the Testing Set and Submitting Results on Kaggle
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán trên tập Kiểm tra và Nộp Kết quả lên Kaggle
 
 
 <!--
@@ -449,7 +453,8 @@ After obtaining a satisfactory model design and hyperparameters, we use all trai
 Note that predictions are made by the output network we just trained.
 -->
 
-*dịch đoạn phía trên*
+Sau khi thu được một thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng tất cả dữ liệu huấn luyện (bao gồm dữ liệu kiểm định) để huấn luyện lại mô hình, sau đó thực hiện dự đoán trên tập kiểm tra.
+Chú ý rằng các dự đoán được lấy từ mạng đầu ra mà ta đã huấn luyện.
 
 
 ```{.python .input  n=8}
@@ -479,7 +484,9 @@ The format of this file is consistent with the Kaggle competition requirements.
 The method for submitting results is similar to method in :numref:`sec_kaggle_house`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi chạy đoạn mã trên, ta sẽ sinh tệp "submission.csv".
+Định dạng của tệp này nhất quán với yêu cầu của cuộc thi Kaggle này.
+Cách thức nộp kết quả tương tự như trong :numref:`sec_kaggle_house`.
 
 
 ## Tóm tắt
@@ -489,7 +496,8 @@ We can use a model pre-trained on the ImageNet dataset to extract features and o
 This will allow us to classify a subset of the ImageNet dataset with lower computing and storage overhead.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tuỳ biến cỡ nhỏ. 
+Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phép bộ nhớ và tính toán thấp hơn.
 
 
 ## Bài tập
@@ -500,7 +508,9 @@ This will allow us to classify a subset of the ImageNet dataset with lower compu
 3. Scan the QR code to access the relevant discussions and exchange ideas about the methods used and the results obtained with the community. Can you come up with any better techniques?
 -->
 
-*dịch đoạn phía trên*
+1. Khi sử dụng toàn bộ dữ liệu Kaggle, bạn sẽ thu được kết quả như thế nào khi tăng `batch_size` (kích thước batch) và `num_epochs` (số lượng epoch)?
+2. Bạn có đạt được kết quả tốt hơn nếu bạn sử dụng mô hình đã được tiền huấn luyện sâu hơn.
+3. Hãy quét mã QR để tham gia thảo luận và trao đổi ý tưởng về các phương pháp đã được sử dụng và kết quả thu được từ cộng đồng Kaggle. Có thể bạn sẽ có một ý tưởng hay kỹ thuật tốt hơn?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -532,7 +542,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 
 
