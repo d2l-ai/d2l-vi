@@ -392,7 +392,7 @@ def style_loss(Y_hat, gram_Y):
 ### Total Variance Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Biến thiên Toàn phần
 
 
 <!--
@@ -401,7 +401,9 @@ One common noise reduction method is total variation denoising.
 We assume that $x_{i, j}$ represents the pixel value at the coordinate $(i, j)$, so the total variance loss is:
 -->
 
-*dịch đoạn phía trên*
+Đôi khi các ảnh tổng hợp mà ta học có nhiều nhiễu tần số cao, cụ thể là các điểm ảnh sáng hoặc tối.
+Khử nhiễu biến thiên toàn phần (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
+Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, mất mát biến thiên toàn phần bằng:
 
 
 $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\right|.$$
@@ -411,7 +413,7 @@ $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\r
 We try to make the values of neighboring pixels as similar as possible.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ cố làm cho giá trị của các điểm ảnh lân cận càng giống nhau càng tốt.
 
 
 ```{.python .input  n=13}
@@ -425,7 +427,7 @@ def tv_loss(Y_hat):
 ### The Loss Function
 -->
 
-### *dịch tiêu đề phía trên*
+### Hàm Mất mát
 
 
 <!--
@@ -433,7 +435,8 @@ The loss function for style transfer is the weighted sum of the content loss, st
 By adjusting these weight hyperparameters, we can balance the retained content, transferred style, and noise reduction in the composite image according to their relative importance.
 -->
 
-*dịch đoạn phía trên*
+Hàm mất mát trong truyền tải phong cách bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
+Thông qua việc điều chỉnh các siêu tham số trọng số này, ta có thể cân bằng giữa phần nội dung giữ lại, phong cách truyền tải và mức giảm nhiễu trong ảnh tổng hợp dựa theo từng giá trị tương ứng của chúng.
 
 
 ```{.python .input  n=14}
@@ -459,7 +462,7 @@ def compute_loss(X, contents_Y_hat, styles_Y_hat, contents_Y, styles_Y_gram):
 ## Creating and Initializing the Composite Image
 -->
 
-## *dịch tiêu đề phía trên*
+## Khai báo và Khởi tạo Ảnh Tổng hợp
 
 
 <!--
@@ -468,7 +471,9 @@ Therefore, we can define a simple model, `GeneratedImage`, and treat the composi
 In the model, forward computation only returns the model parameter.
 -->
 
-*dịch đoạn phía trên*
+Trong truyền tải phong cách, ảnh tổng hợp là biến số duy nhất mà ta cần cập nhật.
+Do đó, ta có thể định nghĩa một mô hình đơn giản, `GeneratedImage`, và coi ảnh tổng hợp như một tham số mô hình.
+Trong mô hình này, lượt truyền xuôi chỉ trả về tham số mô hình.
 
 
 
@@ -488,7 +493,8 @@ Next, we define the `get_inits` function. This function creates a composite imag
 The Gram matrix for the various style layers of the style image, `styles_Y_gram`, is computed prior to training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa hàm `get_inits`. Hàm này khai báo một đối tượng mô hình ảnh tổng hợp và khởi tạo đối tượng theo ảnh `X`.
+Ma trận Gram cho các tầng phong cách khác nhau của ảnh phong cách, `styles_Y_gram`, được tính trước khi huấn luyện.
 
 
 
@@ -677,7 +683,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
 * 
