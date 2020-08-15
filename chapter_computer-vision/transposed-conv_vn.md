@@ -196,7 +196,7 @@ In fact, convolution operations can also be achieved by matrix multiplication.
 In the example below, we define a $3\times$ input $X$ with a $2\times 2$ kernel $K$, and then use `corr2d` to compute the convolution output.
 -->
 
-Chập chuyển vị có tên như vậy xuất phát từ chuyển vị ma trận.
+Tên của tích chập chuyển vị có xuất phát từ phép chuyển vị ma trận.
 Thật vậy, phép tính chập có thể tính thông quan phép nhân ma trận.
 Trong ví dụ dưới đây, ta định nghĩa một biến đầu vào $X$ $3\times 3$ với một kernel $2\times 2$ $K$, rồi dùng `corr2d` để tính ra tích chập.
 
@@ -315,5 +315,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
