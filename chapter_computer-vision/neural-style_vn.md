@@ -487,7 +487,7 @@ Therefore, we call the `waitall` synchronization function during every epoch.
 
 Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
 Nhớ lại thảo luận về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
-Do ta chỉ gọi hàm đồng bộ hoá `asscalar` sau mỗi 50 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ.
+Do ta chỉ gọi hàm đồng bộ hoá `asnumpy` sau mỗi 10 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ. <!-- bản gốc sai, sửa lại theo code phía dưới https://github.com/d2l-ai/d2l-en/pull/1350/files -->
 Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
 
 
@@ -657,4 +657,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
