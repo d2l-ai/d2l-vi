@@ -26,7 +26,7 @@ Now, we will apply the knowledge we learned in the previous sections in order to
 The competition's web address is
 -->
 
-Chúng tôi đã thực hiện thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
+Chúng ta thực hiện thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
 Đây là một tập dữ liệu quan trọng trong lĩnh vực thị giác máy tính.
 Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi trên Kaggle nhắm tới các bài toán phân loại tập ảnh CIFAR-10.
 Địa chỉ trang web  của cuộc thi tại 
@@ -653,5 +653,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
