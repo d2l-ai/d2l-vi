@@ -647,8 +647,8 @@ Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp �
 -->
 
 * Các hàm mất mát được sử dụng trong truyền tải phong cách thường bao gồm ba phần:
-1. Mất mát nội dung được sử dụng để ảnh tổng hợp xấp xỉ ảnh nội dung mà tập trung vào các đặc trưng về nội dung.
-2. Mất mát phong cách được sử dụng để ảnh tổng hợp xấp xỉ ảnh phong cách dưới dạng các đặc trưng phong cách.
+1. Mất mát nội dung được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng về nội dung trong ảnh nội dung.
+2. Mất mát phong cách được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng phong cách trong ảnh phong cách.
 3. Mất mát biến thiên toàn phần giúp giảm nhiễu trong ảnh tổng hợp.
 * Ta có thể sử dụng CNN đã được tiền huấn luyện để trích xuất đặc trưng ảnh và cực tiểu hoá hàm mất mát để liên tục cập nhật ảnh tổng hợp.
 * Ta sử dụng ma trận Gram để biểu diễn phong cách đưa ra bởi các tầng phong cách.
@@ -707,4 +707,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * Đỗ Trường Giang
-
