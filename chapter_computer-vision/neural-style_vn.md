@@ -353,7 +353,7 @@ Naturally, the two Gram matrix inputs of the square error function for style los
 Here, we assume that the Gram matrix of the style image, `gram_Y`, has been computed in advance.
 -->
 
-Một cách tự nhiên, hai đầu vào ma trận Gram của hàm bình phương sai số cho mất mát phong cách được lấy từ đầu ra tầng phong cách của ảnh ảnh kết hợp và ảnh phong cách.
+Một cách tự nhiên, hai ma trận Gram đầu vào của hàm bình phương sai số cho mất mát phong cách được lấy từ ảnh kết hợp và ảnh phong cách của đầu ra tầng phong cách.
 Ở đây, ta giả sử ma trận Gram của ảnh phong cách, `gram_Y`, có thể được tính toán trước.
 
 
@@ -661,5 +661,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
 
