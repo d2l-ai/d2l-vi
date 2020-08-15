@@ -40,6 +40,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | backpropagation                        | lan truyền ngược               |                                              |
 | backpropagation through time           | lan truyền ngược qua thời gian |                                              |
 | backward pass                          | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
+| bag of words | túi từ | |
 | bandit                                 | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                                  | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
 | batch normalization                    | chuẩn hóa theo batch           | [https://git.io/Jfe1T](https://git.io/Jfe1T) |
