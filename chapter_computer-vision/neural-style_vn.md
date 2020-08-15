@@ -255,7 +255,7 @@ Hàm `get_contents` để lấy đặc trưng nội dung trích xuất từ ản
 và hàm `get_styles` để lấy đặc trưng phong cách trích xuất từ ảnh phong cách.
 Do trong lúc huấn luyện, ta không cần thay đổi các tham số của của mô hình VGG đã được tiền huấn luyện,
 nên ta có thể trích xuất đặc trưng nội dung từ ảnh nội dung và đặc trưng phong cách từ ảnh phong cách trước khi bắt đầu huấn luyện. 
-Bởi vì ảnh kết hợp là tham số mô hình phải được cập nhật trong quá trình truyền tải phong cách,
+Bởi vì ảnh kết hợp là các tham số mô hình sẽ được cập nhật trong quá trình truyền tải phong cách,
 ta có thể chỉ cần gọi hàm `extract_features` trong lúc huấn luyện để trích xuất đặc trưng nội dung và phong cách của ảnh kết hợp.
 
 
