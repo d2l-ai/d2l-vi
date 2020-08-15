@@ -13,7 +13,7 @@ In this section, we will tackle the dog breed identification challenge in the Ka
 The competition's web address is
 -->
 
-Trong phần này, ta sẽ giải quyết thử thách nhận diện giống chó trong cuộc thi trên Kaggle.
+Trong phần này, ta sẽ giải quyết thử thách nhận diện giống chó trong một cuộc thi trên Kaggle.
 Cuộc thi có địa chỉ tại
 
 
@@ -541,7 +541,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
 
 
