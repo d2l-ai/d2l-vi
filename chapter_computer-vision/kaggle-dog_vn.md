@@ -509,7 +509,7 @@ Ta có thể sử dụng mô hình đã được tiền huấn luyện trên t�
 -->
 
 1. Khi sử dụng toàn bộ dữ liệu Kaggle, bạn sẽ thu được kết quả như thế nào khi tăng `batch_size` (kích thước batch) và `num_epochs` (số lượng epoch)?
-2. Bạn có đạt được kết quả tốt hơn nếu bạn sử dụng mô hình đã được tiền huấn luyện sâu hơn.
+2. Bạn có đạt được kết quả tốt hơn nếu sử dụng mô hình đã được tiền huấn luyện sâu hơn không?
 3. Hãy quét mã QR để tham gia thảo luận và trao đổi ý tưởng về các phương pháp đã được sử dụng và kết quả thu được từ cộng đồng Kaggle. Có thể bạn sẽ có một ý tưởng hay kỹ thuật tốt hơn?
 
 
@@ -543,7 +543,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
 
 
 
