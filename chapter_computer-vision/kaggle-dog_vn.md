@@ -102,7 +102,7 @@ After unzipping the downloaded file in `../data`, you will find the entire datas
 -->
 
 Sau khi đăng nhập vào Kaggle, ta có thể chọn thẻ "Data" trong trang web cuộc thi nhận diện giống chó
-như mô tả trong  :numref:`fig_kaggle_dog` và tải tập dữ liệu về bằng cách nhấn vào nút "Download All".
+như mô tả trong :numref:`fig_kaggle_dog` và tải tập dữ liệu về bằng cách nhấn vào nút "Download All".
 Sau khi giải nén tệp đã tải về trong `../data`, bạn có thể tìm thấy toàn bộ tập dữ liệu theo các đường dẫn sau:
 
 
@@ -537,7 +537,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
 
 
