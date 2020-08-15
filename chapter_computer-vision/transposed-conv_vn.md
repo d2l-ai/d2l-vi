@@ -248,7 +248,7 @@ To reuse the generated $W$, we construct a $2\times 2$ input, so the correspondi
 -->
 
 Ta có thể thực hiện phép chập chuyển vị giống như phép nhân ma trận bằng cách sử dụng lại `kernel2matrix`.
-Để sử dụng lại ma trận $W$ đã tạo ra, ta xây dựng một đầu vào $2\times 2$, nên ma trận trọng số tương ứng sẽ có kích thước $(9, 4)$, chình là $W^\top$. 
+Để sử dụng lại ma trận $W$ đã tạo ra, ta xây dựng một đầu vào $2\times 2$, nên ma trận trọng số $W^\top$ tương ứng sẽ có kích thước $(9, 4)$. 
 Ta hãy cùng nhau kiểm tra lại kết quả hai phép tính xem.
 
 
