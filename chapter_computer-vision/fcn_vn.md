@@ -238,7 +238,7 @@ In a fully convolutional network, we initialize the transposed convolution layer
 For a $1\times 1$ convolution layer, we use Xavier for randomly initialization.
 -->
 
-Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép tăng chiều nội suy song tuyến tính. Với tầng tích chập $1\times 1$, ta sử dụng Xavier để khởi tạo ngẫu nhiên.
+Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép tăng chiều nội suy song tuyến tính. Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên  Xavier.
 
 
 ```{.python .input  n=12}
