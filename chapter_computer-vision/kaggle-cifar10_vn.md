@@ -96,7 +96,7 @@ Tập kiểm thử chứa $300,000$ ảnh, trong đó có $10,000$ ảnh đượ
 trong khi $290,000$ không được dùng tính điểm được đưa vào để ngăn ngừa việc dán nhãn thủ công vào tập kiểm thử và rồi nộp kết quả đã dán nhãn.
 Định dạng ảnh trong cả hai tập dữ liệu là dạng PNG, với chiều cao và chiều rộng là 32 điểm ảnh với ba kênh màu (RGB).
 Các ảnh được phân thành $10$ nhóm: máy bay, xe hơi, chim, mèo, nai, chó, ếch, ngựa, thuyền và xe tải.
-Góc trên-bên trái của Hình 9.16 thể hiện một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
+Góc trên-bên trái của Hình 9.16 hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
