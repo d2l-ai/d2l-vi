@@ -157,7 +157,7 @@ Due to space limitations, we only give the implementation of the `bilinear_kerne
 -->
 
 Chúng ta đã biết tầng tích chập chuyển vị có thể phóng đại ánh xạ đặc trưng.
-Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, được biết đến là phép tăng chiều. 
+Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, được biết đến là phép tăng mẫu. 
 Có rất nhiều phương pháp tăng chiều, và một phương pháp phổ biến đó là nội suy song tuyến tính (*bilinear interpolation*).
 Nói một cách đơn giản, để lấy điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$, đầu tiên toạ độ này sẽ được ánh xạ tới toạ độ $(x', y')$ trong ảnh đầu vào.
 Điều này có thể được thực hiện dựa trên tỷ lệ kích thước của ba đầu vào tới kích thước của đầu ra.
