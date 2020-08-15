@@ -272,7 +272,10 @@ Then a transposed convolution layer with the same kernel sizes, padding and stri
 * We can implement convolution operations by the matrix multiplication, the corresponding transposed convolutions can be done by transposed matrix multiplication.
 -->
 
-*dịch đoạn phía trên*
+* So với phương pháp tích chập nén đầu vào thông qua hạt nhân (*kernel*), phép tích chập chuyển vị làm tăng số chiều của đầu vào.
+* Nếu một tầng tích chập nén chiều dài và chiều cao của đầu vào lần lượt đi $n_w$ và $n_h$ lần,
+thì một tầng tích chập chuyển vị có cùng kích thước hạt nhân, đệm và sải bước sẽ tăng chiều dài và chiều cao của đầu vào lần lượt lên $n_w$ và $n_h$ lần.
+* Ta có thể lập trình thao tác tích chập bằng phép nhân ma trận, và phép tích chập chuyển vị tương ứng cũng có thể thực hiện bằng phép nhân ma trận chuyển vị.
 
 
 ## Bài tập
@@ -282,7 +285,7 @@ Then a transposed convolution layer with the same kernel sizes, padding and stri
 Is it efficient to use matrix multiplication to implement convolution operations? Why?
 -->
 
-*dịch đoạn phía trên*
+Việc sử dụng phép nhân ma trận để lập trình cho thao tác tích chập liệu có thực sự hiệu quả? Tại sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -314,4 +317,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
