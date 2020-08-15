@@ -215,4 +215,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 * Phạm Đăng Khoa
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
