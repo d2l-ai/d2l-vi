@@ -190,7 +190,7 @@ Now, we will experiment with bilinear interpolation upsampling implemented by tr
 Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
 -->
 
-Bây giờ, ta sẽ thí nghiệm với phép tăng chiều sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào với thừa số bằng 2 và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
+Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào với thừa số bằng 2 và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
 
 
 ```{.python .input  n=11}
