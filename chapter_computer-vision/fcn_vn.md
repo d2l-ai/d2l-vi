@@ -204,7 +204,7 @@ Read the image `X` and record the result of upsampling as `Y`.
 In order to print the image, we need to adjust the position of the channel dimension.
 -->
 
-Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng chiều là `Y`.
+Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng mẫu là `Y`.
 Để in ảnh, ta cần điều chỉnh vị trí của chiều kênh.
 
 
