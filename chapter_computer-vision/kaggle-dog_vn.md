@@ -5,7 +5,7 @@
 # Dog Breed Identification (ImageNet Dogs) on Kaggle
 -->
 
-# *dịch tiêu đề phía trên*
+# Nhận diện Giống Chó (ImageNet Dogs) trên Kaggle
 
 
 <!--
@@ -13,7 +13,8 @@ In this section, we will tackle the dog breed identification challenge in the Ka
 The competition's web address is
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, ta sẽ giải quyết thử thách nhận diện giống chó trong cuộc thi trên Kaggle.
+Cuộc thi có địa chỉ tại
 
 
 > https://www.kaggle.com/c/dog-breed-identification
@@ -25,7 +26,9 @@ The dataset used in this competition is actually a subset of the famous ImageNet
 Different from the images in the CIFAR-10 dataset used in the previous section, the images in the ImageNet dataset are higher and wider and their dimensions are inconsistent.
 -->
 
-*dịch đoạn phía trên*
+Trong cuộc thi này, ta cần cố gắng nhận diện 120 giống chó khác nhau.
+Tập dữ liệu trong cuộc thi này thực chất là một tập hợp con của tập dữ liệu ImageNet nổi tiếng.
+Khác với ảnh trong tập dữ liệu CIFAR-10 được sử dụng trong phần trước, các ảnh trong tập dữ liệu ImageNet có chiều dài và chiều rộng lớn hơn, đồng thời kích thước của chúng không nhất quán.
 
 
 <!--
@@ -33,7 +36,8 @@ Different from the images in the CIFAR-10 dataset used in the previous section, 
 In order to submit the results, please register an account on the Kaggle website first.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_kaggle_dog` mô tả thông tin trên trang web của cuộc thi.
+Để có thể nộp kết quả, trước tiên xin vui lòng đăng kí tài khoảng trên trang web của Kaggle.
 
 
 <!--
@@ -41,7 +45,7 @@ In order to submit the results, please register an account on the Kaggle website
 -->
 
 
-![*dịch mô tả phía trên*](../img/kaggle-dog.jpg)
+![Trang web cuộc thi nhận diện giống chó. Tập dữ liệu cho cuộc thi này có thể được truy cập bằng cách nhấn vào thẻ "Data".](../img/kaggle-dog.jpg)
 :width:`400px`
 :label:`fig_kaggle_dog`
 
@@ -51,7 +55,7 @@ In order to submit the results, please register an account on the Kaggle website
 First, import the packages or modules required for the competition.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta nhập vào các gói thư viện hoặc các mô-đun cần cho cuộc thi.
 
 
 ```{.python .input}
@@ -71,7 +75,7 @@ npx.set_np()
 ## Obtaining and Organizing the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Thu thập và Tổ chức Tập dữ liệu
 
 
 <!--
@@ -82,7 +86,11 @@ These images contain three RGB channels (color) and they have different heights 
 There are 120 breeds of dogs in the training set, including Labradors, Poodles, Dachshunds, Samoyeds, Huskies, Chihuahuas, and Yorkshire Terriers.
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu cuộc thi được chia thành tập huấn luyện và tập kiểm tra.
+Tập huấn luyện bao gồm $10,222$ ảnh và tập kiểm tra bao gồm $10,357$ ảnh.
+Tất cả các ảnh trong hai tập đều được định dạng JPEG.
+Các ảnh này gồm có ba kênh (màu) RGB và chúng có chiều cao và chiều rộng khác nhau.
+Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha mồi (*Labrador*), Chó săn vịt (*Poodle*), Chó Dachshund, Samoyed, Huskie, Chihuahua, và Chó sục Yorkshire (*Yorkshire Terriers*).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -523,7 +531,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
