@@ -251,7 +251,7 @@ we can only call the `extract_features` function during training to extract the 
 -->
 
 Tiếp theo, ta định nghĩa hai hàm đó là: 
-Hàm `get_contents` để thu được đặc trưng nội dung trích xuất từ ảnh nội dungg,
+Hàm `get_contents` để lấy đặc trưng nội dung trích xuất từ ảnh nội dung,
 và hàm `get_styles` để thu được đặc trưng phong cách trích xuất từ ảnh phong cách.
 Do trong lúc huấn luyện, ta không cần thay đổi các tham số của của mô hình VGG đã được tiền huấn luyện,
 nên ta có thể trích xuất đặc trưng nội dung từ ảnh nội dung và đặc trưng phong cách từ ảnh phong cách trước khi bắt đầu huấn luyện. 
@@ -655,4 +655,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
