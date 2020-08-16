@@ -289,7 +289,7 @@ reorg_cifar10_data(data_dir, valid_ratio)
 ## Image Augmentation
 -->
 
-## *dịch tiêu đề phía trên*
+## Tăng cường Ảnh
 
 
 <!--
@@ -299,7 +299,10 @@ We can also perform normalization for the three RGB channels of color images usi
 Below, we list some of these operations that you can choose to use or modify depending on requirements.
 -->
 
-*dịch đoạn phía trên*
+Để tránh hiện tượng quá khớp, ta sẽ áp dụng tăng cường ảnh.
+Ví dụ, ta có thể lật ngẫu nhiên các ảnh bằng cách thêm vào `transforms.RandomFlipLeftRight()`.
+Ta cũng có thể thực hiện chuẩn hoá trên ba kênh màu RGB của ảnh bằng cách sử dụng `transforms.Normalize()`.
+Dưới đây, chúng tôi liệt kê một số thao tác tăng cường ảnh để bạn có thể lựa chọn sử dụng hoặc chỉnh sửa tuỳ theo nhu cầu.
 
 
 ```{.python .input  n=9}
@@ -324,7 +327,7 @@ transform_train = gluon.data.vision.transforms.Compose([
 In order to ensure the certainty of the output during testing, we only perform normalization on the image.
 -->
 
-*dịch đoạn phía trên*
+Để đảm bảo tính chắc chắn của đầu ra trong quá trình kiểm tra, ta chỉ thực hiện chuẩn hoá trên ảnh.
 
 
 ```{.python .input}
@@ -339,14 +342,14 @@ transform_test = gluon.data.vision.transforms.Compose([
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Tập dữ liệu
 
 
 <!--
 Next, we can create the `ImageFolderDataset` instance to read the organized dataset containing the original image files, where each example includes the image and label.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta tạo đối tượng `ImageFolderDataset` để đọc tập dữ liệu đã được thiết lập ở trên bao gồm các tệp ảnh gốc, trong đó mỗi ví dụ gồm có ảnh và nhãn.
 
 
 ```{.python .input  n=10}
@@ -363,7 +366,9 @@ During training, we only use the validation set to evaluate the model, so we nee
 During prediction, we will train the model on the combined training set and validation set to make full use of all labelled data.
 -->
 
-*dịch đoạn phía trên*
+Trong `DataLoader` ta chỉ rõ thao tác tăng cường ảnh như đã xác định ở trên.
+Trong suốt quá trình huấn luyện, ta chỉ sử dụng tập kiểm định để đánh giá mô hình , do đó ta cần đảm bảo tính chắc chắc của đầu ra.
+Trong quá trình dự đoán, ta sẽ huấn luyện mô hình trên tập huấn luyện và tập kiểm định gộp lại để tận dụng tất cả dữ liệu có dán nhãn.
 
 
 ```{.python .input}
@@ -646,7 +651,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
 * 
