@@ -5,7 +5,7 @@
 # Image Augmentation
 -->
 
-# Tăng cường ảnh
+# Tăng cường Ảnh
 :label:`sec_image_augmentation`
 
 
@@ -51,7 +51,7 @@ npx.set_np()
 ## Common Image Augmentation Method
 -->
 
-## Phương pháp tăng cường ảnh thông dụng
+## Phương pháp Tăng cường ảnh Thông dụng
 <!--
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
@@ -216,7 +216,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### Kết hợp nhiều phương pháp tăng cường ảnh
+### Kết hợp nhiều Phương pháp Tăng cường ảnh
 
 
 <!--
