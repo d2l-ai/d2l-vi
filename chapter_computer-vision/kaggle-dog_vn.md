@@ -100,7 +100,7 @@ Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha m
 ### Downloading the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Tải về Tập dữ liệu
 
 
 <!--
@@ -109,7 +109,9 @@ shown in :numref:`fig_kaggle_dog` and download the dataset by clicking the "Down
 After unzipping the downloaded file in `../data`, you will find the entire dataset in the following paths:
 -->
 
-*dịch đoạn phía trên*
+Sau khi đăng nhập vào Kaggle, ta có thể chọn thẻ "Data" trong trang web cuộc thi nhận diện giống chó
+như mô tả trong :numref:`fig_kaggle_dog` và tải tập dữ liệu về bằng cách nhấn vào nút "Download All".
+Sau khi giải nén tệp đã tải về trong `../data`, bạn có thể tìm thấy toàn bộ tập dữ liệu theo các đường dẫn sau:
 
 
 * ../data/dog-breed-identification/labels.csv
@@ -123,7 +125,8 @@ You may have noticed that the above structure is quite similar to that of the CI
 where folders `train/` and `test/` contain training and testing dog images respectively, and `labels.csv` has the labels for the training images.
 -->
 
-*dịch đoạn phía trên*
+Có thể bạn đã nhận ra rằng cấu trúc trên khá giống với cấu trúc thư mục của cuộc thi CIFAR-10 trong :numref:`sec_kaggle_cifar10`,
+trong đó thư mục `train/` và `test/` lần lượt chứa ảnh chó để huấn luyện và kiểm tra, và `labels.csv` chứa nhãn cho các ảnh huấn luyện.
 
 
 <!--
@@ -131,7 +134,8 @@ Similarly, to make it easier to get started, we provide a small-scale sample of 
 If you are going to use the full dataset for the Kaggle competition, you will also need to change the `demo` variable below to `False`.
 -->
 
-*dịch đoạn phía trên*
+Tương tự, để đơn giản hoá giai đoạn khởi động này, chúng tôi cung cấp một tập mẫu nhỏ của tập dữ liệu kể trên, "train_valid_test_tiny.zip".
+Nếu bạn sử dụng tập dữ liệu đầy đủ cho cuộc thi Kaggle, bạn sẽ cần thay đổi biến `demo` phía dưới thành `False`.
 
 
 ```{.python .input  n=1}
@@ -153,21 +157,21 @@ else:
 ### Organizing the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Tổ chức Tập dữ liệu
 
 
 <!--
 We can organize the dataset similarly to what we did in :numref:`sec_kaggle_cifar10`, namely separating a validation set from the training set, and moving images into subfolders grouped by labels.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tổ chức tập dữ liệu tương tự như cách ta đã làm trong :numref:`sec_kaggle_cifar10`, tức là tách một tập kiểm định từ tập huấn luyện, và sau đó đưa các ảnh vào từng thư mục con theo nhãn của chúng.
 
 
 <!--
 The `reorg_dog_data` function below is used to read the training data labels, segment the validation set, and organize the training set.
 -->
 
-*dịch đoạn phía trên*
+Hàm `reorg_dog_data` dưới đây được sử dụng để đọc nhãn của dữ liệu huấn luyện, tách riêng tập kiểm định và tổ chức tập huấn luyện.
 
 
 ```{.python .input  n=2}
@@ -534,7 +538,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
