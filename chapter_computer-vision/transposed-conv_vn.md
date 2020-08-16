@@ -21,9 +21,8 @@ Transposed convolution, also named fractionally-strided convolution :cite:`Dumou
 Các tầng mà chúng tôi đã giới thiệu gần đây về mạng nơ-ron tích chập,
 bao gồm cả các tầng tích chập (:numref:`sec_conv_layer`) và tầng gộp (:numref:`sec_pooling`), 
 thường giảm chiều rộng và chiều cao của đầu vào, hoặc giữ nguyên chúng.
-Các ứng dụng ví dụ như phân vùng theo ngữ nghĩa (:numref:`sec_semantic_segmentation`) và mạng đối sinh (:numref:`sec_dcgan`), 
-tuy nhiên, yêu cầu phải dự đoán các giá trị cho mỗi pixel vì thế cần phải tăng chiều rộng và chiều cao của đầu vào.
-Tích chập chuyển vị, cũng có tên là tích chập sải bước theo phân số :cite:`Dumoulin.Visin.2016` hay phân rã tích chập :cite:`Long.Shelhamer.Darrell.2015`, phục vụ cho mục đích này.
+Tuy nhiên, các ứng dụng như phân vùng theo ngữ nghĩa (:numref:`sec_semantic_segmentation`) và mạng đối sinh (:numref:`sec_dcgan`), yêu cầu phải dự đoán các giá trị cho mỗi pixel vì thế cần phải tăng chiều rộng và chiều cao của đầu vào.
+Tích chập chuyển vị, cũng có tên là tích chập sải bước theo phân số (*fractionally-strided convolution*) :cite:`Dumoulin.Visin.2016` hay phân tách tích chập (*deconvolution*) :cite:`Long.Shelhamer.Darrell.2015`, phục vụ cho mục đích này.
 
 
 
@@ -48,8 +47,8 @@ Let us consider a basic case that both input and output channels are 1, with 0 p
 :numref:`fig_trans_conv` illustrates how transposed convolution with a $2\times 2$ kernel is computed on the $2\times 2$ input matrix.
 -->
 
-Ta hãy cân nhắc một trường hợp mà các kênh đầu vào và đầu ra là 1, với đệm 0 và sải bước 1. 
-:numref:`fig_trans_conv` mô tả cách tích chập chuyển vị có một hạt nhân $2\times 2$ được tính toán trên một ma trận đầu vào kích thước $2\times 2$.
+Ta hãy cân nhắc một trường hợp mà số kênh đầu vào và đầu ra là 1, với đệm 0 và sải bước 1. 
+:numref:`fig_trans_conv` mô tả cách tích chập chuyển vị với một hạt nhân $2\times 2$ được tính toán trên một ma trận đầu vào kích thước $2\times 2$.
 
 
 
@@ -58,7 +57,7 @@ Ta hãy cân nhắc một trường hợp mà các kênh đầu vào và đầu 
 -->
 
 
-![Tầng tích chập chuyển vị có một hạt nhân $2\times 2$.](../img/trans_conv.svg)
+![Tầng tích chập chuyển vị với một hạt nhân $2\times 2$.](../img/trans_conv.svg)
 :label:`fig_trans_conv`
 
 
@@ -86,7 +85,7 @@ Remember the convolution computes results by `Y[i, j] = (X[i: i + h, j: j + w] *
 While the transposed convolution broadcasts input values through the kernel, which results in a larger output shape.
 -->
 
-Hãy nhớ ràng tích chập tính toán kết quả bằng `Y[i, j] = (X[i: i + h, j: j + w] * K).sum()` (tham khảo theo `corr2d` trong :numref:`sec_conv_layer`), tổng hợp các giá trị đầu vào thông qua hạt nhân.
+Hãy nhớ rằng kết quả tính tích chập là `Y[i, j] = (X[i: i + h, j: j + w] * K).sum()` (tham khảo theo `corr2d` trong :numref:`sec_conv_layer`), tức tổng hợp các giá trị đầu vào thông qua hạt nhân.
 Trong khi tích chập chuyển vị truyền đi các giá trị đầu vào thông qua hạt nhân, tạo thành một đầu ra có kích thước lớn hơn.
 
 
@@ -109,8 +108,8 @@ Or we can use `nn.Conv2DTranspose` to obtain the same results.
 As `nn.Conv2D`, both input and kernel should be 4-D tensors.
 -->
 
-Hoặc  ta có thể sử dụng `nn.Conv2DTranspose` để thu được kết quả tương tự.
-Là `nn.Conv2D`, cả đầu vào và hạt nhân phải là tensor 4 chiều.
+Hoặc ta có thể sử dụng `nn.Conv2DTranspose` để thu được kết quả tương tự.
+Vì là `nn.Conv2D`, cả đầu vào và hạt nhân phải là tensor 4 chiều.
 
 
 ```{.python .input  n=17}
@@ -322,4 +321,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Đỗ Trường Giang
-
