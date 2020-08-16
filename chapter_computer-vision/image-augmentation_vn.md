@@ -215,7 +215,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### Kết hợp nhiều Phương pháp Tăng cường ảnh
+### Kết hợp nhiều phương pháp tăng cường ảnh
 
 
 <!--
