@@ -187,7 +187,7 @@ tconv(conv(X)).shape == X.shape
 ## Analogy to Matrix Transposition
 -->
 
-## *dịch tiêu đề phía trên*
+## Sự tương đồng với chuyển vị ma trận
 
 
 <!--
@@ -196,7 +196,9 @@ In fact, convolution operations can also be achieved by matrix multiplication.
 In the example below, we define a $3\times$ input $X$ with a $2\times 2$ kernel $K$, and then use `corr2d` to compute the convolution output.
 -->
 
-*dịch đoạn phía trên*
+Tên của tích chập chuyển vị có xuất phát từ phép chuyển vị ma trận.
+Thật vậy, phép tính chập có thể tính thông qua phép nhân ma trận.
+Trong ví dụ dưới đây, ta định nghĩa một biến đầu vào $X$ $3\times 3$ với một kernel $K$ $2\times 2$, rồi dùng `corr2d` để tính ra tích chập.
 
 
 ```{.python .input}
@@ -212,7 +214,8 @@ Next, we rewrite convolution kernel $K$ as a matrix $W$.
 Its shape will be $(4, 9)$, where the $i^\mathrm{th}$ row present applying the kernel to the input to generate the $i^\mathrm{th}$ output element.
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, ta viết lại hạt nhân chập $K$ dưới dạng ma trận $W$.
+Kích thước của nó sẽ là $(4, 9)$, ở đây hàng thứ $i$ biểu diễn việc sử dụng kernel đối với đầu vào để sinh ra phần tử đầu ra thứ $i$. <!-- (Chỗ này không hiểu phép sinh kiểu gì) -->
 
 
 ```{.python .input}
@@ -231,7 +234,7 @@ W
 Then the convolution operator can be implemented by matrix multiplication with proper reshaping.
 -->
 
-*dịch đoạn phía trên*
+Rồi toán tử chập có thể được thực hiện nhờ phép nhân ma trận với việc chỉnh lại kích thước phù hợp.
 
 
 ```{.python .input}
@@ -244,7 +247,9 @@ We can implement transposed convolution as a matrix multiplication as well by re
 To reuse the generated $W$, we construct a $2\times 2$ input, so the corresponding weight matrix will have a shape $(9, 4)$, which is $W^\top$. Let us verify the results.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thực hiện phép chập chuyển vị giống như phép nhân ma trận bằng cách sử dụng lại `kernel2matrix`.
+Để sử dụng lại ma trận $W$ đã tạo ra, ta xây dựng một đầu vào $2\times 2$, nên ma trận trọng số $W^\top$ tương ứng sẽ có kích thước $(9, 4)$. 
+Ta hãy cùng nhau kiểm tra lại kết quả hai phép tính xem.
 
 
 ```{.python .input}
@@ -309,8 +314,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * Đỗ Trường Giang
-
