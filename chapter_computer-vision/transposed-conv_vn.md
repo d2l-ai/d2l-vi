@@ -214,7 +214,7 @@ Next, we rewrite convolution kernel $K$ as a matrix $W$.
 Its shape will be $(4, 9)$, where the $i^\mathrm{th}$ row present applying the kernel to the input to generate the $i^\mathrm{th}$ output element.
 -->
 
-Kế tiếp, ta viết lại kernel chập $K$ dưới dạng ma trận $W$.
+Kế tiếp, ta viết lại hạt nhân chập $K$ dưới dạng ma trận $W$.
 Kích thước của nó sẽ là $(4, 9)$, ở đây hàng thứ $i$ biểu diễn việc sử dụng kernel đối với đầu vào để sinh ra phần tử đầu ra thứ $i$. <!-- (Chỗ này không hiểu phép sinh kiểu gì) -->
 
 
