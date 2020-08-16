@@ -18,10 +18,10 @@ In computer vision, we refer to such tasks as object detection (or object recogn
 -->
 
 Ở phần trước, chúng ta đã giới thiệu nhiều loại mô hình dùng cho phân loại ảnh.
-Trong nhiệm vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
-Tuy nhiên, trong nhiều tình huống, có nhiều đối tượng trong ảnh mà ta quan tâm.
+Trong tác vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
+Tuy nhiên, trong nhiều tình huống, có cùng lúc nhiều đối tượng trong ảnh mà ta quan tâm.
 Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng trong ảnh.
-Trong lĩnh vực thị giác máy tính, ta gọi những tác vụ như vậy là phát hiện vật thể (hay nhận dạng vật thể).
+Những tác vụ như vậy, trong lĩnh vực thị giác máy tính, được gọi là phát hiện vật thể (hay nhận dạng vật thể).
 
 <!--
 Object detection is widely used in many fields.
@@ -31,9 +31,9 @@ Systems in the security field need to detect abnormal targets, such as intruders
 -->
 
 Phát hiện vật thể được sử dụng rộng rãi trong nhiều lĩnh vực.
-Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản từ các ảnh được video thu về.
-Những robot cần thực hiện kiểu tác vụ này để phát hiện các đối tượng chúng quan tâm.
-Hay các hệ thống anh ninh cần phát hiện các mục tiêu bất thường như các đối tượng xâm nhập bất hợp pháp hoặc bom mìn.
+Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản từ các ảnh thu về từ video.
+Robot cần thực hiện kiểu tác vụ này để phát hiện các đối tượng chúng quan tâm.
+Hay các hệ thống an ninh cần phát hiện các mục tiêu bất thường, ví dụ như các đối tượng xâm nhập bất hợp pháp hoặc bom mìn.
 
 <!--
 In the next few sections, we will introduce multiple deep learning models used for object detection.
@@ -41,7 +41,7 @@ Before that, we should discuss the concept of target location.
 First, import the packages and modules required for the experiment.
 -->
 
-Trong một số phần tiếp theo, chúng tôi sẽ giới thiệu nhiều mô hình học sâu dùng để phát hiện vật thể.
+Trong các phần tiếp theo, chúng tôi sẽ giới thiệu nhiều mô hình học sâu dùng để phát hiện vật thể.
 Trước hết, ta nên bàn qua về khái niệm vị trí vật thể.
 Đầu tiên, ta hãy nhập các gói và mô-đun cần thiết cho việc thử nghiệm.
 
@@ -60,8 +60,8 @@ We can see there is a dog on the left side of the image and a cat on the right.
 They are the two main targets in this image.
 -->
 
-Kế tiếp, ta sẽ nạp các ảnh mẫu cần để sử dụng trong phần này.
-Ta có thể thấy ở đây có một con chó ở bên trái của bức ảnh và một con mèo nằm bên phải.
+Kế tiếp, ta nạp các ảnh mẫu sẽ sử dụng trong phần này.
+Ta có thể thấy trong hình là một con chó ở bên trái của và một con mèo ở bên phải.
 Chúng là hai đối tượng chính trong ảnh này.
 
 ```{.python .input}
@@ -129,7 +129,7 @@ def bbox_to_rect(bbox, color):
 After loading the bounding box on the image, we can see that the main outline of the target is basically inside the box.
 -->
 
-Sau khi vẽ khung chứa lên ảnh, ta có thể thấy rằng các đường nét chính của mục tiêu về cơ bản là nằm trong khung này.
+Sau khi vẽ khung chứa lên ảnh, có thể thấy rằng phần chính của mục tiêu về cơ bản là nằm trong khung chứa.
 
 
 ```{.python .input}
@@ -188,3 +188,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
