@@ -208,7 +208,7 @@ Because $\sigma(x)+\sigma(-x) = 1$, the condition that the sum of the conditiona
 based on the given central target word $w_c$ in dictionary $\mathcal{V}$ be 1 will also suffice:
 -->
 
-*dịch đoạn phía trên*
+Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào được sinh ra dựa trên từ mục tiêu $w_c$ được cho trong từ điển $\mathcal{V}$ phải bằng 1 cũng được thoả mãn:
 
 
 $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
@@ -218,7 +218,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, do bậc của $\mathcal{V}$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán đối với mỗi bước trong sofmax phân cấp được giảm đáng kể so với trường hợp mà ta không áp dụng huấn luyện xấp xỉ.
 
 
 ## Tóm tắt
@@ -230,7 +230,10 @@ The gradient computational overhead for each step in the training process is lin
 The gradient computational overhead for each step in the training process is related to the logarithm of the dictionary size.
 -->
 
-*dịch đoạn phía trên*
+* Lấy mẫu âm xây dựng dựa hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương.
+Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu.
+* Softmax phân cấp sử dụng một cây nhị phân và xây dụng hàm mất mát dựa trên đường đi từ nút gốc đến nút lá.
+Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ theo hàm log với kích thước từ điển.
 
 
 ## Bài tập
@@ -241,7 +244,9 @@ The gradient computational overhead for each step in the training process is rel
 3. How can we apply negative sampling and hierarchical softmax in the skip-gram model?
 -->
 
-*dịch đoạn phía trên*
+1. Trước khi đọc phần tiếp theo, hãy nghĩ xem ta nên lấy mẫu các từ nhiễu như thế nào trong lấy mẫu âm.
+2. Điều gì giúp cho công thức cuối cùng trong phần này là đúng?
+3. Ta có thể áp dụng lấy mẫu âm và softmax phân cấp như thế nào trong mô hình skip-gram?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -272,5 +277,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
