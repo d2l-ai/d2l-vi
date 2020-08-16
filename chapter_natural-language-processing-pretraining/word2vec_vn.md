@@ -157,7 +157,7 @@ Here, any timestep that is less than 1 or greater than $T$ can be ignored.
 ### Skip-Gram Model Training
 -->
 
-### *dịch đoạn phía trên*
+### Mô hình huấn luyện Skip-Gram
 
 
 <!--
@@ -166,7 +166,9 @@ In the training process, we are going to learn the model parameters by maximizin
 This is equivalent to minimizing the following loss function:
 -->
 
-*dịch đoạn phía trên*
+Các tham số trong mô hình skip-gram là vector từ đích trung tâm và vector từ ngữ cảnh cho từng từ riêng lẻ.
+Trong quá trình huấn luyện, chúng ta sẽ tìm hiểu các tham số mô hình bằng cách tối ưu hoá hàm hợp lý (_likelihood_), còn gọi là ước lượng hợp lý cực đại.
+Việc này tương tự với việc giảm thiểu hàm mất mát sau đây:
 
 
 $$ - \sum_{t=1}^{T} \sum_{-m \leq j \leq m,\ j \neq 0} \text{log}\, P(w^{(t+j)} \mid w^{(t)}).$$
@@ -179,7 +181,10 @@ The key of gradient computation is to compute the gradient of the logarithmic co
 By definition, we first have
 -->
 
-*dịch đoạn phía trên*
+Nếu ta dùng SGD, thì trong mỗi vòng lặp, ta chọn ra một chuỗi con nhỏ hơn thông qua việc lấy mẫu ngẫu nhiên để tính toán độ lỗi cho chuỗi con đó,
+rồi sau đó tính gradient để cập nhật những tham số mô hình.
+Chìa khoá quan trọng của việc tính toán gradient là tính gradient của xác suất có điều kiện theo logarit cho vector từ trung tâm và vector từ ngữ cảnh.
+Theo định nghĩa, đầu tiên ta có
 
 
 $$\log P(w_o \mid w_c) =
@@ -190,7 +195,7 @@ $$\log P(w_o \mid w_c) =
 Through differentiation, we can get the gradient $\mathbf{v}_c$ from the formula above.
 -->
 
-*dịch đoạn phía trên*
+Thông qua phép tính đạo hàm, ta nhận được giá trị gradient $\mathbf{v}_c$ từ công thức trên.
 
 
 $$
@@ -208,7 +213,8 @@ Its computation obtains the conditional probability for all the words in the dic
 We then use the same method to obtain the gradients for other word vectors.
 -->
 
-*dịch đoạn phía trên*
+Phép tính thu được xác suất có điều kiện cho mọi từ có trong từ điển cho từ đích trung tâm $w_c$.
+Sau đó, ta lại sử dụng cùng một phương pháp để tìm ra được gradient cho các vector từ khác. 
 
 
 <!--
@@ -216,7 +222,8 @@ After the training, for any word in the dictionary with index $i$, we are going 
 In applications of natural language processing, the central target word vector in the skip-gram model is generally used as the representation vector of a word.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện xong, đối với bất kì từ nào trong từ điển có chỉ số $i$, ta sẽ nhận được hai bộ vector từ $\mathbf{v}_i$ và $\mathbf{u}_i$.
+Trong các ứng dụng của xử lý ngôn ngữ tự nhiên, vector từ đích trung tâm trong mô hình skip-gram thường được sử dụng để làm vector biểu diễn một từ.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -391,7 +398,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 4 -->
 * 
