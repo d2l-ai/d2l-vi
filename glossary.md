@@ -325,7 +325,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
-| negative sampling | lấy mẫu âm tính | |
+| negative sampling | lấy mẫu âm | |
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
 | neural style transfer | truyền tải phong cách nơ-ron | [https://git.io/JJyeI](https://git.io/JJyeI) |
