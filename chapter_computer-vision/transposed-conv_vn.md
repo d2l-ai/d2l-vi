@@ -215,7 +215,7 @@ Its shape will be $(4, 9)$, where the $i^\mathrm{th}$ row present applying the k
 -->
 
 Kế tiếp, ta viết lại kernel chập $K$ dưới dạng ma trận $W$.
-Kích thước của nó sẽ là $(4, 9)$, ở đây hàng $i^\mathrm{th}$ biểu diễn việc sử dụng kernel đối với đầu vào để sinh ra phần tử đầu ra $i^\mathrm{th}$. (Chỗ này không hiểu phép sinh kiểu gì)
+Kích thước của nó sẽ là $(4, 9)$, ở đây hàng thứ $i$ biểu diễn việc sử dụng kernel đối với đầu vào để sinh ra phần tử đầu ra thứ $i$. <!-- (Chỗ này không hiểu phép sinh kiểu gì) -->
 
 
 ```{.python .input}
