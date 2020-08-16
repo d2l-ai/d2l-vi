@@ -5,7 +5,7 @@
 # The Dataset for Pretraining Word Embedding
 -->
 
-# *dịch đoạn phía trên*
+# Dữ liệu cho Tiền Huấn luyện Embbeding Từ
 :label:`sec_word2vec_data`
 
 
@@ -15,14 +15,16 @@ The dataset we use is [Penn Tree Bank (PTB)](https://catalog.ldc.upenn.edu/LDC99
 It takes samples from Wall Street Journal articles and includes training sets, validation sets, and test sets.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng tôi sẽ giới thiệu cách tiền xử lý một tập dữ liệu với phương pháp lấy mẫu âm tính :numref:`sec_approx_train` và tạo các minibatch cho huấn luyện word2vec.
+Tập dữ liệu ta sẽ sử dụng đó là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho dữ liệu nhỏ nhưng được sử dụng phổ biến.
+Nó là nguồn dữ liệu được lấy từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
 
 
 <!--
 First, import the packages and modules required for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm.
 
 
 ```{.python .input  n=1}
@@ -39,7 +41,7 @@ import random
 ## Reading and Preprocessing the Dataset
 -->
 
-## *dịch đoạn phía trên*
+## Đọc và Tiền xử lý Dữ liệu
 
 
 <!--
@@ -49,7 +51,10 @@ All the words in a sentence are separated by spaces.
 In the word embedding task, each word is a token.
 -->
 
-*dịch đoạn phía trên*
+Tập dữ liệu này đã được xử lý trước.
+Mỗi dòng của tập dữ liệu được coi là một câu.
+Tất cả các từ trong một câu được phân cách bằng dấu cách.
+Trong bài toán embedding từ, mỗi từ là một token.
 
 
 ```{.python .input  n=2}
@@ -74,7 +79,8 @@ Next we build a vocabulary with words appeared not greater than 10 times mapped 
 Note that the preprocessed PTB data also contains "&lt;unk&gt;" tokens presenting rare words.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được ánh xạ tới token "&lt;unk&gt;".
+Lưu ý rằng tập dữ liệu PTB đã được tiền xử lý cũng chứa các token "&lt;unk&gt;" đại diện cho các từ hiếm gặp.
 
 
 ```{.python .input  n=3}
@@ -87,7 +93,7 @@ f'vocab size: {len(vocab)}'
 ## Subsampling
 -->
 
-## *dịch đoạn phía trên*
+## Lấy mẫu con
 
 
 <!--
@@ -99,7 +105,13 @@ Specifically, each indexed word $w_i$ in the dataset will drop out at a certain 
 The dropout probability is given as:
 -->
 
-*dịch đoạn phía trên*
+
+Trong dữ liệu văn bản, thường có một số từ xuất hiện với tần suất cao, chẳng hạn như các từ "the", "a" và "in" trong tiếng Anh.
+Nói chung, trong cửa sổ ngữ cảnh, sẽ tốt hơn nếu huấn luyện mô hình embedding từ khi một từ bình thường (chẳng hạn như "chip") và
+một từ có tần suất thấp hơn (chẳng hạn như "bộ vi xử lý") xuất hiện cùng lúc, hơn là khi một từ bình thường xuất hiện với một từ có tần suất cao hơn (chẳng hạn như "the").
+Do đó, khi huấn luyện mô hình embedding từ, ta có thể thực hiện lấy mẫu con[2] trên các từ.
+Cụ thể, mỗi từ $w_i$ được gán chỉ số trong tập dữ liệu sẽ bị loại bỏ với một xác suất nhất định.
+Xác suất loại bỏ được tính như sau:
 
 
 $$ P(w_i) = \max\left(1 - \sqrt{\frac{t}{f(w_i)}}, 0\right),$$
@@ -112,8 +124,10 @@ As we can see, it is only possible to drop out the word $w_i$ in subsampling whe
 The higher the word's frequency, the higher its dropout probability.
 -->
 
-*dịch đoạn phía trên*
-
+Ở đây, $f(w_i)$ là tỷ lệ giữa các thực thể từ $w_i$ với tổng số từ trong tập dữ liệu,
+và hằng số $t$ là một siêu tham số (có giá trị bằng $10^{-4}$ trong thí nghiệm này).
+Như ta thấy, chỉ có thể loại bỏ từ $w_i$ trong lúc lấy mẫu con khi $f(w_i) > t$.
+Tần suất của từ càng cao, xác suất loại bỏ học càng lớn.
 
 ```{.python .input  n=4}
 #@save
@@ -533,7 +547,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
