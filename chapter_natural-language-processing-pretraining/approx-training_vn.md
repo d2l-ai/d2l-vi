@@ -5,14 +5,14 @@
 # Approximate Training
 -->
 
-# *dịch tiêu đề phía trên*
+# Huấn luyện gần đúng
 :label:`sec_approx_train`
 
 <!--
 Recall content of the last section.  The core feature of the skip-gram model is the use of softmax operations to compute the conditional probability of generating context word $w_o$ based on the given central target word $w_c$.
 -->
 
-*dịch đoạn phía trên*
+Nhắc lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$.
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)}.$$
@@ -22,7 +22,7 @@ $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \
 The logarithmic loss corresponding to the conditional probability is given as
 -->
 
-*dịch đoạn phía trên*
+Mất mát log tương ứng với xác suất có điều kiện trên được tính như sau
 
 
 $$-\log P(w_o \mid w_c) =
@@ -41,14 +41,22 @@ Since there is no major difference between the skip-gram model and the CBOW mode
 we will only use the skip-gram model as an example to introduce these two training methods in this section.
 -->
 
-*dịch đoạn phía trên*
+Do toán tử softmax xem xét từ ngữ cảnh có thể bất kỳ từ nào trong từ điển $\mathcal{V}$, 
+nên mất mát được đề cập ở trên, thực tế, bao gồm tổng số lượng các phần tử trong từ điển.
+Ở phần trước, ta đã biết rằng đối với mô hình skip-gram và mô hình CBOW,
+vì cả hai đều tính được xác suất có điều kiện bằng cách sử dụng toán tử softmax,
+nên tính toán gradient cho mỗi bước bao gồm tổng số lượng các phần tử trong từ điển.
+Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao.
+Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm tính và toán tử softmax phân cấp.
+Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW,
+nên ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên trong phần này.
 
 
 <!--
 ## Negative Sampling
 -->
 
-## *dịch tiêu đề phía trên*
+## Lấy Mẫu Âm tính
 :label:`subsec_negative-sampling`
 
 
@@ -57,7 +65,9 @@ Negative sampling modifies the original objective function.
 Given a context window for the central target word $w_c$, we will treat it as an event for context word $w_o$ to appear in the context window and compute the probability of this event from
 -->
 
-*dịch đoạn phía trên*
+
+Phương pháp lấy mẫu tính sửa đổi hàm mục tiêu ban đầu.
+Cho một cửa sổ ngữ cảnh cho từ đích trung tâm $w_c$, ta coi nó như một sự kiện cho từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh và tính xác suất của sự kiện này theo
 
 
 $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
@@ -67,7 +77,7 @@ $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
 Here, the $\sigma$ function has the same definition as the sigmoid activation function:
 -->
 
-*dịch đoạn phía trên*
+Ở đây, hàm $\sigma$ có cùng định nghĩa với hàm kích hoạt sigmoid:
 
 
 $$\sigma(x) = \frac{1}{1+\exp(-x)}.$$
@@ -79,7 +89,9 @@ Given a text sequence of length $T$, we assume that the word at timestep $t$ is 
 Now we consider maximizing the joint probability
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta sẽ xem xét việc huấn luyện vector từ bằng cách cực đại hóa xác suất kết hợp của tất cả các sự kiện trong chuỗi văn bản.
+Cho một chuỗi văn bản có độ dài $T$, ta giả sử rằng từ tại bước thời gian $t$ là $w^{(t)}$ và kích thước cửa sổ ngữ cảnh là $m$.
+Bây giờ, ta sẽ xem xét việc cực đại hóa xác suất kết hợp
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(D=1\mid w^{(t)}, w^{(t+j)}).$$
@@ -263,7 +275,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
