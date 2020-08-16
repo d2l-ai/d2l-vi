@@ -106,7 +106,7 @@ Góc trên-bên trái của Hình 9.16 hiển thị một số ảnh máy bay, x
 ### Downloading the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Thực hiện tải tập dữ liệu
 
 
 <!--
@@ -115,7 +115,8 @@ shown in :numref:`fig_kaggle_cifar10` and download the dataset by clicking the "
 After unzipping the downloaded file in `../data`, and unzipping `train.7z` and `test.7z` inside it, you will find the entire dataset in the following paths:
 -->
 
-*dịch đoạn phía trên*
+Sau khi đăng nhạp vào Kaggle, ta có thể chọn vào thẻ "Data" trên trang của cuộc thi phân loại ảnh CIFAR-10 như thể hiện ở hình :numref:`fig_kaggle_cifar10` và tải tập dữ liệu này bằng cách nhấp chuột vào nút "Download All".
+Sau khi giải nén tập tin đã tải về vào `../data`, và giải nén `train.7z` và `test.7z` trong tập tin này, bạn sẽ tìm thấy toàn bộ tập dữ liệu ở đường dẫn sau:
 
 
 * ../data/cifar-10/train/[1-50000].png
@@ -128,7 +129,7 @@ After unzipping the downloaded file in `../data`, and unzipping `train.7z` and `
 Here folders `train` and `test` contain the training and testing images respectively, `trainLabels.csv` has labels for the training images, and `sample_submission.csv` is a sample of submission. 
 -->
 
-*dịch đoạn phía trên*
+Các thử mục `train` và `test` ở đây có chứa các ảnh cho việc huấn luyện và kiểm định tương ứng, tập tin `trainLabels.csv` chứa các nhãn dùng cho ảnh huấn luyện và tập tin `sample_submission.csv` là một mẫu để nộp.
 
 
 <!--
@@ -136,7 +137,8 @@ To make it easier to get started, we provide a small-scale sample of the dataset
 To use the full dataset of the Kaggle competition, you need to set the following `demo` variable to `False`.
 -->
 
-*dịch đoạn phía trên*
+Để việc bắt đầu làm quen dễ hơn, chúng tôi cung cấp một mẫu thu nhỏ của tập dữ liệu này: nó chứa $1000$ ảnh huấn luyện đầu tiên và $5$ ảnh kiểm định ngẫu nhiên.
+Để sử dụng toàn bộ tập dữ liệu của cuộc thi Kaggle, bạn cần thiết lập biến `demo` sau thành `False`.
 
 
 ```{.python .input  n=15}
@@ -159,7 +161,7 @@ else:
 ### Organizing the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Thực hiện tổ chức tập dữ liệu
 
 
 <!--
@@ -168,8 +170,9 @@ Let us first read the labels from the csv file.
 The following function returns a dictionary that maps the filename without extension to its label.
 -->
 
-*dịch đoạn phía trên*
-
+Ta cần tổ chức tập dữ liệu để thuận tiện cho việ huấn luyện và kiểm định mô hình.
+Ta hãy bắt đầu đọc các nhãn từ tập tin csv.
+Hàm sau đây trả về một từ điển thực hiện ánh xạ tên tập tin không bao gồm phần đuôi mở rộng sang tên nhãn của nó.
 
 ```{.python .input  n=16}
 #@save
@@ -197,8 +200,13 @@ while the other $5,000$ images will be stored as validation set in the path "`tr
 After organizing the data, images of the same class will be placed under the same folder so that we can read them later.
 -->
 
-*dịch đoạn phía trên*
-
+Kế tiếp, ta định nghĩa hàm `reorg_train_valid` để phân đoạn tập kiểm định từ tập huấn luyện gốc.
+Tham trị `valid_ratio` trong hàm này là tỉ số của số mẫu trong tập kiểm định đối với số mẫu trong tập huấn luyện gốc.
+Cụ thể, gọi $n$ là số ảnh của lớp với số mẫu tối thiểu, và $r$ là tỉ số thì ta sẽ dùng  $\max(\lfloor nr\rfloor,1)$ ảnh cho mỗi lớp làm tập kiểm định.
+Ta hãy chọn `valid_ratio=0.1` làm ví dụ.
+Vì tập ảnh huấn luyện gốc có $50,000$ ảnh, do đó ta sẽ có $45,000$ ảnh dùng để huấn luyện và lưu ở đường dẫn "`train_valid_test/train`" khi ta tinh chỉnh các tham số tiên nghiệm (hyperparameters),
+trong khi $5,000$ ảnh còn lại sẽ được giữ lại làm tập kiểm định ở đường dẫn "`train_valid_test/valid`".
+Sau khi tổ chức dữ liệu, ảnh của cùng lớp sẽ được đặt ở cùng thử mục để chúng ta có thể đọc chung sau đó.
 
 ```{.python .input  n=2}
 #@save
@@ -238,8 +246,7 @@ def reorg_train_valid(data_dir, labels, valid_ratio):
 The `reorg_test` function below is used to organize the testing set to facilitate the reading during prediction.
 -->
 
-*dịch đoạn phía trên*
-
+Hàm `reorg_test` dưới đây được dùng để tổ chức tập huấn luyện để thuận tiện cho việc đọc trong suốt quá trình dự đoán.
 
 ```{.python .input  n=3}
 #@save    
@@ -255,7 +262,7 @@ def reorg_test(data_dir):
 Finally, we use a function to call the previously defined `read_csv_labels`, `reorg_train_valid`, and `reorg_test` functions.
 -->
 
-*dịch đoạn phía trên*
+Sau cùng, ta sử dụng một hàm để gọi các hàm  `read_csv_labels`, `reorg_train_valid`, và `reorg_test` đã được định nghĩa trước đó.
 
 
 ```{.python .input  n=7}
@@ -272,7 +279,9 @@ During actual training and testing, the complete dataset of the Kaggle competiti
 We use $10\%$ of the training examples as the validation set for tuning hyperparameters.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta chỉ thiết lập kích thước batch là $4$ đối với tập dữ liệu chạy thử.
+Trong suốt quá trình huấn luyện và kiểm thử thật sự, tập huấn luyện đầy đủ của cuộc thi Kaggle nên được sử dụng và `batch_size` nên được được thiết lập giá trị số nguyên lớn hơn như là $128$.
+Ta sử dụng $10\%$ của các mẫu huấn luyện làm tập kiểm định để tinh chỉnh các tham số tiên nghiệm.
 
 
 ```{.python .input  n=4}
@@ -577,13 +586,13 @@ train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Classifying the Testing Set and Submitting Results on Kaggle
 -->
 
-## Phân loại Tập Kiểm tra và Nộp Kết quả trên Kaggle
+## *dịch tiêu đề phía trên*
 
 <!--
 After obtaining a satisfactory model design and hyperparameters, we use all training datasets (including validation sets) to retrain the model and classify the testing set.
 -->
 
-Sau khi thu được thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng toàn bộ tập huấn luyện (bao gồm tập kiểm định) để huấn luyện lại mô hình và tiến hành phân loại tập kiểm tra.
+*dịch đoạn phía trên*
 
 
 ```{.python .input  n=14}
@@ -609,9 +618,7 @@ The format of this file is consistent with the Kaggle competition requirements.
 The method for submitting results is similar to method in :numref:`sec_kaggle_house`.
 -->
 
-Sau khi chạy đoạn mã trên, ta sẽ thu được tệp "submission.csv".
-Tệp này có định dạng phù hợp với yêu cầu của cuộc thi trên Kaggle.
-Cách thức nộp kết quả giống với cách thức trong :numref:`sec_kaggle_house`.
+*dịch đoạn phía trên*
 
 
 ## Tóm tắt
@@ -621,8 +628,7 @@ Cách thức nộp kết quả giống với cách thức trong :numref:`sec_kag
 * We can use convolutional neural networks, image augmentation, and hybrid programming to take part in an image classification competition.
 -->
 
-* Ta có thể tạo một đối tượng `ImageFolderDataset` để đọc tập dữ liệu gồm có các tệp ảnh gốc.
-* Ta có thể sử dụng mạng nơ-ron tích chập, tăng cường ảnh, và lập trình hybrid để tham gia vào cuộc thi phân loại ảnh.
+*dịch đoạn phía trên*
 
 
 ## Bài tập
@@ -634,10 +640,7 @@ See what accuracy and ranking you can achieve in this competition.
 3. Scan the QR code to access the relevant discussions and exchange ideas about the methods used and the results obtained with the community. Can you come up with any better techniques?
 -->
 
-1. Sử dụng tập dữ liệu CIFAR-10 đầy đủ cho cuộc thi trên Kaggle. Thay đổi `batch_size` và số epoch `num_epochs` lần lượt bằng 128 và 100.
-Quan sát độ chính xác và xem bạn có thể đạt xếp hạng thứ bao nhiêu trong cuộc thi này.
-2. Bạn có thể đạt độ chính xác bằng bao nhiêu nếu không sử dụng tăng cường ảnh?
-3. Quét mã QR để truy cập các bài thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
+*dịch đoạn phía trên*
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -671,5 +674,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 5 -->
-* Đỗ Trường Giang
-
+* 
