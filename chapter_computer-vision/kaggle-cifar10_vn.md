@@ -589,7 +589,7 @@ The method for submitting results is similar to method in :numref:`sec_kaggle_ho
 
 Sau khi chạy đoạn mã trên, ta sẽ thu được tệp "submission.csv".
 Tệp này có định dạng phù hợp với yêu cầu của cuộc thi trên Kaggle.
-Cách thức nộp kết quá giống với cách thức trong :numref:`sec_kaggle_house`.
+Cách thức nộp kết quả giống với cách thức trong :numref:`sec_kaggle_house`.
 
 
 ## Tóm tắt
@@ -650,6 +650,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
-
 
 
