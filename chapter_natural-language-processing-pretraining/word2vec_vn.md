@@ -230,7 +230,7 @@ In applications of natural language processing, the central target word vector i
 ## The Continuous Bag of Words (CBOW) Model
 -->
 
-## *dịch đoạn phía trên*
+## MÔ hình túi từ liên tục (CBOW)
 
 
 <!--
@@ -241,7 +241,11 @@ the CBOW model is concerned with the conditional probability of generating
 the target word "loves" based on the context words "the", "man", "his" and "son"(as shown in :numref:`fig_cbow`), such as
 -->
 
-*dịch đoạn phía trên*
+Mô hình túi từ liên tục (CBOW) tương tự như mô hình skip-gram.
+Khác biệt lớn nhất đó là mô hình CBOW thì giả định rằng từ đích trung tâm được tạo ra dựa trên các từ ngữ cảnh trước và sau nó trong một chuỗi văn bản.
+Với cùng một chuỗi văn bản có "the", "man", "loves", "his" và "son", trong đó thì "love" là từ đích trung tâm, với kích thước cửa sổ ngữ cảnh bằng 2,
+mô hình CBOW liên quan đến xác suất có điều kiện của việc tạo ra
+từ đích là "love" dựa trên các từ ngữ cảnh "the", "man", "his" và "son" (như được thể hiện tại :numref:`fig_cbow`), chẳng hạn
 
 
 $$P(\textrm{"loves"}\mid\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"son"}).$$
@@ -251,7 +255,7 @@ $$P(\textrm{"loves"}\mid\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"so
 ![The CBOW model cares about the conditional probability of generating the central target word from given context words.](../img/cbow.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/cbow.svg)
+![Mô hình CBOW quan tâm đến xác suất có điều kiện tạo ra từ đích trung tâm từ các từ ngữ cảnh nhất định.](../img/cbow.svg)
 :label:`fig_cbow`
 
 
@@ -263,7 +267,11 @@ Let central target word $w_c$ be indexed as $c$, and context words $w_{o_1}, \ld
 Thus, the conditional probability of generating a central target word from the given context word is
 -->
 
-*dịch đoạn phía trên*
+Vì có quá nhiều từ ngữ cảnh trong mô hình CBOW, chúng ta sẽ lấy trung bình các vector từ của chúng và sau đó sử dụng phương pháp tương tự như mô hình skip-gram để tính xác suất có điều kiện.
+Ta giả sử rằng $\mathbf{v_i}\in\mathbb{R}^d$ and $\mathbf{u_i}\in\mathbb{R}^d$ là vector từ ngữ cảnh
+và vector từ đích trung tâm của từ có chỉ số $i$ trong từ điển (lưu ý rằng các kí hiệu đối lập với các kí hiệu có trong mô hình skip-gram).
+Hãy để từ đích trung tâm $w_c$ được đánh chỉ số là $c$, và từ ngữ cảnh là $w_{o_1}, \ldots, w_{o_{2m}}$ được đánh chỉ số $o_1, \ldots, o_{2m}$ trong từ điển.
+Do đó, xác suất có điều kiện để tạo ra từ đích trung tâm dựa vào từ ngữ cảnh cho trước là 
 
 
 $$P(w_c \mid w_{o_1}, \ldots, w_{o_{2m}}) = \frac{\text{exp}\left(\frac{1}{2m}\mathbf{u}_c^\top (\mathbf{v}_{o_1} + \ldots, + \mathbf{v}_{o_{2m}}) \right)}{ \sum_{i \in \mathcal{V}} \text{exp}\left(\frac{1}{2m}\mathbf{u}_i^\top (\mathbf{v}_{o_1} + \ldots, + \mathbf{v}_{o_{2m}}) \right)}.$$
@@ -274,7 +282,8 @@ For brevity, denote $\mathcal{W}_o= \{w_{o_1}, \ldots, w_{o_{2m}}\}$, and $\bar{
 The equation above can be simplified as
 -->
 
-*dịch đoạn phía trên*
+Để rút gọn, kí hiệu $\mathcal{W}_o= \{w_{o_1}, \ldots, w_{o_{2m}}\}$, và $\bar{\mathbf{v}}_o = \left(\mathbf{v}_{o_1} + \ldots, + \mathbf{v}_{o_{2m}} \right)/(2m)$.
+Phương trình trên được đơn giản hoá thành
 
 
 $$P(w_c \mid \mathcal{W}_o) = \frac{\exp\left(\mathbf{u}_c^\top \bar{\mathbf{v}}_o\right)}{\sum_{i \in \mathcal{V}} \exp\left(\mathbf{u}_i^\top \bar{\mathbf{v}}_o\right)}.$$
@@ -285,7 +294,8 @@ Given a text sequence of length $T$, we assume that the word at timestep $t$ is 
 The likelihood function of the CBOW model is the probability of generating any central target word from the context words.
 -->
 
-*dịch đoạn phía trên*
+Cho một chuỗi văn bản có độ dài $T$, ta giả định rằng từ xuất hiện tại timestep $t$ là $w^{(t)}$, và kích thước của cửa sổ ngữ cảnh là $m$.
+Hàm hợp lý của mô hình CBOW là xác suất tạo ra bất kì từ đích trung tâm nào dựa vào những từ ngữ cảnh.
 
 
 $$ \prod_{t=1}^{T}  P(w^{(t)} \mid  w^{(t-m)}, \ldots, w^{(t-1)}, w^{(t+1)}, \ldots, w^{(t+m)}).$$
@@ -394,7 +404,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
