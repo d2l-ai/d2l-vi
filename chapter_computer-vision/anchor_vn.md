@@ -265,8 +265,8 @@ and finally filter out the prediction bounding boxes that need to be output.
 -->
 
 Trong tập huấn luyện, chúng ta xem mỗi khung neo là một mẫu huấn luyện.
-Để huấn luyện mô hình phát hiện đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là hạng mục (*category*) của đối tượng trong khung neo, thứ hai là độ dời tương đối của khung chứa nhãn gốc so với khung neo.
-Trong phát hiện đối tượng, trước tiên ta tạo ra nhiều khung neo, dự đoán các hạng mục và độ dời cho từng khung neo, hiệu chỉnh vị trí chúng dựa theo độ lệch dự kiến để có được những khung chứa dự đoán và sau cùng là chọn ra các khung chứa dự đoán tốt làm đầu ra.
+Để huấn luyện mô hình phát hiện đối tượng, chúng ta cần đánh dấu hai loại nhãn cho mỗi khung neo: thứ nhất là hạng mục (*category*) của đối tượng trong khung neo, thứ hai là độ dời tương đối (*offset*) của khung chứa nhãn gốc so với khung neo.
+Trong phát hiện đối tượng, trước tiên ta tạo ra nhiều khung neo, dự đoán các hạng mục và độ dời cho từng khung neo, hiệu chỉnh vị trí của chúng dựa theo độ lệch dự kiến để có được những khung chứa và sau cùng là lọc ra các khung chứa mà cần được dự đoán.
 
 
 <!--
@@ -276,7 +276,7 @@ So how do we assign ground-truth bounding boxes to anchor boxes similar to them?
 -->
 
 Chúng ta biết rằng, trong tập huấn luyện phát hiện đối tượng, mỗi hình ảnh được gán nhãn với vị trí của khung chứa nhãn gốc và hạng mục của đối tượng.
-Ta gán nhãn cho các khung neo sau khi tạo chủ yếu dựa vào thông tin vị trí và danh mục của các khung chứa nhãn gốc tương đồng với các khung neo đó.
+Ta gán nhãn cho các khung neo sau khi tạo chủ yếu dựa vào thông tin vị trí và hạng mục của các khung chứa nhãn gốc tương đồng với các khung neo đó.
 Vậy làm thế nào để gán các khung chứa nhãn gốc cho những khung neo tương đồng với chúng?
 
 
