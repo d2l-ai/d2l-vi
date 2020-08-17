@@ -218,7 +218,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-Hơn nữa, do bậc của $\mathcal{V}$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán đối với mỗi bước trong sofmax phân cấp được giảm đáng kể so với trường hợp mà ta không áp dụng huấn luyện xấp xỉ.
+Hơn nữa, do bậc của $\mathcal{V}$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán đối với mỗi bước trong sofmax phân cấp được giảm đáng kể so với trường hợp mà ta không áp dụng huấn luyện gần đúng.
 
 
 ## Tóm tắt
