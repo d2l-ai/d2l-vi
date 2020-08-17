@@ -382,7 +382,7 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 -->
 
 * Đầu tiên, mạng tích chập đầy đủ sử dụng một mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng các hạng mục thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng thành kích thước ban đầu của ảnh bằng cách sử dụng tầng tích chập chuyển vị để cho ra hạng mục của từng điểm ảnh.
-* Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép ngoại suy song tuyến tính tăng mẫu.
+* Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị thành phép tăng mẫu nội suy song tuyến tính.
 
 
 ## Bài tập
@@ -432,5 +432,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
 
