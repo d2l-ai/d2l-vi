@@ -356,7 +356,7 @@ For the sake of simplicity, we only read a few large test images and crop an are
 Only this area is used for prediction. For the input image, we print the cropped area first, then print the predicted result, and finally print the labeled category.
 -->
 
-Để đơn giản, ta chỉ đọc một vài ảnh kiểm tra và cắt các vùng với kích thước $320\times480$ từ góc trái trên cùng của ảnh.
+Để đơn giản, ta chỉ đọc một vài ảnh kiểm tra có kích thước lớn và cắt các vùng với kích thước $320\times480$ từ góc trái trên cùng của ảnh.
 Chỉ vùng này được sử dụng để dự đoán. Với ảnh đầu vào, đầu tiên ta in ra vùng được cắt, sau đó in ra kết quả dự đoán, và cuối cùng in ra hạng mục nhãn.
 
 
@@ -432,4 +432,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
