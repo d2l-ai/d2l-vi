@@ -162,7 +162,7 @@ It uses a binary tree for data structure as illustrated in :numref:`fig_hi_softm
 with the leaf nodes of the tree representing every word in the dictionary $\mathcal{V}$.
 -->
 
-Softmax phân cấp (*Hierarchical softmax*) là một phương pháp huấn luyện xấp xỉ khác.
+Softmax phân cấp (*Hierarchical softmax*) là một phương pháp huấn luyện gần đúng khác.
 Phương pháp này sử dụng cấu trúc dữ liệu cây nhị phân như minh hoạ trong :numref:`fig_hi_softmax`,
 với các nút lá của cây biểu diễn tất cả các từ trong từ điển $\mathcal{V}$.
 
@@ -186,7 +186,7 @@ Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫ
 Gọi $n(w, j)$ là nút thứ $j^\mathrm{th}$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
 Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
 <!-- Note: Ở đây bản gốc không có reference tới hình cây nhị phân trên nên bị lỗi reference tới Figure 10.3 -->
-Softmax phân cấp sẽ xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng
+Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng
 
 
 $$P(w_o \mid w_c) = \prod_{j=1}^{L(w_o)-1} \sigma\left( [\![  n(w_o, j+1) = \text{leftChild}(n(w_o, j)) ]\!] \cdot \mathbf{u}_{n(w_o, j)}^\top \mathbf{v}_c\right),$$
