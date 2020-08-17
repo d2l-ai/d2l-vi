@@ -287,7 +287,7 @@ In addition, the model calculates the accuracy based on whether the prediction c
 Bây ta có thể bắt đầu huấn luyện mô hình.
 Hàm mất mát và hàm tính độ chính xác được sử dụng ở đây không quá khác biệt so với các hàm được sử dụng trong bài toán phân loại ảnh.
 Bởi vì ta sử dụng kênh của tầng tích chập chuyển vị để dự đoán các hạng mục điểm ảnh, tham số `axis=1` được định rõ trong `SoftmaxCrossEntropyLoss`.
-Hơn nữa, mô hình tính toán độ chính xác dựa trên hạng mục của từng pixel được dự đoán đúng hay không.
+Hơn nữa, mô hình tính toán độ chính xác dựa trên hạng mục của từng điểm ảnh được dự đoán có đúng hay không.
 
 
 ```{.python .input  n=12}
@@ -435,5 +435,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
