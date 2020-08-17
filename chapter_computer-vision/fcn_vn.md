@@ -352,7 +352,7 @@ of the different areas can be used as an input for the softmax operation to pred
 Kích thước và hình dạng của ảnh trong tập kiểm tra có thể khác nhau.
 Vì mô hình sử dụng tầng tích chập chuyển vị với sải bước bằng 32, nên khi chiều cao và chiều rộng của ảnh đầu vào không chia hết cho 32 thì chiều cao và chiều rộng của đầu ra tầng tích chập chuyển vị sẽ chênh lệch so với kích thước của ảnh đầu vào. 
 Để giải quyết vấn đề này, ta có thể cắt nhiều vùng hình chữ nhật trong ảnh với chiều cao và chiều rộng chia hết cho 32, sau đó thực hiện lượt truyền xuôi trên các điểm ảnh của những vùng này. 
-Khi kết hợp các kết quả lại, các vùng này phải khôi phục lại ảnh đầu vào.
+Khi kết hợp các kết quả lại, các vùng này phải khôi phục lại toàn bộ ảnh đầu vào.
 Khi một điểm ảnh nằm trong nhiều vùng khác nhau, ta lấy trung bình đầu ra của tầng tích chập chuyển vị trong lượt truyền xuôi của tất cả các vùng làm đầu vào cho phép tính softmax để dự đoán hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -435,4 +435,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
