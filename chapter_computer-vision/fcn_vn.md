@@ -261,7 +261,7 @@ Here, we specify shape of the randomly cropped output image as $320\times 480$, 
 -->
 
 Ta đọc dữ liệu bằng cách sử dụng phương thức được mô tả ở phần trước.
-Ở đây, ta định rõ kích thước của ảnh đầu ra được cắt ngẫu nhiên thành $320\times 480$, sao cho cả chiều cao và chiều rộng chia hết cho 32.
+Ở đây, ta định rõ kích thước của ảnh đầu ra được cắt ngẫu nhiên thành $320\times 480$, để cả chiều cao và chiều rộng chia hết cho 32.
 
 
 ```{.python .input  n=13}
@@ -435,6 +435,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
 
