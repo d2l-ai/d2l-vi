@@ -119,7 +119,7 @@ tconv(X)
 ## Padding, Strides, and Channels
 -->
 
-# *dịch tiêu đề phía trên*
+# Đệm, Sải bước và Kênh
 
 
 <!--
@@ -127,7 +127,8 @@ We apply padding elements to the input in convolution, while they are applied to
 A $1\times 1$ padding means we first compute the output as normal, then remove the first/last rows and columns.
 -->
 
-*dịch đoạn phía trên*
+Khi tính tích chập ta áp dụng đệm lên đầu vào, nhưng với tích chập chuyển vị, chúng được áp dụng vào đầu ra.
+Một đệm có kích cỡ $1\times 1$ có nghĩa đầu tiên ta tính toán đầu ra như bình thường, sau đó bỏ đi dòng và cột đầu tiên/cuối cùng.
 
 
 ```{.python .input}
@@ -141,8 +142,7 @@ tconv(X)
 Similarly, strides are applied to outputs as well.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự, các sải bước cũng được áp dụng vào các đầu ra.
 
 ```{.python .input}
 tconv = nn.Conv2DTranspose(1, kernel_size=2, strides=2)
@@ -157,7 +157,9 @@ When the input has multiple channels, denoted by $c_i$, the transposed convoluti
 If the output has a channel size $c_o$, then we have a $c_i\times k_h\times k_w$ kernel for each output channel.
 -->
 
-*dịch đoạn phía trên*
+Phần mở rộng đa kênh của tích chập chuyển vị cũng giống như tích chập.
+Khi đầu vào có $c_i$ kênh, tích chập chuyển vị gán một ma trận hạt nhân có kích thước $k_h\times k_w$ vào mỗi kênh đầu vào.
+Nếu số kênh đầu ra là $c_o$, thì ta có một hạt nhân có kích thước $c_i\times k_h\times k_w$ cho mỗi kênh đầu ra.
 
 
 
@@ -167,7 +169,9 @@ the same hyperparameters as $f$ except for the output channel set to be the chan
 Let us verify this statement.
 -->
 
-*dịch đoạn phía trên*
+Do đó, nếu ta đưa $X$ qua một tầng tích chập $f$ để tính $Y=f(X)$ và tạo một tầng tích chập chuyển vị $g$ với
+cùng một siêu tham số như $f$ ngoại trừ kênh đầu ra được đặt thành kích thước kênh $X$, thì $g(Y)$ sẽ có cùng kích thước với $X$.
+Ta hãy xác minh phát biểu này.
 
 
 ```{.python .input}
@@ -311,7 +315,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
