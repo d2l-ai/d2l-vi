@@ -394,7 +394,7 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 4. The outputs of some intermediate layers of the convolutional neural network are also used in the paper on fully convolutional networks[1]. Try to implement this idea.
 -->
 
-1. Nếu ta sử dụng Xavier để khởi tạo ngẫu nhiên tầng tích chập chuyển vị, kết quả có thay đổi gì không?
+1. Nếu ta sử dụng Xavier để khởi tạo ngẫu nhiên tầng tích chập chuyển vị, kết quả thay đổi ra sao?
 2. Bạn có thể cải thiện độ chính xác của mô hình bằng cách điều chỉnh các siêu tham số không?
 3. Hãy dự đoán các hạng mục của tất cả các điểm ảnh trong ảnh kiểm tra.
 4. Đầu ra của một số tầng trung gian của mạng nơ-ron tích chập cũng được sử trung trong bài báo về mạng tích chập đầy đủ [1]. Hãy thử lập trình lại ý tưởng này.
@@ -432,6 +432,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
 
 
