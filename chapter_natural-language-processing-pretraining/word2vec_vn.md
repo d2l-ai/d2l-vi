@@ -57,7 +57,7 @@ For the vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their cosine similari
 -->
 
 Mặc dù rất dễ xây dựng các vector one-hot, nhưng chúng thường không phải là một lựa chọn tốt.
-Một trong những lý do chính là các vector one-hot này không thể biểu diễn một cách chính xác độ tương tự giữa các từ khác nhau, chẳng hạn như độ tương tự cosine mà ta thường sử dụng.
+Một trong những lý do chính là các vector one-hot này không thể biểu diễn một cách chính xác độ tương tự giữa các từ khác nhau, chẳng hạn như độ tương tự cô-sin mà ta thường sử dụng.
 Với hai vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, độ tương tự cô-sin của chúng là giá trị cô-sin của góc giữa chúng:
 
 
