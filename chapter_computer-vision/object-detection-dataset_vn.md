@@ -18,8 +18,8 @@ This format can reduce the storage overhead of the dataset on the disk and impro
 If you want to learn more about how to read images, refer to the documentation for the [GluonCV Toolkit](https://gluon-cv.mxnet.io/).
 -->
 
-Không có bộ dữ liệu nhỏ nào cho phát hiện đối tượng, như MNIST hay Fashion-MNIST.
-Để nhanh chóng kiểm định mô hình, ta sẽ thu thập một tập dữ liệu nhỏ.
+Không có một bộ dữ liệu nhỏ nào cho bài toán phát hiện đối tượng như MNIST hay Fashion-MNIST.
+Để nhanh chóng kiểm định mô hình, ta sẽ tập hợp lại một tập dữ liệu nhỏ.
 Đầu tiên, ta tạo 1000 bức ảnh Pikachu với các góc độ và kích thước khác nhau bằng mô hình mã nguồn mở Pikachu 3D.
 Sau đó, ta thu thập một loạt các ảnh nền và đặt ngẫu nhiên ảnh Pikachu lên trên mỗi bức ảnh.
 Ta dùng [im2rec tool](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyển đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
@@ -77,7 +77,7 @@ Ta sẽ đọc tập dữ liệu phát hiện đối tượng theo thứ tự ng
 "Det" (viết tắt cho Detection), đề cập đến việc phát hiện.
 Vì định dạng của dữ liệu là RecordIO, ta cần có tệp chỉ số `'train.idx'` để đọc minibatch ngẫu nhiên.
 Ngoài ra, đối với từng ảnh trong tập huấn luyện, ta sẽ cắt xén ngẫu nhiên nhưng vẫn yêu cầu bao phủ ít nhất 95% mỗi đối tượng.
-Vì việc cắt xén là ngẫu nhiên, yêu cầu này không phải lúc nào cũng thoả mãn.
+Vì việc cắt xén là ngẫu nhiên, yêu cầu này không phải lúc nào cũng được thoả mãn.
 Ta cho trước số lần cắt ảnh ngẫu nhiên tối đa là 200 lần. Nếu không có lần nào thoả mãn yêu cầu, hình ảnh sẽ được giữ nguyên.
 Để đầu ra được đảm bảo, ta sẽ không cắt ngẫu nhiên các hình ảnh trong tập kiểm tra.
 Ta cũng không cần đọc dữ liệu trong tập kiểm tra theo thứ tự ngẫu nhiên.
