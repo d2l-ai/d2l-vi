@@ -5,7 +5,7 @@
 # Image Classification (CIFAR-10) on Kaggle
 -->
 
-# *dịch tiêu đề phía trên*
+# Phân loại ảnh (CIFAR-10) trên Kaggle
 :label:`sec_kaggle_cifar10`
 
 
@@ -15,8 +15,9 @@ In practice, however, image datasets often exist in the format of image files.
 In this section, we will start with the original image files and organize, read, and convert the files to the tensor format step by step.
 -->
 
-*dịch đoạn phía trên*
-
+Cho đến lúc này, ta đã và đang sử dụng  gói `data` của Gluon để lấy trực tiếp các tập dữ liệu dưới định dạng tensor.
+Tuy nhiên, trong thực tế thì các dữ liệu ảnh thường tồn tại ở định dạng các tập tin ảnh.
+Trong phần này, ta sẽ bắt đầu với các tập tin ảnh gốc và từng bước một tổ chức, đọc và chuyển đổi các ảnh này sang định dạng tensor. 
 
 <!--
 We performed an experiment on the CIFAR-10 dataset in :numref:`sec_image_augmentation`.
@@ -25,8 +26,10 @@ Now, we will apply the knowledge we learned in the previous sections in order to
 The competition's web address is
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta thực hiện thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
+Đây là một tập dữ liệu quan trọng trong lĩnh vực thị giác máy tính.
+Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi trên Kaggle nhắm tới các bài toán phân loại tập ảnh CIFAR-10.
+Địa chỉ trang web  của cuộc thi tại 
 
 > https://www.kaggle.com/c/cifar-10
 
@@ -36,14 +39,14 @@ The competition's web address is
 In order to submit the results, please register an account on the Kaggle website first.
 -->
 
-*dịch đoạn phía trên*
-
+Hình :numref:`fig_kaggle_cifar10` cho biết thông tin trên  trang web của cuộc thi.
+Để có thể tham gia nộp kết quả, vui lòng đăng ký một tài khoản trên trang Kaggle trước tiên.
 
 <!--
 ![CIFAR-10 image classification competition webpage information. The dataset for the competition can be accessed by clicking the "Data" tab.](../img/kaggle_cifar10.png)
 -->
 
-![*dịch mô tả phía trên*](../img/kaggle_cifar10.png)
+![Thông tin trang web cuộc thi phân loại ảnh CIFAR-10. Tập dữ liệu cho cuộc thi có thể truy xuất bằng cách chọn vào bảng "Data".](../img/kaggle_cifar10.png)
 :width:`600px`
 :label:`fig_kaggle_cifar10`
 
@@ -52,7 +55,7 @@ In order to submit the results, please register an account on the Kaggle website
 First, import the packages or modules required for the competition.
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, nạp các gói và mô-đun cần cho cuộc thi này.
 
 
 ```{.python .input  n=14}
@@ -74,7 +77,7 @@ npx.set_np()
 ## Obtaining and Organizing the Dataset
 -->
 
-### *dịch tiêu đề phía trên*
+### Tải và tổ chức tập dữ liệu
 
 
 <!--
@@ -87,7 +90,13 @@ The images cover $10$ categories: planes, cars, birds, cats, deer, dogs, frogs, 
 The upper-left corner of Figure 9.16 shows some images of planes, cars, and birds in the dataset.
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu thi đấu được chia thành tập dữ liệu huấn luyện và tập kiểm thử.
+Tập huấn luyện chứa $50,000$ ảnh.
+Tập kiểm thử chứa $300,000$ ảnh, trong đó có $10,000$ ảnh được sử dụng để tính điểm,
+trong khi $290,000$ không được dùng tính điểm được đưa vào để ngăn ngừa việc dán nhãn thủ công vào tập kiểm thử và rồi nộp kết quả đã dán nhãn.
+Định dạng ảnh trong cả hai tập dữ liệu là dạng PNG, với chiều cao và chiều rộng là 32 điểm ảnh với ba kênh màu (RGB).
+Các ảnh được phân thành $10$ nhóm: máy bay, xe hơi, chim, mèo, nai, chó, ếch, ngựa, thuyền và xe tải.
+Góc trên-bên trái của Hình 9.16 hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -280,7 +289,7 @@ reorg_cifar10_data(data_dir, valid_ratio)
 ## Image Augmentation
 -->
 
-## *dịch tiêu đề phía trên*
+## Tăng cường Ảnh
 
 
 <!--
@@ -290,7 +299,10 @@ We can also perform normalization for the three RGB channels of color images usi
 Below, we list some of these operations that you can choose to use or modify depending on requirements.
 -->
 
-*dịch đoạn phía trên*
+Để tránh hiện tượng quá khớp, ta sẽ áp dụng tăng cường ảnh.
+Ví dụ, ta có thể lật ngẫu nhiên các ảnh bằng cách thêm vào `transforms.RandomFlipLeftRight()`.
+Ta cũng có thể thực hiện chuẩn hoá trên ba kênh màu RGB của ảnh bằng cách sử dụng `transforms.Normalize()`.
+Dưới đây, chúng tôi liệt kê một số thao tác tăng cường ảnh để bạn có thể lựa chọn sử dụng hoặc chỉnh sửa tuỳ theo nhu cầu.
 
 
 ```{.python .input  n=9}
@@ -315,7 +327,7 @@ transform_train = gluon.data.vision.transforms.Compose([
 In order to ensure the certainty of the output during testing, we only perform normalization on the image.
 -->
 
-*dịch đoạn phía trên*
+Để đảm bảo tính chắc chắn của đầu ra trong quá trình kiểm tra, ta chỉ thực hiện chuẩn hoá trên ảnh.
 
 
 ```{.python .input}
@@ -330,14 +342,14 @@ transform_test = gluon.data.vision.transforms.Compose([
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Tập dữ liệu
 
 
 <!--
 Next, we can create the `ImageFolderDataset` instance to read the organized dataset containing the original image files, where each example includes the image and label.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta tạo đối tượng `ImageFolderDataset` để đọc tập dữ liệu đã được thiết lập ở trên bao gồm các tệp ảnh gốc, trong đó mỗi ví dụ gồm có ảnh và nhãn.
 
 
 ```{.python .input  n=10}
@@ -354,7 +366,9 @@ During training, we only use the validation set to evaluate the model, so we nee
 During prediction, we will train the model on the combined training set and validation set to make full use of all labelled data.
 -->
 
-*dịch đoạn phía trên*
+Trong `DataLoader` ta chỉ rõ thao tác tăng cường ảnh như đã xác định ở trên.
+Trong suốt quá trình huấn luyện, ta chỉ sử dụng tập kiểm định để đánh giá mô hình , do đó ta cần đảm bảo tính chắc chắc của đầu ra.
+Trong quá trình dự đoán, ta sẽ huấn luyện mô hình trên tập huấn luyện và tập kiểm định gộp lại để tận dụng tất cả dữ liệu có dán nhãn.
 
 
 ```{.python .input}
@@ -379,7 +393,7 @@ test_iter = gluon.data.DataLoader(
 ## Defining the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Mô hình
 
 
 <!--
@@ -387,7 +401,8 @@ Here, we build the residual blocks based on the `HybridBlock` class, which is sl
 This is done to improve execution efficiency.
 -->
 
-*dịch đoạn phía trên*
+Ở phần này, ta xây dựng các khối phần dư dựa trên lớp `HybridBlock`, lớp này có đôi chút khác biệt so với cách lập trình được mô tả trong :numref:`sec_resnet`.
+Sự thay đổi này nhằm cải thiện hiệu suất thực thi.
 
 
 ```{.python .input  n=11}
@@ -418,7 +433,7 @@ class Residual(nn.HybridBlock):
 Next, we define the ResNet-18 model.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta định nghĩa mô hình ResNet-18.
 
 
 ```{.python .input}
@@ -450,7 +465,8 @@ The CIFAR-10 image classification challenge uses 10 categories.
 We will perform Xavier random initialization on the model before training begins.
 -->
 
-*dịch đoạn phía trên*
+Thử thách phân loại ảnh CIFAR-10 bao gồm 10 hạng mục.
+Ta sẽ thực hiện khởi tạo ngẫu nhiên Xavier trên mô hình trước khi bắt đầu huấn luyện.
 
 
 ```{.python .input}
@@ -471,7 +487,7 @@ loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ## Defining the Training Functions
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Huấn luyện
 
 
 <!--
@@ -480,7 +496,9 @@ Next, we define the model training function `train`.
 We record the training time of each epoch, which helps us compare the time costs of different models.
 -->
 
-*dịch đoạn phía trên*
+Ta tiến hành lựa chọn mô hình và điều chỉnh các siêu tham số tuỳ theo kết quả của mô hình trên tập kiểm định.
+Tiếp theo, ta định nghĩa hàm huấn luyện mô hình `train`.
+Ta ghi lại thời gian huấn luyện mỗi epoch nhằm giúp so sánh thời gian mà các mô hình khác nhau yêu cầu.
 
 
 ```{.python .input}
@@ -525,7 +543,7 @@ def train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Training and Validating the Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện và Kiểm định Mô hình
 
 
 <!--
@@ -536,7 +554,11 @@ Because `lr_period` and `lr_decay` are set to 80 and 0.1 respectively, the learn
 For simplicity, we only train one epoch here.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể huấn luyện và kiểm định mô hình.
+Các siêu tham số sau có thể được điều chỉnh.
+Ví dụ, ta có thể tăng số epoch.
+Do `lr_period` và `lr_decay` được đặt lần lượt bằng 80 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 80 epoch.
+Để đơn giản hoá, ở đây ta chỉ huấn luyện một epoch.
 
 
 ```{.python .input  n=13}
@@ -555,13 +577,13 @@ train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Classifying the Testing Set and Submitting Results on Kaggle
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân loại Tập Kiểm tra và Nộp Kết quả trên Kaggle
 
 <!--
 After obtaining a satisfactory model design and hyperparameters, we use all training datasets (including validation sets) to retrain the model and classify the testing set.
 -->
 
-*dịch đoạn phía trên*
+Sau khi thu được thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng toàn bộ tập huấn luyện (bao gồm tập kiểm định) để huấn luyện lại mô hình và tiến hành phân loại tập kiểm tra.
 
 
 ```{.python .input  n=14}
@@ -587,7 +609,9 @@ The format of this file is consistent with the Kaggle competition requirements.
 The method for submitting results is similar to method in :numref:`sec_kaggle_house`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi chạy đoạn mã trên, ta sẽ thu được tệp "submission.csv".
+Tệp này có định dạng phù hợp với yêu cầu của cuộc thi trên Kaggle.
+Cách thức nộp kết quả giống với cách thức trong :numref:`sec_kaggle_house`.
 
 
 ## Tóm tắt
@@ -597,7 +621,8 @@ The method for submitting results is similar to method in :numref:`sec_kaggle_ho
 * We can use convolutional neural networks, image augmentation, and hybrid programming to take part in an image classification competition.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể tạo một đối tượng `ImageFolderDataset` để đọc tập dữ liệu gồm có các tệp ảnh gốc.
+* Ta có thể sử dụng mạng nơ-ron tích chập, tăng cường ảnh, và lập trình hybrid để tham gia vào cuộc thi phân loại ảnh.
 
 
 ## Bài tập
@@ -609,7 +634,10 @@ See what accuracy and ranking you can achieve in this competition.
 3. Scan the QR code to access the relevant discussions and exchange ideas about the methods used and the results obtained with the community. Can you come up with any better techniques?
 -->
 
-*dịch đoạn phía trên*
+1. Sử dụng tập dữ liệu CIFAR-10 đầy đủ cho cuộc thi trên Kaggle. Thay đổi `batch_size` và số epoch `num_epochs` lần lượt bằng 128 và 100.
+Quan sát độ chính xác và xem bạn có thể đạt xếp hạng thứ bao nhiêu trong cuộc thi này.
+2. Bạn có thể đạt độ chính xác bằng bao nhiêu nếu không sử dụng tăng cường ảnh?
+3. Quét mã QR để truy cập các bài thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -631,19 +659,17 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 5 -->
-* 
-
-
+* Đỗ Trường Giang
 

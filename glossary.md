@@ -23,6 +23,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
 | anchor box                            | khung neo                 |                                              |
+| approximate inference | suy luận gần đúng | |
+| approximate training   | huấn luyện gần đúng | |
 | argument (in programming)             | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
@@ -40,6 +42,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | backpropagation                        | lan truyền ngược               |                                              |
 | backpropagation through time           | lan truyền ngược qua thời gian |                                              |
 | backward pass                          | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
+| bag of words | túi từ | |
 | bandit                                 | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                                  | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
 | batch normalization                    | chuẩn hóa theo batch           | [https://git.io/Jfe1T](https://git.io/Jfe1T) |
@@ -99,6 +102,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | cosine                          | cô-sin                   |                                              |
 | cost function                   | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
 | covariate                       | hiệp biến                | [https://git.io/JvohK](https://git.io/JvohK) |
+| crop (image)            | cắt (ảnh)          |                                              |
 | cross correlation               | tương quan chéo          |                                              |
 | cross entropy                   | entropy chéo             |                                              |
 | cross validation                | kiểm định chéo           |                                              |
@@ -127,6 +131,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distributed               | phân tán                        |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
+| downsample        | giảm mẫu                  |  [https://git.io/JvohC](https://git.io/JvohC)                          |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
@@ -443,6 +448,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sensitivity                       | độ nhạy                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | shape (in linear algebra)         | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn) |
 | significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| skip-gram (model) | (mô hình) skip-gram | |
+| significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | slicing (an array)                | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH) |
 | source data / distribution        | dữ liệu / phân phối gốc  | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | spam email                        | email rác                |                                              |
@@ -510,6 +517,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underflow (numerical)     | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning     | học không giám sát        |                                              |
+| upsample        | tăng mẫu                  |   [https://git.io/JvohC](https://git.io/JvohC)                              |
 
 ## V
 | English                    | Tiếng Việt         | Thảo luận tại                                |

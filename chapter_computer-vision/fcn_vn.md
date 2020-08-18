@@ -5,7 +5,7 @@
 # Fully Convolutional Networks (FCN)
 -->
 
-# *dịch tiêu đề phía trên*
+# Mạng Tích Chập Đầy đủ
 :label:`sec_fcn`
 
 
@@ -18,14 +18,17 @@ so that the predictions have a one-to-one correspondence with input image in spa
 Given a position on the spatial dimension, the output of the channel dimension will be a category prediction of the pixel corresponding to the location.
 -->
 
-*dịch đoạn phía trên*
+Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
+Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các nhãn điểm ảnh.
+Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
+Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
 
 
 <!--
 We will first import the package or module needed for the experiment and then explain the transposed convolution layer.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta sẽ nhập gói thư viện và mô-đun cần thiết cho thí nghiệm này và sau đó sẽ giải thích về tầng tích chập chuyển vị.
 
 
 ```{.python .input  n=2}
@@ -42,7 +45,7 @@ npx.set_np()
 ## Constructing a Model
 -->
 
-## *dịch tiêu đề phía trên*
+## Xây dựng Mô hình
 
 
 <!--
@@ -54,13 +57,16 @@ The model output has the same height and width as the input image and has a one-
 The final output channel contains the category prediction of the pixel of the corresponding spatial position.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng tôi sẽ trình bày một thiết kế cơ bản nhất của mô hình tích chập đầy đủ.
+Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng lớp nhãn thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và rộng của ánh xạ đặc trưng bằng với kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
+Đầu ra của mạng có cùng chiều cao và chiều rộng như ảnh gốc và có sự tương ứng một-một theo vị trí không gian.
+Kênh đầu ra cuối cùng chứa lớp dự đoán của từng điểm ảnh tương ứng với vị trí không gian. 
 
 <!--
 ![Fully convolutional network.](../img/fcn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/fcn.svg)
+![Mạng tích chập đầy đủ.](../img/fcn.svg)
 :label:`fig_fcn`
 
 
@@ -71,8 +77,10 @@ The `output` module contains the fully connected layer used for output.
 These layers are not required for a fully convolutional network.
 -->
 
-*dịch đoạn phía trên*
-
+Dưới đây, ta sử dụng mô hình ResNet-18 được tiền huấn luyện trên ImageNet để trích xuất đặc trưng và lưu thực thể mô hình là `pretrained_net`.
+Như ta thấy, hai tầng cuối của mô hình nằm trong biến thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
+Mô-đun `output` chứa tầng kết nối đầy đủ được sử dụng cho đầu ra.
+Các tầng này không bắt buộc phải có trong mạng tích chập đầy đủ.
 
 ```{.python .input  n=5}
 pretrained_net = gluon.model_zoo.vision.resnet18_v2(pretrained=True)
@@ -88,7 +96,8 @@ Next, we create the fully convolutional network instance `net`.
 It duplicates all the neural layers except the last two layers of the instance member variable `features` of `pretrained_net` and the model parameters obtained after pre-training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta khởi tạo một thực thể mạng tích chập đầy đủ `net`.
+Thực thể này sao lặp tất cả các tầng nơ-ron ngoại trừ hai tầng cuối cùng của biến thành viên `features` trong `pretrained_net` và các tham số mô hình thu được từ bước tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -103,7 +112,8 @@ Given an input of a height and width of 320 and 480 respectively,
 the forward computation of `net` will reduce the height and width of the input to $1/32$ of the original, i.e., 10 and 15.
 -->
 
-*dịch đoạn phía trên*
+Với đầu vào có chiều cao và chiều rộng là 320 và 480,
+bước tính toán truyền xuôi của `net` sẽ giảm chiều cao và rộng của đầu vào thành $1/32$ kích thước ban đầu, nghĩa là, 10 và 15.
 
 
 ```{.python .input  n=7}
@@ -122,8 +132,12 @@ It is not difficult to see that, if the stride is $s$, the padding is $s/2$ (ass
 the transposed convolution kernel will magnify both the height and width of the input by a factor of $s$.
 -->
 
-*dịch đoạn phía trên*
-
+Tiếp đến, ta chuyển đổi số lượng kênh đầu ra bằng số lượng hạng mục trong bộ dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
+Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng lên gấp 32 lần để bằng với kích thước thành chiều cao và chiều rộng của ảnh đầu vào.
+Nhắc lại phương pháp tính kích thước đầu ra của tầng tích chập được mô tả trong :numref:`sec_padding`.
+Vì $(320-64+16\times2+32)/32=10$ và $(480-64+16\times2+32)/32=15$, nên ta sẽ xây dựng một tầng tích chập chuyển vị với sải bước 32, đặt chiều dài và chiều rộng của hạt nhân tích chập bằng 64, và kích thước đệm bằng 16.
+Không khó để nhận ra rằng nếu sải bước bằng $s$, kích thước đệm là $s/2$ (giả sử $s/2$ là số nguyên) và hạt nhân tích chập có chiều dài và chiều rộng bằng $2s$, thì hạt nhân tích chập chuyển vị sẽ phóng đại chiều cao và rộng của đầu vào với thừa số $s$.
+ 
 
 ```{.python .input  n=8}
 num_classes = 21
@@ -140,7 +154,7 @@ net.add(nn.Conv2D(num_classes, kernel_size=1),
 ## Initializing the Transposed Convolution Layer
 -->
 
-## *dịch tiêu đề phía trên*
+## Khởi tạo Tầng Tích chập Chuyển vị
 
 
 <!--
@@ -156,8 +170,16 @@ Upsampling by bilinear interpolation can be implemented by transposed convolutio
 Due to space limitations, we only give the implementation of the `bilinear_kernel` function and will not discuss the principles of the algorithm.
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta đã biết tầng tích chập chuyển vị có thể phóng đại ánh xạ đặc trưng.
+Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, được biết đến là phép tăng mẫu. 
+Có rất nhiều phương pháp tăng mẫu, và một phương pháp phổ biến đó là nội suy song tuyến tính (*bilinear interpolation*).
+Nói một cách đơn giản, để lấy điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$, đầu tiên toạ độ này sẽ được ánh xạ tới toạ độ $(x', y')$ trong ảnh đầu vào.
+Điều này có thể được thực hiện dựa trên tỷ lệ kích thước của ba đầu vào tới kích thước của đầu ra.
+Giá trị được ánh xạ $x'$ và $y'$ thường là các số thực.
+Sau đó, ta tìm bốn điểm ảnh gần toạ độ $(x', y')$ nhất trên ảnh đầu vào.
+Cuối cùng, các điểm ảnh tại toạ độ $(x, y)$ của đầu ra sẽ được tính toán dựa trên bốn điểm ảnh của ảnh đầu vào và khoảng cách tương đối của chúng tới $(x', y')$.
+Phép tăng chiều bằng nội suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị sử dụng hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
+Do giới hạn về số trang, ta chỉ lập trình hàm `bilinear_kernel` và sẽ không thảo luận các nguyên tắc cơ bản của thuật toán.
 
 
 ```{.python .input  n=9}
@@ -182,8 +204,7 @@ Now, we will experiment with bilinear interpolation upsampling implemented by tr
 Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào với thừa số bằng 2 và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
 
 
 ```{.python .input  n=11}
@@ -197,8 +218,8 @@ Read the image `X` and record the result of upsampling as `Y`.
 In order to print the image, we need to adjust the position of the channel dimension.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng mẫu là `Y`.
+Để in ảnh, ta cần điều chỉnh vị trí của chiều kênh.
 
 
 ```{.python .input}
@@ -214,8 +235,8 @@ As you can see, the transposed convolution layer magnifies both the height and w
 It is worth mentioning that, besides to the difference in coordinate scale, the image magnified by bilinear interpolation and original image printed in :numref:`sec_bbox` look the same.
 -->
 
-*dịch đoạn phía trên*
-
+Như ta có thể thấy, tầng tích chập chuyển vị phóng đại cả chiều cao và chiều rộng của ảnh với thừa số bằng 2.
+Điểm đáng nói là bên cạnh điểm khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép nội suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
 
 ```{.python .input}
 d2l.set_figsize()
@@ -231,7 +252,7 @@ In a fully convolutional network, we initialize the transposed convolution layer
 For a $1\times 1$ convolution layer, we use Xavier for randomly initialization.
 -->
 
-*dịch đoạn phía trên*
+Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép tăng chiều nội suy song tuyến tính. Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên  Xavier.
 
 
 ```{.python .input  n=12}
@@ -252,7 +273,7 @@ net[-2].initialize(init=init.Xavier())
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Dữ liệu
 
 
 <!--
@@ -260,7 +281,8 @@ We read the dataset using the method described in the previous section.
 Here, we specify shape of the randomly cropped output image as $320\times 480$, so both the height and width are divisible by 32.
 -->
 
-*dịch đoạn phía trên*
+Ta đọc dữ liệu bằng cách sử dụng phương thức được mô tả ở phần trước.
+Ở đây, ta định rõ kích thước của ảnh đầu ra được cắt ngẫu nhiên thành $320\times 480$, để cả chiều cao và chiều rộng chia hết cho 32.
 
 
 ```{.python .input  n=13}
@@ -273,7 +295,7 @@ train_iter, test_iter = d2l.load_data_voc(batch_size, crop_size)
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
@@ -283,7 +305,10 @@ Because we use the channel of the transposed convolution layer to predict pixel 
 In addition, the model calculates the accuracy based on whether the prediction category of each pixel is correct.
 -->
 
-*dịch đoạn phía trên*
+Bây ta có thể bắt đầu huấn luyện mô hình.
+Hàm mất mát và hàm tính độ chính xác được sử dụng ở đây không quá khác biệt so với các hàm được sử dụng trong bài toán phân loại ảnh.
+Bởi vì ta sử dụng kênh của tầng tích chập chuyển vị để dự đoán các hạng mục điểm ảnh, tham số `axis=1` được định rõ trong `SoftmaxCrossEntropyLoss`.
+Hơn nữa, mô hình tính toán độ chính xác dựa trên hạng mục của từng điểm ảnh được dự đoán có đúng hay không.
 
 
 ```{.python .input  n=12}
@@ -300,14 +325,14 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 
 <!--
 During predicting, we need to standardize the input image in each channel and transform them into the four-dimensional input format required by the convolutional neural network.
 -->
 
-*dịch đoạn phía trên*
+Trong pha dự đoán, ta cần chuẩn tắc hoá ảnh đầu vào theo từng kênh và chuyển đổi chúng thành đầu vào có kích thước 4 chiều như mạng nơ-ron tích chập yêu cầu.
 
 
 ```{.python .input  n=13}
@@ -323,7 +348,7 @@ def predict(img):
 To visualize the predicted categories for each pixel, we map the predicted categories back to their labeled colors in the dataset.
 -->
 
-*dịch đoạn phía trên*
+Để biểu diễn trực quan các hạng mục được dự đoán cho từng điểm ảnh, ta ánh xạ các hạng mục dự đoán về nhãn màu trong tập dữ liệu.
 
 
 ```{.python .input  n=14}
@@ -345,7 +370,11 @@ When a pixel is covered by multiple areas, the average of the transposed convolu
 of the different areas can be used as an input for the softmax operation to predict the category.
 -->
 
-*dịch đoạn phía trên*
+Kích thước và hình dạng của ảnh trong tập kiểm tra có thể khác nhau.
+Vì mô hình sử dụng tầng tích chập chuyển vị với sải bước bằng 32, nên khi chiều cao và chiều rộng của ảnh đầu vào không chia hết cho 32 thì chiều cao và chiều rộng của đầu ra tầng tích chập chuyển vị sẽ chênh lệch so với kích thước của ảnh đầu vào. 
+Để giải quyết vấn đề này, ta có thể cắt nhiều vùng hình chữ nhật trong ảnh với chiều cao và chiều rộng chia hết cho 32, sau đó thực hiện lượt truyền xuôi trên các điểm ảnh của những vùng này. 
+Khi kết hợp các kết quả lại, các vùng này phải khôi phục lại toàn bộ ảnh đầu vào.
+Khi một điểm ảnh nằm trong nhiều vùng khác nhau, ta lấy trung bình đầu ra của tầng tích chập chuyển vị trong lượt truyền xuôi của tất cả các vùng làm đầu vào cho phép tính softmax để dự đoán hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -419,16 +448,16 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
-* Nguyễn Văn Quang
+* 
