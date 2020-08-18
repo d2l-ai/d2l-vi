@@ -17,17 +17,17 @@ These semantic regions label and predict objects at the pixel level.
 As you can see, compared to object detection, semantic segmentation labels areas with pixel-level borders, for significantly greater precision.
 -->
 
-Trong thảo luận ở những phần trước của chúng ta về các vấn đề liên quan tới nhận dạng vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để dán nhãn và dự đoán các vật thể trong ảnh.
-Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa, đây là việc thực hiện phân đoạn ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
-Các vùng ngữ nghĩa đó dán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
-:numref:`fig_segmentation` thể hiện một ảnh đã được phân vùng ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "nền".
-Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ dán nhãn các vùng bằng các đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
+Khi thảo luận ở những phần trước về các vấn đề liên quan tới phát hiện vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để gán nhãn và dự đoán các vật thể trong ảnh.
+Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa (*semantic segmentation*), đây là việc thực hiện phân chia ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
+Các vùng ngữ nghĩa đó gán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
+:numref:`fig_segmentation` minh họa một ảnh đã được phân vùng ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền".
+Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ gán nhãn các vùng bằng các đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
 
 <!--
 ![Semantically-segmented image, with areas labeled "dog", "cat", and "background".](../img/segmentation.svg)
 -->
 
-![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được dán nhãn "chó", "mèo" và "nền"](../img/segmentation.svg)
+![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền"](../img/segmentation.svg)
 :label:`fig_segmentation`
 
 
@@ -43,8 +43,8 @@ In the computer vision field, there are two important methods related to semanti
 Here, we will distinguish these concepts from semantic segmentation as follows:
 -->
 
-Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới việc phân vùng theo ngữ nghĩa đó là: phân vùng ảnh và phân vùng thực thể.
-Ở đây, chúng ta sẽ phân biệt các khái niệm này với việc phân vùng theo ngữ nghĩa như sau:
+Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới phân vùng theo ngữ nghĩa: phân vùng ảnh và phân vùng thực thể.
+Ta phân biệt các khái niệm này với phân vùng theo ngữ nghĩa như sau:
 
 
 <!--
@@ -63,13 +63,13 @@ If an image contains two dogs, instance segmentation will distinguish which pixe
 * Phân vùng ảnh chia một bức ảnh thành các vùng thành phần.
 Phương pháp này thường sử dụng độ tương quan giữa các điểm ảnh trên ảnh.
 Trong suốt quá trình huấn luyện, nhãn cho các điểm ảnh là không cần thiết.
-Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân đoạn có ngữ nghĩa mà ta mong muốn.
-Nếu ta đưa vào bức ảnh ở 9.10, phân vùng ảnh có thể chia con chó thành hai vùng,
+Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân chia có ngữ nghĩa mà ta mong muốn.
+Nếu ta đưa vào bức ảnh trong :numref:`fig_segmentation`, phân vùng ảnh có thể chia con chó thành hai vùng,
 một vùng bao phủ trên miệng và cặp mắt nơi màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú chó nơi màu vàng chiếm ưu thế.
 * Phân vùng thực thể còn được gọi là phát hiện và phân vùng đồng thời.
 Phương pháp này cố gắng xác định các vùng ở mức điểm ảnh theo từng đối tượng riêng biệt ngay trong ảnh.
-Tương phản với phân vùng theo ngữ nghĩa, phân vùng thực thể không chỉ phân biệt ngữ nghĩa mà còn cả các thực thể khác nhau.
-Nếu một ảnh có chứa hai chú chó, phân vùng thực thể sẽ phân biệt những điểm ảnh thuộc về từng con nào. 
+Khác với phân vùng theo ngữ nghĩa, phân vùng thực thể không chỉ phân biệt ngữ nghĩa mà còn cả các thực thể khác nhau.
+Nếu một ảnh có chứa hai chú chó, phân vùng thực thể sẽ phân biệt những điểm ảnh thuộc về từng chú chó. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -88,8 +88,8 @@ In the semantic segmentation field, one important dataset is [Pascal VOC2012](ht
 To better understand this dataset, we must first import the package or module needed for the experiment.
 -->
 
-Trong lĩnh vực phân vùng theo ngữ nghĩa, [Pascal VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/) là một tập dữ liệu quan trọng.
-Để có thể hiểu rõ hơn về tập dữ liệu này, đầu tiên ta cần phải nhập vào gói thư viện hoặc mô-đun cần cho thí nghiệm.
+Trong phân vùng theo ngữ nghĩa, [Pascal VOC2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/) là một tập dữ liệu quan trọng.
+Để hiểu rõ hơn về tập dữ liệu này, đầu tiên ta nhập vào gói thư viện hoặc mô-đun cần thiết.
 
 
 ```{.python .input  n=1}
@@ -109,8 +109,8 @@ After you decompress the archive, the dataset is located in the `../data/VOCdevk
 -->
 
 Trang gốc có thể không ổn định nên ta tải dữ liệu về từ một trang nhân bản.
-Tệp tin nặng khoảng 2 GB nên thời gian tải sẽ hơi lâu một chút.
-Sau khi giải nén tệp tin, tập dữ liệu được lưu tại đường dẫn `../data/VOCdevkit/VOC2012`.
+Tập tin nặng khoảng 2 GB nên thời gian tải về có thể sẽ hơi lâu.
+Sau khi giải nén tập tin, tập dữ liệu được lưu tại đường dẫn `../data/VOCdevkit/VOC2012`.
 
 
 ```{.python .input  n=2}
@@ -131,12 +131,12 @@ In the labels, pixels with the same color belong to the same semantic category.
 The `read_voc_images` function defined below reads all input images and labels to the memory.
 -->
 
-Truy cập `../data/VOCdevkit/VOC2012` để quan sát các phần khác nhau của tập dữ liệu.
-Đường dẫn `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví dụ để huấn luyện và kiểm tra.
-Đường dẫn `JPEGImages` và `SegmentationClass` lần lượt chứa ví dụ các ảnh đầu vào và nhãn.
+Đi tới thư mục `../data/VOCdevkit/VOC2012` để quan sát các phần khác nhau của tập dữ liệu.
+Thư mục `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví dụ để huấn luyện và kiểm tra.
+Thư mục `JPEGImages` và `SegmentationClass` lần lượt chứa các mẫu ảnh đầu vào và nhãn.
 Các nhãn này cũng mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
 Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng hạng mục ngữ nghĩa.
-Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào cùng nhãn vào bộ nhớ.
+Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào và nhãn vào bộ nhớ.
 
 
 ```{.python .input  n=3}
@@ -205,7 +205,7 @@ VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
 After defining the two constants above, we can easily find the category index for each pixel in the labels.
 -->
 
-Sau khi khai báo hai biến hằng trên, ta có thể dễ dàng tìm chỉ số lớp cho mỗi điểm ảnh trong nhãn.
+Sau khi khai báo hai hằng số trên, ta có thể dễ dàng tìm chỉ số hạng mục cho mỗi điểm ảnh trong nhãn.
 
 
 ```{.python .input  n=6}
