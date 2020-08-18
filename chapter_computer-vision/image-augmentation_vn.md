@@ -420,7 +420,7 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
 
 <!-- Now we train the model using image augmentation of random flipping left and right. -->
 
-Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải.
+Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải. 
 
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
