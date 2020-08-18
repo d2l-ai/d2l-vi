@@ -201,7 +201,7 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc. 
  
 
 
