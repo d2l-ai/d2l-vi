@@ -658,7 +658,7 @@ output
 We remove the prediction bounding boxes of category -1 and visualize the results retained by NMS.
 -->
 
-Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại bởi triệt phi cựa đại.
+Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại bởi triệt phi cựa đại. 
 
 
 ```{.python .input  n=14}
