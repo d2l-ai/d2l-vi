@@ -129,7 +129,7 @@ The conditional probability of generating the context word for the given central
 -->
 
 
-Trong mô hình skip-gam, mỗi từ được biểu diễn bằng hai vector $d$-chiều, được sử dụng để tính xác suất có điều kiện.
+Trong mô hình skip-gam, mỗi từ được biểu diễn bằng hai vector $d$-chiều để tính xác suất có điều kiện.
 Ta giả định rằng một từ được gán chỉ số là $i$ trong từ điển, vector của từ được biểu diễn là $\mathbf{v}_i\in\mathbb{R}^d$ khi từ này là từ đích trung tâm và $\mathbf{u}_i\in\mathbb{R}^d$ khi từ này là một từ ngữ cảnh.
  Gọi $c$ và $o$ lần lượt là chỉ số của từ đích trung tâm $w_c$ và từ ngữ cảnh $w_o$ trong từ điển.
 Có thể thu được xác suất có điều kiện sinh ra từ ngữ cảnh cho một từ đích trung tâm cho trước bằng phép toán softmax cho các tích vô hướng:
