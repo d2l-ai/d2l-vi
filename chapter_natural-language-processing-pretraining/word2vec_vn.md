@@ -116,7 +116,7 @@ $$P(\textrm{"the"}\mid\textrm{"loves"})\cdot P(\textrm{"man"}\mid\textrm{"loves"
 -->
 
 
-![mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh cho một từ đích trung tâm nhất định.](../img/skip-gram.svg)
+![Mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh cho một từ đích trung tâm nhất định.](../img/skip-gram.svg)
 :label:`fig_skip_gram`
 
 
@@ -413,5 +413,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
