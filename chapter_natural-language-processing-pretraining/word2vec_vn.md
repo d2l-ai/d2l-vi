@@ -82,7 +82,7 @@ Next, we will take a look at the two models and their training methods.
 
 
 [Word2vec](https://code.google.com/archive/p/word2vec/) là một công cụ chúng ta đã nghĩ đến để giải quyết vấn đề trên.
-Nó biểu diễn mỗi từ bằng một vector có độ dài cố định và sử dụng những vector này để biểu thị tốt hơn độ tương tự và các quan hệ loại suy giữa các từ khác nhau.
+Nó biểu diễn mỗi từ bằng một vector có độ dài cố định và sử dụng những vector này để biểu thị tốt hơn độ tương tự và và các quan hệ loại suy (*analogy relationship*) giữa các từ khác nhau.
 Công cụ Word2vec chứa hai mô hình: skip-gam :cite:`Mikolov.Sutskever.Chen.ea.2013` và túi từ liên tục ( _continuous bag of words_ CBOW) :cite:`Mikolov.Chen.Corrado.ea.2013`.
 Tiếp theo, ta sẽ xem xét hai mô hình và phương pháp huấn luyện chúng.
 
