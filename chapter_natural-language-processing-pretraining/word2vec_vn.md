@@ -147,7 +147,7 @@ When context window size is $m$, the likelihood function of the skip-gram model 
 
 
 Trong đó chỉ số từ vựng được đặt bằng $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$.
-Giả sử với một chuỗi văn bản có độ dài $T$, trong đó từ tại bước thời gian $t$ được ký hiệu là $w^{(t)}$.
+Giả sử trong một chuỗi văn bản có độ dài $T$, từ tại bước thời gian $t$ được ký hiệu là $w^{(t)}$.
 Giả sử rằng các từ ngữ cảnh được sinh độc lập với từ trung tâm cho trước.
 Khi kích thước cửa sổ ngữ cảnh là $m$, hàm hợp lý (_likelihood_) của mô hình skip-gam là xác suất kết hợp sinh ra tất cả các từ ngữ cảnh với bất kỳ từ trung tâm cho trước nào
 
