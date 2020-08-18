@@ -586,13 +586,13 @@ train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 ## Classifying the Testing Set and Submitting Results on Kaggle
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân loại Tập Kiểm tra và Nộp Kết quả trên Kaggle
 
 <!--
 After obtaining a satisfactory model design and hyperparameters, we use all training datasets (including validation sets) to retrain the model and classify the testing set.
 -->
 
-*dịch đoạn phía trên*
+Sau khi thu được thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng toàn bộ tập huấn luyện (bao gồm tập kiểm định) để huấn luyện lại mô hình và tiến hành phân loại tập kiểm tra.
 
 
 ```{.python .input  n=14}
@@ -618,7 +618,9 @@ The format of this file is consistent with the Kaggle competition requirements.
 The method for submitting results is similar to method in :numref:`sec_kaggle_house`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi chạy đoạn mã trên, ta sẽ thu được tệp "submission.csv".
+Tệp này có định dạng phù hợp với yêu cầu của cuộc thi trên Kaggle.
+Cách thức nộp kết quả giống với cách thức trong :numref:`sec_kaggle_house`.
 
 
 ## Tóm tắt
@@ -628,7 +630,8 @@ The method for submitting results is similar to method in :numref:`sec_kaggle_ho
 * We can use convolutional neural networks, image augmentation, and hybrid programming to take part in an image classification competition.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể tạo một đối tượng `ImageFolderDataset` để đọc tập dữ liệu gồm có các tệp ảnh gốc.
+* Ta có thể sử dụng mạng nơ-ron tích chập, tăng cường ảnh, và lập trình hybrid để tham gia vào cuộc thi phân loại ảnh.
 
 
 ## Bài tập
@@ -640,7 +643,10 @@ See what accuracy and ranking you can achieve in this competition.
 3. Scan the QR code to access the relevant discussions and exchange ideas about the methods used and the results obtained with the community. Can you come up with any better techniques?
 -->
 
-*dịch đoạn phía trên*
+1. Sử dụng tập dữ liệu CIFAR-10 đầy đủ cho cuộc thi trên Kaggle. Thay đổi `batch_size` và số epoch `num_epochs` lần lượt bằng 128 và 100.
+Quan sát độ chính xác và xem bạn có thể đạt xếp hạng thứ bao nhiêu trong cuộc thi này.
+2. Bạn có thể đạt độ chính xác bằng bao nhiêu nếu không sử dụng tăng cường ảnh?
+3. Quét mã QR để truy cập các bài thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -674,4 +680,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
