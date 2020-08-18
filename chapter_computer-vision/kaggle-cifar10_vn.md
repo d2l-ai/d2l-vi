@@ -115,7 +115,7 @@ shown in :numref:`fig_kaggle_cifar10` and download the dataset by clicking the "
 After unzipping the downloaded file in `../data`, and unzipping `train.7z` and `test.7z` inside it, you will find the entire dataset in the following paths:
 -->
 
-Sau khi đăng nhạp vào Kaggle, ta có thể chọn vào thẻ "Data" trên trang của cuộc thi phân loại ảnh CIFAR-10 như thể hiện ở hình :numref:`fig_kaggle_cifar10` và tải tập dữ liệu này bằng cách nhấp chuột vào nút "Download All".
+Sau khi đăng nhập vào Kaggle, ta có thể chọn thẻ "Data" trên trang của cuộc thi phân loại ảnh CIFAR-10 như thể hiện ở hình :numref:`fig_kaggle_cifar10` và tải tập dữ liệu này bằng cách nhấp chuột vào nút "Download All".
 Sau khi giải nén tập tin đã tải về vào `../data`, và giải nén `train.7z` và `test.7z` trong tập tin này, bạn sẽ tìm thấy toàn bộ tập dữ liệu ở đường dẫn sau:
 
 
@@ -129,7 +129,7 @@ Sau khi giải nén tập tin đã tải về vào `../data`, và giải nén `t
 Here folders `train` and `test` contain the training and testing images respectively, `trainLabels.csv` has labels for the training images, and `sample_submission.csv` is a sample of submission. 
 -->
 
-Các thử mục `train` và `test` ở đây có chứa các ảnh cho việc huấn luyện và kiểm định tương ứng, tập tin `trainLabels.csv` chứa các nhãn dùng cho ảnh huấn luyện và tập tin `sample_submission.csv` là một mẫu để nộp.
+Các thư mục `train` và `test` ở đây có chứa các ảnh cho việc huấn luyện và kiểm tra tương ứng, tập tin `trainLabels.csv` chứa các nhãn dùng cho ảnh huấn luyện và tập tin `sample_submission.csv` là một tệp nộp ví dụ.
 
 
 <!--
@@ -137,7 +137,7 @@ To make it easier to get started, we provide a small-scale sample of the dataset
 To use the full dataset of the Kaggle competition, you need to set the following `demo` variable to `False`.
 -->
 
-Để việc bắt đầu làm quen dễ hơn, chúng tôi cung cấp một mẫu thu nhỏ của tập dữ liệu này: nó chứa $1000$ ảnh huấn luyện đầu tiên và $5$ ảnh kiểm định ngẫu nhiên.
+Để việc bắt đầu dễ hơn, chúng tôi cung cấp một mẫu thu nhỏ của tập dữ liệu này: nó chứa $1000$ ảnh huấn luyện đầu tiên và $5$ ảnh kiểm tra ngẫu nhiên.
 Để sử dụng toàn bộ tập dữ liệu của cuộc thi Kaggle, bạn cần thiết lập biến `demo` sau thành `False`.
 
 
@@ -170,8 +170,8 @@ Let us first read the labels from the csv file.
 The following function returns a dictionary that maps the filename without extension to its label.
 -->
 
-Ta cần tổ chức tập dữ liệu để thuận tiện cho việ huấn luyện và kiểm định mô hình.
-Ta hãy bắt đầu đọc các nhãn từ tập tin csv.
+Ta cần tổ chức tập dữ liệu để thuận tiện cho việc huấn luyện và kiểm tra mô hình.
+Ta hãy bắt đầu bằng cách đọc các nhãn từ tập tin csv.
 Hàm sau đây trả về một từ điển thực hiện ánh xạ tên tập tin không bao gồm phần đuôi mở rộng sang tên nhãn của nó.
 
 ```{.python .input  n=16}
@@ -201,12 +201,12 @@ After organizing the data, images of the same class will be placed under the sam
 -->
 
 Kế tiếp, ta định nghĩa hàm `reorg_train_valid` để phân đoạn tập kiểm định từ tập huấn luyện gốc.
-Tham trị `valid_ratio` trong hàm này là tỉ số của số mẫu trong tập kiểm định đối với số mẫu trong tập huấn luyện gốc.
-Cụ thể, gọi $n$ là số ảnh của lớp với số mẫu tối thiểu, và $r$ là tỉ số thì ta sẽ dùng  $\max(\lfloor nr\rfloor,1)$ ảnh cho mỗi lớp làm tập kiểm định.
+Tham số `valid_ratio` trong hàm này là tỷ số của số mẫu trong tập kiểm định đối với số mẫu trong tập huấn luyện gốc.
+Cụ thể, gọi $n$ là số ảnh của lớp có số mẫu tối thiểu, và $r$ là tỷ số thì ta sẽ dùng  $\max(\lfloor nr\rfloor,1)$ ảnh trong mỗi lớp làm tập kiểm định.
 Ta hãy chọn `valid_ratio=0.1` làm ví dụ.
-Vì tập ảnh huấn luyện gốc có $50,000$ ảnh, do đó ta sẽ có $45,000$ ảnh dùng để huấn luyện và lưu ở đường dẫn "`train_valid_test/train`" khi ta tinh chỉnh các tham số tiên nghiệm (hyperparameters),
-trong khi $5,000$ ảnh còn lại sẽ được giữ lại làm tập kiểm định ở đường dẫn "`train_valid_test/valid`".
-Sau khi tổ chức dữ liệu, ảnh của cùng lớp sẽ được đặt ở cùng thử mục để chúng ta có thể đọc chung sau đó.
+Vì tập ảnh huấn luyện gốc có $50,000$ ảnh, do đó ta sẽ có $45,000$ ảnh dùng để huấn luyện và lưu ở thư mục "`train_valid_test/train`" khi ta tinh chỉnh các tham số tiên nghiệm (hyperparameters),
+trong khi $5,000$ ảnh còn lại sẽ được giữ lại làm tập kiểm định ở thư mục "`train_valid_test/valid`".
+Sau khi tổ chức dữ liệu, ảnh của cùng một lớp sẽ được đặt ở cùng thư mục để chúng ta có thể đọc chúng sau này.
 
 ```{.python .input  n=2}
 #@save
@@ -246,7 +246,7 @@ def reorg_train_valid(data_dir, labels, valid_ratio):
 The `reorg_test` function below is used to organize the testing set to facilitate the reading during prediction.
 -->
 
-Hàm `reorg_test` dưới đây được dùng để tổ chức tập huấn luyện để thuận tiện cho việc đọc trong suốt quá trình dự đoán.
+Hàm `reorg_test` dưới đây được dùng để tổ chức tập kiểm tra để thuận tiện cho việc đọc trong suốt quá trình dự đoán.
 
 ```{.python .input  n=3}
 #@save    
@@ -280,8 +280,8 @@ We use $10\%$ of the training examples as the validation set for tuning hyperpar
 -->
 
 Chúng ta chỉ thiết lập kích thước batch là $4$ đối với tập dữ liệu chạy thử.
-Trong suốt quá trình huấn luyện và kiểm thử thật sự, tập huấn luyện đầy đủ của cuộc thi Kaggle nên được sử dụng và `batch_size` nên được được thiết lập giá trị số nguyên lớn hơn như là $128$.
-Ta sử dụng $10\%$ của các mẫu huấn luyện làm tập kiểm định để tinh chỉnh các tham số tiên nghiệm.
+Trong suốt quá trình huấn luyện và kiểm thử thật sự, tập huấn luyện đầy đủ của cuộc thi Kaggle nên được sử dụng và `batch_size` nên được được thiết lập một giá trị số nguyên lớn hơn như là $128$.
+Ta sử dụng $10\%$ của các mẫu huấn luyện làm tập kiểm định để tinh chỉnh các siêu tham số.
 
 
 ```{.python .input  n=4}
