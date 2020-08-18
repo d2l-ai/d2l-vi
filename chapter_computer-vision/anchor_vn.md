@@ -577,7 +577,7 @@ Finally, output all prediction bounding boxes in the list $L$.
 Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định khỏi $L$.
 Ta sẽ lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được sử dụng làm chuẩn so sánh.
 Lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
-Cuối cùng, đầu ra sẽ là mọi khung chứa dự đoán trong $L$.
+Cuối cùng, đầu ra sẽ là mọi khung chứa dự đoán còn lại trong $L$.
 
 
 <!--
@@ -634,12 +634,12 @@ The remaining four elements are the $x, y$ axis coordinates of the upper-left co
 of the prediction bounding box (the value range is between 0 and 1).
 -->
 
-Ta dùng hàm `multibox_detection` để thực hiện triệt phi cựa đại và đặt ngưỡng cho nó là 0.5.
+Ta dùng hàm `multibox_detection` để thực hiện triệt phi cực đại và đặt ngưỡng là 0.5.
 Hàm này tạo thêm chiều mẫu trong tensor đầu vào.
 Ta có thể thấy kích thước của kết quả trả về là (kích thước batch, số lượng khung neo, 6).
 6 phần tử của từng hàng biểu diễn thông tin đầu ra của một khung chứa dự đoán.
 Phần tử đầu tiên là chỉ số của hạng mục dự đoán, bắt đầu từ 0 (0 là chó, 1 là mèo).
-Giá trị -1 cho biết đó là nền hoặc phần bị loại bỏ bởi triệt phi cựa đại.
+Giá trị -1 cho biết đó là nền hoặc khung bị loại bỏ bởi triệt phi cực đại.
 Phần tử thứ hai chính là độ tin cậy của khung chứa dự đoán.
 Bốn phần tử còn lại là các toạ độ $x, y$ của góc trên bên trái và góc dưới bên phải của khung chứa dự đoán (miền giá trị nằm trong khoảng từ 0 đến 1).
 
@@ -658,7 +658,7 @@ output
 We remove the prediction bounding boxes of category -1 and visualize the results retained by NMS.
 -->
 
-Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại bởi triệt phi cựa đại. 
+Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại sau khi triệt phi cực đại. 
 
 
 ```{.python .input  n=14}
@@ -676,8 +676,8 @@ In practice, we can remove prediction bounding boxes with lower confidence level
 We can also filter the output of NMS, for example, by only retaining results with higher confidence levels as the final output.
 -->
 
-Trong thực tế, ta có thể loại bỏ các khung chứa dự đoán có mức độ tin cậy thấp hơn trước khi thực hiện triệt phi cựa đại để giảm bớt chi phí tính toán.
-Ta cũng có thể lọc các đầu ra của triệt phi cựa đại, ví dụ, bằng cách chỉ giữ lại những kết quả có độ tin cậy cao để làm đầu ra cuối cùng.
+Trong thực tế, ta có thể loại bỏ các khung chứa dự đoán có mức độ tin cậy thấp trước khi thực hiện triệt phi cực đại để giảm bớt chi phí tính toán.
+Ta cũng có thể lọc các đầu ra sau khi triệt phi cực đại, ví dụ, bằng cách chỉ giữ lại những kết quả có độ tin cậy cao để làm đầu ra cuối cùng.
 
 
 ## Tóm tắt
@@ -692,10 +692,10 @@ one is the category of the target contained in the anchor box and the other is t
 -->
 
 * Chúng ta tạo ra nhiều khung neo với nhiều kích thước và tỉ lệ khác nhau, bao quanh từng điểm ảnh.
-* IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao với phần hợp của hai khung chứa.
+* IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao trên phần hợp của hai khung chứa.
 * Trong tập huấn luyện, ta đánh dấu hai loại nhãn cho mỗi khung neo:
 hạng mục của đối tượng trong khung neo và độ dời của khung chứa chuẩn so với khung neo.
-* Khi dự đoán, ta có thể dùng triệt phi cựa đại để loại bỏ các khung chứa dự đoán tương tự nhau, từ đó đơn giản hoá kết quả.
+* Khi dự đoán, ta có thể dùng triệt phi cực đại để loại bỏ các khung chứa dự đoán tương tự nhau, từ đó đơn giản hoá kết quả.
 
 
 ## Bài tập
