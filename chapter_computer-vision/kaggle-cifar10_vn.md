@@ -671,7 +671,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * Đỗ Trường Giang
