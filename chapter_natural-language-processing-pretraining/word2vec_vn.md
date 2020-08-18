@@ -69,7 +69,7 @@ Since the cosine similarity between the one-hot vectors of any two different wor
 it is difficult to use the one-hot vector to accurately represent the similarity between multiple different words.
 -->
 
-Do độ tương tự cosine giữa các vector one-hot của hai từ khác nhau bằng 0, 
+Do độ tương tự cô-sin giữa các vector one-hot của hai từ khác nhau bằng 0, 
 nên rất khó khi sử dụng vector one-hot để biểu diễn độ tương tự giữa các từ khác nhau.
 
 
