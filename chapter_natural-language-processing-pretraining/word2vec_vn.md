@@ -77,7 +77,7 @@ Next, we will take a look at the two models and their training methods.
 ## The Skip-Gram Model
 -->
 
-## *dịch đoạn phía trên*
+## Mô hình Skip-Gram
 
 
 <!--
@@ -88,8 +88,11 @@ As shown in :numref:`fig_skip_gram`, given the central target word "loves", the 
 for generating the context words, "the", "man", "his" and "son", that are within a distance of no more than 2 words, which is
 -->
 
-*dịch đoạn phía trên*
 
+Mô hình skip-gam giả định rằng một từ có thể được sử dụng để sinh ra các từ xung quanh nó trong một chuỗi văn bản.
+Ví dụ, ta giả định rằng chuỗi văn bản là "the", "man", "loves", "his" và "son".
+Ta sử dụng "loves" làm từ đích trung tâm và đặt kích thước cửa sổ ngữ cảnh bằng 2.
+Như mô tả trong :numref:`fig_skip_gram`, với từ mục tiêu trung tâm "loves", mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh ("the", "man", "his" và "son") nằm trong khoảng cách không quá 2 từ, đó là
 
 
 $$P(\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"son"}\mid\textrm{"loves"}).$$
@@ -100,7 +103,9 @@ We assume that, given the central target word, the context words are generated i
 In this case, the formula above can be rewritten as
 -->
 
-*dịch đoạn phía trên*
+
+Ta giả định rằng, với từ đích trung tâm, các từ ngữ cảnh được sinh ra độc lập với nhau.
+Trong trường hợp này, công thức trên có thể được viết lại thành
 
 
 $$P(\textrm{"the"}\mid\textrm{"loves"})\cdot P(\textrm{"man"}\mid\textrm{"loves"})\cdot P(\textrm{"his"}\mid\textrm{"loves"})\cdot P(\textrm{"son"}\mid\textrm{"loves"}).$$
@@ -111,7 +116,7 @@ $$P(\textrm{"the"}\mid\textrm{"loves"})\cdot P(\textrm{"man"}\mid\textrm{"loves"
 -->
 
 
-![*dịch mô tả phía trên*](../img/skip-gram.svg)
+![Mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh cho một từ đích trung tâm nhất định.](../img/skip-gram.svg)
 :label:`fig_skip_gram`
 
 
@@ -123,7 +128,11 @@ Let the central target word $w_c$ and context word $w_o$ be indexed as $c$ and $
 The conditional probability of generating the context word for the given central target word can be obtained by performing a softmax operation on the vector inner product:
 -->
 
-*dịch đoạn phía trên*
+
+Trong mô hình skip-gam, mỗi từ được biểu diễn bằng hai vector $d$-chiều để tính xác suất có điều kiện.
+Ta giả định rằng một từ được gán chỉ số là $i$ trong từ điển, vector của từ được biểu diễn là $\mathbf{v}_i\in\mathbb{R}^d$ khi từ này là từ đích trung tâm và $\mathbf{u}_i\in\mathbb{R}^d$ khi từ này là một từ ngữ cảnh.
+ Gọi $c$ và $o$ lần lượt là chỉ số của từ đích trung tâm $w_c$ và từ ngữ cảnh $w_o$ trong từ điển.
+Có thể thu được xác suất có điều kiện sinh ra từ ngữ cảnh cho một từ đích trung tâm cho trước bằng phép toán softmax cho các tích vô hướng:
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)},$$
@@ -136,7 +145,11 @@ Assume that context words are independently generated given center words.
 When context window size is $m$, the likelihood function of the skip-gram model is the joint probability of generating all the context words given any center word
 -->
 
-*dịch đoạn phía trên*
+
+Trong đó tập chỉ số trong bộ từ vựng là $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$.
+Giả sử trong một chuỗi văn bản có độ dài $T$, từ tại bước thời gian $t$ được ký hiệu là $w^{(t)}$.
+Giả sử rằng các từ ngữ cảnh được sinh độc lập với từ trung tâm cho trước.
+Khi kích thước cửa sổ ngữ cảnh là $m$, hàm hợp lý (_likelihood_) của mô hình skip-gam là xác suất kết hợp sinh ra tất cả các từ ngữ cảnh với bất kỳ từ trung tâm cho trước nào
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
@@ -146,7 +159,9 @@ $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)})
 Here, any timestep that is less than 1 or greater than $T$ can be ignored.
 -->
 
-*dịch đoạn phía trên*
+
+Ở đây, bất kỳ bước thời gian nào nhỏ hơn 1 hoặc lớn hơn $T$ đều có thể bỏ qua.
+
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -388,7 +403,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
