@@ -104,12 +104,12 @@ By considering negative sampling, we can rewrite the joint probability above, wh
 Tuy nhiên, các sự kiện được đưa vào mô hình chỉ xem xét các mẫu dương tính.
 Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
 Rõ ràng, các vector từ như vậy là vô nghĩa.
-Phương pháp lấy mẫu âm tính khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy mẫu có bổ sung các mẫu âm tính.
+Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy mẫu có bổ sung các mẫu âm.
 Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
 và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh theo phân phối $P(w)$ đóng vai trò là các từ nhiễu.
 Ta giả sử sự kiện cho từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
-Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương tính lẫn và mẫu âm tính là độc lập với nhau.
-Bằng cách xem xét phương pháp lấy mẫu âm tính, ta có thể viết lại xác suất kết hợp ở trên mà chỉ xem xét các mẫu dương tính như sau
+Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương tính lẫn và mẫu âm là độc lập với nhau.
+Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp ở trên mà chỉ xem xét các mẫu dương tính như sau
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
@@ -148,7 +148,7 @@ $$
 Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$. When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
 -->
 
-Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm tính có chi phí tính toán cho mỗi bước thấp hơn.
+Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
