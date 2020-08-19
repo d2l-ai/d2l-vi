@@ -167,7 +167,7 @@ This is equivalent to minimizing the following loss function:
 -->
 
 Các tham số trong mô hình skip-gram là vector từ đích trung tâm và vector từ ngữ cảnh cho từng từ riêng lẻ.
-Trong quá trình huấn luyện, chúng ta sẽ tìm hiểu các tham số mô hình bằng cách cực đại hoá hàm hợp lý (_likelihood_), còn gọi là ước lượng hợp lý cực đại.
+Trong quá trình huấn luyện, chúng ta sẽ học các tham số mô hình bằng cách cực đại hoá hàm hợp lý, còn gọi là ước lượng hợp lý cực đại.
 Việc này tương tự với việc giảm thiểu hàm mất mát sau đây:
 
 
@@ -183,7 +183,7 @@ By definition, we first have
 
 Nếu ta dùng SGD, thì trong mỗi vòng lặp, ta chọn ra một chuỗi con nhỏ hơn thông qua việc lấy mẫu ngẫu nhiên để tính toán mất mát cho chuỗi con đó,
 rồi sau đó tính gradient để cập nhật các tham số mô hình.
-Chìa khoá quan trọng của việc tính toán gradient là tính gradient của logarit xác suất có điều kiện cho vector từ trung tâm và vector từ ngữ cảnh.
+Điểm then chốt của việc tính toán gradient là tính gradient của logarit xác suất có điều kiện cho vector từ trung tâm và vector từ ngữ cảnh.
 Theo định nghĩa, đầu tiên ta có
 
 
@@ -405,4 +405,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
