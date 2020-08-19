@@ -5,7 +5,7 @@
 # Word Embedding with Global Vectors (GloVe)
 -->
 
-# *dịch đoạn phía trên*
+# Nhúng từ với Vector toàn cục (Glove)
 :label:`sec_glove`
 
 
@@ -14,7 +14,8 @@ First, we should review the skip-gram model in word2vec.
 The conditional probability $P(w_j\mid w_i)$ expressed in the skip-gram model using the softmax operation will be recorded as $q_{ij}$, that is:
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, ta sẽ xem lại mô hình skip-gram trong word2vec.
+Sác xuất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ  được ghi lại dưới dạng $q_{ij}$ như sau:
 
 
 $$q_{ij}=\frac{\exp(\mathbf{u}_j^\top \mathbf{v}_i)}{ \sum_{k \in \mathcal{V}} \text{exp}(\mathbf{u}_k^\top \mathbf{v}_i)},$$
@@ -25,7 +26,8 @@ where $\mathbf{v}_i$ and $\mathbf{u}_i$ are the vector representations of word $
 and $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$ is the vocabulary index set.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $\mathbf{v}_i$ và $\mathbf{u}_i$ lần lượt là các biểu diễn vector của từ trung tâm và từ ngữ cảnh của từ $w_i$ với chỉ số $i$,
+và $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$ là tập chỉ số từ vựng.
 
 
 <!--
@@ -39,8 +41,14 @@ Denote multiplicity of element $j$ in multiset $\mathcal{C}_i$ as $x_{ij}$: it i
 As a result, the loss function of the skip-gram model can be expressed in a different way:
 -->
 
-*dịch đoạn phía trên*
-
+Với từ $w_i$, nó có thể xuất hiện trong tập dữ liệu nhiều lần.
+Ta gom tất cả các từ ngữ cảnh mỗi lần khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, và ký hiệu chúng là tập bội $\mathcal{C}_i$.
+Số lượng của một phần tử trong tập bội được gọi là bội số của phần tử đó. 
+Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu:
+Cửa sổ ngữ cảnh khi hai từ $w_i$ đó trở thành từ trung tâm trong chuỗi văn bản chứa các chỉ số từ ngữ cảnh $2, 1, 5, 2$ và $2, 3, 2, 1$.
+Thì, tập bội $\mathcal{C}_i = \{1, 1, 2, 2, 2, 2, 3, 5\}$, ở đây bội số của phần tử số 1 là 2, bội số của phần tử số 2 là 4, và bội số của phần tử số 3 và 5 đều là 1.
+Ký hiệu bội số của phần tử $j$ trong tập bội $\mathcal{C}_i$ là $x_{ij}$: nó là số từ $w_j$ trong tất cả cửa sổ ngữ cảnh để từ trung tâm $w_i$ ở trong toàn bộ tập dữ liệu.
+Kết quả là hàm mất mát của mô hình skip-gram có thể mô tả theo một cách khác là:
 
 $$-\sum_{i\in\mathcal{V}}\sum_{j\in\mathcal{V}} x_{ij} \log\,q_{ij}.$$
 
@@ -51,7 +59,9 @@ and record the conditional probability $x_{ij}/x_i$ for generating context word 
 We can rewrite the loss function of the skip-gram model as
 -->
 
-*dịch đoạn phía trên*
+Ta cộng thêm số lượng tất cả các từ ngữ cảnh đối với từ tâm đích $w_i$ để nhận lấy $x_i$,
+và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ tâm đích $w_i$ là $p_{ij}$.
+Ta có thể viết lại hàm mất mất của mô hình skip-gram như
 
 
 $$-\sum_{i\in\mathcal{V}} x_i \sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}.$$
