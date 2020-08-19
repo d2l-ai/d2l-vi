@@ -287,7 +287,7 @@ As a fully connected layer, it transforms ResNet's final global average pooling 
 Mô hình gốc được huấn luyện sẵn bao gồm hai biến thành viên: `features` và `output`.
 `features` bao gồm tất cả các tầng của mô hình ngoại trừ tầng đầu ra, và `output` chính là tầng đầu ra của mô hình đó.
 Mục đích chính của việc phân chia này là để tạo điều kiện cho việc tinh chỉnh các tham số của tất cả các tầng của mô hình trừ tầng đầu ra.
-Biến thành viên `output` của mô hình gốc Là một tầng kết nối đầy đủ. 
+Biến thành viên `output` của mô hình gốc là một tầng kết nối đầy đủ. 
 Nó biến đổi đầu ra của tầng gộp trung bình toàn cục thành 1000 lớp đầu ra trên tập dữ liệu ImageNet như dưới đây.
 
 
@@ -307,9 +307,9 @@ Assume the learning rate in the `Trainer` instance is $\eta$ and use a learning 
 -->
 
 Sau đó ta xây dựng một mạng nơ-ron mới làm mô hình mục tiêu.
-Mạng này được định nghĩa giống như mô hình gốc được huấn luyện sẵn, tuy nhiên số đầu ra cuối cùng bằng với số lớp trong tập dữ liệu mục tiêu.
-Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số mô hình theo các tầng tương ứng của mô hình gốc.
-Các tham số mô hình trong `features` đã được huấn luyện trên tập dữ liệu ImageNet cho ta kết quả tương đối tốt.
+Mạng này được định nghĩa giống như mô hình tiền huấn luyện gốc, tuy nhiên số đầu ra cuối cùng bằng với số hạng mục trong tập dữ liệu mục tiêu.
+Ở đoạn mã phía dưới, các tham số mô hình trong biến thành viên `features` của mô hình mục tiêu `finetune_net` được khởi tạo giống như các tham số của các tầng tương ứng trong mô hình gốc.
+Các tham số mô hình trong `features` đã được huấn luyện trên tập dữ liệu ImageNet nên đã tương đối tốt.
 Vì vậy thường thì ta chỉ cần sử dụng tốc độ học nhỏ để "tinh chỉnh" các tham số trên.
 Ngược lại, các tham số mô hình trong biến thành viên `output` được khởi tạo ngẫu nhiên và thường yêu cầu tốc độ học lớn hơn nhiều để học lại từ đầu.
 Giả sử rằng tốc độ học trong đối tượng `Trainer` là $\eta$ thì ta sử dụng tốc độ học là $10\eta$ để cập nhật tham số mô hình trong biến thành viên `output`.
@@ -396,7 +396,7 @@ As you can see, the fine-tuned model tends to achieve higher precision in the sa
 -->
 
 Như bạn có thể thấy, với số epoch như nhau, mô hình tinh chỉnh có giá trị precision cao hơn. 
-Lý do là nó sở hữu giá trị ban đầu của các tham số tốt hơn.
+Lý do là vì các tham có giá trị khởi tạo ban đầu tốt hơn.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
