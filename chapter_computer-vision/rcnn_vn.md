@@ -15,8 +15,8 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN :cite:`He.Gkioxari.
 Due to space limitations, we will confine our discussion to the designs of these models.
 -->
 
-CNN theo vùng, hay các vùng với đặc trưng CNN (R-CNN) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
-Trong phần này, chúng ta sẽ thảo luận R-CNN và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
+Mạng nơ-ron tích chập theo vùng, hay các vùng với đặc trưng CNN (R-CNN) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
+Trong phần này, chúng ta sẽ thảo luận về R-CNN và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
 Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.Dollar.ea.2017`.
 
 
@@ -34,7 +34,7 @@ Afterwards, we use the features of each proposed region to predict their categor
 :numref:`fig_r-cnn` shows an R-CNN model.
 -->
 
-Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một dạng phương pháp lựa chọn) và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
+Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một phương pháp lựa chọn) và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
 Tiếp đến, các mô hình này sử dụng CNN để thực hiện lượt truyền xuôi nhằm trích xuất đặc trưng từ từng vùng đề xuất.
 Sau đó, ta sử dụng các đặc trưng của từng vùng được đề xuất để dự đoán hạng mục và khung chứa.
 :numref:`fig_r-cnn` mô tả một mô hình R-CNN.
@@ -65,15 +65,14 @@ Here, each support vector machine is used to determine whether an example belong
 4. The features and labeled bounding box of each proposed region are combined as an example to train a linear regression model for ground-truth bounding box prediction.
 -->
 
-1. Việc tìm kiếm chọn lọc được thực hiện trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
-Các vùng đề xuất thông thường được lựa chọn để có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
-Nhãn gốc hạng mục và khung chứa sẽ được gán cho từng vùng được đề xuất.
-2. Ta sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
-Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các tính toán truyền xuôi để trích xuất đặc trưng cho các vùng đề xuất tương ứng.
-3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được gói thành một mẫu để huấn luyện nhiều máy vector hỗ trợ cho 
-phép phân loại vật thể.
-Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một lớp nào đó hay không.
-4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được gói thành một mẫu để huấn luyện mô hình hồi quy tuyến tính để dự đoán khung chứa gốc. 
+1. Tìm kiếm chọn lọc trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
+Các vùng đề xuất thông thường sẽ có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
+Hạng mục và khung chứa nhãn gốc sẽ được gán cho từng vùng đề xuất.
+2. Sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
+Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các lượt truyền xuôi để trích xuất đặc trưng từ các vùng đề xuất tương ứng.
+3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện nhiều máy vector hỗ trợ cho phép phân loại vật thể.
+Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một hạng mục nào đó hay không.
+4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được kết hợp thành một mẫu để huấn luyện mô hình hồi quy tuyến tính để dự đoán khung chứa nhãn gốc. 
 
 <!--
 Although R-CNN models use pre-trained CNNs to effectively extract image features, the main downside is the slow speed.
@@ -82,8 +81,8 @@ This massive computing load means that R-CNNs are not widely used in actual appl
 -->
 
 Mặc dù các mô hình R-CNN sử dụng các mạng CNN đã được tiền huấn luyện để trích xuất các đặc trưng ảnh một cách hiệu quả, điểm hạn chế chính yếu đó là tốc độ chậm.
-Ta có thể hình dung, với hàng ngàn vùng đề xuất từ một ảnh, ta cần tới hàng ngàn phép tính truyền xuôi từ mạng CNN để phát hiện vật thể. 
-Phép tính toán cồng kềnh khiến các mô hình R-CNN không được sử dụng rộng rãi trong các ứng dụng thực tế.
+Có thể hình dung, với hàng ngàn vùng đề xuất từ một ảnh, ta cần tới hàng ngàn phép tính truyền xuôi từ mạng CNN để phát hiện vật thể. 
+Khối lượng tính toán nặng nề khiến các mô hình R-CNN không được sử dụng rộng rãi trong các ứng dụng thực tế.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -102,9 +101,9 @@ As these regions have a high degree of overlap, independent feature extraction r
 Fast R-CNN improves on the R-CNN by only performing CNN forward computation on the image as a whole.
 -->
 
-Điểm nghẽn cổ chai chính về hiệu năng của mô hình R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
-Do các vùng đề xuất này có độ chồng lặp cao, nên việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến khối lượng lớn các phép tính lặp lại.
-Fast R-CNN cải thiện mô hình R-CNN chỉ bằng cách thực hiện tính toán truyền xuôi qua mạng CNN trên toàn bộ ảnh.
+Điểm nghẽn cổ chai chính về hiệu năng của R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
+Do các vùng đề xuất này có độ chồng lặp cao, việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến số lượng lớn các phép tính lặp lại.
+Fast R-CNN cải thiện R-CNN bằng cách chỉ thực hiện lượt truyền xuôi qua mạng CNN trên toàn bộ ảnh.
 
 
 <!--
