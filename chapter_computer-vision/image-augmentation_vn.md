@@ -21,13 +21,13 @@ In this section, we will discuss this technology, which is widely used in comput
 -->
 
 Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ dữ liệu lớn là điều kiện tiên quyết cho sự thành công của các mạng nơ-ron sâu.
-Kỹ thuật tăng cường ảnh giúp mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên trên các mẫu ảnh. 
-Từ đó tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
+Kỹ thuật tăng cường ảnh giúp mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên trên các mẫu ảnh,
+từ đó tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
 Cũng có thể giải thích tác dụng của tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện, làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định. Do đó giúp cải thiện năng lực khái quát hóa của mô hình.
-Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, vì vậy giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
+Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, vì vậy giảm sự phụ thuộc của mô hình vào vị trí xuất hiện của đối tượng.
 Ta cũng có thể điều chỉnh độ sáng, màu sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
 Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
-Tới đây, chúng ta sẽ thảo luận về kỹ thuật vốn được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này. 
+Tới đây, chúng ta sẽ thảo luận về kỹ thuật mà được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này. 
 
 <!--
 First, import the packages or modules required for the experiment in this section.
@@ -135,7 +135,7 @@ This can also reduce the sensitivity of the model to the target position.
 
 Trong ví dụ chúng ta sử dụng, con mèo nằm ở giữa ảnh, nhưng không phải tất cả các ảnh mèo khác đều sẽ như vậy.
 :numref:`sec_pooling` có đề cập rằng tầng gộp có thể làm giảm độ nhạy của tầng tích chập với vị trí mục tiêu.
-Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt (*crop*) ngẫu nhiên hình ảnh.
+Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt ngẫu nhiên hình ảnh.
 Điều này cũng có thể làm giảm độ nhạy của mô hình với vị trí mục tiêu.
 
 
@@ -201,7 +201,7 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc. 
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `brightness` (độ sáng), `contrast` (độ tương phản), `saturation` (độ bão hoà), và `hue` (tông màu) của ảnh cùng một lúc. 
  
 
 
@@ -497,3 +497,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 5 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
+* Lê Khắc Hồng Phúc
