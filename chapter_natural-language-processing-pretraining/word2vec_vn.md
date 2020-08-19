@@ -5,7 +5,7 @@
 # Word Embedding (word2vec)
 -->
 
-# *dịch đoạn phía trên*
+# Embedding Từ (word2vec)
 :label:`sec_word2vec`
 
 
@@ -18,14 +18,18 @@ The technique of mapping words to vectors of real numbers is also known as word 
 Over the last few years, word embedding has gradually become basic knowledge in natural language processing.
 -->
 
-*dịch đoạn phía trên*
-
+Ngôn ngữ tự nhiên là một hệ thống phức tạp mà con người sử dụng để diễn đạt ngữ nghĩa. 
+Trong hệ thống này, từ là đơn vị cơ bản của ngữ nghĩa.
+Như tên gọi của nó, một vector từ (_word vector_) là một vector được sử dụng để biểu diễn một từ.
+Vector từ cũng có thể được coi là vector đặc trưng của một từ.
+Kỹ thuật ánh xạ từ ngữ sang vector các số thực còn được gọi là kỹ thuật embedding từ (_word embedding_).
+Trong vài năm gần đây, embedding từ dần trở thành kiến thức cơ bản trong xử lý ngôn ngữ tự nhiên.
 
 <!--
 ## Why Not Use One-hot Vectors?
 -->
 
-## *dịch đoạn phía trên*
+## Tại sao Không Sử dụng Vector One-hot?
 
 
 <!--
@@ -37,7 +41,13 @@ In order to get the one-hot vector representation of the word, we create a vecto
 In this way, each word is represented as a vector of length $N$ that can be used directly by the neural network.
 -->
 
-*dịch đoạn phía trên*
+
+Chúng ta đã sử dụng vector one-hot để đại diện cho từ (ký tự được coi là từ) trong :numref:`sec_rnn_scratch`.
+Nhớ lại rằng khi ta giả sử số lượng các từ khác nhau trong từ điển (kích thước từ điển) là $N$, mỗi từ có thể tương ứng một-một với các số nguyên liên tiếp từ 0 đến $N-1$.
+Những số nguyên tương ứng với các từ được gọi là chỉ số của từ.
+Ta giả sử rằng chỉ số của một từ là $i$.
+Để thu được biểu diễn vector one-hot của từ, ta tạo một vector có tất cả phần tử có giá trị là 0 với độ dài $N$ và đặt phần tử $i$ là 1.
+Theo đó, mỗi từ được biểu diễn dưới dạng vector có độ dài $N$ có thể được sử dụng trực tiếp bởi mạng nơ-ron.
 
 
 <!--
@@ -46,7 +56,9 @@ One of the major reasons is that the one-hot word vectors cannot accurately expr
 For the vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their cosine similarities are the cosines of the angles between them:
 -->
 
-*dịch đoạn phía trên*
+Mặc dù rất dễ xây dựng các vector one-hot, nhưng chúng thường không phải là một lựa chọn tốt.
+Một trong những lý do chính là các vector one-hot này không thể biểu diễn một cách chính xác độ tương tự giữa các từ khác nhau, chẳng hạn như độ tương tự cô-sin mà ta thường sử dụng.
+Độ tương tự cô-sin của hai vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ là giá trị cô-sin của góc giữa chúng:
 
 
 $$\frac{\mathbf{x}^\top \mathbf{y}}{\|\mathbf{x}\| \|\mathbf{y}\|} \in [-1, 1].$$
@@ -57,7 +69,8 @@ Since the cosine similarity between the one-hot vectors of any two different wor
 it is difficult to use the one-hot vector to accurately represent the similarity between multiple different words.
 -->
 
-*dịch đoạn phía trên*
+Do độ tương tự cô-sin giữa các vector one-hot của hai từ khác nhau bằng 0, 
+nên rất khó khi sử dụng vector one-hot để biểu diễn độ tương tự giữa các từ khác nhau.
 
 
 <!--
@@ -67,7 +80,11 @@ The Word2vec tool contains two models: skip-gram :cite:`Mikolov.Sutskever.Chen.e
 Next, we will take a look at the two models and their training methods.
 -->
 
-*dịch đoạn phía trên*
+
+[Word2vec](https://code.google.com/archive/p/word2vec/) là một công cụ được phát minh để giải quyết vấn đề trên.
+Nó biểu diễn mỗi từ bằng một vector có độ dài cố định và sử dụng những vector này để biểu thị tốt hơn độ tương tự và và các quan hệ loại suy (*analogy relationship*) giữa các từ khác nhau.
+Công cụ Word2vec gồm hai mô hình: skip-gam :cite:`Mikolov.Sutskever.Chen.ea.2013` và túi từ liên tục ( _continuous bag of words_ CBOW) :cite:`Mikolov.Chen.Corrado.ea.2013`.
+Tiếp theo, ta sẽ xem xét hai mô hình và phương pháp huấn luyện chúng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -400,7 +417,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
@@ -414,5 +431,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
-
