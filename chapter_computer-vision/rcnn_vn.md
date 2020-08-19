@@ -261,15 +261,15 @@ In order to obtain precise object detection results, Fast R-CNN generally requir
 Faster R-CNN replaces selective search with a region proposal network. This reduces the number of proposed regions generated, while ensuring precise object detection.
 -->
 
-Để có được kết quả phát hiện đối tượng chính xác, Fast R-CNN thường đòi hỏi tạo ra nhiều vùng đề xuất kĩ thuật tìm kiếm chọn lọc.
-Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất vùng. Điều này làm giảm số vùng đề xuất, trong khi vẫn đảm bảo phát hiện chính xác đối tượng.
+Để có kết quả phát hiện đối tượng chính xác, Fast R-CNN thường đòi hỏi tạo ra nhiều vùng đề xuất khi tìm kiếm chọn lọc.
+Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất vùng. Mạng này làm giảm số vùng đề xuất, trong khi vẫn đảm bảo phát hiện chính xác đối tượng.
 
 
 <!--
 ![Faster R-CNN model.](../img/faster-rcnn.svg)
 -->
 
-![*Mô hình Faster R-CNN*](../img/faster-rcnn.svg)
+![Mô hình Faster R-CNN](../img/faster-rcnn.svg)
 :label:`fig_faster_r-cnn`
 
 
@@ -281,8 +281,8 @@ The other parts of the model remain unchanged.
 The detailed region proposal network computation process is described below:
 -->
 
-:numref:`fig_faster_r-cnn` minh hoạ một mô hình Faster R-CNN.
-So với Fast R-CNN, Faster R-CNN chỉ chuyển đổi phương pháp tạo các vùng đề xuất từ kĩ thuật tìm kiếm chọn lọc sang mạng đề xuất vùng.
+:numref:`fig_faster_r-cnn` minh hoạ mô hình Faster R-CNN.
+So với Fast R-CNN, Faster R-CNN chỉ thay thế phương pháp sinh các vùng đề xuất từ tìm kiếm chọn lọc sang mạng đề xuất vùng.
 Những phần còn lại trong mô hình không đổi.
 Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
 
@@ -296,13 +296,12 @@ This way, each element in the feature map the CNN extracts from the image is a n
 Finally, we output the predicted bounding boxes as the proposed regions required by the RoI pooling layer.
 -->
 
-1. Ta dùng một tầng tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
+1. Dùng một tầng tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
 Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
-2. Ta lấy mỗi phần tử trong ánh xạ đặc trưng làm trung tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khung khác nhau, sau đó gán nhãn cho chúng.
-3. Ta lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
-4. Sau đó, ta sử dụng phương pháp triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
-Cuối cùng, ta xuất ra các khung chứa dự đoán dưới dạng các vùng đề xuất theo yêu cầu của tầng tổng hợp RoI.
-
+2. Lấy mỗi phần tử trong ánh xạ đặc trưng làm tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khác nhau, sau đó gán nhãn cho chúng.
+3. Lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (là vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
+4. Sau đó, sử dụng triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
+Cuối cùng, ta xuất ra các khung chứa dự đoán là các vùng đề xuất rồi đưa vào tầng gộp RoI.
 
 
 <!--
@@ -312,10 +311,10 @@ as well as the binary category and bounding box predictions for the anchor boxes
 Finally, the region proposal network can learn how to generate high-quality proposed regions, which reduces the number of proposed regions while maintaining the precision of object detection.
 -->
 
-Đáng lưu ý rằng, vì là một phần của mô hình Faster R-CNN, nên mạng đề xuất khu vực được huấn luyện cùng với phần còn lại trong mô hình.
-Ngoài ra, trong đối tượng Faster R-CNN còn chứa các hàm dự đoán hạng mục và khung chứa của bài toán phát hiện vật thể,
-và cả các hàm dự đoán hạng mục nhị phân và khung chứa cho các khung neo nằm trong mạng đề xuất vùng.
-Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, nhằm giảm đi số lượng vùng đề xuất trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.
+Lưu ý rằng, vì là một phần của mô hình Faster R-CNN, nên mạng đề xuất vùng được huấn luyện cùng với phần còn lại trong mô hình.
+Ngoài ra, trong đối tượng Faster R-CNN còn chứa các hàm dự đoán hạng mục và khung chứa trong bài toán phát hiện vật thể,
+cũng như các hàm dự đoán hạng mục nhị phân và khung chứa cho các khung neo trong mạng đề xuất vùng.
+Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, giảm đi số lượng vùng đề xuất trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -354,13 +353,12 @@ This not only predicts the categories and bounding boxes of RoIs, but allows us 
 We will describe how to use fully convolutional networks to predict pixel-level semantics in images later in this chapter.
 -->
 
-Như được trình bày tại :numref:`fig_mask_r-cnn`, có thể thấy Mask R-CNN là một sự hiệu chỉnh của Faster R-CNN.
-Mô hình Mask R-CNN thay thế tầng tổng hợp RoI bằng tầng căn chỉnh RoI (*RoI alignment layer*).
-Điều này cho phép sử dụng phép nội suy song tuyến tính (*bilinear interpolation*) để giữ lại thông tin không gian trong ánh xạ đặc trưng, làm cho Mask R-CNN trở nên phù hợp hơn với các dự báo cấp điểm ảnh.
+Trong :numref:`fig_mask_r-cnn`, có thể thấy Mask R-CNN là một sự hiệu chỉnh của Faster R-CNN.
+Mask R-CNN thay thế tầng tổng hợp RoI bằng tầng căn chỉnh RoI (*RoI alignment layer*).
+Điều này cho phép sử dụng phép nội suy song tuyến tính (*bilinear interpolation*) để giữ lại thông tin không gian trong ánh xạ đặc trưng, làm cho Mask R-CNN trở nên phù hợp hơn với các dự đoán cấp điểm ảnh.
 Lớp căn chỉnh RoI xuất ra các ánh xạ đặc trưng có cùng kích thước cho mọi RoI.
-Điều này không những dự đoán các lớp và khung chứa của RoI, mà còn cho phép chúng ta bổ sung một mạng nơ-ron tích chập đầy đủ để dự đoán những vị trí cấp điểm ảnh của các đối tượng.
-Chúng tôi sẽ mô tả cách sử dụng mạng nơ-ron tích chập đầy đủ để dự đoán ngữ nghĩa cấp điểm ảnh trong những ảnh ở phần sau tại chương này. 
-
+Điều này không những dự đoán các lớp và khung chứa của RoI, mà còn cho phép chúng ta bổ sung một mạng nơ-ron tích chập đầy đủ (*fully convolutional network*) để dự đoán vị trí cấp điểm ảnh của các đối tượng.
+Chúng tôi sẽ mô tả cách sử dụng mạng nơ-ron tích chập đầy đủ để dự đoán ngữ nghĩa cấp điểm ảnh trong những ảnh ở phần sau của chương này. 
 
 
 ## Tóm tắt
@@ -376,14 +374,13 @@ This reduces the number of proposed regions generated, while ensuring precise ob
 * Mask R-CNN uses the same basic structure as Faster R-CNN, but adds a fully convolution layer to help locate objects at the pixel level and further improve the precision of object detection.
 -->
 
-Một mô hình R-CNN chọn ra nhiều vùng đề xuất và sử dụng CNN để thực hiện tính toán truyền xuôi rồi trích xuất đặc trưng từ mỗi vùng đề xuất.
+* Mô hình R-CNN chọn ra nhiều vùng đề xuất và sử dụng CNN để thực hiện tính toán truyền xuôi rồi trích xuất đặc trưng từ mỗi vùng đề xuất.
 Sau đó dùng các đặc trưng này để dự đoán hạng mục và khung chứa của những vùng đề xuất.
 * Fast R-CNN cải thiện R-CNN bằng cách chỉ thực hiện tính toán truyền xuôi CNN trên toàn bộ bức ảnh.
-Nó giới thiệu một lớp tổng hợp RoI để trích xuất các đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
-* Faster R-CNN thay thế cách tìm kiếm chọn lọc, được dùng trong Fast R-CNN bằng mạng đề xuất vùng.
+Mạng này sử dụng một tầng tổng hợp RoI để trích xuất các đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
+* Faster R-CNN thay thế tìm kiếm chọn lọc trong Fast R-CNN bằng mạng đề xuất vùng.
 Điều này làm giảm số lượng vùng đề xuất tạo ra, và vẫn đảm bảo độ chính xác khi phát hiện đối tượng.
-* Mask R-CNN dùng cấu trúc cơ bản giống như Faster R-CNN, nhưng có bổ sung một mạng nơ-ron tích chập đầy đủ giúp định vị đối tượng ở cấp điểm ảnh và cải thiện hơn nữa độ chính xác của việc phát hiện đối tượng.
-
+* Mask R-CNN có cấu trúc cơ bản giống Faster R-CNN, nhưng có thêm một mạng nơ-ron tích chập đầy đủ giúp định vị đối tượng ở cấp điểm ảnh và cải thiện hơn nữa độ chính xác của việc phát hiện đối tượng.
 
 
 ## Bài tập
@@ -414,21 +411,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
 * Lê Khắc Hồng Phúc
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 4 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 5 -->
-* 
+* Nguyễn Văn Cường
