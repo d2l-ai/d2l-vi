@@ -25,9 +25,9 @@ Finally, we will perform practice exercises on two important computer vision dat
 -->
 
 Ở chương "Mạng Nơ-ron Tích chập", chúng tôi đã giới thiệu các mô hình học sâu thường được sử dụng trong lĩnh vực thị giác máy tính và đã cùng thực hành một số tác vụ phân loại hình ảnh đơn giản.
-Trong chương này, chúng tôi sẽ giới thiệu các phương pháp tăng cường hình ảnh, phương pháp tinh chỉnh và áp dụng chúng vào phân loại hình ảnh.
-Tiếp đến, ta sẽ khám phá các phương pháp nhận diện vật thể khác nhau, cùng tìm hiểu cách sử dụng các mạng tích chập hoàn toàn để thực hiện phân vùng ngữ nghĩa trên hình ảnh.
-Sau đó, chúng tôi giải thích cách sử dụng kỹ thuật chuyển phong cách để tạo nên những hình ảnh trông giống như bìa của cuốn sách này.
+Trong chương này, chúng tôi sẽ giới thiệu các phương pháp tăng cường hình ảnh (*image augmentation*), phương pháp tinh chỉnh (*fine-tuning*) và áp dụng chúng vào phân loại hình ảnh.
+Tiếp đến, ta sẽ khám phá các phương pháp phát hiện vật thể khác nhau, cùng tìm hiểu cách sử dụng các mạng tích chập đầy đủ để thực hiện phân vùng ngữ nghĩa trên hình ảnh.
+Sau đó, chúng tôi giải thích cách sử dụng kỹ thuật truyền tải phong cách (*style transfer*) để tạo nên những hình ảnh trông giống như bìa của cuốn sách này.
 Cuối cùng, chúng tôi sẽ thực hiện các bài tập thực hành trên hai bộ dữ liệu thị giác máy tính quan trọng để xem lại nội dung của chương này và những chương trước.
 
 
