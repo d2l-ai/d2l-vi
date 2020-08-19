@@ -374,7 +374,7 @@ For a pair of words with close semantical meaning, why it is likely for their wo
 Bạn sẽ huấn luyện các vector từ của chúng như thế nào? Gợi ý: Xem phần 4 trong bài báo Word2vec[2].
 3. Sử dụng mô hình skip-gam làm ví dụ để tìm hiểu về thiết kế của mô hình word2vec.
 Mối quan hệ giữa tích vô hướng của hai vector từ và độ tương tự cosine trong mô hình skip-gam là gì?
-Đối với một cặp từ có ngữ nghĩa gần nhau, tại sao khả năng độ tương tự cosine giữa hai vector từ này lại cao?
+Đối với một cặp từ có ngữ nghĩa gần nhau, tại sao hai vector từ này lại thường có độ tương tự cosine cao?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -408,5 +408,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
 
