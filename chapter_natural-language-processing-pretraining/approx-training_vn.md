@@ -47,7 +47,7 @@ nên mất mát được đề cập ở trên, thực tế, bao gồm tổng s�
 vì cả hai đều tính được xác suất có điều kiện bằng cách sử dụng toán tử softmax,
 nên tính toán gradient cho mỗi bước bao gồm tổng số lượng các phần tử trong từ điển.
 Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao.
-Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm tính và toán tử softmax phân cấp.
+Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm và toán tử softmax phân cấp.
 Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW,
 nên ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên trong phần này.
 
@@ -56,7 +56,7 @@ nên ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu
 ## Negative Sampling
 -->
 
-## Lấy Mẫu Âm tính
+## Lấy Mẫu Âm
 :label:`subsec_negative-sampling`
 
 
