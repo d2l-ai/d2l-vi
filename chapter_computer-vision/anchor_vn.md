@@ -525,11 +525,11 @@ To simplify the results, we can remove similar prediction bounding boxes.
 A commonly used method is called non-maximum suppression (NMS).
 -->
 
-Trong giai đoạn dự đoán mô hình, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán lớp và độ dời của từng khung neo này.
+Trong giai đoạn dự đoán, đầu tiên ta tạo ra nhiều khung neo cho bức ảnh rồi sau đó dự đoán hạng mục và độ dời của từng khung neo.
 Tiếp theo, ta thu được những khung chứa dự đoán dựa trên các khung neo và độ dời dự đoán của chúng.
 Khi tồn tại nhiều khung neo, thì nhiều khung chứa dự đoán tương tự nhau có thể được tạo ra cho cùng một mục tiêu.
 Để đơn giản hoá kết quả, ta có thể loại bỏ những khung chứa dự đoán giống nhau.
-Một phương pháp thường được sử dụng cho việc này thường được gọi là triệt phi cực đại (*non-maximum suppression - NMS*).
+Một phương pháp thường được sử dụng là triệt phi cực đại (*non-maximum suppression - NMS*).
 
 
 <!--
@@ -544,14 +544,14 @@ The threshold here is a preset hyperparameter.
 At this point, $L$ retains the prediction bounding box with the highest confidence level and removes other prediction bounding boxes similar to it.
 -->
 
-Hãy cùng xem qua cách NMS hoạt động.
-Đối với khung chứa dự đoán $B$, mô hình sẽ tính toán xác suất dự đoán cho từng lớp.
-Giả sử rằng xác suất dự đoán lớn nhất là $p$, lớp tương ứng với xác suất này sẽ là lớp dự đoán của $B$.
+Hãy cùng xem cách NMS hoạt động.
+Đối với khung chứa dự đoán $B$, mô hình sẽ dự đoán xác suất cho từng hạng mục.
+Giả sử rằng xác suất dự đoán lớn nhất là $p$, hạng mục tương ứng với xác suất này sẽ là hạng mục dự đoán của $B$.
 Ta gọi $p$ là độ tin cậy (*confidence level*) của khung chứa dự đoán $B$.
 Trên cùng một bức ảnh, ta sắp xếp các khung chứa dự đoán không phải là nền theo thứ tự giảm dần độ tin cậy, thu được danh sách $L$.
-Ta sẽ chọn ra khung chứa dự đoán $B_1$ có mức tin cậy cao nhất từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" có hệ số IoU với khung chứa $B_1$ lớn hơn một ngưỡng nhất định khỏi danh sách $L$.
-Mức ngưỡng này là một siêu tham số đã được định trước.
-Tại thời điểm này, $L$ chỉ giữ lại khung chứa dự đoán có mức tin cậy cao nhất sau khi đã loại bỏ những khung chứa giống nó.
+Ta chọn ra khung chứa dự đoán có mức tin cậy cao nhất $B_1$ từ $L$ để làm chuẩn so sánh và loại bỏ tất cả khung chứa dự đoán "không chuẩn" có hệ số IoU với khung chứa $B_1$ lớn hơn một ngưỡng nhất định khỏi danh sách $L$.
+Mức ngưỡng này là một siêu tham số được định trước.
+Tại thời điểm này, $L$ chỉ còn khung chứa dự đoán có độ tin cậy cao nhất sau khi đã loại bỏ những khung chứa giống nó.
 
 
 <!--
@@ -562,10 +562,10 @@ At this time, the IoU of any pair of prediction bounding boxes in $L$ is less th
 Finally, output all prediction bounding boxes in the list $L$.
 -->
 
-Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định từ $L$.
+Sau đó, ta chọn tiếp khung chứa dự đoán $B_2$ có độ tin cậy cao thứ hai trong $L$ để làm chuẩn so sánh, và loại bỏ tất cả khung chứa dự đoán "không chuẩn" khác có hệ số IoU so với khung chứa $B_2$ lớn hơn một ngưỡng nhất định khỏi $L$.
 Ta sẽ lặp lại quy trình này cho đến khi tất cả khung chứa dự đoán trong $L$ đã được sử dụng làm chuẩn so sánh.
 Lúc này, IoU của bất cứ cặp khung chứa dự đoán nào trong $L$ đều nhỏ hơn ngưỡng cho trước.
-Cuối cùng, ta sẽ xuất ra mọi khung chứa dự đoán trong danh sách $L$.
+Cuối cùng, đầu ra sẽ là mọi khung chứa dự đoán còn lại trong $L$.
 
 
 <!--
@@ -576,12 +576,10 @@ This means that the prediction bounding boxes are anchor boxes.
 Finally, we construct a predicted probability for each category.
 -->
 
-Tiếp theo, ta sẽ xem xét một ví dụ chi tiết.
+Tiếp theo, hãy xem xét một ví dụ chi tiết.
 Trước tiên ta tạo bốn khung neo.
-Để đơn giản hóa vấn đề, ta giả định rằng độ dời dự đoán đều bằng 0.
-Điều này có nghĩa là các khung chứa dự đoán đều là các khung neo.
+Để đơn giản hóa vấn đề, ta giả định rằng độ dời dự đoán đều bằng 0, nghĩa là các khung chứa dự đoán đều là các khung neo.
 Cuối cùng, ta định ra một xác suất dự đoán cho từng lớp.
-
 
 
 ```{.python .input  n=11}
@@ -624,12 +622,12 @@ The remaining four elements are the $x, y$ axis coordinates of the upper-left co
 of the prediction bounding box (the value range is between 0 and 1).
 -->
 
-Ta dùng hàm `multibox_detection` để thực hiện phương pháp triệt phi cựa đại và đặt ngưỡng cho nó là 0.5.
-Điều này tạo thêm một chiều cho batch trong tensor đầu vào.
-Ta có thể thấy rằng kích thước của kết quả trả về là (kích thước batch, số lượng khung neo, 6).
+Ta dùng hàm `multibox_detection` để thực hiện triệt phi cực đại và đặt ngưỡng là 0.5.
+Hàm này tạo thêm chiều mẫu trong tensor đầu vào.
+Ta có thể thấy kích thước của kết quả trả về là (kích thước batch, số lượng khung neo, 6).
 6 phần tử của từng hàng biểu diễn thông tin đầu ra của một khung chứa dự đoán.
-Phần tử đầu tiên là chỉ số của lớp dự đoán, bắt đầu từ 0 (0 là chó, 1 là mèo).
-Giá trị -1 cho biết đó là nền hoặc phần bị loại bỏ bởi triệt phi cựa đại.
+Phần tử đầu tiên là chỉ số của hạng mục dự đoán, bắt đầu từ 0 (0 là chó, 1 là mèo).
+Giá trị -1 cho biết đó là nền hoặc khung bị loại bỏ bởi triệt phi cực đại.
 Phần tử thứ hai chính là độ tin cậy của khung chứa dự đoán.
 Bốn phần tử còn lại là các toạ độ $x, y$ của góc trên bên trái và góc dưới bên phải của khung chứa dự đoán (miền giá trị nằm trong khoảng từ 0 đến 1).
 
@@ -648,7 +646,7 @@ output
 We remove the prediction bounding boxes of category -1 and visualize the results retained by NMS.
 -->
 
-Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại bởi triệt phi cựa đại.
+Ta loại bỏ các khung chứa dự đoán có giá trị -1 rồi trực quan hoá các kết quả còn được giữ lại sau khi triệt phi cực đại. 
 
 
 ```{.python .input  n=14}
@@ -666,8 +664,8 @@ In practice, we can remove prediction bounding boxes with lower confidence level
 We can also filter the output of NMS, for example, by only retaining results with higher confidence levels as the final output.
 -->
 
-Trong thực tế, ta có thể loại bỏ các khung chứa dự đoán có mức độ tin cậy thấp hơn trước khi thực hiện triệt phi cựa đại, để bớt đi chi phí tính toán.
-Ta cũng có thể lọc các đầu ra của triệt phi cựa đại, ví dụ, bằng cách giữ lại những kết quả có độ tin cậy cao hơn để làm đầu ra cuối cùng.
+Trong thực tế, ta có thể loại bỏ các khung chứa dự đoán có mức độ tin cậy thấp trước khi thực hiện triệt phi cực đại để giảm bớt chi phí tính toán.
+Ta cũng có thể lọc các đầu ra sau khi triệt phi cực đại, ví dụ, bằng cách chỉ giữ lại những kết quả có độ tin cậy cao để làm đầu ra cuối cùng.
 
 
 ## Tóm tắt
@@ -682,10 +680,10 @@ one is the category of the target contained in the anchor box and the other is t
 -->
 
 * Chúng ta tạo ra nhiều khung neo với nhiều kích thước và tỉ lệ khác nhau, bao quanh từng điểm ảnh.
-* IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao nhau với phần kết hợp của hai khung chứa.
+* IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao trên phần hợp của hai khung chứa.
 * Trong tập huấn luyện, ta đánh dấu hai loại nhãn cho mỗi khung neo:
-lớp của đối tượng chứa trong khung neo và độ dời của khung chứa chuẩn so với khung neo.
-* Khi dự đoán, ta có thể dùng triệt phi cựa đại để loại bỏ các khung chứa dự đoán tương tự nhau, từ đó đơn giản hoá kết quả.
+hạng mục của đối tượng trong khung neo và độ dời của khung chứa chuẩn so với khung neo.
+* Khi dự đoán, ta có thể dùng triệt phi cực đại để loại bỏ các khung chứa dự đoán tương tự nhau, từ đó đơn giản hoá kết quả.
 
 
 ## Bài tập
@@ -698,10 +696,10 @@ lớp của đối tượng chứa trong khung neo và độ dời của khung c
 4. Modify the variable `anchors` in the "Labeling Training Set Anchor Boxes" and "Output Bounding Boxes for Prediction" sections. How do the results change?
 -->
 
-1. Thay đổi giá trị `size` và `ratios` trong hàm `multibox_prior` và quan sát những thay đổi đối với các khung neo được tạo.
+1. Thay đổi giá trị `size` và `ratios` trong hàm `multibox_prior` và quan sát sự thay đổi của các khung neo được tạo.
 2. Tạo hai khung chứa với giá trị IoU là 0.5 và quan sát sự chồng nhau giữa chúng.
 3. Xác thực kết quả độ dời `labels[0]` bằng cách đánh dấu các độ dời của khung neo như định nghĩa trong phần này (hằng số là một giá trị mặc định).
-4. Thay đổi biến `anchors` trong phần "Gán nhãn các khung neo trong tập huấn luyện" và "Khung chứa khi Dự đoán". Kết quả thay đổi như thế nào?
+4. Thay đổi biến `anchors` trong phần "Gán nhãn Khung neo trong tập Huấn luyện" và "Khung chứa khi Dự đoán". Kết quả thay đổi như thế nào?
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
@@ -722,34 +720,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 3 -->
 * Phạm Đăng Khoa
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
-* Phạm Đăng Khoa
-
-<!-- Phần 5 -->
 * Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-* Phạm Minh Đức
-
-<!-- Phần 6 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
-* Phạm Minh Đức
-
-<!-- Phần 7 -->
-* Phạm Đăng Khoa
-* Phạm Minh Đức
-* Nguyễn Văn Cường
-
-<!-- Phần 8 -->
-* 
