@@ -276,7 +276,7 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện nhưng không sử dụng nó với các biến đổi ngẫu nhiên trong dự đoán.
+Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện nhưng không sử dụng các biến đổi ngẫu nhiên trong dự đoán.
 Ở đây, chúng ta chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
 Ngoài ra, chúng ta sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
 tức là, tensor số thực dấu phẩy động 32-bit có kích thước (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
@@ -300,7 +300,7 @@ For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
 Tiếp theo, ta định nghĩa một chức năng phụ trợ để giúp đọc hình ảnh và áp dụng tăng cường ảnh dễ dàng hơn.
-Hàm `transform_first` cung cấp bởi Gluon giúp thực thi tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
+Hàm `transform_first` được cung cấp bởi Gluon giúp thực thi tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
 Để biết thêm chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
@@ -420,7 +420,7 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
 
 <!-- Now we train the model using image augmentation of random flipping left and right. -->
 
-Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải. 
+Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh qua phép lật ngẫu nhiên trái và phải. 
 
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
@@ -437,7 +437,7 @@ train_with_data_aug(train_augs, test_augs, net)
 -->
 
 * Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
-* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên mẫu huấn luyện, không áp dụng các biến đổi ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
+* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên mẫu huấn luyện, không áp dụng các biến đổi tăng cường ảnh ngẫu nhiên trong quá trình dự đoán.
 * Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
 
@@ -497,3 +497,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
