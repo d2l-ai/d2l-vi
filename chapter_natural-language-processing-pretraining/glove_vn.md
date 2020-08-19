@@ -68,7 +68,7 @@ If we minimize the loss function from the formula above, we will be able to allo
 to approach as close as possible to the true conditional probability distribution.
 -->
 
-Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ để sinh từ ngữ cảnh
+Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ sinh từ ngữ cảnh
 dựa trên từ trung tâm $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
 Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh với từ mục tiêu trung tâm $w_i$.
 Nếu ta cực tiểu hoá hàm mất mát theo công thức trên, ta sẽ có thể cho phép phân phối xác suất có điều kiện được dự đoán
@@ -85,7 +85,7 @@ In the cross-entropy loss function, the final prediction of the conditional prob
 -->
 
 Tuy nhiên, mặc dù là loại hàm mất mát phổ biến nhất, hàm mất mát entropy chéo lại thường không phải là lựa chọn tốt.
-Mặt khác, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để cho phép dự đoán của mô hình $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm có tổng tất cả các từ trong toàn bộ từ điển trong mẫu số.
+Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để cho phép dự đoán của mô hình $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm có tổng tất cả các từ trong toàn bộ từ điển trong mẫu số của nó.
 Điều này có thể dễ dàng khiến tổng chi phí tính toán quá lớn.
 Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu.
 Trong hàm mất mát entropy chéo, dự đoán cuối cùng của phân phối xác suất có điều kiện trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác.
@@ -115,15 +115,15 @@ Therefore, we get the square loss $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 
 
 1. Ở đây, ta sử dụng các biến phân phối phi xác suất $p'_{ij}=x_{ij}$ và $q'_{ij}=\exp(\mathbf{u}_j^\top \mathbf{v}_i)$ và tính log của chúng.
 Theo đó, ta có mất mát bình phương $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 = \left(\mathbf{u}_j^\top \mathbf{v}_i - \log\,x_{ij}\right)^2$.
-2. Ta cộng hai số vô hướng tham số mô hình vào từng từ $w_i$: hệ số điều chỉnh $b_i$ (cho các từ trung tâm) và $c_i$ (cho các từ ngữ cảnh).
-3. Thay thế trọng số của mỗi mất mát bằng hàm $h(x_{ij})$. Trọng số hàm $h(x)$ là hàm đơn điệu tăng trong khoảng $[0, 1]$.
+2. Ta cộng vào từng từ $w_i$ hai số vô hướng là tham số mô hình: hệ số điều chỉnh $b_i$ (cho các từ trung tâm) và $c_i$ (cho các từ ngữ cảnh).
+3. Thay thế trọng số của mỗi mất mát bằng hàm $h(x_{ij})$. hàm trọng số $h(x)$ là hàm đơn điệu tăng trong khoảng $[0, 1]$.
 
 
 <!--
 Therefore, the goal of GloVe is to minimize the loss function.
 -->
 
-Theo đó, mục tiêu của GloVe là cực tiểu hoá hàm mất mát.
+Theo đó, mục tiêu của GloVe là cực tiểu hoá hàm mất mát
 
 
 $$\sum_{i\in\mathcal{V}} \sum_{j\in\mathcal{V}} h(x_{ij}) \left(\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j - \log\,x_{ij}\right)^2.$$
