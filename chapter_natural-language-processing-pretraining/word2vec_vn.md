@@ -22,7 +22,7 @@ Ngôn ngữ tự nhiên là một hệ thống phức tạp mà con người s�
 Trong hệ thống này, từ là đơn vị cơ bản của ngữ nghĩa.
 Như tên gọi của nó, một vector từ (_word vector_) là một vector được sử dụng để biểu diễn một từ.
 Vector từ cũng có thể được coi là vector đặc trưng của một từ.
-Kỹ thuật ánh xạ từ sang vector các số thực còn được gọi là kỹ thuật embedding từ (_word embedding_).
+Kỹ thuật ánh xạ từ ngữ sang vector các số thực còn được gọi là kỹ thuật embedding từ (_word embedding_).
 Trong vài năm gần đây, embedding từ dần trở thành kiến thức cơ bản trong xử lý ngôn ngữ tự nhiên.
 
 <!--
