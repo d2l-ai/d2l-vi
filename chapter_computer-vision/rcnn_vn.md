@@ -137,14 +137,14 @@ During bounding box prediction, the shape of the fully connected layer output is
 This means that we predict the category and bounding box for each proposed region.
 -->
 
-1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh là đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
+1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh làm đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
 Hơn nữa, mạng này được huấn luyện như bình thường để cập nhật tham số mô hình.
 Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
-2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, mỗi vùng có kích thước khác nhau dẫn đến đầu ra CNN có vùng quan tâm (_regions of interests - RoI_) với kích thước khác nhau.
-Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
-Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng RoI làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
+2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, kích thước các vùng này khác nhau chỉ ra rằng vùng quan tâm (_regions of interests - RoI_) tại đầu ra của CNN có kích thước khác nhau.
+Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm này (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
+Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng quan tâm làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định khi thiết kế mô hình.
-4. Khi dự đoán hạng mục, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times q$ và áp dụng phép hồi quy softmax ($q$ là số lượng hạng mục).
+4. Khi dự đoán hạng mục, kích thước đầu ra của tầng kết nối đầy đủ lại được biến đổi thành $n \times q$ và áp dụng phép hồi quy softmax ($q$ là số lượng hạng mục).
 Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
 Nghĩa là ta dự đoán hạng mục và khung chứa cho từng vùng đề xuất.
 
@@ -162,10 +162,10 @@ This allows the RoI pooling layer to extract features of the same shape from RoI
 Tầng gộp RoI trong mạng Fast R-CNN có phần khác với các tầng gộp mà ta đã thảo luận trước đó.
 Trong tầng gộp thông thường, ta thiết lập cửa sổ gộp, giá trị đệm, và sải bước để quyết định kích thước đầu ra.
 Trong tầng gộp RoI, ta có thể trực tiếp định rõ kích thước đầu ra của từng vùng, ví dụ chiều cao và chiều rộng của từng vùng sẽ là $h_2, w_2$.
-Giả sử rằng chiều cao và chiều rộng của cửa sổ RoI là $h$ và $w$, cửa sổ này được chia thành một lưới các cửa sổ phụ với kích thước $h_2 \times w_2$.
-Mỗi cửa sổ phụ có kích thước xấp xỉ $(h/h_2) \times (w/w_2)$.
+Giả sử chiều cao và chiều rộng của cửa sổ RoI là $h$ và $w$, cửa sổ này được chia thành một lưới có $h_2 \times w_2$ cửa sổ con.
+Mỗi cửa sổ con có kích thước xấp xỉ $(h/h_2) \times (w/w_2)$.
 Chiều cao và chiều rộng của cửa sổ con phải luôn là số nguyên và thành phần lớn nhất được sử dụng là đầu ra cho cửa sổ con đó.
-Điều này cho phép tầng gộp RoI trích xuất đặc trưng có cùng kích thước từ các vùng RoI có kích thước khác nhau.
+Điều này cho phép tầng gộp RoI trích xuất đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -179,16 +179,16 @@ For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a single $2\times
 When we divide the region into four sub-windows, they respectively contain the elements 0, 1, 4, and 5 (5 is the largest); 2 and 6 (6 is the largest); 8 and 9 (9 is the largest); and 10.
 -->
 
-Trong hình :numref:`fig_roi`, ta chọn một vùng $3\times 3$ làm ROI của một đầu vào $4 \times 4$.
-Với ROI này, ta sử dụng một tầng gộp ROI $2\times 2$ để thu được một đầu ra đơn $2\times 2$.
-Khi ta chia vùng này thành bốn cửa sổ con, chúng lần lượt chứa các phần tử 0, 1, 4 và 5 (5 là lớn nhất); 2 và 6 (6 là lớn nhất); 8 và 9 (9 là lớn nhất); và 10.
+Trong :numref:`fig_roi`, ta chọn một vùng $3\times 3$ làm RoI của một đầu vào $4 \times 4$.
+Với RoI này, ta sử dụng một tầng gộp RoI $2\times 2$ để thu được một đầu ra đơn $2\times 2$.
+Khi chia vùng này thành bốn cửa sổ con, chúng lần lượt chứa các phần tử 0, 1, 4 và 5 (5 là lớn nhất); 2 và 6 (6 là lớn nhất); 8 và 9 (9 là lớn nhất); và 10.
 
 <!--
 ![$2\times 2$ RoI pooling layer.](../img/roi.svg)
 -->
 
 
-![Tầng gộp ROI $2\times 2$](../img/roi.svg)
+![Tầng gộp RoI $2\times 2$](../img/roi.svg)
 :label:`fig_roi`
 
 
@@ -197,8 +197,8 @@ We use the `ROIPooling` function to demonstrate the RoI pooling layer computatio
 Assume that the CNN extracts the feature `X` with both a height and width of 4 and only a single channel.
 -->
 
-Ta sử dụng hàm `ROIPooling` để thực hiện việc tính toán tầng gộp ROI.
-Giả sử rằng CNN trích đặc trưng `X` với chiều rộng và chiều cao là 4 và một kênh đơn duy nhất.
+Ta sử dụng hàm `ROIPooling` để thực hiện việc tính toán tầng gộp RoI.
+Giả sử rằng CNN trích xuất đặc trưng `X` với chiều rộng và chiều cao là 4 với một kênh duy nhất.
 
 
 ```{.python .input  n=4}
@@ -216,8 +216,8 @@ Assume that the height and width of the image are both 40 pixels and that select
 Each region is expressed as five elements: the region's object category and the $x, y$ coordinates of its upper-left and bottom-right corners.
 -->
 
-Giả sử rằng chiều rộng và chiều cao của ảnh là 40 điểm ảnh và tìm kiếm chọn lọc (selective search) sinh ra hai vùng đề xuất trên ảnh này.
-Mỗi vùng được biểu thị gồm 5 phần tử: hạng mục của đối tượng trong vùng đó và các tọa độ $x, y$ của các góc trên-bên trái và dưới-bên phải.
+Giả sử chiều cao và chiều rộng của ảnh là 40 pixel và tìm kiếm chọn lọc sinh ra hai vùng đề xuất trên ảnh này.
+Mỗi vùng được biểu diễn bằng 5 phần tử: hạng mục của đối tượng trong vùng đó và các tọa độ $x, y$ của góc trên bên trái và góc dưới bên phải.
 
 
 ```{.python .input  n=5}
@@ -231,9 +231,9 @@ and then the RoIs are labeled on `X` as `X[:, :, 0:3, 0:3]` and `X[:, :, 1:4, 0:
 Finally, we divide the two RoIs into a sub-window grid and extract features with a height and width of 2.
 -->
 
-Bởi vì chiều cao và chiều rộng của `X` là $1/10$ chiều cao và chiều rộng của ảnh, các tọa độ của hai vùng được đề xuất sẽ nhân với 0.1 dựa theo `spatial_scale`,
-rồi các ROI này được gắn nhãn lên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
-Sau cùng, ta chia hai ROI thành một lưới cửa sổ con và trích xuất các đặc trưng với chiều cao và chiều rộng là 2.
+Vì chiều cao và chiều rộng của `X` bằng $1/10$ chiều cao và chiều rộng của ảnh, các tọa độ của hai vùng được đề xuất sẽ nhân với 0.1 thông qua `spatial_scale`,
+rồi các RoI được gán nhãn trên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
+Sau cùng, ta chia hai RoI thành một lưới cửa sổ con và trích xuất đặc trưng với chiều cao và chiều rộng là 2.
 
 
 ```{.python .input  n=6}
