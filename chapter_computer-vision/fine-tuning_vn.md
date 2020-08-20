@@ -15,9 +15,9 @@ We also described ImageNet, the most widely used large-scale image dataset in th
 However, the size of datasets that we often deal with is usually larger than the first, but smaller than the second.
 -->
 
-Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60 000 ảnh.
+Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60,000 ảnh.
 Chúng ta cũng đã nói về ImageNet, tập dữ liệu ảnh quy mô lớn được sử dụng phổ biến trong giới học thuật, với hơn 10 triệu tấm ảnh vật thể thuộc hơn 1000 hạng mục.
-Tuy nhiên, những tập dữ liệu ta hay gặp thường có kích thước chỉ ở đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
+Tuy nhiên, những tập dữ liệu ta thường gặp chỉ có kích thước đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
 <!--
@@ -28,7 +28,7 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn tới trang bán chiếc ghế đó cho người dùng.
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn tới website bán chiếc ghế đó.
 Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế phổ biến, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
 Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
 Điều này dẫn tới việc các mô hình phức tạp bị quá khớp khi huấn luyện trên tập dữ liệu này, dù chúng hoạt động tốt với Imagenet.
@@ -44,7 +44,7 @@ Although, recently, data collection costs have dropped significantly, the costs 
 
 Để giải quyết vấn đề này, một giải pháp dễ thấy là đi thu thập thêm dữ liệu.
 Tuy nhiên, việc thu thập và gán nhãn dữ liệu có thể tốn rất nhiều tiền và thời gian.
-Ví dụ, để xây dựng được tập ImageNet, các nhà nghiên cứu đã tiêu hàng triệu đô la từ nguồn tài trợ nghiên cứu.
+Ví dụ, để xây dựng được tập ImageNet, hàng triệu đô la đã được sử dụng từ nguồn tài trợ nghiên cứu.
 Dù vậy, gần đây chi phí thu thập dữ liệu đã giảm mạnh, nhưng điều này vẫn rất đáng lưu ý.
 
 
@@ -55,7 +55,7 @@ models trained on this dataset can extract more general image features that can 
 These similar features may be equally effective for recognizing a chair.
 -->
 
-Một giải pháp khác là áp dụng kỹ thuật học truyền tải (*transfer learning*), mang kiến thức đã học được từ tập dữ liệu gốc áp dụng sang tập dữ liệu đích.
+Một giải pháp khác là áp dụng kỹ thuật học truyền tải (*transfer learning*), mang kiến thức đã học được từ tập dữ liệu gốc áp dụng sang tập dữ liệu mục tiêu.
 Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, bề mặt, hình dáng, và các kết cấu của vật thể.
 Các đặc trưng tương đồng này cũng sẽ có ích trong bài toán nhận diện ghế.
 
@@ -117,7 +117,7 @@ We will use the model obtained by fine tuning to identify whether an image conta
 
 Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món ăn xúc xích.
 Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
-Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, trong đó sẽ có các ảnh có chứa xúc xích.
+Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, trong đó sẽ có các ảnh chứa hình xúc xích.
 Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món ăn này hay không.
 
 <!--
