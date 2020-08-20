@@ -347,7 +347,7 @@ $$ \prod_{t=1}^{T}  P(w^{(t)} \mid  w^{(t-m)}, \ldots, w^{(t-1)}, w^{(t+1)}, \ld
 ### CBOW Model Training
 -->
 
-### *dịch đoạn phía trên*
+### Huấn luyện Mô hình CBOW
 
 
 <!--
@@ -355,7 +355,8 @@ CBOW model training is quite similar to skip-gram model training.
 The maximum likelihood estimation of the CBOW model is equivalent to minimizing the loss function.
 -->
 
-*dịch đoạn phía trên*
+Quá trình huấn luyện mô hình CBOW khá giống với quá trình huấn luyện mô hình skip-gram.
+Uớc lượng hợp lý cực đại của mô hình CBOW tương đương với việc cực tiểu hoá hàm mất mát.
 
 
 $$  -\sum_{t=1}^T  \text{log}\, P(w^{(t)} \mid  w^{(t-m)}, \ldots, w^{(t-1)}, w^{(t+1)}, \ldots, w^{(t+m)}).$$
@@ -365,7 +366,7 @@ $$  -\sum_{t=1}^T  \text{log}\, P(w^{(t)} \mid  w^{(t-m)}, \ldots, w^{(t-1)}, w^
 Notice that
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng
 
 
 $$\log\,P(w_c \mid \mathcal{W}_o) = \mathbf{u}_c^\top \bar{\mathbf{v}}_o - \log\,\left(\sum_{i \in \mathcal{V}} \exp\left(\mathbf{u}_i^\top \bar{\mathbf{v}}_o\right)\right).$$
@@ -375,7 +376,7 @@ $$\log\,P(w_c \mid \mathcal{W}_o) = \mathbf{u}_c^\top \bar{\mathbf{v}}_o - \log\
 Through differentiation, we can compute the logarithm of the conditional probability of the gradient of any context word vector $\mathbf{v}_{o_i}$($i = 1, \ldots, 2m$) in the formula above.
 -->
 
-*dịch đoạn phía trên*
+Thông qua phép đạo hàm, ta có thể tính log của xác suất có điều kiện của gradient của bất kỳ vector từ ngữ cảnh nào $\mathbf{v}_{o_i}$($i = 1, \ldots, 2m$) trong công thức trên.
 
 
 $$\frac{\partial \log\, P(w_c \mid \mathcal{W}_o)}{\partial \mathbf{v}_{o_i}} = \frac{1}{2m} \left(\mathbf{u}_c - \sum_{j \in \mathcal{V}} \frac{\exp(\mathbf{u}_j^\top \bar{\mathbf{v}}_o)\mathbf{u}_j}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \bar{\mathbf{v}}_o)} \right) = \frac{1}{2m}\left(\mathbf{u}_c - \sum_{j \in \mathcal{V}} P(w_j \mid \mathcal{W}_o) \mathbf{u}_j \right).$$
@@ -386,8 +387,8 @@ We then use the same method to obtain the gradients for other word vectors.
 Unlike the skip-gram model, we usually use the context word vector as the representation vector for a word in the CBOW model.
 -->
 
-*dịch đoạn phía trên*
-
+Sau đó, ta sử dụng cùng phương pháp đó để tính gradient cho các vector của từ khác.
+Không giống như mô hình skip-gam, trong mô hình CBOW ta thường sử dụng vector từ ngữ cảnh làm vector biểu diễn một từ.
 
 ## Tóm tắt
 
@@ -399,7 +400,11 @@ The skip-gram model assumes that context words are generated based on the centra
 The CBOW model assumes that the central target word is generated based on the context words.
 -->
 
-*dịch đoạn phía trên*
+* Vector từ là một vector được sử dụng để biểu diễn một từ.
+Kỹ thuật ánh xạ từ sang vector các số thực còn được gọi là kỹ thuật embedding từ.
+* Word2vec bao gồm cả mô hình túi từ liên tục (CBOW) và mô hình skip-gam.
+Mô hình skip-gam giả định rằng các từ ngữ cảnh được sinh ra dựa trên từ đích trung tâm.
+Mô hình CBOW giả định rằng từ đích trung tâm được sinh ra dựa trên các từ ngữ cảnh.
 
 
 ## Bài tập
@@ -413,7 +418,12 @@ What is the relationship between the inner product of two word vectors and the c
 For a pair of words with close semantical meaning, why it is likely for their word vector cosine similarity to be high?
 -->
 
-*dịch đoạn phía trên*
+1. Độ phức tạp tính toán của mỗi gradient là gì? Nếu từ điển chứa một lượng lớn các từ, điều này sẽ gây ra vấn đề gì?
+2. Có một số cụm từ cố định trong tiếng Anh bao gồm nhiều từ, chẳng hạn như "new york".
+Bạn sẽ huấn luyện các vector từ của chúng như thế nào? Gợi ý: Xem phần 4 trong bài báo Word2vec[2].
+3. Sử dụng mô hình skip-gam làm ví dụ để tìm hiểu về thiết kế của mô hình word2vec.
+Mối quan hệ giữa tích vô hướng của hai vector từ và độ tương tự cô-sin trong mô hình skip-gam là gì?
+Đối với một cặp từ có ngữ nghĩa gần nhau, tại sao hai vector từ này lại thường có độ tương tự cô-sin cao?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -447,4 +457,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Đăng Khoa
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
