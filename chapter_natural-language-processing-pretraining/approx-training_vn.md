@@ -183,7 +183,7 @@ Hierarchical softmax will approximate the conditional probability in the skip-gr
 -->
 
 Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫn các nút lá) từ gốc của cây nhị phân đến nút lá của từ $w$.
-Gọi $n(w, j)$ là nút thứ $j^\mathrm{th}$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
+Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
 Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
 <!-- Note: Ở đây bản gốc không có reference tới hình cây nhị phân trên nên bị lỗi reference tới Figure 10.3 -->
 Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng
@@ -283,4 +283,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
