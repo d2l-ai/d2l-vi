@@ -44,7 +44,7 @@ we will only use the skip-gram model as an example to introduce these two traini
 Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$, 
 nên mất mát được đề cập ở trên, thực tế, bao gồm phép lấy tổng qua tất cả phần tử trong từ điển.
 Ở phần trước, ta đã biết rằng đối với mô hình skip-gram và mô hình CBOW,
-vì cả hai đều tính được xác suất có điều kiện bằng cách sử dụng toán tử softmax,
+vì cả hai đều tính xác suất có điều kiện thông qua toán tử softmax,
 nên tính toán gradient cho mỗi bước bao gồm tổng số lượng các phần tử trong từ điển.
 Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao.
 Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm và toán tử softmax phân cấp.
