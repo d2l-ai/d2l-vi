@@ -67,7 +67,7 @@ Given a context window for the central target word $w_c$, we will treat it as an
 
 
 Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu.
-Cho một cửa sổ ngữ cảnh cho từ đích trung tâm $w_c$, ta coi nó như một sự kiện cho từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh và tính xác suất của sự kiện này theo
+Cho một cửa sổ ngữ cảnh với từ đích trung tâm $w_c$, ta coi việc từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh là một sự kiện và tính xác suất của sự kiện này theo
 
 
 $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
