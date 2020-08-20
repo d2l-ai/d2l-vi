@@ -129,7 +129,11 @@ These non-zero $x_{ij}$ are computed in advance based on the entire dataset and 
 Therefore, the name GloVe is taken from "Global Vectors".
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng tôi có một đề xuất đối với việc lựa chọn hàm trọng số $h(x)$: khi $x < c$ (ví dụ $c = 100$), chọn $h(x) = (x/c) ^\alpha$ (ví dụ $\alpha = 0.75$), ngược lại chọn $h(x) = 1$.
+Do $h(0)=0$, ta đơn giản có thể bỏ qua mất mát bình phương tại $x_{ij}=0$.
+Khi sử dụng minibatch SGD trong huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không với mỗi bước thời gian và tính toán gradient để cập nhập các tham số mô hình.
+Các giá trị khác không $x_{ij}$ trên được tính trước dựa trên toàn bộ tập dữ liệu và chúng mang ý nghĩa thống kê toàn cục của tập dữ liệu.
+Do đó, tên gọi GloVe được lấy từ "Global Vectors - Vector Toàn cục".
 
 
 <!--
@@ -140,7 +144,11 @@ However, the two sets of word vectors that are learned by the same word may be d
 After learning all the word vectors, GloVe will use the sum of the central target word vector and the context word vector as the final word vector for the word.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh của từ $w_j$ thì từ $w_j$ cũng sẽ xuất hiện trong cửa sổ ngữ cảnh của từ $w_i$. Do đó, $x_{ij}=x_{ji}$.
+Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay cho xác suất có điều kiện $p_{ij}$ bất đối xứng.
+Do đó, vector từ mục tiêu trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe.
+Tuy vậy, hai tập vector từ mà được học bởi cùng một từ đến cuối cùng có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
+Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng các vector từ mục tiêu trung tâm và vector từ ngữ cảnh làm vector từ cuối cùng cho từ đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -150,7 +158,7 @@ After learning all the word vectors, GloVe will use the sum of the central targe
 ## Understanding GloVe from Conditional Probability Ratios
 -->
 
-## *dịch đoạn phía trên*
+## Lý giải GloVe bằng Tỉ số Xác suất Có điều kiện
 
 
 <!--
@@ -160,7 +168,10 @@ the conditional probability of generating context word $w_j$ with central target
 From a real example from a large corpus, here we have the following two sets of conditional probabilities with "ice" and "steam" as the central target words and the ratio between them:
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác.
+Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
+xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ mục tiêu trung tâm $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
+Xét ví dụ thực từ một văn bản dài, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ mục tiêu trung tâm và tỉ số giữa chúng:
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
@@ -174,7 +185,7 @@ From a real example from a large corpus, here we have the following two sets of 
 We will be able to observe phenomena such as:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể quan sát thấy các hiện tượng như sau:
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -293,7 +304,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
 * 
