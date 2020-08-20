@@ -23,6 +23,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
 | anchor box                            | khung neo                 |                                              |
+| approximate inference                 | suy luận gần đúng         |                                              |
+| approximate training                  | huấn luyện gần đúng       |                                              |
 | argument (in programming)             | đối số                    |                                              |
 | artificial data synthesis             | tổng hợp dữ liệu nhân tạo |                                              |
 | artificial general intelligence (AGI) | trí tuệ nhân tạo phổ quát | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
@@ -40,6 +42,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | backpropagation                        | lan truyền ngược               |                                              |
 | backpropagation through time           | lan truyền ngược qua thời gian |                                              |
 | backward pass                          | lượt truyền ngược              | [https://git.io/JvohG](https://git.io/JvohG) |
+| bag of words                           | túi từ                         |                                              
 | bandit                                 | máy đánh bạc                   | [https://git.io/Jfe1v](https://git.io/Jfe1v) |
 | batch                                  | batch                          | [https://git.io/JvojE](https://git.io/JvojE) |
 | batch normalization                    | chuẩn hóa theo batch           | [https://git.io/Jfe1T](https://git.io/Jfe1T) |
@@ -59,49 +62,50 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 
 ## C
 
-| English                         | Tiếng Việt               | Thảo luận tại                                |
-|---------------------------------|--------------------------|----------------------------------------------|
-| cache                           | bộ nhớ đệm               |
-| (strictly) convex function      | hàm lồi (chặt)           | [https://git.io/JvohV](https://git.io/JvohV) |
-| candidate hidden state          | trạng thái ẩn tiềm năng  |                                              |
-| candidate memory                | ô nhớ tiềm năng          |                                              |
-| categorical variable            | biến hạng mục            | [https://git.io/JfeXx](https://git.io/JfeXx) |
-| category                        | hạng mục                 | [https://git.io/JJDKV](https://git.io/JJDKV) |
-| causality                       | quan hệ nhân quả         |                                              |
-| chain rule                      | quy tắc dây chuyền       | [https://git.io/Jvojk](https://git.io/Jvojk) |
-| channel (in computer vision)    | kênh                     |                                              |
-| (model) checkpoint              | checkpoint (của mô hình) |                                              |
-| classifier                      | bộ phân loại             |                                              |
-| closed-form solution            | biểu thức dạng đóng      | [https://git.io/Jvopd](https://git.io/Jvopd) |
-| cloud computing                 | điện toán đám mây        | [https://git.io/JJn3b](https://git.io/JJn3b) |
-| clustering                      | phân cụm                 | [https://git.io/JvojD](https://git.io/JvojD) |
-| code (noun)                     | mã nguồn                 |                                              |
-| code (verb)                     | viết mã                  |                                              |
-| coefficient                     | hệ số                    |                                              |
-| collaborative filtering         | lọc cộng tác             | [https://git.io/JfjST](https://git.io/JfjST) |
-| command line (interface)        | cửa sổ dòng lệnh         |                                              |
-| computational graph             | đồ thị tính toán         | [https://git.io/JvohQ](https://git.io/JvohQ) |
-| computer vision                 | thị giác máy tính        |                                              |
-| computing (in computer science) | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
-| concatenate        | nối | |
-| conditional distribution        | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| confidence interval             | khoảng tin cậy           |                                              |
-| confidence level                | mức tin cậy              |                                              |
-| confusion matrix                | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
-| constrain                       | ràng buộc                |                                              |
-| content loss (in style transfer) | mất mát nội dung | [https://git.io/JJyeI](https://git.io/JJyeI) |
-| convex combination              | tổ hợp lồi               |                                              |
-| convex optimization             | tối ưu lồi               |                                              |
-| convex set                      | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
-| convolutional neural network    | mạng nơ-ron tích chập    |                                              |
-| corpus                          | kho ngữ liệu             |                                              |
-| correlation coefficient         | hệ số tương quan         |                                              |
-| cosine                          | cô-sin                   |                                              |
-| cost function                   | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
-| covariate                       | hiệp biến                | [https://git.io/JvohK](https://git.io/JvohK) |
-| cross correlation               | tương quan chéo          |                                              |
-| cross entropy                   | entropy chéo             |                                              |
-| cross validation                | kiểm định chéo           |                                              |
+| English                          | Tiếng Việt               | Thảo luận tại                                |
+|----------------------------------|--------------------------|----------------------------------------------|
+| cache                            | bộ nhớ đệm               |
+| (strictly) convex function       | hàm lồi (chặt)           | [https://git.io/JvohV](https://git.io/JvohV) |
+| candidate hidden state           | trạng thái ẩn tiềm năng  |                                              |
+| candidate memory                 | ô nhớ tiềm năng          |                                              |
+| categorical variable             | biến hạng mục            | [https://git.io/JfeXx](https://git.io/JfeXx) |
+| category                         | hạng mục                 | [https://git.io/JJDKV](https://git.io/JJDKV) |
+| causality                        | quan hệ nhân quả         |                                              |
+| chain rule                       | quy tắc dây chuyền       | [https://git.io/Jvojk](https://git.io/Jvojk) |
+| channel (in computer vision)     | kênh                     |                                              |
+| (model) checkpoint               | checkpoint (của mô hình) |                                              |
+| classifier                       | bộ phân loại             |                                              |
+| closed-form solution             | biểu thức dạng đóng      | [https://git.io/Jvopd](https://git.io/Jvopd) |
+| cloud computing                  | điện toán đám mây        | [https://git.io/JJn3b](https://git.io/JJn3b) |
+| clustering                       | phân cụm                 | [https://git.io/JvojD](https://git.io/JvojD) |
+| code (noun)                      | mã nguồn                 |                                              |
+| code (verb)                      | viết mã                  |                                              |
+| coefficient                      | hệ số                    |                                              |
+| collaborative filtering          | lọc cộng tác             | [https://git.io/JfjST](https://git.io/JfjST) |
+| command line (interface)         | cửa sổ dòng lệnh         |                                              |
+| computational graph              | đồ thị tính toán         | [https://git.io/JvohQ](https://git.io/JvohQ) |
+| computer vision                  | thị giác máy tính        |                                              |
+| computing (in computer science)  | điện toán                | [https://git.io/JvojH](https://git.io/JvojH) |
+| concatenate                      | nối                      |                                              |
+| conditional distribution         | phân phối có điều kiện   | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| confidence interval              | khoảng tin cậy           |                                              |
+| confidence level                 | mức tin cậy              |                                              |
+| confusion matrix                 | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| constrain                        | ràng buộc                |                                              |
+| content loss (in style transfer) | mất mát nội dung         | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| convex combination               | tổ hợp lồi               |                                              |
+| convex optimization              | tối ưu lồi               |                                              |
+| convex set                       | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
+| convolutional neural network     | mạng nơ-ron tích chập    |                                              |
+| corpus                           | kho ngữ liệu             |                                              |
+| correlation coefficient          | hệ số tương quan         |                                              |
+| cosine                           | cô-sin                   |                                              |
+| cost function                    | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
+| covariate                        | hiệp biến                | [https://git.io/JvohK](https://git.io/JvohK) |
+| crop (image)                     | cắt (ảnh)                |                                              |
+| cross correlation                | tương quan chéo          |                                              |
+| cross entropy                    | entropy chéo             |                                              |
+| cross validation                 | kiểm định chéo           |                                              |
 
 ## D
 | English                   | Tiếng Việt                      | Thảo luận tại                                |
@@ -127,6 +131,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distributed               | phân tán                        |                                              |
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
+| downsample                | giảm mẫu                        | [https://git.io/JvohC](https://git.io/JvohC) |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
@@ -159,26 +164,26 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | exponential weighted moving average | trung bình động trọng số mũ |                                              |
 
 ## F
-| English                    | Tiếng Việt           | Thảo luận tại                                |
-|----------------------------|----------------------|----------------------------------------------|
-| F1 score                   | chỉ số F1            |                                              |
-| false negative             | âm tính giả          |                                              |
-| false positive             | dương tính giả       |                                              |
-| feature                    | đặc trưng            |                                              |
-| feature extraction         | trích xuất đặc trưng |                                              |
-| feature map (in CNN)       | ánh xạ đặc trưng     |                                              |
-| feed-forward network (FNN) | mạng truyền xuôi     |                                              |
-| fine-tuning                | tinh chỉnh           |                                              |
-| filter (in CNN)            | bộ lọc               | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
-| fit                        | khớp                 | [https://git.io/JvKet](https://git.io/JvKet) |
-| first principle            | định đề cơ bản       | [https://git.io/JvKet](https://git.io/JvKet) |
-| flatten                    | trải phẳng           | [https://git.io/JvohO](https://git.io/JvohO) |
-| forward pass               | lượt truyền xuôi     | [https://git.io/JvohG](https://git.io/JvohG) |
-| framework                  | framework            |                                              |
-| frontend                   | front-end            |                                              |
-| functional analysis        | giải tích hàm        |                                              |
-| fully-connected            | kết nối đầy đủ       | [https://git.io/JvohR](https://git.io/JvohR) |
-| fully convolutional network | mạng tích chập đầy đủ | |
+| English                     | Tiếng Việt            | Thảo luận tại                                |
+|-----------------------------|-----------------------|----------------------------------------------|
+| F1 score                    | chỉ số F1             |                                              |
+| false negative              | âm tính giả           |                                              |
+| false positive              | dương tính giả        |                                              |
+| feature                     | đặc trưng             |                                              |
+| feature extraction          | trích xuất đặc trưng  |                                              |
+| feature map (in CNN)        | ánh xạ đặc trưng      |                                              |
+| feed-forward network (FNN)  | mạng truyền xuôi      |                                              |
+| fine-tuning                 | tinh chỉnh            |                                              |
+| filter (in CNN)             | bộ lọc                | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
+| fit                         | khớp                  | [https://git.io/JvKet](https://git.io/JvKet) |
+| first principle             | định đề cơ bản        | [https://git.io/JvKet](https://git.io/JvKet) |
+| flatten                     | trải phẳng            | [https://git.io/JvohO](https://git.io/JvohO) |
+| forward pass                | lượt truyền xuôi      | [https://git.io/JvohG](https://git.io/JvohG) |
+| framework                   | framework             |                                              |
+| frontend                    | front-end             |                                              |
+| functional analysis         | giải tích hàm         |                                              |
+| fully-connected             | kết nối đầy đủ        | [https://git.io/JvohR](https://git.io/JvohR) |
+| fully convolutional network | mạng tích chập đầy đủ |                                              |
 
 ## G
 | English                        | Tiếng Việt                        | Thảo luận tại                                                                              |
@@ -233,9 +238,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | indicator variable                          | biến chỉ định                | [https://git.io/JvQha](https://git.io/JvQha) |
 | inductive bias                              | thiên kiến quy nạp           |                                              |
 | initializer                                 | bộ khởi tạo                  | [https://git.io/Jfe1U](https://git.io/Jfe1U) |
-| instance segmentation                       | phân vùng thực thể           |  |
+| instance segmentation                       | phân vùng thực thể           |                                              |
 | internal covariate shift                    | dịch chuyển hiệp biến nội bộ |                                              |
-| intersection over union (IoU) | phần giao trên phần hợp | | 
+| intersection over union (IoU)               | phần giao trên phần hợp      |                                              | 
 | iteration                                   | vòng lặp                     |                                              |
 | iterator                                    | iterator                     | [https://git.io/JvohG](https://git.io/JvohG) |
 
@@ -324,10 +329,10 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | negative sample/example           | mẫu âm                            |                                                                                            |
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
 | neural network                    | mạng nơ-ron                       | [https://git.io/JvQxY](https://git.io/JvQxY), [https://git.io/JvQxR](https://git.io/JvQxR) |
-| neural style transfer | truyền tải phong cách nơ-ron | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| neural style transfer             | truyền tải phong cách nơ-ron      | [https://git.io/JJyeI](https://git.io/JJyeI)                                               |
 | node (in neural networks)         | nút                               | [https://git.io/Jvohm](https://git.io/Jvohm)                                               |
 | noise-injection                   | thêm nhiễu                        |                                                                                            |
-| non-maximum suppression | triệt phi cực đại | [https://git.io/JJXrQ](https://git.io/JJXrQ) |
+| non-maximum suppression           | triệt phi cực đại                 | [https://git.io/JJXrQ](https://git.io/JJXrQ)                                               |
 | non-squashing activation function | hàm kích hoạt không ép            |                                                                                            |
 | nonstationary distribution        | phân phối không dừng              | [https://git.io/Jfe1M](https://git.io/Jfe1M)                                               |
 | nonparametric                     | phi tham số                       |                                                                                            |
@@ -379,13 +384,13 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | positional encoding                | biểu diễn vị trí             |                                              |
 | positive sample/example            | mẫu dương                    |                                              |
 | posterior                          | hậu nghiệm                   | [https://git.io/JvQA6](https://git.io/JvQA6) |
-| precision (vs accuracy metric)     | precision                    | [https://git.io/JJ9sl](https://git.io/JJ9sl)         |
+| precision (vs accuracy metric)     | precision                    | [https://git.io/JJ9sl](https://git.io/JJ9sl) |
 | preconditioning                    | tiền điều kiện               |                                              |
-| pre-train                        | tiền huấn luyện                    | [https://git.io/JJ1HO](https://git.io/JJ1HO) |
+| pre-train                          | tiền huấn luyện              | [https://git.io/JJ1HO](https://git.io/JJ1HO) |
 | principal component analysis (PCA) | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                              | tiên nghiệm                  | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | probability theory                 | lý thuyết xác suất           |                                              |
-| proposed region               | vùng đề xuất           |                                              |
+| proposed region                    | vùng đề xuất                 |                                              |
 | proxy (in statistics)              | biến đại diện                |                                              |
 
 ## Q
@@ -443,13 +448,15 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | sensitivity                       | độ nhạy                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | shape (in linear algebra)         | kích thước               | [https://git.io/Jvojn](https://git.io/Jvojn) |
 | significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| skip-gram (model)                 | (mô hình) skip-gram      |                                              |
+| significance test                 | kiểm định ý nghĩa        | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | slicing (an array)                | cắt chọn (mảng)          | [https://git.io/JvohH](https://git.io/JvohH) |
 | source data / distribution        | dữ liệu / phân phối gốc  | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | spam email                        | email rác                |                                              |
 | speech recognition                | nhận dạng giọng nói      |                                              |
 | squashing function                | hàm ép                   | [https://git.io/JvQA5](https://git.io/JvQA5) |
 | standard deviation                | độ lệch chuẩn            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| standardize                       | chuẩn tắc hóa                |                                              |
+| standardize                       | chuẩn tắc hóa            |                                              |
 | state-of-the-art                  | tân tiến nhất            |                                              |
 | stationary point                  | điểm dừng                | [https://git.io/JvohC](https://git.io/JvohC) |
 | statistical inference             | suy luận thống kê        |                                              |
@@ -458,7 +465,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | statistical significant           | có ý nghĩa thống kê      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
 | stochastic gradient descent       | hạ gradient ngẫu nhiên   |                                              |
 | stop word                         | từ dừng                  |                                              |
-| style loss (in style transfer) | mất mát phong cách | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| style loss (in style transfer)    | mất mát phong cách       | [https://git.io/JJyeI](https://git.io/JJyeI) |
 | stride                            | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                         | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation               | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
@@ -483,7 +490,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | timeseries analysis                    | phân tích dữ liệu chuỗi thời gian         |                                              |
 | timestep                               | bước thời gian                            | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | token                                  | token                                     |                                              |
-| total variation | biến thiên toàn phần | [https://git.io/JJyeI](https://git.io/JJyeI)  |
+| total variation                        | biến thiên toàn phần                      | [https://git.io/JJyeI](https://git.io/JJyeI) |
 | total variation denoising              | khử nhiễu biến thiên toàn phần            |                                              |
 | training dev set                       | tập phát triển huấn luyện                 |                                              |
 | training set                           | tập huấn luyện                            |                                              |
@@ -494,7 +501,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | transformer                            | transformer                               |                                              |
 | transition layer                       | tầng chuyển tiếp                          |                                              |
 | translation invariant                  | bất biến tịnh tiến                        | [https://git.io/Jftwj](https://git.io/Jftwj) |
-| transposed convolution                 | tích chập chuyển vị                             | [https://git.io/JJ1HU](https://git.io/JJ1HU) |
+| transposed convolution                 | tích chập chuyển vị                       | [https://git.io/JJ1HU](https://git.io/JJ1HU) |
 | true negative                          | âm tính thật                              |                                              |
 | true positive                          | dương tính thật                           |                                              |
 | truncated backpropagation through time | lan truyền ngược qua thời gian bị cắt xén |                                              |
@@ -510,6 +517,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | underflow (numerical)     | tràn (số) dưới            | [https://git.io/JvohC](https://git.io/JvohC) |
 | unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning     | học không giám sát        |                                              |
+| upsample                  | tăng mẫu                  | [https://git.io/JvohC](https://git.io/JvohC) |
 
 ## V
 | English                    | Tiếng Việt         | Thảo luận tại                                |

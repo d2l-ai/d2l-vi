@@ -31,6 +31,7 @@ chapter_recurrent-modern/index_vn
 chapter_attention-mechanisms/index_vn
 chapter_optimization/index_vn
 chapter_computational-performance/index_vn
+chapter_computer-vision/index_vn
 ```
 
 ```toc
