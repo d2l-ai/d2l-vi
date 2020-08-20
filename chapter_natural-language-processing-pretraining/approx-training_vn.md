@@ -208,7 +208,7 @@ Because $\sigma(x)+\sigma(-x) = 1$, the condition that the sum of the conditiona
 based on the given central target word $w_c$ in dictionary $\mathcal{V}$ be 1 will also suffice:
 -->
 
-Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào được sinh ra dựa trên từ mục tiêu $w_c$ được cho trong từ điển $\mathcal{V}$ phải bằng 1 cũng được thoả mãn:
+Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào trong từ điển $\mathcal{V}$ được sinh ra dựa trên từ đích trung tâm cho trước $w_c$ phải bằng 1 cũng được thoả mãn:
 
 
 $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
@@ -218,7 +218,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-Hơn nữa, do bậc của $\mathcal{V}$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán đối với mỗi bước trong sofmax phân cấp được giảm đáng kể so với trường hợp mà ta không áp dụng huấn luyện gần đúng.
+Hơn nữa, do độ phức tạp của $L(w_o)-1$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán cho mỗi bước trong sofmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng.
 
 
 ## Tóm tắt
@@ -278,4 +278,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Đỗ Trường Giang
-
