@@ -242,7 +242,8 @@ During feature extraction, we only need to use all the VGG layers from the input
 Below, we build a new network, `net`, which only retains the layers in the VGG network we need to use. We then use `net` to extract features.
 -->
 
-*dịch đoạn phía trên*
+Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung hoặc phong cách gần tầng đầu ra nhất. 
+Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng ta cần trong mạng VGG. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
 
 
 ```{.python .input  n=6}
@@ -257,7 +258,8 @@ Given input `X`, if we simply call the forward computation `net(X)`, we can only
 Because we also need the outputs of the intermediate layers, we need to perform layer-by-layer computation and retain the content and style layer outputs.
 -->
 
-*dịch đoạn phía trên*
+Với đầu vào `X`, nếu ta chỉ đơn thuần thực hiện lượt truyền xuôi `net(X)`, ta chỉ có thể thu được đầu ra của tầng cuối cùng.
+Bởi vì ta cũng cần đầu ra của các tầng trung gian, nên ta phải thực hiện phép tính theo từng tầng và giữ lại đầu ra của tầng nội dung và phong cách.
 
 
 ```{.python .input  n=7}
@@ -283,8 +285,13 @@ As the composite image is the model parameter that must be updated during style 
 we can only call the `extract_features` function during training to extract the content and style features of the composite image.
 -->
 
-*dịch đoạn phía trên*
-
+Tiếp theo, ta định nghĩa hai hàm đó là: 
+Hàm `get_contents` để lấy đặc trưng nội dung trích xuất từ ảnh nội dung,
+và hàm `get_styles` để lấy đặc trưng phong cách trích xuất từ ảnh phong cách.
+Do trong lúc huấn luyện, ta không cần thay đổi các tham số của của mô hình VGG đã được tiền huấn luyện,
+nên ta có thể trích xuất đặc trưng nội dung từ ảnh nội dung và đặc trưng phong cách từ ảnh phong cách trước khi bắt đầu huấn luyện. 
+Bởi vì ảnh kết hợp là các tham số mô hình sẽ được cập nhật trong quá trình truyền tải phong cách,
+ta có thể chỉ cần gọi hàm `extract_features` trong lúc huấn luyện để trích xuất đặc trưng nội dung và phong cách của ảnh kết hợp.
 
 
 ```{.python .input  n=8}
@@ -307,7 +314,7 @@ def get_styles(image_shape, device):
 ## Defining the Loss Function
 -->
 
-## *dịch tiêu đề phía trên*
+## Định nghĩa Hàm Mất mát
 
 
 <!--
@@ -315,14 +322,15 @@ Next, we will look at the loss function used for style transfer.
 The loss function includes the content loss, style loss, and total variation loss.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sẽ chuyển sang hàm mất mát được sử dụng trong truyền tải phong cách.
+Hàm mất mát gồm có mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
 
 
 <!--
 ### Content Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Nội dung
 
 
 <!--
@@ -330,7 +338,8 @@ Similar to the loss function used in linear regression, content loss uses a squa
 The two inputs of the square error function are both content layer outputs obtained from the `extract_features` function.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như hàm mất mát được sử dụng trong hồi quy tuyến tính, mất mát nội dụng sử dụng hàm bình phương sai số để đo sự khác biệt về đặc trưng nội dung giữa ảnh kết hợp và ảnh nội dung.
+Hai đầu vào của hàm bình phương sai số bao gồm cả hai đầu ra của tầng nội dung thu được từ hàm `extract_features`.
 
 
 ```{.python .input  n=10}
@@ -343,7 +352,7 @@ def content_loss(Y_hat, Y):
 ### Style Loss
 -->
 
-### *dịch tiêu đề phía trên*
+### Mất mát Phong cách
 
 
 <!--
@@ -360,7 +369,17 @@ In addition, the height and width of the Gram matrix are both the number of chan
 To ensure that the style loss is not affected by the size of these values, we define the `gram` function below to divide the Gram matrix by the number of its elements, i.e., $c \cdot h \cdot w$.
 -->
 
-*dịch đoạn phía trên*
+Tương tự như mất mát nội dung, mất mát phong cách sử dụng hàm bình phương sai số để đo sự khác biệt về đặc trưng phong cách giữa ảnh kết hợp và ảnh phong cách.
+Để biểu diễn đầu ra phong cách của các tầng phong cách, đầu tiên ta sử dụng hàm `extract_features` để tính toán đầu ra tầng phong cách.
+Giả sử đầu ra có một mẫu, $c$ kênh, và có chiều cao và chiều rộng là $h$ và $w$, ta có thể chuyển đổi đầu ra thành ma trận $\mathbf{X}$ có $c$ hàng và $h \cdot w$ cột.
+Bạn có thể coi ma trận $\mathbf{X}$ là tổ hợp của $c$ vector $\mathbf{x}_1, \ldots, \mathbf{x}_c$, có độ dài là $hw$.
+Ở đây, vector $\mathbf{x}_i$ biểu diễn đặc trưng phong cách của kênh $i$.
+Trong ma trận Gram $\mathbf{X}\mathbf{X}^\top \in \mathbb{R}^{c \times c}$ của các vector trên, phần tử $x_{ij}$ nằm trên hàng $i$ cột $j$ là tích vô hướng của hai vector $\mathbf{x}_i$ và $\mathbf{x}_j$.
+Phần tử này biểu thị sự tương quan đặc trưng phong cách của hai kênh $i$ và $j$.
+Ta sử dụng ma trận Gram này để biểu diễn đầu ra phong cách của các tầng phong cách.
+Bạn đọc chú ý rằng khi giá trị $h \cdot w$ lớn, thì thường dẫn đến ma trận Gram cũng có các giá trị lớn.
+Hơn nữa, chiều cao và chiều rộng của ma trận Gram đều là số kênh $c$.
+Để đảm bảo rằng mất mát phong cách không bị ảnh hưởng bởi các giá trị kích thước, ta định nghĩa hàm `gram` dưới đây thực hiện phép chia ma trận Gram cho số các phần tử của nó, đó là, $c \cdot h \cdot w$.
 
 
 ```{.python .input  n=11}
@@ -376,7 +395,8 @@ Naturally, the two Gram matrix inputs of the square error function for style los
 Here, we assume that the Gram matrix of the style image, `gram_Y`, has been computed in advance.
 -->
 
-*dịch đoạn phía trên*
+Một cách tự nhiên, hai ma trận Gram đầu vào của hàm bình phương sai số cho mất mát phong cách được lấy từ ảnh kết hợp và ảnh phong cách của đầu ra tầng phong cách.
+Ở đây, ta giả sử ma trận Gram của ảnh phong cách, `gram_Y`, đã được tính toán trước.
 
 
 ```{.python .input  n=12}
@@ -646,7 +666,12 @@ Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp �
 * We use a Gram matrix to represent the style output by the style layers.
 -->
 
-*dịch đoạn phía trên*
+* Các hàm mất mát được sử dụng trong truyền tải phong cách thường bao gồm ba phần:
+  1. Mất mát nội dung được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng về nội dung trong ảnh nội dung.
+  2. Mất mát phong cách được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng phong cách trong ảnh phong cách.
+  3. Mất mát biến thiên toàn phần giúp giảm nhiễu trong ảnh tổng hợp.
+* Ta có thể sử dụng CNN đã được tiền huấn luyện để trích xuất đặc trưng ảnh và cực tiểu hoá hàm mất mát để liên tục cập nhật ảnh tổng hợp.
+* Ta sử dụng ma trận Gram để biểu diễn phong cách đưa ra bởi các tầng phong cách.
 
 
 ## Bài tập
@@ -657,7 +682,9 @@ Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp �
 3. Use different content and style images. Can you create more interesting composite images?
 -->
 
-*dịch đoạn phía trên*
+1. Đầu ra thay đổi thế nào khi bạn chọn tầng nội dung và phong cách khác?
+2. Điều chỉnh các siêu tham số trọng số của hàm mất mát. Đầu ra khi đó liệu có giữ lại nhiều nội dung hơn hay có ít nhiễu hơn?
+3. Sử dụng ảnh nội dung và ảnh phong cách khác. Bạn hãy thử tạo ra các ảnh tổng hợp khác thú vị hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -686,10 +713,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 5 -->
 * Đỗ Trường Giang
@@ -699,4 +726,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
