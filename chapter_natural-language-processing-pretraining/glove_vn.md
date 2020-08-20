@@ -191,7 +191,10 @@ we would expect a conditional probability ratio close to 1, like the value 1.36 
 we would expect a conditional probability ratio close to 1, like the value 0.96 in the last row of the table above.
 -->
 
-*dịch đoạn phía trên*
+Với từ $w_k$ liên quan tới từ "ice" nhưng không có liên quan nào với từ "steam", như là $w_k=$"solid", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "steam" mà không có liên quan nào với từ "ice", như là $w_k=$"gas", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới cả hai từ "steam" và từ "ice", như là $w_k=$"water", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ không liên quan tới cả hai từ "steam" và từ "ice", như là $w_k=$"fashion", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên.
 
 
 <!--
@@ -202,7 +205,11 @@ The conditional probability ratio with $w_i$ as the central target word is ${p_{
 We can find a function that uses word vectors to fit this conditional probability ratio.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thấy rằng tỉ số sác xuất điều kiện có thể thể hiện mối quan hệ giữa các từ khác nhau dễ hình dung hơn.
+Ta có thể tạo một hàm vector từ để khớp tỉ số sác xuất điều kiện một cách hiệu quả hơn.
+Như ta đã biết, để thu được bất cứ tỉ số nào của kiểu này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$.
+Tỉ số sác xuất điều kiện với $w_i$ làm từ tâm đích là ${p_{ij}}/{p_{ik}}$.
+Ta có thể tìm một hàm dùng các vector từ để khớp tỉ số sác xuất điều kiện này.
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -216,8 +223,11 @@ $f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{
 After exchanging index $j$ with $k$, we will be able to see that function $f$ satisfies the condition $f(x)f(-x)=1$, so one possibility could be $f(x)=\exp(x)$. Thus:
 -->
 
-*dịch đoạn phía trên*
-
+Thiết kế khả dĩ của hàm $f$ ở đây không là duy nhất.
+Ta chỉ cần quan tâm một lựa chọn hợp lý hơn.
+Lưu ý rằng tỉ số sác xuất điều kiện là một số vô hướng, ta có thể giới hạn $f$ vào một hàm vô hướng:
+$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{u}_k)^\top {\mathbf{v}}_i\right)$.
+Sau khi hoán đổi chỉ số $j$ và $k$, ta sẽ có thể thấy rằng hàm $f$ thỏa điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Do đó:
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = \frac{\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right)}{\exp\left(\mathbf{u}_k^\top {\mathbf{v}}_i\right)} \approx \frac{p_{ij}}{p_{ik}}.$$
 
@@ -228,7 +238,9 @@ Considering that $p_{ij}=x_{ij}/x_i$, after taking the logarithm we get $\mathbf
 We use additional bias terms to fit $- \log\, \alpha + \log\, x_i$, such as the central target word bias term $b_i$ and context word bias term $c_j$:
 -->
 
-*dịch đoạn phía trên*
+Một lựa chọn thỏa mãn bên phải biểu thức xấp xỉ là $\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right) \approx \alpha p_{ij}$, ở đây $\alpha$ là một hằng số.
+Xem xét  $p_{ij}=x_{ij}/x_i$, sau khi lấy logarith ta nhận được $\mathbf{u}_j^\top {\mathbf{v}}_i \approx \log\,\alpha + \log\,x_{ij} - \log\,x_i$.
+Ta sử dụng thêm các độ lệch để khớp $- \log\, \alpha + \log\, x_i$, cụ thể là độ lệch từ tâm đích $b_i$ và độ lệch từ ngữ cảnh $c_j$ kết quả là:
 
 
 $$\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j \approx \log(x_{ij}).$$
@@ -238,7 +250,7 @@ $$\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j \approx \log(x_{ij}).$$
 By taking the square error and weighting the left and right sides of the formula above, we can get the loss function of GloVe.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách lấy sai số bình phương và đặt trọng số vào bên trái và bên phải của biểu thức trên, ta có được hàm mất mát của Glove.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -296,7 +308,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 5 -->
 * 
