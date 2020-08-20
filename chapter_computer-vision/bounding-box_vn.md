@@ -61,7 +61,7 @@ They are the two main targets in this image.
 -->
 
 Kế tiếp, ta nạp các ảnh mẫu sẽ sử dụng trong phần này.
-Ta có thể thấy trong hình là một con chó ở bên trái của và một con mèo ở bên phải.
+Ta có thể thấy trong hình là một con chó ở bên trái và một con mèo ở bên phải.
 Chúng là hai đối tượng chính trong ảnh này.
 
 ```{.python .input}
