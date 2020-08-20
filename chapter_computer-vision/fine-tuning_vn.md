@@ -118,7 +118,7 @@ We will use the model obtained by fine tuning to identify whether an image conta
 Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món ăn xúc xích.
 Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
 Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, trong đó sẽ có các ảnh chứa hình xúc xích.
-Ta sẽ sử dụng mô hình có được qua việc tinh chỉnh này để xác định một bức ảnh có chứa món ăn này hay không.
+Ta sẽ sử dụng mô hình thu được từ việc tinh chỉnh để xác định một bức ảnh có chứa món ăn này hay không.
 
 <!--
 First, import the packages and modules required for the experiment.
@@ -128,7 +128,7 @@ If you want to get more pre-trained models for computer vision, you can use the 
 
 Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
 Gói `model_zoo` trong Gluon cung cấp một mô hình đã được huấn luyện sẵn phổ biến.
-Nếu bạn muốn lấy thêm các mô hình đã được tiền huấn luyện cho thị giác máy tính, tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
+Nếu bạn muốn lấy thêm các mô hình đã được tiền huấn luyện cho thị giác máy tính, hãy tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -156,7 +156,7 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-Bộ dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
+Tập dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
 $1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
@@ -165,7 +165,7 @@ We first download the compressed dataset and get two folders `hotdog/train` and 
 Both folders have `hotdog` and `not-hotdog` category subfolders, each of which has corresponding image files.
 -->
 
-Đầu tiên ta tải bộ dữ liệu nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
+Đầu tiên ta tải tập dữ liệu nén và thu được 2 tập tin `hotdog/train` và `hotdog/test`.
 Cả hai đều có hai tập tin phụ `hotdog` và `not-hotdog` chứa các ảnh với phân loại tương ứng.
 
 
@@ -183,7 +183,7 @@ data_dir = d2l.download_extract('hotdog')
 We create two `ImageFolderDataset` instances to read all the image files in the training dataset and testing dataset, respectively.
 -->
 
-Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các tệp ảnh trong bộ huấn luyện và bộ kiểm tra.
+Ta tạo hai thực thể `ImageFolderDataset` để đọc toàn bộ các tệp ảnh trong tập huấn luyện và tập kiểm tra.
 
 
 
@@ -200,7 +200,7 @@ The first 8 positive examples and the last 8 negative images are shown below.
 As you can see, the images vary in size and aspect ratio.
 -->
 
-Dưới đây là 8 mẫu dương tính đầu tiên và 8 mẫu âm  cuối cùng.
+Dưới đây là 8 mẫu dương tính đầu tiên và 8 mẫu âm cuối cùng.
 Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
 
 
@@ -222,7 +222,7 @@ The average of all values of the channel is subtracted from each value and then 
 Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỉ lệ để có chiều dài và chiều rộng 224 pixel.
 Khi kiểm tra, ta biến đổi tỉ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
 Thêm vào đó, chúng ta chuẩn hoá các giá trị của ba kênh màu RGB (red, green, blue).
-Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu và kết quả này sẽ được chia cho độ lệch chuẩn của chúng để thu được ảnh đã qua xử lý.
+Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu, sau đó được chia cho độ lệch chuẩn của chúng để thu được ảnh đã qua xử lý.
 
 
 ```{.python .input  n=5}
