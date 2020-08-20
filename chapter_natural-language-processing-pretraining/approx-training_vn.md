@@ -22,7 +22,7 @@ $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \
 The logarithmic loss corresponding to the conditional probability is given as
 -->
 
-Mất mát log tương ứng với xác suất có điều kiện trên được tính như sau
+Mất mát tương ứng với log xác suất có điều kiện trên được tính như sau
 
 
 $$-\log P(w_o \mid w_c) =
