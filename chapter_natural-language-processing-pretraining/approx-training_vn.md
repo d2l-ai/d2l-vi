@@ -41,7 +41,7 @@ Since there is no major difference between the skip-gram model and the CBOW mode
 we will only use the skip-gram model as an example to introduce these two training methods in this section.
 -->
 
-Do toán tử softmax xem xét từ ngữ cảnh có thể bất kỳ từ nào trong từ điển $\mathcal{V}$, 
+Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$, 
 nên mất mát được đề cập ở trên, thực tế, bao gồm tổng số lượng các phần tử trong từ điển.
 Ở phần trước, ta đã biết rằng đối với mô hình skip-gram và mô hình CBOW,
 vì cả hai đều tính được xác suất có điều kiện bằng cách sử dụng toán tử softmax,
