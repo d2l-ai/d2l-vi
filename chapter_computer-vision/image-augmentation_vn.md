@@ -5,7 +5,7 @@
 # Image Augmentation
 -->
 
-# Tăng cường ảnh
+# Tăng cường Ảnh
 :label:`sec_image_augmentation`
 
 
@@ -21,18 +21,19 @@ In this section, we will discuss this technology, which is widely used in comput
 -->
 
 Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ dữ liệu lớn là điều kiện tiên quyết cho sự thành công của các mạng nơ-ron sâu.
-Kỹ thuật tăng cường ảnh mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên từ trên các ảnh để tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
-Cũng có thể giải thích tác dụng của tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện có thể làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định, do đó cải thiện năng lực khái quát hóa của mô hình.
-Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, do đó giảm sự phụ thuộc vào vị trí mà đối tượng xuất hiện của mô hình.
-Ta cũng có thể điều chỉnh độ sáng, mắc sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
+Kỹ thuật tăng cường ảnh giúp mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên trên các mẫu ảnh,
+từ đó tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
+Cũng có thể giải thích tác dụng của tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện, làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định. Do đó giúp cải thiện năng lực khái quát hóa của mô hình.
+Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, vì vậy giảm sự phụ thuộc của mô hình vào vị trí xuất hiện của đối tượng.
+Ta cũng có thể điều chỉnh độ sáng, màu sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
 Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
-Trong phần này, chúng ta sẽ thảo luận về kỹ thuật được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này.
+Tới đây, chúng ta sẽ thảo luận về kỹ thuật mà được sử dụng rộng rãi trong lĩnh vực thị giác máy tính này. 
 
 <!--
 First, import the packages or modules required for the experiment in this section.
 -->
 
-Trước tiên, thực hiện nhập các gói và mô-đun cần cho thử nghiệm trong mục này.
+Trước tiên, thực hiện nhập các gói và mô-đun cần thiết.
 
 
 
@@ -50,7 +51,7 @@ npx.set_np()
 ## Common Image Augmentation Method
 -->
 
-## Phương pháp tăng cường ảnh thông dụng
+## Phương pháp Tăng cường ảnh Thông dụng
 <!--
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
@@ -72,7 +73,7 @@ This function runs the image augmentation method `aug` multiple times on the inp
 -->
 
 Hầu hết các phương pháp tăng cường ảnh có một độ ngẫu nhiên nhất định.
-Để giúp quan sát dễ hơn hiệu quả của việc này, kế tiếp ta định nghĩa hàm bổ trợ `apply`.
+Để giúp quan sát dễ hơn hiệu quả của nó, kế tiếp ta định nghĩa hàm bổ trợ `apply`.
 Hàm này thực hiện phương thức tăng cường ảnh `aug` nhiều lần từ ảnh đầu vào `img` và hiển thị tất cả kết quả.
 
 ```{.python .input  n=3}
@@ -132,9 +133,9 @@ In addition, we can make objects appear at different positions in the image in d
 This can also reduce the sensitivity of the model to the target position.
 -->
 
-Trong ví dụ chúng ta sử dụng, con mèo ở giữa hình ảnh, nhưng không phải tất cả các ảnh mèo khác đều sẽ như vậy.
-:numref:`sec_pooling` có đề cập rằng tầng gộp có thể làm giảm độ nhạy của tầng tích chập với vị trí đích.
-Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt (*crop*) ngẫu nhiên hình ảnh.
+Trong ví dụ chúng ta sử dụng, con mèo nằm ở giữa ảnh, nhưng không phải tất cả các ảnh mèo khác đều sẽ như vậy.
+:numref:`sec_pooling` có đề cập rằng tầng gộp có thể làm giảm độ nhạy của tầng tích chập với vị trí mục tiêu.
+Ngoài ra, chúng ta có thể làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh theo tỷ lệ khác nhau bằng cách cắt ngẫu nhiên hình ảnh.
 Điều này cũng có thể làm giảm độ nhạy của mô hình với vị trí mục tiêu.
 
 
@@ -175,7 +176,7 @@ In the example below, we randomly change the brightness of the image to a value 
 
 Một phương pháp tăng cường khác là thay đổi màu sắc.
 Chúng ta có thể thay đổi bốn khía cạnh màu sắc của hình ảnh: độ sáng, độ tương phản, độ bão hòa và tông màu.
-Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh thành giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) độ sáng của ảnh gốc.
+Trong ví dụ dưới đây, chúng tôi thay đổi ngẫu nhiên độ sáng của hình ảnh với giá trị trong khoảng từ 50% ($1-0.5$) đến 150% ($1+0.5$) độ sáng của ảnh gốc.
 
 
 
@@ -200,7 +201,7 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `độ sáng`, `độ tương phản`, `độ bão hoà`, và `tông màu` của ảnh cùng một lúc.
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `brightness` (độ sáng), `contrast` (độ tương phản), `saturation` (độ bão hoà), và `hue` (tông màu) của ảnh cùng một lúc. 
  
 
 
@@ -215,7 +216,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### Kết hợp nhiều phương pháp tăng cường ảnh
+### Kết hợp nhiều Phương pháp Tăng cường ảnh
 
 
 <!--
@@ -246,7 +247,7 @@ apply(img, augs)
 ## Using an Image Augmentation Training Model
 -->
 
-## Huấn luyện mô hình dùng tăng cường ảnh
+## Huấn luyện Mô hình dùng Tăng cường ảnh
 
 
 <!--
@@ -258,7 +259,7 @@ The first 32 training images in the CIFAR-10 dataset are shown below.
 
 Tiếp theo, ta sẽ xem xét làm thế nào để áp dụng tăng cường hình ảnh trong huấn luyện thực tế.
 Ở đây, ta sử dụng bộ dữ liệu CIFAR-10, thay vì Fashion-MNIST trước đây.
-Điều này là do vị trí và kích thước của các đối tượng trong bộ dữ liệu Fashion-MNIST đã được chuẩn hóa và sự khác biệt về màu sắc và kích thước của các đối tượng trong bộ dữ liệu CIFAR-10 đáng kể hơn.
+Điều này là do vị trí và kích thước của các đối tượng trong bộ dữ liệu Fashion-MNIST đã được chuẩn hóa và sự khác biệt về màu sắc và kích thước của các đối tượng trong bộ dữ liệu CIFAR-10 là đáng kể hơn.
 32 hình ảnh huấn luyện đầu tiên trong bộ dữ liệu CIFAR-10 được hiển thị bên dưới.
 
 
@@ -276,7 +277,7 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện mà không sử dụng với các thao tác ngẫu nhiên trong dự đoán.
+Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện nhưng không sử dụng các biến đổi ngẫu nhiên trong dự đoán.
 Ở đây, chúng ta chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
 Ngoài ra, chúng ta sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
 tức là, tensor số thực dấu phẩy động 32-bit có kích thước (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
@@ -300,8 +301,8 @@ For detailed descriptions of `DataLoader`, refer to :numref:`sec_fashion_mnist`.
 -->
 
 Tiếp theo, ta định nghĩa một chức năng phụ trợ để giúp đọc hình ảnh và áp dụng tăng cường ảnh dễ dàng hơn.
-Hàm `transform_first` được cung cấp bởi các bộ dữ liệu cung cấp sẵn trong Gluon áp dụng tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
-Để biết mô tả chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
+Hàm `transform_first` được cung cấp bởi Gluon giúp thực thi tăng cường ảnh cho phần tử đầu tiên của mỗi mẫu huấn luyện (hình ảnh và nhãn), tức là chỉ áp dụng lên phần ảnh.
+Để biết thêm chi tiết về `DataLoader`, hãy tham khảo :numref:`sec_fashion_mnist`.
 
 
 
@@ -420,7 +421,7 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
 
 <!-- Now we train the model using image augmentation of random flipping left and right. -->
 
-Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh bằng cách lật ngẫu nhiên trái và phải.
+Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh qua phép lật ngẫu nhiên trái và phải. 
 
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
@@ -437,7 +438,7 @@ train_with_data_aug(train_augs, test_augs, net)
 -->
 
 * Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
-* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên ví dụ để huấn luyện, không áp dụng các thao tác ngẫu nhiên của tăng cường ảnh trong quá trình dự đoán.
+* Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên mẫu huấn luyện, không áp dụng các biến đổi tăng cường ảnh ngẫu nhiên trong quá trình dự đoán.
 * Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
 
@@ -496,4 +497,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 5 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
