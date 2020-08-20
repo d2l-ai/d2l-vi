@@ -100,8 +100,8 @@ SSD uses the same method to reduce the model complexity.
 Đặt số hạng mục của vật thể là $q$. Trong trường hợp này, số hạng mục của khung neo là $q+1$, với 0 kí hiệu khung neo chỉ là nền hậu cảnh.
 Ở một tỉ lệ nhất định, đặt chiều cao và chiều rộng của ánh xạ đặc trưng lần lượt là $h$ và $w$.
 Nếu ta sử dụng từng phần tử làm tâm để sinh $a$ khung neo, ta cần phân loại tổng cộng $hwa$ khung neo.
-Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) làm đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá lớn.
-Nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán hạng mục trong :numref:`sec_nin`.
+Nếu ta sử dụng một tầng kết nối đầy đủ (FCN) tại đầu ra thì khả năng cao là số lượng tham số mô hình sẽ quá lớn.
+Hãy nhớ lại cách ta sử dụng các kênh trong tầng tích chập để đưa ra dự đoán hạng mục trong :numref:`sec_nin`.
 SSD sử dụng phương pháp tương tự để giảm độ phức tạp của mô hình.
 
 
@@ -119,7 +119,7 @@ Do đó, toạ độ trong không gian của đầu ra và đầu vào tương q
 Giả sử rằng đầu ra và đầu vào này có cùng toạ độ không gian $(x, y)$, các kênh của ánh xạ đặc trưng đầu ra tại toạ độ $(x, y)$
 đại diện cho các dự đoán hạng mục của tất cả các khung neo được sinh ra khi sử dụng toạ độ $(x, y)$ của ánh xạ đặc trưng đầu vào làm trung tâm.
 Bởi lẽ đó, có tất cả $a(q+1)$ kênh đầu ra, với các kênh đầu ra được đánh chỉ số theo $i(q+1) + j$
-($0 \leq j \leq q$) biểu diễn dự đoán lớp có chỉ số $j$ cho khung neo chỉ số $i$.
+($0 \leq j \leq q$) biểu diễn dự đoán hạng mục thứ $j$ cho khung neo thứ $i$.
 
 
 <!--
@@ -921,3 +921,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
+* Phạm Minh Đức
