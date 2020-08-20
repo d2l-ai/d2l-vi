@@ -66,7 +66,7 @@ Given a context window for the central target word $w_c$, we will treat it as an
 -->
 
 
-Phương pháp lấy mẫu tính sửa đổi hàm mục tiêu ban đầu.
+Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu.
 Cho một cửa sổ ngữ cảnh cho từ đích trung tâm $w_c$, ta coi nó như một sự kiện cho từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh và tính xác suất của sự kiện này theo
 
 
@@ -285,4 +285,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
