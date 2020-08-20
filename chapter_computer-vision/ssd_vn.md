@@ -57,7 +57,7 @@ Các khối này sau đó sử dụng từng phần tử trong ánh xạ đặc 
 Bằng cách này, khối đặc trưng đa tỉ lệ càng gần đỉnh mô hình trong :numref:`fig_ssd` thì trả về ánh xạ đặc trưng càng nhỏ, và số khung neo được sinh ra bởi ánh xạ đặc trưng đó càng ít.
 Hơn nữa, khối đặc trưng càng gần đỉnh mô hình thì vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng càng lớn và càng phù hợp để phát hiện những vật thể lớn.
 Vì SSD sinh ra các tập khung neo với số lượng và kích thước khác nhau dựa trên khối mạng cơ sở
-và từng khối đặc trưng đa tỉ lệ rồi sau đó dự đoán hạng mục và độ dời (tức là dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, có thể nói SSD là một mô hình phát hiện vật thể đa tỉ lệ.
+và từng khối đặc trưng đa tỉ lệ, rồi sau đó dự đoán hạng mục và độ dời (tức là dự đoán khung chứa) cho các khung neo để phát hiện các vật thể với kích cỡ khác nhau, có thể nói SSD là một mô hình phát hiện vật thể đa tỉ lệ.
 
 
 <!--
@@ -164,7 +164,7 @@ The only difference is that, here, we need to predict 4 offsets for each anchor 
 -->
 
 Thiết kế của tầng dự đoán khung chứa cũng tương tự như tầng dự đoán hạng mục.
-Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời, thay vì $q+1$ hạng mục, cho từng khung neo.
+Điểm khác biệt duy nhất đó là ta cần dự đoán 4 giá trị độ dời cho từng khung neo, thay vì $q+1$ hạng mục. 
 
 
 
@@ -920,3 +920,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 * Lê Khắc Hồng Phúc
+* Nguyễn Lê Quang Nhật
