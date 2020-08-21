@@ -53,10 +53,10 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Attention Mechanisms (**Đã hoàn thành**)
 * Optimization Algorithms (**Đã hoàn thành**)
 * Computational Performance (**Đã hoàn thành**)
-* Computer Vision (*Đang tiến hành*)
+* Computer Vision (**Đã hoàn thành**)
 * Natural Language Processing: Pretraining (*Đang tiến hành*)
 * Natural Language Processing: Applications (*Đang tiến hành*)
-* Recommender Systems
+* Recommender Systems (*Đang tiến hành*)
 * Generative Adversarial Networks
 * Appendix: Mathematics for Deep Learning
 * Appendix: Tools for Deep Learning
