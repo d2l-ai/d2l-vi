@@ -127,7 +127,7 @@ The higher the word's frequency, the higher its dropout probability.
 Ở đây, $f(w_i)$ là tỷ lệ giữa các thực thể từ $w_i$ với tổng số từ trong tập dữ liệu,
 và hằng số $t$ là một siêu tham số (có giá trị bằng $10^{-4}$ trong thí nghiệm này).
 Như ta thấy, chỉ có thể loại bỏ từ $w_i$ trong lúc lấy mẫu con khi $f(w_i) > t$.
-Tần suất của từ càng cao, xác suất loại bỏ học càng lớn.
+Tần suất của từ càng cao, xác suất loại bỏ càng lớn.
 
 ```{.python .input  n=4}
 #@save
