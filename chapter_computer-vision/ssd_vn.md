@@ -209,7 +209,7 @@ Ví dụ khi dự đoán hạng mục, giả sử mỗi phần tử trong ánh x
 Với 10 hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
 Định dạng đầu ra dự đoán là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
 Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
-Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để tính toán về sau.
+Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để dễ tính toán về sau.
 
 ```{.python .input  n=3}
 def forward(x, block):
@@ -231,7 +231,7 @@ to facilitate subsequent concatenation on the $1^{\mathrm{st}}$ dimension.
 
 Chiều kênh chứa dự đoán cho tất cả các khung neo có cùng tâm.
 Đầu tiên, ta sẽ chuyển chiều kênh thành chiều cuối cùng.
-Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng 2D (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều thứ $1$ dễ dàng hơn.
+Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng 2D (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều thứ nhất dễ dàng hơn.
 
 
 ```{.python .input  n=4}
@@ -281,7 +281,7 @@ Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và
 Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
 Tuy nhiên, tầng gộp cực đại tiếp theo giảm một nửa kích thước đặc trưng.
 Do $1\times 2+(3-1)+(3-1)=6$, mỗi phần tử trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
-Ta có thể thấy, khối giảm chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng đầu ra.
+Ta có thể thấy, khối giảm mẫu trên chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng đầu ra.
 
 
 ```{.python .input  n=6}
@@ -361,7 +361,7 @@ Therefore, modules two to five are all multiscale feature blocks shown in :numre
 Mô hình SSD chứa tất cả năm mô-đun.
 Mỗi mô-đun tạo ra một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
 Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, và mô-đun thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
-
+Do đó, mô-đun thứ hai tới thứ năm đều là các khối đặc trưng đa tỷ lệ như mô tả trong :numref:`fig_ssd`.
 
 ```{.python .input  n=9}
 def get_blk(i):
