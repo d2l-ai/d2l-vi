@@ -560,7 +560,7 @@ Dự đoán độ dời là một bài toán chuẩn hoá.
 Tuy nhiên, ở đây ta không sử dụng hàm mất mát bình phương như trước.
 Thay vào đó, ta sử dụng mất mát chuẩn $L_1$, tức là trị tuyệt đối hiệu của giá trị dự đoán và giá trị nhãn gốc.
 Biến mặt nạ `bbox_masks` loại bỏ các khung neo âm và khung neo đệm khỏi phép tính mất mát.
-Cuối cùng, ta cộng mất mát lớp và mất mát độ dời của khung neo để có hàm mất mát cuối cùng cho mô hình.
+Cuối cùng, ta cộng mất mát hạng mục và mất mát độ dời của khung neo để có hàm mất mát cuối cùng cho mô hình.
 
 
 ```{.python .input  n=16}
@@ -667,7 +667,7 @@ Below, we read the test image and transform its size.
 Then, we convert it to the four-dimensional format required by the convolutional layer.
 -->
 
-Trong bước dự đoán, ta muốn phát hiện tất cả các vật thể trong vùng quan tâm trong ảnh.
+Trong bước dự đoán, ta muốn phát hiện tất cả các vật thể đáng quan tâm trong ảnh.
 Ở đoạn mã dưới, ta đọc và biến đổi kích thước của ảnh kiểm tra,
 rồi chuyển thành dạng tensor bốn chiều mà tầng tích chập yêu cầu.
 
