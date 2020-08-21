@@ -113,7 +113,15 @@ Suppose that events $P$ and $N_1, \ldots, N_K$ for both positive and negative ex
 By considering negative sampling, we can rewrite the joint probability above, which only considers the positive examples, as
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương.
+Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
+Rõ ràng, các vector từ như vậy là vô nghĩa.
+Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm.
+Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
+và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$.
+Ta giả sử sự kiện từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
+Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương lẫn và mẫu âm là độc lập với nhau.
+Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp chỉ xem xét các mẫu dương ở trên như sau
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
@@ -123,7 +131,7 @@ $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)})
 Here, the conditional probability is approximated to be
 -->
 
-*dịch đoạn phía trên*
+Ở đây, xác suất có điều kiện được tính gần đúng bằng
 
 
 $$ P(w^{(t+j)} \mid w^{(t)}) =P(D=1\mid w^{(t)}, w^{(t+j)})\prod_{k=1,\ w_k \sim P(w)}^K P(D=0\mid w^{(t)}, w_k).$$
@@ -134,7 +142,8 @@ Let the text sequence index of word $w^{(t)}$ at timestep $t$ be $i_t$ and $h_k$
 The logarithmic loss for the conditional probability above is
 -->
 
-*dịch đoạn phía trên*
+Đặt chỉ số của từ $w^{(t)}$ trong chuỗi văn bản tại bước thời gian $t$ là $i_t$ và chỉ số của từ nhiễu $w_k$ trong từ điển là $h_k$.
+Mất mát log cho xác suất có điều kiện ở trên là
 
 
 $$
@@ -151,7 +160,7 @@ $$
 Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$. When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -278,7 +287,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
