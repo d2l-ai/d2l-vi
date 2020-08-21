@@ -178,14 +178,13 @@ với các nút lá của cây biểu diễn tất cả các từ trong từ đi
 <!--
 We assume that $L(w)$ is the number of nodes on the path (including the root and leaf nodes) from the root node of the binary tree to the leaf node of word $w$.
 Let $n(w, j)$ be the $j^\mathrm{th}$ node on this path, with the context word vector $\mathbf{u}_{n(w, j)}$.
-We use Figure 10.3 as an example, so $L(w_3) = 4$.
+We use :numref:`fig_hi_softmax` as an example, so $L(w_3) = 4$.
 Hierarchical softmax will approximate the conditional probability in the skip-gram model as
 -->
 
 Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫn các nút lá) từ gốc của cây nhị phân đến nút lá của từ $w$.
 Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
 Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
-<!-- Note: Ở đây bản gốc không có reference tới hình cây nhị phân trên nên bị lỗi reference tới Figure 10.3 -->
 Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng
 
 
@@ -195,9 +194,9 @@ $$P(w_o \mid w_c) = \prod_{j=1}^{L(w_o)-1} \sigma\left( [\![  n(w_o, j+1) = \tex
 <!--
 Here the $\sigma$ function has the same definition as the sigmoid activation function, and $\text{leftChild}(n)$ is the left child node of node $n$.
 If $x$ is true, $[\![x]\!] = 1$; otherwise $[\![x]\!] = -1$.
-Now, we will compute the conditional probability of generating word $w_3$ based on the given word $w_c$ in Figure 10.3.
+Now, we will compute the conditional probability of generating word $w_3$ based on the given word $w_c$ in :numref:`fig_hi_softmax`.
 We need to find the inner product of word vector $\mathbf{v}_c$ (for word $w_c$) and each non-leaf node vector on the path from the root node to $w_3$.
-Because, in the binary tree, the path from the root node to leaf node $w_3$ needs to be traversed left, right, and left again (the path with the bold line in Figure 10.3), we get
+Because, in the binary tree, the path from the root node to leaf node $w_3$ needs to be traversed left, right, and left again (the path with the bold line in :numref:`fig_hi_softmax`), we get
 -->
 
 Trong đó hàm $\sigma$ có định nghĩa giống với hàm kích hoạt sigmoid, và $\text{leftChild}(n)$ là nút con bên trái của nút $n$.
@@ -283,3 +282,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
+
