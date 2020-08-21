@@ -446,14 +446,14 @@ We use the `batchify` function just defined to specify the minibatch reading met
 ## Putting All Things Together
 -->
 
-## *dịch đoạn phía trên*
+## Kết hợp mọi thứ cùng nhau
 
 
 <!--
 Last, we define the `load_data_ptb` function that read the PTB dataset and return the data iterator.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta định nghĩa hàm `load_data_ptb` để đọc tập dữ liệu PTB và trả về vòng lặp dữ liệu.
 
 
 ```{.python .input  n=16}
@@ -480,7 +480,7 @@ def load_data_ptb(batch_size, max_window_size, num_noise_words):
 Let us print the first minibatch of the data iterator.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy cùng in ra minibatch đầu tiên trong vòng lặp dữ liệu.
 
 
 ```{.python .input  n=17}
@@ -500,7 +500,8 @@ for batch in data_iter:
 and use mask variables to distinguish between padding and non-padding elements, so that only non-padding elements participate in the calculation of the loss function.
 -->
 
-*dịch đoạn phía trên*
+* Việc lấy mẫu con cố gắng giảm thiểu tác động của các từ có tần suất cao đến việc đào tạo mô hình embedding từ.
+* Ta có thể chèn những ví dụ có độ dài khác nhau để tạo ra các minibatch với các ví dụ có cùng độ dài và sử dụng các biến mặt nạ để phân biệt giữa phần tử đệm và phần tử phi đệm, vì thế chỉ có những phần tử phi đệm mới tham gia vào việc tính toán hàm mất mát.
 
 
 ## Bài tập
@@ -511,7 +512,8 @@ We use the `batchify` function to specify the minibatch reading method in the `D
 How should these shapes be calculated?
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi sử dụng hàm `batchify` để chỉ định phương thức đọc minibatch trong thực thể `DataLoader` và in ra kích thước của từng biến trong lần đọc batch đầu tiên.
+Những kích thước này nên được tính toán như thế nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -545,6 +547,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Phạm Đăng Khoa
 
 
