@@ -108,8 +108,8 @@ Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằn
 Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
 và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$.
 Ta giả sử sự kiện cho từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
-Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương tính lẫn và mẫu âm là độc lập với nhau.
-Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp ở trên mà chỉ xem xét các mẫu dương tính như sau
+Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương lẫn và mẫu âm là độc lập với nhau.
+Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp chỉ xem xét các mẫu dương ở trên như sau
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
