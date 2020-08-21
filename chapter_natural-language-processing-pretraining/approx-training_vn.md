@@ -150,7 +150,6 @@ Here, the gradient computation in each step of the training is no longer related
 
 Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
 
-
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
@@ -277,10 +276,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
 
 <!-- Phần 4 -->
 * 
-
