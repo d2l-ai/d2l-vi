@@ -109,7 +109,7 @@ The dropout probability is given as:
 Trong dữ liệu văn bản, thường có một số từ xuất hiện với tần suất cao, chẳng hạn như các từ "the", "a" và "in" trong tiếng Anh.
 Nói chung, trong cửa sổ ngữ cảnh, sẽ tốt hơn nếu huấn luyện mô hình embedding từ khi một từ bình thường (chẳng hạn như "chip") và
 một từ có tần suất thấp hơn (chẳng hạn như "bộ vi xử lý") xuất hiện cùng lúc, hơn là khi một từ bình thường xuất hiện với một từ có tần suất cao hơn (chẳng hạn như "the").
-Do đó, khi huấn luyện mô hình embedding từ, ta có thể thực hiện lấy mẫu con[2] trên các từ.
+Do đó, khi huấn luyện mô hình embedding từ, ta có thể thực hiện lấy mẫu con [2] trên các từ.
 Cụ thể, mỗi từ $w_i$ được gán chỉ số trong tập dữ liệu sẽ bị loại bỏ với một xác suất nhất định.
 Xác suất loại bỏ được tính như sau:
 
