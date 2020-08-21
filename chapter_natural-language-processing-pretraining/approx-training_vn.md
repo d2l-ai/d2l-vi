@@ -101,7 +101,7 @@ Suppose that events $P$ and $N_1, \ldots, N_K$ for both positive and negative ex
 By considering negative sampling, we can rewrite the joint probability above, which only considers the positive examples, as
 -->
 
-Tuy nhiên, các sự kiện được đưa vào mô hình chỉ xem xét các mẫu dương tính.
+Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương.
 Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
 Rõ ràng, các vector từ như vậy là vô nghĩa.
 Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy mẫu có bổ sung các mẫu âm.
@@ -283,4 +283,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
