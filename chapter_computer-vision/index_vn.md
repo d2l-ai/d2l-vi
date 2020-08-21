@@ -57,3 +57,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
