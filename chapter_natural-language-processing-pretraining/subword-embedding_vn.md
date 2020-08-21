@@ -5,7 +5,7 @@
 # Subword Embedding
 -->
 
-# *dịch đoạn phía trên*
+# Nhúng từ tố
 :label:`sec_fasttext`
 
 
@@ -22,14 +22,23 @@ In Finnish, a noun may have more than 15 forms.
 In fact, morphology, which is an important branch of linguistics, studies the internal structure and formation of words.
 -->
 
-*dịch đoạn phía trên*
+Các từ tiếng Anh thường có các cấu trúc nội và phương thức tạo thành.
+Chẳng hạn, ta có thể suy ra mối quan hệ giữa các từ "dog", "dogs" và "dogcatcher" thông qua cách viết của chúng.
+Tất cả các từ đó có cùng từ gốc là "dog" nhưng có hậu tố khác nhau làm thay đổi nghĩa của từ.
+Hơn nữa, sự liên kết này có thể được mở rộng ra đối với các từ khác.
+Chẳng hạn, mối quan hệ giữa từ "dog" và "dogs" đơn giản giống như mối quan hệ giữa từ "cat" và "cats".
+Mối quan hệ giữa từ "boy" và "boyfriend" đơn giản giống mối quan hệ giữa từ "girl" và "girlfriend".
+Đặc tính này không phải là duy nhất trong tiếng Anh.
+Trong tiếng Pháp và Tây Ban Nha, rất nhiều động từ có thể có hơn 40 dạng khác nhau tùy thuộc vào ngữ cảnh.
+Trong tiếng Phần Lan, một danh từ có thể có hơn 15 dạng.
+Thật vậy, hình thái học chính nó là một nhánh quan trọng của ngôn ngữ học chuyên nghiên cứu về cấu trúc và hình thái của các từ. 
 
 
 <!--
 ## fastText
 -->
 
-## *dịch đoạn phía trên*
+## fastText
 
 
 <!--
@@ -40,7 +49,11 @@ In view of this, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` proposes the m
 thereby attempting to introduce morphological information in the skip-gram model in word2vec.
 -->
 
-*dịch đoạn phía trên*
+Trong word2vec, ta không trực tiếp sử dụng thông tin hình thái học.
+Trong cả mô hình skip-gram và bag-of-word liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
+Chẳng hạn, "dog" và "dogs" được biểu diễn bởi hai vector khác nhau, trong khi mối quan hệ giữa hai vector đó không biểu thị trực tiếp trong mô hình. 
+Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức nhúng từ tố,
+thông qua việc thực hiện đưa thông tin hình thái học vào trong mô hình skip-gram trong word2vec.
 
 
 <!--
@@ -51,8 +64,11 @@ Then, we treat the word as a sequence of characters to extract the $n$-grams.
 For example, when $n=3$, we can get all subwords with a length of $3$:
 -->
 
-*dịch đoạn phía trên*
-
+Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ tố.
+Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu làm thế nào các từ tố được tạo thành.
+Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ tố được dùng làm tiền tố và hậu tố.
+Rồi ta sẽ xem từ này như một chuỗi các ký tự để trích xuất $n$-grams.
+Chẳng hạn, khi $n=3$, ta có thể nhận tất cả từ tố với chiều dài là $3$:
 
 $$\textrm{"<wh"}, \ \textrm{"whe"}, \ \textrm{"her"}, \ \textrm{"ere"}, \ \textrm{"re>"},$$
 
@@ -61,7 +77,7 @@ $$\textrm{"<wh"}, \ \textrm{"whe"}, \ \textrm{"her"}, \ \textrm{"ere"}, \ \textr
 and the special subword $\textrm{"<where>"}$.
 -->
 
-*dịch đoạn phía trên*
+và từ tố đặc biệt  $\textrm{"<where>"}$.
 
 
 <!--
@@ -71,8 +87,10 @@ Assume the vector of the subword $g$ in the dictionary is $\mathbf{z}_g$.
 Then, the central word vector $\mathbf{u}_w$ for the word $w$ in the skip-gram model can be expressed as
 -->
 
-*dịch đoạn phía trên*
-
+Trong fastText, với một từ $w$, ta ghi tập hợp của tất cả các từ tố của nó với chiều dài từ $3$ đến $6$ và các từ tố đặc biệt là $\mathcal{G}_w$.
+Do đó, từ điển này là tập hợp của bộ sưu tập các từ tố của tất cả các từ.
+Giả sử vector của từ tố $g$ trong từ điển này là  $\mathbf{z}_g$.
+Thì vector từ trung tâm $\mathbf{u}_w$ cho từ $w$ trong mô hình skip-gram có thể thể hiện như
 
 $$\mathbf{u}_w = \sum_{g\in\mathcal{G}_w} \mathbf{z}_g.$$
 
@@ -84,7 +102,10 @@ Also, the vector of one word requires the summation of all subword vectors, whic
 However, we can obtain better vectors for more uncommon complex words, even words not existing in the dictionary, by looking at other words with similar structures.
 -->
 
-*dịch đoạn phía trên*
+Phần còn lại tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, nên ta không mô tả lại ở đây.
+Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển trong fastText lớn hơn dẫn tới số tham số của mô hình nhiều hơn.
+Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ tố dẫn tới kết quả làm độ phức tạp tính toán cao hơn.
+Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này, nhờ tham chiếu các từ khác có cấu trúc tương tự.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -342,7 +363,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
