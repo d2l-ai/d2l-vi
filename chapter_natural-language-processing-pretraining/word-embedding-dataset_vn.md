@@ -124,7 +124,7 @@ As we can see, it is only possible to drop out the word $w_i$ in subsampling whe
 The higher the word's frequency, the higher its dropout probability.
 -->
 
-Ở đây, $f(w_i)$ là tỷ lệ giữa các thực thể từ $w_i$ với tổng số từ trong tập dữ liệu,
+Ở đây, $f(w_i)$ là tỷ lệ giữa số lần xuất hiện từ $w_i$ với tổng số từ trong tập dữ liệu,
 và hằng số $t$ là một siêu tham số (có giá trị bằng $10^{-4}$ trong thí nghiệm này).
 Như ta thấy, chỉ có thể loại bỏ từ $w_i$ trong lúc lấy mẫu con khi $f(w_i) > t$.
 Tần suất của từ càng cao, xác suất loại bỏ càng lớn.
