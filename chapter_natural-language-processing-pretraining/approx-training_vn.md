@@ -106,7 +106,7 @@ Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau v�
 Rõ ràng, các vector từ như vậy là vô nghĩa.
 Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy mẫu có bổ sung các mẫu âm.
 Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
-và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh theo phân phối $P(w)$ đóng vai trò là các từ nhiễu.
+và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$.
 Ta giả sử sự kiện cho từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
 Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương tính lẫn và mẫu âm là độc lập với nhau.
 Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp ở trên mà chỉ xem xét các mẫu dương tính như sau
