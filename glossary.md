@@ -22,7 +22,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance               | chất lượng thuật toán     |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
-| analogy                               | oại suy             |                                              |
+| analogy                               | loại suy             |                                              |
 | anchor box                            | khung neo                 |                                              |
 | approximate inference                 | suy luận gần đúng         |                                              |
 | approximate training                  | huấn luyện gần đúng       |                                              |
