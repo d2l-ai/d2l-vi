@@ -6,7 +6,7 @@
 # Bidirectional Encoder Representations from Transformers (BERT)
 -->
 
-# *dịch đoạn phía trên*
+# Biểu diễn Mã hoá hai chiều từ Transformer (BERT)
 :label:`sec_bert`
 
 
@@ -17,14 +17,16 @@ In fact, these word embedding models are all *context-independent*.
 Let us begin by illustrating this property.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã giới thiệu một vài mô hình embedding từ cho bài toán hiểu ngôn ngữ tự nhiên.
+Sau khi tiền huấn luyện, đầu ra có thể được coi là một ma trận trong đó mỗi hàng là một vector biểu diễn cho một từ trong bộ từ vựng đã được định nghĩa trước.
+Trong thực tế, tất cả các mô hình embedding từ này thuộc loại mô hình *độc lập ngữ cảnh* (_context-independent_).
 
 
 <!--
 ## From Context-Independent to Context-Sensitive
 -->
 
-## *dịch đoạn phía trên*
+## Từ Độc lập Ngữ cảnh tới Nhạy Ngữ cảnh
 
 
 <!--
@@ -36,7 +38,12 @@ For instance, the word "crane" in contexts "a crane is flying" and "a crane driv
 thus, the same word may be assigned different representations depending on contexts.
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại các thí nghiệm trong :numref:`sec_word2vec_pretraining` và :numref:`sec_synonyms`.
+Ví dụ, cả word2vec và GloVe gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh của như thế nào (nếu có).
+Về mặt hình thức, biểu diễn độc lập ngữ cảnh của một token bất kỳ $x$ là một hành $f(x)$ chỉ nhận $x$ làm đầu vào.
+Với sự đa nghĩa phong phú và ngữ nghĩa phức tạp trong các ngôn ngữ tự nhiên, biểu diễn độc lập ngữ cảnh có những hạn chế rõ ràng.
+Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying" và ngữ cảnh "a crane driver came" có nghĩa hoàn toàn khác nhau;
+do đó, cùng một từ có thể được gán các biểu diễn khác nhau tùy thuộc vào ngữ cảnh.
 
 
 <!--
@@ -46,7 +53,10 @@ Popular context-sensitive representations include TagLM (language-model-augmente
 CoVe (Context Vectors) :cite:`McCann.Bradbury.Xiong.ea.2017`, and ELMo (Embeddings from Language Models) :cite:`Peters.Neumann.Iyyer.ea.2018`.
 -->
 
-*dịch đoạn phía trên*
+Điều này thúc đẩy sự phát triển của các biểu diễn từ *nhạy ngữ cảnh* (_context-sensitive_), trong đó biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
+Do đó, biểu diễn nhạy ngữ cảnh của một token bất kỳ $x$ là hàm $f(x, c(x))$ phụ thuộc vào cả từ $x$ lẫn ngữ cảnh của từ là $c(x)$. 
+Các biểu diễn nhạy ngữ cảnh phổ biến bao gồm TagLM (Bộ Tag chuỗi tăng cường mô hình ngôn ngữ (_language-model-augmented sequence tagger_)) :cite:`Peters.Ammar.Bhagavatula.ea.2017`,
+CoVe (vetor ngữ cảnh (_Context Vectors_)) :cite:`McCann.Bradbury.Xiong.ea.2017`, và ELMo (embedding các mô hình ngôn ngữ (_Embeddings from Language Models_)) :cite:`Peters.Neumann.Iyyer.ea.2018`.
 
 
 <!--
@@ -60,7 +70,14 @@ Leveraging different best models for different tasks at that time, adding ELMo i
 sentiment analysis, natural language inference, semantic role labeling, coreference resolution, named entity recognition, and question answering.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, ELMo là hàm gán một biểu diễn cho mỗi từ của chuỗi đầu vào bằng cách lấy toàn bộ chuỗi làm đầu vào cho hàm.
+Cụ thể, ELMo kết hợp tất cả các biểu diễn tầng trung gian từ LSTM hai chiều đã được tiền huấn luyện làm biểu diễn đầu ra.
+Sau đó, biểu diễn ELMo sẽ được đưa vào mô hình giám sát ban đầu của các tác vụ khác như các đặc trưng bổ sung, chẳng hạn bằng cách ghép nối biểu diễn ELMo và biểu diễn gốc (ví dụ GloVe) của token trong mô hình ban đầu.
+Mặt khác, tất cả các trọng số trong mô hình LSTM hai chiều được tiền huấn luyện đều bị đóng băng sau khi các biểu diễn ELMo được thêm vào.
+Mặt khác, mô hình được giám sát hiện có được tùy chỉnh cụ thể cho một nhiệm vụ nhất định.
+Thêm ELMo vào các mô hình tân tiến nhất cho các tác vụ khác nhau tại thời điểm công bố ELMo giúp cải thiện chất lượng các mô hình này trên sáu tác vụ xử lý ngôn ngữ tự nhiên đó là:
+phân tích cảm xúc (_sentiment analysis_), suy luận ngôn ngữ tự nhiên (_natural language inference_), dán nhãn vai trò ngữ nghĩa (_semantic role labeling_), phân giải đồng tham chiếu (_coreference resolution_) nhận dạng thực thể có tên (_named entity recognition_) và trả lời câu hỏi (_question answering_).
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -625,7 +642,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
