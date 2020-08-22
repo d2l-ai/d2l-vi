@@ -5,7 +5,7 @@
 # Pretraining word2vec
 -->
 
-# *dịch đoạn phía trên*
+# Tiền huấn luyện word2vec
 :label:`sec_word2vec_pretraining`
 
 
@@ -13,14 +13,14 @@
 In this section, we will train a skip-gram model defined in:numref:`sec_word2vec`.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, ta sẽ huấn luyện một mô hình skip-gram đã được định nghĩa ở :numref:`sec_word2vec`.
 
 
 <!--
 First, import the packages and modules required for the experiment, and load the PTB dataset.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp dữ liệu PTB. 
 
 
 ```{.python .input  n=1}
@@ -39,7 +39,7 @@ data_iter, vocab = d2l.load_data_ptb(batch_size, max_window_size,
 ## The Skip-Gram Model
 -->
 
-## *dịch đoạn phía trên*
+## Mô hình Skip-Gram
 
 
 <!--
@@ -47,14 +47,15 @@ We will implement the skip-gram model by using embedding layers and minibatch mu
 These methods are also often used to implement other natural language processing applications.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lập trình mô hình skip-gram bằng cách sử dụng các tầng embedding và phép nhân minibatch.
+Các phương pháp này cũng thường được sử dụng để lập trình các ứng dụng xử lý ngôn ngữ tự nhiên khác.
 
 
 <!--
 ### Embedding Layer
 -->
 
-### *dịch đoạn phía trên*
+### Tầng Embedding
 
 
 <!--
@@ -63,7 +64,9 @@ The weight of the embedding layer is a matrix whose number of rows is the dictio
 We set the dictionary size to $20$ and the word vector dimension to $4$.
 -->
 
-*dịch đoạn phía trên*
+Tầng này được gọi là tầng embedding, trong đó các từ thu được bằng cách phương pháp embedding. Ta sử dụng tầng này bằng cách tạo một thực thể `nn.Embedding` trong Gluon.
+Trọng số của tầng embedding là một ma trận có số lượng hàng là kích thước từ điển (`input_dim`) và số lượng cột là chiều của mỗi vector từ (`output_dim`).
+Ta đặt kích thước từ điển bằng $20$ và chiều vector từ là $4$.
 
 
 ```{.python .input  n=15}
@@ -80,7 +83,9 @@ Below we enter an index of shape ($2$, $3$) into the embedding layer.
 Because the dimension of the word vector is 4, we obtain a word vector of shape ($2$, $3$, $4$).
 -->
 
-*dịch đoạn phía trên*
+Đầu vào của tầng embedding là chỉ số của từ.
+Khi ta nhập chỉ số $i$ của một từ, tầng embedding sẽ trả về một vector từ tương ứng với cột thứ $i$ của ma trận trọng số.
+Dưới đây ta nhập vào tầng embedding chỉ số có kích thước ($2$, $3$).
 
 
 ```{.python .input  n=16}
@@ -389,7 +394,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
