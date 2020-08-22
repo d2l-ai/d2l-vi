@@ -96,7 +96,7 @@ embed(x)
 ### Minibatch Multiplication
 -->
 
-### *dịch đoạn phía trên*
+### Phép nhân Minibatch
 
 
 <!--
@@ -107,7 +107,11 @@ The output of matrix multiplication on these two batches are $n$ matrices $\math
 Therefore, given two tensors of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the shape of the minibatch multiplication output is ($n$, $a$, $c$).
 -->
 
-*dịch đoạn phía trên*
+Ta có thể nhân ma trận của hai minibatch bằng toán tử nhân minibatch `batch_dot`.
+Giả sử batch đầu tiên chứa $n$ ma trận $\mathbf{X}_1, \ldots, \mathbf{X}_n$ có kích thước là $a\times b$, 
+và batch thứ hai chứa $n$ ma trận $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ có kích thước là $b\times c$.
+Đầu ra của toán tử nhân ma trận với hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
+Do đó, với hai tensor có kích thước là ($n$, $a$, $b$) và ($n$, $b$, $c$), kích thước đầu ra của toán tử nhân minibatch là ($n$, $a$, $c$).
 
 
 ```{.python .input  n=17}
@@ -121,7 +125,7 @@ npx.batch_dot(X, Y).shape
 ### Skip-gram Model Forward Calculation
 -->
 
-### *dịch đoạn phía trên*
+### Tính toán Truyền Xuôi của Mô hình Skip-gram 
 
 
 <!--
@@ -134,7 +138,12 @@ and then the output of shape (batch size, 1, `max_len`) is obtained by minibatch
 Each element in the output is the inner product of the central target word vector and the context word vector or noise word vector.
 -->
 
-*dịch đoạn phía trên*
+Ở lượt truyền xuôi, đầu vào của mô hình skip-gram chứa chỉ số của từ mục tiêu trung tâm là `center`
+và chỉ số của từ ngữ cảnh và từ nhiễu được ghép nối là `contexts_and_negatives`.
+Trong đó, biến `center` có kích thước là (kích thước batch, 1),
+và biến `contexts_and_negatives` có kích thước là (kích thước batch, `max_len`).
+Đầu tiên hai biến này được biến đổi từ chỉ số từ thành vector từ bởi tầng embedding từ, sau đó đầu ra có kích thước là (kích thước batch, 1, `max_len`) thu được bằng phép nhân minibatch.
+Mỗi phần tử của đầu ra là tích vô hướng của vector từ đích trung tâm và vector từ ngữ cảnh hoặc vector từ nhiễu.
 
 
 ```{.python .input  n=18}
@@ -150,7 +159,7 @@ def skip_gram(center, contexts_and_negatives, embed_v, embed_u):
 Verify that the output shape should be (batch size, 1, `max_len`).
 -->
 
-*dịch đoạn phía trên*
+Ta xác nhận xem đầu ra có kích thước là (kích thước batch, 1, `max_len`).
 
 
 ```{.python .input}
@@ -162,14 +171,14 @@ skip_gram(np.ones((2, 1)), np.ones((2, 4)), embed, embed).shape
 ## Training
 -->
 
-## *dịch đoạn phía trên*
+## Huấn luyện
 
 
 <!--
 Before training the word embedding model, we need to define the loss function of the model.
 -->
 
-*dịch đoạn phía trên*
+Trước khi huấn luyện mô hình embedding từ, ta cần định nghĩa hàm mất mát của mô hình.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -389,7 +398,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
