@@ -17,7 +17,7 @@ It takes samples from Wall Street Journal articles and includes training sets, v
 
 Trong phần này, chúng tôi sẽ giới thiệu cách tiền xử lý một tập dữ liệu với phương pháp lấy mẫu âm :numref:`sec_approx_train` và tạo các minibatch để huấn luyện word2vec.
 Tập dữ liệu ta sẽ sử dụng đó là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho dữ liệu nhỏ nhưng được sử dụng phổ biến.
-Nó là nguồn dữ liệu được lấy từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
+Dữ liệu được lấy từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
 
 
 <!--
