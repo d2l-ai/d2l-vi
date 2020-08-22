@@ -51,7 +51,7 @@ All the words in a sentence are separated by spaces.
 In the word embedding task, each word is a token.
 -->
 
-Tập dữ liệu này đã được xử lý trước.
+Tập dữ liệu này đã được tiền xử lý trước.
 Mỗi dòng của tập dữ liệu được coi là một câu.
 Tất cả các từ trong một câu được phân cách bằng dấu cách.
 Trong bài toán embedding từ, mỗi từ là một token.
