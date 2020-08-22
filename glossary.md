@@ -181,6 +181,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | forward pass                | lượt truyền xuôi      | [https://git.io/JvohG](https://git.io/JvohG) |
 | framework                   | framework             |                                              |
 | frontend                    | front-end             |                                              |
+| frozen weight (freeze weight)| trọng số bị đóng băng (đóng băng trọng số)||
 | functional analysis         | giải tích hàm         |                                              |
 | fully-connected             | kết nối đầy đủ        | [https://git.io/JvohR](https://git.io/JvohR) |
 | fully convolutional network | mạng tích chập đầy đủ |                                              |
