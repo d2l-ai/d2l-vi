@@ -262,7 +262,7 @@ Specifically, we use the random cropping method used in image augmentation to cr
 -->
 
 Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
-Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc của ảnh đầu vào.
+Với phương pháp phân vùng theo ngữ nghĩa, ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc của ảnh đầu vào.
 Sẽ rất khó để thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
 Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỉ lệ ảnh.
 Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
@@ -353,7 +353,7 @@ Below, we can see the number of examples retained in the training and testing se
 -->
 
 Sử dụng lớp `VOCSegDataset` được tuỳ chỉnh ở trên, ta có thể khởi tạo đối tượng tập huấn luyện và tập kiểm tra.
-Giả sử thao tác cắt ngẫu nhiên sản tạo ra ảnh có kích thước $320\times 480$.
+Giả sử thao tác cắt ngẫu nhiên tạo ra ảnh có kích thước $320\times 480$.
 Dưới đây ta có thể thấy số lượng ảnh được giữ lại trong tập huấn luyện và tập kiểm tra.
 
 
@@ -373,7 +373,7 @@ In contrast to image classification and object recognition, labels here are thre
 
 Ta đặt kích thước batch là 64 và định nghĩa các iterator cho tập huấn luyện và tập kiểm tra.
 Sau đó ta sẽ in ra kích thước của minibatch đầu tiên.
-Khác với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây có dạng mảng ba chiều.
+Khác với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây là các mảng ba chiều.
 
 
 
@@ -446,7 +446,7 @@ Which of the image augmentation methods used in image classification would be ha
 -->
 
 Xem lại nội dung được trình bày trong :numref:`sec_image_augmentation`.
-Phương pháp tăng cường ảnh nào sử dụng trong phân loại ảnh mà khó có thể sử dụng trong phân vùng ảnh theo ngữ nghĩa?
+Phương pháp tăng cường ảnh nào sử dụng trong phân loại ảnh có thể khó sử dụng trong phân vùng ảnh theo ngữ nghĩa?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
