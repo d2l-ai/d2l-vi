@@ -282,7 +282,7 @@ The detailed region proposal network computation process is described below:
 -->
 
 :numref:`fig_faster_r-cnn` minh hoạ mô hình Faster R-CNN.
-So với Fast R-CNN, Faster R-CNN chỉ thay thế phương pháp sinh các vùng đề xuất từ tìm kiếm chọn lọc sang mạng đề xuất vùng.
+So với Fast R-CNN, Faster R-CNN chỉ thay thế phương pháp sản sinh các vùng đề xuất từ tìm kiếm chọn lọc sang mạng đề xuất vùng.
 Những phần còn lại trong mô hình không đổi.
 Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
 
@@ -300,7 +300,7 @@ Finally, we output the predicted bounding boxes as the proposed regions required
 Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
 2. Lấy mỗi phần tử trong ánh xạ đặc trưng làm tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khác nhau, sau đó gán nhãn cho chúng.
 3. Lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (là vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
-4. Sau đó, sử dụng triệt phi cực đại để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
+4. Sau đó, sử dụng triệt phi cực đại (*non-maximum suppression*) để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
 Cuối cùng, ta xuất ra các khung chứa dự đoán là các vùng đề xuất rồi đưa vào tầng gộp RoI.
 
 
@@ -358,7 +358,7 @@ Mask R-CNN thay thế tầng tổng hợp RoI bằng tầng căn chỉnh RoI (*R
 Điều này cho phép sử dụng phép nội suy song tuyến tính (*bilinear interpolation*) để giữ lại thông tin không gian trong ánh xạ đặc trưng, làm cho Mask R-CNN trở nên phù hợp hơn với các dự đoán cấp điểm ảnh.
 Lớp căn chỉnh RoI xuất ra các ánh xạ đặc trưng có cùng kích thước cho mọi RoI.
 Điều này không những dự đoán các lớp và khung chứa của RoI, mà còn cho phép chúng ta bổ sung một mạng nơ-ron tích chập đầy đủ (*fully convolutional network*) để dự đoán vị trí cấp điểm ảnh của các đối tượng.
-Chúng tôi sẽ mô tả cách sử dụng mạng nơ-ron tích chập đầy đủ để dự đoán ngữ nghĩa cấp điểm ảnh trong những ảnh ở phần sau của chương này. 
+Chúng tôi sẽ mô tả cách sử dụng mạng nơ-ron tích chập đầy đủ để dự đoán ngữ nghĩa cấp điểm ảnh ở phần sau của chương này. 
 
 
 ## Tóm tắt
@@ -379,7 +379,7 @@ Sau đó dùng các đặc trưng này để dự đoán hạng mục và khung 
 * Fast R-CNN cải thiện R-CNN bằng cách chỉ thực hiện tính toán truyền xuôi CNN trên toàn bộ bức ảnh.
 Mạng này sử dụng một tầng tổng hợp RoI để trích xuất các đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
 * Faster R-CNN thay thế tìm kiếm chọn lọc trong Fast R-CNN bằng mạng đề xuất vùng.
-Điều này làm giảm số lượng vùng đề xuất tạo ra, và vẫn đảm bảo độ chính xác khi phát hiện đối tượng.
+Điều này làm giảm số lượng vùng đề xuất tạo ra, nhưng vẫn đảm bảo độ chính xác khi phát hiện đối tượng.
 * Mask R-CNN có cấu trúc cơ bản giống Faster R-CNN, nhưng có thêm một mạng nơ-ron tích chập đầy đủ giúp định vị đối tượng ở cấp điểm ảnh và cải thiện hơn nữa độ chính xác của việc phát hiện đối tượng.
 
 
