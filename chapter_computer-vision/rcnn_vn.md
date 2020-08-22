@@ -70,9 +70,9 @@ Các vùng đề xuất thông thường sẽ có nhiều tỷ lệ với hình 
 Hạng mục và khung chứa nhãn gốc sẽ được gán cho từng vùng đề xuất.
 2. Sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
 Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các lượt truyền xuôi để trích xuất đặc trưng từ các vùng đề xuất tương ứng.
-3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện nhiều máy vector hỗ trợ cho phép phân loại vật thể.
+3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện các máy vector hỗ trợ (*support vector machines*) cho phép phân loại vật thể.
 Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một hạng mục nào đó hay không.
-4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được kết hợp thành một mẫu để huấn luyện mô hình hồi quy tuyến tính để dự đoán khung chứa nhãn gốc. 
+4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được kết hợp thành một mẫu để huấn luyện mô hình hồi quy tuyến tính, để phục vụ dự đoán khung chứa nhãn gốc. 
 
 <!--
 Although R-CNN models use pre-trained CNNs to effectively extract image features, the main downside is the slow speed.
@@ -232,7 +232,7 @@ Finally, we divide the two RoIs into a sub-window grid and extract features with
 -->
 
 Vì chiều cao và chiều rộng của `X` bằng $1/10$ chiều cao và chiều rộng của ảnh, các tọa độ của hai vùng được đề xuất sẽ nhân với 0.1 thông qua `spatial_scale`,
-rồi các RoI được gán nhãn trên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
+tiếp theo các RoI được gán nhãn trên `X` lần lượt là `X[:, :, 0:3, 0:3]` và `X[:, :, 1:4, 0:4]`.
 Sau cùng, ta chia hai RoI thành một lưới cửa sổ con và trích xuất đặc trưng với chiều cao và chiều rộng là 2.
 
 
