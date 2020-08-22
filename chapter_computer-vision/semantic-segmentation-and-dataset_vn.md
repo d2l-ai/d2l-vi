@@ -18,10 +18,10 @@ As you can see, compared to object detection, semantic segmentation labels areas
 -->
 
 Khi thảo luận ở những phần trước về các vấn đề liên quan tới phát hiện vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để gán nhãn và dự đoán các vật thể trong ảnh.
-Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa (*semantic segmentation*), đây là việc thực hiện phân chia ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
+Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa (*semantic segmentation*), tức là phân chia ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
 Các vùng ngữ nghĩa đó gán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
 :numref:`fig_segmentation` minh họa một ảnh đã được phân vùng ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền".
-Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ gán nhãn các vùng bằng các đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
+Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ gán nhãn các vùng theo đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
 
 <!--
 ![Semantically-segmented image, with areas labeled "dog", "cat", and "background".](../img/segmentation.svg)
@@ -63,7 +63,7 @@ If an image contains two dogs, instance segmentation will distinguish which pixe
 * Phân vùng ảnh chia một bức ảnh thành các vùng thành phần.
 Phương pháp này thường sử dụng độ tương quan giữa các điểm ảnh trên ảnh.
 Trong suốt quá trình huấn luyện, nhãn cho các điểm ảnh là không cần thiết.
-Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân chia có ngữ nghĩa mà ta mong muốn.
+Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân chia chứa ngữ nghĩa mà ta mong muốn.
 Nếu ta đưa vào bức ảnh trong :numref:`fig_segmentation`, phân vùng ảnh có thể chia con chó thành hai vùng,
 một vùng bao phủ trên miệng và cặp mắt nơi màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú chó nơi màu vàng chiếm ưu thế.
 * Phân vùng thực thể còn được gọi là phát hiện và phân vùng đồng thời.
@@ -136,7 +136,7 @@ Thư mục `ImageSets/Segmentation` chứa các tệp văn bản định rõ ví
 Thư mục `JPEGImages` và `SegmentationClass` lần lượt chứa các mẫu ảnh đầu vào và nhãn.
 Các nhãn này cũng mang định dạng ảnh, với số chiều bằng với ảnh đầu vào tương ứng.
 Trong các nhãn, các điểm ảnh cùng màu thì thuộc cùng hạng mục ngữ nghĩa.
-Hàm `read_voc_images` được định nghĩa dưới đây đọc tất cả các ảnh đầu vào và nhãn vào bộ nhớ.
+Hàm `read_voc_images` định nghĩa dưới đây đọc và lưu vào bộ nhớ tất cả các ảnh đầu vào và nhãn tương ứng.
 
 
 ```{.python .input  n=3}
@@ -205,7 +205,7 @@ VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
 After defining the two constants above, we can easily find the category index for each pixel in the labels.
 -->
 
-Sau khi khai báo hai hằng số trên, ta có thể dễ dàng tìm chỉ số hạng mục cho mỗi điểm ảnh trong nhãn.
+Sau khi khai báo hai hằng số trên, ta có thể dễ dàng tìm chỉ số hạng mục cho mỗi điểm ảnh trong các nhãn.
 
 
 ```{.python .input  n=6}
