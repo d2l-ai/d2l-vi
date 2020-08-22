@@ -144,7 +144,7 @@ subsampled = subsampling(sentences, vocab)
 Compare the sequence lengths before and after sampling, we can see subsampling significantly reduced the sequence length.
 -->
 
-*dịch đoạn phía trên*
+So sánh độ dài chuỗi trước và sau khi lấy mẫu, ta có thể thấy việc lấy mẫu con làm giảm đáng kể độ dài chuỗi.
 
 
 ```{.python .input  n=5}
@@ -161,8 +161,7 @@ d2l.plt.legend(['origin', 'subsampled']);
 For individual tokens, the sampling rate of the high-frequency word "the" is less than 1/20.
 -->
 
-*dịch đoạn phía trên*
-
+Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tuần suất cao như từ "the" nên nhỏ hơn 1/20.
 
 ```{.python .input  n=6}
 def compare_counts(token):
@@ -178,7 +177,7 @@ compare_counts('the')
 But the low-frequency word "join" is completely preserved.
 -->
 
-*dịch đoạn phía trên*
+Nhưng các từ có tần số thấp như từ "join" hoàn toàn được giữ nguyên.
 
 
 ```{.python .input  n=7}
@@ -190,7 +189,7 @@ compare_counts('join')
 Last, we map each token into an index to construct the corpus.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu.
 
 
 ```{.python .input  n=8}
@@ -203,14 +202,14 @@ corpus[0:3]
 ## Loading the Dataset
 -->
 
-## *dịch đoạn phía trên*
+## Nạp Dữ liệu
 
 
 <!--
 Next we read the corpus with token indicies into data batches for training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta đọc kho ngữ liệu với các chỉ số token thành các batch dữ liệu cho quá trình huấn luyện. 
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -536,7 +535,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * 
