@@ -68,7 +68,7 @@ Here, each support vector machine is used to determine whether an example belong
 1. Tìm kiếm chọn lọc trên ảnh đầu vào để lựa chọn các vùng đề xuất tiềm năng :cite:`Uijlings.Van-De-Sande.Gevers.ea.2013`.
 Các vùng đề xuất thông thường sẽ có nhiều tỷ lệ với hình dạng và kích thước khác nhau.
 Hạng mục và khung chứa nhãn gốc sẽ được gán cho từng vùng đề xuất.
-2. Sử dụng một mạng CNN đã được tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
+2. Sử dụng một mạng CNN đã qua tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
 Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các lượt truyền xuôi để trích xuất đặc trưng từ các vùng đề xuất tương ứng.
 3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện các máy vector hỗ trợ (*support vector machines*) cho phép phân loại vật thể.
 Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một hạng mục nào đó hay không.
@@ -102,7 +102,7 @@ Fast R-CNN improves on the R-CNN by only performing CNN forward computation on t
 -->
 
 Điểm nghẽn cổ chai chính về hiệu năng của R-CNN đó là việc trích xuất đặc trưng cho từng vùng đề xuất một cách độc lập.
-Do các vùng đề xuất này có độ chồng lặp cao, việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến số lượng lớn các phép tính lặp lại.
+Do các vùng đề xuất này có độ chồng lặp cao, việc trích xuất đặc trưng một cách độc lập sẽ dẫn đến một số lượng lớn các phép tính lặp lại.
 Fast R-CNN cải thiện R-CNN bằng cách chỉ thực hiện lượt truyền xuôi qua mạng CNN trên toàn bộ ảnh.
 
 
@@ -140,7 +140,7 @@ This means that we predict the category and bounding box for each proposed regio
 1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh làm đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
 Hơn nữa, mạng này được huấn luyện như bình thường để cập nhật tham số mô hình.
 Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
-2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, kích thước các vùng này khác nhau chỉ ra rằng vùng quan tâm (_regions of interests - RoI_) tại đầu ra của CNN có kích thước khác nhau.
+2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, kích thước khác nhau của các vùng này chỉ ra rằng vùng quan tâm (_regions of interests - RoI_) tại đầu ra của CNN có kích thước khác nhau.
 Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm này (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
 Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng quan tâm làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định khi thiết kế mô hình.
