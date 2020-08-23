@@ -375,7 +375,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | perplexity (metric in NLP)         | perplexity                   | [https://git.io/Jf9KY](https://git.io/Jf9KY) |
 | perturbation                       | nhiễu                        | [https://git.io/JvQA1](https://git.io/JvQA1) |
 | pipeline                           | pipeline                     | [https://git.io/JvQxG](https://git.io/JvQxG) |
-| pixel                              | điểm ảnh                     |                                              |
+| pixel (component of digital images)                              | điểm ảnh |                                              |
+| pixel (unit of measurement)                             | pixel (đơn vị đo) |                                              |
 | plateau (noun)                     | vùng nằm ngang               |                                              |
 | plateau (verb)                     | nằm ngang                    |                                              |
 | policy (in reinforcement learning) | chính sách                   | [https://git.io/Jvoj9](https://git.io/Jvoj9) |
