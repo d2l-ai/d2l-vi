@@ -190,14 +190,14 @@ def postprocess(img):
 ## Extracting Features
 -->
 
-## Trích xuất đặc trưng
+## Trích xuất Đặc trưng
 
 
 <!--
 We use the VGG-19 model pre-trained on the ImageNet dataset to extract image features[1].
 -->
 
-Ta sử dụng mô hình VGG-19 tiền huấn luyện trên tập dữ liệu ImagNet để trích các đặc trưng của ảnh[1].
+Ta sử dụng mô hình VGG-19 tiền huấn luyện trên tập dữ liệu ImagNet để trích xuất các đặc trưng của ảnh [1].
 
 
 ```{.python .input  n=4}
@@ -218,16 +218,16 @@ In this experiment, we select the last convolutional layer of the fourth convolu
 We can obtain the indexes for these layers by printing the `pretrained_net` instance.
 -->
 
-Để trích các đặc trưng nội dung và phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
-Nói chung, đầu ra càng gần với tầng đầu vào, việc trích thông tin chi tiết của ảnh càng dễ hơn.
-Trong khi đầu ra xa hơn thì dễ trích các thông tin toàn cục hơn.
+Để trích xuất các đặc trưng nội dung và phong cách, ta có thể chọn đầu ra của một số tầng nhất định trong mạng VGG. 
+Nói chung, đầu ra càng gần với tầng đầu vào, việc trích xuất thông tin chi tiết của ảnh càng dễ hơn.
+Ngược lại khi đầu ra xa hơn thì dễ trích xuất các thông tin toàn cục hơn.
 Để ngăn ảnh tổng hợp không giữ quá nhiều chi tiết của ảnh nội dung, ta chọn một tầng mạng VGG gần tầng đầu ra để lấy các đặc trưng nội dung của ảnh đó.
 Tầng này được gọi là tầng nội dung.
-Ta cũng chọn các đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách cục bộ và toàn cục.
+Ta cũng chọn đầu ra ở các tầng khác nhau từ mạng VGG để phối hợp với các phong cách cục bộ và toàn cục.
 Các tầng đó được gọi là các tầng phong cách.
 Như ta đã đề cập trong :numref:`sec_vgg`, mạng VGG có năm khối tích chập.
 Trong thử nghiệm này, ta chọn tầng cuối của khối tích chập thứ tư làm tầng nội dung và tầng đầu tiên của mỗi khối làm các tầng phong cách.
-Ta có thể nhận được các chỉ số ở các tầng đó thông qua việc in thử `pretrained_net`.
+Ta có thể thu thập chỉ số ở các tầng đó thông qua việc in ra thực thể `pretrained_net`.
 
 ```{.python .input  n=5}
 style_layers, content_layers = [0, 5, 10, 19, 28], [25]
@@ -242,7 +242,7 @@ During feature extraction, we only need to use all the VGG layers from the input
 Below, we build a new network, `net`, which only retains the layers in the VGG network we need to use. We then use `net` to extract features.
 -->
 
-Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung hoặc phong cách gần tầng đầu ra nhất. 
+Khi trích xuất đặc trưng, ta chỉ cần sử dụng tất cả các tầng VGG bắt đầu từ tầng đầu vào tới tầng nội dung hoặc tầng phong cách gần tầng đầu ra nhất. 
 Dưới đây, ta sẽ xây dựng một mạng `net` mới, mạng này chỉ giữ lại các tầng ta cần trong mạng VGG. Sau đó ta sử dụng `net` để trích xuất đặc trưng.
 
 
@@ -322,7 +322,7 @@ Next, we will look at the loss function used for style transfer.
 The loss function includes the content loss, style loss, and total variation loss.
 -->
 
-Tiếp theo, ta sẽ chuyển sang hàm mất mát được sử dụng trong truyền tải phong cách.
+Tiếp theo, ta sẽ bàn về hàm mất mát được sử dụng trong truyền tải phong cách.
 Hàm mất mát gồm có mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
 
 
@@ -395,7 +395,7 @@ Naturally, the two Gram matrix inputs of the square error function for style los
 Here, we assume that the Gram matrix of the style image, `gram_Y`, has been computed in advance.
 -->
 
-Một cách tự nhiên, hai ma trận Gram đầu vào của hàm bình phương sai số cho mất mát phong cách được lấy từ ảnh kết hợp và ảnh phong cách của đầu ra tầng phong cách.
+Thông thường, hai ma trận Gram đầu vào của hàm bình phương sai số cho mất mát phong cách được lấy từ ảnh kết hợp và ảnh phong cách của đầu ra tầng phong cách.
 Ở đây, ta giả sử ma trận Gram của ảnh phong cách, `gram_Y`, đã được tính toán trước.
 
 
@@ -423,7 +423,7 @@ We assume that $x_{i, j}$ represents the pixel value at the coordinate $(i, j)$,
 
 Đôi khi các ảnh tổng hợp mà ta học có nhiều nhiễu tần số cao, cụ thể là các điểm ảnh sáng hoặc tối.
 Khử nhiễu biến thiên toàn phần (*total variation denoising*) là một phương pháp phổ biến nhằm giảm nhiễu.
-Ta giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, mất mát biến thiên toàn phần bằng:
+Giả định $x_{i, j}$ biểu diễn giá trị điểm ảnh tại toạ độ $(i, j)$, ta có mất mát biến thiên toàn phần:
 
 
 $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\right|.$$
@@ -433,7 +433,7 @@ $$\sum_{i, j} \left|x_{i, j} - x_{i+1, j}\right| + \left|x_{i, j} - x_{i, j+1}\r
 We try to make the values of neighboring pixels as similar as possible.
 -->
 
-Ta sẽ cố làm cho giá trị của các điểm ảnh lân cận càng giống nhau càng tốt.
+Ta sẽ cố gắng làm cho giá trị của các điểm ảnh lân cận càng giống nhau càng tốt.
 
 
 ```{.python .input  n=13}
@@ -455,8 +455,8 @@ The loss function for style transfer is the weighted sum of the content loss, st
 By adjusting these weight hyperparameters, we can balance the retained content, transferred style, and noise reduction in the composite image according to their relative importance.
 -->
 
-Hàm mất mát trong truyền tải phong cách bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
-Thông qua việc điều chỉnh các siêu tham số trọng số này, ta có thể cân bằng giữa phần nội dung giữ lại, phong cách truyền tải và mức giảm nhiễu trong ảnh tổng hợp dựa theo từng giá trị tương ứng của chúng.
+Hàm mất mát truyền tải phong cách được tính bằng tổng có trọng số của mất mát nội dung, mất mát phong cách, và mất mát biến thiên toàn phần.
+Thông qua việc điều chỉnh các siêu tham số trọng số này, ta có thể cân bằng giữa phần nội dung giữ lại, phong cách truyền tải và mức giảm nhiễu trong ảnh tổng hợp dựa trên tầm ảnh hưởng tương ứng của chúng.
 
 
 ```{.python .input  n=14}
