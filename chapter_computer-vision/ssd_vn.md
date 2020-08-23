@@ -181,7 +181,7 @@ def bbox_predictor(num_anchors):
 ### Concatenating Predictions for Multiple Scales
 -->
 
-### Ghép nối các Dự đoán Đa Tỷ lệ
+### Ghép nối Dự đoán Đa Tỷ lệ
 
 
 <!--
@@ -189,8 +189,8 @@ As we mentioned, SSD uses feature maps based on multiple scales to generate anch
 Because the shapes and number of anchor boxes centered on the same element differ for the feature maps of different scales, the prediction outputs at different scales may have different shapes.
 -->
 
-Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng dựa trên nhiều tỷ lệ để sinh các khung neo và dự đoán hạng mục và độ dời tương ứng.
-Vì kích thước và số lượng các khung neo có tâm đặt tại cùng một điểm là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có kích thước khác nhau.
+Như đã đề cập, SSD sử dụng các ánh xạ đặc trưng trên nhiều tỷ lệ để sinh các khung neo rồi dự đoán hạng mục và độ dời.
+Vì kích thước và số lượng các khung neo có tâm tại cùng một phần tử là khác nhau đối với ánh xạ đặc trưng có tỷ lệ khác nhau, các đầu ra dự đoán tại các tỷ lệ khác nhau có thể sẽ có kích thước khác nhau.
 
 
 <!--
@@ -205,11 +205,11 @@ Therefore, we must transform them into a consistent format and concatenate the p
 
 Trong ví dụ dưới đây, ta sử dụng cùng một batch dữ liệu để xây dựng ánh xạ đặc trưng `Y1` và `Y2` của hai tỷ lệ khác nhau.
 Trong đó, `Y2` có chiều cao và chiều rộng bằng một nửa `Y1`.
-Lấy ví dụ về dự đoán hạng mục, ta giả sử rằng mỗi điểm trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (Y1) và 3 (Y2) khung neo tương ứng.
+Ví dụ khi dự đoán hạng mục, giả sử mỗi phần tử trong ánh xạ đặc trưng `Y1` và `Y2` sinh 5 (với Y1) và 3 (với Y2) khung neo tương ứng.
 Với 10 hạng mục vật thể, số lượng kênh đầu ra của tầng dự đoán hạng mục sẽ là $5\times(10+1)=55$ hoặc $3\times(10+1)=33$ tương ứng.
-Định dạng của đầu ra dự đoán sẽ là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
+Định dạng đầu ra dự đoán là (kích thước batch, số lượng kênh, chiều cao, chiều rộng).
 Ta thấy, ngoại trừ kích thước batch, kích thước của các chiều còn lại là khác nhau.
-Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để tính toán về sau.
+Do đó, ta phải biến đổi chúng về cùng một định dạng và ghép nối dự đoán đa tỉ lệ để dễ tính toán về sau.
 
 ```{.python .input  n=3}
 def forward(x, block):
@@ -229,10 +229,9 @@ Because the batch size is the same for all scales, we can convert the prediction
 to facilitate subsequent concatenation on the $1^{\mathrm{st}}$ dimension.
 -->
 
-Chiều kênh bao gồm dự đoán cho tất cả các khung neo có cùng tâm.
+Chiều kênh chứa dự đoán cho tất cả các khung neo có cùng tâm.
 Đầu tiên, ta sẽ chuyển chiều kênh thành chiều cuối cùng.
-Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng nhị phân (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều thứ $1^{\mathrm{st}}$ dễ dàng hơn.
-
+Do kích thước batch là giống nhau với mọi tỷ lệ, ta có thể chuyển đổi kết quả dự đoán thành định dạng 2D (kích thước batch, chiều cao $\times$ chiều rộng $\times$ số lượng kênh) để việc ghép nối trên chiều thứ nhất dễ dàng hơn.
 
 
 ```{.python .input  n=4}
@@ -277,12 +276,12 @@ As you can see, the height and width downsample block enlarges the receptive fie
 -->
 
 
-Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm chiều cao và chiều rộng 50%. 
+Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm 50% chiều cao và chiều rộng. 
 Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
 Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
-Tuy nhiên, tầng gộp cực đại tiếp theo giảm kích thước đặc trưng còn một nửa.
-Do $1\times 2+(3-1)+(3-1)=6$, mỗi điểm trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
-Ta có thể thấy, khối giảm chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi điểm trong ánh xạ đặc trưng đầu ra.
+Tuy nhiên, tầng gộp cực đại tiếp theo sẽ giảm một nửa kích thước của ánh xạ đặc trưng.
+Do $1\times 2+(3-1)+(3-1)=6$, mỗi phần tử trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
+Ta có thể thấy, khối giảm mẫu trên chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng đầu ra.
 
 
 ```{.python .input  n=6}
@@ -301,7 +300,7 @@ By testing forward computation in the height and width downsample block, we can 
 -->
 
 
-Bằng phép kiểm tra tính toán truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
+Kiểm tra tính toán của lượt truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
 
 
 ```{.python .input  n=7}
@@ -325,9 +324,9 @@ When we input an original image with the shape $256\times256$, the base network 
 
 
 Khối mạng cơ sở được sử dụng để trích xuất đặc trưng từ ảnh gốc ban đầu.
-Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ. 
-Mạng này bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi tầng.
-Khi ta truyền ảnh đầu vào với kích thước $256\times256$, khối mạng cơ sở sẽ cho ra ánh xạ đặc trưng có kích thước $32 \times 32$.
+Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ,
+bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi bước.
+Khi ta truyền ảnh đầu vào có kích thước $256\times256$, khối mạng cơ sở sẽ cho ra ánh xạ đặc trưng có kích thước $32 \times 32$.
 
 
 ```{.python .input  n=8}
@@ -360,9 +359,9 @@ Therefore, modules two to five are all multiscale feature blocks shown in :numre
 -->
 
 Mô hình SSD chứa tất cả năm mô-đun.
-Mỗi mô-đun xuất một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
-Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ hai tới bốn là các khối giảm chiều cao và chiều rộng, và khối thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
-
+Mỗi mô-đun tạo ra một ánh xạ đặc trưng dùng để sinh các khung neo, dự đoán hạng mục và độ dời của các khung neo đó.
+Mô-đun đầu tiên là khối mạng cơ sở, các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, và mô-đun thứ năm là tầng gộp cực đại toàn cục nhằm giảm chiều cao và chiều rộng xuống còn 1.
+Do đó, mô-đun thứ hai tới thứ năm đều là các khối đặc trưng đa tỷ lệ như mô tả trong :numref:`fig_ssd`.
 
 ```{.python .input  n=9}
 def get_blk(i):
@@ -382,8 +381,8 @@ In contrast to the previously-described convolutional neural networks, this modu
 but also the anchor boxes of the current scale generated from `Y` and their predicted categories and offsets.
 -->
 
-Bây giờ, ta sẽ định nghĩa luợt tính xuôi cho từng mô-đun.
-Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
+Bây giờ, ta sẽ định nghĩa luợt truyền xuôi cho từng mô-đun.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo của tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -402,8 +401,8 @@ Here, we first divide the interval from 0.2 to 1.05 into five equal parts to det
 Then, according to $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447$, and similar formulas, we determine the sizes of larger anchor boxes at the different scales.
 -->
 
-Như ta đã đề cập, khối đặc trưng đa tỉ lệ càng gần đỉnh như trong :numref:`fig_ssd`, các vật thể nó phát hiện và các khung neo nó tạo ra càng lớn.
-Ở đây, ta trước hết chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
+Như đã đề cập, trong :numref:`fig_ssd`, khối đặc trưng đa tỉ lệ càng gần đỉnh, các vật thể được phát hiện và các khung neo được tạo ra càng lớn.
+Ở đây, trước hết ta chia khoảng từ 0.2 tới 1.05 thành năm phần bằng nhau để xác định các kích thước của các khung neo nhỏ hơn ở các tỉ lệ: 0.2, 0.37, 0.54 v.v.
 Kế đến, theo  $\sqrt{0.2 \times 0.37} = 0.272$, $\sqrt{0.37 \times 0.54} = 0.447, và các công thức tương tự, ta xác định kích thước của các khung neo lớn hơn ở các tỉ lệ khác nhau.
 
 
@@ -459,8 +458,8 @@ Because modules two to four are height and width downsample blocks, module five 
 and each element in the feature map is used as the center for 4 anchor boxes, a total of $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ anchor boxes are generated for each image at the five scales.
 -->
 
-Bây giờ ta tạo thử một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 điểm ảnh.
-Như ta đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
+Bây giờ ta thử tạo một mô hình SSD và sử dụng nó để thực hiện lượt truyền xuôi trên minibatch ảnh `X` có chiều rộng và chiều cao là 256 pixel.
+Như đã kiểm nghiệm trước đó, mô-đun đầu tiên xuất ánh xạ đặc trưng với kích thước $32 \times 32$.
 Bởi vì các mô-đun từ thứ hai tới thứ tư là các khối giảm chiều cao và chiều rộng, còn mô-đun thứ năm là tầng gộp toàn cục, 
 và mỗi phần tử trong ánh xạ đặc trưng này được dùng làm tâm cho bốn khung neo, tổng cộng $(32^2 + 16^2 + 8^2 + 4^2 + 1)\times 4 = 5444$ khung neo được tạo ra cho mỗi ảnh ở năm tỉ lệ đó.
 
@@ -885,4 +884,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
-
