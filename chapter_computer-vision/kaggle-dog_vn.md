@@ -100,7 +100,7 @@ Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha m
 ### Downloading the Dataset
 -->
 
-### Tải xuống Tập dữ liệu
+### Tải tập dữ liệu
 
 
 <!--
@@ -566,5 +566,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
 
