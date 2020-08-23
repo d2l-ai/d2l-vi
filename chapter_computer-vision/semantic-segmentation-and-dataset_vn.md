@@ -473,4 +473,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
