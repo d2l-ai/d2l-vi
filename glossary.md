@@ -132,6 +132,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
 | downsample                | giảm mẫu                        | [https://git.io/JvohC](https://git.io/JvohC) |
+| downstream task           | tác vụ hạ nguồn              | |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
