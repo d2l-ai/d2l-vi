@@ -205,9 +205,9 @@ When the mask is 0, the predicted value and label of the corresponding position 
 As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
 -->
 
-Đáng đề cập đến rằng ta có thể sử dụng biến mặt nạ để xác định phần giá trị dự đoán và nhãn mà có tham gia trong phép tính hàm mất mát trong minibatch:
-khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ tham gia vào phép tính hàm mất mát;
-khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng không tham gia vào phép tính hàm mất mát.
+Đáng chú ý là ta có thể sử dụng biến mặt nạ để chỉ định phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
+khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ được dùng trong phép tính hàm mất mát;
+khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng sẽ không được dùng trong phép tính hàm mất mát.
 Như đã đề cập ở trên, các biến mặt nạ có thể được sử dụng nhằm tránh hiệu ứng đệm trên các phép tính hàm mất mát.
 
 
@@ -215,7 +215,7 @@ Như đã đề cập ở trên, các biến mặt nạ có thể được sử 
 Given two identical examples, different masks lead to different loss values.
 -->
 
-Cho hai mẫu giống nhau, do mặt nạ khác nhau dẫn đến giá trị mất mát cũng khác nhau.
+Với hai mẫu giống nhau, mặt nạ khác nhau sẽ dẫn đến giá trị mất mát cũng khác nhau.
 
 
 ```{.python .input}
@@ -230,7 +230,7 @@ loss(pred, label, mask)
 We can normalize the loss in each example due to various lengths in each example.
 -->
 
-Ta có thể chuẩn hoá mất mát trong từng mẫu do độ dài từng mẫu là khác nhau.
+Ta có thể chuẩn hoá mất mát trong từng mẫu do các mẫu có độ dài khác nhau.
 
 
 ```{.python .input}
@@ -402,5 +402,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
