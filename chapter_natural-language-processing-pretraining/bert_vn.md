@@ -70,7 +70,7 @@ sentiment analysis, natural language inference, semantic role labeling, corefere
 ## From Task-Specific to Task-Agnostic
 -->
 
-## *dịch đoạn phía trên*
+## Từ Chuyên biệt cho Tác vụ đến Bất khả tri với Tác vụ
 
 
 <!--
@@ -88,7 +88,16 @@ GPT was evaluated on twelve tasks of natural language inference, question answer
 and improved the state of the art in nine of them with minimal changes to the model architecture.
 -->
 
-*dịch đoạn phía trên*
+Mặc dù ELMo đã cải thiện đáng kể lời giải cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên,
+mỗi lời giải vẫn dựa trên kiến ​​trúc *chuyên biệt cho tác vụ* (_task-specific_).
+Tuy nhiên, trong thực tế, xây dựng một kiến ​​trúc cụ thể cho mỗi tác vụ xử lý ngôn ngữ tự nhiên là điều không đơn giản.
+Phương pháp GPT (Generative Pre-Training) thể hiện nỗ lực thiết kế một mô hình *bất khả tri với tác vụ* (_task-agnostic_) chung cho các biểu diễn nhạy ngữ cảnh :cite:`Radford.Narasimhan.Salimans.ea.2018`.
+Được xây dựng dựa trên bộ giải mã Transformer, GPT tiền huấn luyện mô hình ngôn ngữ được sử dụng để biểu diễn chuỗi văn bản.
+Khi áp dụng GPT cho một tác vụ hạ nguồn, đầu ra của mô hình ngôn ngữ sẽ được truyền tới một tầng đầu ra tuyến tính được bổ sung
+để dự đoán nhãn cho tác vụ đó.
+Trái ngược hoàn toàn với cách ELMo đóng băng các tham số của mô hình đã được tiền huấn luyện,
+GPT tinh chỉnh *tất cả* các tham số trong bộ giải mã Transformer đã được tiền huấn luyện trong suốt quá trình học có giám sát trên tác vụ hạ nguồn.
+GPT được đánh giá trên mười hai tác vụ về suy luận ngôn ngữ tự nhiên, trả lời câu hỏi, độ tương tự của câu, và bài toán phân loại, và cải thiện kết quả tân tiến nhất của chín tác vụ với những thay đổi tối thiểu đối với kiến ​​trúc mô hình.
 
 
 <!--
@@ -97,14 +106,16 @@ In contexts "i went to the bank to deposit cash" and "i went to the bank to sit 
 GPT will return the same representation for "bank", though it has different meanings.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, do tính chất tự hồi quy của các mô hình ngôn ngữ, GPT chỉ nhìn theo chiều xuôi (từ trái sang phải).
+Trong các ngữ cảnh "i went to the bank to deposit cash" ("tôi đến ngân hàng để gửi tiền mặt") và "i went to the bank to sit down"("tôi ra bờ hồ để ngồi"), do từ "bank" nhạy với ngữ cảnh bên trái,
+GPT sẽ trả về cùng một biểu diễn cho từ "bank", mặc dù nó có các ý nghĩa khác nhau.
 
 
 <!--
 ## BERT: Combining the Best of Both Worlds
 -->
 
-## *dịch đoạn phía trên*
+## BERT: Kết hợp những Điều Tốt nhất của cả Hai Phương pháp
 
 
 <!--
@@ -119,14 +130,23 @@ Second, all the parameters of the pretrained Transformer encoder are fine-tuned,
 :numref:`fig_elmo-gpt-bert` depicts the differences among ELMo, GPT, and BERT.
 -->
 
-*dịch đoạn phía trên*
+
+Như ta đã thấy, ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng các kiến ​​trúc chuyên biệt cho tác vụ; trong khi đó GPT có kiến trúc bất khả tri với tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
+Kết hợp những thứ tốt nhất của cả hai phương pháp trên, BERT (biểu diễn bộ mã hóa hai chiều từ Transformer)
+mã hóa ngữ cảnh theo hai chiều và yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên :cite:`Devlin.Chang.Lee.ea.2018`.
+Sử dụng bộ mã hóa Transformer được tiền huấn luyện, BERT có thể biểu diễn bất kỳ token nào dựa trên ngữ cảnh hai chiều của nó.
+Trong quá trình học có giám sát trên các tác vụ hạ nguồn, BERT tương tự như GPT ở hai khía cạnh.
+Đầu tiên, các biểu diễn BERT sẽ được truyền vào một tầng đầu ra được bổ sung, với những thay đổi tối thiểu đối với kiến ​​trúc mô hình tùy thuộc vào bản chất của tác vụ,
+chẳng hạn như dự đoán cho mỗi token với dự đoán cho toàn bộ chuỗi.
+Thứ hai, tất cả các tham số của bộ mã hóa Transformer được đào tạo trước đều được tinh chỉnh, trong khi tầng đầu ra bổ sung sẽ được huấn luyện từ đầu.
+:numref:`fig_elmo-gpt-bert` mô tả những điểm khác biệt giữa ELMo, GPT, và BERT.
 
 
 <!--
 ![A comparison of ELMo, GPT, and BERT.](../img/elmo-gpt-bert.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/elmo-gpt-bert.svg)
+![So sánh giữa ELMO, GPT, và BERT.](../img/elmo-gpt-bert.svg)
 :label:`fig_elmo-gpt-bert`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -628,7 +648,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * 
