@@ -19,7 +19,7 @@ As you can see, compared to object detection, semantic segmentation labels areas
 
 Khi thảo luận ở những phần trước về các vấn đề liên quan tới phát hiện vật thể, chúng ta chỉ sử dụng các khung chứa chữ nhật để gán nhãn và dự đoán các vật thể trong ảnh.
 Trong phần này, ta sẽ xem xét việc phân vùng theo ngữ nghĩa (*semantic segmentation*), tức là phân chia ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
-Các vùng ngữ nghĩa đó gán nhãn và dự đoán các đối tượng ở mức điểm ảnh.
+Các vùng ngữ nghĩa đó gán nhãn và dự đoán các đối tượng ở mức độ điểm ảnh.
 :numref:`fig_segmentation` minh họa một ảnh đã được phân vùng ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền".
 Như bạn có thể thấy, so với việc phát hiện vật thể, việc phân vùng theo ngữ nghĩa sẽ gán nhãn các vùng theo đường biên ở mức điểm ảnh, đem lại độ chính xác lớn hơn đáng kể.
 
@@ -60,12 +60,12 @@ In contrast to semantic segmentation, instance segmentation not only distinguish
 If an image contains two dogs, instance segmentation will distinguish which pixels belong to which dog.
 -->
 
-* Phân vùng ảnh chia một bức ảnh thành các vùng thành phần.
+* Phân vùng ảnh (*Image segmentation*) chia một bức ảnh thành các vùng thành phần.
 Phương pháp này thường sử dụng độ tương quan giữa các điểm ảnh trên ảnh.
 Trong suốt quá trình huấn luyện, nhãn cho các điểm ảnh là không cần thiết.
 Tuy nhiên, trong quá trình dự đoán, phương pháp này có thể không đảm bảo các vùng được phân chia chứa ngữ nghĩa mà ta mong muốn.
 Nếu ta đưa vào bức ảnh trong :numref:`fig_segmentation`, phân vùng ảnh có thể chia con chó thành hai vùng,
-một vùng bao phủ trên miệng và cặp mắt nơi màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú chó nơi màu vàng chiếm ưu thế.
+một vùng bao phủ phần miệng và cặp mắt nơi màu đen là chủ đạo và vùng thứ hai phủ trên phần còn lại của chú chó nơi màu vàng chiếm ưu thế.
 * Phân vùng thực thể còn được gọi là phát hiện và phân vùng đồng thời.
 Phương pháp này cố gắng xác định các vùng ở mức điểm ảnh theo từng đối tượng riêng biệt ngay trong ảnh.
 Khác với phân vùng theo ngữ nghĩa, phân vùng thực thể không chỉ phân biệt ngữ nghĩa mà còn cả các thực thể khác nhau.
