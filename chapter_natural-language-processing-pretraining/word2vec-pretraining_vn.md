@@ -273,7 +273,7 @@ Because of the existence of padding, the calculation of the loss function is sli
 -->
 
 Hàm huấn luyện được định nghĩa như phía dưới.
-Do có sự hiện hữu của đệm nên phép tính hàm mất mát có đôi chút khác biệt so với các hàm huấn luyện trước.
+Do có sự hiện hữu của phần đệm nên phép tính hàm mất mát có đôi chút khác biệt so với các hàm huấn luyện trước.
 
 
 ```{.python .input  n=21}
@@ -308,7 +308,7 @@ def train(net, data_iter, lr, num_epochs, device=d2l.try_gpu()):
 Now, we can train a skip-gram model using negative sampling.
 -->
 
-Giờ ta có thể huấn luyện một mô hình skip-gram sử dụng lấy mẫu âm.
+Giờ ta có thể huấn luyện một mô hình skip-gram sử dụng phương pháp lấy mẫu âm.
 
 
 ```{.python .input  n=22}
@@ -321,7 +321,7 @@ train(net, data_iter, lr, num_epochs)
 ## Applying the Word Embedding Model
 -->
 
-## Ứng dụng Mô hình Embedding Từ
+## Áp dụng Mô hình Embedding Từ
 
 
 <!--
@@ -353,7 +353,7 @@ get_similar_tokens('chip', 3, net[0])
 We can pretrain a skip-gram model through negative sampling.
 -->
 
-Ta có thể tiền huấn luyện một mô hình skip-gram thông qua lấy mẫu âm.
+Ta có thể tiền huấn luyện một mô hình skip-gram thông qua phương pháp lấy mẫu âm.
 
 
 ## Bài tập
@@ -370,12 +370,12 @@ What are the benefits of this sort of training? Try to implement this training m
 -->
 
 1. Đặt `sparse_grad=True` khi tạo một đối tượng `nn.Embedding`.
-Việc này có tăng tốc quá trình huấn luyện? Tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
+Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
 2. Bạn hãy cố gắng tìm từ đồng nghĩa cho các từ khác.
 3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
-4. Khi tập dữ liệu lớn, chỉ khi cập nhật tham số mô hình, ta thường lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện thời.
-Nói một cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
-Cách huấn luyện này có lợi ích gì? Hãy cố gắng lập trình phương pháp huấn luyện này.
+4. Khi tập dữ liệu lớn, thường thì chỉ khi cập nhật tham số mô hình ta mới lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện thời.
+Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
+Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -407,5 +407,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Đỗ Trường Giang
-
 
