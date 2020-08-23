@@ -279,7 +279,7 @@ As you can see, the height and width downsample block enlarges the receptive fie
 Với bài toán phát hiện vật thể đa tỷ lệ, ta định nghĩa khối `down_sample_blk` sau đây để giảm 50% chiều cao và chiều rộng. 
 Khối này bao gồm 2 tầng tích chập $3\times3$ với đệm bằng 1 và tầng gộp cực đại $2\times2$ với sải bước bằng 2 được kết nối tuần tự.
 Như ta đã biết, tầng tích chập $3\times3$ với đệm bằng 1 sẽ không thay đổi kích thước của ánh xạ đặc trưng.
-Tuy nhiên, tầng gộp cực đại tiếp theo giảm một nửa kích thước đặc trưng.
+Tuy nhiên, tầng gộp cực đại tiếp theo sẽ giảm một nửa kích thước của ánh xạ đặc trưng.
 Do $1\times 2+(3-1)+(3-1)=6$, mỗi phần tử trong ánh xạ đặc trưng đầu ra sẽ có vùng tiếp nhận với kích thước $6\times6$ trên ánh xạ đặc trưng đầu vào.
 Ta có thể thấy, khối giảm mẫu trên chiều cao và chiều rộng mở rộng vùng tiếp nhận của mỗi phần tử trong ánh xạ đặc trưng đầu ra.
 
@@ -300,7 +300,7 @@ By testing forward computation in the height and width downsample block, we can 
 -->
 
 
-Kiểm tra tính toán truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
+Kiểm tra tính toán của lượt truyền xuôi trong khối giảm chiều cao và chiều rộng, ta có thể thấy khối này thay đổi số kênh đầu vào và giảm một nửa chiều cao và chiều rộng.
 
 
 ```{.python .input  n=7}
@@ -325,7 +325,7 @@ When we input an original image with the shape $256\times256$, the base network 
 
 Khối mạng cơ sở được sử dụng để trích xuất đặc trưng từ ảnh gốc ban đầu.
 Để đơn giản hoá phép tính, ta sẽ xây dựng một mạng cơ sở nhỏ,
-bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi tầng.
+bao gồm các khối giảm chiều cao và chiều rộng được kết nối tuần tự sao cho số lượng kênh tăng gấp đôi sau mỗi bước.
 Khi ta truyền ảnh đầu vào có kích thước $256\times256$, khối mạng cơ sở sẽ cho ra ánh xạ đặc trưng có kích thước $32 \times 32$.
 
 
@@ -382,7 +382,7 @@ but also the anchor boxes of the current scale generated from `Y` and their pred
 -->
 
 Bây giờ, ta sẽ định nghĩa luợt truyền xuôi cho từng mô-đun.
-Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo ở tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
+Khác với các mạng nơ-ron tích chập đã mô tả trước đây, mô-đun này không chỉ trả về ánh xạ đặc trưng `Y` xuất ra từ phép tích chập, mà còn sinh ra  từ `Y` cả các khung neo của tỉ lệ hiện tại cùng với các dự đoán hạng mục và độ dời.
 
 
 ```{.python .input  n=10}
@@ -884,4 +884,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
-
