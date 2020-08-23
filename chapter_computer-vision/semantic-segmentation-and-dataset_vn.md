@@ -262,10 +262,10 @@ Specifically, we use the random cropping method used in image augmentation to cr
 -->
 
 Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
-Trong phân vùng theo ngữ nghĩa, phương pháp này yêu cầu ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc theo ảnh đầu vào.
-Sẽ rất khó để có thể thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
+Với phương pháp phân vùng theo ngữ nghĩa, ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc của ảnh đầu vào.
+Sẽ rất khó để thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
 Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỉ lệ ảnh.
-Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên mà đã được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
+Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
 
 
 
@@ -288,7 +288,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### Lớp Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
+### Các Lớp của Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
 
 
 <!--
@@ -298,10 +298,10 @@ As some images in the dataset may be smaller than the output dimensions specifie
 In addition, we define the `normalize_image` function to normalize each of the three RGB channels of the input images.
 -->
 
-Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để tuỳ chỉnh lớp tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
-Với việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập từ tập dữ liệu ảnh đầu vào với chỉ số `idx` và các chỉ số hạng mục của từng điểm ảnh trong ảnh đó.
-Do có một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra được chỉ định trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng cách tuỳ chỉnh hàm `filter`.
-Cộng với đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB một của các ảnh đầu vào.
+Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để tuỳ chỉnh tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
+Bằng việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập từ tập dữ liệu ảnh đầu vào với chỉ số `idx` và các chỉ số hạng mục của từng điểm ảnh trong ảnh đó.
+Do một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra mong muốn trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng hàm `filter`.
+Thêm vào đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB của các ảnh đầu vào.
 
 
 ```{.python .input  n=9}
@@ -353,8 +353,8 @@ Below, we can see the number of examples retained in the training and testing se
 -->
 
 Sử dụng lớp `VOCSegDataset` được tuỳ chỉnh ở trên, ta có thể khởi tạo đối tượng tập huấn luyện và tập kiểm tra.
-Ta giả sử rằng thao tác cắt ngẫu nhiên sản sinh ra ảnh có kích thước $320\times 480$.
-Dưới đây ta có thể quan sát số lượng ảnh được giữ lại trong tập huấn luyện và tập kiểm tra.
+Giả sử thao tác cắt ngẫu nhiên tạo ra ảnh có kích thước $320\times 480$.
+Dưới đây ta có thể thấy số lượng ảnh được giữ lại trong tập huấn luyện và tập kiểm tra.
 
 
 
@@ -373,7 +373,7 @@ In contrast to image classification and object recognition, labels here are thre
 
 Ta đặt kích thước batch là 64 và định nghĩa các iterator cho tập huấn luyện và tập kiểm tra.
 Sau đó ta sẽ in ra kích thước của minibatch đầu tiên.
-Trái lại so với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây có dạng mảng ba chiều.
+Khác với phân loại ảnh và nhận dạng vật thể, các nhãn ở đây là các mảng ba chiều.
 
 
 
@@ -433,8 +433,8 @@ def load_data_voc(batch_size, crop_size):
 -->
 
 * Phân vùng theo ngữ nghĩa tập trung vào việc phân vùng ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
-* Trong lĩnh vực phân vùng ảnh theo ngữ nghĩa, tập dữ liệu Pascal VOC2012 là một tập dữ liệu quan trọng.
-* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì thay đổi tỉ lệ của chúng.
+* Trong lĩnh vực này, Pascal VOC2012 là một tập dữ liệu quan trọng.
+* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì biến đổi tỉ lệ của chúng.
 
 
 ## Bài tập
@@ -445,8 +445,8 @@ Recall the content we covered in :numref:`sec_image_augmentation`.
 Which of the image augmentation methods used in image classification would be hard to use in semantic segmentation?
 -->
 
-Xem lại nội dung chúng tôi đã đưa ra trong :numref:`sec_image_augmentation`.
-Phương pháp tăng cường ảnh nào được sử dụng trong phân loại ảnh mà khó có thể sử dụng được trong phân vùng ảnh theo ngữ nghĩa?
+Xem lại nội dung được trình bày trong :numref:`sec_image_augmentation`.
+Phương pháp tăng cường ảnh nào sử dụng trong phân loại ảnh có thể khó sử dụng trong phân vùng ảnh theo ngữ nghĩa?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -468,19 +468,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 4 -->
-* 
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
