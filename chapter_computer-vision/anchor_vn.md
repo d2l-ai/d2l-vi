@@ -18,7 +18,7 @@ These bounding boxes are called anchor boxes.
 We will practice object detection based on anchor boxes in the following sections.
 -->
 
-Các giải thuật phát hiện vật thể thường lấy mẫu ở rất nhiều vùng của ảnh đầu vào, rồi xác định các vùng đó có chứa đối tượng cần quan tâm hay không, và điều chỉnh các biên của vùng lấy mẫu này để dự đoán một cách chính xác các khung chứa chuẩn của đối tượng.
+Các giải thuật phát hiện vật thể thường lấy mẫu ở rất nhiều vùng của ảnh đầu vào, rồi xác định xem các vùng đó có chứa đối tượng cần quan tâm hay không, và điều chỉnh biên của vùng lấy mẫu này để dự đoán khung chứa nhãn gốc của đối tượng một cách chính xác hơn.
 Các mô hình khác nhau có thể dùng các phương pháp lấy mẫu vùng ảnh khác nhau.
 Ở đây, chúng tôi sẽ giới thiệu một phương pháp đó là: tạo ra nhiều khung chứa với kích thước và tỉ lệ cạnh khác nhau với tâm trên từng điểm ảnh.
 Các khung chứa đó được gọi là các khung neo.
@@ -123,7 +123,7 @@ The coordinate values of the $x$ and $y$ axis are divided by the width and heigh
 Ta có thể thấy rằng kích thước của khung neo được trả về ở biến `y` là (kích thước batch, số khung neo, 4).
 Sau khi thay đổi kích thước của `y` thành (chiều cao ảnh, chiều rộng ảnh, số khung neo có tâm trên cùng một điểm ảnh, 4), ta sẽ thu được tất cả các khung neo với tâm ở một vị trí điểm ảnh nhất định.
 Trong phần ví dụ dưới đây, ta truy xuất khung neo đầu tiên có tâm tại vị trí (250, 250).
-Nó có bốn phần tử: các trục tọa độ $x, y$ ở góc trên bên trái và các trục tọa độ $x, y$ ở góc dưới bên phải của khung neo.
+Nó có bốn phần tử: tọa độ trục $x, y$ ở góc trên bên trái và tọa độ trục $x, y$ ở góc dưới bên phải của khung neo.
 Tọa độ của các trục $x$ và $y$ được chia lần lượt cho chiều rộng và độ cao của ảnh, do đó giá trị của chúng sẽ nằm trong khoảng 0 và 1.
 
 
@@ -203,8 +203,8 @@ We know that the Jaccard index can measure the similarity between two sets.
 Given sets $\mathcal{A}$ and $\mathcal{B}$, their Jaccard index is the size of their intersection divided by the size of their union:
 -->
 
-Chúng ta chỉ mới đề cập rằng khung neo đó bao phủ tốt hình ảnh chú chó.
-Nếu ta biết khung chứa nhãn gốc của đối tượng, thì làm thế nào để định lượng được “mức độ tốt” ở đây? Một phương pháp đơn giản là đo độ tương đồng giữa các khung neo và khung chứa nhãn gốc.
+Chúng ta chỉ mới đề cập rằng khung neo đó bao quanh tốt chú chó trong ảnh.
+Nếu ta biết khung chứa nhãn gốc của đối tượng, làm thế nào để định lượng được “mức độ tốt” ở đây? Một phương pháp đơn giản là đo độ tương đồng giữa các khung neo và khung chứa nhãn gốc.
 Chúng ta biết rằng hệ số Jaccard có thể đo lường sự tương đồng giữa hai tập dữ liệu.
 Với hai tập hợp $\mathcal{A}$ và $\mathcal{B}$, chỉ số Jaccard của chúng là kích thước của phần giao trên kích thước của phần hợp:
 
@@ -222,7 +222,7 @@ The value range of IoU is between 0 and 1: 0 means that there are no overlapping
 
 Trong thực tế, chúng ta có thể coi vùng điểm ảnh trong khung chứa là một tập hợp các điểm ảnh.
 Theo cách này, chúng ta có thể đo lường được tính tương đồng của hai khung chứa bằng hệ số Jaccard của các tập điểm ảnh tương ứng.
-Khi đo sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được xem như là Giao trên Hợp (*Intersection over Union - IoU*), tức là tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, được thể hiện trong :numref:`fig_iou`.
+Khi đo sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được gọi là Giao trên Hợp (*Intersection over Union - IoU*), tức tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, được thể hiện trong :numref:`fig_iou`.
 Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 có nghĩa là không có điểm ảnh nào giao nhau giữa hai khung chứa, trong khi đó giá trị 1 chỉ ra rằng hai khung chứa ấy hoàn toàn trùng nhau.
 
 
@@ -230,7 +230,7 @@ Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 c
 ![IoU is the ratio of the intersecting area to the union area of two bounding boxes.](../img/iou.svg)
 -->
 
-![IoU là tỷ lệ giữa vùng giao trên vùng hợp của hai khung chứa.](../img/iou.svg)
+![IoU là tỉ lệ giữa vùng giao trên vùng hợp của hai khung chứa.](../img/iou.svg)
 :label:`fig_iou`
 
 
@@ -238,7 +238,7 @@ Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 c
 For the remainder of this section, we will use IoU to measure the similarity between anchor boxes and ground-truth bounding boxes, and between different anchor boxes.
 -->
 
-Trong phần còn lại, chúng ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa nhãn gốc, và giữa các khung neo với nhau. 
+Trong phần còn lại, chúng ta sẽ dùng IoU để đo sự tương đồng giữa các khung neo với khung chứa nhãn gốc và giữa các khung neo với nhau. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
