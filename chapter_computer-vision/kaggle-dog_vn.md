@@ -558,4 +558,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
 * Nguyễn Văn Quang
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
