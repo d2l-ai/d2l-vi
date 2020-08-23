@@ -308,7 +308,7 @@ In addition, the model calculates the accuracy based on whether the prediction c
 Bây giờ ta có thể bắt đầu huấn luyện mô hình.
 Hàm mất mát và hàm tính độ chính xác được sử dụng ở đây không quá khác biệt so với các hàm được sử dụng trong bài toán phân loại ảnh.
 Vì ta sử dụng kênh của tầng tích chập chuyển vị để dự đoán hạng mục cho điểm ảnh, tham số `axis=1` (chiều kênh) được định rõ trong `SoftmaxCrossEntropyLoss`.
-Thêm vào đó, mô hình tính toán độ chính xác dựa trên hạng mục của từng điểm ảnh có được dự đoán đúng hay không.
+Thêm vào đó, dựa trên hạng mục của từng điểm ảnh có được dự đoán đúng hay không mà mô hình sẽ tính toán độ chính xác.
 
 
 ```{.python .input  n=12}
@@ -332,7 +332,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 During predicting, we need to standardize the input image in each channel and transform them into the four-dimensional input format required by the convolutional neural network.
 -->
 
-Trong pha dự đoán, ta cần chuẩn tắc hoá ảnh đầu vào theo từng kênh và chuyển đổi chúng thành tensor 4 chiều như yêu cầu của mạng nơ-ron tích chập.
+Trong quá trình dự đoán, ta cần chuẩn tắc hoá ảnh đầu vào theo từng kênh và chuyển đổi chúng thành tensor 4 chiều như yêu cầu của mạng nơ-ron tích chập.
 
 
 ```{.python .input  n=13}
@@ -370,11 +370,11 @@ When a pixel is covered by multiple areas, the average of the transposed convolu
 of the different areas can be used as an input for the softmax operation to predict the category.
 -->
 
-Kích thước và hình dạng của ảnh trong tập kiểm tra là khác nhau.
+Kích thước và hình dạng của ảnh trong tập kiểm tra không cố định.
 Vì mô hình sử dụng tầng tích chập chuyển vị với sải bước bằng 32, nên khi chiều cao và chiều rộng của ảnh đầu vào không chia hết cho 32 thì chiều cao và chiều rộng của đầu ra tầng tích chập chuyển vị sẽ chênh lệch so với kích thước của ảnh đầu vào.
 Để giải quyết vấn đề này, ta có thể cắt nhiều vùng hình chữ nhật trong ảnh với chiều cao và chiều rộng chia hết cho 32, sau đó thực hiện lượt truyền xuôi trên các điểm ảnh của những vùng này. 
 Khi kết hợp các kết quả lại, các vùng này sẽ khôi phục lại toàn bộ ảnh đầu vào.
-Khi một điểm ảnh nằm trong nhiều vùng khác nhau, có thể lấy trung bình đầu ra qua tầng tích chập chuyển vị của điểm ảnh đó trên tất cả các vùng làm đầu vào cho phép toán softmax để dự đoán hạng mục.
+Khi một điểm ảnh nằm trong nhiều vùng khác nhau, trung bình đầu ra của tầng tích chập chuyển vị sau lan truyền xuôi của các vùng khác nhau có thể được sử dụng để làm đầu vào cho phép toán softmax nhằm dự đoán hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
