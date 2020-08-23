@@ -300,7 +300,7 @@ In addition, we define the `normalize_image` function to normalize each of the t
 
 Ta kế thừa lớp `Dataset` cung cấp bởi Gluon để tuỳ chỉnh tập dữ liệu phân vùng theo ngữ nghĩa `VOCSegDataset`.
 Bằng việc lập trình hàm `__getitem__`, ta có thể tuỳ ý truy cập từ tập dữ liệu ảnh đầu vào với chỉ số `idx` và các chỉ số hạng mục của từng điểm ảnh trong ảnh đó.
-Do một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng hàm `filter`.
+Do một số ảnh trong tập dữ liệu có thể nhỏ hơn chiều đầu ra mong muốn trong phép cắt ngẫu nhiên, ta cần loại bỏ các ví dụ đó bằng hàm `filter`.
 Thêm vào đó, ta định nghĩa hàm `normalize_image` để chuẩn hoá từng kênh RGB của các ảnh đầu vào.
 
 
