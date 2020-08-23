@@ -157,7 +157,6 @@ Since we have generated anchor boxes of different sizes on multiple scales, we w
 Now we are going to introduce a method based on convolutional neural networks (CNNs).
 -->
 
-
 Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều tỉ lệ khác nhau.
 Bây giờ chúng tôi sẽ giới thiệu một phương pháp dựa vào mạng nơ-ron tích chập (CNNs).
 
@@ -180,7 +179,7 @@ At the current scale, the object detection model needs to predict the category a
 có kích thước $h \times w$ và số khung neo của mỗi tập hợp là $a$.
 Ví dụ, đối với tỉ lệ đầu tiên trong thí nghiệm này, ta sinh 16 tập hợp khung neo với
 các tâm khác nhau dựa vào 10 (số kênh) ánh xạ đặc trưng có kích thước $4 \times 4$, và mỗi tập hợp bao gồm 3 khung neo.
-Tiếp theo, mỗi khung neo được gán nhãn bằng một danh mục và độ dời dựa vào danh mục phân loại và vị trí của khung chứa nhãn gốc.
+Tiếp theo, mỗi khung neo được gán nhãn bằng một danh mục và độ dời dựa vào danh mục được phân loại và vị trí của khung chứa nhãn gốc.
 Với tỉ lệ hiện tại, mô hình phát hiện vật thể cần phải dự đoán danh mục và độ dời của $h \times w$ tập hợp khung neo với các tâm khác nhau dựa vào ảnh đầu vào.
 
 
@@ -241,7 +240,7 @@ What methods can you think of to convert this variable into the anchor box's cat
 -->
 
 Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng với $c_i, h, w$ lần lượt là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
-Liệu có phương pháp nào để chuyển đổi biến này thành danh mục và độ dời của một khung neo không? Kích thước của đầu ra là gì?
+Liệu có phương pháp nào để chuyển đổi biến này thành danh mục và độ dời của một khung neo không? Kích thước của đầu ra là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
