@@ -319,7 +319,7 @@ và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho
 Gluon cung cấp một số mô hình đã được tiền huấn luyện.
 Ở đây, ta sử dụng mô hình ResNet-34 đã được tiền huấn luyện.
 Do dữ liệu của cuộc thi là tập con của tập dữ liệu tiền huấn luyện, ta đơn thuần sử dụng lại đầu vào của tầng đầu ra mô hình đã được tiền huấn luyện làm đặc trưng được được trích xuất.
-Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ.
+Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ.
 Khác với thí nghiệm trong :numref:`sec_fine_tuning`, ở đây ta không huấn luyện lại mô hình trích xuất đặc trưng đã được tiền huấn luyện.
 Điều này giúp giảm thời gian huấn luyện và bộ nhớ cần thiết để lưu trữ gradient của tham số mô hình.
 
@@ -330,7 +330,7 @@ This is consistent with the normalization of the pre-trained model.
 -->
 
 Bạn đọc lưu ý trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hoá.
-Điều này nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
+Điều này giúp dữ liệu nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -521,7 +521,7 @@ This will allow us to classify a subset of the ImageNet dataset with lower compu
 -->
 
 * Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tuỳ biến cỡ nhỏ. 
-* Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phép bộ nhớ và tính toán thấp hơn.
+* Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phí bộ nhớ và tính toán thấp hơn.
 
 
 ## Bài tập
