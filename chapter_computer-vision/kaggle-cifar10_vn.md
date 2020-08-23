@@ -28,7 +28,7 @@ The competition's web address is
 
 Chúng ta thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
 Đây là một tập dữ liệu quan trọng trong lĩnh vực thị giác máy tính.
-Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi trên Kaggle, để giải quyết các bài toán phân loại tập ảnh CIFAR-10.
+Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi phân loại tập ảnh CIFAR-10 trên Kaggle.
 Địa chỉ trang web của cuộc thi tại 
 
 > https://www.kaggle.com/c/cifar-10
@@ -90,10 +90,10 @@ The images cover $10$ categories: planes, cars, birds, cats, deer, dogs, frogs, 
 The upper-left corner of :numref:`fig_kaggle_cifar10` shows some images of planes, cars, and birds in the dataset.
 -->
 
-Dữ liệu thi đấu được chia thành tập huấn luyện và tập kiểm thử.
+Dữ liệu cuộc thi được chia thành tập huấn luyện và tập kiểm tra.
 Tập huấn luyện chứa $50,000$ ảnh.
-Tập kiểm thử chứa $300,000$ ảnh, trong đó $10,000$ ảnh được sử dụng để tính điểm,
-$290,000$ ảnh còn lại dùng để ngăn ngừa việc gán nhãn thủ công vào tập kiểm thử rồi nộp kết quả đã gán nhãn.
+Tập kiểm tra chứa $300,000$ ảnh, trong đó $10,000$ ảnh được sử dụng để tính điểm,
+$290,000$ ảnh còn lại dùng để ngăn ngừa việc gán nhãn thủ công vào tập kiểm tra rồi nộp kết quả đã gán nhãn.
 Định dạng ảnh trong cả hai tập dữ liệu là PNG, với chiều cao và chiều rộng là 32 pixel với ba kênh màu (RGB).
 Các ảnh được phân thành $10$ hạng mục: máy bay, xe hơi, chim, mèo, nai, chó, ếch, ngựa, thuyền và xe tải.
 Góc trên-bên trái của :numref:`fig_kaggle_cifar10` hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
@@ -280,8 +280,8 @@ We use $10\%$ of the training examples as the validation set for tuning hyperpar
 -->
 
 Chúng ta chỉ thiết lập kích thước batch là $4$ đối với tập dữ liệu chạy thử.
-Trong suốt quá trình huấn luyện và kiểm thử thật sự, nên sử dụng tập huấn luyện đầy đủ của cuộc thi Kaggle và `batch_size` nên được được thiết lập một giá trị số nguyên lớn hơn như là $128$.
-Ta sử dụng $10\%$ số lượng mẫu huấn luyện làm tập kiểm định để tinh chỉnh các siêu tham số.
+Trong suốt quá trình huấn luyện và kiểm thử thật sự, nên sử dụng tập huấn luyện đầy đủ của cuộc thi Kaggle và `batch_size` nên được thiết lập một giá trị số nguyên lớn hơn như là $128$.
+Ta sử dụng $10\%$ mẫu huấn luyện làm tập kiểm định để tinh chỉnh các siêu tham số.
 
 
 ```{.python .input  n=4}
