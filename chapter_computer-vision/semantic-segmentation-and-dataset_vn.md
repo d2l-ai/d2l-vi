@@ -288,7 +288,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### Lớp Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
+### Các Lớp của Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
 
 
 <!--
