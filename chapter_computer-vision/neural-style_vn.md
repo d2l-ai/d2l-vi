@@ -17,9 +17,9 @@ This process is as complex as tuning the hyperparameters of a model.
 -->
 
 Nếu có sử dụng các ứng dụng mạng xã hội hoặc là một nhiếp ảnh gia không chuyên, chắc hẳn bạn cũng đã quen thuộc với kính lọc (*filter*).
-Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc mặt của những người trong ảnh trở nên trắng trẻo hơn.
+Kính lọc có thể biến đổi tông màu của ảnh để làm cho khung cảnh phía sau sắc nét hơn hoặc khuôn mặt của những người trong ảnh trở nên trắng trẻo hơn.
 Tuy nhiên, thường một kính lọc chỉ có thể thay đổi một khía cạnh của bức ảnh.
-Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm với nhiều cách kết hợp kính lọc khác nhau.
+Để có được bức ảnh hoàn hảo, ta thường phải thử nghiệm kết hợp nhiều kính lọc khác nhau.
 Quá trình này phức tạp ngang với việc tinh chỉnh siêu tham số của mô hình.
 
 <!--
@@ -38,7 +38,7 @@ Trong phần này, ta sẽ thảo luận cách sử dụng mạng nơ-ron tích 
 Ta sẽ dùng mạng nơ-ron để biến đổi ảnh nội dung sao cho phong cách của nó giống như ảnh phong cách đã cho.
 Trong :numref:`fig_style_transfer`, ảnh nội dung là một bức ảnh phong cảnh được tác giả chụp ở công viên quốc gia Mount Rainier, gần Seattle.
 Ảnh phong cách là một bức tranh sơn dầu vẽ cây gỗ sồi vào mùa thu.
-Đầu ra là một ảnh kết hợp giữ lại được các hình dạng tổng thể của các vật trong ảnh nội dung, nhưng được áp dụng phong cách tranh sơn dầu của ảnh phong cách và giúp cho màu sắc trở nên sống động hơn.
+Ảnh kết hợp đầu ra giữ lại được hình dạng tổng thể của các vật trong ảnh nội dung, nhưng được áp dụng phong cách tranh sơn dầu của ảnh phong cách, nhờ đó khiến màu sắc tổng thể trở nên sống động hơn.
 
 <!--
 ![Content and style input images and composite image produced by style transfer.](../img/style-transfer.svg)
@@ -105,7 +105,7 @@ Cuối cùng, sau khi huấn luyện xong, ta sẽ có tham số của mô hình
 Next, we will perform an experiment to help us better understand the technical details of style transfer.
 -->
 
-Tiếp theo, ta sẽ thực hiện một thí nghiệm để giúp hiểu rõ hơn các chi tiết kỹ thuật của truyền tải phong cách.
+Tiếp theo, ta sẽ thực hiện một thí nghiệm để hiểu rõ hơn các chi tiết kỹ thuật của truyền tải phong cách.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -116,7 +116,7 @@ Tiếp theo, ta sẽ thực hiện một thí nghiệm để giúp hiểu rõ h�
 ## Reading the Content and Style Images
 -->
 
-## Đọc ảnh nội dung và ảnh phong cách
+## Đọc ảnh Nội dung và Ảnh phong cách
 
 
 <!--
@@ -124,7 +124,7 @@ First, we read the content and style images.
 By printing out the image coordinate axes, we can see that they have different dimensions.
 -->
 
-Trước hết, ta đọc các ảnh nội dung và ảnh phong cách.
+Trước hết, ta đọc ảnh nội dung và ảnh phong cách.
 Bằng cách in ra các trục tọa độ ảnh, ta có thể thấy rằng chúng có các chiều khác nhau.
 
 
@@ -151,7 +151,7 @@ d2l.plt.imshow(style_img.asnumpy());
 ## Preprocessing and Postprocessing
 -->
 
-## Tiền xử lý và hậu xử lý
+## Tiền xử lý và Hậu xử lý
 
 <!--
 Below, we define the functions for image preprocessing and postprocessing. 
@@ -163,7 +163,7 @@ we use the `clip` function to replace values smaller than 0 or greater than 1 wi
 
 Dưới đây, ta định nghĩa các hàm tiền xử lý và hậu xử lý ảnh.
 Hàm `preprocess` chuẩn hóa các kênh RGB của ảnh đầu vào và chuyển kết quả sang định dạng có thể đưa vào mạng CNN.
-Hàm `postprocess` khôi phục các giá trị điểm ảnh của ảnh đầu ra về các giá trị gốc của nó trước khi chuẩn hóa.
+Hàm `postprocess` khôi phục các giá trị điểm ảnh của ảnh đầu ra về các giá trị gốc trước khi chuẩn hóa.
 Vì hàm in ảnh đòi hỏi mỗi điểm ảnh có giá trị thực từ 0 tới 1,
 ta sử dụng hàm `clip` để thay thế các giá trị nhỏ hơn 0 hoặc lớn hơn 1 lần lượt bằng 0 hoặc 1.
 
