@@ -13,7 +13,10 @@ Given rich text in social media, chat apps, emails, product reviews, news articl
 it becomes vital to enable computers to understand them to offer assistance or make decisions based on human languages.
 -->
 
-*dịch tiêu đề phía trên*
+Con người có nhu cầu giao tiếp.
+Chính từ nhu cầu cơ bản của loài người này, có một lượng lớn dữ liệu văn bản được tạo ra hàng ngày.
+Với một lượng dữ liệu văn bản đa dạng trên mạng xã hội, ứng dụng trò chuyện, email, đánh giá sản phẩm, tài liệu nghiên cứu, và sách báo,
+khá là quan trọng để giúp máy tính hiểu những dữ liệu này nhằm đưa ra hỗ trợ hoặc đưa ra quyết định dựa trên ngôn ngữ của con người.
 
 
 <!--
