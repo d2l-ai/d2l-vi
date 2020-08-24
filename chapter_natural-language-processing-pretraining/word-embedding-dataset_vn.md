@@ -361,7 +361,7 @@ all_negatives = get_negatives(all_contexts, corpus, 5)
 ### Reading into Batches
 -->
 
-### Đọc dữ liệu trong nhiều batch
+### Đọc Dữ liệu thành Batch
 
 
 <!--
@@ -370,7 +370,7 @@ We will read them in random minibatches.
 -->
 
 Chúng ta trích xuất tất cả các từ đích trung tâm `all_centers`và các từ ngữ cảnh `all_contexts` và những từ nhiễu của mỗi từ đích trung tâm trong tập dữ liệu.
-Chúng ta sẽ đọc chúng trong các minibatch ngẫu nhiên.
+Chúng ta sẽ đọc chúng thành các minibatch ngẫu nhiên.
 
 
 <!--
@@ -387,17 +387,17 @@ Based on the construction of the mask variable, we only need to create a label v
 as the `contexts_negatives` variable and set the elements corresponding to context words (positive examples) to 1, and the rest to 0.
 -->
 
-Trong một minibatch dữ liệu, ví dụ $i^\mathrm{th}$ bao gồm một từ trung tâm và các từ ngữ cảnh $n_i$ tương ứng với nó và các từ nhiễu $m_i$.
-Do kích thước cửa sổ ngữ cảnh của mỗi ví dụ có thể khác nhau, nên tổng số từ ngữ cảnh và từ nhiễu, $n_i+m_i$, cũng sẽ khác nhau.
-Khi tạo một minibatch, chúng ta nối các từ ngữ cảnh và các từ nhiễu của mỗi ví dụ,
-và thêm các số 0 cho đệm cho đến khi độ dài của các đoạn ghép bằng nhau, nghĩa là độ dài của tất cả các đoạn nối là $\max_i n_i+m_i$(`max_len`).
+Trong một minibatch dữ liệu, mẫu thứ $i$ bao gồm một từ đích trung tâm và các từ ngữ cảnh $n_i$ và các từ nhiễu $m_i$ tương ứng với từ đích trung tâm đó.
+Do kích thước cửa sổ ngữ cảnh của mỗi mẫu có thể khác nhau, nên tổng số từ ngữ cảnh và từ nhiễu, $n_i+m_i$, cũng sẽ khác nhau.
+Khi tạo một minibatch, chúng ta nối (*concatenate*) các từ ngữ cảnh và các từ nhiễu của mỗi mẫu,
+và đệm 0 để độ dài của các đoạn nối bằng nhau, tức bằng $\max_i n_i+m_i$(`max_len`).
 Nhằm tránh ảnh hưởng của phần đệm lên việc tính toán hàm mất mát, chúng ta tạo dựng một biến mặt nạ `masks`,
-mỗi phần tử trong số đó tương ứng với một phần tử trong phần nối giữa ngữ cảnh và từ nhiễu, `contexts_negatives`.
-Khi một phần tử trong biến `contexts_negatives` là một phần đệm, thì phần tử trong biến mặt nạ `masks` ở cùng một vị trí sẽ là 0.
+mỗi phần tử trong đó tương ứng với một phần tử trong phần nối giữa ngữ cảnh và từ nhiễu, `contexts_negatives`.
+Khi một phần tử trong biến `contexts_negatives` là một phần đệm, thì phần tử trong biến mặt nạ `masks` ở vị trí đó sẽ là 0.
 Nếu không, nó nhận giá trị 1.
-Để phân biệt giữa các mẩu ví dụ tích cực và tiêu cực, chúng ta cũng cần phân biệt các từ ngữ cảnh với các từ nhiễu trong biến `contexts_negatives`.
+Để phân biệt giữa các mẫu dương và âm, chúng ta cũng cần phân biệt các từ ngữ cảnh với các từ nhiễu trong biến `contexts_negatives`.
 Dựa trên cấu tạo của biến mặt nạ, chúng ta chỉ cần tạo một biến nhãn `labels` có cùng kích thước
-dưới dạng biến `contexts_negatives` và đặt giá trị các phần tử tương ứng với các từ ngữ cảnh (ví dụ tích cực) bằng 1 và phần còn lại bằng 0.
+với biến `contexts_negatives` và đặt giá trị các phần tử tương ứng với các từ ngữ cảnh (mẫu dương) bằng 1 và phần còn lại bằng 0.
 
 
 <!--
@@ -407,8 +407,8 @@ The minibatch data returned by this function conforms to the format we need, for
 -->
 
 Tiếp đó, chúng ta sẽ triển khai chức năng đọc minibatch `batchify`.
-Đầu vào minibatch `data` của nó là một danh sách có độ dài là kích thước của một batch, mỗi phần tử trong đó chứa các từ đích trung tâm `center`, các từ ngữ cảnh `context` và các từ nhiễu `negavtive`.
-Dữ liệu trong minibatch được trả về bởi hàm này đều tuân theo định dạng mà chúng ta cần đến, ví dụ là nó bao gồm biến mặt nạ.
+Đầu vào minibatch `data` của nó là một danh sách có độ dài là kích thước batch, mỗi phần tử trong đó chứa các từ đích trung tâm `center`, các từ ngữ cảnh `context` và các từ nhiễu `negative`.
+Dữ liệu trong minibatch được trả về bởi hàm này đều tuân theo định dạng mà chúng ta cần, ví dụ, bao gồm biến mặt nạ.
 
 
 ```{.python .input  n=14}
@@ -559,5 +559,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
