@@ -559,15 +559,14 @@ def train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
 Now, we can train and validate the model.
 The following hyperparameters can be tuned.
 For example, we can increase the number of epochs.
-Because `lr_period` and `lr_decay` are set to 80 and 0.1 respectively, the learning rate of the optimization algorithm will be multiplied by 0.1 after every 80 epochs.
+Because `lr_period` and `lr_decay` are set to 50 and 0.1 respectively, the learning rate of the optimization algorithm will be multiplied by 0.1 after every 50 epochs.
 For simplicity, we only train one epoch here.
 -->
 
 Bây giờ ta có thể huấn luyện và kiểm định mô hình.
-Các siêu tham số sau có thể được điều chỉnh.
-Ví dụ, ta có thể tăng số epoch.
-Do `lr_period` và `lr_decay` được đặt lần lượt bằng 80 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 80 epoch.
-Để đơn giản hoá, ở đây ta chỉ huấn luyện một epoch.
+Các siêu tham số sau có thể được điều chỉnh: `num_epochs`, `lr_period` và `lr_decay`.
+Ta có thể tăng số epoch. Để đơn giản, ở đây ta chỉ huấn luyện 5 epoch.
+Do `lr_period` và `lr_decay` được đặt lần lượt bằng 50 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 50 epoch. <!--cho match code-->
 
 
 ```{.python .input  n=13}
@@ -643,10 +642,10 @@ See what accuracy and ranking you can achieve in this competition.
 3. Scan the QR code to access the relevant discussions and exchange ideas about the methods used and the results obtained with the community. Can you come up with any better techniques?
 -->
 
-1. Sử dụng tập dữ liệu CIFAR-10 đầy đủ cho cuộc thi trên Kaggle. Thay đổi `batch_size` và số epoch `num_epochs` lần lượt bằng 128 và 100.
-Quan sát độ chính xác và xem bạn có thể đạt xếp hạng thứ bao nhiêu trong cuộc thi này.
+1. Sử dụng tập dữ liệu CIFAR-10 đầy đủ cho cuộc thi trên Kaggle. Thay đổi `batch_size` và `num_epochs` lần lượt bằng 128 và 100.
+Quan sát độ chính xác và xem bạn có thể đạt thứ hạng bao nhiêu trong cuộc thi này.
 2. Bạn có thể đạt độ chính xác bằng bao nhiêu nếu không sử dụng tăng cường ảnh?
-3. Quét mã QR để truy cập các bài thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
+3. Quét mã QR để truy cập các thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -667,19 +666,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
 * Phạm Hồng Vinh
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-
-<!-- Phần 5 -->
-* Đỗ Trường Giang
