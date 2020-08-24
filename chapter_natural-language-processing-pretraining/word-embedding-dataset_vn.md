@@ -161,7 +161,7 @@ d2l.plt.legend(['origin', 'subsampled']);
 For individual tokens, the sampling rate of the high-frequency word "the" is less than 1/20.
 -->
 
-Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tuần suất cao như từ "the" nên nhỏ hơn 1/20.
+Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tuần suất cao như từ "the" nhỏ hơn 1/20.
 
 ```{.python .input  n=6}
 def compare_counts(token):
@@ -545,5 +545,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
