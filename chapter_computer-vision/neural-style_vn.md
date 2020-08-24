@@ -548,7 +548,7 @@ Therefore, we call the `waitall` synchronization function during every epoch.
 
 Trong suốt quá trình huấn luyện mô hình, ta liên tục trích xuất các đặc trưng nội dung và đặc trưng phong cách của ảnh tổng hợp và tính toán hàm mất mát.
 Nhớ lại thảo luận về cách mà các hàm đồng bộ hoá buộc front-end phải chờ kết quả tính toán trong :numref:`sec_async`.
-Do ta chỉ gọi hàm đồng bộ hoá `asnumpy` sau mỗi 10 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ. <!-- bản gốc sai, sửa lại theo code phía dưới https://github.com/d2l-ai/d2l-en/pull/1350/files -->
+Vì ta chỉ gọi hàm đồng bộ hoá `asnumpy` sau mỗi 10 epoch, quá trình huấn luyện có thể chiếm dụng lượng lớn bộ nhớ. <!-- bản gốc sai, sửa lại theo code phía dưới https://github.com/d2l-ai/d2l-en/pull/1350/files -->
 Do đó, ta gọi đến hàm đồng bộ hoá `waitall` tại tất cả các epoch.
 
 
@@ -636,7 +636,7 @@ The composite image not only has large blocks of color like the style image, but
 -->
 
 Như bạn có thể thấy, mỗi epoch cần nhiều thời gian hơn do kích thước ảnh lớn hơn.
-Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
+Có thể thấy trong :numref:`fig_style_transfer_large`, ảnh tổng hợp được sinh ra giữ lại nhiều chi tiết hơn nhờ có kích thước lớn hơn.
 Ảnh tổng hợp không những có các khối màu giống như ảnh phong cách, mà các khối này còn có hoa văn phảng phất nét vẽ bút lông.
 
 
@@ -666,12 +666,12 @@ Như thể hiện trong :numref:`fig_style_transfer_large`, ảnh tổng hợp �
 * We use a Gram matrix to represent the style output by the style layers.
 -->
 
-* Các hàm mất mát được sử dụng trong truyền tải phong cách thường bao gồm ba phần:
-  1. Mất mát nội dung được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng về nội dung trong ảnh nội dung.
-  2. Mất mát phong cách được sử dụng để cho ảnh tổng hợp xấp xỉ các đặc trưng phong cách trong ảnh phong cách.
+* Các hàm mất mát được sử dụng trong truyền tải phong cách nhìn chung bao gồm ba phần:
+  1. Mất mát nội dung được sử dụng để biến đổi ảnh tổng hợp gần giống ảnh nội dung dựa trên đặc trưng nội dung.
+  2. Mất mát phong cách được sử dụng để biến đổi ảnh tổng hợp gần giống ảnh phong cách dựa trên đặc trưng phong cách.
   3. Mất mát biến thiên toàn phần giúp giảm nhiễu trong ảnh tổng hợp.
-* Ta có thể sử dụng CNN đã được tiền huấn luyện để trích xuất đặc trưng ảnh và cực tiểu hoá hàm mất mát để liên tục cập nhật ảnh tổng hợp.
-* Ta sử dụng ma trận Gram để biểu diễn phong cách đưa ra bởi các tầng phong cách.
+* Ta có thể sử dụng CNN đã qua tiền huấn luyện để trích xuất đặc trưng ảnh và cực tiểu hoá hàm mất mát, nhờ đó liên tục cập nhật ảnh tổng hợp.
+* Ta sử dụng ma trận Gram để biểu diễn phong cách đầu ra của các tầng phong cách.
 
 
 ## Bài tập
@@ -727,3 +727,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
+* Phạm Minh Đức
+* Phạm Hồng Vinh
