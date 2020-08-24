@@ -330,7 +330,7 @@ As we can see, when using the trained word embedding model, the words closest in
 -->
 
 Sau khi huấn luyện mô hình embedding từ, ta có thể biểu diễn sự tương đồng về nghĩa giữa các từ dựa trên độ tương đồng cô-sin giữa hai vector từ.
-Như ta có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chíp xử lý.
+Như ta có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chip xử lý.
 
 
 ```{.python .input  n=23}
