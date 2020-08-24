@@ -26,8 +26,8 @@ The dataset used in this competition is actually a subset of the famous ImageNet
 Different from the images in the CIFAR-10 dataset used in the previous section, the images in the ImageNet dataset are higher and wider and their dimensions are inconsistent.
 -->
 
-Trong cuộc thi này, ta cần cố gắng nhận diện 120 giống chó khác nhau.
-Tập dữ liệu trong cuộc thi này thực chất là một tập hợp con của tập dữ liệu ImageNet nổi tiếng.
+Trong cuộc thi này, ta cần nhận diện 120 giống chó khác nhau.
+Tập dữ liệu trong cuộc thi này thực chất là một tập con của tập dữ liệu ImageNet nổi tiếng.
 Khác với ảnh trong tập dữ liệu CIFAR-10 được sử dụng trong phần trước, các ảnh trong tập dữ liệu ImageNet có chiều dài và chiều rộng lớn hơn, đồng thời kích thước của chúng không nhất quán.
 
 
@@ -37,7 +37,7 @@ In order to submit the results, please register an account on the Kaggle website
 -->
 
 :numref:`fig_kaggle_dog` mô tả thông tin trên trang web của cuộc thi.
-Để có thể nộp kết quả, trước tiên xin vui lòng đăng kí tài khoảng trên trang web của Kaggle.
+Để có thể nộp kết quả, trước tiên vui lòng đăng kí tài khoảng trên Kaggle.
 
 
 <!--
@@ -75,7 +75,7 @@ npx.set_np()
 ## Obtaining and Organizing the Dataset
 -->
 
-## Thu thập và Tổ chức Tập dữ liệu
+## Tải xuống và Tổ chức Tập dữ liệu
 
 
 <!--
@@ -88,8 +88,8 @@ There are 120 breeds of dogs in the training set, including Labradors, Poodles, 
 
 Dữ liệu cuộc thi được chia thành tập huấn luyện và tập kiểm tra.
 Tập huấn luyện bao gồm $10,222$ ảnh và tập kiểm tra bao gồm $10,357$ ảnh.
-Tất cả các ảnh trong hai tập đều được định dạng JPEG.
-Các ảnh này gồm có ba kênh (màu) RGB và chúng có chiều cao và chiều rộng khác nhau.
+Tất cả các ảnh trong hai tập đều có định dạng JPEG.
+Các ảnh này gồm có ba kênh (màu) RGB và có chiều cao và chiều rộng khác nhau.
 Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha mồi (*Labrador*), Chó săn vịt (*Poodle*), Chó Dachshund, Samoyed, Huskie, Chihuahua, và Chó sục Yorkshire (*Yorkshire Terriers*).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -100,7 +100,7 @@ Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha m
 ### Downloading the Dataset
 -->
 
-### Tải về Tập dữ liệu
+### Tải tập dữ liệu
 
 
 <!--
@@ -111,7 +111,7 @@ After unzipping the downloaded file in `../data`, you will find the entire datas
 
 Sau khi đăng nhập vào Kaggle, ta có thể chọn thẻ "Data" trong trang web cuộc thi nhận diện giống chó
 như mô tả trong :numref:`fig_kaggle_dog` và tải tập dữ liệu về bằng cách nhấn vào nút "Download All".
-Sau khi giải nén tệp đã tải về trong `../data`, bạn có thể tìm thấy toàn bộ tập dữ liệu theo các đường dẫn sau:
+Sau khi giải nén tệp đã tải về trong thư mục `../data`, bạn có thể tìm thấy toàn bộ tập dữ liệu theo các đường dẫn sau:
 
 
 * ../data/dog-breed-identification/labels.csv
@@ -134,8 +134,8 @@ Similarly, to make it easier to get started, we provide a small-scale sample of 
 If you are going to use the full dataset for the Kaggle competition, you will also need to change the `demo` variable below to `False`.
 -->
 
-Tương tự, để đơn giản hoá giai đoạn khởi động này, chúng tôi cung cấp một tập mẫu nhỏ của tập dữ liệu kể trên, "train_valid_test_tiny.zip".
-Nếu bạn sử dụng tập dữ liệu đầy đủ cho cuộc thi Kaggle, bạn sẽ cần thay đổi biến `demo` phía dưới thành `False`.
+Tương tự, để đơn giản, chúng tôi cung cấp một tập mẫu nhỏ của tập dữ liệu kể trên, "train_valid_test_tiny.zip".
+Nếu bạn sử dụng tập dữ liệu đầy đủ cho cuộc thi Kaggle, bạn cần thay đổi biến `demo` phía dưới thành `False`.
 
 
 ```{.python .input  n=1}
@@ -164,7 +164,7 @@ else:
 We can organize the dataset similarly to what we did in :numref:`sec_kaggle_cifar10`, namely separating a validation set from the training set, and moving images into subfolders grouped by labels.
 -->
 
-Ta có thể tổ chức tập dữ liệu tương tự như cách ta đã làm trong :numref:`sec_kaggle_cifar10`, tức là tách một tập kiểm định từ tập huấn luyện, và sau đó đưa các ảnh vào từng thư mục con theo nhãn của chúng.
+Ta có thể tổ chức tập dữ liệu tương tự như cách ta đã làm trong :numref:`sec_kaggle_cifar10`, tức là tách riêng một tập kiểm định từ tập huấn luyện, và sau đó đưa các ảnh vào từng thư mục con theo nhãn của chúng.
 
 
 <!--
@@ -194,7 +194,7 @@ reorg_dog_data(data_dir, valid_ratio)
 ## Image Augmentation
 -->
 
-## Tăng cường Dữ liệu Ảnh
+## Tăng cường ảnh
 
 
 
@@ -204,7 +204,7 @@ Here are some more image augmentation operations that might be useful.
 -->
 
 Trong phần này, kích thước ảnh lớn hơn phần trước.
-Dưới đây là một số kĩ thuật tăng cường dữ liệu ảnh có thể sẽ hữu dụng.
+Dưới đây là một số kĩ thuật tăng cường ảnh có thể sẽ hữu dụng.
 
 
 ```{.python .input  n=4}
@@ -233,7 +233,7 @@ transform_train = gluon.data.vision.transforms.Compose([
 During testing, we only use definite image preprocessing operations.
 -->
 
-Trong pha kiểm tra, ta chỉ sử dụng một số bước tiền xử lý ảnh nhất định.
+Trong quá trình kiểm tra, ta chỉ sử dụng một số bước tiền xử lý ảnh nhất định.
 
 
 ```{.python .input}
