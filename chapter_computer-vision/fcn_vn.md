@@ -273,7 +273,7 @@ net[-2].initialize(init=init.Xavier())
 ## Reading the Dataset
 -->
 
-## *dịch tiêu đề phía trên*
+## Đọc Dữ liệu
 
 
 <!--
@@ -281,7 +281,8 @@ We read the dataset using the method described in the previous section.
 Here, we specify shape of the randomly cropped output image as $320\times 480$, so both the height and width are divisible by 32.
 -->
 
-*dịch đoạn phía trên*
+Ta đọc dữ liệu bằng phương thức được mô tả ở phần trước.
+Ở đây, ta định rõ kích thước của ảnh đầu ra sau khi cắt ngẫu nhiên là $320\times 480$, để cả chiều cao và chiều rộng chia hết cho 32.
 
 
 ```{.python .input  n=13}
@@ -294,7 +295,7 @@ train_iter, test_iter = d2l.load_data_voc(batch_size, crop_size)
 ## Training
 -->
 
-## *dịch tiêu đề phía trên*
+## Huấn luyện
 
 
 <!--
@@ -304,7 +305,10 @@ Because we use the channel of the transposed convolution layer to predict pixel 
 In addition, the model calculates the accuracy based on whether the prediction category of each pixel is correct.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể bắt đầu huấn luyện mô hình.
+Hàm mất mát và hàm tính độ chính xác được sử dụng ở đây không quá khác biệt so với các hàm được sử dụng trong bài toán phân loại ảnh.
+Vì ta sử dụng kênh của tầng tích chập chuyển vị để dự đoán hạng mục cho điểm ảnh, tham số `axis=1` (chiều kênh) được định rõ trong `SoftmaxCrossEntropyLoss`.
+Thêm vào đó, dựa trên hạng mục của từng điểm ảnh có được dự đoán đúng hay không mà mô hình sẽ tính toán độ chính xác.
 
 
 ```{.python .input  n=12}
@@ -321,14 +325,14 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 ## Prediction
 -->
 
-## *dịch tiêu đề phía trên*
+## Dự đoán
 
 
 <!--
 During predicting, we need to standardize the input image in each channel and transform them into the four-dimensional input format required by the convolutional neural network.
 -->
 
-*dịch đoạn phía trên*
+Trong quá trình dự đoán, ta cần chuẩn tắc hoá ảnh đầu vào theo từng kênh và chuyển đổi chúng thành tensor 4 chiều như yêu cầu của mạng nơ-ron tích chập.
 
 
 ```{.python .input  n=13}
@@ -344,7 +348,7 @@ def predict(img):
 To visualize the predicted categories for each pixel, we map the predicted categories back to their labeled colors in the dataset.
 -->
 
-*dịch đoạn phía trên*
+Để biểu diễn trực quan các hạng mục được dự đoán cho từng điểm ảnh, ta ánh xạ các hạng mục dự đoán về nhãn màu trong tập dữ liệu.
 
 
 ```{.python .input  n=14}
@@ -366,7 +370,11 @@ When a pixel is covered by multiple areas, the average of the transposed convolu
 of the different areas can be used as an input for the softmax operation to predict the category.
 -->
 
-*dịch đoạn phía trên*
+Kích thước và hình dạng của ảnh trong tập kiểm tra không cố định.
+Vì mô hình sử dụng tầng tích chập chuyển vị với sải bước bằng 32, nên khi chiều cao và chiều rộng của ảnh đầu vào không chia hết cho 32 thì chiều cao và chiều rộng của đầu ra tầng tích chập chuyển vị sẽ chênh lệch so với kích thước của ảnh đầu vào.
+Để giải quyết vấn đề này, ta có thể cắt nhiều vùng hình chữ nhật trong ảnh với chiều cao và chiều rộng chia hết cho 32, sau đó thực hiện lượt truyền xuôi trên các điểm ảnh của những vùng này. 
+Khi kết hợp các kết quả lại, các vùng này sẽ khôi phục lại toàn bộ ảnh đầu vào.
+Khi một điểm ảnh nằm trong nhiều vùng khác nhau, trung bình đầu ra của tầng tích chập chuyển vị sau lan truyền xuôi của các vùng khác nhau có thể được sử dụng để làm đầu vào cho phép toán softmax nhằm dự đoán hạng mục.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -377,7 +385,8 @@ For the sake of simplicity, we only read a few large test images and crop an are
 Only this area is used for prediction. For the input image, we print the cropped area first, then print the predicted result, and finally print the labeled category.
 -->
 
-*dịch đoạn phía trên*
+Để đơn giản, ta chỉ đọc một vài ảnh kiểm tra có kích thước lớn và cắt các vùng với kích thước $320\times480$ từ góc trái trên cùng của ảnh, và chỉ sử dụng vùng này để dự đoán.
+Với ảnh đầu vào, đầu tiên ta in ra vùng được cắt, sau đó in ra kết quả dự đoán, và cuối cùng in ra hạng mục nhãn gốc.
 
 
 ```{.python .input  n=15}
@@ -401,7 +410,8 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 * In a fully convolutional network, we initialize the transposed convolution layer for upsampled bilinear interpolation.
 -->
 
-*dịch đoạn phía trên*
+* Đầu tiên, mạng tích chập đầy đủ sử dụng một mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng các hạng mục bằng tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng thành kích thước ban đầu của ảnh bằng cách sử dụng tầng tích chập chuyển vị để cho ra hạng mục của từng điểm ảnh.
+* Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị cho phép tăng mẫu nội suy song tuyến tính.
 
 
 ## Bài tập
@@ -413,7 +423,10 @@ d2l.show_images(imgs[::3] + imgs[1::3] + imgs[2::3], 3, n, scale=2);
 4. The outputs of some intermediate layers of the convolutional neural network are also used in the paper on fully convolutional networks[1]. Try to implement this idea.
 -->
 
-*dịch đoạn phía trên*
+1. Nếu ta sử dụng Xavier để khởi tạo ngẫu nhiên tầng tích chập chuyển vị, kết quả thay đổi ra sao?
+2. Bạn có thể cải thiện độ chính xác của mô hình bằng cách điều chỉnh các siêu tham số không?
+3. Hãy dự đoán các hạng mục của tất cả các điểm ảnh trong ảnh kiểm tra.
+4. Trong bài báo về mạng tích chập đầy đủ [1], đầu ra của một số tầng trung gian của mạng nơ-ron tích chập cũng được sử dụng. Hãy thử lập trình lại ý tưởng này.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -434,17 +447,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 4 -->
-* 
-
-<!-- Phần 5 -->
-* 
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
+* Phạm Hồng Vinh
+* Nguyễn Lê Quang Nhật
+* Nguyễn Văn Cường

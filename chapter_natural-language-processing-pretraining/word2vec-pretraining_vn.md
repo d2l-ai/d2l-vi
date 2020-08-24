@@ -183,14 +183,14 @@ Before training the word embedding model, we need to define the loss function of
 ### Binary Cross Entropy Loss Function
 -->
 
-### *dịch đoạn phía trên*
+### Hàm Mất mát Entropy Chéo Nhị phân
 
 
 <!--
 According to the definition of the loss function in negative sampling, we can directly use Gluon's binary cross-entropy loss function `SigmoidBinaryCrossEntropyLoss`.
 -->
 
-*dịch đoạn phía trên*
+Theo như định nghĩa hàm mất mát trong phương pháp lấy mẫu âm, ta có thể sử dụng trực tiếp hàm mất mát entropy chéo nhị phân của Gluon `SigmoidBinaryCrossEntropyLoss`.
 
 
 ```{.python .input  n=19}
@@ -205,14 +205,17 @@ When the mask is 0, the predicted value and label of the corresponding position 
 As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý là ta có thể sử dụng biến mặt nạ để chỉ định phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
+khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ được dùng trong phép tính hàm mất mát;
+khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng sẽ không được dùng trong phép tính hàm mất mát.
+Như đã đề cập ở trên, các biến mặt nạ có thể được sử dụng nhằm tránh hiệu ứng đệm trên các phép tính hàm mất mát.
 
 
 <!--
 Given two identical examples, different masks lead to different loss values.
 -->
 
-*dịch đoạn phía trên*
+Với hai mẫu giống nhau, mặt nạ khác nhau sẽ dẫn đến giá trị mất mát cũng khác nhau.
 
 
 ```{.python .input}
@@ -227,7 +230,7 @@ loss(pred, label, mask)
 We can normalize the loss in each example due to various lengths in each example.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể chuẩn hoá mất mát trong từng mẫu do các mẫu có độ dài khác nhau.
 
 
 ```{.python .input}
@@ -239,14 +242,14 @@ loss(pred, label, mask) / mask.sum(axis=1) * mask.shape[1]
 ### Initializing Model Parameters
 -->
 
-*dịch đoạn phía trên*
+### Khởi tạo Tham số Mô hình
 
 
 <!--
 We construct the embedding layers of the central and context words, respectively, and set the hyperparameter word vector dimension `embed_size` to 100.
 -->
 
-*dịch đoạn phía trên*
+Ta khai báo tầng embedding lần lượt của từ trung tâm và từ ngữ cảnh, và đặt siêu tham số số chiều của vector từ bằng 100.
 
 
 ```{.python .input  n=20}
@@ -403,8 +406,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
-
-<!-- Phần 4 -->
 * Đỗ Trường Giang
 * Phạm Minh Đức
+
+<!-- Phần 4 -->
+* 
+
