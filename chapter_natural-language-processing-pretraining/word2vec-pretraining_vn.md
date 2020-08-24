@@ -267,7 +267,7 @@ net.add(nn.Embedding(input_dim=len(vocab), output_dim=embed_size),
 ### Training
 -->
 
-### *dịch đoạn phía trên*
+### Huấn luyện
 
 
 <!--
@@ -275,7 +275,8 @@ The training function is defined below.
 Because of the existence of padding, the calculation of the loss function is slightly different compared to the previous training functions.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện được định nghĩa như phía dưới.
+Do có sự hiện hữu của phần đệm nên phép tính hàm mất mát có đôi chút khác biệt so với các hàm huấn luyện trước.
 
 
 ```{.python .input  n=21}
@@ -310,7 +311,7 @@ def train(net, data_iter, lr, num_epochs, device=d2l.try_gpu()):
 Now, we can train a skip-gram model using negative sampling.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể huấn luyện một mô hình skip-gram sử dụng phương pháp lấy mẫu âm.
 
 
 ```{.python .input  n=22}
@@ -323,7 +324,7 @@ train(net, data_iter, lr, num_epochs)
 ## Applying the Word Embedding Model
 -->
 
-## *dịch đoạn phía trên*
+## Áp dụng Mô hình Embedding Từ
 
 
 <!--
@@ -331,7 +332,8 @@ After training the word embedding model, we can represent similarity in meaning 
 As we can see, when using the trained word embedding model, the words closest in meaning to the word "chip" are mostly related to chips.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện mô hình embedding từ, ta có thể biểu diễn sự tương đồng về nghĩa giữa các từ dựa trên độ tương đồng cô-sin giữa hai vector từ.
+Như ta có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chip xử lý.
 
 
 ```{.python .input  n=23}
@@ -354,7 +356,7 @@ get_similar_tokens('chip', 3, net[0])
 We can pretrain a skip-gram model through negative sampling.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tiền huấn luyện một mô hình skip-gram thông qua phương pháp lấy mẫu âm.
 
 
 ## Bài tập
@@ -370,7 +372,13 @@ In other words, the same central target word may have different context words or
 What are the benefits of this sort of training? Try to implement this training method.
 -->
 
-*dịch đoạn phía trên*
+1. Đặt `sparse_grad=True` khi tạo một đối tượng `nn.Embedding`.
+Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
+2. Bạn hãy cố gắng tìm từ đồng nghĩa cho các từ khác.
+3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
+4. Khi tập dữ liệu lớn, thường thì chỉ khi cập nhật tham số mô hình ta mới lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện thời.
+Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
+Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -403,3 +411,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
+
