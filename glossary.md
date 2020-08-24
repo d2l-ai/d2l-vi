@@ -93,6 +93,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confusion matrix                 | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                        | ràng buộc                |                                              |
 | content loss (in style transfer) | mất mát nội dung         | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| context-independent              | độc lập ngữ cảnh         |                                              |
+| context-sensitive                | nhạy ngữ cảnh            |                                              |
 | convex combination               | tổ hợp lồi               |                                              |
 | convex optimization              | tối ưu lồi               |                                              |
 | convex set                       | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
