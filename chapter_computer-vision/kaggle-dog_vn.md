@@ -313,13 +313,13 @@ Different from the experiment in :numref:`sec_fine_tuning`, here, we do not retr
 This reduces the training time and the memory required to store model parameter gradients.
 -->
 
-Dữ liệu cho cuộc thi này là một phần của dữ liệu ImageNet.
+Dữ liệu cho cuộc thi này là một phần của tập dữ liệu ImageNet.
 Do đó, ta có thể sử dụng cách tiếp cận được thảo luận trong :numref:`sec_fine_tuning` để lựa chọn mô hình đã được tiền huấn luyện trên toàn bộ dữ liệu ImageNet 
-và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho mạng tuỳ biến cỡ nhỏ.
-Gluon cung cấp một số các các mô hình đã được tiền huấn luyện.
+và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho một mạng tuỳ biến cỡ nhỏ.
+Gluon cung cấp một số mô hình đã được tiền huấn luyện.
 Ở đây, ta sử dụng mô hình ResNet-34 đã được tiền huấn luyện.
 Do dữ liệu của cuộc thi là tập con của tập dữ liệu tiền huấn luyện, ta đơn thuần sử dụng lại đầu vào của tầng đầu ra mô hình đã được tiền huấn luyện làm đặc trưng được được trích xuất.
-Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ tuần tự.
+Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ.
 Khác với thí nghiệm trong :numref:`sec_fine_tuning`, ở đây ta không huấn luyện lại mô hình trích xuất đặc trưng đã được tiền huấn luyện.
 Điều này giúp giảm thời gian huấn luyện và bộ nhớ cần thiết để lưu trữ gradient của tham số mô hình.
 
@@ -329,8 +329,8 @@ You must note that, during image augmentation, we use the mean values and standa
 This is consistent with the normalization of the pre-trained model.
 -->
 
-Bạn đọc lựu ý trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hoá.
-Điều này nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
+Bạn đọc lưu ý trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hoá.
+Điều này giúp dữ liệu nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -354,7 +354,7 @@ When calculating the loss, we first use the member variable `features` to obtain
 Then, we use this feature as the input for our small custom output network and compute the output.
 -->
 
-Khi tính toán mất mát, đầu tiên ta sử biến thành viên `features` để lấy đầu vào của tầng đầu ra mô hình được tiền huấn luyện làm đặc trưng trích xuất.
+Khi tính toán mất mát, đầu tiên ta sử dụng biến thành viên `features` để lấy đầu vào của tầng đầu ra trong mô hình được tiền huấn luyện làm đặc trưng trích xuất.
 Sau đó, ta sử dụng đặc trưng này làm đầu vào cho mạng đầu ra tuỳ biến cỡ nhỏ và tính toán đầu ra.
 
 
@@ -449,7 +449,8 @@ For example, we can increase the number of epochs.
 Because `lr_period` and `lr_decay` are set to 10 and 0.1 respectively, the learning rate of the optimization algorithm will be multiplied by 0.1 after every 10 epochs.
 -->
 
-Bây giờ, ta có thể huấn luyện và kiểm định mô hình. Các siêu tham số dưới đây có thể được điều chỉnh.
+Bây giờ, ta có thể huấn luyện và kiểm định mô hình. 
+Các siêu tham số dưới đây có thể được điều chỉnh: `num_epochs`, `lr_period` và `lr_decay`.
 Ví dụ, ta có thể tăng số lượng epoch.
 Do `lr_period` và `lr_decay` được thiết lập bằng 10 và 0.1, tốc độ học của thuật toán tối ưu sẽ được nhân với 0.1 sau mỗi 10 epoch.
 
@@ -507,8 +508,8 @@ The format of this file is consistent with the Kaggle competition requirements.
 The method for submitting results is similar to method in :numref:`sec_kaggle_house`.
 -->
 
-Sau khi chạy đoạn mã trên, ta sẽ sinh tệp "submission.csv".
-Định dạng của tệp này nhất quán với yêu cầu của cuộc thi Kaggle này.
+Chạy đoạn mã trên sẽ sinh tệp "submission.csv".
+Định dạng của tệp này nhất quán với yêu cầu của cuộc thi Kaggle.
 Cách thức nộp kết quả tương tự như trong :numref:`sec_kaggle_house`.
 
 
@@ -519,8 +520,8 @@ We can use a model pre-trained on the ImageNet dataset to extract features and o
 This will allow us to classify a subset of the ImageNet dataset with lower computing and storage overhead.
 -->
 
-Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tuỳ biến cỡ nhỏ. 
-Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phép bộ nhớ và tính toán thấp hơn.
+* Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tuỳ biến cỡ nhỏ. 
+* Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phí bộ nhớ và tính toán thấp hơn.
 
 
 ## Bài tập
@@ -533,7 +534,7 @@ Ta có thể sử dụng mô hình đã được tiền huấn luyện trên t�
 
 1. Khi sử dụng toàn bộ dữ liệu Kaggle, bạn sẽ thu được kết quả như thế nào khi tăng `batch_size` (kích thước batch) và `num_epochs` (số lượng epoch)?
 2. Bạn có đạt được kết quả tốt hơn nếu sử dụng mô hình đã được tiền huấn luyện sâu hơn không?
-3. Hãy quét mã QR để tham gia thảo luận và trao đổi ý tưởng về các phương pháp đã được sử dụng và kết quả thu được từ cộng đồng Kaggle. Có thể bạn sẽ có một ý tưởng hay kỹ thuật tốt hơn?
+3. Quét mã QR để tham gia thảo luận và trao đổi ý tưởng về các phương pháp đã được sử dụng và kết quả thu được từ cộng đồng Kaggle. Bạn có thể nghĩ ra một ý tưởng hay kỹ thuật tốt hơn không?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -555,15 +556,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-
-<!-- Phần 3 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 4 -->
-* Nguyễn Văn Quang
-
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường

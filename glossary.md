@@ -22,6 +22,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | algorithm's performance               | chất lượng thuật toán     |                                              |
 | alternative hypothesis                | giả thuyết đối            | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | analytical solution                   | nghiệm theo công thức     |                                              |
+| analogy                               | loại suy             |                                              |
 | anchor box                            | khung neo                 |                                              |
 | approximate inference                 | suy luận gần đúng         |                                              |
 | approximate training                  | huấn luyện gần đúng       |                                              |
@@ -93,6 +94,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | confusion matrix                 | ma trận nhầm lẫn         | [https://git.io/JvQAy](https://git.io/JvQAy) |
 | constrain                        | ràng buộc                |                                              |
 | content loss (in style transfer) | mất mát nội dung         | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| context-independent              | độc lập ngữ cảnh         |                                              |
+| context-sensitive                | nhạy ngữ cảnh            |                                              |
 | convex combination               | tổ hợp lồi               |                                              |
 | convex optimization              | tối ưu lồi               |                                              |
 | convex set                       | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
@@ -132,6 +135,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
 | downsample                | giảm mẫu                        | [https://git.io/JvohC](https://git.io/JvohC) |
+| downstream task           | tác vụ hạ nguồn              | |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
@@ -484,6 +488,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |----------------------------------------|-------------------------------------------|----------------------------------------------|
 | Taylor expansion                       | khai triển Taylor                         |                                              |
 | target data / distribution             | dữ liệu / phân phối mục tiêu              | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| task-specific                          | đặc thù cho tác vụ                    |                                              |
+| task-agnostic                          | không phân biệt tác vụ                |                                              |
 | tensor contraction                     | phép co tensor                            | [https://git.io/JvojX](https://git.io/JvojX) |
 | test set                               | tập kiểm tra                              |                                              |
 | test set performance                   | chất lượng trên tập kiểm tra              |                                              |
