@@ -263,7 +263,7 @@ Assume the maximum context window is 2 and print all the central target words an
 -->
 
 Kế tiếp, ta tạo một tập dữ liệu nhân tạo chứa hai câu có lần lượt 7 và 3 từ.
-Giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ tâm đích và các từ ngữ cảnh của chúng.
+Giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng.
 
 
 ```{.python .input  n=10}
