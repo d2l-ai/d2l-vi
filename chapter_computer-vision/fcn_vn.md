@@ -21,7 +21,7 @@ Given a position on the spatial dimension, the output of the channel dimension w
 Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
 Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các hạng mục tương ứng của điểm ảnh.
 Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
-Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
+Với một vị trí trên chiều không gian, đầu ra theo chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
 
 
 <!--
@@ -59,8 +59,8 @@ The final output channel contains the category prediction of the pixel of the co
 
 Ở đây, chúng tôi sẽ trình bày một thiết kế cơ bản nhất của mô hình tích chập đầy đủ.
 Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng hạng mục thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng bằng với kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
-Đầu ra của mạng có cùng chiều cao và chiều rộng với ảnh gốc và có sự tương ứng một-một theo vị trí không gian.
-Kênh đầu ra cuối cùng chứa hạng mục dự đoán của từng điểm ảnh có vị trí không gian tương ứng. 
+Đầu ra của mạng có cùng chiều cao và chiều rộng với ảnh gốc và có sự tương xứng một-một theo vị trí không gian.
+Kênh đầu ra cuối cùng chứa hạng mục dự đoán của từng điểm ảnh ở vị trí không gian tương ứng. 
 
 <!--
 ![Fully convolutional network.](../img/fcn.svg)
@@ -204,7 +204,7 @@ Now, we will experiment with bilinear interpolation upsampling implemented by tr
 Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
 -->
 
-Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. 
+Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được thực hiện bằng tầng tích chập chuyển vị. 
 Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào lên hai lần và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
 
 
@@ -254,7 +254,7 @@ For a $1\times 1$ convolution layer, we use Xavier for randomly initialization.
 -->
 
 Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị để thực hiện phép tăng mẫu nội suy song tuyến tính.
-Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên  Xavier.
+Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên Xavier.
 
 
 ```{.python .input  n=12}
