@@ -60,7 +60,7 @@ We can rewrite the loss function of the skip-gram model as
 -->
 
 Ta tính tổng số lượng tất cả các từ ngữ cảnh đối với từ trung tâm $w_i$ để có $x_i$,
-và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ tâm đích $w_i$ là $p_{ij}$.
+và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ trung tâm $w_i$ là $p_{ij}$.
 Ta có thể viết lại hàm mất mất của mô hình skip-gram như
 
 
