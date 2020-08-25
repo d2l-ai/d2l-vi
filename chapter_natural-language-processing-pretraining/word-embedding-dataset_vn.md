@@ -222,7 +222,7 @@ Next we read the corpus with token indicies into data batches for training.
 ### Extracting Central Target Words and Context Words
 -->
 
-### Trích xuất từ tâm đích và từ ngữ cảnh
+### Trích xuất từ đích trung tâm và từ ngữ cảnh
 
 
 <!--
@@ -555,5 +555,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
