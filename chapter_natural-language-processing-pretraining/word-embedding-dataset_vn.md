@@ -293,7 +293,7 @@ The following extracts all the central target words and their context words in t
 -->
 
 Ta thiết lập cửa sổ ngữ cảnh cực đại là 5.
-Phần sau trích tất cả các từ tâm đích và các từ ngữ cảnh của chúng trong tập dữ liệu. 
+Đoạn mã sau trích xuất tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng trong tập dữ liệu. 
 
 
 ```{.python .input  n=11}
@@ -571,5 +571,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Phạm Đăng Khoa
-
 
