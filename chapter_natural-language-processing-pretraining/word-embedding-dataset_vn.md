@@ -235,7 +235,7 @@ Tiếp theo, ta đọc kho ngữ liệu với các chỉ số token thành các 
 ### Extracting Central Target Words and Context Words
 -->
 
-### *dịch đoạn phía trên*
+### Trích xuất từ đích trung tâm và từ ngữ cảnh
 
 
 <!--
@@ -244,7 +244,9 @@ The following definition function extracts all the central target words and thei
 It uniformly and randomly samples an integer to be used as the context window size between integer 1 and the `max_window_size` (maximum context window).
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng những từ có khoảng cách so với từ đích trung tâm không vượt quá kích thước cửa sổ ngữ cảnh làm các từ ngữ cảnh của từ đích trung tâm đã cho. 
+Hàm sau đây trích xuất tất cả từ đích trung tâm và các từ ngữ cảnh của chúng.
+Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên được lấy ngẫu nhiên theo phân phối đồng nhất trong khoảng giữa 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại).
 
 
 ```{.python .input  n=9}
@@ -273,7 +275,8 @@ Next, we create an artificial dataset containing two sentences of 7 and 3 words,
 Assume the maximum context window is 2 and print all the central target words and their context words.
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, ta tạo một tập dữ liệu nhân tạo chứa hai câu có lần lượt 7 và 3 từ.
+Giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng.
 
 
 ```{.python .input  n=10}
@@ -289,7 +292,8 @@ We set the maximum context window size to 5.
 The following extracts all the central target words and their context words in the dataset.
 -->
 
-*dịch đoạn phía trên*
+Ta thiết lập cửa sổ ngữ cảnh cực đại là 5.
+Đoạn mã sau trích xuất tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng trong tập dữ liệu. 
 
 
 ```{.python .input  n=11}
@@ -297,9 +301,11 @@ all_centers, all_contexts = get_centers_and_contexts(corpus, 5)
 f'# center-context pairs: {len(all_centers)}' 
 ```
 
-
+<!--
 ### Negative Sampling
+-->
 
+### Lấy mẫu Âm
 
 <!--
 We use negative sampling for approximate training.
@@ -308,7 +314,9 @@ According to the suggestion in the Word2vec paper, the noise word sampling proba
 the word frequency of $w$ to the total word frequency raised to the power of 0.75 [2].
 -->
 
-*dịch đoạn phía trên*
+Ta thực hiện lấy mẫu âm để huấn luyện gần đúng.
+Với mỗi cặp từ đích trung tâm và ngữ cảnh, ta lẫy mẫu ngẫu nhiên $K$ từ nhiễu ($K=5$ trong thử nghiệm này).
+Theo đề xuất trong bài báo Word2vec, xác suất lấy mẫu từ nhiễu $P(w)$ là tỉ số của số lần xuất hiện từ $w$ đối với tổng số lần xuất hiện của tất cả các từ, lấy mũ 0.75 [2]. 
 
 
 <!--
@@ -316,7 +324,8 @@ We first define a class to draw a candidate according to the sampling weights.
 It caches a 10000 size random number bank instead of calling `random.choices` every time.
 -->
 
-*dịch đoạn phía trên*
+Ta trước hết định nghĩa một lớp để lấy ra một ứng cử viên dựa theo các trọng số lấy mẫu.
+Lớp này lấy 10000 số ngẫu nhiên một lúc thay vì gọi `random.choices` liên tục.
 
 
 ```{.python .input  n=12}
@@ -568,7 +577,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * Phạm Đăng Khoa
