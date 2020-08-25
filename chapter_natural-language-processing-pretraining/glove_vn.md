@@ -69,9 +69,9 @@ to approach as close as possible to the true conditional probability distributio
 -->
 
 Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ sinh từ ngữ cảnh
-dựa trên từ trung tâm $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
-Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ mục tiêu trung tâm $w_i$.
-Nếu ta cực tiểu hoá hàm mất mát theo công thức trên, ta sẽ có thể cho phép phân phối xác suất có điều kiện được dự đoán
+dựa trên từ tâm đích $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
+Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$.
+Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán
 tiệm cận gần nhất có thể tới phân phối xác suất có điều kiện thật.
 
 
