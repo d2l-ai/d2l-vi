@@ -301,7 +301,7 @@ According to the suggestion in the Word2vec paper, the noise word sampling proba
 the word frequency of $w$ to the total word frequency raised to the power of 0.75 [2].
 -->
 
-Ta thực hiện lấy mẫu âm tính để huấn luyện xấp xỉ.
+Ta thực hiện lấy mẫu âm để huấn luyện gần đúng.
 Với mỗi cặp từ đích trung tâm và ngữ cảnh, ta lẫy mẫu ngẫu nhiên $K$ từ nhiễu ($K=5$ trong thử nghiệm này).
 Theo đề xuất trong bài báo Word2vec, xác suất lấy mẫu từ nhiễu $P(w)$ là tỉ số của số lần xuất hiện từ $w$ đối với tổng số lần xuất hiện của tất cả các từ, lấy mũ 0.75 [2]. 
 
