@@ -19,8 +19,8 @@ Given a position on the spatial dimension, the output of the channel dimension w
 -->
 
 Ở phần trước, chúng ta đã thảo luận về phân vùng theo ngữ nghĩa bằng cách dự đoán hạng mục trên từng điểm ảnh.
-Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các nhãn điểm ảnh.
-Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
+Mạng tích chập đầy đủ (_fully convolutional network_ - FCN) :cite:`Long.Shelhamer.Darrell.2015` sử dụng mạng nơ-ron tích chập để biến đổi các điểm ảnh thành các hạng mục tương ứng của điểm ảnh.
+Khác với các mạng nơ-ron tích chập được giới thiệu trước đây, mạng FCN biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng tầng trung gian về kích thước ảnh đầu vào thông qua các tầng tích chập chuyển vị, sao cho các dự đoán có sự tương xứng một-một với ảnh đầu vào theo không gian (chiều cao và rộng).
 Với một vị trí trên chiều không gian, đầu ra của chiều kênh sẽ là hạng mục được dự đoán tương ứng với điểm ảnh tại vị trí đó.
 
 
@@ -58,9 +58,9 @@ The final output channel contains the category prediction of the pixel of the co
 -->
 
 Ở đây, chúng tôi sẽ trình bày một thiết kế cơ bản nhất của mô hình tích chập đầy đủ.
-Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng lớp nhãn thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và rộng của ánh xạ đặc trưng bằng với kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
-Đầu ra của mạng có cùng chiều cao và chiều rộng như ảnh gốc và có sự tương ứng một-một theo vị trí không gian.
-Kênh đầu ra cuối cùng chứa lớp dự đoán của từng điểm ảnh tương ứng với vị trí không gian. 
+Như mô tả trong hình :numref:`fig_fcn`, đầu tiên mạng tích chập đầy đủ sử dụng mạng nơ-ron tích chập để trích xuất đặc trưng ảnh, sau đó biến đổi số lượng kênh thành số lượng hạng mục thông qua tầng tích chập $1\times 1$, và cuối cùng biến đổi chiều cao và chiều rộng của ánh xạ đặc trưng bằng với kích thước của ảnh đầu vào bằng cách sử dụng tầng tích chập chuyển vị :numref:`sec_transposed_conv`.
+Đầu ra của mạng có cùng chiều cao và chiều rộng với ảnh gốc và có sự tương ứng một-một theo vị trí không gian.
+Kênh đầu ra cuối cùng chứa hạng mục dự đoán của từng điểm ảnh có vị trí không gian tương ứng. 
 
 <!--
 ![Fully convolutional network.](../img/fcn.svg)
@@ -78,7 +78,7 @@ These layers are not required for a fully convolutional network.
 -->
 
 Dưới đây, ta sử dụng mô hình ResNet-18 được tiền huấn luyện trên ImageNet để trích xuất đặc trưng và lưu thực thể mô hình là `pretrained_net`.
-Như ta thấy, hai tầng cuối của mô hình nằm trong biến thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
+Như có thể thấy, hai tầng cuối của mô hình nằm trong biến thành viên `features` là tầng gộp cực đại toàn cục `GlobalAvgPool2D` và tầng trải phẳng `Flatten`. 
 Mô-đun `output` chứa tầng kết nối đầy đủ được sử dụng cho đầu ra.
 Các tầng này không bắt buộc phải có trong mạng tích chập đầy đủ.
 
@@ -97,7 +97,7 @@ It duplicates all the neural layers except the last two layers of the instance m
 -->
 
 Tiếp theo, ta khởi tạo một thực thể mạng tích chập đầy đủ `net`.
-Thực thể này sao lặp tất cả các tầng nơ-ron ngoại trừ hai tầng cuối cùng của biến thành viên `features` trong `pretrained_net` và các tham số mô hình thu được từ bước tiền huấn luyện.
+Thực thể này sao chép tất cả các tầng nơ-ron ngoại trừ hai tầng cuối cùng của biến thành viên `features` trong `pretrained_net` và các tham số mô hình thu được từ bước tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -113,7 +113,7 @@ the forward computation of `net` will reduce the height and width of the input t
 -->
 
 Với đầu vào có chiều cao và chiều rộng là 320 và 480,
-bước tính toán truyền xuôi của `net` sẽ giảm chiều cao và rộng của đầu vào thành $1/32$ kích thước ban đầu, nghĩa là, 10 và 15.
+bước tính toán lượt truyền xuôi của `net` sẽ giảm chiều cao và chiều rộng của đầu vào thành $1/32$ kích thước ban đầu, tức 10 và 15.
 
 
 ```{.python .input  n=7}
@@ -132,11 +132,11 @@ It is not difficult to see that, if the stride is $s$, the padding is $s/2$ (ass
 the transposed convolution kernel will magnify both the height and width of the input by a factor of $s$.
 -->
 
-Tiếp đến, ta chuyển đổi số lượng kênh đầu ra bằng số lượng hạng mục trong bộ dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
-Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng lên gấp 32 lần để bằng với kích thước thành chiều cao và chiều rộng của ảnh đầu vào.
-Nhắc lại phương pháp tính kích thước đầu ra của tầng tích chập được mô tả trong :numref:`sec_padding`.
-Vì $(320-64+16\times2+32)/32=10$ và $(480-64+16\times2+32)/32=15$, nên ta sẽ xây dựng một tầng tích chập chuyển vị với sải bước 32, đặt chiều dài và chiều rộng của hạt nhân tích chập bằng 64, và kích thước đệm bằng 16.
-Không khó để nhận ra rằng nếu sải bước bằng $s$, kích thước đệm là $s/2$ (giả sử $s/2$ là số nguyên) và hạt nhân tích chập có chiều dài và chiều rộng bằng $2s$, thì hạt nhân tích chập chuyển vị sẽ phóng đại chiều cao và rộng của đầu vào với thừa số $s$.
+Tiếp đến, ta biến đổi số lượng kênh đầu ra bằng với số lượng hạng mục trong tập dữ liệu Pascal VOC2012 (21) thông qua tầng tích chập $1\times 1$.
+Cuối cùng, ta cần phóng đại chiều cao và chiều rộng của ánh xạ đặc trưng lên gấp 32 lần để bằng với chiều cao và chiều rộng của ảnh đầu vào.
+Hãy nhớ lại phương pháp tính kích thước đầu ra của tầng tích chập được mô tả trong :numref:`sec_padding`.
+Vì $(320-64+16\times2+32)/32=10$ và $(480-64+16\times2+32)/32=15$, ta sẽ xây dựng một tầng tích chập chuyển vị với sải bước 32, đặt chiều dài và chiều rộng của hạt nhân tích chập bằng 64 và kích thước đệm bằng 16.
+Không khó để nhận ra rằng nếu sải bước bằng $s$, kích thước đệm là $s/2$ (giả sử $s/2$ là số nguyên) và hạt nhân tích chập có chiều dài và chiều rộng bằng $2s$, thì hạt nhân tích chập chuyển vị sẽ phóng đại chiều cao và chiều rộng của đầu vào lên $s$ lần.
  
 
 ```{.python .input  n=8}
@@ -171,15 +171,15 @@ Due to space limitations, we only give the implementation of the `bilinear_kerne
 -->
 
 Chúng ta đã biết tầng tích chập chuyển vị có thể phóng đại ánh xạ đặc trưng.
-Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, được biết đến là phép tăng mẫu. 
-Có rất nhiều phương pháp tăng mẫu, và một phương pháp phổ biến đó là nội suy song tuyến tính (*bilinear interpolation*).
+Trong xử lý ảnh, đôi khi ta cần phóng đại ảnh, hay còn được biết đến là phép tăng mẫu. 
+Có rất nhiều phương pháp tăng mẫu, và một phương pháp phổ biến là nội suy song tuyến tính (*bilinear interpolation*).
 Nói một cách đơn giản, để lấy điểm ảnh của ảnh đầu ra tại toạ độ $(x, y)$, đầu tiên toạ độ này sẽ được ánh xạ tới toạ độ $(x', y')$ trong ảnh đầu vào.
 Điều này có thể được thực hiện dựa trên tỷ lệ kích thước của ba đầu vào tới kích thước của đầu ra.
 Giá trị được ánh xạ $x'$ và $y'$ thường là các số thực.
 Sau đó, ta tìm bốn điểm ảnh gần toạ độ $(x', y')$ nhất trên ảnh đầu vào.
 Cuối cùng, các điểm ảnh tại toạ độ $(x, y)$ của đầu ra sẽ được tính toán dựa trên bốn điểm ảnh của ảnh đầu vào và khoảng cách tương đối của chúng tới $(x', y')$.
-Phép tăng chiều bằng nội suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị sử dụng hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
-Do giới hạn về số trang, ta chỉ lập trình hàm `bilinear_kernel` và sẽ không thảo luận các nguyên tắc cơ bản của thuật toán.
+Phép tăng mẫu bằng nội suy song tuyến tính có thể được lập trình bằng tầng tích chập chuyển vị với hạt nhân tích chập được xây dựng bằng hàm `bilinear_kernel` dưới đây.
+Do giới hạn về số trang, chúng tôi sẽ chỉ cung cấp cách lập trình hàm `bilinear_kernel` và sẽ không thảo luận về nguyên tắc của thuật toán.
 
 
 ```{.python .input  n=9}
@@ -204,7 +204,8 @@ Now, we will experiment with bilinear interpolation upsampling implemented by tr
 Construct a transposed convolution layer that magnifies height and width of input by a factor of 2 and initialize its convolution kernel with the `bilinear_kernel` function.
 -->
 
-Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào với thừa số bằng 2 và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
+Bây giờ, ta sẽ thí nghiệm với phép tăng mẫu sử dụng phép nội suy song tuyến tính được lập trình bằng tầng tích chập chuyển vị. 
+Ta sẽ xây dựng tầng tích chập chuyển vị để phóng đại chiều cao và chiều rộng của đầu vào lên hai lần và khởi tạo hạt nhân tích chập với hàm `bilinear_kernel`.
 
 
 ```{.python .input  n=11}
@@ -218,7 +219,7 @@ Read the image `X` and record the result of upsampling as `Y`.
 In order to print the image, we need to adjust the position of the channel dimension.
 -->
 
-Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng mẫu là `Y`.
+Ta sẽ đọc ảnh `X` và lưu kết quả của phép tăng mẫu là `Y`. 
 Để in ảnh, ta cần điều chỉnh vị trí của chiều kênh.
 
 
@@ -235,8 +236,8 @@ As you can see, the transposed convolution layer magnifies both the height and w
 It is worth mentioning that, besides to the difference in coordinate scale, the image magnified by bilinear interpolation and original image printed in :numref:`sec_bbox` look the same.
 -->
 
-Như ta có thể thấy, tầng tích chập chuyển vị phóng đại cả chiều cao và chiều rộng của ảnh với thừa số bằng 2.
-Điểm đáng nói là bên cạnh điểm khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép nội suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
+Như ta có thể thấy, tầng tích chập chuyển vị phóng đại cả chiều cao và chiều rộng của ảnh lên hai lần.
+Điều đáng nói là bên cạnh sự khác biệt trong tỷ lệ toạ độ, ảnh được phóng đại bởi phép nội suy song tuyến tính và ảnh ban đầu được in :numref:`sec_bbox` nhìn giống nhau.
 
 ```{.python .input}
 d2l.set_figsize()
@@ -252,7 +253,8 @@ In a fully convolutional network, we initialize the transposed convolution layer
 For a $1\times 1$ convolution layer, we use Xavier for randomly initialization.
 -->
 
-Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị với phép tăng chiều nội suy song tuyến tính. Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên  Xavier.
+Trong mạng tích chập đầy đủ, ta khởi tạo tầng tích chập chuyển vị để thực hiện phép tăng mẫu nội suy song tuyến tính.
+Với tầng tích chập $1\times 1$, ta sử dụng phương pháp khởi tạo ngẫu nhiên  Xavier.
 
 
 ```{.python .input  n=12}
