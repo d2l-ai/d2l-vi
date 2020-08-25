@@ -233,7 +233,7 @@ It uniformly and randomly samples an integer to be used as the context window si
 
 Ta sử dụng những từ có khoảng cách so với từ đích trung tâm không vượt quá kích thước cửa sổ ngữ cảnh làm các từ ngữ cảnh của từ đích trung tâm đã cho. 
 Hàm sau đây trích xuất tất cả từ đích trung tâm và các từ ngữ cảnh của chúng.
-Sử dụng lấy mẫu ngẫu nhiên và đồng đều với một số nguyên có giá trị trong khoảng 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại) để làm kích thước cửa sổ ngữ cảnh.
+Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên được lấy ngẫu nhiên theo phân phối đồng nhất trong khoảng giữa 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại).
 
 
 ```{.python .input  n=9}
