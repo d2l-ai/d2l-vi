@@ -41,7 +41,7 @@ Denote multiplicity of element $j$ in multiset $\mathcal{C}_i$ as $x_{ij}$: it i
 As a result, the loss function of the skip-gram model can be expressed in a different way:
 -->
 
-Với từ $w_i$, nó có thể xuất hiện trong tập dữ liệu nhiều lần.
+Từ $w_i$ có thể xuất hiện trong tập dữ liệu nhiều lần.
 Ta gom tất cả các từ ngữ cảnh mỗi khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, rồi ký hiệu đó là tập bội $\mathcal{C}_i$.
 Số lượng của một phần tử trong tập bội được gọi là bội số của phần tử đó. 
 Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu:
