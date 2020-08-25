@@ -42,7 +42,7 @@ As a result, the loss function of the skip-gram model can be expressed in a diff
 -->
 
 Với từ $w_i$, nó có thể xuất hiện trong tập dữ liệu nhiều lần.
-Ta gom tất cả các từ ngữ cảnh mỗi lần khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, và ký hiệu chúng là tập bội $\mathcal{C}_i$.
+Ta gom tất cả các từ ngữ cảnh mỗi khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, rồi ký hiệu đó là tập bội $\mathcal{C}_i$.
 Số lượng của một phần tử trong tập bội được gọi là bội số của phần tử đó. 
 Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu:
 Cửa sổ ngữ cảnh khi hai từ $w_i$ đó trở thành từ trung tâm trong chuỗi văn bản chứa các chỉ số từ ngữ cảnh $2, 1, 5, 2$ và $2, 3, 2, 1$.
@@ -310,5 +310,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
