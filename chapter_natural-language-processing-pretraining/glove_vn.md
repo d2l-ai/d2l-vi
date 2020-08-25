@@ -5,7 +5,7 @@
 # Word Embedding with Global Vectors (GloVe)
 -->
 
-# Nhúng từ với Vector toàn cục (Glove)
+# Embedding từ với Vector Toàn cục (GloVe)
 :label:`sec_glove`
 
 
