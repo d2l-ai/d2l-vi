@@ -311,7 +311,7 @@ We first define a class to draw a candidate according to the sampling weights.
 It caches a 10000 size random number bank instead of calling `random.choices` every time.
 -->
 
-Ta trước hết định nghĩa một lớp để rút ra một ứng cử viên dựa theo các trọng số lấy mẫu.
+Ta trước hết định nghĩa một lớp để lấy ra một ứng cử viên dựa theo các trọng số lấy mẫu.
 Lớp này lấy một ngân hàng số ngẫu nhiên có kích thước 10000 thay vì lúc nào cũng gọi `random.choices`.
 
 
