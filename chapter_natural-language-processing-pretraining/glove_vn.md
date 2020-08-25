@@ -205,7 +205,7 @@ The conditional probability ratio with $w_i$ as the central target word is ${p_{
 We can find a function that uses word vectors to fit this conditional probability ratio.
 -->
 
-Ta có thể thấy rằng tỉ số sác xuất điều kiện có thể thể hiện mối quan hệ giữa các từ khác nhau dễ hình dung hơn.
+Ta có thể thấy rằng tỉ số sác xuất điều kiện có thể thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn.
 Ta có thể tạo một hàm vector từ để khớp tỉ số sác xuất điều kiện một cách hiệu quả hơn.
 Như ta đã biết, để thu được bất cứ tỉ số nào của kiểu này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$.
 Tỉ số sác xuất điều kiện với $w_i$ làm từ tâm đích là ${p_{ij}}/{p_{ik}}$.
