@@ -132,7 +132,7 @@ Therefore, the name GloVe is taken from "Global Vectors".
 Ở đây, chúng tôi có một đề xuất đối với việc lựa chọn hàm trọng số $h(x)$: khi $x < c$ (ví dụ $c = 100$), chọn $h(x) = (x/c) ^\alpha$ (ví dụ $\alpha = 0.75$), ngược lại chọn $h(x) = 1$.
 Do $h(0)=0$, ta đơn giản có thể bỏ qua mất mát bình phương tại $x_{ij}=0$.
 Khi sử dụng minibatch SGD trong huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không từ mỗi bước thời gian và tính toán gradient để cập nhập các tham số mô hình.
-Các giá trị $x_{ij}$ khác không trên được tính trước trên toàn bộ tập dữ liệu và chúng mang ý nghĩa thống kê toàn cục của tập dữ liệu.
+Các giá trị $x_{ij}$ khác không trên được tính trước trên toàn bộ tập dữ liệu, là thống kê toàn cục của tập dữ liệu.
 Do đó, tên gọi GloVe được lấy từ "Global Vectors - Vector Toàn cục".
 
 
@@ -146,8 +146,8 @@ After learning all the word vectors, GloVe will use the sum of the central targe
 
 Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh của từ $w_j$ thì từ $w_j$ cũng sẽ xuất hiện trong cửa sổ ngữ cảnh của từ $w_i$. Do đó, $x_{ij}=x_{ji}$.
 Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay cho xác suất có điều kiện $p_{ij}$ bất đối xứng.
-Do đó, vector từ mục tiêu trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe.
-Tuy vậy, hai tập vector từ mà được học bởi cùng một từ đến cuối cùng có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
+Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe.
+Tuy vậy, hai tập vector từ được học bởi cùng một mô hình đến cuối cùng có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
 Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng các vector từ mục tiêu trung tâm và vector từ ngữ cảnh làm vector từ cuối cùng cho từ đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -170,8 +170,8 @@ From a real example from a large corpus, here we have the following two sets of 
 
 Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác.
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
-xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ mục tiêu trung tâm $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
-Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ mục tiêu trung tâm và tỉ số giữa chúng:
+xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
+Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng:
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
@@ -305,10 +305,11 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
 * 
-
