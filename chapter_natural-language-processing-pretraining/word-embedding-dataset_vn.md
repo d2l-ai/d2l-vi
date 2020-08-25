@@ -302,7 +302,7 @@ the word frequency of $w$ to the total word frequency raised to the power of 0.7
 -->
 
 Ta thực hiện lấy mẫu âm tính để huấn luyện xấp xỉ.
-Với mỗi cặp từ tâm và ngữ cảnh, ta lẫy mẫu ngẫu nhiên $K$ từ nhiễu ($K=5$ trong thử nghiệm này).
+Với mỗi cặp từ đích trung tâm và ngữ cảnh, ta lẫy mẫu ngẫu nhiên $K$ từ nhiễu ($K=5$ trong thử nghiệm này).
 Theo đề xuất trong bài báo Word2vec, sác xuất lấy mẫu từ nhiễu $P(w)$ là tỉ số của tần xuất của từ $w$ đối với tổng số tần xuất từ xuất hiện mũ 0.75 [2]. 
 
 
