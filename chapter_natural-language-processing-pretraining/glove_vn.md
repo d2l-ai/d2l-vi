@@ -192,7 +192,7 @@ we would expect a conditional probability ratio close to 1, like the value 0.96 
 -->
 
 Với từ $w_k$ liên quan tới từ "ice" nhưng không có liên quan nào với từ "steam", như là $w_k=$"solid", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ liên quan tới từ "steam" mà không có liên quan nào với từ "ice", như là $w_k=$"gas", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên.
 Với từ $w_k$ liên quan tới cả hai từ "steam" và từ "ice", như là $w_k=$"water", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên.
 Với từ $w_k$ không liên quan tới cả hai từ "steam" và từ "ice", như là $w_k=$"fashion", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên.
 
@@ -312,5 +312,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
