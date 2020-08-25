@@ -513,7 +513,7 @@ How should these shapes be calculated?
 -->
 
 Chúng tôi sử dụng hàm `batchify` để chỉ định phương thức đọc minibatch trong thực thể `DataLoader` và in ra kích thước của từng biến trong lần đọc batch đầu tiên.
-Những kích thước này nên được tính toán như thế nào?
+Những kích thước này được tính toán như thế nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -548,4 +548,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Phạm Đăng Khoa
-
