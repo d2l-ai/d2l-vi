@@ -15,7 +15,7 @@ The conditional probability $P(w_j\mid w_i)$ expressed in the skip-gram model us
 -->
 
 Trước tiên, ta sẽ xem lại mô hình skip-gram trong word2vec.
-Sác xuất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ  được ghi lại dưới dạng $q_{ij}$ như sau:
+Xác suất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ  được ghi lại dưới dạng $q_{ij}$ như sau:
 
 
 $$q_{ij}=\frac{\exp(\mathbf{u}_j^\top \mathbf{v}_i)}{ \sum_{k \in \mathcal{V}} \text{exp}(\mathbf{u}_k^\top \mathbf{v}_i)},$$
