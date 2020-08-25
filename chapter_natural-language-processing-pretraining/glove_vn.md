@@ -47,7 +47,7 @@ Số lượng của một phần tử trong tập bội được gọi là bội
 Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu:
 cửa sổ ngữ cảnh khi hai từ $w_i$ đó là từ trung tâm trong chuỗi văn bản chứa các chỉ số từ ngữ cảnh $2, 1, 5, 2$ và $2, 3, 2, 1$.
 Thì, tập bội $\mathcal{C}_i = \{1, 1, 2, 2, 2, 2, 3, 5\}$, ở đây bội số của phần tử số 1 là 2, bội số của phần tử số 2 là 4, và bội số của phần tử số 3 và 5 đều là 1.
-Ký hiệu bội số của phần tử $j$ trong tập bội $\mathcal{C}_i$ là $x_{ij}$: nó là số từ $w_j$ trong tất cả cửa sổ ngữ cảnh để từ trung tâm $w_i$ ở trong toàn bộ tập dữ liệu.
+Ký hiệu bội số của phần tử $j$ trong tập bội $\mathcal{C}_i$ là $x{ij}$: nó là số lần từ $w_j$ có trong cửa sổ ngữ cảnh mà từ $w_i$ làm trung tâm trong toàn bộ tập dữ liệu.
 Kết quả là hàm mất mát của mô hình skip-gram có thể mô tả theo một cách khác là:
 
 $$-\sum_{i\in\mathcal{V}}\sum_{j\in\mathcal{V}} x_{ij} \log\,q_{ij}.$$
