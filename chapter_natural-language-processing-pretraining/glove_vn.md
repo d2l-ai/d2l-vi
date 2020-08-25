@@ -59,7 +59,7 @@ and record the conditional probability $x_{ij}/x_i$ for generating context word 
 We can rewrite the loss function of the skip-gram model as
 -->
 
-Ta cộng thêm số lượng tất cả các từ ngữ cảnh đối với từ tâm đích $w_i$ để nhận lấy $x_i$,
+Ta cộng lại số lượng tất cả các từ ngữ cảnh đối với từ tâm đích $w_i$ để nhận lấy $x_i$,
 và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ tâm đích $w_i$ là $p_{ij}$.
 Ta có thể viết lại hàm mất mất của mô hình skip-gram như
 
@@ -310,4 +310,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
