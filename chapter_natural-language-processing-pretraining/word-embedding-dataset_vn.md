@@ -292,7 +292,7 @@ f'# center-context pairs: {len(all_centers)}'
 ### Negative Sampling
 -->
 
-### Lấy mẫu âm tính
+### Lấy mẫu Âm
 
 <!--
 We use negative sampling for approximate training.
