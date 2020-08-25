@@ -78,7 +78,11 @@ If we minimize the loss function from the formula above, we will be able to allo
 to approach as close as possible to the true conditional probability distribution.
 -->
 
-*dịch đoạn phía trên*
+Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ sinh từ ngữ cảnh
+dựa trên từ tâm đích $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
+Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$.
+Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán
+tiệm cận gần nhất có thể tới phân phối xác suất có điều kiện thật.
 
 
 <!--
@@ -90,14 +94,18 @@ On the other hand, there are often a lot of uncommon words in the dictionary, an
 In the cross-entropy loss function, the final prediction of the conditional probability distribution on a large number of uncommon words is likely to be inaccurate.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, mặc dù là loại hàm mất mát phổ biến nhất, hàm mất mát entropy chéo lại thường không phải là lựa chọn tốt.
+Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để cho phép dự đoán của mô hình $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó.
+Điều này có thể dễ dàng khiến tổng chi phí tính toán quá lớn.
+Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu.
+Trong hàm mất mát entropy chéo, dự đoán phân phối xác suất có điều kiện cuối cùng trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác.
 
 
 <!--
 ## The GloVe Model
 -->
 
-## *dịch đoạn phía trên*
+## Mô hình GloVe
 
 
 <!--
@@ -105,7 +113,7 @@ To address this, GloVe :cite:`Pennington.Socher.Manning.2014`, a word embedding 
 square loss and makes three changes to the skip-gram model based on this loss.
 -->
 
-*dịch đoạn phía trên*
+Để giải quyết vấn đề trên, GloVe :cite:`Pennington.Socher.Manning.2014`, một mô hình embedding từ xuất hiện sau word2vec, áp dụng mất mát bình phương và tạo ra ba sự thay đổi trong mô hình skip-gram dựa theo mất mát này.
 
 
 <!--
@@ -115,14 +123,17 @@ Therefore, we get the square loss $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 
 3. Replace the weight of each loss with the function $h(x_{ij})$. The weight function $h(x)$ is a monotone increasing function with the range $[0, 1]$.
 -->
 
-*dịch đoạn phía trên*
+1. Ở đây, ta sử dụng các biến phân phối phi xác suất $p'_{ij}=x_{ij}$ và $q'_{ij}=\exp(\mathbf{u}_j^\top \mathbf{v}_i)$ và tính log của chúng.
+Theo đó, ta có mất mát bình phương $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 = \left(\mathbf{u}_j^\top \mathbf{v}_i - \log\,x_{ij}\right)^2$.
+2. Ta cộng vào từng từ $w_i$ hai số vô hướng là tham số mô hình: hệ số điều chỉnh $b_i$ (cho các từ trung tâm) và $c_i$ (cho các từ ngữ cảnh).
+3. Thay thế trọng số của mỗi mất mát bằng hàm $h(x_{ij})$. Hàm trọng số $h(x)$ là hàm đơn điệu tăng trong khoảng $[0, 1]$.
 
 
 <!--
 Therefore, the goal of GloVe is to minimize the loss function.
 -->
 
-*dịch đoạn phía trên*
+Theo đó, mục tiêu của GloVe là cực tiểu hoá hàm mất mát
 
 
 $$\sum_{i\in\mathcal{V}} \sum_{j\in\mathcal{V}} h(x_{ij}) \left(\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j - \log\,x_{ij}\right)^2.$$
@@ -300,7 +311,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
 * 
