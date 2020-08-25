@@ -3,6 +3,7 @@ import io
 import os
 import re
 from setuptools import setup, find_packages
+import d2l
 
 
 def read(*names, **kwargs):
@@ -25,21 +26,22 @@ def find_version(*file_paths):
 VERSION = find_version('d2l', '__init__.py')
 
 requirements = [
+    'jupyter',
     'numpy',
     'matplotlib',
-    'jupyter'
+    'pandas'
 ]
 
 setup(
     # Metadata
     name='d2l',
     version=VERSION,
-    author='Contributors',
-    author_email='mli@amazon.com',
+    python_requires='>=3.5',
+    author='D2L Developers',
+    author_email='d2l.devs@gmail.com',
     url='https://d2l.ai',
-    description='Dive into Deep Learning Utils',
-    long_description='Dive into Deep Learning Book Utilities',
-    license='Apache-2.0',
+    description='Dive into Deep Learning',
+    license='MIT-0',
 
     # Package info
     packages=find_packages(exclude=('tests',)),

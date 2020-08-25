@@ -5,7 +5,7 @@
 # Transposed Convolution
 -->
 
-# *dịch tiêu đề phía trên*
+# Tích chập chuyển vị
 :label:`sec_transposed_conv`
 
 
@@ -18,7 +18,11 @@ however, require to predict values for each pixel and therefore needs to increas
 Transposed convolution, also named fractionally-strided convolution :cite:`Dumoulin.Visin.2016` or deconvolution :cite:`Long.Shelhamer.Darrell.2015`, serves this purpose.
 -->
 
-*dịch đoạn phía trên*
+Các tầng trong mạng nơ-ron tích chập,
+bao gồm tầng tích chập (:numref:`sec_conv_layer`) và tầng gộp (:numref:`sec_pooling`), 
+thường giảm chiều rộng và chiều cao của đầu vào, hoặc giữ nguyên chúng.
+Tuy nhiên, các ứng dụng như phân vùng theo ngữ nghĩa (:numref:`sec_semantic_segmentation`) và mạng đối sinh (*GAN* - :numref:`sec_dcgan`), yêu cầu phải dự đoán các giá trị cho mỗi pixel vì thế cần tăng chiều rộng và chiều cao của đầu vào.
+Tích chập chuyển vị, cũng có tên là tích chập sải bước phân số (*fractionally-strided convolution*) :cite:`Dumoulin.Visin.2016` hay phân tách tích chập (*deconvolution*) :cite:`Long.Shelhamer.Darrell.2015`, phục vụ cho mục đích này.
 
 
 
@@ -35,7 +39,7 @@ npx.set_np()
 ## Basic 2D Transposed Convolution
 -->
 
-## *dịch tiêu đề phía trên*
+## Tích chập chuyển vị 2D căn bản
 
 
 <!--
@@ -43,7 +47,8 @@ Let us consider a basic case that both input and output channels are 1, with 0 p
 :numref:`fig_trans_conv` illustrates how transposed convolution with a $2\times 2$ kernel is computed on the $2\times 2$ input matrix.
 -->
 
-*dịch đoạn phía trên*
+Xét trường hợp cơ bản với số kênh đầu vào và đầu ra là 1, với đệm 0 và sải bước 1. 
+:numref:`fig_trans_conv` mô tả cách tích chập chuyển vị với một hạt nhân $2\times 2$ được tính toán trên một ma trận đầu vào kích thước $2\times 2$.
 
 
 <!--
@@ -51,16 +56,14 @@ Let us consider a basic case that both input and output channels are 1, with 0 p
 -->
 
 
-![*dịch mô tả phía trên*](../img/trans_conv.svg)
+![Tầng tích chập chuyển vị với hạt nhân $2\times 2$.](../img/trans_conv.svg)
 :label:`fig_trans_conv`
-
 
 <!--
 We can implement this operation by giving matrix kernel $K$ and matrix input $X$.
 -->
 
-*dịch đoạn phía trên*
-
+Ta có thể lập trình phép tính này với ma trận hạt nhân $K$ và ma trận đầu vào $X$.
 
 
 ```{.python .input}
@@ -79,14 +82,15 @@ Remember the convolution computes results by `Y[i, j] = (X[i: i + h, j: j + w] *
 While the transposed convolution broadcasts input values through the kernel, which results in a larger output shape.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại rằng kết quả tính tích chập là `Y[i, j] = (X[i: i + h, j: j + w] * K).sum()` (đọc lại `corr2d` trong :numref:`sec_conv_layer`), tức tổng hợp các giá trị đầu vào thông qua hạt nhân.
+Trong khi tích chập chuyển vị lan truyền từng giá trị đầu vào khắp hạt nhân, tạo thành đầu ra có kích thước lớn hơn.
 
 
 <!--
 Verify the results in :numref:`fig_trans_conv`.
 -->
 
-*dịch đoạn phía trên*
+Kiểm chứng các kết quả trong :numref:`fig_trans_conv`.
 
 
 ```{.python .input}
@@ -101,7 +105,8 @@ Or we can use `nn.Conv2DTranspose` to obtain the same results.
 As `nn.Conv2D`, both input and kernel should be 4-D tensors.
 -->
 
-*dịch đoạn phía trên*
+Hoặc ta có thể sử dụng `nn.Conv2DTranspose` để thu được kết quả tương tự.
+Vì đang sử dụng `nn.Conv2D`, cả đầu vào và hạt nhân phải là tensor 4 chiều.
 
 
 ```{.python .input  n=17}
@@ -119,7 +124,7 @@ tconv(X)
 ## Padding, Strides, and Channels
 -->
 
-# *dịch tiêu đề phía trên*
+# Đệm, Sải bước và Kênh
 
 
 <!--
@@ -127,7 +132,8 @@ We apply padding elements to the input in convolution, while they are applied to
 A $1\times 1$ padding means we first compute the output as normal, then remove the first/last rows and columns.
 -->
 
-*dịch đoạn phía trên*
+Khi tính tích chập ta áp dụng đệm lên đầu vào, nhưng với tích chập chuyển vị, chúng được áp dụng vào đầu ra.
+Ví dụ, với đệm $1\times 1$, đầu tiên ta tính toán đầu ra như bình thường, sau đó bỏ đi dòng và cột đầu tiên/cuối cùng.
 
 
 ```{.python .input}
@@ -141,8 +147,7 @@ tconv(X)
 Similarly, strides are applied to outputs as well.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự, sải bước cũng được áp dụng vào các đầu ra.
 
 ```{.python .input}
 tconv = nn.Conv2DTranspose(1, kernel_size=2, strides=2)
@@ -157,8 +162,9 @@ When the input has multiple channels, denoted by $c_i$, the transposed convoluti
 If the output has a channel size $c_o$, then we have a $c_i\times k_h\times k_w$ kernel for each output channel.
 -->
 
-*dịch đoạn phía trên*
-
+Phần mở rộng đa kênh của tích chập chuyển vị cũng giống như tích chập.
+Khi đầu vào có $c_i$ kênh, tích chập chuyển vị gán một ma trận hạt nhân có kích thước $k_h\times k_w$ vào mỗi kênh đầu vào.
+Nếu số kênh đầu ra là $c_o$, thì hạt nhân có kích thước $c_i\times k_h\times k_w$ cho mỗi kênh đầu ra.
 
 
 <!--
@@ -167,7 +173,9 @@ the same hyperparameters as $f$ except for the output channel set to be the chan
 Let us verify this statement.
 -->
 
-*dịch đoạn phía trên*
+Do đó, nếu ta đưa $X$ qua một tầng tích chập $f$ để tính $Y=f(X)$ và tạo một tầng tích chập chuyển vị $g$ với
+cùng một siêu tham số như $f$ ngoại trừ kênh đầu ra được đặt thành kích thước kênh $X$, thì $g(Y)$ sẽ có cùng kích thước với $X$.
+Ta hãy xác minh phát biểu này.
 
 
 ```{.python .input}
@@ -196,9 +204,9 @@ In fact, convolution operations can also be achieved by matrix multiplication.
 In the example below, we define a $3\times$ input $X$ with a $2\times 2$ kernel $K$, and then use `corr2d` to compute the convolution output.
 -->
 
-Tên của tích chập chuyển vị có xuất phát từ phép chuyển vị ma trận.
+Tên của tích chập chuyển vị xuất phát từ phép chuyển vị ma trận.
 Thật vậy, phép tính chập có thể tính thông qua phép nhân ma trận.
-Trong ví dụ dưới đây, ta định nghĩa một biến đầu vào $X$ $3\times 3$ với một kernel $K$ $2\times 2$, rồi dùng `corr2d` để tính ra tích chập.
+Trong ví dụ dưới đây, ta định nghĩa một biến đầu vào $X$ $3\times 3$ với một kernel $K$ $2\times 2$, rồi dùng `corr2d` để tính tích chập.
 
 
 ```{.python .input}
@@ -215,7 +223,7 @@ Its shape will be $(4, 9)$, where the $i^\mathrm{th}$ row present applying the k
 -->
 
 Kế tiếp, ta viết lại hạt nhân chập $K$ dưới dạng ma trận $W$.
-Kích thước của nó sẽ là $(4, 9)$, ở đây hàng thứ $i$ biểu diễn việc sử dụng kernel đối với đầu vào để sinh ra phần tử đầu ra thứ $i$. <!-- (Chỗ này không hiểu phép sinh kiểu gì) -->
+Kích thước của nó sẽ là $(4, 9)$, hàng thứ $i$ biểu diễn việc sử dụng kernel lên đầu vào để sinh ra phần tử đầu ra thứ $i$.
 
 
 ```{.python .input}
@@ -249,7 +257,7 @@ To reuse the generated $W$, we construct a $2\times 2$ input, so the correspondi
 
 Ta có thể thực hiện phép chập chuyển vị giống như phép nhân ma trận bằng cách sử dụng lại `kernel2matrix`.
 Để sử dụng lại ma trận $W$ đã tạo ra, ta xây dựng một đầu vào $2\times 2$, nên ma trận trọng số $W^\top$ tương ứng sẽ có kích thước $(9, 4)$. 
-Ta hãy cùng nhau kiểm tra lại kết quả hai phép tính xem.
+Ta hãy cùng kiểm tra lại kết quả.
 
 
 ```{.python .input}
@@ -273,7 +281,7 @@ Then a transposed convolution layer with the same kernel sizes, padding and stri
 -->
 
 * So với phương pháp tích chập nén đầu vào thông qua hạt nhân (*kernel*), phép tích chập chuyển vị làm tăng số chiều của đầu vào.
-* Nếu một tầng tích chập nén chiều dài và chiều cao của đầu vào lần lượt đi $n_w$ và $n_h$ lần,
+* Nếu một tầng tích chập nén chiều rộng và chiều cao của đầu vào lần lượt đi $n_w$ và $n_h$ lần,
 thì một tầng tích chập chuyển vị có cùng kích thước hạt nhân, đệm và sải bước sẽ tăng chiều dài và chiều cao của đầu vào lần lượt lên $n_w$ và $n_h$ lần.
 * Ta có thể lập trình thao tác tích chập bằng phép nhân ma trận, và phép tích chập chuyển vị tương ứng cũng có thể thực hiện bằng phép nhân ma trận chuyển vị.
 
@@ -307,14 +315,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* 
-
-<!-- Phần 2 -->
-* 
-
-<!-- Phần 3 -->
+* Trần Yến Thy
+* Nguyễn Văn Cường
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 4 -->
 * Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Lê Quang Nhật

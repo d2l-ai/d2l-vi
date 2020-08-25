@@ -5,7 +5,7 @@
 # The Dataset for Pretraining Word Embedding
 -->
 
-# *dịch đoạn phía trên*
+# Dữ liệu cho Tiền Huấn luyện Embbeding Từ
 :label:`sec_word2vec_data`
 
 
@@ -15,14 +15,16 @@ The dataset we use is [Penn Tree Bank (PTB)](https://catalog.ldc.upenn.edu/LDC99
 It takes samples from Wall Street Journal articles and includes training sets, validation sets, and test sets.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng tôi sẽ giới thiệu cách tiền xử lý một tập dữ liệu với phương pháp lấy mẫu âm :numref:`sec_approx_train` và tạo các minibatch để huấn luyện word2vec.
+Tập dữ liệu ta sẽ sử dụng đó là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho dữ liệu nhỏ nhưng được sử dụng phổ biến.
+Dữ liệu được lấy từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
 
 
 <!--
 First, import the packages and modules required for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm.
 
 
 ```{.python .input  n=1}
@@ -39,7 +41,7 @@ import random
 ## Reading and Preprocessing the Dataset
 -->
 
-## *dịch đoạn phía trên*
+## Đọc và Tiền xử lý Dữ liệu
 
 
 <!--
@@ -49,7 +51,10 @@ All the words in a sentence are separated by spaces.
 In the word embedding task, each word is a token.
 -->
 
-*dịch đoạn phía trên*
+Tập dữ liệu này đã được tiền xử lý trước.
+Mỗi dòng của tập dữ liệu được coi là một câu.
+Tất cả các từ trong một câu được phân cách bằng dấu cách.
+Trong bài toán embedding từ, mỗi từ là một token.
 
 
 ```{.python .input  n=2}
@@ -74,7 +79,8 @@ Next we build a vocabulary with words appeared not greater than 10 times mapped 
 Note that the preprocessed PTB data also contains "&lt;unk&gt;" tokens presenting rare words.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được coi như token "&lt;unk&gt;".
+Lưu ý rằng tập dữ liệu PTB đã được tiền xử lý cũng chứa các token "&lt;unk&gt;" đại diện cho các từ hiếm gặp.
 
 
 ```{.python .input  n=3}
@@ -87,7 +93,7 @@ f'vocab size: {len(vocab)}'
 ## Subsampling
 -->
 
-## *dịch đoạn phía trên*
+## Lấy mẫu con
 
 
 <!--
@@ -99,7 +105,13 @@ Specifically, each indexed word $w_i$ in the dataset will drop out at a certain 
 The dropout probability is given as:
 -->
 
-*dịch đoạn phía trên*
+
+Trong dữ liệu văn bản, thường có một số từ xuất hiện với tần suất cao, chẳng hạn như các từ "the", "a" và "in" trong tiếng Anh.
+Nói chung, trong cửa sổ ngữ cảnh, sẽ tốt hơn nếu huấn luyện mô hình embedding từ khi một từ bình thường (chẳng hạn như "chip") và
+một từ có tần suất thấp hơn (chẳng hạn như "microprocessor") xuất hiện cùng lúc, hơn là khi một từ bình thường xuất hiện với một từ có tần suất cao hơn (chẳng hạn như "the").
+Do đó, khi huấn luyện mô hình embedding từ, ta có thể thực hiện lấy mẫu con [2] trên các từ.
+Cụ thể, mỗi từ $w_i$ được gán chỉ số trong tập dữ liệu sẽ bị loại bỏ với một xác suất nhất định.
+Xác suất loại bỏ được tính như sau:
 
 
 $$ P(w_i) = \max\left(1 - \sqrt{\frac{t}{f(w_i)}}, 0\right),$$
@@ -112,8 +124,10 @@ As we can see, it is only possible to drop out the word $w_i$ in subsampling whe
 The higher the word's frequency, the higher its dropout probability.
 -->
 
-*dịch đoạn phía trên*
-
+Ở đây, $f(w_i)$ là tỷ lệ giữa số lần xuất hiện từ $w_i$ với tổng số từ trong tập dữ liệu,
+và hằng số $t$ là một siêu tham số (có giá trị bằng $10^{-4}$ trong thí nghiệm này).
+Như ta thấy, chỉ có thể loại bỏ từ $w_i$ trong lúc lấy mẫu con khi $f(w_i) > t$.
+Tần suất của từ càng cao, xác suất loại bỏ càng lớn.
 
 ```{.python .input  n=4}
 #@save
@@ -144,7 +158,7 @@ subsampled = subsampling(sentences, vocab)
 Compare the sequence lengths before and after sampling, we can see subsampling significantly reduced the sequence length.
 -->
 
-*dịch đoạn phía trên*
+So sánh độ dài chuỗi trước và sau khi lấy mẫu, ta có thể thấy việc lấy mẫu con làm giảm đáng kể độ dài chuỗi.
 
 
 ```{.python .input  n=5}
@@ -161,8 +175,7 @@ d2l.plt.legend(['origin', 'subsampled']);
 For individual tokens, the sampling rate of the high-frequency word "the" is less than 1/20.
 -->
 
-*dịch đoạn phía trên*
-
+Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tuần suất cao như từ "the" nhỏ hơn 1/20.
 
 ```{.python .input  n=6}
 def compare_counts(token):
@@ -178,7 +191,7 @@ compare_counts('the')
 But the low-frequency word "join" is completely preserved.
 -->
 
-*dịch đoạn phía trên*
+Nhưng các từ có tần số thấp như từ "join" hoàn toàn được giữ nguyên.
 
 
 ```{.python .input  n=7}
@@ -190,7 +203,7 @@ compare_counts('join')
 Last, we map each token into an index to construct the corpus.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu.
 
 
 ```{.python .input  n=8}
@@ -203,14 +216,14 @@ corpus[0:3]
 ## Loading the Dataset
 -->
 
-## *dịch đoạn phía trên*
+## Nạp Dữ liệu
 
 
 <!--
 Next we read the corpus with token indicies into data batches for training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta đọc kho ngữ liệu với các chỉ số token thành các batch dữ liệu cho quá trình huấn luyện. 
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -455,14 +468,14 @@ We use the `batchify` function just defined to specify the minibatch reading met
 ## Putting All Things Together
 -->
 
-## *dịch đoạn phía trên*
+## Kết hợp mọi thứ cùng nhau
 
 
 <!--
 Last, we define the `load_data_ptb` function that read the PTB dataset and return the data iterator.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, chúng ta định nghĩa hàm `load_data_ptb` để đọc tập dữ liệu PTB và trả về iterator dữ liệu.
 
 
 ```{.python .input  n=16}
@@ -489,7 +502,7 @@ def load_data_ptb(batch_size, max_window_size, num_noise_words):
 Let us print the first minibatch of the data iterator.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy cùng in ra minibatch đầu tiên trong iterator dữ liệu.
 
 
 ```{.python .input  n=17}
@@ -509,7 +522,8 @@ for batch in data_iter:
 and use mask variables to distinguish between padding and non-padding elements, so that only non-padding elements participate in the calculation of the loss function.
 -->
 
-*dịch đoạn phía trên*
+* Việc lấy mẫu con cố gắng giảm thiểu tác động của các từ có tần suất cao đến việc huấn luyện mô hình embedding từ.
+* Ta có thể đệm để tạo ra các minibatch với các mẫu có cùng độ dài và sử dụng các biến mặt nạ để phân biệt phần tử đệm, vì thế chỉ có những phần tử không phải đệm mới được dùng để tính toán hàm mất mát.
 
 
 ## Bài tập
@@ -520,7 +534,8 @@ We use the `batchify` function to specify the minibatch reading method in the `D
 How should these shapes be calculated?
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi sử dụng hàm `batchify` để chỉ định phương thức đọc minibatch trong thực thể `DataLoader` và in ra kích thước của từng biến trong lần đọc batch đầu tiên.
+Những kích thước này được tính toán như thế nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -542,18 +557,19 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
-* Nguyễn Mai Hoàng Long
+* Phạm Đăng Khoa
 
 
