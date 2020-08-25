@@ -312,7 +312,7 @@ It caches a 10000 size random number bank instead of calling `random.choices` ev
 -->
 
 Ta trước hết định nghĩa một lớp để lấy ra một ứng cử viên dựa theo các trọng số lấy mẫu.
-Lớp này lấy một ngân hàng số ngẫu nhiên có kích thước 10000 thay vì lúc nào cũng gọi `random.choices`.
+Lớp này lấy 10000 số ngẫu nhiên một lúc thay vì gọi `random.choices` liên tục.
 
 
 ```{.python .input  n=12}
