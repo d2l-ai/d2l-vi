@@ -131,8 +131,8 @@ Therefore, the name GloVe is taken from "Global Vectors".
 
 Ở đây, chúng tôi có một đề xuất đối với việc lựa chọn hàm trọng số $h(x)$: khi $x < c$ (ví dụ $c = 100$), chọn $h(x) = (x/c) ^\alpha$ (ví dụ $\alpha = 0.75$), ngược lại chọn $h(x) = 1$.
 Do $h(0)=0$, ta đơn giản có thể bỏ qua mất mát bình phương tại $x_{ij}=0$.
-Khi sử dụng minibatch SGD trong huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không với mỗi bước thời gian và tính toán gradient để cập nhập các tham số mô hình.
-Các giá trị khác không $x_{ij}$ trên được tính trước dựa trên toàn bộ tập dữ liệu và chúng mang ý nghĩa thống kê toàn cục của tập dữ liệu.
+Khi sử dụng minibatch SGD trong huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không từ mỗi bước thời gian và tính toán gradient để cập nhập các tham số mô hình.
+Các giá trị $x_{ij}$ khác không trên được tính trước trên toàn bộ tập dữ liệu và chúng mang ý nghĩa thống kê toàn cục của tập dữ liệu.
 Do đó, tên gọi GloVe được lấy từ "Global Vectors - Vector Toàn cục".
 
 
@@ -171,7 +171,7 @@ From a real example from a large corpus, here we have the following two sets of 
 Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác.
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
 xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ mục tiêu trung tâm $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
-Xét ví dụ thực từ một văn bản dài, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ mục tiêu trung tâm và tỉ số giữa chúng:
+Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ mục tiêu trung tâm và tỉ số giữa chúng:
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
@@ -311,5 +311,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
 
