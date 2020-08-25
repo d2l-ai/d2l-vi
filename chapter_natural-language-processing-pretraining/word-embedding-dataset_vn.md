@@ -262,7 +262,7 @@ Next, we create an artificial dataset containing two sentences of 7 and 3 words,
 Assume the maximum context window is 2 and print all the central target words and their context words.
 -->
 
-Kế tiếp, ta tạo một tập dữ liệu giả chứa hai câu có lần lượt 7 và 3 từ.
+Kế tiếp, ta tạo một tập dữ liệu nhân tạo chứa hai câu có lần lượt 7 và 3 từ.
 Giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ tâm đích và các từ ngữ cảnh của chúng.
 
 
