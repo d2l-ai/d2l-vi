@@ -232,7 +232,7 @@ It uniformly and randomly samples an integer to be used as the context window si
 -->
 
 Ta sử dụng những từ có khoảng cách so với từ tâm đích không vượt quá kích thước cửa sổ ngữ cảnh là các từ ngữ cảnh xung quanh từ mục tiêu đã cho. 
-Hàm định nghĩa sau đây trích tất cả các từ tâm đích và các từ ngữ cãnh của chúng.
+Hàm sau đây trích xuất tất cả từ đích trung tâm và các từ ngữ cảnh của chúng.
 Sử dụng lấy mẫu ngẫu nhiên và đồng đều với một số nguyên có giá trị trong khoảng 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại) để làm kích thước cửa sổ ngữ cảnh.
 
 
@@ -555,4 +555,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
