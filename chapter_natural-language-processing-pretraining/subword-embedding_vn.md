@@ -77,7 +77,7 @@ $$\textrm{"<wh"}, \ \textrm{"whe"}, \ \textrm{"her"}, \ \textrm{"ere"}, \ \textr
 and the special subword $\textrm{"<where>"}$.
 -->
 
-và từ tố đặc biệt  $\textrm{"<where>"}$.
+và từ con đặc biệt $\textrm{"<where>"}$.
 
 
 <!--
