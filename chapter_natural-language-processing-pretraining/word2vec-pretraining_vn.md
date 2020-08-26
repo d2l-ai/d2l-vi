@@ -20,7 +20,7 @@ Trong phần này, ta sẽ huấn luyện một mô hình skip-gram đã đượ
 First, import the packages and modules required for the experiment, and load the PTB dataset.
 -->
 
-Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp dữ liệu PTB. 
+Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp tập dữ liệu PTB. 
 
 
 ```{.python .input  n=1}
@@ -404,5 +404,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
