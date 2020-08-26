@@ -88,8 +88,8 @@ Then, the central word vector $\mathbf{u}_w$ for the word $w$ in the skip-gram m
 -->
 
 Trong fastText, với một từ $w$, ta ghi tập hợp của tất cả các từ con của nó với chiều dài từ $3$ đến $6$ và các từ con đặc biệt là $\mathcal{G}_w$.
-Do đó, từ điển này là tập hợp của bộ sưu tập các từ tố của tất cả các từ.
-Giả sử vector của từ tố $g$ trong từ điển này là  $\mathbf{z}_g$.
+Do đó, từ điển này là tập hợp các từ con của tất cả các từ.
+Giả sử vector của từ con $g$ trong từ điển này là $\mathbf{z}_g$.
 Thì vector từ trung tâm $\mathbf{u}_w$ cho từ $w$ trong mô hình skip-gram có thể biểu diễn là
 
 $$\mathbf{u}_w = \sum_{g\in\mathcal{G}_w} \mathbf{z}_g.$$
