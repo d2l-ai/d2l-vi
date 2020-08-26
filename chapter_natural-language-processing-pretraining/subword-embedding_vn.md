@@ -261,7 +261,7 @@ As a greedy approach, the following `segment_BPE` function tries to break words 
 -->
 
 Chú ý là kết quả của biểu diễn cặp byte tùy thuộc vào tập dữ liệu đang được sử dụng.
-Ta cũng có thể dùng các tố từ đã học từ một tập dữ liệu để phân đoạn các từ của một tập dữ liệu khác.
+Ta cũng có thể dùng các từ con đã học từ một tập dữ liệu để phân đoạn các từ của một tập dữ liệu khác.
 Với cách tiếp cận tham lam, hàm `segment_BPE` sau đây cố gắng tách các từ thành các từ con dài nhất có thể từ đối số đầu vào `symbols`.
 
 
