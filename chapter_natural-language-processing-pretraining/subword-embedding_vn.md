@@ -22,7 +22,7 @@ In Finnish, a noun may have more than 15 forms.
 In fact, morphology, which is an important branch of linguistics, studies the internal structure and formation of words.
 -->
 
-Các từ tiếng Anh thường có các cấu trúc nội và phương thức tạo thành.
+Các từ tiếng Anh thường có cấu những trúc nội tại và phương thức cấu thành.
 Chẳng hạn, ta có thể suy ra mối quan hệ giữa các từ "dog", "dogs" và "dogcatcher" thông qua cách viết của chúng.
 Tất cả các từ đó có cùng từ gốc là "dog" nhưng có hậu tố khác nhau làm thay đổi nghĩa của từ.
 Hơn nữa, sự liên kết này có thể được mở rộng ra đối với các từ khác.
@@ -373,4 +373,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
