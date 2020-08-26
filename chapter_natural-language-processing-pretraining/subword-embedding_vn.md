@@ -31,7 +31,7 @@ Mối quan hệ giữa từ "boy" và "boyfriend" đơn giản giống mối qua
 Đặc tính này không phải là duy nhất trong tiếng Anh.
 Trong tiếng Pháp và Tây Ban Nha, rất nhiều động từ có thể có hơn 40 dạng khác nhau tùy thuộc vào ngữ cảnh.
 Trong tiếng Phần Lan, một danh từ có thể có hơn 15 dạng.
-Thật vậy, hình thái học chính nó là một nhánh quan trọng của ngôn ngữ học chuyên nghiên cứu về cấu trúc và hình thái của các từ. 
+Thật vậy, hình thái học (*morphology*) là một nhánh quan trọng của ngôn ngữ học chuyên nghiên cứu về cấu trúc và hình thái của các từ. 
 
 
 <!--
