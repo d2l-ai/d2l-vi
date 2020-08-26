@@ -245,7 +245,7 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-Với cùng tập dữ liệu đặc tả trong các từ khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các tố từ "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
 Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
