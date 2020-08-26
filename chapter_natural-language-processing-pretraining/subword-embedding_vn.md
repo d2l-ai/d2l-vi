@@ -291,7 +291,7 @@ In the following, we use the subwords in list `symbols`, which is learned from t
 to segment `tokens` that represent another dataset.
 -->
 
-Trong phần tiếp theo, ta sử dụng các tố từ trong danh sách `symbols` đã được học từ tập dữ liệu ở trên để phân đoạn những `tokens` để biểu diễn cho tập dữ liệu khác.
+Trong phần tiếp theo, ta sử dụng các từ con trong danh sách `symbols` đã được học từ tập dữ liệu ở trên để phân đoạn các `tokens` biểu diễn tập dữ liệu khác.
 
 
 ```{.python .input}
