@@ -212,7 +212,7 @@ In the first iteration, the most frequent pair of consecutive symbols are `'t'` 
 In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` to result in another new symbol `'tal'`.
 -->
 
-Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các từ khóa của từ điển `token_freqs`.
+Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`.
 Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte trộn chúng lại để tạo ra một biểu tượng mới là `'ta'`.
 Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục trộn biểu tượng `'ta'` và `'l'` đưa tới tạo một biểu tượng mới khác là `'tal'`.
 
@@ -357,4 +357,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
