@@ -285,8 +285,9 @@ GloVe uses squared loss and the word vector to fit global statistics computed in
 * The central target word vector and context word vector of any word are equivalent in GloVe.
 -->
 
-*dịch đoạn phía trên*
-
+* Trong một số trường hợp, hàm mất mát entropy chéo tồn tại một hạn chế.
+GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu.
+* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe.
 
 ## Bài tập
 
@@ -297,7 +298,10 @@ Hint: See section 4.2 from the paper GloVe :cite:`Pennington.Socher.Manning.2014
 2. For any word, will its central target word bias term and context word bias term be equivalent to each other in GloVe? Why?
 -->
 
-*dịch đoạn phía trên*
+1. Nếu một từ xuất hiện trong cửa sổ ngữ cảnh của từ khác, 
+làm thế nào để sử dụng khoảng cách giữa hai từ này trong chuỗi văn bản để thiết kế lại phương pháp tính toán xác suất có điều kiện $p_{ij}$?
+Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.Manning.2014`.
+2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -334,4 +338,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
+
+
