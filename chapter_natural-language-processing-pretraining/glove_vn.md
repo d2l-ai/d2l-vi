@@ -267,7 +267,7 @@ Hint: See section 4.2 from the paper GloVe :cite:`Pennington.Socher.Manning.2014
 -->
 
 1. Nếu một từ xuất hiện trong cửa sổ ngữ cảnh của từ khác, 
-ta có thể sử dụng khoảng cách giữa hai từ này trong chuỗi văn bản để thiết kế lại phương pháp tính toán xác suất có điều kiện $p_{ij}$ bằng cách nào?
+làm thế nào để sử dụng khoảng cách giữa hai từ này trong chuỗi văn bản để thiết kế lại phương pháp tính toán xác suất có điều kiện $p_{ij}$?
 Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.Manning.2014`.
 2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao?
 
@@ -304,5 +304,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
 
