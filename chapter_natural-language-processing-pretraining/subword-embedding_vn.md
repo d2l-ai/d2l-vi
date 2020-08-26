@@ -87,7 +87,7 @@ Assume the vector of the subword $g$ in the dictionary is $\mathbf{z}_g$.
 Then, the central word vector $\mathbf{u}_w$ for the word $w$ in the skip-gram model can be expressed as
 -->
 
-Trong fastText, với một từ $w$, ta ghi tập hợp của tất cả các từ tố của nó với chiều dài từ $3$ đến $6$ và các từ tố đặc biệt là $\mathcal{G}_w$.
+Trong fastText, với một từ $w$, ta ghi tập hợp của tất cả các từ con của nó với chiều dài từ $3$ đến $6$ và các từ con đặc biệt là $\mathcal{G}_w$.
 Do đó, từ điển này là tập hợp của bộ sưu tập các từ tố của tất cả các từ.
 Giả sử vector của từ tố $g$ trong từ điển này là  $\mathbf{z}_g$.
 Thì vector từ trung tâm $\mathbf{u}_w$ cho từ $w$ trong mô hình skip-gram có thể thể hiện như
