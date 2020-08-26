@@ -107,7 +107,7 @@ The output of matrix multiplication on these two batches are $n$ matrices $\math
 Therefore, given two tensors of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the shape of the minibatch multiplication output is ($n$, $a$, $c$).
 -->
 
-Ta có thể nhân ma trận của hai minibatch bằng toán tử nhân minibatch `batch_dot`.
+Ta có thể nhân các ma trận trong hai minibatch bằng toán tử nhân minibatch `batch_dot`.
 Giả sử batch đầu tiên chứa $n$ ma trận $\mathbf{X}_1, \ldots, \mathbf{X}_n$ có kích thước là $a\times b$, 
 và batch thứ hai chứa $n$ ma trận $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ có kích thước là $b\times c$.
 Đầu ra của toán tử nhân ma trận với hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
@@ -408,5 +408,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
