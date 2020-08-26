@@ -251,8 +251,8 @@ Here, we specify `pretrained=True` to automatically download and load the pre-tr
 The first time they are used, the model parameters need to be downloaded from the Internet.
 -->
 
-Ta sử dụng ResNet-18 đã được huấn luyện trước đó trên tập dữ liệu ImageNet làm mô hình gốc.
-Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện sẵn.
+Ta sử dụng ResNet-18 đã được tiền huấn luyện trên tập dữ liệu ImageNet làm mô hình gốc.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được tiền huấn luyện.
 Trong lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 

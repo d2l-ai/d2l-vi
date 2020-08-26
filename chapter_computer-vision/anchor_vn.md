@@ -346,7 +346,7 @@ In this case, a common technique is to label the offset of $A$ as
 -->
 
 Giờ ta có thể gán nhãn hạng mục và độ dời cho các khung neo.
-Nếu khung neo $A$ được gán khung có chứa nhãn gốc $B$ thì khung neo $A$ sẽ có cùng hạng mục với $B$.
+Nếu khung neo $A$ được gán khung chứa nhãn gốc $B$ thì khung neo $A$ sẽ có cùng hạng mục với $B$.
 Độ dời của khung neo $A$ được đặt dựa theo vị trí tương đối của tọa độ tâm của $B$ và $A$ cũng như kích thước tương đối của hai khung.
 Do vị trí và kích thước của các khung trong tập dữ liệu thường khá đa dạng,
 các vị trí và kích thước tương đối này thường yêu cầu một số phép biến đổi đặc biệt sao cho phân phối của giá trị độ dời trở nên đều và dễ khớp hơn.
