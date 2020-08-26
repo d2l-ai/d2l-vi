@@ -5,7 +5,7 @@
 # Subword Embedding
 -->
 
-# Nhúng từ tố
+# Embedding từ con
 :label:`sec_fasttext`
 
 
