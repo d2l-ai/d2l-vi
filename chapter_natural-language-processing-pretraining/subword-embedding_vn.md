@@ -52,7 +52,7 @@ thereby attempting to introduce morphological information in the skip-gram model
 Trong word2vec, ta không trực tiếp sử dụng thông tin hình thái học.
 Trong cả mô hình skip-gram và bag-of-word liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
 Chẳng hạn, "dog" và "dogs" được biểu diễn bởi hai vector khác nhau, trong khi mối quan hệ giữa hai vector đó không biểu thị trực tiếp trong mô hình. 
-Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức nhúng từ tố,
+Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con,
 thông qua việc thực hiện đưa thông tin hình thái học vào trong mô hình skip-gram trong word2vec.
 
 
