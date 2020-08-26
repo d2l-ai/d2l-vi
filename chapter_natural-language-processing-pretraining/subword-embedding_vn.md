@@ -104,7 +104,7 @@ However, we can obtain better vectors for more uncommon complex words, even word
 
 Phần còn lại tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, nên ta không mô tả lại ở đây.
 Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển trong fastText lớn hơn dẫn tới số tham số của mô hình nhiều hơn.
-Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ tố dẫn tới kết quả làm độ phức tạp tính toán cao hơn.
+Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới kết quả làm độ phức tạp tính toán cao hơn.
 Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này, nhờ tham chiếu các từ khác có cấu trúc tương tự.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
