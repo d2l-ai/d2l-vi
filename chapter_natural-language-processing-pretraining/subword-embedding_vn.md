@@ -64,7 +64,7 @@ Then, we treat the word as a sequence of characters to extract the $n$-grams.
 For example, when $n=3$, we can get all subwords with a length of $3$:
 -->
 
-Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ tố.
+Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ con.
 Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu làm thế nào các từ tố được tạo thành.
 Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ tố được dùng làm tiền tố và hậu tố.
 Rồi ta sẽ xem từ này như một chuỗi các ký tự để trích xuất $n$-grams.
