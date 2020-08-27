@@ -307,7 +307,10 @@ print(segment_BPE(tokens, symbols))
 As a greedy approach, byte pair encoding iteratively merges the most frequent pair of consecutive symbols.
 -->
 
-*dịch đoạn phía trên*
+* FastText đề xuất phương pháp embedding cho từ con. Dựa trên mô hình skip-gram trong word2vec, phương pháp này biểu diễn vector từ trung tâm thành tổng các vector từ con của từ đó.
+* Embedding cho từ con sử dụng nguyên tắc trong hình thái học, thường cải thiện chất lượng biểu diễn của các từ ít gặp.
+* Mã hoá cặp byte thực hiện phân tích thống kê trên tập dữ liệu huấn luyện để phát hiện các ký hiệu chung trong một từ.
+* Được coi là một giải thuật tham lam, mã hoá cặp byte lặp lại phép gộp (_merge_) các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
 
 
 ## Bài tập
@@ -320,8 +323,11 @@ Can you think of any methods to solve them? Hint: Refer to the end of section 3.
 4. How can we extend the idea of byte pair encoding to extract phrases?
 -->
 
-*dịch đoạn phía trên*
-
+1. Khi có quá nhiều từ con (ví dụ, 6 từ trong tiếng Anh có thể tạo ra $3\times 10^8$ các tổ hợp khác nhau), vấn đề gì sẽ xảy ra?
+Bạn có thể giải quyết vấn đề trên không? Gợi ý: Tham khảo đoạn cuối phần 3.2 của bài báo fastText [1].
+2. Bạn có thể thiết kết một mô hình embedding cho từ con dựa trên phương pháp túi từ liên tục bằng cách nào?
+3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp được thực hiện khi kích thước bộ từ vựng ký hiệu ban đầu là $n$? 
+4. Ta có thể mở rộng ý tưởng của thuật toán mã hoá cặp byte để trích xuất các cụm từ bằng cách nào?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -351,5 +357,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
 
