@@ -5,7 +5,7 @@
 # Word Embedding with Global Vectors (GloVe)
 -->
 
-# *dịch đoạn phía trên*
+# Embedding từ với Vector Toàn cục (GloVe)
 :label:`sec_glove`
 
 
@@ -14,7 +14,8 @@ First, we should review the skip-gram model in word2vec.
 The conditional probability $P(w_j\mid w_i)$ expressed in the skip-gram model using the softmax operation will be recorded as $q_{ij}$, that is:
 -->
 
-*dịch đoạn phía trên*
+Trước tiên, ta sẽ xem lại mô hình skip-gram trong word2vec.
+Xác suất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ  được ghi lại dưới dạng $q_{ij}$ như sau:
 
 
 $$q_{ij}=\frac{\exp(\mathbf{u}_j^\top \mathbf{v}_i)}{ \sum_{k \in \mathcal{V}} \text{exp}(\mathbf{u}_k^\top \mathbf{v}_i)},$$
@@ -25,7 +26,8 @@ where $\mathbf{v}_i$ and $\mathbf{u}_i$ are the vector representations of word $
 and $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$ is the vocabulary index set.
 -->
 
-*dịch đoạn phía trên*
+Ở đây $\mathbf{v}_i$ và $\mathbf{u}_i$ lần lượt là các biểu diễn vector của từ trung tâm và từ ngữ cảnh của từ $w_i$ với chỉ số $i$,
+và $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$ là tập chỉ số từ vựng.
 
 
 <!--
@@ -39,8 +41,14 @@ Denote multiplicity of element $j$ in multiset $\mathcal{C}_i$ as $x_{ij}$: it i
 As a result, the loss function of the skip-gram model can be expressed in a different way:
 -->
 
-*dịch đoạn phía trên*
-
+Từ $w_i$ có thể xuất hiện trong tập dữ liệu nhiều lần.
+Ta gom tất cả các từ ngữ cảnh mỗi khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, rồi ký hiệu đó là tập bội $\mathcal{C}_i$.
+Số lượng của một phần tử trong tập bội được gọi là bội số của phần tử đó. 
+Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu:
+cửa sổ ngữ cảnh khi hai từ $w_i$ đó là từ trung tâm trong chuỗi văn bản chứa các chỉ số từ ngữ cảnh $2, 1, 5, 2$ và $2, 3, 2, 1$.
+Thì, tập bội $\mathcal{C}_i = \{1, 1, 2, 2, 2, 2, 3, 5\}$, ở đây bội số của phần tử số 1 là 2, bội số của phần tử số 2 là 4, và bội số của phần tử số 3 và 5 đều là 1.
+Ký hiệu bội số của phần tử $j$ trong tập bội $\mathcal{C}_i$ là $x{ij}$: nó là số lần từ $w_j$ có trong cửa sổ ngữ cảnh mà từ $w_i$ làm trung tâm trong toàn bộ tập dữ liệu.
+Kết quả là hàm mất mát của mô hình skip-gram có thể mô tả theo một cách khác là:
 
 $$-\sum_{i\in\mathcal{V}}\sum_{j\in\mathcal{V}} x_{ij} \log\,q_{ij}.$$
 
@@ -51,7 +59,9 @@ and record the conditional probability $x_{ij}/x_i$ for generating context word 
 We can rewrite the loss function of the skip-gram model as
 -->
 
-*dịch đoạn phía trên*
+Ta tính tổng số lượng tất cả các từ ngữ cảnh đối với từ trung tâm $w_i$ để có $x_i$,
+và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ trung tâm $w_i$ là $p_{ij}$.
+Ta có thể viết lại hàm mất mất của mô hình skip-gram như
 
 
 $$-\sum_{i\in\mathcal{V}} x_i \sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}.$$
@@ -68,7 +78,11 @@ If we minimize the loss function from the formula above, we will be able to allo
 to approach as close as possible to the true conditional probability distribution.
 -->
 
-*dịch đoạn phía trên*
+Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ sinh từ ngữ cảnh
+dựa trên từ tâm đích $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
+Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$.
+Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán
+tiệm cận gần nhất có thể tới phân phối xác suất có điều kiện thật.
 
 
 <!--
@@ -80,14 +94,18 @@ On the other hand, there are often a lot of uncommon words in the dictionary, an
 In the cross-entropy loss function, the final prediction of the conditional probability distribution on a large number of uncommon words is likely to be inaccurate.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, mặc dù là loại hàm mất mát phổ biến nhất, hàm mất mát entropy chéo lại thường không phải là lựa chọn tốt.
+Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để cho phép dự đoán của mô hình $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó.
+Điều này có thể dễ dàng khiến tổng chi phí tính toán quá lớn.
+Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu.
+Trong hàm mất mát entropy chéo, dự đoán phân phối xác suất có điều kiện cuối cùng trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác.
 
 
 <!--
 ## The GloVe Model
 -->
 
-## *dịch đoạn phía trên*
+## Mô hình GloVe
 
 
 <!--
@@ -95,7 +113,7 @@ To address this, GloVe :cite:`Pennington.Socher.Manning.2014`, a word embedding 
 square loss and makes three changes to the skip-gram model based on this loss.
 -->
 
-*dịch đoạn phía trên*
+Để giải quyết vấn đề trên, GloVe :cite:`Pennington.Socher.Manning.2014`, một mô hình embedding từ xuất hiện sau word2vec, áp dụng mất mát bình phương và tạo ra ba sự thay đổi trong mô hình skip-gram dựa theo mất mát này.
 
 
 <!--
@@ -105,14 +123,17 @@ Therefore, we get the square loss $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 
 3. Replace the weight of each loss with the function $h(x_{ij})$. The weight function $h(x)$ is a monotone increasing function with the range $[0, 1]$.
 -->
 
-*dịch đoạn phía trên*
+1. Ở đây, ta sử dụng các biến phân phối phi xác suất $p'_{ij}=x_{ij}$ và $q'_{ij}=\exp(\mathbf{u}_j^\top \mathbf{v}_i)$ và tính log của chúng.
+Theo đó, ta có mất mát bình phương $\left(\log\,p'_{ij} - \log\,q'_{ij}\right)^2 = \left(\mathbf{u}_j^\top \mathbf{v}_i - \log\,x_{ij}\right)^2$.
+2. Ta cộng vào từng từ $w_i$ hai số vô hướng là tham số mô hình: hệ số điều chỉnh $b_i$ (cho các từ trung tâm) và $c_i$ (cho các từ ngữ cảnh).
+3. Thay thế trọng số của mỗi mất mát bằng hàm $h(x_{ij})$. Hàm trọng số $h(x)$ là hàm đơn điệu tăng trong khoảng $[0, 1]$.
 
 
 <!--
 Therefore, the goal of GloVe is to minimize the loss function.
 -->
 
-*dịch đoạn phía trên*
+Theo đó, mục tiêu của GloVe là cực tiểu hoá hàm mất mát
 
 
 $$\sum_{i\in\mathcal{V}} \sum_{j\in\mathcal{V}} h(x_{ij}) \left(\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j - \log\,x_{ij}\right)^2.$$
@@ -129,7 +150,11 @@ These non-zero $x_{ij}$ are computed in advance based on the entire dataset and 
 Therefore, the name GloVe is taken from "Global Vectors".
 -->
 
-*dịch đoạn phía trên*
+Ở đây, chúng tôi có một đề xuất đối với việc lựa chọn hàm trọng số $h(x)$: khi $x < c$ (ví dụ $c = 100$), chọn $h(x) = (x/c) ^\alpha$ (ví dụ $\alpha = 0.75$), ngược lại chọn $h(x) = 1$.
+Do $h(0)=0$, ta đơn giản có thể bỏ qua mất mát bình phương tại $x_{ij}=0$.
+Khi sử dụng minibatch SGD trong huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không từ mỗi bước thời gian và tính toán gradient để cập nhập các tham số mô hình.
+Các giá trị $x_{ij}$ khác không trên được tính trước trên toàn bộ tập dữ liệu, là thống kê toàn cục của tập dữ liệu.
+Do đó, tên gọi GloVe được lấy từ "Global Vectors - Vector Toàn cục".
 
 
 <!--
@@ -140,7 +165,11 @@ However, the two sets of word vectors that are learned by the same word may be d
 After learning all the word vectors, GloVe will use the sum of the central target word vector and the context word vector as the final word vector for the word.
 -->
 
-*dịch đoạn phía trên*
+Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh của từ $w_j$ thì từ $w_j$ cũng sẽ xuất hiện trong cửa sổ ngữ cảnh của từ $w_i$. Do đó, $x_{ij}=x_{ji}$.
+Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay cho xác suất có điều kiện $p_{ij}$ bất đối xứng.
+Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe.
+Tuy vậy, hai tập vector từ được học bởi cùng một mô hình đến cuối cùng có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
+Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng các vector từ mục tiêu trung tâm và vector từ ngữ cảnh làm vector từ cuối cùng cho từ đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -150,7 +179,7 @@ After learning all the word vectors, GloVe will use the sum of the central targe
 ## Understanding GloVe from Conditional Probability Ratios
 -->
 
-## *dịch đoạn phía trên*
+## Lý giải GloVe bằng Tỉ số Xác suất Có điều kiện
 
 
 <!--
@@ -160,7 +189,10 @@ the conditional probability of generating context word $w_j$ with central target
 From a real example from a large corpus, here we have the following two sets of conditional probabilities with "ice" and "steam" as the central target words and the ratio between them:
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác.
+Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
+xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
+Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng:
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
@@ -174,7 +206,7 @@ From a real example from a large corpus, here we have the following two sets of 
 We will be able to observe phenomena such as:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể quan sát thấy các hiện tượng như sau:
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -253,8 +285,9 @@ GloVe uses squared loss and the word vector to fit global statistics computed in
 * The central target word vector and context word vector of any word are equivalent in GloVe.
 -->
 
-*dịch đoạn phía trên*
-
+* Trong một số trường hợp, hàm mất mát entropy chéo tồn tại một hạn chế.
+GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu.
+* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe.
 
 ## Bài tập
 
@@ -265,7 +298,10 @@ Hint: See section 4.2 from the paper GloVe :cite:`Pennington.Socher.Manning.2014
 2. For any word, will its central target word bias term and context word bias term be equivalent to each other in GloVe? Why?
 -->
 
-*dịch đoạn phía trên*
+1. Nếu một từ xuất hiện trong cửa sổ ngữ cảnh của từ khác, 
+làm thế nào để sử dụng khoảng cách giữa hai từ này trong chuỗi văn bản để thiết kế lại phương pháp tính toán xác suất có điều kiện $p_{ij}$?
+Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.Manning.2014`.
+2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -290,15 +326,18 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
 
 

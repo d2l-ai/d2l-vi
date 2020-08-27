@@ -5,7 +5,7 @@
 # Multiscale Object Detection
 -->
 
-# Phát hiện vật thể đa tỉ lệ
+# Phát hiện Vật thể Đa tỉ lệ
 
 
 <!--
@@ -18,9 +18,9 @@ If five different shapes of anchor boxes are generated centered on each pixel, o
 
 Trong :numref:`sec_anchor`, ta đã tạo ra nhiều khung neo có tâm tại từng điểm ảnh đầu vào.
 Các khung neo đó được sử dụng để lấy mẫu các vùng khác nhau của ảnh đầu vào này.
-Tuy nhiên, nếu các khung neo sinh ra từ mọi điểm trên ảnh thì chẳng mấy chốc sẽ có quá nhiều khung neo phải xử lý.
-Chẳng hạn, ta giả định rằng ảnh đầu vào này có độ cao và độ rộng lần lượt là 561 và 728 pixel.
-Nếu mỗi điểm ảnh ta tạo ra 5 khung neo kích thước khác nhau có cùng tâm trên đó, thì sẽ có hơn hai triệu khung neo ($561 \times 728 \times 5$) cần phải kiểm tra và dán nhãn trên ảnh này.
+Tuy nhiên, nếu ta sinh khung neo cho mọi điểm trên ảnh thì chẳng mấy chốc sẽ có quá nhiều khung neo phải xử lý.
+Chẳng hạn, ta giả định rằng ảnh đầu vào có chiều cao và chiều rộng lần lượt là 561 và 728 pixel.
+Nếu với mỗi điểm ảnh ta sinh ra năm khung neo kích thước khác nhau có cùng tâm ở đó, ta sẽ phải dự đoán và dán nhãn hơn hai triệu khung neo ($561 \times 728 \times 5$).
 
 <!--
 It is not difficult to reduce the number of anchor boxes.
@@ -31,11 +31,11 @@ Here, we will use a simple example: Objects with shapes of $1 \times 1$, $1 \tim
 Therefore, when using smaller anchor boxes to detect smaller objects, we can sample more regions; when using larger anchor boxes to detect larger objects, we can sample fewer regions.
 -->
 
-Việc giảm số lượng khung neo không phải là quá khó.
-Một cách dễ dàng là lẫy mẫu ngẫu nhiên theo phân phối đều trên một phần nhỏ điểm ảnh từ ảnh đầu vào và tạo ra các khung neo có tâm trên các điểm được chọn đó.
+Việc giảm số lượng khung neo cũng không quá khó.
+Một cách dễ dàng là lẫy mẫu ngẫu nhiên theo phân phối đều trên một lượng nhỏ điểm ảnh từ ảnh đầu vào và tạo ra các khung neo có tâm tại các điểm được chọn.
 Thêm vào đó, ta có thể tạo ra những khung neo có số lượng và kích thước thay đổi với nhiều tỉ lệ.
 Lưu ý rằng các vật thể nhỏ hơn nhiều khả năng sẽ được định vị dễ hơn.
-Ở đây, ta sẽ dùng một ví dụ đơn giản: Các vật thể có kích thước $1 \times 1$, $1 \times 2$, and $2 \times 2$ sẽ có thể ở 4, 2, và 1 vị trí khác nhau trên một bức ảnh có kích thước $2 \times 2$.
+Ở đây, ta sẽ dùng một ví dụ đơn giản: các vật thể có kích thước $1 \times 1$, $1 \times 2$, and $2 \times 2$ sẽ có thể nằm ở lần lượt 4, 2, và 1 vị trí trên một bức ảnh có kích thước $2 \times 2$.
 Do đó, khi sử dụng những khung neo nhỏ hơn để phát hiện các vật thể nhỏ hơn, ta có thể lấy mẫu nhiều vùng hơn; và ngược lại.
 
 <!--
@@ -43,7 +43,7 @@ To demonstrate how to generate anchor boxes on multiple scales, let us read an i
 It has a height and width of $561 \times 728$ pixels.
 -->
 
-Để minh họa cách làm thế nào sinh ra các khung neo với nhiều tỉ lệ, trước hết ta hãy đọc một ảnh có kích thước $561 \times 728$ pixel.
+Để minh họa cách sinh ra khung neo với nhiều tỉ lệ, trước hết ta hãy đọc một ảnh có kích thước $561 \times 728$ pixel.
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -64,7 +64,7 @@ We can determine the midpoints of anchor boxes uniformly sampled on any image by
 -->
 
 Trong :numref:`sec_conv_layer`, mảng đầu ra 2D của mạng nơ-ron tích chập (CNN) được gọi là một ánh xạ đặc trưng.
-Ta có thể xác định tâm của các khung neo được lấy mẫu đều trên một ảnh bằng cách mô tả kích thước của ánh xạ đặc trưng này.
+Ta có thể xác định tâm của các khung neo được lấy mẫu đều trên bất kì ảnh nào bằng cách chỉ định kích thước của ánh xạ đặc trưng này.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -84,14 +84,14 @@ to generate anchor boxes with size `s` (we assume that the length of list `s` is
 -->
 
 Hàm `display_anchors` được định nghĩa như ở dưới.
-Ta tạo các khung neo `anchors` có tâm được đặt theo từng đơn vị (điểm ảnh) trong ánh xạ đặc trưng `fmap`.
+Ta sẽ tạo các khung neo `anchors` có tâm được đặt theo từng đơn vị (điểm ảnh) trong ánh xạ đặc trưng `fmap`.
 Do các toạ độ $x$ và $y$ trong các khung neo `anchors` đã được chia cho chiều rộng và chiều cao của ánh xạ đặc trưng `fmap`,
 ta sử dụng các giá trị trong khoảng từ 0 đến 1 để biểu diễn vị trí tương đối của các khung neo trong ánh xạ đặc trưng.
-Do tâm điểm của các khung neo `anchors` trùng với tất cả các đơn vị của ánh xạ đặc trưng `fmap`,
-vị trí tương đối trong không gian của tâm điểm của `anchors` trên một ảnh bất kì bắt buộc phải tuân theo phân phối đều.
+Do tâm của các khung neo `anchors` trùng với tất cả các đơn vị của ánh xạ đặc trưng `fmap`,
+vị trí tương đối trong không gian của tâm của `anchors` trên một ảnh bất kì bắt buộc phải tuân theo phân phối đều.
 Cụ thể, khi chiều rộng và chiều cao của một ánh xạ đặc trưng lần lượt được đặt là `fmap_w` và `fmap_h`,
-hàm này sẽ tạo ra mẫu phân phối đều cho các hàng `fmap_h` và các cột `fmap_w` cho các điểm ảnh và sử dụng chúng làm tâm điểm
-để sinh các khung neo với kích thước `s` (ta giả sử rằng độ dài của mảng `s` là 1) và các tỉ lệ khung hình khác nhau (`ratios`).
+hàm này sẽ lấy mẫu các điểm ảnh theo phân phối đều từ `fmap_h` hàng và `fmap_w` cột và sử dụng chúng làm tâm
+để sinh các khung neo với kích thước `s` (ta giả sử rằng độ dài của danh sách `s` là 1) và các tỉ lệ khung ảnh (`ratios`) khác nhau.
 
 
 ```{.python .input  n=2}
@@ -112,9 +112,9 @@ We assume that the size of the anchor boxes is 0.15 and the height and width of 
 We can see that the midpoints of anchor boxes from the 4 rows and 4 columns on the image are uniformly distributed.
 -->
 
-Đầu tiên ta tập trung vào việc phát hiện các vật thể nhỏ. Để dễ dàng phân biệt trong lúc hiển thị, các khung neo với các tâm điểm khác nhau ở ví dụ này sẽ không chồng chéo lên nhau.
+Đầu tiên ta sẽ tập trung vào việc phát hiện các vật thể nhỏ. Để dễ dàng phân biệt trong lúc hiển thị, các khung neo có tâm khác nhau ở ví dụ này sẽ không nằm chồng chéo lẫn nhau. 
 Ta giả sử rằng kích thước của các khung neo là 0.15 và chiều cao và chiều rộng của ánh xạ đặc trưng đều bằng 4.
-Ta có thể thấy rằng tâm điểm của các khung neo tuân theo phân phối đều trên 4 hàng và 4 cột trong ảnh .
+Có thể thấy rằng tâm của các khung neo tuân theo phân phối đều trên 4 hàng và 4 cột trong ảnh .
 
 
 ```{.python .input  n=3}
@@ -127,8 +127,8 @@ We are going to reduce the height and width of the feature map by half and use a
 When the size is set to 0.4, overlaps will occur between regions of some anchor boxes.
 -->
 
-Ta giảm chiều cao và chiều rộng của ánh xạ đặc trưng đi một nửa và sử dụng khung neo lớn hơn để phát hiện vật thể kích thước lớn hơn.
-Khi kích thước được đặt bằng 0.4, hiện tượng chồng chéo giữa một số khung neo giữa các vùng sẽ xảy ra.
+Ta giảm chiều cao và chiều rộng của ánh xạ đặc trưng đi một nửa và sử dụng khung neo lớn hơn để phát hiện vật thể có kích thước lớn hơn.
+Khi kích thước được đặt bằng 0.4, một số khung neo sẽ nằm chồng chéo nhau.
 
 
 
@@ -142,8 +142,8 @@ Finally, we are going to reduce the height and width of the feature map by half 
 Now the midpoint of the anchor box is the center of the image.
 -->
 
-Cuối cùng, ta tiếp tục giảm chiều cao và chiều rộng của ánh xạ đặc trưng đi một nửa và tăng kích thước khung neo lên 0.8.
-Lúc này tâm điểm của khung neo chính là tâm của ảnh.
+Cuối cùng, ta sẽ giảm chiều cao và chiều rộng của ánh xạ đặc trưng đi một nửa và tăng kích thước khung neo lên 0.8.
+Lúc này tâm của khung neo chính là tâm của ảnh.
 
 
 
@@ -157,7 +157,7 @@ Since we have generated anchor boxes of different sizes on multiple scales, we w
 Now we are going to introduce a method based on convolutional neural networks (CNNs).
 -->
 
-Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều quy mô khác nhau.
+Do ta sinh các khung neo với kích thước khác nhau trên nhiều tỉ lệ khác nhau, ta sẽ sử dụng chúng để phát hiện các vật thể với kích cỡ đa dạng trên nhiều tỉ lệ khác nhau.
 Bây giờ chúng tôi sẽ giới thiệu một phương pháp dựa vào mạng nơ-ron tích chập (CNNs).
 
 
@@ -179,8 +179,8 @@ At the current scale, the object detection model needs to predict the category a
 có kích thước $h \times w$ và số khung neo của mỗi tập hợp là $a$.
 Ví dụ, đối với tỉ lệ đầu tiên trong thí nghiệm này, ta sinh 16 tập hợp khung neo với
 các tâm khác nhau dựa vào 10 (số kênh) ánh xạ đặc trưng có kích thước $4 \times 4$, và mỗi tập hợp bao gồm 3 khung neo.
-Tiếp theo, mỗi khung neo được gán nhãn bằng một lớp và độ dời dựa vào quá trình phân loại và vị trí của khung chứa nhãn gốc.
-Với tỉ lệ hiện tại, mô hình phát hiện vật thể cần phải dự đoán lớp và độ dời của $h \times w$ tập hợp khung neo với các tâm khác nhau dựa vào ảnh đầu vào.
+Tiếp theo, mỗi khung neo được gán nhãn bằng một danh mục và độ dời dựa vào danh mục được phân loại và vị trí của khung chứa nhãn gốc.
+Với tỉ lệ hiện tại, mô hình phát hiện vật thể cần phải dự đoán danh mục và độ dời của $h \times w$ tập hợp khung neo với các tâm khác nhau dựa vào ảnh đầu vào.
 
 
 <!--
@@ -194,10 +194,10 @@ It is not hard to see that, in essence, we use the information of the input imag
 
 Ta giả sử rằng $c_i$ ánh xạ đặc trưng là đầu ra trung gian của CNN dựa trên ảnh đầu vào.
 Do mỗi ánh xạ đặc trưng có $h \times w$ vị trí khác nhau trong không gian, một vị trí sẽ có $c_i$ đơn vị.
-Theo định nghĩa của vùng tiếp nhận trong :numref:`sec_conv_layer`, các đơn vị $c_i$ của ánh xạ đặc trưng ở cùng một vị trí trong không gian sẽ có cùng vùng tiếp nhận trên ảnh đầu vào.
+Theo định nghĩa của vùng tiếp nhận trong :numref:`sec_conv_layer`, $c_i$ đơn vị của ánh xạ đặc trưng nằm ở cùng một vị trí trong không gian sẽ có cùng một vùng tiếp nhận trên ảnh đầu vào.
 Do đó, chúng biểu diễn thông tin của ảnh đầu vào trên cùng vùng tiếp nhận đó.
-Bởi vậy, ta có thể biến đổi $c_i$ đơn vị của ánh xạ đặc trưng tại cùng vị trí trong không gian thành các lớp và độ dời cho $a$ khung neo được sinh ra có tâm tại vị trí đó.
-Không khó để nhận ra rằng, về bản chất, ta sử dụng thông tin của ảnh đầu vào trong một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của khung neo gần với vùng đó trên ảnh đầu vào.
+Bởi vậy, ta có thể biến đổi $c_i$ đơn vị của ánh xạ đặc trưng tại cùng vị trí trong không gian thành danh mục và độ dời cho $a$ khung neo được sinh ra có tâm tại vị trí đó.
+Không khó để nhận ra rằng, về bản chất, ta sử dụng thông tin của ảnh đầu vào trong một vùng tiếp nhận nhất định để dự đoán danh mục và độ dời của khung neo gần với vùng đó trên ảnh đầu vào.
 
 
 <!--
@@ -205,15 +205,15 @@ When the feature maps of different layers have receptive fields of different siz
 For example, we can design a network to have a wider receptive field for each unit in the feature map that is closer to the output layer, to detect objects with larger sizes in the input image.
 -->
 
-Khi các ánh xạ đặc trưng của các tầng khác nhau có các vùng tiếp nhận với kích thước khác nhau trong ảnh đầu vào, chúng được sử dụng để phát hiện vật thể với kích thước khác nhau.
-Ví dụ, ta có thể thiết kế một mạng để cho mỗi đơn vị trong ánh xạ đặc trưng gần với tầng đầu ra hơn có vùng tiếp nhận rộng hơn, để phát hiện các vật thể với kích thước lớn hơn trong ảnh đầu vào.
+Khi các ánh xạ đặc trưng của các tầng khác nhau có các vùng tiếp nhận với kích thước khác nhau trên ảnh đầu vào, chúng được sử dụng để phát hiện vật thể với kích thước khác nhau.
+Ví dụ, ta có thể thiết kế mạng sao cho mỗi đơn vị trong ánh xạ đặc trưng gần với tầng đầu ra hơn có vùng tiếp nhận rộng hơn, để phát hiện các vật thể với kích thước lớn hơn trong ảnh đầu vào.
 
 
 <!--
 We will implement a multiscale object detection model in the following section.
 -->
 
-Ta sẽ tiến hành lập trình mô hình phát hiện vật thể đa tỉ lệ trong phần kế tiếp.
+Ta sẽ tiến hành lập trình mô hình phát hiện vật thể đa tỉ lệ trong phần kế tiếp. 
 
 
 
@@ -227,8 +227,8 @@ Ta sẽ tiến hành lập trình mô hình phát hiện vật thể đa tỉ l�
 -->
 
 * Ta có thể sinh các khung neo với số lượng và kích thước khác nhau trên nhiều tỉ lệ để phát hiện vật thể có kích thước khác nhau trên nhiều tỉ lệ.
-* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm của các khung neo được lấy mẫu đều trên tất cả các ảnh.
-* Ta sử dụng thông tin của ảnh đầu vào từ một vùng tiếp nhận nhất định để dự đoán lớp và độ dời của các khung neo gần với vùng đó trên ảnh.
+* Kích thước của ánh xạ đặc trưng có thể được sử dụng để xác định tâm của các khung neo được lấy mẫu đều trên bất kỳ ảnh nào.
+* Ta sử dụng thông tin của ảnh đầu vào từ một vùng tiếp nhận nhất định để dự đoán danh mục và độ dời của các khung neo gần với vùng đó trên ảnh.
 
 
 ## Bài tập
@@ -239,8 +239,8 @@ Given an input image, assume $1 \times c_i \times h \times w$ to be the shape of
 What methods can you think of to convert this variable into the anchor box's category and offset? What is the shape of the output?
 -->
 
-Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng với $c_i, h, w$ là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
-Liệu có phương pháp nào chuyển đổi biến này thành lớp và độ dời của một khung neo? Kích thước của đầu ra là gì?
+Cho một ảnh đầu vào, giả sử $1 \times c_i \times h \times w$ là kích thước của ánh xạ đặc trưng với $c_i, h, w$ lần lượt là số lượng, chiều cao và chiều dài của ánh xạ đặc trưng.
+Liệu có phương pháp nào để chuyển đổi biến này thành danh mục và độ dời của một khung neo không? Kích thước của đầu ra là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -260,14 +260,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* 
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
 * Nguyễn Văn Cường
-* Nguyễn Lê Quang Nhật
+* Phạm Minh Đức
+* Phạm Hồng Vinh
