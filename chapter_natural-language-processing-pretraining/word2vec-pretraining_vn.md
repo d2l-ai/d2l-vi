@@ -64,7 +64,7 @@ The weight of the embedding layer is a matrix whose number of rows is the dictio
 We set the dictionary size to $20$ and the word vector dimension to $4$.
 -->
 
-Tầng này được gọi là tầng embedding, trong đó các từ thu được bằng cách phương pháp embedding. Ta sử dụng tầng này bằng cách tạo một thực thể `nn.Embedding` trong Gluon.
+Để thu được các từ bằng cách phương pháp embedding, ta sử dụng tầng embedding bằng cách tạo một thực thể `nn.Embedding` trong Gluon.
 Trọng số của tầng embedding là một ma trận có số lượng hàng là kích thước từ điển (`input_dim`) và số lượng cột là chiều của mỗi vector từ (`output_dim`).
 Ta đặt kích thước từ điển bằng $20$ và chiều vector từ là $4$.
 
@@ -404,4 +404,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
