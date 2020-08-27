@@ -215,7 +215,7 @@ The dictionary of pretrained word vector instance `glove_6b50d` already created 
 Excluding input words and unknown words, we search for the three words that are the most similar in meaning to "chip".
 -->
 
-Từ điển mẫu vector từ tiền huấn luyện `glove_6b50d` đã tạo chứa 400,000 từ và một token chứa biết đặc biệt.
+Từ điển mẫu vector từ tiền huấn luyện `glove_6b50d` đã tạo chứa 400,000 từ và một token chưa biết đặc biệt.
 Loại trừ những từ đầu vào và những từ chưa biết, ta tìm kiếm ba từ có nghĩa gần với từ "chip".
 
 
@@ -365,4 +365,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * 
-
