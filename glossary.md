@@ -475,6 +475,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | stride                            | sải bước                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
 | subscript                         | chỉ số dưới              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | subspace estimation               | ước lượng không gian con | [https://git.io/JvojD](https://git.io/JvojD) |
+| subword (NLP)                     | từ con                   | [https://git.io/JUkWJ](https://git.io/JUkWJ) |
 | superscript                       | chỉ số trên              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
 | supervised learning               | học có giám sát          |                                              |
 | support vector machine (SVM)      | Máy vector hỗ trợ        |                                              |
