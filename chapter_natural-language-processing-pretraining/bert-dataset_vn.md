@@ -5,7 +5,7 @@
 # The Dataset for Pretraining BERT
 -->
 
-# *dịch đoạn phía trên*
+# Tập dữ liệu để tiền huấn luyện BERT
 :label:`sec_bert-dataset`
 
 
@@ -19,7 +19,11 @@ Thus, it is getting popular to pretrain BERT on a customized dataset.
 To facilitate the demonstration of BERT pretraining, we use a smaller corpus WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 -->
 
-*dịch đoạn phía trên*
+Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: dựng mô hình   từ ẩn và dự đoán câu kế.
+Một mặt, mô hình BERT gốc được tiền huấn luyện trên sự ghép nối của hai kho ngữ liệu khổng lồ BookCorpus và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), làm khó vận hành đối với hầu hết máy đọc cuốn sách này.
+Mặt khác, mô hình BERT tiền huấn luyện có sẵn có thể không phù hợp với các ứng dụng ở một số lĩnh vực cụ thể như ngành dược. 
+Do đó, cách thông dụng là tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh.
+Để thuận tiện cho việc minh họa thực hiện tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 
 
 <!--
@@ -27,7 +31,8 @@ Comparing with the PTB dataset used for pretraining word2vec in :numref:`sec_wor
 WikiText-2 i) retains the original punctuation, making it suitable for next sentence prediction; ii) retrains the original case and numbers; iii) is over twice larger.
 -->
 
-*dịch đoạn phía trên*
+So với tập dữ liệu PTB đã dùng để thực hiện tiền huấn luyện word2vec ở :numref:`sec_word2vec_data`,
+WikiText-2 i) giữ dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) huấn luyện lại kiểu viết chữ và các số ban đầu; iii) là lớn hơn hai lần. 
 
 
 ```{.python .input  n=1}
@@ -52,7 +57,10 @@ To split sentences, we only use the period as the delimiter for simplicity.
 We leave discussions of more complex sentence splitting techniques in the exercises at the end of this section.
 -->
 
-*dịch đoạn phía trên*
+Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn mà khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
+Các đoạn văn có tối thiểu hai câu được giữ lại.
+Để tách các câu, ta chỉ dùng dấu chấm làm dấu ngắt cho đơn giản.
+Ta giành việc thảo luận cho các kỹ thuật tách câu phức tạp ở phần bài tập ở cuối của mục này.
 
 
 ```{.python .input  n=2}
@@ -456,7 +464,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
