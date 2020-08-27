@@ -104,8 +104,8 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ khóa con được trích xuất phải có độ dài được chỉ định, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước từ vựng.
-Để cho phép các từ khóa con có độ dài thay đổi trong từ vựng có kích thước cố định, chúng tôi có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (BPE) để trích lọc các từ khoá phụ :cite:`Sennrich.Haddow.Birch.2015`.
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước từ vựng.
+Để cho phép các từ con có độ dài thay đổi trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`.
 
 
 <!--
@@ -118,19 +118,19 @@ such as GPT-2 :cite:`Radford.Wu.Child.ea.2019` and RoBERTa :cite:`Liu.Ott.Goyal.
 In the following, we will illustrate how byte pair encoding works.
 -->
 
-Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để khám phá các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý.
-Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte kết hợp lặp đi lặp lại các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn.
-Lưu ý rằng để có hiệu quả tốt, các cặp vượt qua ranh giới từ sẽ không được lưu tâm đến.
-Cuối cùng, chúng ta có thể sử dụng các ký hiệu như từ khóa phụ để phân đoạn các từ.
-Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện xử lý ngôn ngữ tự nhiên phổ biến chẳng hạn như GPT-2 :cite:`Radford.Wu.Child.ea.2019` and RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`.
-Trong phần kế tiếp, chúng tôi sẽ minh hoạ mã hoá cặp byte hoạt động ra sao. 
+Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để tìm các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý.
+Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte lặp đi lặp lại việc gộp các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn.
+Lưu ý rằng để tăng hiệu năng, các cặp vượt qua ranh giới từ sẽ không được xét.
+Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ.
+Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`.
+Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá cặp byte. 
 
 
 <!--
 First, we initialize the vocabulary of symbols as all the English lowercase characters, a special end-of-word symbol `'_'`, and a special unknown symbol `'[UNK]'`.
 -->
 
-Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường tiếng Anh, một ký hiệu đặc biệt cuối từ `'_'` , và một ký hiệu không xác định đặc biệt `'[UNK]'`.
+Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu cuối từ `'_'` , và ký hiệu không xác định `'[UNK]'`.
 
 
 ```{.python .input}
@@ -152,13 +152,13 @@ space is inserted between every pair of consecutive characters within each word 
 In other words, space is the delimiter between symbols within a word.
 -->
 
-Vì chúng tôi không xem xét các cặp ký hiệu vượt qua ranh giới của các từ,
+Vì không xét các cặp ký hiệu vượt qua ranh giới của các từ,
 chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ với tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu.
-Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để chúng tôi có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
+Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
 từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man").
 Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt,
 khoảng trắng được chèn giữa mọi cặp ký tự liên tiếp trong mỗi từ (các khóa của từ điển `token_freqs`).
-Nói cách khác, khoảng trắng là khoảng phân cách giữa các ký hiệu trong một từ.
+Nói cách khác, khoảng trắng là kí tự phân cách (*delimiter*) giữa các ký hiệu trong một từ.
 
 
 ```{.python .input}
@@ -175,7 +175,7 @@ We define the following `get_max_freq_pair` function that
 returns the most frequent pair of consecutive symbols within a word,
 where words come from keys of the input dictionary `token_freqs`.
 -->
-Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, nơi mà các từ xuất hiện trong các khoá của từ điển đầu vào `token_freqs`.
+Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, trong đó các từ xuất hiện trong các khoá của từ điển đầu vào `token_freqs`.
 
 
 ```{.python .input}
@@ -195,7 +195,7 @@ As a greedy approach based on frequency of consecutive symbols,
 byte pair encoding will use the following `merge_symbols` function to merge the most frequent pair of consecutive symbols to produce new symbols.
 -->
 
-Tương tự như một cách tiếp cận tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới.
+Là một cách tiếp cận tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới.
 
 
 ```{.python .input}
@@ -363,4 +363,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
