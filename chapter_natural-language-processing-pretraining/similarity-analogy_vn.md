@@ -182,7 +182,7 @@ we encapsulate this part of the logic separately in the `knn` ($k$-nearest neigh
 -->
 
 Để sử dụng lại lô gic cho việc tìm kiếm $k$ điểm kế cận gần nhất khi tìm kiếm các từ loại suy,
-ta gói gọn phần logic này tách biệt trong hàm `knn` ($k$-nearest neighbors).
+ta gói gọn phần logic này tách biệt trong hàm `knn` ($k$*-nearest neighbors*).
 
 
 ```{.python .input}
