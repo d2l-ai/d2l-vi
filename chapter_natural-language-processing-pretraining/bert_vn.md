@@ -131,7 +131,7 @@ Second, all the parameters of the pretrained Transformer encoder are fine-tuned,
 -->
 
 
-Như ta đã thấy, ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng các kiến ​​trúc chuyên biệt cho tác vụ; trong khi đó GPT có kiến trúc bất khả tri với tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
+Như ta đã thấy, ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng các kiến ​​trúc đặc thù cho tác vụ; trong khi đó GPT có kiến trúc không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
 Kết hợp những thứ tốt nhất của cả hai phương pháp trên, BERT (biểu diễn bộ mã hóa hai chiều từ Transformer)
 mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu vài thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên :cite:`Devlin.Chang.Lee.ea.2018`.
 Sử dụng bộ mã hóa Transformer được tiền huấn luyện, BERT có thể biểu diễn bất kỳ token nào dựa trên ngữ cảnh hai chiều của nó.
