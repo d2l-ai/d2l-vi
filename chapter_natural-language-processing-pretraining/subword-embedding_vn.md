@@ -212,7 +212,9 @@ In the first iteration, the most frequent pair of consecutive symbols are `'t'` 
 In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` to result in another new symbol `'tal'`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`.
+Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`.
+Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`.
 
 
 ```{.python .input}
@@ -228,7 +230,7 @@ for i in range(num_merges):
 After 10 iterations of byte pair encoding, we can see that list `symbols` now contains 10 more symbols that are iteratively merged from other symbols.
 -->
 
-*dịch đoạn phía trên*
+Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác.
 
 
 ```{.python .input}
@@ -243,7 +245,8 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-*dịch đoạn phía trên*
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
+Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
 ```{.python .input}
@@ -257,7 +260,9 @@ We can also use the subwords learned from one dataset to segment words of anothe
 As a greedy approach, the following `segment_BPE` function tries to break words into the longest possible subwords from the input argument `symbols`.
 -->
 
-*dịch đoạn phía trên*
+Chú ý là kết quả của biểu diễn cặp byte tùy thuộc vào tập dữ liệu đang được sử dụng.
+Ta cũng có thể dùng các từ con đã học từ một tập dữ liệu để phân đoạn các từ của một tập dữ liệu khác.
+Với cách tiếp cận tham lam, hàm `segment_BPE` sau đây cố gắng tách các từ thành các từ con dài nhất có thể từ đối số đầu vào `symbols`.
 
 
 ```{.python .input}
@@ -286,7 +291,7 @@ In the following, we use the subwords in list `symbols`, which is learned from t
 to segment `tokens` that represent another dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong phần tiếp theo, ta sử dụng các từ con trong danh sách `symbols` đã được học từ tập dữ liệu ở trên để phân đoạn các `tokens` biểu diễn tập dữ liệu khác.
 
 
 ```{.python .input}
@@ -354,8 +359,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
