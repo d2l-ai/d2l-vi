@@ -2,7 +2,7 @@
 
 Các thuật ngữ cần được dịch theo chuẩn trong tập tin này.
 
-Nếu một từ chưa có trong bảng thuật ngữ hay ở góc độ của bạn cho rằng một từ không nên dịch ra tiếng Việt, 
+Nếu một từ chưa có trong bảng thuật ngữ hay ở góc độ của bạn cho rằng một từ nào đó không nên được dịch ra tiếng Việt, 
 bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions](https://github.com/aivivn/d2l-vn/discussions)** của dự án.
 
 *Chú ý giữ thứ tự theo bảng chữ cái để tiện tra cứu.*
