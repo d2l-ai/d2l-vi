@@ -22,7 +22,7 @@ To facilitate the demonstration of BERT pretraining, we use a smaller corpus Wik
 Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: dựng mô hình   từ ẩn và dự đoán câu kế.
 Một mặt, mô hình BERT gốc được tiền huấn luyện trên sự ghép nối của hai kho ngữ liệu khổng lồ BookCorpus và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), làm khó vận hành đối với hầu hết máy đọc cuốn sách này.
 Mặt khác, mô hình BERT tiền huấn luyện có sẵn có thể không phù hợp với các ứng dụng ở một số lĩnh vực cụ thể như ngành dược. 
-Do đó, cách thông dụng là tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh.
+Do đó, tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh đang trở nên phổ biến hơn.
 Để thuận tiện cho việc minh họa thực hiện tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 
 
@@ -477,4 +477,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
