@@ -119,7 +119,7 @@ The corresponding word embedding is automatically downloaded the first time we c
 -->
 
 Tiếp theo, ta sử dụng embedding GloVe có kích thước chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
-Embedding tương ứng của từ sẽ được tải về tự động khi ta khởi tạo một thực thể embedding từ đã được tiền huấn luyện.
+Embedding tương ứng của từ sẽ được tự động tải về khi ta khởi tạo lần đầu một thực thể embedding từ đã được tiền huấn luyện.
 
 
 ```{.python .input  n=11}
