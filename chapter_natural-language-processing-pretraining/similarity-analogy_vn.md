@@ -143,7 +143,7 @@ len(glove_6b50d)
 We can use a word to get its index in the dictionary, or we can get the word from its index.
 -->
 
-Ta có thể thu được chỉ số của một từ trong từ điển, hoặc ngược lại thu được từ đó từ chỉ số của nó.
+Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngược lại tra từ tương ứng với chỉ số của nó.
 
 
 ```{.python .input  n=12}
@@ -369,4 +369,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * 
-
