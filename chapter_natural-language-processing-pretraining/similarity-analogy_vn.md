@@ -251,7 +251,7 @@ get_similar_tokens('beautiful', 3, glove_6b50d)
 ### Finding Analogies
 -->
 
-### *dịch đoạn phía trên*
+### Tìm kiếm các Loại suy
 
 
 <!--
@@ -263,7 +263,12 @@ Assume the word vector for the word $w$ is $\text{vec}(w)$.
 To solve the analogy problem, we need to find the word vector that is most similar to the result vector of $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh việc tìm kiếm các từ đồng nghĩa, ta cũng có thể sử dụng các vector từ đã tiền huấn luyện để tìm kiếm các loại suy giữa các từ.
+Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man (nam)" với "woman (nữ)" giống như "son (con trai)" với "daugther (con gái)".
+Bài toán tìm kiếm loại suy có thể được định nghĩa như sau: với bốn từ trong quan hệ loại suy $a : b :: c : d$, 
+cho trước ba từ $a$, $b$ và $c$, ta muốn tìm từ $d$.
+Giả sử, vector từ cho từ $w$ là $\text{vec}(w)$.
+Để giải quyết bài toán loại suy, ta cần tìm vector từ gần nhất với vector là kết quả của $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
 
 
 ```{.python .input}
@@ -279,7 +284,7 @@ def get_analogy(token_a, token_b, token_c, embed):
 Verify the "male-female" analogy.
 -->
 
-*dịch đoạn phía trên*
+Kiểm tra quan hệ loại suy "nam giới - nữ giới".
 
 
 ```{.python .input  n=18}
@@ -291,7 +296,7 @@ get_analogy('man', 'woman', 'son', glove_6b50d)
 “Capital-country” analogy: "beijing" is to "china" as "tokyo" is to what? The answer should be "japan".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "thủ đô-quốc gia”: từ "beijing" với từ "china" tương tự như từ "tokyo" với từ nào? Đáp án đó là từ "japan".
 
 
 ```{.python .input  n=19}
@@ -303,7 +308,7 @@ get_analogy('beijing', 'china', 'tokyo', glove_6b50d)
 "Adjective-superlative adjective" analogy: "bad" is to "worst" as "big" is to what? The answer should be "biggest".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "tính từ - tính từ so sánh nhất": từ "bad" với từ "worst" tương tự như từ "big" với từ nào? Đáp án đó là từ "biggest".
 
 
 ```{.python .input  n=20}
@@ -315,7 +320,7 @@ get_analogy('bad', 'worst', 'big', glove_6b50d)
 "Present tense verb-past tense verb" analogy: "do" is to "did" as "go" is to what? The answer should be "went".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "động từ thì hiện tại - động từ thì quá khứ": từ "do" với từ "did" tương tự như từ "go" với từ nào? Đáp án đó là "went".
 
 
 ```{.python .input  n=21}
@@ -330,8 +335,8 @@ get_analogy('do', 'did', 'go', glove_6b50d)
 * We can use pre-trained word vectors to seek synonyms and analogies.
 -->
 
-*dịch đoạn phía trên*
-
+* Các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các tác vụ xử lý ngôn ngữ tự nhiên.
+* Ta có thể sử dụng các vector từ được tiền huấn luyện để tìm kiếm các từ đồng nghĩa và các loại suy.
 
 ## Bài tập
 
@@ -340,7 +345,8 @@ get_analogy('do', 'did', 'go', glove_6b50d)
 2. If the dictionary is extremely large, how can we accelerate finding synonyms and analogies?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy kiểm tra kết quả với fastText bằng cách sử dụng `TokenEmbedding('wiki.en')`.
+2. Nếu từ điển quá lớn, ta có thể tăng tốc tìm kiếm các từ đồng nghĩa và các loại suy bằng cách nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -369,3 +375,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * 
+
