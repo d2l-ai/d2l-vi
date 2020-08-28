@@ -268,6 +268,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 |------------------------------------|--------------------------------|----------------------------------------------|
 | long short-term Memory (LSTM)      | bộ nhớ ngắn hạn dài            | [https://git.io/JvKeI](https://git.io/JvKeI) |
 | label smoothing                    | làm mượt nhãn                  |                                              |
+| language model(ling)               | mô hình (hoá) ngôn ngữ         |                                              |
+| masked language model              | mô hình ngôn ngữ có mặt nạ     |                                              |
 | latent variable                    | biến tiềm ẩn                   |                                              |
 | law of large numbers               | luật số lớn                    | [https://git.io/JvohQ](https://git.io/JvohQ) |
 | layer                              | tầng                           |                                              |
