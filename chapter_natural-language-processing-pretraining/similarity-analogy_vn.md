@@ -5,7 +5,7 @@
 # Finding Synonyms and Analogies
 -->
 
-# *dịch đoạn phía trên*
+# Tìm kiếm các từ Đồng nghĩa và các Loại suy
 :label:`sec_synonyms`
 
 
@@ -16,7 +16,10 @@ This section will demonstrate how to use these pretrained word vectors to find s
 We will continue to apply pretrained word vectors in subsequent sections.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_word2vec_pretraining` ta đã huấn luyện mô hình embedding cho từ word2vec trên tập dữ liệu cỡ nhỏ và tìm kiếm các từ đồng nghĩa sử dụng độ tương tự cô-sin giữa các vector từ.
+Trong thực tế, các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các bài toán xử lý ngôn ngữ tự nhiên cụ thể.
+Phần này sẽ trình bày cách sử dụng các vector từ đã được tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy (*analogy*).
+Ta sẽ tiếp tục áp dụng các vector từ được tiền huấn luyện trong các phần sau.
 
 
 ```{.python .input}
@@ -32,7 +35,7 @@ npx.set_np()
 ## Using Pretrained Word Vectors
 -->
 
-## *dịch đoạn phía trên*
+## Sử dụng các Vector Từ đã được Tiền Huấn luyện
 
 
 <!--
@@ -41,7 +44,9 @@ The pretrained fastText embeddings are available in multiple languages.
 Here we consider one English version (300-dimensional "wiki.en") that can be downloaded from the [fastText website](https://fasttext.cc/).
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là các embedding GloVe đã được tiền huấn luyện với kích thước chiều là 50, 100, và 300, có thể được tải từ [trang web GloVe](https://nlp.stanford.edu/projects/glove/).
+Các embedding cho fastText được tiền huấn luyện trên nhiều ngôn ngữ.
+Ở đây, ta quan tâm tới phiên bản cho tiếng Anh ("wiki.en" có chiều kích thước là 300) có thể được tải từ [trang web fastText](https://fasttext.cc/).
 
 
 ```{.python .input  n=35}
@@ -67,7 +72,7 @@ d2l.DATA_HUB['wiki.en'] = (d2l.DATA_URL + 'wiki.en.zip',
 We define the following `TokenEmbedding` class to load the above pretrained Glove and fastText embeddings.
 -->
 
-*dịch đoạn phía trên*
+Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText đã được tiền huấn luyện ở trên .
 
 
 ```{.python .input}
@@ -113,7 +118,8 @@ Next, we use 50-dimensional GloVe embeddings pretrained on a subset of the Wikip
 The corresponding word embedding is automatically downloaded the first time we create a pretrained word embedding instance.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sử dụng embedding GloVe có kích thước chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
+Embedding tương ứng của từ sẽ được tự động tải về khi ta khởi tạo lần đầu một thực thể embedding từ đã được tiền huấn luyện.
 
 
 ```{.python .input  n=11}
@@ -125,7 +131,7 @@ glove_6b50d = TokenEmbedding('glove.6b.50d')
 Output the dictionary size. The dictionary contains $400,000$ words and a special unknown token.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể in ra kích thước từ điển. Từ điển chứa $400,000$ từ và một token đặc biệt cho các từ không biết. 
 
 
 ```{.python .input}
@@ -137,7 +143,7 @@ len(glove_6b50d)
 We can use a word to get its index in the dictionary, or we can get the word from its index.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngược lại tra từ tương ứng với chỉ số của nó.
 
 
 ```{.python .input  n=12}
@@ -356,11 +362,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
 * 
-
