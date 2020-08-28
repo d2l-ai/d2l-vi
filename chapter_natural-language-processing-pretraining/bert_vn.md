@@ -97,7 +97,7 @@ Khi áp dụng GPT cho một tác vụ hạ nguồn, đầu ra của mô hình n
 để dự đoán nhãn cho tác vụ đó.
 Trái ngược hoàn toàn với cách ELMo đóng băng các tham số của mô hình đã được tiền huấn luyện,
 GPT tinh chỉnh *tất cả* các tham số trong bộ giải mã Transformer đã được tiền huấn luyện trong suốt quá trình học có giám sát trên tác vụ hạ nguồn.
-GPT được đánh giá trên mười hai tác vụ về suy luận ngôn ngữ tự nhiên, trả lời câu hỏi, độ tương tự của câu, và bài toán phân loại, và cải thiện kết quả tân tiến nhất của chín tác vụ với những thay đổi tối thiểu đối với kiến ​​trúc mô hình.
+GPT được đánh giá trên mười hai tác vụ về suy luận ngôn ngữ tự nhiên, trả lời câu hỏi, độ tương tự của câu, và bài toán phân loại, và cải thiện kết quả tân tiến nhất của chín tác vụ với vài thay đổi tối thiểu đối tới kiến ​​trúc mô hình.
 
 
 <!--
