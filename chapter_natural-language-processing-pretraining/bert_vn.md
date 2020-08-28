@@ -70,7 +70,7 @@ sentiment analysis, natural language inference, semantic role labeling, corefere
 ## From Task-Specific to Task-Agnostic
 -->
 
-## Từ Chuyên biệt cho Tác vụ đến Bất khả tri với Tác vụ
+## Từ Đặc thù Tác vụ đến Không phân biệt Tác vụ
 
 
 <!--
@@ -664,4 +664,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
