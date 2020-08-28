@@ -15,7 +15,7 @@ content
 content
 -->
 
-# *dịch đoạn phía trên*
+# *dịch tiêu đề trên*
 ```
 
 ### Pictures line

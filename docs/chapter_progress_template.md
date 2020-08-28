@@ -1,28 +1,30 @@
 Cập nhật tiến độ hoàn thành chương **Natural Language Processing: Applications**.
+Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
-## Giai đoạn 1 ` parts`
-* [ ] 15.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 part`
+## Giai đoạn 1 `13 parts`
+* [ ] 15.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `01 part`
 * [ ] 15.01. [Sentiment Analysis and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-and-dataset_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 * [ ] 15.02. [Sentiment Analysis: Using Recurrent Neural Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-rnn_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 * [ ] 15.03. [Sentiment Analysis: Using Convolutional Neural Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-cnn_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.04. [Natural Language Inference and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-and-dataset_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.05. [Natural Language Inference: Using Attention](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-attention_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.06. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+finetuning-bert_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
+* [ ] 15.04. [Natural Language Inference and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-and-dataset_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `03 parts`
+* [ ] 15.05. [Natural Language Inference: Using Attention](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-attention_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `05 parts`
+* [ ] 15.06. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+finetuning-bert_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `04 parts`
 * [ ] 15.07. [Natural Language Inference: Fine-Tuning BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-bert_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 
-## Giai đoạn 2 ` parts`
-* [ ] 15.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 part`
+## Giai đoạn 2 `6 parts`
+* [ ] 15.00 [NLP Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `01 part`
 * [ ] 15.01. [Sentiment Analysis and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-and-dataset_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 * [ ] 15.02. [Sentiment Analysis: Using Recurrent Neural Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-rnn_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 * [ ] 15.03. [Sentiment Analysis: Using Convolutional Neural Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+sentiment-analysis-cnn_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.04. [Natural Language Inference and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-and-dataset_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.05. [Natural Language Inference: Using Attention](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-attention_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
-* [ ] 15.06. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+finetuning-bert_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
+* [ ] 15.04. [Natural Language Inference and the Dataset](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-and-dataset_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `01 parts`
+* [ ] 15.05. [Natural Language Inference: Using Attention](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-attention_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `02 parts`
+* [ ] 15.06. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+finetuning-bert_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `02 parts`
 * [ ] 15.07. [Natural Language Inference: Fine-Tuning BERT](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+natural-language-inference-bert_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+nlp-application%22) `0 parts`
 
 ---
 
 Cập nhật tiến độ hoàn thành chương **Recommender Systems**.
+Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
 ## Giai đoạn 1 ` parts`
 * [ ] 16.00 [Recommender Systems Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+recommender-systems%22) `0 part`
@@ -53,6 +55,7 @@ Cập nhật tiến độ hoàn thành chương **Recommender Systems**.
 ---
 
 Cập nhật tiến độ hoàn thành chương **Generative Adversarial Networks**.
+Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
 ## Giai đoạn 1 ` parts`
 * [ ] 17.00 [GAN Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 part`
@@ -68,6 +71,7 @@ Cập nhật tiến độ hoàn thành chương **Generative Adversarial Network
 ---
 
 Cập nhật tiến độ hoàn thành chương **Appendix: Mathematics for Deep Learning**.
+Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
 ## Giai đoạn 1 ` parts`
 * [ ] 18.00 [Math Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+appendix-math%22) `0 part`
@@ -100,6 +104,7 @@ Cập nhật tiến độ hoàn thành chương **Appendix: Mathematics for Deep
 ---
 
 Cập nhật tiến độ hoàn thành chương **Appendix: Tools for Deep Learning**.
+Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
 ## Giai đoạn 1 ` parts`
 * [ ] 19.00 [Tools Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+appendix-tools%22) `0 part`
