@@ -72,7 +72,7 @@ sentiment analysis, natural language inference, semantic role labeling, corefere
 
 Ví dụ, ELMo là hàm gán một biểu diễn cho mỗi từ của chuỗi đầu vào bằng cách lấy toàn bộ chuỗi làm đầu vào cho hàm.
 Cụ thể, ELMo kết hợp tất cả các biểu diễn tầng trung gian từ LSTM hai chiều đã được tiền huấn luyện làm biểu diễn đầu ra.
-Sau đó, biểu diễn ELMo sẽ được đưa vào mô hình giám sát ban đầu của các tác vụ khác như các đặc trưng bổ sung, chẳng hạn bằng cách ghép nối biểu diễn ELMo và biểu diễn gốc (ví dụ GloVe) của token trong mô hình ban đầu.
+Sau đó, biểu diễn ELMo sẽ được đưa vào mô hình giám sát cho các tác vụ khác như một đặc trưng bổ sung, chẳng hạn bằng cách ghép nối biểu diễn ELMo và biểu diễn gốc (ví dụ GloVe) của token trong mô hình hiện tại.
 Một mặt, tất cả các trọng số trong mô hình LSTM hai chiều được tiền huấn luyện đều bị đóng băng sau khi các biểu diễn ELMo được thêm vào.
 Mặt khác, mô hình được giám sát ban đầu được tùy biến cụ thể cho một tác vụ nhất định.
 Thêm ELMo vào các mô hình tân tiến nhất cho các tác vụ khác nhau tại thời điểm ELMo được công bố giúp cải thiện chất lượng các mô hình này trên sáu tác vụ xử lý ngôn ngữ tự nhiên đó là:
