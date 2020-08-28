@@ -88,7 +88,7 @@ GPT was evaluated on twelve tasks of natural language inference, question answer
 and improved the state of the art in nine of them with minimal changes to the model architecture.
 -->
 
-Mặc dù ELMo đã cải thiện đáng kể lời giải cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên,
+Mặc dù ELMo đã cải thiện đáng kể giải pháp cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên,
 mỗi giải pháp vẫn dựa trên một kiến ​​trúc *đặc thù cho tác vụ* (_task-specific_).
 Tuy nhiên, trong thực tế, xây dựng một kiến ​​trúc cụ thể cho mỗi tác vụ xử lý ngôn ngữ tự nhiên là điều không đơn giản.
 Phương pháp GPT (Generative Pre-Training) thể hiện nỗ lực thiết kế một mô hình *bất khả tri với tác vụ* (_task-agnostic_) chung cho các biểu diễn nhạy ngữ cảnh :cite:`Radford.Narasimhan.Salimans.ea.2018`.
