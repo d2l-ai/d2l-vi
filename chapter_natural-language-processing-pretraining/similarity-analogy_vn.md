@@ -72,7 +72,7 @@ d2l.DATA_HUB['wiki.en'] = (d2l.DATA_URL + 'wiki.en.zip',
 We define the following `TokenEmbedding` class to load the above pretrained Glove and fastText embeddings.
 -->
 
-Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText ở trên đã được tiền huấn luyện.
+Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText đã được tiền huấn luyện ở trên .
 
 
 ```{.python .input}
