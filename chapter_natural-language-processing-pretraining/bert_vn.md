@@ -19,8 +19,8 @@ Let us begin by illustrating this property.
 
 Chúng tôi đã giới thiệu một vài mô hình embedding từ cho bài toán hiểu ngôn ngữ tự nhiên.
 Sau khi tiền huấn luyện, đầu ra có thể được coi là một ma trận trong đó mỗi hàng là một vector biểu diễn cho một từ trong bộ từ vựng đã được định nghĩa trước.
-Trong thực tế, tất cả các mô hình embedding từ này thuộc loại mô hình *độc lập ngữ cảnh* (_context-independent_).
-
+Trong thực tế, tất cả các mô hình embedding từ này đều có tính chất *độc lập ngữ cảnh* (_context-independent_).
+Chúng tôi sẽ bắt đầu bằng việc mô tả tính chất này.
 
 <!--
 ## From Context-Independent to Context-Sensitive
@@ -661,4 +661,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 7 -->
 * 
-
