@@ -262,7 +262,7 @@ Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, 
 Bài toán tìm kiếm loại suy có thể được định nghĩa như sau: với bốn từ trong quan hệ loại suy $a : b :: c : d$, 
 cho trước ba từ $a$, $b$ và $c$, ta muốn tìm từ $d$.
 Giả sử, vector từ cho từ $w$ là $\text{vec}(w)$.
-Để giải quyết bài toán loại suy, ta cần tìm vector từ gần nhất với vector thu được từ $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
+Để giải quyết bài toán loại suy, ta cần tìm vector từ gần nhất với vector là kết quả của $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
 
 
 ```{.python .input}
