@@ -4,7 +4,7 @@
 
 * [ ] Pull Request này tương ứng với issue nào? Điền số issue sau dấu `#` (không có dấu cách): Close #
 
-* [ ] Bản dịch này có bám sát **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)** không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy tạo một Pull Request riêng đề xuất cách dịch từ/cụm đó.
+* [ ] Bản dịch này đã bám sát **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)** không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy thảo luận thêm ở thẻ Discussions của dự án.
 
 * [ ] Format của bản gốc có được giữ nguyên không?
      
@@ -12,9 +12,7 @@
 
 * [ ] Điền tên đầy đủ của bạn vào mục **Những người thực hiện** ở cuối tập tin.
 
-* [ ] Điền tên những reviewers mà bạn thấy có nhiều đóng góp cho Pull Request này. Xem danh sách Contributors **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md)**.
-
 ## Lưu ý cho người phản biện (Reviewer)
 
-1. Chỉ review nếu Pull Request (PR) này đã sẵn sàng cho việc review. Một PR sẵn sàng khi PR đó không có label `status: wip`.
+1. Chỉ review khi Pull Request (PR) này đã sẵn sàng cho việc review. Một PR sẵn sàng khi PR đó không có label `status: wip`.
 2. Đã đọc kỹ hướng dẫn đóng góp và xem qua **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)**.
