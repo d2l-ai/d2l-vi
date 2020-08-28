@@ -258,7 +258,7 @@ To solve the analogy problem, we need to find the word vector that is most simil
 -->
 
 Bên cạnh việc tìm kiếm các từ đồng nghĩa, ta cũng có thể sử dụng các vector từ đã tiền huấn luyện để tìm kiếm các loại suy giữa các từ.
-Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man" với "woman" giống như "son" với "daugther".
+Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man (nam)" với "woman (nữ)" giống như "son (con trai)" với "daugther (con gái)".
 Bài toán tìm kiếm loại suy có thể được định nghĩa như sau: với bốn từ trong quan hệ loại suy $a : b :: c : d$, 
 cho trước ba từ $a$, $b$ và $c$, ta muốn tìm từ $d$.
 Giả sử, vector từ cho từ $w$ là $\text{vec}(w)$.
@@ -369,4 +369,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
-
