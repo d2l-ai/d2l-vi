@@ -136,7 +136,7 @@ Kết hợp những thứ tốt nhất của cả hai phương pháp trên, BERT
 mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu vài thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên :cite:`Devlin.Chang.Lee.ea.2018`.
 Sử dụng bộ mã hóa Transformer được tiền huấn luyện, BERT có thể biểu diễn bất kỳ token nào dựa trên ngữ cảnh hai chiều của nó.
 Trong quá trình học có giám sát trên các tác vụ hạ nguồn, BERT tương tự như GPT ở hai khía cạnh.
-Đầu tiên, các biểu diễn BERT sẽ được truyền vào một tầng đầu ra được bổ sung, với những thay đổi tối thiểu đối với kiến ​​trúc mô hình tùy thuộc vào bản chất của tác vụ,
+Đầu tiên, các biểu diễn BERT sẽ được truyền vào một tầng đầu ra được bổ sung, với những thay đổi tối thiểu tới kiến ​​trúc mô hình tùy thuộc vào bản chất của tác vụ,
 chẳng hạn như dự đoán cho mỗi token hay dự đoán cho toàn bộ chuỗi.
 Thứ hai, tất cả các tham số của bộ mã hóa Transformer được đào tạo trước đều được tinh chỉnh, trong khi tầng đầu ra bổ sung sẽ được huấn luyện từ đầu.
 :numref:`fig_elmo-gpt-bert` mô tả những điểm khác biệt giữa ELMo, GPT, và BERT.
