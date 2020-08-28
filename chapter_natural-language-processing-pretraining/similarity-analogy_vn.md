@@ -18,7 +18,7 @@ We will continue to apply pretrained word vectors in subsequent sections.
 
 Trong :numref:`sec_word2vec_pretraining` ta đã huấn luyện mô hình embedding cho từ word2vec trên tập dữ liệu cỡ nhỏ và tìm kiếm các từ đồng nghĩa sử dụng độ tương tự cô-sin giữa các vector từ.
 Trong thực tế, các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các bài toán xử lý ngôn ngữ tự nhiên cụ thể.
-Phần này sẽ trình bày cách sử dụng các vector từ đã được tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy.
+Phần này sẽ trình bày cách sử dụng các vector từ đã được tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy (*analogy*).
 Ta sẽ tiếp tục áp dụng các vector từ được tiền huấn luyện trong các phần sau.
 
 
