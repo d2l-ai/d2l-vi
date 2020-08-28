@@ -90,7 +90,7 @@ and improved the state of the art in nine of them with minimal changes to the mo
 
 Mặc dù ELMo đã cải thiện đáng kể giải pháp cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên,
 mỗi giải pháp vẫn dựa trên một kiến ​​trúc *đặc thù cho tác vụ* (_task-specific_).
-Tuy nhiên, trong thực tế, xây dựng một kiến ​​trúc cụ thể cho mỗi tác vụ xử lý ngôn ngữ tự nhiên là điều không đơn giản.
+Tuy nhiên, trong thực tế, xây dựng một kiến ​​trúc đặc thù cho mỗi tác vụ xử lý ngôn ngữ tự nhiên là điều không đơn giản.
 Phương pháp GPT (Generative Pre-Training) thể hiện nỗ lực thiết kế một mô hình *không phân biệt tác vụ* (_task-agnostic_) chung cho các biểu diễn nhạy ngữ cảnh :cite:`Radford.Narasimhan.Salimans.ea.2018`.
 Được xây dựng dựa trên bộ giải mã Transformer, GPT tiền huấn luyện mô hình ngôn ngữ được sử dụng để biểu diễn chuỗi văn bản.
 Khi áp dụng GPT cho một tác vụ hạ nguồn, đầu ra của mô hình ngôn ngữ sẽ được truyền tới một tầng đầu ra tuyến tính được bổ sung
