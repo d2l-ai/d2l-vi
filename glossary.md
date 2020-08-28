@@ -330,8 +330,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | English                           | Tiếng Việt                        | Thảo luận tại                                                                              |
 |-----------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
 | named entity (recognition)        | (nhận dạng) thực thể có tên                   | [https://git.io/JvojG](https://git.io/JvojG)                                               |
-| natural language inference | suy luận ngôn ngữ tự nhiên           |                                                                                            |
+| natural language inference (NLI) | suy luận ngôn ngữ tự nhiên         |                                                                                            |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
+| natural language understanding (NLU) | hiểu ngôn ngữ tự nhiên         |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
 | network in network                | mạng trong mạng                   | [https://git.io/JfGi1](https://git.io/JfGi1)                                               |
