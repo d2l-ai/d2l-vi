@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # The Object Detection Dataset
 -->
@@ -20,17 +17,17 @@ If you want to learn more about how to read images, refer to the documentation f
 
 Không có một bộ dữ liệu nhỏ nào cho bài toán phát hiện đối tượng như MNIST hay Fashion-MNIST.
 Để nhanh chóng kiểm định mô hình, ta sẽ tập hợp lại một tập dữ liệu nhỏ.
-Đầu tiên, ta tạo 1000 bức ảnh Pikachu với các góc độ và kích thước khác nhau bằng mô hình mã nguồn mở Pikachu 3D.
+Đầu tiên, ta tạo 1000 bức ảnh Pikachu với nhiều góc độ và kích thước khác nhau bằng mô hình mã nguồn mở Pikachu 3D.
 Sau đó, ta thu thập một loạt các ảnh nền và đặt ngẫu nhiên ảnh Pikachu lên trên mỗi bức ảnh.
-Ta dùng [im2rec tool](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyển đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
+Ta dùng [công cụ im2rec](https://github.com/apache/incubator-mxnet/blob/master/tools/im2rec.py) do MXNet cung cấp để chuyển đổi hình ảnh gốc sang định dạng RecordIO nhị phân[1].
 Định dạng này có khả năng giảm dung lượng lưu trữ và cải thiện hiệu suất đọc dữ liệu.
-Nếu bạn đọc muốn tìm hiểu thêm về cách đọc ảnh, có thể tham khảo tài liệu cho [GluonCV Toolkit](https://gluon-cv.mxnet.io/).
+Nếu bạn đọc muốn tìm hiểu thêm về cách đọc ảnh, có thể tham khảo tài liệu cho [bộ công cụ GluonCV](https://gluon-cv.mxnet.io/).
 
 <!--
 ## Downloading the Dataset
 -->
 
-## Tải xuống tập dữ liệu
+## Tải xuống tập Dữ liệu
 
 
 <!--
@@ -77,8 +74,8 @@ Ta sẽ đọc tập dữ liệu phát hiện đối tượng theo thứ tự ng
 "Det" (viết tắt cho Detection), đề cập đến việc phát hiện.
 Vì định dạng của dữ liệu là RecordIO, ta cần có tệp chỉ số `'train.idx'` để đọc minibatch ngẫu nhiên.
 Ngoài ra, đối với từng ảnh trong tập huấn luyện, ta sẽ cắt xén ngẫu nhiên nhưng vẫn yêu cầu bao phủ ít nhất 95% mỗi đối tượng.
-Vì việc cắt xén là ngẫu nhiên, yêu cầu này không phải lúc nào cũng được thoả mãn.
-Ta cho trước số lần cắt ảnh ngẫu nhiên tối đa là 200 lần. Nếu không có lần nào thoả mãn yêu cầu, hình ảnh sẽ được giữ nguyên.
+Vì việc cắt xén là ngẫu nhiên, yêu cầu này không phải lúc nào cũng được thỏa mãn.
+Ta cho trước số lần cắt ảnh ngẫu nhiên tối đa là 200 lần. Nếu không có lần nào thỏa mãn yêu cầu, hình ảnh sẽ được giữ nguyên.
 Để đầu ra được đảm bảo, ta sẽ không cắt ngẫu nhiên các hình ảnh trong tập kiểm tra.
 Ta cũng không cần đọc dữ liệu trong tập kiểm tra theo thứ tự ngẫu nhiên.
 
@@ -102,10 +99,6 @@ def load_data_pikachu(batch_size, edge_size=256):
         data_shape=(3, edge_size, edge_size), shuffle=False)
     return train_iter, val_iter
 ```
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 <!--
@@ -132,7 +125,7 @@ Do đó, chúng ta có thể đọc được một minibatch mỗi lần.
 Nhãn của mỗi khung chứa trong bức ảnh được biểu diễn bằng một mảng có độ dài là 5.
 Phần tử đầu tiên trong mảng là hạng mục của đối tượng xuất hiện trong khung chứa.
 Khi giá trị là -1, khung chứa ấy chính là khung chứa ngẫu nhiên dùng để lấp đầy.
-Bốn phần tử còn lại trong mảng đại diện cho toạ độ trục $x, y$ của góc trên bên trái và góc dưới bên phải của khung chứa(miền giá trị từ 0 đến 1).
+Bốn phần tử còn lại trong mảng đại diện cho toạ độ trục $x, y$ của góc trên bên trái và góc dưới bên phải của khung chứa (miền giá trị từ 0 đến 1).
 Tập dữ liệu Pikachu ở đây chỉ có một khung chứa cho mỗi ảnh, vì thế $m=1$.
 
 
@@ -164,6 +157,7 @@ Chúng ta có thể thấy rằng góc, kích thước và vị trí của Pikac
 Dĩ nhiên, đây là một tập dữ liệu tự tạo đơn giản.
 Trong thực tế, dữ liệu thường phức tạp hơn nhiều.
 
+
 ```{.python .input  n=4}
 imgs = (batch.data[0][0:10].transpose(0, 2, 3, 1)) / 255
 axes = d2l.show_images(imgs, 2, 5, scale=2)
@@ -171,8 +165,8 @@ for ax, label in zip(axes, batch.label[0][0:10]):
     d2l.show_bboxes(ax, [label[0][1:5] * edge_size], colors=['w'])
 ```
 
-## Tóm tắt
 
+## Tóm tắt
 
 <!--
 * The Pikachu dataset we synthesized can be used to test object detection models.
@@ -195,10 +189,6 @@ Referring to the MXNet documentation, what are the parameters for the constructo
 Trong tài liệu MXNet, tham số trong các hàm tạo (*constructors*) của các lớp `image.ImageDetIter` và `image.CreateDetAugmenter` là gì? Cho biết ý nghĩa của chúng?
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/372)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -206,12 +196,6 @@ Trong tài liệu MXNet, tham số trong các hàm tạo (*constructors*) của 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Phạm Đăng Khoa

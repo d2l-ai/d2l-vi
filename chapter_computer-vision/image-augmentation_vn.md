@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Image Augmentation
 -->
@@ -24,6 +21,7 @@ Trong :numref:`sec_alexnet` chúng ta có đề cập đến việc các bộ d�
 Kỹ thuật tăng cường ảnh giúp mở rộng kích thước của tập dữ liệu huấn luyện thông qua việc áp dụng một loạt thay đổi ngẫu nhiên trên các mẫu ảnh,
 từ đó tạo ra các mẫu huấn luyện tuy tương tự nhưng vẫn có sự khác biệt.
 Cũng có thể giải thích tác dụng của tăng cường ảnh là việc thay đổi ngẫu nhiên các mẫu dùng cho huấn luyện, làm giảm sự phụ thuộc của mô hình vào một số thuộc tính nhất định. Do đó giúp cải thiện năng lực khái quát hóa của mô hình.
+
 Chẳng hạn, ta có thể cắt tập ảnh theo các cách khác nhau, để các đối tượng ta quan tâm xuất hiện ở các vị trí khác nhau, vì vậy giảm sự phụ thuộc của mô hình vào vị trí xuất hiện của đối tượng.
 Ta cũng có thể điều chỉnh độ sáng, màu sắc, và các yếu tố khác để giảm độ nhạy màu sắc của mô hình. 
 Có thể khẳng định rằng kỹ thuật tăng cường ảnh đóng góp rất lớn cho sự thành công của mạng AlexNet.
@@ -34,7 +32,6 @@ First, import the packages or modules required for the experiment in this sectio
 -->
 
 Trước tiên, thực hiện nhập các gói và mô-đun cần thiết.
-
 
 
 ```{.python .input  n=1}
@@ -51,7 +48,9 @@ npx.set_np()
 ## Common Image Augmentation Method
 -->
 
-## Phương pháp Tăng cường ảnh Thông dụng
+## Phương pháp Tăng cường Ảnh Thông dụng
+
+
 <!--
 In this experiment, we will use an image with a shape of $400\times 500$ as an example.
 -->
@@ -73,8 +72,9 @@ This function runs the image augmentation method `aug` multiple times on the inp
 -->
 
 Hầu hết các phương pháp tăng cường ảnh có một độ ngẫu nhiên nhất định.
-Để giúp quan sát dễ hơn hiệu quả của nó, kế tiếp ta định nghĩa hàm bổ trợ `apply`.
+Để giúp việc quan sát tính hiệu quả của nó dễ hơn, ta sẽ định nghĩa hàm bổ trợ `apply`.
 Hàm này thực hiện phương thức tăng cường ảnh `aug` nhiều lần từ ảnh đầu vào `img` và hiển thị tất cả kết quả.
+
 
 ```{.python .input  n=3}
 def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
@@ -82,9 +82,6 @@ def apply(img, aug, num_rows=2, num_cols=4, scale=1.5):
     d2l.show_images(Y, num_rows, num_cols, scale=scale)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Flipping and Cropping
@@ -146,7 +143,7 @@ Unless otherwise stated, the random number between $a$ and $b$ in this section r
 -->
 
 Trong đoạn mã sau, chúng tôi cắt ngẫu nhiên một vùng có diện tích từ 10% đến 100% diện tích ban đầu và tỷ lệ giữa chiều rộng và chiều cao của vùng được chọn ngẫu nhiên trong khoảng từ 0.5 đến 2.
-Sau đó, cả chiều rộng và chiều cao của vùng đều được biến đổi tỉ lệ thành 200 pixel.
+Sau đó, cả chiều rộng và chiều cao của vùng đều được biến đổi tỷ lệ thành 200 pixel.
 Trừ khi có quy định khác, giá trị ngẫu nhiên liên tục giữa $a$ và $b$ thu được bằng cách lấy mẫu đồng nhất trong khoảng $[a, b]$.
 
 
@@ -157,9 +154,6 @@ shape_aug = gluon.data.vision.transforms.RandomResizedCrop(
 apply(img, shape_aug)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Changing the Color
@@ -201,7 +195,7 @@ apply(img, gluon.data.vision.transforms.RandomHue(0.5))
 We can also create a `RandomColorJitter` instance and set how to randomly change the `brightness`, `contrast`, `saturation`, and `hue` of the image at the same time.
 -->
 
-Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `brightness` (độ sáng), `contrast` (độ tương phản), `saturation` (độ bão hoà), và `hue` (tông màu) của ảnh cùng một lúc. 
+Ta cũng có thể tạo một thực thể `RandomColorJitter` và thiết lập để ngẫu nhiên thay đổi `brightness` (độ sáng), `contrast` (độ tương phản), `saturation` (độ bão hòa), và `hue` (tông màu) của ảnh cùng một lúc. 
  
 
 
@@ -216,7 +210,7 @@ apply(img, color_aug)
 ### Overlying Multiple Image Augmentation Methods
 -->
 
-### Kết hợp nhiều Phương pháp Tăng cường ảnh
+### Kết hợp nhiều Phương pháp Tăng cường Ảnh
 
 
 <!--
@@ -235,19 +229,12 @@ augs = gluon.data.vision.transforms.Compose([
 apply(img, augs)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Using an Image Augmentation Training Model
 -->
 
-## Huấn luyện Mô hình dùng Tăng cường ảnh
+## Huấn luyện Mô hình dùng Tăng cường Ảnh
 
 
 <!--
@@ -277,7 +264,7 @@ In addition, we use a `ToTensor` instance to convert minibatch images into the f
 i.e., 32-bit floating point numbers with the shape of (batch size, number of channels, height, width) and value range between 0 and 1.
 -->
 
-Để có được kết quả dứt khoát trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện nhưng không sử dụng các biến đổi ngẫu nhiên trong dự đoán.
+Để có được kết quả cuối cùng trong dự đoán, ta thường chỉ áp dụng tăng cường ảnh khi huấn luyện nhưng không sử dụng các biến đổi ngẫu nhiên trong dự đoán.
 Ở đây, chúng ta chỉ sử dụng phương pháp lật ngẫu nhiên trái phải đơn giản nhất.
 Ngoài ra, chúng ta sử dụng một thực thể `ToTensor` để chuyển đổi minibatch hình ảnh thành định dạng theo yêu cầu của MXNet,
 tức là, tensor số thực dấu phẩy động 32-bit có kích thước (kích thước batch, số kênh, chiều cao, chiều rộng) và phạm vi giá trị trong khoảng từ 0 đến 1.
@@ -314,9 +301,6 @@ def load_cifar10(is_train, augs, batch_size):
         num_workers=d2l.get_dataloader_workers())
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Using a Multi-GPU Training Model
@@ -331,9 +315,8 @@ CIFAR-10 dataset. We will also apply the methods described in
 :numref:`sec_multi_gpu_concise` and use a multi-GPU training model.
 -->
 
-Ta huấn luyện mô hình ResNet-18 như mô tả ở :numref:`sec_resnet` trên
-tập dữ liệu CIFAR-10. Cùng với đó ta áp dụng các phương pháp được mô tả trong
-:numref:`sec_multi_gpu_concise` và sử dụng mô hình huấn luyện đa GPU.
+Ta huấn luyện mô hình ResNet-18 như mô tả ở :numref:`sec_resnet` trên tập dữ liệu CIFAR-10.
+Cùng với đó ta áp dụng các phương pháp được mô tả trong :numref:`sec_multi_gpu_concise` và sử dụng mô hình huấn luyện đa GPU.
 
 
 <!--
@@ -397,13 +380,12 @@ def train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs,
 <!--
 Now, we can define the `train_with_data_aug` function to use image augmentation to train the model.
 This function obtains all available GPUs and uses Adam as the optimization algorithm for training.
-It then applies image augmentation to the training dataset, and finally calls the `train` function just defined to train and evaluate the model.
+It then applies image augmentation to the training dataset, and finally calls the `train_ch13` function just defined to train and evaluate the model.
 -->
 
 Giờ ta có thể định nghĩa hàm `train_with_data_aug` để áp dụng tăng cường ảnh vào huấn luyện mô hình.
 Hàm này tìm tất cả các GPU có sẵn và sử dụng Adam làm thuật toán tối ưu cho quá trình huấn luyện.
 Sau đó nó áp dụng tăng cường ảnh vào tập huấn luyện, và cuối cùng gọi đến hàm `train_ch13` được định nghĩa ở trên để huấn luyện và đánh giá mô hình.
-
 
 
 ```{.python .input  n=18}
@@ -419,14 +401,15 @@ def train_with_data_aug(train_augs, test_augs, net, lr=0.001):
     train_ch13(net, train_iter, test_iter, loss, trainer, 10, devices)
 ```
 
+
 <!-- Now we train the model using image augmentation of random flipping left and right. -->
 
 Giờ ta huấn luyện mô hình áp dụng tăng cường ảnh qua phép lật ngẫu nhiên trái và phải. 
 
+
 ```{.python .input  n=19}
 train_with_data_aug(train_augs, test_augs, net)
 ```
-
 
 
 ## Tóm tắt
@@ -437,7 +420,7 @@ train_with_data_aug(train_augs, test_augs, net)
 * We can obtain classes related to image augmentation from Gluon's `transforms` module.
 -->
 
-* Tăng cường ảnh sản sinh các ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
+* Tăng cường ảnh sản sinh ra những ảnh ngẫu nhiên dựa vào dữ liệu có sẵn trong tập huấn luyện để đối phó với hiện tượng quá khớp.
 * Để có thể thu được kết quả tin cậy trong quá trình dự đoán, thường thì ta chỉ áp dụng tăng cường ảnh lên mẫu huấn luyện, không áp dụng các biến đổi tăng cường ảnh ngẫu nhiên trong quá trình dự đoán.
 * Mô-đun `transforms` của Gluon có các lớp thực hiện tăng cường ảnh.
 
@@ -458,9 +441,6 @@ Liệu thí nghiệm so sánh này có thể hỗ trợ cho luận điểm rằn
 2. Sử dụng thêm các phương thức tăng cường ảnh khác trên tập dữ liệu CIFAR-10 khi huấn luyện mô hình. Theo dõi kết quả.
 3. Tham khảo tài liệu của MXNet và cho biết mô-đun `transforms` của Gluon còn cung cấp các phương thức tăng cường ảnh nào khác?
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/367)
@@ -469,33 +449,12 @@ Liệu thí nghiệm so sánh này có thể hỗ trợ cho luận điểm rằn
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 5 -->
 * Đỗ Trường Giang
-* Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
-* Lê Khắc Hồng Phúc
