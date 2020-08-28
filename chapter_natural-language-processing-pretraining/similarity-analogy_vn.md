@@ -45,7 +45,7 @@ Here we consider one English version (300-dimensional "wiki.en") that can be dow
 -->
 
 Dưới đây là các embedding GloVe đã được tiền huấn luyện với kích thước chiều là 50, 100, và 300, có thể được tải từ [trang web GloVe](https://nlp.stanford.edu/projects/glove/).
-Các embedding fastText được tiền huấn luyện sẵn trên một số ngôn ngữ.
+Các embedding cho fastText được tiền huấn luyện trên nhiều ngôn ngữ.
 Ở đây, ta quan tâm tới phiên bản cho tiếng Anh ("wiki.en" có chiều kích thước là 300) có thể được tải từ [trang web fastText](https://fasttext.cc/).
 
 
