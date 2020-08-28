@@ -278,7 +278,7 @@ def get_analogy(token_a, token_b, token_c, embed):
 Verify the "male-female" analogy.
 -->
 
-Kiểm tra loại suy "male-female".
+Kiểm tra quan hệ loại suy "nam giới - nữ giới".
 
 
 ```{.python .input  n=18}
