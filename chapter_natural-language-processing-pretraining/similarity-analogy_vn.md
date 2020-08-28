@@ -118,7 +118,7 @@ Next, we use 50-dimensional GloVe embeddings pretrained on a subset of the Wikip
 The corresponding word embedding is automatically downloaded the first time we create a pretrained word embedding instance.
 -->
 
-Tiếp theo, ta sử dụng embedding GloVe có chiều kích thước là 50 được tiền huấn luyện trên tập con của Wikipedia.
+Tiếp theo, ta sử dụng embedding GloVe có kích thước chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
 Embedding tương ứng của từ sẽ được tải về tự động khi ta khởi tạo một thực thể embedding từ đã được tiền huấn luyện.
 
 
