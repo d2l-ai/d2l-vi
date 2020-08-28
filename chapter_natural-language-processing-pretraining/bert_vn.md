@@ -6,7 +6,7 @@
 # Bidirectional Encoder Representations from Transformers (BERT)
 -->
 
-# Biểu diễn Mã hoá hai chiều từ Transformer (BERT)
+# Biểu diễn Mã hoá hai chiều từ Transformer (*Bidirectional Encoder Representations from Transformers* - BERT)
 :label:`sec_bert`
 
 
