@@ -229,6 +229,7 @@ Do tỉ số xác suất có điều kiện là một số vô hướng, ta có 
 $f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{u}_k)^\top {\mathbf{v}}_i\right)$.
 Sau khi hoán đổi chỉ số $j$ và $k$, ta có thể thấy rằng hàm $f$ thỏa mãn điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Do đó:
 
+
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = \frac{\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right)}{\exp\left(\mathbf{u}_k^\top {\mathbf{v}}_i\right)} \approx \frac{p_{ij}}{p_{ik}}.$$
 
 
@@ -309,6 +310,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * 
