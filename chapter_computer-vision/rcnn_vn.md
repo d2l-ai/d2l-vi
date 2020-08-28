@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Region-based CNNs (R-CNNs)
 -->
 
-# CNN theo vùng (*Region-based CNNs* -- R-CNN)
+# CNN theo Vùng (R-CNN)
 
 
 <!--
@@ -15,7 +12,8 @@ Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, and Mask R-CNN :cite:`He.Gkioxari.
 Due to space limitations, we will confine our discussion to the designs of these models.
 -->
 
-Mạng nơ-ron tích chập theo vùng, hay các vùng với đặc trưng CNN (R-CNN) là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
+Mạng nơ-ron tích chập theo vùng, hay các vùng với đặc trưng CNN (R-CNN) 
+là một hướng tiếp cận tiên phong ứng dụng mô hình sâu cho bài toán phát hiện vật thể :cite:`Girshick.Donahue.Darrell.ea.2014`.
 Trong phần này, chúng ta sẽ thảo luận về R-CNN và một loạt các cải tiến sau đó: Fast R-CNN :cite:`Girshick.2015`, 
 Faster R-CNN :cite:`Ren.He.Girshick.ea.2015`, và Mask R-CNN :cite:`He.Gkioxari.Dollar.ea.2017`.
 
@@ -34,10 +32,12 @@ Afterwards, we use the features of each proposed region to predict their categor
 :numref:`fig_r-cnn` shows an R-CNN model.
 -->
 
-Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một phương pháp lựa chọn) và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
+Đầu tiên, các mô hình R-CNN sẽ chọn một số vùng đề xuất từ ảnh (ví dụ, các khung neo cũng là một phương pháp lựa chọn) 
+và sau đó gán nhãn hạng mục và khung chứa (ví dụ, các giá trị độ dời) cho các vùng này.
 Tiếp đến, các mô hình này sử dụng CNN để thực hiện lượt truyền xuôi nhằm trích xuất đặc trưng từ từng vùng đề xuất.
 Sau đó, ta sử dụng các đặc trưng của từng vùng được đề xuất để dự đoán hạng mục và khung chứa.
 :numref:`fig_r-cnn` mô tả một mô hình R-CNN.
+
 
 <!--
 ![R-CNN model.](../img/r-cnn.svg)
@@ -70,7 +70,7 @@ Các vùng đề xuất thông thường sẽ có nhiều tỷ lệ với hình 
 Hạng mục và khung chứa nhãn gốc sẽ được gán cho từng vùng đề xuất.
 2. Sử dụng một mạng CNN đã qua tiền huấn luyện, ở dạng rút gọn, đặt trước tầng đầu ra.
 Mạng này biến đổi từng vùng đề xuất thành các đầu vào có chiều phù hợp với mạng và thực hiện các lượt truyền xuôi để trích xuất đặc trưng từ các vùng đề xuất tương ứng.
-3. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện các máy vector hỗ trợ (*support vector machines*) cho phép phân loại vật thể.
+1. Các đặc trưng và nhãn hạng mục của từng vùng đề xuất được kết hợp thành một mẫu để huấn luyện các máy vector hỗ trợ cho phép phân loại vật thể.
 Ở đây, mỗi máy vector hỗ trợ được sử dụng để xác định một mẫu có thuộc về một hạng mục nào đó hay không.
 4. Các đặc trưng và khung chứa được gán nhãn của mỗi vùng đề xuất được kết hợp thành một mẫu để huấn luyện mô hình hồi quy tuyến tính, để phục vụ dự đoán khung chứa nhãn gốc. 
 
@@ -84,15 +84,12 @@ Mặc dù các mô hình R-CNN sử dụng các mạng CNN đã được tiền 
 Có thể hình dung, với hàng ngàn vùng đề xuất từ một ảnh, ta cần tới hàng ngàn phép tính truyền xuôi từ mạng CNN để phát hiện vật thể. 
 Khối lượng tính toán nặng nề khiến các mô hình R-CNN không được sử dụng rộng rãi trong các ứng dụng thực tế.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Fast R-CNN
 -->
 
-# Mạng Fast R-CNN
+## Fast R-CNN
 
 
 <!--
@@ -140,9 +137,9 @@ This means that we predict the category and bounding box for each proposed regio
 1. So với mạng R-CNN, mạng Fast R-CNN sử dụng toàn bộ ảnh làm đầu vào cho CNN để trích xuất đặc trưng thay vì từng vùng đề xuất.
 Hơn nữa, mạng này được huấn luyện như bình thường để cập nhật tham số mô hình.
 Do đầu vào là toàn bộ ảnh, đầu ra của mạng CNN có kích thước $1 \times c \times h_1 \times w_1$.
-2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, kích thước khác nhau của các vùng này chỉ ra rằng vùng quan tâm (_regions of interests - RoI_) tại đầu ra của CNN có kích thước khác nhau.
+2. Giả sử thuật toán tìm kiếm chọn lọc chọn ra $n$ vùng đề xuất, kích thước khác nhau của các vùng này chỉ ra rằng vùng quan tâm (*regions of interests - RoI*) tại đầu ra của CNN có kích thước khác nhau.
 Các đặc trưng có cùng kích thước phải được trích xuất từ các vùng quan tâm này (giả sử có chiều cao là $h_2$ và chiều rộng là $w_2$).
-Mạng Fast R-CNN đề xuất phép gộp RoI (_RoI pooling_), nhận đầu ra từ CNN và các vùng quan tâm làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
+Mạng Fast R-CNN đề xuất phép gộp RoI (*RoI pooling*), nhận đầu ra từ CNN và các vùng quan tâm làm đầu vào rồi ghép nối các đặc trưng được trích xuất từ mỗi vùng quan tâm làm đầu ra có kích thước $n \times c \times h_2 \times w_2$.
 3. Tầng kết nối đầy đủ được sử dụng để biến đổi kích thước đầu ra thành $n \times d$, trong đó $d$ được xác định khi thiết kế mô hình.
 4. Khi dự đoán hạng mục, kích thước đầu ra của tầng kết nối đầy đủ lại được biến đổi thành $n \times q$ và áp dụng phép hồi quy softmax ($q$ là số lượng hạng mục).
 Khi dự đoán khung chứa, kích thước đầu ra của tầng đầy đủ lại được biến đổi thành $n \times 4$.
@@ -168,11 +165,6 @@ Chiều cao và chiều rộng của cửa sổ con phải luôn là số nguyê
 Điều này cho phép tầng gộp RoI trích xuất đặc trưng có cùng kích thước từ các vùng quan tâm có kích thước khác nhau.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-
 <!--
 In :numref:`fig_roi`, we select an $3\times 3$ region as an RoI of the $4 \times 4$ input.
 For this RoI, we use a $2\times 2$ RoI pooling layer to obtain a single $2\times 2$ output.
@@ -188,7 +180,7 @@ Khi chia vùng này thành bốn cửa sổ con, chúng lần lượt chứa cá
 -->
 
 
-![Tầng gộp RoI $2\times 2$](../img/roi.svg)
+![Tầng gộp RoI $2\times 2$.](../img/roi.svg)
 :label:`fig_roi`
 
 
@@ -240,13 +232,6 @@ Sau cùng, ta chia hai RoI thành một lưới cửa sổ con và trích xuất
 npx.roi_pooling(X, rois, pooled_size=(2, 2), spatial_scale=0.1)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Faster R-CNN
@@ -268,7 +253,7 @@ Faster R-CNN thay thế tìm kiếm chọn lọc bằng mạng đề xuất vùn
 ![Faster R-CNN model.](../img/faster-rcnn.svg)
 -->
 
-![Mô hình Faster R-CNN](../img/faster-rcnn.svg)
+![Mô hình Faster R-CNN.](../img/faster-rcnn.svg)
 :label:`fig_faster_r-cnn`
 
 
@@ -280,7 +265,7 @@ The other parts of the model remain unchanged.
 The detailed region proposal network computation process is described below:
 -->
 
-:numref:`fig_faster_r-cnn` minh hoạ mô hình Faster R-CNN.
+:numref:`fig_faster_r-cnn` minh họa mô hình Faster R-CNN.
 So với Fast R-CNN, Faster R-CNN chỉ thay thế phương pháp sản sinh các vùng đề xuất từ tìm kiếm chọn lọc sang mạng đề xuất vùng.
 Những phần còn lại trong mô hình không đổi.
 Quy trình tính toán của mạng đề xuất vùng được mô tả chi tiết dưới đây:
@@ -297,7 +282,7 @@ Finally, we output the predicted bounding boxes as the proposed regions required
 
 1. Dùng một tầng tích chập $3\times 3$ với đệm bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$.
 Bằng cách này, mỗi phần tử trong ánh xạ đặc trưng mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
-2. Lấy mỗi phần tử trong ánh xạ đặc trưng làm tâm để tạo ra nhiều khung neo có kích thước và tỉ lệ khác nhau, sau đó gán nhãn cho chúng.
+2. Lấy mỗi phần tử trong ánh xạ đặc trưng làm tâm để tạo ra nhiều khung neo có kích thước và tỷ lệ khác nhau, sau đó gán nhãn cho chúng.
 3. Lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm khung neo để phân loại nhị phân (là vật thể hay là nền) và dự đoán khung chứa tương ứng cho các khung neo.
 4. Sau đó, sử dụng triệt phi cực đại (*non-maximum suppression*) để loại bỏ các khung chứa có kết quả giống nhau của hạng mục "vật thể".
 Cuối cùng, ta xuất ra các khung chứa dự đoán là các vùng đề xuất rồi đưa vào tầng gộp RoI.
@@ -316,10 +301,6 @@ cũng như các hàm dự đoán hạng mục nhị phân và khung chứa cho c
 Sau cùng, mạng đề xuất vùng có thể học được cách sinh ra những vùng đề xuất có chất lượng cao, giảm đi số lượng vùng đề xuất trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
 <!--
 ## Mask R-CNN
 -->
@@ -332,7 +313,8 @@ If training data is labeled with the pixel-level positions of each object in an 
 a Mask R-CNN model can effectively use these detailed labels to further improve the precision of object detection.
 -->
 
-Nếu dữ liệu huấn luyện được gán nhãn với các vị trí ở cấp độ từng điểm ảnh trong bức hình, thì mô hình Mask R-CNN có thể sử dụng hiệu quả các nhãn chi tiết này để cải thiện độ chính xác của việc phát hiện đối tượng.
+Nếu dữ liệu huấn luyện được gán nhãn với các vị trí ở cấp độ từng điểm ảnh trong bức hình, 
+thì mô hình Mask R-CNN có thể sử dụng hiệu quả các nhãn chi tiết này để cải thiện độ chính xác của việc phát hiện đối tượng.
 
 
 <!--
@@ -389,11 +371,8 @@ Mạng này sử dụng một tầng gộp RoI để trích xuất các đặc t
 Study the implementation of each model in the [GluonCV toolkit](https://github.com/dmlc/gluon-cv/) related to this section.
 -->
 
-Tìm hiểu cách thực thi từng mô hình trong [GluonCV toolkit](https://github.com/dmlc/gluon-cv/) liên quan đến phần này.
+Tìm hiểu cách thực thi từng mô hình trong [bộ công cụ GluonCV](https://github.com/dmlc/gluon-cv/) liên quan đến phần này.
 
-
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 ## Thảo luận
 * [Tiếng Anh](https://discuss.d2l.ai/t/374)
@@ -402,12 +381,6 @@ Tìm hiểu cách thực thi từng mô hình trong [GluonCV toolkit](https://gi
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang

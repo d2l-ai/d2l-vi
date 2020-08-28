@@ -194,7 +194,7 @@ As you can see, the images vary in size and aspect ratio.
 -->
 
 Dưới đây là 8 mẫu dương tính đầu tiên và 8 mẫu âm cuối cùng.
-Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
+Bạn có thể thấy những hình ảnh có nhiều kích thước và tỷ lệ khác nhau.
 
 
 
@@ -212,8 +212,8 @@ In addition, we normalize the values of the three RGB (red, green, and blue) col
 The average of all values of the channel is subtracted from each value and then the result is divided by the standard deviation of all values of the channel to produce the output.
 -->
 
-Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỉ lệ để có chiều dài và chiều rộng 224 pixel.
-Khi kiểm tra, ta biến đổi tỉ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỷ lệ ngẫu nhiên sau đó biến đổi tỷ lệ để có chiều dài và chiều rộng 224 pixel.
+Khi kiểm tra, ta biến đổi tỷ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
 Thêm vào đó, chúng ta chuẩn hóa các giá trị của ba kênh màu RGB (red, green, blue).
 Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu, sau đó được chia cho độ lệch chuẩn của chúng để thu được ảnh đã qua xử lý.
 

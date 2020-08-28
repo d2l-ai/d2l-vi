@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Image Classification (CIFAR-10) on Kaggle
 -->
@@ -28,7 +25,7 @@ The competition's web address is
 
 Chúng ta thử nghiệm trên tập dữ liệu CIFAR-10 trong :numref:`sec_image_augmentation`.
 Đây là một tập dữ liệu quan trọng trong lĩnh vực thị giác máy tính.
-Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi phân loại tập ảnh CIFAR-10 trên Kaggle.
+Bây giờ, ta sẽ áp dụng kiến thức đã học ở các phần trước để tham gia vào cuộc thi phân loại ảnh CIFAR-10 trên Kaggle.
 Địa chỉ trang web của cuộc thi tại 
 
 > https://www.kaggle.com/c/cifar-10
@@ -96,17 +93,14 @@ Tập kiểm tra chứa $300,000$ ảnh, trong đó $10,000$ ảnh được sử
 $290,000$ ảnh còn lại dùng để ngăn ngừa việc gán nhãn thủ công vào tập kiểm tra rồi nộp kết quả đã gán nhãn.
 Định dạng ảnh trong cả hai tập dữ liệu là PNG, với chiều cao và chiều rộng là 32 pixel với ba kênh màu (RGB).
 Các ảnh được phân thành $10$ hạng mục: máy bay, xe hơi, chim, mèo, nai, chó, ếch, ngựa, thuyền và xe tải.
-Góc trên-bên trái của :numref:`fig_kaggle_cifar10` hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
+Góc trên bên trái của :numref:`fig_kaggle_cifar10` hiển thị một số ảnh máy bay, xe hơi và chim trong tập dữ liệu.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Downloading the Dataset
 -->
 
-### Tải tập dữ liệu
+### Tải tập Dữ liệu
 
 
 <!--
@@ -161,7 +155,7 @@ else:
 ### Organizing the Dataset
 -->
 
-### Tổ chức tập dữ liệu
+### Tổ chức tập Dữ liệu
 
 
 <!--
@@ -173,6 +167,7 @@ The following function returns a dictionary that maps the filename without exten
 Ta cần tổ chức tập dữ liệu để thuận tiện cho việc huấn luyện và kiểm tra.
 Hãy bắt đầu bằng cách đọc các nhãn từ tập tin csv.
 Hàm sau đây trả về một từ điển thực hiện ánh xạ tên tập tin (không bao gồm phần mở rộng) sang nhãn của nó.
+
 
 ```{.python .input  n=16}
 #@save
@@ -201,12 +196,13 @@ After organizing the data, images of the same class will be placed under the sam
 -->
 
 Kế tiếp, ta định nghĩa hàm `reorg_train_valid` để phân đoạn tập kiểm định từ tập huấn luyện gốc.
-Tham số `valid_ratio` trong hàm này là tỷ số của số mẫu trong tập kiểm định đối với số mẫu trong tập huấn luyện gốc.
-Cụ thể, gọi $n$ là số ảnh của lớp có ít mẫu nhất, và $r$ là tỷ số thì ta sẽ dùng $\max(\lfloor nr\rfloor,1)$ ảnh trong mỗi lớp làm tập kiểm định.
+Tham số `valid_ratio` trong hàm này là tỉ số của số mẫu trong tập kiểm định đối với số mẫu trong tập huấn luyện gốc.
+Cụ thể, gọi $n$ là số ảnh của lớp có ít mẫu nhất, và $r$ là tỉ số thì ta sẽ dùng $\max(\lfloor nr\rfloor,1)$ ảnh trong mỗi lớp làm tập kiểm định.
 Ta hãy chọn `valid_ratio=0.1` làm ví dụ.
 Vì tập ảnh huấn luyện gốc có $50,000$ ảnh, do đó ta sẽ có $45,000$ ảnh dùng để huấn luyện và lưu ở thư mục "`train_valid_test/train`" khi tinh chỉnh các siêu tham số,
 trong khi $5,000$ ảnh còn lại sử dụng làm tập kiểm định sẽ được lưu ở thư mục "`train_valid_test/valid`".
 Sau khi tổ chức dữ liệu, ảnh của một lớp sẽ được đặt ở cùng thư mục để đọc chúng sau này.
+
 
 ```{.python .input  n=2}
 #@save
@@ -247,6 +243,7 @@ The `reorg_test` function below is used to organize the testing set to facilitat
 -->
 
 Hàm `reorg_test` dưới đây được dùng để tổ chức tập kiểm tra để thuận tiện cho việc đọc tệp trong quá trình dự đoán.
+
 
 ```{.python .input  n=3}
 #@save    
@@ -290,9 +287,6 @@ valid_ratio = 0.1
 reorg_cifar10_data(data_dir, valid_ratio)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Image Augmentation
@@ -310,8 +304,8 @@ Below, we list some of these operations that you can choose to use or modify dep
 
 Để tránh hiện tượng quá khớp, ta sẽ áp dụng tăng cường ảnh.
 Ví dụ, ta có thể lật ngẫu nhiên các ảnh bằng cách thêm `transforms.RandomFlipLeftRight()`.
-Ta cũng có thể thực hiện chuẩn hoá trên ba kênh màu RGB của ảnh bằng cách sử dụng `transforms.Normalize()`.
-Dưới đây, chúng tôi liệt kê một số thao tác tăng cường ảnh để bạn có thể lựa chọn sử dụng hoặc chỉnh sửa tuỳ theo nhu cầu.
+Ta cũng có thể thực hiện chuẩn hóa trên ba kênh màu RGB của ảnh bằng cách sử dụng `transforms.Normalize()`.
+Dưới đây, chúng tôi liệt kê một số thao tác tăng cường ảnh để bạn có thể lựa chọn sử dụng hoặc chỉnh sửa tùy theo nhu cầu.
 
 
 ```{.python .input  n=9}
@@ -336,7 +330,7 @@ transform_train = gluon.data.vision.transforms.Compose([
 In order to ensure the certainty of the output during testing, we only perform normalization on the image.
 -->
 
-Để đảm bảo tính chắc chắn của đầu ra trong quá trình kiểm tra, ta chỉ thực hiện chuẩn hoá trên ảnh.
+Để đảm bảo tính chắc chắn của đầu ra trong quá trình kiểm tra, ta chỉ thực hiện chuẩn hóa trên ảnh.
 
 
 ```{.python .input}
@@ -351,7 +345,7 @@ transform_test = gluon.data.vision.transforms.Compose([
 ## Reading the Dataset
 -->
 
-## Đọc Tập dữ liệu
+## Đọc tập Dữ liệu
 
 
 <!--
@@ -394,9 +388,6 @@ test_iter = gluon.data.DataLoader(
     last_batch='keep')
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Defining the Model
@@ -410,7 +401,7 @@ Here, we build the residual blocks based on the `HybridBlock` class, which is sl
 This is done to improve execution efficiency.
 -->
 
-Ở phần này, ta xây dựng các khối phần dư dựa trên lớp `HybridBlock`, khối này có đôi chút khác biệt so với cách lập trình trong :numref:`sec_resnet`, để cải thiện hiệu suất thực thi.
+Ở phần này, ta xây dựng các khối phần dư dựa trên lớp `HybridBlock`, khối này có đôi chút khác biệt so với cách lập trình trong :numref:`sec_resnet` nhằm cải thiện hiệu suất thực thi.
 
 
 ```{.python .input  n=11}
@@ -487,9 +478,6 @@ def get_net(devices):
 loss = gluon.loss.SoftmaxCrossEntropyLoss()
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Defining the Training Functions
@@ -504,9 +492,9 @@ Next, we define the model training function `train`.
 We record the training time of each epoch, which helps us compare the time costs of different models.
 -->
 
-Ta tiến hành lựa chọn mô hình và điều chỉnh các siêu tham số tuỳ theo kết quả của mô hình trên tập kiểm định.
+Ta tiến hành lựa chọn mô hình và điều chỉnh các siêu tham số tùy theo kết quả của mô hình trên tập kiểm định.
 Tiếp theo, ta định nghĩa hàm huấn luyện mô hình `train`.
-Ta ghi lại thời gian huấn luyện mỗi epoch nhằm giúp so sánh thời gian mà các mô hình khác nhau yêu cầu.
+Ta ghi lại thời gian huấn luyện mỗi epoch nhằm giúp ta có thể so sánh thời gian mà các mô hình khác nhau yêu cầu.
 
 
 ```{.python .input}
@@ -565,7 +553,7 @@ For simplicity, we only train one epoch here.
 Bây giờ ta có thể huấn luyện và kiểm định mô hình.
 Các siêu tham số sau có thể được điều chỉnh: `num_epochs`, `lr_period` và `lr_decay`.
 Ta có thể tăng số epoch. Để đơn giản, ở đây ta chỉ huấn luyện 5 epoch.
-Do `lr_period` và `lr_decay` được đặt lần lượt bằng 50 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 50 epoch. <!--cho match code-->
+Do `lr_period` và `lr_decay` được đặt lần lượt bằng 50 và 0.1, tốc độ học của thuật toán tối ưu sẽ giảm đi 10 lần sau mỗi 50 epoch.
 
 
 ```{.python .input  n=13}
@@ -576,9 +564,6 @@ train(net, train_iter, valid_iter, num_epochs, lr, wd, devices, lr_period,
       lr_decay)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Classifying the Testing Set and Submitting Results on Kaggle
@@ -647,9 +632,6 @@ Quan sát độ chính xác và xem bạn có thể đạt thứ hạng bao nhi�
 3. Quét mã QR để truy cập các thảo luận liên quan và trao đổi ý tưởng về các phương pháp được sử dụng và kết quả thu được với mọi người. Bạn có khám phá ra kĩ thuật nào khác tốt hơn không?
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/379)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -657,14 +639,9 @@ Quan sát độ chính xác và xem bạn có thể đạt thứ hạng bao nhi�
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
+* Lê Khắc Hồng Phúc
 * Nguyễn Mai Hoàng Long
 * Phạm Hồng Vinh
 * Đỗ Trường Giang

@@ -17,7 +17,7 @@ We will practice object detection based on anchor boxes in the following section
 
 Các giải thuật phát hiện vật thể thường lấy mẫu ở rất nhiều vùng của ảnh đầu vào, rồi xác định xem các vùng đó có chứa đối tượng cần quan tâm hay không, và điều chỉnh biên của vùng lấy mẫu này để dự đoán khung chứa nhãn gốc của đối tượng một cách chính xác hơn.
 Các mô hình khác nhau có thể dùng các phương pháp lấy mẫu vùng ảnh khác nhau.
-Ở đây, chúng tôi sẽ giới thiệu một phương pháp đó là: tạo ra nhiều khung chứa với kích thước và tỉ lệ cạnh khác nhau với tâm trên từng điểm ảnh.
+Ở đây, chúng tôi sẽ giới thiệu một phương pháp đó là: tạo ra nhiều khung chứa với kích thước và tỷ lệ cạnh khác nhau với tâm trên từng điểm ảnh.
 Các khung chứa đó được gọi là các khung neo.
 Chúng ta sẽ thực hành phát hiện vật thể dựa trên các khung neo ở các phần sau.
 
@@ -58,7 +58,7 @@ When the center position is given, an anchor box with known width and height is 
 
 Giả sử ảnh đầu vào có chiều cao $h$ và chiều rộng $w$.
 Ta sinh ra các khung neo với kích thước khác nhau có tâm tại mỗi điểm ảnh.
-Giả sử kích thước này $s\in (0, 1]$, tỉ lệ cạnh là $r >0$, chiều rộng và chiều cao của khung neo lần lượt là $ws\sqrt{r}$ và $hs/\sqrt{r}$.
+Giả sử kích thước này $s\in (0, 1]$, tỷ lệ cạnh là $r >0$, chiều rộng và chiều cao của khung neo lần lượt là $ws\sqrt{r}$ và $hs/\sqrt{r}$.
 Với một vị trí tâm cho trước, ta xác định được khung neo với chiều cao và chiều rộng như trên.
 
 <!--
@@ -68,10 +68,10 @@ Although these anchor boxes may cover all ground-truth bounding boxes, the compu
 Therefore, we are usually only interested in a combination containing $s_1$ or $r_1$ sizes and aspect ratios, that is:
 -->
 
-Dưới đây, ta thiết lập một tập kích thước $s_1,\ldots, s_n$ và một tập tỉ lệ khung $r_1,\ldots, r_m$.
-Nếu ta dùng tổ hợp tất cả các kích thước và tỉ lệ khung với mỗi điểm ảnh làm một tâm, ảnh đầu vào sẽ có tổng cộng $whnm$ khung neo.
+Dưới đây, ta thiết lập một tập kích thước $s_1,\ldots, s_n$ và một tập tỷ lệ khung $r_1,\ldots, r_m$.
+Nếu ta dùng tổ hợp tất cả các kích thước và tỷ lệ khung với mỗi điểm ảnh làm một tâm, ảnh đầu vào sẽ có tổng cộng $whnm$ khung neo.
 Mặc dù các khung chứa chuẩn đối tượng có thể sẽ nằm trong số đó, nhưng độ phức tạp tính toán này thường quá cao.
-Do đó, ta thường chỉ chú ý tới tổ hợp chứa $s_1$ kích thước hoặc $r_1$ tỉ lệ khung như sau:
+Do đó, ta thường chỉ chú ý tới tổ hợp chứa $s_1$ kích thước hoặc $r_1$ tỷ lệ khung như sau:
 
 
 $$(s_1, r_1), (s_1, r_2), \ldots, (s_1, r_m), (s_2, r_1), (s_3, r_1), \ldots, (s_n, r_1).$$
@@ -215,7 +215,7 @@ The value range of IoU is between 0 and 1: 0 means that there are no overlapping
 
 Trong thực tế, chúng ta có thể coi vùng điểm ảnh trong khung chứa là một tập hợp các điểm ảnh.
 Theo cách này, ta có thể đo lường được tính tương đồng của hai khung chứa bằng hệ số Jaccard của các tập điểm ảnh tương ứng.
-Khi đo sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được gọi là Giao trên Hợp (*Intersection over Union - IoU*), tức tỉ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, được thể hiện trong :numref:`fig_iou`.
+Khi đo sự tương đồng giữa hai khung chứa, hệ số Jaccard thường được gọi là Giao trên Hợp (*Intersection over Union - IoU*), tức tỷ lệ giữa vùng giao nhau và vùng kết hợp của hai khung chứa ảnh, được thể hiện trong :numref:`fig_iou`.
 Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 có nghĩa là không có điểm ảnh nào giao nhau giữa hai khung chứa, trong khi đó giá trị 1 chỉ ra rằng hai khung chứa ấy hoàn toàn trùng nhau.
 
 
@@ -223,7 +223,7 @@ Miền giá trị của IoU nằm trong khoảng từ 0 đến 1: giá trị 0 c
 ![IoU is the ratio of the intersecting area to the union area of two bounding boxes.](../img/iou.svg)
 -->
 
-![IoU là tỉ lệ giữa vùng giao trên vùng hợp của hai khung chứa.](../img/iou.svg)
+![IoU là tỷ lệ giữa vùng giao trên vùng hợp của hai khung chứa.](../img/iou.svg)
 :label:`fig_iou`
 
 
@@ -653,7 +653,7 @@ one is the category of the target contained in the anchor box and the other is t
 * When predicting, we can use non-maximum suppression (NMS) to remove similar prediction bounding boxes, thereby simplifying the results.
 -->
 
-* Chúng ta tạo ra nhiều khung neo với nhiều kích thước và tỉ lệ khác nhau, bao quanh từng điểm ảnh.
+* Chúng ta tạo ra nhiều khung neo với nhiều kích thước và tỷ lệ khác nhau, bao quanh từng điểm ảnh.
 * IoU, còn được gọi là hệ số Jaccard, đo lường độ tương đồng giữa hai khung chứa. Đó là tỷ lệ của phần giao trên phần hợp của hai khung chứa.
 * Trong tập huấn luyện, ta đánh dấu hai loại nhãn cho mỗi khung neo:
 hạng mục của đối tượng trong khung neo và độ dời của khung chứa chuẩn so với khung neo.
