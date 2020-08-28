@@ -32,7 +32,7 @@ WikiText-2 i) retains the original punctuation, making it suitable for next sent
 -->
 
 So với tập dữ liệu PTB đã dùng để thực hiện tiền huấn luyện word2vec ở :numref:`sec_word2vec_data`,
-WikiText-2 i) giữ dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) huấn luyện lại kiểu viết chữ và các số ban đầu; iii) là lớn hơn hai lần. 
+WikiText-2 i) giữ dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) giữ lại kiểu viết chữ hoa và số gốc; iii) và lớn hơn gấp hai lần. 
 
 
 ```{.python .input  n=1}
