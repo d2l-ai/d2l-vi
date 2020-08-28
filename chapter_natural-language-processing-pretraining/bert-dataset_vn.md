@@ -57,7 +57,7 @@ To split sentences, we only use the period as the delimiter for simplicity.
 We leave discussions of more complex sentence splitting techniques in the exercises at the end of this section.
 -->
 
-Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn mà khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
+Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn có khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
 Các đoạn văn có tối thiểu hai câu được giữ lại.
 Để tách các câu, ta chỉ dùng dấu chấm làm dấu ngắt cho đơn giản.
 Ta giành việc thảo luận cho các kỹ thuật tách câu phức tạp ở phần bài tập ở cuối của mục này.
