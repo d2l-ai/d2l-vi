@@ -56,7 +56,7 @@ CoVe (Context Vectors) :cite:`McCann.Bradbury.Xiong.ea.2017`, and ELMo (Embeddin
 Điều này thúc đẩy sự phát triển của các biểu diễn từ *nhạy ngữ cảnh* (_context-sensitive_), trong đó biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
 Do đó, biểu diễn nhạy ngữ cảnh của một token bất kỳ $x$ là hàm $f(x, c(x))$ phụ thuộc vào cả từ $x$ lẫn ngữ cảnh của từ là $c(x)$. 
 Các biểu diễn nhạy ngữ cảnh phổ biến bao gồm TagLM (Bộ Tag chuỗi được tăng cường với mô hình ngôn ngữ (_language-model-augmented sequence tagger_)) :cite:`Peters.Ammar.Bhagavatula.ea.2017`,
-CoVe (vector ngữ cảnh (_Context Vectors_)) :cite:`McCann.Bradbury.Xiong.ea.2017`, và ELMo (embedding các mô hình ngôn ngữ (_Embeddings from Language Models_)) :cite:`Peters.Neumann.Iyyer.ea.2018`.
+CoVe (vector ngữ cảnh (_Context Vectors_)) :cite:`McCann.Bradbury.Xiong.ea.2017`, và ELMo (embedding từ các mô hình ngôn ngữ (_Embeddings from Language Models_)) :cite:`Peters.Neumann.Iyyer.ea.2018`.
 
 
 <!--
