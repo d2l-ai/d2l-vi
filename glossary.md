@@ -101,6 +101,7 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | convex set                       | tập lồi                  | [https://git.io/JvohV](https://git.io/JvohV) |
 | convolutional neural network     | mạng nơ-ron tích chập    |                                              |
 | corpus                           | kho ngữ liệu             |                                              |
+| coreference resolution          | phân giải đồng tham chiếu         |                                              |
 | correlation coefficient          | hệ số tương quan         |                                              |
 | cosine                           | cô-sin                   |                                              |
 | cost function                    | hàm chi phí              | [https://git.io/Jvojp](https://git.io/Jvojp) |
@@ -328,7 +329,8 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 ## N
 | English                           | Tiếng Việt                        | Thảo luận tại                                                                              |
 |-----------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
-| named entity                      | thực thể có tên                   | [https://git.io/JvojG](https://git.io/JvojG)                                               |
+| named entity (recognition)        | (nhận dạng) thực thể có tên                   | [https://git.io/JvojG](https://git.io/JvojG)                                               |
+| natural language inference | suy luận ngôn ngữ tự nhiên           |                                                                                            |
 | natural language processing (NLP) | xử lý ngôn ngữ tự nhiên           |                                                                                            |
 | negative log-likelihood function  | hàm đối log hợp lý                |                                                                                            |
 | negative sample/example           | mẫu âm                            |                                                                                            |
@@ -445,8 +447,9 @@ Nếu bạn cho rằng một từ không nên dịch ra tiếng Việt, bạn c�
 | scale invariant                   | bất biến quy mô          | [https://git.io/Jftwj](https://git.io/Jftwj) |
 | scoring function                  | hàm tính điểm            |                                              |
 | serialization (programming)       | chuỗi hóa                |                                              |
+| semantic role labeling             | dán nhãn vai trò ngữ nghĩa |                                              |
 | semantic segmentation             | phân vùng theo ngữ nghĩa |                                              |
-| sentiment classification          | phân loại cảm xúc        |                                              |
+| sentiment classification (analysis)     | phân loại (phân tích) cảm xúc        |                                              |
 | sequence learning                 | học chuỗi                | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence              | chuỗi sang chuỗi         |                                              |
 | sequential partitioning           | phân tách tuần tự        |                                              |
