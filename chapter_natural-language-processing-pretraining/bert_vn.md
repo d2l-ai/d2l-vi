@@ -42,7 +42,7 @@ Hãy nhớ lại các thí nghiệm trong :numref:`sec_word2vec_pretraining` và
 Ví dụ, cả word2vec và GloVe đều gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh của nó như thế nào (nếu có).
 Về mặt hình thức, biểu diễn độc lập ngữ cảnh của một token bất kỳ $x$ là một hàm $f(x)$ chỉ nhận $x$ làm đầu vào.
 Do hiện tượng đa nghĩa cũng như sự phức tạp ngữ nghĩa xuất hiện khá phổ biến trong ngôn ngữ tự nhiên, biểu diễn độc lập ngữ cảnh có những hạn chế rõ ràng.
-Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying" và ngữ cảnh "a crane driver came" có nghĩa hoàn toàn khác nhau;
+Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying (một con sếu đang bay)" và ngữ cảnh "a crane driver came (tài xế xe cần cẩu đã tới)" có nghĩa hoàn toàn khác nhau;
 do đó, cùng một từ có thể được gán các biểu diễn khác nhau tùy thuộc vào ngữ cảnh.
 
 
