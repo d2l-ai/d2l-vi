@@ -187,7 +187,8 @@ For instance, one *BERT input sequence* may include either one *text sequence* o
 Trong xử lý ngôn ngữ tự nhiên, một số nhiệm vụ (cụ thể, phân tích cảm xúc) lấy một câu văn làm đầu vào, 
 trong khi một số tác vụ khác (cụ thể, suy diễn ngôn ngữ tự nhiên), đầu vào là một cặp chuỗi văn bản.
 Chuỗi đầu vào BERT biểu diễn một cách tường minh cả câu văn và cặp văn bản.
-Ở nhiệm vụ đầu, chuỗi đầu vào BERT việc ghép các token của chuỗi văn bản đầu “&lt;cls&gt;”, chuỗi văn bản thứ hai “&lt;sep&gt;” và chuỗi “&lt;sep&gt;”.
+Ở tác vụ đầu, chuỗi đầu vào BERT là sự ghép nói ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
+Ở tác vụ thứ hai, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
 Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" khác với các kiểu "chuỗi" khác.
 Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả một *chuỗi văn bản* hoặc hai *chuỗi văn bản*.
 
