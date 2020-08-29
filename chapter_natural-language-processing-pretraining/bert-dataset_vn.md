@@ -93,7 +93,7 @@ into the dataset of the ideal format to pretrain BERT.
 
 Ở phần sau đây, ta bắt đầu thực hiện các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
 Dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
-Các hàm trợ giúp này sẽ được gọi sau đó khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
+Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
 
 <!--
 ### Generating the Next Sentence Prediction Task
@@ -472,4 +472,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * 
-
