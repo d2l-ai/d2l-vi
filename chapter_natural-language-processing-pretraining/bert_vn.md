@@ -200,7 +200,7 @@ For single text inputs, only $\mathbf{e}_A$ is used.
 -->
 
 Để phân biệt cặp văn bản, các embedding phần đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embeddings token của chuỗi thứ nhất và chuỗi thứ hai.
-Đối với đầu vào là câu văn, ta chỉ sử dụng $\mathbf{e}_A$.
+Đối với đầu vào là văn bản đơn, ta chỉ sử dụng $\mathbf{e}_A$.
 
 <!--
 The following `get_tokens_and_segments` takes either one sentence or two sentences as the input, 
