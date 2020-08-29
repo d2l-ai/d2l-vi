@@ -5,7 +5,7 @@
 # Sentiment Analysis: Using Recurrent Neural Networks
 -->
 
-# Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Truy hồi
+# Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Hồi tiếp
 :label:`sec_sentiment_rnn`
 
 
@@ -48,7 +48,7 @@ train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size)
 ## Using a Recurrent Neural Network Model
 -->
 
-## Sử dụng Mạng Nơ-ron Truy hồi
+## Sử dụng Mạng Nơ-ron Hồi tiếp
 
 
 <!--
@@ -63,7 +63,7 @@ the `LSTM` instance is the hidden layer for sequence encoding, and the `Dense` i
 
 
 Trong mô hình này, đầu tiên mỗi từ nhận được một vector đặc trưng tương ứng từ tầng embedding.
-Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron truy hồi hai chiều để thu được thông tin chuỗi.
+Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron hồi tiếp hai chiều để thu được thông tin chuỗi.
 Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ.
 Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều trong bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
 tới tầng phân loại đầu ra như là thông tin chuỗi đặc trưng được mã hoá.
@@ -107,7 +107,7 @@ class BiRNN(nn.Block):
 Create a bidirectional recurrent neural network with two hidden layers.
 -->
 
-Ta sẽ tạo một mạng nơ-ron truy hồi hai chiều với hai tầng ẩn như sau.
+Ta sẽ tạo một mạng nơ-ron hồi tiếp hai chiều với hai tầng ẩn như sau.
 
 
 ```{.python .input}
