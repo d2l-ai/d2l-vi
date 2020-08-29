@@ -5,7 +5,7 @@
 # Finding Synonyms and Analogies
 -->
 
-# *dịch đoạn phía trên*
+# Tìm kiếm các từ Đồng nghĩa và các Loại suy
 :label:`sec_synonyms`
 
 
@@ -16,7 +16,10 @@ This section will demonstrate how to use these pretrained word vectors to find s
 We will continue to apply pretrained word vectors in subsequent sections.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_word2vec_pretraining` ta đã huấn luyện mô hình embedding cho từ word2vec trên tập dữ liệu cỡ nhỏ và tìm kiếm các từ đồng nghĩa sử dụng độ tương tự cô-sin giữa các vector từ.
+Trong thực tế, các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các bài toán xử lý ngôn ngữ tự nhiên cụ thể.
+Phần này sẽ trình bày cách sử dụng các vector từ đã được tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy (*analogy*).
+Ta sẽ tiếp tục áp dụng các vector từ được tiền huấn luyện trong các phần sau.
 
 
 ```{.python .input}
@@ -32,7 +35,7 @@ npx.set_np()
 ## Using Pretrained Word Vectors
 -->
 
-## *dịch đoạn phía trên*
+## Sử dụng các Vector Từ đã được Tiền Huấn luyện
 
 
 <!--
@@ -41,7 +44,9 @@ The pretrained fastText embeddings are available in multiple languages.
 Here we consider one English version (300-dimensional "wiki.en") that can be downloaded from the [fastText website](https://fasttext.cc/).
 -->
 
-*dịch đoạn phía trên*
+Dưới đây là các embedding GloVe đã được tiền huấn luyện với kích thước chiều là 50, 100, và 300, có thể được tải từ [trang web GloVe](https://nlp.stanford.edu/projects/glove/).
+Các embedding cho fastText được tiền huấn luyện trên nhiều ngôn ngữ.
+Ở đây, ta quan tâm tới phiên bản cho tiếng Anh ("wiki.en" có chiều kích thước là 300) có thể được tải từ [trang web fastText](https://fasttext.cc/).
 
 
 ```{.python .input  n=35}
@@ -67,7 +72,7 @@ d2l.DATA_HUB['wiki.en'] = (d2l.DATA_URL + 'wiki.en.zip',
 We define the following `TokenEmbedding` class to load the above pretrained Glove and fastText embeddings.
 -->
 
-*dịch đoạn phía trên*
+Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText đã được tiền huấn luyện ở trên .
 
 
 ```{.python .input}
@@ -113,7 +118,8 @@ Next, we use 50-dimensional GloVe embeddings pretrained on a subset of the Wikip
 The corresponding word embedding is automatically downloaded the first time we create a pretrained word embedding instance.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta sử dụng embedding GloVe có kích thước chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
+Embedding tương ứng của từ sẽ được tự động tải về khi ta khởi tạo lần đầu một thực thể embedding từ đã được tiền huấn luyện.
 
 
 ```{.python .input  n=11}
@@ -125,7 +131,7 @@ glove_6b50d = TokenEmbedding('glove.6b.50d')
 Output the dictionary size. The dictionary contains $400,000$ words and a special unknown token.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể in ra kích thước từ điển. Từ điển chứa $400,000$ từ và một token đặc biệt cho các từ không biết. 
 
 
 ```{.python .input}
@@ -137,7 +143,7 @@ len(glove_6b50d)
 We can use a word to get its index in the dictionary, or we can get the word from its index.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngược lại tra từ tương ứng với chỉ số của nó.
 
 
 ```{.python .input  n=12}
@@ -245,7 +251,7 @@ get_similar_tokens('beautiful', 3, glove_6b50d)
 ### Finding Analogies
 -->
 
-### *dịch đoạn phía trên*
+### Tìm kiếm các Loại suy
 
 
 <!--
@@ -257,7 +263,12 @@ Assume the word vector for the word $w$ is $\text{vec}(w)$.
 To solve the analogy problem, we need to find the word vector that is most similar to the result vector of $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
 -->
 
-*dịch đoạn phía trên*
+Bên cạnh việc tìm kiếm các từ đồng nghĩa, ta cũng có thể sử dụng các vector từ đã tiền huấn luyện để tìm kiếm các loại suy giữa các từ.
+Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man (nam)" với "woman (nữ)" giống như "son (con trai)" với "daugther (con gái)".
+Bài toán tìm kiếm loại suy có thể được định nghĩa như sau: với bốn từ trong quan hệ loại suy $a : b :: c : d$, 
+cho trước ba từ $a$, $b$ và $c$, ta muốn tìm từ $d$.
+Giả sử, vector từ cho từ $w$ là $\text{vec}(w)$.
+Để giải quyết bài toán loại suy, ta cần tìm vector từ gần nhất với vector là kết quả của $\text{vec}(c)+\text{vec}(b)-\text{vec}(a)$.
 
 
 ```{.python .input}
@@ -273,7 +284,7 @@ def get_analogy(token_a, token_b, token_c, embed):
 Verify the "male-female" analogy.
 -->
 
-*dịch đoạn phía trên*
+Kiểm tra quan hệ loại suy "nam giới - nữ giới".
 
 
 ```{.python .input  n=18}
@@ -285,7 +296,7 @@ get_analogy('man', 'woman', 'son', glove_6b50d)
 “Capital-country” analogy: "beijing" is to "china" as "tokyo" is to what? The answer should be "japan".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "thủ đô-quốc gia”: từ "beijing" với từ "china" tương tự như từ "tokyo" với từ nào? Đáp án đó là từ "japan".
 
 
 ```{.python .input  n=19}
@@ -297,7 +308,7 @@ get_analogy('beijing', 'china', 'tokyo', glove_6b50d)
 "Adjective-superlative adjective" analogy: "bad" is to "worst" as "big" is to what? The answer should be "biggest".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "tính từ - tính từ so sánh nhất": từ "bad" với từ "worst" tương tự như từ "big" với từ nào? Đáp án đó là từ "biggest".
 
 
 ```{.python .input  n=20}
@@ -309,7 +320,7 @@ get_analogy('bad', 'worst', 'big', glove_6b50d)
 "Present tense verb-past tense verb" analogy: "do" is to "did" as "go" is to what? The answer should be "went".
 -->
 
-*dịch đoạn phía trên*
+Loại suy "động từ thì hiện tại - động từ thì quá khứ": từ "do" với từ "did" tương tự như từ "go" với từ nào? Đáp án đó là "went".
 
 
 ```{.python .input  n=21}
@@ -324,8 +335,8 @@ get_analogy('do', 'did', 'go', glove_6b50d)
 * We can use pre-trained word vectors to seek synonyms and analogies.
 -->
 
-*dịch đoạn phía trên*
-
+* Các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các tác vụ xử lý ngôn ngữ tự nhiên.
+* Ta có thể sử dụng các vector từ được tiền huấn luyện để tìm kiếm các từ đồng nghĩa và các loại suy.
 
 ## Bài tập
 
@@ -334,7 +345,8 @@ get_analogy('do', 'did', 'go', glove_6b50d)
 2. If the dictionary is extremely large, how can we accelerate finding synonyms and analogies?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy kiểm tra kết quả với fastText bằng cách sử dụng `TokenEmbedding('wiki.en')`.
+2. Nếu từ điển quá lớn, ta có thể tăng tốc tìm kiếm các từ đồng nghĩa và các loại suy bằng cách nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -356,7 +368,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 

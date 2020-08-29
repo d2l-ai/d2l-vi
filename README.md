@@ -8,8 +8,10 @@
 ## Hướng dẫn đóng góp vào dự án
 Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
 
-## Tham gia vào Slack của nhóm Dịch thuật
-Đăng ký tham gia **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)** để trao đổi và hỏi đáp về các vấn đề liên quan.
+## Thảo luận cùng nhóm Dịch thuật
+Hiện nay chúng tôi có hai kênh trao đổi chính mà bạn có thể lựa chọn:
+* **Github Discussions** - dành cho những thảo luận về thuật ngữ, ngôn ngữ trong dịch thuật, và các vấn đề hỏi đáp liên quan trong khuôn khổ các nội dung mà dự án triển khai. Bạn có thể xem qua **[tại đây](https://github.com/aivivn/d2l-vn/discussions)**.
+* **Slack** - dành cho những cuộc hội thoại nhanh (quick chat), bạn có thể đăng ký **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)**.
 
 ## Bảng thuật ngữ
 Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](glossary.md)**.
@@ -117,7 +119,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 12.5. [Huấn luyện đa GPU](chapter_computational-performance/multiple-gpus_vn.md)
     * [x] 12.6. [Cách lập trình Súc tích đa GPU](chapter_computational-performance/multiple-gpus-gluon_vn.md)
     * [x] 12.7. [Tham số Máy chủ](chapter_computational-performance/parameterserver_vn.md)
-* [-] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
+* [x] 13. [Thị giác Máy tính](chapter_computer-vision/index_vn.md)
     * [x] 13.1. [Tăng cường Ảnh](chapter_computer-vision/image-augmentation_vn.md)
     * [x] 13.2. [Tinh chỉnh](chapter_computer-vision/fine-tuning_vn.md)
     * [x] 13.3. [Phát hiện Vật thể và Khoanh vùng Đối tượng (Khung chứa)](chapter_computer-vision/bounding-box_vn.md)
@@ -132,25 +134,25 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 13.12. [Truyền tải Phong cách Nơ-ron](chapter_computer-vision/neural-style_vn.md)
     * [x] 13.13. [Phân loại Ảnh (CIFAR-10) trên Kaggle](chapter_computer-vision/kaggle-gluon-cifar10_vn.md)
     * [x] 13.14. [Nhận diện Giống Chó (ImageNet Dogs) trên Kaggle](chapter_computer-vision/kaggle-gluon-dog_vn.md)
-* [ ] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
-    * [-] 14.1. [Word Embedding (word2vec)](chapter_natural-language-processing-pretraining/word2vec_vn.md)
-    * [-] 14.2. [Approximate Training](chapter_natural-language-processing-pretraining/approx-training_vn.md)
-    * [-] 14.3. [The Dataset for Pretraining Word Embedding](chapter_natural-language-processing-pretraining/word-embedding-dataset_vn.md)
-    * [-] 14.4. [Pretraining word2vec](chapter_natural-language-processing-pretraining/word2vec-pretraining_vn.md)
-    * [-] 14.5. [Word Embedding with Global Vectors (GloVe)](chapter_natural-language-processing-pretraining/glove_vn.md)
-    * [-] 14.6. [Subword Embedding](chapter_natural-language-processing-pretraining/subword-embedding_vn.md)
+* [-] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
+    * [x] 14.1. [Embedding Từ (word2vec)](chapter_natural-language-processing-pretraining/word2vec_vn.md)
+    * [x] 14.2. [Huấn luyện gần đúng](chapter_natural-language-processing-pretraining/approx-training_vn.md)
+    * [x] 14.3. [Dữ liệu cho Tiền Huấn luyện Embbeding Từ](chapter_natural-language-processing-pretraining/word-embedding-dataset_vn.md)
+    * [x] 14.4. [Tiền huấn luyện word2vec](chapter_natural-language-processing-pretraining/word2vec-pretraining_vn.md)
+    * [x] 14.5. [Embedding từ với Vector Toàn cục (GloVe)](chapter_natural-language-processing-pretraining/glove_vn.md)
+    * [x] 14.6. [Embedding từ con](chapter_natural-language-processing-pretraining/subword-embedding_vn.md)
     * [-] 14.7. [Finding Synonyms and Analogies](chapter_natural-language-processing-pretraining/similarity-analogy_vn.md)
     * [-] 14.8. [Bidirectional Encoder Representations from Transformers (BERT)](chapter_natural-language-processing-pretraining/bert_vn.md)
     * [-] 14.9. [The Dataset for Pretraining BERT](chapter_natural-language-processing-pretraining/bert-dataset_vn.md)
     * [-] 14.10. [Pretraining BERT](chapter_natural-language-processing-pretraining/bert-pretraining_vn.md)
 * [ ] 15. [Xử lý Ngôn ngữ Tự nhiên: Ứng dụng](chapter_natural-language-processing-applications/index_vn.md)
-    * [ ] 15.1. [Sentiment Analysis and the Dataset](chapter_natural-language-processing-applications/sentiment-analysis-and-dataset_vn.md)
-    * [ ] 15.2. [Sentiment Analysis: Using Recurrent Neural Networks](chapter_natural-language-processing-applications/sentiment-analysis-rnn_vn.md)
-    * [ ] 15.3. [Sentiment Analysis: Using Convolutional Neural Networks](chapter_natural-language-processing-applications/sentiment-analysis-cnn_vn.md)
-    * [ ] 15.4. [Natural Language Inference and the Dataset](chapter_natural-language-processing-applications/natural-language-inference-and-dataset_vn.md)
-    * [ ] 15.5. [Natural Language Inference: Using Attention](chapter_natural-language-processing-applications/natural-language-inference-attention_vn.md)
-    * [ ] 15.6. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](chapter_natural-language-processing-applications/finetuning-bert_vn.md)
-    * [ ] 15.7. [Natural Language Inference: Fine-Tuning BERT](chapter_natural-language-processing-applications/natural-language-inference-bert_vn.md)
+    * [-] 15.1. [Sentiment Analysis and the Dataset](chapter_natural-language-processing-applications/sentiment-analysis-and-dataset_vn.md)
+    * [-] 15.2. [Sentiment Analysis: Using Recurrent Neural Networks](chapter_natural-language-processing-applications/sentiment-analysis-rnn_vn.md)
+    * [-] 15.3. [Sentiment Analysis: Using Convolutional Neural Networks](chapter_natural-language-processing-applications/sentiment-analysis-cnn_vn.md)
+    * [-] 15.4. [Natural Language Inference and the Dataset](chapter_natural-language-processing-applications/natural-language-inference-and-dataset_vn.md)
+    * [-] 15.5. [Natural Language Inference: Using Attention](chapter_natural-language-processing-applications/natural-language-inference-attention_vn.md)
+    * [-] 15.6. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](chapter_natural-language-processing-applications/finetuning-bert_vn.md)
+    * [-] 15.7. [Natural Language Inference: Fine-Tuning BERT](chapter_natural-language-processing-applications/natural-language-inference-bert_vn.md)
 * [ ] 16. [Hệ thống Gợi ý](chapter_recommender-systems/index_vn.md)
     * [ ] 16.1. [Overview of Recommender Systems](chapter_recommender-systems/recsys-intro_vn.md)
     * [ ] 16.2. [The MovieLens Dataset](chapter_recommender-systems/movielens_vn.md)

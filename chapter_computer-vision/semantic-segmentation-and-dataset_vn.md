@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Semantic Segmentation and the Dataset
 -->
@@ -27,7 +24,7 @@ Như bạn có thể thấy, so với việc phát hiện vật thể, việc ph
 ![Semantically-segmented image, with areas labeled "dog", "cat", and "background".](../img/segmentation.svg)
 -->
 
-![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền"](../img/segmentation.svg)
+![Ảnh được phân vùng theo ngữ nghĩa, với các vùng được gán nhãn "chó", "mèo" và "nền".](../img/segmentation.svg)
 :label:`fig_segmentation`
 
 
@@ -35,7 +32,7 @@ Như bạn có thể thấy, so với việc phát hiện vật thể, việc ph
 ## Image Segmentation and Instance Segmentation
 -->
 
-## Phân vùng ảnh và phân vùng thực thể
+## Phân vùng Ảnh và Phân vùng Thực thể
 
 
 <!--
@@ -43,7 +40,7 @@ In the computer vision field, there are two important methods related to semanti
 Here, we will distinguish these concepts from semantic segmentation as follows:
 -->
 
-Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới phân vùng theo ngữ nghĩa: phân vùng ảnh và phân vùng thực thể.
+Trong lĩnh vực thị giác máy tính, có hai phương pháp quan trọng liên quan tới phân vùng theo ngữ nghĩa, đó là: phân vùng ảnh và phân vùng thực thể.
 Ta phân biệt các khái niệm này với phân vùng theo ngữ nghĩa như sau:
 
 
@@ -70,10 +67,6 @@ một vùng bao phủ phần miệng và cặp mắt nơi màu đen là chủ đ
 Phương pháp này cố gắng xác định các vùng ở mức điểm ảnh theo từng đối tượng riêng biệt ngay trong ảnh.
 Khác với phân vùng theo ngữ nghĩa, phân vùng thực thể không chỉ phân biệt ngữ nghĩa mà còn cả các thực thể khác nhau.
 Nếu một ảnh có chứa hai chú chó, phân vùng thực thể sẽ phân biệt những điểm ảnh thuộc về từng chú chó. 
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 <!--
@@ -238,13 +231,6 @@ y = voc_label_indices(train_labels[0], build_colormap2label())
 y[105:115, 130:140], VOC_CLASSES[1]
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Data Preprocessing
@@ -261,10 +247,10 @@ To avoid this problem, we crop the images to set dimensions and do not scale the
 Specifically, we use the random cropping method used in image augmentation to crop the same region from input images and their labels.
 -->
 
-Trong chương trước, ta biến đổi tỉ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
+Trong chương trước, ta biến đổi tỷ lệ của ảnh để khớp với kích thước đầu vào của mô hình.
 Với phương pháp phân vùng theo ngữ nghĩa, ta phải tái ánh xạ hạng mục được dự đoán của điểm ảnh về kích thước gốc của ảnh đầu vào.
 Sẽ rất khó để thực hiện việc này một cách chính xác, nhất là ở các phân vùng mang ngữ nghĩa khác nhau.
-Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỉ lệ ảnh.
+Để tránh vấn đề này, ta cắt ảnh để chỉnh kích thước chứ không biến đổi tỷ lệ ảnh.
 Cụ thể, ta sử dụng phương pháp cắt ngẫu nhiên được sử dụng trong kỹ thuật tăng cường ảnh để cắt cùng một vùng từ cả ảnh đầu vào và nhãn của nó.
 
 
@@ -288,7 +274,7 @@ d2l.show_images(imgs[::2] + imgs[1::2], 2, n);
 ### Dataset Classes for Custom Semantic Segmentation
 -->
 
-### Các Lớp của Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
+### Các lớp của Tập dữ liệu cho Phân vùng theo Ngữ nghĩa Tuỳ chỉnh
 
 
 <!--
@@ -343,7 +329,7 @@ class VOCSegDataset(gluon.data.Dataset):
 ### Reading the Dataset
 -->
 
-### Đọc Tập dữ liệu
+### Đọc tập Dữ liệu
 
 
 <!--
@@ -388,15 +374,12 @@ for X, Y in train_iter:
     break
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Putting All Things Together
 -->
 
-### Kết hợp tất cả lại với nhau
+### Kết hợp Tất cả lại với nhau
 
 
 <!--
@@ -434,7 +417,8 @@ def load_data_voc(batch_size, crop_size):
 
 * Phân vùng theo ngữ nghĩa tập trung vào việc phân vùng ảnh thành các vùng với hạng mục ngữ nghĩa khác nhau.
 * Trong lĩnh vực này, Pascal VOC2012 là một tập dữ liệu quan trọng.
-* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì biến đổi tỉ lệ của chúng.
+* Do các ảnh đầu vào và nhãn trong phân vùng ảnh theo ngữ nghĩa có mối tương quan một-một ở cấp độ điểm ảnh, 
+ta cắt các ảnh này một cách ngẫu nhiên theo kích thước cố định thay vì biến đổi tỷ lệ của chúng.
 
 
 ## Bài tập
@@ -449,10 +433,6 @@ Xem lại nội dung được trình bày trong :numref:`sec_image_augmentation`
 Phương pháp tăng cường ảnh nào sử dụng trong phân loại ảnh có thể khó sử dụng trong phân vùng ảnh theo ngữ nghĩa?
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/375)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -460,12 +440,6 @@ Phương pháp tăng cường ảnh nào sử dụng trong phân loại ảnh c�
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Mai Hoàng Long

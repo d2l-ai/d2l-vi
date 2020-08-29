@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Fine-Tuning
 -->
@@ -15,8 +12,8 @@ We also described ImageNet, the most widely used large-scale image dataset in th
 However, the size of datasets that we often deal with is usually larger than the first, but smaller than the second.
 -->
 
-Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST, với chỉ 60,000 ảnh.
-Chúng ta cũng đã nói về ImageNet, tập dữ liệu ảnh quy mô lớn được sử dụng phổ biến trong giới học thuật, với hơn 10 triệu tấm ảnh vật thể thuộc hơn 1000 hạng mục.
+Trong các chương trước, chúng ta đã thảo luận cách huấn luyện mô hình trên tập dữ liệu Fashion-MNIST với chỉ 60,000 ảnh.
+Ta cũng đã nói về ImageNet, tập dữ liệu ảnh quy mô lớn được sử dụng phổ biến trong giới học thuật, với hơn 10 triệu tấm ảnh vật thể thuộc hơn 1000 hạng mục.
 Tuy nhiên, những tập dữ liệu ta thường gặp chỉ có kích thước đâu đó giữa hai tập này, lớn hơn MNIST nhưng nhỏ hơn ImageNet.
 
 
@@ -28,7 +25,7 @@ This may result in the overfitting of the complicated model applicable to ImageN
 At the same time, because of the limited amount of data, the accuracy of the final trained model may not meet the practical requirements.
 -->
 
-Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn tới website bán chiếc ghế đó.
+Giả sử ta muốn nhận diện các loại ghế khác nhau trong ảnh rồi gửi đường dẫn mua hàng đến người dùng.
 Một cách khả dĩ là: đầu tiên ta tìm khoảng một trăm loại ghế phổ biến, chụp một nghìn bức ảnh từ các góc máy khác nhau với mỗi loại, rồi huấn luyện mô hình phân loại trên tập dữ liệu ảnh này.
 Dù tập dữ liệu này lớn hơn Fashion-MNIST, thì số lượng ảnh vẫn không bằng được một phần mười của ImageNet.
 Điều này dẫn tới việc các mô hình phức tạp bị quá khớp khi huấn luyện trên tập dữ liệu này, dù chúng hoạt động tốt với Imagenet.
@@ -59,10 +56,6 @@ Một giải pháp khác là áp dụng kỹ thuật học truyền tải (*tran
 Ví dụ, đa phần ảnh trong ImageNet không chụp ghế, nhưng những mô hình đã được huấn luyện trên ImageNet có khả năng trích xuất các đặc trưng chung của ảnh, rồi từ đó giúp nhận diện ra góc cạnh, bề mặt, hình dáng, và các kết cấu của vật thể.
 Các đặc trưng tương đồng này cũng sẽ có ích trong bài toán nhận diện ghế.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 
 <!--
 In this section, we introduce a common technique in transfer learning: fine tuning. 
@@ -71,6 +64,7 @@ As shown in :numref:`fig_finetune`, fine tuning consists of the following four s
 
 Trong phần này, chúng tôi giới thiệu một kỹ thuật thông dụng trong việc học truyền tải, đó là tinh chỉnh (*fine tuning*).
 Như minh họa trong hình :numref:`fig_finetune`, việc tinh chỉnh được tiến hành theo bốn bước sau đây:
+
 
 <!--
 1. Pre-train a neural network model, i.e., the source model, on a source dataset (e.g., the ImageNet dataset).
@@ -92,13 +86,13 @@ Ta cũng giả định là tầng đầu ra của mô hình gốc có liên hệ
 4. Huấn luyện mô hình mục tiêu trên tập dữ liệu mục tiêu, chẳng hạn như tập dữ liệu ghế.
 Chúng ta sẽ huấn luyện tầng đầu ra từ đầu, trong khi các tham số của tất cả các tầng còn lại được tinh chỉnh từ các tham số của mô hình gốc.
 
+
 <!--
 ![Fine tuning.](../img/finetune.svg)
 -->
 
-![Thực hiện tinh chỉnh](../img/finetune.svg)
+![Thực hiện tinh chỉnh.](../img/finetune.svg)
 :label:`fig_finetune`
-
 
 
 <!--
@@ -115,10 +109,11 @@ This small dataset contains thousands of images, some of which contain hot dogs.
 We will use the model obtained by fine tuning to identify whether an image contains a hot dog.
 -->
 
-Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng món ăn xúc xích.
+Tiếp theo, ta sẽ dùng một ví dụ cụ thể để luyện tập đó là: nhận dạng xúc xích.
 Ta sẽ tinh chỉnh mô hình ResNet đã huấn luyện trên tập dữ liệu ImageNet dựa trên một tập dữ liệu nhỏ.
 Tập dữ liệu nhỏ này chứa hàng nghìn ảnh, trong đó sẽ có các ảnh chứa hình xúc xích.
 Ta sẽ sử dụng mô hình thu được từ việc tinh chỉnh để xác định một bức ảnh có chứa món ăn này hay không.
+
 
 <!--
 First, import the packages and modules required for the experiment.
@@ -128,7 +123,8 @@ If you want to get more pre-trained models for computer vision, you can use the 
 
 Trước tiên, ta thực hiện nhập các gói và mô-đun cần cho việc thử nghiệm.
 Gói `model_zoo` trong Gluon cung cấp một mô hình đã được huấn luyện sẵn phổ biến.
-Nếu bạn muốn lấy thêm các mô hình đã được tiền huấn luyện cho thị giác máy tính, hãy tham khảo trang nguồn [GluonCV Toolkit](https://gluon-cv.mxnet.io)
+Nếu bạn muốn lấy thêm các mô hình đã được tiền huấn luyện cho thị giác máy tính, bạn có thể tham khảo [Bộ công cụ GluonCV](https://gluon-cv.mxnet.io).
+
 
 ```{.python .input  n=1}
 %matplotlib inline
@@ -140,9 +136,6 @@ import os
 npx.set_np()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Obtaining the Dataset
@@ -156,7 +149,7 @@ The hot dog dataset we use was taken from online images and contains $1,400$ pos
 $1,000$ images of various classes are used for training and the rest are used for testing.
 -->
 
-Tập dữ liệu bánh mì kẹp xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
+Tập dữ liệu xúc xích mà ta sử dụng được lấy từ internet, gồm $1,400$ ảnh mẫu dương chứa xúc xích và $1,400$ ảnh mẫu âm chứa các loại thức ăn khác.
 $1,000$ ảnh thuộc nhiều lớp khác nhau được sử dụng để huấn luyện và phần còn lại được dùng để kiểm tra.
 
 
@@ -201,7 +194,7 @@ As you can see, the images vary in size and aspect ratio.
 -->
 
 Dưới đây là 8 mẫu dương tính đầu tiên và 8 mẫu âm cuối cùng.
-Bạn có thể thấy những hình ảnh có nhiều kích thước và tỉ lệ khác nhau.
+Bạn có thể thấy những hình ảnh có nhiều kích thước và tỷ lệ khác nhau.
 
 
 
@@ -219,9 +212,9 @@ In addition, we normalize the values of the three RGB (red, green, and blue) col
 The average of all values of the channel is subtracted from each value and then the result is divided by the standard deviation of all values of the channel to produce the output.
 -->
 
-Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỉ lệ ngẫu nhiên sau đó biến đổi tỉ lệ để có chiều dài và chiều rộng 224 pixel.
-Khi kiểm tra, ta biến đổi tỉ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
-Thêm vào đó, chúng ta chuẩn hoá các giá trị của ba kênh màu RGB (red, green, blue).
+Trong quá trình huấn luyện, chúng ta cắt ảnh với kích thước và tỷ lệ ngẫu nhiên sau đó biến đổi tỷ lệ để có chiều dài và chiều rộng 224 pixel.
+Khi kiểm tra, ta biến đổi tỷ lệ chiều dài và chiều rộng của ảnh về kích thước 256 pixel, sau đó cắt ở vùng trung tâm để thu được ảnh có chiều dài và rộng là 224 pixel để làm đầu vào cho mô hình.
+Thêm vào đó, chúng ta chuẩn hóa các giá trị của ba kênh màu RGB (red, green, blue).
 Tất cả giá trị trên ảnh sẽ được trừ đi giá trị trung bình trên kênh màu, sau đó được chia cho độ lệch chuẩn của chúng để thu được ảnh đã qua xử lý.
 
 
@@ -244,13 +237,6 @@ test_augs = gluon.data.vision.transforms.Compose([
     normalize])
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Defining and Initializing the Model
@@ -265,9 +251,9 @@ Here, we specify `pretrained=True` to automatically download and load the pre-tr
 The first time they are used, the model parameters need to be downloaded from the Internet.
 -->
 
-Ta sử dụng ResNet-18 đã được huấn luyện trước trên tập dữ liệu ImageNet làm mô hình gốc.
-Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được huấn luyện sẵn.
-Ở lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
+Ta sử dụng ResNet-18 đã được tiền huấn luyện trên tập dữ liệu ImageNet làm mô hình gốc.
+Ở đây ta chỉ rõ `pretrained=True` để tự động tải xuống và nạp các tham số mô hình được tiền huấn luyện.
+Trong lần sử dụng đầu tiên, các tham số mô hình cần được tải xuống từ Internet.
 
 
 
@@ -325,9 +311,6 @@ finetune_net.output.initialize(init.Xavier())
 finetune_net.output.collect_params().setattr('lr_mult', 10)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Fine Tuning the Model
@@ -398,9 +381,6 @@ As you can see, the fine-tuned model tends to achieve higher precision in the sa
 Như bạn có thể thấy, với số epoch như nhau, mô hình tinh chỉnh có giá trị precision cao hơn. 
 Lý do là vì các tham có giá trị khởi tạo ban đầu tốt hơn.
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 ## Tóm tắt
 
@@ -410,7 +390,7 @@ Lý do là vì các tham có giá trị khởi tạo ban đầu tốt hơn.
 * Generally, fine tuning parameters use a smaller learning rate, while training the output layer from scratch can use a larger learning rate.
 -->
 
-* Học truyền tải chuyển kiến thức học được từ tập dữ liệu gốc sang tập dữ liệu mục tiêu. Tinh chỉnh là một kĩ thuật phổ biến trong học truyền tải.
+* Học truyền tải chuyển kiến thức học được từ tập dữ liệu gốc sang tập dữ liệu mục tiêu. Tinh chỉnh là một kỹ thuật phổ biến trong học truyền tải.
 * Mô hình mục tiêu tái tạo toàn bộ thiết kế mô hình và các tham số của mô hình gốc, ngoại trừ tầng đầu ra, và tinh chỉnh các tham số này dựa vào tập dữ liệu mục tiêu. Ngược lại, tầng đầu ra của mô hình mục tiêu cần được huấn luyện lại từ đầu.
 * Thông thường việc tinh chỉnh các tham số sử dụng tốc độ học nhỏ, trong khi việc huấn luyện lại tầng đầu ra từ đầu có thể sử dụng tốc độ học lớn hơn.
 
@@ -439,7 +419,7 @@ Its corresponding weight parameter at the output layer can be obtained by using 
 How can we use this parameter?
 -->
 
-4. Thực ra thì cũng có lớp "hotdog" trong tập dữ liệu `ImageNet`.
+4. Thật ra, lớp "hotdog" có trong tập dữ liệu `ImageNet`.
 Các trọng số tương ứng của nó trong tầng đầu ra có thể thu được thông qua việc sử dụng đoạn mã sau.
 Ta có thể sử dụng các tham số này như thế nào?
 
@@ -451,10 +431,6 @@ hotdog_w.shape
 ```
 
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/368)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -462,33 +438,14 @@ hotdog_w.shape
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Mai Sơn Hải
 * Phạm Minh Đức
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
-* 
-
-<!-- Phần 3 -->
-* Nguyễn Thanh Hoà
-
-<!-- Phần 4 -->
+* Nguyễn Thanh Hòa
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-<!-- Phần 5 -->
-* Đỗ Trường Giang
-
-<!-- Phần 6 -->
-* Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
+* Nguyễn Mai Hoàng Long

@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Dog Breed Identification (ImageNet Dogs) on Kaggle
 -->
@@ -92,9 +89,6 @@ Tất cả các ảnh trong hai tập đều có định dạng JPEG.
 Các ảnh này gồm có ba kênh (màu) RGB và có chiều cao và chiều rộng khác nhau.
 Có tất cả 120 giống chó trong tập huấn luyện, gồm có Chó tha mồi (*Labrador*), Chó săn vịt (*Poodle*), Chó Dachshund, Samoyed, Huskie, Chihuahua, và Chó sục Yorkshire (*Yorkshire Terriers*).
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Downloading the Dataset
@@ -164,7 +158,8 @@ else:
 We can organize the dataset similarly to what we did in :numref:`sec_kaggle_cifar10`, namely separating a validation set from the training set, and moving images into subfolders grouped by labels.
 -->
 
-Ta có thể tổ chức tập dữ liệu tương tự như cách ta đã làm trong :numref:`sec_kaggle_cifar10`, tức là tách riêng một tập kiểm định từ tập huấn luyện, và sau đó đưa các ảnh vào từng thư mục con theo nhãn của chúng.
+Ta có thể tổ chức tập dữ liệu tương tự như cách ta đã làm trong :numref:`sec_kaggle_cifar10`, 
+tức là tách riêng một tập kiểm định từ tập huấn luyện, sau đó đưa các ảnh vào từng thư mục con theo nhãn của chúng.
 
 
 <!--
@@ -186,15 +181,12 @@ valid_ratio = 0.1
 reorg_dog_data(data_dir, valid_ratio)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Image Augmentation
 -->
 
-## Tăng cường ảnh
+## Tăng cường Ảnh
 
 
 
@@ -204,7 +196,7 @@ Here are some more image augmentation operations that might be useful.
 -->
 
 Trong phần này, kích thước ảnh lớn hơn phần trước.
-Dưới đây là một số kĩ thuật tăng cường ảnh có thể sẽ hữu dụng.
+Dưới đây là một số kỹ thuật tăng cường ảnh có thể sẽ hữu dụng.
 
 
 ```{.python .input  n=4}
@@ -246,9 +238,6 @@ transform_test = gluon.data.vision.transforms.Compose([
                                            [0.229, 0.224, 0.225])])
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Reading the Dataset
@@ -315,11 +304,11 @@ This reduces the training time and the memory required to store model parameter 
 
 Dữ liệu cho cuộc thi này là một phần của tập dữ liệu ImageNet.
 Do đó, ta có thể sử dụng cách tiếp cận được thảo luận trong :numref:`sec_fine_tuning` để lựa chọn mô hình đã được tiền huấn luyện trên toàn bộ dữ liệu ImageNet 
-và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho một mạng tuỳ biến cỡ nhỏ.
+và sử dụng nó để trích xuất đặc trưng ảnh làm đầu vào cho một mạng tùy biến cỡ nhỏ.
 Gluon cung cấp một số mô hình đã được tiền huấn luyện.
 Ở đây, ta sử dụng mô hình ResNet-34 đã được tiền huấn luyện.
 Do dữ liệu của cuộc thi là tập con của tập dữ liệu tiền huấn luyện, ta đơn thuần sử dụng lại đầu vào của tầng đầu ra mô hình đã được tiền huấn luyện làm đặc trưng được được trích xuất.
-Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một mạng đầu ra tuỳ biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ.
+Sau đó, ta có thể thay thế tầng đầu ra gốc bằng một mạng đầu ra tùy biến cỡ nhỏ để huấn luyện bao gồm hai tầng kết nối đầy đủ.
 Khác với thí nghiệm trong :numref:`sec_fine_tuning`, ở đây ta không huấn luyện lại mô hình trích xuất đặc trưng đã được tiền huấn luyện.
 Điều này giúp giảm thời gian huấn luyện và bộ nhớ cần thiết để lưu trữ gradient của tham số mô hình.
 
@@ -329,8 +318,8 @@ You must note that, during image augmentation, we use the mean values and standa
 This is consistent with the normalization of the pre-trained model.
 -->
 
-Bạn đọc lưu ý trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hoá.
-Điều này giúp dữ liệu nhất quán với việc chuẩn hoá của mô hình tiền huấn luyện.
+Độc giả cần lưu ý, trong quá trình tăng cường ảnh, ta sử dụng giá trị trung bình và độ lệch chuẩn của ba kênh RGB lấy từ toàn bộ dữ liệu ImageNet để chuẩn hóa.
+Điều này giúp dữ liệu nhất quán với việc chuẩn hóa của mô hình tiền huấn luyện.
 
 
 ```{.python .input  n=6}
@@ -355,7 +344,7 @@ Then, we use this feature as the input for our small custom output network and c
 -->
 
 Khi tính toán mất mát, đầu tiên ta sử dụng biến thành viên `features` để lấy đầu vào của tầng đầu ra trong mô hình được tiền huấn luyện làm đặc trưng trích xuất.
-Sau đó, ta sử dụng đặc trưng này làm đầu vào cho mạng đầu ra tuỳ biến cỡ nhỏ và tính toán đầu ra.
+Sau đó, ta sử dụng đặc trưng này làm đầu vào cho mạng đầu ra tùy biến cỡ nhỏ và tính toán đầu ra.
 
 
 ```{.python .input}
@@ -374,9 +363,6 @@ def evaluate_loss(data_iter, net, devices):
     return l_sum / n
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Defining the Training Functions
@@ -391,7 +377,7 @@ The model training function `train` only trains the small custom output network.
 -->
 
 Ta sẽ lựa chọn mô hình và điều chỉnh siêu tham số dựa trên chất lượng mô hình trên tập kiểm định.
-Hàm huấn luyện mô hình `train` chỉ huấn luyện mạng đầu ra tuỳ biến cỡ nhỏ.
+Hàm huấn luyện mô hình `train` chỉ huấn luyện mạng đầu ra tùy biến cỡ nhỏ.
 
 
 ```{.python .input}
@@ -455,7 +441,6 @@ Ví dụ, ta có thể tăng số lượng epoch.
 Do `lr_period` và `lr_decay` được thiết lập bằng 10 và 0.1, tốc độ học của thuật toán tối ưu sẽ được nhân với 0.1 sau mỗi 10 epoch.
 
 
-
 ```{.python .input  n=9}
 devices, num_epochs, lr, wd = d2l.try_all_gpus(), 5, 0.01, 1e-4
 lr_period, lr_decay, net = 10, 0.1, get_net(devices)
@@ -477,7 +462,8 @@ After obtaining a satisfactory model design and hyperparameters, we use all trai
 Note that predictions are made by the output network we just trained.
 -->
 
-Sau khi thu được một thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng tất cả dữ liệu huấn luyện (bao gồm dữ liệu kiểm định) để huấn luyện lại mô hình, sau đó thực hiện dự đoán trên tập kiểm tra.
+Sau khi thu được một thiết kế mô hình và các siêu tham số vừa ý, ta sử dụng tất cả dữ liệu huấn luyện 
+(bao gồm dữ liệu kiểm định) để huấn luyện lại mô hình, sau đó thực hiện dự đoán trên tập kiểm tra.
 Chú ý rằng các dự đoán được lấy từ mạng đầu ra mà ta đã huấn luyện.
 
 
@@ -520,7 +506,7 @@ We can use a model pre-trained on the ImageNet dataset to extract features and o
 This will allow us to classify a subset of the ImageNet dataset with lower computing and storage overhead.
 -->
 
-* Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tuỳ biến cỡ nhỏ. 
+* Ta có thể sử dụng mô hình đã được tiền huấn luyện trên tập dữ liệu ImageNet để trích xuất đặc trưng và chỉ huấn luyện trên mạng đầu ra tùy biến cỡ nhỏ. 
 * Điều này cho phép ta có thể thực hiện dự đoán trên tập con của tập dữ liệu ImageNet với chi phí bộ nhớ và tính toán thấp hơn.
 
 
@@ -537,10 +523,6 @@ This will allow us to classify a subset of the ImageNet dataset with lower compu
 3. Quét mã QR để tham gia thảo luận và trao đổi ý tưởng về các phương pháp đã được sử dụng và kết quả thu được từ cộng đồng Kaggle. Bạn có thể nghĩ ra một ý tưởng hay kỹ thuật tốt hơn không?
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/380)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -548,12 +530,6 @@ This will allow us to classify a subset of the ImageNet dataset with lower compu
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
