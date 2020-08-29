@@ -574,7 +574,7 @@ These two text corpora are huge: they have 800 million words and 2.5 billion wor
 ## Putting All Things Together
 -->
 
-## *dịch đoạn phía trên*
+## Kết hợp Tất cả lại
 
 
 <!--
@@ -583,7 +583,9 @@ Now we can define the `BERTModel` class by instantiating the three classes `BERT
 The forward inference returns the encoded BERT representations `encoded_X`, predictions of masked language modeling `mlm_Y_hat`, and next sentence predictions `nsp_Y_hat`.
 -->
 
-*dịch đoạn phía trên*
+Khi tiền huấn luyện BERT, hàm mất mát cuối cùng là tổ hợp tuyến tính của cả hai hàm mất mát cho tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự doán câu tiếp theo.
+Bây giờ ta có thể định nghĩa lớp `BERTModel` bằng các khởi tạo ba lớp `BERTEncoder`, `MaskLM`, và `NextSentencePred`.
+Lượt truyền xuôi suy luận trả về biểu diễn BERT được mã hoá `encoded_X`, dự đoán `mlm_Y_hat` của tác vụ mô hình hoá ngôn ngữ có mặt nạ, và dự đoán câu tiếp theo `nsp_Y_hat`.
 
 
 ```{.python .input  n=10}
@@ -627,7 +629,18 @@ while GPT is task-agnostic but encodes context left-to-right.
 The former is able to encode bidirectional context for representing words, while the later explicitly models the logical relationship between text pairs.
 -->
 
-*dịch đoạn phía trên*
+
+* Các mô hình embedding từ như word2vec và GloVe có tính chất độc lập với ngữ cảnh.
+Hai mô hình này gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh xung quanh của từ đó là gì (nếu có).
+Rất khó để các mô hình này xử lý tốt các trường hợp phức tạp về ngữ nghĩa hay đa nghĩa trong các ngôn ngữ tự nhiên.
+* Đối với các biểu diễn từ nhạy ngữ cảnh như ELMo và GPT, biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
+* ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng kiến ​​trúc đặc thù cho tác vụ
+(tuy nhiên, thực tế không dễ để tạo ra một kiến ​​trúc đặc thù cho mọi tác vụ xử lý ngôn ngữ tự nhiên);
+trong khi đó GPT không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải (*left-to-right*).
+* BERT kết hợp những gì tốt nhất của cả hai mô hình kể trên: nó mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
+* Các embedding của chuỗi đầu vào BERT là tổng các embedding cho token, embedding đoạn và embedding vị trí.
+* Quá trình tiền huấn luyện BERT gồm có hai tác vụ đó là: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
+Tác vụ trước có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 
 
 ## Bài tập
@@ -640,7 +653,11 @@ and the fully-connected layer in `MaskLM` both use the Gaussian error linear uni
 Research into the difference between GELU and ReLU.
 -->
 
-*dịch đoạn phía trên*
+1. Tại sao BERT gặt hái được thành công?
+2. Khi tất cả các mô hình khác tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi nhiều hơn hay ít hơn số bước tiền huấn luyện để hội thụ hơn mô hình ngôn ngữ từ trái sang phải. Tại sao?
+3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
+và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
+Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -680,4 +697,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Quang
