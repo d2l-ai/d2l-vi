@@ -81,7 +81,7 @@ def _read_wiki(data_dir):
 ## Defining Helper Functions for Pretraining Tasks
 -->
 
-## *dịch đoạn phía trên*
+## Định nghĩa các hàm trợ giúp cho các tác vụ tiền huấn luyện
 
 
 <!--
@@ -91,14 +91,15 @@ These helper functions will be invoked later when transforming the raw text corp
 into the dataset of the ideal format to pretrain BERT.
 -->
 
-*dịch đoạn phía trên*
-
+Ở phần sau đây, ta bắt đầu thực hiện các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
+Dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
+Các hàm trợ giúp này sẽ được gọi sau đó khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
 
 <!--
 ### Generating the Next Sentence Prediction Task
 -->
 
-### *dịch đoạn phía trên*
+### Sinh tác vụ dự đoán câu kế
 
 
 <!--
@@ -107,7 +108,8 @@ the `_get_next_sentence` function generates a training example
 for the binary classification task.
 -->
 
-*dịch đoạn phía trên*
+Dựa theo diễn tả của :label:`subsec_nsp`,
+hàm `_get_next_sentence` sinh một mẫu để huấn luyện cho tác vụ phân loại nhị phân.
 
 
 ```{.python .input  n=3}
@@ -130,8 +132,9 @@ Here `paragraph` is a list of sentences, where each sentence is a list of tokens
 The argument `max_len` specifies the maximum length of a BERT input sequence during pretraining.
 -->
 
-*dịch đoạn phía trên*
-
+Hàm sau đây sinh các mẫu huấn luyện cho việc dự đoán câu kế từ `paragraph` đầu vào thông qua gọi hàm `_get_next_sentence`.
+`paragraph` ở đây là một danh sách các câu mà mỗi câu là một danh sách các token.
+Đối số `max_len` đặc tả chiều dài cực đại của chuỗi đầu vào BERT trong suốt quá trình tiền huấn luyện.
 
 ```{.python .input  n=4}
 #@save
@@ -459,7 +462,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * 
