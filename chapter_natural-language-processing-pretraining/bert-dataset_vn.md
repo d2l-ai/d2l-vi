@@ -91,7 +91,7 @@ These helper functions will be invoked later when transforming the raw text corp
 into the dataset of the ideal format to pretrain BERT.
 -->
 
-Ở phần sau đây, ta bắt đầu thực hiện các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
+Ở phần sau đây, ta sẽ bắt đầu lập trình các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
 Dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
 Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
 
