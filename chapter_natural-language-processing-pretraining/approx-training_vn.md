@@ -113,7 +113,15 @@ Suppose that events $P$ and $N_1, \ldots, N_K$ for both positive and negative ex
 By considering negative sampling, we can rewrite the joint probability above, which only considers the positive examples, as
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương.
+Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
+Rõ ràng, các vector từ như vậy là vô nghĩa.
+Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm.
+Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
+và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$.
+Ta giả sử sự kiện từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
+Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương lẫn và mẫu âm là độc lập với nhau.
+Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp chỉ xem xét các mẫu dương ở trên như sau
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
@@ -123,7 +131,7 @@ $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)})
 Here, the conditional probability is approximated to be
 -->
 
-*dịch đoạn phía trên*
+Ở đây, xác suất có điều kiện được tính gần đúng bằng
 
 
 $$ P(w^{(t+j)} \mid w^{(t)}) =P(D=1\mid w^{(t)}, w^{(t+j)})\prod_{k=1,\ w_k \sim P(w)}^K P(D=0\mid w^{(t)}, w_k).$$
@@ -134,7 +142,8 @@ Let the text sequence index of word $w^{(t)}$ at timestep $t$ be $i_t$ and $h_k$
 The logarithmic loss for the conditional probability above is
 -->
 
-*dịch đoạn phía trên*
+Đặt chỉ số của từ $w^{(t)}$ trong chuỗi văn bản tại bước thời gian $t$ là $i_t$ và chỉ số của từ nhiễu $w_k$ trong từ điển là $h_k$.
+Mất mát log cho xác suất có điều kiện ở trên là
 
 
 $$
@@ -151,7 +160,7 @@ $$
 Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$. When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
 -->
 
-*dịch đoạn phía trên*
+Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -165,7 +174,7 @@ Here, the gradient computation in each step of the training is no longer related
 ## Hierarchical Softmax
 -->
 
-## *dịch tiêu đề phía trên*
+## Softmax Phân cấp
 
 
 <!--
@@ -174,25 +183,30 @@ It uses a binary tree for data structure as illustrated in :numref:`fig_hi_softm
 with the leaf nodes of the tree representing every word in the dictionary $\mathcal{V}$.
 -->
 
-*dịch đoạn phía trên*
+Softmax phân cấp (*Hierarchical softmax*) là một phương pháp huấn luyện gần đúng khác.
+Phương pháp này sử dụng cấu trúc dữ liệu cây nhị phân như minh hoạ trong :numref:`fig_hi_softmax`,
+với các nút lá của cây biểu diễn tất cả các từ trong từ điển $\mathcal{V}$.
 
 
 <!--
 ![Hierarchical Softmax. Each leaf node of the tree represents a word in the dictionary.](../img/hi-softmax.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/hi-softmax.svg)
+![Softmax Phân cấp. Mỗi nút lá của cây biểu diễn một từ trong từ điển.](../img/hi-softmax.svg)
 :label:`fig_hi_softmax`
 
 
 <!--
 We assume that $L(w)$ is the number of nodes on the path (including the root and leaf nodes) from the root node of the binary tree to the leaf node of word $w$.
 Let $n(w, j)$ be the $j^\mathrm{th}$ node on this path, with the context word vector $\mathbf{u}_{n(w, j)}$.
-We use Figure 10.3 as an example, so $L(w_3) = 4$.
+We use :numref:`fig_hi_softmax` as an example, so $L(w_3) = 4$.
 Hierarchical softmax will approximate the conditional probability in the skip-gram model as
 -->
 
-*dịch đoạn phía trên*
+Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫn các nút lá) từ gốc của cây nhị phân đến nút lá của từ $w$.
+Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
+Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
+Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng
 
 
 $$P(w_o \mid w_c) = \prod_{j=1}^{L(w_o)-1} \sigma\left( [\![  n(w_o, j+1) = \text{leftChild}(n(w_o, j)) ]\!] \cdot \mathbf{u}_{n(w_o, j)}^\top \mathbf{v}_c\right),$$
@@ -201,12 +215,16 @@ $$P(w_o \mid w_c) = \prod_{j=1}^{L(w_o)-1} \sigma\left( [\![  n(w_o, j+1) = \tex
 <!--
 Here the $\sigma$ function has the same definition as the sigmoid activation function, and $\text{leftChild}(n)$ is the left child node of node $n$.
 If $x$ is true, $[\![x]\!] = 1$; otherwise $[\![x]\!] = -1$.
-Now, we will compute the conditional probability of generating word $w_3$ based on the given word $w_c$ in Figure 10.3.
+Now, we will compute the conditional probability of generating word $w_3$ based on the given word $w_c$ in :numref:`fig_hi_softmax`.
 We need to find the inner product of word vector $\mathbf{v}_c$ (for word $w_c$) and each non-leaf node vector on the path from the root node to $w_3$.
-Because, in the binary tree, the path from the root node to leaf node $w_3$ needs to be traversed left, right, and left again (the path with the bold line in Figure 10.3), we get
+Because, in the binary tree, the path from the root node to leaf node $w_3$ needs to be traversed left, right, and left again (the path with the bold line in :numref:`fig_hi_softmax`), we get
 -->
 
-*dịch đoạn phía trên*
+Trong đó hàm $\sigma$ có định nghĩa giống với hàm kích hoạt sigmoid, và $\text{leftChild}(n)$ là nút con bên trái của nút $n$.
+Nếu $x$ đúng thì $[\![x]\!] = 1$; ngược lại $[\![x]\!] = -1$.
+Giờ ta sẽ tính xác suất có điều kiện của việc sinh ra từ $w_3$ dựa theo từ $w_c$ được cho trong :numref:`fig_hi_softmax`.
+Ta cần tìm tích vô hướng của vector từ $\mathbf{v}_c$ (cho từ $w_c$) với mỗi vector nút mà không phải là nút lá trên đường đi từ nút gốc đến $w_3$.
+Do trong cây nhị phân, đường đi từ nút gốc đến nút lá $w_3$ cần duyệt trái, phải, rồi lại duyệt trái (đường đi được in đậm trong :numref:`fig_hi_softmax`) nên ta có
 
 
 $$P(w_3 \mid w_c) = \sigma(\mathbf{u}_{n(w_3, 1)}^\top \mathbf{v}_c) \cdot \sigma(-\mathbf{u}_{n(w_3, 2)}^\top \mathbf{v}_c) \cdot \sigma(\mathbf{u}_{n(w_3, 3)}^\top \mathbf{v}_c).$$
@@ -220,7 +238,7 @@ Because $\sigma(x)+\sigma(-x) = 1$, the condition that the sum of the conditiona
 based on the given central target word $w_c$ in dictionary $\mathcal{V}$ be 1 will also suffice:
 -->
 
-*dịch đoạn phía trên*
+Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào trong từ điển $\mathcal{V}$ được sinh ra dựa trên từ đích trung tâm cho trước $w_c$ phải bằng 1 cũng được thoả mãn:
 
 
 $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
@@ -230,7 +248,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, do độ phức tạp của $L(w_o)-1$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán cho mỗi bước trong sofmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng.
 
 
 ## Tóm tắt
@@ -242,7 +260,10 @@ The gradient computational overhead for each step in the training process is lin
 The gradient computational overhead for each step in the training process is related to the logarithm of the dictionary size.
 -->
 
-*dịch đoạn phía trên*
+* Lấy mẫu âm xây dựng dựa hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương.
+Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu.
+* Softmax phân cấp sử dụng một cây nhị phân và xây dụng hàm mất mát dựa trên đường đi từ nút gốc đến nút lá.
+Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ theo hàm log với kích thước từ điển.
 
 
 ## Bài tập
@@ -253,7 +274,9 @@ The gradient computational overhead for each step in the training process is rel
 3. How can we apply negative sampling and hierarchical softmax in the skip-gram model?
 -->
 
-*dịch đoạn phía trên*
+1. Trước khi đọc phần tiếp theo, hãy nghĩ xem ta nên lấy mẫu các từ nhiễu như thế nào trong lấy mẫu âm.
+2. Điều gì giúp cho công thức cuối cùng trong phần này là đúng?
+3. Ta có thể áp dụng lấy mẫu âm và softmax phân cấp như thế nào trong mô hình skip-gram?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -278,10 +301,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+

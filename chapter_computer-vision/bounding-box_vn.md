@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Object Detection and Bounding Boxes
 -->
@@ -19,9 +16,9 @@ In computer vision, we refer to such tasks as object detection (or object recogn
 
 Ở phần trước, chúng ta đã giới thiệu nhiều loại mô hình dùng cho phân loại ảnh.
 Trong tác vụ phân loại ảnh, ta giả định chỉ có duy nhất một đối tượng trong ảnh và ta chỉ tập trung xác định nó thuộc về nhóm nào.
-Tuy nhiên, trong nhiều tình huống, có cùng lúc nhiều đối tượng trong ảnh mà ta quan tâm.
-Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng trong ảnh.
-Những tác vụ như vậy, trong lĩnh vực thị giác máy tính, được gọi là phát hiện vật thể (hay nhận dạng vật thể).
+Tuy nhiên, ở nhiều tình huống cùng lúc sẽ có nhiều đối tượng trong ảnh mà ta quan tâm.
+Ta không chỉ muốn phân loại chúng mà còn muốn xác định vị trí cụ thể của chúng ở trong ảnh.
+Trong lĩnh vực thị giác máy tính, những tác vụ như thế được gọi là phát hiện vật thể (hoặc nhận dạng vật thể).
 
 <!--
 Object detection is widely used in many fields.
@@ -31,8 +28,8 @@ Systems in the security field need to detect abnormal targets, such as intruders
 -->
 
 Phát hiện vật thể được sử dụng rộng rãi trong nhiều lĩnh vực.
-Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản từ các ảnh thu về từ video.
-Robot cần thực hiện kiểu tác vụ này để phát hiện các đối tượng chúng quan tâm.
+Chẳng hạn, trong công nghệ xe tự hành, ta cần lên lộ trình bằng cách xác định các vị trí của phương tiện di chuyển, người đi đường, đường xá và các vật cản trong các ảnh được thu về từ video.
+Robot cần thực hiện kiểu tác vụ này để phát hiện các đối tượng mà chúng quan tâm.
 Hay các hệ thống an ninh cần phát hiện các mục tiêu bất thường, ví dụ như các đối tượng xâm nhập bất hợp pháp hoặc bom mìn.
 
 <!--
@@ -45,12 +42,25 @@ Trong các phần tiếp theo, chúng tôi sẽ giới thiệu nhiều mô hình
 Trước hết, ta nên bàn qua về khái niệm vị trí vật thể.
 Đầu tiên, ta hãy nhập các gói và mô-đun cần thiết cho việc thử nghiệm.
 
+
 ```{.python .input}
 %matplotlib inline
 from d2l import mxnet as d2l
 from mxnet import image, npx
 
 npx.set_np()
+```
+
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+```
+
+```{.python .input}
+#@tab tensorflow
+%matplotlib inline
+from d2l import tensorflow as d2l
 ```
 
 
@@ -64,15 +74,20 @@ Kế tiếp, ta nạp các ảnh mẫu sẽ sử dụng trong phần này.
 Ta có thể thấy trong hình là một con chó ở bên trái và một con mèo ở bên phải.
 Chúng là hai đối tượng chính trong ảnh này.
 
+
 ```{.python .input}
 d2l.set_figsize()
 img = image.imread('../img/catdog.jpg').asnumpy()
 d2l.plt.imshow(img);
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+```{.python .input}
+#@tab pytorch, tensorflow
+d2l.set_figsize()
+img = d2l.plt.imread('../img/catdog.jpg')
+d2l.plt.imshow(img);
+```
 
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Bounding Box
@@ -89,12 +104,13 @@ The origin of the coordinates in the above image is the upper left corner of the
 -->
 
 Để phát hiện vật thể, ta thường sử dụng khung chứa để mô tả vị trí của mục tiêu.
-Khung chứa là một khung hình chữ nhật có thể được xác định bởi hai toạ độ: tọa độ $x$, $y$ góc trên bên trái và toạ độ $x$, $y$ góc dưới bên phải của khung hình chữ nhật.
-Ta có thể định nghĩa các khung chứa của con chó và con mèo trong ảnh dựa vào thông tin toạ độ của ảnh trên.
-Gốc toạ độ của ảnh trên là góc trên bên trái của ảnh, chiều sang phải và xuống dưới lần lượt là chiều dương của trục $x$ và trục $y$.
+Khung chứa là một khung hình chữ nhật có thể được xác định bởi hai tọa độ: tọa độ $x$, $y$ góc trên bên trái và tọa độ $x$, $y$ góc dưới bên phải của khung hình chữ nhật.
+Ta có thể định nghĩa các khung chứa của con chó và con mèo trong ảnh dựa vào thông tin tọa độ của ảnh trên.
+Gốc tọa độ của ảnh trên là góc trên bên trái của ảnh, chiều sang phải và xuống dưới lần lượt là chiều dương của trục $x$ và trục $y$.
 
 
-```{.python .input  n=2}
+```{.python .input}
+#@tab all
 # bbox is the abbreviation for bounding box
 dog_bbox, cat_bbox = [60, 45, 378, 516], [400, 112, 655, 493]
 ```
@@ -112,7 +128,8 @@ Nó biểu diễn khung chứa theo đúng định dạng khung chứa của `ma
 
 
 
-```{.python .input  n=3}
+```{.python .input}
+#@tab all
 #@save
 def bbox_to_rect(bbox, color):
     """Convert bounding box to matplotlib format."""
@@ -133,11 +150,11 @@ Sau khi vẽ khung chứa lên ảnh, có thể thấy rằng phần chính củ
 
 
 ```{.python .input}
+#@tab all
 fig = d2l.plt.imshow(img)
 fig.axes.add_patch(bbox_to_rect(dog_bbox, 'blue'))
 fig.axes.add_patch(bbox_to_rect(cat_bbox, 'red'));
 ```
-
 
 
 ## Tóm tắt
@@ -163,29 +180,18 @@ Compare the difference between the time it takes to label the bounding box and l
 Tìm một vài ảnh và thử dán nhãn một khung chứa bao quanh mục tiêu.
 So sánh sự khác nhau giữa thời gian cần để dán nhãn các khung chứa và dán nhãn các lớp hạng mục.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/369)
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/369)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật

@@ -29,6 +29,8 @@ Khi đã thống nhất những từ cần dịch, bước này sẽ trực ti�
 
 Sau khi sửa xong bạn có thể mở PR và yêu cầu @rootonchair review.
 
+Chúng tôi đã soạn một hướng dẫn nhanh về cách đưa phần dịch vào hình bằng Inkscape ở [đây](edit_img_tut.md). Hãy ghé qua nếu bạn thấy hứng thú.
+
 #### Nếu bạn không chọn thực hiện:
 Bạn có thể tag @rootonchair sau khi đã thống nhất xong phần dịch.
 

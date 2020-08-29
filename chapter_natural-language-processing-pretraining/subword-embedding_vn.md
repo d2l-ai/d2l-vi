@@ -115,7 +115,7 @@ Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ ph
 ## Byte Pair Encoding
 -->
 
-## *dịch đoạn phía trên*
+## Mã hoá cặp byte
 :label:`subsec_Byte_Pair_Encoding`
 
 
@@ -125,7 +125,8 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-*dịch đoạn phía trên*
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước bộ từ vựng.
+Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`.
 
 
 <!--
@@ -138,14 +139,19 @@ such as GPT-2 :cite:`Radford.Wu.Child.ea.2019` and RoBERTa :cite:`Liu.Ott.Goyal.
 In the following, we will illustrate how byte pair encoding works.
 -->
 
-*dịch đoạn phía trên*
+Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để tìm các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý.
+Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte lặp đi lặp lại việc gộp các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn.
+Lưu ý rằng để tăng hiệu năng, các cặp vượt qua ranh giới từ sẽ không được xét.
+Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ.
+Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`.
+Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá cặp byte. 
 
 
 <!--
 First, we initialize the vocabulary of symbols as all the English lowercase characters, a special end-of-word symbol `'_'`, and a special unknown symbol `'[UNK]'`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`.
 
 
 ```{.python .input}
@@ -167,7 +173,13 @@ space is inserted between every pair of consecutive characters within each word 
 In other words, space is the delimiter between symbols within a word.
 -->
 
-*dịch đoạn phía trên*
+Vì không xét các cặp ký hiệu vượt qua ranh giới của các từ,
+chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ với tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu.
+Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
+từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man").
+Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt,
+khoảng trắng được chèn giữa mọi cặp ký tự liên tiếp trong mỗi từ (các khóa của từ điển `token_freqs`).
+Nói cách khác, khoảng trắng là kí tự phân cách (*delimiter*) giữa các ký hiệu trong một từ.
 
 
 ```{.python .input}
@@ -184,8 +196,7 @@ We define the following `get_max_freq_pair` function that
 returns the most frequent pair of consecutive symbols within a word,
 where words come from keys of the input dictionary `token_freqs`.
 -->
-
-*dịch đoạn phía trên*
+Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, trong đó các từ xuất hiện trong các khoá của từ điển đầu vào `token_freqs`.
 
 
 ```{.python .input}
@@ -205,7 +216,7 @@ As a greedy approach based on frequency of consecutive symbols,
 byte pair encoding will use the following `merge_symbols` function to merge the most frequent pair of consecutive symbols to produce new symbols.
 -->
 
-*dịch đoạn phía trên*
+Là một cách tiếp cận tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới.
 
 
 ```{.python .input}
@@ -233,7 +244,9 @@ In the first iteration, the most frequent pair of consecutive symbols are `'t'` 
 In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` to result in another new symbol `'tal'`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`.
+Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`.
+Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`.
 
 
 ```{.python .input}
@@ -249,7 +262,7 @@ for i in range(num_merges):
 After 10 iterations of byte pair encoding, we can see that list `symbols` now contains 10 more symbols that are iteratively merged from other symbols.
 -->
 
-*dịch đoạn phía trên*
+Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác.
 
 
 ```{.python .input}
@@ -264,7 +277,8 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-*dịch đoạn phía trên*
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
+Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
 ```{.python .input}
@@ -278,7 +292,9 @@ We can also use the subwords learned from one dataset to segment words of anothe
 As a greedy approach, the following `segment_BPE` function tries to break words into the longest possible subwords from the input argument `symbols`.
 -->
 
-*dịch đoạn phía trên*
+Chú ý là kết quả của biểu diễn cặp byte tùy thuộc vào tập dữ liệu đang được sử dụng.
+Ta cũng có thể dùng các từ con đã học từ một tập dữ liệu để phân đoạn các từ của một tập dữ liệu khác.
+Với cách tiếp cận tham lam, hàm `segment_BPE` sau đây cố gắng tách các từ thành các từ con dài nhất có thể từ đối số đầu vào `symbols`.
 
 
 ```{.python .input}
@@ -307,7 +323,7 @@ In the following, we use the subwords in list `symbols`, which is learned from t
 to segment `tokens` that represent another dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong phần tiếp theo, ta sử dụng các từ con trong danh sách `symbols` đã được học từ tập dữ liệu ở trên để phân đoạn các `tokens` biểu diễn tập dữ liệu khác.
 
 
 ```{.python .input}
@@ -328,7 +344,10 @@ print(segment_BPE(tokens, symbols))
 As a greedy approach, byte pair encoding iteratively merges the most frequent pair of consecutive symbols.
 -->
 
-*dịch đoạn phía trên*
+* FastText đề xuất phương pháp embedding cho từ con. Dựa trên mô hình skip-gram trong word2vec, phương pháp này biểu diễn vector từ trung tâm thành tổng các vector từ con của từ đó.
+* Embedding cho từ con sử dụng nguyên tắc trong hình thái học, thường cải thiện chất lượng biểu diễn của các từ ít gặp.
+* Mã hoá cặp byte thực hiện phân tích thống kê trên tập dữ liệu huấn luyện để phát hiện các ký hiệu chung trong một từ.
+* Được coi là một giải thuật tham lam, mã hoá cặp byte lặp lại phép gộp (_merge_) các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
 
 
 ## Bài tập
@@ -341,8 +360,11 @@ Can you think of any methods to solve them? Hint: Refer to the end of section 3.
 4. How can we extend the idea of byte pair encoding to extract phrases?
 -->
 
-*dịch đoạn phía trên*
-
+1. Khi có quá nhiều từ con (ví dụ, 6 từ trong tiếng Anh có thể tạo ra $3\times 10^8$ các tổ hợp khác nhau), vấn đề gì sẽ xảy ra?
+Bạn có thể giải quyết vấn đề trên không? Gợi ý: Tham khảo đoạn cuối phần 3.2 của bài báo fastText [1].
+2. Bạn có thể thiết kết một mô hình embedding cho từ con dựa trên phương pháp túi từ liên tục bằng cách nào?
+3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp được thực hiện khi kích thước bộ từ vựng ký hiệu ban đầu là $n$? 
+4. Ta có thể mở rộng ý tưởng của thuật toán mã hoá cặp byte để trích xuất các cụm từ bằng cách nào?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -366,10 +388,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Văn Quang
+
+

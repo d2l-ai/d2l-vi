@@ -5,7 +5,7 @@
 # Pretraining word2vec
 -->
 
-# *dịch đoạn phía trên*
+# Tiền huấn luyện word2vec
 :label:`sec_word2vec_pretraining`
 
 
@@ -13,14 +13,14 @@
 In this section, we will train a skip-gram model defined in:numref:`sec_word2vec`.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, ta sẽ huấn luyện một mô hình skip-gram đã được định nghĩa ở :numref:`sec_word2vec`.
 
 
 <!--
 First, import the packages and modules required for the experiment, and load the PTB dataset.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp tập dữ liệu PTB. 
 
 
 ```{.python .input  n=1}
@@ -39,7 +39,7 @@ data_iter, vocab = d2l.load_data_ptb(batch_size, max_window_size,
 ## The Skip-Gram Model
 -->
 
-## *dịch đoạn phía trên*
+## Mô hình Skip-Gram
 
 
 <!--
@@ -47,14 +47,15 @@ We will implement the skip-gram model by using embedding layers and minibatch mu
 These methods are also often used to implement other natural language processing applications.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lập trình mô hình skip-gram bằng cách sử dụng các tầng embedding và phép nhân minibatch.
+Các phương pháp này cũng thường được sử dụng để lập trình các ứng dụng xử lý ngôn ngữ tự nhiên khác.
 
 
 <!--
 ### Embedding Layer
 -->
 
-### *dịch đoạn phía trên*
+### Tầng Embedding
 
 
 <!--
@@ -63,7 +64,9 @@ The weight of the embedding layer is a matrix whose number of rows is the dictio
 We set the dictionary size to $20$ and the word vector dimension to $4$.
 -->
 
-*dịch đoạn phía trên*
+Để thu được các từ bằng cách phương pháp embedding, ta sử dụng tầng embedding bằng cách tạo một thực thể `nn.Embedding` trong Gluon.
+Trọng số của tầng embedding là một ma trận có số lượng hàng là kích thước từ điển (`input_dim`) và số lượng cột là chiều của mỗi vector từ (`output_dim`).
+Ta đặt kích thước từ điển bằng $20$ và chiều vector từ là $4$.
 
 
 ```{.python .input  n=15}
@@ -80,7 +83,9 @@ Below we enter an index of shape ($2$, $3$) into the embedding layer.
 Because the dimension of the word vector is 4, we obtain a word vector of shape ($2$, $3$, $4$).
 -->
 
-*dịch đoạn phía trên*
+Đầu vào của tầng embedding là chỉ số của từ.
+Khi ta nhập chỉ số $i$ của một từ, tầng embedding sẽ trả về một vector từ tương ứng với cột thứ $i$ của ma trận trọng số.
+Dưới đây ta nhập vào tầng embedding chỉ số có kích thước ($2$, $3$).
 
 
 ```{.python .input  n=16}
@@ -96,7 +101,7 @@ embed(x)
 ### Minibatch Multiplication
 -->
 
-### *dịch đoạn phía trên*
+### Phép nhân Minibatch
 
 
 <!--
@@ -107,7 +112,11 @@ The output of matrix multiplication on these two batches are $n$ matrices $\math
 Therefore, given two tensors of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the shape of the minibatch multiplication output is ($n$, $a$, $c$).
 -->
 
-*dịch đoạn phía trên*
+Ta có thể nhân các ma trận trong hai minibatch bằng toán tử nhân minibatch `batch_dot`.
+Giả sử batch đầu tiên chứa $n$ ma trận $\mathbf{X}_1, \ldots, \mathbf{X}_n$ có kích thước là $a\times b$, 
+và batch thứ hai chứa $n$ ma trận $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ có kích thước là $b\times c$.
+Đầu ra của toán tử nhân ma trận với hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
+Do đó, với hai tensor có kích thước là ($n$, $a$, $b$) và ($n$, $b$, $c$), kích thước đầu ra của toán tử nhân minibatch là ($n$, $a$, $c$).
 
 
 ```{.python .input  n=17}
@@ -121,7 +130,7 @@ npx.batch_dot(X, Y).shape
 ### Skip-gram Model Forward Calculation
 -->
 
-### *dịch đoạn phía trên*
+### Tính toán Truyền Xuôi của Mô hình Skip-gram 
 
 
 <!--
@@ -134,7 +143,12 @@ and then the output of shape (batch size, 1, `max_len`) is obtained by minibatch
 Each element in the output is the inner product of the central target word vector and the context word vector or noise word vector.
 -->
 
-*dịch đoạn phía trên*
+Ở lượt truyền xuôi, đầu vào của mô hình skip-gram chứa chỉ số của từ mục tiêu trung tâm là `center`
+và chỉ số của từ ngữ cảnh và từ nhiễu được ghép nối là `contexts_and_negatives`.
+Trong đó, biến `center` có kích thước là (kích thước batch, 1),
+và biến `contexts_and_negatives` có kích thước là (kích thước batch, `max_len`).
+Đầu tiên hai biến này được biến đổi từ chỉ số từ thành vector từ bởi tầng embedding từ, sau đó đầu ra có kích thước là (kích thước batch, 1, `max_len`) thu được bằng phép nhân minibatch.
+Mỗi phần tử của đầu ra là tích vô hướng của vector từ đích trung tâm và vector từ ngữ cảnh hoặc vector từ nhiễu.
 
 
 ```{.python .input  n=18}
@@ -150,7 +164,7 @@ def skip_gram(center, contexts_and_negatives, embed_v, embed_u):
 Verify that the output shape should be (batch size, 1, `max_len`).
 -->
 
-*dịch đoạn phía trên*
+Ta xác nhận xem đầu ra có kích thước là (kích thước batch, 1, `max_len`).
 
 
 ```{.python .input}
@@ -162,14 +176,14 @@ skip_gram(np.ones((2, 1)), np.ones((2, 4)), embed, embed).shape
 ## Training
 -->
 
-## *dịch đoạn phía trên*
+## Huấn luyện
 
 
 <!--
 Before training the word embedding model, we need to define the loss function of the model.
 -->
 
-*dịch đoạn phía trên*
+Trước khi huấn luyện mô hình embedding từ, ta cần định nghĩa hàm mất mát của mô hình.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -183,14 +197,14 @@ Before training the word embedding model, we need to define the loss function of
 ### Binary Cross Entropy Loss Function
 -->
 
-### *dịch đoạn phía trên*
+### Hàm Mất mát Entropy Chéo Nhị phân
 
 
 <!--
 According to the definition of the loss function in negative sampling, we can directly use Gluon's binary cross-entropy loss function `SigmoidBinaryCrossEntropyLoss`.
 -->
 
-*dịch đoạn phía trên*
+Theo như định nghĩa hàm mất mát trong phương pháp lấy mẫu âm, ta có thể sử dụng trực tiếp hàm mất mát entropy chéo nhị phân của Gluon `SigmoidBinaryCrossEntropyLoss`.
 
 
 ```{.python .input  n=19}
@@ -205,14 +219,17 @@ When the mask is 0, the predicted value and label of the corresponding position 
 As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý là ta có thể sử dụng biến mặt nạ để chỉ định phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
+khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ được dùng trong phép tính hàm mất mát;
+khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng sẽ không được dùng trong phép tính hàm mất mát.
+Như đã đề cập ở trên, các biến mặt nạ có thể được sử dụng nhằm tránh hiệu ứng đệm trên các phép tính hàm mất mát.
 
 
 <!--
 Given two identical examples, different masks lead to different loss values.
 -->
 
-*dịch đoạn phía trên*
+Với hai mẫu giống nhau, mặt nạ khác nhau sẽ dẫn đến giá trị mất mát cũng khác nhau.
 
 
 ```{.python .input}
@@ -227,7 +244,7 @@ loss(pred, label, mask)
 We can normalize the loss in each example due to various lengths in each example.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể chuẩn hoá mất mát trong từng mẫu do các mẫu có độ dài khác nhau.
 
 
 ```{.python .input}
@@ -239,14 +256,14 @@ loss(pred, label, mask) / mask.sum(axis=1) * mask.shape[1]
 ### Initializing Model Parameters
 -->
 
-*dịch đoạn phía trên*
+### Khởi tạo Tham số Mô hình
 
 
 <!--
 We construct the embedding layers of the central and context words, respectively, and set the hyperparameter word vector dimension `embed_size` to 100.
 -->
 
-*dịch đoạn phía trên*
+Ta khai báo tầng embedding lần lượt của từ trung tâm và từ ngữ cảnh, và đặt siêu tham số số chiều của vector từ bằng 100.
 
 
 ```{.python .input  n=20}
@@ -264,7 +281,7 @@ net.add(nn.Embedding(input_dim=len(vocab), output_dim=embed_size),
 ### Training
 -->
 
-### *dịch đoạn phía trên*
+### Huấn luyện
 
 
 <!--
@@ -272,7 +289,8 @@ The training function is defined below.
 Because of the existence of padding, the calculation of the loss function is slightly different compared to the previous training functions.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện được định nghĩa như phía dưới.
+Do có sự hiện hữu của phần đệm nên phép tính hàm mất mát có đôi chút khác biệt so với các hàm huấn luyện trước.
 
 
 ```{.python .input  n=21}
@@ -307,7 +325,7 @@ def train(net, data_iter, lr, num_epochs, device=d2l.try_gpu()):
 Now, we can train a skip-gram model using negative sampling.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể huấn luyện một mô hình skip-gram sử dụng phương pháp lấy mẫu âm.
 
 
 ```{.python .input  n=22}
@@ -320,7 +338,7 @@ train(net, data_iter, lr, num_epochs)
 ## Applying the Word Embedding Model
 -->
 
-## *dịch đoạn phía trên*
+## Áp dụng Mô hình Embedding Từ
 
 
 <!--
@@ -328,7 +346,8 @@ After training the word embedding model, we can represent similarity in meaning 
 As we can see, when using the trained word embedding model, the words closest in meaning to the word "chip" are mostly related to chips.
 -->
 
-*dịch đoạn phía trên*
+Sau khi huấn luyện mô hình embedding từ, ta có thể biểu diễn sự tương đồng về nghĩa giữa các từ dựa trên độ tương đồng cô-sin giữa hai vector từ.
+Như ta có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chip xử lý.
 
 
 ```{.python .input  n=23}
@@ -351,7 +370,7 @@ get_similar_tokens('chip', 3, net[0])
 We can pretrain a skip-gram model through negative sampling.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể tiền huấn luyện một mô hình skip-gram thông qua phương pháp lấy mẫu âm.
 
 
 ## Bài tập
@@ -367,7 +386,13 @@ In other words, the same central target word may have different context words or
 What are the benefits of this sort of training? Try to implement this training method.
 -->
 
-*dịch đoạn phía trên*
+1. Đặt `sparse_grad=True` khi tạo một đối tượng `nn.Embedding`.
+Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
+2. Bạn hãy cố gắng tìm từ đồng nghĩa cho các từ khác.
+3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
+4. Khi tập dữ liệu lớn, thường thì chỉ khi cập nhật tham số mô hình ta mới lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện thời.
+Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
+Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -389,13 +414,14 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
+* Phạm Minh Đức
 
 <!-- Phần 4 -->
 * 
