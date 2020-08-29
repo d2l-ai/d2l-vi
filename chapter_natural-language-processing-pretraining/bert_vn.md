@@ -460,7 +460,11 @@ The forward inference of `mlm` returns prediction results `mlm_Y_hat` at all the
 For each prediction, the size of the result is equal to the vocabulary size.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ lượt truyền xuôi suy luận của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
+Hãy nhớ lại rằng `encoded_X` từ lượt truyền xuôi suy luận của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
+Ta định nghĩa `mlm_positions` bằng 3 chỉ số để dự đoán một trong hai chuỗi đầu vào BERT đại diện bởi `encoded_X`.
+Lượt truyền xuôi suy luận của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí có mặt nạ `mlm_positions` của `encoded_X`.
+Với mỗi dự đoán, kích thước của kết quả bằng với kích thước bộ từ vựng.
 
 
 ```{.python .input  n=5}
@@ -477,7 +481,8 @@ With the ground truth labels `mlm_Y` of the predicted tokens `mlm_Y_hat` under m
 we can calculate the cross entropy loss of the masked language model task in BERT pretraining.
 -->
 
-*dịch đoạn phía trên*
+Với nhãn gốc `mlm_Y` của token `mlm_Y_hat` có mặt nạ được dự đoán,
+ta có thể tính mất mát entropy chéo của tác vụ mô hình hoá ngôn ngữ có mặt nạ trong quá trình tiền huấn luyện BERT.
 
 
 ```{.python .input  n=6}
@@ -492,7 +497,7 @@ mlm_l.shape
 ### Next Sentence Prediction
 -->
 
-### *dịch đoạn phía trên*
+### Dự đoán Câu tiếp theo
 :label:`subsec_nsp`
 
 
@@ -503,7 +508,10 @@ When generating sentence pairs for pretraining, for half of the time they are in
 while for the other half of the time the second sentence is randomly sampled from the corpus with the label "False".
 -->
 
-*dịch đoạn phía trên*
+Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ, nhưng nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT quan tâm tới tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
+Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các câu kế tiếp được gán nhãn "Đúng" (_True_); 
+và trong nửa còn lại, câu thứ hai được lấy mẫu ngẫu nhiên từ kho ngữ luyện và cặp này được gán nhãn "Sai" (_False_).
 
 
 <!--
@@ -512,7 +520,9 @@ Due to self-attention in the Transformer encoder, the BERT representation of the
 Hence, the output layer (`self.output`) of the MLP classifier takes `X` as the input, where `X` is the output of the MLP hidden layer whose input is the encoded “&lt;cls&gt;” token.
 -->
 
-*dịch đoạn phía trên*
+Lớp `NextSentencePred` dưới đây sử dụng MLP có một tầng ẩn để dự đoán câu thứ hai có phải là câu kế tiếp của câu thứ nhất trong chuỗi đầu vào BERT hay không.
+Do cơ chế tự tập trung trong bộ mã hoá Transformer, biểu diễn BERT cho token đặc biệt “&lt;cls&gt;” mã hoá cả hai câu đầu vào.
+Vì vậy, tầng đầu ra (`self.output`) của bộ phân loại MLP nhận `X` làm đầu vào, trong đó `X` là đầu ra của tầng ẩn MLP mà đầu vào của nó được mã hoá bằng token “&lt;cls&gt;”.
 
 
 ```{.python .input  n=7}
@@ -533,7 +543,8 @@ We can see that the forward inference of an `NextSentencePred` instance
 returns binary predictions for each BERT input sequence.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thấy lượt truyền xuôi suy luận của thực thể `NextSentencePred`
+trả về dự đoán nhị phân cho mỗi chuỗi đầu vào BERT.
 
 
 ```{.python .input  n=8}
@@ -548,7 +559,7 @@ nsp_Y_hat.shape
 The cross-entropy loss of the 2 binary classifications can also be computed.
 -->
 
-*dịch đoạn phía trên*
+Mất mát entropy chéo của 2 tác vụ phân loại nhị phân có thể được tính như sau.
 
 
 ```{.python .input  n=9}
@@ -564,7 +575,9 @@ The original BERT has been pretrained on the concatenation of BookCorpus :cite:`
 These two text corpora are huge: they have 800 million words and 2.5 billion words, respectively.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý là tất cả nhãn đầu vào trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức dán nhãn thủ công.
+Phiên bản gốc của BERT được tiền huấn luyện trên cả hai kho ngữ liệu BookCorpus :cite:`Zhu.Kiros.Zemel.ea.2015` và Wikipedia tiếng Anh.
+Hai kho ngữ liệu văn bản cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -677,7 +690,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 7 -->
 * 
