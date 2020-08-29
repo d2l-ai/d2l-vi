@@ -4,7 +4,7 @@
 
 * [ ] Pull Request này tương ứng với issue nào? Điền số issue sau dấu `#` (không có dấu cách): Close #
 
-* [ ] Bản dịch này đã bám sát **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)** không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy thảo luận thêm ở thẻ Discussions của dự án.
+* [ ] Bản dịch này có bám sát **[Bảng thuật ngữ](https://github.com/aivivn/d2l-vn/blob/master/glossary.md)** không? Nếu một từ/cụm chưa có trong Bảng thuật ngữ, hãy thảo luận thêm ở thẻ Discussions của dự án.
 
 * [ ] Format của bản gốc có được giữ nguyên không?
      
