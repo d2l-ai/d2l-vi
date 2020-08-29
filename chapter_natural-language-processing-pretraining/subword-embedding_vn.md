@@ -104,8 +104,8 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước từ vựng.
-Để cho phép các từ con có độ dài thay đổi trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`.
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước bộ từ vựng.
+Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`.
 
 
 <!--
@@ -130,7 +130,7 @@ Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá c�
 First, we initialize the vocabulary of symbols as all the English lowercase characters, a special end-of-word symbol `'_'`, and a special unknown symbol `'[UNK]'`.
 -->
 
-Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu cuối từ `'_'` , và ký hiệu không xác định `'[UNK]'`.
+Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`.
 
 
 ```{.python .input}
