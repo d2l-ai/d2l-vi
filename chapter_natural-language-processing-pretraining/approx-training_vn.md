@@ -22,7 +22,7 @@ $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \
 The logarithmic loss corresponding to the conditional probability is given as
 -->
 
-Mất mát tương ứng với log xác suất có điều kiện trên được tính như sau
+Mất mát logarit tương ứng xác suất có điều kiện trên được tính như sau
 
 
 $$-\log P(w_o \mid w_c) =
@@ -45,11 +45,11 @@ Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ n
 nên mất mát được đề cập ở trên, thực tế, bao gồm phép lấy tổng qua tất cả phần tử trong từ điển.
 Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW 
 đều tính xác suất có điều kiện thông qua toán tử softmax,
-nên tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển.
+do đó tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển.
 Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao.
-Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm và toán tử softmax phân cấp.
+Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*).
 Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW,
-nên ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên trong phần này.
+trong phần này ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên.
 
 
 <!--
@@ -89,7 +89,7 @@ Given a text sequence of length $T$, we assume that the word at timestep $t$ is 
 Now we consider maximizing the joint probability
 -->
 
-Đầu tiên, ta sẽ xem xét việc huấn luyện vector từ bằng cách cực đại hóa xác suất kết hợp của tất cả các sự kiện trong chuỗi văn bản.
+Đầu tiên, ta sẽ xem xét việc huấn luyện vector từ (*word vector*) bằng cách cực đại hóa xác suất kết hợp của tất cả các sự kiện trong chuỗi văn bản.
 Cho một chuỗi văn bản có độ dài $T$, ta giả sử rằng từ tại bước thời gian $t$ là $w^{(t)}$ và kích thước cửa sổ ngữ cảnh là $m$.
 Bây giờ, ta sẽ xem xét việc cực đại hóa xác suất kết hợp
 
@@ -143,7 +143,7 @@ The logarithmic loss for the conditional probability above is
 -->
 
 Đặt chỉ số của từ $w^{(t)}$ trong chuỗi văn bản tại bước thời gian $t$ là $i_t$ và chỉ số của từ nhiễu $w_k$ trong từ điển là $h_k$.
-Mất mát log cho xác suất có điều kiện ở trên là
+Mất mát logarit cho xác suất có điều kiện ở trên là
 
 
 $$
@@ -310,4 +310,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 4 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
