@@ -112,7 +112,7 @@ net.initialize(init.Xavier(), ctx=devices)
 ### Loading Pre-trained Word Vectors
 -->
 
-### *dịch tiêu đề trên*
+### Nạp các vector từ tiền huấn luyện
 
 
 <!--
@@ -121,7 +121,9 @@ we will directly use word vectors pre-trained on a larger corpus as the feature 
 Here, we load a 100-dimensional GloVe word vector for each word in the dictionary `vocab`.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì tập dữ liệu dùng huấn luyện cho việc phân loại cảm xúc không quá lớn, để xử lý vấn đề quá khớp, 
+ta sẽ dùng các vector từ trực tiếp đã được tiền huấn luyện trên tập ngữ liệu lớn hơn làm các vector đặc trưng cho tất cả các từ.
+Ở đây, ta nạp vector từ Glove 100-chiều cho mỗi từ trong từ điển `vocab`.
 
 
 ```{.python .input}
@@ -133,7 +135,7 @@ glove_embedding = d2l.TokenEmbedding('glove.6b.100d')
 Query the word vectors that in our vocabulary.
 -->
 
-*dịch đoạn phía trên*
+Truy vấn các vector từ này nằm trong từ vựng của chúng ta.
 
 
 ```{.python .input}
@@ -148,7 +150,9 @@ Note that the dimensions of the pre-trained word vectors need to be consistent w
 In addition, we no longer update these word vectors during training.
 -->
 
-*dịch đoạn phía trên*
+Rồi ta sẽ sử dụng các vector từ đó làm các vector đặc trưng cho mỗi từ trong các đánh giá.
+Lưu ý là các chiều của vector từ tiền huấn luyện cần nhất quán với kích thước đầu ra tầng embdding `embed size` trong mô hình đã tạo.
+Thêm vào đó, ta không còn cập nhật các vector từ đó trong suốt quá trình huấn luyện.
 
 
 ```{.python .input  n=47}
@@ -161,14 +165,14 @@ net.embedding.collect_params().setattr('grad_req', 'null')
 ### Training and Evaluating the Model
 -->
 
-### *dịch tiêu đề trên*
+### Huấn luyện và đánh giá mô hình
 
 
 <!--
 Now, we can start training.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thẻ bắt đầu thực hiện huấn luyện
 
 
 ```{.python .input  n=48}
@@ -183,7 +187,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Finally, define the prediction function.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, định nghĩa hàm dự đoán
 
 
 ```{.python .input  n=49}
@@ -199,7 +203,7 @@ def predict_sentiment(net, vocab, sentence):
 Then, use the trained model to classify the sentiments of two simple sentences.
 -->
 
-*dịch đoạn phía trên*
+Rồi sử dụng mô hình đã huấn luyện để phân loại các cảm xúc cho hai câu đơn giản.
 
 
 ```{.python .input  n=50}
@@ -263,7 +267,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * 
