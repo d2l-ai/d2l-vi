@@ -136,7 +136,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | distribution              | phân phối                       |                                              |
 | domain adaptation         | thích ứng miền                  |                                              |
 | downsample                | giảm mẫu                        | [https://git.io/JvohC](https://git.io/JvohC) |
-| downstream task           | tác vụ hạ nguồn                 |                                              |
+| downstream task           | tác vụ xuôi dòng                | [https://git.io/JUtED](https://git.io/JUtED) |
 | dot product               | tích vô hướng (hoặc tích trong) | [https://git.io/JvKem](https://git.io/JvKem) |
 | dropout                   | dropout                         |                                              |
 
@@ -533,6 +533,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | unit (in neural networks) | nút                       | [https://git.io/Jvohm](https://git.io/Jvohm) |
 | unsupervised learning     | học không giám sát        |                                              |
 | upsample                  | tăng mẫu                  | [https://git.io/JvohC](https://git.io/JvohC) |
+| upstream task             | tác vụ ngược dòng         | [https://git.io/JUtED](https://git.io/JUtED) |
 
 ## V
 | English                    | Tiếng Việt         | Thảo luận tại                                |
