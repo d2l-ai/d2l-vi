@@ -160,7 +160,7 @@ def _get_nsp_data_from_paragraph(paragraph, paragraphs, vocab, max_len):
 ### Generating the Masked Language Modeling Task
 -->
 
-### *dịch đoạn phía trên*
+### Tạo Tác Vụ Mô Hình Hóa Ngôn Ngữ Có Mặt Nạ
 :label:`subsec_prepare_mlm_data`
 
 
@@ -177,10 +177,16 @@ a special “&lt;mask&gt;” token or a random token, or remain unchanged.
 In the end, the function returns the input tokens after possible replacement,
 the token indices where predictions take place and labels for these predictions.
 -->
-
-*dịch đoạn phía trên*
-
-
+Để tạo dữ liệu huấn luyện cho tác vụ mô hình hóa ngôn ngữ có mặt nạ từ một chuỗi đầu vào BERT,
+chúng ta định nghĩa hàm `_replace_mlm_tokens`.
+Đầu vào của nó, `tokens` là một danh sách các token biểu diễn cho một chuỗi đầu vào BERT,
+`candidate_pred_positions` là một danh sách chỉ mục cho các token của chuỗi đầu vào BERT 
+ngoại trừ những token đặc biệt (token đặc biệt không được dự đoán trong tác vụ mô hình hóa ngôn ngữ có mặt nạ),
+và `num_mlm_preds` chỉ định số lượng dự đoán (nhớ lại 15% ngẫu nhiên các token để dự đoán).
+Dựa trên định nghĩa của tác vụ mô hình hóa ngôn ngữ có mặt nạ trong :numref:`subsec_mlm`,
+tại mỗi vị trí dự đoán, đầu vào có thể bị thay thế bởi một token “&lt;mask&gt;” đặc biệt hoặc một token ngẫu nhiên, hoặc không đổi.
+Cuối cùng, hàm này trả về những token đầu vào sau khi có thể thay thế,
+những chỉ mục của token nơi mà các dự đoán diễn ra và nhãn cho những dự đoán này.
 ```{.python .input  n=5}
 #@save
 def _replace_mlm_tokens(tokens, candidate_pred_positions, num_mlm_preds,
@@ -217,10 +223,7 @@ def _replace_mlm_tokens(tokens, candidate_pred_positions, num_mlm_preds,
 By invoking the aforementioned `_replace_mlm_tokens` function, the following function takes a BERT input sequence (`tokens`) as an input and returns indices of the input tokens
 (after possible token replacement as described in :numref:`subsec_mlm`), the token indices where predictions take place, and label indices for these predictions.
 -->
-
-*dịch đoạn phía trên*
-
-
+Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm tiếp theo lấy một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ mục của những token đầu vào (sau khi có thể thay thế token như đã được mô tả ở :numref:`subsec_mlm`), những chỉ mục của token nơi mà các dự đoán diễn ra và nhãn cho những dự đoán này.
 ```{.python .input  n=6}
 #@save
 def _get_mlm_data_from_tokens(tokens, vocab):
@@ -251,7 +254,7 @@ def _get_mlm_data_from_tokens(tokens, vocab):
 ## Transforming Text into the Pretraining Dataset
 -->
 
-## *dịch đoạn phía trên*
+## Biến Đổi Văn Bản Thành Bộ Dữ Liệu Tiền Huấn Luyện
 
 
 <!--
@@ -259,10 +262,9 @@ Now we are almost ready to customize a `Dataset` class for pretraining BERT.
 Before that,  we still need to define a helper function `_pad_bert_inputs` to append the special “&lt;mask&gt;” tokens to the inputs.
 Its argument `examples` contain the outputs from the helper functions `_get_nsp_data_from_paragraph` and `_get_mlm_data_from_tokens` for the two pretraining tasks.
 -->
-
-*dịch đoạn phía trên*
-
-
+Bây giờ chúng ta gần như đã sẵn sàng để tùy biến một lớp `Dataset` để tiền huấn luyện BERT.
+Trước đó, chúng ta vẫn cần định nghĩa một hàm `_pad_bert_inputs` để giúp nối các token “&lt;mask&gt;” đặc biệt vào các đầu vào.
+Đối số của nó `examples` chứa các kết quả đầu ra từ những hàm giúp trợ giúp `_get_nsp_data_from_paragraph` và `_get_mlm_data_from_tokens` cho hai tác vụ tiền huấn luyện.
 ```{.python .input  n=7}
 #@save
 def _pad_bert_inputs(examples, max_len, vocab):
