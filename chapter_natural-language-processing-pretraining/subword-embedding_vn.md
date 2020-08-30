@@ -22,7 +22,7 @@ In Finnish, a noun may have more than 15 forms.
 In fact, morphology, which is an important branch of linguistics, studies the internal structure and formation of words.
 -->
 
-Các từ tiếng Anh thường có cấu những trúc nội tại và phương thức cấu thành.
+Các từ tiếng Anh thường có những cấu những trúc nội tại và phương thức cấu thành.
 Chẳng hạn, ta có thể suy ra mối quan hệ giữa các từ "dog", "dogs" và "dogcatcher" thông qua cách viết của chúng.
 Tất cả các từ đó có cùng từ gốc là "dog" nhưng có hậu tố khác nhau làm thay đổi nghĩa của từ.
 Hơn nữa, sự liên kết này có thể được mở rộng ra đối với các từ khác.
@@ -52,7 +52,7 @@ thereby attempting to introduce morphological information in the skip-gram model
 Trong word2vec, ta không trực tiếp sử dụng thông tin hình thái học.
 Trong cả mô hình skip-gram và bag-of-word liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
 Chẳng hạn, "dog" và "dogs" được biểu diễn bởi hai vector khác nhau, trong khi mối quan hệ giữa hai vector đó không biểu thị trực tiếp trong mô hình. 
-Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con,
+Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con (*subword embedding*),
 thông qua việc thực hiện đưa thông tin hình thái học vào trong mô hình skip-gram trong word2vec.
 
 
@@ -102,10 +102,10 @@ Also, the vector of one word requires the summation of all subword vectors, whic
 However, we can obtain better vectors for more uncommon complex words, even words not existing in the dictionary, by looking at other words with similar structures.
 -->
 
-Phần còn lại tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, nên ta không mô tả lại ở đây.
+Phần còn lại của tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, vì vậy ta không mô tả lại ở đây.
 Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển trong fastText lớn hơn dẫn tới số tham số của mô hình nhiều hơn.
-Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới kết quả làm độ phức tạp tính toán cao hơn.
-Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này, nhờ tham chiếu các từ khác có cấu trúc tương tự.
+Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới độ phức tạp tính toán cao hơn.
+Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này nhờ tham chiếu các từ có cấu trúc tương tự khác.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -396,5 +396,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
-
