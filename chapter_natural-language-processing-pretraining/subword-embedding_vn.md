@@ -244,9 +244,9 @@ In the first iteration, the most frequent pair of consecutive symbols are `'t'` 
 In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` to result in another new symbol `'tal'`.
 -->
 
-Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`.
-Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`.
-Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`.
+Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`. 
+Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`. 
+Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`. 
 
 
 ```{.python .input}
@@ -262,7 +262,7 @@ for i in range(num_merges):
 After 10 iterations of byte pair encoding, we can see that list `symbols` now contains 10 more symbols that are iteratively merged from other symbols.
 -->
 
-Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác.
+Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác. 
 
 
 ```{.python .input}
