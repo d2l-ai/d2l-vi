@@ -15,7 +15,7 @@ The conditional probability $P(w_j\mid w_i)$ expressed in the skip-gram model us
 -->
 
 Trước tiên, ta sẽ xem lại mô hình skip-gram trong word2vec.
-Xác suất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ  được ghi lại dưới dạng $q_{ij}$ như sau:
+Xác suất có điều kiện $P(w_j\mid w_i)$ thể hiện trong mô hình skip-gram sử dụng hàm kích hoạt softmax sẽ được ghi lại dưới dạng $q_{ij}$ như sau:
 
 
 $$q_{ij}=\frac{\exp(\mathbf{u}_j^\top \mathbf{v}_i)}{ \sum_{k \in \mathcal{V}} \text{exp}(\mathbf{u}_k^\top \mathbf{v}_i)},$$
@@ -60,8 +60,8 @@ We can rewrite the loss function of the skip-gram model as
 -->
 
 Ta tính tổng số lượng tất cả các từ ngữ cảnh đối với từ trung tâm $w_i$ để có $x_i$,
-và thu được sác xuất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ trung tâm $w_i$ là $p_{ij}$.
-Ta có thể viết lại hàm mất mất của mô hình skip-gram như
+và thu được xác suất điều kiện $x_{ij}/x_i$ để sinh ra từ ngữ cảnh $w_j$ dựa trên từ trung tâm $w_i$ là $p_{ij}.
+Ta có thể viết lại hàm mất mất của mô hình skip-gram như sau
 
 
 $$-\sum_{i\in\mathcal{V}} x_i \sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}.$$
@@ -81,8 +81,8 @@ to approach as close as possible to the true conditional probability distributio
 Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ sinh từ ngữ cảnh
 dựa trên từ tâm đích $w_i$ và entropy chéo với phân phối có điều kiện $q_{ij}$ được dự đoán bởi mô hình.
 Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$.
-Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán
-tiệm cận gần nhất có thể tới phân phối xác suất có điều kiện thật.
+Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán một cách
+gần nhất có thể tới phân phối xác suất có điều kiện thật.
 
 
 <!--
@@ -95,8 +95,8 @@ In the cross-entropy loss function, the final prediction of the conditional prob
 -->
 
 Tuy nhiên, mặc dù là loại hàm mất mát phổ biến nhất, hàm mất mát entropy chéo lại thường không phải là lựa chọn tốt.
-Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để cho phép dự đoán của mô hình $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó.
-Điều này có thể dễ dàng khiến tổng chi phí tính toán quá lớn.
+Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để dự đoán của mô hình $q_{ij}$ có thể trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó.
+Điều này có thể dễ dàng khiến tổng chi phí tính toán trở nên quá lớn.
 Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu.
 Trong hàm mất mát entropy chéo, dự đoán phân phối xác suất có điều kiện cuối cùng trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác.
 
@@ -168,7 +168,7 @@ After learning all the word vectors, GloVe will use the sum of the central targe
 Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh của từ $w_j$ thì từ $w_j$ cũng sẽ xuất hiện trong cửa sổ ngữ cảnh của từ $w_i$. Do đó, $x_{ij}=x_{ji}$.
 Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay cho xác suất có điều kiện $p_{ij}$ bất đối xứng.
 Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe.
-Tuy vậy, hai tập vector từ được học bởi cùng một mô hình đến cuối cùng có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
+Tuy vậy, hai tập vector từ được học bởi cùng một mô hình về cuối có thể sẽ khác nhau do giá trị khởi tạo khác nhau.
 Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng các vector từ mục tiêu trung tâm và vector từ ngữ cảnh làm vector từ cuối cùng cho từ đó.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -353,5 +353,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
-
