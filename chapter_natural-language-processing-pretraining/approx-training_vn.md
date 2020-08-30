@@ -260,10 +260,10 @@ The gradient computational overhead for each step in the training process is lin
 The gradient computational overhead for each step in the training process is related to the logarithm of the dictionary size.
 -->
 
-* Lấy mẫu âm xây dựng dựa hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương.
+* Lấy mẫu âm xây dựng hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương.
 Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu.
 * Softmax phân cấp sử dụng một cây nhị phân và xây dụng hàm mất mát dựa trên đường đi từ nút gốc đến nút lá.
-Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ theo hàm log với kích thước từ điển.
+Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ theo hàm logarit với kích thước từ điển.
 
 
 ## Bài tập
@@ -310,4 +310,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 4 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
+* Nguyễn Lê Quang Nhật
