@@ -262,14 +262,16 @@ However, different from the original Transformer encoder, BERT uses *learnable* 
 To sum up, :numref:`fig_bert-input` shows that the embeddings of the BERT input sequence are the sum of the token embeddings, segment embeddings, and positional embeddings.
 -->
 
-*dịch đoạn phía trên*
-
+BERT lựa chọn bộ giải mã Transformer để làm kiến trúc hai chiều của nó.
+Thông thường trong bộ giải mã Transformer, các embedding vị trí được thêm vào mỗi vị trí của chuỗi đầu vào BERT.
+Tuy nhiên, khác với bộ giải mã Transformer nguyên bản, BERT sử dụng các embedding vị trí mà *có thể học được*.
+Tổng kết lại, :numref:`fig_bert-input` cho thấy rằng các embedding của BERT sử dụng chuỗi đầu vào là tổng của các embedding token, embedding phân vùng và embedding vị trí. 
 
 <!--
 ![The embeddings of the BERT input sequence are the sum of the token embeddings, segment embeddings, and positional embeddings.](../img/bert-input.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/bert-input.svg)
+![Các embedding của BERT sử dụng chuỗi đầu vào là tổng của các embedding token, embedding phân vùng và embedding vị trí.](../img/bert-input.svg)
 :label:`fig_bert-input`
 
 
@@ -278,7 +280,8 @@ The following `BERTEncoder` class is similar to the `TransformerEncoder` class a
 Different from `TransformerEncoder`, `BERTEncoder` uses segment embeddings and learnable positional embeddings.
 -->
 
-*dịch đoạn phía trên*
+Lớp `BERTEncoder` dưới đây tương tự với lớp `TransformerEncoder` được lập trình trong :numref:`sec_transformer`.
+Khác với `TransformerEncoder`, `BERTEncoder` sử dụng các embedding phân vùng và các embedding vị trí có thể học.
 
 
 ```{.python .input  n=2}
@@ -315,7 +318,9 @@ To demonstrate forward inference of `BERTEncoder`,
 let us create an instance of it and initialize its parameters.
 -->
 
-*dịch đoạn phía trên*
+Giả sử rằng kích cỡ của bộ từ vựng là 10,000.
+Để trình bày suy luận truyền xuôi của `BERTEncoder`.
+Ta hay tạo ra một thực thể của nó và khởi tạo các thông số.
 
 
 ```{.python .input  n=3}
@@ -334,7 +339,10 @@ where each token is represented by a vector whose length is predefined by the hy
 This hyperparameter is usually referred to as the *hidden size* (number of hidden units) of the Transformer encoder.
 -->
 
-*dịch đoạn phía trên*
+Ta định nghĩa `tokens` là hai chuỗi đầu vào BERT có độ dài là 8, mỗi token là một chỉ mục của bộ từ vựng.
+Suy luận truyền xuôi của `BERTEncoder` với đầu vào `tokens` trả về kết quả được mã hóa 
+với mỗi token được biểu diễn bởi một vector có chiều dài được định nghĩa trước bởi siêu tham số `num_hiddens`.
+Siêu tham số này thường được ám chỉ đến *kích thước ẩn* (số lượng các nút ẩn) của bộ giải mã Transformer. 
 
 
 ```{.python .input}
