@@ -12,7 +12,7 @@
 Recall content of the last section.  The core feature of the skip-gram model is the use of softmax operations to compute the conditional probability of generating context word $w_o$ based on the given central target word $w_c$.
 -->
 
-Nhắc lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$.
+Nhắc lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$. 
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)}.$$
@@ -22,7 +22,7 @@ $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \
 The logarithmic loss corresponding to the conditional probability is given as
 -->
 
-Mất mát logarit tương ứng xác suất có điều kiện trên được tính như sau
+Mất mát logarit tương ứng xác suất có điều kiện trên được tính như sau 
 
 
 $$-\log P(w_o \mid w_c) =
@@ -41,15 +41,15 @@ Since there is no major difference between the skip-gram model and the CBOW mode
 we will only use the skip-gram model as an example to introduce these two training methods in this section.
 -->
 
-Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$, 
-nên mất mát được đề cập ở trên, thực tế, bao gồm phép lấy tổng qua tất cả phần tử trong từ điển.
-Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW 
-đều tính xác suất có điều kiện thông qua toán tử softmax,
-do đó tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển.
-Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao.
-Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*).
-Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW,
-trong phần này ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên.
+Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$,  
+nên mất mát được đề cập ở trên, thực tế, bao gồm phép lấy tổng qua tất cả phần tử trong từ điển. 
+Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW
+đều tính xác suất có điều kiện thông qua toán tử softmax, 
+do đó tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển. 
+Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao. 
+Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*). 
+Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW, 
+trong phần này ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên. 
 
 
 <!--
@@ -66,8 +66,8 @@ Given a context window for the central target word $w_c$, we will treat it as an
 -->
 
 
-Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu.
-Cho một cửa sổ ngữ cảnh với từ đích trung tâm $w_c$, ta coi việc từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh là một sự kiện và tính xác suất của sự kiện này theo
+Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu. 
+Cho một cửa sổ ngữ cảnh với từ đích trung tâm $w_c$, ta coi việc từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh là một sự kiện và tính xác suất của sự kiện này theo 
 
 
 $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
@@ -77,7 +77,7 @@ $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
 Here, the $\sigma$ function has the same definition as the sigmoid activation function:
 -->
 
-Ở đây, hàm $\sigma$ có cùng định nghĩa với hàm kích hoạt sigmoid:
+Ở đây, hàm $\sigma$ có cùng định nghĩa với hàm kích hoạt sigmoid: 
 
 
 $$\sigma(x) = \frac{1}{1+\exp(-x)}.$$
@@ -89,9 +89,9 @@ Given a text sequence of length $T$, we assume that the word at timestep $t$ is 
 Now we consider maximizing the joint probability
 -->
 
-Đầu tiên, ta sẽ xem xét việc huấn luyện vector từ (*word vector*) bằng cách cực đại hóa xác suất kết hợp của tất cả các sự kiện trong chuỗi văn bản.
-Cho một chuỗi văn bản có độ dài $T$, ta giả sử rằng từ tại bước thời gian $t$ là $w^{(t)}$ và kích thước cửa sổ ngữ cảnh là $m$.
-Bây giờ, ta sẽ xem xét việc cực đại hóa xác suất kết hợp
+Đầu tiên, ta sẽ xem xét việc huấn luyện vector từ (*word vector*) bằng cách cực đại hóa xác suất kết hợp của tất cả các sự kiện trong chuỗi văn bản. 
+Cho một chuỗi văn bản có độ dài $T$, ta giả sử rằng từ tại bước thời gian $t$ là $w^{(t)}$ và kích thước cửa sổ ngữ cảnh là $m$. 
+Bây giờ, ta sẽ xem xét việc cực đại hóa xác suất kết hợp 
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(D=1\mid w^{(t)}, w^{(t+j)}).$$
@@ -113,15 +113,15 @@ Suppose that events $P$ and $N_1, \ldots, N_K$ for both positive and negative ex
 By considering negative sampling, we can rewrite the joint probability above, which only considers the positive examples, as
 -->
 
-Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương.
-Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
-Rõ ràng, các vector từ như vậy là vô nghĩa.
-Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm.
-Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$,
-và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$.
-Ta giả sử sự kiện từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$.
-Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương lẫn và mẫu âm là độc lập với nhau.
-Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp chỉ xem xét các mẫu dương ở trên như sau
+Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương. 
+Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1. 
+Rõ ràng, các vector từ như vậy là vô nghĩa. 
+Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm. 
+Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$, 
+và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$. 
+Ta giả sử sự kiện từ nhiễu $w_k$($k=1, \ldots, K$) không xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$ là $N_k$. 
+Giả sử các sự kiện $P$ và $N_1, \ldots, N_K$ cho cả mẫu dương lẫn và mẫu âm là độc lập với nhau. 
+Bằng cách xem xét phương pháp lấy mẫu âm, ta có thể viết lại xác suất kết hợp chỉ xem xét các mẫu dương ở trên như sau 
 
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)}),$$
@@ -131,7 +131,7 @@ $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(w^{(t+j)} \mid w^{(t)})
 Here, the conditional probability is approximated to be
 -->
 
-Ở đây, xác suất có điều kiện được tính gần đúng bằng
+Ở đây, xác suất có điều kiện được tính gần đúng bằng 
 
 
 $$ P(w^{(t+j)} \mid w^{(t)}) =P(D=1\mid w^{(t)}, w^{(t+j)})\prod_{k=1,\ w_k \sim P(w)}^K P(D=0\mid w^{(t)}, w_k).$$
@@ -142,8 +142,8 @@ Let the text sequence index of word $w^{(t)}$ at timestep $t$ be $i_t$ and $h_k$
 The logarithmic loss for the conditional probability above is
 -->
 
-Đặt chỉ số của từ $w^{(t)}$ trong chuỗi văn bản tại bước thời gian $t$ là $i_t$ và chỉ số của từ nhiễu $w_k$ trong từ điển là $h_k$.
-Mất mát logarit cho xác suất có điều kiện ở trên là
+Đặt chỉ số của từ $w^{(t)}$ trong chuỗi văn bản tại bước thời gian $t$ là $i_t$ và chỉ số của từ nhiễu $w_k$ trong từ điển là $h_k$. 
+Mất mát logarit cho xác suất có điều kiện ở trên là 
 
 
 $$
@@ -160,7 +160,7 @@ $$
 Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$. When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
 -->
 
-Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
+Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà liên quan tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
