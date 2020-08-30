@@ -81,7 +81,7 @@ def _read_wiki(data_dir):
 ## Defining Helper Functions for Pretraining Tasks
 -->
 
-## Định nghĩa các hàm trợ giúp cho các tác vụ tiền huấn luyện
+## Định nghĩa các Hàm trợ giúp cho các Tác vụ Tiền huấn luyện
 
 
 <!--
@@ -92,14 +92,14 @@ into the dataset of the ideal format to pretrain BERT.
 -->
 
 Ở phần sau đây, ta sẽ bắt đầu lập trình các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
-Dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
+dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
 Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
 
 <!--
 ### Generating the Next Sentence Prediction Task
 -->
 
-### Sinh tác vụ dự đoán câu kế
+### Sinh tác vụ Dự đoán câu kế
 
 
 <!--
@@ -135,6 +135,7 @@ The argument `max_len` specifies the maximum length of a BERT input sequence dur
 Hàm sau đây sinh các mẫu huấn luyện cho việc dự đoán câu kế từ `paragraph` đầu vào thông qua gọi hàm `_get_next_sentence`.
 `paragraph` ở đây là một danh sách các câu mà mỗi câu là một danh sách các token.
 Đối số `max_len` đặc tả chiều dài cực đại của chuỗi đầu vào BERT trong suốt quá trình tiền huấn luyện.
+
 
 ```{.python .input  n=4}
 #@save
