@@ -16,7 +16,7 @@ it becomes vital to enable computers to understand them to offer assistance or m
 Con người có nhu cầu giao tiếp.
 Chính từ nhu cầu cơ bản này, một lượng lớn dữ liệu văn bản được tạo ra mỗi ngày.
 Với một lượng dữ liệu văn bản đa dạng trên mạng xã hội, ứng dụng trò chuyện, email, đánh giá sản phẩm, tài liệu nghiên cứu, và sách báo,
-để máy tính hiểu được những dữ liệu này khá là quan trọng, nhằm đưa ra hỗ trợ hoặc đưa ra quyết định dựa trên ngôn ngữ của con người.
+việc giúp máy tính hiểu được những dữ liệu này trở nên quan trọng, nhằm đưa ra hỗ trợ hoặc đưa ra quyết định dựa trên ngôn ngữ của con người.
 
 
 <!--
