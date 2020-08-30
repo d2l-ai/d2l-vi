@@ -46,7 +46,7 @@ Như chúng ta sẽ tìm hiểu trong chương này, biểu diễn của mỗi t
 Sau khi tiền huấn luyện, biểu diễn của mỗi token có thể là một vector. Tuy nhiên, biểu diễn này vẫn không đổi dù cho ngữ cảnh xung quanh bất kể là gì.
 Ví dụ, biểu diễn vector của từ "bank" là giống nhau trong câu "go to the bank to deposit some money" (ra *ngân hàng* để gửi tiền) và "go to the bank to sit down" (ra *bờ hồ* ngồi hóng mát).
 Do đó, nhiều mô hình tiền huấn luyện gần đây điều chỉnh biểu diễn của cùng một token với các ngữ cảnh khác nhau.
-Trong số đó có BERT, một mô hình rất sâu dựa trên bộ mã hóa Transformer.
+Trong số đó có BERT, một mô hình sâu hơn rất nhiều dựa trên bộ mã hóa Transformer.
 Trong chương này, ta sẽ tập trung vào cách tiền huấn luyện các biểu diễn như vậy cho văn bản, như được mô tả trong :numref:`fig_nlp-map-Pretrain`.
 
 
