@@ -304,22 +304,28 @@ By implementing the `__getitem__ `function,
 we can arbitrarily access the pretraining (masked language modeling and next sentence prediction) examples 
 generated from a pair of sentences from the WikiText-2 corpus.
 -->
+
 Đặt những hàm trợ giúp để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
 và hàm trợ giúp để đệm những đầu vào lại với nhau,
 chúng ta tùy biến lớp `_WikiTextDataset` sau đây làm bộ dữ liệu WikiText-2 cho tiền huấn luyện BERT.
 Bằng cách triển khai hàm `__getitem__`,
 chúng ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo)
 được tạo ra từ một cặp câu từ kho ngữ liệu WikiText-2.
+
+
 <!--
 The original BERT model uses WordPiece embeddings whose vocabulary size is 30,000 :cite:`Wu.Schuster.Chen.ea.2016`.
 The tokenization method of WordPiece is a slight modification of the original byte pair encoding algorithm in :numref:`subsec_Byte_Pair_Encoding`.
 For simplicity, we use the `d2l.tokenize` function for tokenization.
 Infrequent tokens that appear less than five times are filtered out.
 -->
+
 Mô hình BERT ban đầu sử dụng WordPiece embedding có kích thước bộ từ vựng là 30,000 :cite:`Wu.Schuster.Chen.ea.2016`.
 Phương pháp để tách token của WordPiece là một phiên bản của thuật toán mã hóa cặp byte ban đầu :numref:`subsec_Byte_Pair_Encoding` với một ít chỉnh sửa.
 Để cho đơn giản, chúng tôi sử dụng hàm `d2l.tokenize` để tách từ.
 Những token xuất hiện ít hơn năm lần được loại đi.
+
+
 ```{.python .input  n=8}
 #@save
 class _WikiTextDataset(gluon.data.Dataset):
@@ -364,8 +370,11 @@ By using the `_read_wiki` function and the `_WikiTextDataset` class,
 we define the following `load_data_wiki` to download and WikiText-2 dataset
 and generate pretraining examples from it.
 -->
+
 Bằng cách sử dụng hàm `_read_wiki` và lớp `_WikiTextDataset`, 
 chúng tôi định nghĩa hàm `load_data_wiki` để tải xuống bộ dữ liệu WikiText-2 và tạo mẫu dữ liệu tiền huấn luyện từ nó.
+
+
 ```{.python .input  n=9}
 #@save
 def load_data_wiki(batch_size, max_len):
@@ -383,8 +392,11 @@ def load_data_wiki(batch_size, max_len):
 Setting the batch size to 512 and the maximum length of a BERT input sequence to be 64, we print out the shapes of a minibatch of BERT pretraining examples.
 Note that in each BERT input sequence, $10$ ($64 \times 0.15$) positions are predicted for the masked language modeling task.
 -->
+
 Đặt kích thước batch là 512 và chiều dài tối đa của chuỗi đầu vào BERT là 64, chúng tôi in ra kích thước của một minibatch của mẫu dữ liệu tiền huấn luyện.
 Lưu ý rằng trong mỗi chuỗi đầu vào BERT, $10$ ($64 \times 0.15$) vị trí được dự đoán cho tác vụ mô hình hóa ngôn ngữ có mặt nạ.
+
+
 ```{.python .input  n=10}
 batch_size, max_len = 512, 64
 train_iter, vocab = load_data_wiki(batch_size, max_len)
@@ -402,8 +414,11 @@ for (tokens_X, segments_X, valid_lens_x, pred_positions_X, mlm_weights_X,
 In the end, let us take a look at the vocabulary size.
 Even after filtering out infrequent tokens, it is still over twice larger than that of the PTB dataset.
 -->
+
 Cuối cùng, cùng nhìn vào kích thước của bộ từ vựng.
 Mặc dù những token ít xuất hiện đã bị loại bỏ, kích thước của nó vẫn lớn hai lần bộ dữ liệu PTB.
+
+
 ```{.python .input  n=11}
 len(vocab)
 ```
@@ -462,7 +477,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* Nguyễn Đình Nam
+* 
 
 <!-- Phần 4 -->
 * Nguyễn Đình Nam
