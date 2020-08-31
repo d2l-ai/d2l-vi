@@ -142,7 +142,7 @@ conceptually simple yet empirically powerful pretraining of deep representations
 -->
 
 BERT cải thiện tốt hơn kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên ở phần rộng hạng mục gồm i) phân loại văn bản đơn (cụ thể, phân tích cảm xúc), ii) phân loại cặp văn bản (cụ thể, suy diễn ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) đánh tag văn bản (cụ thể, nhận dạng thực thể có tên).
-Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMO nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện hiệu quả trên thực nghiệm cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng đối với các tác vụ đa dạng của xử lý ngôn ngữ tự nhiên.
+Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện hiệu quả trên thực nghiệm cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng đối với các tác vụ đa dạng của xử lý ngôn ngữ tự nhiên.
 
 <!--
 In the rest of this chapter, we will dive into the pretraining of BERT.
