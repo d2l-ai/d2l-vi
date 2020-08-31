@@ -208,7 +208,7 @@ then returns tokens of the BERT input sequence and their corresponding segment I
 -->
 
 Hàm `get_tokens_and_segments` sau đây có thể lấy một hoặc hai câu làm đầu vào,
-rồi trả về các token của chuỗi đầu vào BERT và các ID phần tương ứng của chúng.
+rồi trả về các token của chuỗi đầu vào BERT và các ID đoạn tương ứng của chúng.
 
 
 ```{.python .input}
