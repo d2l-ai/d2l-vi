@@ -199,7 +199,7 @@ are added to the token embeddings of the first sequence and the second sequence,
 For single text inputs, only $\mathbf{e}_A$ is used.
 -->
 
-Để phân biệt cặp văn bản, các embedding phần đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embeddings token của chuỗi thứ nhất và chuỗi thứ hai.
+Để phân biệt cặp văn bản, các embedding đoạn đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embedding token của chuỗi thứ nhất và chuỗi thứ hai.
 Đối với đầu vào là văn bản đơn, ta chỉ sử dụng $\mathbf{e}_A$.
 
 <!--
