@@ -244,9 +244,9 @@ The following definition function extracts all the central target words and thei
 It uniformly and randomly samples an integer to be used as the context window size between integer 1 and the `max_window_size` (maximum context window).
 -->
 
-Ta sử dụng những từ cách từ đích trung tâm không quá độ dài cửa sổ ngữ cảnh làm các từ ngữ cảnh của từ đích trung tâm đã cho. 
+Ta sử dụng các từ với khoảng cách tới từ đích trung tâm không quá độ dài cửa sổ ngữ cảnh để làm từ ngữ cảnh cho từ đích trung tâm đó. 
 Hàm sau đây trích xuất tất cả từ đích trung tâm và các từ ngữ cảnh của chúng.
-Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên trong khoảng giữa 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại), được lấy ngẫu nhiên theo phân phối đều.
+Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên từ 1 tới `max_window_size` (kích thước cửa sổ tối đa), được lấy ngẫu nhiên theo phân phối đều.
 
 
 ```{.python .input  n=9}
