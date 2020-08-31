@@ -190,7 +190,7 @@ Chuỗi đầu vào BERT biểu diễn một cách tường minh cả văn bản
 Ở tác vụ đầu, chuỗi đầu vào BERT là sự ghép nói ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
 Ở tác vụ thứ hai, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
 Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" khác với các kiểu "chuỗi" khác.
-Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả một *chuỗi văn bản* hoặc hai *chuỗi văn bản*.
+Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả *một chuỗi văn bản* hoặc *hai chuỗi văn bản*.
 
 
 <!--
