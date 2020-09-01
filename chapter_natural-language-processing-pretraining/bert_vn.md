@@ -577,7 +577,7 @@ These two text corpora are huge: they have 800 million words and 2.5 billion wor
 
 Đáng chú ý là tất cả nhãn đầu vào trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức dán nhãn thủ công.
 Phiên bản gốc của BERT được tiền huấn luyện trên cả hai kho ngữ liệu BookCorpus :cite:`Zhu.Kiros.Zemel.ea.2015` và Wikipedia tiếng Anh.
-Hai kho ngữ liệu văn bản cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
+Hai kho ngữ liệu văn bản này cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
