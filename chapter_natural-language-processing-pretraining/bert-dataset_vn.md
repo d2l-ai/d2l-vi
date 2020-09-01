@@ -183,7 +183,7 @@ chúng ta định nghĩa hàm `_replace_mlm_tokens`.
 Đầu vào của nó, `tokens` là một danh sách các token biểu diễn cho một chuỗi đầu vào BERT,
 `candidate_pred_positions` là một danh sách chỉ mục cho các token của chuỗi đầu vào BERT 
 ngoại trừ những token đặc biệt (token đặc biệt không được dự đoán trong tác vụ mô hình hóa ngôn ngữ có mặt nạ),
-và `num_mlm_preds` chỉ định số lượng dự đoán (nhớ lại 15% ngẫu nhiên các token để dự đoán).
+và `num_mlm_preds` chỉ định số lượng dự đoán (nhớ lại 15% các token ngẫu nhiên để dự đoán).
 Dựa trên định nghĩa của tác vụ mô hình hóa ngôn ngữ có mặt nạ trong :numref:`subsec_mlm`,
 tại mỗi vị trí dự đoán, đầu vào có thể bị thay thế bởi một token “&lt;mask&gt;” đặc biệt hoặc một token ngẫu nhiên, hoặc không đổi.
 Cuối cùng, hàm này trả về những token đầu vào sau khi có thể thay thế,
