@@ -460,7 +460,7 @@ The forward inference of `mlm` returns prediction results `mlm_Y_hat` at all the
 For each prediction, the size of the result is equal to the vocabulary size.
 -->
 
-Để minh hoạ lượt truyền xuôi suy luận của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
+Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
 Hãy nhớ lại rằng `encoded_X` từ lượt truyền xuôi suy luận của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
 Ta định nghĩa `mlm_positions` bằng 3 chỉ số để dự đoán một trong hai chuỗi đầu vào BERT đại diện bởi `encoded_X`.
 Lượt truyền xuôi suy luận của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí có mặt nạ `mlm_positions` của `encoded_X`.
