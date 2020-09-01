@@ -543,7 +543,7 @@ We can see that the forward inference of an `NextSentencePred` instance
 returns binary predictions for each BERT input sequence.
 -->
 
-Ta có thể thấy lượt truyền xuôi suy luận của thực thể `NextSentencePred`
+Ta có thể thấy lượt suy luận xuôi của thực thể `NextSentencePred`
 trả về dự đoán nhị phân cho mỗi chuỗi đầu vào BERT.
 
 
