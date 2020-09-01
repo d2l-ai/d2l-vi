@@ -502,6 +502,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | test set performance                   | chất lượng trên tập kiểm tra              |                                              |
 | test statistic                         | tiêu chuẩn kiểm định                      | [https://git.io/Jvoja](https://git.io/Jvoja) |
 | text data                              | dữ liệu văn bản                           |                                              |
+| text tagging                           | gán thẻ văn bản                           |                                              |
 | timeseries analysis                    | phân tích dữ liệu chuỗi thời gian         |                                              |
 | timestep                               | bước thời gian                            | [https://git.io/JvojQ](https://git.io/JvojQ) |
 | token                                  | token                                     |                                              |
