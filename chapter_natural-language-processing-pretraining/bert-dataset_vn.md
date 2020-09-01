@@ -187,7 +187,7 @@ và `num_mlm_preds` chỉ định số lượng dự đoán (nhớ lại 15% cá
 Dựa trên định nghĩa của tác vụ mô hình hóa ngôn ngữ có mặt nạ trong :numref:`subsec_mlm`,
 tại mỗi vị trí dự đoán, đầu vào có thể bị thay thế bởi token đặc biệt “&lt;mask&gt;” hoặc một token ngẫu nhiên, hoặc không đổi.
 Cuối cùng, hàm này trả về những token đầu vào sau khi có thể thay thế,
-những chỉ mục của token nơi mà các dự đoán diễn ra và nhãn cho những dự đoán này.
+những chỉ số token được dự đoán và nhãn cho những dự đoán này.
 
 
 ```{.python .input  n=5}
