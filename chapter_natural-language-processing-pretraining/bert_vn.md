@@ -584,7 +584,7 @@ The forward inference returns the encoded BERT representations `encoded_X`, pred
 -->
 
 Khi tiền huấn luyện BERT, hàm mất mát cuối cùng là tổ hợp tuyến tính của cả hai hàm mất mát cho tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự doán câu tiếp theo.
-Bây giờ ta có thể định nghĩa lớp `BERTModel` bằng các khởi tạo ba lớp `BERTEncoder`, `MaskLM`, và `NextSentencePred`.
+Bây giờ ta có thể định nghĩa lớp `BERTModel` bằng cách khởi tạo ba lớp `BERTEncoder`, `MaskLM`, và `NextSentencePred`.
 Lượt truyền xuôi suy luận trả về biểu diễn BERT được mã hoá `encoded_X`, dự đoán `mlm_Y_hat` của tác vụ mô hình hoá ngôn ngữ có mặt nạ, và dự đoán câu tiếp theo `nsp_Y_hat`.
 
 
