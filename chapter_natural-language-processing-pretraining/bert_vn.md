@@ -178,8 +178,8 @@ All proposed in 2018, from context-sensitive ELMo to task-agnostic GPT and BERT,
 conceptually simple yet empirically powerful pretraining of deep representations for natural languages have revolutionized solutions to various natural language processing tasks.
 -->
 
-*dịch đoạn phía trên*
-
+BERT cải thiện tốt hơn kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên ở phần rộng hạng mục gồm i) phân loại văn bản đơn (cụ thể, phân tích cảm xúc), ii) phân loại cặp văn bản (cụ thể, suy diễn ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (cụ thể, nhận dạng thực thể có tên).
+Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện hiệu quả trên thực nghiệm cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng đối với các tác vụ đa dạng của xử lý ngôn ngữ tự nhiên.
 
 <!--
 In the rest of this chapter, we will dive into the pretraining of BERT.
@@ -187,7 +187,9 @@ When natural language processing applications are explained in :numref:`chap_nlp
 we will illustrate fine-tuning of BERT for downstream applications.
 -->
 
-*dịch đoạn phía trên*
+Ở phần còn lại của chương này, ta sẽ đào sâu vào tiền huấn luyện BERT.
+Khi những ứng dụng xử lý ngôn ngữ tự nhiên được giải thích trong :numref:`chap_nlp_app`,
+ta sẽ minh họa việc tinh chỉnh BERT cho các ứng dụng xuôi dòng. 
 
 
 ```{.python .input  n=1}
@@ -203,7 +205,7 @@ npx.set_np()
 ## Input Representation
 -->
 
-## *dịch đoạn phía trên*
+## Biểu diễn đầu vào
 :label:`subsec_bert_input_rep`
 
 
@@ -219,7 +221,13 @@ We will consistently distinguish the terminology "BERT input sequence" from othe
 For instance, one *BERT input sequence* may include either one *text sequence* or two *text sequences*.
 -->
 
-*dịch đoạn phía trên*
+Trong xử lý ngôn ngữ tự nhiên, một số nhiệm vụ (cụ thể, phân tích cảm xúc) lấy một câu văn làm đầu vào, 
+trong khi một số tác vụ khác (cụ thể, suy diễn ngôn ngữ tự nhiên), đầu vào là một cặp chuỗi văn bản.
+Chuỗi đầu vào BERT biểu diễn một cách tường minh cả văn bản đơn và văn bản kép.
+Ở tác vụ đầu, chuỗi đầu vào BERT là sự ghép nói ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
+Ở tác vụ thứ hai, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
+Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" khác với các kiểu "chuỗi" khác.
+Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả *một chuỗi văn bản* hoặc *hai chuỗi văn bản*.
 
 
 <!--
@@ -228,15 +236,16 @@ are added to the token embeddings of the first sequence and the second sequence,
 For single text inputs, only $\mathbf{e}_A$ is used.
 -->
 
-*dịch đoạn phía trên*
-
+Để phân biệt cặp văn bản, các embedding đoạn đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embedding token của chuỗi thứ nhất và chuỗi thứ hai.
+Đối với đầu vào là văn bản đơn, ta chỉ sử dụng $\mathbf{e}_A$.
 
 <!--
 The following `get_tokens_and_segments` takes either one sentence or two sentences as the input, 
 then returns tokens of the BERT input sequence and their corresponding segment IDs.
 -->
 
-*dịch đoạn phía trên*
+Hàm `get_tokens_and_segments` sau đây có thể lấy một hoặc hai câu làm đầu vào,
+rồi trả về các token của chuỗi đầu vào BERT và các ID đoạn tương ứng của chúng.
 
 
 ```{.python .input}
@@ -668,7 +677,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyền Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
