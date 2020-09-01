@@ -654,7 +654,7 @@ Research into the difference between GELU and ReLU.
 -->
 
 1. Tại sao BERT gặt hái được thành công?
-2. Khi tất cả các mô hình khác tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi nhiều hơn hay ít hơn số bước tiền huấn luyện để hội thụ hơn mô hình ngôn ngữ từ trái sang phải. Tại sao?
+2. Khi tất cả các điểm còn lại là tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi nhiều hơn hay ít hơn số bước tiền huấn luyện để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
 3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
 và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
 Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
