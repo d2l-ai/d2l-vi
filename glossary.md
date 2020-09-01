@@ -184,6 +184,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | first principle               | định đề cơ bản                             | [https://git.io/JvKet](https://git.io/JvKet) |
 | flatten                       | trải phẳng                                 | [https://git.io/JvohO](https://git.io/JvohO) |
 | forward pass                  | lượt truyền xuôi                           | [https://git.io/JvohG](https://git.io/JvohG) |
+| forward inference             | suy luận xuôi                              |  |
 | framework                     | framework                                  |                                              |
 | frontend                      | front-end                                  |                                              |
 | frozen weight (freeze weight) | trọng số bị đóng băng (đóng băng trọng số) |                                              |
