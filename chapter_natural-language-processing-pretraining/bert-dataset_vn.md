@@ -227,7 +227,7 @@ By invoking the aforementioned `_replace_mlm_tokens` function, the following fun
 (after possible token replacement as described in :numref:`subsec_mlm`), the token indices where predictions take place, and label indices for these predictions.
 -->
 
-Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm tiếp theo lấy một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ mục của những token đầu vào (sau khi có thể thay thế token như đã được mô tả ở :numref:`subsec_mlm`), những chỉ mục của token nơi mà các dự đoán diễn ra và nhãn cho những dự đoán này.
+Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm dưới đây lấy một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ số của những token đầu vào (sau khi thay thế token (nếu có) như mô tả ở :numref:`subsec_mlm`), những chỉ số của token được dự đoán và nhãn cho những dự đoán này.
 
 
 ```{.python .input  n=6}
