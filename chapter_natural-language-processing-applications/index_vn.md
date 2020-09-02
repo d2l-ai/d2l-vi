@@ -74,7 +74,7 @@ In the following, we start by the sentiment analysis application and illustrate 
 
 Như đã giới thiệu trong :numref:`sec_bert`, BERT chỉ yêu cầu các thay đổi kiến trúc tối thiểu cho một loạt các ứng dụng xử lý ngôn ngữ tự nhiên.
 Tuy nhiên, lợi ích này đi kèm với chi phí tinh chỉnh một số lượng lớn các tham số mô hình BERT cho các ứng dụng xuôi dòng.
-Khi ta giới hạn độ phức tạp về không gian hoặc thời gian, những mô hình được thiết kế thủ công dựa trên MLP, CNN, RNN và cơ chế tập trung sẽ khả thi hơn.
+Khi độ phức tạp về không gian hoặc thời gian bị giới hạn, những mô hình được thiết kế thủ công dựa trên MLP, CNN, RNN và cơ chế tập trung sẽ khả thi hơn.
 Trong phần sau, ta sẽ bắt đầu bằng ứng dụng phân tích cảm xúc và minh họa thiết kế mô hình dựa trên kiến trúc RNN và CNN tương ứng.
 
 
