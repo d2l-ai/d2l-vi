@@ -439,7 +439,7 @@ Hãy thử các kỹ thuật tách câu khác, ví dụ như công cụ spaCy v�
 Bạn cần cài đặt NLTK trước:`pip install nltk`.
 Trong mã nguồn, câu lệnh đầu tiên là `import nltk`. Sau đó, tải xuống bộ token hoá câu Punkt (_Punkt sentence tokenizer_): `nltk.download('punkt')`.
 Để tách các câu, ví dụ `sentences = 'This is great ! Why not ?'`,
-gọi `nltk.tokenize.sent_tokenize(sentences)` sẽ trả về một danh sách gồm hai chuỗi câu là `['This is great !', 'Why not ?']`.
+việc gọi `nltk.tokenize.sent_tokenize(sentences)` sẽ trả về một danh sách gồm hai chuỗi câu là `['This is great !', 'Why not ?']`.
 2. Nếu ta không lọc ra những token ít gặp thì kích thước từ vựng là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
