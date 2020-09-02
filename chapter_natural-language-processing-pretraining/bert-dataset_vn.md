@@ -431,8 +431,8 @@ len(vocab)
 * We can arbitrarily access the pretraining (masked language modeling and next sentence prediction) examples generated from a pair of sentences from the WikiText-2 corpus.
 -->
 
-*dịch đoạn phía trên*
-
+* So sánh với tập dữ liệu PTB, tập dữ liệu WikiText-2 vẫn giữ nguyên dấu câu, chữ viết hoa và số ban đầu, đồng thời lớn hơn gấp đôi.
+* Ta có thể tùy ý truy cập vào các mẫu tiền huấn luyện (cả tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự đoán câu tiếp theo) được sinh ra từ một cặp câu từ kho ngữ liệu WikiText-2.
 
 ## Bài tập
 
@@ -446,8 +446,13 @@ invoking `nltk.tokenize.sent_tokenize(sentences)` will return a list of two sent
 1. What is the vocabulary size if we do not filter out any infrequent token?
 -->
 
-*dịch đoạn phía trên*
-
+1. Để đơn giản, dấu chấm được dùng làm dấu phân cách duy nhất để tách các câu.
+Hãy thử các kỹ thuật tách câu khác, ví dụ như công cụ spaCy và NLTK. Lấy NLTK làm ví dụ.
+Bạn cần cài đặt NLTK trước: `pip install nltk`.
+Trong mã nguồn, câu lệnh đầu tiên là `import nltk`. Sau đó, tải xuống bộ token hoá câu Punkt (_Punkt sentence tokenizer_): `nltk.download('punkt')`.
+Để tách các câu, ví dụ `sentences = 'This is great ! Why not ?'`,
+việc gọi `nltk.tokenize.sent_tokenize(sentences)` sẽ trả về một danh sách gồm hai chuỗi câu là `['This is great !', 'Why not ?']`.
+2. Nếu ta không lọc ra những token ít gặp thì kích thước bộ từ vựng là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -480,4 +485,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Văn Quang
+
