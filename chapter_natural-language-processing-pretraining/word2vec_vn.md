@@ -22,7 +22,7 @@ Ngôn ngữ tự nhiên là một hệ thống phức tạp mà con người s�
 Trong hệ thống này, từ là đơn vị cơ bản của ngữ nghĩa.
 Như tên gọi của nó, một vector từ (_word vector_) là một vector được sử dụng để biểu diễn một từ.
 Vector từ cũng có thể được coi là vector đặc trưng của một từ.
-Kỹ thuật ánh xạ từ ngữ sang vector các số thực còn được gọi là kỹ thuật embedding từ (_word embedding_).
+Kỹ thuật ánh xạ từ ngữ sang vector số thực còn được gọi là kỹ thuật embedding từ (_word embedding_).
 Trong vài năm gần đây, embedding từ dần trở thành kiến thức cơ bản trong xử lý ngôn ngữ tự nhiên.
 
 <!--
@@ -42,12 +42,11 @@ In this way, each word is represented as a vector of length $N$ that can be used
 -->
 
 
-Chúng ta đã sử dụng vector one-hot để đại diện cho từ (ký tự được coi là từ) trong :numref:`sec_rnn_scratch`.
-Nhớ lại rằng khi ta giả sử số lượng các từ khác nhau trong từ điển (kích thước từ điển) là $N$, mỗi từ có thể tương ứng một-một với các số nguyên liên tiếp từ 0 đến $N-1$.
-Những số nguyên tương ứng với các từ được gọi là chỉ số của từ.
-Ta giả sử rằng chỉ số của một từ là $i$.
-Để thu được biểu diễn vector one-hot của từ, ta tạo một vector có tất cả phần tử có giá trị là 0 với độ dài $N$ và đặt phần tử $i$ là 1.
-Theo đó, mỗi từ được biểu diễn dưới dạng vector có độ dài $N$ có thể được sử dụng trực tiếp bởi mạng nơ-ron.
+Chúng ta đã sử dụng vector one-hot để đại diện cho từ (thực chất là ký tự) trong :numref:`sec_rnn_scratch`.
+Nhớ lại rằng khi giả sử số lượng các từ riêng biệt trong từ điển (tức kích thước từ điển) là $N$, mỗi từ có thể tương ứng một-một với các số nguyên liên tiếp từ 0 đến $N-1$, được gọi là chỉ số của từ.
+Giả sử chỉ số của một từ là $i$.
+Để thu được biểu diễn vector one-hot của từ đó, ta tạo một vector có $N$ phần tử có giá trị là 0 và đặt phần tử thứ $i$ bằng 1.
+Theo đó, mỗi từ được biểu diễn dưới dạng vector có độ dài $N$ có thể được trực tiếp đưa vào mạng nơ-ron.
 
 
 <!--
@@ -56,8 +55,8 @@ One of the major reasons is that the one-hot word vectors cannot accurately expr
 For the vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$, their cosine similarities are the cosines of the angles between them:
 -->
 
-Mặc dù rất dễ xây dựng các vector one-hot, nhưng chúng thường không phải là một lựa chọn tốt.
-Một trong những lý do chính là các vector one-hot này không thể biểu diễn một cách chính xác độ tương tự giữa các từ khác nhau, chẳng hạn như độ tương tự cô-sin mà ta thường sử dụng.
+Mặc dù rất dễ xây dựng các vector one-hot, nhưng chúng thường không phải là lựa chọn tốt.
+Một trong những lý do chính là các vector one-hot không thể biểu diễn một cách chính xác độ tương tự giữa các từ khác nhau, chẳng hạn như độ tương tự cô-sin mà ta thường sử dụng.
 Độ tương tự cô-sin của hai vectors $\mathbf{x}, \mathbf{y} \in \mathbb{R}^d$ là giá trị cô-sin của góc giữa chúng:
 
 
@@ -69,8 +68,8 @@ Since the cosine similarity between the one-hot vectors of any two different wor
 it is difficult to use the one-hot vector to accurately represent the similarity between multiple different words.
 -->
 
-Do độ tương tự cô-sin giữa các vector one-hot của hai từ khác nhau bằng 0, 
-nên rất khó khi sử dụng vector one-hot để biểu diễn độ tương tự giữa các từ khác nhau.
+Do độ tương tự cô-sin giữa các vector one-hot của bất kì hai từ khác nhau nào đều bằng 0, 
+nên rất khó sử dụng vector one-hot để biểu diễn độ tương tự giữa các từ khác nhau.
 
 
 <!--
@@ -82,9 +81,9 @@ Next, we will take a look at the two models and their training methods.
 
 
 [Word2vec](https://code.google.com/archive/p/word2vec/) là một công cụ được phát minh để giải quyết vấn đề trên.
-Nó biểu diễn mỗi từ bằng một vector có độ dài cố định và sử dụng những vector này để biểu thị tốt hơn độ tương tự và và các quan hệ loại suy (*analogy relationship*) giữa các từ khác nhau.
-Công cụ Word2vec gồm hai mô hình: skip-gam :cite:`Mikolov.Sutskever.Chen.ea.2013` và túi từ liên tục ( _continuous bag of words_ CBOW) :cite:`Mikolov.Chen.Corrado.ea.2013`.
-Tiếp theo, ta sẽ xem xét hai mô hình và phương pháp huấn luyện chúng.
+Nó biểu diễn mỗi từ bằng một vector có độ dài cố định và sử dụng những vector này để biểu thị tốt hơn độ tương tự và và các quan hệ loại suy (*analogy relationship*) giữa các từ.
+Công cụ Word2vec gồm hai mô hình: skip-gam :cite:`Mikolov.Sutskever.Chen.ea.2013` và túi từ liên tục ( _continuous bag of words_ CBOW) :cite:`Mikolov.Chen.Corrado.ea.2013`. <!-- wait #2553 -->
+Tiếp theo, ta sẽ xem xét hai mô hình này và phương pháp huấn luyện chúng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -107,9 +106,9 @@ for generating the context words, "the", "man", "his" and "son", that are within
 
 
 Mô hình skip-gam giả định rằng một từ có thể được sử dụng để sinh ra các từ xung quanh nó trong một chuỗi văn bản.
-Ví dụ, ta giả định rằng chuỗi văn bản là "the", "man", "loves", "his" và "son".
+Ví dụ, giả sử chuỗi văn bản là "the", "man", "loves", "his" và "son".
 Ta sử dụng "loves" làm từ đích trung tâm và đặt kích thước cửa sổ ngữ cảnh bằng 2.
-Như mô tả trong :numref:`fig_skip_gram`, với từ mục tiêu trung tâm "loves", mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh ("the", "man", "his" và "son") nằm trong khoảng cách không quá 2 từ, đó là
+Như mô tả trong :numref:`fig_skip_gram`, với từ đích trung tâm "loves", mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh ("the", "man", "his" và "son") nằm trong khoảng cách không quá 2 từ:
 
 
 $$P(\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"son"}\mid\textrm{"loves"}).$$
@@ -121,7 +120,7 @@ In this case, the formula above can be rewritten as
 -->
 
 
-Ta giả định rằng, với từ đích trung tâm, các từ ngữ cảnh được sinh ra độc lập với nhau.
+Ta giả định rằng, với từ đích trung tâm cho trước, các từ ngữ cảnh được sinh ra độc lập với nhau.
 Trong trường hợp này, công thức trên có thể được viết lại thành
 
 
@@ -133,7 +132,7 @@ $$P(\textrm{"the"}\mid\textrm{"loves"})\cdot P(\textrm{"man"}\mid\textrm{"loves"
 -->
 
 
-![Mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh cho một từ đích trung tâm nhất định.](../img/skip-gram.svg)
+![Mô hình skip-gram quan tâm đến xác suất có điều kiện sinh ra các từ ngữ cảnh với một từ đích trung tâm cho trước.](../img/skip-gram.svg)
 :label:`fig_skip_gram`
 
 
@@ -147,9 +146,9 @@ The conditional probability of generating the context word for the given central
 
 
 Trong mô hình skip-gam, mỗi từ được biểu diễn bằng hai vector $d$-chiều để tính xác suất có điều kiện.
-Ta giả định rằng một từ được gán chỉ số là $i$ trong từ điển, vector của từ được biểu diễn là $\mathbf{v}_i\in\mathbb{R}^d$ khi từ này là từ đích trung tâm và $\mathbf{u}_i\in\mathbb{R}^d$ khi từ này là một từ ngữ cảnh.
- Gọi $c$ và $o$ lần lượt là chỉ số của từ đích trung tâm $w_c$ và từ ngữ cảnh $w_o$ trong từ điển.
-Có thể thu được xác suất có điều kiện sinh ra từ ngữ cảnh cho một từ đích trung tâm cho trước bằng phép toán softmax cho các tích vô hướng:
+Giả sử chỉ số của một từ trong từ điển là $i$, vector của từ được biểu diễn là $\mathbf{v}_i\in\mathbb{R}^d$ khi từ này là từ đích trung tâm và là $\mathbf{u}_i\in\mathbb{R}^d$ khi từ này là một từ ngữ cảnh.
+Gọi $c$ và $o$ lần lượt là chỉ số của từ đích trung tâm $w_c$ và từ ngữ cảnh $w_o$ trong từ điển.
+Có thể thu được xác suất có điều kiện sinh ra từ ngữ cảnh cho một từ đích trung tâm cho trước bằng phép toán softmax trên tích vô hướng của vector:
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)},$$
@@ -163,7 +162,7 @@ When context window size is $m$, the likelihood function of the skip-gram model 
 -->
 
 
-Trong đó tập chỉ số trong bộ từ vựng là $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$.
+trong đó, tập chỉ số trong bộ từ vựng là $\mathcal{V} = \{0, 1, \ldots, |\mathcal{V}|-1\}$.
 Giả sử trong một chuỗi văn bản có độ dài $T$, từ tại bước thời gian $t$ được ký hiệu là $w^{(t)}$.
 Giả sử rằng các từ ngữ cảnh được sinh độc lập với từ trung tâm cho trước.
 Khi kích thước cửa sổ ngữ cảnh là $m$, hàm hợp lý (_likelihood_) của mô hình skip-gam là xác suất kết hợp sinh ra tất cả các từ ngữ cảnh với bất kỳ từ trung tâm cho trước nào
@@ -177,7 +176,7 @@ Here, any timestep that is less than 1 or greater than $T$ can be ignored.
 -->
 
 
-Ở đây, bất kỳ bước thời gian nào nhỏ hơn 1 hoặc lớn hơn $T$ đều có thể bỏ qua.
+Ở đây, bất kỳ bước thời gian nào nhỏ hơn 1 hoặc lớn hơn $T$ đều có thể được bỏ qua.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -213,10 +212,10 @@ The key of gradient computation is to compute the gradient of the logarithmic co
 By definition, we first have
 -->
 
-Nếu ta dùng SGD, thì trong mỗi vòng lặp, ta chọn ra một chuỗi con nhỏ hơn thông qua việc lấy mẫu ngẫu nhiên để tính toán mất mát cho chuỗi con đó,
+Nếu ta dùng SGD, thì trong mỗi vòng lặp, ta chọn ra một chuỗi con nhỏ hơn bằng việc lấy mẫu ngẫu nhiên để tính toán mất mát cho chuỗi con đó,
 rồi sau đó tính gradient để cập nhật các tham số mô hình.
 Điểm then chốt của việc tính toán gradient là tính gradient của logarit xác suất có điều kiện cho vector từ trung tâm và vector từ ngữ cảnh.
-Theo định nghĩa, đầu tiên ta có
+Đầu tiên, theo định nghĩa ta có
 
 
 $$\log P(w_o \mid w_c) =
@@ -254,8 +253,8 @@ After the training, for any word in the dictionary with index $i$, we are going 
 In applications of natural language processing, the central target word vector in the skip-gram model is generally used as the representation vector of a word.
 -->
 
-Sau khi huấn luyện xong, đối với bất kì từ nào trong từ điển có chỉ số $i$, ta sẽ nhận được hai tập vector từ $\mathbf{v}_i$ và $\mathbf{u}_i$.
-Trong các ứng dụng của xử lý ngôn ngữ tự nhiên, vector từ đích trung tâm trong mô hình skip-gram thường được sử dụng để làm vector biểu diễn một từ.
+Sau khi huấn luyện xong, với từ bất kì có chỉ số là $i$ trong từ điển, ta sẽ nhận được tập hai vector từ $\mathbf{v}_i$ và $\mathbf{u}_i$.
+Trong các ứng dụng xử lý ngôn ngữ tự nhiên, vector từ đích trung tâm trong mô hình skip-gram thường được sử dụng để làm vector biểu diễn một từ.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
