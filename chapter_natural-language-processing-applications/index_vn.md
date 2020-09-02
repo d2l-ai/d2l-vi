@@ -27,7 +27,7 @@ These are popular and representative natural language processing applications: t
 
 Cuốn sách này không có ý định trình bày các ứng dụng xử lý ngôn ngữ tự nhiên một cách toàn diện.
 Trọng tâm của cuốn sách là *cách áp dụng học biểu diễn (sâu) của ngôn ngữ để giải quyết các bài toán xử lý ngôn ngữ tự nhiên*.
-Tuy nhiên, chúng ta đã thảo luận về một số ứng dụng xử lý ngôn ngữ tự nhiên mà không cần tiền huấn luyện trong các chương trước và chỉ giải thích các kiến ​​trúc học sâu.
+Tuy nhiên, chúng ta đã thảo luận về một số ứng dụng xử lý ngôn ngữ tự nhiên mà không cần tiền huấn luyện trong các chương trước, nhằm chỉ giải thích các kiến ​​trúc học sâu.
 Ví dụ, trong :numref:`chap_rnn`, chúng ta đã thiết kế các mô hình ngôn ngữ dựa trên RNN để sinh ra các văn bản có nội dung giống như tiểu thuyết.
 Trong :numref:`chap_modern_rnn` và :numref:`chap_attention`, chúng ta cũng đã thiết kế các mô hình ngôn ngữ dựa trên RNN và các cơ chế tập trung cho tác vụ dịch máy.
 Với các biểu diễn văn bản được tiền huấn luyện, trong chương này, chúng ta sẽ xem xét hai tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác đó là, phân tích cảm xúc và suy luận ngôn ngữ tự nhiên.
