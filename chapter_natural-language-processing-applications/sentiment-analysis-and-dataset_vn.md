@@ -89,7 +89,7 @@ Each example is a review and its corresponding label: 1 indicates "positive" and
 -->
 
 Tiếp theo, ta đọc dữ liệu huấn luyện và dữ liệu kiểm tra.
-Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 được gán cho "tích cực" (_positive_), và 0 được gán cho "tiêu cực" (_negative_).
+Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 cho "tích cực", và 0 cho "tiêu cực".
 
 
 ```{.python .input  n=3}
