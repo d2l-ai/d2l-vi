@@ -212,7 +212,7 @@ class Attend(nn.Block):
 ### Comparing
 -->
 
-### *dịch tiêu đề trên*
+### So sánh
 
 
 <!--
@@ -224,7 +224,10 @@ For example, suppose that the attending step determines that "need" and "sleep" 
 both aligned with "tired" in the hypothesis, the pair "tired--need sleep" will be compared.
 -->
 
-*dịch đoạn phía trên*
+Tại bước tiếp theo, chúng ta so sánh một từ trong chuỗi so với chuỗi khác được sắp xếp mượt mà với từ đó.
+Lưu ý rằng trong "soft alignment", tất cả từ đều đến từ một chuỗi, tuy nhiên do có những trọng số tập trung khác nhau, chúng sẽ được so sánh với một từ trong chuỗi khác.
+Cho dễ minh hoạ, :numref:`fig_nli_attention` ghép nối các từ với những từ đã được sắp xếp bằng cách *khó*.
+Ví dụ, giả sử rằng 
 
 
 <!--
@@ -232,7 +235,7 @@ In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of 
 and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
 -->
 
-*dịch đoạn phía trên*
+Tại bước so sánh, chúng ta đưa 
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -245,7 +248,7 @@ while $\mathbf{v}_{B,j}$ is the comparison between word $j$ in the hypothesis an
 The following `Compare` class defines such as comparing step.
 -->
 
-*dịch đoạn phía trên*
+Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ $i$ tại tiền đề 
 
 
 ```{.python .input  n=4}
@@ -268,7 +271,7 @@ class Compare(nn.Block):
 ### Aggregating
 -->
 
-### *dịch tiêu đề trên*
+### Tổng hợp
 
 
 <!--
@@ -277,7 +280,9 @@ in the last step we will aggregate such information to infer the logical relatio
 We begin by summing up both sets:
 -->
 
-*dịch đoạn phía trên*
+Với hai bộ vectơ so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) có trong tay,
+tại bước cuối cùng, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic.
+Chúng ta bắt đầu bằng cách tổng hợp cả hai bộ:
 
 
 $$
@@ -288,8 +293,7 @@ $$
 <!--
 Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
 -->
-
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta đưa cả hai kết quả tổng hợp sau khi được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic:
 
 
 $$
@@ -301,7 +305,7 @@ $$
 The aggregation step is defined in the following `Aggregate` class.
 -->
 
-*dịch đoạn phía trên*
+Bước tổng hợp được định nghĩa trong lớp `Aggregate` sau đây.
 
 
 ```{.python .input  n=5}
@@ -555,7 +559,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 4 -->
 * 
