@@ -62,7 +62,7 @@ Cụ thể, chúng ta sẽ khám phá các kiến ​​trúc phổ biến dựa
 Đối với suy luận ngôn ngữ tự nhiên, chúng ta sẽ chọn cơ chế tập trung và MLP để minh hoạ cách phân tích quan hệ giữa các cặp văn bản.
 Cuối cùng, chúng ta sẽ giới thiệu cách tinh chỉnh mô hình BERT được tiền huấn luyện cho một loạt các ứng dụng xử lý ngôn ngữ tự nhiên,
 ví dụ như các tác vụ cấp chuỗi (phân loại đơn văn bản và phân loại cặp văn bản) và cấp token (gắn thẻ văn bản và trả lời câu hỏi).
-Chúng ta sẽ tinh chỉnh BERT để xử lý ngôn ngữ tự nhiên như là một cách thực nghiệm cụ thể.
+Chúng ta sẽ tinh chỉnh BERT để xử lý ngôn ngữ tự nhiên như một thực nghiệm cụ thể.
 
 
 <!--
