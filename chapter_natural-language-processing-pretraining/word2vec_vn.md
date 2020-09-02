@@ -281,10 +281,10 @@ the target word "loves" based on the context words "the", "man", "his" and "son"
 -->
 
 Mô hình túi từ liên tục (*Continuous bag of words* - CBOW) tương tự như mô hình skip-gram.
-Khác biệt lớn nhất đó là mô hình CBOW giả định rằng từ đích trung tâm được tạo ra dựa trên các từ ngữ cảnh trước và sau nó trong một chuỗi văn bản.
-Với cùng một chuỗi văn bản có "the", "man", "loves", "his" và "son", trong đó thì "love" là từ đích trung tâm, với kích thước cửa sổ ngữ cảnh bằng 2,
+Khác biệt lớn nhất là mô hình CBOW giả định rằng từ đích trung tâm được tạo ra dựa trên các từ ngữ cảnh phía trước và sau nó trong một chuỗi văn bản.
+Với cùng một chuỗi văn bản gồm các từ "the", "man", "loves", "his" và "son", trong đó "love" là từ đích trung tâm, với kích thước cửa sổ ngữ cảnh bằng 2,
 mô hình CBOW quan tâm đến xác suất có điều kiện để sinh ra
-từ đích là "love" dựa trên các từ ngữ cảnh "the", "man", "his" và "son" (như được thể hiện tại :numref:`fig_cbow`), chẳng hạn
+từ đích "love" dựa trên các từ ngữ cảnh "the", "man", "his" và "son" (minh họa tại :numref:`fig_cbow`) như sau:
 
 
 $$P(\textrm{"loves"}\mid\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"son"}).$$
@@ -294,7 +294,7 @@ $$P(\textrm{"loves"}\mid\textrm{"the"},\textrm{"man"},\textrm{"his"},\textrm{"so
 ![The CBOW model cares about the conditional probability of generating the central target word from given context words.](../img/cbow.svg)
 -->
 
-![Mô hình CBOW quan tâm đến xác suất có điều kiện tạo ra từ đích trung tâm từ các từ ngữ cảnh cho trước.](../img/cbow.svg)
+![Mô hình CBOW quan tâm đến xác suất có điều kiện tạo ra từ đích trung tâm dựa trên các từ ngữ cảnh cho trước.](../img/cbow.svg)
 :label:`fig_cbow`
 
 
@@ -306,11 +306,11 @@ Let central target word $w_c$ be indexed as $c$, and context words $w_{o_1}, \ld
 Thus, the conditional probability of generating a central target word from the given context word is
 -->
 
-Vì có quá nhiều từ ngữ cảnh trong mô hình CBOW, chúng ta sẽ lấy trung bình các vector từ của chúng và sau đó sử dụng phương pháp tương tự như mô hình skip-gram để tính xác suất có điều kiện.
-Ta giả sử rằng $\mathbf{v_i}\in\mathbb{R}^d$ and $\mathbf{u_i}\in\mathbb{R}^d$ là vector từ ngữ cảnh
-và vector từ đích trung tâm của từ có chỉ số $i$ trong từ điển (lưu ý rằng các kí hiệu này đối lập với các kí hiệu trong mô hình skip-gram).
+Vì có quá nhiều từ ngữ cảnh trong mô hình CBOW, ta sẽ lấy trung bình các vector từ của chúng và sau đó sử dụng phương pháp tương tự như trong mô hình skip-gram để tính xác suất có điều kiện.
+Giả sử $\mathbf{v_i}\in\mathbb{R}^d$ and $\mathbf{u_i}\in\mathbb{R}^d$ là vector từ ngữ cảnh
+và vector từ đích trung tâm của từ có chỉ số $i$ trong từ điển (lưu ý rằng các kí hiệu này ngược với các kí hiệu trong mô hình skip-gram).
 Gọi $c$ là chỉ số của từ đích trung tâm $w_c$, và $o_1, \ldots, o_{2m}$ là chỉ số các từ ngữ cảnh $w_{o_1}, \ldots, w_{o_{2m}}$ trong từ điển.
-Do đó, xác suất có điều kiện để tạo ra từ đích trung tâm dựa vào từ ngữ cảnh cho trước là 
+Do đó, xác suất có điều kiện sinh ra từ đích trung tâm dựa vào các từ ngữ cảnh cho trước là 
 
 
 $$P(w_c \mid w_{o_1}, \ldots, w_{o_{2m}}) = \frac{\text{exp}\left(\frac{1}{2m}\mathbf{u}_c^\top (\mathbf{v}_{o_1} + \ldots, + \mathbf{v}_{o_{2m}}) \right)}{ \sum_{i \in \mathcal{V}} \text{exp}\left(\frac{1}{2m}\mathbf{u}_i^\top (\mathbf{v}_{o_1} + \ldots, + \mathbf{v}_{o_{2m}}) \right)}.$$
@@ -356,7 +356,7 @@ The maximum likelihood estimation of the CBOW model is equivalent to minimizing 
 -->
 
 Quá trình huấn luyện mô hình CBOW khá giống với quá trình huấn luyện mô hình skip-gram.
-Uớc lượng hợp lý cực đại của mô hình CBOW tương đương với việc cực tiểu hoá hàm mất mát.
+Uớc lượng hợp lý cực đại của mô hình CBOW tương đương với việc cực tiểu hoá hàm mất mát:
 
 
 $$  -\sum_{t=1}^T  \text{log}\, P(w^{(t)} \mid  w^{(t-m)}, \ldots, w^{(t-1)}, w^{(t+1)}, \ldots, w^{(t+m)}).$$
@@ -401,7 +401,7 @@ The CBOW model assumes that the central target word is generated based on the co
 -->
 
 * Vector từ là một vector được sử dụng để biểu diễn một từ.
-Kỹ thuật ánh xạ từ sang vector các số thực còn được gọi là kỹ thuật embedding từ.
+Kỹ thuật ánh xạ các từ sang vector số thực còn được gọi là kỹ thuật embedding từ. 
 * Word2vec bao gồm cả mô hình túi từ liên tục (CBOW) và mô hình skip-gam.
 Mô hình skip-gam giả định rằng các từ ngữ cảnh được sinh ra dựa trên từ đích trung tâm.
 Mô hình CBOW giả định rằng từ đích trung tâm được sinh ra dựa trên các từ ngữ cảnh.
@@ -418,7 +418,7 @@ What is the relationship between the inner product of two word vectors and the c
 For a pair of words with close semantical meaning, why it is likely for their word vector cosine similarity to be high?
 -->
 
-1. Độ phức tạp tính toán của mỗi gradient là gì? Nếu từ điển chứa một lượng lớn các từ, điều này sẽ gây ra vấn đề gì?
+1. Độ phức tạp tính toán của mỗi gradient là bao nhiêu? Nếu từ điển chứa một lượng lớn các từ, điều này sẽ gây ra vấn đề gì? 
 2. Có một số cụm từ cố định trong tiếng Anh bao gồm nhiều từ, chẳng hạn như "new york".
 Bạn sẽ huấn luyện các vector từ của chúng như thế nào? Gợi ý: Xem phần 4 trong bài báo Word2vec[2].
 3. Sử dụng mô hình skip-gam làm ví dụ để tìm hiểu về thiết kế của mô hình word2vec.
@@ -443,18 +443,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 4 -->
-* Phạm Đăng Khoa
-
-<!-- Phần 5 -->
-* Nguyễn Văn Quang
+* Lê Khắc Hồng Phúc
