@@ -236,7 +236,7 @@ and build a similar data_loader function as `load_data_imdb`.
 -->
 
 Hãy khám phá một tập dữ liệu ngôn ngữ tự nhiên khác (ví dụ tập dữ liệu [Đánh giá Amazon](https://snap.stanford.edu/data/web-Amazon.html)) 
-và xây dựng một hàm `data_loader` tương tự giống như `load_data_imdb`.
+và xây dựng một hàm `data_loader` tương tự như `load_data_imdb`.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
