@@ -416,7 +416,7 @@ Even after filtering out infrequent tokens, it is still over twice larger than t
 -->
 
 Cuối cùng, cùng nhìn vào kích thước của bộ từ vựng.
-Mặc dù những token ít xuất hiện đã bị loại bỏ, kích thước của nó vẫn lớn hai lần bộ dữ liệu PTB.
+Mặc dù những token ít xuất hiện đã bị loại bỏ, kích thước của nó vẫn lớn hơn hai lần bộ dữ liệu PTB.
 
 
 ```{.python .input  n=11}
