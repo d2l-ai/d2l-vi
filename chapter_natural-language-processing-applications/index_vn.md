@@ -38,7 +38,7 @@ Với các biểu diễn văn bản được tiền huấn luyện, trong chươ
 ![Pretrained text representations can be fed to various deep learning architectures for different downstream natural language processing applications. This chapter focuses on how to design models for different downstream natural language processing applications.](../img/nlp-map-app.svg)
 -->
 
-![Biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng. Chương này sẽ tập trung vào cách thiết kế các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau. ](../img/nlp-map-app.svg)
+![Biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau. Chương này sẽ tập trung vào cách thiết kế mô hình cho các ứng dụng khác nhau đó.](../img/nlp-map-app.svg)
 :label:`fig_nlp-map-app`
 
 
