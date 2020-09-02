@@ -122,7 +122,7 @@ To study this problem, we will begin by investigating a popular natural language
 ## The Stanford Natural Language Inference (SNLI) Dataset
 -->
 
-## *dịch tiêu đề trên*
+## Tập dữ liệu suy luận ngôn ngữ tự nhiên Stanford
 
 
 <!--
@@ -130,7 +130,8 @@ Stanford Natural Language Inference (SNLI) Corpus is a collection of over $500,0
 We download and store the extracted SNLI dataset in the path `../data/snli_1.0`.
 -->
 
-*dịch đoạn phía trên*
+Tập ngữ liệu ngôn ngữ tự nhiên Stanford (SNLI) là một bộ sưu tập hơn $500,000$ những cặp câu gán nhãn Tiếng Anh :cite:`Bowman.Angeli.Potts.ea.2015`.
+Ta tải và lưu trữ tập dữ liệu SNLI trong đường dẫn `../data/snli_1.0`.
 
 
 ```{.python .input  n=28}
@@ -156,7 +157,7 @@ data_dir = d2l.download_extract('SNLI')
 ### Reading the Dataset
 -->
 
-### *dịch tiêu đề trên*
+### Đọc tập dữ liệu
 
 
 <!--
@@ -164,7 +165,8 @@ The original SNLI dataset contains much richer information than what we really n
 Thus, we define a function `read_snli` to only extract part of the dataset, then return lists of premises, hypotheses, and their labels.
 -->
 
-*dịch đoạn phía trên*
+Tập dữ liệu SNLI gốc chứa nhiều thông tin phong phú hơn những gì ta thực sự cần cho thí nghiệm của chúng ta.
+Vì thế, ta định nghĩa một hàm `read_snli` để chỉ trích xuất phần của tập dữ liệu, 
 
 
 ```{.python .input  n=66}
