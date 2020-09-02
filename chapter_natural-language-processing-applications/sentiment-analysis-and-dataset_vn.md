@@ -136,7 +136,7 @@ d2l.plt.hist([len(line) for line in train_tokens], bins=range(0, 1000, 50));
 ### Padding to the Same Length
 -->
 
-### Đệm thành Cùng độ Dài
+### Đệm cùng độ dài
 
 
 <!--
