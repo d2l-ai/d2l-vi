@@ -223,7 +223,7 @@ def load_data_imdb(batch_size, num_steps=500):
 Then we pad the text sequence for short reviews and create a data iterator.
 -->
 
-* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục
+* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục.
 * Để phân loại cảm xúc văn bản, ta tải dữ liệu IMDb và token hoá các từ trong dữ liệu.
 Sau đó, ta đệm các chuỗi văn bản vào các câu đánh giá ngắn và tạo một iterator dữ liệu.
 
