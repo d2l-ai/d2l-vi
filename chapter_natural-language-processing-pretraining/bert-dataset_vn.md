@@ -419,7 +419,7 @@ len(vocab)
 * We can arbitrarily access the pretraining (masked language modeling and next sentence prediction) examples generated from a pair of sentences from the WikiText-2 corpus.
 -->
 
-* So sánh với tập dữ liệu PTB, tập dữ liệu WikiText-2 vẫn giữ nguyên dấu câu, chữ viết hoa, và số ban đầu, đồng thời lớn hơn gấp đôi.
+* So sánh với tập dữ liệu PTB, tập dữ liệu WikiText-2 vẫn giữ nguyên dấu câu, chữ viết hoa và số ban đầu, đồng thời lớn hơn gấp đôi.
 * Ta có thể tùy ý truy cập vào các mẫu tiền huấn luyện (cả tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự đoán câu tiếp theo) được sinh ra từ một cặp câu từ kho ngữ liệu WikiText-2.
 
 ## Bài tập
