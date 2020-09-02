@@ -305,8 +305,8 @@ we can arbitrarily access the pretraining (masked language modeling and next sen
 generated from a pair of sentences from the WikiText-2 corpus.
 -->
 
-Đặt những hàm trợ giúp để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
-và hàm trợ giúp để đệm những đầu vào lại với nhau,
+Đặt những hàm phụ trợ để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
+và hàm phụ trợ để đệm những đầu vào lại với nhau,
 chúng ta tùy biến lớp `_WikiTextDataset` sau đây làm bộ dữ liệu WikiText-2 cho tiền huấn luyện BERT.
 Bằng cách triển khai hàm `__getitem__`,
 chúng ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo)
