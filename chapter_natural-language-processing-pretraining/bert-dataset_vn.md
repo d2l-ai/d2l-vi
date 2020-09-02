@@ -5,7 +5,7 @@
 # The Dataset for Pretraining BERT
 -->
 
-# *dịch đoạn phía trên*
+# Tập dữ liệu để tiền huấn luyện BERT
 :label:`sec_bert-dataset`
 
 
@@ -19,7 +19,11 @@ Thus, it is getting popular to pretrain BERT on a customized dataset.
 To facilitate the demonstration of BERT pretraining, we use a smaller corpus WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 -->
 
-*dịch đoạn phía trên*
+Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: dựng mô hình từ ẩn và dự đoán câu kế.
+Một mặt, mô hình BERT gốc được tiền huấn luyện trên kho ngữ liệu được ghép lại từ bộ BookCorpus khổng lồ và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), gây khó khăn khi thực hành đối với hầu hết bạn đọc cuốn sách này.
+Mặt khác, mô hình BERT tiền huấn luyện có sẵn có thể không phù hợp với các ứng dụng ở một số lĩnh vực cụ thể như ngành dược. 
+Do đó, tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh đang trở nên phổ biến hơn.
+Để thuận tiện cho việc minh họa thực hiện tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 
 
 <!--
@@ -27,7 +31,8 @@ Comparing with the PTB dataset used for pretraining word2vec in :numref:`sec_wor
 WikiText-2 i) retains the original punctuation, making it suitable for next sentence prediction; ii) retrains the original case and numbers; iii) is over twice larger.
 -->
 
-*dịch đoạn phía trên*
+So với tập dữ liệu PTB đã dùng để thực hiện tiền huấn luyện word2vec ở :numref:`sec_word2vec_data`,
+WikiText-2 i) giữ lại dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) giữ lại ký tự viết hoa và số; iii) và lớn hơn gấp hai lần. 
 
 
 ```{.python .input  n=1}
@@ -52,7 +57,10 @@ To split sentences, we only use the period as the delimiter for simplicity.
 We leave discussions of more complex sentence splitting techniques in the exercises at the end of this section.
 -->
 
-*dịch đoạn phía trên*
+Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn có khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
+Các đoạn văn có tối thiểu hai câu được giữ lại.
+Để tách các câu, ta chỉ dùng dấu chấm làm dấu ngắt cho đơn giản.
+Ta giành việc thảo luận cho các kỹ thuật tách câu phức tạp ở phần bài tập ở cuối mục này.
 
 
 ```{.python .input  n=2}
@@ -81,7 +89,7 @@ def _read_wiki(data_dir):
 ## Defining Helper Functions for Pretraining Tasks
 -->
 
-## *dịch đoạn phía trên*
+## Định nghĩa các Hàm trợ giúp cho các Tác vụ Tiền huấn luyện
 
 
 <!--
@@ -91,14 +99,15 @@ These helper functions will be invoked later when transforming the raw text corp
 into the dataset of the ideal format to pretrain BERT.
 -->
 
-*dịch đoạn phía trên*
-
+Ở phần sau đây, ta sẽ bắt đầu lập trình các hàm trợ giúp cho các hai tác vụ tiền huấn luyện BERT:
+dự đoán câu kế và dựng mô hình ngôn ngữ ẩn.
+Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu định dạng lý tưởng để tiền huấn luyện BERT.
 
 <!--
 ### Generating the Next Sentence Prediction Task
 -->
 
-### *dịch đoạn phía trên*
+### Sinh tác vụ Dự đoán câu kế
 
 
 <!--
@@ -107,7 +116,8 @@ the `_get_next_sentence` function generates a training example
 for the binary classification task.
 -->
 
-*dịch đoạn phía trên*
+Dựa theo diễn tả của :label:`subsec_nsp`,
+hàm `_get_next_sentence` sinh một mẫu để huấn luyện cho tác vụ phân loại nhị phân.
 
 
 ```{.python .input  n=3}
@@ -130,7 +140,9 @@ Here `paragraph` is a list of sentences, where each sentence is a list of tokens
 The argument `max_len` specifies the maximum length of a BERT input sequence during pretraining.
 -->
 
-*dịch đoạn phía trên*
+Hàm sau đây sinh các mẫu huấn luyện cho việc dự đoán câu kế từ `paragraph` đầu vào thông qua gọi hàm `_get_next_sentence`.
+`paragraph` ở đây là một danh sách các câu mà mỗi câu là một danh sách các token.
+Đối số `max_len` đặc tả chiều dài cực đại của chuỗi đầu vào BERT trong suốt quá trình tiền huấn luyện.
 
 
 ```{.python .input  n=4}
@@ -461,10 +473,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * 
@@ -474,3 +486,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
+

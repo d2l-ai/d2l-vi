@@ -158,28 +158,28 @@ glove_6b50d.token_to_idx['beautiful'], glove_6b50d.idx_to_token[3367]
 ## Applying Pretrained Word Vectors
 -->
 
-## *dịch đoạn phía trên*
+## Áp dụng các Vector Từ đã được Tiền huấn luyện
 
 
 <!--
 Below, we demonstrate the application of pretrained word vectors, using GloVe as an example.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta minh họa việc áp dụng các vector từ đã được tiền huấn luyện sử dụng Glove làm ví dụ.
 
 
 <!--
 ### Finding Synonyms
 -->
 
-### *dịch đoạn phía trên*
+### Tìm các từ đồng nghĩa
 
 
 <!--
 Here, we re-implement the algorithm used to search for synonyms by cosine similarity introduced in :numref:`sec_word2vec`
 -->
 
-*dịch đoạn phía trên*
+Tại đây, ta triển khai lại giải thuật dùng để tìm các từ đồng nghĩa bằng phép tính cô-sin giữa hai vector như đã giới thiệu trong :numref:`sec_word2vec`
 
 
 <!--
@@ -187,7 +187,8 @@ In order to reuse the logic for seeking the $k$ nearest neighbors when seeking a
 we encapsulate this part of the logic separately in the `knn` ($k$-nearest neighbors) function.
 -->
 
-*dịch đoạn phía trên*
+Để sử dụng lại thuật toán cho việc tìm kiếm $k$ điểm kế cận gần nhất khi tìm kiếm các từ loại suy,
+ta đóng gói phần này một cách tách biệt trong hàm `knn` ($k$*-nearest neighbors*).
 
 
 ```{.python .input}
@@ -204,7 +205,7 @@ def knn(W, x, k):
 Then, we search for synonyms by pre-training the word vector instance `embed`.
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, ta tìm kiếm các từ đồng nghĩa nhờ tiền huấn luyện vector từ `embed`.
 
 
 ```{.python .input}
@@ -220,7 +221,8 @@ The dictionary of pretrained word vector instance `glove_6b50d` already created 
 Excluding input words and unknown words, we search for the three words that are the most similar in meaning to "chip".
 -->
 
-*dịch đoạn phía trên*
+Từ điển vector từ được tiền huấn luyện `glove_6b50d` tạo sẵn chứa 400,000 từ và một token chưa biết đặc biệt.
+Loại trừ những từ đầu vào và những từ chưa biết, ta tìm kiếm ba từ có nghĩa gần với từ "chip".
 
 
 ```{.python .input}
@@ -232,7 +234,7 @@ get_similar_tokens('chip', 3, glove_6b50d)
 Next, we search for the synonyms of "baby" and "beautiful".
 -->
 
-*dịch đoạn phía trên*
+Kế tiếp, ta tìm các từ gần nghĩa với "baby" và "beautiful".
 
 
 ```{.python .input}
@@ -371,7 +373,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 

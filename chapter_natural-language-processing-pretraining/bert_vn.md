@@ -178,8 +178,8 @@ All proposed in 2018, from context-sensitive ELMo to task-agnostic GPT and BERT,
 conceptually simple yet empirically powerful pretraining of deep representations for natural languages have revolutionized solutions to various natural language processing tasks.
 -->
 
-*dịch đoạn phía trên*
-
+BERT cải thiện tốt hơn kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên ở phần rộng hạng mục gồm i) phân loại văn bản đơn (cụ thể, phân tích cảm xúc), ii) phân loại cặp văn bản (cụ thể, suy diễn ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (cụ thể, nhận dạng thực thể có tên).
+Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện hiệu quả trên thực nghiệm cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng đối với các tác vụ đa dạng của xử lý ngôn ngữ tự nhiên.
 
 <!--
 In the rest of this chapter, we will dive into the pretraining of BERT.
@@ -187,7 +187,9 @@ When natural language processing applications are explained in :numref:`chap_nlp
 we will illustrate fine-tuning of BERT for downstream applications.
 -->
 
-*dịch đoạn phía trên*
+Ở phần còn lại của chương này, ta sẽ đào sâu vào tiền huấn luyện BERT.
+Khi những ứng dụng xử lý ngôn ngữ tự nhiên được giải thích trong :numref:`chap_nlp_app`,
+ta sẽ minh họa việc tinh chỉnh BERT cho các ứng dụng xuôi dòng. 
 
 
 ```{.python .input  n=1}
@@ -203,7 +205,7 @@ npx.set_np()
 ## Input Representation
 -->
 
-## *dịch đoạn phía trên*
+## Biểu diễn đầu vào
 :label:`subsec_bert_input_rep`
 
 
@@ -219,7 +221,13 @@ We will consistently distinguish the terminology "BERT input sequence" from othe
 For instance, one *BERT input sequence* may include either one *text sequence* or two *text sequences*.
 -->
 
-*dịch đoạn phía trên*
+Trong xử lý ngôn ngữ tự nhiên, một số nhiệm vụ (cụ thể, phân tích cảm xúc) lấy một câu văn làm đầu vào, 
+trong khi một số tác vụ khác (cụ thể, suy diễn ngôn ngữ tự nhiên), đầu vào là một cặp chuỗi văn bản.
+Chuỗi đầu vào BERT biểu diễn một cách tường minh cả văn bản đơn và văn bản kép.
+Ở tác vụ đầu, chuỗi đầu vào BERT là sự ghép nói ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
+Ở tác vụ thứ hai, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
+Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" khác với các kiểu "chuỗi" khác.
+Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả *một chuỗi văn bản* hoặc *hai chuỗi văn bản*.
 
 
 <!--
@@ -228,15 +236,16 @@ are added to the token embeddings of the first sequence and the second sequence,
 For single text inputs, only $\mathbf{e}_A$ is used.
 -->
 
-*dịch đoạn phía trên*
-
+Để phân biệt cặp văn bản, các embedding đoạn đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embedding token của chuỗi thứ nhất và chuỗi thứ hai.
+Đối với đầu vào là văn bản đơn, ta chỉ sử dụng $\mathbf{e}_A$.
 
 <!--
 The following `get_tokens_and_segments` takes either one sentence or two sentences as the input, 
 then returns tokens of the BERT input sequence and their corresponding segment IDs.
 -->
 
-*dịch đoạn phía trên*
+Hàm `get_tokens_and_segments` sau đây có thể lấy một hoặc hai câu làm đầu vào,
+rồi trả về các token của chuỗi đầu vào BERT và các ID đoạn tương ứng của chúng.
 
 
 ```{.python .input}
@@ -460,7 +469,11 @@ The forward inference of `mlm` returns prediction results `mlm_Y_hat` at all the
 For each prediction, the size of the result is equal to the vocabulary size.
 -->
 
-*dịch đoạn phía trên*
+Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
+Hãy nhớ lại rằng `encoded_X` từ lượt suy luận truyền xuôi của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
+Ta định nghĩa `mlm_positions` là 3 chỉ số để dự đoán ở trong bất kì chuỗi đầu vào BERT nào của `encoded_X`.
+Lượt suy luận xuôi của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí có mặt nạ `mlm_positions` của `encoded_X`.
+Với mỗi dự đoán, kích thước của kết quả bằng với kích thước bộ từ vựng.
 
 
 ```{.python .input  n=5}
@@ -477,7 +490,8 @@ With the ground truth labels `mlm_Y` of the predicted tokens `mlm_Y_hat` under m
 we can calculate the cross entropy loss of the masked language model task in BERT pretraining.
 -->
 
-*dịch đoạn phía trên*
+Với nhãn gốc `mlm_Y` của token `mlm_Y_hat` có mặt nạ được dự đoán,
+ta có thể tính mất mát entropy chéo của tác vụ mô hình hoá ngôn ngữ có mặt nạ trong quá trình tiền huấn luyện BERT.
 
 
 ```{.python .input  n=6}
@@ -492,7 +506,7 @@ mlm_l.shape
 ### Next Sentence Prediction
 -->
 
-### *dịch đoạn phía trên*
+### Dự đoán Câu tiếp theo
 :label:`subsec_nsp`
 
 
@@ -503,7 +517,10 @@ When generating sentence pairs for pretraining, for half of the time they are in
 while for the other half of the time the second sentence is randomly sampled from the corpus with the label "False".
 -->
 
-*dịch đoạn phía trên*
+Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ, nhưng nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT sử dụng tới tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
+Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các câu kế tiếp được gán nhãn "Đúng" (_True_); 
+và trong nửa còn lại, câu thứ hai được lấy mẫu ngẫu nhiên từ kho ngữ liệu và cặp này được gán nhãn "Sai" (_False_).
 
 
 <!--
@@ -512,7 +529,9 @@ Due to self-attention in the Transformer encoder, the BERT representation of the
 Hence, the output layer (`self.output`) of the MLP classifier takes `X` as the input, where `X` is the output of the MLP hidden layer whose input is the encoded “&lt;cls&gt;” token.
 -->
 
-*dịch đoạn phía trên*
+Lớp `NextSentencePred` dưới đây sử dụng MLP có một tầng ẩn để dự đoán câu thứ hai có phải là câu kế tiếp của câu thứ nhất trong chuỗi đầu vào BERT hay không.
+Do cơ chế tự tập trung trong bộ mã hoá Transformer, biểu diễn BERT cho token đặc biệt “&lt;cls&gt;” mã hoá cả hai câu đầu vào.
+Vì vậy, tầng đầu ra (`self.output`) của bộ phân loại MLP nhận `X` làm đầu vào, trong đó `X` là đầu ra của tầng ẩn MLP mà đầu vào của nó được mã hoá bằng token “&lt;cls&gt;”.
 
 
 ```{.python .input  n=7}
@@ -533,7 +552,8 @@ We can see that the forward inference of an `NextSentencePred` instance
 returns binary predictions for each BERT input sequence.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể thấy lượt suy luận xuôi của thực thể `NextSentencePred`
+trả về dự đoán nhị phân cho mỗi chuỗi đầu vào BERT.
 
 
 ```{.python .input  n=8}
@@ -548,7 +568,7 @@ nsp_Y_hat.shape
 The cross-entropy loss of the 2 binary classifications can also be computed.
 -->
 
-*dịch đoạn phía trên*
+Mất mát entropy chéo của 2 tác vụ phân loại nhị phân có thể được tính như sau.
 
 
 ```{.python .input  n=9}
@@ -564,7 +584,9 @@ The original BERT has been pretrained on the concatenation of BookCorpus :cite:`
 These two text corpora are huge: they have 800 million words and 2.5 billion words, respectively.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý là tất cả nhãn đầu vào trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức dán nhãn thủ công.
+Phiên bản gốc của BERT được tiền huấn luyện trên cả hai kho ngữ liệu BookCorpus :cite:`Zhu.Kiros.Zemel.ea.2015` và Wikipedia tiếng Anh.
+Hai kho ngữ liệu văn bản này cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -574,7 +596,7 @@ These two text corpora are huge: they have 800 million words and 2.5 billion wor
 ## Putting All Things Together
 -->
 
-## *dịch đoạn phía trên*
+## Kết hợp Tất cả lại
 
 
 <!--
@@ -583,7 +605,9 @@ Now we can define the `BERTModel` class by instantiating the three classes `BERT
 The forward inference returns the encoded BERT representations `encoded_X`, predictions of masked language modeling `mlm_Y_hat`, and next sentence predictions `nsp_Y_hat`.
 -->
 
-*dịch đoạn phía trên*
+Khi tiền huấn luyện BERT, hàm mất mát cuối cùng là tổ hợp tuyến tính của cả hai hàm mất mát cho tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự doán câu tiếp theo.
+Bây giờ ta có thể định nghĩa lớp `BERTModel` bằng cách khởi tạo ba lớp `BERTEncoder`, `MaskLM`, và `NextSentencePred`.
+Lượt suy luận xuôi trả về biểu diễn BERT được mã hoá `encoded_X`, dự đoán `mlm_Y_hat` của tác vụ mô hình hoá ngôn ngữ có mặt nạ, và dự đoán câu tiếp theo `nsp_Y_hat`.
 
 
 ```{.python .input  n=10}
@@ -627,7 +651,18 @@ while GPT is task-agnostic but encodes context left-to-right.
 The former is able to encode bidirectional context for representing words, while the later explicitly models the logical relationship between text pairs.
 -->
 
-*dịch đoạn phía trên*
+
+* Các mô hình embedding từ như word2vec và GloVe có tính chất độc lập với ngữ cảnh.
+Hai mô hình này gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh xung quanh của từ đó là gì (nếu có).
+Rất khó để các mô hình này xử lý tốt các trường hợp phức tạp về ngữ nghĩa hay đa nghĩa trong các ngôn ngữ tự nhiên.
+* Đối với các biểu diễn từ nhạy ngữ cảnh như ELMo và GPT, biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
+* ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng kiến ​​trúc đặc thù cho tác vụ
+(tuy nhiên, thực tế không dễ để tạo ra một kiến ​​trúc đặc thù cho mọi tác vụ xử lý ngôn ngữ tự nhiên);
+trong khi đó GPT không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải (*left-to-right*).
+* BERT kết hợp những gì tốt nhất của cả hai mô hình kể trên: nó mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
+* Các embedding của chuỗi đầu vào BERT là tổng các embedding cho token, embedding đoạn và embedding vị trí.
+* Quá trình tiền huấn luyện BERT gồm có hai tác vụ đó là: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
+Tác vụ trước có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 
 
 ## Bài tập
@@ -640,7 +675,11 @@ and the fully-connected layer in `MaskLM` both use the Gaussian error linear uni
 Research into the difference between GELU and ReLU.
 -->
 
-*dịch đoạn phía trên*
+1. Tại sao BERT gặt hái được thành công?
+2. Khi tất cả các điểm còn lại là tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi nhiều hơn hay ít hơn số bước tiền huấn luyện để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
+3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
+và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
+Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -668,7 +707,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Nguyền Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
@@ -677,7 +716,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Văn Quang

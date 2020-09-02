@@ -13,7 +13,10 @@ Given rich text in social media, chat apps, emails, product reviews, news articl
 it becomes vital to enable computers to understand them to offer assistance or make decisions based on human languages.
 -->
 
-*dịch tiêu đề phía trên*
+Con người có nhu cầu giao tiếp.
+Chính từ nhu cầu cơ bản này, một lượng lớn dữ liệu văn bản được tạo ra mỗi ngày.
+Với một lượng dữ liệu văn bản đa dạng trên mạng xã hội, ứng dụng trò chuyện, email, đánh giá sản phẩm, tài liệu nghiên cứu, và sách báo,
+việc giúp máy tính hiểu được những dữ liệu này trở nên quan trọng, nhằm đưa ra hỗ trợ hoặc đưa ra quyết định dựa trên ngôn ngữ của con người.
 
 
 <!--
@@ -22,7 +25,9 @@ In practice, it is very common to use natural language processing techniques to 
 such as language models in :numref:`sec_language_model` and machine translation models in :numref:`sec_machine_translation`.
 -->
 
-*dịch tiêu đề phía trên*
+Xử lý ngôn ngữ tự nhiên nghiên cứu sự tương tác bằng ngôn ngữ tự nhiên giữa máy tính và con người.
+Trong thực tế, việc sử dụng các kỹ thuật xử lý ngôn ngữ tự nhiên để xử lý và phân tích dữ liệu văn bản (ngôn ngữ tự nhiên của con người) rất phổ biến,
+chẳng hạn như các mô hình ngôn ngữ trong :numref:`sec_language_model` hay các mô hình dịch máy trong :numref:`sec_machine_translation`.
 
 
 <!--
@@ -35,14 +40,21 @@ Among them is BERT, a much deeper model based on the Transformer encoder.
 In this chapter, we will focus on how to pretrain such representations for text, as highlighted in :numref:`fig_nlp-map-pretrain`.
 -->
 
-*dịch tiêu đề phía trên*
+
+Để hiểu dữ liệu văn bản, ta có thể bắt đầu với cách biểu diễn loại dữ liệu này, chẳng hạn coi mỗi từ hay từ con như một token riêng lẻ.
+Như chúng ta sẽ tìm hiểu trong chương này, biểu diễn của mỗi token có thể được tiền huấn luyện trên một kho ngữ liệu lớn, sử dụng các mô hình word2vec, GloVe, hay embedding cho từ con.
+Sau khi tiền huấn luyện, biểu diễn của mỗi token có thể là một vector. Tuy nhiên, biểu diễn này vẫn không đổi dù cho ngữ cảnh xung quanh bất kể là gì.
+Ví dụ, biểu diễn vector của từ "bank" là giống nhau trong câu "go to the bank to deposit some money" (ra *ngân hàng* để gửi tiền) và "go to the bank to sit down" (ra *bờ hồ* ngồi hóng mát).
+Do đó, nhiều mô hình tiền huấn luyện gần đây điều chỉnh biểu diễn của cùng một token với các ngữ cảnh khác nhau.
+Trong số đó có BERT, một mô hình sâu hơn rất nhiều dựa trên bộ mã hóa Transformer.
+Trong chương này, ta sẽ tập trung vào cách tiền huấn luyện các biểu diễn như vậy cho văn bản, như được mô tả trong :numref:`fig_nlp-map-Pretrain`.
 
 
 <!--
 ![Pretrained text representations can be fed to various deep learning architectures for different downstream natural language processing applications. This chapter focuses on the upstream text representation pretraining.](../img/nlp-map-pretrain.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-pretrain.svg)
+![Các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu khác nhau cho các ứng dụng xử lý ngôn ngữ tự nhiên hạ nguồn khác nhau. Chương này tập trung vào cách tiền huấn luyện biểu diễn văn bản ngược dòng (_upstream_).](../img/nlp-map-pretrain.svg)
 :label:`fig_nlp-map-pretrain`
 
 
@@ -52,7 +64,9 @@ a variety of deep learning architectures for different downstream natural langua
 We will cover them in :numref:`chap_nlp_app`.
 -->
 
-*dịch tiêu đề phía trên*
+Như mô tả trong :numref:`fig_nlp-map-Pretrain`, các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào
+những kiến trúc học sâu cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau.
+Chúng tôi sẽ trình bày các phần này trong :numref:`chap_nlp_app`.
 
 
 ```toc
@@ -79,4 +93,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-* 
+* Nguyễn Văn Quang
