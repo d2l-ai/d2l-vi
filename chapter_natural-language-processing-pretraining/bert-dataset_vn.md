@@ -372,7 +372,7 @@ and generate pretraining examples from it.
 -->
 
 Bằng cách sử dụng hàm `_read_wiki` và lớp `_WikiTextDataset`, 
-chúng tôi định nghĩa hàm `load_data_wiki` để tải xuống bộ dữ liệu WikiText-2 và tạo mẫu dữ liệu tiền huấn luyện từ nó.
+ta định nghĩa hàm `load_data_wiki` dưới đây để tải xuống bộ dữ liệu WikiText-2 và tạo mẫu dữ liệu tiền huấn luyện.
 
 
 ```{.python .input  n=9}
