@@ -362,9 +362,9 @@ Next, we will use these representations to compute the loss function for pretrai
 The pretraining is composed of the following two tasks: masked language modeling and next sentence prediction.
 -->
 
-Suy luận truyền xuôi của `BERTEncoder` biểu diễn cho BERT mỗi token của văn bản đầu vào và các token đặc biệt được thêm vào “&lt;cls&gt;” and “&lt;seq&gt;”.
-Kế tiếp, ta sẽ sử dụng các biểu diễn này để tính toán hàm mất mát cho BERT tiền huấn luyện.
-Tiền huấn luyện được tạo nên bởi hai tác vụ: mô hình ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
+Suy luận truyền xuôi của `BERTEncoder` biểu diễn BERT của mỗi token của văn bản đầu vào và các token đặc biệt được thêm vào “&lt;cls&gt;” và “&lt;seq&gt;”.
+Kế tiếp, ta sẽ sử dụng các biểu diễn này để tính toán hàm mất mát khi tiền huấn luyện BERT.
+Tiền huấn luyện gồm hai tác vụ: mô hình ngôn ngữ có mặt nạ (*masked language modeling*) và dự đoán câu tiếp theo.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
