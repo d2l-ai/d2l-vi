@@ -120,7 +120,7 @@ for x, y in zip(train_data[0][:3], train_data[1][:3]):
 We use a word as a token, and then create a dictionary based on the training dataset.
 -->
 
-Ta coi mỗi từ là một token, và tạo một từ điển dự trên tập dữ liệu huấn luyện.
+Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện.
 
 
 ```{.python .input  n=4}
