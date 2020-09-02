@@ -5,7 +5,7 @@
 # Sentiment Analysis and the Dataset
 -->
 
-# Phân tích Cảm xúc và Dữ liệu
+# Tác vụ Phân tích Cảm xúc và Bộ Dữ liệu
 :label:`sec_sentiment`
 
 
