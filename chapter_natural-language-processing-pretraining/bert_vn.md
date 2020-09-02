@@ -369,7 +369,7 @@ encoded_X.shape
 ## Pretraining Tasks
 -->
 
-## *dịch đoạn phía trên*
+## Những tác vụ tiền huấn luyện
 :label:`subsec_bert_pretraining_tasks`
 
 
@@ -379,7 +379,9 @@ Next, we will use these representations to compute the loss function for pretrai
 The pretraining is composed of the following two tasks: masked language modeling and next sentence prediction.
 -->
 
-*dịch đoạn phía trên*
+Suy luận truyền xuôi của `BERTEncoder` biểu diễn BERT của mỗi token của văn bản đầu vào và các token đặc biệt được thêm vào “&lt;cls&gt;” và “&lt;seq&gt;”.
+Kế tiếp, ta sẽ sử dụng các biểu diễn này để tính toán hàm mất mát khi tiền huấn luyện BERT.
+Tiền huấn luyện gồm hai tác vụ: mô hình ngôn ngữ có mặt nạ (*masked language modeling*) và dự đoán câu tiếp theo.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -389,7 +391,7 @@ The pretraining is composed of the following two tasks: masked language modeling
 ### Masked Language Modeling
 -->
 
-### *dịch đoạn phía trên*
+### Mô hình ngôn ngữ có mặt nạ
 :label:`subsec_mlm`
 
 
@@ -399,8 +401,9 @@ To encode context bidirectionally for representing each token, BERT randomly mas
 This task is referred to as a *masked language model*.
 -->
 
-*dịch đoạn phía trên*
-
+Như được mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
+Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
+Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
 
 <!--
 In this pretraining task, 15% of tokens will be selected at random as the masked tokens for prediction.
@@ -410,7 +413,10 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 (e.g., "great" is selected to be masked and predicted in "this movie is great"), in the input it will be replaced with:
 -->
 
-*dịch đoạn phía trên*
+Trong tác vụ tiền huấn luyện này, 15% các token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
+Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản đó là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
+Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
+Để tránh xảy ra sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
 <!--
@@ -419,7 +425,9 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 * the unchanged label token for 10% of the time (e.g., "this movie is great" becomes "this movie is great").
 -->
 
-*dịch đoạn phía trên*
+* một token “&lt;mask&gt;” đặc biệt, xác suất 80% (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
+* một token ngẫu nhiên, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is drink");
+* chính token đó, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is great").
 
 
 <!--
@@ -427,7 +435,8 @@ Note that for 10% of 15% time a random token is inserted.
 This occasional noise encourages BERT to be less biased towards the masked token (especially when the label token remains unchanged) in its bidirectional context encoding.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng 10% của 15% token mặt nạ được chèn vào ngẫu nhiên.
+Nhiễu không thường xuyên này giúp BERT bớt đi thiên kiến với token có mặt nạ (đặc biệt khi token nhãn không đổi) trong giải mã ngữ cảnh hai chiều.
 
 
 <!--
@@ -437,7 +446,10 @@ In forward inference, it takes two inputs: the encoded result of `BERTEncoder` a
 The output is the prediction results at these positions.
 -->
 
-*dịch đoạn phía trên*
+Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn tuyện BERT.
+Việc dự đoán này sử dụng một Perceptron một-tầng-ẩn (`self.mlp`).
+Suy luận truyền xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
+Đầu ra là kết quả dự đoán tại các vị trí này.
 
 
 ```{.python .input  n=4}
@@ -722,7 +734,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 5 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 6 -->
 * Nguyễn Văn Quang
