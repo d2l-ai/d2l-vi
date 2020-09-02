@@ -436,7 +436,7 @@ invoking `nltk.tokenize.sent_tokenize(sentences)` will return a list of two sent
 
 1. Để đơn giản, dấu chấm được dùng làm dấu phân cách duy nhất để tách các câu.
 Hãy thử các kỹ thuật tách câu khác, ví dụ như công cụ spaCy và NLTK. Lấy NLTK làm ví dụ.
-Bạn cần cài đặt NLTK trước:`pip install nltk`.
+Bạn cần cài đặt NLTK trước: `pip install nltk`.
 Trong mã nguồn, câu lệnh đầu tiên là `import nltk`. Sau đó, tải xuống bộ token hoá câu Punkt (_Punkt sentence tokenizer_): `nltk.download('punkt')`.
 Để tách các câu, ví dụ `sentences = 'This is great ! Why not ?'`,
 việc gọi `nltk.tokenize.sent_tokenize(sentences)` sẽ trả về một danh sách gồm hai chuỗi câu là `['This is great !', 'Why not ?']`.
