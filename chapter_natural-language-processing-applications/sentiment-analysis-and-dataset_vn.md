@@ -30,7 +30,7 @@ or analyze user sentiments about market conditions and use it to predict future 
 
 Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
 sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
-Bài toán ở đây cũng có thể gọi là phân tích cảm xúc và có một loạt các ứng dụng.
+Bài toán này cũng có thể gọi là phân tích cảm xúc và có rất nhiều ứng dụng.
 Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê về độ hài lòng của khách hàng, hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
