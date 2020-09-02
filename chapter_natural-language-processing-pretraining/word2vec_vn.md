@@ -401,7 +401,7 @@ The CBOW model assumes that the central target word is generated based on the co
 -->
 
 * Vector từ là một vector được sử dụng để biểu diễn một từ.
-Kỹ thuật ánh xạ từ sang vector các số thực còn được gọi là kỹ thuật embedding từ.
+Kỹ thuật ánh xạ từ sang vector các số thực còn được gọi là kỹ thuật embedding từ. 
 * Word2vec bao gồm cả mô hình túi từ liên tục (CBOW) và mô hình skip-gam.
 Mô hình skip-gam giả định rằng các từ ngữ cảnh được sinh ra dựa trên từ đích trung tâm.
 Mô hình CBOW giả định rằng từ đích trung tâm được sinh ra dựa trên các từ ngữ cảnh.
@@ -418,7 +418,7 @@ What is the relationship between the inner product of two word vectors and the c
 For a pair of words with close semantical meaning, why it is likely for their word vector cosine similarity to be high?
 -->
 
-1. Độ phức tạp tính toán của mỗi gradient là gì? Nếu từ điển chứa một lượng lớn các từ, điều này sẽ gây ra vấn đề gì?
+1. Độ phức tạp tính toán của mỗi gradient là gì? Nếu từ điển chứa một lượng lớn các từ, điều này sẽ gây ra vấn đề gì? 
 2. Có một số cụm từ cố định trong tiếng Anh bao gồm nhiều từ, chẳng hạn như "new york".
 Bạn sẽ huấn luyện các vector từ của chúng như thế nào? Gợi ý: Xem phần 4 trong bài báo Word2vec[2].
 3. Sử dụng mô hình skip-gam làm ví dụ để tìm hiểu về thiết kế của mô hình word2vec.
