@@ -55,7 +55,7 @@ This dataset is divided into two datasets for training and testing purposes, eac
 In each dataset, the number of comments labeled as "positive" and "negative" is equal.
 -->
 
-Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh ](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
+Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
 
 
 <!--
