@@ -176,7 +176,7 @@ Here, any timestep that is less than 1 or greater than $T$ can be ignored.
 -->
 
 
-Ở đây, bất kỳ bước thời gian nào nhỏ hơn 1 hoặc lớn hơn $T$ đều có thể bỏ qua.
+Ở đây, bất kỳ bước thời gian nào nhỏ hơn 1 hoặc lớn hơn $T$ đều có thể bỏ qua. 
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
