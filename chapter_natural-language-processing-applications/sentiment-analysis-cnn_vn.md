@@ -281,7 +281,16 @@ Finally, we use a fully connected layer to transform the 9-dimensional vector
 into a 2-dimensional output: positive sentiment and negative sentiment predictions.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_conv1d_textcnn` là một ví dụ minh họa cho textCNN.
+Đầu vào ở đây là một câu gồm 11 từ, với mỗi từ được biểu diễn bằng một vector từ 6 chiều.
+Vì vậy, câu đầu vào có độ rộng là 11 và số kênh đầu vào là 6
+Chúng ta giả sử rằng có 2 hạt nhân của tích chập một chiều có độ rộng là 2 và 4, tương ứng với số kênh đầu ra là 4 và 5.
+Cho nên sau phép tính tích chập một chiều, độ rộng của đầu ra có 4 kênh là $11-2+1=10$,
+trong khi đó độ rộng của đầu ra còn lại 5 kênh là $11-4+1=8$.
+Thậm chí độ rộng của mỗi kênh có khác nhau đi nữa, chúng ta vẫn có thể thực hiện gộp cực đại theo thời gian
+cho mỗi kênh và nối đầu ra gộp của 9 kênh thành một vector 9 chiều.
+Cuối cùng, chúng ta dùng một tầng kết nối đầy đủ để biến đổi vector 9 chiều đó
+thành một đầu ra có 2 chiều: sự dự đoán cảm xúc tích cực hoặc cảm xúc tiêu cực.
 
 
 <!--
@@ -290,7 +299,9 @@ Compared with the previous section, in addition to replacing the recurrent neura
 here we use two embedding layers, one with a fixed weight and another that participates in training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo chúng ta bắt đầu lập trình mô hình textCNN.
+So với phần trước, ngoài việc thay mạng nơ-ron hồi tiếp bằng một tầng tích chập một chiều,
+ở đây chúng ta dùng 2 tầng embedding, một được giữ trọng số cố định và cái còn lại tham gia quá trình huấn luyện.
 
 
 ```{.python .input  n=5}
@@ -338,7 +349,7 @@ class TextCNN(nn.Block):
 Create a TextCNN instance. It has 3 convolutional layers with kernel widths of 3, 4, and 5, all with 100 output channels.
 -->
 
-*dịch đoạn phía trên*
+Tạo một thực thể TextCNN có 3 tầng tích chập với hạt nhân là 3, 4 và 5, tất cả đều có 100 kênh đầu ra.
 
 
 ```{.python .input  n=6}
@@ -353,7 +364,7 @@ net.initialize(init.Xavier(), ctx=devices)
 ### Load Pre-trained Word Vectors
 -->
 
-### *dịch tiêu đề trên*
+### Tải lên Vector Từ đã được Tiền huấn luyện
 
 
 <!--
@@ -361,7 +372,8 @@ As in the previous section, load pre-trained 100-dimensional GloVe word vectors 
 Here, the former participates in training while the latter has a fixed weight.
 -->
 
-*dịch đoạn phía trên*
+Tương tự phần trước, tải lên GloVe 100 chiều đã được tiền huấn luyện và khởi tạo các tầng embedding `embedding` và `constant_embedding`.
+Ở đây, cái phía trước sẽ tham gia quá trình huấn luyện trong khi cái sau có trọng số cố định.
 
 
 ```{.python .input  n=7}
@@ -466,7 +478,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Trương Lộc Phát
 
 <!-- Phần 5 -->
 * 
