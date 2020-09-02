@@ -144,7 +144,8 @@ Because the reviews have different lengths, so they cannot be directly combined 
 Here we fix the length of each comment to 500 by truncating or adding "&lt;unk&gt;" indices.
 -->
 
-Bởi vì mỗi câu đánh gía có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibach một cách trực tiếp. Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;".
+Bởi vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibatch một cách trực tiếp.
+Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;".
 
 
 ```{.python .input  n=5}
