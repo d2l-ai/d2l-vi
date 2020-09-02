@@ -393,7 +393,7 @@ Setting the batch size to 512 and the maximum length of a BERT input sequence to
 Note that in each BERT input sequence, $10$ ($64 \times 0.15$) positions are predicted for the masked language modeling task.
 -->
 
-Đặt kích thước batch là 512 và chiều dài tối đa của chuỗi đầu vào BERT là 64, chúng tôi in ra kích thước của một minibatch của mẫu dữ liệu tiền huấn luyện.
+Đặt kích thước batch là 512 và chiều dài tối đa của chuỗi đầu vào BERT là 64, ta in ra kích thước một minibatch dữ liệu tiền huấn luyện.
 Lưu ý rằng trong mỗi chuỗi đầu vào BERT, $10$ ($64 \times 0.15$) vị trí được dự đoán cho tác vụ mô hình hóa ngôn ngữ có mặt nạ.
 
 
