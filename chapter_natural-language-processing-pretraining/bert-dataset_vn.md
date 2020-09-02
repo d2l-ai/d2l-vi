@@ -320,7 +320,7 @@ For simplicity, we use the `d2l.tokenize` function for tokenization.
 Infrequent tokens that appear less than five times are filtered out.
 -->
 
-Mô hình BERT ban đầu sử dụng WordPiece embedding có kích thước bộ từ vựng là 30,000 :cite:`Wu.Schuster.Chen.ea.2016`.
+Mô hình BERT ban đầu sử dụng embedding WordPiece có kích thước bộ từ vựng là 30,000 :cite:`Wu.Schuster.Chen.ea.2016`.
 Phương pháp để tách token của WordPiece là một phiên bản của thuật toán mã hóa cặp byte ban đầu :numref:`subsec_Byte_Pair_Encoding` với một ít chỉnh sửa.
 Để cho đơn giản, chúng tôi sử dụng hàm `d2l.tokenize` để tách từ.
 Những token xuất hiện ít hơn năm lần được loại đi.
