@@ -5,7 +5,7 @@
 # Sentiment Analysis and the Dataset
 -->
 
-# *dịch tiêu đề trên*
+# Tác vụ Phân tích Cảm xúc và Bộ Dữ liệu
 :label:`sec_sentiment`
 
 
@@ -15,7 +15,9 @@ It is similar to the image classification, the most frequently used application 
 The only difference is that, rather than an image, text classification's example is a text sentence.
 -->
 
-*dịch đoạn phía trên*
+Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài thay đổi thành một hạng mục tương ứng của văn bản đó.
+Tác vụ này khá giống với phân loại ảnh, ứng dụng phổ biến nhất được giới thiệu trong cuốn sách này, ví dụ, :numref:`sec_naive_bayes`.  
+Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh.
 
 
 <!--
@@ -26,7 +28,10 @@ For example, we can analyze user reviews of products to obtain user satisfaction
 or analyze user sentiments about market conditions and use it to predict future trends.
 -->
 
-*dịch đoạn phía trên*
+Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
+sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
+Bài toán này cũng có thể gọi là phân tích cảm xúc và có rất nhiều ứng dụng.
+Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê về độ hài lòng của khách hàng, hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
 ```{.python .input  n=1}
@@ -41,7 +46,7 @@ npx.set_np()
 ## The Sentiment Analysis Dataset
 -->
 
-## *dịch tiêu đề trên*
+## Bộ Dữ liệu Phân tích Cảm xúc
 
 
 <!--
@@ -50,21 +55,22 @@ This dataset is divided into two datasets for training and testing purposes, eac
 In each dataset, the number of comments labeled as "positive" and "negative" is equal.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
+Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb.
+Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau.
 
 <!--
 ###  Reading the Dataset
 -->
 
-### *dịch tiêu đề trên*
+### Đọc Dữ liệu
 
 
 <!--
 We first download this dataset to the "../data" path and extract it to "../data/aclImdb".
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta tải dữ liệu về thư mục "../data" và giải nén dữ liệu vào thư mục "../data/aclImdb".
 
 
 ```{.python .input  n=2}
@@ -82,7 +88,8 @@ Next, read the training and test datasets.
 Each example is a review and its corresponding label: 1 indicates "positive" and 0 indicates "negative".
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, ta đọc dữ liệu huấn luyện và dữ liệu kiểm tra.
+Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 cho "tích cực", và 0 cho "tiêu cực".
 
 
 ```{.python .input  n=3}
@@ -258,7 +265,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
