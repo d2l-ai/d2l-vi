@@ -56,7 +56,8 @@ In each dataset, the number of comments labeled as "positive" and "negative" is 
 -->
 
 Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
-
+Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb.
+Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau.
 
 <!--
 ###  Reading the Dataset
