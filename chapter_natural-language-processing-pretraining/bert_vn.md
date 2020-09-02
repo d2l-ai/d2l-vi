@@ -385,8 +385,8 @@ This task is referred to as a *masked language model*.
 -->
 
 Như được mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
-Để giải mã ngữ cảnh hai chiều cho việc biểu diễn mỗi token, BERT ngẫu nhiên mặt nạ các token và sử dụng các token ấy từ ngữ cảnh hai chiều để dự đoán token có mặt nạ.
-Tác vụ này ám chỉ tới *mô hình ngôn ngữ có mặt nạ*.
+Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
+Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
 
 <!--
 In this pretraining task, 15% of tokens will be selected at random as the masked tokens for prediction.
@@ -396,10 +396,10 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 (e.g., "great" is selected to be masked and predicted in "this movie is great"), in the input it will be replaced with:
 -->
 
-Trong tác vụ tiền huấn luyện này, 15% các token sẽ được lựa chọn ngẫu nhiên để làm các token có mặt nạ cho việc dự đoán.
-Để dự đoán một token có mặt nạ mà không ăn gian bởi việc sử dụng nhãn, một hướng tiếp cận thẳng đó là luôn luôn thay thế nó với một token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
+Trong tác vụ tiền huấn luyện này, 15% các token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
+Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản đó là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
 Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
-Để tránh xảy ra sự không tương đồng giữa tiền huấn luyện và tinh chỉnh, nếu một token được gắn mặt nạ dùng cho đự đoán (ví dụ, "great" được chọn để gắn mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
+Để tránh xảy ra sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
 <!--
@@ -408,9 +408,9 @@ Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao g
 * the unchanged label token for 10% of the time (e.g., "this movie is great" becomes "this movie is great").
 -->
 
-* một token “&lt;mask&gt;” đặc biệt cho 80% thời gian (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
-* một token ngẫu nhiên cho 10% thời gian (ví dụ, "this movie is great" trở thành "this movie is drink");
-* một token nhãn không thay đổi cho 10% thời gian (ví dụ, "this movie is great" trở thành "this movie is great").
+* một token “&lt;mask&gt;” đặc biệt, xác suất 80% (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
+* một token ngẫu nhiên, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is drink");
+* chính token đó, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is great").
 
 
 <!--
@@ -418,8 +418,8 @@ Note that for 10% of 15% time a random token is inserted.
 This occasional noise encourages BERT to be less biased towards the masked token (especially when the label token remains unchanged) in its bidirectional context encoding.
 -->
 
-Lưu ý rằng cho 10% của 15% thời gian một token ngẫu nhiên được chèn vào.
-Nhiễu trừ bị này khuyến khích BERT bớt đi thiên kiến với token có mặt nạ (đặc biệt khi token nhãn duy trì trạng thái không đổi) trong giải mã ngữ cảnh hai chiều.
+Lưu ý rằng 10% của 15% token mặt nạ được chèn vào ngẫu nhiên.
+Nhiễu không thường xuyên này giúp BERT bớt đi thiên kiến với token có mặt nạ (đặc biệt khi token nhãn không đổi) trong giải mã ngữ cảnh hai chiều.
 
 
 <!--
@@ -429,9 +429,9 @@ In forward inference, it takes two inputs: the encoded result of `BERTEncoder` a
 The output is the prediction results at these positions.
 -->
 
-Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ của tiền huấn tuyện BERT.
-Việc dự đoán này sử dụng một MLP một-tầng-ẩn (`self.mlp`).
-Trong suy luận truyền xuôi, nó nhận vào hai đầu vào: một kết quả được mã hóa của `BERTEncoder` và token vị trí cho việc dự đoán.
+Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn tuyện BERT.
+Việc dự đoán này sử dụng một Perceptron một-tầng-ẩn (`self.mlp`).
+Suy luận truyền xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
 Đầu ra là kết quả dự đoán tại các vị trí này.
 
 
