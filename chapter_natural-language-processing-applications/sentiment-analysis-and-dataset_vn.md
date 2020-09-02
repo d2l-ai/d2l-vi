@@ -113,14 +113,14 @@ for x, y in zip(train_data[0][:3], train_data[1][:3]):
 ### Tokenization and Vocabulary
 -->
 
-### *dịch tiêu đề trên*
+### Token hoá và Bộ từ Vựng
 
 
 <!--
 We use a word as a token, and then create a dictionary based on the training dataset.
 -->
 
-*dịch đoạn phía trên*
+Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện.
 
 
 ```{.python .input  n=4}
@@ -136,7 +136,7 @@ d2l.plt.hist([len(line) for line in train_tokens], bins=range(0, 1000, 50));
 ### Padding to the Same Length
 -->
 
-### *dịch tiêu đề trên*
+### Đệm để cùng độ dài
 
 
 <!--
@@ -144,7 +144,8 @@ Because the reviews have different lengths, so they cannot be directly combined 
 Here we fix the length of each comment to 500 by truncating or adding "&lt;unk&gt;" indices.
 -->
 
-*dịch đoạn phía trên*
+Bởi vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibatch một cách trực tiếp.
+Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;".
 
 
 ```{.python .input  n=5}
@@ -159,7 +160,7 @@ train_features.shape
 ### Creating the Data Iterator
 -->
 
-### *dịch tiêu đề trên*
+### Tạo Iterator cho Dữ liệu
 
 
 <!--
@@ -167,7 +168,8 @@ Now, we will create a data iterator.
 Each iteration will return a minibatch of data.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ tạo một iterator cho dữ liệu.
+Mỗi vòng lặp sẽ trả về một minibatch dữ liệu.
 
 
 ```{.python .input  n=6}
@@ -184,14 +186,14 @@ for X, y in train_iter:
 ## Putting All Things Together
 -->
 
-## *dịch tiêu đề trên*
+## Kết hợp Tất cả Lại
 
 
 <!--
 Last, we will save a function `load_data_imdb` into `d2l`, which returns the vocabulary and data iterators.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta lưu hàm `load_data_imdb` vào `d2l`, hàm này trả về bộ từ vựng và các iterator của dữ liệu.
 
 
 ```{.python .input  n=7}
@@ -221,7 +223,9 @@ def load_data_imdb(batch_size, num_steps=500):
 Then we pad the text sequence for short reviews and create a data iterator.
 -->
 
-*dịch đoạn phía trên*
+* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục.
+* Để phân loại cảm xúc văn bản, ta tải dữ liệu IMDb và token hóa các từ trong dữ liệu.
+Sau đó, ta thêm đệm vào chuỗi văn bản cho các câu đánh giá ngắn và tạo một iterator dữ liệu.
 
 
 ## Bài tập
@@ -231,7 +235,8 @@ Discover a different natural language dataset (such as [Amazon reviews](https://
 and build a similar data_loader function as `load_data_imdb`.
 -->
 
-*dịch đoạn phía trên*
+Hãy khám phá một tập dữ liệu ngôn ngữ tự nhiên khác (ví dụ tập dữ liệu [Đánh giá Amazon](https://snap.stanford.edu/data/web-Amazon.html)) 
+và xây dựng một hàm `data_loader` tương tự như `load_data_imdb`.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -256,4 +261,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
