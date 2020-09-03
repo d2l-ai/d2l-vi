@@ -573,4 +573,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 * Phạm Đăng Khoa
 * Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
