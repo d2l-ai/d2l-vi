@@ -115,7 +115,7 @@ Therefore, given two tensors of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the s
 Ta có thể nhân các ma trận trong hai minibatch bằng toán tử nhân minibatch `batch_dot`.
 Giả sử batch đầu tiên chứa $n$ ma trận $\mathbf{X}_1, \ldots, \mathbf{X}_n$ có kích thước là $a\times b$, 
 và batch thứ hai chứa $n$ ma trận $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ có kích thước là $b\times c$.
-Đầu ra của toán tử nhân minibatch trên hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
+Đầu ra của toán tử nhân ma trận trên hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
 Do đó, với hai tensor có kích thước là ($n$, $a$, $b$) và ($n$, $b$, $c$), kích thước đầu ra của toán tử nhân minibatch là ($n$, $a$, $c$).
 
 
@@ -425,4 +425,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
