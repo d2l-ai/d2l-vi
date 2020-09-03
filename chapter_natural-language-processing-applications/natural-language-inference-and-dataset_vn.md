@@ -279,7 +279,7 @@ class SNLIDataset(gluon.data.Dataset):
 ### Putting All Things Together
 -->
 
-### *dịch tiêu đề trên*
+### Kết hợp tất cả mọi thứ lại
 
 
 <!--
