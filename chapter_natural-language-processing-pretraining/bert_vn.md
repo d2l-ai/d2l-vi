@@ -178,7 +178,7 @@ All proposed in 2018, from context-sensitive ELMo to task-agnostic GPT and BERT,
 conceptually simple yet empirically powerful pretraining of deep representations for natural languages have revolutionized solutions to various natural language processing tasks.
 -->
 
-BERT cải thiện kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên trong các bài toán rộng gồm i) phân loại văn bản đơn (cụ thể, phân tích cảm xúc), ii) phân loại cặp văn bản (cụ thể, suy luận ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (cụ thể, nhận dạng thực thể có tên).
+BERT cải thiện kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên trong các bài toán rộng gồm i) phân loại văn bản đơn (như phân tích cảm xúc), ii) phân loại cặp văn bản (như suy luận ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (như nhận dạng thực thể có tên).
 Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện thực nghiệm hiệu quả cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng cho các tác vụ đa dạng trong xử lý ngôn ngữ tự nhiên.
 
 <!--
@@ -221,12 +221,12 @@ We will consistently distinguish the terminology "BERT input sequence" from othe
 For instance, one *BERT input sequence* may include either one *text sequence* or two *text sequences*.
 -->
 
-Trong xử lý ngôn ngữ tự nhiên, một số nhiệm vụ (cụ thể, phân tích cảm xúc) lấy một câu văn làm đầu vào, 
-trong khi một số tác vụ khác (cụ thể, suy diễn ngôn ngữ tự nhiên), đầu vào là một cặp chuỗi văn bản.
-Chuỗi đầu vào BERT biểu diễn một cách tường minh cả văn bản đơn và văn bản kép.
-Ở tác vụ đầu, chuỗi đầu vào BERT là sự ghép nói ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
-Ở tác vụ thứ hai, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
-Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" khác với các kiểu "chuỗi" khác.
+Trong xử lý ngôn ngữ tự nhiên, một số nhiệm vụ (như phân tích cảm xúc) lấy một câu văn làm đầu vào, 
+trong khi một số tác vụ khác (như suy diễn ngôn ngữ tự nhiên), đầu vào là một cặp chuỗi văn bản.
+Chuỗi đầu vào BERT biểu diễn một cách tường minh cả văn bản đơn và cặp văn bản.
+Với văn bản đơn, chuỗi đầu vào BERT là sự ghép nối của token phân loại đặc biệt “&lt;cls&gt;”, token của chuỗi văn bản, và token phân tách đặc biệt “&lt;sep&gt;”.
+Với cặp văn bản, chuỗi đầu vào BERT là sự ghép nối của “&lt;cls&gt;”, token của chuỗi văn bản đầu, “&lt;sep&gt;”, token của chuỗi văn bản thứ hai, và “&lt;sep&gt;”.
+Ta sẽ phân biệt nhất quán thuật ngữ "chuỗi đầu vào BERT" với các kiểu "chuỗi" khác.
 Chẳng hạn, một *chuỗi đầu vào BERT* có thể bao gồm cả *một chuỗi văn bản* hoặc *hai chuỗi văn bản*.
 
 
@@ -236,7 +236,7 @@ are added to the token embeddings of the first sequence and the second sequence,
 For single text inputs, only $\mathbf{e}_A$ is used.
 -->
 
-Để phân biệt cặp văn bản, các embedding đoạn đã học $\mathbf{e}_A$ and $\mathbf{e}_B$ được thêm vào lần lượt các embedding token của chuỗi thứ nhất và chuỗi thứ hai.
+Để phân biệt cặp văn bản, các embedding đoạn đã học $\mathbf{e}_A$ và $\mathbf{e}_B$ được cộng tương ứng vào các embedding token của chuỗi thứ nhất và chuỗi thứ hai.
 Đối với đầu vào là văn bản đơn, ta chỉ sử dụng $\mathbf{e}_A$.
 
 <!--
@@ -271,16 +271,16 @@ However, different from the original Transformer encoder, BERT uses *learnable* 
 To sum up, :numref:`fig_bert-input` shows that the embeddings of the BERT input sequence are the sum of the token embeddings, segment embeddings, and positional embeddings.
 -->
 
-BERT lựa chọn bộ giải mã Transformer để làm kiến trúc hai chiều của nó.
-Thông thường trong bộ giải mã Transformer, các embedding vị trí được cộng vào mỗi vị trí của chuỗi đầu vào BERT.
-Tuy nhiên, khác với bộ giải mã Transformer nguyên bản, BERT sử dụng các embedding vị trí mà *có thể học được*.
-Nói ngắn gọn, :numref:`fig_bert-input` cho thấy rằng các embedding của chuỗi đầu vào BERT sử dụng là tổng của các embedding của token, embedding đoạn và embedding vị trí. 
+Kiến trúc hai chiều của BERT là bộ mã hóa Transformer.
+Thông thường trong bộ mã hóa Transformer, các embedding vị trí được cộng vào mỗi vị trí của chuỗi đầu vào BERT.
+Tuy nhiên, khác với bộ mã hóa Transformer nguyên bản, BERT sử dụng các embedding vị trí *có thể học được*.
+:numref:`fig_bert-input` cho thấy các embedding của chuỗi đầu vào BERT là tổng các embedding của token, embedding đoạn và embedding vị trí. 
 
 <!--
 ![The embeddings of the BERT input sequence are the sum of the token embeddings, segment embeddings, and positional embeddings.](../img/bert-input.svg)
 -->
 
-![Embedding của chuỗi đầu vào BERT là tổng của các embedding của token, embedding đoạn và embedding vị trí.](../img/bert-input.svg)
+![Embedding của chuỗi đầu vào BERT là tổng các embedding của token, embedding đoạn và embedding vị trí.](../img/bert-input.svg)
 :label:`fig_bert-input`
 
 
@@ -289,8 +289,8 @@ The following `BERTEncoder` class is similar to the `TransformerEncoder` class a
 Different from `TransformerEncoder`, `BERTEncoder` uses segment embeddings and learnable positional embeddings.
 -->
 
-Lớp `BERTEncoder` dưới đây tương tự với lớp `TransformerEncoder` được lập trình trong :numref:`sec_transformer`.
-Khác với `TransformerEncoder`, `BERTEncoder` sử dụng các embedding đoạn và các embedding vị trí có thể học.
+Lớp `BERTEncoder` dưới đây tương tự như lớp `TransformerEncoder` trong :numref:`sec_transformer`.
+Khác với `TransformerEncoder`, `BERTEncoder` sử dụng các embedding đoạn và các embedding vị trí có thể học được.
 
 
 ```{.python .input  n=2}
@@ -327,9 +327,9 @@ To demonstrate forward inference of `BERTEncoder`,
 let us create an instance of it and initialize its parameters.
 -->
 
-Giả sử kích thước của bộ từ vựng là 10,000.
-Để trình bày suy luận truyền xuôi của `BERTEncoder`,
-ta hay tạo ra một thực thể của nó và khởi tạo các thông số.
+Giả sử kích thước bộ từ vựng là 10,000.
+Để minh họa suy luận xuôi của `BERTEncoder`,
+hãy tạo ra một thực thể của nó và khởi tạo các thông số.
 
 
 ```{.python .input  n=3}
@@ -349,9 +349,9 @@ This hyperparameter is usually referred to as the *hidden size* (number of hidde
 -->
 
 Ta định nghĩa `tokens` là hai chuỗi đầu vào BERT có độ dài là 8, mỗi token là một chỉ mục của bộ từ vựng.
-Suy luận truyền xuôi của `BERTEncoder` với đầu vào `tokens` trả về kết quả được mã hóa 
-với mỗi token được biểu diễn bởi một vector có chiều dài được định nghĩa trước bởi siêu tham số `num_hiddens`.
-Siêu tham số này thường ám chỉ đến *kích thước ẩn* (số lượng các nút ẩn) của bộ giải mã Transformer. 
+Suy luận xuôi của `BERTEncoder` với đầu vào `tokens` trả về kết quả được mã hóa, 
+với mỗi token được biểu diễn bởi một vector có chiều dài được định nghĩa trước bởi siêu tham số `num_hiddens`,
+là *kích thước ẩn* (số lượng nút ẩn) của bộ mã hóa Transformer. 
 
 
 ```{.python .input}
@@ -379,7 +379,7 @@ Next, we will use these representations to compute the loss function for pretrai
 The pretraining is composed of the following two tasks: masked language modeling and next sentence prediction.
 -->
 
-Suy luận truyền xuôi của `BERTEncoder` biểu diễn BERT của mỗi token của văn bản đầu vào và các token đặc biệt được thêm vào “&lt;cls&gt;” và “&lt;seq&gt;”.
+Suy luận xuôi của `BERTEncoder` cho ra biểu diễn BERT của mỗi token của văn bản đầu vào và các token đặc biệt được thêm vào “&lt;cls&gt;” và “&lt;seq&gt;”.
 Kế tiếp, ta sẽ sử dụng các biểu diễn này để tính toán hàm mất mát khi tiền huấn luyện BERT.
 Tiền huấn luyện gồm hai tác vụ: mô hình ngôn ngữ có mặt nạ (*masked language modeling*) và dự đoán câu tiếp theo.
 
