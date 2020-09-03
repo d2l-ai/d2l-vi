@@ -6,7 +6,7 @@
 # Bidirectional Encoder Representations from Transformers (BERT)
 -->
 
-# Biểu diễn Mã hoá hai chiều từ Transformer (*Bidirectional Encoder Representations from Transformers* - BERT)
+# Biểu diễn Bộ Mã hoá hai chiều từ Transformer (*Bidirectional Encoder Representations from Transformers* - BERT)
 :label:`sec_bert`
 
 
@@ -18,9 +18,9 @@ Let us begin by illustrating this property.
 -->
 
 Chúng tôi đã giới thiệu một vài mô hình embedding từ cho bài toán hiểu ngôn ngữ tự nhiên.
-Sau khi tiền huấn luyện, đầu ra có thể được coi là một ma trận trong đó mỗi hàng là một vector biểu diễn cho một từ trong bộ từ vựng đã được định nghĩa trước.
-Trong thực tế, tất cả các mô hình embedding từ này đều có tính chất *độc lập ngữ cảnh* (_context-independent_).
-Chúng ta sẽ bắt đầu bằng việc mô tả tính chất này.
+Sau khi tiền huấn luyện, đầu ra của các mô hình này có thể coi là một ma trận trong đó mỗi hàng là một vector biểu diễn một từ trong bộ từ vựng được định nghĩa trước.
+Trong thực tế, tất cả các mô hình embedding từ này đều *độc lập ngữ cảnh* (_context-independent_).
+Hãy bắt đầu bằng việc minh họa tính chất này.
 
 <!--
 ## From Context-Independent to Context-Sensitive
@@ -39,11 +39,11 @@ thus, the same word may be assigned different representations depending on conte
 -->
 
 Hãy nhớ lại các thí nghiệm trong :numref:`sec_word2vec_pretraining` và :numref:`sec_synonyms`.
-Ví dụ, cả word2vec và GloVe đều gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh của nó như thế nào (nếu có).
+Cả word2vec và GloVe đều gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh (nếu có) của nó như thế nào.
 Về mặt hình thức, biểu diễn độc lập ngữ cảnh của một token bất kỳ $x$ là một hàm $f(x)$ chỉ nhận $x$ làm đầu vào.
 Do hiện tượng đa nghĩa cũng như sự phức tạp ngữ nghĩa xuất hiện khá phổ biến trong ngôn ngữ tự nhiên, biểu diễn độc lập ngữ cảnh có những hạn chế rõ ràng.
 Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying (một con sếu đang bay)" và ngữ cảnh "a crane driver came (tài xế xe cần cẩu đã tới)" có nghĩa hoàn toàn khác nhau;
-do đó, cùng một từ có thể được gán các biểu diễn khác nhau tùy thuộc vào ngữ cảnh.
+do đó, cùng một từ nên được gán các biểu diễn khác nhau tùy ngữ cảnh.
 
 
 <!--
@@ -54,7 +54,7 @@ CoVe (Context Vectors) :cite:`McCann.Bradbury.Xiong.ea.2017`, and ELMo (Embeddin
 -->
 
 Điều này thúc đẩy sự phát triển của các biểu diễn từ *nhạy ngữ cảnh* (_context-sensitive_), trong đó biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
-Do đó, biểu diễn nhạy ngữ cảnh của một token bất kỳ $x$ là hàm $f(x, c(x))$ phụ thuộc vào cả từ $x$ lẫn ngữ cảnh của từ là $c(x)$. 
+Do đó, biểu diễn nhạy ngữ cảnh của một token bất kỳ $x$ là hàm $f(x, c(x))$ phụ thuộc vào cả từ $x$ lẫn ngữ cảnh của từ $c(x)$. 
 Các biểu diễn nhạy ngữ cảnh phổ biến bao gồm TagLM (Bộ Tag chuỗi được tăng cường với mô hình ngôn ngữ (_language-model-augmented sequence tagger_)) :cite:`Peters.Ammar.Bhagavatula.ea.2017`,
 CoVe (vector ngữ cảnh (_Context Vectors_)) :cite:`McCann.Bradbury.Xiong.ea.2017`, và ELMo (embedding từ các mô hình ngôn ngữ (_Embeddings from Language Models_)) :cite:`Peters.Neumann.Iyyer.ea.2018`.
 
@@ -70,13 +70,13 @@ Leveraging different best models for different tasks at that time, adding ELMo i
 sentiment analysis, natural language inference, semantic role labeling, coreference resolution, named entity recognition, and question answering.
 -->
 
-Ví dụ, ELMo là hàm gán một biểu diễn cho mỗi từ của chuỗi đầu vào bằng cách lấy toàn bộ chuỗi làm đầu vào cho hàm.
+Ví dụ, bằng cách lấy toàn bộ chuỗi làm đầu vào, ELMo gán một biểu diễn cho mỗi từ trong chuỗi đầu vào.
 Cụ thể, ELMo kết hợp tất cả các biểu diễn tầng trung gian từ LSTM hai chiều đã được tiền huấn luyện làm biểu diễn đầu ra.
-Sau đó, biểu diễn ELMo sẽ được đưa vào mô hình giám sát cho các tác vụ khác như một đặc trưng bổ sung, chẳng hạn bằng cách ghép nối biểu diễn ELMo và biểu diễn gốc (ví dụ GloVe) của token trong mô hình hiện tại.
+Sau đó, biểu diễn ELMo sẽ được đưa vào một mô hình học có giám sát cho các tác vụ xuôi dòng như một đặc trưng bổ sung, chẳng hạn bằng cách nối biểu diễn ELMo và biểu diễn gốc (ví dụ như GloVe) của token trong mô hình hiện tại.
 Một mặt, tất cả các trọng số trong mô hình LSTM hai chiều được tiền huấn luyện đều bị đóng băng sau khi các biểu diễn ELMo được thêm vào.
-Mặt khác, mô hình có giám sát được tùy biến cụ thể cho một tác vụ nhất định.
-Thêm ELMo vào các mô hình tân tiến nhất cho các tác vụ khác nhau tại thời điểm ELMo được công bố giúp cải thiện chất lượng các mô hình này trên sáu tác vụ xử lý ngôn ngữ tự nhiên đó là:
-phân tích cảm xúc (_sentiment analysis_), suy luận ngôn ngữ tự nhiên (_natural language inference_), dán nhãn vai trò ngữ nghĩa (_semantic role labeling_), phân giải đồng tham chiếu (_coreference resolution_) nhận dạng thực thể có tên (_named entity recognition_) và trả lời câu hỏi (_question answering_).
+Mặt khác, mô hình học có giám sát được tùy biến cụ thể cho một tác vụ nhất định.
+Tại thời điểm được công bố, thêm ELMo vào các mô hình tân tiến nhất giúp cải thiện chất lượng các mô hình này trên sáu tác vụ xử lý ngôn ngữ tự nhiên:
+phân tích cảm xúc (_sentiment analysis_), suy luận ngôn ngữ tự nhiên (_natural language inference_), gán nhãn vai trò ngữ nghĩa (_semantic role labeling_), phân giải đồng tham chiếu (_coreference resolution_) nhận dạng thực thể có tên (_named entity recognition_) và trả lời câu hỏi (_question answering_).
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
