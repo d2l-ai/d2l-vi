@@ -131,7 +131,7 @@ We download and store the extracted SNLI dataset in the path `../data/snli_1.0`.
 -->
 
 Tập ngữ liệu ngôn ngữ tự nhiên Stanford (SNLI) là một bộ sưu tập hơn $500,000$ những cặp câu gán nhãn Tiếng Anh :cite:`Bowman.Angeli.Potts.ea.2015`.
-Ta tải và lưu trữ tập dữ liệu SNLI trong đường dẫn `../data/snli_1.0`.
+Ta tải xuống và lưu trữ tập dữ liệu SNLI trong đường dẫn `../data/snli_1.0`.
 
 
 ```{.python .input  n=28}
@@ -197,7 +197,8 @@ Now let us print the first $3$ pairs of premise and hypothesis,
 as well as their labels ("0", "1", and "2" correspond to "entailment", "contradiction", and "neutral", respectively ).
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta in $3$ cặp đầu tiên các tiền đề và giả thuyết,
+cũng như nhãn của chúng ("0", "1", và "2" lần lượt tương ứng với "entailment", "contradiction", và "neutral").
 
 
 ```{.python .input  n=70}
@@ -215,8 +216,8 @@ The following shows that the three labels "entailment", "contradiction", and "ne
 both the training set and the testing set.
 -->
 
-*dịch đoạn phía trên*
-
+Tập huấn luyện có khoảng $550,000$ cặp, và tập kiểm tra có khoảng $10,000$ cặp.
+Đoạn tiếp theo cho thấy rằng ba nhãn "entailment", "contradiction", và "neutral" cân bằng trong cả hai tập huấn luyện và tập kiểm tra.
 
 ```{.python .input}
 test_data = read_snli(data_dir, is_train=False)
@@ -229,7 +230,7 @@ for data in [train_data, test_data]:
 ### Defining a Class for Loading the Dataset
 -->
 
-### *dịch tiêu đề trên*
+### Định nghĩa một Lớp để tải tập dữ liệu
 
 
 <!--
@@ -240,7 +241,10 @@ while special tokens “&lt;pad&gt;” will be appended to shorter sequences unt
 By implementing the `__getitem__` function, we can arbitrarily access the premise, hypothesis, and label with the index `idx`.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây ta định nghĩa một lớp để tải tập dữ liệu SNLI bằng cách kế thừa từ lớp `Dataset` trong Gluon.
+Đối số `num_steps` trong lớp khởi tạo chỉ định rõ độ dài của một chuỗi văn bản mà mỗi minibatch các chuỗi sẽ có cùng kích thước.
+Nói cách khác, các token phía sau `num_steps` đầu tiên ở trong chuỗi dài hơn thì được làm gọn lại, trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
+Bằng cách lập trình hàm `__getitem__`, ta có thể tùy tiện truy cập vào các tiền đề, giả thuyết và nhãn với chỉ mục `idx`.
 
 
 ```{.python .input  n=115}
@@ -386,7 +390,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 3 -->
 * 
