@@ -391,8 +391,8 @@ We extract all central target words `all_centers`, and the context words `all_co
 We will read them in random minibatches.
 -->
 
-Chúng ta trích xuất tất cả các từ đích trung tâm `all_centers` và các từ ngữ cảnh `all_contexts` và những từ nhiễu của mỗi từ đích trung tâm trong tập dữ liệu,
-và đọc chúng thành các minibatch ngẫu nhiên.
+Chúng ta trích xuất tất cả các từ đích trung tâm `all_centers`, cũng như các từ ngữ cảnh `all_contexts` và những từ nhiễu của mỗi từ đích trung tâm trong tập dữ liệu,
+rồi đọc chúng thành các minibatch ngẫu nhiên.
 
 
 <!--
@@ -412,11 +412,10 @@ as the `contexts_negatives` variable and set the elements corresponding to conte
 Trong một minibatch dữ liệu, mẫu thứ $i$ bao gồm một từ đích trung tâm cùng $n_i$ từ ngữ cảnh và $m_i$ từ nhiễu tương ứng với từ đích trung tâm đó.
 Do kích thước cửa sổ ngữ cảnh của mỗi mẫu có thể khác nhau, nên tổng số từ ngữ cảnh và từ nhiễu, $n_i+m_i$, cũng sẽ khác nhau.
 Khi tạo một minibatch, chúng ta nối (*concatenate*) các từ ngữ cảnh và các từ nhiễu của mỗi mẫu,
-và đệm 0 để độ dài của các đoạn nối bằng nhau, tức bằng $\max_i n_i+m_i$ (`max_len`).
+và đệm thêm các giá trị 0 để độ dài của các đoạn nối bằng nhau, tức bằng $\max_i n_i+m_i$ (`max_len`).
 Nhằm tránh ảnh hưởng của phần đệm lên việc tính toán hàm mất mát, chúng ta tạo một biến mặt nạ `masks`,
-mỗi phần tử trong đó tương ứng với một phần tử trong phần nối giữa ngữ cảnh và từ nhiễu, `contexts_negatives`.
-Khi một phần tử trong biến `contexts_negatives` là đệm, thì phần tử trong biến mặt nạ `masks` ở vị trí đó sẽ là 0.
-Ngược lại, nó nhận giá trị 1.
+mỗi phần tử trong đó tương ứng với một phần tử trong phần nối giữa từ ngữ cảnh và từ nhiễu, `contexts_negatives`.
+Khi một phần tử trong biến `contexts_negatives` là đệm, thì phần tử trong biến mặt nạ `masks` ở vị trí đó sẽ là 0, còn lại là bằng 1.
 Để phân biệt giữa các mẫu dương và âm, chúng ta cũng cần phân biệt các từ ngữ cảnh với các từ nhiễu trong biến `contexts_negatives`.
 Dựa trên cấu tạo của biến mặt nạ, chúng ta chỉ cần tạo một biến nhãn `labels` có cùng kích thước
 với biến `contexts_negatives` và đặt giá trị các phần tử tương ứng với các từ ngữ cảnh (mẫu dương) bằng 1 và phần còn lại bằng 0.
@@ -453,7 +452,7 @@ def batchify(data):
 Construct two simple examples:
 -->
 
-Thực hiện hai ví dụ đơn giản: 
+Tạo hai ví dụ mẫu đơn giản:
 
 
 ```{.python .input  n=15}
