@@ -148,6 +148,12 @@ Recommending for new users and recommending new items to existing users are call
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
+<!--
+Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
+hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
+
+Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
+-->
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
@@ -155,3 +161,5 @@ Bản dịch trong trang này được thực hiện bởi:
 
 <!-- Phần 2 -->
 * 
+
+*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
