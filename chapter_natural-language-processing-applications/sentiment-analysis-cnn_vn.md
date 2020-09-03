@@ -224,8 +224,8 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-Để cải thiện chất lượng điện toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau thành một minibatch và làm cho chiều dài của từng mẫu thời gian bằng nhau bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
-Đương nhiên, các ký tự được thêm vào không làm thay đổi nghĩa ban đầu.
+Để cải thiện chất lượng điện toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau thành một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi ngữ nghĩa ban đầu.
 Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
@@ -247,7 +247,7 @@ The calculation of textCNN can be mainly divided into the following steps:
 -->
 
 TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
-Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector từ $n$ chiều.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $n$ chiều.
 Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
 Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
@@ -259,7 +259,7 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-1. Định nghĩa nhiều hạt nhân một chiều dùng để thực hiện các phép tính tích chập trên đầu vào.
+1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
 Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quang của các từ liền kề có số lượng khác nhau.
 2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
 3. Vector vừa nối sẽ biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
