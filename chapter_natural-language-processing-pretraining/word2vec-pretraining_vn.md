@@ -84,7 +84,7 @@ Because the dimension of the word vector is 4, we obtain a word vector of shape 
 -->
 
 Đầu vào của tầng embedding là chỉ số của từ.
-Khi ta nhập vào chỉ số $i$ của một từ, tầng embedding sẽ trả về vector từ tương ứng là cột thứ $i$ của ma trận trọng số.
+Khi ta nhập vào chỉ số $i$ của một từ, tầng embedding sẽ trả về vector từ tương ứng là hàng thứ $i$ của ma trận trọng số.
 Dưới đây ta nhập vào tầng embedding một chỉ số có kích thước ($2$, $3$).
 Vì số chiều vector từ là 4, ta thu được vector từ kích thước ($2$, $3$, $4$).
 
@@ -144,7 +144,7 @@ Each element in the output is the inner product of the central target word vecto
 -->
 
 Ở lượt truyền xuôi, đầu vào của mô hình skip-gram chứa chỉ số `center` của từ đích trung tâm
-và chỉ số `contexts_and_negatives` của từ ngữ cảnh và từ nhiễu được ghép nối.
+và chỉ số `contexts_and_negatives` được nối lại từ chỉ số của từ ngữ cảnh và từ nhiễu.
 Trong đó, biến `center` có kích thước là (kích thước batch, 1),
 và biến `contexts_and_negatives` có kích thước là (kích thước batch, `max_len`).
 Đầu tiên hai biến này được biến đổi từ chỉ số từ thành vector từ bởi tầng embedding từ, sau đó đầu ra có kích thước là (kích thước batch, 1, `max_len`) thu được bằng phép nhân minibatch.
@@ -425,5 +425,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * 
-
 
