@@ -224,10 +224,10 @@ For example, suppose that the attending step determines that "need" and "sleep" 
 both aligned with "tired" in the hypothesis, the pair "tired--need sleep" will be compared.
 -->
 
-Tại bước tiếp theo, chúng ta so sánh một từ trong chuỗi so với chuỗi khác được sắp xếp mượt mà với từ đó.
+Tại bước tiếp theo, chúng ta so sánh một từ trong chuỗi với chuỗi khác được sắp xếp gọn với từ đó.
 Lưu ý rằng trong "soft alignment", tất cả từ đều đến từ một chuỗi, tuy nhiên do có những trọng số tập trung khác nhau, chúng sẽ được so sánh với một từ trong chuỗi khác.
 Cho dễ minh hoạ, :numref:`fig_nli_attention` ghép nối các từ với những từ đã được sắp xếp bằng cách *khó*.
-Ví dụ, giả sử rằng 
+Ví dụ, giả sử bước tập trung xác định rằng "need" và "sleep" trong phần mở đầu đều được sắp xếp với "tired" trong ngữ cảnh giả thiết, thì cặp "tired--need sleep" sẽ được so sánh.
 
 
 <!--
@@ -235,7 +235,7 @@ In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of 
 and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
 -->
 
-Tại bước so sánh, chúng ta đưa 
+Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã được sắp xếp tại một chuỗi khác vào trong hàm $g$ (một perceptron đa tầng):
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -248,7 +248,8 @@ while $\mathbf{v}_{B,j}$ is the comparison between word $j$ in the hypothesis an
 The following `Compare` class defines such as comparing step.
 -->
 
-Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ $i$ tại tiền đề 
+Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ $i$ tại phần mở đầu và những từ giả thiết được sắp xếp gọn với từ thứ $i$; trong khi $\mathbf{v}_{B,j}$ lại là phép so sánh giữa từ thứ $j$ trong giả thiết và tất cả từ trong lời mở đầu được sắp xếp gọn với từ thứ $j$.
+Lớp `Compare` sau đây định nghĩa bước so sánh.
 
 
 ```{.python .input  n=4}
