@@ -453,7 +453,7 @@ def batchify(data):
 Construct two simple examples:
 -->
 
-Thực hiện hai ví dụ đơn giản:
+Thực hiện hai ví dụ đơn giản: 
 
 
 ```{.python .input  n=15}
