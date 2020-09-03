@@ -211,9 +211,9 @@ the output of each channel will be the largest value of all timesteps in the cha
 Therefore, the input of the max-over-time pooling layer can have different timesteps on each channel.
 -->
 
-Tương tự, ta có một tầng gộp một chiều.
-Tầng gộp cực đại theo thời gian được dùng trong TextCNN thật chất tương ứng với tầng gộp toàn cục cực đại một chiều.
-Giả sử đầu vào chứa nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong kênh.
+Tương tự, ta có tầng gộp một chiều.
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thật chất tương tự như tầng gộp toàn cục cực đại một chiều.
+Giả sử đầu vào chứa nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
 Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
 
 <!--
@@ -224,9 +224,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-Để cải thiện hiệu suất tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau thành một minibatch 
-và làm cho chiều dài của từng mẫu thời gian bằng nhau bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối mẫu ngắn hơn.
-Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm thủ công.
+Để cải thiện chất lượng điện toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau thành một minibatch và làm cho chiều dài của từng mẫu thời gian bằng nhau bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi nghĩa ban đầu.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -247,8 +247,8 @@ The calculation of textCNN can be mainly divided into the following steps:
 -->
 
 TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
-Giả sử đoạn văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector từ $n$ chiều.
-Sau đó, mẫu đầu vào có độ rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector từ $n$ chiều.
+Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
 Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
 <!--
@@ -259,10 +259,11 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-1. Định nghĩa nhiều nhân một chiều và dùng chúng để thực hiện các phép tính tích chập trên đầu vào.
-Nhân tích chập với độ rộng khác nhau có thể học được sự tương quang của các số lượng khác nhau của các từ liền kề
-2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó concate các giá trị gộp được của các kênh này thành một vector
-3. Vector được concates sẽ được biến đổi thành đầu ra cho từng danh mục bằng các đưa qua tấng fully connected. Tầng dropout đc ùng để giải quyết vấn đề quá khớp.
+1. Định nghĩa nhiều hạt nhân một chiều dùng để thực hiện các phép tính tích chập trên đầu vào.
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quang của các từ liền kề có số lượng khác nhau.
+2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
+3. Vector vừa nối sẽ biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
+Có thể sử dụng tầng dropout để giải quyết tình trạng quá khớp.
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
@@ -470,7 +471,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Lý Phi Long
 
 <!-- Phần 4 -->
 * 
