@@ -222,7 +222,7 @@ As we mentioned earlier, mask variables can be used to avoid the effect of paddi
 Lưu ý là ta có thể sử dụng biến mặt nạ để chỉ định một phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
 khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ được dùng trong phép tính hàm mất mát;
 khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng sẽ không được dùng trong phép tính hàm mất mát.
-Như đã đề cập, các biến mặt nạ có thể được sử dụng nhằm tránh hiệu ứng của đệm trên phép tính hàm mất mát.
+Như đã đề cập, các biến mặt nạ có thể được sử dụng nhằm tránh ảnh hưởng của vùng đệm lên phép tính hàm mất mát.
 
 
 <!--
@@ -390,7 +390,7 @@ What are the benefits of this sort of training? Try to implement this training m
 Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
 2. Hãy tìm từ đồng nghĩa cho các từ khác.
 3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
-4. Khi tập dữ liệu lớn, thường thì chỉ khi cập nhật tham số mô hình ta mới lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện tại.
+4. Khi tập dữ liệu lớn, ta thường lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện tại chỉ khi cập nhật tham số mô hình.
 Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
 Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
