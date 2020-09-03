@@ -390,8 +390,8 @@ What are the benefits of this sort of training? Try to implement this training m
 Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
 2. Hãy tìm từ đồng nghĩa cho các từ khác.
 3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
-4. Khi tập dữ liệu lớn, ta thường lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện tại chỉ khi cập nhật tham số mô hình.
-Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
+4. Khi tập dữ liệu lớn, ta thường lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ đích trung tâm trong minibatch hiện tại chỉ khi cập nhật tham số mô hình.
+Nói cách khác, cùng một từ đích trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
 Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
