@@ -5,7 +5,7 @@
 # Sentiment Analysis: Using Recurrent Neural Networks
 -->
 
-# *dịch tiêu đề trên*
+# Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Hồi tiếp
 :label:`sec_sentiment_rnn`
 
 
@@ -17,14 +17,19 @@ multiple hidden layers :cite:`Maas.Daly.Pham.ea.2011`, as shown in :numref:`fig_
 We will use the model to determine whether a text sequence of indefinite length contains positive or negative emotion.
 -->
 
-*dịch đoạn phía trên*
+
+Tương tự như tìm kiếm các từ đồng nghĩa và loại suy, phân loại văn bản cũng là một
+ứng dụng xuôi dòng của embedding từ.
+Trong phần này, ta sẽ áp dụng các vector từ đã được tiền huấn luyện (GloVe) và mạng nơ-ron truy hồi hai chiều với
+nhiều lớp ẩn :cite:`Maas.Daly.Pham.ea.2011`, như được minh hoạ trong :numref:` fig_nlp-map-sa-rnn`.
+Ta sẽ sử dụng mô hình để xác định xem một chuỗi văn bản có độ dài không xác định chứa cảm xúc tích cực hay tiêu cực.
 
 
 <!--
 ![This section feeds pretrained GloVe to an RNN-based architecture for sentiment analysis.](../img/nlp-map-sa-rnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-sa-rnn.svg)
+![Phần này sẽ truyền các vector GloVe đã được tiền huấn luyện vào một kiến trúc RNN cho bài toán phân tích cảm xúc.](../img/nlp-map-sa-rnn.svg)
 :label:`fig_nlp-map-sa-rnn`
 
 
@@ -43,7 +48,7 @@ train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size)
 ## Using a Recurrent Neural Network Model
 -->
 
-## *dịch tiêu đề trên*
+## Sử dụng Mạng Nơ-ron Hồi tiếp
 
 
 <!--
@@ -56,7 +61,14 @@ In the `BiRNN` class implemented below, the `Embedding` instance is the embeddin
 the `LSTM` instance is the hidden layer for sequence encoding, and the `Dense` instance is the output layer for generated classification results.
 -->
 
-*dịch đoạn phía trên*
+
+Trong mô hình này, đầu tiên mỗi từ nhận được một vector đặc trưng tương ứng từ tầng embedding.
+Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron hồi tiếp hai chiều để thu được thông tin chuỗi.
+Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ.
+Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều ở bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
+tới tầng phân loại đầu ra như là đặc trưng mã hóa của thông tin chuỗi.
+Trong lớp `BiRNN` được lập trình bên dưới, thực thể `Embedding` là tầng embedding,
+thực thể `LSTM` là tầng ẩn để mã hóa chuỗi, và thực thể `Dense` là tầng đầu ra sinh kết quả phân loại.
 
 
 ```{.python .input  n=46}
@@ -95,7 +107,7 @@ class BiRNN(nn.Block):
 Create a bidirectional recurrent neural network with two hidden layers.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ tạo một mạng nơ-ron hồi tiếp hai chiều với hai tầng ẩn như sau.
 
 
 ```{.python .input}
@@ -260,7 +272,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
