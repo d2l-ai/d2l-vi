@@ -66,7 +66,7 @@ For example, when $n=3$, we can get all subwords with a length of $3$:
 
 Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ con.
 Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu làm thế nào các từ tố được tạo thành.
-Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ con được dùng làm tiền tố và hậu tố.
+Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ con được dùng làm tiền tố và hậu tố. 
 Rồi ta sẽ xem từ này như một chuỗi các ký tự để trích xuất $n$-grams.
 Chẳng hạn, khi $n=3$, ta có thể nhận tất cả từ tố với chiều dài là $3$:
 
