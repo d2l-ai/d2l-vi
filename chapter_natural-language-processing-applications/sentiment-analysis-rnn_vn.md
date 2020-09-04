@@ -244,7 +244,7 @@ Còn cách tinh chỉnh các siêu tham số khác thì sao?
 2. Liệu sử dụng vector từ được tiền huấn luyện có kích thước lớn hơn, ví dụ vector từ GloVe có kích thước chiều là 300, có thể cải thiện độ chính xác hay không?
 3. Ta có thể cải thiện độ chính xác bằng cách sử dụng công cụ token hoá từ spaCy không?
 Bạn cần cài đặt spaCy bằng lệnh `pip install spacy` và cài đặt gói ngôn ngữ tiếng Anh bằng lệnh `python -m spacy download en`. 
-Trong mã nguồn, đầu tiên hãy nhập thư viện spaCy với câu lệnh `import spacy`. Tiếp theo, hãy tải gói tiếng Anh spacy `spacy_en = spacy.load('en')`. 
+Trong mã nguồn, đầu tiên hãy nhập thư viện spaCy với câu lệnh `import spacy`. Tiếp theo, hãy nạp gói spacy tiếng Anh `spacy_en = spacy.load('en')`. 
 Cuối cùng, hãy định nghĩa hàm `def tokenizer(text): return [tok.text for tok in spacy_en.tokenizer(text)]` và thay thế hàm `tokenizer` ban đầu. 
 Lưu ý rằng vector từ GloVe sử dụng "-" để kết nối mỗi từ trong cụm danh từ. 
 Ví dụ, cum từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york".
