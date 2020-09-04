@@ -65,7 +65,7 @@ the `LSTM` instance is the hidden layer for sequence encoding, and the `Dense` i
 Trong mô hình này, đầu tiên mỗi từ nhận được một vector đặc trưng tương ứng từ tầng embedding.
 Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron hồi tiếp hai chiều để thu được thông tin chuỗi.
 Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ.
-Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều trong bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
+Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều ở bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
 tới tầng phân loại đầu ra như là đặc trưng mã hóa của thông tin chuỗi.
 Trong lớp `BiRNN` được lập trình bên dưới, thực thể `Embedding` là tầng embedding,
 thực thể `LSTM` là tầng ẩn để mã hóa chuỗi, và thực thể `Dense` là tầng đầu ra sinh kết quả phân loại.
