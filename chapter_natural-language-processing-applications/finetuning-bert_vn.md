@@ -147,7 +147,7 @@ and using the mean squared loss: they are common for regression.
 ## Text Tagging
 -->
 
-## *dịch tiêu đề phía trên*
+## Gán thẻ văn bản
 
 
 <!--
