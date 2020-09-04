@@ -401,7 +401,7 @@ To encode context bidirectionally for representing each token, BERT randomly mas
 This task is referred to as a *masked language model*.
 -->
 
-Như được mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
+Như mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
 Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
 Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
 
@@ -413,9 +413,9 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 (e.g., "great" is selected to be masked and predicted in "this movie is great"), in the input it will be replaced with:
 -->
 
-Trong tác vụ tiền huấn luyện này, 15% các token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
-Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản đó là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
-Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
+Trong tác vụ tiền huấn luyện này, 15% số token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
+Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
+Tuy nhiên, token “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
 Để tránh xảy ra sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
@@ -425,9 +425,9 @@ Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao g
 * the unchanged label token for 10% of the time (e.g., "this movie is great" becomes "this movie is great").
 -->
 
-* một token “&lt;mask&gt;” đặc biệt, xác suất 80% (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
-* một token ngẫu nhiên, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is drink");
-* chính token đó, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is great").
+* token đặc biệt “&lt;mask&gt;”, 80% số lần (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
+* token ngẫu nhiên, 10% số lần (ví dụ, "this movie is great" trở thành "this movie is drink");
+* chính token đó, 10% số lần (ví dụ, "this movie is great" trở thành "this movie is great").
 
 
 <!--
@@ -436,7 +436,7 @@ This occasional noise encourages BERT to be less biased towards the masked token
 -->
 
 Lưu ý rằng 10% của 15% token mặt nạ được chèn vào ngẫu nhiên.
-Nhiễu không thường xuyên này giúp BERT bớt đi thiên kiến với token có mặt nạ (đặc biệt khi token nhãn không đổi) trong giải mã ngữ cảnh hai chiều.
+Nhiễu không thường xuyên này giúp BERT giảm thiên kiến về phía token có mặt nạ (đặc biệt khi token nhãn không đổi) khi mã hóa ngữ cảnh hai chiều.
 
 
 <!--
@@ -446,9 +446,9 @@ In forward inference, it takes two inputs: the encoded result of `BERTEncoder` a
 The output is the prediction results at these positions.
 -->
 
-Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn tuyện BERT.
-Việc dự đoán này sử dụng một Perceptron một-tầng-ẩn (`self.mlp`).
-Suy luận truyền xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
+Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn luyện BERT.
+Việc dự đoán này sử dụng một MLP một-tầng-ẩn (`self.mlp`).
+Lượt suy luận xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
 Đầu ra là kết quả dự đoán tại các vị trí này.
 
 
@@ -489,10 +489,10 @@ The forward inference of `mlm` returns prediction results `mlm_Y_hat` at all the
 For each prediction, the size of the result is equal to the vocabulary size.
 -->
 
-Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
-Hãy nhớ lại rằng `encoded_X` từ lượt suy luận truyền xuôi của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
-Ta định nghĩa `mlm_positions` là 3 chỉ số để dự đoán ở trong bất kì chuỗi đầu vào BERT nào của `encoded_X`.
-Lượt suy luận xuôi của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí có mặt nạ `mlm_positions` của `encoded_X`.
+Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể `mlm`.
+Hãy nhớ lại rằng `encoded_X` từ lượt suy luận xuôi của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
+Ta định nghĩa `mlm_positions` là 3 chỉ số để dự đoán ở một trong hai chuỗi đầu vào BERT của `encoded_X`.
+Lượt suy luận xuôi của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí mặt nạ `mlm_positions` của `encoded_X`.
 Với mỗi dự đoán, kích thước của kết quả bằng với kích thước bộ từ vựng.
 
 
@@ -510,7 +510,7 @@ With the ground truth labels `mlm_Y` of the predicted tokens `mlm_Y_hat` under m
 we can calculate the cross entropy loss of the masked language model task in BERT pretraining.
 -->
 
-Với nhãn gốc `mlm_Y` của token `mlm_Y_hat` có mặt nạ được dự đoán,
+Với nhãn gốc `mlm_Y` của token có mặt nạ được dự đoán `mlm_Y_hat`,
 ta có thể tính mất mát entropy chéo của tác vụ mô hình hoá ngôn ngữ có mặt nạ trong quá trình tiền huấn luyện BERT.
 
 
@@ -537,7 +537,7 @@ When generating sentence pairs for pretraining, for half of the time they are in
 while for the other half of the time the second sentence is randomly sampled from the corpus with the label "False".
 -->
 
-Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ, nhưng nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ ngữ, nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT sử dụng tới tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
 Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các câu kế tiếp được gán nhãn "Đúng" (_True_); 
 và trong nửa còn lại, câu thứ hai được lấy mẫu ngẫu nhiên từ kho ngữ liệu và cặp này được gán nhãn "Sai" (_False_).
