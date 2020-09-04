@@ -64,8 +64,8 @@ The weight of the embedding layer is a matrix whose number of rows is the dictio
 We set the dictionary size to $20$ and the word vector dimension to $4$.
 -->
 
-Để thu được các từ bằng cách phương pháp embedding, ta sử dụng tầng embedding bằng cách tạo một thực thể `nn.Embedding` trong Gluon.
-Trọng số của tầng embedding là một ma trận có số lượng hàng là kích thước từ điển (`input_dim`) và số lượng cột là chiều của mỗi vector từ (`output_dim`).
+Để thu được các embedding từ, ta sử dụng tầng embedding, có thể được tạo bằng một thực thể `nn.Embedding` trong Gluon.
+Trọng số của tầng embedding là một ma trận có số hàng là kích thước từ điển (`input_dim`) và số cột là chiều của mỗi vector từ (`output_dim`).
 Ta đặt kích thước từ điển bằng $20$ và chiều vector từ là $4$.
 
 
@@ -84,9 +84,9 @@ Because the dimension of the word vector is 4, we obtain a word vector of shape 
 -->
 
 Đầu vào của tầng embedding là chỉ số của từ.
-Khi ta nhập chỉ số $i$ của một từ, tầng embedding sẽ trả về một vector từ tương ứng với cột thứ $i$ của ma trận trọng số.
-Dưới đây ta nhập vào tầng embedding chỉ số có kích thước ($2$, $3$).
-
+Khi ta nhập vào chỉ số $i$ của một từ, tầng embedding sẽ trả về vector từ tương ứng là hàng thứ $i$ của ma trận trọng số.
+Dưới đây ta nhập vào tầng embedding một chỉ số có kích thước ($2$, $3$).
+Vì số chiều vector từ là 4, ta thu được vector từ kích thước ($2$, $3$, $4$).
 
 ```{.python .input  n=16}
 x = np.array([[1, 2, 3], [4, 5, 6]])
@@ -115,7 +115,7 @@ Therefore, given two tensors of shape ($n$, $a$, $b$) and ($n$, $b$, $c$), the s
 Ta có thể nhân các ma trận trong hai minibatch bằng toán tử nhân minibatch `batch_dot`.
 Giả sử batch đầu tiên chứa $n$ ma trận $\mathbf{X}_1, \ldots, \mathbf{X}_n$ có kích thước là $a\times b$, 
 và batch thứ hai chứa $n$ ma trận $\mathbf{Y}_1, \ldots, \mathbf{Y}_n$ có kích thước là $b\times c$.
-Đầu ra của toán tử nhân ma trận với hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
+Đầu ra của toán tử nhân ma trận trên hai batch đầu vào là $n$ ma trận $\mathbf{X}_1\mathbf{Y}_1, \ldots, \mathbf{X}_n\mathbf{Y}_n$ có kích thước là $a\times c$.   
 Do đó, với hai tensor có kích thước là ($n$, $a$, $b$) và ($n$, $b$, $c$), kích thước đầu ra của toán tử nhân minibatch là ($n$, $a$, $c$).
 
 
@@ -143,8 +143,8 @@ and then the output of shape (batch size, 1, `max_len`) is obtained by minibatch
 Each element in the output is the inner product of the central target word vector and the context word vector or noise word vector.
 -->
 
-Ở lượt truyền xuôi, đầu vào của mô hình skip-gram chứa chỉ số của từ mục tiêu trung tâm là `center`
-và chỉ số của từ ngữ cảnh và từ nhiễu được ghép nối là `contexts_and_negatives`.
+Ở lượt truyền xuôi, đầu vào của mô hình skip-gram chứa chỉ số `center` của từ đích trung tâm
+và chỉ số `contexts_and_negatives` được nối lại từ chỉ số của từ ngữ cảnh và từ nhiễu.
 Trong đó, biến `center` có kích thước là (kích thước batch, 1),
 và biến `contexts_and_negatives` có kích thước là (kích thước batch, `max_len`).
 Đầu tiên hai biến này được biến đổi từ chỉ số từ thành vector từ bởi tầng embedding từ, sau đó đầu ra có kích thước là (kích thước batch, 1, `max_len`) thu được bằng phép nhân minibatch.
@@ -164,7 +164,7 @@ def skip_gram(center, contexts_and_negatives, embed_v, embed_u):
 Verify that the output shape should be (batch size, 1, `max_len`).
 -->
 
-Ta xác nhận xem đầu ra có kích thước là (kích thước batch, 1, `max_len`).
+Hãy xác nhận kích thước đầu ra là (kích thước batch, 1, `max_len`).
 
 
 ```{.python .input}
