@@ -233,7 +233,8 @@ predict_sentiment(net, vocab, 'this movie is so bad')
 * We can apply pre-trained word vectors and recurrent neural networks to classify the emotions in a text.
 -->
 
-*dịch đoạn phía trên*
+* Phân loại văn bản chuyển đổi một chuỗi văn bản có độ dài không xác định thành hạng mục tương ứng của văn bản đó. Đây là một ứng dụng xuôi dòng của embedding từ.
+* Ta có áp dụng các vector từ được tiền huấn luyện và mạng nơ-ron hồi tiếp để để phân loại cảm xúc trong văn bản.
 
 
 ## Bài tập
@@ -250,7 +251,15 @@ It should be noted that GloVe's word vector uses "-" to connect each word when s
 For example, the phrase "new york" is represented as "new-york" in GloVe. After using spaCy tokenization, "new york" may be stored as "new york".
 -->
 
-*dịch đoạn phía trên*
+1. Hãy tăng số epoch. Bạn có thể đạt được độ chính xác là bao nhiêu trên tập huấn luyện và tập kiểm tra?
+Còn cách tinh chỉnh các siêu tham số khác thì sao?
+2. Liệu sử dụng vector từ được tiền huấn luyện có kích thước lớn hơn, ví dụ vector từ GloVe có kích thước chiều là 300, có thể cải thiện độ chính xác hay không?
+3. Ta có thể cải thiện độ chính xác bằng cách sử dụng công cụ token hoá từ spaCy không?
+Bạn cần cài đặt spaCy bằng lệnh `pip install spacy` và cài đặt gói ngôn ngữ tiếng Anh bằng lệnh `python -m spacy download en`. 
+Trong mã nguồn, đầu tiên hãy nhập thư viện spaCy với câu lệnh `import spacy`. Tiếp theo, hãy nạp gói spacy tiếng Anh `spacy_en = spacy.load('en')`. 
+Cuối cùng, hãy định nghĩa hàm `def tokenizer(text): return [tok.text for tok in spacy_en.tokenizer(text)]` và thay thế hàm `tokenizer` ban đầu. 
+Lưu ý rằng vector từ GloVe sử dụng "-" để kết nối mỗi từ trong cụm danh từ. 
+Ví dụ, cụm từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york".
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -278,4 +287,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Văn Quang
