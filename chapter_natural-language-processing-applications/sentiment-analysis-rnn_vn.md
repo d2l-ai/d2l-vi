@@ -247,7 +247,7 @@ Bạn cần cài đặt spaCy bằng lệnh `pip install spacy` và cài đặt 
 Trong mã nguồn, đầu tiên hãy nhập thư viện spaCy với câu lệnh `import spacy`. Tiếp theo, hãy nạp gói spacy tiếng Anh `spacy_en = spacy.load('en')`. 
 Cuối cùng, hãy định nghĩa hàm `def tokenizer(text): return [tok.text for tok in spacy_en.tokenizer(text)]` và thay thế hàm `tokenizer` ban đầu. 
 Lưu ý rằng vector từ GloVe sử dụng "-" để kết nối mỗi từ trong cụm danh từ. 
-Ví dụ, cum từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york".
+Ví dụ, cụm từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york".
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
