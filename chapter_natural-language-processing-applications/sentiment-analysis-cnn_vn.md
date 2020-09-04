@@ -5,7 +5,7 @@
 # Sentiment Analysis: Using Convolutional Neural Networks
 -->
 
-# *dịch tiêu đề trên*
+# Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Tích Chập
 :label:`sec_sentiment_cnn`
 
 
@@ -19,14 +19,19 @@ As described in :label:`fig_nlp-map-sa-cnn` This section describes a groundbreak
 convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lí dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều.
+Như đề cập về tác vụ mô hình ngôn ngữ và phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
+chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp.
+Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
+Như mô tả trong :label:`fig_nlp-map-sa-cnn`, chương này sẽ miêu tả một hướng tiếp cận đột phá bằng cách áp dụng
+mạng nơ-ron tích chập để phân tích cảm xúc: textCNN :cite:`Kim.2014`.
 
 
 <!--
 ![This section feeds pretrained GloVe to a CNN-based architecture for sentiment analysis.](../img/nlp-map-sa-cnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-sa-cnn.svg)
+![Phần này truyền mô hình tiền huấn luyện GloVe vào một kiến trúc mạng nơ-ron tích chập cho tác vụ phân loại cảm xúc](../img/nlp-map-sa-cnn.svg)
 :label:`fig_nlp-map-sa-cnn`
 
 
@@ -34,7 +39,7 @@ convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 First, import the packages and modules required for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, nhập những gói thư viện và mô-đun cần thiết cho thử nghiệm
 
 
 ```{.python .input  n=1}
@@ -52,7 +57,7 @@ train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size)
 ## One-Dimensional Convolutional Layer
 -->
 
-## *dịch tiêu đề trên*
+## Mạng Nơ-ron Tích Chập Một Chiều
 
 
 <!--
@@ -67,14 +72,21 @@ As we can see, the output width is $7-2+1=6$ and the first element is obtained b
 by element on the leftmost input subarray with a width of 2 and kernel array and then summing the results.
 -->
 
-*dịch đoạn phía trên*
+Trước khi giới thiệu mô hình, chúng ta hãy xem mạng nơ-ron tích chập một chiều hoạt động như thế nào.
+Tương tự như mạng nơ-ron tích chập hai chiều, một mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
+Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tiếp từ trái qua phải của mảng đầu vào.
+Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, mảng đầu vào con trong cửa sổ đó và mảng hạt nhân
+được nhân từng phần tử rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra.
+Như ví dụ ở :numref:`fig_conv1d`, đầu vào là một mảng một chiều với độ rộng là 7 và độ rộng của mảng hạt nhân là 2.
+Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên có được bằng cách nhân
+từng phần tử giữa mảng con 2 phần tử ngoài cùng bên trái của đầu vào và mảng hạt nhân, rồi cộng lại với nhau.
 
 
 <!--
 ![One-dimensional cross-correlation operation. The shaded parts are the first output element as well as the input and kernel array elements used in its calculation: $0\times1+1\times2=2$.](../img/conv1d.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d.svg)
+![Phép tính tương quan chéo một chiều. Những vùng in đậm là phần tử đầu ra đầu tiên, cùng phần tử đầu vào và mảng hạt nhân được dùng trong phép tính đó: $0\times1+1\times2=2$.](../img/conv1d.svg)
 :label:`fig_conv1d`
 
 
@@ -83,7 +95,8 @@ Next, we implement one-dimensional cross-correlation in the `corr1d` function.
 It accepts the input array `X` and kernel array `K` and outputs the array `Y`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ lập trình tương quan chéo một chiều trong hàm `corr1d`.
+Hàm này nhận mảng đầu vào `X` và mảng hạt nhân `K` và cho ra đầu ra là mảng `Y`
 
 
 ```{.python .input  n=2}
@@ -100,7 +113,7 @@ def corr1d(X, K):
 Now, we will reproduce the results of the one-dimensional cross-correlation operation in :numref:`fig_conv1d`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta sẽ tái hiện lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`.
 
 
 ```{.python .input  n=3}
@@ -444,7 +457,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trương Lộc Phát
 
 <!-- Phần 2 -->
 * 

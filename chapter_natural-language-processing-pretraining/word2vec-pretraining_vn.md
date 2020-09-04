@@ -204,7 +204,7 @@ Trước khi huấn luyện mô hình embedding từ, ta cần định nghĩa h�
 According to the definition of the loss function in negative sampling, we can directly use Gluon's binary cross-entropy loss function `SigmoidBinaryCrossEntropyLoss`.
 -->
 
-Theo như định nghĩa hàm mất mát trong phương pháp lấy mẫu âm, ta có thể sử dụng trực tiếp hàm mất mát entropy chéo nhị phân của Gluon `SigmoidBinaryCrossEntropyLoss`.
+Theo định nghĩa hàm mất mát trong phương pháp lấy mẫu âm, ta có thể sử dụng trực tiếp hàm mất mát entropy chéo nhị phân của Gluon `SigmoidBinaryCrossEntropyLoss`.
 
 
 ```{.python .input  n=19}
@@ -219,10 +219,10 @@ When the mask is 0, the predicted value and label of the corresponding position 
 As we mentioned earlier, mask variables can be used to avoid the effect of padding on loss function calculations.
 -->
 
-Đáng chú ý là ta có thể sử dụng biến mặt nạ để chỉ định phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
+Lưu ý là ta có thể sử dụng biến mặt nạ để chỉ định một phần giá trị dự đoán và nhãn được dùng khi tính hàm mất mát trong minibatch:
 khi mặt nạ bằng 1, giá trị dự đoán và nhãn của vị trí tương ứng sẽ được dùng trong phép tính hàm mất mát;
 khi mặt nạ bằng 0, giá trị dự đoán và nhãn của vị trí tương ứng sẽ không được dùng trong phép tính hàm mất mát.
-Như đã đề cập ở trên, các biến mặt nạ có thể được sử dụng nhằm tránh hiệu ứng đệm trên các phép tính hàm mất mát.
+Như đã đề cập, các biến mặt nạ có thể được sử dụng nhằm tránh ảnh hưởng của vùng đệm lên phép tính hàm mất mát.
 
 
 <!--
@@ -263,7 +263,7 @@ loss(pred, label, mask) / mask.sum(axis=1) * mask.shape[1]
 We construct the embedding layers of the central and context words, respectively, and set the hyperparameter word vector dimension `embed_size` to 100.
 -->
 
-Ta khai báo tầng embedding lần lượt của từ trung tâm và từ ngữ cảnh, và đặt siêu tham số số chiều của vector từ bằng 100.
+Ta khai báo tầng embedding lần lượt của từ trung tâm và từ ngữ cảnh, và đặt siêu tham số số chiều của vector từ `embed_size` bằng 100.
 
 
 ```{.python .input  n=20}
@@ -289,8 +289,8 @@ The training function is defined below.
 Because of the existence of padding, the calculation of the loss function is slightly different compared to the previous training functions.
 -->
 
-Hàm huấn luyện được định nghĩa như phía dưới.
-Do có sự hiện hữu của phần đệm nên phép tính hàm mất mát có đôi chút khác biệt so với các hàm huấn luyện trước.
+Hàm huấn luyện được định nghĩa như dưới đây.
+Do có phần đệm nên phép tính mất mát có một chút khác biệt so với các hàm huấn luyện trước.
 
 
 ```{.python .input  n=21}
@@ -346,8 +346,8 @@ After training the word embedding model, we can represent similarity in meaning 
 As we can see, when using the trained word embedding model, the words closest in meaning to the word "chip" are mostly related to chips.
 -->
 
-Sau khi huấn luyện mô hình embedding từ, ta có thể biểu diễn sự tương đồng về nghĩa giữa các từ dựa trên độ tương đồng cô-sin giữa hai vector từ.
-Như ta có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chip xử lý.
+Sau khi huấn luyện mô hình embedding từ, ta có thể biểu diễn sự tương tự về nghĩa giữa các từ dựa trên độ tương tự cô-sin giữa hai vector từ.
+Có thể thấy, khi sử dụng mô hình embedding từ đã được huấn luyện, các từ có nghĩa gần nhất với từ "chip" hầu hết là những từ có liên quan đến chip xử lý.
 
 
 ```{.python .input  n=23}
@@ -388,10 +388,10 @@ What are the benefits of this sort of training? Try to implement this training m
 
 1. Đặt `sparse_grad=True` khi tạo một đối tượng `nn.Embedding`.
 Việc này có tăng tốc quá trình huấn luyện không? Hãy tra tài liệu của MXNet để tìm hiểu ý nghĩa của tham số này.
-2. Bạn hãy cố gắng tìm từ đồng nghĩa cho các từ khác.
+2. Hãy tìm từ đồng nghĩa cho các từ khác.
 3. Điều chỉnh các siêu tham số, quan sát và phân tích kết quả thí nghiệm.
-4. Khi tập dữ liệu lớn, thường thì chỉ khi cập nhật tham số mô hình ta mới lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ trung tâm trong minibatch hiện thời.
-Nói cách khác, cùng một từ trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
+4. Khi tập dữ liệu lớn, ta thường lấy mẫu các từ ngữ cảnh và các từ nhiễu cho từ đích trung tâm trong minibatch hiện tại chỉ khi cập nhật tham số mô hình.
+Nói cách khác, cùng một từ đích trung tâm có thể có các từ ngữ cảnh và từ nhiễu khác nhau với mỗi epoch khác nhau.
 Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
@@ -413,15 +413,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* 
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
 * Phạm Minh Đức
-
-<!-- Phần 4 -->
-* 
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
