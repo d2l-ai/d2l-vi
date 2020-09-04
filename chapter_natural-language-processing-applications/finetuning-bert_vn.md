@@ -227,7 +227,10 @@ When predicting the end, any passage token of position $i$ is transformed by the
 :numref:`fig_bert-qa` depicts fine-tuning BERT for question answering.
 -->
 
-*dịch đoạn phía trên*
+Để tinh chỉnh BERT cho việc trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt như 
+phần đầu và phần thứ hai của chuỗi văn bản trong đầu vào của BERT.
+Để dự đoán vị trí của phần bắt đầu của khoảng văn bản, tầng tương tự mở rộng được kết nối đầy đủ sẽ chuyển hóa
+biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ trở thành một điểm vô hướng $s_i$. 
 
 
 <!--
