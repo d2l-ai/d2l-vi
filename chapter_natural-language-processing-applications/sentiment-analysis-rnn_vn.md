@@ -67,7 +67,7 @@ Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạn
 Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ.
 Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều trong bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
 tới tầng phân loại đầu ra như là thông tin chuỗi đặc trưng được mã hoá.
-Trong lớp `BiRNN` được lập trình dưới, thực thể `Embedding` là tầng embedding,
+Trong lớp `BiRNN` được lập trình bên dưới, thực thể `Embedding` là tầng embedding,
 thực thể `LSTM` là tầng ẩn để mã hóa chuỗi, và thực thể `Dense` là tầng đầu ra sinh kết quả phân loại.
 
 
