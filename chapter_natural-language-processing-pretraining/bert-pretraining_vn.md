@@ -14,7 +14,7 @@ With the BERT model implemented in :numref:`sec_bert` and the pretraining exampl
 we will pretrain BERT on the WikiText-2 dataset in this section.
 -->
 
-Trong phần này, sử dụng mô hình BERT đã được lập trình trong  :numref:`sec_bert` và các mẫu dữ liệu tiền huấn luyện, ta sẽ tiền huấn luyện mô hình BERT trên tập dữ liệu WikiText-2.
+Trong phần này, sử dụng mô hình BERT đã được lập trình trong :numref:`sec_bert` và các mẫu dữ liệu tiền huấn luyện tạo ra từ tập dữ liệu WikiText-2, ta sẽ tiền huấn luyện BERT trên tập dữ liệu này.
 
 
 ```{.python .input  n=1}
@@ -48,9 +48,6 @@ train_iter, vocab = d2l.load_data_wiki(batch_size, max_len)
 
 ## Tiền Huấn luyện BERT
 
-<!--
-## *dịch đoạn phía trên*
--->
 
 <!--
 The original BERT has two versions of different model sizes :cite:`Devlin.Chang.Lee.ea.2018`.
@@ -61,10 +58,10 @@ For demonstration with ease, we define a small BERT, using 2 layers, 128 hidden 
 -->
 
 Mô hình BERT gốc được đề xuất có hai phiên bản với hai kích thước mô hình khác nhau :cite:`Devlin.Chang.Lee.ea.2018`.
-Mô hình cơ bản ($\text{BERT}_{\text{BASE}}$) sử dụng 12 tầng (bộ mã hóa Transformer) với 768 nút ẩn (kích thước ẩn) và 12 tầng tự tập trung.
-Mô hình lớn ($\text{BERT}_{\text{LARGE}}$) sử dụng 24 tầng với 1024 nút ẩn và 16 tầng tự tập trung.
+Mô hình cơ bản ($\text{BERT}_{\text{BASE}}$) sử dụng 12 tầng (khối mã hóa của Transformer) với 768 nút ẩn (kích thước ẩn) và tầng tự tập trung 12 đầu.
+Mô hình lớn ($\text{BERT}_{\text{LARGE}}$) sử dụng 24 tầng với 1024 nút ẩn và tầng tự tập trung 16 đầu.
 Tổng số lượng tham số trong mô hình đầu tiên là 110 triệu, ở mô hình sau là 340 triệu.
-Để minh họa, ta định nghĩa mô hình BERT nhỏ dưới đây, sử dụng 2 tầng với 128 nút ẩn và 2 tầng tự tập trung.
+Để minh họa, ta định nghĩa mô hình BERT nhỏ dưới đây, sử dụng 2 tầng với 128 nút ẩn và tầng tự tập trung 2 đầu.
 
 
 ```{.python .input  n=14}
@@ -82,7 +79,7 @@ Given the shard of training examples, this function computes the loss for both t
 Note that the final loss of BERT pretraining is just the sum of both the masked language modeling loss and the next sentence prediction loss.
 -->
 
-Ta sẽ định nghĩa hàm hỗ trợ `_get_batch_loss_bert` trước khi bắt đầu cài đặt vòng lặp cho quá trình huấn luyện.
+Ta sẽ định nghĩa hàm phụ trợ `_get_batch_loss_bert` trước khi bắt đầu cài đặt vòng lặp cho quá trình huấn luyện.
 Hàm này nhận đầu vào là một batch các mẫu huấn luyện và tính giá trị mất mát đối với hai tác vụ mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
 Lưu ý rằng mất mát tiền huấn luyện BERT là tổng mất mát trong cả hai tác vụ nói trên.
 
@@ -128,8 +125,8 @@ Instead of specifying the number of epochs for training as in the `train_ch13` f
 the input `num_steps` of the following function specifies the number of iteration steps for training.
 -->
 
-Sử dụng lại hai hàm hỗ trợ được đề cập ở trên, hàm `train_bert` dưới đây  sẽ định nghĩa quá trình tiền huấn luyện mô hình BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
-Việc huấn luyện BERT có thể khá mất thời gian.
+Sử dụng hai hàm phụ trợ được đề cập ở trên, hàm `train_bert` dưới đây sẽ định nghĩa quá trình tiền huấn luyện BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
+Việc huấn luyện BERT có thể mất nhiều thời gian.
 Do đó thay vì truyền vào số lượng epoch huấn luyện như trong hàm `train_ch13` (:numref:`sec_image_augmentation`), ta sử dụng tham số `num_steps` trong hàm sau để xác định số vòng lặp huấn luyện.
 
 
