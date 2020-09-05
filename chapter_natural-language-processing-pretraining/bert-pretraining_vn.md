@@ -196,15 +196,15 @@ train_bert(train_iter, net, loss, len(vocab), devices, 1, 50)
 ## Representing Text with BERT
 -->
 
-## *dịch đoạn phía trên*
-
+## Biểu diễn Văn bản với BERT
 
 <!--
 After pretraining BERT, we can use it to represent single text, text pairs, or any token in them.
 The following function returns the BERT (`net`) representations for all tokens in `tokens_a` and `tokens_b`.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng mô hình BERT đã tiền huấn luyện để biểu diễn một văn bản đơn, cặp văn bản hay một token bất kỳ trong văn bản.
+Hàm sau sẽ trả về biểu diễn của mô hình BERT (`net`) cho toàn bộ các token trong `tokens_a` và `tokens_b`.
 
 
 ```{.python .input}
@@ -227,7 +227,11 @@ Since zero is the index of the “&lt;cls&gt;” token, `encoded_text[:, 0, :]` 
 To evaluate the polysemy token "crane", we also print out the first three elements of the BERT representation of the token.
 -->
 
-*dịch đoạn phía trên*
+Xét câu "a crane is flying".
+Nhớ lại :numref:`subsec_bert_input_rep`,
+sau khi thêm các token đặc biệt “&lt;cls&gt;” (dùng cho phân loại) và “&lt;sep&gt;” (dùng để ngăn cách), chiều dài của chuỗi đầu vào BERT là 6.
+Vì 0 là chỉ số của token “&lt;cls&gt;”, `encoded_text[:, 0, :]` là biểu diễn BERT của toàn bộ câu đầu vào.
+Để đánh giá token đa nghĩa "crane", ta sẽ in cả ba phần tử đầu tiên trong biểu diễn BERT của token này.
 
 
 ```{.python .input}
@@ -247,7 +251,10 @@ Note that the first three elements of the polysemy token "crane" are different f
 This supports that BERT representations are context-sensitive.
 -->
 
-*dịch đoạn phía trên*
+ Bây giờ, ta xem xét cặp câu "a crane driver came" và "he just left".
+Tương tự như trên, `encoded_pair[:, 0, :]` là kết quả mã hóa của cặp câu trên thông qua BERT.
+Lưu ý rằng khi token đa nghĩa "crane" xuất hiện trong ngữ cảnh khác nhau, thì ba phần tử đầu tiên trong biểu diễn BERT token này cũng thay đổi.
+Điều này thể hiện rằng biểu diễn từ của BERT có tính nhạy ngữ cảnh.
 
 
 ```{.python .input}
@@ -266,7 +273,7 @@ In :numref:`chap_nlp_app`, we will fine-tune a pretrained BERT model
 for downstream natural language processing applications.
 -->
 
-*dịch đoạn phía trên*
+Ở :numref:`chap_nlp_app`, ta sẽ tinh chỉnh mô hình BERT đã được tiền huấn luyện với một số tác vụ xuôi dòng trong xử lý ngôn ngữ tự nhiên.
 
 
 ## Tóm tắt
@@ -277,7 +284,9 @@ for downstream natural language processing applications.
 * In the experiment, the same token has different BERT representation when their contexts are different. This supports that BERT representations are context-sensitive.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình BERT gốc có hai phiên bản, trong đó mô hình cơ bản có 110 triệu tham số và mô hình lớn có 340 triệu tham số.
+* Ta có thể sử dụng mô hình BERT đã được tiền huấn luyện để biểu diễn một văn bản đơn, cặp văn bản hay một token bất kỳ.
+* Trong thí nghiệm, ta đã thấy rằng cùng một token có thể có nhiều cách biểu diễn khác nhau với những ngữ cảnh khác nhau. Điều này nói lên rằng biểu diễn BERT là nhạy ngữ cảnh.
 
 
 ## Bài tập
@@ -289,7 +298,9 @@ Use the configurations of the original BERT model such as $\text{BERT}_{\text{LA
 Do you encounter any error when running this section? Why?
 -->
 
-*dịch đoạn phía trên*
+1. Kết quả thực nghiệm cho thấy mất mát trong mô hình hóa ngôn ngữ có mặt nạ cao hơn đáng kể so với tác vụ dự đoán câu tiếp theo. Hãy giải thích.
+2. Thay đổi chiều dài tối đa của chuỗi đầu vào BERT là 512 (tương tự với mô hình BERT gốc) và sử dụng cấu hình của mô hình BERT là $\text{BERT}_{\text{LARGE}}$. 
+Bạn có gặp lỗi nào khi chạy thực nghiệm phần này hay không? Giải thích tại sao.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -314,4 +325,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Bùi Thị Cẩm Nhung
 
 <!-- Phần 2 -->
-* 
+* Bùi Thị Cẩm Nhung
