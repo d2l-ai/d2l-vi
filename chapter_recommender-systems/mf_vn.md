@@ -108,21 +108,21 @@ The model parameters can be learned with an optimization algorithm, such as Stoc
 An intuitive illustration of the matrix factorization model is shown below:
 -->
 
-Ảnh minh hoạ trực quan cho mô hình phân tích ma trận thành nhân tử được đưa ra như dưới đây:
+Ảnh minh hoạ trực quan cho mô hình phân rã ma trận được đưa ra như dưới đây:
 
 
 <!--
 ![Illustration of matrix factorization model](../img/rec-mf.svg)
 -->
 
-![Minh hoạ mô hình phân tích ma trận thành nhân tử](../img/rec-mf.svg)
+![Minh hoạ mô hình phân rã ma trận](../img/rec-mf.svg)
 
 
 <!--
 In the rest of this section, we will explain the implementation of matrix factorization and train the model on the MovieLens dataset.
 -->
 
-Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích phần lập trình phân tích ma trận thành nhân tử và huấn luyện mô hình trên tập dữ liệu MovieLens.
+Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích phần lập trình phân rã ma trận và huấn luyện mô hình trên tập dữ liệu MovieLens.
 
 
 ```{.python .input  n=2}
@@ -149,7 +149,7 @@ We can also use `nn.Embedding` to create the user/item biases by setting the `ou
 In the `forward` function, user and item ids are used to look up the embeddings.
 -->
 
-Đầu tiên, ta lập trình mô hình phân tích ma trận thành nhân tử như mô tả trên.
+Đầu tiên, ta lập trình mô hình phân rã ma trận như mô tả trên.
 Các nhân tố ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
 Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố ẩn ($k$).
 Ta cũng có thể sử dụng `nn.Embedding` để tạo độ chệch người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
@@ -320,8 +320,8 @@ scores
 * We can implement and train matrix factorization for recommender systems.
 -->
 
-* Mô hình phân tích ma trận thành nhân tử được sử dụng rộng rãi trong hệ thống gợi ý. Nó có thể được sử dụng để dự đoán đánh giá mà một người dùng có thể đánh giá một sản phẩm.
-* Ta có thể lập trình và huấn luyện mô hình phân tích ma trận thành nhân tử cho hệ thống gợi ý.
+* Mô hình phân rã ma trận được sử dụng rộng rãi trong hệ thống gợi ý. Nó có thể được sử dụng để dự đoán đánh giá mà một người dùng có thể đánh giá một sản phẩm.
+* Ta có thể lập trình và huấn luyện mô hình phân rã ma trận cho hệ thống gợi ý.
 
 
 ## Bài tập
