@@ -108,21 +108,21 @@ The model parameters can be learned with an optimization algorithm, such as Stoc
 An intuitive illustration of the matrix factorization model is shown below:
 -->
 
-*dịch đoạn phía trên*
+Ảnh minh hoạ trực quan cho mô hình phân tích ma trận thành nhân tử được đưa ra như dưới đây:
 
 
 <!--
 ![Illustration of matrix factorization model](../img/rec-mf.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/rec-mf.svg)
+![Minh hoạ mô hình phân tích ma trận thành nhân tử](../img/rec-mf.svg)
 
 
 <!--
 In the rest of this section, we will explain the implementation of matrix factorization and train the model on the MovieLens dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích phần lập trình phân tích ma trận thành nhân tử và huấn luyện mô hình trên tập dữ liệu MovieLens.
 
 
 ```{.python .input  n=2}
@@ -138,7 +138,7 @@ npx.set_np()
 ## Model Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Lập trình Mô hình
 
 
 <!--
@@ -149,7 +149,11 @@ We can also use `nn.Embedding` to create the user/item biases by setting the `ou
 In the `forward` function, user and item ids are used to look up the embeddings.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta lập trình mô hình phân tích ma trận thành nhân tử như mô tả trên.
+Các nhân tố ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
+Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố ẩn ($k$).
+Ta cũng có thể sử dụng `nn.Embedding` để tạo độ chệch người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
+Trong hàm `forward`, id người dùng và sản phẩm được sử dụng để tìm đến đối tượng embedding.
 
 
 ```{.python .input  n=4}
@@ -175,7 +179,7 @@ class MF(nn.Block):
 ## Evaluation Measures
 -->
 
-## *dịch tiêu đề trên*
+## Phương pháp Đánh giá
 
 
 <!--
@@ -183,7 +187,8 @@ We then implement the RMSE (root-mean-square error) measure, which is commonly u
 predicted by the model and the actually observed ratings (ground truth) :cite:`Gunawardana.Shani.2015`. RMSE is defined as:
 -->
 
-*dịch đoạn phía trên*
+Ta lập trình phép đo RMSE (*root-mean-square error* - căn bậc hai trung bình bình phương sai số) được sử dụng rộng rãi nhằm đo sự khác nhau giữa giá trị đánh giá
+được dự đoán và đánh giá được quan sát thực tế (nhãn chuẩn) :cite:`Gunawardana.Shani.2015`. RMSE được định nghĩa bằng:
 
 
 $$
@@ -196,7 +201,8 @@ where $\mathcal{T}$ is the set consisting of pairs of users and items that you w
 $|\mathcal{T}|$ is the size of this set. We can use the RMSE function provided by `mx.metric`.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathcal{T}$ là tập bao gồm các cặp người dùng và sản phẩm mà ta sử dụng để đánh giá.
+$|\mathcal{T}|$ là kích thước tập này. Ta có thể sử dụng hàm RMSE được cung cấp trong `mx.metric`.
 
 
 ```{.python .input  n=3}
@@ -218,7 +224,7 @@ def evaluator(net, test_iter, devices):
 ## Training and Evaluating the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện và Đánh giá Mô hình
 
 
 <!--
@@ -226,7 +232,8 @@ In the training function, we adopt the $L_2$ loss with weight decay.
 The weight decay mechanism has the same effect as the $L_2$ regularization.
 -->
 
-*dịch đoạn phía trên*
+Trong hàm huấn luyện, ta áp dụng mất mát $L_2$ với suy giảm trọng số.
+Phương thức suy giảm trọng số có tác dụng giống như điều chuẩn $L_2$.
 
 
 ```{.python .input  n=4}
@@ -274,7 +281,8 @@ Finally, let us put all things together and train the model.
 Here, we set the latent factor dimension to 30.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, hãy cùng gộp tất cả vào với nhau và huấn luyện mô hình.
+Ở đây, ta đặt kích thước nhân tố ẩn bằng 30.
 
 
 ```{.python .input  n=5}
@@ -296,7 +304,7 @@ train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 Below, we use the trained model to predict the rating that a user (ID 20) might give to an item (ID 30).
 -->
 
-*dịch đoạn phía trên*
+Ở dưới, ta sử dụng mô hình đã được huấn luyện để dự đoán đánh giá mà một người dùng (ID 20) có thể đánh giá một sản phẩm (ID 30).
 
 
 ```{.python .input  n=6}
@@ -312,7 +320,8 @@ scores
 * We can implement and train matrix factorization for recommender systems.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình phân tích ma trận thành nhân tử được sử dụng rộng rãi trong hệ thống gợi ý. Nó có thể được sử dụng để dự đoán đánh giá mà một người dùng có thể đánh giá một sản phẩm.
+* Ta có thể lập trình và huấn luyện mô hình phân tích ma trận thành nhân tử cho hệ thống gợi ý.
 
 
 ## Bài tập
@@ -323,7 +332,9 @@ scores
 * Check the predicted rating scores of other users for a specific movie.
 -->
 
-*dịch đoạn phía trên*
+* Thay đổi kích thước của nhân tố ẩn. Kích thước của nhân tố ẩn ảnh hướng thế nào đến hiệu năng của mô hình?
+* Thử các phép tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
+* Kiểm tra giá trị đánh giá dự đoán của các người dùng khác nhau cho một bộ phim cụ thể.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -348,6 +359,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 15/08/2020)*
