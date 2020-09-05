@@ -1,9 +1,32 @@
+<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
+
+<!--
 # Deep Convolutional Generative Adversarial Networks
+-->
+
+# *dịch tiêu đề trên*
 :label:`sec_dcgan`
 
-In :numref:`sec_basic_gan`, we introduced the basic ideas behind how GANs work. We showed that they can draw samples from some simple, easy-to-sample distribution, like a uniform or normal distribution, and transform them into samples that appear to match the distribution of some dataset. And while our example of matching a 2D Gaussian distribution got the point across, it is not especially exciting.
 
-In this section, we will demonstrate how you can use GANs to generate photorealistic images. We will be basing our models on the deep convolutional GANs (DCGAN) introduced in :cite:`Radford.Metz.Chintala.2015`. We will borrow the convolutional architecture that have proven so successful for discriminative computer vision problems and show how via GANs, they can be leveraged to generate photorealistic images.
+<!--
+In :numref:`sec_basic_gan`, we introduced the basic ideas behind how GANs work.
+We showed that they can draw samples from some simple, easy-to-sample distribution, like a uniform or normal distribution, 
+and transform them into samples that appear to match the distribution of some dataset.
+And while our example of matching a 2D Gaussian distribution got the point across, it is not especially exciting.
+-->
+
+*dịch đoạn phía trên*
+
+
+<!--
+In this section, we will demonstrate how you can use GANs to generate photorealistic images.
+We will be basing our models on the deep convolutional GANs (DCGAN) introduced in :cite:`Radford.Metz.Chintala.2015`.
+We will borrow the convolutional architecture that have proven so successful for discriminative computer vision problems and show how via GANs,
+they can be leveraged to generate photorealistic images.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 from mxnet import gluon, init, np, npx
@@ -22,9 +45,21 @@ from torch import nn
 import warnings
 ```
 
-## The Pokemon Dataset
 
-The dataset we will use is a collection of Pokemon sprites obtained from [pokemondb](https://pokemondb.net/sprites). First download, extract and load this dataset.
+<!--
+## The Pokemon Dataset
+-->
+
+## *dịch tiêu đề trên*
+
+
+<!--
+The dataset we will use is a collection of Pokemon sprites obtained from [pokemondb](https://pokemondb.net/sprites).
+First download, extract and load this dataset.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 #@save
@@ -45,7 +80,15 @@ data_dir = d2l.download_extract('pokemon')
 pokemon = torchvision.datasets.ImageFolder(data_dir)
 ```
 
-We resize each image into $64\times 64$. The `ToTensor` transformation will project the pixel value into $[0, 1]$, while our generator will use the tanh function to obtain outputs in $[-1, 1]$. Therefore we normalize the data with $0.5$ mean and $0.5$ standard deviation to match the value range.
+
+<!--
+We resize each image into $64\times 64$.
+The `ToTensor` transformation will project the pixel value into $[0, 1]$, while our generator will use the tanh function to obtain outputs in $[-1, 1]$.
+Therefore we normalize the data with $0.5$ mean and $0.5$ standard deviation to match the value range.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 batch_size = 256
@@ -73,7 +116,13 @@ data_iter = torch.utils.data.DataLoader(
     shuffle=True, num_workers=d2l.get_dataloader_workers())
 ```
 
+
+<!--
 Let us visualize the first 20 images.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 d2l.set_figsize((4, 4))
@@ -93,9 +142,22 @@ for X, y in data_iter:
     break
 ```
 
-## The Generator
 
-The generator needs to map the noise variable $\mathbf z\in\mathbb R^d$, a length-$d$ vector, to a RGB image with width and height to be $64\times 64$ . In :numref:`sec_fcn` we introduced the fully convolutional network that uses transposed convolution layer (refer to :numref:`sec_transposed_conv`) to enlarge input size. The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
+<!--
+## The Generator
+-->
+
+## *dịch tiêu đề trên*
+
+
+<!--
+The generator needs to map the noise variable $\mathbf z\in\mathbb R^d$, a length-$d$ vector, to a RGB image with width and height to be $64\times 64$.
+In :numref:`sec_fcn` we introduced the fully convolutional network that uses transposed convolution layer (refer to :numref:`sec_transposed_conv`) to enlarge input size.
+The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 class G_block(nn.Block):
@@ -126,7 +188,14 @@ class G_block(nn.Module):
         return self.activation(self.batch_norm(self.conv2d_trans(X)))
 ```
 
-In default, the transposed convolution layer uses a $k_h = k_w = 4$ kernel, a $s_h = s_w = 2$ strides, and a $p_h = p_w = 1$ padding. With a input shape of $n_h^{'} \times n_w^{'} = 16 \times 16$, the generator block will double input's width and height.
+
+<!--
+In default, the transposed convolution layer uses a $k_h = k_w = 4$ kernel, a $s_h = s_w = 2$ strides, and a $p_h = p_w = 1$ padding.
+With a input shape of $n_h^{'} \times n_w^{'} = 16 \times 16$, the generator block will double input's width and height.
+-->
+
+*dịch đoạn phía trên*
+
 
 $$
 \begin{aligned}
@@ -136,6 +205,10 @@ n_h^{'} \times n_w^{'} &= [(n_h k_h - (n_h-1)(k_h-s_h)- 2p_h] \times [(n_w k_w -
   &= 32 \times 32 .\\
 \end{aligned}
 $$
+
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 ```{.python .input}
 x = np.zeros((2, 3, 16, 16))
@@ -151,7 +224,14 @@ g_blk = G_block(20)
 g_blk(x).shape
 ```
 
-If changing the transposed convolution layer to a $4\times 4$ kernel, $1\times 1$ strides and zero padding. With a input size of $1 \times 1$, the output will have its width and height increased by 3 respectively.
+
+<!--
+If changing the transposed convolution layer to a $4\times 4$ kernel, $1\times 1$ strides and zero padding.
+With a input size of $1 \times 1$, the output will have its width and height increased by 3 respectively.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 x = np.zeros((2, 3, 1, 1))
@@ -167,7 +247,17 @@ g_blk = G_block(20, strides=1, padding=0)
 g_blk(x).shape
 ```
 
-The generator consists of four basic blocks that increase input's both width and height from 1 to 32. At the same time, it first projects the latent variable into $64\times 8$ channels, and then halve the channels each time. At last, a transposed convolution layer is used to generate the output. It further doubles the width and height to match the desired $64\times 64$ shape, and reduces the channel size to $3$. The tanh activation function is applied to project output values into the $(-1, 1)$ range.
+
+<!--
+The generator consists of four basic blocks that increase input's both width and height from 1 to 32.
+At the same time, it first projects the latent variable into $64\times 8$ channels, and then halve the channels each time.
+At last, a transposed convolution layer is used to generate the output.
+It further doubles the width and height to match the desired $64\times 64$ shape, and reduces the channel size to $3$.
+The tanh activation function is applied to project output values into the $(-1, 1)$ range.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 n_G = 64
@@ -195,7 +285,13 @@ net_G = nn.Sequential(
     nn.Tanh())  # Output: (3, 64, 64)
 ```
 
+
+<!--
 Generate a 100 dimensional latent variable to verify the generator's output shape.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 x = np.zeros((1, 100, 1, 1))
@@ -209,13 +305,33 @@ x = torch.zeros((1, 100, 1, 1))
 net_G(x).shape
 ```
 
-## Discriminator
 
-The discriminator is a normal convolutional network network except that it uses a leaky ReLU as its activation function. Given $\alpha \in[0, 1]$, its definition is
+<!--
+## Discriminator
+-->
+
+## *dịch tiêu đề trên*
+
+
+<!--
+The discriminator is a normal convolutional network network except that it uses a leaky ReLU as its activation function.
+Given $\alpha \in[0, 1]$, its definition is
+-->
+
+*dịch đoạn phía trên*
+
 
 $$\textrm{leaky ReLU}(x) = \begin{cases}x & \text{if}\ x > 0\\ \alpha x &\text{otherwise}\end{cases}.$$
 
-As it can be seen, it is normal ReLU if $\alpha=0$, and an identity function if $\alpha=1$. For $\alpha \in (0, 1)$, leaky ReLU is a nonlinear function that give a non-zero output for a negative input. It aims to fix the "dying ReLU" problem that a neuron might always output a negative value and therefore cannot make any progress since the gradient of ReLU is 0.
+
+<!--
+As it can be seen, it is normal ReLU if $\alpha=0$, and an identity function if $\alpha=1$.
+For $\alpha \in (0, 1)$, leaky ReLU is a nonlinear function that give a non-zero output for a negative input.
+It aims to fix the "dying ReLU" problem that a neuron might always output a negative value and therefore cannot make any progress since the gradient of ReLU is 0.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 #@tab all
@@ -225,7 +341,14 @@ Y = [d2l.numpy(nn.LeakyReLU(alpha)(x)) for alpha in alphas]
 d2l.plot(d2l.numpy(x), Y, 'x', 'y', alphas)
 ```
 
-The basic block of the discriminator is a convolution layer followed by a batch normalization layer and a leaky ReLU activation. The hyperparameters of the convolution layer are similar to the transpose convolution layer in the generator block.
+
+<!--
+The basic block of the discriminator is a convolution layer followed by a batch normalization layer and a leaky ReLU activation.
+The hyperparameters of the convolution layer are similar to the transpose convolution layer in the generator block.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 class D_block(nn.Block):
@@ -256,7 +379,15 @@ class D_block(nn.Module):
         return self.activation(self.batch_norm(self.conv2d(X)))
 ```
 
-A basic block with default settings will halve the width and height of the inputs, as we demonstrated in :numref:`sec_padding`. For example, given a input shape $n_h = n_w = 16$, with a kernel shape $k_h = k_w = 4$, a stride shape $s_h = s_w = 2$, and a padding shape $p_h = p_w = 1$, the output shape will be:
+
+<!--
+A basic block with default settings will halve the width and height of the inputs, as we demonstrated in :numref:`sec_padding`.
+For example, given a input shape $n_h = n_w = 16$, with a kernel shape $k_h = k_w = 4$, 
+a stride shape $s_h = s_w = 2$, and a padding shape $p_h = p_w = 1$, the output shape will be:
+-->
+
+*dịch đoạn phía trên*
+
 
 $$
 \begin{aligned}
@@ -265,6 +396,7 @@ n_h^{'} \times n_w^{'} &= \lfloor(n_h-k_h+2p_h+s_h)/s_h\rfloor \times \lfloor(n_
   &= 8 \times 8 .\\
 \end{aligned}
 $$
+
 
 ```{.python .input}
 x = np.zeros((2, 3, 16, 16))
@@ -280,7 +412,13 @@ d_blk = D_block(20)
 d_blk(x).shape
 ```
 
+
+<!--
 The discriminator is a mirror of the generator.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 n_D = 64
@@ -304,7 +442,13 @@ net_D = nn.Sequential(
               kernel_size=4, bias=False))  # Output: (1, 1, 1)
 ```
 
+
+<!--
 It uses a convolution layer with output channel $1$ as the last layer to obtain a single prediction value.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 x = np.zeros((1, 3, 64, 64))
@@ -318,9 +462,28 @@ x = torch.zeros((1, 3, 64, 64))
 net_D(x).shape
 ```
 
-## Training
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
-Compared to the basic GAN in :numref:`sec_basic_gan`, we use the same learning rate for both generator and discriminator since they are similar to each other. In addition, we change $\beta_1$ in Adam (:numref:`sec_adam`) from $0.9$ to $0.5$. It decreases the smoothness of the momentum, the exponentially weighted moving average of past gradients, to take care of the rapid changing gradients because the generator and the discriminator fight with each other. Besides, the random generated noise `Z`, is a 4-D tensor and we are using GPU to accelerate the computation.
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
+
+<!--
+## Training
+-->
+
+## *dịch tiêu đề trên*
+
+
+<!--
+Compared to the basic GAN in :numref:`sec_basic_gan`, 
+we use the same learning rate for both generator and discriminator since they are similar to each other.
+In addition, we change $\beta_1$ in Adam (:numref:`sec_adam`) from $0.9$ to $0.5$.
+It decreases the smoothness of the momentum, the exponentially weighted moving average of past gradients, 
+to take care of the rapid changing gradients because the generator and the discriminator fight with each other.
+Besides, the random generated noise `Z`, is a 4-D tensor and we are using GPU to accelerate the computation.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 def train(net_D, net_G, data_iter, num_epochs, lr, latent_dim,
@@ -405,9 +568,14 @@ def train(net_D, net_G, data_iter, num_epochs, lr, latent_dim, device=d2l.try_gp
           f'{metric[2] / timer.stop():.1f} examples/sec on {str(device)}')
 ```
 
+
+<!--
 We train the model with a small number of epochs just for demonstration.
-For better performance,
-the variable `num_epochs` can be set to a larger number.
+For better performance, the variable `num_epochs` can be set to a larger number.
+-->
+
+*dịch đoạn phía trên*
+
 
 ```{.python .input}
 #@tab all
@@ -415,22 +583,52 @@ latent_dim, lr, num_epochs = 100, 0.005, 20
 train(net_D, net_G, data_iter, num_epochs, lr, latent_dim)
 ```
 
-## Summary
+## Tóm tắt
 
+<!--
 * DCGAN architecture has four convolutional layers for the Discriminator and four "fractionally-strided" convolutional layers for the Generator.
 * The Discriminator is a 4-layer strided convolutions with batch normalization (except its input layer) and leaky ReLU activations.
-* Leaky ReLU is a nonlinear function that give a non-zero output for a negative input. It aims to fix the “dying ReLU” problem and helps the gradients flow easier through the architecture.
+* Leaky ReLU is a nonlinear function that give a non-zero output for a negative input. 
+It aims to fix the “dying ReLU” problem and helps the gradients flow easier through the architecture.
+-->
+
+*dịch đoạn phía trên*
 
 
-## Exercises
+## Bài tập
 
+<!--
 1. What will happen if we use standard ReLU activation rather than leaky ReLU?
-1. Apply DCGAN on Fashion-MNIST and see which category works well and which does not.
+2. Apply DCGAN on Fashion-MNIST and see which category works well and which does not.
+-->
 
-:begin_tab:`mxnet`
-[Discussions](https://discuss.d2l.ai/t/409)
-:end_tab:
+*dịch đoạn phía trên*
 
-:begin_tab:`pytorch`
-[Discussions](https://discuss.d2l.ai/t/836)
-:end_tab:
+
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+
+## Thảo luận
+* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/409)
+* [Tiếng Anh - PyTorch](https://discuss.d2l.ai/t/836)
+* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+
+
+## Những người thực hiện
+Bản dịch trong trang này được thực hiện bởi:
+<!--
+Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
+hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
+
+Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
+-->
+
+* Đoàn Võ Duy Thanh
+<!-- Phần 1 -->
+* 
+
+<!-- Phần 2 -->
+* 
+
+<!-- Phần 3 -->
+* 
