@@ -262,7 +262,7 @@ for i in range(num_merges):
 After 10 iterations of byte pair encoding, we can see that list `symbols` now contains 10 more symbols that are iteratively merged from other symbols.
 -->
 
-Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác. 
+Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được lần lượt ghép từ các biểu tượng khác. 
 
 
 ```{.python .input}
@@ -277,7 +277,7 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-Với cùng tập dữ liệu đặc tả trong các khóa (*keys*) của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con là "fast_", "fast", "er_", "tall_", và "tall" theo giải thuật biểu diễn cặp byte.
 Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
@@ -347,7 +347,7 @@ As a greedy approach, byte pair encoding iteratively merges the most frequent pa
 * FastText đề xuất phương pháp embedding cho từ con. Dựa trên mô hình skip-gram trong word2vec, phương pháp này biểu diễn vector từ trung tâm thành tổng các vector từ con của từ đó.
 * Embedding cho từ con sử dụng nguyên tắc trong hình thái học, thường giúp cải thiện chất lượng biểu diễn của các từ ít gặp.
 * Mã hoá cặp byte thực hiện phân tích thống kê trên tập dữ liệu huấn luyện để phát hiện các ký hiệu chung trong một từ.
-Là một giải thuật tham lam, mã hoá cặp byte lặp phép gộp (_merge_) các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
+Là một giải thuật tham lam, mã hoá cặp byte lần lượt gộp các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
 
 
 ## Bài tập
@@ -362,7 +362,7 @@ Can you think of any methods to solve them? Hint: Refer to the end of section 3.
 
 1. Khi có quá nhiều từ con (ví dụ, 6 từ trong tiếng Anh có thể tạo ra $3\times 10^8$ các tổ hợp khác nhau), vấn đề gì sẽ xảy ra?
 Bạn có thể giải quyết vấn đề trên không? Gợi ý: Tham khảo đoạn cuối phần 3.2 của bài báo fastText [1].
-2. Bạn có thể thiết kế một mô hình embedding cho từ con dựa trên mô hình bag-of-words liên tục bằng cách nào?
+2. Làm sao để thiết kế một mô hình embedding cho từ con dựa trên mô hình túi từ liên tục CBOW ?
 3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp cần được thực hiện khi bộ từ vựng ký hiệu ban đầu có kích thước là $n$? 
 4. Ta có thể mở rộng ý tưởng của thuật toán mã hoá cặp byte để trích xuất các cụm từ bằng cách nào?
 
@@ -397,3 +397,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
