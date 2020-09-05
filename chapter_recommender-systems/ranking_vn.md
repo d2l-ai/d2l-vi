@@ -79,7 +79,8 @@ Where $\Theta$ represents the parameters of an arbitrary recommendation model, $
 We can formulate the maximum posterior estimator to derive the generic optimization criterion for the personalized ranking task.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\Theta$ biểu diễn các tham số của một mô hình gợi ý bất kỳ, $>_u$ biểu diễn tổng xếp hạng mong muốn được cá nhân hoá của tất cả sản phẩm cho người dùng $u$.
+Ta có thể biểu diễn công thức của bộ ước lượng hậu nghiệm cực đại xuất phát từ tiêu chuẩn tối ưu chung cho tác vụ cá nhân hoá xếp hạng.
 
 
 $$
@@ -101,14 +102,19 @@ The prior $p(\Theta)$ is a normal distribution with zero mean and variance-covar
 Here, we let $\Sigma_\Theta = \lambda_\Theta I$.
 -->
 
-*dịch đoạn phía trên*
+trong đó $D := \{(u, i, j) \mid i \in I^+_u \wedge j \in I \backslash I^+_u \}$ là tập huấn luyện,
+với $I^+_u$ ký hiệu sản phẩm mà người dùng $u$ thích, $I$ ký hiệu toàn bộ sản phẩm, và $I \backslash I^+_u$ chỉ toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó thích.
+$\hat{y}_{ui}$ và $\hat{y}_{uj}$ là giá trị dự đoán của người dùng $u$ lần lượt đối với sản phẩm $i$ và $j$.
+$p(\Theta)$ ở trước là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$.
+Ở đây ta coi $\Sigma_\Theta = \lambda_\Theta I$.
+
 
 
 <!--
 ![Illustration of Bayesian Personalized Ranking](../img/rec-ranking.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/rec-ranking.svg)
+![Minh hoạ Cá nhân hoá Xếp hạng Bayes](../img/rec-ranking.svg)
 
 
 
@@ -117,7 +123,8 @@ We will implement the base class `mxnet.gluon.loss.Loss` and override the `forwa
 We begin by importing the Loss class and the np module.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng mất mát cá nhân hoá xếp hạng Bayes.
+Ta bắt đầu bằng việc nhập vào lớp Loss và mô-đun np.
 
 
 ```{.python .input  n=5}
@@ -130,7 +137,7 @@ npx.set_np()
 The implementation of BPR loss is as follows.
 -->
 
-*dịch đoạn phía trên*
+Cách lập trình cho mất mát BPR như sau.
 
 
 ```{.python .input  n=2}
@@ -150,7 +157,7 @@ class BPRLoss(gluon.loss.Loss):
 ## Hinge Loss and its Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Mất mát Hinge và Cách lập trình
 
 
 <!--
@@ -159,7 +166,9 @@ provided within the gluon library that is often used in classifiers such as SVMs
 The loss used for ranking in recommender systems has the following form.
 -->
 
-*dịch đoạn phía trên*
+Mất mát Hinge trong xếp hạng có sự khác biệt so với dạng [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
+được cung cấp trong thư viện gluon mà thường được sử dụng trong các bộ phân loại ví dụ như SVM.
+Mất mát này trong xếp hạng trong hệ thống gợi ý có dạng như sau.
 
 
 $$
@@ -174,7 +183,10 @@ Similar to BPR, it aims to optimize for relevant distance between positive and
 negative samples instead of absolute outputs, making it well suited to recommender systems.
 -->
 
-*dịch đoạn phía trên*
+trong đó $m$ là khoảng cách biên an toàn.
+Mất mát này nhằm mục đích đẩy sản phẩm tiêu cực ra xa khỏi các sản phẩm tích cực.
+Giống như BPR, nó nhằm tối ưu cho khoảng cách thích đáng giữa mẫu dương và
+mẫu âm thay vì đầu ra tuyệt đối, khiến cho nó phù hợp với hệ thống gợi ý.
 
 
 ```{.python .input  n=3}
@@ -195,7 +207,7 @@ class HingeLossbRec(gluon.loss.Loss):
 These two losses are interchangeable for personalized ranking in recommendation.
 -->
 
-*dịch đoạn phía trên*
+Hai loại mất mát này có thể thay thế lẫn nhau trong cá nhân hoá xếp hạng trong hệ thống gợi ý.
 
 
 ## Tóm tắt
@@ -205,7 +217,8 @@ These two losses are interchangeable for personalized ranking in recommendation.
 * The two pairwise loses, Bayesian personalized ranking loss and hinge loss, can be used interchangeably.
 -->
 
-*dịch đoạn phía trên*
+* Có ba loại mất mát xếp hạng hiện có trong tác vụ cá nhân hoá xếp hạng trong hệ thống gợi ý, bao gồm các phương pháp theo từng điểm, theo từng cặp và theo danh sách.
+* Hai loại mất mát theo cặp, mất mát cá nhân hoá xếp hạng Bayes và mất mát Hinge, có thể được sử dụng thay thế lẫn nhau.
 
 
 ## Bài tập
@@ -215,7 +228,8 @@ These two losses are interchangeable for personalized ranking in recommendation.
 * Can you find any recommendation models that use BPR or hinge loss?
 -->
 
-*dịch đoạn phía trên*
+* Liệu có biến thể nào khác của mất mát BPR và mất mát Hinge?
+* Bạn có thể tìm mô hình gợi ý nào khác sử dụng mất mát BPR hoặc mất mát Hinge?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -240,6 +254,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
