@@ -4,7 +4,7 @@
 # Overview of Recommender Systems
 -->
 
-# *dịch tiêu đề trên*
+# Sơ lược về Hệ thống Gợi ý
 
 
 <!--
@@ -24,20 +24,33 @@ This chapter will introduce the fundamental concepts, classic models and recent 
 with deep learning in the field of recommender systems, together with implemented examples.
 -->
 
-*dịch đoạn phía trên*
+Trong thập kỷ vừa qua, mạng Internet đã phát triển trở thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn,
+đồng thời thay đổi một cách sâu sắc cách ta giao tiếp, đọc tin tức, mua hàng và xem phim.
+Trong khi đó, một lượng lớn sản phẩm chưa từng có trong tiền lệ (chúng tôi sử dụng từ *sản phẩm* nhằm nói đến phim ảnh, tin tức, sách và hàng hoá)
+được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm ra những sản phẩm mà ta quan tâm đến.
+Do đó hệ thống gợi ý là công cụ lọc thông tin mạnh mẽ
+mà có thể đơn giản hoá dịch vụ cá nhân hoá và cung cấp trải nghiệm mượt mà cho từng người dùng.
+Nói ngắn gọn, hệ thống gợi ý đóng vai trò nòng cốt trong việc tận dụng nguồn dữ liệu dồi dào có sẵn nhằm khiến việc đưa ra lựa chọn dễ dàng hơn.
+Ngày nay, hệ thống gợi ý là là thành phần cơ bản của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
+Nhớ lại ví dụ mà Amazon đưa ra gợi ý các sách Học sâu trong :numref:`subsec_recommender_systems`.
+Lợi ích của việc sử dụng hệ thống gợi ý gồm hai ý:
+Một mặt, nó có thể giảm phần lớn công sức của người dùng trong tìm kiếm sản phẩm và giảm nhẹ vấn đề quá tải thông tin.
+Mặt khác, nó có thể tăng giá trị kinh doanh cho các nhà cung cấp dịch vụ trực tuyến và trở thành nguồn doanh thu quan trọng.
+Chương này sẽ giới thiệu những khái niệm cơ bản, các mô hình cổ điển và những bước tiền gần đây
+của học sâu trong lĩnh vực hệ thống gợi ý, cùng với các ví dụ lập trình.
 
 <!--
 ![Illustration of the Recommendation Process](../img/rec-intro.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/rec-intro.svg)
+![Minh hoạ Quá trình Gợi ý](../img/rec-intro.svg)
 
 
 <!--
 ## Collaborative Filtering
 -->
 
-## *dịch tiêu đề trên*
+## Lọc Cộng tác
 
 
 <!--
@@ -50,7 +63,13 @@ filtering for information or patterns using techniques involving collaboration a
 CF has many forms and numerous CF methods proposed since its advent.
 -->
 
-*dịch đoạn phía trên*
+Ta mở đầu chương này với một khái niệm quan trọng trong hệ thống gợi ý --- lọc cộng tác (*Collaborative Filtering - CF*),
+được tạo ra đầu tiên trong hệ thống Tapestry :cite:`Goldberg.Nichols.Oki.ea.1992`,
+ám chỉ đến "mọi người cộng tác giúp đỡ lẫn nhau để thực hiện quá trình lọc
+nhằm xử lý lượng lớn email và tin nhắn đăng trong nhóm thảo luận".
+Định nghĩa này được làm phong phú với nhiều nghĩa. Hiểu theo nghĩa rộng, đây là quá trình
+lọc lấy thông tin hoặc mô hình sử dụng các kĩ thuật yêu cầu sự cộng tác của nhiều người dùng, tác nhân, và nguồn dữ liệu.
+CF có nhiều hình thức khác nhau và rất nhiều phương pháp CF khác đã được đề xuất từ khi nó được tạo ra.
 
 
 <!--
@@ -67,7 +86,17 @@ the content descriptions of items/users and contextual signals such as timestamp
 Obviously, we may need to adjust the model types/structures when different input data is available.
 -->
 
-*dịch đoạn phía trên*
+Nói chung, các kỹ thuật CF có thể được phân ra thành các lớp: CF dựa vào ghi nhớ (*memory-based CF*), CF dựa vào mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
+Đại diện của các kỹ thuật CF dựa vào ghi nhớ chính là CF dựa vào các điểm dữ liệu lân cận (*nearest neighbor-based CF*) ví dụ như CF dựa vào người dùng (*user-based CF*) hay CF dựa vào sản phẩm (*item-based CF *) :cite:`Sarwar.Karypis.Konstan.ea.2001`.
+Các mô hình nhân tố ẩn (*latent factor model*) ví dụ như phân tích ma trận thành nhân tử (*matrix factorization*) là một ví dụ của CF dựa vào mô hình.
+CF dựa vào ghi nhớ có nhiều hạn chế trong việc xử lý dữ liệu thưa và quy mô lớn do nó tính toán độ tương đồng dựa trên những sản phẩm phổ biến.
+Phương pháp dựa vào mô hình ngày càng trở nên phổ biến hơn do khả năng xử lý dữ liệu thưa thớt tốt hơn và tính mở rộng tốt hơn.
+Nhiều cách tiếp cận với CF dựa vào mô hình có thể được mở rộng với mạng nơ-ron,
+dẫn đến nhiều mô hình linh hoạt và tính mở rộng cao nhờ sự thúc đẩy tính toán trong học sâu :cite:`Zhang.Yao.Sun.ea.2019`.
+Nhìn chung, CF chỉ sử dụng dữ liệu tương tác giữa người dùng - sản phẩm nhằm đưa ra dự đoán và gợi ý.
+Ngoài CF, hệ thống gợi ý dựa vào nội dung (*content-based*) và dựa vào ngữ cảnh (*context-based*) cũng hữu dụng trong việc kết hợp
+nội dung mô tả của sản phẩm/người dùng và các dấu hiệu ngữ cảnh ví dụ như mốc thời gian và địa điểm.
+Đương nhiên, ta có lẽ sẽ cần phải điều chỉnh cấu trúc/loại mô hình với dữ liệu đầu vào khả dụng khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -157,7 +186,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
