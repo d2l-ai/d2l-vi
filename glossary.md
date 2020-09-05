@@ -306,6 +306,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | marginalization                   | phép biên hóa                   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (in computer vision)         | mặt nạ                          |                                              |
 | masked multi-head attention layer | tầng tập trung đa đầu có mặt nạ |                                              |
+| matrix factorization              | phân rã ma trận                 | [https://git.io/JUsrl](https://git.io/JUsrl)
 | max pooling                       | gộp cực đại                     | [https://git.io/JfGi6](https://git.io/JfGi6) |
 | maximize (in optimization)        | cực đại hóa                     |                                              |
 | maximum likelihood estimator      | bộ ước lượng hợp lý cực đại     |                                              |
