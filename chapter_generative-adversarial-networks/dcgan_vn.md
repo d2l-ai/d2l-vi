@@ -322,6 +322,7 @@ Given $\alpha \in[0, 1]$, its definition is
 
 
 $$\textrm{leaky ReLU}(x) = \begin{cases}x & \text{if}\ x > 0\\ \alpha x &\text{otherwise}\end{cases}.$$
+<!--dịch-->
 
 
 <!--
