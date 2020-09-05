@@ -1,19 +1,3 @@
-Cập nhật tiến độ hoàn thành chương **Generative Adversarial Networks**.
-Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
-
-## Giai đoạn 1 ` parts`
-* [ ] 17.00 [GAN Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 part`
-* [ ] 17.01. [Generative Adversarial Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+gan_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 parts`
-* [ ] 17.02. [Deep Convolutional Generative Adversarial Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+dcgan_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 parts`
-
-## Giai đoạn 2 ` parts`
-* [ ] 17.00 [GAN Index](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+index_vn+label%3A%22status%3A+phase+1%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 part`
-* [ ] 17.01. [Generative Adversarial Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+gan_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 parts`
-* [ ] 17.02. [Deep Convolutional Generative Adversarial Networks](https://github.com/aivivn/d2l-vn/issues?q=is%3Aissue+dcgan_vn+label%3A%22status%3A+phase+2%22+label%3A%22chapter%3A+generative-adversarial-networks%22) `0 parts`
-
-
----
-
 Cập nhật tiến độ hoàn thành chương **Appendix: Mathematics for Deep Learning**.
 Tiến độ toàn dự án xem **[tại đây](https://github.com/aivivn/d2l-vn/issues/1497)**.
 
