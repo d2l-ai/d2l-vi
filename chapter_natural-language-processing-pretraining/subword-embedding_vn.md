@@ -65,8 +65,8 @@ For example, when $n=3$, we can get all subwords with a length of $3$:
 -->
 
 Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ con.
-Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu làm thế nào các từ tố được tạo thành.
-Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ con được dùng làm tiền tố và hậu tố. 
+Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu cách các từ tố được tạo thành.
+Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ con được dùng làm tiền tố và hậu tố.
 Rồi ta sẽ xem từ này như một chuỗi các ký tự để trích xuất $n$-grams.
 Chẳng hạn, khi $n=3$, ta có thể nhận tất cả từ tố với chiều dài là $3$:
 
@@ -103,9 +103,9 @@ However, we can obtain better vectors for more uncommon complex words, even word
 -->
 
 Phần còn lại của tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, vì vậy ta không mô tả lại ở đây.
-Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển trong fastText lớn hơn dẫn tới số tham số của mô hình nhiều hơn.
+Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển của fastText lớn hơn dẫn tới nhiều tham số mô hình hơn.
 Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới độ phức tạp tính toán cao hơn.
-Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này nhờ tham chiếu các từ có cấu trúc tương tự khác.
+Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp ít thông dụng, thậm chí cho cả các từ không hiện diện trong từ điển này nhờ tham chiếu tới các từ khác có cấu trúc tương tự.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -125,7 +125,7 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước bộ từ vựng. 
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể xác được định trước. 
 Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`. 
 
 
@@ -174,7 +174,7 @@ In other words, space is the delimiter between symbols within a word.
 -->
 
 Vì không xét các cặp ký hiệu vượt qua ranh giới của các từ,
-chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ với tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu. 
+chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ tới tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu. 
 Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
 từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man"). 
 Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt, 
@@ -196,7 +196,7 @@ We define the following `get_max_freq_pair` function that
 returns the most frequent pair of consecutive symbols within a word,
 where words come from keys of the input dictionary `token_freqs`.
 -->
-Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, trong đó các từ xuất hiện trong các khoá của từ điển đầu vào `token_freqs`. 
+Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, với từ là các khoá của từ điển đầu vào `token_freqs`. 
 
 
 ```{.python .input}
@@ -216,7 +216,7 @@ As a greedy approach based on frequency of consecutive symbols,
 byte pair encoding will use the following `merge_symbols` function to merge the most frequent pair of consecutive symbols to produce new symbols.
 -->
 
-Là một cách tiếp cận tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới. 
+Là một thuật toán tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới. 
 
 
 ```{.python .input}
