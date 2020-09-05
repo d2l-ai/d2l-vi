@@ -112,7 +112,7 @@ net.initialize(init.Xavier(), ctx=devices)
 ### Loading Pre-trained Word Vectors
 -->
 
-### Nạp các vector từ tiền huấn luyện
+### Nạp các Vector Từ đã qua Tiền huấn luyện
 
 
 <!--
@@ -121,8 +121,8 @@ we will directly use word vectors pre-trained on a larger corpus as the feature 
 Here, we load a 100-dimensional GloVe word vector for each word in the dictionary `vocab`.
 -->
 
-Bởi vì tập dữ liệu dùng huấn luyện cho việc phân loại cảm xúc không quá lớn, để xử lý vấn đề quá khớp, 
-ta sẽ dùng các vector từ trực tiếp đã được tiền huấn luyện trên tập ngữ liệu lớn hơn làm các vector đặc trưng cho tất cả các từ.
+Bởi vì tập dữ liệu huấn luyện cho việc phân loại cảm xúc không quá lớn, để xử lý vấn đề quá khớp, 
+ta sẽ dùng trực tiếp các vector từ đã được tiền huấn luyện trên tập ngữ liệu lớn hơn làm các vector đặc trưng cho tất cả các từ.
 Ở đây, ta nạp vector từ Glove 100-chiều cho mỗi từ trong từ điển `vocab`.
 
 
@@ -135,7 +135,7 @@ glove_embedding = d2l.TokenEmbedding('glove.6b.100d')
 Query the word vectors that in our vocabulary.
 -->
 
-Truy vấn các vector từ này nằm trong từ vựng của chúng ta.
+Truy vấn các vector từ nằm trong từ vựng của chúng ta.
 
 
 ```{.python .input}
@@ -151,7 +151,7 @@ In addition, we no longer update these word vectors during training.
 -->
 
 Rồi ta sẽ sử dụng các vector từ đó làm các vector đặc trưng cho mỗi từ trong các đánh giá.
-Lưu ý là các chiều của vector từ tiền huấn luyện cần nhất quán với kích thước đầu ra tầng embdding `embed size` trong mô hình đã tạo.
+Lưu ý là các chiều của vector từ đã qua tiền huấn luyện cần nhất quán với kích thước đầu ra `embed size` của tầng embedding trong mô hình đã tạo.
 Thêm vào đó, ta không còn cập nhật các vector từ đó trong suốt quá trình huấn luyện.
 
 
@@ -172,7 +172,7 @@ net.embedding.collect_params().setattr('grad_req', 'null')
 Now, we can start training.
 -->
 
-Bây giờ ta có thẻ bắt đầu thực hiện huấn luyện
+Bây giờ ta có thể bắt đầu thực hiện huấn luyện.
 
 
 ```{.python .input  n=48}
@@ -203,7 +203,7 @@ def predict_sentiment(net, vocab, sentence):
 Then, use the trained model to classify the sentiments of two simple sentences.
 -->
 
-Rồi sử dụng mô hình đã huấn luyện để phân loại các cảm xúc cho hai câu đơn giản.
+Rồi sử dụng mô hình đã huấn luyện để phân loại cảm xúc cho hai câu đơn giản.
 
 
 ```{.python .input  n=50}
