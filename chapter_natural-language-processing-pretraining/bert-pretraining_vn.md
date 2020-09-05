@@ -128,9 +128,6 @@ Instead of specifying the number of epochs for training as in the `train_ch13` f
 the input `num_steps` of the following function specifies the number of iteration steps for training.
 -->
 
-Hàm `train_bert` sử dụng lại hai hàm hỗ trợ đã được đề cập đến, định nghĩa các bước thực hiện để tiền huấn luyện mô hình BERT (`net`) và trên tập dữ liệu WikiText-2 (`train_iter`).
-Huấn luyện mô hình BERT mất một thời gian tương đối lâu.
-Thay vào đó, ta xác định số lượng epoch trong quá trình huấn luyện trong hàm `train_ch13` (xem mục :numref:`sec_image_augmentation`), `num_steps` được truyền vào hàm xác định số lượng vòng lặp cho quá trình huấn luyện.
 Sử dụng lại hai hàm hỗ trợ được đề cập ở trên, hàm `train_bert` dưới đây  sẽ định nghĩa quá trình tiền huấn luyện mô hình BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
 Việc huấn luyện BERT có thể khá mất thời gian.
 Do đó thay vì truyền vào số lượng epoch huấn luyện như trong hàm `train_ch13` (:numref:`sec_image_augmentation`), ta sử dụng tham số `num_steps` trong hàm sau để xác định số vòng lặp huấn luyện.
