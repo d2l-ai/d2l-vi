@@ -234,7 +234,9 @@ biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị 
 Các ghi điểm của tất cả các đoạn văn token như vậy thì được biến đổi xa hơn bởi thực thi softmax
 trở thành một phân phối xác suất, vì thế mỗi vị trí token $i$ trong đoạn văn được gán
 cho một xác suất $p_i$ trở thành điểm bắt đầu của khoảng văn bản.
-Dự đoán điểm kết thúc của khoảng văn bản cũng giống như ở trên, ngoại trừ các thông số trong 
+Dự đoán điểm kết thúc của khoảng văn bản cũng giống như ở trên, ngoại trừ các thông số trong tầng kết nối đầy đủ mở rộng độc lập với dự đoán điểm bắt đầu.
+Khi dự đoán điểm kết thúc, bất kỳ token đoạn văn nào của vị trí $i$ được biến đổi bởi tầng kết nối đầy đủ trở thành một điểm vô hướng $e_i$.
+:numref:`fig_bert-qa` miêu tả tinh chỉnh BERT cho việc trả lời câu hỏi.
 
 
 <!--
@@ -244,7 +246,7 @@ When predicting the span, we can compute the score $s_i + e_j$ for a valid span
 from position $i$ to position $j$ ($i \leq j$), and output the span with the highest score.
 -->
 
-*dịch đoạn phía trên*
+Cho việc trả lời câu hỏi, mục đích của huấn luyện học có giám sát rõ ràng là tối đa hóa hàm log-likelihood của các vị trí bắt đầu và kết thúc thực. Khi dự đoán khoảng, ta có thể tính toán điểm $s_i + e_j$ cho một khoảng xác định từ vị trí $i$ tới vị trí $j$ ($i \leq j$), và đầu ra của khoảng với điểm cao nhất.
 
 
 ## Tóm tắt
@@ -257,8 +259,10 @@ such as single text classification (e.g., sentiment analysis and testing linguis
 while all the parameters in the pretrained BERT model are fine-tuned.
 -->
 
-*dịch đoạn phía trên*
-
+* BERT đòi hỏi thay đổi kiến trúc tối thiểu (các tầng kết nối đầy đủ mở rộng) cho những ứng dụng xử lý ngôn ngữ tự nhiên ở mức chuỗi và mức token,
+ví dụ như phân loại văn bản đơn (ví dụ, phân tích cảm xúc và kiểm tra khả năng chấp nhận ngôn ngữ), phân loại cặp văn bản hay hồi quy 
+(ví dụ, suy luận ngôn ngữ tự nhiên và sự giống nhau về ngữ nghĩa của văn bản), gắn thẻ văn bản (ví dụ, gắn thẻ loại từ) và trả lời câu hỏi.
+* Trong suốt quá trình học có giám sát của một ứng dụng cấp thấp, các thông số của tầng mở rộng được học từ đầu trong khi tất cả các thông số trong mô hình tiền huấn luyện BERT thì được tinh chỉnh.
 
 
 ## Bài tập
@@ -273,8 +277,13 @@ How can we apply negative sampling (see :numref:`subsec_negative-sampling`) and 
 3. Can we leverage BERT in machine translation?
 -->
 
-*dịch đoạn phía trên*
-
+1. Hãy thiết kế một thuật toán tìm kiếm dùng cho các bài báo tin tức. Khi hệ thống nhận một truy vấn (ví dụ, "oil industry during the coronavirus outbreak"),
+nó trả về một danh sách được xếp hạng các bài viết tin tức liên quan tới truy vấn nhất. 
+Giả sử như ta có một hồ lớn các bài báo và một số lượng lớn các truy vấn.
+Để đơn giản hóa vấn đề, giả thiết rằng các bài liên quan nhất sẽ được gán nhãn cho từng tuy vấn.
+Làm cách nào để ta áp dụng mẫu âm (xem :numref:`subsec_negative-sampling`) và BERT trong thiết kế thuật toán?
+2. Dùng cách nào để tận dụng BERT trong huấn luyện các mô hình ngôn ngữ?
+3. Dùng cách nào để tận dụng BERT trong dịch máy?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -303,4 +312,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Trần Yến Thy
