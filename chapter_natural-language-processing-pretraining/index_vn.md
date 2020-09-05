@@ -47,14 +47,14 @@ Sau khi tiền huấn luyện, biểu diễn của mỗi token có thể là m�
 Ví dụ, biểu diễn vector của từ "bank" là giống nhau trong câu "go to the bank to deposit some money" (ra *ngân hàng* để gửi tiền) và "go to the bank to sit down" (ra *bờ hồ* ngồi hóng mát).
 Do đó, nhiều mô hình tiền huấn luyện gần đây điều chỉnh biểu diễn của cùng một token với các ngữ cảnh khác nhau.
 Trong số đó có BERT, một mô hình sâu hơn rất nhiều dựa trên bộ mã hóa Transformer.
-Trong chương này, ta sẽ tập trung vào cách tiền huấn luyện các biểu diễn như vậy cho văn bản, như được mô tả trong :numref:`fig_nlp-map-Pretrain`.
+Trong chương này, ta sẽ tập trung vào cách tiền huấn luyện các biểu diễn như vậy cho văn bản, như được mô tả trong :numref:`fig_nlp-map-pretrain`.
 
 
 <!--
 ![Pretrained text representations can be fed to various deep learning architectures for different downstream natural language processing applications. This chapter focuses on the upstream text representation pretraining.](../img/nlp-map-pretrain.svg)
 -->
 
-![Các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu khác nhau cho các ứng dụng xử lý ngôn ngữ tự nhiên hạ nguồn khác nhau. Chương này tập trung vào cách tiền huấn luyện biểu diễn văn bản ngược dòng (_upstream_).](../img/nlp-map-pretrain.svg)
+![Các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu khác nhau cho các ứng dụng xử lý ngôn ngữ tự nhiên hạ nguồn khác nhau. Chương này tập trung vào cách tiền huấn luyện biểu diễn văn bản ngược dòng (*upstream*).](../img/nlp-map-pretrain.svg)
 :label:`fig_nlp-map-pretrain`
 
 
@@ -64,7 +64,7 @@ a variety of deep learning architectures for different downstream natural langua
 We will cover them in :numref:`chap_nlp_app`.
 -->
 
-Như mô tả trong :numref:`fig_nlp-map-Pretrain`, các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào
+Như mô tả trong :numref:`fig_nlp-map-pretrain`, các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào
 những kiến trúc học sâu cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau.
 Chúng tôi sẽ trình bày các phần này trong :numref:`chap_nlp_app`.
 
@@ -86,11 +86,6 @@ bert-pretraining_vn
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
