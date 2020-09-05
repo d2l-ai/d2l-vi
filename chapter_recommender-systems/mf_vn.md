@@ -4,7 +4,7 @@
 # Matrix Factorization
 -->
 
-# Phân tích Ma trận thành nhân tử
+# Phân rã Ma trận
 
 
 <!--
@@ -22,24 +22,24 @@ The technical report the Netflix Grand Prize solution :cite:`Toscher.Jahrer.Bell
 In this section, we will dive into the details of the matrix factorization model and its implementation.
 -->
 
-Phân tích ma trận thành nhân tử (*Matrix Factorization*) :cite:`Koren.Bell.Volinsky.2009` là một trong những thuật toán đã tồn tại trong thời gian dài trong các tài liệu về hệ thống gợi ý.
-Phiên bản đầu tiên của mô hình phân tích ma trận thành nhân tử được đề xuất bởi Simon Funk trong một [bài blog nổi tiếng](https://sifter.org/~simon/journal/20061211.html), trong đó anh đã mô tả ý tưởng phân tích ma trận tương tác thành nhân tử.
+Phân rã ma trận (*Matrix Factorization*) :cite:`Koren.Bell.Volinsky.2009` là một trong những thuật toán đã tồn tại trong thời gian dài trong các tài liệu về hệ thống gợi ý.
+Phiên bản đầu tiên của mô hình phân rã ma trận được đề xuất bởi Simon Funk trong một [bài blog nổi tiếng](https://sifter.org/~simon/journal/20061211.html), trong đó anh đã mô tả ý tưởng phân rã ma trận tương tác thành các nhân tử.
 Bài blog này trở nên phổ biến nhờ cuộc thi Netflix tổ chức vào năm 2006.
 Tại thời điểm đó, Netflix, một công ty truyền thông đa phương tiện và cho thuê phim, công bố một cuộc thi nhằm cải thiện hiệu năng hệ thống gợi ý của công ty.
 Đội xuất sắc nhất mà có thể cải thiện mức cơ sở của Netflix (thuật toán Cinematch) lên 10 phần trăm sẽ thắng giải thưởng một triệu USD.
 Do đó, cuộc thi này thu hút rất nhiều sự chú ý trong ngành nghiên cứu hệ thống gợi ý.
 Cuối cùng, giải thưởng lớn nhất được dành cho đội Pragmatic Chaos của BellKor, là sự phối hợp giữa các đội BellKor, Pragmatic Theory và BigChaos (bạn hiện tại chưa cần phải quan tâm đến các thuật toán này).
 Dù kết quả cuối cùng là một giải pháp kết hợp (tức phối hợp nhiều thuật toán với nhau),
-thuật toán phân tích ma trận thành nhân tử đóng vai trò chủ đạo trong thuật toán pha trộn cuối cùng.
+thuật toán phân rã ma trận đóng vai trò chủ đạo trong thuật toán pha trộn cuối cùng.
 Báo cáo kĩ thuật của Giải thưởng Netflix :cite:`Toscher.Jahrer.Bell.2009` cung cấp giới thiệu chi tiết về mô hình được chấp thuận.
-Trong phần này, ta sẽ đi sâu vào chi tiết mô hình phân tích ma trận thành nhân tử và cách lập trình.
+Trong phần này, ta sẽ đi sâu vào chi tiết mô hình phân rã ma trận và cách lập trình.
 
 
 <!--
 ## The Matrix Factorization Model
 -->
 
-## Mô hình Phân tích Ma trận thành nhân tử
+## Mô hình Phân rã Ma trận
 
 
 <!--
@@ -48,7 +48,7 @@ Specifically, the model factorizes the user-item interaction matrix (e.g., ratin
 into the product of two lower-rank matrices, capturing the low-rank structure of the user-item interactions.
 -->
 
-Phân tích ma trận thành nhân tử là một lớp trong các mô hình lọc cộng tác.
+Phân rã ma trận là một lớp trong các mô hình lọc cộng tác.
 Cụ thể, mô hình này phân tích ma trận tương tác giữa người dùng - sản phẩm (ví dụ như ma trận đánh giá)
 thành tích của hai ma trận bậc thấp hơn, nhằm thu được cấu trúc bậc thấp của tương giác giữa người dùng - sản phẩm.
 
@@ -106,7 +106,7 @@ Then, we train the matrix factorization model by minimizing the mean squared err
 The objective function is defined as follows:
 -->
 
-Sau đó, ta huấn luyện mô hình phân tích ma trận thành nhân tử bằng cách cực tiểu hoá trung bình bình phương sai số giữa điểm đánh giá dự đoán và điểm đánh giá thực.
+Sau đó, ta huấn luyện mô hình phân rã ma trận bằng cách cực tiểu hoá trung bình bình phương sai số giữa điểm đánh giá dự đoán và điểm đánh giá thực.
 Hàm mục tiêu được định nghĩa như sau:
 
 
