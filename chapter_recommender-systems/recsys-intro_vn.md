@@ -88,7 +88,7 @@ Obviously, we may need to adjust the model types/structures when different input
 
 Nói chung, các kỹ thuật CF có thể được phân ra thành các lớp: CF dựa vào ghi nhớ (*memory-based CF*), CF dựa vào mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
 Đại diện của các kỹ thuật CF dựa vào ghi nhớ chính là CF dựa vào các điểm dữ liệu lân cận (*nearest neighbor-based CF*) ví dụ như CF dựa vào người dùng (*user-based CF*) hay CF dựa vào sản phẩm (*item-based CF *) :cite:`Sarwar.Karypis.Konstan.ea.2001`.
-Các mô hình nhân tố ẩn (*latent factor model*) ví dụ như phân tích ma trận thành nhân tử (*matrix factorization*) là một ví dụ của CF dựa vào mô hình.
+Các mô hình nhân tố ẩn (*latent factor model*) ví dụ như phân rã ma trận (*matrix factorization*) là một ví dụ của CF dựa vào mô hình.
 CF dựa vào ghi nhớ có nhiều hạn chế trong việc xử lý dữ liệu thưa và quy mô lớn do nó tính toán độ tương đồng dựa trên những sản phẩm phổ biến.
 Phương pháp dựa vào mô hình ngày càng trở nên phổ biến hơn do khả năng xử lý dữ liệu thưa thớt tốt hơn và tính mở rộng tốt hơn.
 Nhiều cách tiếp cận với CF dựa vào mô hình có thể được mở rộng với mạng nơ-ron,
