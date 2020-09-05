@@ -4,7 +4,7 @@
 # Personalized Ranking for Recommender Systems
 -->
 
-# *dịch tiêu đề trên*
+# Cá nhân hoá Xếp hạng trong Hệ thống Gợi ý
 
 
 <!--
@@ -20,7 +20,16 @@ Clearly, these models are incapable of distinguishing between observed and non-o
 and are usually not suitable for personalized ranking tasks.
 -->
 
-*dịch đoạn phía trên*
+Trong các phần trước, ta chỉ xét phản hồi trực tiếp và các mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết.
+Các phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không phải là trực tiếp mà là gián tiếp,
+và phản hồi trực tiếp thường khó thu thập hơn.
+Thứ hai, những cặp người dùng - sản phẩm chưa biết mà có thể dự đoán sở thích của người dùng lại hoàn toàn bị bỏ qua,
+khiến cho các phương pháp này không phù hợp với những trường hợp mà đánh giá không phải là thiếu do ngẫu nhiên mà là do sự thiên vị của người dùng.
+Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa phản ánh tiêu cực (người dùng không hứng thú với sản phẩm)
+và giá trị còn thiếu (người dùng sau này có lẽ sẽ tương tác với sản phẩm).
+Ta đơn giản bỏ qua những cặp chưa biết này trong phân rã ma trận và AutoRec.
+Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết
+và thường không phù hợp với tác vụ cá nhân hoá xếp hạng (*personalized ranking*).
 
 
 <!--
@@ -36,14 +45,23 @@ However, listwise approaches are more complex and compute-intensive than pointwi
 In this section, we will introduce two pairwise objectives/losses, Bayesian Personalized Ranking loss and Hinge loss, and their respective implementations.
 -->
 
-*dịch đoạn phía trên*
+Từ đó, một lớp các mô hình gợi ý hướng tới việc tạo ra danh sách xếp loại gợi ý từ phản hồi gián tiếp dần trở nên phổ biến.
+Thông thường, các mô hình cá nhân hoá xếp loại có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, từng cặp hoặc theo danh sách.
+Cách tiếp cận theo từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích từng người.
+Phân rã ma trận và AutoRec được tối ưu với các mục tiêu theo từng điểm.
+Cách tiếp cận theo từng cặp xét một cặp sản phẩm với mỗi người dùng và nhắm tới việc xấp xỉ thứ bậc của cặp sản phẩm đó.
+Thường thì cách tiếp cận theo từng cặp phù hợp với tác vụ xếp hạng hơn do việc dự đoán thứ bậc tương đối gợi lại bản chất của việc xếp hạng.
+Cách tiếp cận theo danh sách xấp xỉ thứ bậc của toàn bộ danh sách các sản phẩm, ví dụ như
+trực tiếp tối ưu hệ số Độ lợi Chiết khấu Tích luỹ Chuẩn ([Normalized Discounted Cumulative Gain - NDCG](https://en.wikipedia.org/wiki/Discounted_cumulative_gain)).
+Tuy nhiên, cách tiếp cận theo danh sách phức tạp và đòi hỏi khả năng tính toán cao hơn so với cách tiếp cận theo từng điểm và theo từng cặp.
+Trong phần này, chúng tôi sẽ giới thiệu hai loại mất mát/mục tiêu của cách tiếp cận theo từng cặp, mất mát Cá nhân hoá Xếp hạng Bayes (*Bayesian Personalized Ranking*) và mất mát Hinge, cùng với cách lập trình từng loại mất mát tương ứng.
 
 
 <!--
 ## Bayesian Personalized Ranking Loss and its Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Mất mát Cá nhân hoá Xếp hạng Bayes và Cách lập trình
 
 
 <!--
@@ -53,7 +71,10 @@ The training data of BPR consists of both positive and negative pairs (missing v
 It assumes that the user prefers the positive item over all other non-observed items.
 -->
 
-*dịch đoạn phía trên*
+Cá nhân hoá Xếp hạng Bayes (BPR) :cite:`Rendle.Freudenthaler.Gantner.ea.2009` là một loại mất mát cá nhân hoá xếp hạng theo cặp, có xuất phát từ bộ ước lượng hậu nghiệm cực đại (*maximum posterior estimator*).
+Nó được sử dụng rộng rãi trong nhiều mô hình gợi ý hiện nay.
+Dữ liệu huấn luyện cho BPR bao gồm cả các cặp tích cực lẫn tiêu cực (các giá trị còn thiếu).
+Nó giả sử rằng người dùng ưa thích sản phẩm tích cực hơn tất cả các sản phẩm chưa biết.
 
 
 <!--
@@ -61,7 +82,8 @@ In formal, the training data is constructed by tuples in the form of $(u, i, j)$
 The Bayesian formulation of BPR which aims to maximize the posterior probability is given below:
 -->
 
-*dịch đoạn phía trên*
+Trong công thức, dữ liệu huấn luyện được xây dựng bằng tuple dưới dạng $(u, i, j)$, tức biểu diễn rằng người dùng $u$ ưa thích sản phẩm $i$ hơn sản phẩm $j$.
+Công thức Bayes trong BPR được cho dưới đây nhắm tới việc cực đại hoá xác suất hậu nghiệm:
 
 
 $$
@@ -237,7 +259,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
