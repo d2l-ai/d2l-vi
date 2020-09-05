@@ -12,7 +12,7 @@
 Recall content of the last section.  The core feature of the skip-gram model is the use of softmax operations to compute the conditional probability of generating context word $w_o$ based on the given central target word $w_c$.
 -->
 
-Nhắc lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$. 
+Hãy nhớ lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là việc sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$. 
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)}.$$
@@ -22,7 +22,7 @@ $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \
 The logarithmic loss corresponding to the conditional probability is given as
 -->
 
-Mất mát logarit tương ứng xác suất có điều kiện trên được tính như sau 
+Mất mát logarit tương ứng với xác suất có điều kiện trên được tính như sau 
 
 
 $$-\log P(w_o \mid w_c) =
@@ -42,10 +42,10 @@ we will only use the skip-gram model as an example to introduce these two traini
 -->
 
 Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$,  
-nên mất mát được đề cập ở trên, thực tế, bao gồm phép lấy tổng qua tất cả phần tử trong từ điển. 
+nên thực ra mất mát được đề cập ở trên bao gồm phép lấy tổng qua tất cả phần tử trong từ điển. 
 Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW
 đều tính xác suất có điều kiện thông qua toán tử softmax, 
-do đó tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển. 
+do đó việc tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển. 
 Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao. 
 Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*). 
 Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW, 
@@ -114,7 +114,7 @@ By considering negative sampling, we can rewrite the joint probability above, wh
 -->
 
 Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương. 
-Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, thì xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1. 
+Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1. 
 Rõ ràng, các vector từ như vậy là vô nghĩa. 
 Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm. 
 Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$, 
