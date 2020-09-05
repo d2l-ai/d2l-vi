@@ -230,7 +230,11 @@ When predicting the end, any passage token of position $i$ is transformed by the
 Để tinh chỉnh BERT cho việc trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt như 
 phần đầu và phần thứ hai của chuỗi văn bản trong đầu vào của BERT.
 Để dự đoán vị trí của phần bắt đầu của khoảng văn bản, tầng tương tự mở rộng được kết nối đầy đủ sẽ chuyển hóa
-biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ trở thành một điểm vô hướng $s_i$. 
+biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ trở thành một ghi điểm vô hướng $s_i$. 
+Các ghi điểm của tất cả các đoạn văn token như vậy thì được biến đổi xa hơn bởi thực thi softmax
+trở thành một phân phối xác suất, vì thế mỗi vị trí token $i$ trong đoạn văn được gán
+cho một xác suất $p_i$ trở thành điểm bắt đầu của khoảng văn bản.
+Dự đoán điểm kết thúc của khoảng văn bản cũng giống như ở trên, ngoại trừ các thông số trong 
 
 
 <!--
