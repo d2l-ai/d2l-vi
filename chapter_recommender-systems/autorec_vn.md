@@ -55,7 +55,7 @@ User-based AutoRec can be derived accordingly.
 ## Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình
 
 
 <!--
@@ -64,7 +64,9 @@ where unknown ratings are set to zeros by default.
 The neural architecture is defined as:
 -->
 
-*dịch đoạn phía trên*
+Gọi $\mathbf{R}_{*i}$ ký hiệu cột thứ $i$ của ma trận đánh giá,
+với những đánh giá chưa biết được gán mặc định bằng không.
+Kiến trúc nơ-ron được định nghĩa như sau:
 
 
 $$
@@ -78,14 +80,16 @@ Let $h( \cdot )$ denote the whole network of AutoRec.
 The output $h(\mathbf{R}_{*i})$ is the reconstruction of the $i^\mathrm{th}$ column of the rating matrix.
 -->
 
-*dịch đoạn phía trên*
+trong đó $f(\cdot)$ và $g(\cdot)$ biểu diễn hàm kích hoạt, $\mathbf{W}$ và $\mathbf{V}$ là các ma trận trọng số, $\mu$ và $b$ là độ chệch.
+Gọi $h( \cdot )$ ký hiệu cho toàn bộ mạng AutoRec.
+Đầu ra $h(\mathbf{R}_{*i})$ chính là bản khôi phục của cột thứ $i$ của ma trận đánh giá.
 
 
 <!--
 The following objective function aims to minimize the reconstruction error:
 -->
 
-*dịch đoạn phía trên*
+Hàm mục tiêu sau hướng tới việc cực tiểu hoá lỗi khôi phục:
 
 
 $$
@@ -98,7 +102,8 @@ where $\| \cdot \|_{\mathcal{O}}$ means only the contribution of observed rating
 that is, only weights that are associated with observed inputs are updated during back-propagation.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\| \cdot \|_{\mathcal{O}}$ nghĩa là chỉ có phần đánh giá đã biết là được xét,
+tức là chỉ có các trọng số tương ứng với các đầu vào đã biết được cập nhật trong lan truyền ngược.
 
 
 ```{.python .input  n=3}
@@ -115,7 +120,7 @@ npx.set_np()
 ## Implementing the Model
 -->
 
-## *dịch tiêu đề trên*
+## Lập trình Mô hình
 
 
 <!--
@@ -127,7 +132,12 @@ Dropout is included after the encoding transformation to reduce over-fitting.
 The gradients of unobserved inputs are masked out to ensure that only observed ratings contribute to the model learning process.
 -->
 
-*dịch đoạn phía trên*
+Một bộ tự mã hoá điển hình bao gồm một bộ mã hoá và một bộ giải mã.
+Bộ mã hoá chiếu đầu vào thành dạng biểu diễn ẩn và bộ giải mã ánh xạ tầng ẩn tới tầng khôi phục.
+Ta tuân theo cấu trúc này và tạo bộ mã hoá và bộ giải mã với các tầng kết nối dày đặc.
+Hàm kích hoạt của bộ mã hoá được đặt mặc định bằng `sigmoid` và ta sẽ không áp dụng hàm kích hoạt nào lên tầng giải mã.
+Dropout được thêm vào sau biến đổi mã hoá nhằm giảm hiện tượng quá khớp.
+Gradient của các đầu vào chưa biết được lọc ra để đảm bảo rằng chỉ có các đánh giá đã biết tham gia vào quá trình học của mô hình.
 
 
 ```{.python .input  n=2}
@@ -266,7 +276,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
