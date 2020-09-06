@@ -50,7 +50,7 @@ the alignment of words between premises and hypotheses can be neatly accomplishe
 Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiên đề và giả định,
 ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại,
 rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết.
-Tương tự đối với việc sắp xếp các từ giữa những câu nguồn và đích trong việc dịch máy,
+Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
 sự sắp xếp các từ giữa tiên đề và giả định này có thể thực hiện nhanh gọn nhờ cơ chế tập trung.
 
 <!--
