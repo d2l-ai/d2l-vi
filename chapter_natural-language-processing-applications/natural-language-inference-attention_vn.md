@@ -51,7 +51,7 @@ the alignment of words between premises and hypotheses can be neatly accomplishe
 ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại,
 rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết.
 Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
-sự sắp xếp các từ giữa tiên đề và giả định này có thể thực hiện nhanh gọn nhờ cơ chế tập trung.
+sự  căn chỉnh các từ giữa tiền đề và giả thuyết này có thể thực hiện nhanh gọn nhờ cơ chế tập trung.
 
 <!--
 ![Natural language inference using attention mechanisms.](../img/nli_attention.svg)
