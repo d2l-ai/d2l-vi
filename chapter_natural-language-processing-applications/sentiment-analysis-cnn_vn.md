@@ -424,7 +424,7 @@ d2l.predict_sentiment(net, vocab, 'this movie is so bad')
 
 * Ta có thể dùng tích chập một chiều để xử lý và phân tích dữ liệu theo thời gian.
 * Một phép tương quan chéo một chiều với các kênh nhiều đầu vào có thể xem như một phép tương quan chéo hai chiều với một kênh một đầu vào.
-* Đầu vào của lớp gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau.
+* Đầu vào của tầng gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau.
 * TextCNN chủ yếu sử dụng một tầng chập một chiều và một tầng gộp cực đại theo thời gian. 
 
 
