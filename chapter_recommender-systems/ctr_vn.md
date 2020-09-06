@@ -4,7 +4,7 @@
 # Feature-Rich Recommender Systems
 -->
 
-# *dịch tiêu đề trên*
+# Hệ thống Gợi ý với Nhiều Đặc trưng
 
 
 <!--
@@ -23,7 +23,18 @@ Targeted advertisement services have attracted widespread attention and are ofte
 Recommending advertisements that match users' personal taste and interest is important for click-through rate improvement.
 -->
 
-*dịch đoạn phía trên*
+Dữ liệu tương tác là dấu hiệu cơ bản nhất để chỉ sở thích và sự chú ý của người dùng.
+Nó đóng vai trò chủ chốt trong các mô hình đã được giới thiệu ở các phần trước.
+Tuy vậy, dữ liệu tương tác thường vô cùng thưa thớt và đôi lúc có thể có nhiễu.
+Để khắc phục vấn đề này, ta có thể tích hợp các thông tin phụ ví dụ như đặc trưng của sản phẩm, hồ sơ người dùng,
+và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình gợi ý.
+Tận dụng các đặc trưng này có lợi trong việc đưa ra gợi ý mà trong đó các đặc trưng này có thể là
+một nhân tố dự đoán hiệu quả sở thích người dùng, đặc biệt khi thiếu dữ liệu tương tác.
+Do đó, việc các mô hình dự đoán có khả năng xử lý những đặc trưng này đóng vai trò thiết yếu, khiến mô hình có thể nhận thức được một phần nào đó bối cảnh/nội dung.
+Để mô tả loại mô hình gợi ý này, chúng tôi giới thiệu một tác vụ khác với tỉ lệ nhấp chuột (*click-through rate - CTR*)
+cho gợi ý quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và hiển thị dữ liệu quảng cáo vô danh.
+Dịch vụ quảng cáo có mục tiêu đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ gợi ý.
+Gợi ý quảng cáo phù hợp với thị yếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
 
 
 <!--
@@ -32,7 +43,9 @@ Click-through rate is a metric that measures the number of clicks advertisers re
 their ads per number of impressions and it is expressed as a percentage calculated with the formula:
 -->
 
-*dịch đoạn phía trên*
+Các nhà tiếp thị số sử dụng quảng cáo trực tuyến để phát quảng cáo tới khách hàng.
+Tỉ lệ nhấp chuột là một phép đo đo số lần nhấp chuột mà nhà quảng cáo nhận được
+với quảng cáo của họ trên số lần hiển thị, và nó được biểu diễn dưới dạng phần trăm được tính theo công thức:
 
 
 $$ \text{CTR} = \frac{\#\text{Clicks}} {\#\text{Impressions}} \times 100 \% .$$
@@ -47,7 +60,12 @@ It is also closely related to user satisfaction, conversion rate,
 and can be helpful in setting campaign goals as it can help advertisers to set realistic expectations.
 -->
 
-*dịch đoạn phía trên*
+Tỉ lệ nhấp chuột là một dấu hiệu quan trọng cho thấy độ hiệu quả của thuật toán dự đoán.
+Dự đoán tỉ lệ nhấp chuột là tác vụ dự đoán tỉ lệ mà một cái gì đó trên trang mạng được nhấp vào.
+Mô hình dự đoán CTR không những có thể được áp dụng vào hệ thống quảng cáo có mục tiêu mà còn
+trong hệ thống gợi ý sản phẩm nói chung (ví dụ như phim ảnh, tin tức, vật phẩm), chiến dịch quảng cáo qua thư điện tử, và thậm chí là công cụ tìm kiếm.
+Nó cũng liên quan mật thiết đến độ hài lòng của khách hàng, tỉ lệ chuyển đổi,
+và có thể giúp ích trong việc thiết lập mục tiêu của chiến dịch quảng cáo do nó có thể giúp nhà quảng cáo đặt ra kỳ vọng thực tế.
 
 
 ```{.python .input}
@@ -62,7 +80,7 @@ import os
 ## An Online Advertising Dataset
 -->
 
-## *dịch tiêu đề trên*
+## Tập dữ liệu Quảng cáo Trực tuyến
 
 
 <!--
@@ -76,7 +94,14 @@ The columns might represent the advertisement id, site or application id, device
 The real semantics of the features are undisclosed due to anonymization and privacy concern.
 -->
 
-*dịch đoạn phía trên*
+Với những bước tiến tương đối của Internet và công nghệ di động,
+quảng cáo trực tuyến đã trở thành một nguồn thu nhập quan trọng và sản sinh phần lớn doanh thu trong ngành công nghiệp Internet.
+Việc hiện thị quảng cáo thích hợp hoặc quảng cáo khêu gợi sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
+Tập dữ liệu chúng tôi giới thiệu là một tập dữ liệu quảng cáo trực tuyến.
+Nó bao gồm 34 trường, với cột đầu tiên biểu diễn biến mục tiêu cho biết liệu một quảng cáo được nhấp vào (1) hay chưa (0).
+Tất cả các cột còn lại là các hạng mục đặc trưng.
+Các cột này có thể biểu diễn id của quảng cáo, id trang hay ứng dụng, id thiết bị, thời gian, hồ sơ người dùng và vân vân.
+Ngữ nghĩa thực tế của các đặc trưng này không được tiết lộ để ẩn danh hoá dữ liệu và bảo mật thông tin cá nhân.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -227,7 +252,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
