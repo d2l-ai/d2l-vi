@@ -380,14 +380,14 @@ net.constant_embedding.collect_params().setattr('grad_req', 'null')
 ### Train and Evaluate the Model
 -->
 
-### *dịch tiêu đề trên*
+### Huấn luyện và đánh giá mô hình
 
 
 <!--
 Now we can train the model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể huấn luyện mô hình.
 
 
 ```{.python .input  n=8}
@@ -402,7 +402,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Below, we use the trained model to classify sentiments of two simple sentences.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc của hai câu đơn giản.
 
 
 ```{.python .input  n=9}
@@ -422,7 +422,10 @@ d2l.predict_sentiment(net, vocab, 'this movie is so bad')
 * TextCNN mainly uses a one-dimensional convolutional layer and max-over-time pooling layer.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể dùng tích chập một chiều để xử lý và phân tích dữ liệu theo thời gian.
+* Phép tương quan chéo một chiều đa kênh đầu vào có thể xem như phép tương quan chéo hai chiều đơn kênh đầu vào.
+* Đầu vào của tầng gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau.
+* TextCNN chủ yếu sử dụng một tầng chập một chiều và một tầng gộp cực đại theo thời gian. 
 
 
 ## Bài tập
@@ -435,8 +438,10 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 3. What other natural language processing tasks can you use textCNN for?
 -->
 
-*dịch đoạn phía trên*
-
+1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích hai cảm xúc, sử dụng các mạng nơ-ron truy hồi và các mạng nơ-ron tích chập, ở khía cạnh độ chính xác và hiệu suất tính toán.
+2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
+điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy.
+3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -469,4 +474,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long
