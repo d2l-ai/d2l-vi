@@ -438,7 +438,7 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 3. What other natural language processing tasks can you use textCNN for?
 -->
 
-1. Điều chỉnh các tham số mô hình và so sánh các phương pháp phân tích hai cảm xúc, sử dụng các mạng nơ rôn hồi quy và các mạng nơ rôn chập, ở khía cạnh độ chính xác và hiệu xuất tính toán.
+1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích hai cảm xúc, sử dụng các mạng nơ-ron truy hồi và các mạng nơ-ron tích chập, ở khía cạnh độ chính xác và hiệu suất tính toán.
 2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
 điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy.
 3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng?
