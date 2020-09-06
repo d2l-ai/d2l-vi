@@ -143,14 +143,14 @@ To accelerate generation of the SNLI dataset for fine-tuning BERT,
 we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
-Đối với tác vụ xuôi dòng trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một lớp tập dữ liệu tuỳ biến `SNLIBERTDataset`.
+Đối với tác vụ hạ nguồn trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một lớp tập dữ liệu tuỳ biến `SNLIBERTDataset`.
 Trong mỗi ví dụ, tiên đề và giả thuyết tạo thành một cặp chuỗi văn bản
 và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong: numref: `fig_bert-hai-seqs`.
-Nhắc lại: numref: `subsec_bert_input_rep` các ID của phân đoạn đó
-được sử dụng để phân biệt tiên đề và giả thuyết trong trình tự đầu vào BERT.
+Nhắc lại :numref:`subsec_bert_input_rep` các ID của phân đoạn đó
+được sử dụng để phân biệt tiên đề và giả thuyết trong chuỗi đầu vào BERT.
 Với độ dài tối đa được xác định trước của chuỗi đầu vào BERT (`max_len`),
-token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào tiếp tục bị xóa cho đến khi đạt được `max_len`.
-Để đẩy nhanh quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
+token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào liên tục bị xóa cho đến khi độ dài của nó thành `max_len`.
+Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
 chúng tôi sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm thử một cách song song.
 
 
@@ -252,8 +252,8 @@ into three outputs of natural language inference:
 entailment, contradiction, and neutral.
 -->
 
-Như: numref: `fig_bert-hai-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
-chỉ yêu cầu một MLP bổ sung bao gồm hai tầng kết nối đầy đủ
+Như :numref:`fig_bert-hai-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
+chỉ yêu cầu một mạng perceptron nhiều tầng (MLP) bổ sung bao gồm hai tầng kết nối đầy đủ
 (xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
 MLP này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
 token mã hóa thông tin của cả tiên đề và giả thuyết,
