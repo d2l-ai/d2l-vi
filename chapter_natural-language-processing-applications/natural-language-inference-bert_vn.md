@@ -215,7 +215,7 @@ Such examples will be read in minibatches during training and testing
 of natural language inference.
 -->
 
-Sau khi tải xuống tập dữ liệu SNLI, tạo các mẫu huấn luyện và kiểm tra
+Sau khi tải xuống tập dữ liệu SNLI, ta tạo các mẫu huấn luyện và kiểm tra
 bằng cách khởi tạo lớp `SNLIBERTDataset`.
 Các mẫu đó sẽ được đọc trong các minibatch trong quá trình huấn luyện và kiểm tra
 của suy luận ngôn ngữ tự nhiên.
