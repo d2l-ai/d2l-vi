@@ -28,7 +28,7 @@ Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp d�
 ![This section feeds pretrained GloVe to an architecture based on attention and MLPs for natural language inference.](../img/nlp-map-nli-attention.svg)
 -->
 
-![Mục này truyền Glove tiền huấn luyện đến kiến trúc dựa trên sự trập trung và MLPs để suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-attention.svg)
+![Mục này truyền Glove tiền huấn luyện vào kiến trúc tập trung và MLPs để suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-attention.svg)
 :label:`fig_nlp-map-nli-attention`
 
 
