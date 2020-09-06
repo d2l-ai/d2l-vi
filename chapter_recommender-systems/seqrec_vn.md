@@ -34,7 +34,7 @@ Details of the model are described as follows.
 -->
 
 Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình gợi ý tích chập embedding trình tự thời gian (*convolutional sequence embedding recommendation model*),
-kế thừa từ mạng nơ-ron tích chập để thu lại được khuôn mẫu động ảnh hưởng bởi những thao tác gần đây của người dùng.
+kế thừa từ mạng nơ-ron tích chập để nắm bắt được được khuôn mẫu động ảnh hưởng bởi những thao tác gần đây của người dùng.
 Thành phần chính của Caser bao gồm một mạng tích chập ngang và một mạng tích chập dọc,
 nhằm lần lượt khám phá khuôn mẫu mức liên kết (*union-level*) và mức điểm (*point-level*) theo trình tự thời gian.
 Khuôn mẫu mức điểm ám chỉ tác động của một điểm riêng lẻ trong trình tự thời gian trước đó lên sản phẩm mục tiêu,
