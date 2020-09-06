@@ -52,3 +52,4 @@
 | 48. | [luke-dinh](https://github.com/luke-dinh)                       | Đinh Phước Lộc                 |
 | 49. | [vinbrule](https://github.com/vinbrule)                         | Hoang Van-Tien                 |
 | 50. | [markuskhoa](https://github.com/markuskhoa)                     | Phạm Đăng Khoa                 |
+| 51. | [phattruongdevpanel](https://github.com/phattruongdevpanel)     | Trương Lộc Phát                |

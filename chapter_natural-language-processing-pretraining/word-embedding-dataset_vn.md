@@ -5,7 +5,7 @@
 # The Dataset for Pretraining Word Embedding
 -->
 
-# Dữ liệu cho Tiền Huấn luyện Embbeding Từ
+# Tập dữ liệu để Tiền Huấn luyện Embedding Từ
 :label:`sec_word2vec_data`
 
 
@@ -16,15 +16,15 @@ It takes samples from Wall Street Journal articles and includes training sets, v
 -->
 
 Trong phần này, chúng tôi sẽ giới thiệu cách tiền xử lý một tập dữ liệu với phương pháp lấy mẫu âm :numref:`sec_approx_train` và tạo các minibatch để huấn luyện word2vec.
-Tập dữ liệu ta sẽ sử dụng đó là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho dữ liệu nhỏ nhưng được sử dụng phổ biến.
-Dữ liệu được lấy từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
+Tập dữ liệu mà ta sẽ sử dụng là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho ngữ liệu nhỏ nhưng được sử dụng phổ biến.
+Tập dữ liệu này được thu thập từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
 
 
 <!--
 First, import the packages and modules required for the experiment.
 -->
 
-Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm.
+Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm. 
 
 
 ```{.python .input  n=1}
@@ -52,7 +52,7 @@ In the word embedding task, each word is a token.
 -->
 
 Tập dữ liệu này đã được tiền xử lý trước.
-Mỗi dòng của tập dữ liệu được coi là một câu.
+Mỗi dòng của tập dữ liệu được coi là một câu. 
 Tất cả các từ trong một câu được phân cách bằng dấu cách.
 Trong bài toán embedding từ, mỗi từ là một token.
 
@@ -79,7 +79,7 @@ Next we build a vocabulary with words appeared not greater than 10 times mapped 
 Note that the preprocessed PTB data also contains "&lt;unk&gt;" tokens presenting rare words.
 -->
 
-Tiếp theo, ta xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được coi như token "&lt;unk&gt;".
+Tiếp theo ta sẽ xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được coi như token "&lt;unk&gt;".
 Lưu ý rằng tập dữ liệu PTB đã được tiền xử lý cũng chứa các token "&lt;unk&gt;" đại diện cho các từ hiếm gặp.
 
 
@@ -107,7 +107,7 @@ The dropout probability is given as:
 
 
 Trong dữ liệu văn bản, thường có một số từ xuất hiện với tần suất cao, chẳng hạn như các từ "the", "a" và "in" trong tiếng Anh.
-Nói chung, trong cửa sổ ngữ cảnh, sẽ tốt hơn nếu huấn luyện mô hình embedding từ khi một từ bình thường (chẳng hạn như "chip") và
+Nói chung, trong cửa sổ ngữ cảnh, sẽ tốt hơn nếu ta huấn luyện mô hình embedding từ khi một từ bình thường (chẳng hạn như "chip") và
 một từ có tần suất thấp hơn (chẳng hạn như "microprocessor") xuất hiện cùng lúc, hơn là khi một từ bình thường xuất hiện với một từ có tần suất cao hơn (chẳng hạn như "the").
 Do đó, khi huấn luyện mô hình embedding từ, ta có thể thực hiện lấy mẫu con [2] trên các từ.
 Cụ thể, mỗi từ $w_i$ được gán chỉ số trong tập dữ liệu sẽ bị loại bỏ với một xác suất nhất định.
@@ -126,7 +126,7 @@ The higher the word's frequency, the higher its dropout probability.
 
 Ở đây, $f(w_i)$ là tỷ lệ giữa số lần xuất hiện từ $w_i$ với tổng số từ trong tập dữ liệu,
 và hằng số $t$ là một siêu tham số (có giá trị bằng $10^{-4}$ trong thí nghiệm này).
-Như ta thấy, chỉ có thể loại bỏ từ $w_i$ trong lúc lấy mẫu con khi $f(w_i) > t$.
+Như ta có thể thấy, từ $w_i$ chỉ có thể được loại bỏ trong lúc lấy mẫu con khi $f(w_i) > t$.
 Tần suất của từ càng cao, xác suất loại bỏ càng lớn.
 
 ```{.python .input  n=4}
@@ -158,7 +158,7 @@ subsampled = subsampling(sentences, vocab)
 Compare the sequence lengths before and after sampling, we can see subsampling significantly reduced the sequence length.
 -->
 
-So sánh độ dài chuỗi trước và sau khi lấy mẫu, ta có thể thấy việc lấy mẫu con làm giảm đáng kể độ dài chuỗi.
+So sánh độ dài chuỗi trước và sau khi lấy mẫu, ta có thể thấy việc lấy mẫu con làm giảm đáng kể độ dài chuỗi. 
 
 
 ```{.python .input  n=5}
@@ -175,7 +175,7 @@ d2l.plt.legend(['origin', 'subsampled']);
 For individual tokens, the sampling rate of the high-frequency word "the" is less than 1/20.
 -->
 
-Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tuần suất cao như từ "the" nhỏ hơn 1/20.
+Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tần suất cao như từ "the" nhỏ hơn 1/20.
 
 ```{.python .input  n=6}
 def compare_counts(token):
@@ -191,7 +191,7 @@ compare_counts('the')
 But the low-frequency word "join" is completely preserved.
 -->
 
-Nhưng các từ có tần số thấp như từ "join" hoàn toàn được giữ nguyên.
+Nhưng các từ có tần số thấp như từ "join" hoàn toàn được giữ nguyên. 
 
 
 ```{.python .input  n=7}
@@ -203,7 +203,7 @@ compare_counts('join')
 Last, we map each token into an index to construct the corpus.
 -->
 
-Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu.
+Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu. 
 
 
 ```{.python .input  n=8}
@@ -244,9 +244,9 @@ The following definition function extracts all the central target words and thei
 It uniformly and randomly samples an integer to be used as the context window size between integer 1 and the `max_window_size` (maximum context window).
 -->
 
-Ta sử dụng những từ có khoảng cách so với từ đích trung tâm không vượt quá kích thước cửa sổ ngữ cảnh làm các từ ngữ cảnh của từ đích trung tâm đã cho. 
+Ta sử dụng các từ với khoảng cách tới từ đích trung tâm không quá độ dài cửa sổ ngữ cảnh để làm từ ngữ cảnh cho từ đích trung tâm đó. 
 Hàm sau đây trích xuất tất cả từ đích trung tâm và các từ ngữ cảnh của chúng.
-Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên được lấy ngẫu nhiên theo phân phối đồng nhất trong khoảng giữa 1 và `max_window_size` (cửa sổ ngữ cảnh cực đại).
+Ta chọn kích thước cửa sổ ngữ cảnh là một số nguyên từ 1 tới `max_window_size` (kích thước cửa sổ tối đa), được lấy ngẫu nhiên theo phân phối đều.
 
 
 ```{.python .input  n=9}
@@ -276,7 +276,7 @@ Assume the maximum context window is 2 and print all the central target words an
 -->
 
 Kế tiếp, ta tạo một tập dữ liệu nhân tạo chứa hai câu có lần lượt 7 và 3 từ.
-Giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng.
+Hãy giả sử cửa sổ ngữ cảnh cực đại là 2 và in tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng.
 
 
 ```{.python .input  n=10}
@@ -316,7 +316,7 @@ the word frequency of $w$ to the total word frequency raised to the power of 0.7
 
 Ta thực hiện lấy mẫu âm để huấn luyện gần đúng.
 Với mỗi cặp từ đích trung tâm và ngữ cảnh, ta lẫy mẫu ngẫu nhiên $K$ từ nhiễu ($K=5$ trong thử nghiệm này).
-Theo đề xuất trong bài báo Word2vec, xác suất lấy mẫu từ nhiễu $P(w)$ là tỉ số của số lần xuất hiện từ $w$ đối với tổng số lần xuất hiện của tất cả các từ, lấy mũ 0.75 [2]. 
+Theo đề xuất trong bài báo Word2vec, xác suất lấy mẫu từ nhiễu $P(w)$ là tỷ lệ giữa tần suất xuất hiện của từ $w$ và tổng tần suất xuất hiện của tất cả các từ, lấy mũ 0.75 [2]. 
 
 
 <!--
@@ -324,8 +324,8 @@ We first define a class to draw a candidate according to the sampling weights.
 It caches a 10000 size random number bank instead of calling `random.choices` every time.
 -->
 
-Ta trước hết định nghĩa một lớp để lấy ra một ứng cử viên dựa theo các trọng số lấy mẫu.
-Lớp này lấy 10000 số ngẫu nhiên một lúc thay vì gọi `random.choices` liên tục.
+Trước hết ta sẽ định nghĩa một lớp để lấy ra một ứng cử viên dựa theo các trọng số lấy mẫu.
+Lớp này sẽ lưu lại 10000 số ngẫu nhiên một lần thay vì gọi `random.choices` liên tục.
 
 
 ```{.python .input  n=12}
@@ -391,8 +391,8 @@ We extract all central target words `all_centers`, and the context words `all_co
 We will read them in random minibatches.
 -->
 
-Chúng ta trích xuất tất cả các từ đích trung tâm `all_centers`và các từ ngữ cảnh `all_contexts` và những từ nhiễu của mỗi từ đích trung tâm trong tập dữ liệu.
-Chúng ta sẽ đọc chúng thành các minibatch ngẫu nhiên.
+Chúng ta trích xuất tất cả các từ đích trung tâm `all_centers`, cũng như các từ ngữ cảnh `all_contexts` và những từ nhiễu của mỗi từ đích trung tâm trong tập dữ liệu,
+rồi đọc chúng thành các minibatch ngẫu nhiên.
 
 
 <!--
@@ -409,14 +409,13 @@ Based on the construction of the mask variable, we only need to create a label v
 as the `contexts_negatives` variable and set the elements corresponding to context words (positive examples) to 1, and the rest to 0.
 -->
 
-Trong một minibatch dữ liệu, mẫu thứ $i$ bao gồm một từ đích trung tâm và các từ ngữ cảnh $n_i$ và các từ nhiễu $m_i$ tương ứng với từ đích trung tâm đó.
+Trong một minibatch dữ liệu, mẫu thứ $i$ bao gồm một từ đích trung tâm cùng $n_i$ từ ngữ cảnh và $m_i$ từ nhiễu tương ứng với từ đích trung tâm đó.
 Do kích thước cửa sổ ngữ cảnh của mỗi mẫu có thể khác nhau, nên tổng số từ ngữ cảnh và từ nhiễu, $n_i+m_i$, cũng sẽ khác nhau.
 Khi tạo một minibatch, chúng ta nối (*concatenate*) các từ ngữ cảnh và các từ nhiễu của mỗi mẫu,
-và đệm 0 để độ dài của các đoạn nối bằng nhau, tức bằng $\max_i n_i+m_i$(`max_len`).
-Nhằm tránh ảnh hưởng của phần đệm lên việc tính toán hàm mất mát, chúng ta tạo dựng một biến mặt nạ `masks`,
-mỗi phần tử trong đó tương ứng với một phần tử trong phần nối giữa ngữ cảnh và từ nhiễu, `contexts_negatives`.
-Khi một phần tử trong biến `contexts_negatives` là một phần đệm, thì phần tử trong biến mặt nạ `masks` ở vị trí đó sẽ là 0.
-Nếu không, nó nhận giá trị 1.
+và đệm thêm các giá trị 0 để độ dài của các đoạn nối bằng nhau, tức bằng $\max_i n_i+m_i$ (`max_len`).
+Nhằm tránh ảnh hưởng của phần đệm lên việc tính toán hàm mất mát, chúng ta tạo một biến mặt nạ `masks`,
+mỗi phần tử trong đó tương ứng với một phần tử trong phần nối giữa từ ngữ cảnh và từ nhiễu, `contexts_negatives`.
+Khi một phần tử trong biến `contexts_negatives` là đệm, thì phần tử trong biến mặt nạ `masks` ở vị trí đó sẽ là 0, còn lại là bằng 1.
 Để phân biệt giữa các mẫu dương và âm, chúng ta cũng cần phân biệt các từ ngữ cảnh với các từ nhiễu trong biến `contexts_negatives`.
 Dựa trên cấu tạo của biến mặt nạ, chúng ta chỉ cần tạo một biến nhãn `labels` có cùng kích thước
 với biến `contexts_negatives` và đặt giá trị các phần tử tương ứng với các từ ngữ cảnh (mẫu dương) bằng 1 và phần còn lại bằng 0.
@@ -428,9 +427,9 @@ Its minibatch input `data` is a list whose length is the batch size, each elemen
 The minibatch data returned by this function conforms to the format we need, for example, it includes the mask variable.
 -->
 
-Tiếp đó, chúng ta sẽ triển khai chức năng đọc minibatch `batchify`.
-Đầu vào minibatch `data` của nó là một danh sách có độ dài là kích thước batch, mỗi phần tử trong đó chứa các từ đích trung tâm `center`, các từ ngữ cảnh `context` và các từ nhiễu `negative`.
-Dữ liệu trong minibatch được trả về bởi hàm này đều tuân theo định dạng mà chúng ta cần, ví dụ, bao gồm biến mặt nạ.
+Tiếp đó, chúng ta lập trình chức năng đọc minibatch `batchify`,
+với đầu vào minibatch `data` là một danh sách có độ dài là kích thước batch, mỗi phần tử trong đó chứa các từ đích trung tâm `center`, các từ ngữ cảnh `context` và các từ nhiễu `negative`.
+Dữ liệu trong minibatch được trả về bởi hàm này đều tuân theo định dạng chúng ta cần, bao gồm biến mặt nạ.
 
 
 ```{.python .input  n=14}
@@ -453,7 +452,7 @@ def batchify(data):
 Construct two simple examples:
 -->
 
-Thực hiện hai ví dụ đơn giản:
+Tạo hai ví dụ mẫu đơn giản:
 
 
 ```{.python .input  n=15}
@@ -547,7 +546,7 @@ We use the `batchify` function to specify the minibatch reading method in the `D
 How should these shapes be calculated?
 -->
 
-Chúng tôi sử dụng hàm `batchify` để chỉ định phương thức đọc minibatch trong thực thể `DataLoader` và in ra kích thước của từng biến trong lần đọc batch đầu tiên.
+Chúng ta sử dụng hàm `batchify` để chỉ định phương thức đọc minibatch trong thực thể `DataLoader` và in ra kích thước của từng biến trong lần đọc batch đầu tiên.
 Những kích thước này được tính toán như thế nào?
 
 
@@ -569,18 +568,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 4 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 5 -->
-* Phạm Đăng Khoa
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường

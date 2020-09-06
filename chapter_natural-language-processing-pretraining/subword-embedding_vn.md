@@ -22,7 +22,7 @@ In Finnish, a noun may have more than 15 forms.
 In fact, morphology, which is an important branch of linguistics, studies the internal structure and formation of words.
 -->
 
-Các từ tiếng Anh thường có cấu những trúc nội tại và phương thức cấu thành.
+Các từ tiếng Anh thường có những cấu những trúc nội tại và phương thức cấu thành.
 Chẳng hạn, ta có thể suy ra mối quan hệ giữa các từ "dog", "dogs" và "dogcatcher" thông qua cách viết của chúng.
 Tất cả các từ đó có cùng từ gốc là "dog" nhưng có hậu tố khác nhau làm thay đổi nghĩa của từ.
 Hơn nữa, sự liên kết này có thể được mở rộng ra đối với các từ khác.
@@ -52,7 +52,7 @@ thereby attempting to introduce morphological information in the skip-gram model
 Trong word2vec, ta không trực tiếp sử dụng thông tin hình thái học.
 Trong cả mô hình skip-gram và bag-of-word liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
 Chẳng hạn, "dog" và "dogs" được biểu diễn bởi hai vector khác nhau, trong khi mối quan hệ giữa hai vector đó không biểu thị trực tiếp trong mô hình. 
-Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con,
+Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con (*subword embedding*),
 thông qua việc thực hiện đưa thông tin hình thái học vào trong mô hình skip-gram trong word2vec.
 
 
@@ -65,7 +65,7 @@ For example, when $n=3$, we can get all subwords with a length of $3$:
 -->
 
 Trong fastText, mỗi từ trung tâm được biểu diễn như một tập hợp của các từ con.
-Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu làm thế nào các từ tố được tạo thành.
+Dưới đây ta sử dụng từ "where" làm ví dụ để hiểu cách các từ tố được tạo thành.
 Trước hết, ta thêm một số ký tự đặc biệt “&lt;” và “&gt;” vào phần bắt đầu và kết thúc của từ để phân biệt các từ con được dùng làm tiền tố và hậu tố.
 Rồi ta sẽ xem từ này như một chuỗi các ký tự để trích xuất $n$-grams.
 Chẳng hạn, khi $n=3$, ta có thể nhận tất cả từ tố với chiều dài là $3$:
@@ -102,10 +102,10 @@ Also, the vector of one word requires the summation of all subword vectors, whic
 However, we can obtain better vectors for more uncommon complex words, even words not existing in the dictionary, by looking at other words with similar structures.
 -->
 
-Phần còn lại tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, nên ta không mô tả lại ở đây.
-Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển trong fastText lớn hơn dẫn tới số tham số của mô hình nhiều hơn.
-Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới kết quả làm độ phức tạp tính toán cao hơn.
-Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp không thông dụng hơn, thậm chí các từ không hiện diện trong từ điển này, nhờ tham chiếu các từ khác có cấu trúc tương tự.
+Phần còn lại của tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, vì vậy ta không mô tả lại ở đây.
+Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển của fastText lớn hơn dẫn tới nhiều tham số mô hình hơn.
+Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới độ phức tạp tính toán cao hơn.
+Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp ít thông dụng, thậm chí cho cả các từ không hiện diện trong từ điển này nhờ tham chiếu tới các từ khác có cấu trúc tương tự.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -125,8 +125,8 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ con được trích xuất phải nằm trong các độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó không thể xác định trước kích thước bộ từ vựng.
-Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`.
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể được xác định trước. 
+Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`. 
 
 
 <!--
@@ -139,19 +139,19 @@ such as GPT-2 :cite:`Radford.Wu.Child.ea.2019` and RoBERTa :cite:`Liu.Ott.Goyal.
 In the following, we will illustrate how byte pair encoding works.
 -->
 
-Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để tìm các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý.
-Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte lặp đi lặp lại việc gộp các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn.
+Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để tìm các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý. 
+Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte lặp đi lặp lại việc gộp các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn. 
 Lưu ý rằng để tăng hiệu năng, các cặp vượt qua ranh giới từ sẽ không được xét.
-Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ.
-Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`.
-Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá cặp byte. 
+Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ. 
+Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`. 
+Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá cặp byte.
 
 
 <!--
 First, we initialize the vocabulary of symbols as all the English lowercase characters, a special end-of-word symbol `'_'`, and a special unknown symbol `'[UNK]'`.
 -->
 
-Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`.
+Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`. 
 
 
 ```{.python .input}
@@ -174,12 +174,12 @@ In other words, space is the delimiter between symbols within a word.
 -->
 
 Vì không xét các cặp ký hiệu vượt qua ranh giới của các từ,
-chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ với tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu.
+chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ tới tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu. 
 Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
-từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man").
-Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt,
-khoảng trắng được chèn giữa mọi cặp ký tự liên tiếp trong mỗi từ (các khóa của từ điển `token_freqs`).
-Nói cách khác, khoảng trắng là kí tự phân cách (*delimiter*) giữa các ký hiệu trong một từ.
+từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man"). 
+Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt, 
+khoảng trắng được chèn giữa mọi cặp ký tự liên tiếp trong mỗi từ (các khóa của từ điển `token_freqs`). 
+Nói cách khác, khoảng trắng là kí tự phân cách (*delimiter*) giữa các ký hiệu trong một từ. 
 
 
 ```{.python .input}
@@ -196,7 +196,7 @@ We define the following `get_max_freq_pair` function that
 returns the most frequent pair of consecutive symbols within a word,
 where words come from keys of the input dictionary `token_freqs`.
 -->
-Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, trong đó các từ xuất hiện trong các khoá của từ điển đầu vào `token_freqs`.
+Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, với từ là các khoá của từ điển đầu vào `token_freqs`. 
 
 
 ```{.python .input}
@@ -216,7 +216,7 @@ As a greedy approach based on frequency of consecutive symbols,
 byte pair encoding will use the following `merge_symbols` function to merge the most frequent pair of consecutive symbols to produce new symbols.
 -->
 
-Là một cách tiếp cận tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới.
+Là một thuật toán tham lam dựa trên tần suất của các ký hiệu liên tiếp nhau, mã hoá cặp byte sẽ dùng hàm `merge_symbols` để gộp cặp ký hiệu thường gặp nhất để tạo ra những ký hiệu mới. 
 
 
 ```{.python .input}
@@ -244,9 +244,9 @@ In the first iteration, the most frequent pair of consecutive symbols are `'t'` 
 In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` to result in another new symbol `'tal'`.
 -->
 
-Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`.
-Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`.
-Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`.
+Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`. 
+Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`. 
+Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`. 
 
 
 ```{.python .input}
@@ -262,7 +262,7 @@ for i in range(num_merges):
 After 10 iterations of byte pair encoding, we can see that list `symbols` now contains 10 more symbols that are iteratively merged from other symbols.
 -->
 
-Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được ghép từ các biểu tượng khác.
+Sau 10 vòng lặp biểu diễn cặp byte, ta có thể thấy là danh sách `symbols` lúc này chứa hơn 10 biểu tượng đã được lần lượt ghép từ các biểu tượng khác. 
 
 
 ```{.python .input}
@@ -277,7 +277,7 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con "fast_", "fast", "er_", "tall_", và "tall" là kết quả của giải thuật biểu diễn cặp byte.
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con là "fast_", "fast", "er_", "tall_", và "tall" theo giải thuật biểu diễn cặp byte.
 Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
@@ -345,9 +345,9 @@ As a greedy approach, byte pair encoding iteratively merges the most frequent pa
 -->
 
 * FastText đề xuất phương pháp embedding cho từ con. Dựa trên mô hình skip-gram trong word2vec, phương pháp này biểu diễn vector từ trung tâm thành tổng các vector từ con của từ đó.
-* Embedding cho từ con sử dụng nguyên tắc trong hình thái học, thường cải thiện chất lượng biểu diễn của các từ ít gặp.
+* Embedding cho từ con sử dụng nguyên tắc trong hình thái học, thường giúp cải thiện chất lượng biểu diễn của các từ ít gặp.
 * Mã hoá cặp byte thực hiện phân tích thống kê trên tập dữ liệu huấn luyện để phát hiện các ký hiệu chung trong một từ.
-* Được coi là một giải thuật tham lam, mã hoá cặp byte lặp lại phép gộp (_merge_) các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
+Là một giải thuật tham lam, mã hoá cặp byte lần lượt gộp các cặp ký hiệu liên tiếp thường gặp nhất lại với nhau.
 
 
 ## Bài tập
@@ -362,8 +362,8 @@ Can you think of any methods to solve them? Hint: Refer to the end of section 3.
 
 1. Khi có quá nhiều từ con (ví dụ, 6 từ trong tiếng Anh có thể tạo ra $3\times 10^8$ các tổ hợp khác nhau), vấn đề gì sẽ xảy ra?
 Bạn có thể giải quyết vấn đề trên không? Gợi ý: Tham khảo đoạn cuối phần 3.2 của bài báo fastText [1].
-2. Bạn có thể thiết kết một mô hình embedding cho từ con dựa trên phương pháp túi từ liên tục bằng cách nào?
-3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp được thực hiện khi kích thước bộ từ vựng ký hiệu ban đầu là $n$? 
+2. Làm sao để thiết kế một mô hình embedding cho từ con dựa trên mô hình túi từ liên tục CBOW ?
+3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp cần được thực hiện khi bộ từ vựng ký hiệu ban đầu có kích thước là $n$? 
 4. Ta có thể mở rộng ý tưởng của thuật toán mã hoá cặp byte để trích xuất các cụm từ bằng cách nào?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -396,5 +396,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Nguyễn Văn Quang
-
-
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
