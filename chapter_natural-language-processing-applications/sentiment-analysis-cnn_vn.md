@@ -402,7 +402,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Below, we use the trained model to classify sentiments of two simple sentences.
 -->
 
-Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc từ hai câu đơn giản.
+Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc của hai câu đơn giản.
 
 
 ```{.python .input  n=9}
