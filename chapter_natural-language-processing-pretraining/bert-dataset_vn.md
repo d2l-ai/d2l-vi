@@ -60,7 +60,7 @@ We leave discussions of more complex sentence splitting techniques in the exerci
 Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn. 
 Khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
 Các đoạn văn có tối thiểu hai câu được giữ lại.
-Để tách các câu, ta sử dụng dấu chấm làm dấu ngắt cho đơn giản.
+Để tách các câu, ta sử dụng dấu chấm làm dấu phân cách cho đơn giản.
 Ta sẽ dành việc thảo luận cho các kỹ thuật tách câu phức tạp hơn ở phần bài tập ở cuối mục này.
 
 
@@ -509,4 +509,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
-
