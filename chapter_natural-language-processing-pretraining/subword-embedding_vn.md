@@ -125,7 +125,7 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể xác được định trước. 
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể được xác định trước. 
 Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`. 
 
 
