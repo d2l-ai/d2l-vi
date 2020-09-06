@@ -5,7 +5,7 @@
 # Natural Language Inference: Using Attention
 -->
 
-# Suy diễn ngôn ngữ tự nhiên: sử dụng sự tập trung
+# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
 :label:`sec_natural-language-inference-attention`
 
 
