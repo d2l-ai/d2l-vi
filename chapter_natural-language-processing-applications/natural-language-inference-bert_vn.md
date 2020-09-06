@@ -143,15 +143,15 @@ To accelerate generation of the SNLI dataset for fine-tuning BERT,
 we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
-Đối với tác vụ hạ nguồn trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một tuỳ biến của lớp tập dữ liệu `SNLIBERTDataset`.
-Trong mỗi ví dụ, tiên đề và giả thuyết tạo thành một cặp chuỗi văn bản
-và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong: numref: `fig_bert-hai-seqs`.
-Nhắc lại :numref:`subsec_bert_input_rep` các ID của phân đoạn đó
+Đối với tác vụ hạ nguồn trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một tuỳ biến của lớp tập dữ liệu, `SNLIBERTDataset`.
+Trong mỗi mẫu, tiên đề và giả thuyết tạo thành một cặp chuỗi văn bản
+và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-hai-seqs`.
+Nhắc lại :numref:`subsec_bert_input_rep` rằng các ID của phân đoạn đó
 được sử dụng để phân biệt tiên đề và giả thuyết trong chuỗi đầu vào BERT.
-Với độ dài tối đa được xác định trước của chuỗi đầu vào BERT (`max_len`),
-token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào liên tục bị xóa cho đến khi độ dài của nó thành `max_len`.
+Với độ dài tối đa đã định trước của chuỗi đầu vào BERT (`max_len`),
+token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào sẽ bị xóa cho đến khi độ dài của nó thành `max_len`.
 Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
-chúng tôi sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm thử một cách song song.
+ta sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm thử một cách song song.
 
 
 ```{.python .input  n=5}
@@ -215,7 +215,7 @@ Such examples will be read in minibatches during training and testing
 of natural language inference.
 -->
 
-Sau khi tải xuống tập dữ liệu SNLI, chúng ta tạo các mẫu huấn luyện và kiểm tra
+Sau khi tải xuống tập dữ liệu SNLI, tạo các mẫu huấn luyện và kiểm tra
 bằng cách khởi tạo lớp `SNLIBERTDataset`.
 Các mẫu đó sẽ được đọc trong các minibatch trong quá trình huấn luyện và kiểm tra
 của suy luận ngôn ngữ tự nhiên.
