@@ -87,7 +87,7 @@ The real semantics of the features are undisclosed due to anonymization and priv
 The following code downloads the dataset from our server and saves it into the local data folder.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã dưới đây tải về tập dữ liệu từ máy chủ của chúng tôi và lưu nó trên thư mục dữ liệu cục bộ.
 
 
 ```{.python .input  n=15}
@@ -103,21 +103,21 @@ data_dir = d2l.download_extract('ctr')
 There are a training set and a test set, consisting of 15000 and 3000 samples/lines, respectively.
 -->
 
-*dịch đoạn phía trên*
+Tập dữ liệu gồm có tập huấn luyện và tập kiểm tra, lần lượt bao gồm 150000 và 3000 mẫu/dòng.
 
 
 <!--
 ## Dataset Wrapper
 -->
 
-## *dịch tiêu đề trên*
+## Wrapper Tập dữ liệu
 
 
 <!--
 For the convenience of data loading, we implement a `CTRDataset` which loads the advertising dataset from the CSV file and can be used by `DataLoader`.
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện trong việc nạp dữ liệu, ta lập trình lớp `CTRDataset` nạp vào tập dữ liệu quảng cáo từ tệp CSV và có thể được sử dụng bởi `DataLoader`.
 
 
 ```{.python .input  n=13}
@@ -168,7 +168,7 @@ class CTRDataset(gluon.data.Dataset):
 The following example loads the training data and print out the first record.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ dưới đây nạp tập huấn luyện và in ra bản ghi đầu tiên.
 
 
 ```{.python .input  n=16}
@@ -185,7 +185,11 @@ This `CTRDataset` can also be used to load other datasets such as the Criteo dis
 and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/avazu-ctr-prediction).  
 -->
 
-*dịch đoạn phía trên*
+Như có thể thấy, toàn bộ 34 trường đều là đặc trưng hạng mục.
+Mỗi giá trị nhãn biểu diễn chỉ số one-hot của bản ghi tương ứng.
+Nhãn $0$ nghĩa là quảng cáo này chưa được nhấp vào.
+Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiện thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
+và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
 
 
 ## Tóm tắt
@@ -195,7 +199,8 @@ and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/a
 * Click-through rate prediction is usually converted to a binary classification problem. The target is to predict whether an ad/item will be clicked or not based on given features.
 -->
 
-*dịch đoạn phía trên*
+* Tỉ lệ nhấp chuột là một phép đo quan trọng được sử dụng để đo độ hiệu quả của hệ thống quảng cáo và hệ thống gợi ý.
+* Dự đoán tỉ lệ nhấp chuột thường được chuyển đổi thành bài toán phân loại nhị phân. Mục tiêu của bài toán là dự đoán liệu một quảng cáo/sản phẩm có được nhấp vào hay không dựa vào các đặc trưng cho trước.
 
 
 ## Bài tập
@@ -205,7 +210,8 @@ Can you load the Criteo and Avazu dataset with the provided `CTRDataset`.
 It is worth noting that the Criteo dataset consisting of real-valued features so you may have to revise the code a bit.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể nạp vào tập dữ liệu Criteo và Avazu với lớp `CTRDataset` đã được cung cấp được không.
+Chú ý rằng tập dữ liệu Criteo gồm có các đặc trưng mang giá trị thực nên bạn có lẽ sẽ phải kiểm tra lại đoạn mã một chút.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -230,6 +236,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
