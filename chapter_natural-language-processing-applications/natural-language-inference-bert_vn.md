@@ -253,9 +253,9 @@ entailment, contradiction, and neutral.
 -->
 
 Như :numref:`fig_bert-hai-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
-chỉ yêu cầu một mạng perceptron nhiều tầng (MLP) bổ sung bao gồm hai tầng kết nối đầy đủ
+chỉ yêu cầu một perceptron đa tầng bổ sung bao gồm hai tầng kết nối đầy đủ
 (xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
-MLP này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
+Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
 token mã hóa thông tin của cả tiên đề và giả thuyết,
 thành ba đầu ra của suy luận ngôn ngữ tự nhiên:
 kéo theo, đối lập và trung tính.
