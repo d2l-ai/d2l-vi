@@ -21,7 +21,7 @@ Chúng tôi đã giới thiệu tác vụ suy diễn ngôn ngữ tự nhiên và
 Từ quan điểm của nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
 Parikh và các cộng sự đề xuất hướng tới suy diễn ngôn ngữ tự nhiên với cơ chế tập trung và gọi nó là một "mô hình phân tách tập trung khả dĩ" :cite:`Parikh.Tackstrom.Das.ea.2016`.
 Điều này đưa tới kết quả một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất ở vào thời điểm đó dựa trên tập dữ liệu SNLI với số tham số ít hơn nhiều.
-Trong phần này, chúng tôi sẽ mô tả và hiện thực phương pháp dựa trên sự tập trung (cùng với MLPs) để suy diễn ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`.
+Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy diễn ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`.
 
 
 <!--
