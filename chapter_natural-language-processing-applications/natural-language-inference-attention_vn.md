@@ -47,7 +47,7 @@ Similar to alignment of words between source and target sentences in machine tra
 the alignment of words between premises and hypotheses can be neatly accomplished by attention mechanisms.
 -->
 
-Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiên đề và giả định,
+Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiền đề và giả thuyết,
 ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại,
 rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết.
 Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
