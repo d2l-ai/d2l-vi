@@ -269,8 +269,8 @@ All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden
 -->
 
 Sau đây, mô hình BERT tiền huấn luyện `bert` được đưa vào thể hiện `net` của `BERTClassifier` cho ứng dụng hạ nguồn.
-Trong các phần cài đặt chung của tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của MLP bổ sung (`net.output`) mới được học từ đầu.
-Tất cả các tham số của bộ mã hóa BERT tiền huấn luyện (`net.encoder`) và lớp ẩn của MLP bổ sung (net.hidden) sẽ được tinh chỉnh.
+Trong các phần cài đặt chung của tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
+Tất cả các tham số của bộ mã hóa BERT tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
 
 ```{.python .input  n=8}
@@ -287,7 +287,7 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 `MaskLM` and `NextSentencePred` are not updated (staled) when BERT is fine-tuned.
 -->
 
-Nhớ lại rằng trong :numref:`sec_bert`, cả lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong MLP mà chúng đã sử dụng.
+Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong MLP mà chúng đã sử dụng.
 Các tham số này là một phần của các tham số trong mô hình BERT tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
 Tuy nhiên, các tham số như vậy chỉ để tính toán mất mát của mô hình ngôn ngữ mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
 Hai hàm mất mát này không liên quan đến việc tinh chỉnh các ứng dụng hạ nguồn, do đó các thông số của MLP được sử dụng trong
