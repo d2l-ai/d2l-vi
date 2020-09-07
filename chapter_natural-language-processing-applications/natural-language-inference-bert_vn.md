@@ -302,7 +302,7 @@ Due to the limited computational resources, the training and testing accuracy ca
 
 Để cho phép sử dụng các tham số với gradient cũ, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
 Chúng ta sử dụng chức năng này để huấn luyện và đánh giá mô hình `net` bằng cách sử dụng tập huấn luyện (`train_iter`) và tập kiểm tra (`test_iter`) của SNLI.
-Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng ta thảo luận vấn đề đó trong phần bài tập.
+Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng ta để dành thảo luận vấn đề đó trong phần bài tập.
 
 
 ```{.python .input  n=46}
