@@ -289,7 +289,7 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 
 Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong perceptron đa tầng mà chúng đã sử dụng.
 Các tham số này là một phần của các tham số trong mô hình BERT tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
-Tuy nhiên, các tham số đó chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
+Tuy nhiên, các tham số này chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
 Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng hạ nguồn, do đó các tham số của perceptron đa tầng dùng trong
 `MaskLM` và` NextSentencePred` không được cập nhật khi BERT được tinh chỉnh.
 
@@ -302,7 +302,7 @@ Due to the limited computational resources, the training and testing accuracy ca
 
 Để cho phép sử dụng các tham số với gradient cũ, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
 Chúng ta sử dụng chức năng này để huấn luyện và đánh giá mô hình `net` bằng cách sử dụng tập huấn luyện (`train_iter`) và tập kiểm tra (`test_iter`) của SNLI.
-Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng ta để dành thảo luận vấn đề đó trong phần bài tập.
+Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng sẽ thảo luận vấn đề này trong phần bài tập.
 
 
 ```{.python .input  n=46}
