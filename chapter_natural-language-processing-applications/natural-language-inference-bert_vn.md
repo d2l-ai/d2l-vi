@@ -143,7 +143,7 @@ To accelerate generation of the SNLI dataset for fine-tuning BERT,
 we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
-Đối với tác vụ hạ nguồn trong suy diễn ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một tuỳ biến của lớp tập dữ liệu, `SNLIBERTDataset`.
+Đối với tác vụ hạ nguồn trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một tuỳ biến của lớp tập dữ liệu, `SNLIBERTDataset`.
 Trong mỗi mẫu, tiên đề và giả thuyết tạo thành một cặp chuỗi văn bản
 và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-hai-seqs`.
 Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
@@ -218,7 +218,7 @@ of natural language inference.
 Sau khi tải xuống tập dữ liệu SNLI, ta tạo các mẫu huấn luyện và kiểm tra
 bằng cách khởi tạo lớp `SNLIBERTDataset`.
 Các mẫu đó sẽ được đọc từ các minibatch trong quá trình huấn luyện và kiểm tra
-của suy diễn ngôn ngữ tự nhiên.
+của suy luận ngôn ngữ tự nhiên.
 
 
 ```{.python .input  n=6}
@@ -252,12 +252,12 @@ into three outputs of natural language inference:
 entailment, contradiction, and neutral.
 -->
 
-Như :numref:`fig_bert-hai-seqs` chỉ ra, tinh chỉnh BERT trong suy diễn ngôn ngữ tự nhiên
+Như :numref:`fig_bert-hai-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
 chỉ yêu cầu một perceptron đa tầng bổ sung bao gồm hai tầng kết nối đầy đủ
 (xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
 Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
 token mã hóa thông tin của cả tiên đề và giả thuyết,
-thành ba đầu ra của suy diễn ngôn ngữ tự nhiên:
+thành ba đầu ra của suy luận ngôn ngữ tự nhiên:
 kéo theo, đối lập và trung tính.
 
 
