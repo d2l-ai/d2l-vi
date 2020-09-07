@@ -217,8 +217,8 @@ of natural language inference.
 
 Sau khi tải xuống tập dữ liệu SNLI, ta tạo các mẫu huấn luyện và kiểm tra
 bằng cách khởi tạo lớp `SNLIBERTDataset`.
-Các mẫu đó sẽ được đọc trong các minibatch trong quá trình huấn luyện và kiểm tra
-của suy luận ngôn ngữ tự nhiên.
+Các mẫu đó sẽ được đọc từ các minibatch trong quá trình huấn luyện và kiểm tra
+của suy diễn ngôn ngữ tự nhiên.
 
 
 ```{.python .input  n=6}
@@ -257,7 +257,7 @@ chỉ yêu cầu một perceptron đa tầng bổ sung bao gồm hai tầng kế
 (xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
 Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
 token mã hóa thông tin của cả tiên đề và giả thuyết,
-thành ba đầu ra của suy luận ngôn ngữ tự nhiên:
+thành ba đầu ra của suy diễn ngôn ngữ tự nhiên:
 kéo theo, đối lập và trung tính.
 
 
