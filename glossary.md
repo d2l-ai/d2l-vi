@@ -400,6 +400,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | posterior                           | hậu nghiệm                   | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision (vs accuracy metric)      | precision                    | [https://git.io/JJ9sl](https://git.io/JJ9sl) |
 | preconditioning                     | tiền điều kiện               |                                              |
+| premise                             | tiền đề                      | [https://git.io/JUZKL](https://git.io/JUZKL) |
 | pre-train                           | tiền huấn luyện              | [https://git.io/JJ1HO](https://git.io/JJ1HO) |
 | principal component analysis (PCA)  | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                               | tiên nghiệm                  | [https://git.io/JvQA6](https://git.io/JvQA6) |
