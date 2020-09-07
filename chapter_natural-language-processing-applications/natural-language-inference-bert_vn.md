@@ -270,7 +270,7 @@ All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden
 
 Sau đây, mô hình BERT tiền huấn luyện `bert` được đưa vào thể hiện `net` của `BERTClassifier` cho ứng dụng hạ nguồn.
 Trong các phần cài đặt chung của tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
-Tất cả các tham số của bộ mã hóa BERT tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
+Còn tất cả các tham số của bộ mã hóa BERT tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
 
 ```{.python .input  n=8}
@@ -287,11 +287,11 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 `MaskLM` and `NextSentencePred` are not updated (staled) when BERT is fine-tuned.
 -->
 
-Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong MLP mà chúng đã sử dụng.
+Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong perceptron đa tầng mà chúng đã sử dụng.
 Các tham số này là một phần của các tham số trong mô hình BERT tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
-Tuy nhiên, các tham số như vậy chỉ để tính toán mất mát của mô hình ngôn ngữ mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
-Hai hàm mất mát này không liên quan đến việc tinh chỉnh các ứng dụng hạ nguồn, do đó các thông số của MLP được sử dụng trong
-`MaskLM` và` NextSentencePred` không được cập nhật (theo dõi) khi BERT được tinh chỉnh.
+Tuy nhiên, các tham số đó chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
+Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng hạ nguồn, do đó các tham số của perceptron đa tầng dùng trong
+`MaskLM` và` NextSentencePred` không được cập nhật khi BERT được tinh chỉnh.
 
 
 <!--
@@ -300,9 +300,9 @@ We use this function to train and evaluate the model `net` using the training se
 Due to the limited computational resources, the training and testing accuracy can be further improved: we leave its discussions in the exercises.
 -->
 
-Để cho phép các tham số với gradient cũ, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
+Để cho phép sử dụng các tham số với gradient cũ, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
 Chúng ta sử dụng chức năng này để huấn luyện và đánh giá mô hình `net` bằng cách sử dụng tập huấn luyện (`train_iter`) và tập kiểm tra (`test_iter`) của SNLI.
-Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra có thể được cải thiện hơn nữa: chúng tôi để dành các thảo luận đó trong phần bài tập.
+Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng ta thảo luận vấn đề đó trong phần bài tập.
 
 
 ```{.python .input  n=46}
@@ -337,10 +337,10 @@ By increasing fine-tuning epochs (and possibly tuning other hyperparameters), ca
 Compare this pair truncation method and the one used in the `SNLIBERTDataset` class. What are their pros and cons?
 -->
 
-1. Tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn nhiều, có kích thước tương đương với mô hình cơ sở BERT ban đầu nếu tài nguyên tính toán của bạn cho phép.
-Đặt các đối số trong hàm `load_pretrained_model` là: thay thế 'bert.small' bằng 'bert.base',
+1. Hãy tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn nhiều, có kích thước tương đương với mô hình cơ sở BERT ban đầu, nếu tài nguyên tính toán của bạn cho phép.
+Hãy đặt các đối số trong hàm `load_pretrained_model`: thay thế 'bert.small' bằng 'bert.base',
 lần lượt tăng giá trị của `num_hiddens = 256`,` ffn_num_hiddens = 512`, `num_heads = 4`,` num_layers = 2` thành `768`,` 3072`, `12`,` 12`.
-Bằng cách tăng các epoch khi tinh chỉnh (và có thể điều chỉnh các siêu tham số khác), có thể nhận được độ chính xác thử nghiệm cao hơn 0,86 không?
+Bằng cách tăng số epoch khi tinh chỉnh (và có thể điều chỉnh các siêu tham số khác), có thể nhận được độ chính xác thử nghiệm cao hơn 0,86 không?
 2. Làm thế nào để cắt ngắn một cặp chuỗi theo tỉ lệ độ dài của chúng?
 So sánh phương thức cắt ngắn cặp này và phương thức được sử dụng trong lớp `SNLIBERTDataset`. Ưu và nhược điểm của chúng là gì?
 
