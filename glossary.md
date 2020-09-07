@@ -433,6 +433,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | remote                                             | từ xa                                     |                                              |
 | reparameterization                                 | tái tham số hóa                           |                                              |
 | representation learning                            | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
+| reproduce (reproducibility)                        | tái tạo (khả năng tái tạo)                | [https://git.io/JUs2X](https://git.io/JUs2X) |
 | rescale                                            | (phép) tái tỉ lệ                          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | reset gate                                         | cổng xóa                                  |                                              |
 | residual network                                   | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
