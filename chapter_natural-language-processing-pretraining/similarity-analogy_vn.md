@@ -5,7 +5,7 @@
 # Finding Synonyms and Analogies
 -->
 
-# Tìm kiếm các từ Đồng nghĩa và các Loại suy
+# Tìm kiếm từ Đồng nghĩa và Loại suy
 :label:`sec_synonyms`
 
 
@@ -16,9 +16,9 @@ This section will demonstrate how to use these pretrained word vectors to find s
 We will continue to apply pretrained word vectors in subsequent sections.
 -->
 
-Trong :numref:`sec_word2vec_pretraining` ta đã huấn luyện mô hình embedding cho từ word2vec trên tập dữ liệu cỡ nhỏ và tìm kiếm các từ đồng nghĩa sử dụng độ tương tự cô-sin giữa các vector từ.
+Trong :numref:`sec_word2vec_pretraining` ta đã huấn luyện mô hình embedding từ word2vec trên tập dữ liệu cỡ nhỏ và tìm kiếm các từ đồng nghĩa sử dụng độ tương tự cô-sin giữa các vector từ.
 Trong thực tế, các vector từ được tiền huấn luyện trên kho ngữ liệu cỡ lớn thường được áp dụng cho các bài toán xử lý ngôn ngữ tự nhiên cụ thể.
-Phần này sẽ trình bày cách sử dụng các vector từ đã được tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy (*analogy*).
+Phần này sẽ trình bày cách sử dụng các vector từ đã tiền huấn luyện để tìm các từ đồng nghĩa và các loại suy (*analogy*).
 Ta sẽ tiếp tục áp dụng các vector từ được tiền huấn luyện trong các phần sau.
 
 
@@ -46,7 +46,7 @@ Here we consider one English version (300-dimensional "wiki.en") that can be dow
 
 Dưới đây là các embedding GloVe đã được tiền huấn luyện với kích thước chiều là 50, 100, và 300, có thể được tải từ [trang web GloVe](https://nlp.stanford.edu/projects/glove/).
 Các embedding cho fastText được tiền huấn luyện trên nhiều ngôn ngữ.
-Ở đây, ta quan tâm tới phiên bản cho tiếng Anh ("wiki.en" có chiều kích thước là 300) có thể được tải từ [trang web fastText](https://fasttext.cc/).
+Ở đây, ta quan tâm tới phiên bản cho tiếng Anh ("wiki.en" có chiều là 300) có thể được tải từ [trang web fastText](https://fasttext.cc/).
 
 
 ```{.python .input  n=35}
@@ -72,7 +72,7 @@ d2l.DATA_HUB['wiki.en'] = (d2l.DATA_URL + 'wiki.en.zip',
 We define the following `TokenEmbedding` class to load the above pretrained Glove and fastText embeddings.
 -->
 
-Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText đã được tiền huấn luyện ở trên .
+Ta định nghĩa lớp `TokenEmbedding` để nạp các embedding GloVe và fastText ở trên.
 
 
 ```{.python .input}
@@ -118,8 +118,8 @@ Next, we use 50-dimensional GloVe embeddings pretrained on a subset of the Wikip
 The corresponding word embedding is automatically downloaded the first time we create a pretrained word embedding instance.
 -->
 
-Tiếp theo, ta sử dụng embedding GloVe có kích thước chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
-Embedding tương ứng của từ sẽ được tự động tải về khi ta khởi tạo lần đầu một thực thể embedding từ đã được tiền huấn luyện.
+Tiếp theo, ta sử dụng embedding GloVe có chiều là 50 được tiền huấn luyện trên tập con của Wikipedia.
+Embedding tương ứng của từ sẽ được tự động tải về khi tạo một thực thể `TokenEmbedding` lần đầu.
 
 
 ```{.python .input  n=11}
@@ -143,7 +143,7 @@ len(glove_6b50d)
 We can use a word to get its index in the dictionary, or we can get the word from its index.
 -->
 
-Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngược lại tra từ tương ứng với chỉ số của nó.
+Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngược lại tra từ tương ứng với chỉ số cho trước.
 
 
 ```{.python .input  n=12}
@@ -179,7 +179,7 @@ Dưới đây, ta minh họa việc áp dụng các vector từ đã được ti
 Here, we re-implement the algorithm used to search for synonyms by cosine similarity introduced in :numref:`sec_word2vec`
 -->
 
-Tại đây, ta triển khai lại giải thuật dùng để tìm các từ đồng nghĩa bằng phép tính cô-sin giữa hai vector như đã giới thiệu trong :numref:`sec_word2vec`
+Tại đây, ta lập trình lại thuật toán tìm các từ đồng nghĩa bằng độ tương tự cô-sin giữa hai vector trong :numref:`sec_word2vec`.
 
 
 <!--
@@ -187,8 +187,8 @@ In order to reuse the logic for seeking the $k$ nearest neighbors when seeking a
 we encapsulate this part of the logic separately in the `knn` ($k$-nearest neighbors) function.
 -->
 
-Để sử dụng lại thuật toán cho việc tìm kiếm $k$ điểm kế cận gần nhất khi tìm kiếm các từ loại suy,
-ta đóng gói phần này một cách tách biệt trong hàm `knn` ($k$*-nearest neighbors*).
+Để sử dụng lại logic tìm kiếm $k$ láng giềng gần nhất ($k$*-nearest neighbors*) khi tìm kiếm các từ loại suy,
+ta đóng gói phần này một cách tách biệt trong hàm `knn` .
 
 
 ```{.python .input}
@@ -205,7 +205,7 @@ def knn(W, x, k):
 Then, we search for synonyms by pre-training the word vector instance `embed`.
 -->
 
-Kế tiếp, ta tìm kiếm các từ đồng nghĩa nhờ tiền huấn luyện vector từ `embed`.
+Kế tiếp, ta tìm kiếm các từ đồng nghĩa nhờ tiền huấn luyện thực thể vector từ `embed`.
 
 
 ```{.python .input}
@@ -221,8 +221,8 @@ The dictionary of pretrained word vector instance `glove_6b50d` already created 
 Excluding input words and unknown words, we search for the three words that are the most similar in meaning to "chip".
 -->
 
-Từ điển vector từ được tiền huấn luyện `glove_6b50d` tạo sẵn chứa 400,000 từ và một token chưa biết đặc biệt.
-Loại trừ những từ đầu vào và những từ chưa biết, ta tìm kiếm ba từ có nghĩa gần với từ "chip".
+Từ điển vector từ được tiền huấn luyện `glove_6b50d` đã tạo chứa 400,000 từ và một token các từ không biết.
+Loại trừ những từ đầu vào và những từ không biết, ta tìm kiếm ba từ có nghĩa gần với từ "chip".
 
 
 ```{.python .input}
@@ -266,7 +266,7 @@ To solve the analogy problem, we need to find the word vector that is most simil
 -->
 
 Bên cạnh việc tìm kiếm các từ đồng nghĩa, ta cũng có thể sử dụng các vector từ đã tiền huấn luyện để tìm kiếm các loại suy giữa các từ.
-Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man (nam)" với "woman (nữ)" giống như "son (con trai)" với "daugther (con gái)".
+Ví dụ, “man”:“woman”::“son”:“daughter” là một loại suy, "man (nam)" với "woman (nữ)" giống như "son (con trai)" với "daughter (con gái)".
 Bài toán tìm kiếm loại suy có thể được định nghĩa như sau: với bốn từ trong quan hệ loại suy $a : b :: c : d$, 
 cho trước ba từ $a$, $b$ và $c$, ta muốn tìm từ $d$.
 Giả sử, vector từ cho từ $w$ là $\text{vec}(w)$.
@@ -298,7 +298,7 @@ get_analogy('man', 'woman', 'son', glove_6b50d)
 “Capital-country” analogy: "beijing" is to "china" as "tokyo" is to what? The answer should be "japan".
 -->
 
-Loại suy "thủ đô-quốc gia”: từ "beijing" với từ "china" tương tự như từ "tokyo" với từ nào? Đáp án đó là từ "japan".
+Loại suy "thủ đô-quốc gia”: từ "beijing" với từ "china" tương tự như từ "tokyo" với từ nào? Đáp án là "japan".
 
 
 ```{.python .input  n=19}
@@ -310,7 +310,7 @@ get_analogy('beijing', 'china', 'tokyo', glove_6b50d)
 "Adjective-superlative adjective" analogy: "bad" is to "worst" as "big" is to what? The answer should be "biggest".
 -->
 
-Loại suy "tính từ - tính từ so sánh nhất": từ "bad" với từ "worst" tương tự như từ "big" với từ nào? Đáp án đó là từ "biggest".
+Loại suy "tính từ - tính từ so sánh nhất": từ "bad" với từ "worst" tương tự như từ "big" với từ nào? Đáp án là "biggest".
 
 
 ```{.python .input  n=20}
@@ -322,7 +322,7 @@ get_analogy('bad', 'worst', 'big', glove_6b50d)
 "Present tense verb-past tense verb" analogy: "do" is to "did" as "go" is to what? The answer should be "went".
 -->
 
-Loại suy "động từ thì hiện tại - động từ thì quá khứ": từ "do" với từ "did" tương tự như từ "go" với từ nào? Đáp án đó là "went".
+Loại suy "động từ thì hiện tại - động từ thì quá khứ": từ "do" với từ "did" tương tự như từ "go" với từ nào? Đáp án là "went".
 
 
 ```{.python .input  n=21}
@@ -369,14 +369,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
 * Nguyễn Mai Hoàng Long
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* 
-
+* Nguyễn Văn Cường
