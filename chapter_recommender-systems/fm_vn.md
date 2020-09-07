@@ -71,7 +71,7 @@ Nevertheless, the numerical stability might weaken the generalization.
 ## An Efficient Optimization Criterion
 -->
 
-## *dịch tiêu đề trên*
+## Tiêu chuẩn Tối ưu Hiệu quả
 
 
 <!--
@@ -80,7 +80,9 @@ To solve this inefficiency problem, we can reorganize the third term of FM which
 The reformulation of the pairwise interaction term is as follows:
 -->
 
-*dịch đoạn phía trên*
+Tối ưu máy phân rã ma trận theo cách thức trực tiếp dẫn đến độ phức tạp $\mathcal{O}(kd^2)$ do ta phải tính toán toàn bộ các cặp tương tác.
+Để giải quyết vấn đề này, ta có thể biến đổi lại số hạng thứ ba của FM, giúp giảm đáng kể chi phí tính toán, dẫn đến độ phức tạp tăng tuyến tính ($\mathcal{O}(kd)$).
+Công thức biến đổi của số hạng tương tác theo cặp như sau:
 
 
 $$
@@ -99,7 +101,8 @@ With this reformulation, the model complexity are decreased greatly.
 Moreover, for sparse features, only non-zero elements needs to be computed so that the overall complexity is linear to the number of non-zero features.
 -->
 
-*dịch đoạn phía trên*
+Với biến đổi này, độ phức tạp của mô hình giảm đi đáng kể.
+Hơn nữa, với đặc trưng thưa, chỉ các phần tử khác không cần phải tính toán nên độ phức tạp toàn phần quan hệ tuyến tính với số đặc trưng khác không.
 
 
 <!--
@@ -107,7 +110,8 @@ To learn the FM model, we can use the MSE loss for regression task, the cross en
 Standard optimizers such as SGD and Adam are viable for optimization.
 -->
 
-*dịch đoạn phía trên*
+Để học mô hình FM, ta có thể sử dụng mất mát MSE cho tác vụ hồi quy, mất mát entropy chéo với tác vụ phân loại, và mất mát BPR với tác vụ xếp hạng.
+Các bộ tối ưu chuẩn như SGD và Adam đều khả thi để tối ưu.
 
 
 ```{.python .input  n=2}
@@ -124,7 +128,7 @@ npx.set_np()
 ## Model Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Cách lập trình Mô hình
 
 
 <!--
@@ -133,7 +137,9 @@ It is clear to see that FM consists a linear regression block and an efficient f
 We apply a sigmoid function over the final score since we treat the CTR prediction as a classification task.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã sau đây lập trình cho mô hình máy phân rã ma trận.
+Ta có thể thấy rõ ràng rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu quả tốt.
+Ta áp dụng hàm sigmoid lên kết quả cuối cùng do ta coi dự đoán CTR như một tác vụ phân loại.
 
 
 ```{.python .input  n=2}
@@ -159,14 +165,14 @@ class FM(nn.Block):
 ## Load the Advertising Dataset
 -->
 
-## *dịch tiêu đề trên*
+## Nạp Tập dữ liệu Quảng cáo
 
 
 <!--
 We use the CTR data wrapper from the last section to load the online advertising dataset.
 -->
 
-*dịch đoạn phía trên*
+Ta sử dụng lớp wrapper dữ liệu CTR từ phần trước để nạp tập dữ liệu quảng cáo trực tuyến.
 
 
 ```{.python .input  n=3}
@@ -189,7 +195,7 @@ test_iter = gluon.data.DataLoader(
 ## Train the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện mô hình
 
 
 <!--
@@ -197,7 +203,8 @@ Afterwards, we train the model. The learning rate is set to 0.01 and the embeddi
 The `Adam` optimizer and the `SigmoidBinaryCrossEntropyLoss` loss are used for model training.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta tiến hành huấn luyện mô hình. Tốc độ học được đặt bằng 0.01 và kích thước embedding mặc định bằng 20.
+Ta sử dụng bộ tối ưu `Adam` và mất mát `SigmoidBinaryCrossEntropyLoss` để huấn luyện mô hình.
 
 
 ```{.python .input  n=5}
@@ -218,7 +225,8 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 * Feature interaction/crossing is important for prediction tasks and the 2-way interaction can be efficiently modeled with FM.
 -->
 
-*dịch đoạn phía trên*
+* FM là một framework khái quát có thể áp dụng cho nhiều tác vụ khác nhau như hồi quy, phân loại hay xếp hạng.
+* Tương tác/giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán và tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
 
 
 ## Bài tập
@@ -228,7 +236,8 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 * Vary the embedding size to check its impact on performance, can you observe a similar pattern as that of matrix factorization?
 -->
 
-*dịch đoạn phía trên*
+* Bạn có thể kiểm tra FM trên một tập dữ liệu khác ví dụ như tập dữ liệu Avazu, MovieLens, and Criteo không?
+* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, liệu bạn có thể quan sát thấy kiểu mẫu tương tự như vậy với phân rã ma trận?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -251,6 +260,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
