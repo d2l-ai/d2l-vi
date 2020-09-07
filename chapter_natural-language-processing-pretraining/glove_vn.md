@@ -189,7 +189,7 @@ the conditional probability of generating context word $w_j$ with central target
 From a real example from a large corpus, here we have the following two sets of conditional probabilities with "ice" and "steam" as the central target words and the ratio between them:
 -->
 
-Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác. 
+Ta cũng có thể cố gắng lý giải embedding từ Glove theo một cách nhìn khác. 
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
 xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$. 
 Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng: 
@@ -223,10 +223,10 @@ we would expect a conditional probability ratio close to 1, like the value 1.36 
 we would expect a conditional probability ratio close to 1, like the value 0.96 in the last row of the table above.
 -->
 
-Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=$"solid (rắn)", ta kỳ vọng là tỉ số xác suất điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số xác suất điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên. 
-Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=$"water (nước)", ta kỳ vọng là tỉ số xác suất điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên. 
-Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=$"fashion (thời trang)", ta kỳ vọng là tỉ số xác suất điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=$"solid (rắn)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=$"water (nước)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=$"fashion (thời trang)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên. 
 
 
 <!--
@@ -237,11 +237,11 @@ The conditional probability ratio with $w_i$ as the central target word is ${p_{
 We can find a function that uses word vectors to fit this conditional probability ratio.
 -->
 
-Có thể thấy rằng tỉ số xác suất điều kiện thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn. 
+Có thể thấy rằng tỉ số xác suất có điều kiện thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn. 
 Ta có thể tạo một hàm vector của từ để khớp tỉ số xác suất có điều kiện một cách hiệu quả hơn. 
 Như đã biết, để thu được bất cứ tỉ số nào loại này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$. 
 Tỉ số xác suất có điều kiện với $w_i$ làm từ trung tâm là ${p_{ij}}/{p_{ik}}$.
-Ta có thể tìm một hàm dùng các vector từ để khớp tỉ số xác suất có điều kiện này. 
+Ta có thể tìm một hàm dùng các vector từ để khớp với tỉ số xác suất có điều kiện này. 
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -354,3 +354,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
