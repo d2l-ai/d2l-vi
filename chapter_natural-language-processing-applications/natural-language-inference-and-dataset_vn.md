@@ -279,7 +279,7 @@ class SNLIDataset(gluon.data.Dataset):
 ### Putting All Things Together
 -->
 
-### Ghép tất cả mọi thứ lại
+### Kết hợp tất cả lại
 
 
 <!--
@@ -289,9 +289,9 @@ It is noteworthy that we must use the vocabulary constructed from the training s
 As a result, any new token from the testing set will be unknown to the model trained on the training set.
 -->
 
-Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng chung với từ vựng của tập huấn luyện.
-Lưu ý rằng ta phải sử dụng từ vựng được xây dựng từ tập huấn luyện như là của tập kiểm tra.
-Kết quả là, bất kỳ token mới nào từ tập kiểm tra sẽ không rõ ràng đối với mô hình được huấn luyện trên tập huấn luyện.
+Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng chung với bộ từ vựng của tập huấn luyện.
+Lưu ý rằng ta phải sử dụng bộ từ vựng được xây dựng từ tập huấn luyện cho tập kiểm tra.
+Kết quả là, mô hình được huấn luyện trên tập huấn luyện sẽ không biết bất kỳ token mới nào từ tập kiểm tra nếu có.
 
 
 ```{.python .input  n=114}
@@ -318,9 +318,9 @@ and invoke the `load_data_snli` function to get the data iterators and vocabular
 Then we print the vocabulary size.
 -->
 
-Bây giờ ta thiết lập kích cỡ batch lên $128$ và độ dài chuỗi lên $50$,
-và gọi hàm `load_data_snli` để lấy vòng lặp dữ liệu và từ vựng. 
-Rồi ta in kích thước của từ vựng.
+Bây giờ ta đặt kích thước batch là $128$ và độ dài chuỗi là $50$,
+và gọi hàm `load_data_snli` để lấy iterator dữ liệu và bộ từ vựng. 
+Sau đó ta in kích thước của bộ từ vựng.
 
 
 ```{.python .input  n=111}
@@ -356,9 +356,9 @@ for X, Y in train_iter:
 * Stanford Natural Language Inference (SNLI) Corpus is a popular benchmark dataset of natural language inference.
 -->
 
-* Suy luận ngôn ngữ tự nhiên nghiên cứu liệu một giả thuyết có thể được suy ra thành một tiền đề hay không, khi cả hai đều là chuỗi văn bản.
-* Trong suy luận ngôn ngữ tự nhiên, mối quan hệ giữa tiền đề và giả thuyết bao gồm đòi hỏi, mâu thuẫn và trung lập.
-* Ngữ liệu suy luận ngôn ngữ tự nhiên Stanford là một tập dữ liệu suy luận ngôn ngữ tự nhiên chuẩn phổ biến.
+* Suy luận ngôn ngữ tự nhiên nghiên cứu liệu một giả thuyết có thể được suy ra từ một tiền đề hay không, khi cả hai đều là chuỗi văn bản.
+* Trong suy luận ngôn ngữ tự nhiên, mối quan hệ giữa tiền đề và giả thuyết bao gồm kéo theo, mâu thuẫn và trung tính.
+* Bộ dữ liệu suy luận ngôn ngữ tự nhiên Stanford (SNLI) là một tập dữ liệu đánh giá xếp hạng phổ biến cho suy luận ngôn ngữ tự nhiên.
 
 
 ## Bài tập
@@ -369,8 +369,8 @@ Can you design a measure for evaluating machine translation results by using nat
 2. How can we change hyperparameters to reduce the vocabulary size? 
 -->
 
-1. Dịch máy từ lâu được đánh giá dựa trên sự trùng khớp $n$-gram bên ngoài giữa một bản dịch đầu ra và một bản dịch thật.
-Bạn có thể thiết kế một phép đo lường để đánh giá kết quả dịch máy bằng cách sử dụng suy luận ngôn ngữ tự nhiên không?
+1. Dịch máy từ lâu được đánh giá bề ngoài dựa trên sự trùng khớp $n$-gram giữa bản dịch đầu ra và bản dịch nhãn gốc.
+Bạn có thể thiết kế một phép đo để đánh giá kết quả dịch máy bằng cách sử dụng suy luận ngôn ngữ tự nhiên không?
 2. Làm cách nào ta có thể thay đổi siêu tham số để giảm kích thước bộ từ vựng?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
