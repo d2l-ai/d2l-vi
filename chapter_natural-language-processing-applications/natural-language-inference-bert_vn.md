@@ -151,7 +151,7 @@ Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
 Với độ dài tối đa đã định trước của chuỗi đầu vào BERT (`max_len`),
 token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào sẽ bị xóa cho đến khi độ dài của nó thành `max_len`.
 Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
-ta sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm thử một cách song song.
+ta sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm tra một cách song song.
 
 
 ```{.python .input  n=5}
