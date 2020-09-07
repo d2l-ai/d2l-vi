@@ -206,7 +206,7 @@ Hierarchical softmax will approximate the conditional probability in the skip-gr
 Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫn các nút lá) từ gốc của cây nhị phân đến nút lá của từ $w$. 
 Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$. 
 Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
-Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram bằng 
+Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram như sau
 
 
 $$P(w_o \mid w_c) = \prod_{j=1}^{L(w_o)-1} \sigma\left( [\![  n(w_o, j+1) = \text{leftChild}(n(w_o, j)) ]\!] \cdot \mathbf{u}_{n(w_o, j)}^\top \mathbf{v}_c\right),$$
@@ -224,7 +224,7 @@ Trong đó hàm $\sigma$ có định nghĩa giống với hàm kích hoạt sigm
 Nếu $x$ đúng thì $[\![x]\!] = 1$; ngược lại $[\![x]\!] = -1$. 
 Giờ ta sẽ tính xác suất có điều kiện của việc sinh ra từ $w_3$ dựa theo từ $w_c$ được cho trong :numref:`fig_hi_softmax`. 
 Ta cần tìm tích vô hướng của vector từ $\mathbf{v}_c$ (cho từ $w_c$) với mỗi vector nút mà không phải là nút lá trên đường đi từ nút gốc đến $w_3$. 
-Do trong cây nhị phân, đường đi từ nút gốc đến nút lá $w_3$ cần duyệt trái, phải, rồi lại duyệt trái (đường đi được in đậm trong :numref:`fig_hi_softmax`) nên ta có 
+Do trong cây nhị phân, đường đi từ nút gốc đến nút lá $w_3$ là trái, phải, rồi lại trái (đường đi được in đậm trong :numref:`fig_hi_softmax`) nên ta có 
 
 
 $$P(w_3 \mid w_c) = \sigma(\mathbf{u}_{n(w_3, 1)}^\top \mathbf{v}_c) \cdot \sigma(-\mathbf{u}_{n(w_3, 2)}^\top \mathbf{v}_c) \cdot \sigma(\mathbf{u}_{n(w_3, 3)}^\top \mathbf{v}_c).$$
@@ -248,7 +248,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-Hơn nữa, do độ phức tạp của $L(w_o)-1$ bằng $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, tổng chi phí tính toán cho mỗi bước trong sofmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
+Hơn nữa, do độ lớn của $L(w_o)-1$ là $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, chi phí tính toán của mỗi bước trong softmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
 
 
 ## Tóm tắt
@@ -261,9 +261,9 @@ The gradient computational overhead for each step in the training process is rel
 -->
 
 * Lấy mẫu âm xây dựng hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương. 
-Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu. 
+Chi phí tính toán gradient tại mỗi bước trong quá trình huấn luyện có mối quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu. 
 * Softmax phân cấp sử dụng một cây nhị phân và xây dụng hàm mất mát dựa trên đường đi từ nút gốc đến nút lá. 
-Tổng chi phí tính toán gradient cho mỗi bước trong quá trình huấn luyện quan hệ theo hàm logarit với kích thước từ điển. 
+Chi phí tính toán gradient tại mỗi bước trong quá trình huấn luyện có mối quan hệ theo hàm logarit với kích thước từ điển. 
 
 
 ## Bài tập
