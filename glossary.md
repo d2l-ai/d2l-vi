@@ -218,7 +218,8 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | English                 | Tiếng Việt               | Thảo luận tại                                                                              |
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | hand-engineering        | thiết kế thủ công        |                                                                                            |
-| heuristic               | thực nghiệm              |                                                                                            |
+| helper (function)       | (hàm) hỗ trợ             |                                                                                            |
+| heuristic               | thực nghiệm              |  
 | hybrid(ize)             | hybrid (hóa)             | [https://git.io/JJGwt](https://git.io/JJGwt), [https://git.io/JJGwq](https://git.io/JJGwq) |
 | hidden state            | trạng thái ẩn            |                                                                                            |
 | hidden state variable   | biến trạng thái ẩn       |                                                                                            |
