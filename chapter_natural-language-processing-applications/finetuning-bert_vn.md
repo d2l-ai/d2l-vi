@@ -91,7 +91,7 @@ Như minh hoạ trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token
 ## Text Pair Classification or Regression
 -->
 
-## Tác vụ Phân loại hay Hồi quy Cặp Văn bản
+## Phân loại hoặc Hồi quy Cặp Văn bản
 
 
 <!--
