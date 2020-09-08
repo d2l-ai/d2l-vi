@@ -145,7 +145,7 @@ Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người d
 * There are two types of feedbacks: implicit feedback and explicit feedback.  A number of recommendation tasks have been explored during the last decade.
 -->
 
-* Hệ thống gợi ý rất quan trọng đối với từng người dùng và các ngành công nghiệp. Lọc cộng tác là một khái niệm chủ chốt trong hệ thống gợi ý.
+* Hệ thống gợi ý rất quan trọng đối với người dùng cá nhân và các ngành công nghiệp. Lọc cộng tác là một khái niệm chủ chốt trong hệ thống gợi ý.
 * Có hai loại phản hồi: phản hồi gián tiếp và phản hồi trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ vừa qua.
 
 
