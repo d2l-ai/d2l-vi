@@ -132,14 +132,16 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 :numref:`fig_conv1d_channel` shows a one-dimensional cross-correlation operation with three input channels.
 -->
 
-*dịch đoạn phía trên*
+Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu vào.
+Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo một chiều trên từng hạt nhân và đầu vào tương ứng, và cộng các kết quả trên từng kênh lại với nhau để thu được đầu ra.
+:numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào.
 
 
 <!--
 ![One-dimensional cross-correlation operation with three input channels. The shaded parts are the first output element as well as the input and kernel array elements used in its calculation: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-channel.svg)
+![Phép tính tương quan chéo một chiều với ba kênh đầu vào. Những vùng được in đậm là phần tử đầu ra thứ nhất cũng như đầu vào và các phần tử của mảng hạt nhân được sử dụng trong phép tính: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 :label:`fig_conv1d_channel`
 
 
@@ -147,7 +149,7 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 Now, we reproduce the results of the one-dimensional cross-correlation operation with multi-input channel in :numref:`fig_conv1d_channel`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
 
 
 ```{.python .input  n=4}
@@ -173,14 +175,16 @@ multiple input channels in :numref:`fig_conv1d_channel` as the equivalent two-di
 Here, the height of the kernel is equal to the height of the input.
 -->
 
-*dịch đoạn phía trên*
+Định nghĩa phép tính tương quan chéo hai chiều cho ta thấy phép tính tương quan chéo một chiều với đa kênh đầu vào có thể được coi là phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Như minh hoạ trong :numref:`fig_conv1d_2d`, ta có thể biểu diễn phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel` tương tự như phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Ở đây, chiều cao của hạt nhân bằng với chiều cao của đầu vào.
 
 
 <!--
 ![Two-dimensional cross-correlation operation with a single input channel. The highlighted parts are the first output element and the input and kernel array elements used in its calculation: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-2d.svg)
+![Phép tính tương quan chéo hai chiều với một kênh đầu vào. Vùng được tô đậm là phần tử đầu ra thứ nhất và đầu vào cũng như các phần tử của mảng hạt nhân được sử dụng trong phép tính: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 :label:`fig_conv1d_2d`
 
 
@@ -191,7 +195,9 @@ Similarly, we can also specify multiple output channels in the one-dimensional
 convolutional layer to extend the model parameters in the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh.
+Ta đã thảo luận cách xác định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
+Tương tự, ta cũng có thể xác định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -473,7 +479,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trương Lộc Phát
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * Lý Phi Long
