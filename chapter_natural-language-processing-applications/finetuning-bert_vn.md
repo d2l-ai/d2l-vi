@@ -82,7 +82,7 @@ Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I shoul
 ![Fine-tuning BERT for single text classification applications, such as sentiment analysis and testing linguistic acceptability. Suppose that the input single text has six tokens.](../img/bert-one-seq.svg)
 -->
 
-![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại đơn văn bản, ví dụ tác vụ phân tích cảm xúc hay đánh giá khả năng chấp nhận được về mặt ngôn ngữ học. Giả sử đơn văn bản đầu vào có sáu token.](../img/bert-one-seq.svg)
+![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại văn bản đơn, ví dụ như phân tích cảm xúc hay đánh giá khả năng chấp nhận được về ngôn ngữ học. Giả sử văn bản đơn đầu vào có sáu token.](../img/bert-one-seq.svg)
 :label:`fig_bert-one-seq`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
