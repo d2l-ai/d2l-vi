@@ -75,5 +75,6 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 25/04/2020)*
