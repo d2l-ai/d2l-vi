@@ -100,14 +100,19 @@ As the representation of the input single text, it will be fed into a small MLP 
 to output the distribution of all the discrete label values.
 -->
 
-*dịch đoạn phía trên*
+:numref:`sec_bert` mô tả biểu diễn đầu vào của BERT.
+Chuỗi đầu vào BERT biểu diễn một cách rõ ràng cả văn bản đơn và cặp văn bản,
+trong đó token đặc biệt “&lt;cls&gt;” được sử dụng cho các tác vụ phân loại chuỗi, 
+và token đặc biệt “&lt;sep&gt;” đánh dấu vị trị kết thúc của văn bản đơn hoặc vị trí phân tách cặp văn bản.
+Như minh hoạ trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hoá thông tin của toàn bộ chuỗi văn bản đầu vào trong các tác vụ phân loại văn bản đơn.
+Được sử dụng là biểu diễn của văn bản đơn đầu vào, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy đủ để biến đổi thành phân phối của các giá trị nhãn rời rạc.
 
 
 <!--
 ## Text Pair Classification or Regression
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân loại hoặc Hồi quy Cặp Văn bản
 
 
 <!--
@@ -115,7 +120,8 @@ We have also examined natural language inference in this chapter.
 It belongs to *text pair classification*, a type of application classifying a pair of text.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng sẽ xem xét tác vụ suy luận ngôn ngữ tự nhiên trong chương này.
+Tác vụ này nằm trong bài toán *phân loại cặp văn bản* (_text pair classification_), một ứng dụng phân loại cặp văn bản.
 
 
 <!--
@@ -127,7 +133,11 @@ The goal is to predict these scores.
 Examples from the Semantic Textual Similarity Benchmark dataset include (sentence 1, sentence 2, similarity score):
 -->
 
-*dịch đoạn phía trên*
+Nhận một cặp văn bản làm đầu vào, và cho ra một giá trị liên tục, đo độ tương tự ngữ nghĩa của văn bản (_semantic textual similarity_) là một tác vụ *hồi quy cặp văn bản* (*text pair regression*) rất phổ biến.
+Tác vụ này đo độ tương tự ngữ nghĩa của các câu đầu vào.
+Ví dụ, trong tập dữ liệu đánh giá độ tương tự ngữ nghĩa của văn bản (_Semantic Textual Similarity Benchmark_), độ tương tự của một cặp câu nằm trong khoảng từ 0 (không trùng lặp ngữ nghĩa) tới 5 (tương tự ngữ nghĩa) :cite:`Cer.Diab.Agirre.ea.2017`.
+Mục đích của tác vụ này là dự đoán giá trị của độ tương tự trên.
+Các mẫu dữ liệu trong tập dữ liệu đánh giá độ tương tự ngữ nghĩa văn bản có dạng (câu thứ 1, câu thứ 2, độ tương tự):
 
 
 <!--
@@ -136,14 +146,16 @@ Examples from the Semantic Textual Similarity Benchmark dataset include (sentenc
 * "A woman is dancing.", "A man is talking.", 0.000.
 -->
 
-*dịch đoạn phía trên*
+* "A plane is taking off.", "An air plane is taking off.", 5.000;
+* "A woman is eating something.", "A woman is eating meat.", 3.000;
+* "A woman is dancing.", "A man is talking.", 0.000.
 
 
 <!--
 ![Fine-tuning BERT for text pair classification or regression applications, such as natural language inference and semantic textual similarity. Suppose that the input text pair has two and three tokens.](../img/bert-two-seqs.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/bert-two-seqs.svg)
+![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại hoặc hồi quy cặp văn bản, ví dụ tác vụ suy luận ngôn ngữ tự nhiên và tác vụ đo độ tương tự ngữ nghĩa văn bản. Giả sử đầu cặp văn bản đầu vào có hai và ba token.](../img/bert-two-seqs.svg)
 :label:`fig_bert-two-seqs`
 
 
@@ -154,7 +166,10 @@ For text pair regression tasks such as semantic textual similarity, trivial chan
 and using the mean squared loss: they are common for regression.
 -->
 
-*dịch đoạn phía trên*
+So sánh với tác vụ phân loại văn bản đơn trong :numref:`fig_bert-one-seq`,
+tinh chỉnh mô hình BERT cho bài toán phân loại cặp văn bản trong :numref:`fig_bert-two-seqs` có khác biệt trong biểu diễn đầu vào.
+Đối với các tác vụ hồi quy cặp văn bản, chẳng hạn như đo độ tương tự ngữ nghĩa văn bản, một vài thay đổi nhỏ thường được dùng cho hồi quy có thể được áp dụng ở đây, ví dụ như xuất ra giá trị nhãn liên tục
+và sử dụng trung bình mất mát bình phương.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -343,7 +358,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
 * Trần Yến Thy
