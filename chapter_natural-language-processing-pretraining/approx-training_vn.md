@@ -248,7 +248,7 @@ $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-Hơn nữa, do độ lớn của $L(w_o)-1$ là $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, chi phí tính toán của mỗi bước trong softmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
+Hơn nữa, do độ lớn của $L(w_o)-1$ là $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, chi phí tính toán phụ trợ tại mỗi bước trong softmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
 
 
 ## Tóm tắt
@@ -263,7 +263,7 @@ The gradient computational overhead for each step in the training process is rel
 * Lấy mẫu âm xây dựng hàm mất mát bằng cách xét các sự kiện độc lập bao gồm cả mẫu âm lẫn mẫu dương. 
 Chi phí tính toán gradient tại mỗi bước trong quá trình huấn luyện có mối quan hệ tuyến tính với số từ nhiễu mà ta lấy mẫu. 
 * Softmax phân cấp sử dụng một cây nhị phân và xây dụng hàm mất mát dựa trên đường đi từ nút gốc đến nút lá. 
-Chi phí tính toán gradient tại mỗi bước trong quá trình huấn luyện có mối quan hệ theo hàm logarit với kích thước từ điển. 
+Chi phí phụ trợ khi tính toán gradient tại mỗi bước trong quá trình huấn luyện có mối quan hệ theo hàm logarit với kích thước từ điển. 
 
 
 ## Bài tập
@@ -274,7 +274,7 @@ Chi phí tính toán gradient tại mỗi bước trong quá trình huấn luy�
 3. How can we apply negative sampling and hierarchical softmax in the skip-gram model?
 -->
 
-1. Trước khi đọc phần tiếp theo, hãy nghĩ xem ta nên lấy mẫu các từ nhiễu như thế nào trong lấy mẫu âm. 
+1. Trước khi đọc phần tiếp theo, hãy nghĩ xem ta nên lấy mẫu các từ nhiễu như thế nào trong kĩ thuật lấy mẫu âm. 
 2. Điều gì giúp cho công thức cuối cùng trong phần này là đúng? 
 3. Ta có thể áp dụng lấy mẫu âm và softmax phân cấp như thế nào trong mô hình skip-gram? 
 
