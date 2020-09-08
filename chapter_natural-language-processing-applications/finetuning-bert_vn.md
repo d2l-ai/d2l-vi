@@ -134,7 +134,7 @@ Các mẫu dữ liệu trong tập dữ liệu đánh giá độ tương tự ng
 ![Fine-tuning BERT for text pair classification or regression applications, such as natural language inference and semantic textual similarity. Suppose that the input text pair has two and three tokens.](../img/bert-two-seqs.svg)
 -->
 
-![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại và hồi quy cặp văn bản, ví dụ tác vụ suy luận ngôn ngữ tự nhiên và tác vụ đo độ tương tự ngữ nghĩa văn bản. Giả sử đầu cặp văn bản đầu vào có hai và ba token.](../img/bert-two-seqs.svg)
+![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại hoặc hồi quy cặp văn bản, ví dụ tác vụ suy luận ngôn ngữ tự nhiên và tác vụ đo độ tương tự ngữ nghĩa văn bản. Giả sử đầu cặp văn bản đầu vào có hai và ba token.](../img/bert-two-seqs.svg)
 :label:`fig_bert-two-seqs`
 
 
