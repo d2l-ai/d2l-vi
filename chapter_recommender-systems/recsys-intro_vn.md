@@ -27,13 +27,13 @@ with deep learning in the field of recommender systems, together with implemente
 Trong thập kỷ vừa qua, mạng Internet đã phát triển trở thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn,
 đồng thời thay đổi một cách sâu sắc cách ta giao tiếp, đọc tin tức, mua sắm và xem phim.
 Trong khi đó, một lượng lớn sản phẩm chưa từng có trong tiền lệ (chúng tôi sử dụng từ *sản phẩm (item)* nhằm nói đến phim ảnh, tin tức, sách và hàng hoá)
-được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm ra những sản phẩm mà ta quan tâm đến.
+được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm ra những sản phẩm mà ta ưa thích hơn.
 Do đó hệ thống gợi ý là công cụ lọc thông tin mạnh mẽ
 mà có thể thúc đẩy dịch vụ cá nhân hoá và cung cấp trải nghiệm riêng biệt cho từng người dùng.
 Nói ngắn gọn, hệ thống gợi ý đóng vai trò nòng cốt trong việc tận dụng nguồn dữ liệu dồi dào có sẵn nhằm khiến việc đưa ra lựa chọn dễ dàng hơn.
 Ngày nay, hệ thống gợi ý là là thành phần cơ bản của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
 Nhớ lại ví dụ mà Amazon đưa ra gợi ý các sách Học sâu trong :numref:`subsec_recommender_systems`.
-Lợi ích của việc sử dụng hệ thống gợi ý gồm hai ý:
+Có hai lợi ích của việc sử dụng hệ thống gợi ý:
 Một mặt, nó có thể giảm phần lớn công sức của người dùng trong tìm kiếm sản phẩm và giảm nhẹ vấn đề quá tải thông tin.
 Mặt khác, nó có thể tăng giá trị kinh doanh cho các nhà cung cấp dịch vụ trực tuyến và trở thành nguồn doanh thu quan trọng.
 Chương này sẽ giới thiệu những khái niệm cơ bản, các mô hình cổ điển và những bước tiến gần đây
@@ -187,6 +187,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
