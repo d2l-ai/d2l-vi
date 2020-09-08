@@ -147,7 +147,7 @@ and using the mean squared loss: they are common for regression.
 ## Text Tagging
 -->
 
-## *dịch tiêu đề phía trên*
+## Gán thẻ văn bản
 
 
 <!--
@@ -159,14 +159,19 @@ the sentence "John Smith 's car is new" should be tagged as
 "NNP (noun, proper singular) NNP POS (possessive ending) NN (noun, singular or mass) VB (verb, base form) JJ (adjective)".
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta hãy xem xét các tác vụ ở mức token, ví dụ như *gắn thẻ văn bản*, nơi mỗi token được gán một nhãn.
+Trong các tác vụ gán thẻ, *gán thẻ từ loại (part-of-speech tagging)* gán cho mỗi từ một thẻ từ loại (ví dụ, tính từ hay danh từ)
+dựa vào vai trò của từ đó trong câu.
+Ví dụ, dựa vào tập thẻ Penn Treebank II,
+câu "John Smith 's car is new" nên được gắn thẻ như
+"NNP (danh từ, số ít) NNP POS (sở hữu cách) NN (danh từ, số ít hoặc nhiều) VD (động từ, động từ nguyên thể không to) JJ (tính từ)".
 
 
 <!--
 ![Fine-tuning BERT for text tagging applications, such as part-of-speech tagging. Suppose that the input single text has six tokens.](../img/bert-tagging.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/bert-tagging.svg)
+![Tinh chỉnh BERT cho ứng dụng gắn thẻ văn bản, ví dụ như gắn thẻ loại từ. Giả sử rằng đầu vào là một văn bản đơn có sáu token.](../img/bert-tagging.svg)
 :label:`fig_bert-tagging`
 
 
@@ -177,14 +182,17 @@ in text tagging, the BERT representation of *every token* of the input text
 is fed into the same extra fully-connected layers to output the label of the token, such as a part-of-speech tag.
 -->
 
-*dịch đoạn phía trên*
+Tinh chỉnh BERT cho ứng dụng gắn thẻ văn bản được minh họa trong :numref:`fig_bert-tagging`.
+So sánh với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất nằm ở trong
+phần gắn thẻ văn bản, sự biểu diễn BERT của *mỗi token* của văn bản đầu vào
+được truyền vào các tầng kết nối đầy đủ mở rộng giống nhau để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
 
 
 <!--
 ## Question Answering
 -->
 
-## *dịch tiêu đề phía trên*
+## Trả lời câu hỏi
 
 
 <!--
@@ -199,14 +207,21 @@ The answer should be the text span "mask makers" in the passage.
 Thus, the goal in SQuAD v1.1 is to predict the start and end of the text span in the passage given a pair of question and passage.
 -->
 
-*dịch đoạn phía trên*
-
+Là một ứng dụng khác ở mức token, *trả lời câu hỏi* phản ánh khả năng đọc hiểu.
+Ví dụ, tập dữ liệu trả lời câu hỏi Stanford (SQuAD v1.1)
+bao gồm các đoạn văn và các câu hỏi, nơi mà câu trả lời cho mỗi câu hỏi
+chỉ là một phần văn bản (khoảng văn bản) trong đoạn văn mà câu hỏi đang nói tới :cite:`Rajpurkar.Zhang.Lopyrev.ea.2016`.
+Để giải thích, hãy xét đoạn văn sau
+"Một số chuyên gia cho rằng sự hiệu quả của khẩu trang là chưa thể khẳng định. Tuy nhiên, các nhà sản xuất khẩu trang cho rằng sản phẩm của họ, như là khẩu trang N95, có thể bảo vệ khỏi virus."
+và câu hỏi "Ai cho rằng khẩu trang N95 có thể bảo vệ khỏi virus?".
+Câu trả lời nên là khoảng văn bản "các nhà sản xuất khẩu trang" trong đoạn văn.
+Vì thế, mục đích trong SQuAD v1.1 là dự đoán điểm khởi đầu và kết thúc của khoảng văn bản trong đoạn văn được cho trước một cặp câu hỏi và đoạn văn.
 
 <!--
 ![Fine-tuning BERT for question answering. Suppose that the input text pair has two and three tokens.](../img/bert-qa.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/bert-qa.svg)
+![Tinh chỉnh BERT cho trả lời câu hỏi. Giả sử rằng cặp văn bản đầu vào có hai và ba token.](../img/bert-qa.svg)
 :label:`fig_bert-qa`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -293,7 +308,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
