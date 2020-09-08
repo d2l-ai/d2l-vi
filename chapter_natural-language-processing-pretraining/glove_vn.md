@@ -189,10 +189,10 @@ the conditional probability of generating context word $w_j$ with central target
 From a real example from a large corpus, here we have the following two sets of conditional probabilities with "ice" and "steam" as the central target words and the ratio between them:
 -->
 
-Ta cũng có thể cố gắng lý giải embedding từ Glove theo một cách nhìn khác. 
+Ta cũng có thể cố gắng lý giải embedding từ GloVe theo một cách nhìn khác. 
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
 xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$. 
-Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng: 
+Xét ví dụ thực tế từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng: 
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
