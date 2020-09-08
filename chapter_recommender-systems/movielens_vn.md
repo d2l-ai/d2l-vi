@@ -4,7 +4,7 @@
 #  The MovieLens Dataset
 -->
 
-# *dịch tiêu đề trên*
+# Tập dữ liệu MovieLens
 
 
 <!--
@@ -15,7 +15,11 @@ It is created in 1997 and run by GroupLens, a research lab at the University of 
 MovieLens data has been critical for several research studies including personalized recommendation and social psychology.
 -->
 
-*dịch đoạn phía trên*
+Có rất nhiều tập dữ liệu có sẵn dùng cho nghiên cứu hệ thống gợi ý.
+Trong số đó, tập dữ liệu [MovieLens](https://movielens.org/) có lẽ là một trong những tập phổ biến nhất.
+MovieLens là một hệ thống gợi ý phi thương mại trên nền tảng web.
+Nó được tạo ra vào năm 1997 và vận hành bởi GroupLens, một lab nghiên cứu tại Đại học Minnesota, để thu thập dữ liệu đánh giá phim cho mục đích nghiên cứu.
+Dữ liệu của MovieLens là quan trọng cho một số nghiên cứu bao gồm cá nhân hóa gợi ý và tâm lý xã hội.
 
 
 <!--
