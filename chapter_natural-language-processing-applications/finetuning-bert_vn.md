@@ -147,7 +147,7 @@ and using the mean squared loss: they are common for regression.
 
 
 So sánh với tác vụ phân loại đơn văn bản trong :numref:`fig_bert-one-seq`,
-tinh chỉnh mô hình BERT cho bài toán phân loại cặp văn bản trong :numref:`fig_bert-hai-seqs` có khác biệt trong biểu diễn đầu vào.
+tinh chỉnh mô hình BERT cho bài toán phân loại cặp văn bản trong :numref:`fig_bert-two-seqs` có khác biệt trong biểu diễn đầu vào.
 Đối với các tác vụ hồi quy cặp văn bản, chẳng hạn như đo độ tương tự ngữ nghĩa văn bản, một vài thay đổi nhỏ thường được dùng cho hồi quy có thể được áp dụng ở đây, ví dụ như xuất ra giá trị nhãn liên tục
 và sử dụng mất mát bình phương trung bình.
 
