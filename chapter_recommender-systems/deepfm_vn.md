@@ -90,7 +90,10 @@ Let $y_{DNN}$ denote the output of the prediction.
 The ultimate prediction of DeepFM is the summation of the outputs from both FM and DNN. So we have: 
 -->
 
-*dịch đoạn phía trên*
+trong đó $\alpha$ là hàm kích hoạt.
+$\mathbf{W}_{l}$ và $\mathbf{b}_{l}$ là trọng số và độ chệch tại tầng thứ $l$.
+Gọi $y_{DNN}$ ký hiệu đầu ra của dự đoán.
+Dự đoán cuối cùng của DeepFM là tổng đầu ra từ cả FM và DNN. Từ đó ta có:
 
 
 $$
@@ -103,14 +106,15 @@ where $\sigma$ is the sigmoid function.
 The architecture of DeepFM is illustrated below.
 -->
 
-*dịch đoạn phía trên*
+Trong đó $\sigma$ là hàm sigmoid.
+Kiến trúc của DeepFM được minh hoạ như hình dưới.
 
 
 <!--
 ![Illustration of the DeepFM model](../img/rec-deepfm.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/rec-deepfm.svg)
+![Minh hoạ mô hình DeepFM](../img/rec-deepfm.svg)
 
 
 <!--
@@ -118,7 +122,8 @@ It is worth noting that DeepFM is not the only way to combine deep neural networ
 We can also add nonlinear layers over the feature interactions :cite:`He.Chua.2017`.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý rằng DeepFM không phải là cách duy nhất để kết hợp mạng nơ-ron sâu với FM.
+Ta cũng có thể thêm các tầng phi tuyến vào giữa các tương tác đặc trưng :cite:`He.Chua.2017`.
 
 
 ```{.python .input  n=2}
@@ -135,7 +140,7 @@ npx.set_np()
 ## Implemenation of DeepFM
 -->
 
-## *dịch tiêu đề trên*
+## Cách lập trình DeepFM
 
 
 <!--
@@ -145,7 +150,10 @@ Dropout is also used to regularize the model.
 The number of neurons of the MLP can be adjusted with the `mlp_dims` hyperparameter.
 -->
 
-*dịch đoạn phía trên*
+Cách lập trình cho DeepFM tương tự như FM.
+Ta giữ nguyên phần FM và sử dụng khối MLP với `relu` làm hàm kích hoạt.
+Dropout cũng được sử dụng để điều chuẩn mô hình.
+Số nơ-ron của MLP có thể được điều chỉnh thông qua siêu tham số `mlp_dims`.
 
 
 ```{.python .input  n=2}
@@ -181,7 +189,7 @@ class DeepFM(nn.Block):
 ## Training and Evaluating the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện và Đánh giá Mô hình
 
 
 <!--
@@ -190,7 +198,9 @@ We set the MLP component of DeepFM to a three-layered dense network with the a p
 All other hyperparameters remain the same as FM.
 -->
 
-*dịch đoạn phía trên*
+Quá trình nạp dữ liệu giống với phần FM.
+Ta đặt thành phần MLP của DeepFM bằng một mạng ba tầng kết nối đầy đủ với cấu trúc kim tự tháp (30-20-10).
+Tất cả các siêu tham số khác được giữ nguyên so với FM.
 
 
 ```{.python .input  n=4}
@@ -222,7 +232,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Compared with FM, DeepFM converges faster and achieves better performance.
 -->
 
-*dịch đoạn phía trên*
+So với FM, DeepFM hội tụ nhanh hơn và đạt được hiệu năng tốt hơn.
 
 
 ## Tóm tắt
@@ -232,7 +242,8 @@ Compared with FM, DeepFM converges faster and achieves better performance.
 * DeepFM outperforms the original FM on the advertising dataset.
 -->
 
-*dịch đoạn phía trên*
+* Việc tích hợp mạng nơ-ron vào FM cho phép mô hình hoá các tương tác phức tạp và có bậc cao.
+* DeepFM vượt trội so với FM nguyên bản trên tập dữ liệu quảng cáo.
 
 
 ## Bài tập
@@ -242,7 +253,8 @@ Compared with FM, DeepFM converges faster and achieves better performance.
 * Change the dataset to Criteo and compare it with the original FM model.
 -->
 
-*dịch đoạn phía trên*
+* Thay đổi cấu trúc của MLP để kiểm tra ảnh hưởng lên hiệu năng của mô hình.
+* Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM nguyên bản.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -267,6 +279,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
