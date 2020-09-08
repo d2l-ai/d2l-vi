@@ -212,8 +212,8 @@ Therefore, the input of the max-over-time pooling layer can have different times
 -->
 
 Tương tự, ta có tầng gộp một chiều.
-Tầng gộp cực đại theo thời gian được dùng trong TextCNN thật chất tương tự như tầng gộp toàn cục cực đại một chiều.
-Giả sử đầu vào chứa nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều.
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
 Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
 
 <!--
@@ -224,9 +224,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-Để cải thiện chất lượng điện toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau thành một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
-Đương nhiên, các ký tự được thêm vào không làm thay đổi ngữ nghĩa ban đầu.
-Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -247,7 +247,7 @@ The calculation of textCNN can be mainly divided into the following steps:
 -->
 
 TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
-Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $n$ chiều.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều.
 Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
 Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
@@ -260,10 +260,10 @@ A dropout layer can be used in this step to deal with overfitting.
 -->
 
 1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
-Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quang của các từ liền kề có số lượng khác nhau.
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau.
 2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
-3. Vector vừa nối sẽ biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
-Có thể sử dụng tầng dropout để giải quyết tình trạng quá khớp.
+3. Vector vừa nối sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
+Có thể sử dụng tầng dropout ở bước này để giải quyết tình trạng quá khớp.
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
