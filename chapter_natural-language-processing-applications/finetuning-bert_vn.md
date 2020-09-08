@@ -52,7 +52,7 @@ Trong phần sau, ta sẽ tổng quát hóa một tập hợp con các ứng d�
 thành nhãn đầu ra trong tác vụ phân loại đơn văn bản và tác vụ phân loại hay hồi quy cặp văn bản.
 Ở cấp độ token, chúng tôi sẽ giới thiệu ngắn gọn các ứng dụng mới như gán thẻ văn bản
 và trả lời câu hỏi, từ đó làm sáng tỏ cách BERT biểu diễn đầu vào và biến đổi chúng thành nhãn đầu ra như thế nào.
-Trong quá trình tinh chỉnh, những "thay đổi kiến trúc tối thiểu" yêu cầu bởi BERT trên các ứng dụng khác nhau đó là các tầng kết nối đầy đủ được bổ sung.
+Trong quá trình tinh chỉnh, những "thay đổi kiến trúc tối thiểu" mà BERT yêu cầu trên các ứng dụng khác nhau là các tầng kết nối đầy đủ được bổ sung.
 Trong quá trình học có giám sát của một ứng dụng xuôi dòng, các tham số của các tầng bổ sung này
 được học từ đầu trong khi tất cả các tham số trong mô hình BERT đã được tiền huấn luyện sẽ được tinh chỉnh.
 
