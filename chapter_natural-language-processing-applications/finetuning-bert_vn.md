@@ -5,7 +5,7 @@
 # Fine-Tuning BERT for Sequence-Level and Token-Level Applications
 -->
 
-# Tinh chỉnh Mô hình BERT cho các Ứng dụng Cấp độ Chuỗi và Cấp độ Token
+# Tinh chỉnh BERT cho các Ứng dụng Cấp Chuỗi và Cấp Token
 :label:`sec_finetuning-bert`
 
 <!--
