@@ -4,7 +4,7 @@
 # Generative Adversarial Networks
 -->
 
-# *dịch tiêu đề trên*
+# Mạng đối sinh
 :label:`sec_basic_gan`
 
 
@@ -20,8 +20,15 @@ Classification accuracies on high-res images has gone from useless to human-leve
 We will spare you another spiel about all the other discriminative tasks where deep neural networks do astoundingly well.
 -->
 
-*dịch đoạn phía trên*
-
+Xuyên suốt gần toàn bộ cuốn sách này, ta đã nói về việc làm thế nào để thực hiện các dự đoán.
+Dưới dạng nào đi nữa, ta đã sử dụng mạng nơ-rôn sâu học ánh xạ từ các mẫu ví dụ sang các nhãn.
+Loại học này được gọi là học phân biệt,
+như là ta muốn có thể phân biệt giữa ảnh của các con chó và các con mèo.
+Phân loại và hồi quy là hai ví dụ của việc học phân biệt.
+Và mạng nơ-rôn được huấn luyện dùng lan truyền ngước đã đảo lộn mọi thứ 
+ta từng nghĩ là ta đã biết về học phân biệt trên các tập dữ liệu lớn phức tạp. 
+Độ chính xác phân loại ảnh có độ phân giải cao đã đạt tới mức độ như người (với một số điều kiện) từ chỗ không thể sử dụng được chỉ trong 5-6 năm gần đây.
+Chúng tôi sẽ đem đến cho các bạn một câu chuyện khác về tất cả các tác vụ phân biệt khác mà ở đó mạng nơ-rôn sâu thực hiện tốt đáng kinh ngạc.
 
 <!--
 But there is more to machine learning than just solving discriminative tasks.
@@ -32,8 +39,13 @@ For example, given a large corpus of photographs of faces,
 we might want to be able to generate a new photorealistic image that looks like it might plausibly have come from the same dataset.
 This kind of learning is called generative modeling.
 -->
-
-*dịch đoạn phía trên*
+Nhưng có nhiều thứ để học máy hơn là chỉ giải các tác vụ phân biệt.
+Chẳng hạn, với một tập dữ liệu cho trước, không có bất kỳ nhãn nào,
+ta có lẽ muốn học một mô hình thu chính xác các đặc tính của tập dữ liệu này.
+Với một mô hình như vậy, ta có thể lấy các mẫu dữ liệu tạo ra giống như phân phối của dữ liệu dùng huấn luyện.
+Ví dụ, với một kho lớn dữ liệu ảnh khuôn mặt cho trước,
+ta có thể muốn có thể sinh một ảnh như thật mà trông giống như nó được lấy từ cùng tập dữ liệu.
+Kiểu học này được gọi là tạo mô hình sinh.
 
 
 <!--
@@ -45,7 +57,12 @@ The recurrent neural network language models are one example of using a discrimi
 (trained to predict the next character) that once trained can act as a generative model.
 -->
 
-*dịch đoạn phía trên*
+Cho đến gần đây, ta không có phương cách nào để có thể tổng hợp các ảnh như thật mới.
+Nhưng thành công của mạng nơ-rôn sâu với học phân biệt đã mở ra những khả năng mới.
+Một hướng lớn trong hơn ba năm vừa qua là đã áp dụng 
+mạng sâu phân biệt để vượt qua các thách thức trong các bài toán mà ta nhìn chung không nghĩ nó như là bài toán học có giám sát.
+Các mô hình ngôn ngữ mạng nơ-rôn truy hồi là một ví dụ việc sử dụng một mạng phân biệt
+(được huấn luyện để dự đoán ký tự kế tiếp) mà ngay khi được huấn luyện có thể vận hành như một mô hình sinh.
 
 
 <!--
@@ -61,7 +78,16 @@ This allows us to improve the data generator until it generates something that r
 At the very least, it needs to fool the classifier. Even if our classifier is a state of the art deep neural network.
 -->
 
-*dịch đoạn phía trên*
+Trong năm 2014, một bài báo đột phá đưa ra các mạng đối sinh (GAN) :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`,
+một cách mới khôn khéo để nâng sức mạnh của các mô hình phân biệt đến các mô hình sinh tốt.
+Ở trái tim của chúng, các GAN dựa trên ý tưởng là một bộ sinh dữ liệu gọi là tốt nếu ta không thể chỉ ra đâu dữ liệu giả đâu là dữ liệu thật.
+Trong thống kê, điều này được gọi là bài kiểm tra từ hai tập mẫu - một bài kiểm tra để trả lời
+câu hỏi liệu tập dữ liệu $X=\{x_1,\ldots, x_n\}$ và $X'=\{x'_1,\ldots, x'_n\}$  có được rút ra từ cùng tập phân phối.
+Sự khác biệt chính giữa hầu hết những bài nghiên cứu thống kê và các GAN là loại sau sử dụng ý tưởng này theo một cách có cấu trúc.
+Nói cách khác, thay vì chỉ huấn luyện một mô hình để nói "này, có hai tập dữ liệu không giống như chúng đến cùng từ một tập phân phối",
+chúng sử dụng [kiểm tra trên hai tập mẫu](https://en.wikipedia.org/wiki/Two-sample_hypothesis_testing) để cung cấp tín hiệu cho việc huấn luyện cho một mô hình sinh.
+Điều này cho phép ta cải thiện bộ sinh dữ liệu tới khi nó sinh ra thứ gì đó giống như dữ liệu thực.
+Ở mức tối thiểu nhất, nó cần lừa được bộ phân loại. Thậm chí nếu bộ phân loại của ta là mạng nơ-rôn sâu tân tiến nhất.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -529,7 +555,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
