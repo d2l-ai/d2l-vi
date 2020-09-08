@@ -72,8 +72,8 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | categorical variable             | biến hạng mục             | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category                         | hạng mục                  | [https://git.io/JJDKV](https://git.io/JJDKV) |
 | causality                        | quan hệ nhân quả          |                                              |
-| central target word | từ tâm đích | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
-| central word | từ tâm | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
+| central target word | từ đích trung tâm | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
+| central word | từ trung tâm | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
 | chain rule                       | quy tắc dây chuyền        | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | channel (in computer vision)     | kênh                      |                                              |
 | (model) checkpoint               | checkpoint (của mô hình)  |                                              |
