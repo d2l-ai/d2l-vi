@@ -49,7 +49,7 @@ learned from scratch while all the parameters in the pretrained BERT model are f
 
 Trong phần sau, ta sẽ tổng quát hóa một tập hợp con các ứng dụng xử lý ngôn ngữ tự nhiên thành các tác vụ cấp độ chuỗi và cấp độ token.
 Ở cấp độ chuỗi, chúng tôi sẽ giới thiệu cách chuyển đổi biểu diễn BERT của văn bản đầu vào
-thành nhãn đầu ra trong tác vụ phân loại đơn văn bản và tác vụ phân loại hay hồi quy cặp văn bản.
+thành nhãn đầu ra trong tác vụ phân loại văn bản đơn và tác vụ phân loại hay hồi quy cặp văn bản.
 Ở cấp độ token, chúng tôi sẽ giới thiệu ngắn gọn các ứng dụng mới như gán thẻ văn bản
 và trả lời câu hỏi, từ đó làm sáng tỏ cách BERT biểu diễn đầu vào và biến đổi chúng thành nhãn đầu ra như thế nào.
 Trong quá trình tinh chỉnh, những "thay đổi kiến trúc tối thiểu" mà BERT yêu cầu trên các ứng dụng khác nhau là các tầng kết nối đầy đủ được bổ sung.
