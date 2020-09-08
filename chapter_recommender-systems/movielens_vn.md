@@ -142,7 +142,7 @@ d2l.plt.show()
 ## Splitting the dataset
 -->
 
-## *dịch tiêu đề trên*
+## Chia nhỏ tập dữ liệu
 
 
 <!--
@@ -155,7 +155,13 @@ User historical interactions are sorted from oldest to newest based on timestamp
 This mode will be used in the sequence-aware recommendation section.
 -->
 
-*dịch đoạn phía trên*
+Ta chia tập dữ liệu thành các tập huấn luyện và kiểm tra.
+Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`.
+Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không cân nhắc tới timestamp
+và sử dụng 90% dữ lệu để làm mẫu huẫn luyện và 10% còn lại dành cho mẫu kiểm tra theo mặc định.
+Trong chế độ `seq-aware`, ta chừa ra hạng mục mà người dùng đánh giá gần đây nhất để dùng cho kiểm tra, và các tương tác trong quá khứ để làm tập huấn luyện.
+Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất dựa trên timestamp.
+Chế độ này sẽ được sử dụng trong phần gợi ý sequence-aware.
 
 
 ```{.python .input  n=5}
