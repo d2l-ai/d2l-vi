@@ -74,7 +74,7 @@ For instance, "I should study." is acceptable but "I should studying." is not.
 
 Tác vụ *phân loại văn bản đơn* nhận một chuỗi văn bản đơn làm đầu vào và đầu ra là kết quả phân loại của văn bản đó.
 Bên cạnh tác vụ phân tích cảm xúc mà ta đã nghiên cứu trong chương này,
-tập dữ liệu Corpus of Linguistic Acceptability (CoLA) cũng được sử dụng cho tác vụ phân loại đơn văn bản, đó là đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
+tập dữ liệu Corpus of Linguistic Acceptability (CoLA) cũng được sử dụng cho tác vụ phân loại văn bản đơn, đó là đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
 Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I should studying." thì không.
 
 
