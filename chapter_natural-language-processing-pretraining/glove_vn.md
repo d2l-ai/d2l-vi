@@ -42,7 +42,7 @@ As a result, the loss function of the skip-gram model can be expressed in a diff
 -->
 
 Từ $w_i$ có thể xuất hiện trong tập dữ liệu nhiều lần. 
-Ta gom tất cả các từ ngữ cảnh mỗi khi $w_i$ là từ trung tâm và giữ các từ trùng lặp, rồi ký hiệu đó là tập bội $\mathcal{C}_i$. 
+Ta gom tất cả các từ ngữ cảnh mỗi khi $w_i$ là từ trung tâm và giữ các lần trùng lặp, rồi ký hiệu đó là tập bội $\mathcal{C}_i$. 
 Số lượng của một phần tử trong tập bội được gọi là bội số của phần tử đó.
 Chẳng hạn, giả sử rằng từ $w_i$ xuất hiện hai lần trong tập dữ liệu: 
 khi hai từ $w_i$ đó là từ trung tâm trong chuỗi văn bản, hai cửa sổ ngữ cảnh tương ứng chứa các chỉ số từ ngữ cảnh $2, 1, 5, 2$ và $2, 3, 2, 1$. 
@@ -98,7 +98,7 @@ Tuy nhiên, mặc dù là hàm mất mát phổ biến nhất, đôi khi hàm m�
 Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để mô hình đưa ra dự đoán $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó. 
 Điều này có thể dễ dàng khiến tổng chi phí tính toán trở nên quá lớn. 
 Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu. 
-Trong hàm mất mát entropy chéo, dự đoán phân phối xác suất có điều kiện cuối cùng trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác. 
+Trong hàm mất mát entropy chéo, dự đoán cuối cùng cho phân phối xác suất có điều kiện trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác. 
 
 
 <!--
@@ -169,7 +169,7 @@ Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh củ
 Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay vì xác suất có điều kiện $p_{ij}$ bất đối xứng. 
 Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe. 
 Tuy vậy, hai tập vector từ được học bởi cùng một mô hình về cuối có thể sẽ khác nhau do giá trị khởi tạo khác nhau. 
-Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng các vector từ mục tiêu trung tâm và vector từ ngữ cảnh làm vector từ cuối cùng cho từ đó. 
+Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng của vector từ tâm đích và vector từ ngữ cảnh để làm vector từ cuối cùng cho từ đó. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
