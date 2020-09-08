@@ -197,7 +197,9 @@ However, we omit that for the sake of brevity.
 In this case, our test set can be regarded as our held-out validation set.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng đó là điều tốt nếu ta sử dụng tập kiểm định để thực hành, tách bạch khỏi duy nhất một tập kiểm tra.
+Tuy nhiên, chúng tôi bỏ qua điều đó vì mục đích ngắn gọn. 
+Trong trường hợp này, tập kiểm tra của chúng tôi có thể được coi là tập kiểm tra cầm cự.
 
 
 <!--
