@@ -108,7 +108,7 @@ The model parameters can be learned with an optimization algorithm, such as Stoc
 An intuitive illustration of the matrix factorization model is shown below:
 -->
 
-Ảnh minh hoạ trực quan cho mô hình phân rã ma trận được đưa ra như dưới đây:
+Ảnh minh hoạ trực quan cho mô hình phân rã ma trận được đưa ra như hình dưới:
 
 
 <!--
@@ -122,7 +122,7 @@ An intuitive illustration of the matrix factorization model is shown below:
 In the rest of this section, we will explain the implementation of matrix factorization and train the model on the MovieLens dataset.
 -->
 
-Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích phần lập trình phân rã ma trận và huấn luyện mô hình trên tập dữ liệu MovieLens.
+Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích cách lập trình cho phân rã ma trận và huấn luyện mô hình trên tập dữ liệu MovieLens.
 
 
 ```{.python .input  n=2}
@@ -138,7 +138,7 @@ npx.set_np()
 ## Model Implementation
 -->
 
-## Lập trình Mô hình
+## Cách lập trình Mô hình
 
 
 <!--
@@ -150,9 +150,9 @@ In the `forward` function, user and item ids are used to look up the embeddings.
 -->
 
 Đầu tiên, ta lập trình mô hình phân rã ma trận như mô tả trên.
-Các nhân tố ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
-Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố ẩn ($k$).
-Ta cũng có thể sử dụng `nn.Embedding` để tạo độ chệch người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
+Các nhân tố tiềm ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
+Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố tiềm ẩn ($k$).
+Ta cũng có thể sử dụng `nn.Embedding` để thêm vào độ chệch người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
 Trong hàm `forward`, id người dùng và sản phẩm được sử dụng để tìm đến đối tượng embedding.
 
 
@@ -187,8 +187,8 @@ We then implement the RMSE (root-mean-square error) measure, which is commonly u
 predicted by the model and the actually observed ratings (ground truth) :cite:`Gunawardana.Shani.2015`. RMSE is defined as:
 -->
 
-Ta lập trình phép đo RMSE (*root-mean-square error* - căn bậc hai trung bình bình phương sai số) được sử dụng rộng rãi nhằm đo sự khác nhau giữa giá trị đánh giá
-được dự đoán và đánh giá được quan sát thực tế (nhãn chuẩn) :cite:`Gunawardana.Shani.2015`. RMSE được định nghĩa bằng:
+Tiếp theo, ta lập trình phép đo RMSE (*root-mean-square error* - căn bậc hai trung bình bình phương sai số), phép đo này được sử dụng rộng rãi nhằm đo sự khác nhau giữa giá trị đánh giá
+dự đoán và đánh giá được quan sát thực tế (nhãn chuẩn) :cite:`Gunawardana.Shani.2015`. RMSE được định nghĩa bằng:
 
 
 $$
@@ -202,7 +202,7 @@ $|\mathcal{T}|$ is the size of this set. We can use the RMSE function provided b
 -->
 
 trong đó $\mathcal{T}$ là tập bao gồm các cặp người dùng và sản phẩm mà ta sử dụng để đánh giá.
-$|\mathcal{T}|$ là kích thước tập này. Ta có thể sử dụng hàm RMSE được cung cấp trong `mx.metric`.
+$|\mathcal{T}|$ là kích thước tập này. Ta có thể sử dụng hàm RMSE được cung cấp sẵn trong `mx.metric`.
 
 
 ```{.python .input  n=3}
@@ -282,7 +282,7 @@ Here, we set the latent factor dimension to 30.
 -->
 
 Cuối cùng, hãy cùng gộp tất cả vào với nhau và huấn luyện mô hình.
-Ở đây, ta đặt kích thước nhân tố ẩn bằng 30.
+Ở đây, ta đặt kích thước nhân tố tiềm ẩn bằng 30.
 
 
 ```{.python .input  n=5}
@@ -332,7 +332,7 @@ scores
 * Check the predicted rating scores of other users for a specific movie.
 -->
 
-* Thay đổi kích thước của nhân tố ẩn. Kích thước của nhân tố ẩn ảnh hướng thế nào đến hiệu năng của mô hình?
+* Thay đổi kích thước của nhân tố tiềm ẩn. Kích thước của nhân tố tiềm ẩn ảnh hướng thế nào đến hiệu năng của mô hình?
 * Thử các phép tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
 * Kiểm tra giá trị đánh giá dự đoán của các người dùng khác nhau cho một bộ phim cụ thể.
 
