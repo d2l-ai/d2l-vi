@@ -84,7 +84,7 @@ Chuỗi đầu vào BERT biểu diễn một cách rõ ràng cả văn bản đ�
 trong đó token đặc biệt “&lt;cls&gt;” được sử dung cho các tác vụ phân loại chuỗi, 
 và token đặc biệt “&lt;sep&gt;” đánh dấu vị trị kết thúc của văn bản đơn hoặc vị trí phân tách cặp văn bản.
 Như minh hoạ trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hoá thông tin của toàn bộ chuỗi văn bản đầu vào trong các tác vụ phân loại đơn văn bản.
-Được sử dụng là biểu diễn của đơn văn bản đầu vào, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy để biến đổi thành phân phối của các giá trị nhãn rời rạc.
+Được sử dụng là biểu diễn của văn bản đơn đầu vào, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy đủ để biến đổi thành phân phối của các giá trị nhãn rời rạc.
 
 
 <!--
