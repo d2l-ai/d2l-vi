@@ -61,7 +61,7 @@ Trong quá trình học có giám sát của một ứng dụng xuôi dòng, cá
 ## Single Text Classification
 -->
 
-## Tác vụ Phân loại Đơn Văn bản
+## Phân loại Văn bản Đơn
 
 
 <!--
