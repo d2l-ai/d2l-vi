@@ -163,7 +163,7 @@ class AutoRec(nn.Block):
 Since the input and output have been changed, we need to reimplement the evaluation function, while we still use RMSE as the accuracy measure.
 -->
 
-Do ta thay đổi đầu vào và đầu ra nên ta cần phải lập trình lại hàm đánh giá, trong khi ta vẫn sử dụng RMSE làm phép đo độ chính xác.
+Do đầu vào và đầu ra thay đổi nên ta cần phải lập trình lại hàm đánh giá, trong khi đó ta vẫn sẽ sử dụng RMSE làm phép đo độ chính xác.
 
 
 ```{.python .input  n=3}
@@ -246,7 +246,7 @@ d2l.train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 
 * Thay đổi kích thước ẩn của AutoRec để quan sát ảnh hưởng của việc này lên hiệu năng mô hình.
 * Hãy thử thêm vào nhiều tầng ẩn. Việc này có giúp cải thiện hiệu năng mô hình?
-* Bạn có thể tìm một bộ hàm kích hoạt tốt hơn cho bộ giải mã và bộ mã hoá?
+* Liệu bạn có thể tìm một bộ hàm kích hoạt nào khác tốt hơn cho bộ giải mã và bộ mã hoá?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
