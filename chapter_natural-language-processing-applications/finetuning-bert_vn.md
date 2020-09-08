@@ -5,7 +5,7 @@
 # Fine-Tuning BERT for Sequence-Level and Token-Level Applications
 -->
 
-# *dịch tiêu đề phía trên*
+# Tinh chỉnh BERT cho các Ứng dụng Cấp Chuỗi và Cấp Token
 :label:`sec_finetuning-bert`
 
 <!--
@@ -22,7 +22,17 @@ Thus, when there are sufficient computational resources,
 we may consider fine-tuning BERT for downstream natural language processing applications.
 -->
 
-*dịch đoạn phía trên*
+Trong các phần trước, ta đã thiết kế các mô hình khác nhau cho
+các ứng dụng xử lý ngôn ngữ tự nhiên, chẳng hạn như các mô hình dựa trên RNN, CNN, cơ chế tập trung, hay MLP.
+Những mô hình này rất hữu ích khi có giới hạn về không gian hoặc thời gian, tuy nhiên,
+việc thiết kế thủ công một mô hình cụ thể cho mọi tác vụ xử lý ngôn ngữ tự nhiên trong thực tế là điều không khả thi.
+Trong :numref:`sec_bert`, chúng ta đã giới thiệu mô hình BERT được tiền huấn luyện mà chỉ
+yêu cầu thay đổi kiến trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
+Một mặt, tại thời điểm BERT được đề xuất, nó đã cải thiện kết quả tốt nhất trên các tác vụ xử lý ngôn ngữ tự nhiên khác nhau.
+Mặt khác, như đã lưu ý trong :numref:`sec_bert-Pretraining`,
+hai phiên bản của mô hình BERT gốc lần lượt có 110 triệu và 340 triệu tham số.
+Do đó, khi có đủ tài nguyên tính toán,
+ta có thể xem xét việc tinh chỉnh BERT cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng.
 
 
 <!--
@@ -36,14 +46,22 @@ During supervised learning of a downstream application, parameters of the extra 
 learned from scratch while all the parameters in the pretrained BERT model are fine-tuned.
 -->
 
-*dịch đoạn phía trên*
+
+Trong phần sau, ta sẽ tổng quát hóa một tập hợp con các ứng dụng xử lý ngôn ngữ tự nhiên thành các tác vụ cấp độ chuỗi và cấp độ token.
+Ở cấp độ chuỗi, chúng tôi sẽ giới thiệu cách chuyển đổi biểu diễn BERT của văn bản đầu vào
+thành nhãn đầu ra trong tác vụ phân loại văn bản đơn và tác vụ phân loại hay hồi quy cặp văn bản.
+Ở cấp độ token, chúng tôi sẽ giới thiệu ngắn gọn các ứng dụng mới như gán thẻ văn bản
+và trả lời câu hỏi, từ đó làm sáng tỏ cách BERT biểu diễn đầu vào và biến đổi chúng thành nhãn đầu ra như thế nào.
+Trong quá trình tinh chỉnh, những "thay đổi kiến trúc tối thiểu" mà BERT yêu cầu trên các ứng dụng khác nhau là các tầng kết nối đầy đủ được bổ sung.
+Trong quá trình học có giám sát của một ứng dụng xuôi dòng, các tham số của các tầng bổ sung này
+được học từ đầu trong khi tất cả các tham số trong mô hình BERT đã được tiền huấn luyện sẽ được tinh chỉnh.
 
 
 <!--
 ## Single Text Classification
 -->
 
-## *dịch tiêu đề phía trên*
+## Phân loại Văn bản Đơn
 
 
 <!--
@@ -54,14 +72,17 @@ judging whether a given sentence is grammatically acceptable or not :cite:`Warst
 For instance, "I should study." is acceptable but "I should studying." is not.
 -->
 
-*dịch đoạn phía trên*
+Tác vụ *phân loại văn bản đơn* nhận một chuỗi văn bản đơn làm đầu vào và đầu ra là kết quả phân loại của văn bản đó.
+Bên cạnh tác vụ phân tích cảm xúc mà ta đã nghiên cứu trong chương này,
+tập dữ liệu Corpus of Linguistic Acceptability (CoLA) cũng được sử dụng cho tác vụ phân loại văn bản đơn, đó là đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
+Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I should studying." thì không.
 
 
 <!--
 ![Fine-tuning BERT for single text classification applications, such as sentiment analysis and testing linguistic acceptability. Suppose that the input single text has six tokens.](../img/bert-one-seq.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/bert-one-seq.svg)
+![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại văn bản đơn, ví dụ như phân tích cảm xúc hay đánh giá khả năng chấp nhận được về ngôn ngữ học. Giả sử văn bản đơn đầu vào có sáu token.](../img/bert-one-seq.svg)
 :label:`fig_bert-one-seq`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -319,7 +340,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
