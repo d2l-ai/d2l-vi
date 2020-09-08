@@ -149,7 +149,7 @@ Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo 
 Now, we reproduce the results of the one-dimensional cross-correlation operation with multi-input channel in :numref:`fig_conv1d_channel`.
 -->
 
-Bây giờ, ta sẽ tái lập lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
+Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
 
 
 ```{.python .input  n=4}
