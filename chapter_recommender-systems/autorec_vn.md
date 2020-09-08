@@ -16,12 +16,12 @@ Neural networks have been proven to be capable of approximating any continuous f
 making it suitable to address the limitation of matrix factorization and enrich the expressiveness of matrix factorization.
 -->
 
-Mặc dù mô hình phân rã ma trận đạt được hiệu năng tương đối ổn trong bài toán dự đoán đánh giá, về căn bản nó là một mô hình tuyến tính.
-Do đó, những mô hình như này không có khả năng nắm bắt được quan hệ phi tuyến phức tạp và rắc rối mà có thể dự đoán được sở thích của người dùng.
+Mặc dù mô hình phân rã ma trận đạt được hiệu năng tương đối ổn với bài toán dự đoán đánh giá, về căn bản nó là một mô hình tuyến tính.
+Do đó, mô hình dạng này không có khả năng nắm bắt được quan hệ phi tuyến phức tạp và rắc rối mà có thể dự đoán được sở thích của người dùng.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình mạng nơ-ron lọc cộng tác phi tuyến, AutoRec :cite:`Sedhain.Menon.Sanner.ea.2015`.
-Nó đồng nhất so với với lọc cộng tác (CF) với kiến trúc của một bộ tự mã hoá (*autoencoder*) và nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa theo phản hồi trực tiếp.
-Mạng nơ-ron đã được chứng minh rằng có khả năng xấp xỉ bất kì hàm liên tục nào,
-điều này khiến nó phù hợp để khắc phục hạn chế của mô hình phân rã ma trận và tăng cường khả năng biển diễn ý nghĩa của phân rã ma trận.
+Nó đồng nhất với với lọc cộng tác (CF), mang kiến trúc của một bộ tự mã hoá (*autoencoder*) và nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa trên cơ sở các phản hồi trực tiếp.
+Mạng nơ-ron đã được chứng minh là có khả năng xấp xỉ bất kì hàm liên tục nào,
+điều này khiến nó phù hợp để khắc phục hạn chế của mô hình phân rã ma trận và tăng cường khả năng biển diễn của phân rã ma trận.
 
 
 <!--
@@ -31,10 +31,10 @@ In AutoRec, instead of explicitly embedding users/items into low-dimensional spa
 it uses the column/row of the interaction matrix as the input, then reconstructs the interaction matrix in the output layer.
 -->
 
-Một mặt, AutoRec có cùng cấu trúc với một bộ tự mã hoá gồm có một tầng đầu vào, một tầng ẩn và một tầng khôi phục (đầu ra).
+Một mặt, AutoRec có cùng cấu trúc với một bộ tự mã hoá gồm một tầng đầu vào, một tầng ẩn và một tầng khôi phục (đầu ra).
 Bộ tự mã hoá là một mạng nơ-ron học cách sao chép đầu vào sang đầu ra nhằm mã hoá đầu vào thành dạng biểu diễn ẩn (và thường có kích thước nhỏ).
 Trong AutoRec, thay vì nhúng trực tiếp người dùng/sản phẩm vào không gian kích thước nhỏ hơn,
-nó sử dụng các cột/hàng của ma trận tương tác làm đầu vào, sau đó khôi phục lại ma trận tương tác ở đầu ra.
+nó sử dụng các cột/hàng của ma trận tương tác làm đầu vào, sau đó khôi phục lại ma trận tương tác ở tầng đầu ra.
 
 
 <!--
@@ -45,7 +45,7 @@ In the meantime, the missing entries of the input are filled in the output layer
 
 Mặt khác, AutoRec khác với bộ tự mã hoá truyền thống ở chỗ: thay vì học dạng biểu diễn ẩn, AutoRec tập trung vào học/khôi phục tầng đầu ra.
 Nó sử dụng từng phần của ma trận tương tác đã biết làm đầu vào, nhắm tới việc khôi mục một ma trận đánh giá hoàn chỉnh.
-Trong khi đó, các phần tử còn thiếu được thêm vào trong tầng đầu ra thông qua quá trình khôi phục với mục đích gợi ý.
+Trong khi đó, các phần tử còn thiếu trong đầu vào được điền vào tầng đầu ra thông qua quá trình khôi phục nhằm mục đích gợi ý.
 
 
 <!--
