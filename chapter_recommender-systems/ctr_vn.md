@@ -87,7 +87,7 @@ The real semantics of the features are undisclosed due to anonymization and priv
 The following code downloads the dataset from our server and saves it into the local data folder.
 -->
 
-Đoạn mã dưới đây tải về tập dữ liệu từ máy chủ của chúng tôi và lưu nó trên thư mục dữ liệu cục bộ.
+Đoạn mã dưới đây tải tập dữ liệu về từ máy chủ của chúng tôi và lưu nó trên thư mục dữ liệu cục bộ.
 
 
 ```{.python .input  n=15}
@@ -103,7 +103,7 @@ data_dir = d2l.download_extract('ctr')
 There are a training set and a test set, consisting of 15000 and 3000 samples/lines, respectively.
 -->
 
-Tập dữ liệu gồm có tập huấn luyện và tập kiểm tra, lần lượt bao gồm 150000 và 3000 mẫu/dòng.
+Tập dữ liệu bao gồm tập huấn luyện và tập kiểm tra, gồm lần lượt 150000 và 3000 mẫu/dòng.
 
 
 <!--
@@ -186,7 +186,7 @@ and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/a
 -->
 
 Như có thể thấy, toàn bộ 34 trường đều là đặc trưng hạng mục.
-Mỗi giá trị nhãn biểu diễn chỉ số one-hot của bản ghi tương ứng.
+Mỗi giá trị biểu diễn chỉ số one-hot của trường tương ứng.
 Nhãn $0$ nghĩa là quảng cáo này chưa được nhấp vào.
 Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiện thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
 và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
