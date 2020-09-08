@@ -132,7 +132,7 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 :numref:`fig_conv1d_channel` shows a one-dimensional cross-correlation operation with three input channels.
 -->
 
-Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu.
+Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu vào.
 Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo một chiều trên từng hạt nhân và đầu vào tương ứng, và cộng các kết quả trên từng kênh lại với nhau để thu được đầu ra.
 :numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào.
 
