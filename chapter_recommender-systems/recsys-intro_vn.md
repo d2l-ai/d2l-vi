@@ -97,18 +97,18 @@ A user watched a movie does not necessarily indicate a positive view of that mov
 -->
 
 Để có thể học được sử thích của người dùng, hệ thống cần phải thu thập phản hồi của họ.
-Phản hồi này có thể là trực tiếp hoặc gián tiếp :cite:`Hu.Koren.Volinsky.2008`.
+Phản hồi này có thể là trực tiếp (*explicit*) hoặc gián tiếp (*implicit*) :cite:`Hu.Koren.Volinsky.2008`.
 Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá theo sao cho các bộ phim với các mức từ một đến mười sao.
 Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích của họ.
 Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm của họ.
 Tuy nhiên, phản hồi trực tiếp không phải lúc nào cũng dễ dàng có được do nhiều người dùng thường chần chừ trong việc đánh giá sản phẩm.
-Xét một cách tương đối, phản hồi gián tiếp thường dễ có được do nó chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp ví dụ như người dùng nhấp chuột.
-Do đó, nhiều hệ thống gợi ý xuay quanh phản hồi gián tiếp nhằm phản ánh ý kiến người dùng một cách gián tiếp thông qua việc quan sát hành vi người dùng.
-Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt, lượt xem và thậm chí là thao tác chuột.
+Xét một cách tương đối, phản hồi gián tiếp thường dễ có được do nó chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp ví dụ như số lần nhấp chuột của người dùng.
+Do đó, nhiều hệ thống gợi ý xoay quanh phản hồi gián tiếp nhằm phản ánh ý kiến người dùng một cách gián tiếp thông qua việc quan sát hành vi người dùng.
+Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt web, lượt xem và thậm chí là thao tác chuột.
 Ví dụ, một người dùng mà mua nhiều sách có cùng tác giả thì khả năng cao là thích tác giả đó.
 Chú ý ràng phản hồi gián tiếp vốn mang nhiễu.
 Ta chỉ có thể *đoán* sở thích của họ và lý do thực.
-Một người dùng xem một bộ phim không nhất thiết đưa ra một mặt tích cực của bộ phim đó.
+Một người dùng xem một bộ phim không nhất thiết là thích bộ phim đó.
 
 
 <!--
@@ -130,11 +130,11 @@ Recommending for new users and recommending new items to existing users are call
 
 Có nhiều tác vụ gợi ý được nghiên cứu trong thập kỷ vừa qua.
 Dựa trên phạm vi ứng dụng, các tác vụ này bao gồm gợi ý phim ảnh, gợi ý tin tức, gợi ý địa điểm ưa thích (*point-of-interest*) :cite:`Ye.Yin.Lee.ea.2011` và vân vân.
-Ta có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ dự đoán đánh giá nhắm đến việc dự đoán đánh giá trực tiếp.
-Gợi ý $n$ sản phẩm hàng đầu (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa vào phản hồi gián tiếp.
+Ta cũng có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ dự đoán đánh giá nhắm đến việc dự đoán đánh giá trực tiếp.
+Gợi ý $n$ sản phẩm hàng đầu (*top-$n$ recommendation*) (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa vào phản hồi gián tiếp.
 Nếu có bao gồm cả thông tin mốc thời gian, ta có thể xây dựng gợi ý nhận thức trình tự thời gian (*sequence aware*) :cite:`Quadrana.Cremonesi.Jannach.2018`.
-Một tác vụ phổ biến khác được gọi là dự đoán tỉ lệ nhấp chuột, tác vụ này cung dựa vào phản hồi gián tiếp, tuy nhiên rất nhiều dặc trưng theo hạng mục cũng có thể được tận dụng.
-Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người dùng hiện có được gọi là gợi ý khởi động nguội (*cold-start*) :cite:`Schein.Popescul.Ungar.ea.2002`.
+Một tác vụ phổ biến khác được gọi là dự đoán tỉ lệ nhấp chuột, tác vụ này cũng dựa vào phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng theo hạng mục cũng có thể được tận dụng.
+Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người dùng hiện có được gọi là gợi ý khởi động nguội (*cold-start recommendation*) :cite:`Schein.Popescul.Ungar.ea.2002`.
 
 
 
@@ -156,7 +156,7 @@ Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người d
 2. What interesting recommendation tasks do you think can be investigated?
 -->
 
-1. Bạn có thể giải thích cách mà hệ thống gợi ý chi phối cuộc sống hằng ngày của bạn?
+1. Hệ thống gợi ý ảnh hưởng đến cuộc sống hằng ngày của bạn như thế nào?
 2. Ứng dụng gợi ý đáng chú ý nào mà bạn nghĩ có thể đi vào nghiên cứu?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
