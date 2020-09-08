@@ -201,8 +201,7 @@ convolutional layer to extend the model parameters in the convolutional layer.
 ## Max-Over-Time Pooling Layer
 -->
 
-### *dịch tiêu đề trên*
-
+## Tầng Gộp Cực đại Theo Thời gian
 
 <!--
 Similarly, we have a one-dimensional pooling layer.
@@ -212,8 +211,10 @@ the output of each channel will be the largest value of all timesteps in the cha
 Therefore, the input of the max-over-time pooling layer can have different timesteps on each channel.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự, ta có tầng gộp một chiều.
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều.
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
+Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
 
 <!--
 To improve computing performance, we often combine timing examples of different lengths into a minibatch 
@@ -223,7 +224,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-*dịch đoạn phía trên*
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -233,7 +236,7 @@ it usually allows the model to be unaffected by the manually added characters.
 ## The TextCNN Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình TextCNN
 
 
 <!--
@@ -243,8 +246,10 @@ Then the input example has a width of $n$, a height of 1, and $d$ input channels
 The calculation of textCNN can be mainly divided into the following steps:
 -->
 
-*dịch đoạn phía trên*
-
+TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều.
+Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
+Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
 <!--
 1. Define multiple one-dimensional convolution kernels and use them to perform convolution calculations on the inputs. 
@@ -254,14 +259,17 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-*dịch đoạn phía trên*
-
+1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau.
+2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
+3. Vector vừa nối sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
+Có thể sử dụng tầng dropout ở bước này để giải quyết tình trạng quá khớp.
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/textcnn.svg)
+![Thiết kế TextCNN.](../img/textcnn.svg)
 :label:`fig_conv1d_textcnn`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -468,7 +476,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Lý Phi Long
 
 <!-- Phần 4 -->
 * 
