@@ -165,7 +165,7 @@ to obtain representation of the hypothesis that is softly aligned with the word 
 -->
 
 Thực hiện chuẩn hóa các trọng số tập trung trong :eqref:`eq_nli_e`,
-ta tính trung bình trọng số của tất cả các embedding từ trong câu giả định
+ta tính trung bình trọng số của tất cả các embedding từ trong câu giả thuyết
 để thu được biểu diễn của câu giả định thể hiện sự sắp xếp mềm với từ được đánh chỉ số $i$ trong câu tiền đề:
 
 
