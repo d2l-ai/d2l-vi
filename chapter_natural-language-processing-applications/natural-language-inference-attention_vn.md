@@ -99,7 +99,7 @@ Bước đầu tiên là phải sắp xếp các từ trong một chuỗi văn b
 Giả sử câu tiền đề là "i do need sleep" và câu giả định là "i am tired".
 Do sự tương đồng về ngữ nghĩa, ta có thể mong muốn xếp "i" trong câu giả định với "i" trong câu tiên đề,
 và xếp "tired" trong câu giả định với "sleep" trong câu tiền đề.
-Tương tự, ta có thể muốn xếp "i" trong câu tiên đề với "i" trong  câu giả định,
+Tương tự, ta muốn căn chỉnh "i" trong câu tiền đề với "i" trong câu giả thuyết,
 và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết.
 Lưu ý là sự sắp xếp này sắp đặt *mềm* sử dụng trung bình trọng số, 
 ở đây lý tưởng là các trọng số lớn liên kết với các từ được sắp xếp.
