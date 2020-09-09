@@ -188,7 +188,7 @@ predicted by the model and the actually observed ratings (ground truth) :cite:`G
 -->
 
 Tiếp theo, ta lập trình phép đo RMSE (*root-mean-square error* - căn bậc hai trung bình bình phương sai số), phép đo này được sử dụng rộng rãi nhằm đo sự khác nhau giữa giá trị đánh giá
-dự đoán và đánh giá được quan sát thực tế (nhãn chuẩn) :cite:`Gunawardana.Shani.2015`. RMSE được định nghĩa bằng:
+dự đoán và đánh giá thực tế (nhãn gốc) :cite:`Gunawardana.Shani.2015`. RMSE được định nghĩa bằng:
 
 
 $$
