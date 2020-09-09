@@ -98,7 +98,7 @@ For ease of demonstration, :numref:`fig_nli_attention` shows such alignment in a
 Bước đầu tiên là phải sắp xếp các từ trong một chuỗi văn bản này sang một chuỗi văn bản khác.
 Giả sử câu tiền đề là "i do need sleep" và câu giả định là "i am tired".
 Do sự tương đồng về ngữ nghĩa, ta có thể mong muốn xếp "i" trong câu giả định với "i" trong câu tiên đề,
-và xếp "tired" trong câu giả định với "sleep" trong câu tiền đề.
+và căn chỉnh "tired" trong câu giả thuyết với "sleep" trong câu tiền đề.
 Tương tự, ta muốn căn chỉnh "i" trong câu tiền đề với "i" trong câu giả thuyết,
 và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết.
 Lưu ý là sự sắp xếp này sắp đặt *mềm* sử dụng trung bình trọng số, 
