@@ -126,7 +126,7 @@ In the exercise, we will show how to fine-tune the much larger "bert.base" to si
 
 Để thuận tiện biểu diễ trên hầu hết các máy,
 ta sẽ nạp và tinh chỉnh phiên bản nhỏ ("bert-small") của BERT tiền huấn luyện ở mục này.
-Trong bài tập, ta sẽ thể hiện cách làm thế nào để tinh chỉnh "bert-base" lớn hơn nhiều để cải thiện đáng kể độ chính xác khi kiểm tra.
+Phần bài tập sẽ hướng dẫn cách tinh chỉnh mô hình "bert-base" lớn hơn nhiều, để cải thiện đáng kể độ chính xác khi kiểm tra.
 
 
 ```{.python .input  n=4}
