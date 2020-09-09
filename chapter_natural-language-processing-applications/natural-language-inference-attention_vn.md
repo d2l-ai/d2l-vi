@@ -5,7 +5,7 @@
 # Natural Language Inference: Using Attention
 -->
 
-# *dịch tiêu đề trên*
+# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
 :label:`sec_natural-language-inference-attention`
 
 
@@ -17,14 +17,18 @@ This results in a model without recurrent or convolutional layers, achieving the
 In this section, we will describe and implement this attention-based method (with MLPs) for natural language inference, as depicted in :numref:`fig_nlp-map-nli-attention`.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã giới thiệu tác vụ suy diễn ngôn ngữ tự nhiên và tập dữ liệu SNLI trong :numref:`sec_natural-language-inference-and-dataset`.
+Từ quan điểm của nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
+Parikh và các cộng sự đề xuất hướng tới suy diễn ngôn ngữ tự nhiên với cơ chế tập trung và gọi nó là một "mô hình tập trung có thể phân tách" (*decomposable attention model*) :cite:`Parikh.Tackstrom.Das.ea.2016`.
+Điều này đưa tới kết quả một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất ở vào thời điểm đó dựa trên tập dữ liệu SNLI với số tham số ít hơn nhiều.
+Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy diễn ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`.
 
 
 <!--
 ![This section feeds pretrained GloVe to an architecture based on attention and MLPs for natural language inference.](../img/nlp-map-nli-attention.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-nli-attention.svg)
+![Mục này truyền Glove tiền huấn luyện vào kiến trúc tập trung và MLPs để suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-attention.svg)
 :label:`fig_nlp-map-nli-attention`
 
 
@@ -32,7 +36,7 @@ In this section, we will describe and implement this attention-based method (wit
 ## The Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình
 
 
 <!--
@@ -43,14 +47,17 @@ Similar to alignment of words between source and target sentences in machine tra
 the alignment of words between premises and hypotheses can be neatly accomplished by attention mechanisms.
 -->
 
-*dịch đoạn phía trên*
-
+Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiền đề và giả thuyết,
+ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại,
+rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết.
+Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
+sự  căn chỉnh các từ giữa tiền đề và giả thuyết này có thể thực hiện nhanh gọn nhờ cơ chế tập trung.
 
 <!--
 ![Natural language inference using attention mechanisms.](../img/nli_attention.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nli_attention.svg)
+![Suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg)
 :label:`fig_nli_attention`
 
 
@@ -60,7 +67,9 @@ At a high level, it consists of three jointly trained steps: attending, comparin
 We will illustrate them step by step in the following.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_nli_attention` minh họa phương pháp suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.
+Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp.
+Ta sẽ từng bước mô tả chúng trong phần tiếp theo sau đây.
 
 
 ```{.python .input  n=1}
@@ -230,7 +239,7 @@ class Attend(nn.Block):
 ### Comparing
 -->
 
-### *dịch tiêu đề trên*
+### So sánh
 
 
 <!--
@@ -242,7 +251,10 @@ For example, suppose that the attending step determines that "need" and "sleep" 
 both aligned with "tired" in the hypothesis, the pair "tired--need sleep" will be compared.
 -->
 
-*dịch đoạn phía trên*
+Bước tiếp theo, chúng ta so sánh một từ trong chuỗi với chuỗi khác được căn chỉnh mềm với từ đó.
+Lưu ý rằng trong "căn chỉnh mềm", tất cả từ đều đến từ một chuỗi, tuy nhiên do có những trọng số tập trung khác nhau, chúng sẽ được so sánh với một từ trong chuỗi khác.
+Để dễ minh hoạ, :numref:`fig_nli_attention` ghép đôi từ với các từ được căn chỉnh *cứng*.
+Ví dụ, giả sử bước tập trung xác định rằng "need" và "sleep" trong câu tiền đề đều được căn chỉnh với "tired" trong câu giả thuyết, thì cặp "tired--need sleep" sẽ được so sánh.
 
 
 <!--
@@ -250,7 +262,7 @@ In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of 
 and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
 -->
 
-*dịch đoạn phía trên*
+Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh tại chuỗi kia vào hàm $g$ (một perceptron đa tầng):
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -263,7 +275,9 @@ while $\mathbf{v}_{B,j}$ is the comparison between word $j$ in the hypothesis an
 The following `Compare` class defines such as comparing step.
 -->
 
-*dịch đoạn phía trên*
+Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ thứ $i$ của câu tiền đề và tất cả các từ trong câu giả thuyết được căn chỉnh mềm với từ thứ $i$;
+trong khi $\mathbf{v}_{B,j}$ lại là phép so sánh giữa từ thứ $j$ trong câu giả thuyết và tất cả từ trong câu tiền đề được căn chỉnh mềm với từ thứ $j$.
+Lớp `Compare` sau đây định nghĩa bước so sánh.
 
 
 ```{.python .input  n=4}
@@ -286,7 +300,7 @@ class Compare(nn.Block):
 ### Aggregating
 -->
 
-### *dịch tiêu đề trên*
+### Tổng hợp
 
 
 <!--
@@ -295,7 +309,9 @@ in the last step we will aggregate such information to infer the logical relatio
 We begin by summing up both sets:
 -->
 
-*dịch đoạn phía trên*
+Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) có trong tay,
+tại bước cuối cùng, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic.
+Chúng ta bắt đầu bằng cách lấy tổng trên cả hai tập:
 
 
 $$
@@ -306,8 +322,7 @@ $$
 <!--
 Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
 -->
-
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta đưa cả hai kết quả tổng sau khi được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic:
 
 
 $$
@@ -319,7 +334,7 @@ $$
 The aggregation step is defined in the following `Aggregate` class.
 -->
 
-*dịch đoạn phía trên*
+Bước tổng hợp được định nghĩa trong lớp `Aggregate` sau đây.
 
 
 ```{.python .input  n=5}
@@ -567,13 +582,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* Nguyễn Mai Hoàng Long
+* Phạm Đăng Khoa
 
 <!-- Phần 4 -->
 * 

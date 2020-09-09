@@ -72,6 +72,8 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | categorical variable             | biến hạng mục             | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | category                         | hạng mục                  | [https://git.io/JJDKV](https://git.io/JJDKV) |
 | causality                        | quan hệ nhân quả          |                                              |
+| central target word | từ đích trung tâm | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
+| central word | từ trung tâm | [https://git.io/JUGZQ](https://git.io/JUGZQ) |
 | chain rule                       | quy tắc dây chuyền        | [https://git.io/Jvojk](https://git.io/Jvojk) |
 | channel (in computer vision)     | kênh                      |                                              |
 | (model) checkpoint               | checkpoint (của mô hình)  |                                              |
@@ -218,7 +220,8 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | English                 | Tiếng Việt               | Thảo luận tại                                                                              |
 |-------------------------|--------------------------|--------------------------------------------------------------------------------------------|
 | hand-engineering        | thiết kế thủ công        |                                                                                            |
-| heuristic               | thực nghiệm              |                                                                                            |
+| helper (function)       | (hàm) hỗ trợ             |                                                                                            |
+| heuristic               | thực nghiệm              |  
 | hybrid(ize)             | hybrid (hóa)             | [https://git.io/JJGwt](https://git.io/JJGwt), [https://git.io/JJGwq](https://git.io/JJGwq) |
 | hidden state            | trạng thái ẩn            |                                                                                            |
 | hidden state variable   | biến trạng thái ẩn       |                                                                                            |
@@ -306,6 +309,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | marginalization                   | phép biên hóa                   | [https://git.io/Jvohb](https://git.io/Jvohb) |
 | mask (in computer vision)         | mặt nạ                          |                                              |
 | masked multi-head attention layer | tầng tập trung đa đầu có mặt nạ |                                              |
+| matrix factorization              | phân rã ma trận                 | [https://git.io/JUsrl](https://git.io/JUsrl) |
 | max pooling                       | gộp cực đại                     | [https://git.io/JfGi6](https://git.io/JfGi6) |
 | maximize (in optimization)        | cực đại hóa                     |                                              |
 | maximum likelihood estimator      | bộ ước lượng hợp lý cực đại     |                                              |
@@ -398,6 +402,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | posterior                           | hậu nghiệm                   | [https://git.io/JvQA6](https://git.io/JvQA6) |
 | precision (vs accuracy metric)      | precision                    | [https://git.io/JJ9sl](https://git.io/JJ9sl) |
 | preconditioning                     | tiền điều kiện               |                                              |
+| premise                             | tiền đề                      | [https://git.io/JUZKL](https://git.io/JUZKL) |
 | pre-train                           | tiền huấn luyện              | [https://git.io/JJ1HO](https://git.io/JJ1HO) |
 | principal component analysis (PCA)  | phân tích thành phần chính   | [https://git.io/JvojD](https://git.io/JvojD) |
 | prior                               | tiên nghiệm                  | [https://git.io/JvQA6](https://git.io/JvQA6) |
@@ -431,6 +436,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | remote                                             | từ xa                                     |                                              |
 | reparameterization                                 | tái tham số hóa                           |                                              |
 | representation learning                            | học biểu diễn                             | [https://git.io/JvojG](https://git.io/JvojG) |
+| reproduce (reproducibility)                        | tái tạo (khả năng tái tạo)                | [https://git.io/JUs2X](https://git.io/JUs2X) |
 | rescale                                            | (phép) tái tỉ lệ                          | [https://git.io/JfeXx](https://git.io/JfeXx) |
 | reset gate                                         | cổng xóa                                  |                                              |
 | residual network                                   | mạng phần dư                              | [https://git.io/JfGi1](https://git.io/JfGi1) |
