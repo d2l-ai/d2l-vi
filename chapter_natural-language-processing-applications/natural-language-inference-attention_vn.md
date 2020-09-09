@@ -68,7 +68,7 @@ We will illustrate them step by step in the following.
 -->
 
 :numref:`fig_nli_attention` minh họa phương pháp suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.
-Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: tổ chức, so sánh, và sắp xếp.
+Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp.
 Ta sẽ từng bước mô tả chúng trong phần tiếp theo sau đây.
 
 
