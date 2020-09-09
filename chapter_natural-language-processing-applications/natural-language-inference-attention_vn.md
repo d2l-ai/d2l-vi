@@ -5,7 +5,7 @@
 # Natural Language Inference: Using Attention
 -->
 
-# *dịch tiêu đề trên*
+# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
 :label:`sec_natural-language-inference-attention`
 
 
@@ -17,14 +17,18 @@ This results in a model without recurrent or convolutional layers, achieving the
 In this section, we will describe and implement this attention-based method (with MLPs) for natural language inference, as depicted in :numref:`fig_nlp-map-nli-attention`.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã giới thiệu tác vụ suy diễn ngôn ngữ tự nhiên và tập dữ liệu SNLI trong :numref:`sec_natural-language-inference-and-dataset`.
+Từ quan điểm của nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
+Parikh và các cộng sự đề xuất hướng tới suy diễn ngôn ngữ tự nhiên với cơ chế tập trung và gọi nó là một "mô hình tập trung có thể phân tách" (*decomposable attention model*) :cite:`Parikh.Tackstrom.Das.ea.2016`.
+Điều này đưa tới kết quả một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất ở vào thời điểm đó dựa trên tập dữ liệu SNLI với số tham số ít hơn nhiều.
+Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy diễn ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`.
 
 
 <!--
 ![This section feeds pretrained GloVe to an architecture based on attention and MLPs for natural language inference.](../img/nlp-map-nli-attention.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-nli-attention.svg)
+![Mục này truyền Glove tiền huấn luyện vào kiến trúc tập trung và MLPs để suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-attention.svg)
 :label:`fig_nlp-map-nli-attention`
 
 
@@ -32,7 +36,7 @@ In this section, we will describe and implement this attention-based method (wit
 ## The Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình
 
 
 <!--
@@ -43,14 +47,17 @@ Similar to alignment of words between source and target sentences in machine tra
 the alignment of words between premises and hypotheses can be neatly accomplished by attention mechanisms.
 -->
 
-*dịch đoạn phía trên*
-
+Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiền đề và giả thuyết,
+ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại,
+rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết.
+Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
+sự  căn chỉnh các từ giữa tiền đề và giả thuyết này có thể thực hiện nhanh gọn nhờ cơ chế tập trung.
 
 <!--
 ![Natural language inference using attention mechanisms.](../img/nli_attention.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nli_attention.svg)
+![Suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg)
 :label:`fig_nli_attention`
 
 
@@ -60,7 +67,9 @@ At a high level, it consists of three jointly trained steps: attending, comparin
 We will illustrate them step by step in the following.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_nli_attention` minh họa phương pháp suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.
+Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp.
+Ta sẽ từng bước mô tả chúng trong phần tiếp theo sau đây.
 
 
 ```{.python .input  n=1}
@@ -549,7 +558,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
