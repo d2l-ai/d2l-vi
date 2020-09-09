@@ -5,7 +5,7 @@
 # Sentiment Analysis: Using Convolutional Neural Networks
 -->
 
-# *dịch tiêu đề trên*
+# Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Tích Chập
 :label:`sec_sentiment_cnn`
 
 
@@ -19,14 +19,19 @@ As described in :label:`fig_nlp-map-sa-cnn` This section describes a groundbreak
 convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lí dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều.
+Như đề cập về tác vụ mô hình ngôn ngữ và phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
+chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp.
+Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
+Như mô tả trong :label:`fig_nlp-map-sa-cnn`, chương này sẽ miêu tả một hướng tiếp cận đột phá bằng cách áp dụng
+mạng nơ-ron tích chập để phân tích cảm xúc: textCNN :cite:`Kim.2014`.
 
 
 <!--
 ![This section feeds pretrained GloVe to a CNN-based architecture for sentiment analysis.](../img/nlp-map-sa-cnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-sa-cnn.svg)
+![Phần này truyền mô hình tiền huấn luyện GloVe vào một kiến trúc mạng nơ-ron tích chập cho tác vụ phân loại cảm xúc](../img/nlp-map-sa-cnn.svg)
 :label:`fig_nlp-map-sa-cnn`
 
 
@@ -34,7 +39,7 @@ convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 First, import the packages and modules required for the experiment.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, nhập những gói thư viện và mô-đun cần thiết cho thử nghiệm
 
 
 ```{.python .input  n=1}
@@ -52,7 +57,7 @@ train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size)
 ## One-Dimensional Convolutional Layer
 -->
 
-## *dịch tiêu đề trên*
+## Mạng Nơ-ron Tích Chập Một Chiều
 
 
 <!--
@@ -67,14 +72,21 @@ As we can see, the output width is $7-2+1=6$ and the first element is obtained b
 by element on the leftmost input subarray with a width of 2 and kernel array and then summing the results.
 -->
 
-*dịch đoạn phía trên*
+Trước khi giới thiệu mô hình, chúng ta hãy xem mạng nơ-ron tích chập một chiều hoạt động như thế nào.
+Tương tự như mạng nơ-ron tích chập hai chiều, một mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
+Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tiếp từ trái qua phải của mảng đầu vào.
+Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, mảng đầu vào con trong cửa sổ đó và mảng hạt nhân
+được nhân từng phần tử rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra.
+Như ví dụ ở :numref:`fig_conv1d`, đầu vào là một mảng một chiều với độ rộng là 7 và độ rộng của mảng hạt nhân là 2.
+Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên có được bằng cách nhân
+từng phần tử giữa mảng con 2 phần tử ngoài cùng bên trái của đầu vào và mảng hạt nhân, rồi cộng lại với nhau.
 
 
 <!--
 ![One-dimensional cross-correlation operation. The shaded parts are the first output element as well as the input and kernel array elements used in its calculation: $0\times1+1\times2=2$.](../img/conv1d.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d.svg)
+![Phép tính tương quan chéo một chiều. Những vùng in đậm là phần tử đầu ra đầu tiên, cùng phần tử đầu vào và mảng hạt nhân được dùng trong phép tính đó: $0\times1+1\times2=2$.](../img/conv1d.svg)
 :label:`fig_conv1d`
 
 
@@ -83,7 +95,8 @@ Next, we implement one-dimensional cross-correlation in the `corr1d` function.
 It accepts the input array `X` and kernel array `K` and outputs the array `Y`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, chúng ta sẽ lập trình tương quan chéo một chiều trong hàm `corr1d`.
+Hàm này nhận mảng đầu vào `X` và mảng hạt nhân `K` và cho ra đầu ra là mảng `Y`
 
 
 ```{.python .input  n=2}
@@ -100,7 +113,7 @@ def corr1d(X, K):
 Now, we will reproduce the results of the one-dimensional cross-correlation operation in :numref:`fig_conv1d`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta sẽ tái hiện lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`.
 
 
 ```{.python .input  n=3}
@@ -119,14 +132,16 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 :numref:`fig_conv1d_channel` shows a one-dimensional cross-correlation operation with three input channels.
 -->
 
-*dịch đoạn phía trên*
+Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu vào.
+Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo một chiều trên từng hạt nhân và đầu vào tương ứng, và cộng các kết quả trên từng kênh lại với nhau để thu được đầu ra.
+:numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào.
 
 
 <!--
 ![One-dimensional cross-correlation operation with three input channels. The shaded parts are the first output element as well as the input and kernel array elements used in its calculation: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-channel.svg)
+![Phép tính tương quan chéo một chiều với ba kênh đầu vào. Những vùng được in đậm là phần tử đầu ra thứ nhất cũng như đầu vào và các phần tử của mảng hạt nhân được sử dụng trong phép tính: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 :label:`fig_conv1d_channel`
 
 
@@ -134,7 +149,7 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 Now, we reproduce the results of the one-dimensional cross-correlation operation with multi-input channel in :numref:`fig_conv1d_channel`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
 
 
 ```{.python .input  n=4}
@@ -160,14 +175,16 @@ multiple input channels in :numref:`fig_conv1d_channel` as the equivalent two-di
 Here, the height of the kernel is equal to the height of the input.
 -->
 
-*dịch đoạn phía trên*
+Định nghĩa phép tính tương quan chéo hai chiều cho ta thấy phép tính tương quan chéo một chiều với đa kênh đầu vào có thể được coi là phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Như minh hoạ trong :numref:`fig_conv1d_2d`, ta có thể biểu diễn phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel` tương tự như phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Ở đây, chiều cao của hạt nhân bằng với chiều cao của đầu vào.
 
 
 <!--
 ![Two-dimensional cross-correlation operation with a single input channel. The highlighted parts are the first output element and the input and kernel array elements used in its calculation: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-2d.svg)
+![Phép tính tương quan chéo hai chiều với một kênh đầu vào. Vùng được tô đậm là phần tử đầu ra thứ nhất và đầu vào cũng như các phần tử của mảng hạt nhân được sử dụng trong phép tính: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 :label:`fig_conv1d_2d`
 
 
@@ -178,7 +195,9 @@ Similarly, we can also specify multiple output channels in the one-dimensional
 convolutional layer to extend the model parameters in the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh.
+Ta đã thảo luận cách xác định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
+Tương tự, ta cũng có thể xác định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -188,8 +207,7 @@ convolutional layer to extend the model parameters in the convolutional layer.
 ## Max-Over-Time Pooling Layer
 -->
 
-### *dịch tiêu đề trên*
-
+## Tầng Gộp Cực đại Theo Thời gian
 
 <!--
 Similarly, we have a one-dimensional pooling layer.
@@ -199,8 +217,10 @@ the output of each channel will be the largest value of all timesteps in the cha
 Therefore, the input of the max-over-time pooling layer can have different timesteps on each channel.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự, ta có tầng gộp một chiều.
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều.
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
+Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
 
 <!--
 To improve computing performance, we often combine timing examples of different lengths into a minibatch 
@@ -210,7 +230,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-*dịch đoạn phía trên*
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -220,7 +242,7 @@ it usually allows the model to be unaffected by the manually added characters.
 ## The TextCNN Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình TextCNN
 
 
 <!--
@@ -230,8 +252,10 @@ Then the input example has a width of $n$, a height of 1, and $d$ input channels
 The calculation of textCNN can be mainly divided into the following steps:
 -->
 
-*dịch đoạn phía trên*
-
+TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều.
+Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
+Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
 <!--
 1. Define multiple one-dimensional convolution kernels and use them to perform convolution calculations on the inputs. 
@@ -241,14 +265,17 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-*dịch đoạn phía trên*
-
+1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau.
+2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
+3. Vector vừa nối sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
+Có thể sử dụng tầng dropout ở bước này để giải quyết tình trạng quá khớp.
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/textcnn.svg)
+![Thiết kế TextCNN.](../img/textcnn.svg)
 :label:`fig_conv1d_textcnn`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -367,14 +394,14 @@ net.constant_embedding.collect_params().setattr('grad_req', 'null')
 ### Train and Evaluate the Model
 -->
 
-### *dịch tiêu đề trên*
+### Huấn luyện và đánh giá mô hình
 
 
 <!--
 Now we can train the model.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể huấn luyện mô hình.
 
 
 ```{.python .input  n=8}
@@ -389,7 +416,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Below, we use the trained model to classify sentiments of two simple sentences.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc của hai câu đơn giản.
 
 
 ```{.python .input  n=9}
@@ -409,7 +436,10 @@ d2l.predict_sentiment(net, vocab, 'this movie is so bad')
 * TextCNN mainly uses a one-dimensional convolutional layer and max-over-time pooling layer.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể dùng tích chập một chiều để xử lý và phân tích dữ liệu theo thời gian.
+* Phép tương quan chéo một chiều đa kênh đầu vào có thể xem như phép tương quan chéo hai chiều đơn kênh đầu vào.
+* Đầu vào của tầng gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau.
+* TextCNN chủ yếu sử dụng một tầng chập một chiều và một tầng gộp cực đại theo thời gian. 
 
 
 ## Bài tập
@@ -422,8 +452,10 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 3. What other natural language processing tasks can you use textCNN for?
 -->
 
-*dịch đoạn phía trên*
-
+1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích hai cảm xúc, sử dụng các mạng nơ-ron truy hồi và các mạng nơ-ron tích chập, ở khía cạnh độ chính xác và hiệu suất tính toán.
+2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
+điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy.
+3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng?
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -444,16 +476,16 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trương Lộc Phát
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Lý Phi Long
 
 <!-- Phần 4 -->
 * 
 
 <!-- Phần 5 -->
-* 
+* Nguyễn Mai Hoàng Long

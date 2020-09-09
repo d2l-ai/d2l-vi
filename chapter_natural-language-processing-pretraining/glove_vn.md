@@ -189,10 +189,10 @@ the conditional probability of generating context word $w_j$ with central target
 From a real example from a large corpus, here we have the following two sets of conditional probabilities with "ice" and "steam" as the central target words and the ratio between them:
 -->
 
-Ta cũng có thể cố gắng lý giải embedding từ bằng Glove theo một cách nhìn khác.
+Ta cũng có thể cố gắng lý giải embedding từ GloVe theo một cách nhìn khác. 
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
-xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$.
-Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng:
+xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$. 
+Xét ví dụ thực tế từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng: 
 
 
 |$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
@@ -206,7 +206,7 @@ Xét ví dụ thực từ một kho ngữ liệu lớn, ở đây ta có hai t�
 We will be able to observe phenomena such as:
 -->
 
-Ta có thể quan sát thấy các hiện tượng như sau:
+Ta có thể quan sát thấy các hiện tượng như sau: 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -223,10 +223,10 @@ we would expect a conditional probability ratio close to 1, like the value 1.36 
 we would expect a conditional probability ratio close to 1, like the value 0.96 in the last row of the table above.
 -->
 
-Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=$"solid (rắn)", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=$"water (nước)", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=$"fashion (thời trang)", ta kỳ vọng là tỉ số sác xuất điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=$"solid (rắn)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=$"water (nước)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=$"fashion (thời trang)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên. 
 
 
 <!--
@@ -237,11 +237,11 @@ The conditional probability ratio with $w_i$ as the central target word is ${p_{
 We can find a function that uses word vectors to fit this conditional probability ratio.
 -->
 
-Ta có thể thấy rằng tỉ số xác suất điều kiện có thể thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn.
-Ta có thể tạo một hàm vector của từ để khớp tỉ số xác suất có điều kiện một cách hiệu quả hơn.
-Như ta đã biết, để thu được bất cứ tỉ số nào loại này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$.
+Có thể thấy rằng tỉ số xác suất có điều kiện thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn. 
+Ta có thể tạo một hàm vector của từ để khớp tỉ số xác suất có điều kiện một cách hiệu quả hơn. 
+Như đã biết, để thu được bất cứ tỉ số nào loại này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$. 
 Tỉ số xác suất có điều kiện với $w_i$ làm từ trung tâm là ${p_{ij}}/{p_{ik}}$.
-Ta có thể tìm một hàm dùng các vector từ để khớp tỉ số xác suất có điều kiện này.
+Ta có thể tìm một hàm dùng các vector từ để khớp với tỉ số xác suất có điều kiện này. 
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -255,11 +255,11 @@ $f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{
 After exchanging index $j$ with $k$, we will be able to see that function $f$ satisfies the condition $f(x)f(-x)=1$, so one possibility could be $f(x)=\exp(x)$. Thus:
 -->
 
-Thiết kế khả dĩ của hàm $f$ ở đây không phải duy nhất.
-Ta chỉ cần quan tâm một lựa chọn hợp lý hơn.
-Do tỉ số xác suất có điều kiện là một số vô hướng, ta có thể giới hạn $f$ vào một hàm vô hướng:
-$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{u}_k)^\top {\mathbf{v}}_i\right)$.
-Sau khi hoán đổi chỉ số $j$ và $k$, ta có thể thấy rằng hàm $f$ thỏa mãn điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Do đó:
+Thiết kế khả dĩ của hàm $f$ ở đây không phải duy nhất. 
+Ta chỉ cần quan tâm một lựa chọn hợp lý hơn. 
+Do tỉ số xác suất có điều kiện là một số vô hướng, ta có thể giới hạn $f$ vào một hàm vô hướng: 
+$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{u}_k)^\top {\mathbf{v}}_i\right)$. 
+Sau khi hoán đổi chỉ số $j$ và $k$, ta có thể thấy rằng hàm $f$ thỏa mãn điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Ta có: 
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = \frac{\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right)}{\exp\left(\mathbf{u}_k^\top {\mathbf{v}}_i\right)} \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -271,9 +271,9 @@ Considering that $p_{ij}=x_{ij}/x_i$, after taking the logarithm we get $\mathbf
 We use additional bias terms to fit $- \log\, \alpha + \log\, x_i$, such as the central target word bias term $b_i$ and context word bias term $c_j$:
 -->
 
-Một xác suất thỏa mãn vế phải biểu thức xấp xỉ là $\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right) \approx \alpha p_{ij}$, ở đây $\alpha$ là một hằng số.
-Xét $p_{ij}=x_{ij}/x_i$, sau khi lấy log ta được $\mathbf{u}_j^\top {\mathbf{v}}_i \approx \log\,\alpha + \log\,x_{ij} - \log\,x_i$.
-Ta sử dụng thêm hệ số điều chỉnh để khớp $- \log\, \alpha + \log\, x_i$, cụ thể là hệ số điều chỉnh từ trung tâm $b_i$ và hệ số điều chỉnh từ ngữ cảnh $c_j$:
+Một xác suất thỏa mãn vế phải biểu thức xấp xỉ là $\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right) \approx \alpha p_{ij}$, ở đây $\alpha$ là một hằng số. 
+Xét $p_{ij}=x_{ij}/x_i$, sau khi lấy logarit ta được $\mathbf{u}_j^\top {\mathbf{v}}_i \approx \log\,\alpha + \log\,x_{ij} - \log\,x_i$. 
+Ta sử dụng thêm hệ số điều chỉnh để khớp $- \log\, \alpha + \log\, x_i$, cụ thể là hệ số điều chỉnh từ trung tâm $b_i$ và hệ số điều chỉnh từ ngữ cảnh $c_j$: 
 
 
 $$\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j \approx \log(x_{ij}).$$
@@ -283,7 +283,7 @@ $$\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j \approx \log(x_{ij}).$$
 By taking the square error and weighting the left and right sides of the formula above, we can get the loss function of GloVe.
 -->
 
-Bằng cách lấy sai số bình phương và đặt trọng số vào vế trái và vế phải của biểu thức trên, ta tính được hàm mất mát của GloVe.
+Bằng cách lấy sai số bình phương và đặt trọng số vào vế trái và vế phải của biểu thức trên, ta tính được hàm mất mát của GloVe. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -298,9 +298,9 @@ GloVe uses squared loss and the word vector to fit global statistics computed in
 * The central target word vector and context word vector of any word are equivalent in GloVe.
 -->
 
-* Trong một số trường hợp, hàm mất mát entropy chéo tồn tại một hạn chế.
-GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu.
-* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe.
+* Trong một số trường hợp, hàm mất mát entropy chéo có sự hạn chế.
+GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu. 
+* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe. 
 
 ## Bài tập
 
@@ -313,8 +313,8 @@ Hint: See section 4.2 from the paper GloVe :cite:`Pennington.Socher.Manning.2014
 
 1. Nếu một từ xuất hiện trong cửa sổ ngữ cảnh của từ khác, 
 làm thế nào để sử dụng khoảng cách giữa hai từ này trong chuỗi văn bản để thiết kế lại phương pháp tính toán xác suất có điều kiện $p_{ij}$?
-Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.Manning.2014`.
-2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao?
+Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.Manning.2014`. 
+2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao? 
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -354,3 +354,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 5 -->
 * Nguyễn Văn Quang
 * Phạm Minh Đức
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
