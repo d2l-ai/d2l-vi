@@ -122,7 +122,7 @@ An intuitive illustration of the matrix factorization model is shown below:
 In the rest of this section, we will explain the implementation of matrix factorization and train the model on the MovieLens dataset.
 -->
 
-Trong toàn bộ phần còn lại của phần này, chúng tôi sẽ giải thích cách lập trình cho phân rã ma trận và huấn luyện mô hình trên tập dữ liệu MovieLens.
+Trong phần còn lại của phần này, chúng tôi sẽ giải thích cách lập trình cho phân rã ma trận và huấn luyện mô hình trên tập dữ liệu MovieLens.
 
 
 ```{.python .input  n=2}
@@ -152,7 +152,7 @@ In the `forward` function, user and item ids are used to look up the embeddings.
 Đầu tiên, ta lập trình mô hình phân rã ma trận như mô tả trên.
 Các nhân tố tiềm ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
 Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố tiềm ẩn ($k$).
-Ta cũng có thể sử dụng `nn.Embedding` để thêm vào độ chệch người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
+Ta cũng có thể sử dụng `nn.Embedding` để tạo độ chệch cho người dùng/sản phẩm bằng cách gán `output_dim` bằng một.
 Trong hàm `forward`, id người dùng và sản phẩm được sử dụng để tìm đến đối tượng embedding.
 
 
@@ -281,7 +281,7 @@ Finally, let us put all things together and train the model.
 Here, we set the latent factor dimension to 30.
 -->
 
-Cuối cùng, hãy cùng gộp tất cả vào với nhau và huấn luyện mô hình.
+Cuối cùng, hãy kết hợp tất cả với nhau và huấn luyện mô hình.
 Ở đây, ta đặt kích thước nhân tố tiềm ẩn bằng 30.
 
 
@@ -304,7 +304,7 @@ train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 Below, we use the trained model to predict the rating that a user (ID 20) might give to an item (ID 30).
 -->
 
-Ở dưới, ta sử dụng mô hình đã được huấn luyện để dự đoán đánh giá mà một người dùng (ID 20) có thể đánh giá một sản phẩm (ID 30).
+Ở dưới, ta sử dụng mô hình đã được huấn luyện để dự đoán đánh giá có thể của một người dùng (ID 20) cho một sản phẩm (ID 30).
 
 
 ```{.python .input  n=6}
@@ -320,7 +320,7 @@ scores
 * We can implement and train matrix factorization for recommender systems.
 -->
 
-* Mô hình phân rã ma trận được sử dụng rộng rãi trong hệ thống gợi ý. Nó có thể được sử dụng để dự đoán đánh giá mà một người dùng có thể đánh giá một sản phẩm.
+* Mô hình phân rã ma trận được sử dụng rộng rãi trong hệ thống gợi ý. Nó có thể được sử dụng để dự đoán đánh giá có thể của một người dùng cho một sản phẩm.
 * Ta có thể lập trình và huấn luyện mô hình phân rã ma trận cho hệ thống gợi ý.
 
 
@@ -333,7 +333,7 @@ scores
 -->
 
 * Thay đổi kích thước của nhân tố tiềm ẩn. Kích thước của nhân tố tiềm ẩn ảnh hướng thế nào đến hiệu năng của mô hình?
-* Thử các phép tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
+* Thử các bộ tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
 * Kiểm tra giá trị đánh giá dự đoán của các người dùng khác nhau cho một bộ phim cụ thể.
 
 
