@@ -50,7 +50,7 @@ into the product of two lower-rank matrices, capturing the low-rank structure of
 
 Phân rã ma trận là một lớp trong các mô hình lọc cộng tác.
 Cụ thể, mô hình này phân tích ma trận tương tác giữa người dùng - sản phẩm (ví dụ như ma trận đánh giá)
-thành tích hai ma trận bậc thấp hơn, nhằm nắm bắt cấu trúc bậc thấp trong tương giác người dùng - sản phẩm.
+thành tích hai ma trận có hạng thấp hơn, nhằm nắm bắt cấu trúc hạng thấp trong tương giác người dùng - sản phẩm.
 
 
 <!--
@@ -124,7 +124,7 @@ The $(u, i)$ pairs for which $\mathbf{R}_{ui}$ is known are stored in the set $\
 The model parameters can be learned with an optimization algorithm, such as Stochastic Gradient Descent and Adam.
 -->
 
-trong đó $\lambda$ ký hiệu tỉ lệ điều chuẩn.
+trong đó $\lambda$ là tỉ lệ điều chuẩn.
 Số hạng điều chuẩn $\lambda (\| \mathbf{P} \|^2_F + \| \mathbf{Q}\|^2_F + b_u^2 + b_i^2 )$ được sử dụng để tránh hiện tượng quá khớp bằng cách phạt độ lớn của các tham số.
 Cặp $(u, i)$ với $\mathbf{R}_{ui}$ đã biết được lưu trong tập $\mathcal{K}=\{(u, i) \mid \mathbf{R}_{ui} \text{đã biết}\}$.
 Các tham số mô hình có thể được học thông qua một thuật toán tối ưu, ví dụ như Hạ Gradient Ngẫu nhiên hay Adam.
