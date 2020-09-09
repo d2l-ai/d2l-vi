@@ -178,7 +178,7 @@ $$
 Likewise, we compute soft alignment of premise words for each word indexed by $j$ in the hypothesis:
 -->
 
-Tương tự, ta tính sự sắp xếp mềm của các từ trong câu tiền đề cho mỗi từ được đánh chỉ số $j$ trong câu giả định:
+Tương tự, ta tính sự căn chỉnh mềm của các từ trong câu tiền đề cho mỗi từ được đánh chỉ số $j$ trong câu giả thuyết:
 
 
 $$
