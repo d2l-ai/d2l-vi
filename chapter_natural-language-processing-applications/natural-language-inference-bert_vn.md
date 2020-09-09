@@ -32,7 +32,7 @@ và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc dựa trên MLP bổ
 ![This section feeds pretrained BERT to an MLP-based architecture for natural language inference.](../img/nlp-map-nli-bert.svg)
 -->
 
-![Phần này truyền BERT tiền huấn luyện sang một kiến trúc dựa trên MLP để suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-bert.svg)
+![Phần này truyền BERT đã tiền huấn luyện vào một kiến trúc dựa trên MLP cho suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-bert.svg)
 :label:`fig_nlp-map-nli-bert`
 
 
