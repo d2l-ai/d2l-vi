@@ -115,7 +115,7 @@ where $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1,
 For soft alignment, we compute the attention weights $e_{ij} \in \mathbb{R}$ as
 -->
 
-Bây giờ ta mô tả sự sắp xếp mềm sử dụng cơ chế tập trung chi tiết hơn.
+Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn.
 Ký hiệu $\mathbf{A} = (\mathbf{a}_1, \ldots, \mathbf{a}_m)$
 và $\mathbf{B} = (\mathbf{b}_1, \ldots, \mathbf{b}_n)$ là câu tiền đề và câu giả định,
 số từ của các câu này lần lượt là $m$ và $n$,
