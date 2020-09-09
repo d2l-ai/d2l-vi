@@ -192,7 +192,7 @@ with input premises `A` and soft alignment of premises (`alpha`) with input hypo
 -->
 
 Dưới đây ta định nghĩa lớp `Attend` để tính sự sắp xếp mềm của các câu giả định (`beta`)
-với các câu tiền đề đầu vào `A` và sự sắp xếp mề của các câu tiền đề (`alpha`) với các câu giả định `B`.
+với các câu tiền đề đầu vào `A` và sự căn chỉnh mềm của các câu tiền đề (`alpha`) với các câu giả thuyết `B`.
 
 
 ```{.python .input  n=3}
