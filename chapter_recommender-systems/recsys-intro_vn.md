@@ -106,7 +106,7 @@ nội dung mô tả của sản phẩm/người dùng và các dấu hiệu ng�
 ## Explicit Feedback and Implicit Feedback
 -->
 
-## *dịch tiêu đề trên*
+## Phản hồi Trực tiếp và Phản hồi Gián tiếp
 
 
 <!--
@@ -125,14 +125,26 @@ We can only *guess* their preferences and true motives.
 A user watched a movie does not necessarily indicate a positive view of that movie.
 -->
 
-*dịch đoạn phía trên*
+Để có thể học được sử thích của người dùng, hệ thống cần phải thu thập phản hồi của họ.
+Phản hồi này có thể là trực tiếp (*explicit*) hoặc gián tiếp (*implicit*) :cite:`Hu.Koren.Volinsky.2008`.
+Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá theo sao cho các bộ phim với các mức từ một đến mười sao.
+Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích của họ.
+Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm của họ.
+Tuy nhiên, phản hồi trực tiếp không phải lúc nào cũng dễ dàng có được do nhiều người dùng thường chần chừ trong việc đánh giá sản phẩm.
+Xét một cách tương đối, phản hồi gián tiếp thường dễ có được do nó chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp ví dụ như số lần nhấp chuột của người dùng.
+Do đó, nhiều hệ thống gợi ý xoay quanh phản hồi gián tiếp nhằm phản ánh ý kiến người dùng một cách gián tiếp thông qua việc quan sát hành vi người dùng.
+Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt web, lượt xem và thậm chí là thao tác chuột.
+Ví dụ, một người dùng mà mua nhiều sách có cùng tác giả thì khả năng cao là thích tác giả đó.
+Chú ý ràng phản hồi gián tiếp vốn mang nhiễu.
+Ta chỉ có thể *đoán* sở thích của họ và lý do thực.
+Một người dùng xem một bộ phim không nhất thiết là thích bộ phim đó.
 
 
 <!--
 ## Recommendation Tasks
 -->
 
-## *dịch tiêu đề trên*
+## Các tác vụ Gợi ý
 
 
 <!--
@@ -145,7 +157,13 @@ Another popular task is called click-through rate prediction, which is also base
 Recommending for new users and recommending new items to existing users are called cold-start recommendation :cite:`Schein.Popescul.Ungar.ea.2002`.
 -->
 
-*dịch đoạn phía trên*
+Có nhiều tác vụ gợi ý được nghiên cứu trong thập kỷ vừa qua.
+Dựa trên phạm vi ứng dụng, các tác vụ này bao gồm gợi ý phim ảnh, gợi ý tin tức, gợi ý địa điểm ưa thích (*point-of-interest*) :cite:`Ye.Yin.Lee.ea.2011` và vân vân.
+Ta cũng có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ dự đoán đánh giá nhắm đến việc dự đoán đánh giá trực tiếp.
+Gợi ý $n$ sản phẩm hàng đầu (*top-$n$ recommendation*) (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa vào phản hồi gián tiếp.
+Nếu có bao gồm cả thông tin mốc thời gian, ta có thể xây dựng gợi ý nhận thức trình tự thời gian (*sequence aware*) :cite:`Quadrana.Cremonesi.Jannach.2018`.
+Một tác vụ phổ biến khác được gọi là dự đoán tỉ lệ nhấp chuột, tác vụ này cũng dựa vào phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng theo hạng mục cũng có thể được tận dụng.
+Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người dùng hiện có được gọi là gợi ý khởi động nguội (*cold-start recommendation*) :cite:`Schein.Popescul.Ungar.ea.2002`.
 
 
 
@@ -156,7 +174,8 @@ Recommending for new users and recommending new items to existing users are call
 * There are two types of feedbacks: implicit feedback and explicit feedback.  A number of recommendation tasks have been explored during the last decade.
 -->
 
-*dịch đoạn phía trên*
+* Hệ thống gợi ý rất quan trọng đối với người dùng cá nhân và các ngành công nghiệp. Lọc cộng tác là một khái niệm chủ chốt trong hệ thống gợi ý.
+* Có hai loại phản hồi: phản hồi gián tiếp và phản hồi trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ vừa qua.
 
 
 ## Bài tập
@@ -166,7 +185,8 @@ Recommending for new users and recommending new items to existing users are call
 2. What interesting recommendation tasks do you think can be investigated?
 -->
 
-*dịch đoạn phía trên*
+1. Hệ thống gợi ý ảnh hưởng đến cuộc sống hằng ngày của bạn như thế nào?
+2. Ứng dụng gợi ý đáng chú ý nào mà bạn nghĩ có thể đi vào nghiên cứu?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -190,6 +210,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
