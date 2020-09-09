@@ -41,7 +41,7 @@ In this section, we will download a pretrained small version of BERT,
 then fine-tune it for natural language inference on the SNLI dataset.
 -->
 
-Trong phần này, chúng ta sẽ tải một phiên bản nhỏ tiền huấn luyện BERT,
+Trong phần này, chúng ta sẽ tải một phiên bản BERT đã tiền huấn luyện kích thước nhỏ,
 rồi tinh chỉnh nó để suy diễn ngôn ngữ tự nhiên dựa trên tập dữ liệu SNLI.
 
 
