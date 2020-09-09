@@ -5,7 +5,7 @@
 # Natural Language Inference and the Dataset
 -->
 
-# *dịch tiêu đề trên*
+# Suy luận ngôn ngữ tự nhiên và tập dữ liệu
 :label:`sec_natural-language-inference-and-dataset`
 
 
@@ -17,14 +17,16 @@ or eliminate redundancy by identifying sentences that are semantically equivalen
 Instead, we need to be able to reason over pairs of text sequences.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_sentiment`, chúng ta đã thảo luận về bài toán phân tích sắc thái. Mục đích của bài toán là phân loại một chuỗi văn bản vào các hạng mục đã định trước, chẳng hạn như các sắc thái đối lập.
+Tuy nhiên, trong trường hợp cần xác định liệu một câu có thể suy ra được từ một câu khác không, hoặc khi cần loại bỏ sự dư thừa bằng việc xác định các câu tương đương về ngữ nghĩa, việc phân lớp một chuỗi văn bản là không đủ. 
+Khi đó chúng ta cần khả năng suy luận trên các cặp chuỗi văn bản.
 
 
 <!--
 ## Natural Language Inference
 -->
 
-## *dịch tiêu đề trên*
+## Suy luận ngôn ngữ tự nhiên
 
 <!--
 *Natural language inference* studies whether a *hypothesis* can be inferred from a *premise*, where both are a text sequence.
@@ -32,7 +34,9 @@ In other words, natural language inference determines the logical relationship b
 Such relationships usually fall into three types:
 -->
 
-*dịch đoạn phía trên*
+*Suy luận ngôn ngữ tự nhiên* nghiên cứu liệu một *giả thuyết* có thể được suy ra được từ một *tiên đề* không, khi cả hai đều là một chuỗi văn bản. 
+Nói cách khác, suy diễn ngôn ngữ tự nhiên quyết định mối quan hệ lô-gic giữa một cặp chuỗi văn bản. 
+Các mối quan hệ đó thường rơi vào một trong ba loại sau đây:
 
 
 <!--
@@ -41,7 +45,9 @@ Such relationships usually fall into three types:
 * *Neutral*: all the other cases.
 -->
 
-*dịch đoạn phía trên*
+* *Kéo theo*: giả thuyết có thể suy ra được từ tiên đề.
+* *Đối lập*: phủ định của giả thuyết có thể suy ra được từ tiên đề.
+* *Trung tính*: tất cả các trường hợp khác.
 
 
 <!--
@@ -50,60 +56,62 @@ For example, the following pair will be labeled as *entailment* because "showing
 in the hypothesis can be inferred from "hugging one another" in the premise.
 -->
 
-*dịch đoạn phía trên*
+Suy diễn ngôn ngữ tự nhiên còn gọi là bài toán nhận dạng quan hệ kéo theo trong văn bản.
+Ví dụ, cặp sau được gán nhãn là *kéo theo* bởi vì "thể hiện tình cảm" trong giả thuyết có thể
+được suy ra từ "ôm nhau" trong tiên đề.
 
 
 <!--
 > Premise: Two women are hugging each other.
 -->
 
-> *dịch đoạn phía trên*
+> Tiên đề: Hai người đang ôm nhau.
 
 <!--
 > Hypothesis: Two women are showing affection.
 -->
 
-> *dịch đoạn phía trên*
+> Giả thuyết: Hai người đang thể hiện tình cảm.
 
 
 <!--
 The following is an example of *contradiction* as "running the coding example" indicates "not sleeping" rather than "sleeping".
 -->
 
-*dịch đoạn phía trên*
+Sau đây là một ví dụ về *đối lập* bởi vì "chạy đoạn mã ví dụ" cho biết "không ngủ" chứ không phải "ngủ".
 
 
 <!--
 > Premise: A man is running the coding example from Dive into Deep Learning.
 -->
 
-> *dịch đoạn phía trên*
+> Tiên đề: Một bạn đang chạy đoạn mã ví dụ trong Đắm mình vào học sâu.
 
 <!--
 > Hypothesis: The man is sleeping.
 -->
 
-> *dịch đoạn phía trên*
+> Giả thuyết: Bạn đó đang ngủ.
 
 
 <!--
 The third example shows a *neutrality* relationship because neither "famous" nor "not famous" can be inferred from the fact that "are performing for us". 
 -->
 
-*dịch đoạn phía trên*
+Ví dụ thứ ba cho thấy mối quan hệ *trung tính* vì cả "nổi tiếng" và "không nổi tiếng" đều không thể được suy ra từ thực tế là "đang biểu diễn cho chúng tôi".
 
 
 <!--
 > Premise: The musicians are performing for us.
 -->
 
-> *dịch đoạn phía trên*
+> Tiên đề: Các nhạc công đang biểu diễn cho chúng tôi.
 
 <!--
 > Hypothesis: The musicians are famous.
 -->
 
-> *dịch đoạn phía trên*
+> Giả thuyết: Các nhạc công rất nổi tiếng.
 
 
 <!--
@@ -112,7 +120,9 @@ It enjoys wide applications ranging from information retrieval to open-domain qu
 To study this problem, we will begin by investigating a popular natural language inference benchmark dataset.
 -->
 
-*dịch đoạn phía trên*
+Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm để hiểu ngôn ngữ tự nhiên.
+Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏi đáp trong miền mở.
+Để nghiên cứu vấn đề này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến của suy luận ngôn ngữ tự nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -397,7 +407,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Thái Bình
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Trần Yến Thy
