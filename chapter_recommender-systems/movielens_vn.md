@@ -206,7 +206,7 @@ Trong trường hợp này, tập kiểm tra của chúng tôi có thể đượ
 ## Loading the data
 -->
 
-## *dịch tiêu đề trên*
+## Tải dữ liệu
 
 
 <!--
@@ -216,7 +216,10 @@ The function then returns lists of users, items, ratings and a dictionary/matrix
 We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
-*dịch đoạn phía trên*
+Sau việc chia tập dữ liệu, chúng ta sẽ chuyển đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
+Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/hạng mục bắt đầu từ số không.
+Sau đó hàm trả về các danh sách người dùng, hạng mục, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
+Ta có thể xác định loại của phản hồi thành `trực tiếp` hay `gián tiếp`.
 
 
 ```{.python .input  n=6}
@@ -245,7 +248,10 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 (The remaining samples are rolled over to the next epoch.) and orders are shuffled.
 -->
 
-*dịch đoạn phía trên*
+Rồi ta tổng hợp các bước ở trên lại và chúng sẽ được sử dụng ở phần tiếp theo.
+Kết quả được gói gọn trong `Dataset` và `DataLoader`.
+Lưu ý rằng `last_batch` của `DataLoader` dùng cho việc huấn luyện dữ liệu được thiếp lập ở chế độ `rollover`
+(Các mẫu còn lại được cuộn lại cho epoch tiếp theo.) và các thứ tự được xáo trộn.
 
 
 ```{.python .input  n=7}
@@ -278,7 +284,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * We define functions to download and preprocess the MovieLens 100k dataset for further use in later sections.
 -->
 
-*dịch đoạn phía trên*
+* Tập dữ liệu MovieLens được sử dụng rộng rãi cho việc nghiên cứu gợi ý. Nó được công khai và cho phép dùng miễn phí.
+* Ta định nghĩa các hàm để tải và tiền xử lý tập dữ liệu MovieLens 100k để sử dụng sau này trong các phần tiếp theo.
 
 
 ## Bài tập
@@ -288,7 +295,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * Go through the [https://movielens.org/](https://movielens.org/) site for more information about MovieLens.
 -->
 
-*dịch đoạn phía trên*
+* Bạn có thể tìm các tập dữ liệu gợi ý tương tự nào?
+* Xem qua trang [https://movielens.org/](https://movielens.org/) để biết thêm thông tin về MovieLens.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -311,6 +319,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 17/07/2020)*
