@@ -100,7 +100,7 @@ Giả sử câu tiền đề là "i do need sleep" và câu giả định là "i
 Do sự tương đồng về ngữ nghĩa, ta có thể mong muốn xếp "i" trong câu giả định với "i" trong câu tiên đề,
 và xếp "tired" trong câu giả định với "sleep" trong câu tiền đề.
 Tương tự, ta có thể muốn xếp "i" trong câu tiên đề với "i" trong  câu giả định,
-và xếp "need" và "sleep" trong câu tiên đề với "tired" trong câu giả định.
+và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết.
 Lưu ý là sự sắp xếp này sắp đặt *mềm* sử dụng trung bình trọng số, 
 ở đây lý tưởng là các trọng số lớn liên kết với các từ được sắp xếp.
 Để dễ dàng cho việc minh họa, hình :numref:`fig_nli_attention` diễn tả sự sắp xếp này theo một cách *cứng*.
