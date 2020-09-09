@@ -230,7 +230,8 @@ If changing the transposed convolution layer to a $4\times 4$ kernel, $1\times 1
 With a input size of $1 \times 1$, the output will have its width and height increased by 3 respectively.
 -->
 
-*dịch đoạn phía trên*
+Nếu đổi lớp tích chập chuyển vị này thành một bộ lọc $4\times 4$, sải bước $1\times 1$ và đệm không.
+Với kích thước đầu vào là $1 \times 1$, đầu ra sẽ có chiều rộng và cao tăng lên là 3 tương ứng.
 
 
 ```{.python .input}
@@ -256,7 +257,11 @@ It further doubles the width and height to match the desired $64\times 64$ shape
 The tanh activation function is applied to project output values into the $(-1, 1)$ range.
 -->
 
-*dịch đoạn phía trên*
+Bộ sinh bao gồm bốn khối cơ bản thực hiện tăng cả chiều rộng và chiều cao của đầu vào từ 1 lên 32.
+Cùng lúc đó, nó trước tiên đưa biến ẩn này về các kênh $64\times 8$, rồi chia nửa các kênh này mỗi lần.
+Sau cùng, một lớp tích chập chuyển vị được sử dụng để sinh đầu ra.
+Nó lớn hơn gấp đôi chiều rộng và chiều cao để phù hợp kích thước mong muốn $64\times 64$, và giảm kích thước kênh thành $3$.
+Hàm kích hoạt tanh được áp dụng để đưa giá trị đầu ra về khoảng $(-1, 1)$. 
 
 
 ```{.python .input}
@@ -290,7 +295,7 @@ net_G = nn.Sequential(
 Generate a 100 dimensional latent variable to verify the generator's output shape.
 -->
 
-*dịch đoạn phía trên*
+Sinh một biến ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
 
 
 ```{.python .input}
@@ -310,7 +315,7 @@ net_G(x).shape
 ## Discriminator
 -->
 
-## *dịch tiêu đề trên*
+## Bộ phân biệt
 
 
 <!--
@@ -318,7 +323,8 @@ The discriminator is a normal convolutional network network except that it uses 
 Given $\alpha \in[0, 1]$, its definition is
 -->
 
-*dịch đoạn phía trên*
+Bộ phân biệt là một mạng tích chập thông thường ngoại trừ việc nó dùng hàm kích hoạt là ReLU rò rỉ.
+Với $\alpha \in[0, 1]$ cho trước, định nghĩa của nó là
 
 
 $$\textrm{leaky ReLU}(x) = \begin{cases}x & \text{if}\ x > 0\\ \alpha x &\text{otherwise}\end{cases}.$$
@@ -331,7 +337,9 @@ For $\alpha \in (0, 1)$, leaky ReLU is a nonlinear function that give a non-zero
 It aims to fix the "dying ReLU" problem that a neuron might always output a negative value and therefore cannot make any progress since the gradient of ReLU is 0.
 -->
 
-*dịch đoạn phía trên*
+Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm định danh nếu $\alpha=1$.
+Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến mà cho đầu ra khác không với giá trị đâu vào âm.
+Mục đích của hàm này là khắc phục vấn đề "ReLU sắp chết" mà một nơ-rôn có thể luôn xuất giá trị âm và do đó không thể tạo ra bất cứ cải thiện gì vì gradient của ReLU là 0.
 
 
 ```{.python .input}
@@ -348,7 +356,8 @@ The basic block of the discriminator is a convolution layer followed by a batch 
 The hyperparameters of the convolution layer are similar to the transpose convolution layer in the generator block.
 -->
 
-*dịch đoạn phía trên*
+Khối cơ bản của bộ phân biệt là lớp tích chập và theo sau bởi lớp chuẩn hóa theo batch và một hàm kích hoạt ReLU rò rỷ.
+Các tham số mô hình của lớp tích chập này tương tự lớp tích chập chuyển vị trong khối sinh.
 
 
 ```{.python .input}
@@ -387,7 +396,9 @@ For example, given a input shape $n_h = n_w = 16$, with a kernel shape $k_h = k_
 a stride shape $s_h = s_w = 2$, and a padding shape $p_h = p_w = 1$, the output shape will be:
 -->
 
-*dịch đoạn phía trên*
+Khối cơ bản với thiết lập mặc định sẽ chia nửa chiều rộng và chiều cao của các đầu vào, như ta đã trình diễn trong in :numref:`sec_padding`.
+Chẳng hạn, cho trước kích thước đầu vào là $n_h = n_w = 16$, với một bộ lọc có kích thước $k_h = k_w = 4$,
+sải bước $s_h = s_w = 2$, và đệm $p_h = p_w = 1$, kích thước đầu ra sẽ là:
 
 
 $$
@@ -418,7 +429,7 @@ d_blk(x).shape
 The discriminator is a mirror of the generator.
 -->
 
-*dịch đoạn phía trên*
+Bộ phân biệt này là một tấm gương phản chiếu của bộ sinh.
 
 
 ```{.python .input}
@@ -448,7 +459,7 @@ net_D = nn.Sequential(
 It uses a convolution layer with output channel $1$ as the last layer to obtain a single prediction value.
 -->
 
-*dịch đoạn phía trên*
+Nó sử dụng một lớp tích chập với kênh đầu ra $1$ làm lớp sau cùng để có được một giá trị dự đoán đơn.
 
 
 ```{.python .input}
@@ -629,7 +640,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hòang Long
 
 <!-- Phần 3 -->
 * 
