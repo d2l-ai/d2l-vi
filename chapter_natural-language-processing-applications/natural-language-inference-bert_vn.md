@@ -20,7 +20,7 @@ and fine-tuning BERT only requires an additional MLP-based architecture, as illu
 -->
 
 Ở các phần đầu của chương này, ta đã thiết kế kiến trúc dựa trên cơ chế tập trung
-(trong :numref:`sec_natural-language-inference-attention`) cho tác vụ suy diễn ngôn ngữ tự nhiên 
+(trong :numref:`sec_natural-language-inference-attention`) cho tác vụ suy luận ngôn ngữ tự nhiên 
 trên tập dữ liệu SNLI (như được mô tả trong :numref:`sec_natural-language-inference-and-dataset`).
 Bây giờ ta trở lại tác vụ này qua thực hiện tinh chỉnh BERT.
 Như đã thảo luận trong :numref:`sec_finetuning-bert`,
