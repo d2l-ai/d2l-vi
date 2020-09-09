@@ -25,7 +25,7 @@ trên tập dữ liệu SNLI (như được mô tả trong :numref:`sec_natural-
 Bây giờ ta trở lại tác vụ này qua thực hiện tinh chỉnh BERT.
 Như đã thảo luận trong :numref:`sec_finetuning-bert`,
 suy diễn ngôn ngữ tự nhiên là bài toán phân loại cặp văn bản ở mức chuỗi,
-và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc dựa trên MLP bổ trợ, như minh họa trong hình :numref:`fig_nlp-map-nli-bert`.
+và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc bổ trợ dựa trên MLP, như minh họa trong :numref:`fig_nlp-map-nli-bert`.
 
 
 <!--
