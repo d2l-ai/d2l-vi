@@ -22,11 +22,11 @@ The technical report the Netflix Grand Prize solution :cite:`Toscher.Jahrer.Bell
 In this section, we will dive into the details of the matrix factorization model and its implementation.
 -->
 
-Phân rã ma trận (*Matrix Factorization*) :cite:`Koren.Bell.Volinsky.2009` là một trong những thuật toán tồn tại lâu dài trong các tài liệu về hệ thống gợi ý.
+Phân rã ma trận (*Matrix Factorization*) :cite:`Koren.Bell.Volinsky.2009` là một trong những thuật toán lâu đời trong các tài liệu về hệ thống gợi ý.
 Phiên bản đầu tiên của mô hình phân rã ma trận được đề xuất bởi Simon Funk trong một [bài blog nổi tiếng](https://sifter.org/~simon/journal/20061211.html), trong đó anh đã mô tả ý tưởng phân rã ma trận tương tác thành các nhân tử.
-Bài blog này trở nên phổ biến nhờ cuộc thi Netflix tổ chức vào năm 2006.
+Phân rã ma trận sau đó trở nên phổ biến nhờ cuộc thi Netflix tổ chức vào năm 2006.
 Tại thời điểm đó, Netflix, một công ty truyền thông đa phương tiện và cho thuê phim, công bố một cuộc thi nhằm cải thiện hiệu năng hệ thống gợi ý của công ty.
-Đội xuất sắc nhất mà có thể cải thiện mức cơ sở của Netflix (thuật toán Cinematch) lên 10 phần trăm sẽ đoạt giải thưởng một triệu USD.
+Đội xuất sắc nhất mà có thể cải thiện mức cơ sở (*baseline*) của Netflix (thuật toán Cinematch) lên 10 phần trăm sẽ đoạt giải thưởng một triệu USD.
 Do đó, cuộc thi này thu hút rất nhiều sự chú ý trong ngành nghiên cứu hệ thống gợi ý.
 Cuối cùng, giải thưởng chung cuộc được dành cho đội Pragmatic Chaos của BellKor, đội kết hợp bởi các đội BellKor, Pragmatic Theory và BigChaos (bạn hiện tại chưa cần phải quan tâm đến các thuật toán này).
 Dù kết quả cuối cùng là một giải pháp kết hợp (tức phối hợp nhiều thuật toán với nhau),
@@ -72,7 +72,7 @@ và ma trận sản phẩm tiềm ẩn $\mathbf{Q} \in \mathbb{R}^{n \times k}$,
 Gọi $\mathbf{p}_u$ ký hiệu hàng thứ $u$ và của $\mathbf{P}$ và $\mathbf{q}_i$ ký hiệu hàng thứ $i$ của $\mathbf{Q}$.
 Với một sản phẩm $i$ cho trước, các phần tử trong $\mathbf{q}_i$ đo mức độ của các đặc trưng của sản phẩm này như thể loại hay ngôn ngữ của một bộ phim.
 Với một người dùng $u$ cho trước, các phần tử trong $\mathbf{p}_u$ đo mức độ ưa thích của người dùng này đối với các sản phẩm với đặc trưng tương ứng.
-Các nhân tố ẩn này có thể đo những mức độ rõ ràng như đề cập trong các ví dụ trên, hoặc hoàn toàn không thể giải thích được.
+Các nhân tố tiềm ẩn này có thể là các đặc trưng rõ ràng như đề cập trong các ví dụ trên, hoặc hoàn toàn không thể giải thích được.
 Đánh giá dự đoán có thể được ước lượng bằng
 
 
@@ -89,11 +89,11 @@ Specifically, the predicted rating user $u$ gives to item $i$ is calculated by
 -->
 
 trong đó $\hat{\mathbf{R}}\in \mathbb{R}^{m \times n}$ là ma trận đánh giá dự đoán và có cùng kích thước với $\mathbf{R}$.
-Vấn đề chính của cách dự đoán này là độ chệch (*bias*) của người dùng/sản phẩm không được mô hình hoá.
+Một vấn đề lớn của cách dự đoán này là độ chệch (*bias*) của người dùng/sản phẩm không được mô hình hoá.
 Ví dụ, một số người dùng có thiên hướng đánh giá cao hơn hoặc một số sản phẩm luôn bị đánh giá thấp hơn do chất lượng kém.
 Các độ chệch này là vô cùng bình thường trong các ứng dụng thực tế.
 Để thu được các độ chệch này, số hạng độ chệch của người dùng và sản phẩm riêng biệt được đưa vào.
-Cụ thể, đánh giá dự đoán mà người dùng $u$ đánh giá sản phẩm $i$ được tính theo công thức
+Cụ thể, đánh giá dự đoán của người dùng $u$ cho sản phẩm $i$ được tính theo công thức
 
 
 $$
@@ -125,8 +125,8 @@ The model parameters can be learned with an optimization algorithm, such as Stoc
 -->
 
 trong đó $\lambda$ ký hiệu tỉ lệ điều chuẩn.
-Số hạng điều chuẩn $\lambda (\| \mathbf{P} \|^2_F + \| \mathbf{Q}\|^2_F + b_u^2 + b_i^2 )$ được sử dụng để tránh hiện tượng quá khớp bằng cách giảm độ lớn của các tham số.
-Cặp $(u, i)$ với $\mathbf{R}_{ui}$ đã biết được lưu trong tập $\mathcal{K}=\{(u, i) \mid \mathbf{R}_{ui} \text{ is known}\}$.
+Số hạng điều chuẩn $\lambda (\| \mathbf{P} \|^2_F + \| \mathbf{Q}\|^2_F + b_u^2 + b_i^2 )$ được sử dụng để tránh hiện tượng quá khớp bằng cách phạt độ lớn của các tham số.
+Cặp $(u, i)$ với $\mathbf{R}_{ui}$ đã biết được lưu trong tập $\mathcal{K}=\{(u, i) \mid \mathbf{R}_{ui} \text{đã biết}\}$.
 Các tham số mô hình có thể được học thông qua một thuật toán tối ưu, ví dụ như Hạ Gradient Ngẫu nhiên hay Adam.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
