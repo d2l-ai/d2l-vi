@@ -80,7 +80,7 @@ npx.set_np()
 ### Attending
 -->
 
-### Tổ chức
+### Thực hiện Tập trung
 
 
 <!--
