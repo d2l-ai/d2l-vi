@@ -97,7 +97,7 @@ We implement the following `load_pretrained_model` function to load pretrained B
 
 Cả hai mô hình BERT tiền huấn luyện chứa tập tin "vocab.json" là nơi định nghĩa tập từ vựng 
 và tập tin "pretrained.params" chứa các tham số tiền huấn luyện.
-Ta thực hiện hàm `load_pretrained_model` sau đây để nạp các tham số tiền huấn luyện BERT.
+Ta thực hiện hàm `load_pretrained_model` sau đây để nạp các tham số đã tiền huấn luyện của BERT.
 
 
 ```{.python .input  n=3}
