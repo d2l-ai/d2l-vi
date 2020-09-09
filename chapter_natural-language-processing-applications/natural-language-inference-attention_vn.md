@@ -191,7 +191,7 @@ Below we define the `Attend` class to compute the soft alignment of hypotheses (
 with input premises `A` and soft alignment of premises (`alpha`) with input hypotheses `B`.
 -->
 
-Dưới đây ta định nghĩa lớp `Attend` để tính sự sắp xếp mềm của các câu giả định (`beta`)
+Dưới đây ta định nghĩa lớp `Attend` để tính sự căn chỉnh mềm của các câu giả thuyết (`beta`)
 với các câu tiền đề đầu vào `A` và sự căn chỉnh mềm của các câu tiền đề (`alpha`) với các câu giả thuyết `B`.
 
 
