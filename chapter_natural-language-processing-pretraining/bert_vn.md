@@ -6,7 +6,7 @@
 # Bidirectional Encoder Representations from Transformers (BERT)
 -->
 
-# Biểu diễn Bộ Mã hoá hai chiều từ Transformer (*Bidirectional Encoder Representations from Transformers* - BERT)
+# Biểu diễn Mã hoá hai chiều từ Transformer (*Bidirectional Encoder Representations from Transformers* - BERT)
 :label:`sec_bert`
 
 
@@ -87,7 +87,7 @@ phân tích cảm xúc (_sentiment analysis_), suy luận ngôn ngữ tự nhiê
 ## From Task-Specific to Task-Agnostic
 -->
 
-## Từ Tác vụ Cụ thể đến Không phân biệt Tác vụ
+## Từ Đặc thù Tác vụ đến Không phân biệt Tác vụ
 
 
 <!--
@@ -106,7 +106,7 @@ and improved the state of the art in nine of them with minimal changes to the mo
 -->
 
 Mặc dù ELMo đã cải thiện đáng kể giải pháp cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên,
-mỗi giải pháp vẫn dựa trên một kiến ​​trúc *cho tác vụ cụ thể* (_task-specific_).
+mỗi giải pháp vẫn dựa trên một kiến ​​trúc *đặc thù cho tác vụ* (_task-specific_).
 Tuy nhiên, trong thực tế, xây dựng một kiến ​​trúc đặc thù cho mỗi tác vụ xử lý ngôn ngữ tự nhiên là điều không đơn giản.
 Phương pháp GPT (Generative Pre-Training) thể hiện nỗ lực thiết kế một mô hình *không phân biệt tác vụ* (_task-agnostic_) chung cho các biểu diễn nhạy ngữ cảnh :cite:`Radford.Narasimhan.Salimans.ea.2018`.
 Được xây dựng dựa trên bộ giải mã Transformer, GPT tiền huấn luyện mô hình ngôn ngữ được sử dụng để biểu diễn chuỗi văn bản.
@@ -148,7 +148,7 @@ Second, all the parameters of the pretrained Transformer encoder are fine-tuned,
 -->
 
 
-Như ta đã thấy, ELMo mã hóa ngữ cảnh hai chiều nhưng sử dụng các kiến ​​trúc cho tác vụ cụ thể; trong khi đó GPT có kiến trúc không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
+Như ta đã thấy, ELMo mã hóa ngữ cảnh hai chiều nhưng sử dụng các kiến ​​trúc đặc thù cho từng tác vụ; trong khi đó GPT có kiến trúc không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
 Kết hợp những điều tốt nhất của hai phương pháp trên, BERT (biểu diễn bộ mã hóa hai chiều từ Transformer)
 mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu vài thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên :cite:`Devlin.Chang.Lee.ea.2018`.
 Sử dụng bộ mã hóa Transformer được tiền huấn luyện, BERT có thể biểu diễn bất kỳ token nào dựa trên ngữ cảnh hai chiều của nó.
@@ -178,8 +178,8 @@ All proposed in 2018, from context-sensitive ELMo to task-agnostic GPT and BERT,
 conceptually simple yet empirically powerful pretraining of deep representations for natural languages have revolutionized solutions to various natural language processing tasks.
 -->
 
-BERT cải thiện kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên trong các bài toán rộng gồm i) phân loại văn bản đơn (như phân tích cảm xúc), ii) phân loại cặp văn bản (như suy luận ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (như nhận dạng thực thể có tên).
-Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, đều có ý tưởng đơn giản nhưng là những phương pháp tiền huấn luyện thực nghiệm hiệu quả cho các biểu diễn sâu của ngôn ngữ tự nhiên, đã tạo ra những giải pháp cách mạng cho các tác vụ đa dạng trong xử lý ngôn ngữ tự nhiên.
+BERT cải thiện kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên trải khắp các hạng mục gồm i) phân loại văn bản đơn (như phân tích cảm xúc), ii) phân loại cặp văn bản (như suy luận ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (như nhận dạng thực thể có tên).
+Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, tuy về ý tưởng đều đơn giản nhưng trên thực nghiệm là những phương pháp tiền huấn luyện hiệu quả các biểu diễn sâu cho ngôn ngữ tự nhiên, và đã mang đến những giải pháp mang tính cách mạng cho nhiều tác vụ xử lý ngôn ngữ tự nhiên.
 
 <!--
 In the rest of this chapter, we will dive into the pretraining of BERT.
@@ -188,7 +188,7 @@ we will illustrate fine-tuning of BERT for downstream applications.
 -->
 
 Ở phần còn lại của chương này, ta sẽ đi sâu vào tiền huấn luyện BERT.
-Những ứng dụng xử lý ngôn ngữ tự nhiên đã được giải thích trong :numref:`chap_nlp_app`,
+Sau khi những ứng dụng xử lý ngôn ngữ tự nhiên đã được giải thích trong :numref:`chap_nlp_app`,
 ta sẽ minh họa việc tinh chỉnh BERT cho các ứng dụng xuôi dòng. 
 
 
@@ -349,7 +349,7 @@ This hyperparameter is usually referred to as the *hidden size* (number of hidde
 -->
 
 Ta định nghĩa `tokens` là hai chuỗi đầu vào BERT có độ dài là 8, mỗi token là một chỉ mục của bộ từ vựng.
-Suy luận xuôi của `BERTEncoder` với đầu vào `tokens` trả về kết quả được mã hóa, 
+Lượt suy luận xuôi của `BERTEncoder` với đầu vào `tokens` trả về kết quả được mã hóa, 
 với mỗi token được biểu diễn bởi một vector có chiều dài được định nghĩa trước bởi siêu tham số `num_hiddens`,
 là *kích thước ẩn* (số lượng nút ẩn) của bộ mã hóa Transformer. 
 
