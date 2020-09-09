@@ -5,7 +5,7 @@
 # Natural Language Inference: Fine-Tuning BERT
 -->
 
-# Suy diễn ngôn ngữ tự nhiên: Tinh chỉnh BERT
+# Suy luận ngôn ngữ tự nhiên: Tinh chỉnh BERT
 :label:`sec_natural-language-inference-bert`
 
 
