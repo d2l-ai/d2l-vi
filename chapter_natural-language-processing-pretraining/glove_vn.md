@@ -79,7 +79,7 @@ to approach as close as possible to the true conditional probability distributio
 -->
 
 Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ của việc sinh từ ngữ cảnh 
-dựa trên từ tâm đích $w_i$ và entropy chéo với phân phối xác suất có điều kiện $q_{ij}$ được dự đoán bởi mô hình. 
+dựa trên từ đích trung tâm $w_i$ và entropy chéo với phân phối xác suất có điều kiện $q_{ij}$ được dự đoán bởi mô hình. 
 Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$. 
 Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán một cách 
 gần nhất có thể tới phân phối xác suất có điều kiện thật sự. 
@@ -169,7 +169,7 @@ Chú ý rằng nếu từ $w_i$ xuất hiện trong cửa sổ ngữ cảnh củ
 Không như word2vec, GloVe khớp $\log\, x_{ij}$ đối xứng thay vì xác suất có điều kiện $p_{ij}$ bất đối xứng. 
 Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào đều tương đương nhau trong GloVe. 
 Tuy vậy, hai tập vector từ được học bởi cùng một mô hình về cuối có thể sẽ khác nhau do giá trị khởi tạo khác nhau. 
-Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng của vector từ tâm đích và vector từ ngữ cảnh để làm vector từ cuối cùng cho từ đó. 
+Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng của vector từ đích trung tâm và vector từ ngữ cảnh để làm vector từ cuối cùng cho từ đó. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
