@@ -224,10 +224,10 @@ For example, suppose that the attending step determines that "need" and "sleep" 
 both aligned with "tired" in the hypothesis, the pair "tired--need sleep" will be compared.
 -->
 
-Tại bước tiếp theo, chúng ta so sánh một từ trong chuỗi với chuỗi khác được sắp xếp gọn với từ đó.
-Lưu ý rằng trong "soft alignment", tất cả từ đều đến từ một chuỗi, tuy nhiên do có những trọng số tập trung khác nhau, chúng sẽ được so sánh với một từ trong chuỗi khác.
-Cho dễ minh hoạ, :numref:`fig_nli_attention` ghép nối các từ với những từ đã được sắp xếp bằng cách *khó*.
-Ví dụ, giả sử bước tập trung xác định rằng "need" và "sleep" trong phần mở đầu đều được sắp xếp với "tired" trong ngữ cảnh giả thiết, thì cặp "tired--need sleep" sẽ được so sánh.
+Bước tiếp theo, chúng ta so sánh một từ trong chuỗi với chuỗi khác được căn chỉnh mềm với từ đó.
+Lưu ý rằng trong "căn chỉnh mềm", tất cả từ đều đến từ một chuỗi, tuy nhiên do có những trọng số tập trung khác nhau, chúng sẽ được so sánh với một từ trong chuỗi khác.
+Để dễ minh hoạ, :numref:`fig_nli_attention` ghép đôi từ với các từ được căn chỉnh *cứng*.
+Ví dụ, giả sử bước tập trung xác định rằng "need" và "sleep" trong câu tiền đề đều được căn chỉnh với "tired" trong câu giả thuyết, thì cặp "tired--need sleep" sẽ được so sánh.
 
 
 <!--
@@ -235,7 +235,7 @@ In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of 
 and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
 -->
 
-Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã được sắp xếp tại một chuỗi khác vào trong hàm $g$ (một perceptron đa tầng):
+Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh tại chuỗi kia vào hàm $g$ (một perceptron đa tầng):
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -248,7 +248,8 @@ while $\mathbf{v}_{B,j}$ is the comparison between word $j$ in the hypothesis an
 The following `Compare` class defines such as comparing step.
 -->
 
-Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ $i$ tại phần mở đầu và những từ giả thiết được sắp xếp gọn với từ thứ $i$; trong khi $\mathbf{v}_{B,j}$ lại là phép so sánh giữa từ thứ $j$ trong giả thiết và tất cả từ trong lời mở đầu được sắp xếp gọn với từ thứ $j$.
+Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ thứ $i$ của câu tiền đề và tất cả các từ trong câu giả thuyết được căn chỉnh mềm với từ thứ $i$;
+trong khi $\mathbf{v}_{B,j}$ lại là phép so sánh giữa từ thứ $j$ trong câu giả thuyết và tất cả từ trong câu tiền đề được căn chỉnh mềm với từ thứ $j$.
 Lớp `Compare` sau đây định nghĩa bước so sánh.
 
 
@@ -281,9 +282,9 @@ in the last step we will aggregate such information to infer the logical relatio
 We begin by summing up both sets:
 -->
 
-Với hai bộ vectơ so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) có trong tay,
+Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) có trong tay,
 tại bước cuối cùng, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic.
-Chúng ta bắt đầu bằng cách tổng hợp cả hai bộ:
+Chúng ta bắt đầu bằng cách lấy tổng trên cả hai tập:
 
 
 $$
@@ -294,7 +295,7 @@ $$
 <!--
 Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
 -->
-Tiếp theo, chúng ta đưa cả hai kết quả tổng hợp sau khi được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic:
+Tiếp theo, chúng ta đưa cả hai kết quả tổng sau khi được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic:
 
 
 $$
