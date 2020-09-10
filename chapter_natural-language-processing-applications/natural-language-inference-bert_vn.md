@@ -5,7 +5,7 @@
 # Natural Language Inference: Fine-Tuning BERT
 -->
 
-# *dịch tiêu đề trên*
+# Suy luận ngôn ngữ tự nhiên: Tinh chỉnh BERT
 :label:`sec_natural-language-inference-bert`
 
 
@@ -19,14 +19,20 @@ natural language inference is a sequence-level text pair classification problem,
 and fine-tuning BERT only requires an additional MLP-based architecture, as illustrated in :numref:`fig_nlp-map-nli-bert`.
 -->
 
-*dịch đoạn phía trên*
+Ở các phần đầu của chương này, ta đã thiết kế kiến trúc dựa trên cơ chế tập trung
+(trong :numref:`sec_natural-language-inference-attention`) cho tác vụ suy luận ngôn ngữ tự nhiên 
+trên tập dữ liệu SNLI (như được mô tả trong :numref:`sec_natural-language-inference-and-dataset`).
+Bây giờ ta trở lại tác vụ này qua thực hiện tinh chỉnh BERT.
+Như đã thảo luận trong :numref:`sec_finetuning-bert`,
+suy diễn ngôn ngữ tự nhiên là bài toán phân loại cặp văn bản ở mức chuỗi,
+và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc bổ trợ dựa trên MLP, như minh họa trong :numref:`fig_nlp-map-nli-bert`.
 
 
 <!--
 ![This section feeds pretrained BERT to an MLP-based architecture for natural language inference.](../img/nlp-map-nli-bert.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-nli-bert.svg)
+![Phần này truyền BERT đã tiền huấn luyện vào một kiến trúc dựa trên MLP cho suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-bert.svg)
 :label:`fig_nlp-map-nli-bert`
 
 
@@ -35,7 +41,8 @@ In this section, we will download a pretrained small version of BERT,
 then fine-tune it for natural language inference on the SNLI dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta sẽ tải một phiên bản BERT đã tiền huấn luyện kích thước nhỏ,
+rồi tinh chỉnh nó để suy diễn ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
 
 
 ```{.python .input  n=1}
@@ -54,7 +61,7 @@ npx.set_np()
 ## Loading Pretrained BERT
 -->
 
-## *dịch tiêu đề trên*
+## Nạp BERT đã tiền huấn luyện
 
 
 <!--
@@ -66,7 +73,12 @@ In the following, we provide two versions of pretrained BERT:
 while "bert.small" is a small version to facilitate demonstration.
 -->
 
-*dịch đoạn phía trên*
+Ta đã giải thích việc làm thế nào tiền huấn luyện BERT trên tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset` và :numref:`sec_bert-pretraining`
+(lưu ý rằng mô hình BERT ban đầu được tiền huấn luyện trên các kho ngữ liệu lớn hơn nhiều).
+Như đã thảo luận trong :numref:`sec_bert-pretraining`, mô hình BERT gốc có hàng trăm triệu tham số.
+Trong phần sau đây, chúng tôi cung cấp hai phiên bản BERT tiền huấn luyện:
+"bert.base" có kích thước xấp xỉ mô hình BERT cơ sở gốc, là mô hình đòi hỏi nhiều tài nguyên tính toán để tinh chỉnh,
+trong khi "bert.small" là phiên bản nhỏ để thuận tiện cho việc minh họa.
 
 
 ```{.python .input  n=2}
@@ -83,7 +95,9 @@ and a "pretrained.params" file of the pretrained parameters.
 We implement the following `load_pretrained_model` function to load pretrained BERT parameters.
 -->
 
-*dịch đoạn phía trên*
+Cả hai mô hình BERT đã tiền huấn luyện đều chứa tập tin "vocab.json" định nghĩa tập từ vựng 
+và tập tin "pretrained.params" chứa các tham số tiền huấn luyện.
+Ta thực hiện hàm `load_pretrained_model` sau đây để nạp các tham số đã tiền huấn luyện của BERT.
 
 
 ```{.python .input  n=3}
@@ -110,7 +124,9 @@ we will load and fine-tune the small version ("bert.small") of the pretrained BE
 In the exercise, we will show how to fine-tune the much larger "bert.base" to significantly improve the testing accuracy.
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện biểu diễn trên hầu hết các máy,
+ta sẽ nạp và tinh chỉnh phiên bản nhỏ ("bert-small") của BERT đã tiền huấn luyện ở phần này.
+Phần bài tập sẽ hướng dẫn cách tinh chỉnh mô hình "bert-base" lớn hơn nhiều, để cải thiện đáng kể độ chính xác khi kiểm tra.
 
 
 ```{.python .input  n=4}
@@ -349,7 +365,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
