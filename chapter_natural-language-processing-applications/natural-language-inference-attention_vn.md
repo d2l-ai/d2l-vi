@@ -127,7 +127,7 @@ For soft alignment, we compute the attention weights $e_{ij} \in \mathbb{R}$ as
 Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn.
 Ký hiệu $\mathbf{A} = (\mathbf{a}_1, \ldots, \mathbf{a}_m)$
 và $\mathbf{B} = (\mathbf{b}_1, \ldots, \mathbf{b}_n)$ là câu tiền đề và câu giả thuyết,
-số từ của các câu này lần lượt là $m$ và $n$,
+có số từ lần lượt là $m$ và $n$,
 Ở đây $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1, \ldots, n$) là một vector embdding từ $d$-chiều.
 Để căn chỉnh mềm, ta tính trọng số tập trung $e_{ij} \in \mathbb{R}$ như là
 
