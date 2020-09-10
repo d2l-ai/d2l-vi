@@ -157,10 +157,10 @@ This mode will be used in the sequence-aware recommendation section.
 
 Ta chia tập dữ liệu thành các tập huấn luyện và kiểm tra.
 Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`.
-Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không cân nhắc tới timestamp
-và sử dụng 90% dữ lệu để làm mẫu huẫn luyện và 10% còn lại dành cho mẫu kiểm tra theo mặc định.
-Trong chế độ `seq-aware`, ta chừa ra hạng mục mà người dùng đánh giá gần đây nhất để dùng cho kiểm tra, và các tương tác trong quá khứ để làm tập huấn luyện.
-Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất dựa trên timestamp.
+Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không xét tới mốc thời gian
+và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại dành cho mẫu kiểm tra.
+Trong chế độ `seq-aware`, ta chừa lại sản phẩm mà người dùng đánh giá gần đây nhất để dùng trong kiểm tra, còn các tương tác trước đó làm tập huấn luyện.
+Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian.
 Chế độ này sẽ được sử dụng trong phần gợi ý sequence-aware.
 
 
@@ -197,16 +197,16 @@ However, we omit that for the sake of brevity.
 In this case, our test set can be regarded as our held-out validation set.
 -->
 
-Lưu ý rằng đó là điều tốt nếu ta sử dụng tập kiểm định để thực hành, tách bạch khỏi duy nhất một tập kiểm tra.
+Lưu ý rằng trong thực tiễn, ta tốt nhất nên sử dụng tập kiểm định, tách bạch khỏi một tập kiểm tra duy nhất.
 Tuy nhiên, chúng tôi bỏ qua điều đó vì mục đích ngắn gọn. 
-Trong trường hợp này, tập kiểm tra của chúng tôi có thể được coi là tập kiểm tra cầm cự.
+Trong trường hợp này, tập kiểm tra của chúng ta có thể được coi là tập kiểm định bất đắc dĩ.
 
 
 <!--
 ## Loading the data
 -->
 
-## Tải dữ liệu
+## Nạp dữ liệu
 
 
 <!--
@@ -216,10 +216,10 @@ The function then returns lists of users, items, ratings and a dictionary/matrix
 We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
-Sau việc chia tập dữ liệu, chúng ta sẽ chuyển đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
+Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
 Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/hạng mục bắt đầu từ số không.
 Sau đó hàm trả về các danh sách người dùng, hạng mục, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
-Ta có thể xác định loại của phản hồi thành `trực tiếp` hay `gián tiếp`.
+Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*).
 
 
 ```{.python .input  n=6}
@@ -250,8 +250,8 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 
 Rồi ta tổng hợp các bước ở trên lại và chúng sẽ được sử dụng ở phần tiếp theo.
 Kết quả được gói gọn trong `Dataset` và `DataLoader`.
-Lưu ý rằng `last_batch` của `DataLoader` dùng cho việc huấn luyện dữ liệu được thiếp lập ở chế độ `rollover`
-(Các mẫu còn lại được cuộn lại cho epoch tiếp theo.) và các thứ tự được xáo trộn.
+Lưu ý rằng tham số `last_batch` của `DataLoader` dùng cho dữ liệu huấn luyện được thiếp lập ở chế độ `rollover`
+(Các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn.
 
 
 ```{.python .input  n=7}
@@ -284,7 +284,7 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * We define functions to download and preprocess the MovieLens 100k dataset for further use in later sections.
 -->
 
-* Tập dữ liệu MovieLens được sử dụng rộng rãi cho việc nghiên cứu gợi ý. Nó được công khai và cho phép dùng miễn phí.
+* Tập dữ liệu MovieLens được sử dụng rộng rãi trong nghiên cứu hệ thống gợi ý. Tập dữ liệu này được công khai miễn phí sử dụng.
 * Ta định nghĩa các hàm để tải và tiền xử lý tập dữ liệu MovieLens 100k để sử dụng sau này trong các phần tiếp theo.
 
 
