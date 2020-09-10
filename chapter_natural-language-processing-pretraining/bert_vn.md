@@ -401,7 +401,7 @@ To encode context bidirectionally for representing each token, BERT randomly mas
 This task is referred to as a *masked language model*.
 -->
 
-Như mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
+Như mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token bằng cách sử dụng ngữ cảnh phía bên trái của nó.
 Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
 Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
 
@@ -415,8 +415,8 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 
 Trong tác vụ tiền huấn luyện này, 15% số token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
 Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
-Tuy nhiên, token “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
-Để tránh xảy ra sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
+Tuy nhiên, token “&lt;mask&gt;” sẽ không bao giờ xuất hiện khi tinh chỉnh. 
+Để tránh sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
 <!--
@@ -446,8 +446,8 @@ In forward inference, it takes two inputs: the encoded result of `BERTEncoder` a
 The output is the prediction results at these positions.
 -->
 
-Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn luyện BERT.
-Việc dự đoán này sử dụng một MLP một-tầng-ẩn (`self.mlp`).
+Ta lập trình lớp `MaskLM` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn luyện BERT.
+MLP một-tầng-ẩn (`self.mlp`) được dùng cho việc dự đoán.
 Lượt suy luận xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
 Đầu ra là kết quả dự đoán tại các vị trí này.
 
@@ -539,7 +539,7 @@ while for the other half of the time the second sentence is randomly sampled fro
 
 Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ ngữ, nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT sử dụng tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
-Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các cặp câu liên tiếp và được gán nhãn "Đúng" (_True_); 
+Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các cặp câu liên tiếp nhau trong thực tế và được gán nhãn "Đúng" (_True_); 
 và trong nửa còn lại, câu thứ hai được lấy mẫu ngẫu nhiên từ kho ngữ liệu và cặp này được gán nhãn "Sai" (_False_).
 
 
@@ -695,10 +695,10 @@ and the fully-connected layer in `MaskLM` both use the Gaussian error linear uni
 Research into the difference between GELU and ReLU.
 -->
 
-1. Tại sao BERT gặt hái được thành công?
-2. Khi tất cả các điểm còn lại là tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi số bước tiền huấn luyện nhiều hơn hay ít hơn để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
+1. Tại sao BERT lại gặt hái được thành công?
+2. Với các yếu tố khác là không đổi, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi số bước tiền huấn luyện nhiều hơn hay ít hơn để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
 3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
-và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
+và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính Gauss (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
 Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
 
 
@@ -724,4 +724,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 * Nguyễn Văn Cường
