@@ -1,44 +1,31 @@
-<!-- =================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Geometry and Linear Algebraic Operations
 -->
 
-# Các phép toán Hình Học và Đại Số Tuyến Tính
-:label:`sec_geometry-linear-algebric-ops`
+# Các phép toán Hình Học và Đại số Tuyến tính
+:label:`sec_geometry-linear-algebraic-ops`
 
 <!--
-In :numref:`sec_linear-algebra`, we encountered the basics of linear algebra
-and saw how it could be used to express common operations for transforming our data.
-Linear algebra is one of the key mathematical pillars
-underlying much of the work that we do deep learning
-and in machine learning more broadly.
-While :numref:`sec_linear-algebra` contained enough machinery
-to communicate the mechanics of modern deep learning models,
-there is a lot more to the subject.
-In this section, we will go deeper,
-highlighting some geometric interpretations of linear algebra operations,
+In :numref:`sec_linear-algebra`, we encountered the basics of linear algebra and saw how it could be used to express common operations for transforming our data.
+Linear algebra is one of the key mathematical pillars underlying much of the work that we do deep learning and in machine learning more broadly.
+While :numref:`sec_linear-algebra` contained enough machinery to communicate the mechanics of modern deep learning models, there is a lot more to the subject.
+In this section, we will go deeper, highlighting some geometric interpretations of linear algebra operations,
 and introducing a few fundamental concepts, including of eigenvalues and eigenvectors.
 -->
 
-Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến
-tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
-Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu
-và rộng hơn là học máy. Trong khi :numref:`sec_linear-algebra` chứa đựng đầy
-đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều
-cần thảo luận trong lĩnh vực này. Trong mục này, chúng ta sẽ đi sâu hơn, nhấn
-mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới
-thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
+Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
+Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu và rộng hơn là học máy.
+Trong khi :numref:`sec_linear-algebra` chứa đựng đầy đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều cần thảo luận trong lĩnh vực này.
+Trong mục này, chúng ta sẽ đi sâu hơn, nhấn mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
 
 <!--
 ## Geometry of Vectors
 -->
 
-## Ý nghĩa hình học của Vector
+## Ý nghĩa Hình học của Vector
 
 <!--
-First, we need to discuss the two common geometric interpretations of vectors,
-as either points or directions in space.
+First, we need to discuss the two common geometric interpretations of vectors, as either points or directions in space.
 Fundamentally, a vector is a list of numbers such as the Python list below.
 -->
 
@@ -46,9 +33,12 @@ Trước hết, chúng ta cần thảo luận hai diễn giải hình học ph�
 điểm hoặc hướng trong không gian. Về cơ bản, một vector là một danh sách các
 số giống như danh sách trong Python dưới đây:
 
+
 ```{.python .input}
+#@tab all
 v = [1, 7, 0, 1]
 ```
+
 
 <!--
 Mathematicians most often write this as either a *column* or *row* vector, which is to say either as
@@ -68,7 +58,7 @@ hoặc
 
 $$
 \mathbf{x}^\top = \begin{bmatrix}1 & 7 & 0 & 1\end{bmatrix}.
-$$
+$$ 
 
 <!--
 These often have different interpretations,
@@ -76,6 +66,13 @@ where data points are column vectors
 and weights used to form weighted sums are row vectors.
 However, it can be beneficial to be flexible.
 Matrices are useful data structures: they allow us to organize data that have different modalities of variation. For example, rows in our matrix might correspond to different houses (data points), while columns might correspond to different attributes. This should sound familiar if you have ever used spreadsheet software or have read :numref:`sec_pandas`. Thus, although the default orientation of a single vector is a column vector, in a matrix that represents a tabular dataset, it is more conventional to treat each data point as a row vector in the matrix. And, as we will see in later chapters, this convention will enable common deep learning practices. For example, along the outermost axis of an `ndarray`, we can access or enumerate minibatches of data points, or just data points if no minibatch exists.
+-->
+
+<!-- UPDATE
+These often have different interpretations, where data examples are column vectors and weights used to form weighted sums are row vectors.
+However, it can be beneficial to be flexible.
+As we have described in :numref:`sec_linear-algebra`, though a single vector's default orientation is a column vector,
+for any matrix representing a tabular dataset, treating each data example as a row vector in the matrix is more conventional.
 -->
 
 Những biểu diễn này thường có những cách diễn giải khác nhau. Các điểm dữ liệu
@@ -94,17 +91,12 @@ này phù hợp với cách triển khai các mô hình học sâu.
 Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số
 minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
 
-<!-- =================== Kết thúc dịch Phần 1 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 2 ==================== -->
 
 <!--
-Given a vector, the first interpretation
-that we should give it is as a point in space.
-In two or three dimensions, we can visualize these points
-by using the components of the vectors to define
-the location of the points in space compared
-to a fixed reference called the *origin*.  This can be seen in :numref:`fig_grid`.
+Given a vector, the first interpretation that we should give it is as a point in space.
+In two or three dimensions, we can visualize these points by using the components of 
+the vectors to define the location of the points in space compared to a fixed reference called the *origin*.
+This can be seen in :numref:`fig_grid`.
 -->
 
 Cách thứ nhất để giải thích một vector là coi nó như một điểm trong không gian.
@@ -133,12 +125,6 @@ Không giống như khi đối mặt với các bài toán khó hình dung như 
 một tập hợp của các điểm trong không gian. Việc phân loại ảnh chó mèo có thể coi
 như việc tìm ra cách phân biệt hai nhóm điểm riêng biệt trong không gian.
 
-<!-- Nhóm tác giả không phải là người bản xứ nói tiếng Anh. Thực tế, bản tiếng
-Anh này được dịch từ bản tiếng Trung rất nổi tiếng ở Trung Quốc. Khi dịch, tôi
-nghĩ chúng ta có thể sửa đổi câu văn đi một chút cho phù hợp với tiếng Việt.
-Đoạn này sẽ không hiển thị trên web vì nó đã được comment.
--->
-
 <!--
 In parallel, there is a second point of view
 that people often take of vectors: as directions in space.
@@ -149,17 +135,24 @@ to take $2$ steps to the right and $3$ steps up.
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
+<!-- UPDATE
+In parallel, there is a second point of view that people often take of vectors: as directions in space. 
+Not only can we think of the vector $\mathbf{v} = [3,2]^\top$  as the location $3$ units to the right and $2$ units up from the origin,
+we can also think of it as the direction itself to take $3$ steps to the right and $2$ steps up. 
+In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
+-->
+
 Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian. Chúng ta không những
 có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
-và bên trên $3$ đơn vị so với gốc toạ độ, chúng ta cũng có thể coi nó thể hiện
+và bên trên $3$ đơn vị so với gốc tọa độ, chúng ta cũng có thể coi nó thể hiện
 một hướng -- hướng $2$ bước về bên phải và $3$ bước lên trên. Theo cách này,
 ta coi tất cả các vector trong hình :numref:`fig_arrow` là như nhau.
 
 <!--
-![Any vector can be visualized as an arrow in the plane.  In this case, every vector drawn is a representation of the vector $(2,3)$.](../img/ParVec.svg)
+![Any vector can be visualized as an arrow in the plane. In this case, every vector drawn is a representation of the vector $(3,2)^\top$.](../img/ParVec.svg)
 -->
 
-![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector trong hình đều biểu diễn vector $(2,3)$.](../img/ParVec.svg)
+![Bất kỳ vector nào cũng có thể biểu diễn bằng một mũi tên trong mặt phẳng. Trong trường hợp này, mọi vector trong hình đều biểu diễn vector $(3,2)^\top$.](../img/ParVec.svg)
 :label:`fig_arrow`
 
 <!--
@@ -180,21 +173,17 @@ sau đó đi theo một hướng cho bởi một vector khác, như được cho
 ![Phép cộng vector có thể biểu diễn bằng cách đầu tiên đi theo một vector, sau đó đi theo vector kia.](../img/VecAdd.svg)
 :label:`fig_add-vec`
 
-<!-- =================== Kết thúc dịch Phần 2 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 3 ==================== -->
-
 <!--
 Vector subtraction has a similar interpretation.
 By considering the identity that $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
 we see that the vector $\mathbf{u}-\mathbf{v}$ is the direction
-that takes us from the point $\mathbf{u}$ to the point $\mathbf{v}$.
+that takes us from the point $\mathbf{v}$ to the point $\mathbf{u}$.
 -->
 
 Hiệu của hai vector có một cách diễn giải tương tự.
 Bằng cách biểu diễn $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
-ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{u}$ tới
-điểm $\mathbf{v}$.
+ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{v}$ tới
+điểm $\mathbf{u}$.
 
 
 <!--
@@ -205,7 +194,7 @@ ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\math
 
 <!--
 As we saw in :numref:`sec_linear-algebra`,
-if we take two column vectors say $\mathbf{u}$ and $\mathbf{v}$,
+if we take two column vectors $\mathbf{u}$ and $\mathbf{v}$,
 we can form their dot product by computing:
 -->
 
@@ -266,9 +255,6 @@ Vector $\mathbf{v}$ có độ dài $r$ và song song với trục $x$, vector $\
 có độ dài $s$ và tạo một góc $\theta$ với trục $x$. Nếu tính tích vô hướng
 của hai vector này, ta sẽ thấy rằng
 
-<!-- =================== Kết thúc dịch Phần 3 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 4 ==================== -->
 
 $$
 \mathbf{v}\cdot\mathbf{w} = rs\cos(\theta) = \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta).
@@ -312,10 +298,11 @@ Indeed, we can use this in three or three million dimensions without issue.
 Kết quả này tổng quát cho không gian nhiều chiều vì nó không sử dụng điều gì đặc biệt trong không gian hai chiều.
 
 <!--
-As a simple example, let's see how to compute the angle between a pair of vectors:
+As a simple example, let's us see how to compute the angle between a pair of vectors:
 -->
 
 Xét ví dụ đơn giản tính góc giữa cặp vector:
+
 
 ```{.python .input}
 %matplotlib inline
@@ -323,12 +310,35 @@ from d2l import mxnet as d2l
 from IPython import display
 from mxnet import gluon, np, npx
 npx.set_np()
-
 def angle(v, w):
     return np.arccos(v.dot(w) / (np.linalg.norm(v) * np.linalg.norm(w)))
-
 angle(np.array([0, 1, 2]), np.array([2, 3, 4]))
 ```
+
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+from IPython import display
+import torch
+from torchvision import transforms
+import torchvision
+def angle(v, w):
+    return torch.acos(v.dot(w) / (torch.norm(v) * torch.norm(w)))
+angle(torch.tensor([0, 1, 2], dtype=torch.float32), torch.tensor([2.0, 3, 4]))
+```
+
+```{.python .input}
+#@tab tensorflow
+%matplotlib inline
+from d2l import tensorflow as d2l
+from IPython import display
+import tensorflow as tf
+def angle(v, w):
+    return tf.acos(tf.tensordot(v, w, axes=1) / (tf.norm(v) * tf.norm(w)))
+angle(tf.constant([0, 1, 2], dtype=tf.float32), tf.constant([2.0, 3, 4]))
+```
+
 
 <!--
 We will not use it right now, but it is useful to know
@@ -394,9 +404,6 @@ hai nhưng nói về cùng một thứ. Trong một số cách mã hóa (như đ
 của một từ trong từ điển), việc này tương đương với nhân đôi vector mã hóa
 của văn bản, bởi vậy chúng ta lại có thể sử dụng góc.
 
-<!-- =================== Kết thúc dịch Phần 4 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 5 ==================== -->
 
 <!--
 ### Cosine Similarity
@@ -455,7 +462,7 @@ ba chiều). Trong một không gian vector $d$ chiều, một siêu phẳng có
 và chia không gian thành hai nửa không gian.
 
 <!--
-Let's start with an example.
+Let us start with an example.
 Suppose that we have a column vector $\mathbf{w}=[2,1]^\top$. We want to know, "what are the points $\mathbf{v}$ with $\mathbf{w}\cdot\mathbf{v} = 1$?"
 By recalling the connection between dot products and angles above :eqref:`eq_angle_forumla`,
 we can see that this is equivalent to
@@ -495,9 +502,6 @@ $\mathbf{w}$ chính là $1/\|\mathbf{w}\|$ như được biểu diễn trong :nu
 thẳng vuông góc với vector $\mathbf{w}$. Ta có thể tìm được phương trình của
 đường thẳng này là $2x + y = 1$ hoặc $y = 1 - 2x$.
 
-<!-- =================== Kết thúc dịch Phần 5 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 6 ==================== -->
 
 <!--
 If we now look at what happens when we ask about the set of points with
@@ -602,6 +606,47 @@ ave_0 = np.mean(X_train_0, axis=0)
 ave_1 = np.mean(X_train_1, axis=0)
 ```
 
+```{.python .input}
+#@tab pytorch
+# Load in the dataset
+trans = []
+trans.append(transforms.ToTensor())
+trans = transforms.Compose(trans)
+train = torchvision.datasets.FashionMNIST(root="../data", transform=trans,
+                                          train=True, download=True)
+test = torchvision.datasets.FashionMNIST(root="../data", transform=trans,
+                                         train=False, download=True)
+X_train_0 = torch.stack(
+    [x[0] * 256 for x in train if x[1] == 0]).type(torch.float32)
+X_train_1 = torch.stack(
+    [x[0] * 256 for x in train if x[1] == 1]).type(torch.float32)
+X_test = torch.stack(
+    [x[0] * 256 for x in test if x[1] == 0 or x[1] == 1]).type(torch.float32)
+y_test = torch.stack([torch.tensor(x[1]) for x in test
+                      if x[1] == 0 or x[1] == 1]).type(torch.float32)
+# Compute averages
+ave_0 = torch.mean(X_train_0, axis=0)
+ave_1 = torch.mean(X_train_1, axis=0)
+```
+
+```{.python .input}
+#@tab tensorflow
+# Load in the dataset
+(train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.fashion_mnist.load_data()
+X_train_0 = tf.cast(tf.stack(train_images[[i for i, label in enumerate(
+    train_labels) if label == 0]] * 256), dtype=tf.float32)
+X_train_1 = tf.cast(tf.stack(train_images[[i for i, label in enumerate(
+    train_labels) if label == 1]] * 256), dtype=tf.float32)
+X_test = tf.cast(tf.stack(test_images[[i for i, label in enumerate(
+    test_labels) if label == 0]] * 256), dtype=tf.float32)
+y_test = tf.cast(tf.stack(test_images[[i for i, label in enumerate(
+    test_labels) if label == 1]] * 256), dtype=tf.float32)
+# Compute averages
+ave_0 = tf.reduce_mean(X_train_0, axis=0)
+ave_1 = tf.reduce_mean(X_train_1, axis=0)
+```
+
+
 <!--
 It can be informative to examine these averages in detail, so let's plot what they look like.  In this case, we see that the average indeed resembles a blurry image of a t-shirt.
 -->
@@ -610,12 +655,23 @@ It can be informative to examine these averages in detail, so let's plot what th
 hợp này, chúng ta thấy rằng ảnh trung bình của áo thun cũng ở dạng
 một phiên bản mờ của một chiếc áo thun.
 
+
 ```{.python .input}
+#@tab mxnet, pytorch
 # Plot average t-shirt
 d2l.set_figsize()
 d2l.plt.imshow(ave_0.reshape(28, 28).tolist(), cmap='Greys')
 d2l.plt.show()
 ```
+
+```{.python .input}
+#@tab tensorflow
+# Plot average t-shirt
+d2l.set_figsize()
+d2l.plt.imshow(tf.reshape(ave_0, (28, 28)), cmap='Greys')
+d2l.plt.show()
+```
+
 
 <!--
 In the second case, we again see that the average resembles a blurry image of trousers.
@@ -625,8 +681,16 @@ Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình có d�
 một ảnh phiên bản mờ một chiếc quần dài.
 
 ```{.python .input}
+#@tab mxnet, pytorch
 # Plot average trousers
 d2l.plt.imshow(ave_1.reshape(28, 28).tolist(), cmap='Greys')
+d2l.plt.show()
+```
+
+```{.python .input}
+#@tab tensorflow
+# Plot average trousers
+d2l.plt.imshow(tf.reshape(ave_1, (28, 28)), cmap='Greys')
 d2l.plt.show()
 ```
 
@@ -641,14 +705,28 @@ hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng mà cho k
 # Print test set accuracy with eyeballed threshold
 w = (ave_1 - ave_0).T
 predictions = X_test.reshape(2000, -1).dot(w.flatten()) > -1500000
-
 # Accuracy
 np.mean(predictions.astype(y_test.dtype) == y_test, dtype=np.float64)
 ```
 
-<!-- =================== Kết thúc dịch Phần 6 ==================== -->
+```{.python .input}
+#@tab pytorch
+# Print test set accuracy with eyeballed threshold
+w = (ave_1 - ave_0).T
+# '@' is Matrix Multiplication operator in pytorch.
+predictions = X_test.reshape(2000, -1) @ (w.flatten()) > -1500000
+# Accuracy
+torch.mean(predictions.type(y_test.dtype) == y_test, dtype=torch.float64)
+```
 
-<!-- =================== Bắt đầu dịch Phần 7 ==================== -->
+```{.python .input}
+#@tab tensorflow
+# Print test set accuracy with eyeballed threshold
+w = tf.transpose(ave_1 - ave_0)
+predictions = tf.reduce_sum(X_test * tf.nest.flatten(w), axis=0) > -1500000
+# Accuracy
+tf.reduce_mean(tf.cast(tf.cast(predictions, y_test.dtype) == y_test, tf.float32))
+```
 
 <!--
 ## Geometry of Linear Transformations
@@ -727,11 +805,7 @@ $[1,0]^\top$ và $[0,1]^\top$.
 Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
 (tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
 (tính toán cho chỉ hai vector).
-Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa  là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
-
-<!-- =================== Kết thúc dịch Phần 7 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 8 ==================== -->
+Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
 
 <!--
 Let's draw what happens when we use the specific matrix
@@ -760,7 +834,8 @@ but the grid structure must remain as you see in :numref:`fig_grid-transform`.
 
 Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng $2\cdot[1,0]^\top + -1\cdot[0,1]^\top$,
 và bởi vậy ta biết ma trận $A$ sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$.
-Bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm xiên, xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ nguyên như trong :numref:`fig_grid-transform`.
+Bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm xiên, 
+xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ nguyên như trong :numref:`fig_grid-transform`.
 
 <!-- câu này mấy bác Tàu viết quá rườm rà, mình sẽ xem lại và tách thành nhiều câu -->
 
@@ -768,8 +843,7 @@ Bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, 
 ![The matrix $\mathbf{A}$ acting on the given basis vectors.  Notice how the entire grid is transported along with it.](../img/GridTransform.svg)
 -->
 
-![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc
-toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg)
+![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg)
 :label:`fig_grid-transform`
 
 <!--
@@ -800,8 +874,8 @@ compresses the entire two-dimensional plane down to a single line.
 Identifying and working with such transformations are the topic of a later section,
 but geometrically we can see that this is fundamentally different
 from the types of transformations we saw above.
-For instance, the result from matrix $\mathbf{A}$ can be "bent back" to the original grid.  The results from matrix $\mathbf{B}$ cannot
-because we will never know where the vector $[1,2]^\top$ came from---was
+For instance, the result from matrix $\mathbf{A}$ can be "bent back" to the original grid.
+The results from matrix $\mathbf{B}$ cannot because we will never know where the vector $[1,2]^\top$ came from---was
 it $[1,1]^\top$ or $[0, -1]^\top$?
 -->
 
@@ -820,11 +894,8 @@ distorts the entire space in whatever dimension space we are dealing with.
 -->
 
 Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho ma trận bậc cao hơn.
-Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem ma trận đó biến đổi các vector này như thế nào, ta có thể phần nào hình dung được phép nhân ma trận đã làm biến dạng toàn bộ không gian đa chiều như thế nào.
-
-<!-- =================== Kết thúc dịch Phần 8 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 9 ==================== -->
+Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem ma trận đó biến đổi các vector này như thế nào, 
+ta có thể phần nào hình dung được phép nhân ma trận đã làm biến dạng toàn bộ không gian đa chiều như thế nào.
 
 <!--
 ## Linear Dependence
@@ -843,12 +914,13 @@ $$
 \end{bmatrix}.
 $$
 
+
 <!--
 This compresses the entire plane down to live on the single line $y = 2x$.
 The question now arises: is there some way we can detect this
 just looking at the matrix itself?
 The answer is that indeed we can.
-Let's take $\mathbf{b}_1 = [2,4]^\top$ and $\mathbf{b}_2 = [-1, -2]^\top$
+Let us take $\mathbf{b}_1 = [2,4]^\top$ and $\mathbf{b}_2 = [-1, -2]^\top$ 
 be the two columns of $\mathbf{B}$.
 Remember that we can write everything transformed by the matrix $\mathbf{B}$
 as a weighted sum of the columns of the matrix:
@@ -864,13 +936,16 @@ Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu ch�
 Câu trả lời là có thể.
 Đặt $\mathbf{b}_1 = [2,4]^\top$ và $\mathbf{b}_2 = [-1, -2]^\top$
 là hai cột của $\mathbf{B}$.
-Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi bằng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$.
+Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi bằng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, 
+chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$.
 Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
 Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này mà chỉ dùng $\mathbf{b}_2$:
+
 
 $$
 a_1\mathbf{b}_1 + a_2\mathbf{b}_2 = -2a_1\mathbf{b}_2 + a_2\mathbf{b}_2 = (a_2-2a_1)\mathbf{b}_2.
 $$
+
 
 <!--
 This means that one of the columns is, in a sense, redundant
@@ -893,11 +968,12 @@ $$
 
 <!--
 In general, we will say that a collection of vectors
-$\mathbf{v}_1, \ldots \mathbf{v}_k$ are *linearly dependent*
+$\mathbf{v}_1, \ldots, \mathbf{v}_k$ are *linearly dependent*
 if there exist coefficients $a_1, \ldots, a_k$ *not all equal to zero* so that
 -->
 
-Tổng quát, ta sẽ nói rằng: một tập hợp các vector $\mathbf{v}_1, \ldots \mathbf{v}_k$ là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k$ *không đồng thời bằng không* sao cho
+Tổng quát, ta sẽ nói rằng: một tập hợp các vector $\mathbf{v}_1, \ldots, \mathbf{v}_k$ 
+là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k$ *không đồng thời bằng không* sao cho
 
 $$
 \sum_{i=1}^k a_i\mathbf{v_i} = 0.
@@ -919,10 +995,6 @@ Trong trường hợp này, ta có thể biểu diễn một vector dưới dạ
 Bởi vậy, sự phụ thuộc tuyến tính giữa các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang làm giảm số chiều không gian.
 Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
 Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể đảo ngược (khả nghịch) được.
-
-<!-- =================== Kết thúc dịch Phần 9 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 10 ==================== -->
 
 <!--
 ## Rank
@@ -978,7 +1050,8 @@ the first two columns are linearly independent,
 however any of the four collections of three columns are dependent.
 -->
 
-Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính, trong khi tập hợp ba cột bất kỳ trong ma trận đều phụ thuộc tuyến tính.
+Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính, 
+trong khi tập hợp ba cột bất kỳ trong ma trận đều phụ thuộc tuyến tính.
 
 <!--
 This procedure, as described, is very inefficient.
@@ -993,10 +1066,6 @@ is well defined and understand the meaning.
 Quá trình được mô tả ở trên rất không hiệu quả.
 Nó đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên.
 Sau này chúng ta sẽ thấy một cách hiệu quả hơn để tính hạng của ma trận, nhưng bây giờ những gì được nói đến ở trên là đủ để hiểu khái niệm và ý nghĩa của hạng.
-
-<!-- =================== Kết thúc dịch Phần 10 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 11 ==================== -->
 
 <!--
 ## Invertibility
@@ -1037,9 +1106,11 @@ Ma trận này được gọi là ma trận *đơn vị*.
 �Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này.
 Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
+
 $$
 \mathbf{A}^{-1}\mathbf{A} = \mathbf{A}\mathbf{A}^{-1} =  \mathbf{I}.
 $$
+
 
 <!--
 If we look at this as a system, we have $n \times n$ unknowns
@@ -1071,12 +1142,14 @@ then we can see that the inverse is
 
 thì nghịch đảo của ma trận này là
 
+
 $$
  \frac{1}{ad-bc}  \begin{bmatrix}
 d & -b \\
 -c & a
 \end{bmatrix}.
 $$
+
 
 <!--
 We can test to see this by seeing that multiplying
@@ -1085,21 +1158,35 @@ by the inverse given by the formula above works in practice.
 
 Việc này có thể kiểm chứng bằng công thức ma trận nghịch đảo trình bày ở trên.
 
+
 ```{.python .input}
 M = np.array([[1, 2], [1, 4]])
 M_inv = np.array([[2, -1], [-0.5, 0.5]])
 M_inv.dot(M)
 ```
 
-<!-- =================== Kết thúc dịch Phần 11 ==================== -->
+```{.python .input}
+#@tab pytorch
+M = torch.tensor([[1, 2], [1, 4]], dtype=torch.float32)
+M_inv = torch.tensor([[2, -1], [-0.5, 0.5]])
+M_inv @ M
+```
 
-<!-- =================== Bắt đầu dịch Phần 12 ==================== -->
+```{.python .input}
+#@tab tensorflow
+M = tf.constant([[1, 2], [1, 4]], dtype=tf.float32)
+M_inv = tf.constant([[2, -1], [-0.5, 0.5]])
+tf.matmul(M_inv, M)
+```
+
 
 <!--
 ### Numerical Issues
 -->
 
 ### Vấn đề tính toán
+
+<!--
 While the inverse of a matrix is useful in theory,
 we must say that most of the time we do not wish
 to *use* the matrix inverse to solve a problem in practice.
@@ -1143,9 +1230,11 @@ the inverse will typically have almost every entry non-negative,
 requiring us to store all $1\text{M}^2$ entries---that is $1$ trillion entries!
 -->
 
-Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (_sparse_), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0.
+Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (*sparse*), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0.
 Nếu thử một vài ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là một ma trận thưa.
-Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó), ma trận nghịch đảo vẫn hầu như có tất cả các thành phần không âm và đòi hỏi chúng ta phải lưu trữ 1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử!
+Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó), 
+ma trận nghịch đảo vẫn hầu như có tất cả các thành phần không âm và đòi hỏi chúng ta phải lưu trữ $1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử!
+
 
 <!--
 While we do not have time to dive all the way into the thorny numerical issues
@@ -1154,19 +1243,18 @@ we want to provide you with some intuition about when to proceed with caution,
 and generally avoiding inversion in practice is a good rule of thumb.
 -->
 
-Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
-
-<!-- =================== Kết thúc dịch Phần 12 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 13 ==================== -->
+Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, 
+chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
 
 <!--
 ## Determinant
 -->
 
 ## Định thức
+
+<!--
 The geometric view of linear algebra gives an intuitive way
-to interpret a a fundamental quantity known as the *determinant*.
+to interpret a fundamental quantity known as the *determinant*.
 Consider the grid image from before, but now with a highlighted region (:numref:`fig_grid-filled`).
 -->
 
@@ -1195,8 +1283,8 @@ Không có lý do nào để nói hình bình hành này có cùng diện tích 
 
 $$
 \mathbf{A} = \begin{bmatrix}
-1 & -1 \\
-2 & 3
+1 & 2 \\
+-1 & 3
 \end{bmatrix},
 $$
 
@@ -1221,8 +1309,7 @@ c & d
 $$
 
 <!--
-we can see with some computation that the area
-of the resulting parallelogram is $ad-bc$.
+we can see with some computation that the area of the resulting parallelogram is $ad-bc$.
 This area is referred to as the *determinant*.
 -->
 
@@ -1240,20 +1327,26 @@ import numpy as np
 np.linalg.det(np.array([[1, -1], [2, 3]]))
 ```
 
+```{.python .input}
+#@tab pytorch
+torch.det(torch.tensor([[1, -1], [2, 3]], dtype=torch.float32))
+```
+
+```{.python .input}
+#@tab tensorflow
+tf.linalg.det(tf.constant([[1, -1], [2, 3]], dtype=tf.float32))
+```
+
 <!--
-The eagle-eyed amongst us will notice
-that this expression can be zero or even negative.
-For the negative term, this is a matter of convention
-taken generally in mathematics:
-if the matrix flips the figure,
-we say the area is negated.
+The eagle-eyed amongst us will notice that this expression can be zero or even negative.
+For the negative term, this is a matter of convention taken generally in mathematics: 
+if the matrix flips the figure, we say the area is negated.
 Let's see now that when the determinant is zero, we learn more.
 -->
 
-Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm. Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu. Còn khi định thức bằng không thì sao?
-<!--
-Lưu ý là mấy bác Tàu này rất thích chơi chữ, mình cứ dịch đơn giản dễ hiểu và gần gũi với tiếng Việt.
--->
+Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm.
+Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu.
+Còn khi định thức bằng không thì sao?
 
 <!--
 Let's consider
@@ -1268,16 +1361,12 @@ $$
 $$
 
 <!--
-If we compute the determinant of this matrix,
-we get $2\cdot(-2 ) - 4\cdot(-1) = 0$.
+If we compute the determinant of this matrix, we get $2\cdot(-2 ) - 4\cdot(-1) = 0$.
 Given our understanding above, this makes sense.
-$\mathbf{B}$ compresses the square from the original image
-down to a line segment, which has zero area.
-And indeed, being compressed into a lower dimensional space
-is the only way to have zero area after the transformation.
+$\mathbf{B}$ compresses the square from the original image down to a line segment, which has zero area.
+And indeed, being compressed into a lower dimensional space is the only way to have zero area after the transformation.
 Thus we see the following result is true:
-a matrix $A$ is invertible if and only if
-the determinant is not equal to zero.
+a matrix $A$ is invertible if and only if the determinant is not equal to zero.
 -->
 
 Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$.
@@ -1285,17 +1374,14 @@ Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-
 Thật vậy, nén một hình xuống không gian mới với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi.
 Do đó chúng ta suy ra được kết quả sau: một ma trận $A$ khả nghịch nếu và chỉ nếu định thức khác không.
 
+
 <!--
 As a final comment, imagine that we have any figure drawn on the plane.
-Thinking like computer scientists, we can decompose
-that figure into a collection of little squares
-so that the area of the figure is in essence
-just the number of squares in the decomposition.
-If we now transform that figure by a matrix,
-we send each of these squares to parallelograms,
+Thinking like computer scientists, we can decompose that figure into a collection of little squares
+so that the area of the figure is in essence just the number of squares in the decomposition.
+If we now transform that figure by a matrix, we send each of these squares to parallelograms,
 each one of which has area given by the determinant.
-We see that for any figure, the determinant gives the (signed) number
-that a matrix scales the area of any figure.
+We see that for any figure, the determinant gives the (signed) number that a matrix scales the area of any figure.
 -->
 
 Hãy tưởng tượng ta có một hình bất kỳ trên mặt phẳng.
@@ -1303,18 +1389,14 @@ Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nh
 Bây giờ nếu ta biến đổi hình đó bằng một ma trận, ta biến đổi các hình vuông nhỏ thành các hình bình hành với diện tích bằng với định thức của ma trận.
 Ta thấy rằng với bất kỳ hình nào, định thức cho ta một con số (có dấu) mà ma trận co giãn diện tích của một hình bất kỳ.
 
+
 <!--
-Computing determinants for larger matrices can be laborious,
-but the  intuition is the same.
-The determinant remains the factor
-that $n\times n$ matrices scale $n$-dimensional volumes.
+Computing determinants for larger matrices can be laborious, but the intuition is the same.
+The determinant remains the factor that $n\times n$ matrices scale $n$-dimensional volumes.
 -->
 
-Việc tính định thức cho các ma trận lớn có thể phức tạp hơn, nhưng ý tưởng là như nhau. Định thức vẫn có tính chất rằng ma trận $n\times n$ co giãn các khối thể tích trong không gian $n$ chiều.
-
-<!-- =================== Kết thúc dịch Phần 13 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 14 ==================== -->
+Việc tính định thức cho các ma trận lớn có thể phức tạp hơn, nhưng ý tưởng là như nhau.
+Định thức vẫn có tính chất rằng ma trận $n\times n$ co giãn các khối thể tích trong không gian $n$ chiều.
 
 <!--
 ## Tensors and Common Linear Algebra Operations
@@ -1324,14 +1406,13 @@ Việc tính định thức cho các ma trận lớn có thể phức tạp hơn
 
 <!--
 In :numref:`sec_linear-algebra` the concept of tensors was introduced.
-In this section, we will dive more deeply into tensor contractions
-(the tensor equivalent of matrix multiplication),
-and see how it can provide a unified view
-on a number of matrix and vector operations.
+In this section, we will dive more deeply into tensor contractions (the tensor equivalent of matrix multiplication),
+and see how it can provide a unified view on a number of matrix and vector operations.
 -->
 
 Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`.
-Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận), và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
+Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận), 
+và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
 
 <!--
 With matrices and vectors we knew how to multiply them to transform data.
@@ -1353,13 +1434,13 @@ or equivalently
 
 hoặc tương đương
 
+
 $$ c_{i, j} = \sum_{k} a_{i, k}b_{k, j}.$$
+
 
 <!--
 This pattern is one we can repeat for tensors.
-For tensors, there is no one case of what
-to sum over that can be universally chosen,
-so we need specify exactly which indices we want to sum over.
+For tensors, there is no one case of what to sum over that can be universally chosen, so we need specify exactly which indices we want to sum over.
 For instance we could consider
 -->
 
@@ -1374,19 +1455,15 @@ $$
 
 <!--
 Such a transformation is called a *tensor contraction*.
-It can represent a far more flexible family of transformations
-that matrix multiplication alone.
+It can represent a far more flexible family of transformations that matrix multiplication alone.
 -->
 
 Phép biến đổi này được gọi là một phép *co tensor*.
 Nó có thể biểu diễn được các phép biến đổi một cách linh động hơn nhiều so với phép nhân ma trận đơn thuần.
 
 <!--
-As a often-used notational simplification,
-we can notice that the sum is over exactly those indices
-that occur more than once in the expression,
-thus people often work with *Einstein notation*,
-where the summation is implicitly taken over all repeated indices.
+As a often-used notational simplification, we can notice that the sum is over exactly those indices that occur more than once in the expression, 
+thus people often work with *Einstein notation*, where the summation is implicitly taken over all repeated indices.
 This gives the compact expression:
 -->
 
@@ -1397,10 +1474,6 @@ $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
 
-<!-- =================== Kết thúc dịch Phần 14 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 15 ==================== -->
-
 <!--
 ### Common Examples from Linear Algebra
 -->
@@ -1408,19 +1481,11 @@ $$
 ### Một số ví dụ thông dụng trong Đại Số Tuyến Tính
 
 <!--
-Let's see how many of the linear algebraic definitions
+Let us see how many of the linear algebraic definitions
 we have seen before can be expressed in this compressed tensor notation:
 -->
 
 Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã học dưới biểu diễn tensor nén gọn này:
-
-<!--
-* $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
-* $\|\mathbf{v}\|_2^{2} = \sum_i v_iv_i$
-* $(\mathbf{A}\mathbf{v})_i = \sum_j a_{ij}v_j$
-* $(\mathbf{A}\mathbf{B})_{ik} = \sum_j a_{ij}b_{jk}$
-* $\mathrm{tr}(\mathbf{A}) = \sum_i a_{ii}$
--->
 
 * $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
 * $\|\mathbf{v}\|_2^{2} = \sum_i v_iv_i$
@@ -1438,12 +1503,11 @@ Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng
 ### Expressing in Code
 -->
 
-### Biểu diễn khi lập trình
+### Biểu diễn khi Lập trình
 
 <!--
 Tensors may flexibly be operated on in code as well.
-As seen in :numref:`sec_linear-algebra`,
-we can create tensors as is shown below.
+As seen in :numref:`sec_linear-algebra`, we can create tensors as is shown below.
 -->
 
 Tensor cũng có thể được thao tác linh hoạt dưới dạng mã.
@@ -1454,22 +1518,38 @@ Như đã thấy ở :numref:`sec_linear-algebra`, ta có thể tạo tensor b�
 B = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
 A = np.array([[1, 2], [3, 4]])
 v = np.array([1, 2])
+# Print out the shapes
+A.shape, B.shape, v.shape
+```
 
+```{.python .input}
+#@tab pytorch
+# Define tensors
+B = torch.tensor([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+A = torch.tensor([[1, 2], [3, 4]])
+v = torch.tensor([1, 2])
+# Print out the shapes
+A.shape, B.shape, v.shape
+```
+
+```{.python .input}
+#@tab tensorflow
+# Define tensors
+B = tf.constant([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+A = tf.constant([[1, 2], [3, 4]])
+v = tf.constant([1, 2])
 # Print out the shapes
 A.shape, B.shape, v.shape
 ```
 
 <!--
-Einstein summation has been implemented directly  via ```np.einsum```.
-The indices that occurs in the Einstein summation can be passed as a string,
-followed by the tensors that are being acted upon.
-For instance, to implement matrix multiplication,
-we can consider the Einstein summation seen above
-($\mathbf{A}\mathbf{v} = a_{ij}v_j$)
-and strip out the indices themselves to get the implementation:
+Einstein summation has been implemented directly.
+The indices that occurs in the Einstein summation can be passed as a string, followed by the tensors that are being acted upon.
+For instance, to implement matrix multiplication, we can consider the Einstein summation seen above
+($\mathbf{A}\mathbf{v} = a_{ij}v_j$) and strip out the indices themselves to get the implementation:
 -->
 
-Phép tính tổng Einstein đã được lập trình thông qua hàm ```np.einsum```.
+Phép tính tổng Einstein đã được lập trình trực tiếp.
 Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor để thao tác trên đó.
 Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
 
@@ -1478,17 +1558,28 @@ Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng ph
 np.einsum("ij, j -> i", A, v), A.dot(v)
 ```
 
+```{.python .input}
+#@tab pytorch
+# Reimplement matrix multiplication
+torch.einsum("ij, j -> i", A, v), A@v
+```
+
+```{.python .input}
+#@tab tensorflow
+# Reimplement matrix multiplication
+tf.einsum("ij, j -> i", A, v), tf.matmul(A, tf.reshape(v, (2, 1)))
+```
+
 <!--
 This is a highly flexible notation.
-For instance if we want to compute
-what would be traditionally written as
+For instance if we want to compute what would be traditionally written as
 -->
 
 Đây là một ký hiệu cực kỳ linh hoạt.
 Giả sử ta muốn tính toán một phép tính thường được ghi một cách truyền thống là
 
 $$
-c_{kl} = \sum_{ij} \mathbf{B}_{ijk}\mathbf{A}_{il}v_j.
+c_{kl} = \sum_{ij} \mathbf{b}_{ijk}\mathbf{a}_{il}v_j.
 $$
 
 <!--
@@ -1501,12 +1592,19 @@ nó có thể được thực hiện thông qua phép tổng Einstein như sau:
 np.einsum("ijk, il, j -> kl", B, A, v)
 ```
 
+```{.python .input}
+#@tab pytorch
+torch.einsum("ijk, il, j -> kl", B, A, v)
+```
+
+```{.python .input}
+#@tab tensorflow
+tf.einsum("ijk, il, j -> kl", B, A, v)
+```
+
 <!--
-This notation is readable and efficient for humans,
-however bulky if for whatever reason
-we need to generate a tensor contraction programmatically.
-For this reason, `einsum` provides an alternative notation
-by providing integer indices for each tensor.
+This notation is readable and efficient for humans, however bulky if for whatever reason we need to generate a tensor contraction programmatically.
+For this reason, `einsum` provides an alternative notation by providing integer indices for each tensor.
 For example, the same tensor contraction can also be written as:
 -->
 
@@ -1514,8 +1612,19 @@ Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhi�
 Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
 Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
 
+
 ```{.python .input}
 np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
+```
+
+```{.python .input}
+#@tab pytorch
+# PyTorch doesn't support this type of notation.
+```
+
+```{.python .input}
+#@tab tensorflow
+# TensorFlow doesn't support this type of notation.
 ```
 
 <!--
@@ -1524,68 +1633,41 @@ Either notation allows for concise and efficient representation of tensor contra
 
 Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chính xác và hiệu quả.
 
-<!-- =================== Kết thúc dịch Phần 15 ==================== -->
-
-<!-- =================== Bắt đầu dịch Phần 16 ==================== -->
-
-<!--
-## Summary
--->
 
 ## Tóm tắt
 
 <!--
 * Vectors can be interpreted geometrically as either points or directions in space.
--->
-
-Về phương diện hình học vector có thể được hiểu như là điểm hoặc hướng trong không gian.
-
-<!--
 * Dot products define the notion of angle to arbitrarily high-dimensional spaces.
--->
-
-* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ.
-
-<!--
-* Hyperplanes are high-dimensional generalizations of lines and planes.  They can be used to define decision planes that are often used as the last step in a classification task.
--->
-
-* Siêu phẳng (_hyperplane_) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
-Chúng có thể được dùng để định nghĩa mặt phẳng quyết định được dùng trong bước cuối cùng của bài toán phân loại.
-
-<!--
-* Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates. They represent a very restricted, but mathematically clean, way to transform vectors.
--->
-
-* Phép nhân ma trận có thể được biểu diễn hình học như việc biến dạng một cách đồng nhất các các điểm toạ độ.
-Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
-
-<!--
-* Linear dependence is a way to tell when a collection of vectors are in a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space). The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
--->
-
-* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chỉ nằm trong không gian $2$ chiều).
-Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
-
-<!--
-* When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first. Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
--->
-
-* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác mà hoàn tác lại hành động trước đó.
-Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (_numerical instability_) của nó.
-
-<!--
-* Determinants allow us to measure how much a matrix expands or contracts a space. A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
+* Hyperplanes are high-dimensional generalizations of lines and planes.
+They can be used to define decision planes that are often used as the last step in a classification task.
+* Matrix multiplication can be geometrically interpreted as uniform distortions of the underlying coordinates.
+They represent a very restricted, but mathematically clean, way to transform vectors.
+* Linear dependence is a way to tell when a collection of vectors are in 
+a lower dimensional space than we would expect (say you have $3$ vectors living in a $2$-dimensional space).
+The rank of a matrix is the size of the largest subset of its columns that are linearly independent.
+* When a matrix's inverse is defined, matrix inversion allows us to find another matrix that undoes the action of the first.
+Matrix inversion is useful in theory, but requires care in practice owing to numerical instability.
+* Determinants allow us to measure how much a matrix expands or contracts a space.
+A nonzero determinant implies an invertible (non-singular) matrix and a zero-valued determinant means that the matrix is non-invertible (singular).
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
 
+* Về phương diện hình học vector có thể được hiểu như là điểm hoặc hướng trong không gian.
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ.
+* Siêu phẳng (*hyperplane*) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
+Chúng có thể được dùng để định nghĩa mặt phẳng quyết định được dùng trong bước cuối cùng của bài toán phân loại.
+* Phép nhân ma trận có thể được biểu diễn hình học như việc biến dạng một cách đồng nhất các các điểm tọa độ.
+Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
+* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn 
+so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chỉ nằm trong không gian $2$ chiều).
+Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
+* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác mà hoàn tác lại hành động trước đó.
+Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (*numerical instability*) của nó.
 * Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
 Một ma trận là khả nghịch khi và chỉ khi định thức của nó khác không.
 * Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
 
-<!--
-## Exercises
--->
 
 ## Bài tập
 
@@ -1610,7 +1692,8 @@ $$
 2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ và $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có phải là nghịch đảo của nhau?
 
 <!--
-3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
+3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.
+What is the area after transforming the figure by the matrix
 -->
 
 Giả sử ta vẽ ra một hình trong mặt phẳng với diện tích $100\mathrm{m}^2$.
@@ -1634,14 +1717,16 @@ $$
  * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$
 
 <!--
-5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
+5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.
+True or false: the determinant of such a matrix is always $0$?
 -->
 
 5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với các giá trị $a, b, c$, và $d$ nào đó.
 Đúng hay sai: một ma trận như thế luôn có định thức bằng $0$?
 
 <!--
-6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.
+What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
 -->
 
 6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ và $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
@@ -1654,52 +1739,23 @@ Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao
 7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý?
 
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/5147)
--->
+## Thảo luận
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/410)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
-## [Thảo luận](https://discuss.mxnet.io/t/5147)
-
-<!--
-![](../img/qr_geometry-linear-algebric-ops.svg)
--->
-
-<!-- =================== Kết thúc dịch Phần 16 ==================== -->
 
 ### Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
 
-Lưu ý:
-* Mỗi tên chỉ xuất hiện một lần: Nếu bạn đã dịch hoặc review phần 1 của trang này
-thì không cần điền vào các phần sau nữa.
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
--->
-
-<!-- Phần 1 -->
+* Đoàn Võ Duy Thanh
 * Vũ Hữu Tiệp
-
-<!-- Phần 2 -->
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
 * Hoàng Trọng Tuấn
 * Nguyễn Cảnh Thướng
-
-<!-- Phần 7 -->
 * Nguyễn Xuân Tú
-
-<!-- Phần 8 -->
 * Phạm Hồng Vinh
-
-<!-- Phần 11 -->
 * Trần Thị Hồng Hạnh
-
-<!-- Phần 12 -->
 * Nguyễn Lê Quang Nhật
-
-<!-- Phần 16 -->
 * Mai Sơn Hải
+
+*Lần cập nhật gần nhất: 08/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
