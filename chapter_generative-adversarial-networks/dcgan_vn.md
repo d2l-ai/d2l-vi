@@ -471,7 +471,7 @@ net_D(x).shape
 ## Training
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện
 
 
 <!--
@@ -483,7 +483,12 @@ to take care of the rapid changing gradients because the generator and the discr
 Besides, the random generated noise `Z`, is a 4-D tensor and we are using GPU to accelerate the computation.
 -->
 
-*dịch đoạn phía trên*
+So với mô hình GAN cơ bản trong :numref:`sec_basic_gan`,
+ta sử dụng cùng tốc độ học cho cả bộ sinh và bộ phân biệt do chúng tương đồng với nhau.
+Thêm nữa, ta thay đổi $\beta_1$ trong Adam (:numref:`sec_adam`) từ $0.9$ về $0.5$.
+Việc này làm giảm độ mượt của động lượng, tức là trung bình động trọng số mũ của các gradient trước đó,
+nhằm đáp ứng sự thay đổi nhanh chóng của grandient do bộ sinh và bộ phân biệt đối kháng lẫn nhau.
+Bên cạnh đó, nhiễu ngẫu nhiên `Z` là một tensor 4-D và ta sử dụng GPU để tăng tốc độ tính toán.
 
 
 ```{.python .input}
@@ -575,7 +580,8 @@ We train the model with a small number of epochs just for demonstration.
 For better performance, the variable `num_epochs` can be set to a larger number.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ.
+Để đạt hiệu năng tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn.
 
 
 ```{.python .input}
@@ -593,7 +599,10 @@ train(net_D, net_G, data_iter, num_epochs, lr, latent_dim)
 It aims to fix the “dying ReLU” problem and helps the gradients flow easier through the architecture.
 -->
 
-*dịch đoạn phía trên*
+* Kiến trúc DCGAN gồm có bốn tầng tích chập cho Bộ phân biệt và bốn tầng tích chập "sải bước một phần (*fractionally-strided*)" cho Bộ sinh.
+* Bộ phân biệt là một mạng tích chập 4 tầng có sải bước với chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
+* ReLU rò rỉ là một hàm phi tuyến trả về kết quả khác không với đầu vào âm.
+Hàm này nhằm khắc phục vần đề "chết ReLU" và giúp gradient truyền một cách dễ dàng hơn trong suốt kiến trúc.
 
 
 ## Bài tập
@@ -603,7 +612,8 @@ It aims to fix the “dying ReLU” problem and helps the gradients flow easier 
 2. Apply DCGAN on Fashion-MNIST and see which category works well and which does not.
 -->
 
-*dịch đoạn phía trên*
+1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay phì ReLU rò rỉ?
+2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -632,4 +642,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
