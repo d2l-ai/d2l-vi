@@ -111,7 +111,7 @@ và căn chỉnh "tired" trong câu giả thuyết với "sleep" trong câu ti�
 Tương tự, ta muốn căn chỉnh "i" trong câu tiền đề với "i" trong câu giả thuyết,
 và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết.
 Lưu ý là sự căn chỉnh này là *mềm*, sử dụng trung bình trọng số, 
-ở đây lý tưởng là các trọng số lớn liên kết với các từ được sắp xếp.
+ở đây lý tưởng là các trọng số lớn ứng với các từ được căn chỉnh.
 Để dễ dàng cho việc minh họa, hình :numref:`fig_nli_attention` diễn tả sự sắp xếp này theo một cách *cứng*.
 
 
