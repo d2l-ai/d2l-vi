@@ -43,7 +43,7 @@ Cả word2vec và GloVe đều gán cùng một vector được tiền huấn lu
 Về mặt hình thức, biểu diễn độc lập ngữ cảnh của một token bất kỳ $x$ là một hàm $f(x)$ chỉ nhận $x$ làm đầu vào.
 Do hiện tượng đa nghĩa cũng như sự phức tạp ngữ nghĩa xuất hiện khá phổ biến trong ngôn ngữ tự nhiên, biểu diễn độc lập ngữ cảnh có những hạn chế rõ ràng.
 Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying (một con sếu đang bay)" và ngữ cảnh "a crane driver came (tài xế xe cần cẩu đã tới)" có nghĩa hoàn toàn khác nhau;
-do đó, cùng một từ nên được gán các biểu diễn khác nhau tùy ngữ cảnh.
+do đó, một từ nên được gán các biểu diễn khác nhau tùy ngữ cảnh.
 
 
 <!--
@@ -149,7 +149,7 @@ Second, all the parameters of the pretrained Transformer encoder are fine-tuned,
 
 
 Như ta đã thấy, ELMo mã hóa ngữ cảnh hai chiều nhưng sử dụng các kiến ​​trúc đặc thù cho từng tác vụ; trong khi đó GPT có kiến trúc không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải.
-Kết hợp những điều tốt nhất của hai phương pháp trên, BERT (biểu diễn bộ mã hóa hai chiều từ Transformer)
+Kết hợp những điều tốt nhất của hai phương pháp trên, BERT (biểu diễn mã hóa hai chiều từ Transformer - _Bidirectional Encoder Representations from Transformers_)
 mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu vài thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên :cite:`Devlin.Chang.Lee.ea.2018`.
 Sử dụng bộ mã hóa Transformer được tiền huấn luyện, BERT có thể biểu diễn bất kỳ token nào dựa trên ngữ cảnh hai chiều của nó.
 Trong quá trình học có giám sát trên các tác vụ xuôi dòng, BERT tương tự như GPT ở hai khía cạnh.
@@ -179,7 +179,7 @@ conceptually simple yet empirically powerful pretraining of deep representations
 -->
 
 BERT cải thiện kết quả tân tiến nhất đối với mười một tác vụ xử lý ngôn ngữ tự nhiên trải khắp các hạng mục gồm i) phân loại văn bản đơn (như phân tích cảm xúc), ii) phân loại cặp văn bản (như suy luận ngôn ngữ tự nhiên), iii) trả lời câu hỏi, iv) gán thẻ văn bản (như nhận dạng thực thể có tên).
-Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, tuy về ý tưởng đều đơn giản nhưng trên thực nghiệm là những phương pháp tiền huấn luyện hiệu quả các biểu diễn sâu cho ngôn ngữ tự nhiên, và đã mang đến những giải pháp mang tính cách mạng cho nhiều tác vụ xử lý ngôn ngữ tự nhiên.
+Tất cả các kỹ thuật được đề xuất trong năm 2018, từ ELMo nhạy ngữ cảnh cho tới GPT không phân biệt tác vụ và BERT, tuy về ý tưởng đều đơn giản nhưng trên thực nghiệm là những phương pháp tiền huấn luyện hiệu quả cho các biểu diễn sâu của ngôn ngữ tự nhiên, và đã mang đến những giải pháp mang tính cách mạng cho nhiều tác vụ xử lý ngôn ngữ tự nhiên.
 
 <!--
 In the rest of this chapter, we will dive into the pretraining of BERT.
