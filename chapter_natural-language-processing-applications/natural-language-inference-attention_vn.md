@@ -165,7 +165,7 @@ This *decomposition* trick leads to only $m + n$ applications (linear complexity
 
 Cũng nên chú ý rằng, trong :eqref:`eq_nli_e`
 $f$ lấy đầu vào $\mathbf{a}_i$ và $\mathbf{b}_j$ riêng biệt thay vì lấy cùng lúc một cặp của chúng làm đầu vào.
-Thủ thuật *phân rã* này dẫn tới chỉ có $m + n$ phép tính (độ phức tạp tuyến tính) của $f$ thay vì $mn$ phép (độ phức tạp bậc hai).
+Thủ thuật *phân rã* này dẫn tới chỉ có $m + n$ phép tính (độ phức tạp tuyến tính) của $f$ thay vì $mn$ (độ phức tạp bậc hai).
 
 <!--
 Normalizing the attention weights in :eqref:`eq_nli_e`,
