@@ -4,7 +4,7 @@
 # Matrix Factorization
 -->
 
-# *dịch tiêu đề trên*
+# Phân rã Ma trận
 
 
 <!--
@@ -22,14 +22,24 @@ The technical report the Netflix Grand Prize solution :cite:`Toscher.Jahrer.Bell
 In this section, we will dive into the details of the matrix factorization model and its implementation.
 -->
 
-*dịch đoạn phía trên*
+Phân rã ma trận (*Matrix Factorization*) :cite:`Koren.Bell.Volinsky.2009` là một trong những thuật toán lâu đời trong các tài liệu về hệ thống gợi ý.
+Phiên bản đầu tiên của mô hình phân rã ma trận được đề xuất bởi Simon Funk trong một [bài blog nổi tiếng](https://sifter.org/~simon/journal/20061211.html), trong đó anh đã mô tả ý tưởng phân rã ma trận tương tác thành các nhân tử.
+Phân rã ma trận sau đó trở nên phổ biến nhờ cuộc thi Netflix tổ chức vào năm 2006.
+Tại thời điểm đó, Netflix, một công ty truyền thông đa phương tiện và cho thuê phim, công bố một cuộc thi nhằm cải thiện hiệu năng hệ thống gợi ý của công ty.
+Đội xuất sắc nhất mà có thể cải thiện mức cơ sở (*baseline*) của Netflix (thuật toán Cinematch) lên 10 phần trăm sẽ đoạt giải thưởng một triệu USD.
+Do đó, cuộc thi này thu hút rất nhiều sự chú ý trong ngành nghiên cứu hệ thống gợi ý.
+Cuối cùng, giải thưởng chung cuộc được dành cho đội Pragmatic Chaos của BellKor, đội kết hợp bởi các đội BellKor, Pragmatic Theory và BigChaos (bạn hiện tại chưa cần phải quan tâm đến các thuật toán này).
+Dù kết quả cuối cùng là một giải pháp kết hợp (tức phối hợp nhiều thuật toán với nhau),
+thuật toán phân rã ma trận đóng vai trò chủ đạo trong thuật toán kết hợp cuối cùng.
+Báo cáo kĩ thuật của Giải thưởng Netflix :cite:`Toscher.Jahrer.Bell.2009` cung cấp giới thiệu chi tiết về mô hình được chấp thuận.
+Trong phần này, ta sẽ đi sâu vào chi tiết mô hình phân rã ma trận và cách lập trình.
 
 
 <!--
 ## The Matrix Factorization Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình Phân rã Ma trận
 
 
 <!--
@@ -38,7 +48,9 @@ Specifically, the model factorizes the user-item interaction matrix (e.g., ratin
 into the product of two lower-rank matrices, capturing the low-rank structure of the user-item interactions.
 -->
 
-*dịch đoạn phía trên*
+Phân rã ma trận là một lớp trong các mô hình lọc cộng tác.
+Cụ thể, mô hình này phân tích ma trận tương tác giữa người dùng - sản phẩm (ví dụ như ma trận đánh giá)
+thành tích hai ma trận có hạng thấp hơn, nhằm nắm bắt cấu trúc hạng thấp trong tương giác người dùng - sản phẩm.
 
 
 <!--
@@ -53,7 +65,15 @@ These latent factors might measure obvious dimensions as mentioned in those exam
 The predicted ratings can be estimated by
 -->
 
-*dịch đoạn phía trên*
+Gọi $\mathbf{R} \in \mathbb{R}^{m \times n}$ ký hiệu ma trận tương tác với $m$ người dùng và $n$ sản phẩm,
+và các giá trị $\mathbf{R}$ biểu diễn đánh giá trực tiếp.
+Tương tác người dùng - sản phẩm được phân tích thành ma trận người dùng tiềm ẩn $\mathbf{P} \in \mathbb{R}^{m \times k}$
+và ma trận sản phẩm tiềm ẩn $\mathbf{Q} \in \mathbb{R}^{n \times k}$, trong đó $k \ll m, n$, là kích thước nhân tố tiềm ẩn.
+Gọi $\mathbf{p}_u$ ký hiệu hàng thứ $u$ và của $\mathbf{P}$ và $\mathbf{q}_i$ ký hiệu hàng thứ $i$ của $\mathbf{Q}$.
+Với một sản phẩm $i$ cho trước, các phần tử trong $\mathbf{q}_i$ đo mức độ của các đặc trưng của sản phẩm này như thể loại hay ngôn ngữ của một bộ phim.
+Với một người dùng $u$ cho trước, các phần tử trong $\mathbf{p}_u$ đo mức độ ưa thích của người dùng này đối với các sản phẩm với đặc trưng tương ứng.
+Các nhân tố tiềm ẩn này có thể là các đặc trưng rõ ràng như đề cập trong các ví dụ trên, hoặc hoàn toàn không thể giải thích được.
+Đánh giá dự đoán có thể được ước lượng bằng
 
 
 $$\hat{\mathbf{R}} = \mathbf{PQ}^\top$$
@@ -68,7 +88,12 @@ To capture these biases, user specific and item specific bias terms are introduc
 Specifically, the predicted rating user $u$ gives to item $i$ is calculated by
 -->
 
-*dịch đoạn phía trên*
+trong đó $\hat{\mathbf{R}}\in \mathbb{R}^{m \times n}$ là ma trận đánh giá dự đoán và có cùng kích thước với $\mathbf{R}$.
+Một vấn đề lớn của cách dự đoán này là độ chệch (*bias*) của người dùng/sản phẩm không được mô hình hoá.
+Ví dụ, một số người dùng có thiên hướng đánh giá cao hơn hoặc một số sản phẩm luôn bị đánh giá thấp hơn do chất lượng kém.
+Các độ chệch này là vô cùng bình thường trong các ứng dụng thực tế.
+Để thu được các độ chệch này, số hạng độ chệch của người dùng và sản phẩm riêng biệt được đưa vào.
+Cụ thể, đánh giá dự đoán của người dùng $u$ cho sản phẩm $i$ được tính theo công thức
 
 
 $$
@@ -81,7 +106,8 @@ Then, we train the matrix factorization model by minimizing the mean squared err
 The objective function is defined as follows:
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta huấn luyện mô hình phân rã ma trận bằng cách cực tiểu hoá trung bình bình phương sai số (*mean squared error*) giữa đánh giá dự đoán và đánh giá thực.
+Hàm mục tiêu được định nghĩa như sau:
 
 
 $$
@@ -98,7 +124,10 @@ The $(u, i)$ pairs for which $\mathbf{R}_{ui}$ is known are stored in the set $\
 The model parameters can be learned with an optimization algorithm, such as Stochastic Gradient Descent and Adam.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\lambda$ là tỉ lệ điều chuẩn.
+Số hạng điều chuẩn $\lambda (\| \mathbf{P} \|^2_F + \| \mathbf{Q}\|^2_F + b_u^2 + b_i^2 )$ được sử dụng để tránh hiện tượng quá khớp bằng cách phạt độ lớn của các tham số.
+Cặp $(u, i)$ với $\mathbf{R}_{ui}$ đã biết được lưu trong tập $\mathcal{K}=\{(u, i) \mid \mathbf{R}_{ui} \text{đã biết}\}$.
+Các tham số mô hình có thể được học thông qua một thuật toán tối ưu, ví dụ như Hạ Gradient Ngẫu nhiên hay Adam.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -345,7 +374,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Nguyễn Thái Bình
 
 <!-- Phần 2 -->
 * 
