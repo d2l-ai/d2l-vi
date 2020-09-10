@@ -89,7 +89,7 @@ npx.set_np()
 ### Attending
 -->
 
-### *dịch tiêu đề trên*
+### Thực hiện Tập trung
 
 
 <!--
@@ -104,7 +104,15 @@ where ideally large weights are associated with the words to be aligned.
 For ease of demonstration, :numref:`fig_nli_attention` shows such alignment in a *hard* way.
 -->
 
-*dịch đoạn phía trên*
+Bước đầu tiên là phải sắp xếp các từ trong một chuỗi văn bản này sang một chuỗi văn bản khác.
+Giả sử câu tiền đề là "i do need sleep" và câu giả định là "i am tired".
+Do sự tương đồng về ngữ nghĩa, ta mong muốn căn chỉnh "i" trong câu giả thuyết với "i" trong câu tiền đề,
+và căn chỉnh "tired" trong câu giả thuyết với "sleep" trong câu tiền đề.
+Tương tự, ta muốn căn chỉnh "i" trong câu tiền đề với "i" trong câu giả thuyết,
+và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết.
+Lưu ý là sự căn chỉnh này là *mềm*, sử dụng trung bình trọng số, 
+ở đây lý tưởng là các trọng số lớn ứng với các từ được căn chỉnh.
+Để dễ dàng cho việc minh họa, :numref:`fig_nli_attention` diễn tả sự căn chỉnh này theo cách *cứng*.
 
 
 <!--
@@ -116,7 +124,12 @@ where $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1,
 For soft alignment, we compute the attention weights $e_{ij} \in \mathbb{R}$ as
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn.
+Ký hiệu $\mathbf{A} = (\mathbf{a}_1, \ldots, \mathbf{a}_m)$
+và $\mathbf{B} = (\mathbf{b}_1, \ldots, \mathbf{b}_n)$ là câu tiền đề và câu giả thuyết,
+có số từ lần lượt là $m$ và $n$,
+Ở đây $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1, \ldots, n$) là một vector embdding từ $d$-chiều.
+Để căn chỉnh mềm, ta tính trọng số tập trung $e_{ij} \in \mathbb{R}$ như là
 
 
 $$e_{ij} = f(\mathbf{a}_i)^\top f(\mathbf{b}_j),$$
@@ -128,7 +141,8 @@ where the function $f$ is a multilayer perceptron defined in the following `mlp`
 The output dimension of $f$ is specified by the `num_hiddens` argument of `mlp`.
 -->
 
-*dịch đoạn phía trên*
+ở đây hàm $f$ là một perceptron đa tầng được định nghĩa trong hàm 'mlp' dưới đây.
+Chiều đầu ra của $f$ được đặc tả bởi đối số 'num_hiddens' của hàm 'mlp'.
 
 
 ```{.python .input  n=2}
@@ -149,8 +163,9 @@ This *decomposition* trick leads to only $m + n$ applications (linear complexity
 (quadratic complexity).
 -->
 
-*dịch đoạn phía trên*
-
+Cũng nên chú ý rằng, trong :eqref:`eq_nli_e`
+$f$ lấy đầu vào $\mathbf{a}_i$ và $\mathbf{b}_j$ riêng biệt thay vì lấy cùng lúc một cặp của chúng làm đầu vào.
+Thủ thuật *phân rã* này dẫn tới chỉ có $m + n$ phép tính (độ phức tạp tuyến tính) của $f$ thay vì $mn$ (độ phức tạp bậc hai).
 
 <!--
 Normalizing the attention weights in :eqref:`eq_nli_e`,
@@ -158,7 +173,9 @@ we compute the weighted average of all the word embeddings in the hypothesis
 to obtain representation of the hypothesis that is softly aligned with the word indexed by $i$ in the premise:
 -->
 
-*dịch đoạn phía trên*
+Thực hiện chuẩn hóa các trọng số tập trung trong :eqref:`eq_nli_e`,
+ta tính trung bình trọng số của tất cả các embedding từ trong câu giả thuyết
+để thu được biểu diễn của câu giả thuyết được căn chỉnh mềm với từ được đánh chỉ số $i$ trong câu tiền đề:
 
 
 $$
@@ -170,7 +187,7 @@ $$
 Likewise, we compute soft alignment of premise words for each word indexed by $j$ in the hypothesis:
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta tính sự căn chỉnh mềm của các từ trong câu tiền đề cho mỗi từ được đánh chỉ số $j$ trong câu giả thuyết:
 
 
 $$
@@ -183,7 +200,8 @@ Below we define the `Attend` class to compute the soft alignment of hypotheses (
 with input premises `A` and soft alignment of premises (`alpha`) with input hypotheses `B`.
 -->
 
-*dịch đoạn phía trên*
+Dưới đây ta định nghĩa lớp `Attend` để tính sự căn chỉnh mềm của các câu giả thuyết (`beta`)
+với các câu tiền đề đầu vào `A` và sự căn chỉnh mềm của các câu tiền đề (`alpha`) với các câu giả thuyết `B`.
 
 
 ```{.python .input  n=3}
@@ -567,7 +585,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * Phạm Đăng Khoa
