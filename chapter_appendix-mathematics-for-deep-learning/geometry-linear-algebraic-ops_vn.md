@@ -1125,7 +1125,7 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 
 đây là ma trận với các phần tử trên đường chéo có giá trị 1 và các phẩn tử còn lại có giá trị 0.
 Ma trận này được gọi là ma trận *đơn vị*.
-�Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này.
+Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này.
 Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho
 
 
