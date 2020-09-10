@@ -17,8 +17,8 @@ MovieLens data has been critical for several research studies including personal
 
 Có rất nhiều tập dữ liệu có sẵn dùng cho nghiên cứu hệ thống gợi ý.
 Trong số đó, tập dữ liệu [MovieLens](https://movielens.org/) có lẽ là một trong những tập phổ biến nhất.
-MovieLens là một hệ thống gợi ý phi thương mại trên nền tảng web.
-Nó được tạo ra vào năm 1997 và vận hành bởi GroupLens, một lab nghiên cứu tại Đại học Minnesota, để thu thập dữ liệu đánh giá phim cho mục đích nghiên cứu.
+MovieLens là một hệ thống gợi ý phim phi thương mại trên nền tảng web.
+Nó được tạo ra vào năm 1997 và vận hành bởi GroupLens, một phòng nghiên cứu tại trường Đại học Minnesota, nhằm thu thập dữ liệu đánh giá phim phục vụ mục đích nghiên cứu.
 Dữ liệu của MovieLens quan trọng cho một số nghiên cứu bao gồm cá nhân hóa gợi ý và tâm lý xã hội.
 
 
@@ -26,7 +26,7 @@ Dữ liệu của MovieLens quan trọng cho một số nghiên cứu bao gồm 
 ## Getting the Data
 -->
 
-## Lấy dữ liệu
+## Tải Dữ liệu
 
 
 <!--
@@ -43,9 +43,9 @@ Tập dữ liệu MovieLens được đặt máy chủ tại website [GroupLens]
 Có một số phiên bản đã sẵn sàng. Chúng ta sẽ sử dụng tập dữ liệu MovieLens 100K :cite:`Herlocker.Konstan.Borchers.ea.1999`.
 Tập dữ liệu này bao gồm $100,000$ đánh giá, xếp hạng từ 1 tới 5 sao, từ 943 người dùng dành cho 1682 phim.
 Nó được làm sạch để mỗi người dùng đánh giá ít nhất 20 phim.
-Một bài thông tin nhân khẩu học ví dụ như tuổi, giới tính, thể loại về người dùng và các hạng mục cũng có sẵn.
+Một vài thông tin nhân khẩu học cơ bản ví dụ như tuổi, giới tính, thể loại của người dùng và các bộ phim cũng khả dụng.
 Ta có thể tải về [ml-100k.zip](http://files.grouplens.org/datasets/movielens/ml-100k.zip) và giải nén tệp `u.data`, nơi chứa toàn bộ $100,000$ dưới định dạng csv.
-Có nhiều tệp khác trong thư mục, một bản mô tả chi tiết cho mỗi tệp có thể được tìm thấy tại tệp [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) file của tập dữ liệu.
+Có nhiều tệp khác trong thư mục này, bản mô tả chi tiết cho mỗi tệp có thể được tìm thấy trong tệp [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) của tập dữ liệu.
 
 <!--
 To begin with, let us import the packages required to run this section's experiments.
@@ -66,7 +66,7 @@ import pandas as pd
 Then, we download the MovieLens 100k dataset and load the interactions as `DataFrame`.
 -->
 
-Sau đó, ta tải tập dữ liệu MovieLens 100k về và tải các tương tác dưới tên `DataFrame`.
+Sau đó, ta tải tập dữ liệu MovieLens 100k về và nạp các tương tác này thành dạng `DataFrame`.
 
 
 ```{.python .input  n=2}
@@ -100,7 +100,7 @@ It is an effective way to learn the data structure and verify that they have bee
 -->
 
 Hãy tải dữ liệu và quan sát năm bản ghi đầu tiên một cách thủ công.
-Đó là một cách hiệu quả khi ta biết được cấu trúc dữ liệu và chắc chắn rằng chúng được tải lên đúng cách.
+Đây là một cách hữu hiệu để học được cấu trúc của dữ liệu và chắc chắn rằng dữ liệu đã được nạp đúng cách.
 
 
 ```{.python .input  n=3}
@@ -126,15 +126,15 @@ A viable solution is to use additional side information such as user/item featur
 -->
 
 Ta có thể thấy rằng mỗi dòng chứa bốn cột, bao gồm "user id" 1-943, "item id" 1-1682, "rating" 1-5 và "timestamp".
-Ta có thể tạo ra một ma trận tương tác có kích thước $n \times m$, với $n$ và $m$ lần lượt là số lượng của người dùng và số lượng của các hạng mục.
+Ta có thể tạo ra một ma trận tương tác có kích thước $n \times m$, với $n$ và $m$ lần lượt là số người dùng và số bộ phim.
 Tập dữ liệu này ghi lại các đánh giá đang tồn tại, vì thế ta có thể gọi nó là ma trận đánh giá và
 ta sẽ sử dụng ma trận tương tác và ma trận đánh giá thay thế cho nhau trong trường hợp các giá trị của ma trận này biểu diễn đánh giá chính xác.
 Hầu hết các giá trị trong ma trận đánh giá là chưa biết vì người dùng chưa đánh giá phần lớn các bộ phim. 
 Ta cũng có thể cho thấy độ thưa thớt của tập dữ liệu này.
 Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng hạng mục)`.
-Rõ ràng, ma trận tương tác cực kỳ thưa thớt (có nghĩa là, độ thưa = 93.695%).
-Các tập dữ liệu trong thế giới thực có thể chịu mức độ thưa thớt lớn hơn và đã luôn là thử thách có từ lâu trong việc xây dựng các hệ thống gợi ý.
-Một giải pháp khả thi đó là sử dụng thông tin phụ bổ sung như đặc trưng người dùng/hạng mục để giảm bớt độ thưa thớt.
+Rõ ràng, ma trận tương tác cực kỳ thưa thớt (độ thưa = 93.695%).
+Các tập dữ liệu trong thực tế thường phải chịu mức độ thưa thớt lớn hơn nhiều và đây vốn là thử thách có từ lâu trong việc xây dựng các hệ thống gợi ý.
+Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt độ thưa thớt.
 
 
 <!--
@@ -142,7 +142,7 @@ We then plot the distribution of the count of different ratings.
 As expected, it appears to be a normal distribution, with most ratings centered at 3-4.
 -->
 
-Sau đó ta vẽ phân phối của các đếm số của đánh giá khác nhau.
+Sau đó ta vẽ biểu đồ phân phối số lượng các đánh giá khác nhau.
 Đúng như mong đợi, nó trông có vẻ là một phân phối chuẩn, với hầu hết các đánh giá tập trung tại 3-4.
 
 
