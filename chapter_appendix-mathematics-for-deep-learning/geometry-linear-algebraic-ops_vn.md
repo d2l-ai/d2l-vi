@@ -1,3 +1,5 @@
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
+
 <!--
 # Geometry and Linear Algebraic Operations
 -->
@@ -185,6 +187,9 @@ Bằng cách biểu diễn $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
 ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{v}$ tới
 điểm $\mathbf{u}$.
 
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Dot Products and Angles
@@ -439,6 +444,12 @@ Hàm cosin lấy giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng m
 trị nhỏ nhất bằng $-1$ khi chúng cùng phương khác hướng, và $0$ khi hai vector
 trực giao. Chú ý rằng nếu các thành phần của hai vector nhiều chiều được lấy
 mẫu ngẫu nhiên với kỳ vọng $0$, cosin giữa chúng sẽ luôn gần với $0$.
+
+
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
+
 
 <!--
 ## Hyperplanes
@@ -728,6 +739,11 @@ predictions = tf.reduce_sum(X_test * tf.nest.flatten(w), axis=0) > -1500000
 tf.reduce_mean(tf.cast(tf.cast(predictions, y_test.dtype) == y_test, tf.float32))
 ```
 
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
+
+
 <!--
 ## Geometry of Linear Transformations
 -->
@@ -996,6 +1012,12 @@ Bởi vậy, sự phụ thuộc tuyến tính giữa các cột của một ma t
 Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
 Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể đảo ngược (khả nghịch) được.
 
+
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================-->
+
+
 <!--
 ## Rank
 -->
@@ -1246,6 +1268,10 @@ and generally avoiding inversion in practice is a good rule of thumb.
 Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, 
 chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
 
+<!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 6 - BẮT ĐẦU ===================================-->
+
 <!--
 ## Determinant
 -->
@@ -1473,6 +1499,10 @@ Từ đó, ta có một phép biểu diễn ngắn gọn:
 $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
+
+<!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 7 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Common Examples from Linear Algebra
@@ -1737,6 +1767,9 @@ Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao
 -->
 
 7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý?
+
+
+<!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
 
 
 ## Thảo luận
