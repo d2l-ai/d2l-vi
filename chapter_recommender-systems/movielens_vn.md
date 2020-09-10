@@ -295,7 +295,7 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * Go through the [https://movielens.org/](https://movielens.org/) site for more information about MovieLens.
 -->
 
-* Bạn có thể tìm các tập dữ liệu gợi ý tương tự nào?
+* Bạn có thể tìm được tập dữ liệu gợi ý nào khác tương tự như tập MovieLens không?
 * Xem qua trang [https://movielens.org/](https://movielens.org/) để biết thêm thông tin về MovieLens.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
