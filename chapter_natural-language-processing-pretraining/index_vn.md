@@ -13,10 +13,10 @@ Given rich text in social media, chat apps, emails, product reviews, news articl
 it becomes vital to enable computers to understand them to offer assistance or make decisions based on human languages.
 -->
 
-Con người có nhu cầu giao tiếp.
-Chính từ nhu cầu cơ bản này, một lượng lớn dữ liệu văn bản được tạo ra mỗi ngày.
-Với một lượng dữ liệu văn bản đa dạng trên mạng xã hội, ứng dụng trò chuyện, email, đánh giá sản phẩm, tài liệu nghiên cứu, và sách báo,
-việc giúp máy tính hiểu được những dữ liệu này trở nên quan trọng, nhằm đưa ra hỗ trợ hoặc đưa ra quyết định dựa trên ngôn ngữ của con người.
+Con người luôn có nhu cầu được giao tiếp.
+Chính từ nhu cầu cơ bản này mà một lượng lớn dữ liệu văn bản được tạo ra mỗi ngày.
+Với lượng dữ liệu văn bản đa dạng từ mạng xã hội, ứng dụng trò chuyện, email, đánh giá sản phẩm, tài liệu nghiên cứu và sách báo,
+việc giúp máy tính hiểu được những dữ liệu này trở nên quan trọng, nhằm đưa ra cách thức hỗ trợ hoặc quyết định dựa trên ngôn ngữ của con người.
 
 
 <!--
@@ -41,9 +41,10 @@ In this chapter, we will focus on how to pretrain such representations for text,
 -->
 
 
-Để hiểu dữ liệu văn bản, ta có thể bắt đầu với cách biểu diễn loại dữ liệu này, chẳng hạn coi mỗi từ hay từ con như một token riêng lẻ.
-Như chúng ta sẽ tìm hiểu trong chương này, biểu diễn của mỗi token có thể được tiền huấn luyện trên một kho ngữ liệu lớn, sử dụng các mô hình word2vec, GloVe, hay embedding cho từ con.
-Sau khi tiền huấn luyện, biểu diễn của mỗi token có thể là một vector. Tuy nhiên, biểu diễn này vẫn không đổi dù cho ngữ cảnh xung quanh bất kể là gì.
+Để hiểu dữ liệu văn bản, ta có thể bắt đầu với cách biểu diễn loại dữ liệu này, chẳng hạn xem mỗi từ hay từ con như một token riêng lẻ.
+Trong chương này, biểu diễn của mỗi token có thể được tiền huấn luyện trên một kho ngữ liệu lớn, sử dụng các mô hình word2vec, GloVe, hay embedding cho từ con.
+Sau khi tiền huấn luyện, biểu diễn của mỗi token có thể là một vector.
+Tuy nhiên, biểu diễn này vẫn không đổi dù ngữ cảnh xung quanh bất kể là gì.
 Ví dụ, biểu diễn vector của từ "bank" là giống nhau trong câu "go to the bank to deposit some money" (ra *ngân hàng* để gửi tiền) và "go to the bank to sit down" (ra *bờ hồ* ngồi hóng mát).
 Do đó, nhiều mô hình tiền huấn luyện gần đây điều chỉnh biểu diễn của cùng một token với các ngữ cảnh khác nhau.
 Trong số đó có BERT, một mô hình sâu hơn rất nhiều dựa trên bộ mã hóa Transformer.
