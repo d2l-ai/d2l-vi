@@ -43,9 +43,10 @@ and
 
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/380)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/410)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
+*Lần cập nhật gần nhất: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
 
 ```
 
