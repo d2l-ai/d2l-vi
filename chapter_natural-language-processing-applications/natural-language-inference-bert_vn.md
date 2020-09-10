@@ -42,7 +42,7 @@ then fine-tune it for natural language inference on the SNLI dataset.
 -->
 
 Trong phần này, chúng ta sẽ tải một phiên bản BERT đã tiền huấn luyện kích thước nhỏ,
-rồi tinh chỉnh nó để suy diễn ngôn ngữ tự nhiên dựa trên tập dữ liệu SNLI.
+rồi tinh chỉnh nó để suy diễn ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
 
 
 ```{.python .input  n=1}
@@ -61,7 +61,7 @@ npx.set_np()
 ## Loading Pretrained BERT
 -->
 
-## Nạp tiền huấn luyện BERT
+## Nạp BERT đã tiền huấn luyện
 
 
 <!--
@@ -74,11 +74,11 @@ while "bert.small" is a small version to facilitate demonstration.
 -->
 
 Ta đã giải thích việc làm thế nào tiền huấn luyện BERT trên tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset` và :numref:`sec_bert-pretraining`
-(lưu ý rằng mô hình BERT ban đầu được tiền huấn luyện trên kho ngữ liệu lớn hơn nhiều).
+(lưu ý rằng mô hình BERT ban đầu được tiền huấn luyện trên các kho ngữ liệu lớn hơn nhiều).
 Như đã thảo luận trong :numref:`sec_bert-pretraining`, mô hình BERT gốc có hàng trăm triệu tham số.
 Trong phần sau đây, chúng tôi cung cấp hai phiên bản BERT tiền huấn luyện:
-"bert.base" có kích thước xấp xỉ mô hình cơ sở BERT gốc là mô hình đòi hỏi nhiều tài nguyên tính toán để tinh chỉnh,
-trong khi "bert.small" là phiên bản nhỏ để thuận tiện cho việc biểu diễn.
+"bert.base" có kích thước xấp xỉ mô hình BERT cơ sở gốc, là mô hình đòi hỏi nhiều tài nguyên tính toán để tinh chỉnh,
+trong khi "bert.small" là phiên bản nhỏ để thuận tiện cho việc minh họa.
 
 
 ```{.python .input  n=2}
