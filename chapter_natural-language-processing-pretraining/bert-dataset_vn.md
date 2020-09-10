@@ -108,7 +108,7 @@ Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi
 ### Generating the Next Sentence Prediction Task
 -->
 
-### Sinh tác vụ Dự đoán câu kế
+### Sinh tác vụ Dự đoán câu tiếp theo
 
 
 <!--
