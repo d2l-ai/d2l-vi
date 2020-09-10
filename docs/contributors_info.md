@@ -53,3 +53,5 @@
 | 49. | [vinbrule](https://github.com/vinbrule)                         | Hoang Van-Tien                 |
 | 50. | [markuskhoa](https://github.com/markuskhoa)                     | Phạm Đăng Khoa                 |
 | 51. | [phattruongdevpanel](https://github.com/phattruongdevpanel)     | Trương Lộc Phát                |
+| 52. | [btcnhung1299](https://github.com/btcnhung1299)                 | Bùi Thị Cẩm Nhung              |
+| 53. | [nguyenthaibinh](https://github.com/nguyenthaibinh)             | Nguyễn Thái Bình               |
