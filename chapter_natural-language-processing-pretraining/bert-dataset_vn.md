@@ -279,7 +279,7 @@ Its argument `examples` contain the outputs from the helper functions `_get_nsp_
 
 Bây giờ chúng ta gần như đã sẵn sàng để tùy chỉnh một lớp `Dataset` cho việc tiền huấn luyện BERT.
 Trước đó, chúng ta vẫn cần định nghĩa một hàm hỗ trợ `_pad_bert_inputs` để giúp nối các token “&lt;mask&gt;” đặc biệt vào đầu vào.
-Đối số của của hàm `examples` chứa các kết quả đầu ra từ những hàm trợ giúp `_get_nsp_data_from_paragraph` và `_get_mlm_data_from_tokens` cho hai tác vụ tiền huấn luyện.
+Đối số `examples` của của hàm chứa các kết quả đầu ra từ những hàm hỗ trợ `_get_nsp_data_from_paragraph` và `_get_mlm_data_from_tokens` cho hai tác vụ tiền huấn luyện.
 
 
 ```{.python .input  n=7}
@@ -324,11 +324,11 @@ we can arbitrarily access the pretraining (masked language modeling and next sen
 generated from a pair of sentences from the WikiText-2 corpus.
 -->
 
-Kết hợp những hàm trợ giúp để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
-và hàm trợ giúp đệm đầu vào,
+Kết hợp những hàm hỗ trợ để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
+và hàm hỗ trợ đệm đầu vào,
 chúng ta tùy chỉnh lớp `_WikiTextDataset` sau đây thành bộ dữ liệu WikiText-2 cho tiền huấn luyện BERT.
 Bằng cách lập trình hàm `__getitem__`,
-chúng ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu kế)
+chúng ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo)
 được tạo ra từ một cặp câu trong kho ngữ liệu WikiText-2.
 
 
@@ -340,7 +340,7 @@ Infrequent tokens that appear less than five times are filtered out.
 -->
 
 Mô hình BERT ban đầu sử dụng embedding WordPiece có kích thước bộ từ vựng là 30,000 :cite:`Wu.Schuster.Chen.ea.2016`.
-Phương pháp tách token của WordPiece là một phiên bản của thuật toán mã hóa cặp byte ban đầu :numref:`subsec_Byte_Pair_Encoding` với một ít chỉnh sửa.
+Phương pháp tách token của WordPiece là một phiên bản của thuật toán mã hóa cặp byte ban đầu :numref:`subsec_Byte_Pair_Encoding` với một chút chỉnh sửa.
 Để cho đơn giản, chúng tôi sử dụng hàm `d2l.tokenize` để tách từ.
 Những token xuất hiện ít hơn năm lần được loại bỏ.
 
@@ -454,7 +454,7 @@ len(vocab)
 -->
 
 * So sánh với tập dữ liệu PTB, tập dữ liệu WikiText-2 vẫn giữ nguyên dấu câu, chữ viết hoa và ký tự số, có kích thước lớn hơn gấp đôi.
-* Ta có thể tùy ý truy cập vào các mẫu tiền huấn luyện (tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự đoán câu kế) được sinh ra từ một cặp câu trong kho ngữ liệu WikiText-2.
+* Ta có thể tùy ý truy cập vào các mẫu tiền huấn luyện (tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự đoán câu tiếp theo) được sinh ra từ một cặp câu trong kho ngữ liệu WikiText-2.
 
 ## Bài tập
 
@@ -501,4 +501,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 * Phạm Minh Đức
-
