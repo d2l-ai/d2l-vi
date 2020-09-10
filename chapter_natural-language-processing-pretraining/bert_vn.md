@@ -43,7 +43,7 @@ Cả word2vec và GloVe đều gán cùng một vector được tiền huấn lu
 Về mặt hình thức, biểu diễn độc lập ngữ cảnh của một token bất kỳ $x$ là một hàm $f(x)$ chỉ nhận $x$ làm đầu vào.
 Do hiện tượng đa nghĩa cũng như sự phức tạp ngữ nghĩa xuất hiện khá phổ biến trong ngôn ngữ tự nhiên, biểu diễn độc lập ngữ cảnh có những hạn chế rõ ràng.
 Ví dụ, từ "crane" trong ngữ cảnh "a crane is flying (một con sếu đang bay)" và ngữ cảnh "a crane driver came (tài xế xe cần cẩu đã tới)" có nghĩa hoàn toàn khác nhau;
-do đó, một từ nên được gán các biểu diễn khác nhau tùy ngữ cảnh.
+do đó, cùng một từ nên được gán các biểu diễn khác nhau tùy ngữ cảnh.
 
 
 <!--
