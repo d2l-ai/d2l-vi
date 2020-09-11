@@ -370,6 +370,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Nguyễn Thái Bình
-
+* Nguyễn Văn Cường
 <!-- Phần 3 -->
 * 
