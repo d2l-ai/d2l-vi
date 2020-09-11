@@ -403,7 +403,7 @@ This task is referred to as a *masked language model*.
 
 Như mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token bằng cách sử dụng ngữ cảnh phía bên trái của nó.
 Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
-Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
+Tác vụ này được gọi là *mô hình hóa ngôn ngữ có mặt nạ*.
 
 <!--
 In this pretraining task, 15% of tokens will be selected at random as the masked tokens for prediction.
@@ -416,7 +416,7 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 Trong tác vụ tiền huấn luyện này, 15% số token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
 Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
 Tuy nhiên, token “&lt;mask&gt;” sẽ không bao giờ xuất hiện khi tinh chỉnh. 
-Để tránh sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
+Để tránh sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, từ "great" được chọn để che mặt nạ và dự đoán trong câu "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
 <!--
@@ -435,8 +435,8 @@ Note that for 10% of 15% time a random token is inserted.
 This occasional noise encourages BERT to be less biased towards the masked token (especially when the label token remains unchanged) in its bidirectional context encoding.
 -->
 
-Lưu ý rằng 10% của 15% token mặt nạ được chèn vào ngẫu nhiên.
-Nhiễu không thường xuyên này giúp BERT giảm thiên kiến về phía token có mặt nạ (đặc biệt khi token nhãn không đổi) khi mã hóa ngữ cảnh hai chiều.
+Lưu ý rằng trong 15% token được chọn để che mặt nạ, 10% số token đó sẽ được thay thế bằng một token ngẫu nhiên.
+Việc thi thoảng thêm nhiễu sẽ giúp BERT giảm thiên kiến về phía token có mặt nạ (đặc biệt khi token nhãn không đổi) khi mã hóa ngữ cảnh hai chiều.
 
 
 <!--
@@ -606,7 +606,7 @@ These two text corpora are huge: they have 800 million words and 2.5 billion wor
 
 Đáng chú ý là tất cả nhãn trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức gán nhãn thủ công.
 Phiên bản gốc của BERT được tiền huấn luyện trên cả hai kho ngữ liệu BookCorpus :cite:`Zhu.Kiros.Zemel.ea.2015` và Wikipedia tiếng Anh.
-Hai kho ngữ liệu văn bản này cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
+Hai kho ngữ liệu văn bản này cực kỳ lớn, chứa lần lượt khoảng 800 triệu từ và 2.5 tỉ từ.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -681,8 +681,8 @@ Do đó, rất khó để các mô hình này xử lý tốt các trường hợ
 trong khi đó GPT không phân biệt tác vụ nhưng chỉ mã hóa ngữ cảnh theo chiều từ trái sang phải.
 * BERT kết hợp những gì tốt nhất của cả hai mô hình trên: mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
 * Các embedding của chuỗi đầu vào BERT là tổng các embedding cho token, embedding đoạn và embedding vị trí.
-* Quá trình tiền huấn luyện BERT gồm có hai tác vụ đó là: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
-Tác vụ trước có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+* Quá trình tiền huấn luyện BERT gồm có hai tác vụ: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
+Tác vụ đầu có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 
 
 ## Bài tập
@@ -696,7 +696,7 @@ Research into the difference between GELU and ReLU.
 -->
 
 1. Tại sao BERT lại gặt hái được thành công?
-2. Với các yếu tố khác là không đổi, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi số bước tiền huấn luyện nhiều hơn hay ít hơn để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
+2. Giữ nguyên các yếu tố khác, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi số bước tiền huấn luyện nhiều hơn hay ít hơn để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
 3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
 và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính Gauss (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
 Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
@@ -725,4 +725,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
+* Phạm Minh Đức
 * Nguyễn Văn Cường
