@@ -39,7 +39,7 @@ We can download the [ml-100k.zip](http://files.grouplens.org/datasets/movielens/
 There are many other files in the folder, a detailed description for each file can be found in the [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) file of the dataset.
 -->
 
-Tập dữ liệu MovieLens được đặt máy chủ tại website [GroupLens](https://grouplens.org/datasets/movielens/).
+Tập dữ liệu MovieLens có địa chỉ tại [GroupLens](https://grouplens.org/datasets/movielens/).
 Có một số phiên bản đã sẵn sàng. Chúng ta sẽ sử dụng tập dữ liệu MovieLens 100K :cite:`Herlocker.Konstan.Borchers.ea.1999`.
 Tập dữ liệu này bao gồm $100,000$ đánh giá, xếp hạng từ 1 tới 5 sao, từ 943 người dùng dành cho 1682 phim.
 Nó được làm sạch để mỗi người dùng đánh giá ít nhất 20 phim.
@@ -51,7 +51,7 @@ Có nhiều tệp khác trong thư mục này, bản mô tả chi tiết cho m�
 To begin with, let us import the packages required to run this section's experiments.
 -->
 
-Để bắt đầu, ta hãy nhập các gói cần thiết để chạy các thử nghiệm của phần này.
+Để bắt đầu, ta hãy nhập các gói cần thiết để chạy các thí nghiệm của phần này.
 
 
 ```{.python .input  n=1}
@@ -66,7 +66,7 @@ import pandas as pd
 Then, we download the MovieLens 100k dataset and load the interactions as `DataFrame`.
 -->
 
-Sau đó, ta tải tập dữ liệu MovieLens 100k về và nạp các tương tác này thành dạng `DataFrame`.
+Sau đó, ta tải tập dữ liệu MovieLens 100k về và chuyển thành dạng `DataFrame`.
 
 
 ```{.python .input  n=2}
@@ -99,7 +99,7 @@ Let us load up the data and inspect the first five records manually.
 It is an effective way to learn the data structure and verify that they have been loaded properly.
 -->
 
-Hãy tải dữ liệu và quan sát năm bản ghi đầu tiên một cách thủ công.
+Hãy nạp dữ liệu và quan sát năm bản ghi đầu tiên một cách thủ công.
 Đây là một cách hữu hiệu để học được cấu trúc của dữ liệu và chắc chắn rằng dữ liệu đã được nạp đúng cách.
 
 
@@ -130,8 +130,8 @@ Ta có thể tạo ra một ma trận tương tác có kích thước $n \times 
 Tập dữ liệu này ghi lại các đánh giá đang tồn tại, vì thế ta có thể gọi nó là ma trận đánh giá và
 ta sẽ sử dụng ma trận tương tác và ma trận đánh giá thay thế cho nhau trong trường hợp các giá trị của ma trận này biểu diễn đánh giá chính xác.
 Hầu hết các giá trị trong ma trận đánh giá là chưa biết vì người dùng chưa đánh giá phần lớn các bộ phim. 
-Ta cũng có thể cho thấy độ thưa thớt của tập dữ liệu này.
-Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng hạng mục)`.
+Ta cũng có thể cho thấy độ thưa thớt (*sparsity*) của tập dữ liệu này.
+Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng sản phẩm)`.
 Rõ ràng, ma trận tương tác cực kỳ thưa thớt (độ thưa = 93.695%).
 Các tập dữ liệu trong thực tế thường phải chịu mức độ thưa thớt lớn hơn nhiều và đây vốn là thử thách có từ lâu trong việc xây dựng các hệ thống gợi ý.
 Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt độ thưa thớt.
@@ -143,7 +143,7 @@ As expected, it appears to be a normal distribution, with most ratings centered 
 -->
 
 Sau đó ta vẽ biểu đồ phân phối số lượng các đánh giá khác nhau.
-Đúng như mong đợi, nó trông có vẻ là một phân phối chuẩn, với hầu hết các đánh giá tập trung tại 3-4.
+Đúng như mong đợi, nó trông giống một phân phối chuẩn, với hầu hết các đánh giá tập trung tại 3-4.
 
 
 ```{.python .input  n=4}
