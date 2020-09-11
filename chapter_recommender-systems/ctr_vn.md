@@ -4,7 +4,7 @@
 # Feature-Rich Recommender Systems
 -->
 
-# Hệ thống Gợi ý với Nhiều Đặc trưng
+# Hệ thống Gợi ý Phong phú Đặc trưng
 
 
 <!--
@@ -29,9 +29,9 @@ Tuy vậy, dữ liệu tương tác thường vô cùng thưa thớt và đôi l
 Để khắc phục vấn đề này, ta có thể tích hợp các thông tin phụ ví dụ như đặc trưng của sản phẩm, hồ sơ người dùng,
 và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình gợi ý.
 Tận dụng các đặc trưng này có lợi trong việc đưa ra gợi ý mà trong đó các đặc trưng này có thể là
-một nhân tố dự đoán hiệu quả sở thích người dùng, đặc biệt khi thiếu dữ liệu tương tác.
-Do đó, việc các mô hình dự đoán có khả năng xử lý những đặc trưng này đóng vai trò thiết yếu, khiến mô hình có thể nhận thức được một phần nào đó bối cảnh/nội dung.
-Để mô tả loại mô hình gợi ý này, chúng tôi giới thiệu một tác vụ khác với tỉ lệ nhấp chuột (*click-through rate - CTR*)
+một nhân tố hiệu quả trong việc dự đoán sở thích người dùng, đặc biệt khi thiếu dữ liệu tương tác.
+Do đó, việc các mô hình dự đoán có khả năng xử lý những đặc trưng này đóng một vai trò thiết yếu, khiến mô hình có thể nhận thức được một phần nào đó bối cảnh/nội dung.
+Để mô tả loại mô hình gợi ý này, chúng tôi giới thiệu một tác vụ khác trên tỉ lệ nhấp chuột (*click-through rate - CTR*)
 cho gợi ý quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và hiển thị dữ liệu quảng cáo vô danh.
 Dịch vụ quảng cáo có mục tiêu đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ gợi ý.
 Gợi ý quảng cáo phù hợp với thị yếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
@@ -94,7 +94,7 @@ The columns might represent the advertisement id, site or application id, device
 The real semantics of the features are undisclosed due to anonymization and privacy concern.
 -->
 
-Với những bước tiến tương đối của Internet và công nghệ di động,
+Với những bước tiến đáng kể của Internet và công nghệ di động,
 quảng cáo trực tuyến đã trở thành một nguồn thu nhập quan trọng và sản sinh phần lớn doanh thu trong ngành công nghiệp Internet.
 Việc hiện thị quảng cáo thích hợp hoặc quảng cáo khêu gợi sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
 Tập dữ liệu chúng tôi giới thiệu là một tập dữ liệu quảng cáo trực tuyến.
