@@ -291,7 +291,7 @@ Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `Ne
 Các tham số này là một phần của các tham số trong mô hình BERT tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
 Tuy nhiên, các tham số này chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ có mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
 Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng hạ nguồn, do đó các tham số của perceptron đa tầng dùng trong
-`MaskLM` và` NextSentencePred` không được cập nhật khi BERT được tinh chỉnh.
+`MaskLM` và` NextSentencePred` không được cập nhật khi tinh chỉnh BERT.
 
 
 <!--
