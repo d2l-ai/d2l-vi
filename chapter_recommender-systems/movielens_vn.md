@@ -217,8 +217,8 @@ We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
 Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
-Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/hạng mục bắt đầu từ số không.
-Sau đó hàm trả về các danh sách người dùng, hạng mục, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
+Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
+Sau đó hàm trả về các danh sách người dùng, sản phẩm, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
 Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*).
 
 
@@ -248,10 +248,10 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 (The remaining samples are rolled over to the next epoch.) and orders are shuffled.
 -->
 
-Rồi ta tổng hợp các bước ở trên lại và chúng sẽ được sử dụng ở phần tiếp theo.
+Rồi ta kết hợp các bước ở trên lại để sử dụng ở phần tiếp theo.
 Kết quả được gói gọn trong `Dataset` và `DataLoader`.
 Lưu ý rằng tham số `last_batch` của `DataLoader` dùng cho dữ liệu huấn luyện được thiếp lập ở chế độ `rollover`
-(Các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn.
+(các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn.
 
 
 ```{.python .input  n=7}
