@@ -80,7 +80,7 @@ We can formulate the maximum posterior estimator to derive the generic optimizat
 -->
 
 trong đó $\Theta$ biểu diễn các tham số của một mô hình gợi ý bất kỳ, $>_u$ biểu diễn tổng xếp hạng mong muốn được cá nhân hoá của tất cả sản phẩm cho người dùng $u$.
-Ta có thể biểu diễn công thức của bộ ước lượng hậu nghiệm cực đại xuất phát từ tiêu chuẩn tối ưu chung cho tác vụ cá nhân hoá xếp hạng.
+Ta có thể biểu diễn công thức của bộ ước lượng hậu nghiệm cực đại xuất phát từ tiêu chuẩn chung của bài toán tối ưu cho tác vụ cá nhân hoá xếp hạng.
 
 
 $$
@@ -103,9 +103,9 @@ Here, we let $\Sigma_\Theta = \lambda_\Theta I$.
 -->
 
 trong đó $D := \{(u, i, j) \mid i \in I^+_u \wedge j \in I \backslash I^+_u \}$ là tập huấn luyện,
-với $I^+_u$ ký hiệu sản phẩm mà người dùng $u$ thích, $I$ ký hiệu toàn bộ sản phẩm, và $I \backslash I^+_u$ chỉ toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó thích.
-$\hat{y}_{ui}$ và $\hat{y}_{uj}$ là giá trị dự đoán của người dùng $u$ lần lượt đối với sản phẩm $i$ và $j$.
-$p(\Theta)$ ở trước là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$.
+với $I^+_u$ ký hiệu cho sản phẩm mà người dùng $u$ thích, $I$ ký hiệu cho toàn bộ sản phẩm, và $I \backslash I^+_u$ là toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó thích.
+$\hat{y}_{ui}$ và $\hat{y}_{uj}$ lần lượt là giá trị dự đoán của người dùng $u$ đối với sản phẩm $i$ và $j$.
+Tiên nghiệm $p(\Theta)$ là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$.
 Ở đây ta coi $\Sigma_\Theta = \lambda_\Theta I$.
 
 
@@ -166,9 +166,9 @@ provided within the gluon library that is often used in classifiers such as SVMs
 The loss used for ranking in recommender systems has the following form.
 -->
 
-Mất mát Hinge trong xếp hạng có sự khác biệt so với dạng [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
+Mất mát Hinge trong tác vụ xếp hạng có sự khác biệt so với dạng [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
 được cung cấp trong thư viện gluon mà thường được sử dụng trong các bộ phân loại ví dụ như SVM.
-Mất mát này trong xếp hạng trong hệ thống gợi ý có dạng như sau.
+Mất mát này trong tác vụ xếp hạng trong hệ thống gợi ý có dạng như sau.
 
 
 $$
