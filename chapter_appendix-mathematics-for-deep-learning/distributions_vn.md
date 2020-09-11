@@ -293,6 +293,9 @@ torch.randint(1, n, size=(10, 10))
 tf.random.uniform((10, 10), 1, n, dtype=tf.int32)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Continuous Uniform
@@ -633,6 +636,9 @@ m = tfp.distributions.Binomial(n, p)
 m.sample(sample_shape=(10, 10))
 ```
 
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Poisson
@@ -741,6 +747,9 @@ Let us first plot the probability mass function :eqref:`eq_poisson_mass`.
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 ```{.python .input}
 lam = 5.0
@@ -856,6 +865,9 @@ m = tfp.distributions.Poisson(lam)
 m.sample((10, 10))
 ```
 
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Gaussian
@@ -972,6 +984,9 @@ More explicitly, for any $a, b$:
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 $$
 \lim_{n \rightarrow \infty} P(Y^{(n)} \in [a, b]) = P(\mathcal{N}(0,1) \in [a, b]),
@@ -1154,6 +1169,9 @@ torch.normal(mu, sigma, size=(10, 10))
 tf.random.normal((10, 10), mu, sigma)
 ```
 
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Exponential Family
@@ -1222,6 +1240,9 @@ Assuming that $\mathbf{x}$ is an univariate variable, we saw that it had a densi
 
 *dịch đoạn phía trên*
 
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 $$
 \begin{aligned}
@@ -1294,7 +1315,7 @@ we can show that this becomes approximately Gaussian. Why does this make sense?
 *dịch đoạn phía trên*
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
 
@@ -1322,5 +1343,16 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 3 -->
 * 
 
+<!-- Phần 4 -->
+* 
+
+<!-- Phần 5 -->
+* 
+
+<!-- Phần 6 -->
+* 
+
+<!-- Phần 7 -->
+* 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
