@@ -144,7 +144,7 @@ we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
 Đối với tác vụ hạ nguồn trong suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một tuỳ biến của lớp tập dữ liệu, `SNLIBERTDataset`.
-Trong mỗi mẫu, tiên đề và giả thuyết tạo thành một cặp chuỗi văn bản
+Trong mỗi mẫu, tiền đề và giả thuyết tạo thành một cặp chuỗi văn bản
 và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-hai-seqs`.
 Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
 được sử dụng để phân biệt tiên đề và giả thuyết trong chuỗi đầu vào BERT.
