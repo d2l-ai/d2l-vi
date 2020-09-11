@@ -20,10 +20,10 @@ To facilitate the demonstration of BERT pretraining, we use a smaller corpus Wik
 -->
 
 Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
-Một mặt, mô hình BERT gốc được tiền huấn luyện trên kho ngữ liệu được ghép lại từ hai kho ngữ liệu khổng lồ là BookCorpus và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), khiến việc thực hành là khó khăn đối với hầu hết bạn đọc cuốn sách này.
+Một mặt, mô hình BERT gốc được tiền huấn luyện trên kho ngữ liệu được ghép lại từ hai kho ngữ liệu khổng lồ là BookCorpus và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), khiến việc thực hành trở nên khó khăn đối với hầu hết bạn đọc cuốn sách này.
 Mặt khác, mô hình BERT đã được tiền huấn luyện sẵn có thể không phù hợp với các ứng dụng ở một số lĩnh vực cụ thể như ngành dược. 
-Do đó, tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh đang ngày càng trở nên phổ biến hơn.
-Để thuận tiện việc minh họa cho tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
+Do đó, việc tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh đang ngày càng trở nên phổ biến hơn.
+Để thuận tiện minh họa cho tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 
 
 <!--
@@ -58,10 +58,10 @@ We leave discussions of more complex sentence splitting techniques in the exerci
 -->
 
 Trong tập dữ liệu WikiText-2, mỗi dòng biểu diễn một đoạn văn. 
-Khoảng trống được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
+Dấu cách được chèn vào giữa bất cứ dấu ngắt câu nào và token đứng trước nó.
 Các đoạn văn có tối thiểu hai câu được giữ lại.
 Để tách các câu, ta chỉ sử dụng dấu chấm làm dấu phân cách cho đơn giản.
-Ta sẽ dành việc thảo luận cho các kỹ thuật tách câu phức tạp hơn ở phần bài tập ở cuối mục này.
+Ta sẽ dành việc thảo luận về các kỹ thuật tách câu phức tạp hơn ở phần bài tập cuối mục.
 
 
 ```{.python .input  n=2}
@@ -102,7 +102,7 @@ into the dataset of the ideal format to pretrain BERT.
 
 Ở phần này, ta sẽ bắt đầu lập trình các hàm hỗ trợ cho các hai tác vụ tiền huấn luyện BERT:
 dự đoán câu tiếp theo và mô hình hóa ngôn ngữ có mặt nạ. 
-Các hàm trợ giúp này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu có định dạng lý tưởng để tiền huấn luyện BERT.
+Các hàm hỗ trợ này sẽ được gọi khi thực hiện chuyển đổi các kho ngữ liệu văn bản thô sang tập dữ liệu có định dạng lý tưởng để tiền huấn luyện BERT.
 
 <!--
 ### Generating the Next Sentence Prediction Task
@@ -141,7 +141,7 @@ Here `paragraph` is a list of sentences, where each sentence is a list of tokens
 The argument `max_len` specifies the maximum length of a BERT input sequence during pretraining.
 -->
 
-Hàm sau đây sinh các mẫu huấn luyện cho việc dự đoán câu tiếp theo từ `paragraph` đầu vào thông qua hàm `_get_next_sentence`.
+Hàm sau đây sinh các mẫu huấn luyện cho tác vụ dự đoán câu tiếp theo từ đầu vào `paragraph` thông qua hàm `_get_next_sentence`.
 `paragraph` ở đây là một danh sách các câu mà mỗi câu là một danh sách các token.
 Đối số `max_len` là chiều dài cực đại của chuỗi đầu vào BERT trong suốt quá trình tiền huấn luyện.
 
@@ -192,7 +192,7 @@ chúng ta định nghĩa hàm `_replace_mlm_tokens`.
 Đầu vào của nó, `tokens` là một danh sách các token biểu diễn cho một chuỗi đầu vào BERT,
 `candidate_pred_positions` là một danh sách chỉ số của các token của chuỗi đầu vào BERT 
 ngoại trừ những token đặc biệt (token đặc biệt không được dự đoán trong tác vụ mô hình hóa ngôn ngữ có mặt nạ),
-và `num_mlm_preds` chỉ định số lượng các dự đoán (nhớ lại 15% các token ngẫu nhiên để dự đoán). 
+và `num_mlm_preds` chỉ định số lượng token được dự đoán (nhớ lại rằng 15% token ngẫu nhiên được dự đoán). 
 Dựa trên định nghĩa của tác vụ mô hình hóa ngôn ngữ có mặt nạ trong :numref:`subsec_mlm`,
 tại mỗi vị trí dự đoán, đầu vào có thể bị thay thế bởi token đặc biệt “&lt;mask&gt;” hoặc một token ngẫu nhiên, hoặc không đổi.
 Cuối cùng, hàm này trả về những token đầu vào sau khi thực hiện thay thế (nếu có),
@@ -236,7 +236,7 @@ By invoking the aforementioned `_replace_mlm_tokens` function, the following fun
 (after possible token replacement as described in :numref:`subsec_mlm`), the token indices where predictions take place, and label indices for these predictions.
 -->
 
-Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm dưới đây lấy một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ số của những token đầu vào (sau khi thay thế token (nếu có) như mô tả ở :numref:`subsec_mlm`), những chỉ số của token được dự đoán và nhãn cho những dự đoán này. 
+Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm dưới đây nhận một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ số của những token đầu vào (sau khi thay thế token (nếu có) như mô tả ở :numref:`subsec_mlm`), những chỉ số của token được dự đoán và chỉ số nhãn cho những dự đoán này. 
 
 
 ```{.python .input  n=6}
