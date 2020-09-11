@@ -47,7 +47,8 @@
      inkscape:window-x="1440"
      inkscape:window-y="23"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g501">
+     inkscape:current-layer="surface1"
+     inkscape:document-rotation="0">
     <sodipodi:guide
        position="138.52156,121.20332"
        orientation="0,-1"
@@ -399,227 +400,6 @@
        d="M 174.390625 32.550781 L 174.390625 36.550781 M 172.890625 36.550781 L 174.390625 32.550781 L 175.890625 36.550781 "
        transform="matrix(1,0,0,1,-108,51)"
        id="path139" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g151"
-       transform="translate(1.9962206)">
-      <use
-         xlink:href="#glyph1-1"
-         x="164.45821"
-         y="78.554131"
-         id="use149"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g167"
-       transform="translate(7.9962206)">
-      <use
-         xlink:href="#glyph1-2"
-         x="21.7377"
-         y="78.554131"
-         id="use161"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph1-3"
-         x="25.241699"
-         y="78.554131"
-         id="use163"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph1-4"
-         x="28.241699"
-         y="78.554131"
-         id="use165"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g173"
-       transform="translate(7.9962206)">
-      <use
-         xlink:href="#glyph1-5"
-         x="29.5749"
-         y="78.554131"
-         id="use169"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph1-6"
-         x="32.574902"
-         y="78.554131"
-         id="use171"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g185"
-       transform="translate(2.4924412)">
-      <use
-         xlink:href="#glyph1-7"
-         x="72.979103"
-         y="78.554131"
-         id="use183"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g197"
-       transform="translate(2.4924412)">
-      <use
-         xlink:href="#glyph1-8"
-         x="118.7186"
-         y="78.554131"
-         id="use195"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g209"
-       transform="translate(2.4981103)">
-      <use
-         xlink:href="#glyph1-9"
-         x="210.19769"
-         y="78.554131"
-         id="use207"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g221"
-       transform="translate(2.4981103)">
-      <use
-         xlink:href="#glyph1-10"
-         x="255.93719"
-         y="78.554131"
-         id="use219"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g233"
-       transform="translate(2.2414963)">
-      <use
-         xlink:href="#glyph1-11"
-         x="301.6767"
-         y="78.554131"
-         id="use231"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g249"
-       transform="translate(1.7452757)">
-      <use
-         xlink:href="#glyph1-2"
-         x="340.7439"
-         y="78.554131"
-         id="use243"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph1-5"
-         x="344.24789"
-         y="78.554131"
-         id="use245"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph1-12"
-         x="347.24789"
-         y="78.554131"
-         id="use247"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g253"
-       transform="translate(1.7452757)">
-      <use
-         xlink:href="#glyph1-13"
-         x="350.58511"
-         y="78.554131"
-         id="use251"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g257"
-       transform="translate(1.7452757)">
-      <use
-         xlink:href="#glyph1-6"
-         x="353.9223"
-         y="78.554131"
-         id="use255"
-         width="100%"
-         height="100%" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g279">
-      <use
-         xlink:href="#glyph1-1"
-         x="168.2111"
-         y="156.3541"
-         id="use277" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g315">
-      <use
-         xlink:href="#glyph1-7"
-         x="76.7321"
-         y="156.3541"
-         id="use313" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g337">
-      <use
-         xlink:href="#glyph1-8"
-         x="122.4716"
-         y="156.3541"
-         id="use335" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g359">
-      <use
-         xlink:href="#glyph1-9"
-         x="213.9506"
-         y="156.3541"
-         id="use357" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g381">
-      <use
-         xlink:href="#glyph1-10"
-         x="259.6901"
-         y="156.3541"
-         id="use379" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g403">
-      <use
-         xlink:href="#glyph1-11"
-         x="305.4296"
-         y="156.3541"
-         id="use401" />
-    </g>
     <path
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
        d="M 128.652344 93.453125 L 128.652344 36.550781 "
@@ -766,7 +546,9 @@
            id="tspan598-9-4"
            x="4.1269636"
            y="76.530968"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan231">&lt;cls&gt;</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -777,7 +559,9 @@
            id="tspan598-9-4-4"
            x="50.47575"
            y="76.640282"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan233">1</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -788,7 +572,9 @@
            id="tspan598-9-4-4-0"
            x="95.394882"
            y="76.640289"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan235">2</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -799,7 +585,9 @@
            id="tspan598-9-4-4-0-3"
            x="141.31779"
            y="76.389336"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan237">3</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -810,7 +598,9 @@
            id="tspan598-9-4-4-0-5"
            x="187.24071"
            y="76.640282"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan239">4</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -821,7 +611,9 @@
            id="tspan598-9-4-4-0-9"
            x="232.91266"
            y="76.640282"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan241">5</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -832,7 +624,9 @@
            id="tspan598-9-4-4-0-6"
            x="278.58463"
            y="76.640282"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan243">6</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -843,7 +637,9 @@
            id="tspan598-9-4-4-0-30"
            x="317.48108"
            y="76.640289"
-           style="font-size:8px;stroke-width:0.75">B.diễn</tspan></text>
+           style="font-size:8px;stroke-width:0.75">B.diễn<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan245">&lt;sep&gt;</tspan></tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -914,7 +710,9 @@
          id="tspan726"
          x="52.698421"
          y="154.08015"
-         style="font-size:8px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan247">1</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -925,7 +723,9 @@
          id="tspan726-4"
          x="98.330765"
          y="154.04733"
-         style="font-size:8.00003px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8.00003px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan249">2</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -936,7 +736,9 @@
          id="tspan726-7"
          x="143.75179"
          y="154.29828"
-         style="font-size:8.00003px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8.00003px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan251">3</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -947,7 +749,9 @@
          id="tspan726-4-3"
          x="189.80017"
          y="154.17281"
-         style="font-size:8.00003px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8.00003px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan253">4</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -958,7 +762,9 @@
          id="tspan726-7-4"
          x="235.22119"
          y="154.42375"
-         style="font-size:8.00003px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8.00003px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan255">5</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -969,7 +775,9 @@
          id="tspan726-7-4-0"
          x="281.26956"
          y="154.04733"
-         style="font-size:8.00003px;stroke-width:0.75">Token</tspan></text>
+         style="font-size:8.00003px;stroke-width:0.75">Token<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan257">6</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.00003px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
