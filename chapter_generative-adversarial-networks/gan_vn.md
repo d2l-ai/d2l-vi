@@ -44,7 +44,7 @@ Chẳng hạn, với một tập dữ liệu cho trước, không có bất kỳ
 ta có lẽ muốn học một mô hình thu chính xác các đặc tính của tập dữ liệu này.
 Với một mô hình như vậy, ta có thể lấy các mẫu dữ liệu tạo ra giống như phân phối của dữ liệu dùng huấn luyện.
 Ví dụ, với một kho lớn dữ liệu ảnh khuôn mặt cho trước,
-ta có thể muốn có thể sinh một ảnh như thật mà trông giống như nó được lấy từ cùng tập dữ liệu.
+có thể ta muốn có khả năng tạo ra được một ảnh như thật mà trông giống như nó được lấy ra từ cùng tập dữ liệu.
 Kiểu học này được gọi là tạo mô hình sinh.
 
 
