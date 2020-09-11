@@ -142,7 +142,7 @@ d2l.plt.show()
 ## Splitting the dataset
 -->
 
-## Chia nhỏ tập dữ liệu
+## Chia tập dữ liệu
 
 
 <!--
@@ -158,7 +158,7 @@ This mode will be used in the sequence-aware recommendation section.
 Ta chia tập dữ liệu thành các tập huấn luyện và kiểm tra.
 Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`.
 Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không xét tới mốc thời gian
-và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại dành cho mẫu kiểm tra.
+và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại là mẫu kiểm tra.
 Trong chế độ `seq-aware`, ta chừa lại sản phẩm mà người dùng đánh giá gần đây nhất để dùng trong kiểm tra, còn các tương tác trước đó làm tập huấn luyện.
 Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian.
 Chế độ này sẽ được sử dụng trong phần gợi ý nhận thức về chuỗi.
