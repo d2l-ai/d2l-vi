@@ -25,6 +25,9 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 
 ## Mục lục
 
+<details>
+<summary>Các nội dung đã hoàn thành</summary>
+
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
 * [x] [Cài đặt](chapter_install/index_vn.md)
 * [x] [Ký hiệu](chapter_notation/index_vn.md)
@@ -134,7 +137,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 13.12. [Truyền tải Phong cách Nơ-ron](chapter_computer-vision/neural-style_vn.md)
     * [x] 13.13. [Phân loại Ảnh (CIFAR-10) trên Kaggle](chapter_computer-vision/kaggle-gluon-cifar10_vn.md)
     * [x] 13.14. [Nhận diện Giống Chó (ImageNet Dogs) trên Kaggle](chapter_computer-vision/kaggle-gluon-dog_vn.md)
-* [-] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
+* [x] 14. [Xử lý Ngôn ngữ Tự nhiên: Tiền Huấn luyện](chapter_natural-language-processing-pretraining/index_vn.md)
     * [x] 14.1. [Embedding Từ (word2vec)](chapter_natural-language-processing-pretraining/word2vec_vn.md)
     * [x] 14.2. [Huấn luyện gần đúng](chapter_natural-language-processing-pretraining/approx-training_vn.md)
     * [x] 14.3. [Dữ liệu cho Tiền Huấn luyện Embbeding Từ](chapter_natural-language-processing-pretraining/word-embedding-dataset_vn.md)
@@ -145,18 +148,24 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 14.8. [Biểu diễn Mã hoá hai chiều từ Transformer (BERT)](chapter_natural-language-processing-pretraining/bert_vn.md)
     * [x] 14.9. [Tập dữ liệu để tiền huấn luyện BERT](chapter_natural-language-processing-pretraining/bert-dataset_vn.md)
     * [x] 14.10. [Tiền Huấn luyện BERT](chapter_natural-language-processing-pretraining/bert-pretraining_vn.md)
-* [ ] 15. [Xử lý Ngôn ngữ Tự nhiên: Ứng dụng](chapter_natural-language-processing-applications/index_vn.md)
+</details>
+
+
+<details open>
+    <summary>Các nội dung đang triển khai</summary>
+
+* [-] 15. [Xử lý Ngôn ngữ Tự nhiên: Ứng dụng](chapter_natural-language-processing-applications/index_vn.md)
     * [x] 15.1. [Tác vụ Phân tích Cảm xúc và Bộ Dữ liệu](chapter_natural-language-processing-applications/sentiment-analysis-and-dataset_vn.md)
     * [x] 15.2. [Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Hồi tiếp](chapter_natural-language-processing-applications/sentiment-analysis-rnn_vn.md)
-    * [-] 15.3. [Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Tích Chập](chapter_natural-language-processing-applications/sentiment-analysis-cnn_vn.md)
-    * [-] 15.4. [Natural Language Inference and the Dataset](chapter_natural-language-processing-applications/natural-language-inference-and-dataset_vn.md)
-    * [-] 15.5. [Natural Language Inference: Using Attention](chapter_natural-language-processing-applications/natural-language-inference-attention_vn.md)
-    * [-] 15.6. [Fine-Tuning BERT for Sequence-Level and Token-Level Applications](chapter_natural-language-processing-applications/finetuning-bert_vn.md)
-    * [-] 15.7. [Natural Language Inference: Fine-Tuning BERT](chapter_natural-language-processing-applications/natural-language-inference-bert_vn.md)
-* [ ] 16. [Hệ thống Gợi ý](chapter_recommender-systems/index_vn.md)
-    * [-] 16.1. [Overview of Recommender Systems](chapter_recommender-systems/recsys-intro_vn.md)
-    * [-] 16.2. [The MovieLens Dataset](chapter_recommender-systems/movielens_vn.md)
-    * [-] 16.3. [Matrix Factorization](chapter_recommender-systems/mf_vn.md)
+    * [x] 15.3. [Phân tích Cảm xúc: Sử dụng Mạng Nơ-ron Tích Chập](chapter_natural-language-processing-applications/sentiment-analysis-cnn_vn.md)
+    * [x] 15.4. [Suy luận Ngôn ngữ Tự nhiên và tập Dữ liệu](chapter_natural-language-processing-applications/natural-language-inference-and-dataset_vn.md)
+    * [x] 15.5. [Suy diễn Ngôn ngữ Tự nhiên: Sử dụng Cơ chế Tập trung](chapter_natural-language-processing-applications/natural-language-inference-attention_vn.md)
+    * [x] 15.6. [Tinh chỉnh BERT cho các Ứng dụng Cấp Chuỗi và Cấp Token](chapter_natural-language-processing-applications/finetuning-bert_vn.md)
+    * [x] 15.7. [Suy luận Ngôn ngữ Tự nhiên: Tinh chỉnh BERT](chapter_natural-language-processing-applications/natural-language-inference-bert_vn.md)
+* [-] 16. [Hệ thống Gợi ý](chapter_recommender-systems/index_vn.md)
+    * [-] 16.1. [Sơ lược về Hệ thống Gợi ý](chapter_recommender-systems/recsys-intro_vn.md)
+    * [-] 16.2. [Tập dữ liệu MovieLens](chapter_recommender-systems/movielens_vn.md)
+    * [-] 16.3. [Phân rã Ma trận](chapter_recommender-systems/mf_vn.md)
     * [-] 16.4. [AutoRec: Rating Prediction with Autoencoders](chapter_recommender-systems/autorec_vn.md)
     * [-] 16.5. [Personalized Ranking for Recommender Systems](chapter_recommender-systems/ranking_vn.md)
     * [-] 16.6. [Neural Collaborative Filtering for Personalized Ranking](chapter_recommender-systems/neumf_vn.md)
@@ -169,16 +178,16 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [-] 17.2. [Deep Convolutional Generative Adversarial Networks](chapter_generative-adversarial-networks/dcgan_vn.md)
 * [ ] 18. [Phụ lục: Toán học cho Học Sâu](chapter_appendix_math/index_vn.md)
     * [x] 18.1. [Các phép toán Hình học và Đại số Tuyến tính](chapter_appendix_math/geometry-linear-algebric-ops_vn.md)
-    * [ ] 18.2. [Eigendecompositions](chapter_appendix_math/eigendecomposition_vn.md)
+    * [-] 18.2. [Eigendecompositions](chapter_appendix_math/eigendecomposition_vn.md)
     * [x] 18.3. [Giải tích một biến](chapter_appendix_math/single-variable-calculus_vn.md)
-    * [ ] 18.4. [Multivariable Calculus](chapter_appendix_math/multivariable-calculus_vn.md)
-    * [ ] 18.5. [Integral Calculus](chapter_appendix_math/integral-calculus_vn.md)
-    * [ ] 18.6. [Random Variables](chapter_appendix_math/random-variables_vn.md)
-    * [ ] 18.7. [Maximum Likelihood](chapter_appendix_math/maximum-likelihood_vn.md)
-    * [ ] 18.8. [Distributions](chapter_appendix_math/distributions_vn.md)
-    * [ ] 18.9. [Naive Bayes](chapter_appendix_math/naive-bayes_vn.md)
+    * [-] 18.4. [Multivariable Calculus](chapter_appendix_math/multivariable-calculus_vn.md)
+    * [-] 18.5. [Integral Calculus](chapter_appendix_math/integral-calculus_vn.md)
+    * [-] 18.6. [Random Variables](chapter_appendix_math/random-variables_vn.md)
+    * [-] 18.7. [Maximum Likelihood](chapter_appendix_math/maximum-likelihood_vn.md)
+    * [-] 18.8. [Distributions](chapter_appendix_math/distributions_vn.md)
+    * [-] 18.9. [Naive Bayes](chapter_appendix_math/naive-bayes_vn.md)
     * [x] 18.10. [Thống kê](chapter_appendix_math/statistics_vn.md)
-    * [ ] 18.11. [Information Theory](chapter_appendix_math/information-theory_vn.md)
+    * [-] 18.11. [Information Theory](chapter_appendix_math/information-theory_vn.md)
 * [ ] 19. [Phụ lục: Công cụ cho Học Sâu](chapter_appendix-tools-for-deep-learning/index_vn.md)
     * [ ] 19.1. [Sử dụng Jupyter](chapter_appendix-tools-for-deep-learning/jupyter_vn.md)
     * [ ] 19.2. [Sử dụng Amazon SageMaker](chapter_appendix-tools-for-deep-learning/sagemaker_vn.md)
@@ -187,6 +196,8 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [ ] 19.5. [Lựa chọn Máy chủ & GPU](chapter_appendix-tools-for-deep-learning/selecting-servers-gpus_vn.md)
     * [ ] 19.6. [Đóng góp cho Quyển sách](chapter_appendix-tools-for-deep-learning/contributing_vn.md)
     * [ ] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
+</details>
+
 
 ## Giấy phép
 
