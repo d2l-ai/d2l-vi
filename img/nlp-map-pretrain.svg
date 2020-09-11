@@ -8,7 +8,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
    sodipodi:docname="nlp-map-pretrain.svg"
    id="svg727"
    version="1.1"
@@ -27,17 +27,17 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:current-layer="svg727"
-     inkscape:window-maximized="1"
+     inkscape:current-layer="surface1"
+     inkscape:window-maximized="0"
      inkscape:window-y="23"
-     inkscape:window-x="47"
+     inkscape:window-x="1722"
      inkscape:cy="165.72571"
      inkscape:cx="356.38741"
      inkscape:zoom="2.9311224"
      showgrid="false"
      id="namedview729"
-     inkscape:window-height="855"
-     inkscape:window-width="1393"
+     inkscape:window-height="1338"
+     inkscape:window-width="2560"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      guidetolerance="10"
@@ -45,7 +45,8 @@
      objecttolerance="10"
      borderopacity="1"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0" />
   <defs
      id="defs138">
     <g
@@ -410,108 +411,11 @@
        transform="matrix(1,0,0,1,96,-50)"
        d="M -23.476562 198.496094 L 29.050781 198.496094 L 29.050781 224.996094 L -23.476562 224.996094 Z M -23.476562 198.496094 "
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g188"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use186"
-         y="164.6003"
-         x="79.52911"
-         xlink:href="#glyph0-9" />
-    </g>
-    <g
-       id="g192"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use190"
-         y="164.6003"
-         x="86.02891"
-         xlink:href="#glyph0-10" />
-    </g>
-    <g
-       id="g198"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use194"
-         y="164.6003"
-         x="91.03471"
-         xlink:href="#glyph0-2" />
-      <use
-         id="use196"
-         y="164.6003"
-         x="94.03171"
-         xlink:href="#glyph0-11" />
-    </g>
-    <g
-       id="g202"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use200"
-         y="164.6003"
-         x="99.03751"
-         xlink:href="#glyph0-12" />
-    </g>
-    <g
-       id="g208"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use204"
-         y="164.6003"
-         x="104.04331"
-         xlink:href="#glyph0-13" />
-      <use
-         id="use206"
-         y="164.6003"
-         x="108.54331"
-         xlink:href="#glyph0-3" />
-    </g>
-    <g
-       id="g212"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use210"
-         y="164.6003"
-         x="113.54911"
-         xlink:href="#glyph0-14" />
-    </g>
     <path
        id="path214"
        transform="matrix(1,0,0,1,96,-50)"
        d="M 52.46875 198.496094 L 104.996094 198.496094 L 104.996094 224.996094 L 52.46875 224.996094 Z M 52.46875 198.496094 "
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g224"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use216"
-         y="164.6003"
-         x="162.47327"
-         xlink:href="#glyph0-15" />
-      <use
-         id="use218"
-         y="164.6003"
-         x="169.47347"
-         xlink:href="#glyph0-16" />
-      <use
-         id="use220"
-         y="164.6003"
-         x="171.46967"
-         xlink:href="#glyph0-10" />
-      <use
-         id="use222"
-         y="164.6003"
-         x="176.47187"
-         xlink:href="#glyph0-17" />
-    </g>
-    <g
-       id="g228"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use226"
-         y="164.6003"
-         x="181.97807"
-         xlink:href="#glyph0-3" />
-    </g>
     <path
        id="path230"
        transform="matrix(1,0,0,1,96,-50)"
@@ -531,34 +435,6 @@
        transform="matrix(1,0,0,1,96,-50)"
        d="M 204.355469 198.496094 L 256.882812 198.496094 L 256.882812 224.996094 L 204.355469 224.996094 Z M 204.355469 198.496094 "
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g302"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use296"
-         y="164.6003"
-         x="314.699"
-         xlink:href="#glyph0-23" />
-      <use
-         id="use298"
-         y="164.6003"
-         x="320.702"
-         xlink:href="#glyph0-24" />
-      <use
-         id="use300"
-         y="164.6003"
-         x="326.705"
-         xlink:href="#glyph0-25" />
-    </g>
-    <g
-       id="g306"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use304"
-         y="164.6003"
-         x="333.0419"
-         xlink:href="#glyph0-26" />
-    </g>
     <path
        transform="matrix(1,0,0,1,96,-50)"
        id="path346"
@@ -572,53 +448,11 @@
        transform="matrix(1,0,0,1,96,-50)"
        d="M -28.96875 129.125 L 29.050781 129.125 L 29.050781 156.125 L -28.96875 156.125 Z M -28.96875 129.125 "
        style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g388"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use384"
-         y="95.4766"
-         x="86.788879"
-         xlink:href="#glyph0-29" />
-      <use
-         id="use386"
-         y="95.4766"
-         x="94.285879"
-         xlink:href="#glyph0-30" />
-    </g>
-    <g
-       id="g392"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use390"
-         y="95.4766"
-         x="99.291679"
-         xlink:href="#glyph0-1" />
-    </g>
     <path
        id="path394"
        transform="matrix(1,0,0,1,96,-50)"
        d="M 127.242188 129.125 L 185.261719 129.125 L 185.261719 156.125 L 127.242188 156.125 Z M 127.242188 129.125 "
        style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g402"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use396"
-         y="95.4766"
-         x="242.5021"
-         xlink:href="#glyph0-25" />
-      <use
-         id="use398"
-         y="95.4766"
-         x="249.0019"
-         xlink:href="#glyph0-31" />
-      <use
-         id="use400"
-         y="95.4766"
-         x="255.5017"
-         xlink:href="#glyph0-31" />
-    </g>
     <path
        transform="matrix(1,0,0,1,96,-50)"
        id="path444"
@@ -726,126 +560,464 @@
        transform="matrix(1,0,0,1,96,-50)"
        d="M 49.136719 129.125 L 107.15625 129.125 L 107.15625 156.125 L 49.136719 156.125 Z M 49.136719 129.125 "
        style="fill-rule:nonzero;fill:rgb(69.804382%,85.098267%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" />
-    <g
-       id="g724"
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-      <use
-         id="use718"
-         y="95.4766"
-         x="164.39722"
-         xlink:href="#glyph0-39" />
-      <use
-         id="use720"
-         y="95.4766"
-         x="170.89702"
-         xlink:href="#glyph0-31" />
-      <use
-         id="use722"
-         y="95.4766"
-         x="177.39682"
-         xlink:href="#glyph0-31" />
-    </g>
+
+       <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:41.1467;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="11.60407"
+       y="66.723404"
+       id="text1518" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.38439"
+       x="28.585499"
+       y="168.05226"
+       id="text1522"
+       transform="scale(0.98375574,1.0165125)"><tspan
+         sodipodi:role="line"
+         x="28.585499"
+         y="168.05226"
+         style="font-size:9px;text-align:end;text-anchor:end;stroke-width:1.38439"
+         id="tspan1524">huấn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.44693px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.236174"
+       x="161.17113"
+       y="97.484459"
+       id="text1836"
+       transform="scale(1.0153953,0.98483813)"><tspan
+         sodipodi:role="line"
+         id="tspan1834"
+         x="161.17113"
+         y="97.484459"
+         style="stroke-width:0.236174">CNN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.44692px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.236174"
+       x="237.66493"
+       y="96.959518"
+       id="text1836-1"
+       transform="scale(1.0153953,0.98483812)"><tspan
+         sodipodi:role="line"
+         id="tspan1834-5"
+         x="237.66493"
+         y="96.959518"
+         style="stroke-width:0.236174">RNN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="34.812206"
+       y="158.8307"
+       id="text1858"><tspan
+         sodipodi:role="line"
+         id="tspan1856"
+         x="34.812206"
+         y="158.8307"
+         style="font-size:9px;stroke-width:0.75">Tiền</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1860"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.99999911000000097px;white-space:pre;shape-inside:url(#rect1862);" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="29.735428"
+       y="170.79741"
+       id="text1868"><tspan
+         sodipodi:role="line"
+         id="tspan1866"
+         x="29.735428"
+         y="170.79741"
+         style="font-size:9px;stroke-width:0.75">luyện</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="77.239594"
+       y="164.99538"
+       id="text1878"><tspan
+         sodipodi:role="line"
+         id="tspan1876"
+         x="77.239594"
+         y="164.99538"
+         style="font-size:9px;stroke-width:0.75">word2vec</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="161.00648"
+       y="164.63274"
+       id="text1882"
+       inkscape:transform-center-y="-1.4505088"><tspan
+         sodipodi:role="line"
+         id="tspan1880"
+         x="161.00648"
+         y="164.63274"
+         style="font-size:9px;stroke-width:0.75">GloVe</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="313.93616"
+       y="165.35799"
+       id="text2609"><tspan
+         sodipodi:role="line"
+         id="tspan2607"
+         x="313.93616"
+         y="165.35799"
+         style="font-size:9px;stroke-width:0.75">BERT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="225.76892"
+       y="158.10545"
+       id="text2613"><tspan
+         sodipodi:role="line"
+         id="tspan2611"
+         x="225.76892"
+         y="158.10545"
+         style="font-size:9px;stroke-width:0.75">Embedding</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="266.53101"
+       y="223.74098"
+       id="text2617"><tspan
+         sodipodi:role="line"
+         id="tspan2615"
+         x="266.53101"
+         y="223.74098"
+         style="stroke-width:0.75"> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="237.25717"
+       y="170.07217"
+       id="text2621"><tspan
+         sodipodi:role="line"
+         id="tspan2619"
+         x="237.25717"
+         y="170.07217"
+         style="font-size:9px;stroke-width:0.75">từ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="250.26225"
+       y="170.07214"
+       id="text2625"><tspan
+         sodipodi:role="line"
+         id="tspan2623"
+         x="250.26225"
+         y="170.07214"
+         style="font-size:9px;stroke-width:0.75">con</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="13.05458"
+       y="95.733574"
+       id="text2629"><tspan
+         sodipodi:role="line"
+         id="tspan2627"
+         x="13.05458"
+         y="95.733574"
+         style="font-size:9px;stroke-width:0.75">Kiến</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="35.174839"
+       y="95.733582"
+       id="text2633"><tspan
+         sodipodi:role="line"
+         id="tspan2631"
+         x="35.174839"
+         y="95.733582"
+         style="font-size:9px;stroke-width:0.75">trúc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="87.129501"
+       y="95.733574"
+       id="text2637"><tspan
+         sodipodi:role="line"
+         id="tspan2635"
+         x="87.129501"
+         y="95.733574"
+         style="font-size:9px;stroke-width:0.75">MLP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="309.73309"
+       y="96.096207"
+       id="text2641"><tspan
+         sodipodi:role="line"
+         id="tspan2639"
+         x="309.73309"
+         y="96.096207"
+         style="font-size:9px;stroke-width:0.75">Tập</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="328.58972"
+       y="96.096199"
+       id="text2645"><tspan
+         sodipodi:role="line"
+         id="tspan2643"
+         x="328.58972"
+         y="96.096199"
+         style="font-size:9px;stroke-width:0.75">trung</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="10.466697"
+       y="26.109158"
+       id="text2649"><tspan
+         sodipodi:role="line"
+         id="tspan2647"
+         x="10.466697"
+         y="26.109158"
+         style="font-size:9px;stroke-width:0.75">Ứng</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="30.823311"
+       y="26.109158"
+       id="text2653"><tspan
+         sodipodi:role="line"
+         id="tspan2651"
+         x="30.823311"
+         y="26.109158"
+         style="font-size:9px;stroke-width:0.75">dụng</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="95.156799"
+       y="21.395006"
+       id="text2657"><tspan
+         sodipodi:role="line"
+         id="tspan2655"
+         x="95.156799"
+         y="21.395006"
+         style="font-size:9px;stroke-width:0.75">Phân</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text2659"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:29.99999911000000097px;white-space:pre;shape-inside:url(#rect2661);" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="119.47607"
+       y="21.383234"
+       id="text2657-3"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3"
+         x="119.47607"
+         y="21.383234"
+         style="font-size:9px;stroke-width:0.75">tích</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="137.97005"
+       y="21.383234"
+       id="text2657-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8"
+         x="137.97005"
+         y="21.383234"
+         style="font-size:9px;stroke-width:0.75">cảm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="159.08554"
+       y="21.383234"
+       id="text2657-3-6-8"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2"
+         x="159.08554"
+         y="21.383234"
+         style="font-size:9px;stroke-width:0.75">xúc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="105.28237"
+       y="32.324722"
+       id="text2657-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-9"
+         x="105.28237"
+         y="32.324722"
+         style="font-size:9px;stroke-width:0.75">(</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="108.1344"
+       y="32.687351"
+       id="text2657-3-21"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-1"
+         x="108.1344"
+         y="32.687351"
+         style="font-size:9px;stroke-width:0.75">văn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="126.21577"
+       y="32.687351"
+       id="text2657-3-21-1"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-1-2"
+         x="126.21577"
+         y="32.687351"
+         style="font-size:9px;stroke-width:0.75">bản</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="145.07237"
+       y="32.687351"
+       id="text2657-3-21-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-1-2-3"
+         x="145.07237"
+         y="32.687351"
+         style="font-size:9px;stroke-width:0.75">đơn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="160.25323"
+       y="32.324722"
+       id="text2657-3-21-1-3-0"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-1-2-3-0"
+         x="160.25323"
+         y="32.324722"
+         style="font-size:9px;stroke-width:0.75">)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="206.81129"
+       y="21.383236"
+       id="text2657-3-6-8-5"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3"
+         x="206.81129"
+         y="21.383236"
+         style="font-size:9px;stroke-width:0.75">Suy</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="222.40427"
+       y="21.383234"
+       id="text2657-3-6-8-5-9"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6"
+         x="222.40427"
+         y="21.383234"
+         style="font-size:9px;stroke-width:0.75"> luận</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="243.00432"
+       y="21.337248"
+       id="text2657-3-6-8-5-9-8"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-7"
+         x="243.00432"
+         y="21.337248"
+         style="font-size:9px;stroke-width:0.75"> ngôn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="267.16"
+       y="21.609789"
+       id="text2657-3-6-8-5-9-8-0"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-7-0"
+         x="267.16"
+         y="21.609789"
+         style="font-size:9px;stroke-width:0.75"> ngữ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="288.91766"
+       y="21.609787"
+       id="text2657-3-6-8-5-9-8-8"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-7-7"
+         x="288.91766"
+         y="21.609787"
+         style="font-size:9px;stroke-width:0.75"> tự</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="300.88437"
+       y="21.609787"
+       id="text2657-3-6-8-5-9-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-7-4"
+         x="300.88437"
+         y="21.609787"
+         style="font-size:9px;stroke-width:0.75"> nhiên</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="231.49922"
+       y="32.216064"
+       id="text2657-3-6-8-5-9-7"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77"
+         x="231.49922"
+         y="32.216064"
+         style="font-size:9px;stroke-width:0.75"> (</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="235.1255"
+       y="32.216064"
+       id="text2657-3-6-8-5-9-7-2"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77-4"
+         x="235.1255"
+         y="32.216064"
+         style="font-size:9px;stroke-width:0.75"> cặp</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="267.66296"
+       y="32.216064"
+       id="text2657-3-6-8-5-9-7-29"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77-9"
+         x="267.66296"
+         y="32.216064"
+         style="font-size:9px;stroke-width:0.75" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="252.16895"
+       y="32.216064"
+       id="text2657-3-6-8-5-9-7-29-3"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77-9-7"
+         x="252.16895"
+         y="32.216064"
+         style="font-size:9px;stroke-width:0.75"> văn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="273.92664"
+       y="32.216064"
+       id="text2657-3-6-8-5-9-7-29-3-0"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77-9-7-0"
+         x="273.92664"
+         y="32.216064"
+         style="font-size:9px;stroke-width:0.75">bản</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+       x="286.89825"
+       y="31.886473"
+       id="text2657-3-6-8-5-9-7-9"><tspan
+         sodipodi:role="line"
+         id="tspan2655-3-8-2-3-6-77-0"
+         x="286.89825"
+         y="31.886473"
+         style="font-size:9px;stroke-width:0.75"> )</tspan></text>
   </g>
-  <text
-     id="text735"
-     y="27.10413"
-     x="28.500374"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     xml:space="preserve"><tspan
-       style="stroke-width:0.75"
-       y="27.10413"
-       x="28.500374"
-       id="tspan733"
-       sodipodi:role="line">Ứng dụng</tspan></text>
-  <text
-     id="text739"
-     y="96.588303"
-     x="27.858372"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     xml:space="preserve"><tspan
-       style="stroke-width:0.75"
-       y="96.588303"
-       x="27.858372"
-       id="tspan737"
-       sodipodi:role="line">Kiến trúc</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     x="27.329258"
-     y="158.23317"
-     id="text765"><tspan
-       sodipodi:role="line"
-       id="tspan763"
-       x="27.329258"
-       y="158.23317"
-       style="stroke-width:0.75">Tiền</tspan><tspan
-       id="tspan857"
-       sodipodi:role="line"
-       x="27.329258"
-       y="169.48317"
-       style="stroke-width:0.75">huấn luyện</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     x="135.30815"
-     y="20.37006"
-     id="text751"><tspan
-       sodipodi:role="line"
-       id="tspan749"
-       x="135.30815"
-       y="20.37006"
-       style="stroke-width:0.75">Phân tích cảm xúc</tspan><tspan
-       sodipodi:role="line"
-       x="135.30815"
-       y="31.62006"
-       style="stroke-width:0.75"
-       id="tspan755">(văn bản đơn)</tspan><tspan
-       sodipodi:role="line"
-       x="135.30815"
-       y="42.87006"
-       style="stroke-width:0.75"
-       id="tspan753" /></text>
-  <text
-     xml:space="preserve"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     x="268.23126"
-     y="19.732822"
-     id="text759"><tspan
-       sodipodi:role="line"
-       id="tspan757"
-       x="268.23126"
-       y="19.732822"
-       style="stroke-width:0.75">Suy luận ngôn ngữ tự nhiên</tspan><tspan
-       sodipodi:role="line"
-       x="268.23126"
-       y="30.982822"
-       style="stroke-width:0.75"
-       id="tspan761">(cặp văn bản)</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     x="250.12219"
-     y="159.73274"
-     id="text743"><tspan
-       sodipodi:role="line"
-       id="tspan741"
-       x="250.12219"
-       y="159.73274"
-       style="stroke-width:0.75">Embedding</tspan><tspan
-       sodipodi:role="line"
-       x="250.12219"
-       y="170.98274"
-       style="stroke-width:0.75"
-       id="tspan904">từ con</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-size:9px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.75"
-     x="331.22906"
-     y="94.953629"
-     id="text747"><tspan
-       sodipodi:role="line"
-       id="tspan745"
-       x="331.22906"
-       y="94.953629"
-       style="stroke-width:0.75">Tập trung</tspan></text>
 </svg>
