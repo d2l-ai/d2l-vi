@@ -147,7 +147,7 @@ we use 4 worker processes to generate training or testing examples in parallel.
 Trong mỗi mẫu, tiền đề và giả thuyết tạo thành một cặp chuỗi văn bản
 và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-hai-seqs`.
 Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
-được sử dụng để phân biệt tiên đề và giả thuyết trong chuỗi đầu vào BERT.
+được sử dụng để phân biệt tiền đề và giả thuyết trong chuỗi đầu vào BERT.
 Với độ dài tối đa đã định trước của chuỗi đầu vào BERT (`max_len`),
 token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào sẽ bị xóa cho đến khi độ dài của nó thành `max_len`.
 Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
