@@ -268,7 +268,7 @@ In common implementations of BERT fine-tuning, only the parameters of the output
 All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden layer of the additional MLP (net.hidden) will be fine-tuned.
 -->
 
-Sau đây, mô hình BERT tiền huấn luyện `bert` được đưa vào thể hiện `net` của `BERTClassifier` cho ứng dụng hạ nguồn.
+Sau đây, mô hình BERT đã tiền huấn luyện `bert` được đưa vào thực thể `net` của lớp `BERTClassifier` cho ứng dụng xuôi dòng.
 Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
 Còn tất cả các tham số của bộ mã hóa BERT đã tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
