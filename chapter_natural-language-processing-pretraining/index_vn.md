@@ -55,7 +55,7 @@ Trong chương này, ta sẽ tập trung vào cách tiền huấn luyện các b
 ![Pretrained text representations can be fed to various deep learning architectures for different downstream natural language processing applications. This chapter focuses on the upstream text representation pretraining.](../img/nlp-map-pretrain.svg)
 -->
 
-![Các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu khác nhau cho các ứng dụng xử lý ngôn ngữ tự nhiên hạ nguồn khác nhau. Chương này tập trung vào cách tiền huấn luyện biểu diễn văn bản ngược dòng (*upstream*).](../img/nlp-map-pretrain.svg)
+![Các biểu diễn văn bản được tiền huấn luyện có thể được truyền vào các kiến trúc học sâu khác nhau cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau. Chương này tập trung vào cách tiền huấn luyện biểu diễn văn bản ngược dòng (*upstream*).](../img/nlp-map-pretrain.svg)
 :label:`fig_nlp-map-pretrain`
 
 
