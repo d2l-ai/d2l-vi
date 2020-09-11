@@ -301,7 +301,9 @@ In common implementations of BERT fine-tuning, only the parameters of the output
 All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden layer of the additional MLP (net.hidden) will be fine-tuned.
 -->
 
-*dịch đoạn phía trên*
+Sau đây, mô hình BERT đã tiền huấn luyện `bert` được đưa vào thực thể `net` của lớp `BERTClassifier` cho ứng dụng xuôi dòng.
+Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
+Còn tất cả các tham số của bộ mã hóa BERT đã tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
 
 ```{.python .input  n=8}
@@ -318,7 +320,11 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 `MaskLM` and `NextSentencePred` are not updated (staled) when BERT is fine-tuned.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong perceptron đa tầng mà chúng sử dụng.
+Các tham số này là một phần của các tham số trong mô hình BERT đã tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
+Tuy nhiên, các tham số này chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ có mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
+Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng xuôi dòng, do đó các tham số của perceptron đa tầng dùng trong
+`MaskLM` và` NextSentencePred` không được cập nhật khi tinh chỉnh BERT.
 
 
 <!--
@@ -327,7 +333,9 @@ We use this function to train and evaluate the model `net` using the training se
 Due to the limited computational resources, the training and testing accuracy can be further improved: we leave its discussions in the exercises.
 -->
 
-*dịch đoạn phía trên*
+Để cho phép sử dụng các tham số với gradient không được cập nhật, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
+Chúng ta sử dụng chức năng này để huấn luyện và đánh giá mô hình `net` bằng cách sử dụng tập huấn luyện (`train_iter`) và tập kiểm tra (`test_iter`) của SNLI.
+Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng sẽ thảo luận vấn đề này trong phần bài tập.
 
 
 ```{.python .input  n=46}
@@ -346,7 +354,9 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
 Parameters that are only related to pretraining loss will not be updated during fine-tuning. 
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể tinh chỉnh mô hình BERT đã tiền huấn luyện cho các ứng dụng xuôi dòng, chẳng hạn như suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
+* Trong quá trình tinh chỉnh, mô hình BERT trở thành một phần của mô hình ứng dụng xuôi dòng.
+Các tham số chỉ liên quan đến phần mất mát trong tiền huấn luyện sẽ không được cập nhật trong quá trình tinh chỉnh.
 
 
 ## Bài tập
@@ -360,7 +370,12 @@ By increasing fine-tuning epochs (and possibly tuning other hyperparameters), ca
 Compare this pair truncation method and the one used in the `SNLIBERTDataset` class. What are their pros and cons?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn, có kích thước tương đương với mô hình BERT cơ sở ban đầu, nếu tài nguyên tính toán của bạn cho phép.
+Hãy thay đổi các đối số trong hàm `load_pretrained_model`: thay thế 'bert.small' bằng 'bert.base',
+lần lượt tăng giá trị của `num_hiddens = 256`,` ffn_num_hiddens = 512`, `num_heads = 4`,` num_layers = 2` thành `768`,` 3072`, `12`,` 12`.
+Bằng cách tăng số epoch khi tinh chỉnh (và có thể điều chỉnh các siêu tham số khác), có thể nhận được độ chính xác trên tập kiểm tra cao hơn 0,86 không?
+2. Làm thế nào để cắt ngắn một cặp chuỗi theo tỉ lệ độ dài của chúng?
+So sánh phương thức cắt ngắn cặp này và phương thức được sử dụng trong lớp `SNLIBERTDataset`. Ưu và nhược điểm của chúng là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -388,4 +403,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thái Bình
 * Nguyễn Văn Cường
 <!-- Phần 3 -->
-* 
+* Nguyễn Thái Bình
+* Nguyễn Văn Cường
