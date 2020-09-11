@@ -162,7 +162,7 @@ d2l.plt.show()
 ## Splitting the dataset
 -->
 
-## *dịch tiêu đề trên*
+## Chia tập dữ liệu
 
 
 <!--
@@ -175,7 +175,13 @@ User historical interactions are sorted from oldest to newest based on timestamp
 This mode will be used in the sequence-aware recommendation section.
 -->
 
-*dịch đoạn phía trên*
+Ta chia tập dữ liệu thành các tập huấn luyện và kiểm tra.
+Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`.
+Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không xét tới mốc thời gian
+và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại là mẫu kiểm tra.
+Trong chế độ `seq-aware`, ta chừa lại sản phẩm mà người dùng đánh giá gần đây nhất để dùng trong kiểm tra, còn các tương tác trước đó làm tập huấn luyện.
+Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian.
+Chế độ này sẽ được sử dụng trong phần gợi ý nhận thức về chuỗi.
 
 
 ```{.python .input  n=5}
@@ -211,14 +217,16 @@ However, we omit that for the sake of brevity.
 In this case, our test set can be regarded as our held-out validation set.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng trong thực tiễn, ta tốt nhất nên sử dụng tập kiểm định, tách bạch khỏi một tập kiểm tra duy nhất.
+Tuy nhiên, chúng tôi bỏ qua điều đó vì mục đích ngắn gọn. 
+Trong trường hợp này, tập kiểm tra của chúng ta có thể được coi là tập kiểm định bất đắc dĩ.
 
 
 <!--
 ## Loading the data
 -->
 
-## *dịch tiêu đề trên*
+## Nạp dữ liệu
 
 
 <!--
@@ -228,7 +236,10 @@ The function then returns lists of users, items, ratings and a dictionary/matrix
 We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
+Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
+Sau đó hàm trả về các danh sách người dùng, sản phẩm, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
+Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*).
 
 
 ```{.python .input  n=6}
@@ -257,7 +268,10 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 (The remaining samples are rolled over to the next epoch.) and orders are shuffled.
 -->
 
-*dịch đoạn phía trên*
+Rồi ta kết hợp các bước ở trên lại để sử dụng ở phần tiếp theo.
+Kết quả được gói gọn trong `Dataset` và `DataLoader`.
+Lưu ý rằng tham số `last_batch` của `DataLoader` dùng cho dữ liệu huấn luyện được thiếp lập ở chế độ `rollover`
+(các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn.
 
 
 ```{.python .input  n=7}
@@ -290,7 +304,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * We define functions to download and preprocess the MovieLens 100k dataset for further use in later sections.
 -->
 
-*dịch đoạn phía trên*
+* Tập dữ liệu MovieLens được sử dụng rộng rãi trong nghiên cứu hệ thống gợi ý. Tập dữ liệu này được công khai miễn phí sử dụng.
+* Ta định nghĩa các hàm để tải và tiền xử lý tập dữ liệu MovieLens 100k để sử dụng sau này trong các phần tiếp theo.
 
 
 ## Bài tập
@@ -300,7 +315,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * Go through the [https://movielens.org/](https://movielens.org/) site for more information about MovieLens.
 -->
 
-*dịch đoạn phía trên*
+* Bạn có thể tìm được tập dữ liệu gợi ý nào khác tương tự như tập MovieLens không?
+* Xem qua trang [https://movielens.org/](https://movielens.org/) để biết thêm thông tin về MovieLens.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -325,6 +341,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 17/07/2020)*
