@@ -128,7 +128,7 @@ $\mathbf{p}_u \in \mathbb{R}^{ k}$ is the $u^\mathrm{th}$ row of $P$ and $\mathb
 
 trong đó $\mathbf{V} \in \mathbb{R}^{n \times 2k}$ là một ma trận embedding sản phẩm khác.
 $\mathbf{b}' \in \mathbb{R}^n$ là độ chệch đặc thù của sản phẩm.
-$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding người dùng cho thị hiếu chung của người dùng.
+$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding người dùng vào thị hiếu chung của người dùng.
 $\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của $P$ và $\mathbf{v}_i \in \mathbb{R}^{2k}$ là hàng thứ $i$ của $\mathbf{V}$.
 
 
@@ -231,7 +231,7 @@ class Caser(nn.Block):
 ## Sequential Dataset with Negative Sampling
 -->
 
-## Tập dữ liệu theo Trình tự thời gian với Lấy mẫu Âm
+## Tập dữ liệu Tuần tự với Lấy mẫu Âm
 
 
 <!--
@@ -245,7 +245,7 @@ For the remaining seven movies, we can get three training samples, with each sam
 Negative samples are also included in the Customized dataset.
 -->
 
-Để xử lý dữ liệu tương tác theo trình tự thời gian, ta cần lập trình lại lớp Dataset.
+Để xử lý dữ liệu tương tác tuần tự, ta cần lập trình lại lớp Dataset.
 Đoạn mã sau đây tạo một lớp dataset mới có tên là `SeqDataset`.
 Với mỗi mẫu, lớp này trả về id của người dùng, $L$ sản phẩm mà người này đã tương tác trước đó như một chuỗi và sản phẩm tiếp theo mà người này sẽ tương tác làm mục tiêu.
 Hình dưới đây mô tả rõ ràng quá trình nạp dữ liệu với một người dùng.
@@ -258,7 +258,7 @@ Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu đư�
 ![Illustration of the data generation process](../img/rec-seq-data.svg)
 -->
 
-![Minh học quá trình sinh dữ liệu](../img/rec-seq-data.svg)
+![Minh hoạ quá trình sinh dữ liệu](../img/rec-seq-data.svg)
 
 
 ```{.python .input  n=5}
@@ -327,7 +327,7 @@ class SeqDataset(gluon.data.Dataset):
 Afterwards, we read and split the MovieLens 100K dataset in sequence-aware mode and load the training data with sequential dataloader implemented above.
 -->
 
-Kế tiếp, ta đọc và tách tập dữ liệu MovieLens 100K theo dạng nhận thức trình tự thời gian và nạp tập huấn luyện với bộ nạp dữ liệu theo trình tự thời gian đã lập trình như trên.
+Kế tiếp, ta đọc và chia nhỏ tập dữ liệu MovieLens 100K theo dạng nhận thức về chuỗi và nạp tập huấn luyện với bộ nạp dữ liệu tuần tự đã lập trình như trên.
 
 
 ```{.python .input  n=6}
@@ -358,7 +358,7 @@ and the last element is the item this user liked after the five items.
 Cấu trúc dữ liệu huấn luyện được chỉ ra như trên.
 Phần tử đầu tiên là id người dùng, danh sách kế tiếp là ba sản phẩm đầu tiên mà người dùng này thích ($L=3$),
 tiếp theo là danh sách chứa phần tử mục tiêu, và phần tử cuối cùng là sản phẩm người dùng này thích sau các sản phẩm trước.
-<!-- Note: Phần này giải thích khác với kết quả code. -->
+<!-- Note: Phần này tác giả giải thích khác với kết quả code. -->
 
 
 <!--
@@ -373,8 +373,8 @@ Now, let us train the model. We use the same setting as NeuMF, including learnin
 and $k$, in the last section so that the results are comparable.
 -->
 
-Giờ hãy cùng huấn luyện mô hình. Ta sử dụng thiết lập giống với NeuMF, bao gồm tốc độ học, bộ tối ưu,
-và $k$, trong phần trước để có thể so sánh kết quả.
+Giờ hãy cùng huấn luyện mô hình. Ta sử dụng thiết lập giống với NeuMF trong phần trước, bao gồm tốc độ học, bộ tối ưu,
+và $k$, để có thể so sánh kết quả.
 
 
 ```{.python .input  n=7}
@@ -400,7 +400,7 @@ d2l.train_ranking(net, train_iter, test_iter, loss, trainer, test_seq_iter,
 -->
 
 * Suy luận về sở thích ngắn hạn và dài hạn của một người dùng có thể giúp việc dự đoán sản phẩm tiếp theo người này thích trở nên hiệu quả hơn.
-* Mạng nơ-ron tích chập có thể được tận dụng để nắm bắt được sở thích ngắn hạn của người dùng dựa vào các tương tác theo trình tự thời gian.
+* Mạng nơ-ron tích chập có thể được tận dụng để nắm bắt được sở thích ngắn hạn của người dùng dựa vào các tương tác tuần tự.
 
 
 ## Bài tập
@@ -415,8 +415,8 @@ Can you explain the differences between these two tasks?
 
 * Thực hiện một nghiên cứu loại bỏ (*ablation study*) bằng cách bỏ một trong hai mạng tích chập ngang hoặc dọc, thành phần nào quan trọng hơn?
 * Thay đổi siêu tham số $L$. Liệu lịch sử tương tác lâu hơn có giúp tăng độ chính xác?
-* Ngoài tác vụ gợi ý nhận thức trình tự thời gian như chúng tôi giới thiệu ở trên,
-có một loại tác vụ gợi ý nhận thức trình tự thời gian khác được gọi là gợi ý dựa theo phiên (*session-based recommendation*) :cite:`Hidasi.Karatzoglou.Baltrunas.ea.2015`.
+* Ngoài tác vụ gợi ý nhận thức về chuỗi như chúng tôi giới thiệu ở trên,
+có một loại tác vụ gợi ý nhận thức về chuỗi khác được gọi là gợi ý dựa theo phiên (*session-based recommendation*) :cite:`Hidasi.Karatzoglou.Baltrunas.ea.2015`.
 Bạn có thể giải thích sự khác nhau giữa hai tác vụ này?
 
 
