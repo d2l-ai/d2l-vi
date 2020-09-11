@@ -79,9 +79,9 @@ Given the shard of training examples, this function computes the loss for both t
 Note that the final loss of BERT pretraining is just the sum of both the masked language modeling loss and the next sentence prediction loss.
 -->
 
-Ta sẽ định nghĩa hàm phụ trợ `_get_batch_loss_bert` trước khi bắt đầu cài đặt vòng lặp cho quá trình huấn luyện.
+Ta sẽ định nghĩa hàm hỗ trợ `_get_batch_loss_bert` trước khi bắt đầu lập trình vòng lặp cho quá trình huấn luyện.
 Hàm này nhận đầu vào là một batch các mẫu huấn luyện và tính giá trị mất mát đối với hai tác vụ mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
-Lưu ý rằng mất mát cuối cùng của tác vụ tiền huấn luyện BERT chỉlà tổng mất mát của cả hai tác vụ nói trên.
+Lưu ý rằng mất mát cuối cùng của tác vụ tiền huấn luyện BERT chỉ là tổng mất mát của cả hai tác vụ nói trên.
 
 
 ```{.python .input  n=16}
@@ -125,7 +125,7 @@ Instead of specifying the number of epochs for training as in the `train_ch13` f
 the input `num_steps` of the following function specifies the number of iteration steps for training.
 -->
 
-Sử dụng hai hàm phụ trợ được đề cập ở trên, hàm `train_bert` dưới đây sẽ định nghĩa quá trình tiền huấn luyện BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
+Sử dụng hai hàm hỗ trợ được đề cập ở trên, hàm `train_bert` dưới đây sẽ định nghĩa quá trình tiền huấn luyện BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
 Việc huấn luyện BERT có thể mất rất nhiều thời gian.
 Do đó, thay vì truyền vào số lượng epoch huấn luyện như trong hàm `train_ch13` (:numref:`sec_image_augmentation`), ta sử dụng tham số `num_steps` trong hàm sau để xác định số vòng lặp huấn luyện.
 
