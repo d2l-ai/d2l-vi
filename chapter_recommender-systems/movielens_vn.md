@@ -161,7 +161,7 @@ Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu 
 và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại dành cho mẫu kiểm tra.
 Trong chế độ `seq-aware`, ta chừa lại sản phẩm mà người dùng đánh giá gần đây nhất để dùng trong kiểm tra, còn các tương tác trước đó làm tập huấn luyện.
 Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian.
-Chế độ này sẽ được sử dụng trong phần gợi ý sequence-aware.
+Chế độ này sẽ được sử dụng trong phần gợi ý nhận thức về chuỗi.
 
 
 ```{.python .input  n=5}
