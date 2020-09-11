@@ -128,7 +128,7 @@ bert, vocab = load_pretrained_model(
 ## The Dataset for Fine-Tuning BERT
 -->
 
-## Tập dữ liệu dùng cho tinh chỉnh BERT
+## Tập dữ liệu để tinh chỉnh BERT
 
 
 <!--
