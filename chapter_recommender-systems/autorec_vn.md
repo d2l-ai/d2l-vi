@@ -19,7 +19,7 @@ making it suitable to address the limitation of matrix factorization and enrich 
 Mặc dù mô hình phân rã ma trận đạt được hiệu năng tương đối ổn với bài toán dự đoán đánh giá, về căn bản nó là một mô hình tuyến tính.
 Do đó, mô hình dạng này không có khả năng nắm bắt được quan hệ phi tuyến phức tạp và rắc rối mà có thể dự đoán được sở thích của người dùng.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình mạng nơ-ron lọc cộng tác phi tuyến, AutoRec :cite:`Sedhain.Menon.Sanner.ea.2015`.
-Nó đồng nhất với với lọc cộng tác (CF), mang kiến trúc của một bộ tự mã hoá (*autoencoder*) và nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa trên cơ sở các phản hồi trực tiếp.
+Nó áp dụng lọc cộng tác (CF) với kiến trúc của một bộ tự mã hoá (*autoencoder*) và nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa trên cơ sở các phản hồi trực tiếp.
 Mạng nơ-ron đã được chứng minh là có khả năng xấp xỉ bất kì hàm liên tục nào,
 điều này khiến nó phù hợp để khắc phục hạn chế của mô hình phân rã ma trận và tăng cường khả năng biển diễn của phân rã ma trận.
 
@@ -33,7 +33,7 @@ it uses the column/row of the interaction matrix as the input, then reconstructs
 
 Một mặt, AutoRec có cùng cấu trúc với một bộ tự mã hoá gồm một tầng đầu vào, một tầng ẩn và một tầng khôi phục (đầu ra).
 Bộ tự mã hoá là một mạng nơ-ron học cách sao chép đầu vào sang đầu ra nhằm mã hoá đầu vào thành dạng biểu diễn ẩn (và thường có kích thước nhỏ).
-Trong AutoRec, thay vì nhúng trực tiếp người dùng/sản phẩm vào không gian kích thước nhỏ hơn,
+Trong AutoRec, thay vì trực tiếp tạo embedding của người dùng/sản phẩm trong không gian kích thước nhỏ hơn,
 nó sử dụng các cột/hàng của ma trận tương tác làm đầu vào, sau đó khôi phục lại ma trận tương tác ở tầng đầu ra.
 
 
@@ -276,6 +276,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Đỗ Trường Giang
+* Nguyễn Văn Cường
+* Nguyễn Thái Bình
 
 <!-- Phần 2 -->
 * 
