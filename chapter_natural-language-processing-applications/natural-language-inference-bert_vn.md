@@ -337,7 +337,7 @@ By increasing fine-tuning epochs (and possibly tuning other hyperparameters), ca
 Compare this pair truncation method and the one used in the `SNLIBERTDataset` class. What are their pros and cons?
 -->
 
-1. Hãy tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn, có kích thước tương đương với mô hình cơ sở BERT ban đầu, nếu tài nguyên tính toán của bạn cho phép.
+1. Hãy tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn, có kích thước tương đương với mô hình BERT cơ sở ban đầu, nếu tài nguyên tính toán của bạn cho phép.
 Hãy thay đổi các đối số trong hàm `load_pretrained_model`: thay thế 'bert.small' bằng 'bert.base',
 lần lượt tăng giá trị của `num_hiddens = 256`,` ffn_num_hiddens = 512`, `num_heads = 4`,` num_layers = 2` thành `768`,` 3072`, `12`,` 12`.
 Bằng cách tăng số epoch khi tinh chỉnh (và có thể điều chỉnh các siêu tham số khác), có thể nhận được độ chính xác trên tập kiểm tra cao hơn 0,86 không?
