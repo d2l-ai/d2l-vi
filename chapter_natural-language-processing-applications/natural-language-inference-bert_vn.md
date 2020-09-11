@@ -322,7 +322,7 @@ Parameters that are only related to pretraining loss will not be updated during 
 -->
 
 * Chúng ta có thể tinh chỉnh mô hình BERT đã tiền huấn luyện cho các ứng dụng xuôi dòng, chẳng hạn như suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
-* Trong quá trình tinh chỉnh, mô hình BERT trở thành một phần của mô hình ứng dụng hạ nguồn.
+* Trong quá trình tinh chỉnh, mô hình BERT trở thành một phần của mô hình ứng dụng xuôi dòng.
 Các tham số chỉ liên quan đến phần mất mát trong tiền huấn luyện sẽ không được cập nhật trong quá trình tinh chỉnh.
 
 
