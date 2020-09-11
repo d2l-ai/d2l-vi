@@ -279,7 +279,7 @@ Its argument `examples` contain the outputs from the helper functions `_get_nsp_
 
 Bây giờ chúng ta gần như đã sẵn sàng để tùy chỉnh một lớp `Dataset` cho việc tiền huấn luyện BERT.
 Trước đó, chúng ta vẫn cần định nghĩa một hàm hỗ trợ `_pad_bert_inputs` để giúp nối các token “&lt;mask&gt;” đặc biệt vào đầu vào.
-Đối số `examples` của của hàm chứa các kết quả đầu ra từ những hàm hỗ trợ `_get_nsp_data_from_paragraph` và `_get_mlm_data_from_tokens` cho hai tác vụ tiền huấn luyện.
+Đối số `examples` của hàm chứa các kết quả đầu ra từ những hàm hỗ trợ `_get_nsp_data_from_paragraph` và `_get_mlm_data_from_tokens` cho hai tác vụ tiền huấn luyện.
 
 
 ```{.python .input  n=7}
