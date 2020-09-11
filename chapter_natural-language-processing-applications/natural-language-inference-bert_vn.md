@@ -144,7 +144,7 @@ bert, vocab = load_pretrained_model(
 ## The Dataset for Fine-Tuning BERT
 -->
 
-## *dịch tiêu đề trên*
+## Tập dữ liệu để tinh chỉnh BERT
 
 
 <!--
@@ -159,7 +159,15 @@ To accelerate generation of the SNLI dataset for fine-tuning BERT,
 we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
-*dịch đoạn phía trên*
+Đối với tác vụ xuôi dòng suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một lớp tập dữ liệu tuỳ biến, `SNLIBERTDataset`.
+Trong mỗi mẫu, tiền đề và giả thuyết tạo thành một cặp chuỗi văn bản
+và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-two-seqs`.
+Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
+được sử dụng để phân biệt tiền đề và giả thuyết trong chuỗi đầu vào BERT.
+Với độ dài tối đa đã định trước của chuỗi đầu vào BERT (`max_len`),
+token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào sẽ liên tục bị xóa cho đến khi độ dài của nó là `max_len`.
+Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
+ta sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm tra một cách song song.
 
 
 ```{.python .input  n=5}
@@ -223,7 +231,10 @@ Such examples will be read in minibatches during training and testing
 of natural language inference.
 -->
 
-*dịch đoạn phía trên*
+Sau khi tải xuống tập dữ liệu SNLI, ta tạo các mẫu huấn luyện và kiểm tra
+bằng cách khởi tạo lớp `SNLIBERTDataset`.
+Các mẫu đó sẽ được đọc từ các minibatch trong quá trình huấn luyện và kiểm tra
+của suy luận ngôn ngữ tự nhiên.
 
 
 ```{.python .input  n=6}
@@ -244,7 +255,7 @@ test_iter = gluon.data.DataLoader(test_set, batch_size,
 ## Fine-Tuning BERT
 -->
 
-## *dịch tiêu đề trên*
+## Tinh chỉnh BERT
 
 
 <!--
@@ -257,7 +268,13 @@ into three outputs of natural language inference:
 entailment, contradiction, and neutral.
 -->
 
-*dịch đoạn phía trên*
+Như :numref:`fig_bert-two-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
+chỉ yêu cầu một perceptron đa tầng bổ sung bao gồm hai tầng kết nối đầy đủ
+(xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
+Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
+là token mã hóa thông tin của cả tiền đề và giả thuyết,
+thành ba đầu ra của suy luận ngôn ngữ tự nhiên:
+kéo theo, đối lập và trung tính.
 
 
 ```{.python .input  n=7}
@@ -368,7 +385,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
-
+* Nguyễn Thái Bình
+* Nguyễn Văn Cường
 <!-- Phần 3 -->
 * 
