@@ -20,14 +20,14 @@ Clearly, these models are incapable of distinguishing between observed and non-o
 and are usually not suitable for personalized ranking tasks.
 -->
 
-Trong các phần trước, ta chỉ xét phản hồi trực tiếp và các mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết.
+Trong các phần trước, ta chỉ xét các phản hồi trực tiếp và mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết.
 Các phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không phải là trực tiếp mà là gián tiếp,
 và phản hồi trực tiếp thường khó thu thập hơn.
-Thứ hai, những cặp người dùng - sản phẩm chưa biết mà có thể dự đoán sở thích của người dùng lại hoàn toàn bị bỏ qua,
-khiến cho các phương pháp này không phù hợp với những trường hợp mà đánh giá không phải là thiếu do ngẫu nhiên mà là do sự thiên vị của người dùng.
+Thứ hai, những cặp người dùng - sản phẩm chưa biết mang tính dự đoán về sở thích của người dùng lại hoàn toàn bị bỏ qua,
+khiến cho các phương pháp này không phù hợp với những trường hợp mà đánh giá không phải là thiếu do ngẫu nhiên mà là do sự thiên vị từ người dùng.
 Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa phản ánh tiêu cực (người dùng không hứng thú với sản phẩm)
 và giá trị còn thiếu (người dùng sau này có lẽ sẽ tương tác với sản phẩm).
-Ta đơn giản bỏ qua những cặp chưa biết này trong phân rã ma trận và AutoRec.
+Ta đơn giản bỏ qua những cặp chưa biết này trong phương pháp phân rã ma trận và AutoRec.
 Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết
 và thường không phù hợp với tác vụ cá nhân hoá xếp hạng (*personalized ranking*).
 
@@ -45,15 +45,15 @@ However, listwise approaches are more complex and compute-intensive than pointwi
 In this section, we will introduce two pairwise objectives/losses, Bayesian Personalized Ranking loss and Hinge loss, and their respective implementations.
 -->
 
-Từ đó, một lớp các mô hình gợi ý hướng tới việc tạo ra danh sách xếp loại gợi ý từ phản hồi gián tiếp dần trở nên phổ biến.
-Thông thường, các mô hình cá nhân hoá xếp loại có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, từng cặp hoặc theo danh sách.
+Từ đó, một lớp các mô hình gợi ý hướng tới việc tạo ra danh sách xếp hạng gợi ý từ phản hồi gián tiếp dần trở nên phổ biến.
+Thông thường, các mô hình cá nhân hoá xếp hạng có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, từng cặp hoặc theo danh sách.
 Cách tiếp cận theo từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích từng người.
 Phân rã ma trận và AutoRec được tối ưu với các mục tiêu theo từng điểm.
 Cách tiếp cận theo từng cặp xét một cặp sản phẩm với mỗi người dùng và nhắm tới việc xấp xỉ thứ bậc của cặp sản phẩm đó.
 Thường thì cách tiếp cận theo từng cặp phù hợp với tác vụ xếp hạng hơn do việc dự đoán thứ bậc tương đối gợi lại bản chất của việc xếp hạng.
 Cách tiếp cận theo danh sách xấp xỉ thứ bậc của toàn bộ danh sách các sản phẩm, ví dụ như
 trực tiếp tối ưu hệ số Độ lợi Chiết khấu Tích luỹ Chuẩn ([Normalized Discounted Cumulative Gain - NDCG](https://en.wikipedia.org/wiki/Discounted_cumulative_gain)).
-Tuy nhiên, cách tiếp cận theo danh sách phức tạp và đòi hỏi khả năng tính toán cao hơn so với cách tiếp cận theo từng điểm và theo từng cặp.
+Tuy nhiên, cách tiếp cận theo danh sách là phức tạp và đòi hỏi khả năng tính toán cao hơn so với cách tiếp cận theo từng điểm và theo từng cặp.
 Trong phần này, chúng tôi sẽ giới thiệu hai loại mất mát/mục tiêu của cách tiếp cận theo từng cặp, mất mát Cá nhân hoá Xếp hạng Bayes (*Bayesian Personalized Ranking*) và mất mát Hinge, cùng với cách lập trình từng loại mất mát tương ứng.
 
 
