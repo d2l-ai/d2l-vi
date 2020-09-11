@@ -103,7 +103,7 @@ data_dir = d2l.download_extract('ctr')
 There are a training set and a test set, consisting of 15000 and 3000 samples/lines, respectively.
 -->
 
-Tập dữ liệu bao gồm tập huấn luyện và tập kiểm tra, gồm lần lượt 150000 và 3000 mẫu/dòng.
+Tập dữ liệu bao gồm tập huấn luyện và tập kiểm tra, gồm lần lượt 15000 và 3000 mẫu/dòng.
 
 
 <!--
@@ -188,7 +188,7 @@ and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/a
 Như có thể thấy, toàn bộ 34 trường đều là đặc trưng hạng mục.
 Mỗi giá trị biểu diễn chỉ số one-hot của trường tương ứng.
 Nhãn $0$ nghĩa là quảng cáo này chưa được nhấp vào.
-Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiện thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
+Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiển thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
 và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
 
 
@@ -210,8 +210,8 @@ Can you load the Criteo and Avazu dataset with the provided `CTRDataset`.
 It is worth noting that the Criteo dataset consisting of real-valued features so you may have to revise the code a bit.
 -->
 
-Bạn có thể nạp vào tập dữ liệu Criteo và Avazu với lớp `CTRDataset` đã được cung cấp được không.
-Chú ý rằng tập dữ liệu Criteo gồm có các đặc trưng mang giá trị thực nên bạn có lẽ sẽ phải kiểm tra lại đoạn mã một chút.
+Bạn có thể nạp tập dữ liệu Criteo và Avazu với `CTRDataset` đã được cung cấp không.
+Chú ý rằng tập dữ liệu Criteo gồm các đặc trưng mang giá trị số thực nên bạn có lẽ sẽ phải chỉnh sửa lại đoạn mã một chút.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
