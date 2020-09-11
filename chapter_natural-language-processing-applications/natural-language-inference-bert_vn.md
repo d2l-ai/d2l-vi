@@ -269,7 +269,7 @@ All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden
 -->
 
 Sau đây, mô hình BERT tiền huấn luyện `bert` được đưa vào thể hiện `net` của `BERTClassifier` cho ứng dụng hạ nguồn.
-Trong các phần cài đặt chung của tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
+Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
 Còn tất cả các tham số của bộ mã hóa BERT tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
 
