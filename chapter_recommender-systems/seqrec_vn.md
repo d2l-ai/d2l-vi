@@ -16,7 +16,7 @@ A number of recent literatures have demonstrated the usefulness of incorporating
 
 Trong phần trước, ta trừu tượng hoá tác vụ gợi ý như một bài toán hoàn thành ma trận mà không xét hành vi ngắn hạn của người dùng.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình gợi ý cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
-Đây là một hệ thống gợi ý có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường là theo mốc thời gian.
+Đây là một hệ thống gợi ý có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường là có mốc thời gian diễn ra.
 Nhiều bài báo đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng trong sở thích của họ.
 
 
@@ -33,16 +33,16 @@ resulting in a more comprehensive modeling of user interests.
 Details of the model are described as follows.
 -->
 
-Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình gợi ý tích chập embedding chuỗi (*convolutional sequence embedding recommendation model*),
-kế thừa mạng nơ-ron tích chập nhằm nắm bắt khuôn mẫu động có ảnh hưởng đến những thao tác gần đây của người dùng.
+Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình gợi ý embedding chuỗi tích chập (*convolutional sequence embedding recommendation model*),
+kế thừa mạng nơ-ron tích chập nhằm nắm bắt khuôn mẫu động có ảnh hưởng đến những hoạt động gần đây của người dùng.
 Thành phần chính của Caser bao gồm một mạng tích chập ngang và một mạng tích chập dọc,
 nhằm lần lượt khám phá khuôn mẫu mức liên kết (*union-level*) và mức điểm (*point-level*) của chuỗi.
-Khuôn mẫu mức điểm ám chỉ tác động của một điểm riêng lẻ trong phân trước của chuỗi đó lên sản phẩm mục tiêu,
+Khuôn mẫu mức điểm ám chỉ tác động của một điểm riêng lẻ trong lịch sử của chuỗi chứa điểm đó lên sản phẩm mục tiêu,
 trong khi khuôn mẫu mức liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu sau đó.
 Ví dụ, việc mua sữa cùng với bơ dẫn tới xác suất mua thêm cả bột mì cao hơn so với việc chỉ mua một trong hai.
 Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong tầng kết nối đầy đủ cuối,
 kết quả là sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
-Chi tiết về mô hình này được sẽ mô tả ở các phần dưới.
+Chi tiết về mô hình này sẽ được mô tả ở các phần dưới.
 
 
 <!--
@@ -59,8 +59,8 @@ The goal of Caser is to recommend item by considering user general tastes as wel
 Suppose we take the previous $L$ items into consideration, an embedding matrix that represents the former interactions for time step $t$ can be constructed:
 -->
 
-Trong hệ thống gợi ý có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm tử tập sản phẩm.
-Gọi $S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi thời gian đã sắp xếp.
+Trong hệ thống gợi ý có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm từ tập sản phẩm.
+Gọi $S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi đã sắp xếp.
 Mục tiêu của Caser là gợi ý sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như là dự định ngắn hạn.
 Giả sử ta xét đến $L$ sản phẩm trước, ma trận embedding biểu diễn những tương tác xảy ra trước bước thời gian $t$ có thể được xây dựng như sau:
 
