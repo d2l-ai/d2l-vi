@@ -45,7 +45,8 @@
      inkscape:window-x="2720"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g314" />
+     inkscape:current-layer="surface1"
+     inkscape:document-rotation="0" />
   <defs
      id="defs84">
     <g
@@ -759,8 +760,7 @@
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
        id="g314" />
-
-       <text
+    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
        x="57.24786"
@@ -774,12 +774,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="182.40363"
+       x="186.90363"
        y="12.968728"
        id="text242-7"><tspan
          sodipodi:role="line"
          id="tspan240-0"
-         x="182.40363"
+         x="186.90363"
          y="12.968728"
          style="font-size:9px;stroke-width:0.75">Hạt nhân</tspan></text>
     <text

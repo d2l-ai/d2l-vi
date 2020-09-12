@@ -47,9 +47,10 @@
      inkscape:window-x="2720"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
-     inkscape:current-layer="surface1">
+     inkscape:current-layer="surface1"
+     inkscape:document-rotation="0">
     <sodipodi:guide
-       position="264.63247,152.7208"
+       position="249.82324,85.07788"
        orientation="1,0"
        id="guide999" />
     <sodipodi:guide
@@ -434,12 +435,12 @@
        transform="matrix(1,0,0,1,-70,-133)"
        id="path249" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.12435;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.12435, 4.49739;stroke-opacity:1"
-       d="m 209.22798,153.92212 h 51.27241"
+       style="fill:none;stroke:#000000;stroke-width:0.994551;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.994551, 3.97819;stroke-opacity:1"
+       d="m 207.67628,153.92212 h 37.61551"
        id="path251" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 264.63247,153.92212 h -4 m 0,-1.5 4,1.5 -4,1.5"
+       style="fill:none;stroke:#000000;stroke-width:0.884556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+       d="m 248.32324,153.92212 h -2.93456 m 0,-1.59977 2.93456,1.59977 -2.93456,1.59977"
        id="path253" />
     <path
        style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
@@ -1419,8 +1420,8 @@
        transform="matrix(1,0,0,1,-70,-133)"
        id="path737" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 264.63247,109.96602 h -4 m 0,-1.5 4,1.5 -4,1.5"
+       style="fill:none;stroke:#000000;stroke-width:0.878905;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+       d="m 249.12904,109.96602 h -2.91203 m 0,-1.59162 2.91203,1.59162 -2.91203,1.59162"
        id="path763" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
@@ -1457,12 +1458,12 @@
        d="m 371.28906,44.417969 3.78125,1.304687 m -0.49219,1.417969 -3.28906,-2.722656 4.26953,-0.113281"
        id="path865" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.03799;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.03799, 4.15195;stroke-opacity:1"
-       d="M 241.95201,62 H 260.3228"
+       style="fill:none;stroke:#000000;stroke-width:0.899196;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.899196, 3.59678;stroke-opacity:1"
+       d="m 232.42749,62.426956 h 12.7136"
        id="path867" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.03799;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 264.63247,62 h -4.30967 m 0,-1.5 4.30967,1.5 -4.30967,1.5"
+       style="fill:none;stroke:#000000;stroke-width:0.899196;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+       d="m 248.12362,62.426956 h -2.98253 m 0,-1.626573 2.98253,1.626573 -2.98253,1.626573"
        id="path869" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
@@ -1474,13 +1475,12 @@
          id="use899" />
     </g>
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:1,4;stroke-miterlimit:10;"
-       d="M 189.25 195 L 206.515625 195 "
-       transform="matrix(1,0,0,1,-70,-133)"
+       style="fill:none;stroke:#000000;stroke-width:0.795349;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.795349, 3.1814;stroke-opacity:1"
+       d="m 119.06629,62 h 10.92189"
        id="path923" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.09437;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.09437, 4.37748;stroke-opacity:1"
-       d="m 119.60242,154.1415 h 48.83669"
+       style="fill:none;stroke:#000000;stroke-width:1.01595;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.01595, 4.06379;stroke-opacity:1"
+       d="m 119.52681,154.1415 h 42.08815"
        id="path927" />
     <text
        xml:space="preserve"
@@ -1556,28 +1556,28 @@
     <text
        xml:space="preserve"
        style="font-size:8px;line-height:1.25;font-family:sans-serif;stroke-width:0.75"
-       x="136.93066"
+       x="128.32629"
        y="64.387466"
        id="text978"><tspan
          sodipodi:role="line"
          id="tspan976"
-         x="136.93066"
+         x="128.32629"
          y="64.387466"
          style="font-size:8px;stroke-width:0.75">tính tổng sau đó ghép nối</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.87267;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.87267, 3.49069;stroke-opacity:1"
-       d="m 229.76282,109.96602 h 30.88773"
+       style="fill:none;stroke:#000000;stroke-width:0.766994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.766994, 3.06799;stroke-opacity:1"
+       d="m 223.74372,109.96602 h 22.48646"
        id="path251-2" />
     <text
        xml:space="preserve"
        style="font-size:8px;line-height:1.25;font-family:sans-serif;stroke-width:0.75"
-       x="168.03191"
-       y="156.03229"
+       x="166.25169"
+       y="156.32899"
        id="text1033"><tspan
          sodipodi:role="line"
          id="tspan1031"
-         x="168.03191"
-         y="156.03229"
+         x="166.25169"
+         y="156.32899"
          style="font-size:8px;stroke-width:0.75">căn chỉnh</tspan></text>
     <text
        xml:space="preserve"
@@ -1624,19 +1624,19 @@
          y="40.351498"
          style="stroke-width:0.75">Ghép nối</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.831183;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.831183, 3.32474;stroke-opacity:1"
-       d="m 119.81345,110.22486 h 28.02073"
+       style="fill:none;stroke:#000000;stroke-width:0.719627;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.719627, 2.87851;stroke-opacity:1"
+       d="m 119.70938,110.22486 h 21.00395"
        id="path251-2-1" />
   </g>
   <text
      xml:space="preserve"
      style="font-size:8px;line-height:1.25;font-family:sans-serif;stroke-width:0.75"
-     x="147.64293"
-     y="112.46344"
+     x="139.33527"
+     y="112.76014"
      id="text982"><tspan
        sodipodi:role="line"
        id="tspan980"
-       x="147.64293"
-       y="112.46344"
+       x="139.33527"
+       y="112.76014"
        style="font-size:8px;stroke-width:0.75">từ căn chỉnh theo từ</tspan></text>
 </svg>
