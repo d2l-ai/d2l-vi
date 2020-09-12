@@ -132,14 +132,16 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 :numref:`fig_conv1d_channel` shows a one-dimensional cross-correlation operation with three input channels.
 -->
 
-*dịch đoạn phía trên*
+Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu vào.
+Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo một chiều trên từng hạt nhân và đầu vào tương ứng, và cộng các kết quả trên từng kênh lại với nhau để thu được đầu ra.
+:numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào.
 
 
 <!--
 ![One-dimensional cross-correlation operation with three input channels. The shaded parts are the first output element as well as the input and kernel array elements used in its calculation: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-channel.svg)
+![Phép tính tương quan chéo một chiều với ba kênh đầu vào. Những vùng được in đậm là phần tử đầu ra thứ nhất cũng như đầu vào và các phần tử của mảng hạt nhân được sử dụng trong phép tính: $0\times1+1\times2+1\times3+2\times4+2\times(-1)+3\times(-3)=2$.](../img/conv1d-channel.svg)
 :label:`fig_conv1d_channel`
 
 
@@ -147,7 +149,7 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 Now, we reproduce the results of the one-dimensional cross-correlation operation with multi-input channel in :numref:`fig_conv1d_channel`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
 
 
 ```{.python .input  n=4}
@@ -173,14 +175,16 @@ multiple input channels in :numref:`fig_conv1d_channel` as the equivalent two-di
 Here, the height of the kernel is equal to the height of the input.
 -->
 
-*dịch đoạn phía trên*
+Định nghĩa phép tính tương quan chéo hai chiều cho ta thấy phép tính tương quan chéo một chiều với đa kênh đầu vào có thể được coi là phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Như minh hoạ trong :numref:`fig_conv1d_2d`, ta có thể biểu diễn phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel` tương tự như phép tính tương quan chéo hai chiều với một kênh đầu vào.
+Ở đây, chiều cao của hạt nhân bằng với chiều cao của đầu vào.
 
 
 <!--
 ![Two-dimensional cross-correlation operation with a single input channel. The highlighted parts are the first output element and the input and kernel array elements used in its calculation: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/conv1d-2d.svg)
+![Phép tính tương quan chéo hai chiều với một kênh đầu vào. Vùng được tô đậm là phần tử đầu ra thứ nhất và đầu vào cũng như các phần tử của mảng hạt nhân được sử dụng trong phép tính: $2\times(-1)+3\times(-3)+1\times3+2\times4+0\times1+1\times2=2$.](../img/conv1d-2d.svg)
 :label:`fig_conv1d_2d`
 
 
@@ -191,7 +195,9 @@ Similarly, we can also specify multiple output channels in the one-dimensional
 convolutional layer to extend the model parameters in the convolutional layer.
 -->
 
-*dịch đoạn phía trên*
+Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh.
+Ta đã thảo luận cách xác định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
+Tương tự, ta cũng có thể xác định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -201,8 +207,7 @@ convolutional layer to extend the model parameters in the convolutional layer.
 ## Max-Over-Time Pooling Layer
 -->
 
-### *dịch tiêu đề trên*
-
+## Tầng Gộp Cực đại Theo Thời gian
 
 <!--
 Similarly, we have a one-dimensional pooling layer.
@@ -212,8 +217,10 @@ the output of each channel will be the largest value of all timesteps in the cha
 Therefore, the input of the max-over-time pooling layer can have different timesteps on each channel.
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự, ta có tầng gộp một chiều.
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều.
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
+Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
 
 <!--
 To improve computing performance, we often combine timing examples of different lengths into a minibatch 
@@ -223,7 +230,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-*dịch đoạn phía trên*
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -233,7 +242,7 @@ it usually allows the model to be unaffected by the manually added characters.
 ## The TextCNN Model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình TextCNN
 
 
 <!--
@@ -243,8 +252,10 @@ Then the input example has a width of $n$, a height of 1, and $d$ input channels
 The calculation of textCNN can be mainly divided into the following steps:
 -->
 
-*dịch đoạn phía trên*
-
+TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều.
+Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
+Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
 
 <!--
 1. Define multiple one-dimensional convolution kernels and use them to perform convolution calculations on the inputs. 
@@ -254,14 +265,17 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-*dịch đoạn phía trên*
-
+1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau.
+2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
+3. Vector vừa nối sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
+Có thể sử dụng tầng dropout ở bước này để giải quyết tình trạng quá khớp.
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/textcnn.svg)
+![Thiết kế TextCNN.](../img/textcnn.svg)
 :label:`fig_conv1d_textcnn`
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -281,7 +295,16 @@ Finally, we use a fully connected layer to transform the 9-dimensional vector
 into a 2-dimensional output: positive sentiment and negative sentiment predictions.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_conv1d_textcnn` minh họa một ví dụ cho textCNN.
+Đầu vào ở đây là một câu gồm 11 từ, với mỗi từ được biểu diễn bằng một vector từ 6 chiều.
+Vì vậy, câu đầu vào có độ rộng là 11 và số kênh đầu vào là 6
+Chúng ta giả sử rằng có 2 hạt nhân của tích chập một chiều có độ rộng là 2 và 4, tương ứng với số kênh đầu ra là 4 và 5.
+Cho nên sau phép tính tích chập một chiều, độ rộng của đầu ra có 4 kênh là $11-2+1=10$,
+trong khi đó độ rộng của đầu ra còn lại 5 kênh là $11-4+1=8$.
+Thậm chí độ rộng của mỗi kênh có khác nhau đi nữa, chúng ta vẫn có thể thực hiện gộp cực đại theo thời gian
+cho mỗi kênh và nối đầu ra sau gộp của 9 kênh thành một vector 9 chiều.
+Cuối cùng, chúng ta dùng một tầng kết nối đầy đủ để biến đổi vector 9 chiều đó
+thành một đầu ra 2 chiều: dự đoán cảm xúc tích cực và cảm xúc tiêu cực.
 
 
 <!--
@@ -290,7 +313,9 @@ Compared with the previous section, in addition to replacing the recurrent neura
 here we use two embedding layers, one with a fixed weight and another that participates in training.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo chúng ta bắt đầu lập trình mô hình textCNN.
+So với phần trước, ngoài việc thay mạng nơ-ron hồi tiếp bằng một tầng tích chập một chiều,
+ở đây chúng ta dùng 2 tầng embedding, một được giữ trọng số cố định và tầng còn lại tham gia quá trình huấn luyện.
 
 
 ```{.python .input  n=5}
@@ -338,7 +363,7 @@ class TextCNN(nn.Block):
 Create a TextCNN instance. It has 3 convolutional layers with kernel widths of 3, 4, and 5, all with 100 output channels.
 -->
 
-*dịch đoạn phía trên*
+Tạo một thực thể TextCNN có 3 tầng tích chập với chiều rộng hạt nhân là 3, 4 và 5, tất cả đều có 100 kênh đầu ra.
 
 
 ```{.python .input  n=6}
@@ -353,7 +378,7 @@ net.initialize(init.Xavier(), ctx=devices)
 ### Load Pre-trained Word Vectors
 -->
 
-### *dịch tiêu đề trên*
+### Nạp Vector Từ đã được Tiền huấn luyện
 
 
 <!--
@@ -361,7 +386,8 @@ As in the previous section, load pre-trained 100-dimensional GloVe word vectors 
 Here, the former participates in training while the latter has a fixed weight.
 -->
 
-*dịch đoạn phía trên*
+Tương tự phần trước, ta nạp GloVe 100 chiều đã được tiền huấn luyện và khởi tạo các tầng embedding `embedding` và `constant_embedding`.
+Ở đây, `embedding` sẽ tham gia quá trình huấn luyện trong khi `constant_embedding` có trọng số cố định.
 
 
 ```{.python .input  n=7}
@@ -465,13 +491,13 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trương Lộc Phát
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 3 -->
-* 
+* Lý Phi Long
 
 <!-- Phần 4 -->
-* 
+* Trương Lộc Phát
 
 <!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long

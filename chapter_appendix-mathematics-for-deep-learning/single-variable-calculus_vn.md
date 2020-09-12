@@ -1,4 +1,4 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
+<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
 
 <!--
 # Single Variable Calculus
@@ -19,10 +19,10 @@ Trong mục này chúng ta sẽ đi sâu vào kiến thức nền tảng của g
 ## Differential Calculus
 -->
 
-## Giải tích vi phân
+## Giải tích Vi phân
 
 <!--
-Differential calculus is fundamentally the study of how functions behave under small changes.  To see why this is so core to deep learning, let's consider an example.
+Differential calculus is fundamentally the study of how functions behave under small changes.  To see why this is so core to deep learning, let us consider an example.
 -->
 
 Giải tích vi phân là nhánh toán học nghiên cứu về hành vi của các hàm số dưới các biến đổi nhỏ.
@@ -37,32 +37,35 @@ Giả sử chúng ta có một mạng nơ-ron sâu với các trọng số đư�
 Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát của mạng nơ-ron trên tập huấn luyện đấy và ký hiệu nó bằng $\mathcal{L}(\mathbf{w})$.
 
 <!--
-This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, so it is nearly impossible to tell what set of weights $\mathbf{w}$ will minimize the loss. 
-Thus, in practice, we often start by initializing our weights *randomly*, and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
+This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, 
+so it is nearly impossible to tell what set of weights $\mathbf{w}$ will minimize the loss. 
+Thus, in practice, we often start by initializing our weights *randomly*, 
+and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
 -->
 
-Đây là một hàm số cực kì phức tạp, là dạng tổng quát của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, do vậy gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
+Đây là một hàm số cực kì phức tạp, là dạng tổng quát của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, 
+do vậy gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
 Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và đi từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--
-The question then becomes something that on the surface is no easier: how do we find the direction which makes the weights decrease as quickly as possible?  To dig into this, let's first examine the case with only a single weight: $L(\mathbf{w}) = L(x)$ for a single real value $x$.
+The question then becomes something that on the surface is no easier: how do we find the direction which makes the weights decrease as quickly as possible?
+To dig into this, let us first examine the case with only a single weight: $L(\mathbf{w}) = L(x)$ for a single real value $x$.
 -->
 
-Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể? <!-- Cái này bản gốc viết sai rồi, sao lại giảm weights nhanh nhất có thể -->
+Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể?
 Để trả lời câu hỏi này, trước hết ta hãy xét trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  cho một số thực $x$ duy nhất.
 
-<!-- ===================== Kết thúc dịch Phần  1 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 2 ==================== -->
 
 <!--
-Let's take $x$ and try to understand what happens when we change it by a small amount to $x + \epsilon$. 
+Let us take $x$ and try to understand what happens when we change it by a small amount to $x + \epsilon$. 
 If you wish to be concrete, think a number like $\epsilon = 0.0000001$.  
-To help us visualize what happens, let's graph an example function, $f(x) = \sin(x^x)$, over the $[0, 3]$.
+To help us visualize what happens, Let us graph an example function, $f(x) = \sin(x^x)$, over the $[0, 3]$.
 -->
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
 Nếu bạn muốn mọi thứ thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
 Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
+
 
 ```{.python .input}
 %matplotlib inline
@@ -70,12 +73,38 @@ from d2l import mxnet as d2l
 from IPython import display
 from mxnet import np, npx
 npx.set_np()
-
 # Plot a function in a normal range
 x_big = np.arange(0.01, 3.01, 0.01)
 ys = np.sin(x_big**x_big)
 d2l.plot(x_big, ys, 'x', 'f(x)')
 ```
+
+```{.python .input}
+#@tab pytorch
+%matplotlib inline
+from d2l import torch as d2l
+from IPython import display
+import torch
+torch.pi = torch.acos(torch.zeros(1)).item() * 2  # Define pi in torch
+# Plot a function in a normal range
+x_big = torch.arange(0.01, 3.01, 0.01)
+ys = torch.sin(x_big**x_big)
+d2l.plot(x_big, ys, 'x', 'f(x)')
+```
+
+```{.python .input}
+#@tab tensorflow
+%matplotlib inline
+from d2l import tensorflow as d2l
+from IPython import display
+import tensorflow as tf
+tf.pi = tf.acos(tf.zeros(1)).numpy() * 2  # Define pi in TensorFlow
+# Plot a function in a normal range
+x_big = tf.range(0.01, 3.01, 0.01)
+ys = tf.sin(x_big**x_big)
+d2l.plot(x_big, ys, 'x', 'f(x)')
+```
+
 
 <!--
 At this large scale, the function's behavior is not simple. 
@@ -85,6 +114,7 @@ However, if we reduce our range to something smaller like $[1.75,2.25]$, we see 
 Trong một khoảng lớn thế này, cách biến đổi của hàm số không hề đơn giản.
 Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25]$, ta thấy đồ thị trở nên đơn giản hơn nhiều.
 
+
 ```{.python .input}
 # Plot a the same function in a tiny range
 x_med = np.arange(1.75, 2.25, 0.001)
@@ -92,11 +122,29 @@ ys = np.sin(x_med**x_med)
 d2l.plot(x_med, ys, 'x', 'f(x)')
 ```
 
+```{.python .input}
+#@tab pytorch
+# Plot a the same function in a tiny range
+x_med = torch.arange(1.75, 2.25, 0.001)
+ys = torch.sin(x_med**x_med)
+d2l.plot(x_med, ys, 'x', 'f(x)')
+```
+
+```{.python .input}
+#@tab tensorflow
+# Plot a the same function in a tiny range
+x_med = tf.range(1.75, 2.25, 0.001)
+ys = tf.sin(x_med**x_med)
+d2l.plot(x_med, ys, 'x', 'f(x)')
+```
+
+
 <!--
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
 Đỉnh điểm, nếu ta muốn phóng to một đoạn rất nhỏ ra, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
+
 
 ```{.python .input}
 # Plot a the same function in a tiny range
@@ -104,6 +152,23 @@ x_small = np.arange(2.0, 2.01, 0.0001)
 ys = np.sin(x_small**x_small)
 d2l.plot(x_small, ys, 'x', 'f(x)')
 ```
+
+```{.python .input}
+#@tab pytorch
+# Plot a the same function in a tiny range
+x_small = torch.arange(2.0, 2.01, 0.0001)
+ys = torch.sin(x_small**x_small)
+d2l.plot(x_small, ys, 'x', 'f(x)')
+```
+
+```{.python .input}
+#@tab tensorflow
+# Plot a the same function in a tiny range
+x_small = tf.range(2.0, 2.01, 0.0001)
+ys = tf.sin(x_small**x_small)
+d2l.plot(x_small, ys, 'x', 'f(x)')
+```
+
 
 <!--
 This is the key observation of single variable calculus: the behavior of familiar functions can be modeled by a line in a small enough range.  
@@ -122,12 +187,11 @@ Thus, we can consider the ratio of the change in the output of a function for a 
 
 Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với thay đổi nhỏ của đầu vào trong một hàm số. Chúng ta biễu diễn nó một cách toán học là:
 
+
 $$
 \frac{L(x+\epsilon) - L(x)}{(x+\epsilon) - x} = \frac{L(x+\epsilon) - L(x)}{\epsilon}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 2 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 3 ==================== -->
 
 <!--
 This is already enough to start to play around with in code.  
@@ -137,16 +201,17 @@ For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we ca
 Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành viết mã.
 Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
+
 ```{.python .input}
+#@tab all
 # Define our function
 def L(x):
     return x**2 + 1701*(x-4)**3
-
 # Print the difference divided by epsilon for several epsilon
 for epsilon in [0.1, 0.001, 0.0001, 0.00001]:
-    print("epsilon = {:.5f} -> {:.5f}".format(
-        epsilon, (L(4+epsilon) - L(4)) / epsilon))
+    print(f'epsilon = {epsilon:.5f} -> {(L(4+epsilon) - L(4)) / epsilon:.5f}')
 ```
+
 
 <!--
 Now, if we are observant, we will notice that the output of this number is suspiciously close to $8$.  
@@ -160,21 +225,30 @@ Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng
 Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
 Cách mà một nhà toán học giải mã vấn đề trên là:
 
+
 $$
 \lim_{\epsilon \rightarrow 0}\frac{L(4+\epsilon) - L(4)}{\epsilon} = 8.
 $$
 
+
 <!--
-As a bit of a historical digression: in the first few decades of neural network research, scientists used this algorithm (the *method of finite differences*) to evaluate how a loss function changed under small perturbation: just change the weights and see how the loss changed.  
+As a bit of a historical digression: in the first few decades of neural network research, 
+scientists used this algorithm (the *method of finite differences*) to evaluate how a loss function changed under small perturbation: 
+just change the weights and see how the loss changed.  
 This is computationally inefficient, requiring two evaluations of the loss function to see how a single change of one variable influenced the loss.  
 If we tried to do this with even a paltry few thousand parameters, it would require several thousand evaluations of the network over the entire dataset!  
-It was not solved until 1986 that the *backpropagation algorithm* introduced in :cite:`Rumelhart.Hinton.Williams.ea.1988` provided a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
+It was not solved until 1986 that the *backpropagation algorithm* introduced in :cite:`Rumelhart.Hinton.Williams.ea.1988` provided 
+a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, 
+các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
+chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
 Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.  
 Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
-Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (_backpropagation algorithm_) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
+Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (*backpropagation algorithm*) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` 
+đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát 
+với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
 
 <!--
 Back in our example, this value $8$ is different for different values of $x$, so it makes sense to define it as a function of $x$.  
@@ -203,42 +277,49 @@ $$
 Most authors will pick a single notation and stick with it, however even that is not guaranteed.  
 It is best to be familiar with all of these.  
 We will use the notation $\frac{df}{dx}$ throughout this text, unless we want to take the derivative of a complex expression, in which case we will use $\frac{d}{dx}f$ to write expressions like
-
-$$
-\frac{d}{dx}\left[x^4+\cos\left(\frac{x^2+1}{2x-1}\right)\right].
-$$
-
-Often times, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
 -->
 
 Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
 Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
-Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
+Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, 
+khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
+
 
 $$
 \frac{d}{dx}\left[x^4+\cos\left(\frac{x^2+1}{2x-1}\right)\right].
 $$
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 4 ==================== -->
+<!--
+Oftentimes, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
+-->
+
+*dịch đoạn phía trên*
+
+
 
 $$\begin{aligned} \frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon} & \implies \frac{df}{dx}(x) \approx \frac{f(x+\epsilon) - f(x)}{\epsilon} \\ & \implies \epsilon \frac{df}{dx}(x) \approx f(x+\epsilon) - f(x) \\ & \implies f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x). \end{aligned}$$
 :eqlabel:`eq_small_change`
+
 
 <!--
 The last equation is worth explicitly calling out.  
 It tells us that if you take any function and change the input by a small amount, the output would change by that small amount scaled by the derivative.
 -->
 
-Cần phải nói rõ hơn về phương trình cuối cùng. 
-Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và thay đổi đầu vào một lượng nhỏ, sự thay đổi của đầu ra sẽ bằng với lượng nhỏ đó nhân với đạo hàm.  
+Cần phải nói rõ hơn về phương trình cuối cùng.
+Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và thay đổi đầu vào một lượng nhỏ, sự thay đổi của đầu ra sẽ bằng với lượng nhỏ đó nhân với đạo hàm.
 
 <!--
 In this way, we can understand the derivative as the scaling factor that tells us how large of change we get in the output from a change in the input.
 -->
 
-Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra nhận được từ một biến thiên của đầu vào. 
+Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra nhận được từ một biến thiên của đầu vào.
+
+<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+
 
 <!--
 ## Rules of Calculus
@@ -264,7 +345,7 @@ Tuy nhiên bây giờ chúng ta sẽ không làm theo sự cám dỗ này mà th
 ### Đạo hàm phổ biến
 
 <!--
-As was seen in :numref:`sec_calculus`, when computing derivatives one can often times use a series of rules to reduce the computation to a few core functions.  
+As was seen in :numref:`sec_calculus`, when computing derivatives one can oftentimes use a series of rules to reduce the computation to a few core functions.  
 We repeat them here for ease of reference.
 -->
 
@@ -285,8 +366,6 @@ Chúng tôi nhắc lại chúng ở đây để tham khảo.
 * **Đạo hàm hàm mũ e.** $\frac{d}{dx}e^x = e^x$.
 * **Đàm hàm hàm logarit.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 
-<!-- ===================== Kết thúc dịch Phần 4 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 5 ==================== -->
 
 <!--
 ### Derivative Rules
@@ -314,11 +393,12 @@ Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực
 * **Quy tắc dây chuyền.** $\frac{d}{dx}g(h(x)) = \frac{dg}{dh}(h(x))\cdot \frac{dh}{dx}(x)$.
 
 <!--
-Let's see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
+Let us see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
 -->
 
 * Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này.
 * Với quy tắc tổng, xét dãy suy luận sau đây:
+
 
 $$
 \begin{aligned}
@@ -328,6 +408,7 @@ f(x+\epsilon) & = g(x+\epsilon) + h(x+\epsilon) \\
 & = f(x) + \epsilon\left(\frac{dg}{dx}(x) + \frac{dh}{dx}(x)\right).
 \end{aligned}
 $$
+
 
 <!--
 By comparing this result with the fact that $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, we see that $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ as desired.  
@@ -344,6 +425,7 @@ The product is more subtle, and will require a new observation about how to work
 
 Đối với tích thì phức tạp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
 Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
+
 
 $$
 \begin{aligned}
@@ -364,15 +446,19 @@ As a general convention in this appendix, we will use "$\approx$" to denote that
 However, if we wish to be more formal we may examine the difference quotient
 -->
 
-Việc này giống với những tính toán trước đây, và dễ thấy kết quả của ta ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$) là số hạng được nhân với $\epsilon$, nhưng vấn đề là ở số hạng nhân với giá trị $\epsilon^{2}$.
+Việc này giống với những tính toán trước đây, và dễ thấy kết quả của ta ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$) 
+là số hạng được nhân với $\epsilon$, nhưng vấn đề là ở số hạng nhân với giá trị $\epsilon^{2}$.
 Chúng ta sẽ gọi số hạng này là *số hạng bậc cao*, bởi số mũ của $\epsilon^2$ cao hơn số mũ của $\epsilon^1$.
 Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên bây giờ ta có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số rất nhỏ.
 Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao hơn.
 Ta sẽ quy ước sử dụng "$\approx$" để ký hiệu rằng hai số hạng bằng nhau với sai số là các thành phần bậc cao.
 Tuy nhiên, nếu ta muốn chứng minh một cách toán học hơn, ta có thể xét phương trình
+
+
 $$
 \frac{f(x+\epsilon) - f(x)}{\epsilon} = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x) + \epsilon \frac{dg}{dx}(x)\frac{dh}{dx}(x),
 $$
+
 
 <!--
 and see that as we send $\epsilon \rightarrow 0$, the right hand term goes to zero as well.
@@ -395,8 +481,6 @@ f(x+\epsilon) & = g(h(x+\epsilon)) \\
 \end{aligned}
 $$
 
-<!-- ===================== Kết thúc dịch Phần 5 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 6 ==================== -->
 
 <!--
 where in the second line we view the function $g$ as having its input ($h(x)$) shifted by the tiny quantity $\epsilon \frac{dh}{dx}(x)$.
@@ -404,12 +488,14 @@ where in the second line we view the function $g$ as having its input ($h(x)$) s
 
 Chú ý là ở dòng thứ hai trong chuỗi khai triển trên, chúng ta đã xem đối số $h(x)$ của hàm $g$ như là bị dịch đi bởi một lượng rất nhỏ $\epsilon \frac{dh}{dx}(x)$.
 
+
 <!--
 These rule provide us with a flexible set of tools to compute essentially any expression desired.  For instance,
 -->
 
 Các quy tắc này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như là bất kỳ biểu thức nào mà ta muốn.
 Chẳng hạn như trong ví dụ sau:
+
 
 $$
 \begin{aligned}
@@ -420,6 +506,7 @@ $$
 & = \frac{10(x-1)^9}{1+(x-1)^{10}}.
 \end{aligned}
 $$
+
 
 <!--
 Where each line has used the following rules:
@@ -439,6 +526,7 @@ Mỗi dòng của ví dụ này đã sử dụng các quy tắc sau:
 3. Đạo hàm của hằng số, quy tắc dây chuyền, và quy tắc đạo hàm của lũy thừa.
 4. Quy tắc đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
 
+
 <!--
 Two things should be clear after doing this example:
 -->
@@ -450,17 +538,21 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 2. Having a human follow these rules can be tedious and error prone!
 -->
 
-1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, hàm mũ, và hàm logarithms, bằng cách sử dụng những quy tắc trên một cách máy móc.
-2. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
+1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, hàm mũ, và hàm logarithms, 
+2. bằng cách sử dụng những quy tắc trên một cách máy móc.
+3. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
 
 <!--
-Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!  Indeed backpropagation, which we will revisit later in this section, is exactly that.
+Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!
+Indeed backpropagation, which we will revisit later in this section, is exactly that.
 -->
 
-Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
+Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! 
+Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
 
-<!-- ===================== Kết thúc dịch Phần 6 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 7 ==================== -->
+<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Linear Approximation
@@ -475,9 +567,11 @@ When working with derivatives, it is often useful to geometrically interpret the
 Thông thường khi làm việc với đạo hàm, sẽ rất hữu ích nếu chúng ta có thể diễn tả sự xấp xỉ ở trên theo phương diện hình học.
 Nói một cách cụ thể, phương trình này
 
+
 $$
 f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x),
 $$
+
 
 <!--
 approximates the value of $f$ by a line which passes through the point $(x, f(x))$ and has slope $\frac{df}{dx}(x)$.  
@@ -487,17 +581,41 @@ In this way we say that the derivative gives a linear approximation to the funct
 xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$.
 Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
 
+
 ```{.python .input}
 # Compute sin
 xs = np.arange(-np.pi, np.pi, 0.01)
 plots = [np.sin(xs)]
-
-# Compute some linear approximations. Use d(sin(x))/dx = cos(x)
+# Compute some linear approximations. Use d(sin(x)) / dx = cos(x)
 for x0 in [-1.5, 0, 2]:
     plots.append(np.sin(x0) + (xs - x0) * np.cos(x0))
-
 d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ```
+
+```{.python .input}
+#@tab pytorch
+# Compute sin
+xs = torch.arange(-torch.pi, torch.pi, 0.01)
+plots = [torch.sin(xs)]
+# Compute some linear approximations. Use d(sin(x))/dx = cos(x)
+for x0 in [-1.5, 0.0, 2.0]:
+    plots.append(torch.sin(torch.tensor(x0)) + (xs - x0) * 
+                 torch.cos(torch.tensor(x0)))
+d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
+```
+
+```{.python .input}
+#@tab tensorflow
+# Compute sin
+xs = tf.range(-tf.pi, tf.pi, 0.01)
+plots = [tf.sin(xs)]
+# Compute some linear approximations. Use d(sin(x))/dx = cos(x)
+for x0 in [-1.5, 0.0, 2.0]:
+    plots.append(tf.sin(tf.constant(x0)) + (xs - x0) * 
+                 tf.cos(tf.constant(x0)))
+d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
+```
+
 
 <!--
 ### Higher Order Derivatives
@@ -506,7 +624,7 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ### Đạo hàm Cấp cao
 
 <!--
-Let's now do something that may on the surface seem strange.  
+Let us now do something that may on the surface seem strange.  
 Take a function $f$ and compute the derivative $\frac{df}{dx}$.  
 This gives us the rate of change of $f$ at any point.
 -->
@@ -516,33 +634,35 @@ Bắt đầu bằng việc lấy một hàm số $f$ và tính đạo hàm $\fra
 Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
 <!--
-However, the derivative, $\frac{df}{dx}$, can be viewed as a function itself, so nothing stops us from computing the derivative of $\frac{df}{dx}$ to get $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.  
+However, the derivative, $\frac{df}{dx}$, can be viewed as a function itself, so nothing stops us from computing
+ the derivative of $\frac{df}{dx}$ to get $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.  
 We will call this the second derivative of $f$.  
 This function is the rate of change of the rate of change of $f$, or in other words, how the rate of change is changing. 
 We may apply the derivative any number of times to obtain what is called the $n$-th derivative. 
 To keep the notation clean, we will denote the $n$-th derivative as
 -->
 
-Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
+Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của 
+$\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
 Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
 Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
 Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
 Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
 
+
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
 $$
 
+
 <!--
-Let's try to understand *why* this is a useful notion.  
+Let us try to understand *why* this is a useful notion.
 Below, we visualize $f^{(2)}(x)$, $f^{(1)}(x)$, and $f(x)$.
 -->
 
 Hãy tìm hiểu xem *tại sao* đây lại là một khái niệm hữu ích.
 Các hàm số $f^{(2)}(x)$, $f^{(1)}(x)$, và $f(x)$ được biểu diễn trong các đồ thị dưới đây.
 
-<!-- ===================== Kết thúc dịch Phần 7 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 8 ==================== -->
 
 <!--
 First, consider the case that the second derivative $f^{(2)}(x)$ is a positive constant.  
@@ -557,6 +677,7 @@ In other words, the function $f$ curves up, and has a single minimum as is shown
 Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi tăng lên dương ở cuối cùng.
 Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm xuống, đi ngang, rồi tăng lên.
 Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong :numref:`fig_positive-second`.
+
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
@@ -609,16 +730,15 @@ A positive second derivative leads to a upwards curve, while a negative second d
 Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
 Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
-<!-- ===================== Kết thúc dịch Phần 8 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 9 ==================== -->
 
 <!--
-Let's take this one step further. Consider the function $g(x) = ax^{2}+ bx + c$.  We can then compute that
+Let us take this one step further. Consider the function $g(x) = ax^{2}+ bx + c$.  We can then compute that
 -->
 
 Hãy thử tiến xa hơn một bước.
 Xét hàm $g(x) = ax^{2}+ bx + c$.
 Ta có thể tính được
+
 
 $$
 \begin{aligned}
@@ -627,33 +747,65 @@ $$
 \end{aligned}
 $$
 
+
 <!--
 If we have some original function $f(x)$ in mind, we may compute the first two derivatives and find the values for $a, b$, and $c$ that make them match this computation.  
-Similarly to the previous section where we saw that the first derivative gave the best approximation with a straight line, this construction provides the best approximation by a quadratic.  Let's visualize this for $f(x) = \sin(x)$.
+Similarly to the previous section where we saw that the first derivative gave the best approximation with a straight line, 
+this construction provides the best approximation by a quadratic.  Let us visualize this for $f(x) = \sin(x)$.
 -->
 
 Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
 Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một là xấp xỉ tốt nhất của một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
 Cùng minh hoạ với trường hợp $f(x) = \sin(x)$.
 
+
 ```{.python .input}
 # Compute sin
 xs = np.arange(-np.pi, np.pi, 0.01)
 plots = [np.sin(xs)]
-
-# Compute some quadratic approximations. Use d(sin(x))/dx = cos(x)
+# Compute some quadratic approximations. Use d(sin(x)) / dx = cos(x)
 for x0 in [-1.5, 0, 2]:
     plots.append(np.sin(x0) + (xs - x0) * np.cos(x0) -
                               (xs - x0)**2 * np.sin(x0) / 2)
-
 d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 ```
+
+```{.python .input}
+#@tab pytorch
+# Compute sin
+xs = torch.arange(-torch.pi, torch.pi, 0.01)
+plots = [torch.sin(xs)]
+# Compute some quadratic approximations. Use d(sin(x)) / dx = cos(x)
+for x0 in [-1.5, 0.0, 2.0]:
+    plots.append(torch.sin(torch.tensor(x0)) + (xs - x0) * 
+                 torch.cos(torch.tensor(x0)) - (xs - x0)**2 *
+                 torch.sin(torch.tensor(x0)) / 2)
+d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
+```
+
+```{.python .input}
+#@tab tensorflow
+# Compute sin
+xs = tf.range(-tf.pi, tf.pi, 0.01)
+plots = [tf.sin(xs)]
+# Compute some quadratic approximations. Use d(sin(x)) / dx = cos(x)
+for x0 in [-1.5, 0.0, 2.0]:
+    plots.append(tf.sin(tf.constant(x0)) + (xs - x0) * 
+                 tf.cos(tf.constant(x0)) - (xs - x0)**2 *
+                 tf.sin(tf.constant(x0)) / 2)
+d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
+```
+
 
 <!--
 We will extend this idea to the idea of a *Taylor series* in the next section.
 -->
 
 Ta sẽ mở rộng từ ý tưởng này tới ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
+
+<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
+
+<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Taylor Series
@@ -663,10 +815,13 @@ Ta sẽ mở rộng từ ý tưởng này tới ý tưởng của *chuỗi Taylo
 
 
 <!--
-The *Taylor series* provides a method to approximate the function $f(x)$ if we are given values for the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
+The *Taylor series* provides a method to approximate the function $f(x)$ if we are given values for 
+the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
+The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
 -->
 
-*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
+*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, 
+nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
 Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
@@ -675,12 +830,12 @@ We saw the case of $n=2$ in the previous section and a little algebra shows this
 
 Ta đã thấy với trường hợp $n=2$ ở chương trước và với một chút biến đổi đại số, ta có được
 
+
 $$
 f(x) \approx \frac{1}{2}\frac{d^2f}{dx^2}(x_0)(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
 $$
 
-<!-- ===================== Kết thúc dịch Phần 9 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 10 ==================== -->
+
 
 <!--
 As we can see above, the denominator of $2$ is there to cancel out the $2$ we get when we take two derivatives of $x^2$, while the other terms are all zero.  
@@ -696,9 +851,11 @@ If we push the logic further to $n=3$, we will conclude that
 
 Nếu ta mở rộng cách lập luận này cho trường hợp $n=3$, ta sẽ kết luận được
 
+
 $$
 f(x) \approx \frac{\frac{d^3f}{dx^3}(x_0)}{6}(x-x_0)^3 + \frac{\frac{d^2f}{dx^2}(x_0)}{2}(x-x_0)^{2}+ \frac{df}{dx}(x_0)(x-x_0) + f(x_0).
 $$
+
 
 <!--
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
@@ -713,6 +870,7 @@ Furthermore, we can get a degree $n$ polynomial by
 
 Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách
 
+
 $$
 P_n(x) = \sum_{i = 0}^{n} \frac{f^{(i)}(x_0)}{i!}(x-x_0)^{i}.
 $$
@@ -723,12 +881,11 @@ where the notation
 
 với quy ước
 
+
 $$
 f^{(n)}(x) = \frac{d^{n}f}{dx^{n}} = \left(\frac{d}{dx}\right)^{n} f.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 10 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 11 ==================== -->
 
 <!--
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
@@ -744,9 +901,11 @@ In this case, for well behaved functions (known as real analytic functions) like
 Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
 Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vô số các số hạng.
 
+
 $$
 f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!}(x-x_0)^{n}.
 $$
+
 
 <!--
 Take $f(x) = e^{x}$ as am example. Since $e^{x}$ is its own derivative, we know that $f^{(n)}(x) = e^{x}$. 
@@ -757,30 +916,60 @@ Lấy hàm $f(x) = e^{x}$ làm ví dụ.
 Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$.
 Do đó, hàm $e^{x}$ có thể được dựng lại bằng cách tính chuỗi Taylor tại $x_0 = 0$:
 
+
 $$
 e^{x} = \sum_{n = 0}^\infty \frac{x^{n}}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots.
 $$
 
+
 <!--
-Let's see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
+Let us see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
 -->
 
 Hãy cùng tìm hiểu điều này bằng cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
+
 
 ```{.python .input}
 # Compute the exponential function
 xs = np.arange(0, 3, 0.01)
 ys = np.exp(xs)
-
 # Compute a few Taylor series approximations
 P1 = 1 + xs
 P2 = 1 + xs + xs**2 / 2
 P5 = 1 + xs + xs**2 / 2 + xs**3 / 6 + xs**4 / 24 + xs**5 / 120
-
 d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
     "Exponential", "Degree 1 Taylor Series", "Degree 2 Taylor Series",
     "Degree 5 Taylor Series"])
 ```
+
+```{.python .input}
+#@tab pytorch
+# Compute the exponential function
+xs = torch.arange(0, 3, 0.01)
+ys = torch.exp(xs)
+# Compute a few Taylor series approximations
+P1 = 1 + xs
+P2 = 1 + xs + xs**2 / 2
+P5 = 1 + xs + xs**2 / 2 + xs**3 / 6 + xs**4 / 24 + xs**5 / 120
+d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
+    "Exponential", "Degree 1 Taylor Series", "Degree 2 Taylor Series",
+    "Degree 5 Taylor Series"])
+```
+
+```{.python .input}
+#@tab tensorflow
+# Compute the exponential function
+xs = tf.range(0, 3, 0.01)
+ys = tf.exp(xs)
+# Compute a few Taylor series approximations
+P1 = 1 + xs
+P2 = 1 + xs + xs**2 / 2
+P5 = 1 + xs + xs**2 / 2 + xs**3 / 6 + xs**4 / 24 + xs**5 / 120
+d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
+    "Exponential", "Degree 1 Taylor Series", "Degree 2 Taylor Series",
+    "Degree 5 Taylor Series"])
+```
+
 
 <!--
 Taylor series have two primary applications:
@@ -789,7 +978,7 @@ Taylor series have two primary applications:
 Chuỗi Taylor có hai ứng dụng chính:
 
 <!--
-1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables we turn it into a polynomial that we can work with directly.
+1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables us to turn it into a polynomial that we can work with directly.
 -->
 
 1. *Ứng dụng lý thuyết*:
@@ -803,33 +992,25 @@ Taylor series are often helpful to answer such questions.
 
 2. *Ứng dụng số*:
 Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
-Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
+Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), 
+nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
 Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
 
-<!-- ===================== Kết thúc dịch Phần 11 ==================== -->
-<!-- ===================== Bắt đầu dịch Phần 12 ==================== -->
 
-<!--
-## Summary
--->
-
-## Tổng kết
+## Tóm tắt
 
 <!--
 * Derivatives can be used to express how functions change when we change the input by a small amount.
 * Elementary derivatives can be combined using derivative rules to create arbitrarily complex derivatives.
 * Derivatives can be iterated to get second or higher order derivatives.  Each increase in order provides more fine grained information on the behavior of the function.
-* Using information in the derivatives of a single data point, we can approximate well behaved functions by polynomials obtained from the Taylor series.
+* Using information in the derivatives of a single data example, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
+
 * Đạo hàm có thể được sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
 * Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo quy tắc để tính đạo hàm phức tạp tùy ý.
 * Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta nhiều thông tin chi tiết hơn về hành vi của hàm số.
 * Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ khai triển Taylor.
 
-
-<!--
-## Exercises
--->
 
 ## Bài tập
 
@@ -845,57 +1026,24 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 3. Đúng hay Sai: Nếu $f'(x) = 0$ thì $f$ có cực đại hoặc cực tiểu tại $x$?
 4. Cực tiểu của $f(x) = x\log(x)$ với $x\ge0$ ở đâu (ở đây ta giả sử rằng $f$ có giới hạn bằng $0$ tại $f(0)$)?
 
-
-<!--
-## [Discussions](https://discuss.mxnet.io/t/5149)
--->
+<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/5149)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/412)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
-<!--
-![](../img/qr_single-variable-calculus.svg)
--->
-
-
-
-<!-- ===================== Kết thúc dịch Phần 12 ==================== -->
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
 
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
--->
-
-<!-- Phần 1 -->
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Vũ Hữu Tiệp
-
-<!-- Phần 3 -->
 * Nguyễn Lê Quang Nhật
 * Đoàn Võ Duy Thanh
-
-<!-- Phần 4 -->
-* Nguyễn Lê Quang Nhật
-* Phạm Hồng Vinh
-* Đoàn Võ Duy Thanh
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 6 -->
 * Tạ H. Duy Nguyên
-
-<!-- Phần 8 -->
 * Mai Sơn Hải
-
-<!-- Phần 11 -->
 * Phạm Minh Đức
-
-<!-- Phần 12 -->
 * Nguyễn Văn Tâm
+
+*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*

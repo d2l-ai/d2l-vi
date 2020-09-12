@@ -5,7 +5,7 @@
 # Natural Language Inference: Fine-Tuning BERT
 -->
 
-# *dịch tiêu đề trên*
+# Suy luận ngôn ngữ tự nhiên: Tinh chỉnh BERT
 :label:`sec_natural-language-inference-bert`
 
 
@@ -19,14 +19,20 @@ natural language inference is a sequence-level text pair classification problem,
 and fine-tuning BERT only requires an additional MLP-based architecture, as illustrated in :numref:`fig_nlp-map-nli-bert`.
 -->
 
-*dịch đoạn phía trên*
+Ở các phần đầu của chương này, ta đã thiết kế kiến trúc dựa trên cơ chế tập trung
+(trong :numref:`sec_natural-language-inference-attention`) cho tác vụ suy luận ngôn ngữ tự nhiên 
+trên tập dữ liệu SNLI (như được mô tả trong :numref:`sec_natural-language-inference-and-dataset`).
+Bây giờ ta trở lại tác vụ này qua thực hiện tinh chỉnh BERT.
+Như đã thảo luận trong :numref:`sec_finetuning-bert`,
+suy diễn ngôn ngữ tự nhiên là bài toán phân loại cặp văn bản ở mức chuỗi,
+và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc bổ trợ dựa trên MLP, như minh họa trong :numref:`fig_nlp-map-nli-bert`.
 
 
 <!--
 ![This section feeds pretrained BERT to an MLP-based architecture for natural language inference.](../img/nlp-map-nli-bert.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/nlp-map-nli-bert.svg)
+![Phần này truyền BERT đã tiền huấn luyện vào một kiến trúc dựa trên MLP cho suy diễn ngôn ngữ tự nhiên.](../img/nlp-map-nli-bert.svg)
 :label:`fig_nlp-map-nli-bert`
 
 
@@ -35,7 +41,8 @@ In this section, we will download a pretrained small version of BERT,
 then fine-tune it for natural language inference on the SNLI dataset.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta sẽ tải một phiên bản BERT đã tiền huấn luyện kích thước nhỏ,
+rồi tinh chỉnh nó để suy diễn ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
 
 
 ```{.python .input  n=1}
@@ -54,7 +61,7 @@ npx.set_np()
 ## Loading Pretrained BERT
 -->
 
-## *dịch tiêu đề trên*
+## Nạp BERT đã tiền huấn luyện
 
 
 <!--
@@ -66,7 +73,12 @@ In the following, we provide two versions of pretrained BERT:
 while "bert.small" is a small version to facilitate demonstration.
 -->
 
-*dịch đoạn phía trên*
+Ta đã giải thích việc làm thế nào tiền huấn luyện BERT trên tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset` và :numref:`sec_bert-pretraining`
+(lưu ý rằng mô hình BERT ban đầu được tiền huấn luyện trên các kho ngữ liệu lớn hơn nhiều).
+Như đã thảo luận trong :numref:`sec_bert-pretraining`, mô hình BERT gốc có hàng trăm triệu tham số.
+Trong phần sau đây, chúng tôi cung cấp hai phiên bản BERT tiền huấn luyện:
+"bert.base" có kích thước xấp xỉ mô hình BERT cơ sở gốc, là mô hình đòi hỏi nhiều tài nguyên tính toán để tinh chỉnh,
+trong khi "bert.small" là phiên bản nhỏ để thuận tiện cho việc minh họa.
 
 
 ```{.python .input  n=2}
@@ -83,7 +95,9 @@ and a "pretrained.params" file of the pretrained parameters.
 We implement the following `load_pretrained_model` function to load pretrained BERT parameters.
 -->
 
-*dịch đoạn phía trên*
+Cả hai mô hình BERT đã tiền huấn luyện đều chứa tập tin "vocab.json" định nghĩa tập từ vựng 
+và tập tin "pretrained.params" chứa các tham số tiền huấn luyện.
+Ta thực hiện hàm `load_pretrained_model` sau đây để nạp các tham số đã tiền huấn luyện của BERT.
 
 
 ```{.python .input  n=3}
@@ -110,7 +124,9 @@ we will load and fine-tune the small version ("bert.small") of the pretrained BE
 In the exercise, we will show how to fine-tune the much larger "bert.base" to significantly improve the testing accuracy.
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện biểu diễn trên hầu hết các máy,
+ta sẽ nạp và tinh chỉnh phiên bản nhỏ ("bert-small") của BERT đã tiền huấn luyện ở phần này.
+Phần bài tập sẽ hướng dẫn cách tinh chỉnh mô hình "bert-base" lớn hơn nhiều, để cải thiện đáng kể độ chính xác khi kiểm tra.
 
 
 ```{.python .input  n=4}
@@ -128,7 +144,7 @@ bert, vocab = load_pretrained_model(
 ## The Dataset for Fine-Tuning BERT
 -->
 
-## *dịch tiêu đề trên*
+## Tập dữ liệu để tinh chỉnh BERT
 
 
 <!--
@@ -143,7 +159,15 @@ To accelerate generation of the SNLI dataset for fine-tuning BERT,
 we use 4 worker processes to generate training or testing examples in parallel.
 -->
 
-*dịch đoạn phía trên*
+Đối với tác vụ xuôi dòng suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI, ta định nghĩa một lớp tập dữ liệu tuỳ biến, `SNLIBERTDataset`.
+Trong mỗi mẫu, tiền đề và giả thuyết tạo thành một cặp chuỗi văn bản
+và được đóng gói thành một chuỗi đầu vào BERT như được mô tả trong :numref:`fig_bert-two-seqs`.
+Nhắc lại :numref:`subsec_bert_input_rep` rằng ID của các đoạn đó
+được sử dụng để phân biệt tiền đề và giả thuyết trong chuỗi đầu vào BERT.
+Với độ dài tối đa đã định trước của chuỗi đầu vào BERT (`max_len`),
+token cuối cùng của đoạn dài hơn trong cặp văn bản đầu vào sẽ liên tục bị xóa cho đến khi độ dài của nó là `max_len`.
+Để tăng tốc quá trình tạo tập dữ liệu SNLI cho việc tinh chỉnh BERT,
+ta sử dụng 4 tiến trình thợ để tạo ra các mẫu cho tập huấn luyện và tập kiểm tra một cách song song.
 
 
 ```{.python .input  n=5}
@@ -207,7 +231,10 @@ Such examples will be read in minibatches during training and testing
 of natural language inference.
 -->
 
-*dịch đoạn phía trên*
+Sau khi tải xuống tập dữ liệu SNLI, ta tạo các mẫu huấn luyện và kiểm tra
+bằng cách khởi tạo lớp `SNLIBERTDataset`.
+Các mẫu đó sẽ được đọc từ các minibatch trong quá trình huấn luyện và kiểm tra
+của suy luận ngôn ngữ tự nhiên.
 
 
 ```{.python .input  n=6}
@@ -228,7 +255,7 @@ test_iter = gluon.data.DataLoader(test_set, batch_size,
 ## Fine-Tuning BERT
 -->
 
-## *dịch tiêu đề trên*
+## Tinh chỉnh BERT
 
 
 <!--
@@ -241,7 +268,13 @@ into three outputs of natural language inference:
 entailment, contradiction, and neutral.
 -->
 
-*dịch đoạn phía trên*
+Như :numref:`fig_bert-two-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên
+chỉ yêu cầu một perceptron đa tầng bổ sung bao gồm hai tầng kết nối đầy đủ
+(xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
+Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”,
+là token mã hóa thông tin của cả tiền đề và giả thuyết,
+thành ba đầu ra của suy luận ngôn ngữ tự nhiên:
+kéo theo, đối lập và trung tính.
 
 
 ```{.python .input  n=7}
@@ -268,7 +301,9 @@ In common implementations of BERT fine-tuning, only the parameters of the output
 All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden layer of the additional MLP (net.hidden) will be fine-tuned.
 -->
 
-*dịch đoạn phía trên*
+Sau đây, mô hình BERT đã tiền huấn luyện `bert` được đưa vào thực thể `net` của lớp `BERTClassifier` cho ứng dụng xuôi dòng.
+Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu.
+Còn tất cả các tham số của bộ mã hóa BERT đã tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) sẽ được tinh chỉnh.
 
 
 ```{.python .input  n=8}
@@ -285,7 +320,11 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 `MaskLM` and `NextSentencePred` are not updated (staled) when BERT is fine-tuned.
 -->
 
-*dịch đoạn phía trên*
+Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong perceptron đa tầng mà chúng sử dụng.
+Các tham số này là một phần của các tham số trong mô hình BERT đã tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`.
+Tuy nhiên, các tham số này chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ có mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện.
+Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng xuôi dòng, do đó các tham số của perceptron đa tầng dùng trong
+`MaskLM` và` NextSentencePred` không được cập nhật khi tinh chỉnh BERT.
 
 
 <!--
@@ -294,7 +333,9 @@ We use this function to train and evaluate the model `net` using the training se
 Due to the limited computational resources, the training and testing accuracy can be further improved: we leave its discussions in the exercises.
 -->
 
-*dịch đoạn phía trên*
+Để cho phép sử dụng các tham số với gradient không được cập nhật, ta đặt cờ `ignore_stale_grad = True` trong hàm `step` của `d2l.train_batch_ch13`.
+Chúng ta sử dụng chức năng này để huấn luyện và đánh giá mô hình `net` bằng cách sử dụng tập huấn luyện (`train_iter`) và tập kiểm tra (`test_iter`) của SNLI.
+Do hạn chế về tài nguyên tính toán, độ chính xác của việc huấn luyện và kiểm tra vẫn còn có thể được cải thiện hơn nữa: chúng sẽ thảo luận vấn đề này trong phần bài tập.
 
 
 ```{.python .input  n=46}
@@ -313,7 +354,9 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
 Parameters that are only related to pretraining loss will not be updated during fine-tuning. 
 -->
 
-*dịch đoạn phía trên*
+* Chúng ta có thể tinh chỉnh mô hình BERT đã tiền huấn luyện cho các ứng dụng xuôi dòng, chẳng hạn như suy luận ngôn ngữ tự nhiên trên tập dữ liệu SNLI.
+* Trong quá trình tinh chỉnh, mô hình BERT trở thành một phần của mô hình ứng dụng xuôi dòng.
+Các tham số chỉ liên quan đến phần mất mát trong tiền huấn luyện sẽ không được cập nhật trong quá trình tinh chỉnh.
 
 
 ## Bài tập
@@ -327,7 +370,12 @@ By increasing fine-tuning epochs (and possibly tuning other hyperparameters), ca
 Compare this pair truncation method and the one used in the `SNLIBERTDataset` class. What are their pros and cons?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy tinh chỉnh một mô hình BERT tiền huấn luyện lớn hơn, có kích thước tương đương với mô hình BERT cơ sở ban đầu, nếu tài nguyên tính toán của bạn cho phép.
+Hãy thay đổi các đối số trong hàm `load_pretrained_model`: thay thế 'bert.small' bằng 'bert.base',
+lần lượt tăng giá trị của `num_hiddens = 256`,` ffn_num_hiddens = 512`, `num_heads = 4`,` num_layers = 2` thành `768`,` 3072`, `12`,` 12`.
+Bằng cách tăng số epoch khi tinh chỉnh (và có thể điều chỉnh các siêu tham số khác), có thể nhận được độ chính xác trên tập kiểm tra cao hơn 0,86 không?
+2. Làm thế nào để cắt ngắn một cặp chuỗi theo tỉ lệ độ dài của chúng?
+So sánh phương thức cắt ngắn cặp này và phương thức được sử dụng trong lớp `SNLIBERTDataset`. Ưu và nhược điểm của chúng là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -349,10 +397,11 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
-* 
-
+* Nguyễn Thái Bình
+* Nguyễn Văn Cường
 <!-- Phần 3 -->
-* 
+* Nguyễn Thái Bình
+* Nguyễn Văn Cường
