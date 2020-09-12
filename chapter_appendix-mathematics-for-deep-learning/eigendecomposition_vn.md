@@ -5,7 +5,7 @@
 # Eigendecompositions
 -->
 
-# *dịch tiêu đề trên*
+# Phân tích trị riêng
 :label:`sec_eigendecompositions`
 
 
@@ -15,14 +15,16 @@ however, as a beginner, it is easy to overlook their importance.
 Below, we introduce eigendecomposition and try to convey some sense of just why it is so important. 
 -->
 
-*dịch đoạn phía trên*
+Trị riêng thương là một trong những khái niệm hữu ích nhất mà chúng ta sẽ gặp phải khi học đại số tuyến tính,
+tuy nhiên người mới học thường bỏ qua tầm quan trọng của chúng.
+Dưới đây, chúng tôi giới thiệu phân tích trị riêng và cố gắng truyền tải một vài lý do về việc tại sao chúng lại quan trọng.
 
 
 <!--
 Suppose that we have a matrix $A$ with the following entries:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một ma trận $A$ với các đầu vào sau:
 
 
 $$
@@ -38,7 +40,8 @@ If we apply $A$ to any vector $\mathbf{v} = [x, y]^\top$, we obtain a vector $\m
 This has an intuitive interpretation: stretch the vector to be twice as wide in the $x$-direction, and then flip it in the $y$-direction.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta áp dụng $A$ cho bất kỳ vector $\mathbf{v} = [x, y]^\top$ nào, ta nhận được một vector $\mathbf{A}\mathbf{v} = [2x, -y]^\top$.
+Đây là một diễn giải mang tính trực giác: giãn vector rộng gấp đôi theo hướng $x$, rồi lật nó lại theo hướng $y$.
 
 
 <!--
