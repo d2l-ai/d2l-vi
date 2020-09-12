@@ -2,7 +2,10 @@
 
 ## Dự án dịch sách "[Dive into Deep Learning](https://github.com/d2l-ai/d2l-en)"
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/aivivn/d2l-vn/Python%20application/master?style=flat-square)
+![Website](https://img.shields.io/website?down_message=offline&style=flat-square&up_message=online&url=https%3A%2F%2Fd2l.aivivn.com)
+![GitHub repo size](https://img.shields.io/github/repo-size/aivivn/d2l-vn?style=flat-square)
 ![GitHub contributors](https://img.shields.io/github/contributors/aivivn/d2l-vn?color=%233a87f2&label=contributors&style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/aivivn/d2l-vn?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/aivivn/d2l-vn?color=%23f2af3a&style=flat-square)
 
 
