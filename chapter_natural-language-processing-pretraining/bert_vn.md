@@ -401,9 +401,9 @@ To encode context bidirectionally for representing each token, BERT randomly mas
 This task is referred to as a *masked language model*.
 -->
 
-Như được mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token sử dụng ngữ cảnh phía bên trái của nó.
+Như mô tả trong :numref:`sec_language_model`, một mô hình ngôn ngữ dự đoán một token bằng cách sử dụng ngữ cảnh phía bên trái của nó.
 Để mã hóa ngữ cảnh hai chiều khi biểu diễn mỗi token, BERT ngẫu nhiên che mặt nạ các token và sử dụng các token lấy từ ngữ cảnh hai chiều để dự đoán các token mặt nạ đó.
-Tác vụ này được gọi là *mô hình ngôn ngữ có mặt nạ*.
+Tác vụ này được gọi là *mô hình hóa ngôn ngữ có mặt nạ*.
 
 <!--
 In this pretraining task, 15% of tokens will be selected at random as the masked tokens for prediction.
@@ -413,10 +413,10 @@ To avoid such a mismatch between pretraining and fine-tuning, if a token is mask
 (e.g., "great" is selected to be masked and predicted in "this movie is great"), in the input it will be replaced with:
 -->
 
-Trong tác vụ tiền huấn luyện này, 15% các token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
-Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản đó là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
-Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao giờ xuất hiện trong tinh chỉnh. 
-Để tránh xảy ra sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, "great" được chọn để che mặt nạ và dự đoán trong "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
+Trong tác vụ tiền huấn luyện này, 15% số token sẽ được lựa chọn ngẫu nhiên để làm các token mặt nạ cho việc dự đoán.
+Để dự đoán một token mặt nạ mà không sử dụng nhãn, một hướng tiếp cận đơn giản là luôn luôn thay thế nó bằng token đặc biệt “&lt;mask&gt;” trong chuỗi đầu vào BERT.
+Tuy nhiên, token “&lt;mask&gt;” sẽ không bao giờ xuất hiện khi tinh chỉnh. 
+Để tránh sự không đồng nhất giữa tiền huấn luyện và tinh chỉnh, nếu một token được che mặt nạ để dự đoán (ví dụ, từ "great" được chọn để che mặt nạ và dự đoán trong câu "this movie is great"), trong đầu vào nó sẽ được thay thế bởi:
 
 
 <!--
@@ -425,9 +425,9 @@ Tuy nhiên, token đặc biệt nhân tạo “&lt;mask&gt;” sẽ không bao g
 * the unchanged label token for 10% of the time (e.g., "this movie is great" becomes "this movie is great").
 -->
 
-* một token “&lt;mask&gt;” đặc biệt, xác suất 80% (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
-* một token ngẫu nhiên, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is drink");
-* chính token đó, xác suất 10% (ví dụ, "this movie is great" trở thành "this movie is great").
+* token đặc biệt “&lt;mask&gt;”, 80% số lần (ví dụ, "this movie is great" trở thành "this movie is &lt;mask&gt;”);
+* token ngẫu nhiên, 10% số lần (ví dụ, "this movie is great" trở thành "this movie is drink");
+* chính token đó, 10% số lần (ví dụ, "this movie is great" trở thành "this movie is great").
 
 
 <!--
@@ -435,8 +435,8 @@ Note that for 10% of 15% time a random token is inserted.
 This occasional noise encourages BERT to be less biased towards the masked token (especially when the label token remains unchanged) in its bidirectional context encoding.
 -->
 
-Lưu ý rằng 10% của 15% token mặt nạ được chèn vào ngẫu nhiên.
-Nhiễu không thường xuyên này giúp BERT bớt đi thiên kiến với token có mặt nạ (đặc biệt khi token nhãn không đổi) trong giải mã ngữ cảnh hai chiều.
+Lưu ý rằng trong 15% token được chọn để che mặt nạ, 10% số token đó sẽ được thay thế bằng một token ngẫu nhiên.
+Việc thi thoảng thêm nhiễu sẽ giúp BERT giảm thiên kiến về phía token có mặt nạ (đặc biệt khi token nhãn không đổi) khi mã hóa ngữ cảnh hai chiều.
 
 
 <!--
@@ -446,9 +446,9 @@ In forward inference, it takes two inputs: the encoded result of `BERTEncoder` a
 The output is the prediction results at these positions.
 -->
 
-Ta lập trình lớp `MaskML` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn tuyện BERT.
-Việc dự đoán này sử dụng một Perceptron một-tầng-ẩn (`self.mlp`).
-Suy luận truyền xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
+Ta lập trình lớp `MaskLM` sau để dự đoán token có mặt nạ trong tác vụ mô hình hóa ngôn ngữ có mặt nạ khi tiền huấn luyện BERT.
+MLP một-tầng-ẩn (`self.mlp`) được dùng cho việc dự đoán.
+Lượt suy luận xuôi nhận hai đầu vào: kết quả mã hóa của `BERTEncoder` và vị trí token để dự đoán.
 Đầu ra là kết quả dự đoán tại các vị trí này.
 
 
@@ -489,10 +489,10 @@ The forward inference of `mlm` returns prediction results `mlm_Y_hat` at all the
 For each prediction, the size of the result is equal to the vocabulary size.
 -->
 
-Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể  `mlm`.
-Hãy nhớ lại rằng `encoded_X` từ lượt suy luận truyền xuôi của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
-Ta định nghĩa `mlm_positions` là 3 chỉ số để dự đoán ở trong bất kì chuỗi đầu vào BERT nào của `encoded_X`.
-Lượt suy luận xuôi của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí có mặt nạ `mlm_positions` của `encoded_X`.
+Để minh hoạ lượt suy luận xuôi của `MaskLM`, ta sẽ khởi tạo một thực thể `mlm`.
+Hãy nhớ lại rằng `encoded_X` từ lượt suy luận xuôi của `BERTEncoder` biểu diễn 2 chuỗi đầu vào BERT.
+Ta định nghĩa `mlm_positions` là 3 chỉ số để dự đoán ở một trong hai chuỗi đầu vào BERT của `encoded_X`.
+Lượt suy luận xuôi của `mlm` trả về kết quả dự đoán `mlm_Y_hat` tại tất cả các vị trí mặt nạ `mlm_positions` của `encoded_X`.
 Với mỗi dự đoán, kích thước của kết quả bằng với kích thước bộ từ vựng.
 
 
@@ -510,7 +510,7 @@ With the ground truth labels `mlm_Y` of the predicted tokens `mlm_Y_hat` under m
 we can calculate the cross entropy loss of the masked language model task in BERT pretraining.
 -->
 
-Với nhãn gốc `mlm_Y` của token `mlm_Y_hat` có mặt nạ được dự đoán,
+Với nhãn gốc `mlm_Y` của token có mặt nạ được dự đoán `mlm_Y_hat`,
 ta có thể tính mất mát entropy chéo của tác vụ mô hình hoá ngôn ngữ có mặt nạ trong quá trình tiền huấn luyện BERT.
 
 
@@ -537,9 +537,9 @@ When generating sentence pairs for pretraining, for half of the time they are in
 while for the other half of the time the second sentence is randomly sampled from the corpus with the label "False".
 -->
 
-Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ, nhưng nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
-Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT sử dụng tới tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
-Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các câu kế tiếp được gán nhãn "Đúng" (_True_); 
+Mặc dù mô hình hoá ngôn ngữ có mặt nạ có thể mã hoá ngữ cảnh hai chiều để biểu diễn từ ngữ, nó không thể mô hình hoá các mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+Để hiểu hơn về mối quan hệ giữa hai chuỗi văn bản, BERT sử dụng tác vụ phân loại nhị phân, *dự đoán câu tiếp theo* (_next sentence prediction_) trong quá trình tiền huấn luyện.
+Khi sinh các cặp câu cho quá trình tiền huấn luyện, một nửa trong số đó là các cặp câu liên tiếp nhau trong thực tế và được gán nhãn "Đúng" (_True_); 
 và trong nửa còn lại, câu thứ hai được lấy mẫu ngẫu nhiên từ kho ngữ liệu và cặp này được gán nhãn "Sai" (_False_).
 
 
@@ -549,9 +549,9 @@ Due to self-attention in the Transformer encoder, the BERT representation of the
 Hence, the output layer (`self.output`) of the MLP classifier takes `X` as the input, where `X` is the output of the MLP hidden layer whose input is the encoded “&lt;cls&gt;” token.
 -->
 
-Lớp `NextSentencePred` dưới đây sử dụng MLP có một tầng ẩn để dự đoán câu thứ hai có phải là câu kế tiếp của câu thứ nhất trong chuỗi đầu vào BERT hay không.
-Do cơ chế tự tập trung trong bộ mã hoá Transformer, biểu diễn BERT cho token đặc biệt “&lt;cls&gt;” mã hoá cả hai câu đầu vào.
-Vì vậy, tầng đầu ra (`self.output`) của bộ phân loại MLP nhận `X` làm đầu vào, trong đó `X` là đầu ra của tầng ẩn MLP mà đầu vào của nó được mã hoá bằng token “&lt;cls&gt;”.
+Lớp `NextSentencePred` dưới đây sử dụng MLP một tầng ẩn để dự đoán câu thứ hai có phải là câu kế tiếp của câu thứ nhất trong chuỗi đầu vào BERT hay không.
+Do cơ chế tự tập trung trong bộ mã hoá Transformer, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hoá cả hai câu đầu vào.
+Vì vậy, tầng đầu ra (`self.output`) của bộ phân loại MLP nhận đầu vào `X` là đầu ra của tầng ẩn MLP có đầu vào là token được mã hoá “&lt;cls&gt;”.
 
 
 ```{.python .input  n=7}
@@ -604,9 +604,9 @@ The original BERT has been pretrained on the concatenation of BookCorpus :cite:`
 These two text corpora are huge: they have 800 million words and 2.5 billion words, respectively.
 -->
 
-Đáng chú ý là tất cả nhãn đầu vào trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức dán nhãn thủ công.
+Đáng chú ý là tất cả nhãn trong hai tác vụ tiền huấn luyện nói trên đều có thể thu được từ kho ngữ liệu tiền huấn luyện mà không cần công sức gán nhãn thủ công.
 Phiên bản gốc của BERT được tiền huấn luyện trên cả hai kho ngữ liệu BookCorpus :cite:`Zhu.Kiros.Zemel.ea.2015` và Wikipedia tiếng Anh.
-Hai kho ngữ liệu văn bản này cực kỳ lớn với khoảng 800 triệu từ và 2.5 tỉ từ tương ứng.
+Hai kho ngữ liệu văn bản này cực kỳ lớn, chứa lần lượt khoảng 800 triệu từ và 2.5 tỉ từ.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -625,9 +625,9 @@ Now we can define the `BERTModel` class by instantiating the three classes `BERT
 The forward inference returns the encoded BERT representations `encoded_X`, predictions of masked language modeling `mlm_Y_hat`, and next sentence predictions `nsp_Y_hat`.
 -->
 
-Khi tiền huấn luyện BERT, hàm mất mát cuối cùng là tổ hợp tuyến tính của cả hai hàm mất mát cho tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự doán câu tiếp theo.
+Khi tiền huấn luyện BERT, hàm mất mát cuối cùng là tổ hợp tuyến tính của cả hai hàm mất mát trong tác vụ mô hình hoá ngôn ngữ có mặt nạ và dự doán câu tiếp theo.
 Bây giờ ta có thể định nghĩa lớp `BERTModel` bằng cách khởi tạo ba lớp `BERTEncoder`, `MaskLM`, và `NextSentencePred`.
-Lượt suy luận xuôi trả về biểu diễn BERT được mã hoá `encoded_X`, dự đoán `mlm_Y_hat` của tác vụ mô hình hoá ngôn ngữ có mặt nạ, và dự đoán câu tiếp theo `nsp_Y_hat`.
+Lượt suy luận xuôi trả về biểu diễn BERT được mã hoá `encoded_X`, các dự đoán `mlm_Y_hat` của tác vụ mô hình hoá ngôn ngữ có mặt nạ, và `nsp_Y_hat` của tác vụ dự đoán câu tiếp theo.
 
 
 ```{.python .input  n=10}
@@ -674,15 +674,15 @@ The former is able to encode bidirectional context for representing words, while
 
 * Các mô hình embedding từ như word2vec và GloVe có tính chất độc lập với ngữ cảnh.
 Hai mô hình này gán cùng một vector được tiền huấn luyện cho cùng một từ bất kể ngữ cảnh xung quanh của từ đó là gì (nếu có).
-Rất khó để các mô hình này xử lý tốt các trường hợp phức tạp về ngữ nghĩa hay đa nghĩa trong các ngôn ngữ tự nhiên.
+Do đó, rất khó để các mô hình này xử lý tốt các trường hợp phức tạp về ngữ nghĩa hay đa nghĩa trong các ngôn ngữ tự nhiên.
 * Đối với các biểu diễn từ nhạy ngữ cảnh như ELMo và GPT, biểu diễn của từ phụ thuộc vào ngữ cảnh của từ đó.
 * ELMo mã hóa ngữ cảnh theo hai chiều nhưng sử dụng kiến ​​trúc đặc thù cho tác vụ
-(tuy nhiên, thực tế không dễ để tạo ra một kiến ​​trúc đặc thù cho mọi tác vụ xử lý ngôn ngữ tự nhiên);
-trong khi đó GPT không phân biệt tác vụ nhưng mã hóa ngữ cảnh từ trái sang phải (*left-to-right*).
-* BERT kết hợp những gì tốt nhất của cả hai mô hình kể trên: nó mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
+(tuy nhiên, trên thực tế không dễ để tạo ra một kiến ​​trúc đặc thù cho mọi tác vụ xử lý ngôn ngữ tự nhiên);
+trong khi đó GPT không phân biệt tác vụ nhưng chỉ mã hóa ngữ cảnh theo chiều từ trái sang phải.
+* BERT kết hợp những gì tốt nhất của cả hai mô hình trên: mã hóa ngữ cảnh theo hai chiều và chỉ yêu cầu những thay đổi kiến ​​trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
 * Các embedding của chuỗi đầu vào BERT là tổng các embedding cho token, embedding đoạn và embedding vị trí.
-* Quá trình tiền huấn luyện BERT gồm có hai tác vụ đó là: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
-Tác vụ trước có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
+* Quá trình tiền huấn luyện BERT gồm có hai tác vụ: tác vụ mô hình hoá ngôn ngữ có mặt nạ và tác vụ dự đoán câu tiếp theo.
+Tác vụ đầu có thể mã hóa ngữ cảnh hai chiều để biểu diễn từ, trong khi tác vụ sau mô hình hóa mối quan hệ logic giữa các cặp văn bản một cách tường minh.
 
 
 ## Bài tập
@@ -695,10 +695,10 @@ and the fully-connected layer in `MaskLM` both use the Gaussian error linear uni
 Research into the difference between GELU and ReLU.
 -->
 
-1. Tại sao BERT gặt hái được thành công?
-2. Khi tất cả các điểm còn lại là tương đương nhau, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi nhiều hơn hay ít hơn số bước tiền huấn luyện để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
+1. Tại sao BERT lại gặt hái được thành công?
+2. Giữ nguyên các yếu tố khác, liệu một mô hình ngôn ngữ có mặt nạ sẽ đòi hỏi số bước tiền huấn luyện nhiều hơn hay ít hơn để hội tụ so với mô hình ngôn ngữ từ trái sang phải. Tại sao?
 3. Trong mã nguồn gốc của BERT, mạng truyền xuôi theo vị trí (_position-wise feed-forward network_) trong `BERTEncoder` (thông qua `d2l.EncoderBlock`)
-và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
+và tầng kết nối đầy đủ trong `MaskLM` đều sử dụng Đơn vị lỗi tuyến tính Gauss (_Gaussian error linear unit_ (GELU)) :cite:`Hendrycks.Gimpel.2016` làm hàm kích hoạt.
 Hãy nghiên cứu sự khác biệt giữa GELU và ReLU.
 
 
@@ -720,25 +720,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Nguyền Mai Hoàng Long
-
-<!-- Phần 4 -->
+* Nguyễn Mai Hoàng Long
 * Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Phạm Minh Đức
 * Nguyễn Văn Cường
-
-<!-- Phần 5 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 6 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 7 -->
-* Nguyễn Văn Quang
