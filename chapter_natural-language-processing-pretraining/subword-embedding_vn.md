@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Subword Embedding
 -->
@@ -50,7 +47,7 @@ thereby attempting to introduce morphological information in the skip-gram model
 -->
 
 Trong word2vec, ta không trực tiếp sử dụng thông tin hình thái học.
-Trong cả mô hình skip-gram và bag-of-word liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
+Trong cả mô hình skip-gram và túi từ (*bag-of-word*) liên tục, ta sử dụng các vector khác nhau để biểu diễn các từ ở các dạng khác nhau.
 Chẳng hạn, "dog" và "dogs" được biểu diễn bởi hai vector khác nhau, trong khi mối quan hệ giữa hai vector đó không biểu thị trực tiếp trong mô hình. 
 Từ quan điểm này, fastText :cite:`Bojanowski.Grave.Joulin.ea.2017` đề xuất phương thức embedding từ con (*subword embedding*),
 thông qua việc thực hiện đưa thông tin hình thái học vào trong mô hình skip-gram trong word2vec.
@@ -105,11 +102,9 @@ However, we can obtain better vectors for more uncommon complex words, even word
 Phần còn lại của tiến trình xử lý trong fastText đồng nhất với mô hình skip-gram, vì vậy ta không mô tả lại ở đây.
 Như chúng ta có thể thấy, so sánh với mô hình skip-gram, từ điển của fastText lớn hơn dẫn tới nhiều tham số mô hình hơn.
 Hơn nữa, vector của một từ đòi hỏi tính tổng của tất cả vector từ con dẫn tới độ phức tạp tính toán cao hơn.
-Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp ít thông dụng, thậm chí cho cả các từ không hiện diện trong từ điển này nhờ tham chiếu tới các từ khác có cấu trúc tương tự.
+Tuy nhiên, ta có thể thu được các vector tốt hơn cho nhiều từ phức hợp ít thông dụng, 
+thậm chí cho cả các từ không hiện diện trong từ điển này nhờ tham chiếu tới các từ khác có cấu trúc tương tự.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Byte Pair Encoding
@@ -125,8 +120,10 @@ To allow for variable-length subwords in a fixed-size vocabulary, we can apply a
 called *byte pair encoding* (BPE) to extract subwords :cite:`Sennrich.Haddow.Birch.2015`.
 -->
 
-Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể được xác định trước. 
-Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`. 
+Trong fastText, tất cả các từ con được trích xuất phải nằm trong khoảng độ dài cho trước, 
+ví dụ như từ $3$ đến $6$, do đó kích thước bộ từ vựng không thể được xác định trước.
+Để cho phép các từ con có độ dài biến thiên trong bộ từ vựng có kích thước cố định, 
+chúng ta có thể áp dụng thuật toán nén gọi là *mã hoá cặp byte* (*Byte Pair Encoding* -BPE) để trích xuất các từ con :cite:`Sennrich.Haddow.Birch.2015`. 
 
 
 <!--
@@ -142,8 +139,9 @@ In the following, we will illustrate how byte pair encoding works.
 Mã hóa cặp byte thực hiện phân tích thống kê tập dữ liệu huấn luyện để tìm các ký hiệu chung trong một từ, chẳng hạn như các ký tự liên tiếp có độ dài tùy ý. 
 Bắt đầu từ các ký hiệu có độ dài bằng $1$, mã hóa cặp byte lặp đi lặp lại việc gộp các cặp ký hiệu liên tiếp thường gặp nhất để tạo ra các ký hiệu mới dài hơn. 
 Lưu ý rằng để tăng hiệu năng, các cặp vượt qua ranh giới từ sẽ không được xét.
-Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ. 
-Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`. 
+Cuối cùng, chúng ta có thể sử dụng các ký hiệu đó như từ con để phân đoạn các từ.
+Mã hóa cặp byte và các biến thể của nó đã được sử dụng để biểu diễn đầu vào trong các mô hình tiền huấn luyện cho 
+xử lý ngôn ngữ tự nhiên phổ biến như GPT-2 :cite:`Radford.Wu.Child.ea.2019` và RoBERTa :cite:`Liu.Ott.Goyal.ea.2019`. 
 Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá cặp byte.
 
 
@@ -151,7 +149,8 @@ Tiếp theo, chúng tôi sẽ minh hoạ cách hoạt động của mã hoá c�
 First, we initialize the vocabulary of symbols as all the English lowercase characters, a special end-of-word symbol `'_'`, and a special unknown symbol `'[UNK]'`.
 -->
 
-Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`. 
+Đầu tiên, ta khởi tạo bộ từ vựng của các ký hiệu dưới dạng tất cả các ký tự viết thường trong tiếng Anh 
+và hai ký hiệu đặc biệt: ký hiệu kết thúc của từ `'_'` , và ký hiệu không xác định `'[UNK]'`. 
 
 
 ```{.python .input}
@@ -174,12 +173,12 @@ In other words, space is the delimiter between symbols within a word.
 -->
 
 Vì không xét các cặp ký hiệu vượt qua ranh giới của các từ,
-chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ tới tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu. 
+chúng ta chỉ cần một từ điển `raw_token_freqs` ánh xạ các từ tới tần suất của chúng (số lần xuất hiện) trong một tập dữ liệu.
 Lưu ý rằng ký hiệu đặc biệt `'_'` được thêm vào mỗi từ để có thể dễ dàng khôi phục chuỗi từ (ví dụ: "a taller man")
-từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man"). 
+từ chuỗi ký hiệu đầu ra (ví dụ: "a_ tall er_ man").
 Vì chúng ta bắt đầu quá trình gộp một từ vựng chỉ gồm các ký tự đơn và các ký hiệu đặc biệt, 
 khoảng trắng được chèn giữa mọi cặp ký tự liên tiếp trong mỗi từ (các khóa của từ điển `token_freqs`). 
-Nói cách khác, khoảng trắng là kí tự phân cách (*delimiter*) giữa các ký hiệu trong một từ. 
+Nói cách khác, khoảng trắng là ký tự phân cách (*delimiter*) giữa các ký hiệu trong một từ. 
 
 
 ```{.python .input}
@@ -196,7 +195,7 @@ We define the following `get_max_freq_pair` function that
 returns the most frequent pair of consecutive symbols within a word,
 where words come from keys of the input dictionary `token_freqs`.
 -->
-Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, với từ là các khoá của từ điển đầu vào `token_freqs`. 
+Chúng ta định nghĩa hàm `get_max_freq_pair` trả về cặp ký hiệu liên tiếp thường gặp nhất trong một từ, với từ là các khóa của từ điển đầu vào `token_freqs`. 
 
 
 ```{.python .input}
@@ -230,13 +229,6 @@ def merge_symbols(max_freq_pair, token_freqs, symbols):
     return new_token_freqs
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 Now we iteratively perform the byte pair encoding algorithm over the keys of the dictionary `token_freqs`.
@@ -245,7 +237,7 @@ In the second iteration, byte pair encoding continues to merge `'ta'` and `'l'` 
 -->
 
 Bây giờ ta thực hiện vòng lặp giải thuật biểu diễn cặp byte với các khóa của từ điển `token_freqs`. 
-Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần xuất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`. 
+Ở vòng lặp đầu tiên, cặp biểu tượng liền kề có tần suất cao nhất là `'t'` và `'a'`, do đó biểu diễn cặp byte ghép chúng lại để tạo ra một biểu tượng mới là `'ta'`. 
 Ở vòng lặp thứ hai, biểu diễn cặp byte tiếp tục ghép 2 biểu tượng `'ta'` và `'l'` tạo ra một biểu tượng mới khác là `'tal'`. 
 
 
@@ -277,7 +269,8 @@ as a result of the byte pair encoding algorithm.
 For instance, words "faster_" and "taller_" are segmented as "fast er_" and "tall er_", respectively.
 -->
 
-Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này bây giờ được phân đoạn bởi các từ con là "fast_", "fast", "er_", "tall_", và "tall" theo giải thuật biểu diễn cặp byte.
+Với cùng tập dữ liệu đặc tả trong các khóa của từ điển `raw_token_freqs`, mỗi từ trong tập dữ liệu này 
+bây giờ được phân đoạn bởi các từ con là "fast_", "fast", "er_", "tall_", và "tall" theo giải thuật biểu diễn cặp byte.
 Chẳng hạn, từ "faster_" và từ "taller_" được phân đoạn lần lượt là "fast er_" và "tall er_".
 
 
@@ -331,9 +324,6 @@ tokens = ['tallest_', 'fatter_']
 print(segment_BPE(tokens, symbols))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 ## Tóm tắt
 
@@ -366,35 +356,22 @@ Bạn có thể giải quyết vấn đề trên không? Gợi ý: Tham khảo �
 3. Để thu được bộ từ vựng có kích thước $m$, bao nhiêu phép gộp cần được thực hiện khi bộ từ vựng ký hiệu ban đầu có kích thước là $n$? 
 4. Ta có thể mở rộng ý tưởng của thuật toán mã hoá cặp byte để trích xuất các cụm từ bằng cách nào?
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/386)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/386)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
-* Phạm Đăng Khoa
-
-<!-- Phần 3 -->
-* Nguyễn Mai Hoàng Long
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Mai Hoàng Long
+* Phạm Đăng Khoa
+* Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

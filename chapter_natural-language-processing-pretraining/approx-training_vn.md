@@ -1,18 +1,16 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Approximate Training
 -->
 
-# Huấn luyện gần đúng
+# Huấn luyện Gần đúng
 :label:`sec_approx_train`
 
 <!--
 Recall content of the last section.  The core feature of the skip-gram model is the use of softmax operations to compute the conditional probability of generating context word $w_o$ based on the given central target word $w_c$.
 -->
 
-Hãy nhớ lại nội dung của phần trước. Đặc điểm cốt lõi của mô hình skip-gram là việc sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$. 
+Hãy nhớ lại nội dung của phần trước.
+Đặc điểm cốt lõi của mô hình skip-gram là việc sử dụng các toán tử softmax để tính xác suất có điều kiện sinh ra từ ngữ cảnh $w_o$ dựa trên từ đích trung tâm cho trước $w_c$. 
 
 
 $$P(w_o \mid w_c) = \frac{\text{exp}(\mathbf{u}_o^\top \mathbf{v}_c)}{ \sum_{i \in \mathcal{V}} \text{exp}(\mathbf{u}_i^\top \mathbf{v}_c)}.$$
@@ -42,21 +40,21 @@ we will only use the skip-gram model as an example to introduce these two traini
 -->
 
 Do toán tử softmax xem xét từ ngữ cảnh có thể là bất kỳ từ nào trong từ điển $\mathcal{V}$,  
-nên thực ra mất mát được đề cập ở trên bao gồm phép lấy tổng qua tất cả phần tử trong từ điển. 
-Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW
-đều tính xác suất có điều kiện thông qua toán tử softmax, 
-do đó việc tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển. 
+nên mất mát được đề cập ở trên thật ra bao gồm phép lấy tổng qua tất cả phần tử trong từ điển.
+Ở phần trước, ta đã biết rằng cả hai mô hình skip-gram và CBOW đều tính xác suất có điều kiện thông qua toán tử softmax, 
+do đó việc tính toán gradient cho mỗi bước bao gồm phép lấy tổng qua toàn bộ các phần tử trong từ điển.
 Đối với các từ điển lớn hơn với hàng trăm nghìn hoặc thậm chí hàng triệu từ, chi phí tính toán cho mỗi gradient có thể rất cao. 
-Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*). 
+Để giảm độ phức tạp tính toán này, chúng tôi sẽ giới thiệu hai phương pháp huấn luyện gần đúng trong phần này, 
+đó là lấy mẫu âm (*negative sampling*) và toán tử softmax phân cấp (*hierarchical softmax*).
 Do không có sự khác biệt lớn giữa mô hình skip-gram và mô hình CBOW, 
-trong phần này ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên. 
+trong phần này ta chỉ sử dụng mô hình skip-gram làm ví dụ để giới thiệu hai phương pháp huấn luyện trên.
 
 
 <!--
 ## Negative Sampling
 -->
 
-## Lấy Mẫu Âm
+## Lấy mẫu Âm
 :label:`subsec_negative-sampling`
 
 
@@ -66,8 +64,8 @@ Given a context window for the central target word $w_c$, we will treat it as an
 -->
 
 
-Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu. 
-Cho một cửa sổ ngữ cảnh với từ đích trung tâm $w_c$, ta coi việc từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh là một sự kiện và tính xác suất của sự kiện này theo 
+Phương pháp lấy mẫu âm sửa đổi hàm mục tiêu ban đầu.
+Cho một cửa sổ ngữ cảnh với từ đích trung tâm $w_c$, ta xem việc từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh là một sự kiện và tính xác suất của sự kiện này theo 
 
 
 $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
@@ -77,7 +75,7 @@ $$P(D=1\mid w_c, w_o) = \sigma(\mathbf{u}_o^\top \mathbf{v}_c),$$
 Here, the $\sigma$ function has the same definition as the sigmoid activation function:
 -->
 
-Ở đây, hàm $\sigma$ có cùng định nghĩa với hàm kích hoạt sigmoid: 
+Ở đây, hàm $\sigma$ có cùng định nghĩa với hàm kích hoạt sigmoid:
 
 
 $$\sigma(x) = \frac{1}{1+\exp(-x)}.$$
@@ -96,10 +94,6 @@ Bây giờ, ta sẽ xem xét việc cực đại hóa xác suất kết hợp
 
 $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} P(D=1\mid w^{(t)}, w^{(t+j)}).$$
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 
 <!--
 However, the events included in the model only consider positive examples.
@@ -113,9 +107,9 @@ Suppose that events $P$ and $N_1, \ldots, N_K$ for both positive and negative ex
 By considering negative sampling, we can rewrite the joint probability above, which only considers the positive examples, as
 -->
 
-Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương. 
-Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1. 
-Rõ ràng, các vector từ như vậy là vô nghĩa. 
+Tuy nhiên, các sự kiện trong mô hình chỉ xem xét các mẫu dương.
+Trong trường hợp này, chỉ khi tất cả các vector từ bằng nhau và giá trị của chúng tiến tới vô cùng, xác suất kết hợp trên mới có thể đạt giá trị cực đại bằng 1.
+Rõ ràng, các vector từ như vậy là vô nghĩa.
 Phương pháp lấy mẫu âm khiến hàm mục tiêu có ý nghĩa hơn bằng cách lấy thêm các mẫu âm. 
 Giả sử sự kiện $P$ xảy ra khi từ ngữ cảnh $w_o$ xuất hiện trong cửa sổ ngữ cảnh của từ đích trung tâm $w_c$, 
 và ta lấy mẫu $K$ từ không xuất hiện trong cửa sổ ngữ cảnh, đóng vai trò là các từ nhiễu, theo phân phối $P(w)$. 
@@ -157,18 +151,13 @@ $$
 
 
 <!--
-Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$. When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
+Here, the gradient computation in each step of the training is no longer related to the dictionary size, but linearly related to $K$.
+When $K$ takes a smaller constant, the negative sampling has a lower computational overhead for each step.
 -->
 
-Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà có quan hệ tuyến tính với $K$. Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn. 
+Ở đây, tính toán gradient trong mỗi bước huấn luyện không còn liên quan đến kích thước từ điển, mà có quan hệ tuyến tính với $K$.
+Khi $K$ có giá trị nhỏ hơn, thì phương pháp lấy mẫu âm có chi phí tính toán cho mỗi bước thấp hơn.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Hierarchical Softmax
@@ -204,7 +193,7 @@ Hierarchical softmax will approximate the conditional probability in the skip-gr
 -->
 
 Ta giả định $L(w)$ là số nút trên đường đi (gồm cả gốc lẫn các nút lá) từ gốc của cây nhị phân đến nút lá của từ $w$. 
-Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$. 
+Gọi $n(w, j)$ là nút thứ $j$ trên đường đi này, với vector ngữ cảnh của từ là $\mathbf{u}_{n(w, j)}$.
 Ta sử dụng ví dụ trong :numref:`fig_hi_softmax`, theo đó $L(w_3) = 4$.
 Softmax phân cấp tính xấp xỉ xác suất có điều kiện trong mô hình skip-gram như sau
 
@@ -229,26 +218,26 @@ Do trong cây nhị phân, đường đi từ nút gốc đến nút lá $w_3$ l
 
 $$P(w_3 \mid w_c) = \sigma(\mathbf{u}_{n(w_3, 1)}^\top \mathbf{v}_c) \cdot \sigma(-\mathbf{u}_{n(w_3, 2)}^\top \mathbf{v}_c) \cdot \sigma(\mathbf{u}_{n(w_3, 3)}^\top \mathbf{v}_c).$$
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 Because $\sigma(x)+\sigma(-x) = 1$, the condition that the sum of the conditional probability of any word generated 
 based on the given central target word $w_c$ in dictionary $\mathcal{V}$ be 1 will also suffice:
 -->
 
-Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào trong từ điển $\mathcal{V}$ được sinh ra dựa trên từ đích trung tâm cho trước $w_c$ phải bằng 1 cũng được thoả mãn: 
+Do $\sigma(x)+\sigma(-x) = 1$ nên điều kiện mà tổng xác suất có điều kiện của bất kì từ nào trong từ điển $\mathcal{V}$ 
+được sinh ra dựa trên từ đích trung tâm cho trước $w_c$ phải bằng 1 cũng được thoả mãn:
 
 
 $$\sum_{w \in \mathcal{V}} P(w \mid w_c) = 1.$$
 
 
 <!--
-In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
+In addition, because the order of magnitude for $L(w_o)-1$ is $\mathcal{O}(\text{log}_2|\mathcal{V}|)$, when the size of dictionary $\mathcal{V}$ is large, 
+the computational overhead for each step in the hierarchical softmax training is greatly reduced compared to situations where we do not use approximate training.
 -->
 
-Hơn nữa, do độ lớn của $L(w_o)-1$ là $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, chi phí tính toán phụ trợ tại mỗi bước trong softmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
+Hơn nữa, do độ lớn của $L(w_o)-1$ là $\mathcal{O}(\text{log}_2|\mathcal{V}|)$ nên khi kích thước từ điển $\mathcal{V}$ lớn, 
+chi phí tính toán phụ trợ tại mỗi bước trong softmax phân cấp được giảm đáng kể so với khi không áp dụng huấn luyện gần đúng. 
 
 
 ## Tóm tắt
@@ -279,37 +268,19 @@ Chi phí phụ trợ khi tính toán gradient tại mỗi bước trong quá tr�
 3. Ta có thể áp dụng lấy mẫu âm và softmax phân cấp như thế nào trong mô hình skip-gram? 
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/382)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/382)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
-
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-* Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*

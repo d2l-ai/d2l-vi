@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Finding Synonyms and Analogies
 -->
@@ -150,9 +147,6 @@ Ta có thể lấy chỉ số của một từ trong từ điển, hoặc ngư�
 glove_6b50d.token_to_idx['beautiful'], glove_6b50d.idx_to_token[3367]
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Applying Pretrained Word Vectors
@@ -245,9 +239,6 @@ get_similar_tokens('baby', 3, glove_6b50d)
 get_similar_tokens('beautiful', 3, glove_6b50d)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Finding Analogies
@@ -351,22 +342,12 @@ get_analogy('do', 'did', 'go', glove_6b50d)
 2. Nếu từ điển quá lớn, ta có thể tăng tốc tìm kiếm các từ đồng nghĩa và các loại suy bằng cách nào?
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/387)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/387)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
@@ -374,3 +355,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 01/07/2020)*

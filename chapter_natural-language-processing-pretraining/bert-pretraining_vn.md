@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Pretraining BERT
 -->
@@ -14,7 +11,8 @@ With the BERT model implemented in :numref:`sec_bert` and the pretraining exampl
 we will pretrain BERT on the WikiText-2 dataset in this section.
 -->
 
-Trong phần này, sử dụng mô hình BERT đã được lập trình trong :numref:`sec_bert` và các mẫu dữ liệu tiền huấn luyện được tạo ra từ tập dữ liệu WikiText-2, ta sẽ tiền huấn luyện BERT trên tập dữ liệu này.
+Trong phần này, sử dụng mô hình BERT đã được lập trình trong :numref:`sec_bert` và các mẫu dữ liệu tiền huấn luyện được tạo ra từ tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset`, 
+ta sẽ tiền huấn luyện BERT trên tập dữ liệu này.
 
 
 ```{.python .input  n=1}
@@ -60,8 +58,8 @@ For demonstration with ease, we define a small BERT, using 2 layers, 128 hidden 
 Mô hình BERT gốc có hai phiên bản với hai kích thước mô hình khác nhau :cite:`Devlin.Chang.Lee.ea.2018`.
 Mô hình cơ bản ($\text{BERT}_{\text{BASE}}$) sử dụng 12 tầng (khối mã hóa của Transformer) với 768 nút ẩn (kích thước ẩn) và tầng tự tập trung 12 đầu.
 Mô hình lớn ($\text{BERT}_{\text{LARGE}}$) sử dụng 24 tầng với 1024 nút ẩn và tầng tự tập trung 16 đầu.
-Đáng chú ý, tổng số lượng tham số trong mô hình đầu tiên là 110 triệu, còn ở mô hình thứ hai là 340 triệu.
-Để minh họa, ta định nghĩa mô hình BERT nhỏ dưới đây, sử dụng 2 tầng với 128 nút ẩn và tầng tự tập trung 2 đầu.
+Đáng chú ý là tổng số lượng tham số trong mô hình đầu tiên là 110 triệu, còn ở mô hình thứ hai là 340 triệu.
+Để minh họa thì ta định nghĩa mô hình BERT nhỏ dưới đây, sử dụng 2 tầng với 128 nút ẩn và tầng tự tập trung 2 đầu.
 
 
 ```{.python .input  n=14}
@@ -127,7 +125,8 @@ the input `num_steps` of the following function specifies the number of iteratio
 
 Sử dụng hai hàm hỗ trợ được đề cập ở trên, hàm `train_bert` dưới đây sẽ định nghĩa quá trình tiền huấn luyện BERT (`net`) trên tập dữ liệu WikiText-2 (`train_iter`).
 Việc huấn luyện BERT có thể mất rất nhiều thời gian.
-Do đó, thay vì truyền vào số lượng epoch huấn luyện như trong hàm `train_ch13` (:numref:`sec_image_augmentation`), ta sử dụng tham số `num_steps` trong hàm sau để xác định số vòng lặp huấn luyện.
+Do đó, thay vì truyền vào số lượng epoch huấn luyện như trong hàm `train_ch13` (:numref:`sec_image_augmentation`), 
+ta sử dụng tham số `num_steps` trong hàm sau để xác định số vòng lặp huấn luyện.
 
 
 ```{.python .input  n=17}
@@ -188,9 +187,6 @@ Ta có thể vẽ đồ thị hàm mất mát ứng với hai tác vụ mô hìn
 train_bert(train_iter, net, loss, len(vocab), devices, 1, 50)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Representing Text with BERT
@@ -204,7 +200,7 @@ The following function returns the BERT (`net`) representations for all tokens i
 -->
 
 Ta có thể sử dụng mô hình BERT đã tiền huấn luyện để biểu diễn một văn bản đơn, cặp văn bản hay một token bất kỳ trong văn bản.
-Hàm sau sẽ trả về biểu diễn của mô hình BERT (`net`) cho toàn bộ các token trong `tokens_a` và `tokens_b`. 
+Hàm sau sẽ trả về biểu diễn của mô hình BERT (`net`) cho toàn bộ các token trong `tokens_a` và `tokens_b`.
 
 
 ```{.python .input}
@@ -286,7 +282,8 @@ for downstream natural language processing applications.
 
 * Mô hình BERT gốc có hai phiên bản, trong đó mô hình cơ bản có 110 triệu tham số và mô hình lớn có 340 triệu tham số.
 * Ta có thể sử dụng mô hình BERT đã được tiền huấn luyện để biểu diễn một văn bản đơn, cặp văn bản hay một token bất kỳ.
-* Trong thí nghiệm trên, ta đã thấy rằng cùng một token có thể có nhiều cách biểu diễn khác nhau với những ngữ cảnh khác nhau. Điều này thể hiện rằng biểu diễn BERT có tính nhạy ngữ cảnh.
+* Trong thí nghiệm trên, ta đã thấy rằng cùng một token có thể có nhiều cách biểu diễn khác nhau với những ngữ cảnh khác nhau.
+Điều này thể hiện rằng biểu diễn BERT có tính nhạy ngữ cảnh.
 
 
 ## Bài tập
@@ -303,26 +300,17 @@ Do you encounter any error when running this section? Why?
 Bạn có gặp lỗi khi chạy lại thí nghiệm không? Giải thích tại sao.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/390)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/390)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Bùi Thị Cẩm Nhung
+* Nguyễn Văn Quang
+* Phạm Minh Đức
+* Nguyễn Văn Cường
 
-<!-- Phần 2 -->
-* Bùi Thị Cẩm Nhung
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
