@@ -19,14 +19,22 @@ Unlike the rating prediction task in AutoRec, this model generates a ranked reco
 We will use the personalized ranking loss introduced in the last section to train this model.
 -->
 
-*dịch đoạn phía trên*
+Vượt ra khỏi phản hồi trực tiếp, phần này sẽ giới thiệu một framework nơ-ron lọc cộng tác (NCF _neural collaborative filtering framework_) cho bài toán gợi ý với phản hồi gián tiếp.
+Phản hồi gián tiếp khá phổ biến trong các hệ thống gợi ý.
+Các hành động như click, mua và xem là những phản hồi gián tiếp phổ biến, dễ thu thập và thể hiện được sở thích của người dùng.
+Mô hình chúng tôi sẽ giới thiệu, có tên là phân tích nhân tử ma trận thần kinh viết tắt bởi NeuMF :cite:`He.Liao.Zhang.ea.2017`, được đề xuất nhằm giải quyết tác vụ xếp hạng cá nhân hóa với phản hồi gián tiếp.
+Mô hình này tận dụng tính linh hoạt và tính phi tuyến tính của mạng nơ-ron để thay thế các tích vô hướng trong phân rã ma trận, nhằm nâng cao tính biểu diễn của mô hình.
+Cụ thể, mô hình này được thiết kế với hai mạng con đó gồm có phân rã ma trận tổng quát hoá (GMF) và MLP, và mô hình hóa các tương tác theo hai hướng này thay vì các tích vô hướng đơn giản.
+Kết quả đầu ra của hai mạng này được ghép nối với nhau để tính điểm dự đoán cuối cùng.
+Không giống như tác vụ dự đoán xếp hạng trong AutoRec, mô hình này sinh ra danh sách gợi ý được xếp hạng cho từng người dùng dựa trên phản hồi gián tiếp.
+Chúng ta sẽ sử dụng mất mát xếp hạng được cá nhân hóa đã được giới thiệu trong phần trước để huấn luyện mô hình này.
 
 
 <!--
 ## The NeuMF model
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình NeuMF
 
 
 <!--
@@ -35,7 +43,9 @@ The GMF is a generic neural network version of matrix factorization where the in
 It consists of two neural layers:
 -->
 
-*dịch đoạn phía trên*
+Như đề cập ở trên, NeuMF kết hợp hai mạng con với nhau.
+Mô hình GMF là một phiên bản mạng nơ-ron chung của phép phân rã ma trận trong đó đầu vào là tích phân tử của các nhân tố ẩn về người dùng và sản phẩm.
+Nó bao gồm hai tầng nơ-ron sau:
 
 
 $$
@@ -52,7 +62,11 @@ $\alpha$ and $h$ denote the activation function and weight of the output layer.
 $\hat{y}_{ui}$ is the prediction score of the user $u$ might give to the item $i$.
 -->
 
-*dịch đoạn phía trên*
+trong đó phép nhân Hadamard của hai vector được ký hiệu bằng $\odot$.
+$\mathbf{P} \in \mathbb{R}^{m \times k}$  và $\mathbf{Q} \in \mathbb{R}^{n \times k}$ tương ứng với ma trận ẩn về người dùng và sản phẩm.
+$\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của ma trận $P$ và $\mathbf{q}_i \in \mathbb{R}^{ k}$ hàng thứ $i$ của ma trận $Q$. 
+$\alpha$ và $h$ ký hiệu hàm kích hoạt và trọng số của tầng đầu ra.
+$\hat{y}_{ui}$ là điểm dự đoán có thể cho bởi người dùng $u$ cho sản phẩm $i$.
 
 
 <!--
@@ -63,7 +77,11 @@ With the complicated connections and nonlinear transformations, it is capable of
 More precisely, the MLP subnetwork is defined as:
 -->
 
-*dịch đoạn phía trên*
+Một thành phần khác của mô hình này là mạng MLP.
+Để làm nâng cao tính linh hoạt của mô hình, mạng con MLP không chia sẻ các embedding người dùng và sản phẩm với GMF.
+Mạng này có đầu vào là vector ghép nối của hai embedding người dùng và sản phẩm.
+Với các kết nối phức tạp và các phép biến đổi phi tuyến tính, nó có thể ước lượng các tương tác phức tạp giữa người dùng và sản phảm.
+Chính xác hơn, mạng con MLP được định nghĩa như sau:
 
 
 $$
@@ -83,7 +101,9 @@ $\phi^*$ denotes the function of the corresponding layer.
 $\mathbf{z}^*$ denotes the output of corresponding layer.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{W}^*, \mathbf{b}^*$ và $\alpha^*$ là ma trận trọng số, vector điều chỉnh, và hàm kích hoạt.
+Hàm của tầng tương ứng được ký hiệu bởi $\phi^*$.
+Đầu ra của tầng tương ứng được ký hiệu bởi $\mathbf{z}^*$.
 
 
 <!--
@@ -93,7 +113,10 @@ Afterwards, the ouputs are projected with matrix $\mathbf{h}$ and a sigmoid acti
 The prediction layer is formulated as:
 -->
 
-*dịch đoạn phía trên*
+Để kết hợp các đầu ra của GMF và MLP thay vì phép cộng đơn giản,
+NeuMF ghép nối các tầng cuối cùng thứ hai của hai mạng con để tạo thành một vector đặc trưng có thể được truyền tới các tầng tiếp theo.
+Sau đó, các đầu ra sẽ được chiếu bởi ma trận $\mathbf{h}$ và hàm kích hoạt sigmoid.
+Tầng dự đoán được xây dựng như sau:
 
 
 $$
@@ -105,7 +128,7 @@ $$
 The following figure illustrates the model architecture of NeuMF.
 -->
 
-*dịch đoạn phía trên*
+Hình dưới đây minh hoạ kiến trúc mô hình của NeuMF.
 
 
 ![Illustration of the NeuMF model](../img/rec-neumf.svg)
@@ -125,7 +148,7 @@ npx.set_np()
 ## Model Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Lập trình Mô hình
 
 
 <!--
@@ -135,7 +158,10 @@ The structure of the MLP is controlled with the parameter `nums_hiddens`.
 ReLU is used as the default activation function.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã dưới đây được lập trình cho mô hình NeuMF.
+Nó bao gồm mô hình phân rã ma trận tổng quát hoá và perceptron đa tầng với các vector embedding người dùng và sản phẩm khác nhau.
+Kiến trúc của MLP được điều khiể bởi tham số `nums_hiddens`.
+Hàm kích hoạt ReLU được sử dụng mặc định.
 
 
 ```{.python .input  n=2}
@@ -465,7 +491,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 2 -->
 * 
