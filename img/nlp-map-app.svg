@@ -441,9 +441,8 @@
        transform="matrix(1,0,0,1,107,-351)"
        id="path989" />
     <path
-       style="fill:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-       d="M 117.414062 499.496094 L 169.9375 499.496094 L 169.9375 525.996094 L 117.414062 525.996094 Z M 117.414062 499.496094 "
-       transform="matrix(1,0,0,1,107,-351)"
+       style="fill:none;stroke:#000000;stroke-width:1.01788;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+       d="m 222.87242,148.49784 h 54.42596 v 26.49651 h -54.42596 z m 0,0"
        id="path1005" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
@@ -658,14 +657,19 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="225.4063"
+       x="251.56499"
        y="158.10545"
        id="text2613"><tspan
          sodipodi:role="line"
          id="tspan2611"
-         x="225.4063"
+         x="251.56499"
          y="158.10545"
-         style="font-size:9px;stroke-width:0.75">Embedding</tspan></text>
+         style="font-size:9px;text-align:center;text-anchor:middle;stroke-width:0.75">Embedding </tspan><tspan
+         sodipodi:role="line"
+         x="251.56499"
+         y="169.35545"
+         style="font-size:9px;text-align:center;text-anchor:middle;stroke-width:0.75"
+         id="tspan1507">từ con</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:30px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
@@ -687,18 +691,18 @@
          id="tspan2619"
          x="237.25717"
          y="170.07217"
-         style="font-size:9px;stroke-width:0.75">từ</tspan></text>
+         style="font-size:9px;stroke-width:0.75" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="249.89963"
+       x="249.17438"
        y="170.07214"
        id="text2625"><tspan
          sodipodi:role="line"
          id="tspan2623"
-         x="249.89963"
+         x="249.17438"
          y="170.07214"
-         style="font-size:9px;stroke-width:0.75">con</tspan></text>
+         style="font-size:9px;stroke-width:0.75" /></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
