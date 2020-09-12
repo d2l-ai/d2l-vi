@@ -51,14 +51,17 @@ These vectors are still in the same line, and the only modification is that the 
 We call such vectors *eigenvectors* and the factor they are stretched by *eigenvalues*.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, có *một vài* vector mà với chúng có một số thứ không thay đổi.
+Gọi $[1, 0]^\top$ nhận từ $[2, 0]^\top$ và $[0, 1]^\top$ nhận từ $[0, -1]^\top$.
+Những vector này ở cùng dòng, và chỉ có tùy chỉnh là ma trận giãn lần lượt theo tỷ lệ bởi nhân tố $2$ và $-1$.
+Ta gọi những vector ấy là *vector riêng* và các nhân tố làm chúng giãn ra gọi là *trị riêng*.
 
 
 <!--
 In general, if we can find a number $\lambda$ and a vector $\mathbf{v}$ such that 
 -->
 
-*dịch đoạn phía trên*
+Tổng quát, nếu ta tìm được một số $\lambda$ và một vector $\mathbf{v}$ mà 
 
 
 $$
@@ -70,21 +73,21 @@ $$
 We say that $\mathbf{v}$ is an eigenvector for $A$ and $\lambda$ is an eigenvalue.
 -->
 
-*dịch đoạn phía trên*
+Ta nói rằng $\mathbf{v}$ là một vector riêng cho $A$ và $\lambda$ là một trị riêng.
 
 
 <!--
 ## Finding Eigenvalues
 -->
 
-## *dịch tiêu đề trên*
+## Tìm trị riêng
 
 
 <!--
 Let us figure out how to find them. By subtracting off the $\lambda \mathbf{v}$ from both sides, and then factoring out the vector, we see the above is equivalent to:
 -->
 
-*dịch đoạn phía trên*
+Ta hãy tìm hiểu cách tìm chúng. Bằng cách trừ đi $\lambda \mathbf{v}$ từ hai phía, rồi sau đó phân rã vector, ta thấy phần phía trên tương đương với:
 
 
 $$(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = 0.$$
@@ -97,7 +100,9 @@ Thus, we can find the *eigenvalues* by finding for what $\lambda$ is $\det(\math
 Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ to find the associated *eigenvector(s)*.
 -->
 
-*dịch đoạn phía trên*
+Để :eqref:`eq_eigvalue_der` xảy ra, ta thấy rằng $(\mathbf{A} - \lambda \mathbf{I})$ phải nén một số chiều xuống không, vì thế nó không thể nghịch đảo, nên định thức vì thế bằng không.
+Vì thế, ta có thể tìm các *trị riêng* bằng cách tìm $\lambda$ is $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
+Một khi ta tìm được các trị riêng, ta có thể giải bài toán $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
