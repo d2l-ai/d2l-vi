@@ -396,7 +396,10 @@ In each iteration, we first update the discriminator and then the generator.
 We visualize both losses and generated examples.
 -->
 
-*dịch đoạn phía trên*
+Cả bộ phân biệt lẫn bộ sinh biểu diễn như một bộ hồi quy logistic nhị phân với mất mát entropy chéo.
+Ta sử dụng Adam để làm mượt quá trình huấn luyện.
+Với mỗi lần lặp, đầu tiên ta cập nhật bộ phân biệt và sau đó đến bộ sinh.
+Ta sẽ theo dõi cả hai giá trị mất mát lẫn những dữ liệu được sinh.
 
 
 ```{.python .input}
@@ -479,7 +482,7 @@ def train(net_D, net_G, data_iter, num_epochs, lr_D, lr_G, latent_dim, data):
 Now we specify the hyperparameters to fit the Gaussian distribution.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta xác định các siêu tham số để khớp với phân phối Gauss.
 
 
 ```{.python .input}
@@ -497,7 +500,9 @@ train(net_D, net_G, data_iter, num_epochs, lr_D, lr_G,
 * The discriminator tries to distinguish the generated images from the true images, via minimizing the cross-entropy loss, *i.e.*, $\min - y \log D(\mathbf{x}) - (1-y)\log(1-D(\mathbf{x}))$.
 -->
 
-*dịch đoạn phía trên*
+* Mạng đối sinh (*Generative adversarial networks - GANs*) được cấu thành bởi hai mạng sâu, bộ sinh và bộ phân biệt.
+* Bộ sinh tạo các ảnh gần với ảnh thật nhất có thể nhằm đánh lừa bộ phân biệt, thông qua tối đa hóa mất mát entropy chéo, *nói cách khác*, $\max \log(D(\mathbf{x'}))$.
+* Bộ phân biệt cố gắng phân biệt những ảnh được tạo với ảnh thật, thông qua tối thiểu hóa mất mát entropy chéo, *nói cách khác*, $\min - y \log D(\mathbf{x}) - (1-y)\log(1-D(\mathbf{x}))$.
 
 
 ## Bài tập
@@ -506,7 +511,7 @@ train(net_D, net_G, data_iter, num_epochs, lr_D, lr_G,
 Does an equilibrium exist where the generator wins, *i.e.* the discriminator ends up unable to distinguish the two distributions on finite samples?
 -->
 
-*dịch đoạn phía trên*
+Liệu có đạt tới điểm cân bằng khi mà bộ sinh là người chiến thắng, *nói cách khác*, bộ phân biệt không thể phân biệt được hai phân phối trên hữu hạn dữ liệu?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -538,4 +543,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Phạm Hồng Vinh
