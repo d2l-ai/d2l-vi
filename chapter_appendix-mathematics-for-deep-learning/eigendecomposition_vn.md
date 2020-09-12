@@ -104,14 +104,14 @@ Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \math
 ### An Example
 -->
 
-### *dịch tiêu đề trên*
+### Ví dụ
 
 
 <!--
 Let us see this with a more challenging matrix
 -->
 
-*dịch đoạn phía trên*
+Hãy nhìn nhận điều này bằng một ma trận thách thức hơn
 
 
 $$
