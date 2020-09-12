@@ -282,3 +282,5 @@ Bản dịch trong trang này được thực hiện bởi:
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*
