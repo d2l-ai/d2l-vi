@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Word Embedding with Global Vectors (GloVe)
 -->
@@ -66,9 +63,6 @@ Ta có thể viết lại hàm mất mất của mô hình skip-gram như sau
 
 $$-\sum_{i\in\mathcal{V}} x_i \sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}.$$
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 In the formula above, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ computes the conditional probability distribution $p_{ij}$ for context word 
@@ -81,7 +75,7 @@ to approach as close as possible to the true conditional probability distributio
 Trong công thức trên, $\sum_{j\in\mathcal{V}} p_{ij} \log\,q_{ij}$ tính toán phân phối xác suất có điều kiện $p_{ij}$ của việc sinh từ ngữ cảnh 
 dựa trên từ đích trung tâm $w_i$ và entropy chéo với phân phối xác suất có điều kiện $q_{ij}$ được dự đoán bởi mô hình. 
 Hàm mất mát được đánh trọng số bằng cách sử dụng tổng số từ ngữ cảnh cho từ đích trung tâm $w_i$. 
-Việc cực tiểu hoá hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán một cách 
+Việc cực tiểu hóa hàm mất mát theo công thức trên cho phép phân phối xác suất có điều kiện được dự đoán một cách 
 gần nhất có thể tới phân phối xác suất có điều kiện thật sự. 
 
 
@@ -94,8 +88,9 @@ On the other hand, there are often a lot of uncommon words in the dictionary, an
 In the cross-entropy loss function, the final prediction of the conditional probability distribution on a large number of uncommon words is likely to be inaccurate.
 -->
 
-Tuy nhiên, mặc dù là hàm mất mát phổ biến nhất, đôi khi hàm mất mát entropy chéo lại không phải là lựa chọn tốt. 
-Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để mô hình đưa ra dự đoán $q_{ij}$ trở thành phân phối xác suất hợp lệ gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó. 
+Tuy nhiên, mặc dù là hàm mất mát phổ biến nhất, đôi khi hàm mất mát entropy chéo lại không phải là một lựa chọn phù hợp. 
+Một mặt, như ta đã đề cập trong :numref:`sec_approx_train`, chi phí để mô hình đưa ra dự đoán $q_{ij}$ trở thành phân phối xác suất hợp lệ 
+gồm phép lấy tổng qua toàn bộ các từ trong từ điển ở mẫu số của nó. 
 Điều này có thể dễ dàng khiến tổng chi phí tính toán trở nên quá lớn. 
 Mặt khác, thường sẽ có rất nhiều từ hiếm gặp trong từ điển, và chúng ít khi xuất hiện trong tập dữ liệu. 
 Trong hàm mất mát entropy chéo, dự đoán cuối cùng cho phân phối xác suất có điều kiện trên một lượng lớn các từ hiếm gặp rất có thể sẽ không được chính xác. 
@@ -113,7 +108,8 @@ To address this, GloVe :cite:`Pennington.Socher.Manning.2014`, a word embedding 
 square loss and makes three changes to the skip-gram model based on this loss.
 -->
 
-Để giải quyết vấn đề trên, GloVe :cite:`Pennington.Socher.Manning.2014`, một mô hình embedding từ xuất hiện sau word2vec, đã áp dụng mất mát bình phương và đề xuất ba thay đổi trong mô hình skip-gram dựa theo mất mát này. 
+Để giải quyết vấn đề trên, GloVe :cite:`Pennington.Socher.Manning.2014`, một mô hình embedding từ xuất hiện sau word2vec
+đã áp dụng mất mát bình phương và đề xuất ba thay đổi trong mô hình skip-gram dựa theo mất mát này.
 
 
 <!--
@@ -133,14 +129,11 @@ Do đó, ta có mất mát bình phương $\left(\log\,p'_{ij} - \log\,q'_{ij}\r
 Therefore, the goal of GloVe is to minimize the loss function.
 -->
 
-Do đó, mục tiêu của GloVe là cực tiểu hoá hàm mất mát 
+Do đó, mục tiêu của GloVe là cực tiểu hóa hàm mất mát.
 
 
 $$\sum_{i\in\mathcal{V}} \sum_{j\in\mathcal{V}} h(x_{ij}) \left(\mathbf{u}_j^\top \mathbf{v}_i + b_i + c_j - \log\,x_{ij}\right)^2.$$
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 Here, we have a suggestion for the choice of weight function $h(x)$: when $x < c$ (e.g $c = 100$), make $h(x) = (x/c) ^\alpha$ (e.g $\alpha = 0.75$), otherwise make $h(x) = 1$.
@@ -150,11 +143,13 @@ These non-zero $x_{ij}$ are computed in advance based on the entire dataset and 
 Therefore, the name GloVe is taken from "Global Vectors".
 -->
 
+
 Ở đây, chúng tôi có một đề xuất đối với việc lựa chọn hàm trọng số $h(x)$: khi $x < c$ (ví dụ $c = 100$) thì $h(x) = (x/c) ^\alpha$ (ví dụ $\alpha = 0.75$), nếu không thì $h(x) = 1$. 
 Do $h(0)=0$, ta có thể đơn thuần bỏ qua mất mát bình phương tại $x_{ij}=0$.
-Khi sử dụng minibatch SGD trong quá trình huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không tại mỗi bước thời gian và tính toán gradient để cập nhật các tham số mô hình. 
+Khi sử dụng minibatch SGD trong quá trình huấn luyện, ta tiến hành lấy mẫu ngẫu nhiên để được một minibatch $x_{ij}$ khác không 
+tại mỗi bước thời gian và tính toán gradient để cập nhật các tham số mô hình.
 Các giá trị $x_{ij}$ khác không trên được tính trước trên toàn bộ tập dữ liệu và là thống kê toàn cục của tập dữ liệu. 
-Do đó, tên gọi GloVe được lấy từ "Global Vectors - Vector Toàn cục". 
+Do đó, tên gọi GloVe được lấy từ "Global Vectors (*Vector Toàn cục*)". 
 
 
 <!--
@@ -171,15 +166,12 @@ Do đó, vector từ đích trung tâm và vector từ ngữ cảnh của bất 
 Tuy vậy, hai tập vector từ được học bởi cùng một mô hình về cuối có thể sẽ khác nhau do giá trị khởi tạo khác nhau. 
 Sau khi học tất cả các vector từ, GloVe sẽ sử dụng tổng của vector từ đích trung tâm và vector từ ngữ cảnh để làm vector từ cuối cùng cho từ đó. 
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Understanding GloVe from Conditional Probability Ratios
 -->
 
-## Lý giải GloVe bằng Tỉ số Xác suất Có điều kiện
+## Lý giải GloVe bằng Tỷ số Xác suất Có điều kiện
 
 
 <!--
@@ -192,14 +184,14 @@ From a real example from a large corpus, here we have the following two sets of 
 Ta cũng có thể cố gắng lý giải embedding từ GloVe theo một cách nhìn khác. 
 Ta sẽ tiếp tục sử dụng các ký hiệu như ở trên, $P(w_j \mid w_i)$ biểu diễn
 xác suất có điều kiện sinh từ ngữ cảnh $w_j$ với từ tâm đích $w_i$ trong tập dữ liệu, và xác suất này được ghi lại bằng $p_{ij}$. 
-Xét ví dụ thực tế từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỉ số giữa chúng: 
+Xét ví dụ thực tế từ một kho ngữ liệu lớn, ở đây ta có hai tập các xác suất có điều kiện với "ice" và "steam" là các từ tâm đích và tỷ số giữa chúng: 
 
 
-|$w_k$=                      | “solid”  | “gas”    | “water” | “fashion” |
-|---------------------------:|:--------:|:--------:|:-------:|:---------:|
-|$p_1=P(w_k\mid$ "ice" $)$   | 0.00019  | 0.000066 | 0.003   | 0.000017  |
-|$p_2=P(w_k\mid$ "steam" $)$ | 0.000022 | 0.00078  | 0.0022  | 0.000018  |
-|$p_1/p_2$                   | 8.9      | 0.085    | 1.36    | 0.96      |
+| $w_k$=                       |  solid   |  gas     |  water  |  fashion  |
+|-----------------------------:|:--------:|:--------:|:-------:|:---------:|
+| $p_1=P(w_k\mid \text{ice})$  | 0.00019  | 0.000066 | 0.003   | 0.000017  |
+| $p_2=P(w_k\mid\text{steam})$ | 0.000022 | 0.00078  | 0.0022  | 0.000018  |
+| $p_1/p_2$                    | 8.9      | 0.085    | 1.36    | 0.96      |
 
 
 <!--
@@ -208,9 +200,6 @@ We will be able to observe phenomena such as:
 
 Ta có thể quan sát thấy các hiện tượng như sau: 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 * For a word $w_k$ that is related to "ice" but not to "steam", such as $w_k=$"solid", 
@@ -223,10 +212,14 @@ we would expect a conditional probability ratio close to 1, like the value 1.36 
 we would expect a conditional probability ratio close to 1, like the value 0.96 in the last row of the table above.
 -->
 
-Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=$"solid (rắn)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
-Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=$"gas (khí)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên. 
-Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=$"water (nước)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên. 
-Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=$"fashion (thời trang)", ta kỳ vọng là tỉ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ liên quan tới từ "ice (đá)" nhưng không liên quan đến từ "steam (hơi nước)", như là $w_k=\text{solid (rắn)}$, 
+ta kỳ vọng là tỷ số xác suất có điều kiện sẽ lớn hơn, như trường hợp này là 8.9 ở hàng cuối cùng của bảng trên.
+Với từ $w_k$ liên quan tới từ "steam (hơi nước)" mà không có liên quan nào với từ "ice (đá)", như là $w_k=\text{gas (khí)}$, 
+ta kỳ vọng là tỷ số xác suất có điều kiện sẽ nhỏ hơn, như trường hợp này là 0.085 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ liên quan tới cả hai từ "steam (hơi nước)" và từ "ice (đá)", như là $w_k=\text{water (nước)}$, 
+ta kỳ vọng là tỷ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 1.36 ở hàng cuối cùng của bảng trên. 
+Với từ $w_k$ không liên quan tới cả hai từ "steam (hơi)" và từ "ice (đá)", như là $w_k=\text{fashion (thời trang)}$, 
+ta kỳ vọng là tỷ số xác suất có điều kiện sẽ gần với 1, như trường hợp này là 0.96 ở hàng cuối cùng của bảng trên. 
 
 
 <!--
@@ -237,11 +230,11 @@ The conditional probability ratio with $w_i$ as the central target word is ${p_{
 We can find a function that uses word vectors to fit this conditional probability ratio.
 -->
 
-Có thể thấy rằng tỉ số xác suất có điều kiện thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn. 
-Ta có thể tạo một hàm vector của từ để khớp tỉ số xác suất có điều kiện một cách hiệu quả hơn. 
-Như đã biết, để thu được bất cứ tỉ số nào loại này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$. 
-Tỉ số xác suất có điều kiện với $w_i$ làm từ trung tâm là ${p_{ij}}/{p_{ik}}$.
-Ta có thể tìm một hàm dùng các vector từ để khớp với tỉ số xác suất có điều kiện này. 
+Có thể thấy rằng tỷ số xác suất có điều kiện thể hiện mối quan hệ giữa các từ khác nhau trực quan hơn. 
+Ta có thể tạo một hàm vector của từ để khớp tỷ số xác suất có điều kiện một cách hiệu quả hơn. 
+Như đã biết, để thu được bất cứ tỷ số nào loại này đòi hỏi phải có ba từ $w_i$, $w_j$, và $w_k$. 
+tỷ số xác suất có điều kiện với $w_i$ làm từ trung tâm là ${p_{ij}}/{p_{ik}}$.
+Ta có thể tìm một hàm dùng các vector từ để khớp với tỷ số xác suất có điều kiện này. 
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -257,9 +250,9 @@ After exchanging index $j$ with $k$, we will be able to see that function $f$ sa
 
 Thiết kế khả dĩ của hàm $f$ ở đây không phải duy nhất. 
 Ta chỉ cần quan tâm một lựa chọn hợp lý hơn. 
-Do tỉ số xác suất có điều kiện là một số vô hướng, ta có thể giới hạn $f$ vào một hàm vô hướng: 
+Do tỷ số xác suất có điều kiện là một số vô hướng, ta có thể giới hạn $f$ vào một hàm vô hướng: 
 $f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = f\left((\mathbf{u}_j - \mathbf{u}_k)^\top {\mathbf{v}}_i\right)$. 
-Sau khi hoán đổi chỉ số $j$ và $k$, ta có thể thấy rằng hàm $f$ thỏa mãn điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Ta có: 
+Sau khi hóan đổi chỉ số $j$ và $k$, ta có thể thấy rằng hàm $f$ thỏa mãn điều kiện $f(x)f(-x)=1$, do đó một lựa chọn có thể là $f(x)=\exp(x)$. Ta có: 
 
 
 $$f(\mathbf{u}_j, \mathbf{u}_k, {\mathbf{v}}_i) = \frac{\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right)}{\exp\left(\mathbf{u}_k^\top {\mathbf{v}}_i\right)} \approx \frac{p_{ij}}{p_{ik}}.$$
@@ -272,7 +265,7 @@ We use additional bias terms to fit $- \log\, \alpha + \log\, x_i$, such as the 
 -->
 
 Một xác suất thỏa mãn vế phải biểu thức xấp xỉ là $\exp\left(\mathbf{u}_j^\top {\mathbf{v}}_i\right) \approx \alpha p_{ij}$, ở đây $\alpha$ là một hằng số. 
-Xét $p_{ij}=x_{ij}/x_i$, sau khi lấy logarit ta được $\mathbf{u}_j^\top {\mathbf{v}}_i \approx \log\,\alpha + \log\,x_{ij} - \log\,x_i$. 
+Xét $p_{ij}=x_{ij}/x_i$, sau khi lấy logarit ta được $\mathbf{u}_j^\top {\mathbf{v}}_i \approx \log\,\alpha + \log\,x_{ij} - \log\,x_i$.
 Ta sử dụng thêm hệ số điều chỉnh để khớp $- \log\, \alpha + \log\, x_i$, cụ thể là hệ số điều chỉnh từ trung tâm $b_i$ và hệ số điều chỉnh từ ngữ cảnh $c_j$: 
 
 
@@ -285,10 +278,6 @@ By taking the square error and weighting the left and right sides of the formula
 
 Bằng cách lấy sai số bình phương và đặt trọng số vào vế trái và vế phải của biểu thức trên, ta tính được hàm mất mát của GloVe. 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
 
 ## Tóm tắt
 
@@ -299,8 +288,8 @@ GloVe uses squared loss and the word vector to fit global statistics computed in
 -->
 
 * Trong một số trường hợp, hàm mất mát entropy chéo có sự hạn chế.
-GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu. 
-* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe. 
+GloVe sử dụng mất mát bình phương và vector từ để khớp các thống kê toàn cục được tính trước dựa trên toàn bộ dữ liệu.
+* Vector từ đích trung tâm và vector từ ngữ cảnh của bất kì từ nào là như nhau trong GloVe.
 
 ## Bài tập
 
@@ -317,42 +306,21 @@ Gợi ý: Tham khảo phần 4.2 trong bài báo GloVe :cite:`Pennington.Socher.
 2. Với một từ bất kỳ, liệu hệ số điều chỉnh của từ đích trung tâm và từ ngữ cảnh là như nhau trong GloVe không? Tại sao? 
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/385)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/385)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* 
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
-* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Nguyễn Mai Hoàng Long
-* Nguyễn Văn Cường
-* Lê Khắc Hồng Phúc
-<!-- Phần 5 -->
 * Nguyễn Văn Quang
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
 * Phạm Hồng Vinh
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*

@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # The Dataset for Pretraining BERT
 -->
 
-# Tập dữ liệu để tiền huấn luyện BERT
+# Tập dữ liệu để Tiền huấn luyện BERT
 :label:`sec_bert-dataset`
 
 
@@ -19,8 +16,10 @@ Thus, it is getting popular to pretrain BERT on a customized dataset.
 To facilitate the demonstration of BERT pretraining, we use a smaller corpus WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
 -->
 
-Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
-Một mặt, mô hình BERT gốc được tiền huấn luyện trên kho ngữ liệu được ghép lại từ hai kho ngữ liệu khổng lồ là BookCorpus và Wikipedia Tiếng Anh (xem :numref:`subsec_bert_pretraining_tasks`), khiến việc thực hành trở nên khó khăn đối với hầu hết bạn đọc cuốn sách này.
+Để tiền huấn luyện mô hình BERT như thực hiện trong :numref:`sec_bert`, ta cần sinh tập dữ liệu ở định dạng lý tưởng để thuận tiện cho hai tác vụ tiền huấn luyện: 
+mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo.
+Một mặt, mô hình BERT gốc được tiền huấn luyện trên kho ngữ liệu được ghép lại từ hai kho ngữ liệu khổng lồ là BookCorpus và Wikipedia Tiếng Anh 
+(xem :numref:`subsec_bert_pretraining_tasks`), khiến việc thực hành trở nên khó khăn đối với hầu hết độc giả của cuốn sách này.
 Mặt khác, mô hình BERT đã được tiền huấn luyện sẵn có thể không phù hợp với các ứng dụng ở một số lĩnh vực cụ thể như ngành dược. 
 Do đó, việc tiền huấn luyện BERT trên một tập dữ liệu tùy chỉnh đang ngày càng trở nên phổ biến hơn.
 Để thuận tiện minh họa cho tiền huấn luyện BERT, ta sử dụng một kho ngữ liệu nhỏ hơn là WikiText-2 :cite:`Merity.Xiong.Bradbury.ea.2016`.
@@ -28,11 +27,11 @@ Do đó, việc tiền huấn luyện BERT trên một tập dữ liệu tùy ch
 
 <!--
 Comparing with the PTB dataset used for pretraining word2vec in :numref:`sec_word2vec_data`,
-WikiText-2 i) retains the original punctuation, making it suitable for next sentence prediction; ii) retrains the original case and numbers; iii) is over twice larger.
+WikiText-2 i) retains the original punctuation, making it suitable for next sentence prediction; ii) retains the original case and numbers; iii) is over twice larger.
 -->
 
 So với tập dữ liệu PTB đã dùng để thực hiện tiền huấn luyện word2vec ở :numref:`sec_word2vec_data`,
-WikiText-2 i) giữ lại dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) giữ lại ký tự viết hoa và số; iii) và lớn hơn gấp hai lần. 
+WikiText-2 đã i) giữ lại dấu ngắt câu ban đầu, giúp nó phù hợp cho việc dự đoán câu kế tiếp; ii) giữ lại ký tự viết hoa và số; iii) và lớn hơn gấp hai lần. 
 
 
 ```{.python .input  n=1}
@@ -82,10 +81,6 @@ def _read_wiki(data_dir):
     return paragraphs
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 <!--
 ## Defining Helper Functions for Pretraining Tasks
 -->
@@ -112,12 +107,12 @@ Các hàm hỗ trợ này sẽ được gọi khi thực hiện chuyển đổi 
 
 
 <!--
-According to descriptions of :label:`subsec_nsp`,
+According to descriptions of :numref:`subsec_nsp`,
 the `_get_next_sentence` function generates a training example
 for the binary classification task.
 -->
 
-Dựa theo mô tả của :label:`subsec_nsp`,
+Dựa theo mô tả của :numref:`subsec_nsp`,
 hàm `_get_next_sentence` sinh một mẫu để huấn luyện cho tác vụ phân loại nhị phân.
 
 
@@ -161,15 +156,12 @@ def _get_nsp_data_from_paragraph(paragraph, paragraphs, vocab, max_len):
     return nsp_data_from_paragraph
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Generating the Masked Language Modeling Task
 -->
 
-### Tạo Tác Vụ Mô Hình Hóa Ngôn Ngữ Có Mặt Nạ
+### Tạo Tác vụ Mô hình hóa Ngôn ngữ có Mặt nạ
 :label:`subsec_prepare_mlm_data`
 
 
@@ -188,9 +180,9 @@ the token indices where predictions take place and labels for these predictions.
 -->
 
 Để tạo dữ liệu huấn luyện cho tác vụ mô hình hóa ngôn ngữ có mặt nạ từ một chuỗi đầu vào BERT,
-chúng ta định nghĩa hàm `_replace_mlm_tokens`.
+chúng ta cần định nghĩa hàm `_replace_mlm_tokens`.
 Đầu vào của nó, `tokens` là một danh sách các token biểu diễn cho một chuỗi đầu vào BERT,
-`candidate_pred_positions` là một danh sách chỉ số của các token của chuỗi đầu vào BERT 
+còn `candidate_pred_positions` là một danh sách chỉ số của các token của chuỗi đầu vào BERT 
 ngoại trừ những token đặc biệt (token đặc biệt không được dự đoán trong tác vụ mô hình hóa ngôn ngữ có mặt nạ),
 và `num_mlm_preds` chỉ định số lượng token được dự đoán (nhớ lại rằng 15% token ngẫu nhiên được dự đoán). 
 Dựa trên định nghĩa của tác vụ mô hình hóa ngôn ngữ có mặt nạ trong :numref:`subsec_mlm`,
@@ -236,7 +228,9 @@ By invoking the aforementioned `_replace_mlm_tokens` function, the following fun
 (after possible token replacement as described in :numref:`subsec_mlm`), the token indices where predictions take place, and label indices for these predictions.
 -->
 
-Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm dưới đây nhận một chuỗi đầu vào BERT (`tokens`) làm đầu vào và trả về chỉ số của những token đầu vào (sau khi thay thế token (nếu có) như mô tả ở :numref:`subsec_mlm`), những chỉ số của token được dự đoán và chỉ số nhãn cho những dự đoán này. 
+Bằng cách gọi hàm `_replace_mlm_tokens` ở trên, hàm dưới đây nhận một chuỗi đầu vào BERT (`tokens`) làm đầu vào 
+và trả về chỉ số của những token đầu vào (sau khi thay thế token (nếu có) như mô tả ở :numref:`subsec_mlm`), 
+những chỉ số của token được dự đoán và chỉ số nhãn cho những dự đoán này. 
 
 
 ```{.python .input  n=6}
@@ -261,15 +255,12 @@ def _get_mlm_data_from_tokens(tokens, vocab):
     return vocab[mlm_input_tokens], pred_positions, vocab[mlm_pred_labels]
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Transforming Text into the Pretraining Dataset
 -->
 
-## Biến đổi Văn Bản thành Bộ Dữ Liệu Tiền Huấn Luyện
+## Biến đổi Văn bản thành bộ Dữ liệu Tiền huấn luyện
 
 
 <!--
@@ -312,9 +303,6 @@ def _pad_bert_inputs(examples, max_len, vocab):
             all_mlm_weights, all_mlm_labels, nsp_labels)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 Putting the helper functions for generating training examples of the two pretraining tasks,
@@ -325,11 +313,10 @@ we can arbitrarily access the pretraining (masked language modeling and next sen
 generated from a pair of sentences from the WikiText-2 corpus.
 -->
 
-Kết hợp những hàm hỗ trợ để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện,
-và hàm hỗ trợ đệm đầu vào,
-chúng ta tùy chỉnh lớp `_WikiTextDataset` sau đây thành bộ dữ liệu WikiText-2 cho tiền huấn luyện BERT.
+Kết hợp những hàm hỗ trợ để tạo dữ liệu huấn luyện cho hai tác vụ tiền huấn luyện và hàm hỗ trợ đệm đầu vào,
+ta tùy chỉnh lớp `_WikiTextDataset` sau đây thành bộ dữ liệu WikiText-2 cho tiền huấn luyện BERT.
 Bằng cách lập trình hàm `__getitem__`,
-chúng ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo)
+ta có thể tùy ý truy cập những mẫu dữ liệu tiền huấn luyện (mô hình hóa ngôn ngữ có mặt nạ và dự đoán câu tiếp theo)
 được tạo ra từ một cặp câu trong kho ngữ liệu WikiText-2.
 
 
@@ -443,9 +430,6 @@ Mặc dù những token ít xuất hiện đã bị loại bỏ, kích thước 
 len(vocab)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 ## Tóm tắt
 
@@ -472,27 +456,18 @@ invoking `nltk.tokenize.sent_tokenize(sentences)` will return a list of two sent
 1. Để đơn giản, dấu chấm được dùng làm dấu phân cách duy nhất để tách các câu.
 Hãy thử các kỹ thuật tách câu khác, ví dụ như công cụ spaCy và NLTK. Lấy NLTK làm ví dụ.
 Bạn cần cài đặt NLTK trước: `pip install nltk`.
-Trong mã nguồn, đầu tiên hãy `import nltk`. Sau đó, tải xuống bộ token hoá câu Punkt (_Punkt sentence tokenizer_): `nltk.download('punkt')`.
+Trong mã nguồn, đầu tiên hãy `import nltk`. Sau đó, tải xuống bộ token hoá câu Punkt (*Punkt sentence tokenizer*): `nltk.download('punkt')`.
 Để tách các câu, ví dụ `sentences = 'This is great ! Why not ?'`,
 việc gọi `nltk.tokenize.sent_tokenize(sentences)` sẽ trả về một danh sách gồm hai chuỗi câu là `['This is great !', 'Why not ?']`.
-2. Nếu ta không lọc ra những token ít gặp thì kích thước bộ từ vựng là bao nhiêu?
-
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
+1. Nếu ta không lọc ra những token ít gặp thì kích thước bộ từ vựng là bao nhiêu?
 
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/389)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/389)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Mai Hoàng Long
@@ -502,3 +477,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 * Phạm Minh Đức
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*

@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Pretraining word2vec
 -->
@@ -20,7 +17,7 @@ Trong phần này, ta sẽ huấn luyện một mô hình skip-gram đã đượ
 First, import the packages and modules required for the experiment, and load the PTB dataset.
 -->
 
-Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp tập dữ liệu PTB. 
+Đầu tiên, ta nhập các gói thư viện và mô-đun cần thiết cho thí nghiệm, và nạp tập dữ liệu PTB.
 
 
 ```{.python .input  n=1}
@@ -93,9 +90,6 @@ x = np.array([[1, 2, 3], [4, 5, 6]])
 embed(x)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Minibatch Multiplication
@@ -130,7 +124,7 @@ npx.batch_dot(X, Y).shape
 ### Skip-gram Model Forward Calculation
 -->
 
-### Tính toán Truyền Xuôi của Mô hình Skip-gram 
+### Tính toán Truyền xuôi của Mô hình Skip-Gram 
 
 
 <!--
@@ -185,19 +179,12 @@ Before training the word embedding model, we need to define the loss function of
 
 Trước khi huấn luyện mô hình embedding từ, ta cần định nghĩa hàm mất mát của mô hình.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Binary Cross Entropy Loss Function
 -->
 
-### Hàm Mất mát Entropy Chéo Nhị phân
+### Hàm Mất mát Entropy chéo Nhị phân
 
 
 <!--
@@ -244,7 +231,7 @@ loss(pred, label, mask)
 We can normalize the loss in each example due to various lengths in each example.
 -->
 
-Ta có thể chuẩn hoá mất mát trong từng mẫu do các mẫu có độ dài khác nhau.
+Ta có thể chuẩn hóa mất mát trong từng mẫu do các mẫu có độ dài khác nhau.
 
 
 ```{.python .input}
@@ -273,9 +260,6 @@ net.add(nn.Embedding(input_dim=len(vocab), output_dim=embed_size),
         nn.Embedding(input_dim=len(vocab), output_dim=embed_size))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Training
@@ -395,22 +379,13 @@ Nói cách khác, cùng một từ đích trung tâm có thể có các từ ng�
 Cách huấn luyện này có lợi ích gì? Hãy thử lập trình phương pháp huấn luyện này.
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/384)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/384)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
@@ -419,3 +394,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*

@@ -269,7 +269,7 @@ Chi phí phụ trợ khi tính toán gradient tại mỗi bước trong quá tr�
 
 
 ## Thảo luận
-* Tiếng Anh: [Main Forums](https://discuss.d2l.ai/t/382)
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/382)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện

@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # The Dataset for Pretraining Word Embedding
 -->
@@ -16,7 +13,7 @@ It takes samples from Wall Street Journal articles and includes training sets, v
 -->
 
 Trong phần này, chúng tôi sẽ giới thiệu cách tiền xử lý một tập dữ liệu với phương pháp lấy mẫu âm :numref:`sec_approx_train` và tạo các minibatch để huấn luyện word2vec.
-Tập dữ liệu mà ta sẽ sử dụng là [Penn Tree Bank (PTB)] (https://catalog.ldc.upenn.edu/LDC99T42), một kho ngữ liệu nhỏ nhưng được sử dụng phổ biến.
+Tập dữ liệu mà ta sẽ sử dụng là [Penn Tree Bank (PTB)](https://catalog.ldc.upenn.edu/LDC99T42), một kho ngữ liệu nhỏ nhưng được sử dụng phổ biến.
 Tập dữ liệu này được thu thập từ các bài báo của Wall Street Journal và bao gồm các tập huấn luyện, tập kiểm định và tập kiểm tra.
 
 
@@ -24,7 +21,7 @@ Tập dữ liệu này được thu thập từ các bài báo của Wall Street
 First, import the packages and modules required for the experiment.
 -->
 
-Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm. 
+Đầu tiên, ta nhập các gói và mô-đun cần thiết cho thí nghiệm.
 
 
 ```{.python .input  n=1}
@@ -52,7 +49,7 @@ In the word embedding task, each word is a token.
 -->
 
 Tập dữ liệu này đã được tiền xử lý trước.
-Mỗi dòng của tập dữ liệu được coi là một câu. 
+Mỗi dòng của tập dữ liệu được xem là một câu. 
 Tất cả các từ trong một câu được phân cách bằng dấu cách.
 Trong bài toán embedding từ, mỗi từ là một token.
 
@@ -79,7 +76,7 @@ Next we build a vocabulary with words appeared not greater than 10 times mapped 
 Note that the preprocessed PTB data also contains "&lt;unk&gt;" tokens presenting rare words.
 -->
 
-Tiếp theo ta sẽ xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được coi như token "&lt;unk&gt;".
+Tiếp theo ta sẽ xây dựng bộ từ vựng, trong đó các từ xuất hiện dưới 10 lần sẽ được xem như token "&lt;unk&gt;".
 Lưu ý rằng tập dữ liệu PTB đã được tiền xử lý cũng chứa các token "&lt;unk&gt;" đại diện cho các từ hiếm gặp.
 
 
@@ -150,9 +147,6 @@ def subsampling(sentences, vocab):
 subsampled = subsampling(sentences, vocab)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 Compare the sequence lengths before and after sampling, we can see subsampling significantly reduced the sequence length.
@@ -176,6 +170,7 @@ For individual tokens, the sampling rate of the high-frequency word "the" is les
 -->
 
 Với các token riêng lẻ, tỉ lệ lấy mẫu của các từ có tần suất cao như từ "the" nhỏ hơn 1/20.
+
 
 ```{.python .input  n=6}
 def compare_counts(token):
@@ -203,7 +198,7 @@ compare_counts('join')
 Last, we map each token into an index to construct the corpus.
 -->
 
-Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu. 
+Cuối cùng, ta ánh xạ từng token tới một chỉ số tương ứng để xây dựng kho ngữ liệu.
 
 
 ```{.python .input  n=8}
@@ -226,16 +221,11 @@ Next we read the corpus with token indicies into data batches for training.
 Tiếp theo, ta đọc kho ngữ liệu với các chỉ số token thành các batch dữ liệu cho quá trình huấn luyện. 
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-
 <!--
 ### Extracting Central Target Words and Context Words
 -->
 
-### Trích xuất từ đích trung tâm và từ ngữ cảnh
+### Trích xuất từ Đích Trung tâm và Từ Ngữ cảnh
 
 
 <!--
@@ -293,7 +283,7 @@ The following extracts all the central target words and their context words in t
 -->
 
 Ta thiết lập cửa sổ ngữ cảnh cực đại là 5.
-Đoạn mã sau trích xuất tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng trong tập dữ liệu. 
+Đoạn mã sau trích xuất tất cả các từ đích trung tâm và các từ ngữ cảnh của chúng trong tập dữ liệu.
 
 
 ```{.python .input  n=11}
@@ -371,13 +361,6 @@ def get_negatives(all_contexts, corpus, K):
 all_negatives = get_negatives(all_contexts, corpus, 5)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Reading into Batches
@@ -472,9 +455,6 @@ We use the `batchify` function just defined to specify the minibatch reading met
 
 Chúng ta dùng hàm `batchify` vừa được định nghĩa để chỉ định phương thức đọc minibatch trong thực thể `DataLoader`.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## Putting All Things Together
@@ -535,7 +515,8 @@ and use mask variables to distinguish between padding and non-padding elements, 
 -->
 
 * Việc lấy mẫu con cố gắng giảm thiểu tác động của các từ có tần suất cao đến việc huấn luyện mô hình embedding từ.
-* Ta có thể đệm để tạo ra các minibatch với các mẫu có cùng độ dài và sử dụng các biến mặt nạ để phân biệt phần tử đệm, vì thế chỉ có những phần tử không phải đệm mới được dùng để tính toán hàm mất mát.
+* Ta có thể đệm để tạo ra các minibatch với các mẫu có cùng độ dài và sử dụng các biến mặt nạ để phân biệt phần tử đệm, 
+vì thế chỉ có những phần tử không phải đệm mới được dùng để tính toán hàm mất mát.
 
 
 ## Bài tập
@@ -550,10 +531,6 @@ Chúng ta sử dụng hàm `batchify` để chỉ định phương thức đọc
 Những kích thước này được tính toán như thế nào?
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/383)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -561,11 +538,6 @@ Những kích thước này được tính toán như thế nào?
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
@@ -574,3 +546,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
+* Phạm Hồng Vinh
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
