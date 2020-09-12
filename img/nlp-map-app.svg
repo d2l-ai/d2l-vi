@@ -36,8 +36,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1968"
-     inkscape:window-height="1337"
+     inkscape:window-width="1280"
+     inkscape:window-height="1338"
      id="namedview1504"
      showgrid="false"
      showguides="true"
@@ -45,7 +45,7 @@
      inkscape:zoom="2.0682398"
      inkscape:cx="285.20298"
      inkscape:cy="123.33333"
-     inkscape:window-x="2032"
+     inkscape:window-x="1440"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      inkscape:current-layer="surface1"
@@ -489,9 +489,8 @@
          id="use1309" />
     </g>
     <path
-       style="fill-rule:nonzero;fill:rgb(39.99939%,74.902344%,100%);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;"
-       d="M 97.246094 361 L 223.246094 361 L 223.246094 388 L 97.246094 388 Z M 97.246094 361 "
-       transform="matrix(1,0,0,1,107,-351)"
+       style="fill:#63bdff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.01446;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+       d="M 202.70831,10.004203 H 332.41765 V 36.995797 H 202.70831 Z m 0,0"
        id="path1331" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
@@ -659,12 +658,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="225.76892"
+       x="225.4063"
        y="158.10545"
        id="text2613"><tspan
          sodipodi:role="line"
          id="tspan2611"
-         x="225.76892"
+         x="225.4063"
          y="158.10545"
          style="font-size:9px;stroke-width:0.75">Embedding</tspan></text>
     <text
@@ -692,12 +691,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:9px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
-       x="250.26225"
+       x="249.89963"
        y="170.07214"
        id="text2625"><tspan
          sodipodi:role="line"
          id="tspan2623"
-         x="250.26225"
+         x="249.89963"
          y="170.07214"
          style="font-size:9px;stroke-width:0.75">con</tspan></text>
     <text
