@@ -54,12 +54,12 @@ Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Vi�
 * Optimization Algorithms (**Đã hoàn thành**)
 * Computational Performance (**Đã hoàn thành**)
 * Computer Vision (**Đã hoàn thành**)
-* Natural Language Processing: Pretraining (*Đang tiến hành*)
+* Natural Language Processing: Pretraining (**Đã hoàn thành**)
 * Natural Language Processing: Applications (*Đang tiến hành*)
 * Recommender Systems (*Đang tiến hành*)
-* Generative Adversarial Networks
-* Appendix: Mathematics for Deep Learning
-* Appendix: Tools for Deep Learning
+* Generative Adversarial Networks (*Đang tiến hành*)
+* Appendix: Mathematics for Deep Learning (*Đang tiến hành*)
+* Appendix: Tools for Deep Learning (*Đang tiến hành*)
 * References
 
 ### Diễn đàn
