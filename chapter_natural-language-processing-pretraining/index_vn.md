@@ -90,3 +90,7 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 12/09/2020. (Cập nhật lần cuối từ nội dung gốc: 02/04/2020)*
