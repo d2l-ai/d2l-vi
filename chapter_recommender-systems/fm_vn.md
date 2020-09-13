@@ -24,10 +24,10 @@ The technical details and implementations are described below.
 Máy phân rã ma trận (*Factorization machines - FM*) :cite:`Rendle.2010`, được đề xuất bởi Steffen Rendle vào năm 2010,
 là một thuật toán học có giám sát, có thể được sử dụng trong các tác vụ phân loại, hồi quy hay xếp hạng.
 Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp nổi tiếng và có sức ảnh hưởng trong việc đưa ra dự đoán và gợi ý.
-Cụ thể, nó là kết quả khái quát hoá mô hình hồi quy tuyến tính và mô hình phân rã ma trận.
-Hơn nữa, nó còn gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
+Cụ thể, nó là phiên bản khái quát hoá của mô hình hồi quy tuyến tính và mô hình phân rã ma trận.
+Hơn nữa, nó còn làm gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
 Điểm mạnh của máy phân rã ma trận so với hồi quy tuyến tính và phân ra mã trận là:
-(1) Nó có thể mô hình hoá biến tương tác $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
+(1) Nó có thể mô hình hoá tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
 (2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm thời gian tính toán đa thức về độ phức tạp tuyến tính,
 giúp nó đạt hiệu quả cực tốt đặc biệt với đầu vào thưa thớt nhiều chiều.
 Với các lý do trên, máy phân rã được áp dụng rộng rãi trong quảng cáo hiện đại và gợi ý sản phẩm.
@@ -73,7 +73,7 @@ It is worth noting that FM can also generalize to higher orders (degree > 2).
 Nevertheless, the numerical stability might weaken the generalization.
 -->
 
-trong đó $\mathbf{w}_0 \in \mathbb{R}$ là độ chệch toàn cục;
+trong đó $\mathbf{w}_0 \in \mathbb{R}$ là hệ số điều chỉnh toàn cục;
 $\mathbf{w} \in \mathbb{R}^d$ ký hiệu trọng số của biến thứ $i$;
 $\mathbf{V} \in \mathbb{R}^{d\times k}$ biểu diễn embedding đặc trưng;
 $\mathbf{v}_i$ biểu diễn hàng thứ $i$ của $\mathbf{V}$; $k$ là số chiều của nhân tố ẩn;
