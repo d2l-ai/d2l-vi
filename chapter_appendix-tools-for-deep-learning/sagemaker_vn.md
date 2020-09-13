@@ -37,7 +37,11 @@ and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the 
 *dịch đoạn phía trên*
 
 
+<!--
 ![Open the SageMaker panel.](../img/sagemaker.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker.png)
 :width:`300px`
 :label:`fig_sagemaker`
 
@@ -56,7 +60,11 @@ Next, let us create a notebook instance as described in :numref:`fig_sagemaker-c
 *dịch đoạn phía trên*
 
 
+<!--
 ![Create a SageMaker instance.](../img/sagemaker-create.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-create.png)
 :width:`400px`
 :label:`fig_sagemaker-create`
 
@@ -70,7 +78,11 @@ In :numref:`fig_sagemaker-create-2`, we choose `ml.p3.2xlarge`. With one Tesla V
 *dịch đoạn phía trên*
 
 
+<!--
 ![Choose the instance type.](../img/sagemaker-create-2.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-create-2.png)
 :width:`400px`
 :label:`fig_sagemaker-create-2`
 
@@ -106,10 +118,17 @@ We can specify this GitHub repository URL to let SageMaker clone this repository
 
 
 
+<!--
 ![Specify the GitHub repository.](../img/sagemaker-create-3.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-create-3.png)
 :width:`400px`
 :label:`fig_sagemaker-create-3`
 
+<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
+
+<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Running and Stopping an Instance
@@ -126,7 +145,11 @@ When it is ready, you can click on the "Open Jupyter" link as shown in :numref:`
 *dịch đoạn phía trên*
 
 
+<!--
 ![Open Jupyter on the created SageMaker instance.](../img/sagemaker-open.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-open.png)
 :width:`400px`
 :label:`fig_sagemaker-open`
 
@@ -138,7 +161,11 @@ Then, as shown in :numref:`fig_sagemaker-jupyter`, you may navigate through the 
 *dịch đoạn phía trên*
 
 
+<!--
 ![The Jupyter server running on the SageMaker instance.](../img/sagemaker-jupyter.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-jupyter.png)
 :width:`400px`
 :label:`fig_sagemaker-jupyter`
 
@@ -151,7 +178,11 @@ After finishing your work, do not forget to stop the instance to avoid further c
 *dịch đoạn phía trên*
 
 
+<!--
 ![Stop a SageMaker instance.](../img/sagemaker-stop.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-stop.png)
 :width:`300px`
 :label:`fig_sagemaker-stop`
 
@@ -200,7 +231,11 @@ First, you need to open a terminal as shown in :numref:`fig_sagemaker-terminal`.
 *dịch đoạn phía trên*
 
 
+<!--
 ![Open a terminal on the SageMaker instance.](../img/sagemaker-terminal.png)
+-->
+
+![*dịch mô tả phía trên*](../img/sagemaker-terminal.png)
 :width:`300px`
 :label:`fig_sagemaker-terminal`
 
@@ -238,7 +273,7 @@ git pull
 :end_tab:
 
 
-## Summary
+## Tóm tắt
 
 <!--
 * We can launch and stop a Jupyter server through Amazon SageMaker to run this book.
@@ -248,7 +283,7 @@ git pull
 *dịch đoạn phía trên*
 
 
-## Exercises
+## Bài tập
 
 <!--
 1. Try to edit and run the code in this book using Amazon SageMaker.
@@ -256,6 +291,9 @@ git pull
 -->
 
 *dịch đoạn phía trên*
+
+
+<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 
 ## Thảo luận
@@ -277,9 +315,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
-
-<!-- Phần 3 -->
 * 
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 22/08/2020)*
