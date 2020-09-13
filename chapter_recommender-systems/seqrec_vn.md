@@ -128,7 +128,7 @@ $\mathbf{p}_u \in \mathbb{R}^{ k}$ is the $u^\mathrm{th}$ row of $P$ and $\mathb
 
 trong đó $\mathbf{V} \in \mathbb{R}^{n \times 2k}$ là một ma trận embedding sản phẩm khác.
 $\mathbf{b}' \in \mathbb{R}^n$ là độ chệch đặc thù của sản phẩm.
-$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding người dùng vào thị hiếu chung của người dùng.
+$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding người dùng cho thị hiếu chung của người dùng.
 $\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của $P$ và $\mathbf{v}_i \in \mathbb{R}^{2k}$ là hàng thứ $i$ của $\mathbf{V}$.
 
 
@@ -247,11 +247,11 @@ Negative samples are also included in the Customized dataset.
 
 Để xử lý dữ liệu tương tác tuần tự, ta cần lập trình lại lớp Dataset.
 Đoạn mã sau đây tạo một lớp dataset mới có tên là `SeqDataset`.
-Với mỗi mẫu, lớp này trả về id của người dùng, $L$ sản phẩm mà người này đã tương tác trước đó như một chuỗi và sản phẩm tiếp theo mà người này sẽ tương tác làm mục tiêu.
+Với mỗi mẫu, lớp này trả về id của người dùng, một chuỗi $L$ sản phẩm mà người này đã tương tác trước đó và sản phẩm tiếp theo mà người này sẽ tương tác làm mục tiêu.
 Hình dưới đây mô tả rõ ràng quá trình nạp dữ liệu với một người dùng.
 Giả sử người dùng này thích 8 bộ phim, ta sắp xếp 8 bộ phim này theo thứ tự thời gian.
 Bộ phim cuối cùng được bỏ ra ngoài để làm sản phẩm kiểm tra.
-Với bảy bộ phim còn lại, ta có thể lấy ba mẫu huấn luyện, với mỗi mẫu bao gồm mội chuỗi gồm năm ($L=5$) bộ phim và bộ phim kế tiếp làm mục tiêu.
+Với bảy bộ phim còn lại, ta có thể tạo ba mẫu huấn luyện, với mỗi mẫu bao gồm một chuỗi gồm năm ($L=5$) bộ phim và bộ phim kế tiếp làm mục tiêu.
 Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu được tuỳ chỉnh.
 
 <!--
