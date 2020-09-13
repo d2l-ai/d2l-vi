@@ -39,7 +39,7 @@ For example, given a large corpus of photographs of faces,
 we might want to be able to generate a new photorealistic image that looks like it might plausibly have come from the same dataset.
 This kind of learning is called generative modeling.
 -->
-Nhưng có nhiều thứ để học máy hơn là chỉ giải các tác vụ phân biệt.
+Nhưng học máy còn có nhiều thứ khác hơn là chỉ giải các tác vụ phân biệt.
 Chẳng hạn, với một tập dữ liệu cho trước, không có bất kỳ nhãn nào,
 ta có lẽ muốn học một mô hình thu chính xác các đặc tính của tập dữ liệu này.
 Với một mô hình như vậy, ta có thể lấy các mẫu dữ liệu tạo ra giống như phân phối của dữ liệu dùng huấn luyện.
