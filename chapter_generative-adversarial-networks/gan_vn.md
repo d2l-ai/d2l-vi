@@ -78,7 +78,7 @@ This allows us to improve the data generator until it generates something that r
 At the very least, it needs to fool the classifier. Even if our classifier is a state of the art deep neural network.
 -->
 
-Trong năm 2014, một bài báo đột phá đưa ra các mạng đối sinh (GAN) :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`,
+Trong năm 2014, một bài báo đột phá đã giới thiệu Mạng đối sinh (*Generative Adversarial Network -- GAN*) :cite:`Goodfellow.Pouget-Abadie.Mirza.ea.2014`,
 một phương pháp khôn khéo để tận dụng sức mạnh của các mô hình phân biệt để có được các mô hình sinh tốt.
 Về cốt lõi, GAN dựa trên ý tưởng là một bộ sinh dữ liệu là tốt nếu ta không thể chỉ ra đâu là dữ liệu giả đâu là dữ liệu thật.
 Trong thống kê, điều này được gọi là bài kiểm tra từ hai tập mẫu - một bài kiểm tra để trả lời
