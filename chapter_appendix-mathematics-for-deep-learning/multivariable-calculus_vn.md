@@ -754,7 +754,7 @@ and then keeping track of how $f$ changes when we change *any* node in the entir
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
 ```{.python .input}
 #@tab all
@@ -785,7 +785,7 @@ print(f'df/dy at {w}, {x}, {y}, {z} is {df_dy}')
 print(f'df/dz at {w}, {x}, {y}, {z} is {df_dz}')
 ```
 
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 The fact that we compute derivatives from $f$ back towards the inputs rather than from the inputs forward to the outputs 
@@ -983,9 +983,9 @@ If we look at the value of the function, its gradient, and its Hessian :eqref:`e
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 $$
 \begin{aligned}
@@ -1205,9 +1205,9 @@ $$
 f(\mathbf{x}) = \sum_{i = 1}^{n} \beta_ix_i = \beta_1x_1 + \cdots + \beta_nx_n.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
 
 <!--
 If we now take the partial derivative with respect to say $\beta_1$, note that everything is zero but the first term, 
@@ -1362,9 +1362,9 @@ $$
 \frac{d}{dx_k}x_ia_{ij}x_j = [\mathbf{A} + \mathbf{A}^\top]_{ki}x_i.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
 
 <!--
 Similarly, this term is now the product of the matrix $\mathbf{A} + \mathbf{A}^\top$ by the vector $\mathbf{x}$, so we see that
@@ -1466,9 +1466,9 @@ $$
 \frac{d}{d\mathbf{V}} \|\mathbf{X} - \mathbf{U}\mathbf{V}\|_2^{2}= -2(\mathbf{X} - \mathbf{U}\mathbf{V})\mathbf{U}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 10 ===================== -->
 
 <!--
 However, if we look at this it does not quite work. Recall that $\mathbf{X}$ is $n \times m$, as is $\mathbf{U}\mathbf{V}$, 
@@ -1603,9 +1603,9 @@ If we notice that $u_{ia} = [\mathbf{U}^\top]_{ai}$, we can then write
 
 *dịch đoạn phía trên*
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
-<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
+<!-- ===================== Bắt đầu dịch Phần 11 ===================== -->
 
 $$
 \frac{d}{dv_{ab}} \|\mathbf{X} - \mathbf{U}\mathbf{V}\|_2^{2}= -2\sum_{i} [\mathbf{U}^\top]_{ai}[\mathbf{X}-\mathbf{U}\mathbf{V}]_{ib}.
@@ -1681,7 +1681,7 @@ How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $
 *dịch đoạn phía trên*
 
 
-<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
+<!-- ===================== Kết thúc dịch Phần 11 ===================== -->
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
 
@@ -1727,5 +1727,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 9 -->
 * 
 
+<!-- Phần 10 -->
+* 
+
+<!-- Phần 11 -->
+* 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
