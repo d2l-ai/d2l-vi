@@ -195,19 +195,18 @@ the sentence "John Smith 's car is new" should be tagged as
 "NNP (noun, proper singular) NNP POS (possessive ending) NN (noun, singular or mass) VB (verb, base form) JJ (adjective)".
 -->
 
-Bây giờ ta hãy xem xét các tác vụ ở mức token, ví dụ như *gắn thẻ văn bản*, nơi mỗi token được gán một nhãn.
-Trong các tác vụ gán thẻ, *gán thẻ từ loại (part-of-speech tagging)* gán cho mỗi từ một thẻ từ loại (ví dụ, tính từ hay danh từ)
-dựa vào vai trò của từ đó trong câu.
+Bây giờ ta hãy xem xét các tác vụ ở mức token, ví dụ như *gán thẻ văn bản*, nơi mỗi token được gán một nhãn.
+Trong số các tác vụ gán thẻ văn bản, *gán thẻ từ loại (part-of-speech tagging)* gán cho mỗi từ một thẻ từ loại (ví dụ, tính từ hay danh từ) dựa vào vai trò của từ đó trong câu.
 Ví dụ, dựa vào tập thẻ Penn Treebank II,
-câu "John Smith 's car is new" nên được gắn thẻ như
-"NNP (danh từ, số ít) NNP POS (sở hữu cách) NN (danh từ, số ít hoặc nhiều) VD (động từ, động từ nguyên thể không to) JJ (tính từ)".
+câu "John Smith 's car is new" nên được gán thẻ như
+"NNP (danh từ, số ít) NNP POS (sở hữu cách) NN (danh từ, số ít hoặc nhiều) VB (động từ, động từ nguyên thể không to) JJ (tính từ)".
 
 
 <!--
 ![Fine-tuning BERT for text tagging applications, such as part-of-speech tagging. Suppose that the input single text has six tokens.](../img/bert-tagging.svg)
 -->
 
-![Tinh chỉnh BERT cho ứng dụng gắn thẻ văn bản, ví dụ như gắn thẻ loại từ. Giả sử rằng đầu vào là một văn bản đơn có sáu token.](../img/bert-tagging.svg)
+![Tinh chỉnh BERT cho ứng dụng gán thẻ văn bản, ví dụ như gán thẻ từ loại. Giả sử đầu vào là một văn bản đơn có sáu token.](../img/bert-tagging.svg)
 :label:`fig_bert-tagging`
 
 
@@ -218,10 +217,10 @@ in text tagging, the BERT representation of *every token* of the input text
 is fed into the same extra fully-connected layers to output the label of the token, such as a part-of-speech tag.
 -->
 
-Tinh chỉnh BERT cho ứng dụng gắn thẻ văn bản được minh họa trong :numref:`fig_bert-tagging`.
-So sánh với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất nằm ở trong
-phần gắn thẻ văn bản, sự biểu diễn BERT của *mỗi token* của văn bản đầu vào
-được truyền vào các tầng kết nối đầy đủ mở rộng giống nhau để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
+Tinh chỉnh BERT cho ứng dụng gán thẻ văn bản được minh họa trong :numref:`fig_bert-tagging`.
+So với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất là
+biểu diễn BERT của *mỗi token* của văn bản đầu vào
+được truyền vào các tầng kết nối đầy đủ bổ sung giống nhau để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
 
 
 <!--
@@ -246,12 +245,12 @@ Thus, the goal in SQuAD v1.1 is to predict the start and end of the text span in
 Là một ứng dụng khác ở mức token, *trả lời câu hỏi* phản ánh khả năng đọc hiểu.
 Ví dụ, tập dữ liệu trả lời câu hỏi Stanford (SQuAD v1.1)
 bao gồm các đoạn văn và các câu hỏi, nơi mà câu trả lời cho mỗi câu hỏi
-chỉ là một phần văn bản (khoảng văn bản) trong đoạn văn mà câu hỏi đang nói tới :cite:`Rajpurkar.Zhang.Lopyrev.ea.2016`.
+chỉ là một phần văn bản (khoảng văn bản - *text span*) trong đoạn văn mà câu hỏi đang đề cập tới :cite:`Rajpurkar.Zhang.Lopyrev.ea.2016`.
 Để giải thích, hãy xét đoạn văn sau
 "Một số chuyên gia cho rằng sự hiệu quả của khẩu trang là chưa thể khẳng định. Tuy nhiên, các nhà sản xuất khẩu trang cho rằng sản phẩm của họ, như là khẩu trang N95, có thể bảo vệ khỏi virus."
 và câu hỏi "Ai cho rằng khẩu trang N95 có thể bảo vệ khỏi virus?".
 Câu trả lời nên là khoảng văn bản "các nhà sản xuất khẩu trang" trong đoạn văn.
-Vì thế, mục đích trong SQuAD v1.1 là dự đoán điểm khởi đầu và kết thúc của khoảng văn bản trong đoạn văn được cho trước một cặp câu hỏi và đoạn văn.
+Vì thế, mục đích trong SQuAD v1.1 là dự đoán điểm khởi đầu và kết thúc của khoảng văn bản trong đoạn văn, khi cho trước câu hỏi và đoạn văn.
 
 <!--
 ![Fine-tuning BERT for question answering. Suppose that the input text pair has two and three tokens.](../img/bert-qa.svg)
@@ -278,16 +277,16 @@ When predicting the end, any passage token of position $i$ is transformed by the
 :numref:`fig_bert-qa` depicts fine-tuning BERT for question answering.
 -->
 
-Để tinh chỉnh BERT cho việc trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt như 
+Để tinh chỉnh BERT cho ứng dụng trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt như 
 chuỗi văn bản thứ nhất thứ hai của trong đầu vào của BERT.
 Để dự đoán vị trí của phần bắt đầu của khoảng văn bản, cùng một tầng kết nối đầy đủ được thêm vào sẽ chuyển hóa
 biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ thành một giá trị vô hướng $s_i$. 
 Các giá trị vô hướng của tất cả token trong đoạn văn được tiếp tục biến đổi bởi hàm softmax
-trở thành một phân phối xác suất, mỗi vị trí token $i$ trong đoạn văn được gán
+trở thành một phân phối xác suất, dẫn tới mỗi vị trí $i$ của token trong đoạn văn được gán
 cho một xác suất $p_i$, là xác suất token đó là điểm bắt đầu của khoảng văn bản.
-Dự đoán điểm kết thúc của khoảng văn bản cũng giống như ở trên, ngoại trừ các tham số trong tầng kết nối đầy đủ mở rộng là độc lập với các tầng để dự đoán điểm bắt đầu.
-Khi dự đoán điểm kết thúc, bất kỳ token nào trong đoạn văn có vị trí $i$ được biến đổi bởi tầng kết nối đầy đủ trở thành một giá trị vô hướng $e_i$.
-:numref:`fig_bert-qa` miêu tả tinh chỉnh BERT cho việc trả lời câu hỏi.
+Dự đoán điểm kết thúc của khoảng văn bản cũng tương tự, ngoại trừ các tham số trong tầng kết nối đầy đủ mở rộng là độc lập với các tầng để dự đoán điểm bắt đầu.
+Khi dự đoán điểm kết thúc, token có vị trí $i$ trong đoạn văn được biến đổi thành một giá trị vô hướng $e_i$ bởi tầng kết nối đầy đủ.
+:numref:`fig_bert-qa` minh họa tinh chỉnh BERT cho ứng dụng trả lời câu hỏi.
 
 
 <!--
@@ -297,8 +296,8 @@ When predicting the span, we can compute the score $s_i + e_j$ for a valid span
 from position $i$ to position $j$ ($i \leq j$), and output the span with the highest score.
 -->
 
-Cho việc trả lời câu hỏi, mục đích của huấn luyện học có giám sát đơn giản là cực đại hóa hàm log hợp lý của các vị trí bắt đầu và kết thúc thực. 
-Khi dự đoán khoảng, ta có thể tính toán điểm $s_i + e_j$ cho một khoảng hợp lệ từ vị trí $i$ tới vị trí $j$ ($i \leq j$), và đưa ra khoảng có điểm cao nhất.
+Cho việc trả lời câu hỏi, mục đích của huấn luyện học có giám sát đơn giản là cực đại hóa hàm log hợp lý của các vị trí bắt đầu và kết thúc nhãn gốc. 
+Khi dự đoán khoảng văn bản, ta có thể tính toán giá trị $s_i + e_j$ cho một khoảng hợp lệ từ vị trí $i$ tới vị trí $j$ ($i \leq j$), và đưa ra khoảng có giá trị cao nhất làm đầu ra.
 
 
 ## Tóm tắt
@@ -312,9 +311,9 @@ while all the parameters in the pretrained BERT model are fine-tuned.
 -->
 
 * BERT đòi hỏi thay đổi kiến trúc tối thiểu (các tầng kết nối đầy đủ mở rộng) cho những ứng dụng xử lý ngôn ngữ tự nhiên ở mức chuỗi và mức token,
-ví dụ như phân loại văn bản đơn (ví dụ, phân tích cảm xúc và kiểm tra khả năng chấp nhận ngôn ngữ), phân loại cặp văn bản hay hồi quy 
-(ví dụ, suy luận ngôn ngữ tự nhiên và sự tương đồng ngữ nghĩa văn bản), gắn thẻ văn bản (ví dụ, gắn thẻ từ loại) và trả lời câu hỏi.
-* Trong suốt quá trình học có giám sát của một ứng dụng xuôi dòng, các thông số của tầng mở rộng được học từ đầu trong khi tất cả các thông số trong mô hình tiền huấn luyện BERT thì được tinh chỉnh.
+ví dụ như phân loại văn bản đơn (phân tích cảm xúc và kiểm tra khả năng chấp nhận được về ngôn ngữ), phân loại hoặc hồi quy cặp văn bản 
+(suy luận ngôn ngữ tự nhiên và đo sự tương đồng ngữ nghĩa văn bản), gán thẻ văn bản (như gán thẻ từ loại) và trả lời câu hỏi.
+* Trong suốt quá trình học có giám sát của một ứng dụng xuôi dòng, các thông số của các tầng mở rộng được học từ đầu trong khi tất cả các thông số trong mô hình BERT đã tiền huấn luyện sẽ được tinh chỉnh.
 
 
 ## Bài tập
@@ -334,8 +333,8 @@ nó trả về một danh sách xếp hạng các bài viết tin tức liên qu
 Giả sử như ta có một tập lớn các bài báo và một số lượng lớn các truy vấn.
 Để đơn giản hóa vấn đề, giả thiết rằng bài báo liên quan nhất được gán nhãn cho từng truy vấn.
 Làm cách nào để ta áp dụng lấy mẫu âm (xem :numref:`subsec_negative-sampling`) và BERT trong thiết kế thuật toán?
-2. Dùng cách nào để tận dụng BERT trong huấn luyện các mô hình ngôn ngữ?
-3. Dùng cách nào để tận dụng BERT trong dịch máy?
+2. Làm thế nào để tận dụng BERT trong huấn luyện các mô hình ngôn ngữ?
+3. Làm thế nào để tận dụng BERT trong dịch máy?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -354,16 +353,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Văn Quang
-
-<!-- Phần 2 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Trần Yến Thy
 * Nguyễn Văn Cường
