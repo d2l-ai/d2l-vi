@@ -80,7 +80,7 @@ We can formulate the maximum posterior estimator to derive the generic optimizat
 -->
 
 trong đó $\Theta$ biểu diễn các tham số của một mô hình gợi ý bất kỳ, $>_u$ biểu diễn tổng xếp hạng mong muốn được cá nhân hoá của tất cả sản phẩm cho người dùng $u$.
-Ta có thể biểu diễn công thức của bộ ước lượng hậu nghiệm cực đại xuất phát từ tiêu chuẩn chung của bài toán tối ưu cho tác vụ cá nhân hoá xếp hạng.
+Ta có thể xây dựng công thức của bộ ước lượng hậu nghiệm cực đại để rút ra tiêu chuẩn tối ưu khái quát của tác vụ cá nhân hoá xếp hạng.
 
 
 $$
@@ -124,7 +124,7 @@ We begin by importing the Loss class and the np module.
 -->
 
 Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng mất mát cá nhân hoá xếp hạng Bayes.
-Ta bắt đầu bằng việc nhập vào lớp Loss và mô-đun np.
+Ta bắt đầu bằng việc nhập lớp Loss và mô-đun np.
 
 
 ```{.python .input  n=5}
@@ -166,9 +166,9 @@ provided within the gluon library that is often used in classifiers such as SVMs
 The loss used for ranking in recommender systems has the following form.
 -->
 
-Mất mát Hinge trong tác vụ xếp hạng có sự khác biệt so với dạng [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
-được cung cấp trong thư viện gluon mà thường được sử dụng trong các bộ phân loại ví dụ như SVM.
-Mất mát này trong tác vụ xếp hạng trong hệ thống gợi ý có dạng như sau.
+Mất mát Hinge trong tác vụ xếp hạng có sự khác biệt so với [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
+được cung cấp trong thư viện gluon mà thường được sử dụng trong các bộ phân loại như SVM.
+Mất mát được sử dụng cho tác vụ xếp hạng trong hệ thống gợi ý có dạng như sau.
 
 
 $$
@@ -207,7 +207,7 @@ class HingeLossbRec(gluon.loss.Loss):
 These two losses are interchangeable for personalized ranking in recommendation.
 -->
 
-Hai loại mất mát này có thể thay thế lẫn nhau trong cá nhân hoá xếp hạng trong hệ thống gợi ý.
+Hai loại mất mát này có thể thay thế lẫn nhau cho tác vụ cá nhân hoá xếp hạng trong hệ thống gợi ý.
 
 
 ## Tóm tắt
@@ -228,8 +228,8 @@ Hai loại mất mát này có thể thay thế lẫn nhau trong cá nhân hoá 
 * Can you find any recommendation models that use BPR or hinge loss?
 -->
 
-* Liệu có biến thể nào khác của mất mát BPR và mất mát Hinge?
-* Bạn có thể tìm mô hình gợi ý nào khác sử dụng mất mát BPR hoặc mất mát Hinge?
+* Liệu có biến thể nào khác của mất mát BPR và mất mát Hinge không?
+* Bạn có thể tìm mô hình gợi ý nào khác sử dụng mất mát BPR hoặc mất mát Hinge không?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
