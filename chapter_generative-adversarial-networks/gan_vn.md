@@ -62,7 +62,7 @@ Nhưng thành công của mạng nơ-rôn sâu với học phân biệt đã m�
 Một hướng lớn trong hơn ba năm vừa qua là đã áp dụng 
 mạng sâu phân biệt để vượt qua các thách thức trong các bài toán mà nhìn chung không được coi là học có giám sát.
 Các mô hình ngôn ngữ mạng nơ-ron hồi tiếp là một ví dụ về việc sử dụng một mạng phân biệt
-(được huấn luyện để dự đoán ký tự kế tiếp) mà ngay khi được huấn luyện có thể vận hành như một mô hình sinh.
+(được huấn luyện để dự đoán ký tự kế tiếp) mà một khi được huấn luyện có thể vận hành như một mô hình sinh.
 
 
 <!--
