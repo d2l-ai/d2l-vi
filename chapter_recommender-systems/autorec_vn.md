@@ -156,14 +156,14 @@ class AutoRec(nn.Block):
 ## Reimplementing the Evaluator
 -->
 
-## *dịch tiêu đề trên*
+## Lập trình lại Phép đánh giá
 
 
 <!--
 Since the input and output have been changed, we need to reimplement the evaluation function, while we still use RMSE as the accuracy measure.
 -->
 
-*dịch đoạn phía trên*
+Do đầu vào và đầu ra thay đổi nên ta cần phải lập trình lại hàm đánh giá, nhưng vẫn sử dụng RMSE làm phép đo độ chính xác.
 
 
 ```{.python .input  n=3}
@@ -184,7 +184,7 @@ def evaluator(network, inter_matrix, test_data, devices):
 ## Training and Evaluating the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện và Đánh giá Mô hình
 
 
 <!--
@@ -193,7 +193,9 @@ We can clearly see that the test RMSE is lower than the matrix factorization mod
 confirming the effectiveness of neural networks in the rating prediction task.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy cùng huấn luyện và đánh giá AutoRec trên tập dữ liệu MovieLens.
+Ta có thể thấy rõ ràng rằng RMSE kiểm tra thấp hơn so với mô hình phân rã ma trận,
+điều này xác thực độ hiệu quả của mạng nơ-ron trong nhiệm vụ dự đoán đánh giá.
 
 
 ```{.python .input  n=4}
@@ -230,7 +232,8 @@ d2l.train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 * Experiments on the MovieLens 100K dataset show that AutoRec achieves superior performance than matrix factorization.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể dựng thuật toán phân rã ma trận với bộ tự giải mã, trong khi tích hợp các tầng phi tuyến và điều chuẩn dropout.
+* Thí nghiệm trên tập dữ liệu MovieLens 100K cho thấy AutoRec đạt hiệu năng vượt trội so với phân rã ma trận.
 
 
 ## Bài tập
@@ -241,7 +244,9 @@ d2l.train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 * Can you find a better combination of decoder and encoder activation functions?
 -->
 
-*dịch đoạn phía trên*
+* Thay đổi kích thước ẩn của AutoRec để quan sát ảnh hưởng của việc này lên hiệu năng mô hình.
+* Hãy thử thêm vào nhiều tầng ẩn. Việc này có giúp cải thiện hiệu năng mô hình không?
+* Liệu bạn có thể tìm một bộ hàm kích hoạt nào khác tốt hơn cho bộ giải mã và bộ mã hoá?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -269,6 +274,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
