@@ -57,7 +57,7 @@ The recurrent neural network language models are one example of using a discrimi
 (trained to predict the next character) that once trained can act as a generative model.
 -->
 
-Cho đến gần đây, ta không có phương cách nào để có thể tổng hợp các ảnh như thật mới.
+Cho đến gần đây, ta không có phương cách nào để có thể tổng hợp các ảnh mới như thật.
 Nhưng thành công của mạng nơ-rôn sâu với học phân biệt đã mở ra những khả năng mới.
 Một hướng lớn trong hơn ba năm vừa qua là đã áp dụng 
 mạng sâu phân biệt để vượt qua các thách thức trong các bài toán mà ta nhìn chung không nghĩ nó như là bài toán học có giám sát.
