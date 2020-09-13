@@ -102,7 +102,7 @@ Moreover, for sparse features, only non-zero elements needs to be computed so th
 -->
 
 Với biến đổi này, độ phức tạp của mô hình giảm đi đáng kể.
-Hơn nữa, với đặc trưng thưa, chỉ các phần tử khác không cần phải tính toán nên độ phức tạp toàn phần quan hệ tuyến tính với số đặc trưng khác không.
+Hơn nữa, với đặc trưng thưa, chỉ các phần tử khác 0 cần phải tính toán nên độ phức tạp toàn phần có quan hệ tuyến tính với số đặc trưng khác 0.
 
 
 <!--
@@ -111,7 +111,7 @@ Standard optimizers such as SGD and Adam are viable for optimization.
 -->
 
 Để học mô hình FM, ta có thể sử dụng mất mát MSE cho tác vụ hồi quy, mất mát entropy chéo với tác vụ phân loại, và mất mát BPR với tác vụ xếp hạng.
-Các bộ tối ưu chuẩn như SGD và Adam đều khả thi để tối ưu.
+Các bộ tối ưu chuẩn như SGD và Adam đều khả thi cho việc tối ưu.
 
 
 ```{.python .input  n=2}
@@ -237,7 +237,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 -->
 
 * Bạn có thể kiểm tra FM trên một tập dữ liệu khác ví dụ như tập dữ liệu Avazu, MovieLens, and Criteo không?
-* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, liệu bạn có thể quan sát thấy kiểu mẫu tương tự như vậy với phân rã ma trận?
+* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, liệu bạn có thể quan sát thấy khuôn mẫu tương tự đối với phân rã ma trận?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
