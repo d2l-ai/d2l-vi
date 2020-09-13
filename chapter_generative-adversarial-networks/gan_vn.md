@@ -60,7 +60,7 @@ The recurrent neural network language models are one example of using a discrimi
 Cho đến gần đây, ta không có phương cách nào để có thể tổng hợp các ảnh mới như thật.
 Nhưng thành công của mạng nơ-rôn sâu với học phân biệt đã mở ra những khả năng mới.
 Một hướng lớn trong hơn ba năm vừa qua là đã áp dụng 
-mạng sâu phân biệt để vượt qua các thách thức trong các bài toán mà ta nhìn chung không nghĩ nó như là bài toán học có giám sát.
+mạng sâu phân biệt để vượt qua các thách thức trong các bài toán mà nhìn chung không được coi là học có giám sát.
 Các mô hình ngôn ngữ mạng nơ-ron hồi tiếp là một ví dụ về việc sử dụng một mạng phân biệt
 (được huấn luyện để dự đoán ký tự kế tiếp) mà ngay khi được huấn luyện có thể vận hành như một mô hình sinh.
 
