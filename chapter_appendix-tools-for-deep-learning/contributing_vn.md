@@ -4,7 +4,7 @@
 # Contributing to This Book
 -->
 
-# *dịch tiêu đề trên*
+# Đóng góp cho Quyển sách
 :label:`sec_how_to_contribute`
 
 
