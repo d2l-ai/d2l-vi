@@ -5,7 +5,7 @@
 # Natural Language Inference and the Dataset
 -->
 
-# Suy luận ngôn ngữ tự nhiên và tập dữ liệu
+# Suy luận ngôn ngữ tự nhiên và Tập dữ liệu
 :label:`sec_natural-language-inference-and-dataset`
 
 
@@ -17,9 +17,10 @@ or eliminate redundancy by identifying sentences that are semantically equivalen
 Instead, we need to be able to reason over pairs of text sequences.
 -->
 
-Trong :numref:`sec_sentiment`, chúng ta đã thảo luận về bài toán phân tích sắc thái. Mục đích của bài toán là phân loại một chuỗi văn bản vào các hạng mục đã định trước, chẳng hạn như các sắc thái đối lập.
+Trong :numref:`sec_sentiment`, chúng ta đã thảo luận về bài toán phân tích sắc thái cảm xúc (*sentiment analysis*).
+Mục đích của bài toán là phân loại một chuỗi văn bản vào các hạng mục đã định trước, chẳng hạn như các sắc thái đối lập.
 Tuy nhiên, trong trường hợp cần xác định liệu một câu có thể suy ra được từ một câu khác không, hoặc khi cần loại bỏ sự dư thừa bằng việc xác định các câu tương đương về ngữ nghĩa, việc phân lớp một chuỗi văn bản là không đủ. 
-Khi đó chúng ta cần khả năng suy luận trên các cặp chuỗi văn bản.
+Thay vào đó chúng ta cần khả năng suy luận trên các cặp chuỗi văn bản.
 
 
 <!--
@@ -34,8 +35,8 @@ In other words, natural language inference determines the logical relationship b
 Such relationships usually fall into three types:
 -->
 
-*Suy luận ngôn ngữ tự nhiên* nghiên cứu liệu một *giả thuyết* có thể được suy ra được từ một *tiên đề* không, khi cả hai đều là một chuỗi văn bản. 
-Nói cách khác, suy diễn ngôn ngữ tự nhiên quyết định mối quan hệ lô-gic giữa một cặp chuỗi văn bản. 
+*Suy luận ngôn ngữ tự nhiên* nghiên cứu liệu một *giả thuyết (hypothesis)* có thể được suy ra được từ một *tiền đề (premise)* không, cả hai đều là chuỗi văn bản. 
+Nói cách khác, suy diễn ngôn ngữ tự nhiên quyết định mối quan hệ logic giữa một cặp chuỗi văn bản. 
 Các mối quan hệ đó thường rơi vào một trong ba loại sau đây:
 
 
@@ -45,8 +46,8 @@ Các mối quan hệ đó thường rơi vào một trong ba loại sau đây:
 * *Neutral*: all the other cases.
 -->
 
-* *Kéo theo*: giả thuyết có thể suy ra được từ tiên đề.
-* *Đối lập*: phủ định của giả thuyết có thể suy ra được từ tiên đề.
+* *Kéo theo*: giả thuyết có thể suy ra được từ tiền đề.
+* *Đối lập*: phủ định của giả thuyết có thể suy ra được từ tiền đề.
 * *Trung tính*: tất cả các trường hợp khác.
 
 
@@ -58,14 +59,14 @@ in the hypothesis can be inferred from "hugging one another" in the premise.
 
 Suy diễn ngôn ngữ tự nhiên còn gọi là bài toán nhận dạng quan hệ kéo theo trong văn bản.
 Ví dụ, cặp sau được gán nhãn là *kéo theo* bởi vì "thể hiện tình cảm" trong giả thuyết có thể
-được suy ra từ "ôm nhau" trong tiên đề.
+được suy ra từ "ôm nhau" trong tiền đề.
 
 
 <!--
 > Premise: Two women are hugging each other.
 -->
 
-> Tiên đề: Hai người đang ôm nhau.
+> tiền đề: Hai người đang ôm nhau.
 
 <!--
 > Hypothesis: Two women are showing affection.
@@ -78,14 +79,14 @@ Ví dụ, cặp sau được gán nhãn là *kéo theo* bởi vì "thể hiện 
 The following is an example of *contradiction* as "running the coding example" indicates "not sleeping" rather than "sleeping".
 -->
 
-Sau đây là một ví dụ về *đối lập* bởi vì "chạy đoạn mã ví dụ" cho biết "không ngủ" chứ không phải "ngủ".
+Sau đây là một ví dụ về *đối lập*, vì "chạy đoạn mã ví dụ" cho biết "không ngủ" chứ không phải "ngủ".
 
 
 <!--
 > Premise: A man is running the coding example from Dive into Deep Learning.
 -->
 
-> Tiên đề: Một bạn đang chạy đoạn mã ví dụ trong Đắm mình vào học sâu.
+> tiền đề: Một bạn đang chạy đoạn mã ví dụ trong Đắm mình vào học sâu.
 
 <!--
 > Hypothesis: The man is sleeping.
@@ -105,7 +106,7 @@ Ví dụ thứ ba cho thấy mối quan hệ *trung tính* vì cả "nổi tiế
 > Premise: The musicians are performing for us.
 -->
 
-> Tiên đề: Các nhạc công đang biểu diễn cho chúng tôi.
+> tiền đề: Các nhạc công đang biểu diễn cho chúng tôi.
 
 <!--
 > Hypothesis: The musicians are famous.
@@ -120,7 +121,7 @@ It enjoys wide applications ranging from information retrieval to open-domain qu
 To study this problem, we will begin by investigating a popular natural language inference benchmark dataset.
 -->
 
-Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm để hiểu ngôn ngữ tự nhiên.
+Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm trong việc hiểu ngôn ngữ tự nhiên.
 Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏi đáp trong miền mở.
 Để nghiên cứu vấn đề này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến của suy luận ngôn ngữ tự nhiên.
 
@@ -132,7 +133,7 @@ Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏ
 ## The Stanford Natural Language Inference (SNLI) Dataset
 -->
 
-## Tập dữ liệu suy luận ngôn ngữ tự nhiên của Stanford (SNLI)
+## Tập dữ liệu Suy luận ngôn ngữ tự nhiên của Stanford (SNLI)
 
 
 <!--
@@ -140,7 +141,7 @@ Stanford Natural Language Inference (SNLI) Corpus is a collection of over $500,0
 We download and store the extracted SNLI dataset in the path `../data/snli_1.0`.
 -->
 
-Tập ngữ liệu ngôn ngữ tự nhiên Stanford (SNLI) là một bộ sưu tập hơn $500,000$ cặp câu Tiếng Anh được gán nhãn :cite:`Bowman.Angeli.Potts.ea.2015`.
+Tập ngữ liệu ngôn ngữ tự nhiên của Stanford (SNLI) là một bộ sưu tập hơn $500,000$ cặp câu Tiếng Anh được gán nhãn :cite:`Bowman.Angeli.Potts.ea.2015`.
 Ta tải xuống và giải nén tập dữ liệu SNLI trong đường dẫn `../data/snli_1.0`.
 
 
@@ -175,8 +176,8 @@ The original SNLI dataset contains much richer information than what we really n
 Thus, we define a function `read_snli` to only extract part of the dataset, then return lists of premises, hypotheses, and their labels.
 -->
 
-Tập dữ liệu SNLI gốc chứa nhiều thông tin phong phú hơn những gì ta thực sự cần cho thí nghiệm của chúng ta.
-Vì thế, ta định nghĩa một hàm `read_snli` để chỉ trích xuất phần của tập dữ liệu, rồi trả về các danh sách tiền đề (*premise*), giả thuyết (*hypothesis*) và nhãn của chúng.
+Tập dữ liệu SNLI gốc chứa thông tin phong phú hơn những gì thực sự cần cho thí nghiệm của chúng ta.
+Vì thế, ta định nghĩa một hàm `read_snli` để chỉ trích xuất một phần của tập dữ liệu, rồi trả về các danh sách tiền đề, giả thuyết và nhãn của chúng.
 
 
 ```{.python .input  n=66}
@@ -207,8 +208,7 @@ Now let us print the first $3$ pairs of premise and hypothesis,
 as well as their labels ("0", "1", and "2" correspond to "entailment", "contradiction", and "neutral", respectively ).
 -->
 
-Bây giờ chúng ta in $3$ cặp đầu tiên các tiền đề và giả thuyết,
-cũng như nhãn của chúng ("0", "1", và "2" lần lượt tương ứng với "kéo theo", "đối lập", và "trung tính").
+Bây giờ ta in $3$ cặp tiền đề và giả thuyết đầu tiên cũng như nhãn của chúng ("0", "1", và "2" tương ứng với "kéo theo", "đối lập", và "trung tính").
 
 
 ```{.python .input  n=70}
@@ -240,7 +240,7 @@ for data in [train_data, test_data]:
 ### Defining a Class for Loading the Dataset
 -->
 
-### Định nghĩa một Lớp để tải tập dữ liệu
+### Định nghĩa Lớp Nạp tập dữ liệu
 
 
 <!--
@@ -251,9 +251,9 @@ while special tokens “&lt;pad&gt;” will be appended to shorter sequences unt
 By implementing the `__getitem__` function, we can arbitrarily access the premise, hypothesis, and label with the index `idx`.
 -->
 
-Dưới đây ta định nghĩa một lớp để tải tập dữ liệu SNLI bằng cách kế thừa từ lớp `Dataset` trong Gluon.
-Đối số `num_steps` trong phương thức khởi tạo chỉ định rõ độ dài chuỗi văn bản, do đó mỗi minibatch sẽ có cùng kích thước.
-Nói cách khác, các token phía sau `num_steps` token đầu tiên ở trong chuỗi dài hơn thì được loại bỏ, trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
+Dưới đây ta định nghĩa một lớp để nạp tập dữ liệu SNLI bằng cách kế thừa lớp `Dataset` trong Gluon.
+Đối số `num_steps` trong phương thức khởi tạo chỉ rõ độ dài chuỗi văn bản, do đó mỗi minibatch sẽ có cùng kích thước.
+Nói cách khác, các token phía sau `num_steps` token đầu tiên ở trong chuỗi dài hơn sẽ được loại bỏ, trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
 Bằng cách lập trình hàm `__getitem__`, ta có thể truy cập vào các tiền đề, giả thuyết và nhãn bất kỳ với chỉ số `idx`.
 
 
@@ -305,7 +305,7 @@ It is noteworthy that we must use the vocabulary constructed from the training s
 As a result, any new token from the testing set will be unknown to the model trained on the training set.
 -->
 
-Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng chung với bộ từ vựng của tập huấn luyện.
+Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng với bộ từ vựng của tập huấn luyện.
 Lưu ý rằng ta phải sử dụng bộ từ vựng được xây dựng từ tập huấn luyện cho tập kiểm tra.
 Kết quả là, mô hình được huấn luyện trên tập huấn luyện sẽ không biết bất kỳ token mới nào từ tập kiểm tra nếu có.
 
@@ -334,7 +334,7 @@ and invoke the `load_data_snli` function to get the data iterators and vocabular
 Then we print the vocabulary size.
 -->
 
-Bây giờ ta đặt kích thước batch là $128$ và độ dài chuỗi là $50$,
+Ở đây ta đặt kích thước batch là $128$ và độ dài chuỗi là $50$,
 và gọi hàm `load_data_snli` để lấy iterator dữ liệu và bộ từ vựng. 
 Sau đó ta in kích thước của bộ từ vựng.
 
@@ -352,7 +352,7 @@ we have $2$ inputs `X[0]` and `X[1]` representing pairs of premises and hypothes
 -->
 
 Bây giờ ta in kích thước của minibatch đầu tiên.
-Trái với phân tích cảm xúc, 
+Trái với phân tích sắc thái cảm xúc, 
 ta có $2$ đầu vào `X[0]` và `X[1]` biểu diễn cặp tiền đề và giả thuyết. 
 
 
@@ -373,7 +373,7 @@ for X, Y in train_iter:
 -->
 
 * Suy luận ngôn ngữ tự nhiên nghiên cứu liệu một giả thuyết có thể được suy ra từ một tiền đề hay không, khi cả hai đều là chuỗi văn bản.
-* Trong suy luận ngôn ngữ tự nhiên, mối quan hệ giữa tiền đề và giả thuyết bao gồm kéo theo, mâu thuẫn và trung tính.
+* Trong suy luận ngôn ngữ tự nhiên, mối quan hệ giữa tiền đề và giả thuyết bao gồm kéo theo, đối lập và trung tính.
 * Bộ dữ liệu suy luận ngôn ngữ tự nhiên Stanford (SNLI) là một tập dữ liệu đánh giá xếp hạng phổ biến cho suy luận ngôn ngữ tự nhiên.
 
 
@@ -385,9 +385,9 @@ Can you design a measure for evaluating machine translation results by using nat
 2. How can we change hyperparameters to reduce the vocabulary size? 
 -->
 
-1. Dịch máy từ lâu được đánh giá bề ngoài dựa trên sự trùng khớp $n$-gram giữa bản dịch đầu ra và bản dịch nhãn gốc.
+1. Dịch máy từ lâu đã được đánh giá theo một cách hời hợt dựa trên sự trùng khớp $n$-gram giữa bản dịch đầu ra và bản dịch nhãn gốc.
 Bạn có thể thiết kế một phép đo để đánh giá kết quả dịch máy bằng cách sử dụng suy luận ngôn ngữ tự nhiên không?
-2. Làm cách nào ta có thể thay đổi siêu tham số để giảm kích thước bộ từ vựng?
+2. Thay đổi siêu tham số như thế nào để giảm kích thước bộ từ vựng?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
@@ -406,13 +406,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Thái Bình
 * Lê Khắc Hồng Phúc
+* Trần Yến Thy
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-
-<!-- Phần 3 -->
-* Trần Yến Thy
