@@ -4,7 +4,7 @@
 # Sequence-Aware Recommender Systems
 -->
 
-# *dịch tiêu đề trên*
+# Hệ thống Gợi ý có Nhận thức về Chuỗi
 
 
 <!--
@@ -14,7 +14,10 @@ It is a sequence-aware recommender :cite:`Quadrana.Cremonesi.Jannach.2018` where
 A number of recent literatures have demonstrated the usefulness of incorporating such information in modeling users' temporal behavioral patterns and discovering their interest drift.
 -->
 
-*dịch đoạn phía trên*
+Trong phần trước, ta trừu tượng hoá tác vụ gợi ý như một bài toán hoàn thành ma trận mà không xét hành vi ngắn hạn của người dùng.
+Trong phần này, chúng tôi sẽ giới thiệu một mô hình gợi ý cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
+Đây là một hệ thống gợi ý có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường là có mốc thời gian diễn ra.
+Nhiều bài báo đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng trong sở thích của họ.
 
 
 <!--
@@ -30,14 +33,23 @@ resulting in a more comprehensive modeling of user interests.
 Details of the model are described as follows.
 -->
 
-*dịch đoạn phía trên*
+Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình gợi ý embedding chuỗi tích chập (*convolutional sequence embedding recommendation model*),
+kế thừa mạng nơ-ron tích chập nhằm nắm bắt khuôn mẫu động có ảnh hưởng đến những hoạt động gần đây của người dùng.
+Thành phần chính của Caser bao gồm một mạng tích chập ngang và một mạng tích chập dọc,
+nhằm lần lượt khám phá khuôn mẫu mức liên kết (*union-level*) và mức điểm (*point-level*) của chuỗi.
+Khuôn mẫu mức điểm ám chỉ tác động của một điểm riêng lẻ trong lịch sử của chuỗi chứa điểm đó lên sản phẩm mục tiêu,
+trong khi khuôn mẫu mức liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu sau đó.
+Ví dụ, việc mua sữa cùng với bơ dẫn tới xác suất mua thêm cả bột mì cao hơn so với việc chỉ mua một trong hai.
+Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong tầng kết nối đầy đủ cuối,
+kết quả là sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
+Chi tiết về mô hình này sẽ được mô tả ở các phần dưới.
 
 
 <!--
 ## Model Architectures
 -->
 
-## *dịch tiêu đề trên*
+## Kiến trúc Mô hình
 
 
 <!--
@@ -47,7 +59,10 @@ The goal of Caser is to recommend item by considering user general tastes as wel
 Suppose we take the previous $L$ items into consideration, an embedding matrix that represents the former interactions for time step $t$ can be constructed:
 -->
 
-*dịch đoạn phía trên*
+Trong hệ thống gợi ý có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm từ tập sản phẩm.
+Gọi $S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi đã sắp xếp.
+Mục tiêu của Caser là gợi ý sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như là dự định ngắn hạn.
+Giả sử ta xét đến $L$ sản phẩm trước, ma trận embedding biểu diễn những tương tác xảy ra trước bước thời gian $t$ có thể được xây dựng như sau:
 
 
 $$
@@ -61,7 +76,9 @@ $\mathbf{E}^{(u, t)} \in \mathbb{R}^{L \times k}$ can be used to infer the trans
 We can view the input matrix $\mathbf{E}^{(u, t)}$ as an image which is the input of the subsequent two convolutional components.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{Q} \in \mathbb{R}^{n \times k}$ biểu diễn embedding sản phẩm và $\mathbf{q}_i$ ký hiệu hàng thứ $i$.
+$\mathbf{E}^{(u, t)} \in \mathbb{R}^{L \times k}$ có thể được sử dụng để ám chỉ sở thích nhất thời của người dùng $u$ tại bước thời gian $t$.
+Ta có thể coi ma trận đầu vào $\mathbf{E}^{(u, t)}$ như một ảnh và đây chính là đầu vào của hai thành phần tích chập kế tiếp.
 
 
 <!--
@@ -70,7 +87,9 @@ and the vertical convolutional layer has $d'$ vertical filters $\mathbf{G}^j \in
 After a series of convolutional and pool operations, we get the two outputs:
 -->
 
-*dịch đoạn phía trên*
+Tầng tích chập ngang có $d$ bộ lọc ngang $\mathbf{F}^j \in \mathbb{R}^{h \times k}, 1 \leq j \leq d, h = \{1, ..., L\}$,
+và tầng tích chập dọc có $d'$ bộ lọc dọc $\mathbf{G}^j \in \mathbb{R}^{ L \times 1}, 1 \leq j \leq d'$.
+Sau một chuỗi những thao tác tích chập và thao tác gộp, ta thu được hai đầu ra:
 
 
 $$
@@ -86,7 +105,10 @@ For simplicity, we omit the details of convolution and pool operations.
 They are concatenated and fed into a fully-connected neural network layer to get more high-level representations.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{o} \in \mathbb{R}^d$ là đầu ra của mạng tích chập ngang
+và $\mathbf{o}' \in \mathbb{R}^{kd'}$ là đầu ra của mạng tích chập dọc.
+Để đơn giản, ta bỏ qua chi tiết của các thao tác tích chập và thao tác gộp.
+Chúng được nối với nhau và đưa vào một tầng nơ-ron kết nối đầy đủ để thu được dạng biểu diễn cấp cao hơn.
 
 
 $$
@@ -99,7 +121,8 @@ where $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ is the weight matrix and 
 The learned vector $\mathbf{z} \in \mathbb{R}^k$ is the representation of user's short-term intent.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ là ma trận trọng số và $\mathbf{b} \in \mathbb{R}^k$ là độ chệch.
+Vector được học $\mathbf{z} \in \mathbb{R}^k$ chính là dạng biểu diễn cho sở thích ngắn hạn của người dùng.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -419,7 +442,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
