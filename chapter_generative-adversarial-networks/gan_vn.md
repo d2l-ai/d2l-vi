@@ -84,7 +84,7 @@ Về cốt lõi, GAN dựa trên ý tưởng là một bộ sinh dữ liệu là
 Trong thống kê, điều này được gọi là bài kiểm tra từ hai tập mẫu - một bài kiểm tra để trả lời
 câu hỏi liệu tập dữ liệu $X=\{x_1,\ldots, x_n\}$ và $X'=\{x'_1,\ldots, x'_n\}$  có được rút ra từ cùng tập phân phối.
 Sự khác biệt chính giữa hầu hết những bài nghiên cứu thống kê và các GAN là loại sau sử dụng ý tưởng này theo một cách có cấu trúc.
-Nói cách khác, thay vì chỉ huấn luyện một mô hình để nói "này, có hai tập dữ liệu không giống như chúng đến cùng từ một tập phân phối",
+Nói cách khác, thay vì chỉ huấn luyện một mô hình để nói "này, hai tập dữ liệu này có vẻ như không đến từ cùng một phân phối",
 chúng sử dụng [kiểm tra trên hai tập mẫu](https://en.wikipedia.org/wiki/Two-sample_hypothesis_testing) để cung cấp tín hiệu cho việc huấn luyện cho một mô hình sinh.
 Điều này cho phép ta cải thiện bộ sinh dữ liệu tới khi nó sinh ra thứ gì đó giống như dữ liệu thực.
 Ở mức tối thiểu nhất, nó cần lừa được bộ phân loại. Thậm chí nếu bộ phân loại của ta là mạng nơ-rôn sâu tân tiến nhất.
