@@ -443,5 +443,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*
