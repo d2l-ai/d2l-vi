@@ -597,7 +597,7 @@ A
 ### Behavior on Random Data
 -->
 
-### *dịch tiêu đề trên*
+### Hành vi trên Dữ liệu Ngẫu nhiên
 
 
 <!--
@@ -609,7 +609,12 @@ then small changes in input will be amplified into large changes in output---tin
 This does not seem right!
 -->
 
-*dịch đoạn phía trên*
+Để đơn giản, trong mô hình thử nghiệm của chúng ta, ta giả sử rằng vector dữ liệu ta đưa vào trong $\mathbf{v}_{in}$ là một vector Gaussian ngẫu nhiên năm chiều.
+Hãy thử nghĩ xem ta sẽ muốn cái gì xảy ra.
+Trong ngữ cảnh này, hãy liên tưởng tới một bài toán ML nói chung, trong đó ta đang cố biến dữ liệu đầu vào, như một ảnh, thành một dự đoán, như xác suất ảnh đó là bức ảnh một con mèo.
+Nếu phép khai triển liên tục của $\mathbf{A}$ khiến một vector ngẫu liên bị kéo dãn lên quá dài
+thì chỉ với một thay đổi nhỏ trên đầu vào cũng có thể khuếch đại thành một thay đổi lớn trên đầu ra -- các sự biến đổi nhỏ trên ảnh đầu vào cũng có thể dẫn tới các dự đoán vô cùng khác.
+Việc này dường như không hợp lý!
 
 
 <!--
@@ -618,7 +623,9 @@ then after running through many layers, the vector will essentially shrink to no
 and the output will not depend on the input. This is also clearly not right either!
 -->
 
-*dịch đoạn phía trên*
+Trái lại, nếu $\mathbf{A}$ khiến các vector ngẫu nhiên co ngắn lại,
+thì sau khi đi qua nhiều tầng, vector này về cơ bản sẽ co đến mức chẳng còn lại gì,
+và đầu ra sẽ không còn phụ thuộc vào đầu vào. Rõ ràng là việc này cũng không hề hợp lý!
 
 
 <!--
@@ -626,7 +633,8 @@ We need to walk the narrow line between growth and decay
 to make sure that our output changes depending on our input, but not much!
 -->
 
-*dịch đoạn phía trên*
+Ta cần tìm ra ranh giới giữa tăng trưởng và suy giảm
+để đảm bảo rằng thay đổi trên đầu ra phụ thuộc vào đầu vào của ta, nhưng không quá phụ thuộc!
 
 
 <!--
@@ -634,7 +642,8 @@ Let us see what happens when we repeatedly multiply our matrix $\mathbf{A}$
 against a random input vector, and keep track of the norm.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem chuyện gì sẽ xảy ra nếu ta liên tục nhân ma trận $\mathbf{A}$
+với một vector đầu vào ngẫu nhiên, và theo dõi giá trị chuẩn (*norm*).
 
 
 ```{.python .input}
@@ -681,7 +690,8 @@ The norm is growing uncontrollably!
 Indeed if we take the list of quotients, we will see a pattern.
 -->
 
-*dịch đoạn phía trên*
+Giá trị chuẩn tăng một cách không thể kiểm soát được!
+Quả thực, nếu ta lấy ra danh sách các tỉ số, ta sẽ thấy một khuôn mẫu.
 
 
 ```{.python .input}
@@ -721,7 +731,10 @@ where the portion at the end shifts a little,
 but the stretching factor is stable.  
 -->
 
-*dịch đoạn phía trên*
+Nếu quan sát vị trí cuối cùng của phép tính trên,
+ta có thể thấy rằng vector ngẫu nhiên bị kéo dãn lên 1.974459321485[...]` lần,
+với phần số thập phân ở cuối có thay đổi một chút,
+nhưng hệ số dãn đã ổn định.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -1023,7 +1036,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
 * 
