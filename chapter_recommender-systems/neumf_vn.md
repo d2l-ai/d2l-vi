@@ -131,7 +131,10 @@ The following figure illustrates the model architecture of NeuMF.
 Hình dưới đây minh hoạ kiến trúc mô hình của NeuMF.
 
 
-![Illustration of the NeuMF model](../img/rec-neumf.svg)
+<!-- ![Illustration of the NeuMF model](../img/rec-neumf.svg) -->
+
+![Minh hoạ mô hình NeuMF](../img/rec-neumf.svg)
+
 
 ```{.python .input  n=1}
 from d2l import mxnet as d2l
