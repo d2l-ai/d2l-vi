@@ -98,7 +98,7 @@ Ta gọi mô hình này là mạng sinh. Thành phần thứ hai là mạng phâ
 Nó cố gắng phân biệt dữ liệu giả và thật với nhau.
 Cả hai mạng như trong cuộc cạnh tranh với nhau.
 Mạng sinh sẽ cố gắng đánh lừa mạng phân biệt.
-Cùng lúc đó, mạng phân biệt sẽ thích nghi với dữ liệu giả vừa mới tạo ra.
+Đồng thời, mạng phân biệt sẽ thích nghi với dữ liệu giả vừa mới tạo ra.
 Thông tin này, sẽ được dùng để cải thiện mạng sinh, v.v.
 
 <!--
@@ -110,8 +110,8 @@ Assume the label $y$ for the true data is $1$ and $0$ for the fake data.
 We train the discriminator to minimize the cross-entropy loss, *i.e.*,
 -->
 
-Mạng phân biệt là một bộ phân loại nhị phân nhằm phân biệt xem đầu vào $x$ là thật (từ dữ liệu thật) hoặc giả (từ mạnh sinh).
-Thông thường, đầu ra của mạng phân biệt là một số dự đoán vô hướng $o\in\mathbb R$ cho đầu vào $\mathbf x$, chằng hạn như sử sụng một tầng kết nối đầy đủ với kích thước ẩn 1 và sau đó sẽ được đưa qua hàm sigmoid để nhận được xác suất dự đoán $D(\mathbf x) = 1/(1+e^{-o})$.
+Mạng phân biệt là một bộ phân loại nhị phân nhằm phân biệt xem đầu vào $x$ là thật (từ dữ liệu thật) hoặc giả (từ mạng sinh).
+Thông thường, đầu ra của mạng phân biệt là một số vô hướng $o\in\mathbb R$ dự đoán cho đầu vào $\mathbf x$, chằng hạn như sử sụng một tầng kết nối đầy đủ với kích thước ẩn 1 và sau đó sẽ được đưa qua hàm sigmoid để nhận được xác suất dự đoán $D(\mathbf x) = 1/(1+e^{-o})$.
 Giả sử nhãn $y$ cho dữ liệu thật là $1$ và $0$ cho dữ liệu giả.
 Ta sẽ huấn luyện mạng phân biệt để cực tiểu hóa mất mát entropy chéo, *nghĩa là*,
 
