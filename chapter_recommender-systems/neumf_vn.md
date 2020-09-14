@@ -44,7 +44,7 @@ It consists of two neural layers:
 -->
 
 Như đề cập ở trên, NeuMF kết hợp hai mạng con với nhau.
-Mô hình GMF là một phiên bản mạng nơ-ron chung của phép phân rã ma trận trong đó đầu vào là tích phân tử của các nhân tố ẩn về người dùng và sản phẩm.
+Mô hình GMF là một phiên bản mạng nơ-ron khái quát hoá phép phân rã ma trận mà trong đó đầu vào là tích theo từng phần tử giữa các đặc trưng ẩn của người dùng và sản phẩm.
 Nó bao gồm hai tầng nơ-ron sau:
 
 
