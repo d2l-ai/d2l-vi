@@ -78,7 +78,7 @@ More precisely, the MLP subnetwork is defined as:
 -->
 
 Một thành phần khác của mô hình này là mạng MLP.
-Để làm nâng cao tính linh hoạt của mô hình, mạng con MLP không chia sẻ các embedding người dùng và sản phẩm với GMF.
+Để tăng cường tính linh hoạt của mô hình, mạng con MLP không chia sẻ các embedding người dùng và sản phẩm với GMF.
 Mạng này có đầu vào là vector ghép nối của hai embedding người dùng và sản phẩm.
 Với các kết nối phức tạp và các phép biến đổi phi tuyến tính, nó có thể ước lượng các tương tác phức tạp giữa người dùng và sản phảm.
 Chính xác hơn, mạng con MLP được định nghĩa như sau:
