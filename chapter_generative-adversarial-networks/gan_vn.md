@@ -28,7 +28,7 @@ Phân loại và hồi quy là hai ví dụ của việc học phân biệt.
 Và mạng nơ-ron được huấn luyện bằng phương pháp lan truyền ngược đã đảo lộn mọi thứ 
 ta từng nghĩ là ta đã biết về học phân biệt trên các tập dữ liệu lớn phức tạp. 
 Độ chính xác của tác vụ phân loại ảnh có độ phân giải cao đã đạt tới mức độ như người (với một số điều kiện) từ chỗ không thể sử dụng được chỉ trong 5-6 năm gần đây.
-Chúng tôi sẽ đem đến cho các bạn một câu chuyện khác về tất cả các tác vụ phân biệt khác mà ở đó mạng nơ-rôn sâu thực hiện tốt đáng kinh ngạc.
+Chúng tôi sẽ tha cho các bạn một bài diễn thuyết nữa về các tác vụ phân biệt khác mà ở đó mạng nơ-ron sâu thực hiện tốt đáng kinh ngạc.
 
 <!--
 But there is more to machine learning than just solving discriminative tasks.
