@@ -22,7 +22,7 @@ We will spare you another spiel about all the other discriminative tasks where d
 
 Xuyên suốt gần toàn bộ cuốn sách này, ta đã nói về việc làm thế nào để thực hiện các dự đoán.
 Dưới dạng nào đi nữa, ta đã sử dụng mạng nơ-rôn sâu học ánh xạ từ các mẫu ví dụ sang các nhãn.
-Loại học này được gọi là học phân biệt,
+Kiểu học này được gọi là học phân biệt,
 như là ta muốn có thể phân biệt giữa các ảnh của chó và mèo.
 Phân loại và hồi quy là hai ví dụ của việc học phân biệt.
 Và mạng nơ-ron được huấn luyện bằng phương pháp lan truyền ngược đã đảo lộn mọi thứ 
