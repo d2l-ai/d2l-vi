@@ -4,7 +4,7 @@
 # Neural Collaborative Filtering for Personalized Ranking
 -->
 
-# Lọc ộng tác Nơ-ron cho Xếp hạng Cá nhân hoá
+# Lọc Cộng tác Nơ-ron cho Cá nhân hoá Xếp hạng 
 
 
 <!--
