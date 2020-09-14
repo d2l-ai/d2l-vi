@@ -289,7 +289,7 @@ def hit_and_auc(rankedlist, test_matrix, k):
 Then, the overall Hit rate and AUC are calculated as follows.
 -->
 
-Sau đó, tỷ lệ truy cập và AUC tổng thể được tính như sau.
+Sau đó, tỷ lệ chọn đúng và AUC tổng thể được tính như sau.
 
 
 ```{.python .input  n=5}
