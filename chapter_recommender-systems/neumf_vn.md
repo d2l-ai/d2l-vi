@@ -238,7 +238,7 @@ $rank_{u, g_u}$ denotes the ranking of the ground truth item $g_u$ of the user $
 $m$ is the number of users. $\mathcal{U}$ is the user set.
 -->
 
-trong đó hàm biểu thị được ký hiệu bởi $\textbf{1}$, bằng 1 nếu sản phẩm nhãn gốc được xếp hạng trong danh sách hàng đầu $\ell$, nếu không nó trả về 0.
+trong đó hàm biểu thị được ký hiệu bởi $\textbf{1}$, bằng 1 nếu sản phẩm nhãn gốc được xếp hạng trong danh sách $\ell$ sản phẩm hàng đầu, ngược lại hàm trả về 0.
 $rank_{u, g_u}$ ký hiệu xếp hạng của sản phẩm nhãn gốc $g_u$ của người dùng $u$ trong danh sách gợi ý (xếp hạng lý tưởng là 1).
 $m$ là số lượng người dùng. $\mathcal{U}$ là tập người dùng.
 
