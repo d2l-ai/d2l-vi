@@ -461,7 +461,7 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 * Hãy thay đổi kích thước của các đặc trưng ẩn. Kích thước của các đặc trưng ẩn tác động đến chất lượng của mô hình như thế nào?
 * Hãy thay đổi kiến trúc của MLP (ví dụ: số lượng tầng, số lượng nơ-ron của mỗi tầng) và cho biết tác động của nó đối với chất lượng của mô hình.
 * Hãy thử các bộ tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
-* Hãy thử sử dụng mất mát hinge được định nghĩa trong phần cuối cùng để tối ưu mô hình này.
+* Hãy thử sử dụng mất mát hinge được định nghĩa ở phần trước để tối ưu mô hình này.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
