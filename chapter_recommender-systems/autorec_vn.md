@@ -44,7 +44,7 @@ In the meantime, the missing entries of the input are filled in the output layer
 -->
 
 Mặt khác, AutoRec khác với bộ tự mã hoá truyền thống ở chỗ: thay vì học dạng biểu diễn ẩn, AutoRec tập trung vào học/khôi phục tầng đầu ra.
-Nó sử dụng từng phần của ma trận tương tác đã biết làm đầu vào, nhắm tới việc khôi mục một ma trận đánh giá hoàn chỉnh.
+Nó sử dụng phần đã biết của ma trận tương tác làm đầu vào nhằm khôi mục ma trận đánh giá hoàn chỉnh.
 Trong khi đó, các phần tử còn thiếu trong đầu vào được điền vào tầng đầu ra thông qua quá trình khôi phục nhằm mục đích gợi ý.
 
 
