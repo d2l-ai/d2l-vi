@@ -26,7 +26,7 @@ Mô hình chúng tôi sẽ giới thiệu, có tên là phân tích nhân tử m
 Mô hình này tận dụng tính linh hoạt và tính phi tuyến tính của mạng nơ-ron để thay thế các tích vô hướng trong phân rã ma trận, nhằm nâng cao tính biểu diễn của mô hình.
 Cụ thể, mô hình này được thiết kế với hai mạng con gồm có phân rã ma trận tổng quát hoá (GMF - *Generalized Matrix Factorization*) và MLP, và mô hình hóa các tương tác theo hai hướng này thay vì các tích vô hướng đơn giản.
 Kết quả đầu ra của hai mạng này được ghép nối với nhau để tính điểm dự đoán cuối cùng.
-Không giống như tác vụ dự đoán xếp hạng trong AutoRec, mô hình này sinh ra danh sách gợi ý được xếp hạng cho từng người dùng dựa trên phản hồi gián tiếp.
+Không giống như tác vụ dự đoán đánh giá trong AutoRec, mô hình này sinh ra danh sách gợi ý đã được xếp hạng cho từng người dùng dựa trên phản hồi gián tiếp.
 Chúng ta sẽ sử dụng mất mát xếp hạng được cá nhân hóa đã được giới thiệu trong phần trước để huấn luyện mô hình này.
 
 
