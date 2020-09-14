@@ -261,7 +261,7 @@ recall and normalized discounted cumulative gain (NDCG) can also be used.
 -->
 
 trong đó $\mathcal{I}$ là tập các sản phẩm. $S_u$ là các sản phẩm tiềm năng của người dùng $u$.
-Chú ý rằng có rất nhiều thước đo đánh giá khác như precision, recall, hay NDCG (Normalized Discounted cumulative gain) có thể được sử dụng.
+Chú ý rằng có rất nhiều phép đánh giá khác như precision, recall, hay NDCG (Normalized Discounted Cumulative Gain) cũng có thể được sử dụng.
 
 
 
