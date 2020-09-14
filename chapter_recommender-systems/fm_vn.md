@@ -137,7 +137,7 @@ It is clear to see that FM consists a linear regression block and an efficient f
 We apply a sigmoid function over the final score since we treat the CTR prediction as a classification task.
 -->
 
-Đoạn mã sau đây lập trình cho mô hình máy phân rã ma trận.
+Đoạn mã sau đây lập trình mô hình máy phân rã ma trận.
 Ta có thể thấy rõ ràng rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu quả tốt.
 Ta áp dụng hàm sigmoid lên kết quả cuối cùng do ta coi dự đoán CTR như một tác vụ phân loại.
 
@@ -203,7 +203,7 @@ Afterwards, we train the model. The learning rate is set to 0.01 and the embeddi
 The `Adam` optimizer and the `SigmoidBinaryCrossEntropyLoss` loss are used for model training.
 -->
 
-Cuối cùng, ta tiến hành huấn luyện mô hình. Tốc độ học được đặt bằng 0.01 và kích thước embedding mặc định bằng 20.
+Cuối cùng, ta tiến hành huấn luyện mô hình. Tốc độ học được đặt bằng 0.02 và kích thước embedding mặc định bằng 20.
 Ta sử dụng bộ tối ưu `Adam` và mất mát `SigmoidBinaryCrossEntropyLoss` để huấn luyện mô hình.
 
 
@@ -226,7 +226,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 -->
 
 * FM là một framework khái quát có thể áp dụng cho nhiều tác vụ khác nhau như hồi quy, phân loại hay xếp hạng.
-* Tương tác/giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán và tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
+* Tương tác/tương giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán và tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
 
 
 ## Bài tập
