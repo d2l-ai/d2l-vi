@@ -161,7 +161,7 @@ ReLU is used as the default activation function.
 Đoạn mã dưới đây được lập trình cho mô hình NeuMF.
 Nó bao gồm mô hình phân rã ma trận tổng quát hoá và perceptron đa tầng với các vector embedding người dùng và sản phẩm khác nhau.
 Kiến trúc của MLP được điều khiể bởi tham số `nums_hiddens`.
-Hàm kích hoạt ReLU được sử dụng mặc định.
+ReLU được sử dụng làm hàm kích hoạt mặc định.
 
 
 ```{.python .input  n=2}
