@@ -26,7 +26,7 @@ và phản hồi trực tiếp thường khó thu thập hơn.
 Thứ hai, những cặp người dùng - sản phẩm chưa biết mang tính dự đoán về sở thích của người dùng lại hoàn toàn bị bỏ qua,
 khiến cho các phương pháp này không phù hợp với những trường hợp mà đánh giá không phải là thiếu do ngẫu nhiên mà là do sự thiên vị từ người dùng.
 Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa phản ánh tiêu cực (người dùng không hứng thú với sản phẩm)
-và giá trị còn thiếu (người dùng sau này có lẽ sẽ tương tác với sản phẩm).
+và giá trị còn thiếu (có lẽ sau này người dùng sẽ tương tác với sản phẩm).
 Ta đơn thuần bỏ qua những cặp chưa biết này trong phương pháp phân rã ma trận và AutoRec.
 Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết
 và thường không phù hợp với tác vụ cá nhân hoá xếp hạng (*personalized ranking*).
