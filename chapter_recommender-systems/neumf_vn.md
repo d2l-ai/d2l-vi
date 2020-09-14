@@ -387,7 +387,7 @@ Here, we split the dataset in the `seq-aware` mode where users' latest interacte
 Bây giờ, ta tải tập dữ liệu MovieLens 100k và huấn luyện mô hình.
 Vì tập dữ liệu MovieLens chỉ chứa các đánh giá xếp hạng, ta sẽ nhị phân hoá các phân biệt các đánh giá xếp hạng này thành 0 và 1 với một vài mất mát về độ chính xác.
 Nếu người dùng xếp hạng một sản phẩm, ta coi phản hồi gián tiếp bằng 1, nếu không phản hồi đó sẽ bằng 0.
-Hành động xếp hạng một sản phẩm có thể được coi là một hình thức cung cấp phản hồi gián tiếp.
+Hành động đánh giá một sản phẩm có thể được coi như là một hình thức cung cấp phản hồi gián tiếp.
 Ở đây, ta phân tách tập dữ liệu ở chế độ `seq-aware`, trong đó các sản phẩm mà người dùng tương tác gần đây nhất sẽ được tách ra để kiểm tra.
 
 
