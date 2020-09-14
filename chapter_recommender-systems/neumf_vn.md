@@ -21,7 +21,7 @@ We will use the personalized ranking loss introduced in the last section to trai
 
 Vượt ra khỏi phản hồi trực tiếp, phần này sẽ giới thiệu một framework nơ-ron lọc cộng tác (NCF _neural collaborative filtering framework_) cho bài toán gợi ý với phản hồi gián tiếp.
 Phản hồi gián tiếp khá phổ biến trong các hệ thống gợi ý.
-Các hành động như click, mua và xem là những phản hồi gián tiếp phổ biến, dễ thu thập và thể hiện được sở thích của người dùng.
+Các hành động như nhấp chuột, mua và xem là những phản hồi gián tiếp phổ biến mà có thể dễ dàng thu thập và thể hiện được sở thích của người dùng.
 Mô hình chúng tôi sẽ giới thiệu, có tên là phân tích nhân tử ma trận thần kinh viết tắt bởi NeuMF :cite:`He.Liao.Zhang.ea.2017`, được đề xuất nhằm giải quyết tác vụ xếp hạng cá nhân hóa với phản hồi gián tiếp.
 Mô hình này tận dụng tính linh hoạt và tính phi tuyến tính của mạng nơ-ron để thay thế các tích vô hướng trong phân rã ma trận, nhằm nâng cao tính biểu diễn của mô hình.
 Cụ thể, mô hình này được thiết kế với hai mạng con đó gồm có phân rã ma trận tổng quát hoá (GMF) và MLP, và mô hình hóa các tương tác theo hai hướng này thay vì các tích vô hướng đơn giản.
