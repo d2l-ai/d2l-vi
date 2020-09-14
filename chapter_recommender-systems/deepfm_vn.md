@@ -21,7 +21,7 @@ Máy phân rã ma trận mô hình hoá tương tác đặc trưng dưới dạn
 Điều này thường không đủ đối với dữ liệu thực tế khi bản thân cấu trúc giao giữa các đặc trưng thường rất phức tạp và có dạng phi tuyến.
 Tệ hơn nữa, trong thực tế tương tác đặc trưng bậc hai lại thường được sử dụng trong máy phân rã ma trận.
 Việc mô hình hoá tổ hợp tương tác bậc cao hơn với máy phân rã ma trận về lý thuyết là khả thi
-nhưng thường không được sử dụng do tính bất ổn định số và độ phức tạp tính toán cao.
+nhưng thường không được sử dụng do tính bất ổn định số học và độ phức tạp tính toán cao.
 
 
 <!--
@@ -61,8 +61,8 @@ DeepFM bao gồm một thành phần FM và một thành phần sâu được t�
 Thành phần FM giống với máy phân rã ma trận 2 chiều đã được sử dụng để mô hình hoá tương tác đặc trưng bậc thấp.
 Thành phần sâu là một perceptron đa tầng được sử dụng để nắm bắt tương tác đặc trưng bậc cao và tính phi tuyến.
 Hai thành phần này có chung đầu vào/embedding và tổng đầu ra của chúng được lấy làm dự đoán cuối cùng.
-Đáng chỉ ra rằng tính chất của DeepFM tương tự với kiến trúc Wide \& Deep mà có thể nắm bắt được cả sự ghi nhớ và sự khái quát hoá.
-DeepFM có lợi thế hơn mô hình Wide \& Deep ở chỗ nó giảm yêu cầu phải thiết kế đặc trưng một cách thủ công bằng việc tự động nhận biết tổ hợp đặc trưng.
+Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu mà có thể nắm bắt được cả sự ghi nhớ và sự khái quát hoá.
+DeepFM có lợi thế hơn mô hình Rộng \& Sâu ở chỗ nó giảm tải việc thiết kế đặc trưng một cách thủ công bằng cách tự động nhận biết tổ hợp đặc trưng.
 
 
 <!--
@@ -75,9 +75,9 @@ that are looked up with the sparse categorical feature input, denoted as:
 
 Để ngắn gọn, ta bỏ qua phần mô tả thành phần FM và ký hiệu đầu ra của thành phần này là $\hat{y}^{(FM)}$.
 Bạn đọc có thể tham khảo phần trước để biết thêm chi tiết.
-Gọi $\mathbf{e}_i \in \mathbb{R}^{k}$ ký hiệu vector đặc trưng tiềm tiềm ẩn của trường thứ $i$.
+Gọi $\mathbf{e}_i \in \mathbb{R}^{k}$ ký hiệu vector đặc trưng tiềm ẩn của trường thứ $i$.
 Đầu vào của thành phần sâu là tổ hợp của embedding dày đặc của tất cả các trường
-có thể được tra cứu bằng đầu vào danh mục đặc trưng thưa, ký hiệu là:
+có thể được tra cứu bằng đầu vào là đặc trưng danh mục thưa, ký hiệu là:
 
 
 $$
