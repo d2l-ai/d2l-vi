@@ -85,7 +85,7 @@ Trong thống kê, điều này được gọi là bài kiểm tra từ hai tậ
 câu hỏi liệu tập dữ liệu $X=\{x_1,\ldots, x_n\}$ và $X'=\{x'_1,\ldots, x'_n\}$  có được rút ra từ cùng tập phân phối.
 Sự khác biệt chính giữa hầu hết những bài nghiên cứu thống kê và GAN là GAN sử dụng ý tưởng này theo kiểu có tính cách xây dựng.
 Nói cách khác, thay vì chỉ huấn luyện một mô hình để nói "này, hai tập dữ liệu này có vẻ như không đến từ cùng một phân phối",
-chúng sử dụng [kiểm tra trên hai tập mẫu](https://en.wikipedia.org/wiki/Two-sample_hypothesis_testing) để cung cấp tín hiệu cho việc huấn luyện cho một mô hình sinh.
+chúng sử dụng [phương pháp kiểm tra trên hai tập mẫu](https://en.wikipedia.org/wiki/Two-sample_hypothesis_testing) để cung cấp tín hiệu cho việc huấn luyện cho một mô hình sinh.
 Điều này cho phép ta cải thiện bộ sinh dữ liệu tới khi nó sinh ra thứ gì đó giống như dữ liệu thực.
 Ở mức tối thiểu nhất, nó cần lừa được bộ phân loại, kể cả nếu bộ phân loại của ta là một mạng nơ-rôn sâu tân tiến nhất.
 
