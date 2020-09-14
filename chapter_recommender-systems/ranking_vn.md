@@ -104,7 +104,7 @@ Here, we let $\Sigma_\Theta = \lambda_\Theta I$.
 
 trong đó $D := \{(u, i, j) \mid i \in I^+_u \wedge j \in I \backslash I^+_u \}$ là tập huấn luyện,
 với $I^+_u$ ký hiệu cho sản phẩm mà người dùng $u$ thích, $I$ ký hiệu cho toàn bộ sản phẩm, và $I \backslash I^+_u$ là toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó thích.
-$\hat{y}_{ui}$ và $\hat{y}_{uj}$ lần lượt là giá trị dự đoán của người dùng $u$ đối với sản phẩm $i$ và $j$.
+$\hat{y}_{ui}$ và $\hat{y}_{uj}$ lần lượt là điểm số dự đoán của người dùng $u$ đối với sản phẩm $i$ và $j$.
 Tiên nghiệm $p(\Theta)$ là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$.
 Ở đây ta coi $\Sigma_\Theta = \lambda_\Theta I$.
 
