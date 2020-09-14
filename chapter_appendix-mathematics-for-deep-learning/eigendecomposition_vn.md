@@ -273,7 +273,7 @@ will exist as long as we can find a full collection of linearly independent eige
 ## Operations on Eigendecompositions
 -->
 
-## *dịch tiêu đề trên*
+## Các phép toán trên phân tích trị riêng
 
 
 <!--
@@ -281,7 +281,8 @@ One nice thing about eigendecompositions :eqref:`eq_eig_decomp` is that we can w
 in terms of the eigendecomposition. As a first example, consider:
 -->
 
-*dịch đoạn phía trên*
+Một điều hay về phân tích trị riêng :eqref:`eq_eig_decomp` là ta có thể viết nhiều phép toán ta thường gặp phải một cách sạch sẽ
+về mặt phân tích trị riêng. Ví dụ đầu tiên, xem xét:
 
 
 $$
@@ -294,7 +295,8 @@ This tells us that for any positive power of a matrix, the eigendecomposition is
 The same can be shown for negative powers, so if we want to invert a matrix we need only consider
 -->
 
-*dịch đoạn phía trên*
+Điều này cho chúng ta biết rằng với bất kỳ số mũ dương nào của một ma trận, phân tích trị riêng đạt được bằng cách tăng các trị riêng lên cùng bậc.
+Điều tương tự cũng có thể được chứng minh cho các số mũ âm, vì nếu ta muốn nghịch đảo một ma trận ta chỉ cần cân nhắc 
 
 
 $$
@@ -307,14 +309,15 @@ or in other words, just invert each eigenvalue.
 This will work as long as each eigenvalue is non-zero, so we see that invertible is the same as having no zero eigenvalues.  
 -->
 
-*dịch đoạn phía trên*
+hay nói cách khác, chỉ cần đảo từng trị riêng một.
+Điều này hiệu quả chỉ cần mỗi trị riêng khác không, vì thế ta thấy rằng khả nghịch cũng giống như không có trị riêng bằng không.
 
 
 <!--
 Indeed, additional work can show that if $\lambda_1, \ldots, \lambda_n$ are the eigenvalues of a matrix, then the determinant of that matrix is
 -->
 
-*dịch đoạn phía trên*
+Thật sự, các bổ sung có thể chứng minh rằng nếu $\lambda_1, \ldots, \lambda_n$ là các trị riêng của một ma trận, rồi định thức của ma trận ấy là 
 
 
 $$
@@ -328,7 +331,10 @@ This makes sense intuitively because whatever stretching $\mathbf{W}$ does, $W^{
 by multiplication by the diagonal matrix $\boldsymbol{\Sigma}$, which stretches volumes by the product of the diagonal elements.
 -->
 
-*dịch đoạn phía trên*
+hay là tích của tất cả các trị riêng.
+Điều này hợp lý theo trực giác bởi vì bất kỳ stretching nào mà ma trận $\mathbf{W}$ thực hiện, thì $W^{-1}$ hoàn tác nó, vì thế cuối cùng stretching duy nhất mà xảy ra 
+là
+bằng việc nhân với ma trận đường chéo $\boldsymbol{\Sigma}$, khi mà nó sẽ stretch volumes bằng tích của các phần tử nằm trên đường chéo.
 
 
 <!--
@@ -336,7 +342,8 @@ Finally, recall that the rank was the maximum number of linearly independent col
 By examining the eigendecomposition closely, we can see that the rank is the same as the number of non-zero eigenvalues of $\mathbf{A}$.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta hãy nhớ lại rằng hạng ma trận là số lớn nhất của các cột độc lập tuyến tính của ma trận.
+Bằng cách kiểm nghiệm phân tích trị riêng một cách chặt chẽ, ta có thể thấy rằng hạng giống với số lượng các trị riêng khác không của $\mathbf{A}$.
 
 
 <!--
@@ -344,7 +351,8 @@ The examples could continue, but hopefully the point is clear: eigendecompositio
 and is a fundamental operation underlying many numerical algorithms and much of the analysis that we do in linear algebra. 
 -->
 
-*dịch đoạn phía trên*
+Ví dụ có thể tiếp tục, nhưng hi vọng luận điểm được làm rõ: phân tích trị riêng có thể đơn giản hóa nhiều phép tính đại số tuyến tính
+và là một phép toán cơ bản phía sau nhiều thuật toán số và nhiều phân tích mà ta thực hiện trong đại số tuyến tính. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
