@@ -222,7 +222,7 @@ The formal definition is as follows:
 -->
 
 Trong phần này, ta sẽ áp dụng chiến lược chia tách theo thời gian để xây dựng tập huấn luyện và tập kiểm tra.
-Hai thước đo đánh giá bao gồm tỷ lệ truy cập ở mức cắt giảm $\ell$ ($\text{Hit}@\ell$) và diện tích dưới đường cong ROC (AUC) được sử dụng để đánh giá hiệu quả của mô hình.
+Hai phép đánh giá bao gồm tỷ lệ chọn đúng (*hit rate*) theo ngưỡng $\ell$ ($\text{Hit}@\ell$) cho trước và diện tích dưới đường cong ROC (AUC) được sử dụng để đánh giá hiệu quả của mô hình.
 Tỷ lệ truy cập tại vị trí $\ell$ cho mỗi người dùng biểu thị rằng sản phẩm được gợi ý có được đưa vào danh sách được xếp hạng hàng đầu $\ell$ hay không.
 Định nghĩa chính thức như sau:
 
