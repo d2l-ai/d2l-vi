@@ -249,9 +249,9 @@ Negative samples are also included in the Customized dataset.
 Đoạn mã sau đây tạo một lớp dataset mới có tên là `SeqDataset`.
 Với mỗi mẫu, lớp này trả về id của người dùng, một chuỗi $L$ sản phẩm mà người này đã tương tác trước đó và sản phẩm tiếp theo mà người này sẽ tương tác làm mục tiêu.
 Hình dưới đây mô tả rõ ràng quá trình nạp dữ liệu với một người dùng.
-Giả sử người dùng này thích 8 bộ phim, ta sắp xếp 8 bộ phim này theo thứ tự thời gian.
+Giả sử người dùng này thích 9 bộ phim, ta sắp xếp 9 bộ phim này theo thứ tự thời gian.
 Bộ phim cuối cùng được bỏ ra ngoài để làm sản phẩm kiểm tra.
-Với bảy bộ phim còn lại, ta có thể tạo ba mẫu huấn luyện, với mỗi mẫu bao gồm một chuỗi gồm năm ($L=5$) bộ phim và bộ phim kế tiếp làm mục tiêu.
+Với 8 bộ phim còn lại, ta có thể tạo ba mẫu huấn luyện, với mỗi mẫu bao gồm một chuỗi gồm năm ($L=5$) bộ phim và bộ phim kế tiếp làm mục tiêu.
 Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu được tuỳ chỉnh.
 
 <!--
