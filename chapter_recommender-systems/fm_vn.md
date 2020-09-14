@@ -4,7 +4,7 @@
 # Factorization Machines
 -->
 
-# *dịch tiêu đề trên*
+# Máy Phân rã ma trận
 
 
 <!--
@@ -21,14 +21,24 @@ For these reasons, factorization machines are widely employed in modern advertis
 The technical details and implementations are described below.
 -->
 
-*dịch đoạn phía trên*
+Máy phân rã ma trận (*Factorization machines - FM*) :cite:`Rendle.2010`, được đề xuất bởi Steffen Rendle vào năm 2010,
+là một thuật toán học có giám sát, có thể được sử dụng trong các tác vụ phân loại, hồi quy hay xếp hạng.
+Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp nổi tiếng và có sức ảnh hưởng trong việc đưa ra dự đoán và gợi ý.
+Cụ thể, nó là phiên bản khái quát hoá của mô hình hồi quy tuyến tính và mô hình phân rã ma trận.
+Hơn nữa, nó còn làm gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
+Điểm mạnh của máy phân rã ma trận so với hồi quy tuyến tính và phân ra mã trận là:
+(1) Nó có thể mô hình hoá tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
+(2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm thời gian tính toán đa thức về độ phức tạp tuyến tính,
+giúp nó đạt hiệu quả cực tốt đặc biệt với đầu vào thưa nhiều chiều.
+Với các lý do trên, máy phân rã được áp dụng rộng rãi trong quảng cáo hiện đại và gợi ý sản phẩm.
+Chi tiết kỹ thuật cũng như cách lập trình được mô tả trong các phần dưới.
 
 
 <!--
 ## 2-Way Factorization Machines
 -->
 
-## *dịch tiêu đề trên*
+## Máy Phân rã 2 Chiều.
 
 
 <!--
@@ -37,7 +47,9 @@ which can be real-valued label or class label such as binary class "click/non-cl
 The model for a factorization machine of degree two is defined as:
 -->
 
-*dịch đoạn phía trên*
+Gọi $x \in \mathbb{R}^d$ là vector đặc trưng của một mẫu, và $y$ là nhãn tương ứng,
+nhãn này có thể mang giá trị thực hoặc là nhãn hạng mục ví dụ như hạng mục nhị phân "nhấp/chưa nhấp".
+Mô hình của máy phân rã ma trận bậc hai được định nghĩa như sau:
 
 
 $$
@@ -61,8 +73,20 @@ It is worth noting that FM can also generalize to higher orders (degree > 2).
 Nevertheless, the numerical stability might weaken the generalization.
 -->
 
-*dịch đoạn phía trên*
- 
+trong đó $\mathbf{w}_0 \in \mathbb{R}$ là hệ số điều chỉnh toàn cục;
+$\mathbf{w} \in \mathbb{R}^d$ ký hiệu trọng số của biến thứ $i$;
+$\mathbf{V} \in \mathbb{R}^{d\times k}$ biểu diễn embedding đặc trưng;
+$\mathbf{v}_i$ biểu diễn hàng thứ $i$ của $\mathbf{V}$; $k$ là số chiều của nhân tố tiềm ẩn;
+$\langle\cdot, \cdot \rangle$ là tích vô hướng của hai vector.
+$\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ mô hình hoá sự tương tác giữa đặc trưng thứ $i$ và thứ $j$.
+Một số tương tác đặc trưng có thể dễ dàng hiểu được cho nên chúng có thể được thiết kế bởi các chuyên gia.
+Tuy nhiên, đa số các tương tác đặc trưng khác thường ẩn trong dữ liệu và khó để có thể nhận biết.
+Do đó việc tự động mô hình hoá tương tác đặc trưng có thể giảm đáng kể công sức trong việc thiết kế đặc trưng (*feature engineering*).
+Ta có thể thấy rõ ràng rằng hai số hạng đầu tiên tương ứng với mô hình hồi quy tuyến tính và số hạng cuối cùng là dạng mở rộng của mô hình phân rã ma trận.
+Nếu đặc trưng $i$ biểu diễn một sản phẩm và đặc trưng $j$ biểu diễn một người dùng, số hạng thứ ba chính là tích vô hướng giữa embedding người dùng và sản phẩm.
+Đáng chú ý là FM cũng có thể khái quát hoá với bậc cao hơn (bậc > 2).
+Tuy vậy, tính ổn định số có thể khiến sự khái quát bị suy giảm.
+
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
@@ -248,7 +272,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
