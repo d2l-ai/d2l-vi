@@ -101,7 +101,7 @@ $\phi^*$ denotes the function of the corresponding layer.
 $\mathbf{z}^*$ denotes the output of corresponding layer.
 -->
 
-trong đó $\mathbf{W}^*, \mathbf{b}^*$ và $\alpha^*$ là ma trận trọng số, vector điều chỉnh, và hàm kích hoạt.
+trong đó $\mathbf{W}^*, \mathbf{b}^*$ và $\alpha^*$ là ma trận trọng số, vector hệ số điều chỉnh, và hàm kích hoạt.
 Hàm của tầng tương ứng được ký hiệu bởi $\phi^*$.
 Đầu ra của tầng tương ứng được ký hiệu bởi $\mathbf{z}^*$.
 
