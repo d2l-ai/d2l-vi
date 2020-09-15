@@ -66,7 +66,7 @@ trong đó $\odot$ là phép nhân Hadamard của hai vector.
 $\mathbf{P} \in \mathbb{R}^{m \times k}$ và $\mathbf{Q} \in \mathbb{R}^{n \times k}$ lần lượt tương ứng với ma trận đặc trưng ẩn cho người dùng và sản phẩm.
 $\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của ma trận $P$ và $\mathbf{q}_i \in \mathbb{R}^{ k}$ hàng thứ $i$ của ma trận $Q$. 
 $\alpha$ và $h$ ký hiệu hàm kích hoạt và trọng số của tầng đầu ra.
-$\hat{y}_{ui}$ là điểm dự đoán có thể cho bởi người dùng $u$ cho sản phẩm $i$.
+$\hat{y}_{ui}$ là điểm dự đoán người dùng $u$ có thể đưa ra cho sản phẩm $i$.
 
 
 <!--
