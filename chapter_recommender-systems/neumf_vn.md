@@ -269,7 +269,7 @@ Chú ý rằng có rất nhiều phép đánh giá khác như precision, recall,
 The following function calculates the hit counts and AUC for each user.
 -->
 
-Hàm sau đây tính toán số lần truy cập và AUC cho mỗi người dùng.
+Hàm sau đây tính toán số lần chọn đúng và AUC cho mỗi người dùng.
 
 
 ```{.python .input  n=4}
