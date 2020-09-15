@@ -18,11 +18,10 @@ We will use the model to determine whether a text sequence of indefinite length 
 -->
 
 
-Tương tự như tìm kiếm các từ đồng nghĩa và loại suy, phân loại văn bản cũng là một
-ứng dụng xuôi dòng của embedding từ.
+Tương tự như tìm kiếm các từ đồng nghĩa và loại suy, phân loại văn bản cũng là một tác vụ xuôi dòng của embedding từ. 
 Trong phần này, ta sẽ áp dụng các vector từ đã được tiền huấn luyện (GloVe) và mạng nơ-ron truy hồi hai chiều với
-nhiều lớp ẩn :cite:`Maas.Daly.Pham.ea.2011`, như được minh hoạ trong :numref:` fig_nlp-map-sa-rnn`.
-Ta sẽ sử dụng mô hình để xác định xem một chuỗi văn bản có độ dài không xác định chứa cảm xúc tích cực hay tiêu cực.
+nhiều lớp ẩn :cite:`Maas.Daly.Pham.ea.2011`, như được minh hoạ trong :numref:` fig_nlp-map-sa-rnn`. 
+Ta sẽ sử dụng mô hình này để xác định xem một chuỗi văn bản có độ dài không xác định chứa cảm xúc tích cực hay tiêu cực. 
 
 
 <!--
@@ -62,13 +61,13 @@ the `LSTM` instance is the hidden layer for sequence encoding, and the `Dense` i
 -->
 
 
-Trong mô hình này, đầu tiên mỗi từ nhận được một vector đặc trưng tương ứng từ tầng embedding.
-Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron hồi tiếp hai chiều để thu được thông tin chuỗi.
-Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ.
-Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều ở bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
+Trong mô hình này, đầu tiên mỗi từ nhận được một vector đặc trưng tương ứng từ tầng embedding. 
+Sau đó, ta mã hóa thêm chuỗi đặc trưng bằng cách sử dụng mạng nơ-ron hồi tiếp hai chiều để thu được thông tin chuỗi. 
+Cuối cùng, ta chuyển đổi thông tin chuỗi được mã hóa thành đầu ra thông qua tầng kết nối đầy đủ. 
+Cụ thể, ta có thể ghép nối các trạng thái ẩn của bộ nhớ ngắn hạn dài hai chiều (*bidirectional long-short term memory*) ở bước thời gian ban đầu và bước thời gian cuối cùng và truyền nó
 tới tầng phân loại đầu ra như là đặc trưng mã hóa của thông tin chuỗi.
 Trong lớp `BiRNN` được lập trình bên dưới, thực thể `Embedding` là tầng embedding,
-thực thể `LSTM` là tầng ẩn để mã hóa chuỗi, và thực thể `Dense` là tầng đầu ra sinh kết quả phân loại.
+thực thể `LSTM` là tầng ẩn để mã hóa chuỗi, và thực thể `Dense` là tầng đầu ra sinh kết quả phân loại. 
 
 
 ```{.python .input  n=46}
@@ -107,7 +106,7 @@ class BiRNN(nn.Block):
 Create a bidirectional recurrent neural network with two hidden layers.
 -->
 
-Ta sẽ tạo một mạng nơ-ron hồi tiếp hai chiều với hai tầng ẩn như sau.
+Ta sẽ tạo một mạng nơ-ron hồi tiếp hai chiều với hai tầng ẩn như sau. 
 
 
 ```{.python .input}
@@ -134,8 +133,8 @@ Here, we load a 100-dimensional GloVe word vector for each word in the dictionar
 -->
 
 Bởi vì tập dữ liệu huấn luyện cho việc phân loại cảm xúc không quá lớn, để xử lý vấn đề quá khớp, 
-ta sẽ dùng trực tiếp các vector từ đã được tiền huấn luyện trên tập ngữ liệu lớn hơn làm các vector đặc trưng cho tất cả các từ.
-Ở đây, ta nạp vector từ Glove 100-chiều cho mỗi từ trong từ điển `vocab`.
+ta sẽ dùng trực tiếp các vector từ đã được tiền huấn luyện trên tập ngữ liệu lớn hơn làm các vector đặc trưng cho tất cả các từ. 
+Ở đây, ta nạp vector từ Glove 100-chiều cho mỗi từ trong từ điển `vocab`.  
 
 
 ```{.python .input}
@@ -147,7 +146,7 @@ glove_embedding = d2l.TokenEmbedding('glove.6b.100d')
 Query the word vectors that in our vocabulary.
 -->
 
-Truy vấn các vector từ nằm trong từ vựng của chúng ta.
+Truy vấn các vector từ nằm trong từ vựng của chúng ta. 
 
 
 ```{.python .input}
@@ -162,9 +161,9 @@ Note that the dimensions of the pre-trained word vectors need to be consistent w
 In addition, we no longer update these word vectors during training.
 -->
 
-Rồi ta sẽ sử dụng các vector từ đó làm các vector đặc trưng cho mỗi từ trong các đánh giá.
+Tiếp theo, ta sử dụng các vector từ đó làm vector đặc trưng cho mỗi từ trong các đánh giá. 
 Lưu ý là các chiều của vector từ đã qua tiền huấn luyện cần nhất quán với kích thước đầu ra `embed size` của tầng embedding trong mô hình đã tạo.
-Thêm vào đó, ta không còn cập nhật các vector từ đó trong suốt quá trình huấn luyện.
+Thêm vào đó, ta không còn cập nhật các vector từ đó trong suốt quá trình huấn luyện. 
 
 
 ```{.python .input  n=47}
@@ -184,7 +183,7 @@ net.embedding.collect_params().setattr('grad_req', 'null')
 Now, we can start training.
 -->
 
-Bây giờ ta có thể bắt đầu thực hiện huấn luyện.
+Bây giờ ta có thể bắt đầu thực hiện huấn luyện. 
 
 
 ```{.python .input  n=48}
@@ -199,7 +198,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Finally, define the prediction function.
 -->
 
-Cuối cùng, định nghĩa hàm dự đoán
+Cuối cùng, định nghĩa hàm dự đoán 
 
 
 ```{.python .input  n=49}
@@ -215,7 +214,7 @@ def predict_sentiment(net, vocab, sentence):
 Then, use the trained model to classify the sentiments of two simple sentences.
 -->
 
-Rồi sử dụng mô hình đã huấn luyện để phân loại cảm xúc cho hai câu đơn giản.
+Tiếp theo, sử dụng mô hình đã huấn luyện để phân loại cảm xúc cho hai câu đơn giản. 
 
 
 ```{.python .input  n=50}
@@ -237,8 +236,8 @@ predict_sentiment(net, vocab, 'this movie is so bad')
 * We can apply pre-trained word vectors and recurrent neural networks to classify the emotions in a text.
 -->
 
-* Phân loại văn bản chuyển đổi một chuỗi văn bản có độ dài không xác định thành hạng mục tương ứng của văn bản đó. Đây là một ứng dụng xuôi dòng của embedding từ.
-* Ta có áp dụng các vector từ được tiền huấn luyện và mạng nơ-ron hồi tiếp để để phân loại cảm xúc trong văn bản.
+* Phân loại văn bản ánh xạ một chuỗi văn bản có độ dài không xác định thành hạng mục tương ứng của văn bản đó. Đây là một tác vụ xuôi dòng của embedding từ. 
+* Ta có thể áp dụng các vector từ được tiền huấn luyện và mạng nơ-ron hồi tiếp để để phân loại cảm xúc trong văn bản. 
 
 
 ## Bài tập
@@ -255,15 +254,14 @@ It should be noted that GloVe's word vector uses "-" to connect each word when s
 For example, the phrase "new york" is represented as "new-york" in GloVe. After using spaCy tokenization, "new york" may be stored as "new york".
 -->
 
-1. Hãy tăng số epoch. Bạn có thể đạt được độ chính xác là bao nhiêu trên tập huấn luyện và tập kiểm tra?
-Còn cách tinh chỉnh các siêu tham số khác thì sao?
-2. Liệu sử dụng vector từ được tiền huấn luyện có kích thước lớn hơn, ví dụ vector từ GloVe có kích thước chiều là 300, có thể cải thiện độ chính xác hay không?
+1. Hãy tăng số epoch. Bạn có thể đạt được độ chính xác là bao nhiêu trên tập huấn luyện và tập kiểm tra? Thử tinh chỉnh các siêu tham số khác và đánh giá kết quả. 
+2. Liệu sử dụng vector từ được tiền huấn luyện có kích thước lớn hơn, ví dụ vector từ GloVe có kích thước chiều là 300, có thể cải thiện độ chính xác hay không? 
 3. Ta có thể cải thiện độ chính xác bằng cách sử dụng công cụ token hoá từ spaCy không?
 Bạn cần cài đặt spaCy bằng lệnh `pip install spacy` và cài đặt gói ngôn ngữ tiếng Anh bằng lệnh `python -m spacy download en`. 
 Trong mã nguồn, đầu tiên hãy nhập thư viện spaCy với câu lệnh `import spacy`. Tiếp theo, hãy nạp gói spacy tiếng Anh `spacy_en = spacy.load('en')`. 
 Cuối cùng, hãy định nghĩa hàm `def tokenizer(text): return [tok.text for tok in spacy_en.tokenizer(text)]` và thay thế hàm `tokenizer` ban đầu. 
 Lưu ý rằng vector từ GloVe sử dụng "-" để kết nối mỗi từ trong cụm danh từ. 
-Ví dụ, cụm từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york".
+Ví dụ, cụm từ "new york" được biểu diễn bằng "new-york" trong GloVe. Sau khi sử dụng công cụ token hoá spaCy, "new york" có thể sẽ được lưu thành "new york". 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -292,3 +290,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
