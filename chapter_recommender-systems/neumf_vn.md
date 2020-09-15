@@ -336,7 +336,7 @@ def evaluate_ranking(net, test_input, seq, candidates, num_users, num_items,
 The training function is defined below. We train the model in the pairwise manner.
 -->
 
-Hàm huấn luyện được định nghĩa như sau. Ta huấn luyện mô hình từng cặp mạng con một.
+Hàm huấn luyện được định nghĩa như sau. Ta huấn luyện mô hình bằng phương pháp theo từng cặp.
 
 
 ```{.python .input  n=6}
