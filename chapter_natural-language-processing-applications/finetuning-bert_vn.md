@@ -24,7 +24,7 @@ we may consider fine-tuning BERT for downstream natural language processing appl
 
 Trong các phần trước, ta đã thiết kế các mô hình khác nhau cho
 các ứng dụng xử lý ngôn ngữ tự nhiên, dựa trên RNN, CNN, cơ chế tập trung và MLP.
-Những mô hình này rất hữu ích khi có giới hạn về không gian hoặc thời gian, tuy nhiên,
+Những mô hình này rất hữu ích khi bị mô hình bị giới hạn về không gian bộ nhớ hoặc thời gian thực thi, tuy nhiên,
 việc thiết kế thủ công một mô hình cụ thể cho mọi tác vụ xử lý ngôn ngữ tự nhiên trong thực tế là điều không khả thi.
 Trong :numref:`sec_bert`, chúng ta đã giới thiệu mô hình BERT được tiền huấn luyện mà chỉ
 yêu cầu thay đổi kiến trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
@@ -74,7 +74,7 @@ For instance, "I should study." is acceptable but "I should studying." is not.
 
 Tác vụ *phân loại văn bản đơn* nhận một chuỗi văn bản đơn làm đầu vào và đầu ra là kết quả phân loại của văn bản đó.
 Bên cạnh tác vụ phân tích cảm xúc mà ta đã nghiên cứu trong chương này,
-tập dữ liệu CoLA (*Corpus of Linguistic Acceptability*) cũng được sử dụng cho tác vụ phân loại văn bản đơn, đó là đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
+tập dữ liệu CoLA (*Corpus of Linguistic Acceptability*) cũng được sử dụng cho tác vụ phân loại văn bản đơn, đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
 Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I should studying." thì không.
 
 
@@ -101,11 +101,11 @@ to output the distribution of all the discrete label values.
 -->
 
 :numref:`sec_bert` mô tả biểu diễn đầu vào của BERT.
-Chuỗi đầu vào BERT biểu diễn cả văn bản đơn và cặp văn bản một cách rõ ràng,
+Chuỗi đầu vào BERT biểu diễn cả văn bản đơn và cặp văn bản một cách rạch ròi,
 trong đó token đặc biệt “&lt;cls&gt;” được sử dụng cho các tác vụ phân loại chuỗi, 
 và token đặc biệt “&lt;sep&gt;” đánh dấu vị trí kết thúc của văn bản đơn hoặc vị trí phân tách cặp văn bản.
 Như minh hoạ trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hoá thông tin của toàn bộ chuỗi văn bản đầu vào trong các tác vụ phân loại văn bản đơn.
-Được sử dụng là biểu diễn của văn bản đơn đầu vào, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy đủ để biến đổi thành phân phối của các giá trị nhãn rời rạc.
+Là biểu diễn của văn bản đầu vào đơn, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy đủ để biến đổi thành phân phối của các giá trị nhãn rời rạc.
 
 
 <!--
