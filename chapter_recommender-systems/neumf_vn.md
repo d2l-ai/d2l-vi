@@ -183,7 +183,7 @@ The following function takes users identity and candidate items as input, and sa
 During the training stage, the model ensures that the items that a user likes to be ranked higher than items he dislikes or has not interacted with.
 -->
 
-Một bước quan trọng trong mất mát xếp hạng theo cặp là phép lấy mẫu âm.
+Một bước quan trọng trong mất mát xếp hạng theo cặp là lấy mẫu âm.
 Với mỗi người dùng, các sản phẩm mà người dùng chưa tương tác là các sản phẩm tiềm năng (các mục chưa được quan sát).
 Hàm dưới đây có đầu vào là danh tính người dùng và các sản phẩm tiềm năng, và lấy mẫu âm các sản phẩm ngẫu nhiên cho từng người dùng từ tập tiềm năng của người dùng đó.
 Trong quá trình huấn luyện, mô hình đảm bảo rằng các sản phẩm mà một người dùng thích sẽ được xếp hạng cao hơn các sản phẩm mà người này không thích hoặc chưa từng tương tác.
