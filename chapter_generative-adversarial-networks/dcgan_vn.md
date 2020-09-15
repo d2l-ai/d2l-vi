@@ -15,9 +15,9 @@ and transform them into samples that appear to match the distribution of some da
 And while our example of matching a 2D Gaussian distribution got the point across, it is not especially exciting.
 -->
 
-Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách thức hoạt động của GAN. 
+Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách hoạt động của GAN. 
 Ta đã thấy được quá trình tạo mẫu của mô hình đơn giản, phân phối dễ-đến-mẫu, giống như phân phối uniform hay phân phối chuẩn, và transform chúng thành các mẫu phù hợp với phân phối của tập dữ liệu.
-Và trong ví dụ về khớp phân phối Gassian 2 chiều đã chỉ rõ vấn đến, nó không quá thú vị.
+Và trong ví dụ về khớp phân phối Gassian 2 chiều đã được làm rõ, nó không gì quá thú vị.
 
 <!--
 In this section, we will demonstrate how you can use GANs to generate photorealistic images.
