@@ -495,6 +495,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
