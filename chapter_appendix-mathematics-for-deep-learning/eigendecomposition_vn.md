@@ -354,7 +354,7 @@ and is a fundamental operation underlying many numerical algorithms and much of 
 ## Eigendecompositions of Symmetric Matrices
 -->
 
-## *dịch tiêu đề trên*
+## Phân tích trị riêng của ma trận đối xứng
 
 
 <!--
