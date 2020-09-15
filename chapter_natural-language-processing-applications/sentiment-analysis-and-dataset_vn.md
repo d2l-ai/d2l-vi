@@ -10,14 +10,14 @@
 
 
 <!--
-Text classification is a common task in natural language processing, which transforms a sequence of text of indefinite length into a category of text.
+Text classification is a common task in natural language processing, which transforms a sequence of text of sindefinite length into a category of text.
 It is similar to the image classification, the most frequently used application in this book, e.g., :numref:`sec_naive_bayes`.
 The only difference is that, rather than an image, text classification's example is a text sentence.
 -->
 
-Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài thay đổi thành một hạng mục tương ứng của văn bản đó.
-Tác vụ này khá giống với phân loại ảnh, ứng dụng phổ biến nhất được giới thiệu trong cuốn sách này, ví dụ, :numref:`sec_naive_bayes`.  
-Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh.
+Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài không cố định thành một hạng mục tương ứng của văn bản đó. 
+Tác vụ này khá giống với phân loại ảnh, vốn là ứng dụng phổ biến nhất được giới thiệu trong cuốn sách này, ví dụ, :numref:`sec_naive_bayes`.
+Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh. 
 
 
 <!--
@@ -31,7 +31,7 @@ or analyze user sentiments about market conditions and use it to predict future 
 Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
 sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
 Bài toán này cũng có thể gọi là phân tích cảm xúc và có rất nhiều ứng dụng.
-Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê về độ hài lòng của khách hàng, hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
+Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng của khách hàng, hoặc phân tích cảm xúc của khách hàng với điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
 ```{.python .input  n=1}
@@ -55,9 +55,9 @@ This dataset is divided into two datasets for training and testing purposes, eac
 In each dataset, the number of comments labeled as "positive" and "negative" is equal.
 -->
 
-Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
-Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb.
-Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau.
+Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc. 
+Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb. 
+Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau. 
 
 <!--
 ###  Reading the Dataset
@@ -70,7 +70,7 @@ Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực"
 We first download this dataset to the "../data" path and extract it to "../data/aclImdb".
 -->
 
-Đầu tiên, ta tải dữ liệu về thư mục "../data" và giải nén dữ liệu vào thư mục "../data/aclImdb".
+Đầu tiên, ta tải dữ liệu về thư mục "../data" và giải nén dữ liệu vào thư mục "../data/aclImdb". 
 
 
 ```{.python .input  n=2}
@@ -127,7 +127,7 @@ for x, y in zip(train_data[0][:3], train_data[1][:3]):
 We use a word as a token, and then create a dictionary based on the training dataset.
 -->
 
-Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện.
+Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện. 
 
 
 ```{.python .input  n=4}
@@ -151,8 +151,8 @@ Because the reviews have different lengths, so they cannot be directly combined 
 Here we fix the length of each comment to 500 by truncating or adding "&lt;unk&gt;" indices.
 -->
 
-Bởi vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibatch một cách trực tiếp.
-Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;".
+Vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibatch một cách trực tiếp. 
+Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;". 
 
 
 ```{.python .input  n=5}
@@ -200,7 +200,7 @@ for X, y in train_iter:
 Last, we will save a function `load_data_imdb` into `d2l`, which returns the vocabulary and data iterators.
 -->
 
-Cuối cùng, ta lưu hàm `load_data_imdb` vào `d2l`, hàm này trả về bộ từ vựng và các iterator của dữ liệu.
+Cuối cùng, ta lưu hàm `load_data_imdb` vào `d2l`, hàm này trả về bộ từ vựng và các iterator của dữ liệu.  
 
 
 ```{.python .input  n=7}
@@ -230,9 +230,9 @@ def load_data_imdb(batch_size, num_steps=500):
 Then we pad the text sequence for short reviews and create a data iterator.
 -->
 
-* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục.
-* Để phân loại cảm xúc văn bản, ta tải dữ liệu IMDb và token hóa các từ trong dữ liệu.
-Sau đó, ta thêm đệm vào chuỗi văn bản cho các câu đánh giá ngắn và tạo một iterator dữ liệu.
+* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục. 
+* Để phân loại cảm xúc văn bản, ta tải dữ liệu IMDb và token hóa các từ trong dữ liệu. 
+Sau đó, ta thêm đệm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu. 
 
 
 ## Bài tập
@@ -269,3 +269,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
+* Nguyễn Lê Quang Nhật
