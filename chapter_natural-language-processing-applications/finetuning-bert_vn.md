@@ -355,4 +355,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
 * Trần Yến Thy
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
