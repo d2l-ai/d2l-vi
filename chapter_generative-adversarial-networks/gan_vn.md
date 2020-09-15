@@ -97,7 +97,7 @@ chúng sử dụng [phương pháp kiểm tra trên hai tập mẫu](https://en.
 ![Generative Adversarial Networks](../img/gan.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/gan.svg)
+![Mạng Đối Sinh](../img/gan.svg)
 :label:`fig_gan`
 
 
@@ -116,8 +116,16 @@ At that point, the discriminator network adapts to the new fake data.
 This information, in turn is used to improve the generator network, and so on.
 -->
 
-*dịch đoạn phía trên*
-
+Kiến trúc của mạng đối sinh được miêu tả trong hình :numref:`fig_gan`.
+Như ta có thể thấy, có hai thành phần trong kiến trúc của GAN - đầu tiên, ta cần một thiết bị (giả sử, một mạng sâu nhưng nó có thể là bất ký thứ gì, chẳng hạn như công cụ kết xuất đồ họa trò chơi) có khả năng tạo ra dữ liệu giống thật.
+Nếu ta đang làm việc với hình ảnh, mô hình cần tạo ra hình ảnh.
+Nếu ta đang làm việc với giọng nói, mô hình cần tạo ra được chuỗi âm thanh, v.v.
+Ta gọi mô hình này là mạng sinh. Thành phần thứ hai là mạng phân biệt.
+Nó cố gắng phân biệt dữ liệu giả và thật với nhau.
+Cả hai mạng này sẽ cạnh tranh với nhau.
+Mạng sinh sẽ cố gắng đánh lừa mạng phân biệt.
+Đồng thời, mạng phân biệt sẽ thích nghi với dữ liệu giả vừa mới tạo ra.
+Thông tin này từ đó sẽ được dùng để cải thiện mạng sinh, và cứ tiếp tục như vậy.
 
 <!--
 The discriminator is a binary classifier to distinguish if the input $x$ is real (from real data) or fake (from the generator).
@@ -128,11 +136,12 @@ Assume the label $y$ for the true data is $1$ and $0$ for the fake data.
 We train the discriminator to minimize the cross-entropy loss, *i.e.*,
 -->
 
-*dịch đoạn phía trên*
-
+Mạng phân biệt là một bộ phân loại nhị phân nhằm phân biệt xem đầu vào $x$ là thật (từ dữ liệu thật) hoặc giả (từ mạng sinh).
+Thông thường, đầu ra của mạng phân biệt là một số vô hướng $o\in\mathbb R$ dự đoán cho đầu vào $\mathbf x$, chằng hạn như sử sụng một tầng kết nối đầy đủ với kích thước ẩn 1 và sau đó sẽ được đưa qua hàm sigmoid để nhận được xác suất dự đoán $D(\mathbf x) = 1/(1+e^{-o})$.
+Giả sử nhãn $y$ cho dữ liệu thật là $1$ và $0$ cho dữ liệu giả.
+Ta sẽ huấn luyện mạng phân biệt để cực tiểu hóa mất mát entropy chéo, *nghĩa là*,
 
 $$ \min_D \{ - y \log D(\mathbf x) - (1-y)\log(1-D(\mathbf x)) \},$$
-
 
 <!--
 For the generator, it first draws some parameter $\mathbf z\in\mathbb R^d$ from a source of randomness,
@@ -145,11 +154,12 @@ In other words, for a given discriminator $D$,
 we update the parameters of the generator $G$ to maximize the cross-entropy loss when $y=0$, *i.e.*,
 -->
 
-*dịch đoạn phía trên*
-
+Đối với mạng sinh, trước tiên nó tạo ra một vài tham số ngẫu nhiên $\mathbf z\in\mathbb R^d$ từ một nguồn, *ví dụ*, phân phối chuẩn $\mathbf z \sim \mathcal{N} (0, 1)$.
+Ta thường gọi $\mathbf z$ như là một biến tiềm ẩn.
+Mục tiêu của mạng sinh là đánh lừa mạng phân biệt để phân loại $\mathbf x'=G(\mathbf z)$  là dữ liệu thật, *nghĩa là*, ta muốn $D( G(\mathbf z)) \approx 1$.
+Nói cách khác, cho trước một mạng phân biệt $D$, ta sẽ cập nhật tham số của mạng sinh $G$ nhằm cực đại hóa mất mát entropy chéo khi $y=0$, *tức là*,
 
 $$ \max_G \{ - (1-y) \log(1-D(G(\mathbf z))) \} = \max_G \{ - \log(1-D(G(\mathbf z))) \}.$$
-
 
 <!--
 If the generator does a perfect job, then $D(\mathbf x')\approx 1$ so the above loss near 0, 
@@ -157,17 +167,16 @@ which results the gradients are too small to make a good progress for the discri
 So commonly we minimize the following loss:
 -->
 
-*dịch đoạn phía trên*
-
+Nếu như mạng sinh làm tốt, thì $D(\mathbf x')\approx 1$ để mất mát gần 0, kết quả là các gradient sẽ trở nên quá nhỏ để tạo ra được sự tiến bộ đáng kể cho mạng phân biệt
+Vì vậy, ta sẽ cực tiểu hóa mất mát như sau:
 
 $$ \min_G \{ - y \log(D(G(\mathbf z))) \} = \min_G \{ - \log(D(G(\mathbf z))) \}, $$
-
 
 <!--
 which is just feed $\mathbf x'=G(\mathbf z)$ into the discriminator but giving label $y=1$.
 -->
 
-*dịch đoạn phía trên*
+trong đó chỉ đưa $\mathbf x'=G(\mathbf z)$ vào mạng phân biệt nhưng cho trước nhãn $y=1$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -560,7 +569,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 2 -->
-* 
+* Lý Phi Long
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
