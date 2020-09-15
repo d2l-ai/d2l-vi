@@ -589,7 +589,7 @@ Imagine we have a different network of functions where the functions on the righ
 ![Another more subtle example of the chain rule.](../img/ChainNet2.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/ChainNet2.svg)
+![Một ví dụ khác về quy tắc dây chuyền](../img/ChainNet2.svg)
 :label:`fig_chain-2`
 
 
@@ -597,7 +597,7 @@ Imagine we have a different network of functions where the functions on the righ
 To compute something like $\frac{\partial f}{\partial y}$, we need to sum over all (in this case $3$) paths from $y$ to $f$ giving
 -->
 
-*dịch đoạn phía trên*
+Để tính toán $\frac{\partial f}{\partial y}$, chúng ta cần tính tổng toàn bộ đường đi từ $y$ đến $f$:
 
 
 $$
@@ -610,7 +610,7 @@ Understanding the chain rule in this way will pay great dividends when trying to
 and why various architectural choices like those in LSTMs (:numref:`sec_lstm`) or residual layers (:numref:`sec_resnet`) can help shape the learning process by controlling gradient flow.
 -->
 
-*dịch đoạn phía trên*
+Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradients xuyên suốt mạng và vì sao một số lựa chọn kiến trúc trong LSTMs (:numref:`sec_lstm`) hoặc các residual layers (:numref:`sec_resnet`) có thể hình thành quá trình học bằng cách kiểm soát dòng chảy gradient.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -620,14 +620,14 @@ and why various architectural choices like those in LSTMs (:numref:`sec_lstm`) o
 ## The Backpropagation Algorithm
 -->
 
-## *dịch tiêu đề trên*
+## Thuật toán lan truyền ngược (*Backpropagation*)
 
 
 <!--
 Let us return to the example of :eqref:`eq_multi_func_def` the previous section where
 -->
 
-*dịch đoạn phía trên*
+Hãy xem lại ví dụ :eqref:`eq_multi_func_def` ở phần trước:
 
 
 $$
@@ -643,7 +643,7 @@ $$
 If we want to compute say $\frac{\partial f}{\partial w}$ we may apply the multi-variate chain rule to see:
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta muốn tính $\frac{\partial f}{\partial w}$, chúng ta có thể áp dụng quy tắc dây chuyền:
 
 
 $$
@@ -660,8 +660,8 @@ Let us try using this decomposition to compute $\frac{\partial f}{\partial w}$.
 Notice that all we need here are the various single step partials:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta hãy thử sử dụng cách phân tách này để tính $\frac{\partial f}{\partial w}$.
+Tất cả những gì chúng ta cần làm là thực hiện một số tính toán đạo hàm riêng:
 
 $$
 \begin{aligned}
@@ -677,7 +677,7 @@ $$
 If we write this out into code this becomes a fairly manageable expression.
 -->
 
-*dịch đoạn phía trên*
+Khi lập trình, các tính toán này trở thành một biểu thức khá dễ quản lý.
 
 
 ```{.python .input}
@@ -711,14 +711,20 @@ However, think back to our motivation from deep learning: we want to see how eve
 In essence, we want to apply the chain rule keeping $\partial f$ in the numerator whenever we can!
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, cần lưu ý rằng điều này không làm cho việc tính toán các đạo hàm chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản.
+Lý do nằm ở *cách* chúng ta chọn để áp dụng quy tắc dây chuyền.
+Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn giữ $\partial w$ ở mẫu khi có thể.
+Với cách này, chúng ta áp dụng quy tắc dây chuyền để  $w$ thay đổi mỗi biến số như thế nào.
+Nếu đó là những gì chúng ta muốn thì cách này quả là một ý tưởng hay.
+Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào.
+Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào chúng ta còn có thể!
 
 
 <!--
 To be more explicit, note that we can write
 -->
 
-*dịch đoạn phía trên*
+Cụ thể hơn, chúng ta có thể viết như sau:
 
 
 $$
@@ -736,7 +742,8 @@ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}
 Nothing stops us from also including the equations:
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng cách áp dụng quy tắc dây chuyền này buộc chúng ta phải tính $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}{\partial a}, \frac{\partial f}{\partial b}, \; \text{and} \; \frac{\partial f}{\partial w}$.
+Chúng ta cũng có thể thêm vào các phương trình:
 
 
 $$
@@ -752,7 +759,7 @@ $$
 and then keeping track of how $f$ changes when we change *any* node in the entire network.  Let us implement it.
 -->
 
-*dịch đoạn phía trên*
+và tiếp đó theo dõi $f$ biến đổi như thế nào khi chúng ta thay đổi *bất kỳ* nút nào trong toàn bộ mạng. Chúng ta hãy triển khai nó.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
