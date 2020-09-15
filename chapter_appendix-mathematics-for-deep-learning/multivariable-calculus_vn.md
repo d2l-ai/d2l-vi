@@ -5,7 +5,7 @@
 # Multivariable Calculus
 -->
 
-# *dịch tiêu đề trên*
+# Giải tích Nhiều biến
 :label:`sec_multivariable_calculus`
 
 
@@ -14,14 +14,15 @@ Now that we have a fairly strong understanding of derivatives of a function of a
 let us return to our original question where we were considering a loss function of potentially billions of weights.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ chúng ta đã có hiểu biết vững chắc về đạo hàm của một hàm đơn biến,
+hãy cùng trở lại câu hỏi ban đầu về hàm mất mát của (nhiều khả năng là) hàng tỷ trọng số.
 
 
 <!--
 ## Higher-Dimensional Differentiation
 -->
 
-## *dịch tiêu đề trên*
+## Đạo hàm trong Không gian Nhiều chiều
 
 
 <!--
@@ -29,8 +30,8 @@ What :numref:`sec_single_variable_calculus` tells us is that if we change a sing
 This is nothing more than a function of a single variable, so we can write
 -->
 
-*dịch đoạn phía trên*
-
+Những gì được nói trong :numref:`sec_single_variable_calculus` là ta sẽ biết điều gì sẽ xảy ra nếu ta thay đổi chỉ một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại.
+Trường hợp này cũng không khác với một hàm đa biến là mấy, nên ta có thể viết
 
 $$L(w_1+\epsilon_1, w_2, \ldots, w_N) \approx L(w_1, w_2, \ldots, w_N) + \epsilon_1 \frac{d}{dw_1} L(w_1, w_2, \ldots, w_N).$$
 :eqlabel:`eq_part_der`
@@ -41,14 +42,14 @@ We will call the derivative in one variable while fixing the other the *partial 
 and we will use the notation $\frac{\partial}{\partial w_1}$ for the derivative in :eqref:`eq_part_der`.
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_),
+và ta ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`.
 
 <!--
 Now, let us take this and change $w_2$ a little bit to $w_2 + \epsilon_2$:
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, tiếp tục thay đổi $w_2$ một khoảng nhỏ $w_2 + \epsilon_2$:
 
 
 $$
@@ -71,7 +72,8 @@ the same way we could discard $\epsilon^{2}$ in the previous section, along with
 By continuing in this manner, we may write that
 -->
 
-*dịch đoạn phía trên*
+Một lần nữa, ta lại sử dụng những gì ta đã thấy ở :eqref:`eq_part_der` và ý tưởng rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước.
+Cứ tiếp tục theo cách này, ta có thể viết được
 
 
 $$
@@ -83,11 +85,11 @@ $$
 This may look like a mess, but we can make this more familiar by noting that the sum on the right looks exactly like a dot product, so if we let
 -->
 
-*dịch đoạn phía trên*
+Thoạt nhìn có vẻ là một mớ hỗn độn, chú ý rằng phép tổng bên phải chính là biểu diễn của phép tích vô hướng và ta có thể khiến chúng trở nên quen thuộc hơn bằng cách cho
 
 
 $$
-\boldsymbol{\epsilon} = [\epsilon_1, \ldots, \epsilon_N]^\top \; \text{and} \;
+\boldsymbol{\epsilon} = [\epsilon_1, \ldots, \epsilon_N]^\top \; \text{và} \;
 \nabla_{\mathbf{x}} L = \left[\frac{\partial L}{\partial x_1}, \ldots, \frac{\partial L}{\partial x_N}\right]^\top,
 $$
 
@@ -96,7 +98,7 @@ $$
 then
 -->
 
-*dịch đoạn phía trên*
+thì
 
 
 $$L(\mathbf{w} + \boldsymbol{\epsilon}) \approx L(\mathbf{w}) + \boldsymbol{\epsilon}\cdot \nabla_{\mathbf{w}} L(\mathbf{w}).$$
@@ -107,7 +109,7 @@ $$L(\mathbf{w} + \boldsymbol{\epsilon}) \approx L(\mathbf{w}) + \boldsymbol{\eps
 We will call the vector $\nabla_{\mathbf{w}} L$ the *gradient* of $L$.
 -->
 
-*dịch đoạn phía trên*
+Ta gọi vector $\nabla_{\mathbf{w}} L$ là *gradient* của $L$.
 
 
 <!--
@@ -117,7 +119,10 @@ It allows us to tell approximately how the function $L$ will change given any pe
 As we will see in the next section, this will provide us with an important tool in understanding geometrically how we can learn using information contained in the gradient.
 -->
 
-*dịch đoạn phía trên*
+Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút.
+Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ là chúng ta chuyển tất cả về dạng vector và tích vô hướng.
+Nó cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào.
+Như ta sẽ thấy trong mục tiếp theo, điều này sẽ cung cấp cho chúng ta một công cụ quan trọng để hiểu một cách họa hình cách ta có thể học từ thông tin chứa trong gradient.
 
 
 <!--
@@ -125,11 +130,12 @@ But first, let us see this approximation at work with an example.
 Suppose that we are working with the function
 -->
 
-*dịch đoạn phía trên*
+Nhưng trước tiên, hãy cùng kiểm tra phép xấp xỉ này với một ví dụ.
+Giả sử ta đang làm việc với hàm
 
 
 $$
-f(x, y) = \log(e^x + e^y) \text{ with gradient } \nabla f (x, y) = \left[\frac{e^x}{e^x+e^y}, \frac{e^y}{e^x+e^y}\right].
+f(x, y) = \log(e^x + e^y) \text{ với gradient } \nabla f (x, y) = \left[\frac{e^x}{e^x+e^y}, \frac{e^y}{e^x+e^y}\right].
 $$
 
 
@@ -137,11 +143,11 @@ $$
 If we look at a point like $(0, \log(2))$, we see that
 -->
 
-*dịch đoạn phía trên*
+Nếu ta nhìn vào một điểm như $(0, \log(2))$, ta thấy được rằng
 
 
 $$
-f(x, y) = \log(3) \text{ with gradient } \nabla f (x, y) = \left[\frac{1}{3}, \frac{2}{3}\right].
+f(x, y) = \log(3) \text{ với gradient } \nabla f (x, y) = \left[\frac{1}{3}, \frac{2}{3}\right].
 $$
 
 
@@ -150,7 +156,7 @@ Thus, if we want to approximate $f$ at $(\epsilon_1, \log(2) + \epsilon_2)$,
 we see that we should have the specific instance of :eqref:`eq_nabla_use`:
 -->
 
-*dịch đoạn phía trên*
+Vì thế, nếu muốn xấp xỉ $f$ tại $(\epsilon_1, \log(2) + \epsilon_2)$, ta thấy rằng ta sẽ có được một ví dụ cụ thể của :eqref:`eq_nabla_use`:
 
 
 $$
@@ -162,7 +168,7 @@ $$
 We can test this in code to see how good the approximation is.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác mức nào.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
