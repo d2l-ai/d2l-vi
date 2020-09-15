@@ -128,7 +128,7 @@ $\mathbf{p}_u \in \mathbb{R}^{ k}$ is the $u^\mathrm{th}$ row of $P$ and $\mathb
 
 trong đó $\mathbf{V} \in \mathbb{R}^{n \times 2k}$ là một ma trận embedding sản phẩm khác.
 $\mathbf{b}' \in \mathbb{R}^n$ là độ chệch đặc thù của sản phẩm.
-$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding người dùng cho thị hiếu chung của người dùng.
+$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding thị hiếu chung của người dùng.
 $\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của $P$ và $\mathbf{v}_i \in \mathbb{R}^{2k}$ là hàng thứ $i$ của $\mathbf{V}$.
 
 
