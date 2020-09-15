@@ -96,10 +96,10 @@ Nếu ta đang làm việc với hình ảnh, mô hình cần tạo ra hình ả
 Nếu ta đang làm việc với giọng nói, mô hình cần tạo ra được chuỗi âm thanh, v.v.
 Ta gọi mô hình này là mạng sinh. Thành phần thứ hai là mạng phân biệt.
 Nó cố gắng phân biệt dữ liệu giả và thật với nhau.
-Cả hai mạng như trong cuộc cạnh tranh với nhau.
+Cả hai mạng này sẽ cạnh tranh với nhau.
 Mạng sinh sẽ cố gắng đánh lừa mạng phân biệt.
 Đồng thời, mạng phân biệt sẽ thích nghi với dữ liệu giả vừa mới tạo ra.
-Thông tin này, sẽ được dùng để cải thiện mạng sinh, v.v.
+Thông tin này từ đó sẽ được dùng để cải thiện mạng sinh, và cứ tiếp tục như vậy.
 
 <!--
 The discriminator is a binary classifier to distinguish if the input $x$ is real (from real data) or fake (from the generator).
