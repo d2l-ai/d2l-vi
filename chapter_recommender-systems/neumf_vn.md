@@ -161,7 +161,7 @@ The structure of the MLP is controlled with the parameter `nums_hiddens`.
 ReLU is used as the default activation function.
 -->
 
-Đoạn mã dưới đây được lập trình cho mô hình NeuMF.
+Đoạn mã dưới đây lập trình mô hình NeuMF.
 Nó bao gồm mô hình phân rã ma trận tổng quát hoá và perceptron đa tầng với các vector embedding người dùng và sản phẩm khác nhau.
 Kiến trúc của mạng MLP được quy định thông qua tham số `nums_hiddens`.
 ReLU được sử dụng làm hàm kích hoạt mặc định.
