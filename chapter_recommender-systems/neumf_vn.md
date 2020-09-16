@@ -202,7 +202,7 @@ class NeuMF(nn.Block):
 ## Customized Dataset with Negative Sampling
 -->
 
-## *dịch tiêu đề trên*
+## Tập Dữ liệu Tùy chỉnh với phép Lấy mẫu Âm
 
 
 <!--
@@ -212,7 +212,10 @@ The following function takes users identity and candidate items as input, and sa
 During the training stage, the model ensures that the items that a user likes to be ranked higher than items he dislikes or has not interacted with.
 -->
 
-*dịch đoạn phía trên*
+Một bước quan trọng trong mất mát xếp hạng theo cặp là lấy mẫu âm.
+Với mỗi người dùng, các sản phẩm mà người dùng chưa tương tác là các sản phẩm tiềm năng (các mục chưa được quan sát).
+Hàm dưới đây có đầu vào là danh tính người dùng và các sản phẩm tiềm năng, và lấy mẫu âm các sản phẩm ngẫu nhiên cho từng người dùng từ tập tiềm năng của người dùng đó.
+Trong quá trình huấn luyện, mô hình đảm bảo rằng các sản phẩm mà một người dùng thích sẽ được xếp hạng cao hơn các sản phẩm mà người này không thích hoặc chưa từng tương tác.
 
 
 ```{.python .input  n=3}
@@ -237,7 +240,7 @@ class PRDataset(gluon.data.Dataset):
 ## Evaluator
 -->
 
-## *dịch tiêu đề trên*
+## Đánh giá
 
 
 <!--
@@ -247,7 +250,10 @@ Hit rate at given position $\ell$ for each user indicates that whether the recom
 The formal definition is as follows:
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, ta sẽ áp dụng chiến lược chia tách theo thời gian để xây dựng tập huấn luyện và tập kiểm tra.
+Hai phép đánh giá bao gồm tỷ lệ chọn đúng (*hit rate*) theo ngưỡng $\ell$ ($\text{Hit}@\ell$) cho trước và diện tích dưới đường cong ROC (AUC) được sử dụng để đánh giá hiệu quả của mô hình.
+Tỷ lệ chọn đúng tại ngưỡng $\ell$ cho trước với mỗi người dùng biểu thị rằng liệu sản phẩm được gợi ý có được đưa vào danh sách xếp hạng $\ell$ sản phẩm hàng đầu hay không.
+Định nghĩa chính thức như sau:
 
 
 $$
@@ -261,14 +267,15 @@ $rank_{u, g_u}$ denotes the ranking of the ground truth item $g_u$ of the user $
 $m$ is the number of users. $\mathcal{U}$ is the user set.
 -->
 
-*dịch đoạn phía trên*
-
+trong đó hàm biểu thị được ký hiệu bởi $\textbf{1}$, bằng 1 nếu sản phẩm nhãn gốc được xếp hạng trong danh sách $\ell$ sản phẩm hàng đầu, ngược lại hàm trả về 0.
+$rank_{u, g_u}$ ký hiệu xếp hạng của sản phẩm nhãn gốc $g_u$ của người dùng $u$ trong danh sách gợi ý (xếp hạng lý tưởng là 1).
+$m$ là số lượng người dùng. $\mathcal{U}$ là tập người dùng.
 
 <!--
 The definition of AUC is as follows:
 -->
 
-*dịch đoạn phía trên*
+Định nghĩa AUC được mô tả dưới đây:
 
 
 $$
@@ -282,14 +289,16 @@ Note that many other evaluation protocols such as precision,
 recall and normalized discounted cumulative gain (NDCG) can also be used.
 -->
 
-*dịch đoạn phía trên*
+trong đó $\mathcal{I}$ là tập các sản phẩm. $S_u$ là các sản phẩm tiềm năng của người dùng $u$.
+Chú ý rằng có rất nhiều phép đánh giá khác như precision, recall, hay NDCG (*Normalized Discounted Cumulative Gain*) cũng có thể được sử dụng.
+
 
 
 <!--
 The following function calculates the hit counts and AUC for each user.
 -->
 
-*dịch đoạn phía trên*
+Hàm sau đây tính toán số lần chọn đúng và AUC cho mỗi người dùng.
 
 
 ```{.python .input  n=4}
@@ -309,7 +318,7 @@ def hit_and_auc(rankedlist, test_matrix, k):
 Then, the overall Hit rate and AUC are calculated as follows.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, tỷ lệ chọn đúng và AUC tổng thể được tính như sau.
 
 
 ```{.python .input  n=5}
@@ -349,14 +358,14 @@ def evaluate_ranking(net, test_input, seq, candidates, num_users, num_items,
 ## Training and Evaluating the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện và Đánh giá Mô hình
 
 
 <!--
 The training function is defined below. We train the model in the pairwise manner.
 -->
 
-*dịch đoạn phía trên*
+Hàm huấn luyện được định nghĩa như sau. Ta huấn luyện mô hình bằng phương pháp theo từng cặp.
 
 
 ```{.python .input  n=6}
@@ -404,7 +413,11 @@ The action of rating an item can be treated as a form of providing implicit feed
 Here, we split the dataset in the `seq-aware` mode where users' latest interacted items are left out for test.
 -->
 
-*dịch đoạn phía trên*
+Lúc này ta có thể nạp tập dữ liệu MovieLens 100k và huấn luyện mô hình.
+Vì tập dữ liệu MovieLens chỉ chứa các đánh giá xếp hạng, ta sẽ nhị phân hoá các phân biệt các đánh giá xếp hạng này thành 0 và 1 với một vài mất mát về độ chính xác.
+Nếu một người dùng đã đánh giá một sản phẩm, ta coi phản hồi gián tiếp bằng 1, bằng 0 nếu ngược lại.
+Hành động đánh giá một sản phẩm có thể được coi như là một hình thức cung cấp phản hồi gián tiếp.
+Ở đây, ta phân tách tập dữ liệu ở chế độ `seq-aware`, trong đó các sản phẩm mà người dùng tương tác gần đây nhất sẽ được tách ra để kiểm tra.
 
 
 ```{.python .input  n=11}
@@ -426,7 +439,7 @@ train_iter = gluon.data.DataLoader(
 We then create and initialize the model. We use a three-layer MLP with constant hidden size 10.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, ta tạo một mô hình và khởi tạo nó. Ta sử dụng mạng MLP 3 tầng với kích thước ẩn không đổi bằng 10.
 
 
 ```{.python .input  n=8}
@@ -440,7 +453,7 @@ net.initialize(ctx=devices, force_reinit=True, init=mx.init.Normal(0.01))
 The following code trains the model.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã nguồn dưới đây được sử dụng để huấn luyện mô hình.
 
 
 ```{.python .input  n=12}
@@ -460,7 +473,8 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 * NeuMF is a combination of matrix factorization and Multilayer perceptron. The multilayer perceptron takes the concatenation of user and item embeddings as the input.
 -->
 
-*dịch đoạn phía trên*
+* Bổ sung thêm tính phi tuyến tính vào mô hình phân rã ma trận giúp cải thiện khả năng và tính hiệu quả của mô hình.
+* Mô hình NeuMF là sự kết hợp giữa mô hình phân rã ma trận và perceptron đa tầng. Perceptron đa tầng có đầu vào là vector được ghép nối bởi embedding người dùng và embedding sản phẩm.
 
 
 ## Bài tập
@@ -472,7 +486,11 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 * Try to use hinge loss defined in the last section to optimize this model.
 -->
 
-*dịch đoạn phía trên*
+
+* Hãy thay đổi kích thước của các nhân tố ẩn. Kích thước của các nhân tố ẩn tác động như thế nào đến chất lượng mô hình?
+* Hãy thay đổi kiến trúc của MLP (ví dụ: số lượng tầng, số lượng nơ-ron của mỗi tầng) và cho biết tác động của nó đối với chất lượng của mô hình.
+* Hãy thử các bộ tối ưu, tốc độ học và tốc độ suy giảm trọng số khác nhau.
+* Hãy thử sử dụng mất mát hinge được định nghĩa ở phần trước để tối ưu mô hình này.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -498,6 +516,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Văn Quang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 31/07/2020)*
