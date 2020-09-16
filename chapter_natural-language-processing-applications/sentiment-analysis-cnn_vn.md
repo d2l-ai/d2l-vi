@@ -232,7 +232,7 @@ it usually allows the model to be unaffected by the manually added characters.
 
 Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
 Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
-Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự đư\speợc thêm vào thủ công.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
