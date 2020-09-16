@@ -925,7 +925,15 @@ The relationship between the eigenvalues (and a related object called singular v
 has been shown to have deep connections to proper initialization of neural networks as was discussed in :cite:`Pennington.Schoenholz.Ganguli.2017` and subsequent works.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể thấy được điều mà ta mong muốn!
+Sau khi chuẩn hoá ma trận bằng trị riêng chính, ta thấy rằng dữ liệu ngẫu nhiên không còn bùng nổ như trước nữa,
+thay vào đó lại cân bằng quanh một giá trị nhất định.
+Sẽ thật tuyệt nếu ta có thể thực hiện việc này bằng các định đề cơ bản, và hoá ra là nếu ta tìm hiểu sâu về mặt toán học của nó,
+ta có thể thấy rằng trị riêng lớn nhất của một ma trận lớn ngẫu nhiên với kỳ vọng độc lập không,
+phương sai một và các phần tử tuân theo phân phối Gauss trung bình bằng xấp xỉ $\sqrt{n}$, hay trong trường hợp của ta $\sqrt{5} \approx 2.2$,
+bởi một thực tế tuyệt vời được biết đến là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
+Mối quan hệ giữa các trị riêng (và một đại lượng liên quan được gọi là trị đơn (*singular value*)) của ma trận ngẫu nhiên
+đã được chứng minh là có liên hệ sâu sắc tới việc khởi tạo mạng nơ-ron một cách thích hợp như đã thảo luận trong :cite:`Pennington.Schoenholz.Ganguli.2017` và các nghiên cứu liên quan.
 
 
 ## Tóm tắt
@@ -938,7 +946,11 @@ has been shown to have deep connections to proper initialization of neural netwo
 * The behavior of iterated matrix powers depends primarily on the size of the largest eigenvalue.  This understanding has many applications in the theory of neural network initialization.
 -->
 
-*dịch đoạn phía trên*
+* Vector riêng là các vector bị dãn bởi một ma trận mà không thay đổi hướng.
+* Trị riêng là mức độ mà các vector riêng đó bị dãn bởi khai triển ma trận.
+* Phân tích trị riêng của một ma trận cho nhiều thao tác có thể rút gọn thành các thao tác trên trị riêng.
+* Định lý Đường tròn Gershgorin (*Gershgorin Circle Theorem*) có thể cung cấp giá trị xấp xỉ cho các trị riêng của một ma trận.
+* Hành vi của công suất lặp ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo cho mạng nơ-ron.
 
 
 ## Bài tập
@@ -947,7 +959,7 @@ has been shown to have deep connections to proper initialization of neural netwo
 1. What are the eigenvalues and eigenvectors of
 -->
 
-*dịch đoạn phía trên*
+1. Tìm các trị riêng và vector riêng của
 
 
 $$
@@ -962,7 +974,7 @@ $$
 2. What are the eigenvalues and eigenvectors of the following matrix, and what is strange about this example compared to the previous one?
 -->
 
-*dịch đoạn phía trên*
+2. Tìm các trị riêng và vector riêng của ma trận sau đây, và cho biết có điều gì lạ ở ví dụ này so với ví dụ trước?
 
 
 $$
@@ -978,7 +990,8 @@ $$
 *Note*: this problem can be done in your head.
 -->
 
-*dịch đoạn phía trên*
+3. Không tính các trị riêng, liệu có khả năng trị riêng nhỏ nhất của ma trận sau nhỏ hơn $0.5$?
+*Ghi chú*: bài tập này có thể nhẩm được trong đầu.
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -1029,7 +1042,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 24/07/2020)*
