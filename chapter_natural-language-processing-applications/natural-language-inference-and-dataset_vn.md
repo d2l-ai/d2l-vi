@@ -86,7 +86,7 @@ Sau đây là một ví dụ về *đối lập*, vì "chạy đoạn mã ví d�
 > Premise: A man is running the coding example from Dive into Deep Learning.
 -->
 
-> tiền đề: Một bạn đang chạy đoạn mã ví dụ trong Đắm mình vào học sâu.
+> Tiền đề: Một bạn đang chạy đoạn mã ví dụ trong Đắm mình vào học sâu.
 
 <!--
 > Hypothesis: The man is sleeping.
@@ -106,7 +106,7 @@ Ví dụ thứ ba cho thấy mối quan hệ *trung tính* vì cả "nổi tiế
 > Premise: The musicians are performing for us.
 -->
 
-> tiền đề: Các nhạc công đang biểu diễn cho chúng tôi.
+> Tiền đề: Các nhạc công đang biểu diễn cho chúng tôi.
 
 <!--
 > Hypothesis: The musicians are famous.
@@ -123,7 +123,7 @@ To study this problem, we will begin by investigating a popular natural language
 
 Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm trong việc hiểu ngôn ngữ tự nhiên.
 Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏi đáp trong miền mở.
-Để nghiên cứu vấn đề này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến của suy luận ngôn ngữ tự nhiên.
+Để nghiên cứu vấn đề này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến trong suy luận ngôn ngữ tự nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -240,7 +240,7 @@ for data in [train_data, test_data]:
 ### Defining a Class for Loading the Dataset
 -->
 
-### Định nghĩa Lớp Nạp tập dữ liệu
+### Định nghĩa Lớp để Nạp Tập dữ liệu
 
 
 <!--
@@ -307,7 +307,7 @@ As a result, any new token from the testing set will be unknown to the model tra
 
 Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng với bộ từ vựng của tập huấn luyện.
 Lưu ý rằng ta phải sử dụng bộ từ vựng được xây dựng từ tập huấn luyện cho tập kiểm tra.
-Kết quả là, mô hình được huấn luyện trên tập huấn luyện sẽ không biết bất kỳ token mới nào từ tập kiểm tra nếu có.
+Như vậy, mô hình được huấn luyện trên tập huấn luyện sẽ không biết bất kỳ token mới nào từ tập kiểm tra nếu có.
 
 
 ```{.python .input  n=114}
@@ -385,7 +385,7 @@ Can you design a measure for evaluating machine translation results by using nat
 2. How can we change hyperparameters to reduce the vocabulary size? 
 -->
 
-1. Dịch máy từ lâu đã được đánh giá theo một cách hời hợt dựa trên sự trùng khớp $n$-gram giữa bản dịch đầu ra và bản dịch nhãn gốc.
+1. Dịch máy từ lâu nay vẫn được đánh giá bằng sự trùng lặp bề ngoài giữa các $n$-gram của bản dịch đầu ra và bản dịch nhãn gốc.
 Bạn có thể thiết kế một phép đo để đánh giá kết quả dịch máy bằng cách sử dụng suy luận ngôn ngữ tự nhiên không?
 2. Thay đổi siêu tham số như thế nào để giảm kích thước bộ từ vựng?
 
