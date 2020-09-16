@@ -396,7 +396,7 @@ In each iteration, we first update the discriminator and then the generator.
 We visualize both losses and generated examples.
 -->
 
-Cả bộ phân biệt lẫn bộ sinh biểu diễn như một bộ hồi quy logistic nhị phân với mất mát entropy chéo.
+Cả bộ phân biệt lẫn bộ sinh hoạt động như một bộ hồi quy logistic nhị phân với mất mát entropy chéo.
 Ta sử dụng Adam để làm mượt quá trình huấn luyện.
 Với mỗi lần lặp, đầu tiên ta cập nhật bộ phân biệt và sau đó đến bộ sinh.
 Ta sẽ theo dõi cả hai giá trị mất mát lẫn những dữ liệu được sinh.
