@@ -199,7 +199,7 @@ Bây giờ ta hãy xem xét các tác vụ ở mức token, ví dụ như *gán 
 Trong số các tác vụ gán thẻ văn bản, *gán thẻ từ loại (part-of-speech tagging)* gán cho mỗi từ một thẻ từ loại (ví dụ, tính từ hay danh từ) dựa vào vai trò của từ đó trong câu.
 Ví dụ, dựa vào tập thẻ Penn Treebank II,
 câu "John Smith 's car is new" nên được gán thẻ như
-"NNP (danh từ, số ít) NNP POS (sở hữu cách) NN (danh từ, số ít hoặc nhiều) VB (động từ, động từ nguyên thể không to) JJ (tính từ)".
+"NNP (danh từ riêng, số ít) NNP POS (sở hữu cách) NN (danh từ, số ít hoặc nhiều) VB (động từ, động từ nguyên thể không "to") JJ (tính từ)".
 
 
 <!--
@@ -219,8 +219,8 @@ is fed into the same extra fully-connected layers to output the label of the tok
 
 Tinh chỉnh BERT cho ứng dụng gán thẻ văn bản được minh họa trong :numref:`fig_bert-tagging`.
 So với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất là
-biểu diễn BERT của *mỗi token* của văn bản đầu vào
-được truyền vào các tầng kết nối đầy đủ bổ sung giống nhau để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
+biểu diễn BERT của *mỗi token* trong văn bản đầu vào
+được truyền vào cùng một mạng kết nối đầy đủ bổ sung để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
 
 
 <!--
@@ -277,16 +277,16 @@ When predicting the end, any passage token of position $i$ is transformed by the
 :numref:`fig_bert-qa` depicts fine-tuning BERT for question answering.
 -->
 
-Để tinh chỉnh BERT cho ứng dụng trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt như 
-chuỗi văn bản thứ nhất thứ hai của trong đầu vào của BERT.
+Để tinh chỉnh BERT cho ứng dụng trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt là 
+chuỗi văn bản thứ nhất và thứ hai trong đầu vào của BERT.
 Để dự đoán vị trí của phần bắt đầu của khoảng văn bản, cùng một tầng kết nối đầy đủ được thêm vào sẽ chuyển hóa
 biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ thành một giá trị vô hướng $s_i$. 
 Các giá trị vô hướng của tất cả token trong đoạn văn được tiếp tục biến đổi bởi hàm softmax
 trở thành một phân phối xác suất, dẫn tới mỗi vị trí $i$ của token trong đoạn văn được gán
 cho một xác suất $p_i$, là xác suất token đó là điểm bắt đầu của khoảng văn bản.
-Dự đoán điểm kết thúc của khoảng văn bản cũng tương tự, ngoại trừ các tham số trong tầng kết nối đầy đủ mở rộng là độc lập với các tầng để dự đoán điểm bắt đầu.
+Dự đoán điểm kết thúc của khoảng văn bản cũng tương tự, ngoại trừ việc các tham số trong tầng kết nối đầy đủ mở rộng là độc lập với các tầng để dự đoán điểm bắt đầu.
 Khi dự đoán điểm kết thúc, token có vị trí $i$ trong đoạn văn được biến đổi thành một giá trị vô hướng $e_i$ bởi tầng kết nối đầy đủ.
-:numref:`fig_bert-qa` minh họa tinh chỉnh BERT cho ứng dụng trả lời câu hỏi.
+:numref:`fig_bert-qa` minh họa tinh quá trình chỉnh BERT cho ứng dụng trả lời câu hỏi.
 
 
 <!--
@@ -296,7 +296,7 @@ When predicting the span, we can compute the score $s_i + e_j$ for a valid span
 from position $i$ to position $j$ ($i \leq j$), and output the span with the highest score.
 -->
 
-Cho việc trả lời câu hỏi, mục đích của huấn luyện học có giám sát đơn giản là cực đại hóa hàm log hợp lý của các vị trí bắt đầu và kết thúc nhãn gốc. 
+Cho việc trả lời câu hỏi, mục đích của huấn luyện có giám sát đơn giản là cực đại hóa hàm log hợp lý của các vị trí bắt đầu và kết thúc nhãn gốc. 
 Khi dự đoán khoảng văn bản, ta có thể tính toán giá trị $s_i + e_j$ cho một khoảng hợp lệ từ vị trí $i$ tới vị trí $j$ ($i \leq j$), và đưa ra khoảng có giá trị cao nhất làm đầu ra.
 
 
@@ -332,8 +332,8 @@ How can we apply negative sampling (see :numref:`subsec_negative-sampling`) and 
 nó trả về một danh sách xếp hạng các bài viết tin tức liên quan tới truy vấn nhất. 
 Giả sử như ta có một tập lớn các bài báo và một số lượng lớn các truy vấn.
 Để đơn giản hóa vấn đề, giả thiết rằng bài báo liên quan nhất được gán nhãn cho từng truy vấn.
-Làm cách nào để ta áp dụng lấy mẫu âm (xem :numref:`subsec_negative-sampling`) và BERT trong thiết kế thuật toán?
-2. Làm thế nào để tận dụng BERT trong huấn luyện các mô hình ngôn ngữ?
+Làm cách nào để ta áp dụng phương pháp lấy mẫu âm (xem :numref:`subsec_negative-sampling`) và BERT khi thiết kế thuật toán?
+2. Làm thế nào để tận dụng BERT khi huấn luyện các mô hình ngôn ngữ?
 3. Làm thế nào để tận dụng BERT trong dịch máy?
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
