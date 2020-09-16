@@ -396,7 +396,7 @@ For example, given a input shape $n_h = n_w = 16$, with a kernel shape $k_h = k_
 a stride shape $s_h = s_w = 2$, and a padding shape $p_h = p_w = 1$, the output shape will be:
 -->
 
-Khối cơ bản với thiết lập mặc định sẽ chia nửa chiều rộng và chiều cao của các đầu vào, như ta đã trình diễn trong in :numref:`sec_padding`.
+Khối cơ bản với thiết lập mặc định sẽ chia nửa chiều rộng và chiều cao của đầu vào, như ta đã chứng tỏ trong :numref:`sec_padding`.
 Chẳng hạn, cho trước kích thước đầu vào là $n_h = n_w = 16$, với một bộ lọc có kích thước $k_h = k_w = 4$,
 sải bước $s_h = s_w = 2$, và đệm $p_h = p_w = 1$, kích thước đầu ra sẽ là:
 
