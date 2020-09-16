@@ -361,7 +361,7 @@ and is a fundamental operation underlying many numerical algorithms and much of 
 It is not always possible to find enough linearly independent eigenvectors for the above process to work. For instance the matrix
 -->
 
-*dịch đoạn phía trên*
+Sự thực là không phải lúc nào ta cũng có thể tìm đủ các vector riêng đọc lập tuyến tính cho quy trình phía trên hoạt động. Ví dụ ma trận sau
 
 
 $$
@@ -378,8 +378,9 @@ To handle such matrices, we require more advanced techniques than we can cover (
 We will often need to restrict our attention to those matrices where we can guarantee the existence of a full set of eigenvectors.
 -->
 
-*dịch đoạn phía trên*
-
+chỉ có duy nhất một vector riêng, gọi là $(1, 0)^\top$. 
+Để xử lý những ma trận như thế, yêu cầu ta những kỹ thuật nâng cao hơn những thứ ta có thể bảo đảm (ví dụ như dạng chuẩn Jordan, hay phân tích đơn trị). 
+Ta thường sẽ cần hạn chế chú ý đến những ma trận mà ta có thể đảm bảo tồn tại một bộ đầy đủ các vector riêng. 
 
 <!--
 The most commonly encountered family are the *symmetric matrices*, which are those matrices where $\mathbf{A} = \mathbf{A}^\top$. 
@@ -388,7 +389,9 @@ where $\mathbf{W}^\top = \mathbf{W}^{-1}$—and all the eigenvalues will be real
 Thus, in this special case, we can write :eqref:`eq_eig_decomp` as
 -->
 
-*dịch đoạn phía trên*
+Tập vector mà thường gặp nhất là tập *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
+Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận orthogonal* - ma trận mà các cột của nó là các vector có độ dài bằng một và..
+
 
 
 $$
