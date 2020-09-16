@@ -310,7 +310,7 @@ such as single text classification (e.g., sentiment analysis and testing linguis
 while all the parameters in the pretrained BERT model are fine-tuned.
 -->
 
-* BERT đòi hỏi thay đổi kiến trúc tối thiểu (các tầng kết nối đầy đủ mở rộng) cho những ứng dụng xử lý ngôn ngữ tự nhiên ở mức chuỗi và mức token,
+* BERT chỉ yêu cầu các thay đổi tối thiểu tới kiến trúc (thêm các tầng kết nối đầy đủ) cho nhiều ứng dụng xử lý ngôn ngữ tự nhiên ở mức chuỗi và mức token,
 ví dụ như phân loại văn bản đơn (phân tích cảm xúc và kiểm tra khả năng chấp nhận được về ngôn ngữ), phân loại hoặc hồi quy cặp văn bản 
 (suy luận ngôn ngữ tự nhiên và đo sự tương đồng ngữ nghĩa văn bản), gán thẻ văn bản (như gán thẻ từ loại) và trả lời câu hỏi.
 * Trong suốt quá trình học có giám sát của một ứng dụng xuôi dòng, các thông số của các tầng mở rộng được học từ đầu trong khi tất cả các thông số trong mô hình BERT đã tiền huấn luyện sẽ được tinh chỉnh.
