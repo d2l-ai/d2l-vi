@@ -295,7 +295,7 @@ net_G = nn.Sequential(
 Generate a 100 dimensional latent variable to verify the generator's output shape.
 -->
 
-Sinh một biến ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
+Sinh một biến tiềm ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
 
 
 ```{.python .input}
