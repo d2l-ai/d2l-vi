@@ -459,7 +459,7 @@ net_D = nn.Sequential(
 It uses a convolution layer with output channel $1$ as the last layer to obtain a single prediction value.
 -->
 
-Nó sử dụng một lớp tích chập với kênh đầu ra $1$ làm lớp sau cùng để có được một giá trị dự đoán đơn.
+Nó sử dụng một lớp tích chập với kênh đầu ra $1$ làm lớp sau cùng để có được một giá trị dự đoán đơn lẻ.
 
 
 ```{.python .input}
