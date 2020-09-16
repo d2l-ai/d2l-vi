@@ -66,7 +66,7 @@ Ví dụ, cặp sau được gán nhãn là *kéo theo* bởi vì "thể hiện 
 > Premise: Two women are hugging each other.
 -->
 
-> tiền đề: Hai người đang ôm nhau.
+> Tiền đề: Hai người đang ôm nhau.
 
 <!--
 > Hypothesis: Two women are showing affection.
