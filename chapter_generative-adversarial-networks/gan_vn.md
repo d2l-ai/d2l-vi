@@ -164,8 +164,8 @@ We will illustrate what happens if we use GANs to build the world's most ineffic
 Let us get started.
 -->
 
-Rất nhiều ứng dụng của GAN là liên quan tới hình ảnh.
-Nhằm mục đích ví dụ, chúng ta sẽ bắt đầu với việc khớp một phân phối đơn giản trước.
+Rất nhiều ứng dụng của GAN liên quan tới hình ảnh.
+Để ví dụ, chúng ta sẽ bắt đầu với việc khớp một phân phối đơn giản trước.
 Ta sẽ minh họa bằng việc cho thấy việc gì sẽ xảy ra nếu sử dụng GAN để tạo một bộ ước lượng kém hiệu quả nhất thế giới cho một phân phối Gauss.
 Hãy tiến hành nào.
 
@@ -215,8 +215,8 @@ Let us see what we got.
 This should be a Gaussian shifted in some rather arbitrary way with mean $b$ and covariance matrix $A^TA$.
 -->
 
-Dựa trên những gì ta có.
-Dữ liệu này có thể là một phân phối Gauss được dịch chuyển theo những cách khá bất thường với trung bình $b$ và ma trận hiệp phương sai $A^TA$.
+Dựa vào đoạn mã trên,
+dữ liệu này là một phân phối Gauss được dịch chuyển theo những cách khá bất thường với trung bình $b$ và ma trận hiệp phương sai $A^TA$.
 
 
 ```{.python .input}
@@ -246,9 +246,9 @@ This is since we will be driving that linear network with a Gaussian data genera
 Hence, it literally only needs to learn the parameters to fake things perfectly.
 -->
 
-Mạng bộ sinh sẽ là một mạng đơn giản nhất có thể - một mô hình tuyến tính đơn tầng.
+Bộ sinh sẽ là một mạng đơn giản nhất có thể - một mô hình tuyến tính đơn tầng.
 Đó là vì chúng ta sẽ sử dụng mạng tuyến tính đó cùng với bộ sinh dữ liệu từ phân phối Gauss.
-Nên nó chỉ cần học những tham số của phân phối này để đóng giả một cách hoàn hảo.
+Nên nó chỉ cần học những tham số của phân phối này để làm giả một cách hoàn hảo.
 
 
 ```{.python .input}
@@ -275,7 +275,7 @@ we will use an MLP with 3 layers to make things a bit more interesting.
 -->
 
 Đối với bộ phân biệt, nó sẽ hơi khác một chút:
-ta sẽ sử dụng một MLP 3 tầng để khiến mọi thứ trở nên thú vị hơn một chút
+ta sẽ sử dụng một MLP 3 tầng để khiến mọi thứ trở nên thú vị hơn một chút.
 
 
 ```{.python .input}
@@ -354,7 +354,7 @@ The generator is updated similarly.
 Here we reuse the cross-entropy loss but change the label of the fake data from $0$ to $1$.
 -->
 
-Bộ sinh cũng được cập nhật theo một cách tương tự.
+Bộ sinh cũng được cập nhật theo cách tương tự.
 Ở đây, ta sử dụng lại làm mất mát entropy chéo nhưng thay đổi nhãn của dữ liệu giả từ $0$ thành $1$.
 
 
