@@ -10,7 +10,7 @@
 
 
 <!--
-Text classification is a common task in natural language processing, which transforms a sequence of text of sindefinite length into a category of text.
+Text classification is a common task in natural language processing, which transforms a sequence of text of indefinite length into a category of text.
 It is similar to the image classification, the most frequently used application in this book, e.g., :numref:`sec_naive_bayes`.
 The only difference is that, rather than an image, text classification's example is a text sentence.
 -->
