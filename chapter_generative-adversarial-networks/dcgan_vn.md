@@ -337,7 +337,7 @@ For $\alpha \in (0, 1)$, leaky ReLU is a nonlinear function that give a non-zero
 It aims to fix the "dying ReLU" problem that a neuron might always output a negative value and therefore cannot make any progress since the gradient of ReLU is 0.
 -->
 
-Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm định danh nếu $\alpha=1$.
+Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm đồng nhất nếu $\alpha=1$.
 Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến mà cho đầu ra khác không với giá trị đâu vào âm.
 Mục đích của hàm này là khắc phục vấn đề "ReLU chết" mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể tạo ra bất cứ cải thiện gì vì gradient của ReLU là 0.
 
