@@ -216,7 +216,7 @@ This should be a Gaussian shifted in some rather arbitrary way with mean $b$ and
 -->
 
 Dựa vào đoạn mã trên,
-dữ liệu này là một phân phối Gauss được dịch chuyển theo những cách khá bất thường với trung bình $b$ và ma trận hiệp phương sai $A^TA$.
+dữ liệu này là một phân phối Gauss được dịch chuyển một cách tùy ý với trung bình $b$ và ma trận hiệp phương sai $A^TA$.
 
 
 ```{.python .input}
@@ -248,7 +248,7 @@ Hence, it literally only needs to learn the parameters to fake things perfectly.
 
 Bộ sinh sẽ là một mạng đơn giản nhất có thể - một mô hình tuyến tính đơn tầng.
 Đó là vì chúng ta sẽ sử dụng mạng tuyến tính đó cùng với bộ sinh dữ liệu từ phân phối Gauss.
-Nên nó chỉ cần học những tham số của phân phối này để làm giả một cách hoàn hảo.
+Nên nó chỉ cần học những tham số của phân phối này để làm giả dữ liệu một cách hoàn hảo.
 
 
 ```{.python .input}
