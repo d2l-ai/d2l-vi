@@ -390,7 +390,9 @@ Thus, in this special case, we can write :eqref:`eq_eig_decomp` as
 -->
 
 Tập vector mà thường gặp nhất là tập *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
-Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận orthogonal* - ma trận mà các cột của nó là các vector có độ dài bằng một và..
+Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận orthogonal* - ma trận mà các cột của nó là các vector có độ dài bằng một mà vuông góc với nhau,
+tại $\mathbf{W}^\top = \mathbf{W}^{-1}$ - và tất cả các trị riêng sẽ là số thực.
+Do đó, trong trường hợp đặc biệt này, ta có thể viết :eqref:`eq_eig_decomp` như là
 
 
 $$
@@ -1033,7 +1035,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 5 -->
 * 
