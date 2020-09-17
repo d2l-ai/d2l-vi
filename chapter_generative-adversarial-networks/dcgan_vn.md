@@ -16,8 +16,8 @@ And while our example of matching a 2D Gaussian distribution got the point acros
 -->
 
 Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách hoạt động của GAN. 
-Ta đã thấy được quá trình tạo mẫu của mô hình đơn giản, phân phối dễ-đến-mẫu, giống như phân phối uniform hay phân phối chuẩn, và transform chúng thành các mẫu phù hợp với phân phối của tập dữ liệu.
-Và trong ví dụ về khớp phân phối Gassian 2 chiều đã được làm rõ, nó không gì quá thú vị.
+Ta đã thấy được quá trình tạo mẫu của mô hình đơn giản, các phân phối dễ-lấy-mẫu như phân phối đều hay phân phối chuẩn, và biến đổi chúng thành các mẫu phù hợp với phân phối của một vài tập dữ liệu.
+Dù ví dụ về khớp phân phối Gauss 2 chiều đã được làm rõ, nó không quá thú vị.
 
 <!--
 In this section, we will demonstrate how you can use GANs to generate photorealistic images.
@@ -27,7 +27,7 @@ they can be leveraged to generate photorealistic images.
 -->
 
 Trong phần này, ta sẽ trình bày làm cách nào dùng GANs để tạo ra những hình ảnh chân thực.
-Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`.
+Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`.
 Ta sẽ mượn kiến trúc tích chập đã được cho là thành công với bài toán thị giác máy tính phân biệt và bằng cách thông qua GAN, ta có thể tận dụng để tạo ra được hình ảnh chân thực.
 
 ```{.python .input}
@@ -61,7 +61,7 @@ First download, extract and load this dataset.
 -->
 
 Tập dữ liệu ta sẽ thu thập các nhân vật Pokemon từ [pokemondb](https://pokemondb.net/sprites).
-Đầu tiên tải xuống, giải nén và tải tập dữ liệu lên.
+Đầu tiên ta tải xuống, giải nén và tải tập dữ liệu lên.
 
 ```{.python .input}
 #@save
@@ -149,7 +149,7 @@ for X, y in data_iter:
 ## The Generator
 -->
 
-## Mạng Sinh
+## Bộ Sinh
 
 <!--
 The generator needs to map the noise variable $\mathbf z\in\mathbb R^d$, a length-$d$ vector, to a RGB image with width and height to be $64\times 64$.
@@ -157,9 +157,9 @@ In :numref:`sec_fcn` we introduced the fully convolutional network that uses tra
 The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
 -->
 
-Mạng sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$.
-Trong :numref:`sec_fcn` ta đã giới thiệu về mạng kết nối đầu đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.
-Khối cơ bản của mạng sinh gồm tầng tích chập chuyển vị theo sau đó là chuẩn hóa theo bach và kích hoạt ReLU.
+Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$.
+Trong :numref:`sec_fcn` ta đã giới thiệu về mạng kết nối đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.
+Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị theo sau đó là chuẩn hóa theo batch và hàm kích hoạt ReLU.
 
 ```{.python .input}
 class G_block(nn.Block):
@@ -197,7 +197,7 @@ With a input shape of $n_h^{'} \times n_w^{'} = 16 \times 16$, the generator blo
 -->
 
 Mặc định, tầng tích chập chuyển vị dùng $k_h = k_w = 4$ nhân, sải bước $s_h = s_w = 2$ và đệm $p_h = p_w = 1$.
-Với kích thước đầu vào $n_h^{'} \times n_w^{'} = 16 \times 16$, khối mạng sinh sẽ nhân đôi chiều rộng và chiều cao của đầu vào.
+Với kích thước đầu vào $n_h^{'} \times n_w^{'} = 16 \times 16$, khối bộ sinh sẽ nhân đôi chiều rộng và chiều cao của đầu vào.
 
 $$
 \begin{aligned}
