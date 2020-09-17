@@ -332,9 +332,9 @@ by multiplication by the diagonal matrix $\boldsymbol{\Sigma}$, which stretches 
 -->
 
 hay là tích của tất cả các trị riêng.
-Điều này hợp lý theo trực giác bởi vì bất kỳ stretching nào mà ma trận $\mathbf{W}$ thực hiện, thì $W^{-1}$ hoàn tác nó, vì thế cuối cùng stretching duy nhất mà xảy ra 
+Điều này hợp lý theo trực giác bởi vì bất kỳ kéo giãn nào mà ma trận $\mathbf{W}$ thực hiện, thì $W^{-1}$ hoàn tác nó, vì thế cuối cùng kéo giãn duy nhất mà xảy ra 
 là
-bằng việc nhân với ma trận đường chéo $\boldsymbol{\Sigma}$, khi mà nó sẽ stretch volumes bằng tích của các phần tử nằm trên đường chéo.
+bằng việc nhân với ma trận đường chéo $\boldsymbol{\Sigma}$, khi mà nó sẽ kéo giãn thể tích bằng tích của các phần tử nằm trên đường chéo.
 
 
 <!--
