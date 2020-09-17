@@ -600,9 +600,9 @@ It aims to fix the “dying ReLU” problem and helps the gradients flow easier 
 -->
 
 * Kiến trúc DCGAN gồm có bốn tầng tích chập cho Bộ phân biệt và bốn tầng tích chập "sải bước một phần (*fractionally-strided*)" cho Bộ sinh.
-* Bộ phân biệt là một mạng tích chập 4 tầng có sải bước với chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
+* Bộ phân biệt là một mạng 4 tầng bao gồm các tầng tích chập có sải bước và chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
 * ReLU rò rỉ là một hàm phi tuyến trả về kết quả khác không với đầu vào âm.
-Hàm này nhằm khắc phục vần đề "chết ReLU" và giúp gradient truyền một cách dễ dàng hơn trong suốt kiến trúc.
+Hàm này nhằm khắc phục vần đề "ReLU chết" và giúp gradient truyền một cách dễ dàng hơn trong suốt kiến trúc.
 
 
 ## Bài tập
@@ -612,7 +612,7 @@ Hàm này nhằm khắc phục vần đề "chết ReLU" và giúp gradient truy
 2. Apply DCGAN on Fashion-MNIST and see which category works well and which does not.
 -->
 
-1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay phì ReLU rò rỉ?
+1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay vì ReLU rò rỉ?
 2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không.
 
 
