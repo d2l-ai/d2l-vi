@@ -260,7 +260,7 @@ The tanh activation function is applied to project output values into the $(-1, 
 Bộ sinh bao gồm bốn khối cơ bản thực hiện tăng cả chiều rộng và chiều cao của đầu vào từ 1 lên 32.
 Cùng lúc đó, trước tiên nó chiếu biến tiềm ẩn này về $64\times 8$ kênh, rồi giảm một nửa số kênh sau mỗi lần.
 Cuối cùng, một tầng tích chập chuyển vị được sử dụng để sinh đầu ra.
-Nó gấp đôi chiều rộng và chiều cao để phù hợp kích thước mong muốn $64\times 64$, và giảm kích thước kênh xuống $3$.
+Nó tăng gấp đôi chiều rộng và chiều cao để khớp với kích thước mong muốn $64\times 64$, và giảm kích thước kênh xuống $3$.
 Hàm kích hoạt tanh được áp dụng để đưa giá trị đầu ra về khoảng $(-1, 1)$. 
 
 
