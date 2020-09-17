@@ -239,14 +239,14 @@ f'approximation: {grad_approx}, true Value: {true_value}'
 ## Geometry of Gradients and Gradient Descent
 -->
 
-## *dịch tiêu đề trên*
+## Hình học Gradient và Thuật toán Hạ Gradient
 
 
 <!--
 Consider the again :eqref:`eq_nabla_use`:
 -->
 
-*dịch đoạn phía trên*
+Nhìn lại :eqref:`eq_nabla_use`:
 
 
 $$
@@ -260,7 +260,9 @@ Let us understand geometrically the algorithm of gradient descent first describe
 What we will do is the following:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn sử dụng thông tin gradient để cực tiểu hóa mất mát $L$.
+Hãy cùng tìm hiểu cách hoạt động về mặt hình học của thuật toán hạ gradient được mô tả lần đầu ở :numref:`sec_autograd`.
+Những bước của thuật toán được miêu tả như sau:
 
 
 <!--
@@ -270,8 +272,10 @@ What we will do is the following:
 4. Repeat.
 -->
 
-*dịch đoạn phía trên*
-
+1. Bắt đầu tại một vị trí khởi điểm được chọn một cách ngẫu nhiên cho các tham số $\mathbf{w}$.
+2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất.
+3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$.
+4. Lặp lại.
 
 <!--
 The only thing we do not know exactly how to do is to compute the vector $\mathbf{v}$ in the second step.
@@ -279,7 +283,9 @@ We will call such a direction the *direction of steepest descent*.
 Using the geometric understanding of dot products from :numref:`sec_geometry-linear-algebraic-ops`, we see that we can rewrite :eqref:`eq_nabla_use` as
 -->
 
-*dịch đoạn phía trên*
+Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai.
+Ta gọi $\mathbf{v}$ là *hướng hạ giốc nhất*.
+Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau
 
 
 $$
