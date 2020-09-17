@@ -186,7 +186,7 @@ trong đó chỉ đưa $\mathbf x'=G(\mathbf z)$ vào mạng phân biệt nhưng
 To sum up, $D$ and $G$ are playing a "minimax" game with the comprehensive objective function:
 -->
 
-*dịch đoạn phía trên*
+Nói tóm lại, $D$ và $G$ đang chơi trò chơi "minimax" với một hàm mục tiêu toàn diện như sau:
 
 
 $$min_D max_G \{ -E_{x \sim \text{Data}} log D(\mathbf x) - E_{z \sim \text{Noise}} log(1 - D(G(\mathbf z))) \}.$$
@@ -199,7 +199,10 @@ We will illustrate what happens if we use GANs to build the world's most ineffic
 Let us get started.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều ứng dụng của GAN liên quan tới hình ảnh.
+Để ví dụ, chúng ta sẽ bắt đầu với việc khớp một phân phối đơn giản trước.
+Ta sẽ minh họa bằng việc cho thấy việc gì sẽ xảy ra nếu sử dụng GAN để tạo một bộ ước lượng kém hiệu quả nhất thế giới cho một phân phối Gauss.
+Hãy tiến hành nào.
 
 
 ```{.python .input}
@@ -223,14 +226,14 @@ from torch import nn
 ## Generate some "real" data
 -->
 
-## *dịch tiêu đề trên*
+## Sinh một vài dữ liệu "thật"
 
 
 <!--
 Since this is going to be the world's lamest example, we simply generate data drawn from a Gaussian.
 -->
 
-*dịch đoạn phía trên*
+Vì đây có thể là một ví dụ nhàm chán bậc nhất, ta chỉ đơn giản sinh dữ liệu lấy từ một phân phối Gauss.
 
 
 ```{.python .input}
@@ -247,7 +250,8 @@ Let us see what we got.
 This should be a Gaussian shifted in some rather arbitrary way with mean $b$ and covariance matrix $A^TA$.
 -->
 
-*dịch đoạn phía trên*
+Dựa vào đoạn mã trên,
+dữ liệu này là một phân phối Gauss được dịch chuyển một cách tùy ý với trung bình $b$ và ma trận hiệp phương sai $A^TA$.
 
 
 ```{.python .input}
@@ -268,7 +272,7 @@ data_iter = d2l.load_array((data,), batch_size)
 ## Generator
 -->
 
-## *dịch tiêu đề trên*
+## Bộ Sinh
 
 
 <!--
@@ -277,7 +281,9 @@ This is since we will be driving that linear network with a Gaussian data genera
 Hence, it literally only needs to learn the parameters to fake things perfectly.
 -->
 
-*dịch đoạn phía trên*
+Bộ sinh sẽ là một mạng đơn giản nhất có thể - một mô hình tuyến tính đơn tầng.
+Đó là vì chúng ta sẽ sử dụng mạng tuyến tính đó cùng với bộ sinh dữ liệu từ phân phối Gauss.
+Nên nó chỉ cần học những tham số của phân phối này để làm giả dữ liệu một cách hoàn hảo.
 
 
 ```{.python .input}
@@ -295,7 +301,7 @@ net_G = nn.Sequential(nn.Linear(2, 2))
 ## Discriminator
 -->
 
-## *dịch tiêu đề trên*
+## Bộ phân biệt
 
 
 <!--
@@ -303,7 +309,8 @@ For the discriminator we will be a bit more discriminating:
 we will use an MLP with 3 layers to make things a bit more interesting.
 -->
 
-*dịch đoạn phía trên*
+Đối với bộ phân biệt, nó sẽ hơi khác một chút:
+ta sẽ sử dụng một MLP 3 tầng để khiến mọi thứ trở nên thú vị hơn một chút.
 
 
 ```{.python .input}
@@ -326,14 +333,14 @@ net_D = nn.Sequential(
 ## Training
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện
 
 
 <!--
 First we define a function to update the discriminator.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta định nghĩa một hàm để cập nhật bộ phân biệt.
 
 
 ```{.python .input}
@@ -382,7 +389,8 @@ The generator is updated similarly.
 Here we reuse the cross-entropy loss but change the label of the fake data from $0$ to $1$.
 -->
 
-*dịch đoạn phía trên*
+Bộ sinh cũng được cập nhật theo cách tương tự.
+Ở đây, ta sử dụng lại làm mất mát entropy chéo nhưng thay đổi nhãn của dữ liệu giả từ $0$ thành $1$.
 
 
 ```{.python .input}
@@ -574,7 +582,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 3 -->
-* 
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
