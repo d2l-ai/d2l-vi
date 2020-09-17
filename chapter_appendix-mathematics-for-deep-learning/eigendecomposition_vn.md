@@ -227,7 +227,7 @@ $$
 be the matrix where the columns are the eigenvectors of the matrix $\mathbf{A}$. Let
 -->
 
-la ma trận có các cột là vector riêng của ma trận $\mathbf{A}$. Cho
+là ma trận có các cột là vector riêng của ma trận $\mathbf{A}$. Cho
 
 
 $$
