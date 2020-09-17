@@ -356,7 +356,7 @@ The basic block of the discriminator is a convolution layer followed by a batch 
 The hyperparameters of the convolution layer are similar to the transpose convolution layer in the generator block.
 -->
 
-Khối cơ bản của bộ phân biệt là lớp tích chập và theo sau bởi lớp chuẩn hóa theo batch và một hàm kích hoạt ReLU rò rỉ.
+Khối cơ bản của bộ phân biệt là một tầng tích chập theo sau bởi tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU rò rỉ.
 Các tham số mô hình của lớp tích chập này tương tự lớp tích chập chuyển vị trong khối sinh.
 
 
