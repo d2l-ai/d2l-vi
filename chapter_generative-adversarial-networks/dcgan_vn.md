@@ -487,7 +487,7 @@ So với mô hình GAN cơ bản trong :numref:`sec_basic_gan`,
 ta sử dụng cùng tốc độ học cho cả bộ sinh và bộ phân biệt do chúng tương đồng với nhau.
 Thêm nữa, ta thay đổi $\beta_1$ trong Adam (:numref:`sec_adam`) từ $0.9$ về $0.5$.
 Việc này làm giảm độ mượt của động lượng, tức là trung bình động trọng số mũ của các gradient trước đó,
-nhằm đáp ứng sự thay đổi nhanh chóng của grandient do bộ sinh và bộ phân biệt đối kháng lẫn nhau.
+nhằm đáp ứng sự thay đổi nhanh chóng của gradient do bộ sinh và bộ phân biệt đối kháng lẫn nhau.
 Bên cạnh đó, nhiễu ngẫu nhiên `Z` là một tensor 4-D và ta sử dụng GPU để tăng tốc độ tính toán.
 
 
@@ -581,7 +581,7 @@ For better performance, the variable `num_epochs` can be set to a larger number.
 -->
 
 Chúng tôi chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ.
-Để đạt hiệu năng tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn.
+Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn.
 
 
 ```{.python .input}
@@ -602,7 +602,7 @@ It aims to fix the “dying ReLU” problem and helps the gradients flow easier 
 * Kiến trúc DCGAN gồm có bốn tầng tích chập cho Bộ phân biệt và bốn tầng tích chập "sải bước một phần (*fractionally-strided*)" cho Bộ sinh.
 * Bộ phân biệt là một mạng 4 tầng bao gồm các tầng tích chập có sải bước và chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
 * ReLU rò rỉ là một hàm phi tuyến trả về kết quả khác không với đầu vào âm.
-Hàm này nhằm khắc phục vần đề "ReLU chết" và giúp gradient truyền một cách dễ dàng hơn trong suốt kiến trúc.
+Hàm này nhằm khắc phục vần đề "ReLU chết" và giúp gradient truyền một cách dễ dàng hơn xuyên suốt kiến trúc.
 
 
 ## Bài tập
