@@ -231,7 +231,7 @@ With a input size of $1 \times 1$, the output will have its width and height inc
 -->
 
 Nếu đổi tầng tích chập chuyển vị này thành một hạt nhân $4\times 4$, sải bước $1\times 1$ và đệm không.
-Với kích thước đầu vào là $1 \times 1$, đầu ra sẽ có chiều rộng và cao tăng lên là 3 tương ứng.
+Với kích thước đầu vào là $1 \times 1$, chiều rộng và chiều cao của đầu ra sẽ tăng thêm 3 giá trị.
 
 
 ```{.python .input}
