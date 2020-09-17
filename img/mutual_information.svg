@@ -43,12 +43,13 @@
      inkscape:guide-bbox="true"
      inkscape:object-nodes="false"
      inkscape:zoom="3.5735294"
-     inkscape:cx="93.465021"
+     inkscape:cx="123.18108"
      inkscape:cy="110.66667"
      inkscape:window-x="199"
-     inkscape:window-y="25"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
-     inkscape:current-layer="surface1">
+     inkscape:current-layer="surface1"
+     inkscape:document-rotation="0">
     <sodipodi:guide
        position="64.012348,94.012348"
        orientation="0,-1"
@@ -387,15 +388,6 @@
    id="tspan966-9">X,<tspan
    style="font-style:normal;stroke-width:0.75"
    id="tspan968-5"> </tspan>Y</tspan>)</tspan></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.900663"
-       id="rect1087"
-       width="68.079819"
-       height="18.504528"
-       x="19.364159"
-       y="22.827679"
-       ry="0"
-       transform="matrix(0.96341386,-0.26801816,0.18550579,0.98264317,0,0)" />
     <ellipse
        style="display:none;fill:#47a3ff;fill-opacity:1;stroke-width:0.75"
        id="path1050"
@@ -412,34 +404,5 @@
        rx="70.308647"
        ry="68.629631"
        transform="rotate(-100.74635)" />
-    <text
-       xml:space="preserve"
-       style="font-size:9px;line-height:1.25;font-family:sans-serif;white-space:pre;stroke-width:0.75"
-       id="text1048"><textPath
-         xlink:href="#path1050"
-         id="textPath1057"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">Entropy H(<tspan
-   style="font-style:italic"
-   id="tspan1060">X</tspan>)</textPath></text>
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:0.90066"
-       id="rect1087-4"
-       width="68.079826"
-       height="18.50453"
-       x="116.3298"
-       y="-44.60965"
-       ry="0"
-       transform="matrix(0.94733026,0.32025829,-0.39929789,0.91682125,0,0)" />
-    <text
-       xml:space="preserve"
-       style="font-size:9px;line-height:1.25;font-family:sans-serif;white-space:pre;stroke-width:1"
-       id="text1048-3"
-       x="-21.689552"
-       y="-22.528044"><textPath
-         xlink:href="#path1050-8"
-         id="textPath1057-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';stroke-width:1">    Entropy H(<tspan
-   style="font-style:italic"
-   id="tspan1104">Y</tspan>)</textPath></text>
   </g>
 </svg>
