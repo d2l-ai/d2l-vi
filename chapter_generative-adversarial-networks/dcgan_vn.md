@@ -295,7 +295,7 @@ net_G = nn.Sequential(
 Generate a 100 dimensional latent variable to verify the generator's output shape.
 -->
 
-Sinh một biến tiềm ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
+Hãy sinh một biến tiềm ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
 
 
 ```{.python .input}
@@ -339,7 +339,7 @@ It aims to fix the "dying ReLU" problem that a neuron might always output a nega
 
 Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm đồng nhất nếu $\alpha=1$.
 Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến mà cho đầu ra khác không với giá trị đâu vào âm.
-Mục đích của hàm này là khắc phục vấn đề "ReLU chết" mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể tạo ra bất cứ cải thiện gì vì gradient của ReLU là 0.
+Mục đích của hàm này là khắc phục vấn đề "ReLU chết" mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể cải thiện vì gradient của ReLU là 0.
 
 
 ```{.python .input}
