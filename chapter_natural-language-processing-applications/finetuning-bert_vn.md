@@ -286,7 +286,7 @@ trở thành một phân phối xác suất, dẫn tới mỗi vị trí $i$ c�
 cho một xác suất $p_i$, là xác suất token đó là điểm bắt đầu của khoảng văn bản.
 Dự đoán điểm kết thúc của khoảng văn bản cũng tương tự, ngoại trừ việc các tham số trong tầng kết nối đầy đủ mở rộng là độc lập với các tầng để dự đoán điểm bắt đầu.
 Khi dự đoán điểm kết thúc, token có vị trí $i$ trong đoạn văn được biến đổi thành một giá trị vô hướng $e_i$ bởi tầng kết nối đầy đủ.
-:numref:`fig_bert-qa` minh họa tinh quá trình chỉnh BERT cho ứng dụng trả lời câu hỏi.
+:numref:`fig_bert-qa` minh họa quá trình tinh chỉnh BERT cho ứng dụng trả lời câu hỏi.
 
 
 <!--
