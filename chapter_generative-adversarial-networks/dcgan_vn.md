@@ -230,7 +230,7 @@ If changing the transposed convolution layer to a $4\times 4$ kernel, $1\times 1
 With a input size of $1 \times 1$, the output will have its width and height increased by 3 respectively.
 -->
 
-Nếu đổi lớp tích chập chuyển vị này thành một bộ lọc $4\times 4$, sải bước $1\times 1$ và đệm không.
+Nếu đổi tầng tích chập chuyển vị này thành một hạt nhân $4\times 4$, sải bước $1\times 1$ và đệm không.
 Với kích thước đầu vào là $1 \times 1$, đầu ra sẽ có chiều rộng và cao tăng lên là 3 tương ứng.
 
 
