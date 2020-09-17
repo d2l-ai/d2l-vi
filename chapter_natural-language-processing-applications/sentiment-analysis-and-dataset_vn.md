@@ -89,7 +89,7 @@ Each example is a review and its corresponding label: 1 indicates "positive" and
 -->
 
 Tiếp theo, ta đọc dữ liệu huấn luyện và dữ liệu kiểm tra.
-Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 cho "tích cực", và 0 cho "tiêu cực".
+Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 cho "tích cực", và 0 cho "tiêu cực". 
 
 
 ```{.python .input  n=3}
@@ -143,7 +143,7 @@ d2l.plt.hist([len(line) for line in train_tokens], bins=range(0, 1000, 50));
 ### Padding to the Same Length
 -->
 
-### Đệm để cùng độ dài
+### Đệm để cùng độ dài 
 
 
 <!--
