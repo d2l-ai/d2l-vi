@@ -122,7 +122,7 @@ As we will see in the next section, this will provide us with an important tool 
 Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút.
 Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ là chúng ta chuyển tất cả về dạng vector và tích vô hướng.
 Nó cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào.
-Như ta sẽ thấy trong mục tiếp theo, điều này sẽ cung cấp cho chúng ta một công cụ quan trọng để hiểu một cách họa hình cách ta có thể học từ thông tin chứa trong gradient.
+Như ta sẽ thấy trong mục tiếp theo, điều này sẽ cung cấp cho chúng ta một công cụ quan trọng để hiểu dưới dạng hình học cách ta có thể học từ thông tin chứa trong gradient.
 
 
 <!--
