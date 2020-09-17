@@ -393,7 +393,6 @@ Tập vector mà thường gặp nhất là tập *ma trận đối xứng*, là
 Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận orthogonal* - ma trận mà các cột của nó là các vector có độ dài bằng một và..
 
 
-
 $$
 \mathbf{A} = \mathbf{W}\boldsymbol{\Sigma}\mathbf{W}^\top .
 $$
@@ -403,7 +402,7 @@ $$
 ## Gershgorin Circle Theorem
 -->
 
-## *dịch tiêu đề trên*
+## Định lý vòng tròn Gershgorin
 
 
 <!--
@@ -412,8 +411,9 @@ If presented an arbitrary matrix, there is little that can be said about what th
 There is, however, one theorem that can make it easy to approximate well if the largest values are on the diagonal.
 -->
 
-*dịch đoạn phía trên*
-
+Các trị riêng thường khó để luận giải bằng trực giác.
+Nếu tồn tại một ma trận bất kỳ, có rất ít điều có thể nói về trị riêng là gì mà không phải tính toán chúng.
+Tuy nhiên, tồn tại một định lý mà có thể làm cho nó dễ dàng để tính xấp xỉ tốt nếu các giá trị lớn nhất nằm trên đường chéo. 
 
 <!--
 Let $\mathbf{A} = (a_{ij})$ be any square matrix ($n\times n$).
@@ -422,7 +422,10 @@ Let $\mathcal{D}_i$ represent the disc in the complex plane with center $a_{ii}$
 Then, every eigenvalue of $\mathbf{A}$ is contained in one of the $\mathcal{D}_i$.
 -->
 
-*dịch đoạn phía trên*
+Cho $\mathbf{A} = (a_{ij})$ là ma trận vuông bất kỳ ($n\times n$).
+Ta sẽ định nghĩa $r_i = \sum_{j \neq i} |a_{ij}|$.
+Cho $\mathcal{D}_i$ biểu diễn đĩa trong mặt phẳng phức với tâm là $a_{ii}$ radius $r_i$.
+Kế đó, mỗi trị riêng của $\mathbf{A}$ được chứa ở một trong các $\mathcal{D}_i$.
 
 
 <!--
@@ -430,7 +433,8 @@ This can be a bit to unpack, so let us look at an example.
 Consider the matrix:
 -->
 
-*dịch đoạn phía trên*
+Điều này có thể hơi khó hiểu một chút, nên ta hãy nhìn vào ví dụ sau.
+Xem xét ma trận:
 
 
 $$
@@ -449,7 +453,9 @@ The matrix is symmetric, so all eigenvalues are real.
 This means that all of our eigenvalues will be in one of the ranges of 
 -->
 
-*dịch đoạn phía trên*
+Ta có $r_1 = 0.3$, $r_2 = 0.6$, $r_3 = 0.8$ và $r_4 = 0.9$.
+Ma trận này đối xứng, tất cả các trị riêng đều là số thực.
+Điều này có nghĩa tất cả các trị riêng sẽ là một trong các khoảng của 
 
 
 $$[a_{11}-r_1, a_{11}+r_1] = [0.7, 1.3], $$
@@ -467,7 +473,9 @@ that the eigenvalues are approximately $0.99$, $2.97$, $4.95$, $9.08$,
 all comfortably inside the ranges provided.
 -->
 
-*dịch đoạn phía trên*
+Thực hiện việc tính toán số cho thấy
+rằng các trị riêng xấp xỉ ở $0.99$, $2.97$, $4.95$, $9.08$,
+đều nằm trong các khoảng cho trước một cách thoải mái.
 
 
 ```{.python .input}
@@ -508,7 +516,8 @@ In this way, eigenvalues can be approximated, and the approximations will be fai
 in the case that the diagonal is significantly larger than all the other elements.  
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, các trị riêng có thể được tính xấp xỉ, và xấp xỉ đấy sẽ khá chính xác
+trong trường hợp đường chéo lớn hơn hẳn so với các phần tử còn lại.
 
 
 <!--
@@ -516,7 +525,8 @@ It is a small thing, but with a complex and subtle topic like eigendecomposition
 it is good to get any intuitive grasp we can.
 -->
 
-*dịch đoạn phía trên*
+Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tế nhị như phân tích trị riêng,
+thật tốt để chúng ta nắm bắt bất kỳ trực quan nào có thể.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
