@@ -80,7 +80,7 @@ Let $h( \cdot )$ denote the whole network of AutoRec.
 The output $h(\mathbf{R}_{*i})$ is the reconstruction of the $i^\mathrm{th}$ column of the rating matrix.
 -->
 
-trong đó $f(\cdot)$ và $g(\cdot)$ biểu diễn hàm kích hoạt, $\mathbf{W}$ và $\mathbf{V}$ là các ma trận trọng số, $\mu$ và $b$ là độ chệch.
+trong đó $f(\cdot)$ và $g(\cdot)$ biểu diễn hàm kích hoạt, $\mathbf{W}$ và $\mathbf{V}$ là các ma trận trọng số, $\mu$ và $b$ là hệ số điều chỉnh.
 Gọi $h( \cdot )$ ký hiệu cho toàn bộ mạng AutoRec.
 Đầu ra $h(\mathbf{R}_{*i})$ chính là bản khôi phục của cột thứ $i$ của ma trận đánh giá.
 
@@ -89,7 +89,7 @@ Gọi $h( \cdot )$ ký hiệu cho toàn bộ mạng AutoRec.
 The following objective function aims to minimize the reconstruction error:
 -->
 
-Hàm mục tiêu sau hướng tới việc cực tiểu hoá lỗi khôi phục:
+Hàm mục tiêu sau hướng tới việc cực tiểu hoá sai số khôi phục:
 
 
 $$
@@ -136,8 +136,8 @@ Một bộ tự mã hoá điển hình bao gồm một bộ mã hoá và một b
 Bộ mã hoá chiếu đầu vào thành dạng biểu diễn ẩn và bộ giải mã ánh xạ tầng ẩn tới tầng khôi phục.
 Ta tuân theo cấu trúc này và tạo bộ mã hoá và bộ giải mã với các tầng kết nối dày đặc.
 Hàm kích hoạt của bộ mã hoá được đặt mặc định bằng `sigmoid` và ta sẽ không áp dụng hàm kích hoạt nào lên tầng giải mã.
-Dropout được thêm vào sau biến đổi mã hoá nhằm giảm hiện tượng quá khớp.
-Gradient của các đầu vào chưa biết được lọc ra để đảm bảo rằng chỉ có các đánh giá đã biết tham gia vào quá trình học của mô hình.
+Dropout được thêm vào sau khi mã hoá nhằm giảm hiện tượng quá khớp.
+Gradient của các đầu vào chưa biết bị che lại để đảm bảo rằng chỉ có các đánh giá đã biết tham gia vào quá trình học của mô hình.
 
 
 ```{.python .input  n=2}
