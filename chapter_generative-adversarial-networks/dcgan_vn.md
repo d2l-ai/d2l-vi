@@ -641,6 +641,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Nguyễn Mai Hòang Long
+* Phạm Hồng Vinh
+* Phạm Minh Đức
 
 <!-- Phần 3 -->
 * 
