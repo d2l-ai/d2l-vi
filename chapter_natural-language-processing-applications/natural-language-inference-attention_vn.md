@@ -568,7 +568,7 @@ How shall we collect and label the dataset? Can you design a model with attentio
 1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác cao hơn trên tập kiểm tra không?
 2. Những điểm hạn chế chính của mô hình tập trung kết hợp cho suy luận ngôn ngữ tự nhiên là gì?
 3. Giả sử ta muốn tính độ tương tự ngữ nghĩa (một giá trị liên tục trong khoảng $0$ và $1$) cho một cặp câu bất kỳ.
-Làm thế nào để thu thập và gán nhãn tập dữ liệu?
+Ta sẽ thu thập và gán nhãn tập dữ liệu như thế nào?
 Bạn có thể thiết kế một mô hình với cơ chế tập trung không?
 
 
