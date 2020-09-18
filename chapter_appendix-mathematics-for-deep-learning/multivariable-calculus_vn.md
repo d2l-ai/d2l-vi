@@ -272,7 +272,7 @@ Những bước của thuật toán được miêu tả như sau:
 4. Repeat.
 -->
 
-1. Bắt đầu tại một vị trí khởi điểm được chọn một cách ngẫu nhiên cho các tham số $\mathbf{w}$.
+1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
 2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất.
 3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$.
 4. Lặp lại.
@@ -303,7 +303,12 @@ The only way to achieve this is to head in the exact opposite direction:
 pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện, ta cho rằng hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$.
+Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn biểu diễn trên trở nên càng âm.
+Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể.
+Giờ, nhắc lại kiến thức của phép cos, ta có thể biến nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ.
+Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
+chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 
 
 <!--
@@ -312,7 +317,9 @@ the direction of steepest decent points in the direction of $-\nabla_{\mathbf{w}
 Thus our informal algorithm can be rewritten as follows.
 -->
 
-*dịch đoạn phía trên*
+Điều này dẫn ta đến với một trong những thuật toán quan trọng nhất của học máy:
+hướng hạ giốc nhất cùng hướng với $-\nabla_{\mathbf{w}}L(\mathbf{w})$.
+Vậy nên thuật toán của ta sẽ được viết lại như sau.
 
 
 <!--
@@ -322,7 +329,10 @@ Thus our informal algorithm can be rewritten as follows.
 4. Repeat.
 -->
 
-*dịch đoạn phía trên*
+1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
+2. Tính toán $\nabla_{\mathbf{w}} L(\mathbf{w})$.
+3. Tiến một bước nhỏ về hướng ngược lại của nó: $\mathbf{w} \rightarrow \mathbf{w} - \epsilon\nabla_{\mathbf{w}} L(\mathbf{w})$.
+4. Lặp lại.
 
 
 <!--
@@ -330,7 +340,8 @@ This basic algorithm has been modified and adapted many ways by many researchers
 Use the gradient to find the direction that decreases the loss as rapidly as possible, and update the parameters to take a step in that direction.
 -->
 
-*dịch đoạn phía trên*
+Thuật toán cơ bản này dù đã được chỉnh sửa và kết hợp theo nhiều cách bởi các nhà nghiên cứu, nhưng khái niệm cốt lõi vẫn là như nhau.
+Sử dụng gradient để tìm hướng giảm mất mát nhanh nhất có thể và cập nhật các tham số để thực hiện di chuyển về hướng đó.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -1710,7 +1721,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
