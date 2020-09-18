@@ -1477,7 +1477,7 @@ On the other hand $\mathbf{U}$ is $n \times r$,
 and we cannot multiply a $n \times m$ and a $n \times r$ matrix since the dimensions do not match! 
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu ta nhìn vào điều này nó sẽ không hoạt động.
 
 
 <!--
