@@ -549,10 +549,10 @@ Such alignment is soft using weighted average, where ideally large weights are a
 * We can use pretrained word embedding as the input representation for downstream natural language processing task such as natural language inference.
 -->
 
-* Mô hình tập trung có thể phân rã gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và kết hợp.
+* Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và kết hợp.
 * Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại.
 Việc căn chỉnh này là mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ được căn chỉnh.
-* Thủ thuật phân rã giúp giảm độ phức tạp còn tuyến tính thay vì bậc hai khi tính toán trọng số tập trung.
+* Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung.
 * Ta có thể sử dụng embedding từ đã tiền huấn luyện làm biểu diễn đầu vào cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng như suy luận ngôn ngữ tự nhiên.
 
 
@@ -565,8 +565,8 @@ Việc căn chỉnh này là mềm, sử dụng trung bình có trọng số, tr
 How shall we collect and label the dataset? Can you design a model with attention mechanisms?
 -->
 
-1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác trên tập kiểm tra cao hơn không?
-2. Những điểm hạn chế chính của mô hình tập trung có thể phân rã cho suy luận ngôn ngữ tự nhiên là gì?
+1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác cao hơn trên tập kiểm tra không?
+2. Những điểm hạn chế chính của mô hình tập trung kết hợp cho suy luận ngôn ngữ tự nhiên là gì?
 3. Giả sử ta muốn tính độ tương tự ngữ nghĩa (một giá trị liên tục trong khoảng $0$ và $1$) cho một cặp câu bất kỳ.
 Làm thế nào để thu thập và gán nhãn tập dữ liệu?
 Bạn có thể thiết kế một mô hình với cơ chế tập trung không?
