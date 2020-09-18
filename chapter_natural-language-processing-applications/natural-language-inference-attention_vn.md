@@ -369,8 +369,8 @@ By putting the attending, comparing, and aggregating steps together,
 we define the decomposable attention model to jointly train these three steps.
 -->
 
-Bằng cách gộp các bước thực hiện tập trung, so sánh và kết hợp,
-ta định nghĩa mô hình tập trung có thể phân rã để huấn luyện 3 bước trên cùng nhau.
+Bằng cách gộp các bước thực hiện tập trung, so sánh và kết hợp lại với nhau,
+ta định nghĩa mô hình tập trung được kết hợp để huấn luyện đồng thời cả 3 bước trên.
 
 
 ```{.python .input  n=6}
@@ -406,7 +406,7 @@ Now we will train and evaluate the defined decomposable attention model on the S
 We begin by reading the dataset.
 -->
 
-Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung có thể phân rã định nghĩa ở trên trên tập dữ liệu SNLI.
+Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung kết hợp định nghĩa ở trên trên tập dữ liệu SNLI.
 Ta bắt đầu bằng việc đọc tập dữ liệu.
 
 <!--
@@ -474,8 +474,8 @@ In contrast to the `split_batch` function in :numref:`sec_multi_gpu` that takes 
 we define a `split_batch_multi_inputs` function to take multiple inputs such as premises and hypotheses in minibatches.
 -->
 
-Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như chuỗi văn bản (hoặc ảnh),
-ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào như tiền đề, giả thuyết trong minibatch.
+Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn,
+ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào ví dụ như cặp tiền đề và giả thuyết ở trong minibatch.
 
 
 ```{.python .input  n=10}
