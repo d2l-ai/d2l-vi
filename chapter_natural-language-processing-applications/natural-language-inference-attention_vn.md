@@ -361,7 +361,7 @@ class Aggregate(nn.Block):
 ### Putting All Things Together
 -->
 
-### *dịch tiêu đề trên*
+### Kết hợp tất cả lại
 
 
 <!--
@@ -369,7 +369,8 @@ By putting the attending, comparing, and aggregating steps together,
 we define the decomposable attention model to jointly train these three steps.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách gộp các bước thực hiện tập trung, so sánh và kết hợp lại với nhau,
+ta định nghĩa mô hình tập trung được kết hợp để huấn luyện đồng thời cả 3 bước trên.
 
 
 ```{.python .input  n=6}
@@ -397,7 +398,7 @@ class DecomposableAttention(nn.Block):
 ## Training and Evaluating the Model
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện và Đánh giá Mô hình
 
 
 <!--
@@ -405,14 +406,14 @@ Now we will train and evaluate the defined decomposable attention model on the S
 We begin by reading the dataset.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung kết hợp định nghĩa ở trên trên tập dữ liệu SNLI.
+Ta bắt đầu bằng việc đọc tập dữ liệu.
 
 <!--
 ### Reading the dataset
 -->
 
-### *dịch tiêu đề trên*
+### Đọc tập dữ liệu
 
 
 <!--
@@ -420,7 +421,8 @@ We download and read the SNLI dataset using the function defined in :numref:`sec
 The batch size and sequence length are set to $256$ and $50$, respectively.
 -->
 
-*dịch đoạn phía trên*
+Ta tải xuống và đọc tập dữ liệu SNLI bằng hàm định nghĩa trong :numref:`sec_natural-language-inference-and-dataset`.
+Kích thước batch và độ dài chuỗi được đặt là $256$ và $50$.
 
 
 ```{.python .input  n=7}
@@ -433,7 +435,7 @@ train_iter, test_iter, vocab = d2l.load_data_snli(batch_size, num_steps)
 ### Creating the Model
 -->
 
-### *dịch tiêu đề trên*
+### Tạo mô hình
 
 
 <!--
@@ -444,8 +446,11 @@ Then we create a model instance, initialize its parameters,
 and load the GloVe embedding to initialize vectors of input tokens.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sử dụng embedding GloVe $100$-chiều đã tiền huấn luyện để biểu diễn các token đầu vào.
+Do đó, ta định nghĩa trước chiều của các vector $\mathbf{a}_i$ và $\mathbf{b}_j$ trong :eqref:`eq_nli_e` là $100$.
+Chiều đầu ra của hàm $f$ trong :eqref:`eq_nli_e` và $g$ trong :eqref:`eq_nli_v_ab` được đặt bằng $200$.
+Sau đó ta tạo thực thể của mô hình, khởi tạo trọng số,
+và nạp embedding GloVe để khởi tạo các vector token đầu vào.
 
 ```{.python .input  n=8}
 embed_size, num_hiddens, devices = 100, 200, d2l.try_all_gpus()
@@ -461,7 +466,7 @@ net.embedding.weight.set_data(embeds)
 ### Training and Evaluating the Model
 -->
 
-### *dịch tiêu đề trên*
+### Huấn luyện và Đánh giá Mô hình
 
 
 <!--
@@ -469,7 +474,8 @@ In contrast to the `split_batch` function in :numref:`sec_multi_gpu` that takes 
 we define a `split_batch_multi_inputs` function to take multiple inputs such as premises and hypotheses in minibatches.
 -->
 
-*dịch đoạn phía trên*
+Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn,
+ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào ví dụ như cặp tiền đề và giả thuyết ở trong minibatch.
 
 
 ```{.python .input  n=10}
@@ -486,7 +492,7 @@ def split_batch_multi_inputs(X, y, devices):
 Now we can train and evaluate the model on the SNLI dataset.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta có thể huấn luyện và đánh giá mô hình trên tập dữ liệu SNLI.
 
 
 ```{.python .input  n=11}
