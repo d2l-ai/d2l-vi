@@ -232,7 +232,7 @@ Then we pad the text sequence for short reviews and create a data iterator.
 
 * Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản theo hạng mục.
 * Để phân loại cảm xúc văn bản, ta nạp bộ dữ liệu IMDb và token hóa các từ trong đó. 
-Sau đó, ta thêm đệm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu. 
+Sau đó, ta đệm thêm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu. 
 
 
 ## Bài tập
