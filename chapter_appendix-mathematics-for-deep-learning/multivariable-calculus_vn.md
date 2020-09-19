@@ -1214,7 +1214,8 @@ If we now take the partial derivative with respect to say $\beta_1$, note that e
 which is just $x_1$ multiplied by $\beta_1$, so the we obtain that
 -->
 
-*dịch đoạn phía trên*
+Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, cần lưu ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
+có giá trị bằng $x_1$ nhân với $\beta_1$. Vì thế , ta có
 
 
 $$
@@ -1226,7 +1227,7 @@ $$
 or more generally that 
 -->
 
-*dịch đoạn phía trên*
+hoặc tổng quát hơn đó là
 
 
 $$
@@ -1238,7 +1239,7 @@ $$
 We can now reassemble this into a matrix to see
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể  gộp chúng lại thành một ma trận như sau
 
 
 $$
@@ -1258,7 +1259,7 @@ $$
 This illustrates a few factors about matrix calculus that we will often counter throughout this section:
 -->
 
-*dịch đoạn phía trên*
+Dưới đây minh họa một vài yếu tố về  giải tích ma trận mà ta sẽ gặp trong suốt phần này:
 
 
 <!--
@@ -1270,7 +1271,12 @@ The core reason for this is the convention that we match the shape of the denomi
 we will need to take transposes to match back to the shape of the original term.
 -->
 
-*dịch đoạn phía trên*
+* Đầu tiên, các phép tính sẽ liên quan khá mật thiết.
+* Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn giống với trường hợp đơn biến.
+Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau.
+* Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu.
+Lý do chủ yếu là quy ước mà ta khớp với kích thước của mẫu số, do đó khi ta nhân ma trận,
+ta cần lấy các chuyển vị tương ứng với kích thước của số hạng ban đầu.
 
 
 <!--
@@ -1278,7 +1284,8 @@ To keep building intuition, let us try a computation that is a little harder.
 Suppose that we have a column vector $\mathbf{x}$, and a square matrix $A$ and we want to compute
 -->
 
-*dịch đoạn phía trên*
+Ta hãy thử một phép tính khó hơn làm một ví dụ minh họa trực quan.
+Giả sử ta có một vector cột $\mathbf{x}$ và một ma trận vuông $A$, và ta ta muốn tính biểu thức sau:
 
 
 $$\frac{d}{d\mathbf{x}}(\mathbf{x}^\top A \mathbf{x}).$$
@@ -1290,7 +1297,7 @@ To drive towards easier to manipulate notation, let us consider this problem usi
 In this case we can write the function as
 -->
 
-*dịch đoạn phía trên*
+Để  thuận tiện cho việc ký hiệu, ta hãy viết lại bài toán bằng ký hiệu Einstein.
 
 
 $$
@@ -1302,7 +1309,7 @@ $$
 To compute our derivative, we need to understand for every $k$, what the value of
 -->
 
-*dịch đoạn phía trên*
+Để tính đạo hàm, ta cần hiểu các giá trị sau với từng giá trị của biến $k$:
 
 
 $$
@@ -1314,7 +1321,7 @@ $$
 By the product rule, this is
 -->
 
-*dịch đoạn phía trên*
+Theo quy tắc nhân, ta có
 
 
 $$
@@ -1328,7 +1335,9 @@ This means that every term where $i$ and $k$ are different vanish from this sum,
 The same reasoning holds for the second term where we need $j=k$. This gives
 -->
 
-*dịch đoạn phía trên*
+Với số hạng  như $\frac{dx_i}{dx_k}$, không khó để thấy rằng đạo hàm trên có giá trị bằng 1 khi $i=k$, ngược lại nó sẽ bằng 0.
+Điều này có nghĩa là mọi số hạng, với $i$ và $k$ khác nhau, sẽ biến mất khỏi tổng trên, vì thế các số hạng duy nhất còn lại trong tổng đầu tiên đó là những số hạng có $i=k$.
+Lập luận tương tự cũng áp dụng cho số hạng thứ hai khi ta cần $j=k$. Từ đó, ta có
 
 
 $$
@@ -1341,7 +1350,8 @@ Now, the names of the indices in Einstein notation are arbitrary---the fact that
 so we can re-index so that they both use $i$ to see that
 -->
 
-*dịch đoạn phía trên*
+Hiện tại, tên của các chỉ số  trong ký hiệu Einstein là tùy ý - trên thực tế , $i$ và $j$ khác nhau là không quan trọng đối với phép tính trên tại thời điểm này,
+vì thế ta có thể gán lại chỉ số  sao cho cả hai đều chứa $i$
 
 
 $$
@@ -1355,7 +1365,9 @@ Let us try and identify this outcome in terms of matrix operations.
 $a_{ki} + a_{ik}$ is the $k, i$-th component of $\mathbf{A} + \mathbf{A}^\top$. This gives
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta hãy bắt đầu luyện tập một chút để  hiểu hơn.
+Ta hãy thử xác định kết quả trên theo các phép toán ma trận.
+$a_{ki} + a_{ik}$ là phần tử thứ $k, i$ của $\mathbf{A} + \mathbf{A}^\top$. Từ đó, ta có
 
 
 $$
@@ -1722,7 +1734,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 8 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 9 -->
 * 
