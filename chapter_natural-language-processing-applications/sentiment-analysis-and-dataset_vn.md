@@ -15,7 +15,7 @@ It is similar to the image classification, the most frequently used application 
 The only difference is that, rather than an image, text classification's example is a text sentence.
 -->
 
-Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài không cố định thành một hạng mục tương ứng của văn bản đó. 
+Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài không cố định tới một hạng mục tương ứng. 
 Tác vụ này khá giống với phân loại ảnh, vốn là ứng dụng phổ biến nhất được giới thiệu trong cuốn sách này, ví dụ, :numref:`sec_naive_bayes`.
 Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh. 
 
@@ -30,8 +30,8 @@ or analyze user sentiments about market conditions and use it to predict future 
 
 Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
 sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
-Bài toán này cũng có thể gọi là phân tích cảm xúc và có rất nhiều ứng dụng.
-Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng của khách hàng, hoặc phân tích cảm xúc của khách hàng với điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
+Bài toán này cũng có thể gọi là phân tích cảm xúc (sắc thái) và có rất nhiều ứng dụng.
+Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng, hoặc phân tích cảm xúc của khách hàng với điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
 ```{.python .input  n=1}
@@ -89,7 +89,7 @@ Each example is a review and its corresponding label: 1 indicates "positive" and
 -->
 
 Tiếp theo, ta đọc dữ liệu huấn luyện và dữ liệu kiểm tra.
-Mỗi mẫu là một đánh giá và nhãn tương ứng của nó: 1 cho "tích cực", và 0 cho "tiêu cực". 
+Mỗi mẫu là một bình luận đánh giá cùng với nhãn tương ứng: 1 cho "tích cực", và 0 cho "tiêu cực". 
 
 
 ```{.python .input  n=3}
@@ -143,7 +143,7 @@ d2l.plt.hist([len(line) for line in train_tokens], bins=range(0, 1000, 50));
 ### Padding to the Same Length
 -->
 
-### Đệm để cùng độ dài 
+### Đệm để cùng Độ dài
 
 
 <!--
@@ -151,8 +151,8 @@ Because the reviews have different lengths, so they cannot be directly combined 
 Here we fix the length of each comment to 500 by truncating or adding "&lt;unk&gt;" indices.
 -->
 
-Vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể ghép lại với nhau thành minibatch một cách trực tiếp. 
-Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ số "&lt;unk&gt;". 
+Vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể tổng hợp trực tiếp thành minibatch được. 
+Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ mục "&lt;unk&gt;". 
 
 
 ```{.python .input  n=5}
@@ -230,8 +230,8 @@ def load_data_imdb(batch_size, num_steps=500):
 Then we pad the text sequence for short reviews and create a data iterator.
 -->
 
-* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản thành một hạng mục. 
-* Để phân loại cảm xúc văn bản, ta tải dữ liệu IMDb và token hóa các từ trong dữ liệu. 
+* Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản theo hạng mục.
+* Để phân loại cảm xúc văn bản, ta nạp bộ dữ liệu IMDb và token hóa các từ trong đó. 
 Sau đó, ta thêm đệm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu. 
 
 
@@ -270,3 +270,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
