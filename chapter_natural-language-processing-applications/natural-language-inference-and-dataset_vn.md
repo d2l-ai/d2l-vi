@@ -36,7 +36,7 @@ Such relationships usually fall into three types:
 -->
 
 *Suy luận ngôn ngữ tự nhiên* nghiên cứu liệu một *giả thuyết (hypothesis)* có thể được suy ra được từ một *tiền đề (premise)* không, cả hai đều là chuỗi văn bản. 
-Nói cách khác, suy diễn ngôn ngữ tự nhiên quyết định mối quan hệ logic giữa một cặp chuỗi văn bản. 
+Nói cách khác, suy luận ngôn ngữ tự nhiên quyết định mối quan hệ logic giữa một cặp chuỗi văn bản. 
 Các mối quan hệ đó thường rơi vào một trong ba loại sau đây:
 
 
@@ -57,7 +57,7 @@ For example, the following pair will be labeled as *entailment* because "showing
 in the hypothesis can be inferred from "hugging one another" in the premise.
 -->
 
-Suy diễn ngôn ngữ tự nhiên còn gọi là bài toán nhận dạng quan hệ kéo theo trong văn bản.
+Suy luận ngôn ngữ tự nhiên còn được gọi là bài toán nhận dạng quan hệ kéo theo trong văn bản.
 Ví dụ, cặp sau được gán nhãn là *kéo theo* bởi vì "thể hiện tình cảm" trong giả thuyết có thể
 được suy ra từ "ôm nhau" trong tiền đề.
 
@@ -123,7 +123,7 @@ To study this problem, we will begin by investigating a popular natural language
 
 Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm trong việc hiểu ngôn ngữ tự nhiên.
 Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏi đáp trong miền mở.
-Để nghiên cứu vấn đề này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến trong suy luận ngôn ngữ tự nhiên.
+Để nghiên cứu bài toán này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến trong suy luận ngôn ngữ tự nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -141,7 +141,7 @@ Stanford Natural Language Inference (SNLI) Corpus is a collection of over $500,0
 We download and store the extracted SNLI dataset in the path `../data/snli_1.0`.
 -->
 
-Tập ngữ liệu ngôn ngữ tự nhiên của Stanford (SNLI) là một bộ sưu tập hơn $500,000$ cặp câu Tiếng Anh được gán nhãn :cite:`Bowman.Angeli.Potts.ea.2015`.
+Tập ngữ liệu ngôn ngữ tự nhiên của Stanford (SNLI) là một tập hợp gồm hơn $500,000$ cặp câu Tiếng Anh được gán nhãn :cite:`Bowman.Angeli.Potts.ea.2015`.
 Ta tải xuống và giải nén tập dữ liệu SNLI trong đường dẫn `../data/snli_1.0`.
 
 
@@ -177,7 +177,7 @@ Thus, we define a function `read_snli` to only extract part of the dataset, then
 -->
 
 Tập dữ liệu SNLI gốc chứa thông tin phong phú hơn những gì thực sự cần cho thí nghiệm của chúng ta.
-Vì thế, ta định nghĩa một hàm `read_snli` để chỉ trích xuất một phần của tập dữ liệu, rồi trả về các danh sách tiền đề, giả thuyết và nhãn của chúng.
+Vì thế, ta định nghĩa một hàm `read_snli` để trích xuất một phần của tập dữ liệu, rồi trả về các danh sách tiền đề, giả thuyết và nhãn của chúng.
 
 
 ```{.python .input  n=66}
@@ -252,7 +252,7 @@ By implementing the `__getitem__` function, we can arbitrarily access the premis
 -->
 
 Dưới đây ta định nghĩa một lớp để nạp tập dữ liệu SNLI bằng cách kế thừa lớp `Dataset` trong Gluon.
-Đối số `num_steps` trong phương thức khởi tạo chỉ rõ độ dài chuỗi văn bản, do đó mỗi minibatch sẽ có cùng kích thước.
+Đối số `num_steps` trong phương thức khởi tạo chỉ định độ dài chuỗi văn bản, do đó mỗi minibatch sẽ có cùng kích thước.
 Nói cách khác, các token phía sau `num_steps` token đầu tiên ở trong chuỗi dài hơn sẽ được loại bỏ, trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
 Bằng cách lập trình hàm `__getitem__`, ta có thể truy cập vào các tiền đề, giả thuyết và nhãn bất kỳ với chỉ số `idx`.
 
