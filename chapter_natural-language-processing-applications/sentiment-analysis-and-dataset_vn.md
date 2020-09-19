@@ -31,7 +31,7 @@ or analyze user sentiments about market conditions and use it to predict future 
 Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
 sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
 Bài toán này cũng có thể gọi là phân tích cảm xúc (sắc thái) và có rất nhiều ứng dụng.
-Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng, hoặc phân tích cảm xúc của khách hàng với điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
+Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng, hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
 ```{.python .input  n=1}
@@ -151,7 +151,7 @@ Because the reviews have different lengths, so they cannot be directly combined 
 Here we fix the length of each comment to 500 by truncating or adding "&lt;unk&gt;" indices.
 -->
 
-Vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể tổng hợp trực tiếp thành minibatch được. 
+Vì mỗi câu đánh giá có độ dài khác nhau, nên chúng không thể được tổng hợp trực tiếp thành minibatch được. 
 Ta có thể cố định độ dài mỗi câu bình luận là 500 bằng cách cắt xén hoặc thêm vào các chỉ mục "&lt;unk&gt;". 
 
 
