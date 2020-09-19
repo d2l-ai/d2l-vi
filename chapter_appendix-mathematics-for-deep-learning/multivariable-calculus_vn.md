@@ -1477,7 +1477,10 @@ On the other hand $\mathbf{U}$ is $n \times r$,
 and we cannot multiply a $n \times m$ and a $n \times r$ matrix since the dimensions do not match! 
 -->
 
-Tuy nhiên, nếu ta nhìn vào điều này nó sẽ không hoạt động.
+Tuy nhiên, nếu ta nhìn vào điều này nó không hoàn toàn hoạt động. Hãy nhớ lại $\mathbf{X}$ is $n \times m$, như là $\mathbf{U}\mathbf{V}$, 
+nên ma trận $2(\mathbf{X} - \mathbf{U}\mathbf{V})$ là $n \times m$.
+Mặt khác $\mathbf{U}$ là $n \times r$,
+và ta không thể nhân một ma trận $n \times m$ với một ma trận $n \times r$ vì số chiều không khớp nhau! 
 
 
 <!--
@@ -1487,7 +1490,7 @@ We can do this by multiplying $U^\top$ by $(\mathbf{X} - \mathbf{U}\mathbf{V})$.
 Thus, we can guess the solution to :eqref:`eq_mat_goal_2` is
 -->
 
-*dịch đoạn phía trên*
+Ta muốn nhận $\frac{d}{d\mathbf{V}}$,
 
 
 $$
