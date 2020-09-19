@@ -505,14 +505,14 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
 ### Using the Model
 -->
 
-### *dịch tiêu đề trên*
+### Sử dụng Mô hình
 
 
 <!--
 Finally, define the prediction function to output the logical relationship between a pair of premise and hypothesis.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, định nghĩa hàm dự đoán để xuất ra mối quan hệ logic giữa cặp tiền đề và giả thuyết.
 
 
 ```{.python .input  n=14}
@@ -531,7 +531,7 @@ def predict_snli(net, vocab, premise, hypothesis):
 We can use the trained model to obtain the natural language inference result for a sample pair of sentences.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng mô hình đã huấn luyện để thu được kết quả suy luận ngôn ngữ tự nhiên cho các cặp câu mẫu.
 
 
 ```{.python .input  n=15}
@@ -549,7 +549,11 @@ Such alignment is soft using weighted average, where ideally large weights are a
 * We can use pretrained word embedding as the input representation for downstream natural language processing task such as natural language inference.
 -->
 
-*dịch đoạn phía trên*
+* Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và kết hợp.
+* Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại.
+Việc căn chỉnh này là mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ được căn chỉnh.
+* Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung.
+* Ta có thể sử dụng embedding từ đã tiền huấn luyện làm biểu diễn đầu vào cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng như suy luận ngôn ngữ tự nhiên.
 
 
 ## Bài tập
@@ -561,7 +565,11 @@ Such alignment is soft using weighted average, where ideally large weights are a
 How shall we collect and label the dataset? Can you design a model with attention mechanisms?
 -->
 
-*dịch đoạn phía trên*
+1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác cao hơn trên tập kiểm tra không?
+2. Những điểm hạn chế chính của mô hình tập trung kết hợp cho suy luận ngôn ngữ tự nhiên là gì?
+3. Giả sử ta muốn tính độ tương tự ngữ nghĩa (một giá trị liên tục trong khoảng $0$ và $1$) cho một cặp câu bất kỳ.
+Ta sẽ thu thập và gán nhãn tập dữ liệu như thế nào?
+Bạn có thể thiết kế một mô hình với cơ chế tập trung không?
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -594,4 +602,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
