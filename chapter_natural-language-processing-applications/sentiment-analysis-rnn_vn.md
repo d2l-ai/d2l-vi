@@ -163,7 +163,7 @@ In addition, we no longer update these word vectors during training.
 
 Tiếp theo, ta sử dụng các vector từ đó làm vector đặc trưng cho mỗi từ trong các đánh giá. 
 Lưu ý là các chiều của vector từ đã qua tiền huấn luyện cần nhất quán với kích thước đầu ra `embed size` của tầng embedding trong mô hình đã tạo.
-Thêm vào đó, ta không còn cập nhật các vector từ đó trong suốt quá trình huấn luyện. 
+Thêm vào đó, ta không còn cập nhật các vector từ này trong suốt quá trình huấn luyện. 
 
 
 ```{.python .input  n=47}
