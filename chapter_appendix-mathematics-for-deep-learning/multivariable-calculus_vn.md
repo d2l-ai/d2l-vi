@@ -462,14 +462,14 @@ however, not every point with gradient zero is the true *global* minimum (or max
 ## Multivariate Chain Rule
 -->
 
-## *dịch tiêu đề trên*
+## Quy tắc chuỗi đa biến
 
 
 <!--
 Let us suppose that we have a function of four variables ($w, x, y$, and $z$) which we can make by composing many terms:
 -->
 
-*dịch đoạn phía trên*
+Giả sử là ta có một hàm bốn biến ($w, x, y$, and $z$) mà nó được tạo ra bằng cách kết hợp các hàm con: 
 
 
 $$\begin{aligned}f(u, v) & = (u+v)^{2} \\u(a, b) & = (a+b)^{2}, \qquad v(a, b) = (a-b)^{2}, \\a(w, x, y, z) & = (w+x+y+z)^{2}, \qquad b(w, x, y, z) = (w+x-y-z)^2.\end{aligned}$$
@@ -481,14 +481,15 @@ Such chains of equations are common when working with neural networks, so trying
 We can start to see visual hints of this connection in :numref:`fig_chain-1` if we take a look at what variables directly relate to one another.
 -->
 
-*dịch đoạn phía trên*
+Các chuỗi phương trình như vậy là thông dụng khi ta làm việc với các mạng nơ-rôn, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là chìa khóa.
+Ta có thể bắt đầu xem gợi ý trực quan của kết nối này trong :numref:`fig_chain-1` nếu ta nhìn vào mỗi liên hệ trực tiếp giữa những biến này với biến khác.
 
 
 <!--
 ![The function relations above where nodes represent values and edges show functional dependence.](../img/ChainNet1.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/ChainNet1.svg)
+![Các quan hệ của hàm ở trên biểu diễn dưới dạng giá trị và cạnh của các nốt cho thấy sự tùy thuộc trong hàm.](../img/ChainNet1.svg)
 :label:`fig_chain-1`
 
 
@@ -496,7 +497,7 @@ We can start to see visual hints of this connection in :numref:`fig_chain-1` if 
 Nothing stops us from just composing everything from :eqref:`eq_multi_func_def` and writing out that
 -->
 
-*dịch đoạn phía trên*
+Không có điều gì có thể cản ta khỏi việc tạo ra mọi thứ từ :eqref:`eq_multi_func_def` và viết ra như là
 
 
 $$
@@ -510,7 +511,9 @@ but if we did that we would quickly find ourself swamped with terms, many of whi
 Indeed, one can see that, for instance:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể kế đến lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến
+nhưng nếu ta làm như thế ta sẽ nhanh chống nhận ra chính ta ngập trong các thành phần, nhiều trong số chúng là lặp lại!
+Thật vậy, như ta có thể thấy, chẳng hạn:
 
 
 $$
@@ -529,7 +532,10 @@ This represents a massive quantity of wasted work, and if we needed to compute d
 the whole deep learning revolution would have stalled out before it began!
 -->
 
-*dịch đoạn phía trên*
+Kế đến nếu ta cũng muốn tính $\frac{\partial f}{\partial x}$, ta sẽ lại kết thúc với một phương trình tương tự với nhiều thành phần bị lặp lại,
+và nhiều thành phần lặp lại *chung* giữa hai đạo hàm.
+Điều này thể hiện một lượng lớn việc lãng phí, và nếu ta tính các đạo hàm theo cách này,
+toàn bộ cuộc cách mạng học sâu sẽ chấm dứt trước khi nó bắt đầu!
 
 
 <!--
@@ -538,7 +544,9 @@ We will start by trying to understand how $f$ changes when we change $a$, essent
 We will reason as we did back when we worked with the gradient for the first time. Let us take $a$ and add a small amount $\epsilon$ to it.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy chia nhỏ vấn đề này.
+Ta sẽ bắt đầu bằng cách thử hiểu làm thế nào $f$ thay đổi khi ta đổi $a$, giả sử cần thiết là tất cả $w, x, y$, và $z$ không tồn tại.
+Ta sẽ giải thích như ta đã từng làm ở trước với gradient cho lần đầu tiên. Hãy lấy $a$ và cộng một lượng nhỏ $\epsilon$ vào nó.
 
 
 $$
@@ -556,7 +564,10 @@ It is notationally burdensome to track exactly where we evaluate every derivativ
 as in the expression $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, so we often abbreviate this to the much more memorable
 -->
 
-*dịch đoạn phía trên*
+Dòng đầu tiên theo sau từ định nghĩa từ vi phân từng phần, và dòng thứ hai theo sau từ định nghĩa gradient.
+Thật khó khăn đáng kể để dò theo chính xác chỗ ta đánh giá mỗi phép vi phân,
+vì trong biểu thức $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, cho nên ta thường rút gọn nó để dễ nhớ hơn nhiều
+
 
 
 $$
@@ -572,14 +583,18 @@ We can compute both of these contributions via the chain rule: $\frac{\partial w
 and $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respectively, and added up.
 -->
 
-*dịch đoạn phía trên*
+Sẽ hữu dụng khi suy từ về ý nghĩa của biến đổi này.
+Ta hãy cảm nhận làm thế nào một hàm có dạng $f(u(a, b), v(a, b))$ thay đổi giá trị của nó khi $a$ thay đổi.
+Có hai đường có thể xảy ra: một đường ở đây $a \rightarrow u \rightarrow f$ và một đường là $a \rightarrow v \rightarrow f$.
+Ta có thể tính đóng góp của hai đường này qua quy tắc chuỗi: $\frac{\partial w}{\partial u} \cdot \frac{\partial u}{\partial x}$
+và $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respectively, và cộng gộp lại.
 
 
 <!--
 Imagine we have a different network of functions where the functions on the right depend on those that are connected to on the left as is shown in :numref:`fig_chain-2`.
 -->
 
-*dịch đoạn phía trên*
+Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở bên phải tùy thuộc vào các hàm kết nối ở bên trai như thể hiện trong :numref:`fig_chain-2`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -1710,7 +1725,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 5 -->
 * 
