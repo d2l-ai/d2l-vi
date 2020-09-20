@@ -299,8 +299,8 @@ into a 2-dimensional output: positive sentiment and negative sentiment predictio
 Đầu vào ở đây là một câu gồm 11 từ, với mỗi từ được biểu diễn bằng một vector từ 6 chiều. 
 Vì vậy, câu đầu vào có độ rộng là 11 và số kênh đầu vào là 6.
 Chúng ta giả sử rằng 2 hạt nhân tích chập một chiều có độ rộng lần lượt là 2 và 4, tương ứng với số kênh đầu ra là 4 và 5. 
-Cho nên sau phép tính tích chập một chiều, độ rộng của đầu ra có 4 kênh là $11-2+1=10$,
-trong khi đó độ rộng của đầu ra còn lại 5 kênh là $11-4+1=8$.
+Cho nên sau phép tính tích chập một chiều, đầu ra 4 kênh có chiều rộng là là $11-2+1=10$,
+trong khi đó độ rộng của đầu ra 5 kênh còn lại là $11-4+1=8$.
 Thậm chí độ rộng của mỗi kênh có khác nhau đi nữa, chúng ta vẫn có thể thực hiện gộp cực đại theo thời gian
 cho mỗi kênh và nối đầu ra sau gộp của 9 kênh thành một vector 9 chiều. 
 Cuối cùng, chúng ta dùng một tầng kết nối đầy đủ để biến đổi vector 9 chiều đó
@@ -464,7 +464,7 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 3. What other natural language processing tasks can you use textCNN for?
 -->
 
-1. Điều chỉnh các tham số mô hình và so sánh phương pháp phân tích hai cảm xúc giữa mạng nơ-ron truy hồi và mạng nơ-ron tích chập, xét trên khía cạnh độ chính xác và hiệu suất tính toán. 
+1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích cảm xúc giữa mạng nơ-ron truy hồi và mạng nơ-ron tích chập, xét trên khía cạnh độ chính xác và hiệu suất tính toán. 
 2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
 điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy. 
 3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng? 
@@ -502,3 +502,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
