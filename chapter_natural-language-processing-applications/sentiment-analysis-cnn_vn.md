@@ -20,9 +20,9 @@ convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 -->
 
 Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lý dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều. 
-Như đã đề cập về tác vụ mô hình ngôn ngữ và phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
+Như đã đề cập về các mô hình ngôn ngữ và các tác vụ phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
 chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp. 
-Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
+Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron tích chập một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
 Như mô tả trong :label:`fig_nlp-map-sa-cnn`, chương này sẽ miêu tả một hướng tiếp cận đột phá bằng cách áp dụng
 mạng nơ-ron tích chập để phân tích cảm xúc: textCNN :cite:`Kim.2014`. 
 
@@ -74,11 +74,11 @@ by element on the leftmost input subarray with a width of 2 and kernel array and
 
 Trước khi giới thiệu mô hình, chúng ta hãy xem mạng nơ-ron tích chập một chiều hoạt động như thế nào.
 Tương tự như mạng nơ-ron tích chập hai chiều, mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
-Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tiếp từ trái qua phải. 
+Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tục từ trái qua phải. 
 Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, ta nhân từng phần tử của mảng đầu vào con trong cửa sổ đó với mảng hạt nhân rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra. 
 Như ví dụ ở :numref:`fig_conv1d`, đầu vào là một mảng một chiều với độ rộng là 7 và độ rộng của mảng hạt nhân là 2.
 Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên được tính bằng cách nhân
-từng phần tử giữa mảng con 2 phần tử ngoài cùng bên trái của đầu vào và mảng hạt nhân, rồi cộng lại với nhau.
+từng phần tử của mảng con 2 phần tử ngoài cùng bên trái của đầu vào với mảng hạt nhân, rồi cộng lại với nhau.
 
 
 <!--
@@ -112,7 +112,7 @@ def corr1d(X, K):
 Now, we will reproduce the results of the one-dimensional cross-correlation operation in :numref:`fig_conv1d`.
 -->
 
-Bây giờ chúng ta sẽ tái hiện lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`. 
+Bây giờ chúng ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`. 
 
 
 ```{.python .input  n=3}
