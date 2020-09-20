@@ -111,7 +111,7 @@ Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \math
 Let us see this with a more challenging matrix
 -->
 
-Hãy nhìn nhận điều này bằng một ma trận thách thức hơn
+Hãy xét một ma trận thách thức hơn
 
 
 $$
@@ -197,7 +197,7 @@ However, the vectors computed are parallel to the ones we found by hand with the
 -->
 
 Lưu ý rằng `numpy` chuẩn hóa các vector riêng trở về độ dài bằng một, trong khi các vector của chúng tôi có độ dài tùy ý.
-Thêm vào đó, chọn dấu cũng là tùy ý.
+Thêm vào đó, việc chọn dấu cũng là tùy ý.
 Tuy nhiên, các vector được tính toán thì song song với các vector chúng ta đã tìm ra theo cách thủ công khi sử dụng cùng trị riêng. 
 
 
@@ -205,7 +205,7 @@ Tuy nhiên, các vector được tính toán thì song song với các vector ch
 ## Decomposing Matrices
 -->
 
-## Phân rã các ma trận
+## Phân rã Ma trận
 
 
 <!--
@@ -244,7 +244,7 @@ Then the definition of eigenvalues and eigenvectors tells us that
 -->
 
 là ma trận với các trị riêng tương ứng nằm trên đường chéo.
-Rồi từ định nghĩa của trị riêng và vector riêng cho ta biết
+Rồi từ định nghĩa của trị riêng và vector riêng, ta có
 
 $$
 \mathbf{A}\mathbf{W} =\mathbf{W} \boldsymbol{\Sigma} .
@@ -255,7 +255,7 @@ $$
 The matrix $W$ is invertible, so we may multiply both sides by $W^{-1}$ on the right, we see that we may write
 -->
 
-Ma trận $W$ là khả nghịch, nên ta có thẻ nhân hai vế bởi $W^{-1}$ bên phải, ta thấy rằng ta có thể viết
+Ma trận $W$ là khả nghịch, nên ta có thể nhân hai vế với $W^{-1}$ phía bên phải, để có
 
 
 $$\mathbf{A} = \mathbf{W} \boldsymbol{\Sigma} \mathbf{W}^{-1}.$$
@@ -268,7 +268,7 @@ will exist as long as we can find a full collection of linearly independent eige
 -->
 
 Trong phần tiếp theo ta sẽ thấy một số hệ quả hay ho từ diều này, nhưng bây giờ ta chỉ cần biết rằng phân rã như vậy 
-sẽ tồn chỉ cần ta có thể tìm một bộ sưu tập đầy đủ các vector riêng độc lập tuyến tính (để làm tiền đề cho ma trận $W$ khả nghịch). 
+sẽ tồn tại nếu ta có thể tìm tất cả các vector riêng độc lập tuyến tính (để ma trận $W$ khả nghịch). 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
