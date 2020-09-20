@@ -361,7 +361,7 @@ and is a fundamental operation underlying many numerical algorithms and much of 
 It is not always possible to find enough linearly independent eigenvectors for the above process to work. For instance the matrix
 -->
 
-Sự thực là không phải lúc nào ta cũng có thể tìm đủ các vector riêng đọc lập tuyến tính cho quy trình phía trên hoạt động. Ví dụ ma trận sau
+Không phải lúc nào ta cũng có thể tìm đủ các vector riêng độc lập tuyến tính để quy trình phía trên hoạt động. Ví dụ ma trận sau
 
 
 $$
@@ -379,7 +379,7 @@ We will often need to restrict our attention to those matrices where we can guar
 -->
 
 chỉ có duy nhất một vector riêng, gọi là $(1, 0)^\top$. 
-Để xử lý những ma trận như thế, yêu cầu ta những kỹ thuật nâng cao hơn những thứ ta có thể bảo đảm (ví dụ như dạng chuẩn Jordan, hay phân tích đơn trị). 
+Để xử lý những ma trận như thế, ta cần những kỹ thuật cao cấp hơn những gì đã đề cập (ví dụ như dạng chuẩn Jordan, hay phân tích đơn trị). 
 Ta thường sẽ cần hạn chế chú ý đến những ma trận mà ta có thể đảm bảo tồn tại một bộ đầy đủ các vector riêng. 
 
 <!--
@@ -389,8 +389,8 @@ where $\mathbf{W}^\top = \mathbf{W}^{-1}$—and all the eigenvalues will be real
 Thus, in this special case, we can write :eqref:`eq_eig_decomp` as
 -->
 
-Tập vector mà thường gặp nhất là tập *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
-Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận orthogonal* - ma trận mà các cột của nó là các vector có độ dài bằng một mà vuông góc với nhau,
+Họ vector thường gặp nhất là *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
+Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận trực giao* - ma trận mà các cột của nó là các vector có độ dài bằng một và vuông góc với nhau,
 tại $\mathbf{W}^\top = \mathbf{W}^{-1}$ - và tất cả các trị riêng sẽ là số thực.
 Do đó, trong trường hợp đặc biệt này, ta có thể viết :eqref:`eq_eig_decomp` như là
 
@@ -413,9 +413,9 @@ If presented an arbitrary matrix, there is little that can be said about what th
 There is, however, one theorem that can make it easy to approximate well if the largest values are on the diagonal.
 -->
 
-Các trị riêng thường khó để luận giải bằng trực giác.
-Nếu tồn tại một ma trận bất kỳ, có rất ít điều có thể nói về trị riêng là gì mà không phải tính toán chúng.
-Tuy nhiên, tồn tại một định lý mà có thể làm cho nó dễ dàng để tính xấp xỉ tốt nếu các giá trị lớn nhất nằm trên đường chéo. 
+Các trị riêng thường khó để tư duy bằng trực giác.
+Nếu tồn tại một ma trận bất kỳ, ta chỉ có thể nói rất ít về trị riêng nếu không tính toán chúng.
+Tuy nhiên, tồn tại một định lý giúp dễ dàng xấp xỉ tốt trị riêng nếu các giá trị lớn nhất của ma trận nằm trên đường chéo. 
 
 <!--
 Let $\mathbf{A} = (a_{ij})$ be any square matrix ($n\times n$).
@@ -426,7 +426,7 @@ Then, every eigenvalue of $\mathbf{A}$ is contained in one of the $\mathcal{D}_i
 
 Cho $\mathbf{A} = (a_{ij})$ là ma trận vuông bất kỳ ($n\times n$).
 Ta sẽ định nghĩa $r_i = \sum_{j \neq i} |a_{ij}|$.
-Cho $\mathcal{D}_i$ biểu diễn đĩa trong mặt phẳng phức với tâm là $a_{ii}$ radius $r_i$.
+Cho $\mathcal{D}_i$ biểu diễn hình tròn trong mặt phẳng phức với tâm là $a_{ii}$, bán kính $r_i$.
 Kế đó, mỗi trị riêng của $\mathbf{A}$ được chứa ở một trong các $\mathcal{D}_i$.
 
 
@@ -518,7 +518,7 @@ In this way, eigenvalues can be approximated, and the approximations will be fai
 in the case that the diagonal is significantly larger than all the other elements.  
 -->
 
-Bằng cách này, các trị riêng có thể được tính xấp xỉ, và xấp xỉ đấy sẽ khá chính xác
+Bằng cách này, các trị riêng có thể được tính xấp xỉ khá chính xác
 trong trường hợp đường chéo lớn hơn hẳn so với các phần tử còn lại.
 
 
@@ -527,8 +527,8 @@ It is a small thing, but with a complex and subtle topic like eigendecomposition
 it is good to get any intuitive grasp we can.
 -->
 
-Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tế nhị như phân tích trị riêng,
-thật tốt để chúng ta nắm bắt bất kỳ trực quan nào có thể.
+Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tinh vi như phân tích trị riêng,
+thật tốt nếu có thể hiểu bất kỳ trực quan nào.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
