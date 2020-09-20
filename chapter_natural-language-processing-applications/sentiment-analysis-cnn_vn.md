@@ -406,7 +406,7 @@ net.constant_embedding.collect_params().setattr('grad_req', 'null')
 ### Train and Evaluate the Model
 -->
 
-### Huấn luyện và đánh giá mô hình
+### Huấn luyện và Đánh giá mô hình
 
 
 <!--
