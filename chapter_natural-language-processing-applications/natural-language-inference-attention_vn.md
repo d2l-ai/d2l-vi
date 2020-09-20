@@ -309,9 +309,8 @@ in the last step we will aggregate such information to infer the logical relatio
 We begin by summing up both sets:
 -->
 
-Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) có trong tay,
-tại bước cuối cùng, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic.
-Chúng ta bắt đầu bằng cách lấy tổng trên cả hai tập:
+Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) trong tay, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic tại bước cuối cùng. 
+Chúng ta bắt đầu bằng cách lấy tổng trên cả hai tập: 
 
 
 $$
@@ -322,7 +321,7 @@ $$
 <!--
 Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
 -->
-Tiếp theo, chúng ta đưa cả hai kết quả tổng sau khi được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic:
+Tiếp theo, chúng ta đưa hai kết quả tổng đã được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic: 
 
 
 $$
@@ -334,7 +333,7 @@ $$
 The aggregation step is defined in the following `Aggregate` class.
 -->
 
-Bước tổng hợp được định nghĩa trong lớp `Aggregate` sau đây.
+Bước tổng hợp được định nghĩa trong lớp `Aggregate` sau đây. 
 
 
 ```{.python .input  n=5}
@@ -369,8 +368,8 @@ By putting the attending, comparing, and aggregating steps together,
 we define the decomposable attention model to jointly train these three steps.
 -->
 
-Bằng cách gộp các bước thực hiện tập trung, so sánh và kết hợp lại với nhau,
-ta định nghĩa mô hình tập trung được kết hợp để huấn luyện đồng thời cả 3 bước trên.
+Bằng cách gộp các bước thực hiện tập trung, so sánh và tổng hợp lại với nhau,
+ta định nghĩa mô hình tập trung kết hợp để cùng huấn luyện cả ba bước này.
 
 
 ```{.python .input  n=6}
@@ -406,8 +405,8 @@ Now we will train and evaluate the defined decomposable attention model on the S
 We begin by reading the dataset.
 -->
 
-Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung kết hợp định nghĩa ở trên trên tập dữ liệu SNLI.
-Ta bắt đầu bằng việc đọc tập dữ liệu.
+Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung kết hợp được định nghĩa ở trên trên tập dữ liệu SNLI. 
+Ta bắt đầu bằng việc đọc tập dữ liệu. 
 
 <!--
 ### Reading the dataset
@@ -421,8 +420,8 @@ We download and read the SNLI dataset using the function defined in :numref:`sec
 The batch size and sequence length are set to $256$ and $50$, respectively.
 -->
 
-Ta tải xuống và đọc tập dữ liệu SNLI bằng hàm định nghĩa trong :numref:`sec_natural-language-inference-and-dataset`.
-Kích thước batch và độ dài chuỗi được đặt là $256$ và $50$.
+Ta tải xuống và đọc tập dữ liệu SNLI bằng hàm định nghĩa trong :numref:`sec_natural-language-inference-and-dataset`. 
+Kích thước batch và độ dài chuỗi được đặt là $256$ và $50$. 
 
 
 ```{.python .input  n=7}
@@ -446,11 +445,11 @@ Then we create a model instance, initialize its parameters,
 and load the GloVe embedding to initialize vectors of input tokens.
 -->
 
-Ta sử dụng embedding GloVe $100$-chiều đã tiền huấn luyện để biểu diễn các token đầu vào.
-Do đó, ta định nghĩa trước chiều của các vector $\mathbf{a}_i$ và $\mathbf{b}_j$ trong :eqref:`eq_nli_e` là $100$.
-Chiều đầu ra của hàm $f$ trong :eqref:`eq_nli_e` và $g$ trong :eqref:`eq_nli_v_ab` được đặt bằng $200$.
+Ta sử dụng embedding GloVe $100$-chiều đã tiền huấn luyện để biểu diễn các token đầu vào. 
+Do đó, ta định nghĩa trước chiều của các vector $\mathbf{a}_i$ và $\mathbf{b}_j$ trong :eqref:`eq_nli_e` là $100$. 
+Chiều đầu ra của hàm $f$ trong :eqref:`eq_nli_e` và $g$ trong :eqref:`eq_nli_v_ab` được đặt bằng $200$. 
 Sau đó ta tạo thực thể của mô hình, khởi tạo trọng số,
-và nạp embedding GloVe để khởi tạo các vector token đầu vào.
+và nạp embedding GloVe để khởi tạo các vector token đầu vào. 
 
 ```{.python .input  n=8}
 embed_size, num_hiddens, devices = 100, 200, d2l.try_all_gpus()
@@ -474,8 +473,8 @@ In contrast to the `split_batch` function in :numref:`sec_multi_gpu` that takes 
 we define a `split_batch_multi_inputs` function to take multiple inputs such as premises and hypotheses in minibatches.
 -->
 
-Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn,
-ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào ví dụ như cặp tiền đề và giả thuyết ở trong minibatch.
+Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn, 
+ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào, ví dụ như cặp tiền đề và giả thuyết ở trong các minibatch. 
 
 
 ```{.python .input  n=10}
@@ -492,7 +491,7 @@ def split_batch_multi_inputs(X, y, devices):
 Now we can train and evaluate the model on the SNLI dataset.
 -->
 
-Giờ ta có thể huấn luyện và đánh giá mô hình trên tập dữ liệu SNLI.
+Giờ ta có thể huấn luyện và đánh giá mô hình trên tập dữ liệu SNLI. 
 
 
 ```{.python .input  n=11}
@@ -518,7 +517,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
 Finally, define the prediction function to output the logical relationship between a pair of premise and hypothesis.
 -->
 
-Cuối cùng, định nghĩa hàm dự đoán để xuất ra mối quan hệ logic giữa cặp tiền đề và giả thuyết.
+Cuối cùng, định nghĩa hàm dự đoán để xuất ra mối quan hệ logic giữa cặp tiền đề và giả thuyết. 
 
 
 ```{.python .input  n=14}
@@ -537,7 +536,7 @@ def predict_snli(net, vocab, premise, hypothesis):
 We can use the trained model to obtain the natural language inference result for a sample pair of sentences.
 -->
 
-Ta có thể sử dụng mô hình đã huấn luyện để thu được kết quả suy luận ngôn ngữ tự nhiên cho các cặp câu mẫu.
+Ta có thể sử dụng mô hình đã huấn luyện để thu được kết quả suy luận ngôn ngữ tự nhiên cho các cặp câu mẫu. 
 
 
 ```{.python .input  n=15}
@@ -555,11 +554,11 @@ Such alignment is soft using weighted average, where ideally large weights are a
 * We can use pretrained word embedding as the input representation for downstream natural language processing task such as natural language inference.
 -->
 
-* Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và kết hợp.
-* Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại.
-Việc căn chỉnh này là mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ được căn chỉnh.
-* Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung.
-* Ta có thể sử dụng embedding từ đã tiền huấn luyện làm biểu diễn đầu vào cho các ứng dụng xử lý ngôn ngữ tự nhiên xuôi dòng như suy luận ngôn ngữ tự nhiên.
+* Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và tổng hợp. 
+* Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại. 
+Đây là kỹ thuật căn chỉnh mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ được căn chỉnh. 
+* Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung. 
+* Ta có thể sử dụng embedding từ đã tiền huấn luyện để biểu diễn đầu vào cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng, ví dụ như suy luận ngôn ngữ tự nhiên.
 
 
 ## Bài tập
@@ -571,11 +570,11 @@ Việc căn chỉnh này là mềm, sử dụng trung bình có trọng số, tr
 How shall we collect and label the dataset? Can you design a model with attention mechanisms?
 -->
 
-1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác cao hơn trên tập kiểm tra không?
-2. Những điểm hạn chế chính của mô hình tập trung kết hợp cho suy luận ngôn ngữ tự nhiên là gì?
-3. Giả sử ta muốn tính độ tương tự ngữ nghĩa (một giá trị liên tục trong khoảng $0$ và $1$) cho một cặp câu bất kỳ.
-Ta sẽ thu thập và gán nhãn tập dữ liệu như thế nào?
-Bạn có thể thiết kế một mô hình với cơ chế tập trung không?
+1. Huấn luyện mô hình với các tập siêu tham số khác nhau. Bạn có thể thu được độ chính xác cao hơn trên tập kiểm tra không? 
+2. Những điểm hạn chế chính của mô hình tập trung kết hợp đối với suy luận ngôn ngữ tự nhiên là gì? 
+3. Giả sử ta muốn tính độ tương tự ngữ nghĩa (một giá trị liên tục trong khoảng $0$ và $1$) cho một cặp câu bất kỳ. 
+Ta sẽ thu thập và gán nhãn tập dữ liệu như thế nào? 
+Bạn có thể thiết kế một mô hình với cơ chế tập trung không? 
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -611,3 +610,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
