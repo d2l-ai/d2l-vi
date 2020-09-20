@@ -321,7 +321,7 @@ $$
 <!--
 Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
 -->
-Tiếp theo, chúng ta đưa hai kết quả tổng đã được ghép nối vào hàm $h$ (như một perceptron nhiều tầng) để thu được kết quả phân loại của mối quan hệ logic: 
+Tiếp theo, chúng ta ghép nối hai kết quả tổng rồi đưa vào hàm $h$ (một perceptron đa tầng) để thu được kết quả phân loại của mối quan hệ logic: 
 
 
 $$
@@ -556,7 +556,7 @@ Such alignment is soft using weighted average, where ideally large weights are a
 
 * Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và tổng hợp. 
 * Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại. 
-Đây là kỹ thuật căn chỉnh mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ được căn chỉnh. 
+Đây là kỹ thuật căn chỉnh mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ sẽ được căn chỉnh. 
 * Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung. 
 * Ta có thể sử dụng embedding từ đã tiền huấn luyện để biểu diễn đầu vào cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng, ví dụ như suy luận ngôn ngữ tự nhiên.
 
