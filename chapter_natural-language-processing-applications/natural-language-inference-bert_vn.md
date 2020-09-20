@@ -19,13 +19,13 @@ natural language inference is a sequence-level text pair classification problem,
 and fine-tuning BERT only requires an additional MLP-based architecture, as illustrated in :numref:`fig_nlp-map-nli-bert`.
 -->
 
-Ở các phần đầu của chương này, ta đã thiết kế kiến trúc dựa trên cơ chế tập trung 
+Ở các phần đầu của chương này, ta đã thiết kế một kiến trúc dựa trên cơ chế tập trung 
 (trong :numref:`sec_natural-language-inference-attention`) cho tác vụ suy luận ngôn ngữ tự nhiên
 trên tập dữ liệu SNLI (như được mô tả trong :numref:`sec_natural-language-inference-and-dataset`). 
 Bây giờ ta trở lại tác vụ này qua thực hiện tinh chỉnh BERT. 
 Như đã thảo luận trong :numref:`sec_finetuning-bert`,
-suy diễn ngôn ngữ tự nhiên là bài toán phân loại cặp văn bản ở mức chuỗi, 
-và việc tinh chỉnh BERT chỉ đòi hỏi kiến trúc bổ trợ dựa trên MLP, như minh họa trong :numref:`fig_nlp-map-nli-bert`. 
+suy diễn ngôn ngữ tự nhiên là bài toán phân loại cặp văn bản ở cấp độ chuỗi, 
+và việc tinh chỉnh BERT chỉ đòi hỏi thêm một kiến trúc bổ trợ dựa trên MLP, như minh họa trong :numref:`fig_nlp-map-nli-bert`. 
 
 
 <!--
@@ -73,7 +73,7 @@ In the following, we provide two versions of pretrained BERT:
 while "bert.small" is a small version to facilitate demonstration.
 -->
 
-Ta đã giải thích việc làm thế nào tiền huấn luyện BERT trên tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset` và :numref:`sec_bert-pretraining`
+Ta đã giải thích cách tiền huấn luyện BERT trên tập dữ liệu WikiText-2 trong :numref:`sec_bert-dataset` và :numref:`sec_bert-pretraining`
 (lưu ý rằng mô hình BERT ban đầu được tiền huấn luyện trên các kho ngữ liệu lớn hơn nhiều). 
 Như đã thảo luận trong :numref:`sec_bert-pretraining`, mô hình BERT gốc có hàng trăm triệu tham số. 
 Trong phần sau đây, chúng tôi cung cấp hai phiên bản BERT tiền huấn luyện:
@@ -269,8 +269,8 @@ entailment, contradiction, and neutral.
 -->
 
 Như :numref:`fig_bert-two-seqs` chỉ ra, tinh chỉnh BERT trong suy luận ngôn ngữ tự nhiên 
-chỉ yêu cầu một perceptron đa tầng bổ sung gồm hai tầng kết nối đầy đủ
-(xem `self.hiised` và` self.output` trong lớp `BERTClassifier` sau đây).
+chỉ yêu cầu thêm một perceptron đa tầng gồm hai tầng kết nối đầy đủ
+(xem `self.hiised` và` self.output` trong lớp `BERTClassifier` bên dưới).
 Perceptron đa tầng này biến đổi biểu diễn BERT của token đặc biệt “&lt;cls&gt;”, 
 là token mã hóa thông tin của cả tiền đề và giả thuyết, 
 thành ba đầu ra của suy luận ngôn ngữ tự nhiên: 
@@ -302,8 +302,8 @@ All the parameters of the pretrained BERT encoder (`net.encoder`) and the hidden
 -->
 
 Sau đây, mô hình BERT đã tiền huấn luyện `bert` được đưa vào thực thể `net` của lớp `BERTClassifier` cho tác vụ xuôi dòng. 
-Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của lớp đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu. 
-Còn tất cả các tham số của bộ mã hóa BERT đã tiền huấn luyện (`net.encoder`) và lớp ẩn của perception đa tầng bổ sung (net.hidden) thì sẽ được tinh chỉnh. 
+Thường khi lập trình tinh chỉnh BERT, chỉ các tham số của tầng đầu ra của perception đa tầng bổ sung (`net.output`) mới được học từ đầu. 
+Còn tất cả các tham số của bộ mã hóa BERT đã tiền huấn luyện (`net.encoder`) và tầng ẩn của perception đa tầng bổ sung (net.hidden) thì sẽ được tinh chỉnh. 
 
 
 ```{.python .input  n=8}
@@ -320,7 +320,7 @@ These two loss functions are irrelevant to fine-tuning downstream applications, 
 `MaskLM` and `NextSentencePred` are not updated (staled) when BERT is fine-tuned.
 -->
 
-Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số trong perceptron đa tầng mà chúng sử dụng. 
+Nhớ lại rằng trong :numref:`sec_bert`, cả 2 lớp` MaskLM` và lớp `NextSentencePred` đều có các tham số của perceptron đa tầng mà chúng sử dụng. 
 Các tham số này là một phần của các tham số trong mô hình BERT đã tiền huấn luyện `bert`, và do đó là một phần của các tham số trong `net`. 
 Tuy nhiên, các tham số này chỉ được dùng để tính toán mất mát của mô hình ngôn ngữ có mặt nạ và mất mát khi dự đoán câu tiếp theo trong quá trình tiền huấn luyện. 
 Hai hàm mất mát này không liên quan đến việc tinh chỉnh trong các ứng dụng xuôi dòng, do đó các tham số của perceptron đa tầng dùng trong
@@ -406,3 +406,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thái Bình
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
+ * Phạm Hồng Vinh
