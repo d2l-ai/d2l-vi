@@ -607,14 +607,14 @@ $$
 ## A Comment on Sign Conventions
 -->
 
-## *dịch tiêu đề trên*
+## Nhận xét về quy ước kí hiệu
 
 
 <!--
 Keen-eyed readers will observe something strange about the computations above. Namely, computations like
 -->
 
-*dịch đoạn phía trên*
+Những độc giả nào tinh mắt sẽ nhận thấy điều kì lạ từ những phép tính trên. Cụ thể, là các phép tính như
 
 
 $$
@@ -626,7 +626,7 @@ $$
 can produce negative numbers. When thinking about areas, it can be strange to see a negative value, and so it is worth digging into what the convention is.
 -->
 
-*dịch đoạn phía trên*
+có thể tạo ra số âm. Khi nghĩ về các diện tích, có thể hơi lạ khi thấy một giá trị âm, và vì vậy nó đáng để đào sâu tìm hiểu quy ước là gì.
 
 
 <!--
@@ -634,7 +634,8 @@ Mathematicians take the notion of signed areas. This manifests itself in two way
 First, if we consider a function $f(x)$ which is sometimes less than zero, then the area will also be negative. So for instance
 -->
 
-*dịch đoạn phía trên*
+Các nhà toán học có khái niệm về các diện tích giới hạn. Điều này thể hiện theo hai cách.
+Đầu tiên, nếu ta xét một hàm $f(x)$ đôi khi nhỏ hơn 0, thì diện tích cũng sẽ là số âm. Vì thế, ví dụ
 
 
 $$
@@ -646,7 +647,7 @@ $$
 Similarly, integrals which progress from right to left, rather than left to right are also taken to be negative areas
 -->
 
-*dịch đoạn phía trên*
+Tương tự, đường tích phân tiến từ phải sang trái, thay vì từ trái sang phải, cũng được coi là vùng có diện tích âm
 
 
 $$
@@ -661,7 +662,10 @@ or flipping over the $y$-axis to get an integral in the wrong order) will produc
 And indeed, flipping twice will give a pair of negative signs that cancel out to have positive area
 -->
 
-*dịch đoạn phía trên*
+Diện tích chuẩn (từ trái sang phải của một hàm số dương) thì luôn dương.
+Bất kỳ thứ gì thu được bằng cách lật nó (giả sử lật đối xứng qua trục $ x $ để lấy tích phân của một số âm,
+hoặc lật qua trục $ y $ để lấy một tích phân không đúng thứ tự) sẽ tạo ra một vùng âm.
+Và quả thực, việc lật hai lần sẽ tạo nên cặp dấu âm triệt tiêu nhau, từ đó có được diện tích có giá trị dương.
 
 
 $$
@@ -673,14 +677,14 @@ $$
 If this discussion sounds familiar, it is! In :numref:`sec_geometry-linear-algebraic-ops` we discussed how the determinant represented the signed area in much the same way.
 -->
 
-*dịch đoạn phía trên*
+Nếu cuộc thảo luận này nghe có vẻ quen thuộc, thì đó chính là! Trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách mà định thức biểu diễn diện tích giới hạn theo cùng một cách.
 
 
 <!--
 ## Multiple Integrals
 -->
 
-## *dịch tiêu đề trên*
+## Tích phân bội
 
 
 <!--
@@ -688,8 +692,8 @@ In some cases, we will need to work in higher dimensions. For instance, suppose 
 and we want to know the volume under $f$ when $x$ ranges over $[a, b]$ and $y$ ranges over $[c, d]$.
 -->
 
-*dịch đoạn phía trên*
-
+Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng nhiều chiều hơn. Ví dụ: giả sử rằng chúng ta có một hàm gồm hai biến, như $f(x, y)$
+và chúng tôi muốn biết thể tích dưới $f$ khi $x$ nằm trong đoạn trên $[a, b]$ và $y$ trong đoạn trên $[c, d]$.
 
 ```{.python .input}
 # Construct grid and compute function
@@ -756,7 +760,7 @@ ax.dist = 12
 We write this as 
 -->
 
-*dịch đoạn phía trên*
+Ta viết đoạn này tương tự là
 
 
 $$
@@ -769,7 +773,7 @@ Suppose that we wish to compute this integral. My claim is that we can do this b
 and then shifting to the integral in $y$, that is to say
 -->
 
-*dịch đoạn phía trên*
+Giả sử chúng ta muốn tính tích phân này. Tôi quả quyết rằng ta có thể làm được điều đó bằng cách đầu tiên tính toán theo vòng lặp tại cận $x$ và rồi chuyển sang tích phân tại cận $y$, nghĩa là
 
 
 $$
@@ -781,7 +785,7 @@ $$
 Let us see why this is.  
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng quan sát tại sao.
 
 
 <!--
@@ -789,7 +793,8 @@ Consider the figure above where we have split the function into $\epsilon \times
 squares which we will index with integer coordinates $i, j$. In this case, our integral is approximately
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét hình trên, nơi chúng ta đã phân chia hàm thành $\epsilon \times \epsilon$
+các ô vuông mà ta sẽ lập chỉ số với các tọa độ nguyên $i, j$. Trong trường hợp này, tích phân của chúng ta xấp xỉ
 
 
 $$
@@ -802,7 +807,8 @@ Once we discretize the problem, we may add up the values on these squares in wha
 This is illustrated in :numref:`fig_sum-order`. In particular, we can say that
 -->
 
-*dịch đoạn phía trên*
+Một khi ta đã giải quyết được bài toán, chúng ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà ta muốn và không phải lo lắng về việc các giá trị bị thay đổi.
+Điều này được minh họa trong: numref: `fig_sum-order`. Đặc biệt, có thể nói rằng
 
 
 $$
@@ -813,7 +819,7 @@ $$
 ![Illustrating how to decompose a sum over many squares as a sum over first the columns (1), then adding the column sums together (2).](../img/SumOrder.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/SumOrder.svg)
+![*Minh họa cách phân rã một tổng trên nhiều ô vuông dưới dạng tổng trên đầu tiên các cột (1), sau đó cộng các tổng của cột với nhau (2).*](../img/SumOrder.svg)
 :label:`fig_sum-order`
 
 
@@ -821,7 +827,7 @@ $$
 The sum on the inside is precisely the discretization of the integral 
 -->
 
-*dịch đoạn phía trên*
+Tổng bên trong chính xác là sự rời rạc của tích phân.
 
 
 $$
@@ -833,7 +839,7 @@ $$
 Finally, notice that if we combine these two expressions we get 
 -->
 
-*dịch đoạn phía trên*
+Sau cùng, lưu ý rằng nếu ta kết hợp hai biểu thức này với nhau, chúng ta nhận được
 
 
 $$
@@ -845,7 +851,7 @@ $$
 Thus putting it all together, we have that
 -->
 
-*dịch đoạn phía trên*
+Vì thế khi kết hợp tất cả lại với nhau, chúng ta có được
 
 
 $$
@@ -860,7 +866,10 @@ For the type of mathematics encountered when doing machine learning (continuous 
 however it is possible to create examples where it fails (for example the function $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ over the rectangle $[0,2]\times[0,1]$).
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng, một khi đã xáo trộn, tất cả những gì ta cần làm đó là sắp xếp lại thứ tự mà ta đã thêm vào danh sách các số.
+Điều này có thể làm cho nó có vẻ như vô nghĩa, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
+Đối với loại toán học gặp phải khi thực hiện tác vụ máy học (các hàm liên tục), không có gì đáng lo ngại,
+tuy vậy có thể tạo các ví dụ không thành công (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
 
 
 <!--
@@ -868,7 +877,8 @@ Note that the choice to do the integral in $x$ first, and then the integral in $
 We could have equally well chosen to do $y$ first and then $x$ to see
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng việc lựa chọn để tính tích phân tại cận $x$ trước tiên, và sau đó tích phân tại cận $y$ là tùy ý.
+Ta cũng có thể chọn thực hiện $y$ trước rồi đến $x$ sau
 
 
 $$
@@ -880,7 +890,7 @@ $$
 Often times, we will condense down to vector notation, and say that for $U = [a, b]\times [c, d]$ this is
 -->
 
-*dịch đoạn phía trên*
+Thông thường, chúng ta sẽ rút gọn thành ký hiệu vectơ và nói rằng với $U = [a, b]\times [c, d]$ thì đây là
 
 
 $$
@@ -892,7 +902,7 @@ $$
 ## Change of Variables in Multiple Integrals
 -->
 
-## *dịch tiêu đề trên*
+## Đổi biến trong Tích phân bội
 
 
 <!--
@@ -909,14 +919,16 @@ We can take this to be $\phi : \mathbb{R}^n \rightarrow \mathbb{R}^n$, that is a
 To keep the expressions clean, we will assume that $\phi$ is *injective* which is to say it never folds over itself ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).  
 -->
 
-*dịch đoạn phía trên*
+Chúng ta cần một hàm để xác định lại miền tích hợp.
+Ta cũng có thể coi đây là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, đó là bất kỳ hàm nào nhận $n$ là biến thực và trả về kết quả $n$ có giá trị khác.
+Để giữ cho các biểu thức rõ ràng, ta sẽ giả định rằng $\phi$ là *injective* có nghĩa là nó không bao giờ tự gập lại ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
 
 
 <!--
 In this case, we can say that
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta có thể phát biểu rằng
 
 
 $$
@@ -928,8 +940,7 @@ $$
 where $D\phi$ is the *Jacobian* of $\phi$, which is the matrix of partial derivatives of $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
 -->
 
-*dịch đoạn phía trên*
-
+trong đó $D\phi$ là *Jacobian* của $\phi$, là ma trận của các đạo hàm riêng của $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
