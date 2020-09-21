@@ -365,14 +365,14 @@ và là một phép toán cơ bản phía sau nhiều thuật toán số và nhi
 ## Eigendecompositions of Symmetric Matrices
 -->
 
-## *dịch tiêu đề trên*
+## Phân tích trị riêng của ma trận đối xứng
 
 
 <!--
 It is not always possible to find enough linearly independent eigenvectors for the above process to work. For instance the matrix
 -->
 
-*dịch đoạn phía trên*
+Không phải lúc nào ta cũng có thể tìm đủ các vector riêng độc lập tuyến tính để quy trình phía trên hoạt động. Ví dụ ma trận sau
 
 
 $$
@@ -389,8 +389,9 @@ To handle such matrices, we require more advanced techniques than we can cover (
 We will often need to restrict our attention to those matrices where we can guarantee the existence of a full set of eigenvectors.
 -->
 
-*dịch đoạn phía trên*
-
+chỉ có duy nhất một vector riêng, gọi là $(1, 0)^\top$. 
+Để xử lý những ma trận như thế, ta cần những kỹ thuật cao cấp hơn những gì đã đề cập (ví dụ như dạng chuẩn Jordan, hay phân tích đơn trị). 
+Ta thường sẽ cần hạn chế chú ý đến những ma trận mà ta có thể đảm bảo tồn tại một bộ đầy đủ các vector riêng. 
 
 <!--
 The most commonly encountered family are the *symmetric matrices*, which are those matrices where $\mathbf{A} = \mathbf{A}^\top$. 
@@ -399,7 +400,10 @@ where $\mathbf{W}^\top = \mathbf{W}^{-1}$—and all the eigenvalues will be real
 Thus, in this special case, we can write :eqref:`eq_eig_decomp` as
 -->
 
-*dịch đoạn phía trên*
+Họ vector thường gặp nhất là *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
+Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận trực giao* - ma trận mà các cột của nó là các vector có độ dài bằng một và vuông góc với nhau,
+tại $\mathbf{W}^\top = \mathbf{W}^{-1}$ - và tất cả các trị riêng sẽ là số thực.
+Do đó, trong trường hợp đặc biệt này, ta có thể viết :eqref:`eq_eig_decomp` như là
 
 
 $$
@@ -411,7 +415,7 @@ $$
 ## Gershgorin Circle Theorem
 -->
 
-## *dịch tiêu đề trên*
+## Định lý vòng tròn Gershgorin
 
 
 <!--
@@ -420,8 +424,9 @@ If presented an arbitrary matrix, there is little that can be said about what th
 There is, however, one theorem that can make it easy to approximate well if the largest values are on the diagonal.
 -->
 
-*dịch đoạn phía trên*
-
+Các trị riêng thường khó để tư duy bằng trực giác.
+Nếu tồn tại một ma trận bất kỳ, ta chỉ có thể nói rất ít về trị riêng nếu không tính toán chúng.
+Tuy nhiên, tồn tại một định lý giúp dễ dàng xấp xỉ tốt trị riêng nếu các giá trị lớn nhất của ma trận nằm trên đường chéo. 
 
 <!--
 Let $\mathbf{A} = (a_{ij})$ be any square matrix ($n\times n$).
@@ -430,7 +435,10 @@ Let $\mathcal{D}_i$ represent the disc in the complex plane with center $a_{ii}$
 Then, every eigenvalue of $\mathbf{A}$ is contained in one of the $\mathcal{D}_i$.
 -->
 
-*dịch đoạn phía trên*
+Cho $\mathbf{A} = (a_{ij})$ là ma trận vuông bất kỳ ($n\times n$).
+Ta sẽ định nghĩa $r_i = \sum_{j \neq i} |a_{ij}|$.
+Cho $\mathcal{D}_i$ biểu diễn hình tròn trong mặt phẳng phức với tâm là $a_{ii}$, bán kính $r_i$.
+Kế đó, mỗi trị riêng của $\mathbf{A}$ được chứa ở một trong các $\mathcal{D}_i$.
 
 
 <!--
@@ -438,7 +446,8 @@ This can be a bit to unpack, so let us look at an example.
 Consider the matrix:
 -->
 
-*dịch đoạn phía trên*
+Điều này có thể hơi khó hiểu một chút, nên ta hãy nhìn vào ví dụ sau.
+Xem xét ma trận:
 
 
 $$
@@ -457,7 +466,9 @@ The matrix is symmetric, so all eigenvalues are real.
 This means that all of our eigenvalues will be in one of the ranges of 
 -->
 
-*dịch đoạn phía trên*
+Ta có $r_1 = 0.3$, $r_2 = 0.6$, $r_3 = 0.8$ và $r_4 = 0.9$.
+Ma trận này đối xứng, tất cả các trị riêng đều là số thực.
+Điều này có nghĩa tất cả các trị riêng sẽ là một trong các khoảng của 
 
 
 $$[a_{11}-r_1, a_{11}+r_1] = [0.7, 1.3], $$
@@ -475,7 +486,9 @@ that the eigenvalues are approximately $0.99$, $2.97$, $4.95$, $9.08$,
 all comfortably inside the ranges provided.
 -->
 
-*dịch đoạn phía trên*
+Thực hiện việc tính toán số cho thấy
+rằng các trị riêng xấp xỉ ở $0.99$, $2.97$, $4.95$, $9.08$,
+đều nằm trong các khoảng cho trước một cách thoải mái.
 
 
 ```{.python .input}
@@ -516,7 +529,8 @@ In this way, eigenvalues can be approximated, and the approximations will be fai
 in the case that the diagonal is significantly larger than all the other elements.  
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, các trị riêng có thể được tính xấp xỉ khá chính xác
+trong trường hợp đường chéo lớn hơn hẳn so với các phần tử còn lại.
 
 
 <!--
@@ -524,7 +538,8 @@ It is a small thing, but with a complex and subtle topic like eigendecomposition
 it is good to get any intuitive grasp we can.
 -->
 
-*dịch đoạn phía trên*
+Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tinh vi như phân tích trị riêng,
+thật tốt nếu có thể hiểu bất kỳ trực quan nào.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -1033,7 +1048,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 4 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 5 -->
 * 
