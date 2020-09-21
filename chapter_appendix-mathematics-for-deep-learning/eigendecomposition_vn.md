@@ -929,9 +929,9 @@ Giờ ta có thể thấy được điều mà ta mong muốn!
 Sau khi chuẩn hoá ma trận bằng trị riêng chính, ta thấy rằng dữ liệu ngẫu nhiên không còn bùng nổ như trước nữa,
 thay vào đó lại cân bằng quanh một giá trị nhất định.
 Sẽ thật tuyệt nếu ta có thể thực hiện việc này bằng các định đề cơ bản, và hoá ra là nếu ta tìm hiểu sâu về mặt toán học của nó,
-ta có thể thấy rằng trị riêng lớn nhất của một ma trận lớn ngẫu nhiên với kỳ vọng độc lập không,
-phương sai một và các phần tử tuân theo phân phối Gauss trung bình bằng xấp xỉ $\sqrt{n}$, hay trong trường hợp của ta $\sqrt{5} \approx 2.2$,
-bởi một thực tế tuyệt vời được biết đến là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
+ta có thể thấy rằng trị riêng lớn nhất của một ma trận lớn ngẫu nhiên theo phân phối Gauss, với kỳ vọng độc lập bằng 0,
+phương sai bằng 1, về trung bình sẽ xấp xỉ bằng $\sqrt{n}$, hay trong trường hợp của ta là $\sqrt{5} \approx 2.2$,
+tuân theo một luật tuyệt vời là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
 Mối quan hệ giữa các trị riêng (và một đại lượng liên quan được gọi là trị đơn (*singular value*)) của ma trận ngẫu nhiên
 đã được chứng minh là có liên hệ sâu sắc tới việc khởi tạo mạng nơ-ron một cách thích hợp như đã thảo luận trong :cite:`Pennington.Schoenholz.Ganguli.2017` và các nghiên cứu liên quan.
 
@@ -948,9 +948,9 @@ Mối quan hệ giữa các trị riêng (và một đại lượng liên quan �
 
 * Vector riêng là các vector bị dãn bởi một ma trận mà không thay đổi hướng.
 * Trị riêng là mức độ mà các vector riêng đó bị dãn bởi khai triển ma trận.
-* Phân tích trị riêng của một ma trận cho nhiều thao tác có thể rút gọn thành các thao tác trên trị riêng.
+* Phân tích trị riêng của ma trận cho phép nhiều thao tác trên ma trận có thể rút gọn thành các thao tác trên trị riêng.
 * Định lý Đường tròn Gershgorin (*Gershgorin Circle Theorem*) có thể cung cấp giá trị xấp xỉ cho các trị riêng của một ma trận.
-* Hành vi của công suất lặp ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo cho mạng nơ-ron.
+* Hành vi của lặp lũy thừa cho ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo cho mạng nơ-ron.
 
 
 ## Bài tập
