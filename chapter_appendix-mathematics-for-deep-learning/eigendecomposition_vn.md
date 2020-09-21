@@ -278,7 +278,7 @@ sẽ tồn tại nếu ta có thể tìm tất cả các vector riêng độc l�
 ## Operations on Eigendecompositions
 -->
 
-## *dịch tiêu đề trên*
+## Các phép toán dùng phân tích trị riêng
 
 
 <!--
@@ -286,7 +286,8 @@ One nice thing about eigendecompositions :eqref:`eq_eig_decomp` is that we can w
 in terms of the eigendecomposition. As a first example, consider:
 -->
 
-*dịch đoạn phía trên*
+Một điều hay về phân tích trị riêng :eqref:`eq_eig_decomp` là ta có thể viết nhiều phép toán thường gặp một cách gọn gàng
+về mặt phân tích trị riêng. Ví dụ đầu tiên, xem xét:
 
 
 $$
@@ -299,7 +300,8 @@ This tells us that for any positive power of a matrix, the eigendecomposition is
 The same can be shown for negative powers, so if we want to invert a matrix we need only consider
 -->
 
-*dịch đoạn phía trên*
+Điều này cho chúng ta biết rằng với bất kỳ số mũ dương nào của một ma trận, phân tích trị riêng đạt được bằng cách lũy thừa các trị riêng lên cùng số mũ.
+Điều tương tự cũng có thể được chứng minh cho các số mũ âm, vì nếu ta muốn nghịch đảo một ma trận ta chỉ cần xét
 
 
 $$
@@ -312,14 +314,15 @@ or in other words, just invert each eigenvalue.
 This will work as long as each eigenvalue is non-zero, so we see that invertible is the same as having no zero eigenvalues.  
 -->
 
-*dịch đoạn phía trên*
+hay nói cách khác, chỉ cần nghịch đảo từng trị riêng một.
+Điều này có thể thực hiện chỉ cần các trị riêng khác không, vì thế khả nghịch tương đương với không có trị riêng bằng không.
 
 
 <!--
 Indeed, additional work can show that if $\lambda_1, \ldots, \lambda_n$ are the eigenvalues of a matrix, then the determinant of that matrix is
 -->
 
-*dịch đoạn phía trên*
+Thật sự, có thể chứng minh rằng nếu $\lambda_1, \ldots, \lambda_n$ là các trị riêng của một ma trận, định thức của ma trận đó sẽ là 
 
 
 $$
@@ -333,7 +336,8 @@ This makes sense intuitively because whatever stretching $\mathbf{W}$ does, $W^{
 by multiplication by the diagonal matrix $\boldsymbol{\Sigma}$, which stretches volumes by the product of the diagonal elements.
 -->
 
-*dịch đoạn phía trên*
+hay là tích của tất cả các trị riêng.
+Điều này hợp lý theo trực giác vì nếu kéo giãn ma trận $\mathbf{W}$ thế nào, thì $W^{-1}$ sẽ hoàn tác nó, vì thế cuối cùng kéo giãn duy nhất là việc nhân với ma trận đường chéo $\boldsymbol{\Sigma}$, sẽ kéo giãn độ lớn bằng tích của các phần tử trên đường chéo.
 
 
 <!--
@@ -341,7 +345,8 @@ Finally, recall that the rank was the maximum number of linearly independent col
 By examining the eigendecomposition closely, we can see that the rank is the same as the number of non-zero eigenvalues of $\mathbf{A}$.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, ta hãy nhớ lại rằng hạng ma trận là số lượng cột độc lập tuyến tính lớn nhất của ma trận.
+Bằng cách kiểm nghiệm phân tích trị riêng một cách chặt chẽ, ta có thể thấy rằng hạng bằng số lượng các trị riêng khác không của $\mathbf{A}$.
 
 
 <!--
@@ -349,7 +354,8 @@ The examples could continue, but hopefully the point is clear: eigendecompositio
 and is a fundamental operation underlying many numerical algorithms and much of the analysis that we do in linear algebra. 
 -->
 
-*dịch đoạn phía trên*
+Trước khi tiếp tục, hy vọng bạn đọc hiểu được luận điểm: phân tích trị riêng có thể đơn giản hóa nhiều phép tính đại số tuyến tính
+và là một phép toán cơ bản phía sau nhiều thuật toán số và nhiều phân tích mà ta thực hiện trong đại số tuyến tính. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -1023,7 +1029,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
