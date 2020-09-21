@@ -609,7 +609,7 @@ then small changes in input will be amplified into large changes in output---tin
 This does not seem right!
 -->
 
-Để đơn giản, trong mô hình thử nghiệm của chúng ta, ta giả sử rằng vector dữ liệu ta đưa vào trong $\mathbf{v}_{in}$ là một vector Gaussian ngẫu nhiên năm chiều.
+Ttrong mô hình đơn giản, ta giả sử rằng vector dữ liệu ta đưa vào trong $\mathbf{v}_{in}$ là một vector Gauss ngẫu nhiên năm chiều.
 Hãy thử nghĩ xem ta sẽ muốn cái gì xảy ra.
 Trong ngữ cảnh này, hãy liên tưởng tới một bài toán ML nói chung, trong đó ta đang cố biến dữ liệu đầu vào, như một ảnh, thành một dự đoán, như xác suất ảnh đó là bức ảnh một con mèo.
 Nếu phép khai triển liên tục của $\mathbf{A}$ khiến một vector ngẫu liên bị kéo dãn lên quá dài
@@ -731,8 +731,8 @@ where the portion at the end shifts a little,
 but the stretching factor is stable.  
 -->
 
-Nếu quan sát vị trí cuối cùng của phép tính trên,
-ta có thể thấy rằng vector ngẫu nhiên bị kéo dãn lên 1.974459321485[...]` lần,
+Nếu quan sát phần cuối của phép tính trên,
+ta có thể thấy rằng vector ngẫu nhiên bị kéo dãn `1.974459321485[...]` lần,
 với phần số thập phân ở cuối có thay đổi một chút,
 nhưng hệ số dãn đã ổn định.
 
