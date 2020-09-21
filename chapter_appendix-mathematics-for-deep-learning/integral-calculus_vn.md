@@ -283,14 +283,14 @@ This will be the basis for our study of integration.
 ## The Fundamental Theorem of Calculus
 -->
 
-## *dịch tiêu đề trên*
+## Định lý Cơ bản của Giải tích
 
 
 <!--
 To dive deeper into the theory of integration, let us introduce a function 
 -->
 
-*dịch đoạn phía trên*
+Để đào sâu hơn nữa vào lý thuyết tích phân, chúng tôi xin phép giới thiệu một hàm
 
 
 $$
@@ -303,7 +303,8 @@ This function measures the area between $0$ and $x$ depending on how we change $
 Notice that this is everything we need since
 -->
 
-*dịch đoạn phía trên*
+Hàm này tính toán diện tích giữa $0$ và $x$ tùy thuộc vào việc chúng ta thay đổi $x$ như thế nào.
+Thật ra đây là tất cả những gì ta cần vì
 
 
 $$
@@ -316,13 +317,13 @@ This is a mathematical encoding of the fact that we can measure the area out to 
 and then subtract off the area to the near end point as indicated in :numref:`fig_area-subtract`.
 -->
 
-*dịch đoạn phía trên*
+Đây là một cách ký hiệu toán học cho việc ta có thể tính diện tích của khoảng xa hơn rồi trừ đi cho diện tích của khoảng gần hơn như chỉ ra trong :numref:`fig_area-subtract`.
 
 <!--
 ![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/SubArea.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/SubArea.svg)
+![Minh họa cho việc tại sao ta có thể đơn giản bài toán tính diện tích dưới đường cong giữa hai điểm thành bài toán tính toán phần diện tích phía bên trái của một điểm](../img/SubArea.svg)
 :label:`fig_area-subtract`
 
 
@@ -330,7 +331,7 @@ and then subtract off the area to the near end point as indicated in :numref:`fi
 Thus, we can figure out what the integral over any interval is by figuring out what $F(x)$ is.  
 -->
 
-*dịch đoạn phía trên*
+Vì thế, ta có thể biết được tích phân giữa hai khoảng bất kỳ là bao nhiêu bằng việc biết được $F(x)$.
 
 
 <!--
@@ -339,7 +340,9 @@ As we often do in calculus, let us imagine what happens when we shift the value 
 From the comment above, we know that
 -->
 
-*dịch đoạn phía trên*
+Để làm điều đó, hãy xem xét một thí nghiệm.
+Như ta thường làm trong giải tích, hãy tưởng tượng điều gì sẽ xảy ra khi ta dịch chuyển $x$ một khoảng nhỏ.
+Bằng nhận xét phía trên, ta biết rằng
 
 
 $$
@@ -351,7 +354,7 @@ $$
 This tells us that the function changes by the area under a tiny sliver of a function.
 -->
 
-*dịch đoạn phía trên*
+Nó cho ta biết hàm này thay đổi một khoảng bằng với diện tích phía dưới phần thay đổi cực nhỏ của hàm.
 
 
 <!--
@@ -361,7 +364,10 @@ Indeed, one can show that as $\epsilon \rightarrow 0$ this approximation becomes
 Thus we can conclude:
 -->
 
-*dịch đoạn phía trên*
+Đây là điểm mà ta sẽ sử dụng việc xấp xỉ.
+Nếu ta nhìn vào phần diện tích nhỏ đó, ta thấy phần diện tích này gần với diện tích của một hình chữ nhật với chiều cao là giá trị tại $f(x)$ và chiều rộng là $\epsilon$.
+Thật vậy, ta có thể thấy khi $\epsilon \rightarrow 0$ phép xấp xỉ này càng trở nên chính xác hơn.
+Vì thế, ta có thể kết luận
 
 
 $$
@@ -374,7 +380,8 @@ However, we can now notice: this is exactly the pattern we expect if we were com
 Thus we see the following rather surprising fact:
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, ta có thể để ý rằng: đây chính là dạng phương trình mong muốn nếu ta muốn tính toán đạo hàm của $F$!
+Vì thế ta có được một sự thật khá bất ngờ rằng:
 
 
 $$
@@ -386,7 +393,7 @@ $$
 This is the *fundamental theorem of calculus*.  We may write it in expanded form as
 -->
 
-*dịch đoạn phía trên*
+Đây chính là *định lý cơ bản của giải tích*. Ta có thể viết nó dưới dạng mở rộng là
 
 
 $$\frac{d}{dx}\int_{-\infty}^x f(y) \; dy = f(x).$$
