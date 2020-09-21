@@ -86,7 +86,7 @@ the content descriptions of items/users and contextual signals such as timestamp
 Obviously, we may need to adjust the model types/structures when different input data is available.
 -->
 
-Nói chung, các kỹ thuật CF có thể được phân loại thành: CF dựa trên ghi nhớ (*memory-based CF*), CF dựa trên mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
+Nhìn chung, các kỹ thuật CF có thể được phân loại thành: CF dựa trên ghi nhớ (*memory-based CF*), CF dựa trên mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
 Đại diện của CF dựa trên ghi nhớ chính là CF dựa trên các láng giềng (*nearest neighbor-based CF*) như CF dựa trên người dùng (*user-based CF*) hay CF dựa trên sản phẩm (*item-based CF*) :cite:`Sarwar.Karypis.Konstan.ea.2001`.
 Các mô hình nhân tố tiềm ẩn (*latent factor model*) như phân rã ma trận (*matrix factorization*) là một ví dụ của CF dựa trên mô hình.
 CF dựa trên ghi nhớ có nhiều hạn chế trong việc xử lý dữ liệu thưa và quy mô lớn do việc tính toán độ tương đồng dựa trên những sản phẩm thường gặp.
@@ -130,12 +130,12 @@ Phản hồi này có thể là trực tiếp (*explicit*) hoặc gián tiếp (
 Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá theo sao cho các bộ phim với các mức từ một đến mười sao.
 Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích.
 Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm.
-Tuy nhiên, phản hồi trực tiếp không phải lúc nào cũng dễ dàng có được do nhiều người dùng thường không sẵn sàng đánh giá sản phẩm.
+Tuy nhiên, không phải lúc nào cũng dễ dàng thu thập phản hồi trực tiếp do nhiều người dùng thường không sẵn sàng đánh giá sản phẩm.
 Xét một cách tương đối, phản hồi gián tiếp thường dễ thu thập hơn do chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp như số lần nhấp chuột của người dùng.
 Do đó, nhiều hệ thống gợi ý xoay quanh phản hồi gián tiếp, phản ánh ý kiến người dùng một cách gián tiếp thông qua việc quan sát hành vi của họ.
 Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt web, lượt xem và thậm chí là thao tác chuột.
 Ví dụ, một người dùng mua nhiều sách của cùng tác giả thì khả năng cao là thích tác giả đó.
-Chú ý rawfng phản hồi gián tiếp vốn mang nhiễu.
+Chú ý rằng phản hồi gián tiếp vốn mang nhiễu.
 Ta chỉ có thể *đoán* sở thích và động lực thực của họ.
 Một người dùng xem một bộ phim không nhất thiết là thích bộ phim đó.
 
