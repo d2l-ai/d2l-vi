@@ -175,7 +175,7 @@ Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người d
 -->
 
 * Hệ thống gợi ý rất quan trọng đối với người dùng cá nhân và các ngành công nghiệp. Lọc cộng tác là một khái niệm then chốt trong hệ thống gợi ý.
-* Có hai loại phản hồi: gián tiếp và trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ vừa qua.
+* Có hai loại phản hồi: gián tiếp và trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ qua.
 
 
 ## Bài tập
