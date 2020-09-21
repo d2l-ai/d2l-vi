@@ -4,7 +4,7 @@
 # Deep Convolutional Generative Adversarial Networks
 -->
 
-# *dịch tiêu đề trên*
+# Mạng Đối Sinh Tích chập Sâu
 :label:`sec_dcgan`
 
 
@@ -15,8 +15,9 @@ and transform them into samples that appear to match the distribution of some da
 And while our example of matching a 2D Gaussian distribution got the point across, it is not especially exciting.
 -->
 
-*dịch đoạn phía trên*
-
+Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách hoạt động của GAN. 
+Ta đã thấy được quá trình tạo mẫu từ các phân phối đơn giản, dễ-lấy-mẫu như phân phối đều hay phân phối chuẩn, và biến đổi chúng thành các mẫu phù hợp với phân phối của tập dữ liệu nào đó.
+Dù ví dụ cho GAN khớp với phân phối Gauss 2 chiều đã làm rõ ý tưởng, nó không quá thú vị.
 
 <!--
 In this section, we will demonstrate how you can use GANs to generate photorealistic images.
@@ -25,8 +26,9 @@ We will borrow the convolutional architecture that have proven so successful for
 they can be leveraged to generate photorealistic images.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần này, ta sẽ trình bày cách dùng GANs để tạo ra những bức ảnh chân thực.
+Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`.
+Ta sẽ mượn kiến trúc tích chập đã được cho là thành công với bài toán thị giác máy tính phân biệt và bằng cách thông qua GAN, ta có thể tận dụng để tạo ra được hình ảnh chân thực.
 
 ```{.python .input}
 from mxnet import gluon, init, np, npx
@@ -50,7 +52,7 @@ import warnings
 ## The Pokemon Dataset
 -->
 
-## *dịch tiêu đề trên*
+## Tập dữ liệu Pokemon
 
 
 <!--
@@ -58,8 +60,8 @@ The dataset we will use is a collection of Pokemon sprites obtained from [pokemo
 First download, extract and load this dataset.
 -->
 
-*dịch đoạn phía trên*
-
+Tập dữ liệu ta sẽ thu thập các nhân vật Pokemon từ [pokemondb](https://pokemondb.net/sprites).
+Đầu tiên ta tải xuống, giải nén và nạp tập dữ liệu.
 
 ```{.python .input}
 #@save
@@ -87,8 +89,9 @@ The `ToTensor` transformation will project the pixel value into $[0, 1]$, while 
 Therefore we normalize the data with $0.5$ mean and $0.5$ standard deviation to match the value range.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sẽ thay đổi kích thước ảnh thành $64\times 64$.
+Phép biến đổi `ToTensor` sẽ chiếu từng giá trị điểm ảnh vào $[0,1]$, trong đó mạng sinh của ta sẽ dùng hàm tanh để đầu ra trong $[-1,1]$.
+Do đó ta chuẩn hóa dữ liệu với trung bình $0.5$ và độ lệch chuẩn $0.5$ để khớp với miền giá trị.
 
 ```{.python .input}
 batch_size = 256
@@ -121,8 +124,7 @@ data_iter = torch.utils.data.DataLoader(
 Let us visualize the first 20 images.
 -->
 
-*dịch đoạn phía trên*
-
+Ta sẽ xem thử 20 hình đầu tiên.
 
 ```{.python .input}
 d2l.set_figsize((4, 4))
@@ -147,8 +149,7 @@ for X, y in data_iter:
 ## The Generator
 -->
 
-## *dịch tiêu đề trên*
-
+## Bộ Sinh
 
 <!--
 The generator needs to map the noise variable $\mathbf z\in\mathbb R^d$, a length-$d$ vector, to a RGB image with width and height to be $64\times 64$.
@@ -156,8 +157,9 @@ In :numref:`sec_fcn` we introduced the fully convolutional network that uses tra
 The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
 -->
 
-*dịch đoạn phía trên*
-
+Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$.
+Trong :numref:`sec_fcn` ta đã giới thiệu về mạng tích chập đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.
+Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị theo sau đó là chuẩn hóa theo batch và hàm kích hoạt ReLU.
 
 ```{.python .input}
 class G_block(nn.Block):
@@ -194,8 +196,8 @@ In default, the transposed convolution layer uses a $k_h = k_w = 4$ kernel, a $s
 With a input shape of $n_h^{'} \times n_w^{'} = 16 \times 16$, the generator block will double input's width and height.
 -->
 
-*dịch đoạn phía trên*
-
+Mặc định, tầng tích chập chuyển vị dùng nhân $k_h = k_w = 4$, sải bước $s_h = s_w = 2$ và đệm $p_h = p_w = 1$.
+Với kích thước đầu vào $n_h^{'} \times n_w^{'} = 16 \times 16$, khối bộ sinh sẽ nhân đôi chiều rộng và chiều cao của đầu vào.
 
 $$
 \begin{aligned}
@@ -647,7 +649,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Lý Phi Long
 
 <!-- Phần 2 -->
 * Nguyễn Mai Hòang Long
