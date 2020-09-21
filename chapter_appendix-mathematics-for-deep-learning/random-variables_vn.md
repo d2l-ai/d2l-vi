@@ -208,7 +208,7 @@ The low portions are areas where we are unlikely to find the random value.
 ### Probability Density Functions
 -->
 
-### *dịch tiêu đề trên*
+### Hàm mật độ xác suất
 
 
 <!--
@@ -216,7 +216,8 @@ Let us now investigate this further.
 We have already seen what a probability density function is intuitively for a random variable $X$, namely the density function is a function $p(x)$ so that
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta hãy tìm hiểu về hàm này sâu hơn.
+Chúng ta đã cảm nhận được hàm mật độ xác suất là gì đối với một biến ngẫu nhiên $X$, gọi tên hàm mật độ này là $p(x)$ sao cho
 
 
 $$P(X \; \text{is in an}\; \epsilon \text{-sized interval around}\; x ) \approx \epsilon \cdot p(x).$$
@@ -227,14 +228,14 @@ $$P(X \; \text{is in an}\; \epsilon \text{-sized interval around}\; x ) \approx 
 But what does this imply for the properties of $p(x)$?
 -->
 
-*dịch đoạn phía trên*
+Nhưng phương trình này ám chỉ điều gì cho các tính chất của $p(x)$?
 
 
 <!--
 First, probabilities are never negative, thus we should expect that $p(x) \ge 0$ as well.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, xác suất không bao giờ âm, do đó chúng ta cũng biết rằng $p(x) \ge 0 $.
 
 
 <!--
@@ -242,7 +243,8 @@ Second, let us imagine that we slice up the $\mathbb{R}$ into an infinite number
 For each of these, we know from :eqref:`eq_pdf_def` the probability is approximately
 -->
 
-*dịch đoạn phía trên*
+Thứ hai, Ta hãy tưởng tượng cắt $\mathbb{R}$ thành vô số lát cắt có chiều rộng $\epsilon $, mỗi lắt cắt có độ rộng $(\epsilon\cdot i, \epsilon \cdot (i + 1)]$.
+Đối với mỗi lắt cắt này, ta biết từ: eqref: `eq_pdf_def`, thì xác suất xấp xỉ
 
 
 $$
@@ -254,7 +256,7 @@ $$
 so summed over all of them it should be
 -->
 
-*dịch đoạn phía trên*
+vì vậy tổng tất cả chúng sẽ là
 
 
 $$
@@ -266,7 +268,7 @@ $$
 This is nothing more than the approximation of an integral discussed in :numref:`sec_integral_calculus`, thus we can say that
 -->
 
-*dịch đoạn phía trên*
+Điều này không gì khác hơn là sự xấp xỉ của một tích phân đã thảo luận trong :numref:`sec_integral_calculus`, do đó có thể nói rằng
 
 
 $$
@@ -278,7 +280,7 @@ $$
 We know that $P(X\in\mathbb{R}) = 1$, since the random variable must take on *some* number, we can conclude that for any density
 -->
 
-*dịch đoạn phía trên*
+Ta biết là $P(X\in\mathbb{R}) = 1$, vì biến ngẫu nhiên này bao gồm tất cả các sự kiện trên một khoảng số *nào đó*, ta có thể kết luận rằng với bất kỳ hàm mật độ nào
 
 
 $$
@@ -290,7 +292,7 @@ $$
 Indeed, digging into this further shows that for any $a$, and $b$, we see that
 -->
 
-*dịch đoạn phía trên*
+Thật vậy, đào sâu hơn vào phương trình này cho ta thấy rằng với bất kỳ $ a $ và $ b $ nào thì 
 
 
 $$
@@ -303,7 +305,8 @@ We may approximate this in code by using the same discrete approximation methods
 In this case we can approximate the probability of falling in the blue region.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể xấp xỉ phương trình này trong chương trình bằng cách sử dụng các phương pháp xấp xỉ rời rạc như trước đây. 
+Trong trường hợp ở đây, ta có thể ước tính xác suất nằm trong vùng màu xanh lam.
 
 
 ```{.python .input}
@@ -359,7 +362,8 @@ It turns out that these two properties describe exactly the space of possible pr
 They are non-negative functions $p(x) \ge 0$ such that
 -->
 
-*dịch đoạn phía trên*
+Nó chỉ ra hai thuộc tính này mô tả chính xác không gian của các hàm mật độ xác suất có thể có (hoặc *p.d.f.* là từ viết tắt thường gặp).
+Chúng là các hàm không âm $p(x) \ge 0$ sao cho
 
 
 $$\int_{-\infty}^{\infty} p(x) \; dx = 1.$$
@@ -370,7 +374,7 @@ $$\int_{-\infty}^{\infty} p(x) \; dx = 1.$$
 We interpret this function by using integration to obtain the probability our random variable is in a specific interval:
 -->
 
-*dịch đoạn phía trên*
+Ta diễn giải hàm này bằng cách dùng tích phân để thu được xác suất biến ngẫu nhiên của ta nằm trong một khoảng cụ thể:
 
 
 $$P(X\in(a, b]) = \int _ {a}^{b} p(x) \; dx.$$
@@ -381,14 +385,14 @@ $$P(X\in(a, b]) = \int _ {a}^{b} p(x) \; dx.$$
 In :numref:`sec_distributions` we will see a number of common distributions, but let us continue working in the abstract.
 -->
 
-*dịch đoạn phía trên*
+Trong :numref:`sec_distributions`, ta sẽ thấy một số phân phối thông dụng, nhưng ta hãy tiếp tục việc này trong phần tóm tắt.
 
 
 <!--
 ### Cumulative Distribution Functions
 -->
 
-### *dịch tiêu đề trên*
+### Hàm phân phối tích lũy
 
 
 <!--
@@ -399,14 +403,17 @@ There is nothing wrong with a density being larger than $10$, as long as it is n
 This can be counter-intuitive, so people often also think in terms of the *cumulative distribution function*, or c.d.f., which *is* a probability.
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần trước, chúng ta đã thấy khái niệm về p.d.f.
+Trong thực tế, đây là một phương pháp thường gặp để thảo luận về các biến ngẫu nhiên liên tục,
+nhưng nó có một nhược điểm quan trọng: đó là các giá trị của p.d.f. bản thân chúng không phải là các giá trị xác suất, mà là một hàm mà ta phải tích phân để sinh ra xác suất.
+Không có gì sai với môt hàm mật độ lớn hơn $10$, miễn là nó không lớn hơn $10$ trong khoảng có chiều dài $1/10$.
+Điều này có thể gây khó hiểu, do đó người ta cũng thường nghĩ tới thuật ngữ *hàm phân phối tích lũy* hoặc c.d.f., chính nó *là* giá trị xác suất.
 
 <!--
 In particular, by using :eqref:`eq_pdf_int_int`, we define the c.d.f. for a random variable $X$ with density $p(x)$ by
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, với việc sử dụng :eqref:`eq_pdf_int_int`, ta định nghĩa c.d.f. cho một biến ngẫu nhiên $X$ với mật độ $p(x)$ bằng
 
 
 $$
@@ -418,7 +425,7 @@ $$
 Let us observe a few properties.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy quan sát một vài tính chất của hàm này
 
 
 <!--
@@ -428,14 +435,18 @@ Let us observe a few properties.
 * $F(x)$ is continuous (has no jumps) if $X$ is a continuous random variable.
 -->
 
-*dịch đoạn phía trên*
+
+* $F(x)\rightarrow 0 $ khi $x\rightarrow -\infty$.
+* $F(x)\rightarrow 1 $ khi $x\rightarrow \infty$.
+* $F(x)$ không giảm ($y > x \implies F(y) \ge F(x)$).
+* $F(x)$ là liên tục (không có bước nhảy) nếu $X$ là một biến ngẫu nhiên liên tục.
 
 
 <!--
 With the fourth bullet point, note that this would not be true if $X$ were discrete, say taking the values $0$ and $1$ both with probability $1/2$. In that case
 -->
 
-*dịch đoạn phía trên*
+Với gạch đầu dòng thứ tư, lưu ý rằng điều này sẽ không đúng nếu $X$ rời rạc, ví dụ như ta lấy cả hai giá trị $0$ và $1$ với xác suất $1/2$. Trong trường hợp như thế
 
 
 $$
@@ -453,7 +464,9 @@ the ability to deal with continuous or discrete random variables in the same fra
 (flip a coin: if heads return the roll of a die, if tails return the distance of a dart throw from the center of a dart board).
 -->
 
-*dịch đoạn phía trên*
+Trong ví dụ này, ta thấy một trong các lợi ích của việc làm việc với c.d.f.,
+khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc trong cùng một khuôn khổ, hay thậm chí là hỗn hợp của hai
+(tung một đồng xu: nếu mặt ngửa thì trả về giá trị thả một con xúc xắc, nếu mặt xấp thì trả về khoảng cách ném phi tiêu từ tâm của bảng hồng tâm).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -1761,7 +1774,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
 * 
