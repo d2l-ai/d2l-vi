@@ -104,14 +104,14 @@ Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \math
 ### An Example
 -->
 
-### *dịch tiêu đề trên*
+### Ví dụ
 
 
 <!--
 Let us see this with a more challenging matrix
 -->
 
-*dịch đoạn phía trên*
+Hãy xét một ma trận thách thức hơn
 
 
 $$
@@ -128,7 +128,9 @@ Thus, two eigenvalues are $4$ and $1$.
 To find the associated vectors, we then need to solve
 -->
 
-*dịch đoạn phía trên*
+Nếu ta để ý $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$, ta thấy rằng điều này tương đương với phương trình đa thức $0 = (2-\lambda)(3-\lambda)-2 = (4-\lambda)(1-\lambda)$.
+Như vậy, hai trị riêng đó là $4$ và $1$.
+Để tìm các vector tương đương, ta cần phải giải hệ phương trình 
 
 
 $$
@@ -147,14 +149,14 @@ $$
 We can solve this with the vectors $[1, -1]^\top$ and $[1, 2]^\top$ respectively.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể giải bài toán lần lượt với các vector $[1, -1]^\top$ và $[1, 2]^\top$.
 
 
 <!--
 We can check this in code using the built-in `numpy.linalg.eig` routine.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể kiểm tra điều này bằng đoạn mã sử dụng trong chương trình con có sẵn `numpy.linalg.eig`.
 
 
 ```{.python .input}
@@ -194,21 +196,23 @@ Additionally, the choice of sign is arbitrary.
 However, the vectors computed are parallel to the ones we found by hand with the same eigenvalues.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng `numpy` chuẩn hóa các vector riêng trở về độ dài bằng một, trong khi các vector của chúng tôi có độ dài tùy ý.
+Thêm vào đó, việc chọn dấu cũng là tùy ý.
+Tuy nhiên, các vector được tính toán thì song song với các vector chúng ta đã tìm ra theo cách thủ công khi sử dụng cùng trị riêng. 
 
 
 <!--
 ## Decomposing Matrices
 -->
 
-## *dịch tiêu đề trên*
+## Phân rã Ma trận
 
 
 <!--
 Let us continue the previous example one step further.  Let
 -->
 
-*dịch đoạn phía trên*
+Hãy tiếp tục với ví dụ trước đó bằng cách tiến xa hơn một bước. Cho
 
 
 $$
@@ -223,7 +227,7 @@ $$
 be the matrix where the columns are the eigenvectors of the matrix $\mathbf{A}$. Let
 -->
 
-*dịch đoạn phía trên*
+là ma trận có các cột là vector riêng của ma trận $\mathbf{A}$. Cho
 
 
 $$
@@ -239,8 +243,8 @@ be the matrix with the associated eigenvalues on the diagonal.
 Then the definition of eigenvalues and eigenvectors tells us that
 -->
 
-*dịch đoạn phía trên*
-
+là ma trận với các trị riêng tương ứng nằm trên đường chéo.
+Rồi từ định nghĩa của trị riêng và vector riêng, ta có
 
 $$
 \mathbf{A}\mathbf{W} =\mathbf{W} \boldsymbol{\Sigma} .
@@ -251,7 +255,7 @@ $$
 The matrix $W$ is invertible, so we may multiply both sides by $W^{-1}$ on the right, we see that we may write
 -->
 
-*dịch đoạn phía trên*
+Ma trận $W$ là khả nghịch, nên ta có thể nhân hai vế với $W^{-1}$ phía bên phải, để có
 
 
 $$\mathbf{A} = \mathbf{W} \boldsymbol{\Sigma} \mathbf{W}^{-1}.$$
@@ -263,7 +267,8 @@ In the next section we will see some nice consequences of this, but for now we n
 will exist as long as we can find a full collection of linearly independent eigenvectors (so that $W$ is invertible).
 -->
 
-*dịch đoạn phía trên*
+Trong phần tiếp theo ta sẽ thấy một số hệ quả hay ho từ diều này, nhưng bây giờ ta chỉ cần biết rằng phân rã như vậy 
+sẽ tồn tại nếu ta có thể tìm tất cả các vector riêng độc lập tuyến tính (để ma trận $W$ khả nghịch). 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -1014,7 +1019,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
