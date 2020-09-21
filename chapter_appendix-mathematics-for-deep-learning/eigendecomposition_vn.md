@@ -273,7 +273,7 @@ will exist as long as we can find a full collection of linearly independent eige
 ## Operations on Eigendecompositions
 -->
 
-## Các phép toán trên phân tích trị riêng
+## Các phép toán dùng phân tích trị riêng
 
 
 <!--
