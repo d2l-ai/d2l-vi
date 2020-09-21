@@ -744,7 +744,7 @@ By taking the norm of the complex number (square root of the sums of squares of 
 we can measure that stretching factor. Let us also sort them.
 -->
 
-Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ mà một cái gì đó bị co dãn,
+Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ co dãn của thứ gì đó,
 nhưng đó là với các vector cụ thể, và các phép co dãn cụ thể.
 Hãy cùng xét xem đó là gì đối với $\mathbf{A}$.
 Nói trước một chút: hoá ra là để có thể quan sát toàn bộ các mức độ đó, ta cần xét tới số phức.
@@ -794,7 +794,7 @@ This is clearly not a coincidence!
 -->
 
 Ta quan sát thấy một chút bất thường ở đây: rằng số mà ta xác định từ trước cho quá trình dãn liên tục trên ma trận $\mathbf{A}$
-khai triển lên một vector ngẫu nhiên lại *chính* là (chính xác lên đến 13 số thập phân) trị riêng lớn nhất của $\mathbf{A}$.
+khai triển lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
 Điều này rõ ràng không phải một sự trùng hợp.
 
 
@@ -818,10 +818,10 @@ cùng hướng với vector riêng của $\mathbf{A}$ tương ứng với trị 
 Trị riêng này quan trọng đến mức nó được gọi là *trị riêng chính (principle eigenvalue)* và *vector riêng chính (principle eigenvector)*.
 Sau khi khai triển $\mathbf{A}$, vector ngẫu nhiên trên bị dãn ra theo mọi hướng có thể,
 do nó liên kết với mọi vector riêng có thể, nhưng nó bị dãn nhiều nhất trên hướng liên kết với vector riêng chính.
-Điều này có nghĩa là sau khi khai triển trên $A$, vector ngẫu nhiên trên dài ra, và trỏ tới hướng sao cho càng ngày càng thẳng với vector riêng chính hơn.
-Sau khi khai triển ma trận nhiều lần, sự định hướng với vector riêng chính ngày càng trở nên gần hơn cho tới khi,
-nhằm mọi mục định thực tế, vector riêng trên bị biến đổi thành vector riêng chính.
-Quả thực là thuật toán này là cơ sở cho cái được biết đến là *power iteration* để tìm trị riêng và vector riêng lớn nhất của một ma trận.
+Điều này có nghĩa là sau khi khai triển trên $A$, vector ngẫu nhiên trên dài ra, và ngày càng cùng hướng với vector riêng chính.
+Sau khi áp dụng ma trận nhiều lần, vector ngẫu nhiên ngày càng gần vector riêng chính cho tới khi,
+nhằm mọi mục định thực tế, vector này trở thành vector riêng chính.
+Đây là cơ sở cho thuật toán *lặp lũy thừa - (power iteration)* để tìm trị riêng và vector riêng lớn nhất của một ma trận.
 Chi tiết có thể tham khảo tại :cite:`Van-Loan.Golub.1983`.
 
 
@@ -841,7 +841,7 @@ Let us see what happens in this case.
 
 Từ phần thảo luận trên, lúc này ta kết luận rằng ta không hề muốn một vector ngẫu nhiên bị dãn hoặc co mất,
 mà ta muốn vector ngẫu nhiên giữ nguyên kích thước trong suốt toàn bộ quá trình.
-Để làm được điều đó, ta cần tái tỉ lệ ma trận bằng trị riêng chính này sao cho trị riêng lớn nhất chỉ có một.
+Để làm được điều đó, ta cần tái tỉ lệ ma trận bằng cách chia cho trị riêng chính, tức sao cho trị riêng lớn nhất giờ có giá trị 1.
 Hãy xem chuyện gì sẽ xảy ra trong trường hợp này.
 
 
