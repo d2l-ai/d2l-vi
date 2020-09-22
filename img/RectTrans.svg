@@ -35,8 +35,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1465"
-     inkscape:window-height="942"
+     inkscape:window-width="1440"
+     inkscape:window-height="791"
      id="namedview237"
      showgrid="false"
      inkscape:zoom="3.159"
@@ -45,7 +45,8 @@
      inkscape:window-x="0"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg235" />
+     inkscape:current-layer="svg235"
+     inkscape:document-rotation="0" />
   <defs
      id="defs78">
     <g
@@ -383,91 +384,6 @@
        id="path142" />
     <g
        style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g146">
-      <use
-         xlink:href="#glyph2-3"
-         x="101.2875"
-         y="35"
-         id="use144" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g156">
-      <use
-         xlink:href="#glyph2-4"
-         x="107.1645"
-         y="35"
-         id="use148" />
-      <use
-         xlink:href="#glyph2-5"
-         x="111.1605"
-         y="35"
-         id="use150" />
-      <use
-         xlink:href="#glyph2-6"
-         x="115.6605"
-         y="35"
-         id="use152" />
-      <use
-         xlink:href="#glyph2-7"
-         x="119.6565"
-         y="35"
-         id="use154" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g164">
-      <use
-         xlink:href="#glyph2-6"
-         x="122.6355"
-         y="35"
-         id="use158" />
-      <use
-         xlink:href="#glyph2-8"
-         x="126.6315"
-         y="35"
-         id="use160" />
-      <use
-         xlink:href="#glyph2-4"
-         x="133.6335"
-         y="35"
-         id="use162" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g170">
-      <use
-         xlink:href="#glyph2-9"
-         x="137.5485"
-         y="35"
-         id="use166" />
-      <use
-         xlink:href="#glyph2-7"
-         x="140.0505"
-         y="35"
-         id="use168" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
-       id="g178">
-      <use
-         xlink:href="#glyph2-10"
-         x="143.2185"
-         y="35"
-         id="use172" />
-      <use
-         xlink:href="#glyph2-11"
-         x="145.7205"
-         y="35"
-         id="use174" />
-      <use
-         xlink:href="#glyph2-4"
-         x="149.7165"
-         y="35"
-         id="use176" />
-    </g>
-    <g
-       style="fill:rgb(0%,0%,0%);fill-opacity:1;"
        id="g182">
       <use
          xlink:href="#glyph0-4"
@@ -602,13 +518,13 @@
        style="stroke-width:0.75" /></text>
   <text
      xml:space="preserve"
-     style="font-size:8px;line-height:1.25;font-family:sans-serif;stroke-width:0.75;fill:#280b0b;"
+     style="font-size:8px;line-height:1.25;font-family:sans-serif;fill:#280b0b;stroke-width:0.75"
      x="95.679008"
-     y="32.763531"
+     y="35.763531"
      id="text247"><tspan
        sodipodi:role="line"
        id="tspan245"
        x="95.679008"
-       y="32.763531"
-       style="font-size:8px;stroke-width:0.75;fill:#280b0b;">Tái tham số hoá</tspan></text>
+       y="35.763531"
+       style="font-size:8px;fill:#280b0b;stroke-width:0.75">Tái tham số hoá</tspan></text>
 </svg>
