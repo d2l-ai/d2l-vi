@@ -349,7 +349,7 @@ Xuyên suốt cuốn sách, ta chỉ tập trung vào những kỹ thuật tối
 However, it is a useful exercise to consider what the geometric understanding we obtained above tells us about optimizing functions directly.
 -->
 
-Tuy nhiên, nó là một bài tập hữu ích để biết được những hiểu biết hình học ta có được ở trên nói gì về tối ưu hóa các hàm một cách trực tiếp.
+Tuy nhiên, rất hữu ích nếu hiểu được những kiến thức hình học ta có được ở trên nói gì về tối ưu hóa các hàm một cách trực tiếp.
 
 
 <!--
@@ -359,7 +359,7 @@ Is there anything we can check to see if their answer is even plausible?
 -->
 
 Giả sử ta muốn tìm giá trị của $\mathbf{x}_0$ giúp cực tiểu hóa một hàm $L(\mathbf{x})$ nào đó.
-Cũng như cho rằng có một người nào đó đưa ta một giá trị và cho rằng đây là giá trị giúp cực tiểu hóa $L$.
+Và có một người nào đó đưa ta một giá trị và cho rằng đây là giá trị giúp cực tiểu hóa $L$.
 Bằng cách nào ta có thể kiểm chứng rằng đáp án của họ là hợp lý?
 
 
@@ -459,7 +459,7 @@ however, not every point with gradient zero is the true *global* minimum (or max
 -->
 
 Điều này nhấn mạnh một thực tế quan trọng cần biết kể cả khi làm việc dưới dạng lý thuyết hay số học:
-các điểm khả dĩ duy nhất cực tiểu hóa (hoặc cực đại hóa) một hàm sẽ có đạo hàm tại đó bằng không,
+các điểm khả dĩ duy nhất mà tại đó hàm là cực tiểu (hoặc cực đại) sẽ có đạo hàm tại đó bằng không,
 tuy nhiên, không phải tất cả các điểm có đạo hàm bằng không sẽ là cực tiểu (hay cực đại) *toàn cục*.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
