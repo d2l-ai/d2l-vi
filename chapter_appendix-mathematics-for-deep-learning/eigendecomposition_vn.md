@@ -770,7 +770,7 @@ nhưng hệ số dãn đã ổn định.
 ### Relating Back to Eigenvectors
 -->
 
-### *dịch tiêu đề trên*
+### Liên hệ Ngược lại tới Vector riêng
 
 
 <!--
@@ -783,7 +783,13 @@ By taking the norm of the complex number (square root of the sums of squares of 
 we can measure that stretching factor. Let us also sort them.
 -->
 
-*dịch đoạn phía trên*
+Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ co dãn của thứ gì đó,
+nhưng đó là với các vector cụ thể, và các phép co dãn cụ thể.
+Hãy cùng xét xem đó là gì đối với $\mathbf{A}$.
+Nói trước một chút: hoá ra là để có thể quan sát toàn bộ các mức độ đó, ta cần xét tới số phức.
+Bạn có thể coi chúng như phép co dãn và phép quay.
+Bằng cách tính mô-đun của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
+ta có thể đo hệ số co dãn. Ta cũng cần phải sắp xếp chúng.
 
 
 ```{.python .input}
@@ -817,7 +823,7 @@ print(f'norms of eigenvalues: {norm_eigs}')
 ### An Observation
 -->
 
-### *dịch tiêu đề trên*
+### Nhận xét
 
 
 <!--
@@ -826,7 +832,9 @@ applied to a random vector is *exactly* (accurate to thirteen decimal places!) t
 This is clearly not a coincidence!
 -->
 
-*dịch đoạn phía trên*
+Ta quan sát thấy một chút bất thường ở đây: rằng số mà ta xác định từ trước cho quá trình dãn liên tục trên ma trận $\mathbf{A}$
+khai triển lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
+Điều này rõ ràng không phải một sự trùng hợp.
 
 
 <!--
@@ -843,14 +851,24 @@ Indeed this algorithm is the basis for what is known as the *power iteration* fo
 For details see, for example, :cite:`Van-Loan.Golub.1983`.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu ta thực sự suy ngẫm chuyện gì đang xảy ra trên phương diện hình học, điều này bắt đầu hợp lý. Xét một vector ngẫu nhiên.
+Vector ngẫu nhiên này trỏ tới mỗi hướng một chút, nên cụ thể, nó chút ít cũng trỏ tới
+cùng hướng với vector riêng của $\mathbf{A}$ tương ứng với trị riêng lớn nhất.
+Trị riêng này quan trọng đến mức nó được gọi là *trị riêng chính (principle eigenvalue)* và *vector riêng chính (principle eigenvector)*.
+Sau khi khai triển $\mathbf{A}$, vector ngẫu nhiên trên bị dãn ra theo mọi hướng có thể,
+do nó liên kết với mọi vector riêng có thể, nhưng nó bị dãn nhiều nhất trên hướng liên kết với vector riêng chính.
+Điều này có nghĩa là sau khi khai triển trên $A$, vector ngẫu nhiên trên dài ra, và ngày càng cùng hướng với vector riêng chính.
+Sau khi áp dụng ma trận nhiều lần, vector ngẫu nhiên ngày càng gần vector riêng chính cho tới khi,
+nhằm mọi mục định thực tế, vector này trở thành vector riêng chính.
+Đây là cơ sở cho thuật toán *lặp lũy thừa - (power iteration)* để tìm trị riêng và vector riêng lớn nhất của một ma trận.
+Chi tiết có thể tham khảo tại :cite:`Van-Loan.Golub.1983`.
 
 
 <!--
 ### Fixing the Normalization
 -->
 
-### *dịch tiêu đề trên*
+### Khắc phục với Chuẩn hoá
 
 
 <!--
@@ -860,7 +878,10 @@ To do so, we now rescale our matrix by this principle eigenvalue so that the lar
 Let us see what happens in this case.
 -->
 
-*dịch đoạn phía trên*
+Từ phần thảo luận trên, lúc này ta kết luận rằng ta không hề muốn một vector ngẫu nhiên bị dãn hoặc co mất,
+mà ta muốn vector ngẫu nhiên giữ nguyên kích thước trong suốt toàn bộ quá trình.
+Để làm được điều đó, ta cần tái tỉ lệ ma trận bằng cách chia cho trị riêng chính, tức sao cho trị riêng lớn nhất giờ có giá trị 1.
+Hãy xem chuyện gì sẽ xảy ra trong trường hợp này.
 
 
 ```{.python .input}
@@ -915,7 +936,7 @@ d2l.plot(tf.range(0, 100), norm_list, 'Iteration', 'Value')
 We can also plot the ratio between consecutive norms as before and see that indeed it stabilizes.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể biểu diễn tỉ lệ các chuẩn liên tục so với trước và xem liệu rằng nó có ổn định.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1068,7 +1089,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
