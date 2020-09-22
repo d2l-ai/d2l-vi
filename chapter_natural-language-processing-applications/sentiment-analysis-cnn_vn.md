@@ -20,7 +20,7 @@ convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 -->
 
 Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lý dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều. 
-Như đã đề cập về các mô hình ngôn ngữ và các tác vụ phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
+Trong chương trước về các mô hình ngôn ngữ và các tác vụ phân loại văn bản, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
 chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp. 
 Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron tích chập một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
 Như mô tả trong :label:`fig_nlp-map-sa-cnn`, chương này sẽ miêu tả một hướng tiếp cận đột phá bằng cách áp dụng
@@ -74,11 +74,11 @@ by element on the leftmost input subarray with a width of 2 and kernel array and
 
 Trước khi giới thiệu mô hình, chúng ta hãy xem mạng nơ-ron tích chập một chiều hoạt động như thế nào.
 Tương tự như mạng nơ-ron tích chập hai chiều, mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
-Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tục từ trái qua phải. 
+Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt lần lượt từ trái qua phải. 
 Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, ta nhân từng phần tử của mảng đầu vào con trong cửa sổ đó với mảng hạt nhân rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra. 
 Như ví dụ ở :numref:`fig_conv1d`, đầu vào là một mảng một chiều với độ rộng là 7 và độ rộng của mảng hạt nhân là 2.
 Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên được tính bằng cách nhân
-từng phần tử của mảng con 2 phần tử ngoài cùng bên trái của đầu vào với mảng hạt nhân, rồi cộng lại với nhau.
+theo từng phần tử mảng đầu vào con chứa 2 phần tử ngoài cùng bên trái với mảng hạt nhân, rồi cộng lại với nhau.
 
 
 <!--
@@ -94,7 +94,7 @@ Next, we implement one-dimensional cross-correlation in the `corr1d` function.
 It accepts the input array `X` and kernel array `K` and outputs the array `Y`.
 -->
 
-Tiếp theo, chúng ta sẽ lập trình tương quan chéo một chiều trong hàm `corr1d`. 
+Tiếp theo, chúng ta sẽ lập trình phép tương quan chéo một chiều trong hàm `corr1d`. 
 Hàm này nhận mảng đầu vào `X` và mảng hạt nhân `K` và cho ra đầu ra là mảng `Y`.
 
 
@@ -195,8 +195,8 @@ convolutional layer to extend the model parameters in the convolutional layer.
 -->
 
 Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh. 
-Ta đã thảo luận cách xác định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
-Tương tự, ta cũng có thể xác định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó. 
+Ta đã thảo luận cách chỉ định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
+Tương tự, ta cũng có thể chỉ định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -218,8 +218,8 @@ Therefore, the input of the max-over-time pooling layer can have different times
 
 Tương tự, ta có tầng gộp một chiều. 
 Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều. 
-Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh. 
-Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh. 
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất qua tất cả bước thời gian trong từng kênh. 
+Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có số lượng bước thời gian khác nhau tại mỗi kênh. 
 
 <!--
 To improve computing performance, we often combine timing examples of different lengths into a minibatch 
@@ -229,7 +229,7 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn. 
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài theo thời gian của từng mẫu đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn. 
 Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
 Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, thông thường điều đó cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công. 
 
