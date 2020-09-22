@@ -19,12 +19,12 @@ As described in :label:`fig_nlp-map-sa-cnn` This section describes a groundbreak
 convolutional neural networks to sentiment analysis: textCNN :cite:`Kim.2014`.
 -->
 
-Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lí dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều.
-Như đề cập về tác vụ mô hình ngôn ngữ và phân loại văn bản ở chương trước, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
-chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp.
-Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
+Trong :numref:`chap_cnn`, chúng ta đã tìm hiểu cách xử lý dữ liệu ảnh hai chiều với mạng nơ-ron tích chập hai chiều. 
+Trong chương trước về các mô hình ngôn ngữ và các tác vụ phân loại văn bản, chúng ta coi dữ liệu văn bản như là dữ liệu chuỗi thời gian với chỉ một chiều duy nhất, và vì vậy,
+chúng sẽ được xử lí bằng mạng nơ-ron hồi tiếp. 
+Thực tế, chúng ta cũng có thể coi văn bản như một bức ảnh một chiều, và sử dụng mạng nơ-ron tích chập một chiều để tìm ra mối liên kết giữa những từ liền kề nhau.
 Như mô tả trong :label:`fig_nlp-map-sa-cnn`, chương này sẽ miêu tả một hướng tiếp cận đột phá bằng cách áp dụng
-mạng nơ-ron tích chập để phân tích cảm xúc: textCNN :cite:`Kim.2014`.
+mạng nơ-ron tích chập để phân tích cảm xúc: textCNN :cite:`Kim.2014`. 
 
 
 <!--
@@ -73,13 +73,12 @@ by element on the leftmost input subarray with a width of 2 and kernel array and
 -->
 
 Trước khi giới thiệu mô hình, chúng ta hãy xem mạng nơ-ron tích chập một chiều hoạt động như thế nào.
-Tương tự như mạng nơ-ron tích chập hai chiều, một mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
-Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt liên tiếp từ trái qua phải của mảng đầu vào.
-Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, mảng đầu vào con trong cửa sổ đó và mảng hạt nhân
-được nhân từng phần tử rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra.
+Tương tự như mạng nơ-ron tích chập hai chiều, mạng nơ-ron tích chập một chiều sử dụng phép tính tương quan chéo một chiều.
+Trong phép tính tương quan chéo một chiều, cửa sổ tích chập bắt đầu từ phía ngoài cùng bên trái của mảng đầu vào và trượt lần lượt từ trái qua phải. 
+Xét trên một vị trí nhất định của cửa sổ tích chập khi trượt, ta nhân từng phần tử của mảng đầu vào con trong cửa sổ đó với mảng hạt nhân rồi cộng lại để lấy được phần tử ở vị trí tương ứng trong mảng đầu ra. 
 Như ví dụ ở :numref:`fig_conv1d`, đầu vào là một mảng một chiều với độ rộng là 7 và độ rộng của mảng hạt nhân là 2.
-Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên có được bằng cách nhân
-từng phần tử giữa mảng con 2 phần tử ngoài cùng bên trái của đầu vào và mảng hạt nhân, rồi cộng lại với nhau.
+Chúng ta có thể thấy rằng độ rộng của đầu ra là $7-2+1=6$ và phần tử đầu tiên được tính bằng cách nhân
+theo từng phần tử mảng đầu vào con chứa 2 phần tử ngoài cùng bên trái với mảng hạt nhân, rồi cộng lại với nhau.
 
 
 <!--
@@ -95,8 +94,8 @@ Next, we implement one-dimensional cross-correlation in the `corr1d` function.
 It accepts the input array `X` and kernel array `K` and outputs the array `Y`.
 -->
 
-Tiếp theo, chúng ta sẽ lập trình tương quan chéo một chiều trong hàm `corr1d`.
-Hàm này nhận mảng đầu vào `X` và mảng hạt nhân `K` và cho ra đầu ra là mảng `Y`
+Tiếp theo, chúng ta sẽ lập trình phép tương quan chéo một chiều trong hàm `corr1d`. 
+Hàm này nhận mảng đầu vào `X` và mảng hạt nhân `K` và cho ra đầu ra là mảng `Y`.
 
 
 ```{.python .input  n=2}
@@ -113,7 +112,7 @@ def corr1d(X, K):
 Now, we will reproduce the results of the one-dimensional cross-correlation operation in :numref:`fig_conv1d`.
 -->
 
-Bây giờ chúng ta sẽ tái hiện lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`.
+Bây giờ chúng ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều ở :numref:`fig_conv1d`. 
 
 
 ```{.python .input  n=3}
@@ -134,7 +133,7 @@ On each channel, it performs the one-dimensional cross-correlation operation on 
 
 Phép tính tương quan chéo một chiều cho nhiều kênh đầu vào cũng tương tự như phép tương quan chéo hai chiều cho nhiều kênh đầu vào.
 Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo một chiều trên từng hạt nhân và đầu vào tương ứng, và cộng các kết quả trên từng kênh lại với nhau để thu được đầu ra.
-:numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào.
+:numref:`fig_conv1d_channel` minh hoạ phép tính tương quan chéo một chiều với ba kênh đầu vào. 
 
 
 <!--
@@ -149,7 +148,7 @@ Với mỗi kênh, toán tử này thực hiện phép tính tương quan chéo 
 Now, we reproduce the results of the one-dimensional cross-correlation operation with multi-input channel in :numref:`fig_conv1d_channel`.
 -->
 
-Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`.
+Bây giờ, ta sẽ tái tạo lại kết quả của phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel`. 
 
 
 ```{.python .input  n=4}
@@ -175,9 +174,9 @@ multiple input channels in :numref:`fig_conv1d_channel` as the equivalent two-di
 Here, the height of the kernel is equal to the height of the input.
 -->
 
-Định nghĩa phép tính tương quan chéo hai chiều cho ta thấy phép tính tương quan chéo một chiều với đa kênh đầu vào có thể được coi là phép tính tương quan chéo hai chiều với một kênh đầu vào.
-Như minh hoạ trong :numref:`fig_conv1d_2d`, ta có thể biểu diễn phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel` tương tự như phép tính tương quan chéo hai chiều với một kênh đầu vào.
-Ở đây, chiều cao của hạt nhân bằng với chiều cao của đầu vào.
+Định nghĩa phép tính tương quan chéo hai chiều cho ta thấy phép tính tương quan chéo một chiều với đa kênh đầu vào có thể được coi là phép tính tương quan chéo hai chiều với một kênh đầu vào. 
+Như minh hoạ trong :numref:`fig_conv1d_2d`, ta có thể biểu diễn phép tính tương quan chéo một chiều với đa kênh đầu vào trong :numref:`fig_conv1d_channel` tương tự như phép tính tương quan chéo hai chiều với một kênh đầu vào. 
+Ở đây, chiều cao của hạt nhân bằng với chiều cao của đầu vào. 
 
 
 <!--
@@ -195,9 +194,9 @@ Similarly, we can also specify multiple output channels in the one-dimensional
 convolutional layer to extend the model parameters in the convolutional layer.
 -->
 
-Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh.
-Ta đã thảo luận cách xác định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
-Tương tự, ta cũng có thể xác định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó.
+Cả hai đầu ra trong :numref:`fig_conv1d` và :numref:`fig_conv1d_channel` chỉ có một kênh. 
+Ta đã thảo luận cách chỉ định đa kênh đầu ra trong tầng tích chập hai chiều tại :numref:`sec_channels`.
+Tương tự, ta cũng có thể chỉ định đa kênh đầu ra trong tầng tích chập một chiều để mở rộng các tham số mô hình trong tầng tích chập đó. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -217,10 +216,10 @@ the output of each channel will be the largest value of all timesteps in the cha
 Therefore, the input of the max-over-time pooling layer can have different timesteps on each channel.
 -->
 
-Tương tự, ta có tầng gộp một chiều.
-Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều.
-Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất của tất cả bước thời gian trong từng kênh.
-Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có những bước thời gian khác nhau tại mỗi kênh.
+Tương tự, ta có tầng gộp một chiều. 
+Tầng gộp cực đại theo thời gian được dùng trong TextCNN thực chất tương tự như tầng gộp cực đại toàn cục một chiều. 
+Giả sử đầu vào có nhiều kênh, mỗi kênh bao gồm các giá trị bước thời gian khác nhau, đầu ra của mỗi kênh sẽ là giá trị lớn nhất qua tất cả bước thời gian trong từng kênh. 
+Do đó, đầu vào của tầng gộp cực đại theo thời gian có thể có số lượng bước thời gian khác nhau tại mỗi kênh. 
 
 <!--
 To improve computing performance, we often combine timing examples of different lengths into a minibatch 
@@ -230,9 +229,9 @@ Because the main purpose of the max-over-time pooling layer is to capture the mo
 it usually allows the model to be unaffected by the manually added characters.
 -->
 
-Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài của từng mẫu thời gian đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn.
+Để cải thiện chất lượng tính toán, ta thường kết hợp những mẫu thời gian có độ dài khác nhau vào một minibatch và làm cho chiều dài theo thời gian của từng mẫu đồng nhất bằng cách thêm các ký tự đặc biệt (ví dụ 0) vào cuối những mẫu ngắn hơn. 
 Đương nhiên, các ký tự được thêm vào không làm thay đổi bản chất ngữ nghĩa.
-Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, điều đó thường cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công.
+Bởi vì, mục tiêu chính của tầng gộp cực đại theo thời gian là học được những đặc trưng quan trọng của thời gian, thông thường điều đó cho phép mô hình không bị ảnh hưởng bởi các ký tự được thêm vào thủ công. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
