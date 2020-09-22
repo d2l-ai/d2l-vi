@@ -49,7 +49,7 @@ và ta ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong
 Now, let us take this and change $w_2$ a little bit to $w_2 + \epsilon_2$:
 -->
 
-Bây giờ, tiếp tục thay đổi $w_2$ một khoảng nhỏ $w_2 + \epsilon_2$:
+Bây giờ, tiếp tục thay đổi $w_2$ một khoảng nhỏ thành $w_2 + \epsilon_2$:
 
 
 $$
