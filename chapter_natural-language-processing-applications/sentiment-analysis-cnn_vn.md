@@ -251,10 +251,10 @@ Then the input example has a width of $n$, a height of 1, and $d$ input channels
 The calculation of textCNN can be mainly divided into the following steps:
 -->
 
-TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian.
-Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều.
-Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào.
-Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau:
+TextCNN chủ yếu sử dụng tầng tích chập một chiều và tầng gộp cực đại theo thời gian. 
+Giả sử chuỗi văn bản đầu vào gồm $n$ từ, mỗi từ được biểu diễn bởi một vector $d$ chiều. 
+Lúc này mẫu đầu vào có chiều rộng là $n$, chiều cao là 1, và $d$ kênh đầu vào. 
+Quá trình tính toán của textCNN chủ yếu được chia thành các bước sau: 
 
 <!--
 1. Define multiple one-dimensional convolution kernels and use them to perform convolution calculations on the inputs. 
@@ -264,11 +264,11 @@ Convolution kernels with different widths may capture the correlation of differe
 A dropout layer can be used in this step to deal with overfitting.
 -->
 
-1. Định nghĩa nhiều hạt nhân một chiều nhằm dùng để thực hiện các phép tính tích chập trên đầu vào.
-Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau.
-2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector
-3. Vector vừa nối sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ.
-Có thể sử dụng tầng dropout ở bước này để giải quyết tình trạng quá khớp.
+1. Định nghĩa nhiều hạt nhân tích chập một chiều để thực hiện các phép tính tích chập trên đầu vào. 
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của các cụm từ liền kề với số lượng khác nhau. 
+2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector. 
+3. Vector nối trên sẽ được biến đổi thành đầu ra cho từng hạng mục bằng thông qua tầng kết nối đầy đủ. 
+Tầng dropout có thể được sử dụng ở bước này để giải quyết tình trạng quá khớp. 
 
 <!--
 ![TextCNN design.](../img/textcnn.svg)
@@ -294,16 +294,16 @@ Finally, we use a fully connected layer to transform the 9-dimensional vector
 into a 2-dimensional output: positive sentiment and negative sentiment predictions.
 -->
 
-:numref:`fig_conv1d_textcnn` minh họa một ví dụ cho textCNN.
-Đầu vào ở đây là một câu gồm 11 từ, với mỗi từ được biểu diễn bằng một vector từ 6 chiều.
-Vì vậy, câu đầu vào có độ rộng là 11 và số kênh đầu vào là 6
-Chúng ta giả sử rằng có 2 hạt nhân của tích chập một chiều có độ rộng là 2 và 4, tương ứng với số kênh đầu ra là 4 và 5.
-Cho nên sau phép tính tích chập một chiều, độ rộng của đầu ra có 4 kênh là $11-2+1=10$,
-trong khi đó độ rộng của đầu ra còn lại 5 kênh là $11-4+1=8$.
+:numref:`fig_conv1d_textcnn` minh họa một ví dụ cho textCNN. 
+Đầu vào ở đây là một câu gồm 11 từ, với mỗi từ được biểu diễn bằng một vector từ 6 chiều. 
+Vì vậy, câu đầu vào có độ rộng là 11 và số kênh đầu vào là 6.
+Chúng ta giả sử rằng 2 hạt nhân tích chập một chiều có độ rộng lần lượt là 2 và 4, tương ứng với số kênh đầu ra là 4 và 5. 
+Cho nên sau phép tính tích chập một chiều, đầu ra 4 kênh có chiều rộng là là $11-2+1=10$,
+trong khi đó độ rộng của đầu ra 5 kênh còn lại là $11-4+1=8$.
 Thậm chí độ rộng của mỗi kênh có khác nhau đi nữa, chúng ta vẫn có thể thực hiện gộp cực đại theo thời gian
-cho mỗi kênh và nối đầu ra sau gộp của 9 kênh thành một vector 9 chiều.
+cho mỗi kênh và nối đầu ra sau gộp của 9 kênh thành một vector 9 chiều. 
 Cuối cùng, chúng ta dùng một tầng kết nối đầy đủ để biến đổi vector 9 chiều đó
-thành một đầu ra 2 chiều: dự đoán cảm xúc tích cực và cảm xúc tiêu cực.
+thành một đầu ra 2 chiều: dự đoán cảm xúc tích cực và cảm xúc tiêu cực. 
 
 
 <!--
@@ -312,9 +312,9 @@ Compared with the previous section, in addition to replacing the recurrent neura
 here we use two embedding layers, one with a fixed weight and another that participates in training.
 -->
 
-Tiếp theo chúng ta bắt đầu lập trình mô hình textCNN.
+Tiếp theo chúng ta bắt đầu lập trình mô hình textCNN. 
 So với phần trước, ngoài việc thay mạng nơ-ron hồi tiếp bằng một tầng tích chập một chiều,
-ở đây chúng ta dùng 2 tầng embedding, một được giữ trọng số cố định và tầng còn lại tham gia quá trình huấn luyện.
+ở đây chúng ta dùng 2 tầng embedding, một được giữ trọng số cố định và tầng còn lại tham gia quá trình huấn luyện. 
 
 
 ```{.python .input  n=5}
@@ -362,7 +362,7 @@ class TextCNN(nn.Block):
 Create a TextCNN instance. It has 3 convolutional layers with kernel widths of 3, 4, and 5, all with 100 output channels.
 -->
 
-Tạo một thực thể TextCNN có 3 tầng tích chập với chiều rộng hạt nhân là 3, 4 và 5, tất cả đều có 100 kênh đầu ra.
+Tạo một thực thể TextCNN có 3 tầng tích chập với chiều rộng hạt nhân là 3, 4 và 5, tất cả đều có 100 kênh đầu ra. 
 
 
 ```{.python .input  n=6}
@@ -385,8 +385,8 @@ As in the previous section, load pre-trained 100-dimensional GloVe word vectors 
 Here, the former participates in training while the latter has a fixed weight.
 -->
 
-Tương tự phần trước, ta nạp GloVe 100 chiều đã được tiền huấn luyện và khởi tạo các tầng embedding `embedding` và `constant_embedding`.
-Ở đây, `embedding` sẽ tham gia quá trình huấn luyện trong khi `constant_embedding` có trọng số cố định.
+Tương tự phần trước, ta nạp GloVe 100 chiều đã được tiền huấn luyện và khởi tạo các tầng embedding `embedding` và `constant_embedding`. 
+Ở đây, `embedding` sẽ tham gia quá trình huấn luyện trong khi `constant_embedding` có trọng số cố định. 
 
 
 ```{.python .input  n=7}
@@ -405,14 +405,14 @@ net.constant_embedding.collect_params().setattr('grad_req', 'null')
 ### Train and Evaluate the Model
 -->
 
-### Huấn luyện và đánh giá mô hình
+### Huấn luyện và Đánh giá mô hình
 
 
 <!--
 Now we can train the model.
 -->
 
-Bây giờ ta có thể huấn luyện mô hình.
+Bây giờ ta có thể huấn luyện mô hình. 
 
 
 ```{.python .input  n=8}
@@ -427,7 +427,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 Below, we use the trained model to classify sentiments of two simple sentences.
 -->
 
-Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc của hai câu đơn giản.
+Dưới đây, ta sử dụng mô hình đã được huấn luyện để phân loại cảm xúc của hai câu đơn giản.  
 
 
 ```{.python .input  n=9}
@@ -447,10 +447,10 @@ d2l.predict_sentiment(net, vocab, 'this movie is so bad')
 * TextCNN mainly uses a one-dimensional convolutional layer and max-over-time pooling layer.
 -->
 
-* Ta có thể dùng tích chập một chiều để xử lý và phân tích dữ liệu theo thời gian.
-* Phép tương quan chéo một chiều đa kênh đầu vào có thể xem như phép tương quan chéo hai chiều đơn kênh đầu vào.
-* Đầu vào của tầng gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau.
-* TextCNN chủ yếu sử dụng một tầng chập một chiều và một tầng gộp cực đại theo thời gian. 
+* Ta có thể dùng tích chập một chiều để xử lý và phân tích dữ liệu theo thời gian. 
+* Phép tương quan chéo một chiều đa kênh đầu vào có thể xem như phép tương quan chéo hai chiều đơn kênh đầu vào. 
+* Đầu vào của tầng gộp cực đại theo thời gian có thể có số bước thời gian trên mỗi kênh khác nhau. 
+* TextCNN chủ yếu sử dụng một tầng chập một chiều và một tầng gộp cực đại theo thời gian.
 
 
 ## Bài tập
@@ -463,10 +463,10 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 3. What other natural language processing tasks can you use textCNN for?
 -->
 
-1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích hai cảm xúc, sử dụng các mạng nơ-ron truy hồi và các mạng nơ-ron tích chập, ở khía cạnh độ chính xác và hiệu suất tính toán.
+1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích cảm xúc giữa mạng nơ-ron truy hồi và mạng nơ-ron tích chập, xét trên khía cạnh độ chính xác và hiệu suất tính toán. 
 2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
-điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy.
-3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng?
+điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy. 
+3. Bạn còn có thể sử dụng TextCNN cho những tác vụ xử lý ngôn ngữ tự nhiên nào khác? 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -500,3 +500,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 5 -->
 * Nguyễn Mai Hoàng Long
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
