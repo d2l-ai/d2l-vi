@@ -5,7 +5,7 @@
 # Natural Language Inference: Using Attention
 -->
 
-# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung 
+# Suy luận ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
 :label:`sec_natural-language-inference-attention`
 
 
@@ -17,11 +17,11 @@ This results in a model without recurrent or convolutional layers, achieving the
 In this section, we will describe and implement this attention-based method (with MLPs) for natural language inference, as depicted in :numref:`fig_nlp-map-nli-attention`.
 -->
 
-Chúng tôi đã giới thiệu tác vụ suy diễn ngôn ngữ tự nhiên và tập dữ liệu SNLI trong :numref:`sec_natural-language-inference-and-dataset`. 
-Từ quan điểm của nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
-Parikh và các cộng sự đề xuất hướng suy diễn ngôn ngữ tự nhiên với cơ chế tập trung và gọi nó là một "mô hình tập trung có thể phân tách" (*decomposable attention model*) :cite:`Parikh.Tackstrom.Das.ea.2016`. 
-Điều này đưa tới kết quả một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất ở vào thời điểm đó dựa trên tập dữ liệu SNLI với số tham số ít hơn nhiều. 
-Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy diễn ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`. 
+Chúng tôi đã giới thiệu tác vụ suy luận ngôn ngữ tự nhiên và tập dữ liệu SNLI trong :numref:`sec_natural-language-inference-and-dataset`. 
+Dựa vào nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
+Parikh và các cộng sự đề xuất hướng giải quyết bài toán suy luận ngôn ngữ tự nhiên bằng cơ chế tập trung và gọi nó là một "mô hình tập trung có thể phân tách" (*decomposable attention model*) :cite:`Parikh.Tackstrom.Das.ea.2016`. 
+Điều này dẫn tới một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất vào thời điểm đó trên tập dữ liệu SNLI với lượng tham số ít hơn nhiều. 
+Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy luận ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`. 
 
 
 <!--
@@ -48,16 +48,16 @@ the alignment of words between premises and hypotheses can be neatly accomplishe
 -->
 
 Đơn giản hơn so với việc duy trì thứ tự của các từ trong các tiền đề và giả thuyết, 
-ta có thể chỉ sắp xếp các từ trong một chuỗi văn bản thành mọi từ trong chuỗi khác và ngược lại, 
+ta có thể căn chỉnh các từ trong một chuỗi văn bản với mọi từ trong chuỗi khác và ngược lại, 
 rồi so sánh và kết hợp các thông tin đó để dự đoán mối quan hệ logic giữa tiền đề và giả thuyết. 
-Tương tự đối với việc căn chỉnh các từ giữa những câu nguồn và đích trong dịch máy,
-sự căn chỉnh các từ giữa tiền đề và giả thuyết này có thể thực hiện nhanh gọn nhờ cơ chế tập trung. 
+Tương tự như việc căn chỉnh các từ giữa câu nguồn và đích trong dịch máy,
+việc căn chỉnh các từ giữa tiền đề và giả thuyết có thể được thực hiện nhanh gọn nhờ cơ chế tập trung. 
 
 <!--
 ![Natural language inference using attention mechanisms.](../img/nli_attention.svg)
 -->
 
-![Suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg) 
+![Suy luận ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg)
 :label:`fig_nli_attention`
 
 
@@ -67,7 +67,7 @@ At a high level, it consists of three jointly trained steps: attending, comparin
 We will illustrate them step by step in the following.
 -->
 
-:numref:`fig_nli_attention` minh họa phương pháp suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung. 
+:numref:`fig_nli_attention` minh họa phương pháp suy luận ngôn ngữ tự nhiên sử dụng cơ chế tập trung. 
 Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp. 
 Ta sẽ từng bước mô tả chúng trong phần tiếp theo. 
 
@@ -104,14 +104,14 @@ where ideally large weights are associated with the words to be aligned.
 For ease of demonstration, :numref:`fig_nli_attention` shows such alignment in a *hard* way.
 -->
 
-Bước đầu tiên là phải sắp xếp các từ trong một chuỗi văn bản này sang một chuỗi văn bản khác. 
-Giả sử câu tiền đề là "i do need sleep" và câu giả định là "i am tired". 
+Bước đầu tiên là phải căn chỉnh các từ trong một chuỗi văn bản với một chuỗi khác. 
+Giả sử câu tiền đề là "i do need sleep" và câu giả thuyết là "i am tired". 
 Do sự tương đồng về ngữ nghĩa, ta mong muốn căn chỉnh "i" trong câu giả thuyết với "i" trong câu tiền đề, 
 và căn chỉnh "tired" trong câu giả thuyết với "sleep" trong câu tiền đề.
 Tương tự, ta muốn căn chỉnh "i" trong câu tiền đề với "i" trong câu giả thuyết, 
 và căn chỉnh "need" và "sleep" trong câu tiền đề với "tired" trong câu giả thuyết. 
-Lưu ý là sự căn chỉnh này là *mềm*, sử dụng trung bình trọng số, 
-ở đây lý tưởng là các trọng số lớn ứng với các từ được căn chỉnh. 
+Lưu ý là sự căn chỉnh này là *mềm*, sử dụng trung bình có trọng số, 
+trong đó các trọng số nên có độ lớn hợp lý ứng với các từ được căn chỉnh. 
 Để dễ dàng cho việc minh họa, :numref:`fig_nli_attention` diễn tả sự căn chỉnh này theo cách *cứng*. 
 
 
@@ -127,9 +127,9 @@ For soft alignment, we compute the attention weights $e_{ij} \in \mathbb{R}$ as
 Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn. 
 Ký hiệu $\mathbf{A} = (\mathbf{a}_1, \ldots, \mathbf{a}_m)$ 
 và $\mathbf{B} = (\mathbf{b}_1, \ldots, \mathbf{b}_n)$ là câu tiền đề và câu giả thuyết, 
-có số từ lần lượt là $m$ và $n$, 
-Ở đây $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1, \ldots, n$) là một vector embdding từ $d$-chiều. 
-Để căn chỉnh mềm, ta tính trọng số tập trung $e_{ij} \in \mathbb{R}$ như là 
+với số từ lần lượt là $m$ và $n$.
+Ở đây $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1, \ldots, n$) là một vector embedding từ $d$-chiều. 
+Để căn chỉnh mềm, ta tính trọng số tập trung $e_{ij} \in \mathbb{R}$ như sau
 
 
 $$e_{ij} = f(\mathbf{a}_i)^\top f(\mathbf{b}_j),$$
@@ -164,8 +164,8 @@ This *decomposition* trick leads to only $m + n$ applications (linear complexity
 -->
 
 Cũng nên chú ý rằng, trong :eqref:`eq_nli_e` 
-$f$ lấy đầu vào $\mathbf{a}_i$ và $\mathbf{b}_j$ riêng biệt thay vì lấy cùng lúc một cặp của chúng làm đầu vào. 
-Thủ thuật *phân rã* này dẫn tới chỉ có $m + n$ phép tính (độ phức tạp tuyến tính) của $f$ thay vì $mn$ (độ phức tạp bậc hai). 
+$f$ nhận hai đầu vào $\mathbf{a}_i$ và $\mathbf{b}_j$ riêng biệt thay vì nhận cả cặp làm đầu vào. 
+Thủ thuật *phân tách* này dẫn tới việc chỉ có $m + n$ lần tính (độ phức tạp tuyến tính) $f$ thay vì $mn$ (độ phức tạp bậc hai). 
 
 <!--
 Normalizing the attention weights in :eqref:`eq_nli_e`,
@@ -174,7 +174,7 @@ to obtain representation of the hypothesis that is softly aligned with the word 
 -->
 
 Thực hiện chuẩn hóa các trọng số tập trung trong :eqref:`eq_nli_e`, 
-ta tính trung bình trọng số của tất cả các embedding từ trong câu giả thuyết 
+ta tính trung bình có trọng số của tất cả các embedding từ trong câu giả thuyết 
 để thu được biểu diễn của câu giả thuyết được căn chỉnh mềm với từ được đánh chỉ số $i$ trong câu tiền đề: 
 
 
@@ -262,7 +262,7 @@ In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of 
 and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
 -->
 
-Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh tại chuỗi kia vào hàm $g$ (một perceptron đa tầng): 
+Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh của chuỗi còn lại vào hàm $g$ (một perceptron đa tầng): 
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -277,7 +277,7 @@ The following `Compare` class defines such as comparing step.
 
 Trong :eqref:`eq_nli_v_ab`, $\mathbf{v}_{A,i}$ là phép so sánh giữa từ thứ $i$ của câu tiền đề và tất cả các từ trong câu giả thuyết được căn chỉnh mềm với từ thứ $i$; 
 trong khi $\mathbf{v}_{B,j}$ lại là phép so sánh giữa từ thứ $j$ trong câu giả thuyết và tất cả từ trong câu tiền đề được căn chỉnh mềm với từ thứ $j$.
-Lớp `Compare` sau đây định nghĩa bước so sánh. 
+Lớp `Compare` sau định nghĩa bước so sánh này. 
 
 
 ```{.python .input  n=4}
