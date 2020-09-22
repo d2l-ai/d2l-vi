@@ -5,7 +5,7 @@
 # Natural Language Inference: Using Attention
 -->
 
-# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
+# Suy diễn ngôn ngữ tự nhiên: sử dụng cơ chế tập trung 
 :label:`sec_natural-language-inference-attention`
 
 
@@ -57,7 +57,7 @@ sự căn chỉnh các từ giữa tiền đề và giả thuyết này có th�
 ![Natural language inference using attention mechanisms.](../img/nli_attention.svg)
 -->
 
-![Suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg)
+![Suy diễn ngôn ngữ tự nhiên sử dụng cơ chế tập trung.](../img/nli_attention.svg) 
 :label:`fig_nli_attention`
 
 
