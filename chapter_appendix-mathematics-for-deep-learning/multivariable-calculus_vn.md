@@ -306,7 +306,7 @@ pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w
 Để thuận tiện, ta cho rằng hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$.
 Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn biểu diễn trên trở nên càng âm.
 Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể.
-Giờ, nhắc lại kiến thức của phép cos, ta có thể biến nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ.
+Giờ, nhắc lại kiến thức của phép cô-sin, ta có thể biến nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ.
 Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
 chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 
