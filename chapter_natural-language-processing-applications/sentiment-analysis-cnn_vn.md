@@ -266,9 +266,9 @@ A dropout layer can be used in this step to deal with overfitting.
 -->
 
 1. Định nghĩa nhiều hạt nhân tích chập một chiều để thực hiện các phép tính tích chập trên đầu vào. 
-Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của số lượng từ liền kề khác nhau. 
+Những hạt nhân tích chập với độ rộng khác nhau có thể học được sự tương quan của các cụm từ liền kề với số lượng khác nhau. 
 2. Thực hiện gộp cực đại theo thời gian trên tất cả các kênh đầu ra, sau đó nối các giá trị gộp được của các kênh này thành một vector. 
-3. Vector nối trên sẽ được biến đổi thành đầu ra cho từng hạng mục bằng các đưa qua tầng kết nối đầy đủ. 
+3. Vector nối trên sẽ được biến đổi thành đầu ra cho từng hạng mục bằng thông qua tầng kết nối đầy đủ. 
 Tầng dropout có thể được sử dụng ở bước này để giải quyết tình trạng quá khớp. 
 
 <!--
@@ -467,7 +467,7 @@ tuning hyperparameters, using larger pre-trained word vectors, and using the spa
 1. Điều chỉnh các tham số mô hình và so sánh hai phương pháp phân tích cảm xúc giữa mạng nơ-ron truy hồi và mạng nơ-ron tích chập, xét trên khía cạnh độ chính xác và hiệu suất tính toán. 
 2. Bạn có thể cải thiện thêm độ chính xác của mô hình trên tập kiểm tra thông qua việc sử dụng ba phương pháp đã được giới thiệu ở phần trước:
 điều chỉnh các tham số mô hình, sử dụng các vector từ tiền huấn luyện lớn hơn, và sử dụng công cụ token hóa từ spaCy. 
-3. Những tác vụ xử lý ngôn ngữ tự nhiên khác nào mà bạn có thể sử dụng textCNN cho chúng? 
+3. Bạn còn có thể sử dụng TextCNN cho những tác vụ xử lý ngôn ngữ tự nhiên nào khác? 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
@@ -503,3 +503,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 * Nguyễn Lê Quang Nhật
 * Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
