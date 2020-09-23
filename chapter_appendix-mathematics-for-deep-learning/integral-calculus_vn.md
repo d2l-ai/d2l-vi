@@ -408,7 +408,11 @@ This is a fact-of-life in the theory of integration.
 Thankfully, notice that when working with definite integrals, the constants drop out, and thus are irrelevant to the outcome.
 -->
 
-*dịch đoạn phía trên*
+Nó lấy ý tưởng về tìm kiếm diện tích (*một tiên nghiệm* khá là khó), và giảm tải nó xuống thành một mệnh đề đạo hàm (một thứ dễ hiểu hơn nhiều).
+Một nhận xét cuối mà chúng tôi cần đưa ra đó là nó không cho ta biết $F(x)$ thực sự là gì.
+Thực chất, $F(x) + C$ với $C$ bất kỳ đều có đạo hàm như nhau.
+Đây là một sự thật mà chúng ta phải chấp nhận trong lý thuyết vi phân.
+Đáng mừng là khi làm việc với tích phân hữu hạn, phần hằng số bị loại bỏ, và vì thế không ảnh hưởng đến kết quả.
 
 
 $$
@@ -424,7 +428,11 @@ For instance, we know that the derivative of $x^{n}$ is $nx^{n-1}$.
 Thus, we can say using the fundamental theorem :eqref:`eq_ftc` that
 -->
 
-*dịch đoạn phía trên*
+Đây có thể trông như là một đống trừu tượng vô nghĩa, nhưng biết ơn vì nó đã cho ta một góc nhìn mới trong việc tính toán tích phân.
+Mục tiêu của ta không còn là làm một vài thao tác chặt-và-cộng để cố gắng tính toán phần diện tích, mà ta chỉ cần tìm một hàm có đạo hàm là hàm ta hiện có!
+Đây là một điều tuyệt vời vì giờ ta có thể liệt kê hàng loạt các phép tích phân phức tạp chỉ bằng cách đảo ngược lại bảng trong :numref:`sec_derivative_table`.
+Ví dụ, ta biết đạo hàm của $x^{n}$ là $nx^{n-1}$.
+Vì thế, bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc`, ta có thể nói rằng
 
 
 $$
@@ -436,7 +444,7 @@ $$
 Similarly, we know that the derivative of $e^{x}$ is itself, so that means
 -->
 
-*dịch đoạn phía trên*
+Tương tự, ta biết đạo hàm của $e^{x}$ là chính nó, vậy có nghĩa là
 
 
 $$
@@ -449,7 +457,8 @@ In this way, we can develop the entire theory of integration leveraging ideas fr
 Every integration rule derives from this one fact.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân một cách tự do bằng cách tận dụng những ý tưởng từ giải tích vi phân.
+Mỗi quy tắc tích phân đều bắt nguồn từ sự thật này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
