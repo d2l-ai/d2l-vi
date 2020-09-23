@@ -1686,7 +1686,11 @@ How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $
 -->
 
 1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Tại sao bạn có cùng đáp án?
-2. Cho $\mathbf{v}$ là một vector có $n$ chiều. 
+2. Cho $\mathbf{v}$ là một vector có $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? là gì?
+3. Cho $L(x, y) = \log(e^x + e^y)$. Tính toán gradient. Tổng của các thành phần của gradient là gì?
+4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem $(0,0)$ là cực đại, cực tiểu hay không là cả hai.
+5. Giả sử ta đang tối thiểu một hàm $f(\mathbf{x}) = g(\mathbf{x}) + h(\mathbf{x})$.
+Làm cách nào ta có thể diễn giải bằng hình học điều kiện $\nabla f = 0$ thông qua $g$ và $h$? 
 
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
