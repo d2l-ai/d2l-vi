@@ -97,7 +97,7 @@ Với những bước tiến đáng kể của Internet và công nghệ di đ�
 quảng cáo trực tuyến đã trở thành một nguồn thu nhập quan trọng và sản sinh phần lớn doanh thu trong ngành công nghiệp Internet.
 Việc hiện thị quảng cáo có liên quan và thu hút sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
 Tập dữ liệu chúng tôi giới thiệu là một tập dữ liệu quảng cáo trực tuyến.
-Nó bao gồm 34 trường, với cột đầu tiên biểu diễn biến mục tiêu cho biết liệu một quảng cáo được nhấp vào (1) hay chưa (0).
+Nó bao gồm 34 trường, với cột đầu tiên biểu diễn biến mục tiêu cho biết liệu một quảng cáo được nhấp vào (1) hay không (0).
 Tất cả các cột còn lại là các đặc trưng theo hạng mục.
 Các cột này có thể biểu diễn id của quảng cáo, id trang web hay ứng dụng, id thiết bị, thời gian, hồ sơ người dùng, v.v.
 Ngữ nghĩa thực tế của các đặc trưng này không được tiết lộ để ẩn danh hoá dữ liệu và bảo mật thông tin cá nhân.
