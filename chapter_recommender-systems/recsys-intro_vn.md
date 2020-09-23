@@ -4,7 +4,7 @@
 # Overview of Recommender Systems
 -->
 
-# Sơ lược về Hệ thống Gợi ý
+# Tổng quan về Hệ thống Gợi ý
 
 
 <!--
@@ -24,17 +24,17 @@ This chapter will introduce the fundamental concepts, classic models and recent 
 with deep learning in the field of recommender systems, together with implemented examples.
 -->
 
-Trong thập kỷ vừa qua, mạng Internet đã phát triển trở thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn,
-đồng thời thay đổi một cách sâu sắc cách ta giao tiếp, đọc tin tức, mua sắm và xem phim.
-Trong khi đó, một lượng lớn sản phẩm chưa từng có trong tiền lệ (chúng tôi sử dụng từ *sản phẩm (item)* nhằm nói đến phim ảnh, tin tức, sách và hàng hoá)
-được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm ra những sản phẩm mà ta ưa thích hơn.
-Do đó hệ thống gợi ý là công cụ lọc thông tin mạnh mẽ
-mà có thể thúc đẩy dịch vụ cá nhân hoá và cung cấp trải nghiệm riêng biệt cho từng người dùng.
-Nói ngắn gọn, hệ thống gợi ý đóng vai trò nòng cốt trong việc tận dụng nguồn dữ liệu dồi dào có sẵn nhằm khiến việc đưa ra lựa chọn dễ dàng hơn.
-Ngày nay, hệ thống gợi ý là là thành phần cơ bản của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
-Nhớ lại ví dụ mà Amazon đưa ra gợi ý các sách Học sâu trong :numref:`subsec_recommender_systems`.
+Trong thập kỷ vừa qua, mạng Internet đã phát triển thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn,
+đồng thời thay đổi sâu sắc cách ta giao tiếp, đọc tin tức, mua sắm và xem phim.
+Trong khi đó, một lượng lớn chưa từng có các sản phẩm (chúng tôi sử dụng từ *sản phẩm (item)* cho phim ảnh, tin tức, sách và hàng hoá)
+được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm những sản phẩm ưa thích hơn.
+Do đó, hệ thống gợi ý là công cụ lọc thông tin mạnh mẽ
+có thể thúc đẩy các dịch vụ cá nhân hoá và cung cấp trải nghiệm riêng biệt cho từng người dùng.
+Nói ngắn gọn, hệ thống gợi ý đóng vai trò nòng cốt trong việc tận dụng nguồn dữ liệu dồi dào hiện có để giúp việc đưa ra lựa chọn dễ dàng hơn.
+Ngày nay, hệ thống gợi ý là là thành phần trung tâm của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
+Nhớ lại ví dụ Amazon đưa ra gợi ý các sách Học sâu trong :numref:`subsec_recommender_systems`.
 Có hai lợi ích của việc sử dụng hệ thống gợi ý:
-Một mặt, nó có thể giảm phần lớn công sức của người dùng trong tìm kiếm sản phẩm và giảm nhẹ vấn đề quá tải thông tin.
+Một mặt, nó có thể giảm lượng lớn công sức tìm kiếm sản phẩm của người dùng và giảm thiểu vấn đề quá tải thông tin.
 Mặt khác, nó có thể tăng giá trị kinh doanh cho các nhà cung cấp dịch vụ trực tuyến và trở thành nguồn doanh thu quan trọng.
 Chương này sẽ giới thiệu những khái niệm cơ bản, các mô hình cổ điển và những bước tiến gần đây
 của học sâu trong lĩnh vực hệ thống gợi ý, cùng với các ví dụ lập trình.
@@ -63,13 +63,13 @@ filtering for information or patterns using techniques involving collaboration a
 CF has many forms and numerous CF methods proposed since its advent.
 -->
 
-Ta mở đầu chương này với một khái niệm quan trọng trong hệ thống gợi ý --- lọc cộng tác (*Collaborative Filtering - CF*),
-được tạo ra đầu tiên trong hệ thống Tapestry :cite:`Goldberg.Nichols.Oki.ea.1992`,
-ám chỉ đến "mọi người cộng tác giúp đỡ lẫn nhau để thực hiện quá trình lọc
+Ta bắt đầu chương này với một khái niệm quan trọng trong hệ thống gợi ý --- lọc cộng tác (*Collaborative Filtering - CF*),
+được tạo ra lần đầu trong hệ thống Tapestry :cite:`Goldberg.Nichols.Oki.ea.1992`,
+ám chỉ "mọi người cộng tác giúp đỡ lẫn nhau để thực hiện quá trình lọc
 nhằm xử lý lượng lớn email và tin nhắn đăng trong nhóm thảo luận".
-Định nghĩa này được làm phong phú với nhiều nghĩa. Hiểu theo nghĩa rộng, đây là quá trình
+Định nghĩa này được làm phong phú thêm bởi nhiều nghĩa. Hiểu theo nghĩa rộng, đây là quá trình
 lọc lấy thông tin hoặc khuôn mẫu sử dụng các kĩ thuật yêu cầu sự cộng tác của nhiều người dùng, tác nhân, và nguồn dữ liệu.
-CF có nhiều hình thức khác nhau và rất nhiều phương pháp CF khác đã được đề xuất từ khi nó được tạo ra.
+CF có nhiều dạng khác nhau, rất nhiều phương pháp CF khác đã được đề xuất kể từ khi phát minh.
 
 
 <!--
@@ -86,17 +86,17 @@ the content descriptions of items/users and contextual signals such as timestamp
 Obviously, we may need to adjust the model types/structures when different input data is available.
 -->
 
-Nói chung, các kỹ thuật CF có thể được phân ra thành các lớp: CF dựa vào ghi nhớ (*memory-based CF*), CF dựa vào mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
-Đại diện của các kỹ thuật CF dựa vào ghi nhớ chính là CF dựa vào các điểm dữ liệu lân cận (*nearest neighbor-based CF*) ví dụ như CF dựa vào người dùng (*user-based CF*) hay CF dựa vào sản phẩm (*item-based CF*) :cite:`Sarwar.Karypis.Konstan.ea.2001`.
-Các mô hình nhân tố tiềm ẩn (*latent factor model*) ví dụ như phân rã ma trận (*matrix factorization*) là một ví dụ của CF dựa vào mô hình.
-CF dựa vào ghi nhớ có nhiều hạn chế trong việc xử lý dữ liệu thưa và quy mô lớn do nó tính toán độ tương đồng dựa trên những sản phẩm phổ biến.
-Phương pháp dựa vào mô hình ngày càng trở nên phổ biến hơn do khả năng xử lý dữ liệu thưa thớt tốt hơn và tính mở rộng tốt hơn.
-Nhiều cách tiếp cận với CF dựa vào mô hình có thể được mở rộng với mạng nơ-ron,
-dẫn đến nhiều mô hình linh hoạt và tính mở rộng cao nhờ sự thúc đẩy tính toán trong học sâu :cite:`Zhang.Yao.Sun.ea.2019`.
+Nhìn chung, các kỹ thuật CF có thể được phân loại thành: CF dựa trên ghi nhớ (*memory-based CF*), CF dựa trên mô hình (*model-based CF*), và lai giữa hai lớp này :cite:`Su.Khoshgoftaar.2009`.
+Đại diện của CF dựa trên ghi nhớ chính là CF dựa trên các điểm lân cận (*nearest neighbor-based CF*) ví dụ như CF dựa trên người dùng (*user-based CF*) hay CF dựa trên sản phẩm (*item-based CF*) :cite:`Sarwar.Karypis.Konstan.ea.2001`.
+Các mô hình nhân tố tiềm ẩn (*latent factor model*) như phân rã ma trận (*matrix factorization*) là một ví dụ của CF dựa trên mô hình.
+CF dựa trên ghi nhớ có nhiều hạn chế trong việc xử lý dữ liệu thưa và quy mô lớn do việc tính toán độ tương đồng dựa trên những sản phẩm thường gặp.
+CF dựa trên mô hình ngày càng trở nên phổ biến do khả năng xử lý dữ liệu thưa và tính mở rộng tốt hơn.
+Nhiều cách tiếp cận với CF dựa trên mô hình có thể được mở rộng với mạng nơ-ron,
+dẫn đến nhiều mô hình linh hoạt và tính mở rộng cao nhờ sự phát triển của học sâu :cite:`Zhang.Yao.Sun.ea.2019`.
 Nhìn chung, CF chỉ sử dụng dữ liệu tương tác giữa người dùng - sản phẩm nhằm đưa ra dự đoán và gợi ý.
-Ngoài CF, hệ thống gợi ý dựa vào nội dung (*content-based*) và dựa vào ngữ cảnh (*context-based*) cũng hữu dụng trong việc kết hợp
-nội dung mô tả của sản phẩm/người dùng và các dấu hiệu ngữ cảnh ví dụ như mốc thời gian và địa điểm.
-Đương nhiên, ta cần phải điều chỉnh cấu trúc/loại mô hình với dữ liệu đầu vào khả dụng khác nhau.
+Ngoài CF, hệ thống gợi ý dựa trên nội dung (*content-based*) và dựa trên ngữ cảnh (*context-based*) cũng hữu dụng trong việc kết hợp
+nội dung mô tả của sản phẩm/người dùng và các dấu hiệu ngữ cảnh như mốc thời gian và địa điểm.
+Đương nhiên, ta cần phải điều chỉnh cấu trúc/loại mô hình khi dữ liệu đầu vào khả dụng khác nhau.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -125,19 +125,19 @@ We can only *guess* their preferences and true motives.
 A user watched a movie does not necessarily indicate a positive view of that movie.
 -->
 
-Để có thể học được sử thích của người dùng, hệ thống cần phải thu thập phản hồi của họ.
+Để học được sở thích của người dùng, hệ thống cần phải thu thập phản hồi của họ.
 Phản hồi này có thể là trực tiếp (*explicit*) hoặc gián tiếp (*implicit*) :cite:`Hu.Koren.Volinsky.2008`.
-Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá theo sao cho các bộ phim với các mức từ một đến mười sao.
-Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích của họ.
-Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm của họ.
-Tuy nhiên, phản hồi trực tiếp không phải lúc nào cũng dễ dàng có được do nhiều người dùng thường chần chừ trong việc đánh giá sản phẩm.
-Xét một cách tương đối, phản hồi gián tiếp thường dễ có được do nó chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp ví dụ như số lần nhấp chuột của người dùng.
-Do đó, nhiều hệ thống gợi ý xoay quanh phản hồi gián tiếp nhằm phản ánh ý kiến người dùng một cách gián tiếp thông qua việc quan sát hành vi người dùng.
+Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá số lượng ngôi sao cho các bộ phim với các mức từ một đến mười sao.
+Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích.
+Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm.
+Tuy nhiên, không phải lúc nào cũng dễ dàng thu thập phản hồi trực tiếp do nhiều người dùng thường không hay đánh giá sản phẩm.
+Xét một cách tương đối, phản hồi gián tiếp thường dễ thu thập hơn do chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp như số lần nhấp chuột của người dùng.
+Do đó, nhiều hệ thống gợi ý xoay quanh phản hồi gián tiếp, phản ánh ý kiến người dùng thông qua việc quan sát hành vi của họ.
 Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt web, lượt xem và thậm chí là thao tác chuột.
-Ví dụ, một người dùng mà mua nhiều sách có cùng tác giả thì khả năng cao là thích tác giả đó.
-Chú ý ràng phản hồi gián tiếp vốn mang nhiễu.
-Ta chỉ có thể *đoán* sở thích của họ và lý do thực.
-Một người dùng xem một bộ phim không nhất thiết là thích bộ phim đó.
+Ví dụ, một người dùng mua nhiều sách của cùng tác giả thì khả năng cao là thích tác giả đó.
+Chú ý rằng phản hồi gián tiếp tự thân là có nhiễu.
+Ta chỉ có thể *đoán* sở thích và động cơ thực của họ.
+Một người dùng xem một bộ phim không nhất thiết là phải thích bộ phim đó.
 
 
 <!--
@@ -158,12 +158,12 @@ Recommending for new users and recommending new items to existing users are call
 -->
 
 Có nhiều tác vụ gợi ý được nghiên cứu trong thập kỷ vừa qua.
-Dựa trên phạm vi ứng dụng, các tác vụ này bao gồm gợi ý phim ảnh, gợi ý tin tức, gợi ý địa điểm ưa thích (*point-of-interest*) :cite:`Ye.Yin.Lee.ea.2011` và vân vân.
-Ta cũng có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ dự đoán đánh giá nhắm đến việc dự đoán đánh giá trực tiếp.
-Gợi ý $n$ sản phẩm hàng đầu (*top-$n$ recommendation*) (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa vào phản hồi gián tiếp.
-Nếu có bao gồm cả thông tin mốc thời gian, ta có thể xây dựng gợi ý nhận thức trình tự thời gian (*sequence aware*) :cite:`Quadrana.Cremonesi.Jannach.2018`.
-Một tác vụ phổ biến khác được gọi là dự đoán tỉ lệ nhấp chuột, tác vụ này cũng dựa vào phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng theo hạng mục cũng có thể được tận dụng.
-Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người dùng hiện có được gọi là gợi ý khởi động nguội (*cold-start recommendation*) :cite:`Schein.Popescul.Ungar.ea.2002`.
+Dựa trên phạm vi ứng dụng, các tác vụ này bao gồm gợi ý phim ảnh, gợi ý tin tức, gợi ý địa điểm ưa thích (*point-of-interest*) :cite:`Ye.Yin.Lee.ea.2011`, v.v.
+Ta cũng có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ trực tiếp dự đoán đánh giá.
+Gợi ý $n$ sản phẩm hàng đầu (*top-$n$ recommendation*) (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa trên phản hồi gián tiếp.
+Nếu có cả thông tin mốc thời gian, ta có thể xây dựng hệ thống gợi ý có nhận thức về chuỗi (*sequence-aware*) :cite:`Quadrana.Cremonesi.Jannach.2018`.
+Một tác vụ phổ biến khác là dự đoán tỉ lệ nhấp chuột, cũng dựa trên phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng rời rạc cũng có thể được tận dụng.
+Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người dùng hiện còn được gọi là gợi ý khởi động nguội (*cold-start recommendation*) :cite:`Schein.Popescul.Ungar.ea.2002`.
 
 
 
@@ -174,8 +174,8 @@ Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người d
 * There are two types of feedbacks: implicit feedback and explicit feedback.  A number of recommendation tasks have been explored during the last decade.
 -->
 
-* Hệ thống gợi ý rất quan trọng đối với người dùng cá nhân và các ngành công nghiệp. Lọc cộng tác là một khái niệm chủ chốt trong hệ thống gợi ý.
-* Có hai loại phản hồi: phản hồi gián tiếp và phản hồi trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ vừa qua.
+* Hệ thống gợi ý rất quan trọng đối với người dùng cá nhân và nhiều ngành công nghiệp. Lọc cộng tác là một khái niệm then chốt trong hệ thống gợi ý.
+* Có hai loại phản hồi: gián tiếp và trực tiếp. Có nhiều ứng dụng gợi ý đã được nghiên cứu trong thập kỷ qua.
 
 
 ## Bài tập
@@ -186,7 +186,7 @@ Gợi ý cho người dùng mới và gợi ý sản phẩm mới cho người d
 -->
 
 1. Hệ thống gợi ý ảnh hưởng đến cuộc sống hằng ngày của bạn như thế nào?
-2. Ứng dụng gợi ý đáng chú ý nào mà bạn nghĩ có thể đi vào nghiên cứu?
+2. Có ứng dụng gợi ý nào đáng chú ý mà bạn nghĩ đáng được nghiên cứu?
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -205,12 +205,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
