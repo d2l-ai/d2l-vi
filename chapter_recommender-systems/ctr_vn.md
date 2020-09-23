@@ -31,8 +31,8 @@ và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình gợ
 Tận dụng các đặc trưng này có lợi trong việc đưa ra gợi ý, vì chúng có thể nói lên sở thích của người dùng, đặc biệt khi thiếu dữ liệu tương tác.
 Do đó, các mô hình dự đoán nên có khả năng xử lý những đặc trưng này, để có thể nhận thức được phần nào bối cảnh/nội dung.
 Để mô tả loại mô hình gợi ý này, chúng tôi giới thiệu một tác vụ khác sử dụng tỉ lệ nhấp chuột (*click-through rate - CTR*)
-cho gợi ý quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và hiển thị dữ liệu quảng cáo vô danh.
-Dịch vụ quảng cáo có mục tiêu đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ gợi ý.
+cho tác vụ gợi ý quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và cũng giới thiệu một tập dữ liệu quảng cáo vô danh.
+Dịch vụ quảng cáo nhắm đối tượng đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ gợi ý.
 Gợi ý quảng cáo phù hợp với thị hiếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
 
 
@@ -60,8 +60,8 @@ and can be helpful in setting campaign goals as it can help advertisers to set r
 -->
 
 Tỉ lệ nhấp chuột là một dấu hiệu quan trọng cho thấy độ hiệu quả của thuật toán dự đoán.
-Dự đoán tỉ lệ nhấp chuột là tác vụ dự đoán tỉ lệ mà một thứ gì đó trên mạng được nhấp vào.
-Mô hình dự đoán CTR không những có thể được áp dụng vào hệ thống quảng cáo có mục tiêu mà còn
+Dự đoán tỉ lệ nhấp chuột là tác vụ dự đoán tỉ lệ mà một đường dẫn trên mạng được nhấp vào.
+Mô hình dự đoán CTR không những có thể được áp dụng vào hệ thống quảng cáo nhắm đối tượng mà còn
 trong hệ thống gợi ý sản phẩm nói chung (như phim ảnh, tin tức, đồ dùng), chiến dịch quảng cáo qua thư điện tử, và thậm chí là công cụ tìm kiếm.
 Nó cũng liên quan mật thiết đến độ hài lòng của khách hàng, tỉ lệ chuyển đổi,
 và có thể giúp ích trong việc thiết lập mục tiêu của chiến dịch quảng cáo do có thể giúp nhà quảng cáo đặt ra kỳ vọng thực tế.
@@ -95,7 +95,7 @@ The real semantics of the features are undisclosed due to anonymization and priv
 
 Với những bước tiến đáng kể của Internet và công nghệ di động,
 quảng cáo trực tuyến đã trở thành một nguồn thu nhập quan trọng và sản sinh phần lớn doanh thu trong ngành công nghiệp Internet.
-Việc hiện thị quảng cáo thích hợp thu hút sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
+Việc hiện thị quảng cáo có liên quan và thu hút sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
 Tập dữ liệu chúng tôi giới thiệu là một tập dữ liệu quảng cáo trực tuyến.
 Nó bao gồm 34 trường, với cột đầu tiên biểu diễn biến mục tiêu cho biết liệu một quảng cáo được nhấp vào (1) hay chưa (0).
 Tất cả các cột còn lại là các đặc trưng theo hạng mục.
@@ -211,7 +211,7 @@ and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/a
 
 Như có thể thấy, toàn bộ 34 trường đều là đặc trưng theo hạng mục.
 Mỗi giá trị biểu diễn chỉ số one-hot của trường tương ứng.
-Nhãn $0$ nghĩa là quảng cáo này chưa được nhấp vào.
+Nhãn $0$ nghĩa là quảng cáo này không được nhấp vào.
 Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiển thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
 và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
 
