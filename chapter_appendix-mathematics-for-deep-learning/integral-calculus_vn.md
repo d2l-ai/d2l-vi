@@ -411,7 +411,7 @@ Thankfully, notice that when working with definite integrals, the constants drop
 Nó lấy ý tưởng về tìm kiếm diện tích (*một tiên nghiệm* khá là khó), và giảm tải nó xuống thành một mệnh đề đạo hàm (một thứ dễ hiểu hơn nhiều).
 Một nhận xét cuối mà chúng tôi cần đưa ra đó là nó không cho ta biết $F(x)$ thực sự là gì.
 Thực chất, $F(x) + C$ với $C$ bất kỳ đều có đạo hàm như nhau.
-Đây là một sự thật mà chúng ta phải chấp nhận trong lý thuyết vi phân.
+Đây là một sự thật mà chúng ta phải chấp nhận trong lý thuyết tích phân.
 Đáng mừng là khi làm việc với tích phân hữu hạn, phần hằng số bị loại bỏ, và vì thế không ảnh hưởng đến kết quả.
 
 
