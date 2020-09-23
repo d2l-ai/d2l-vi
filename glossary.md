@@ -424,6 +424,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | random variable                                    | biến ngẫu nhiên                           |                                              |
 | recall                                             | recall                                    |                                              |
 | receptive field (in CNN)                           | vùng tiếp nhận                            | [https://git.io/Jftwh](https://git.io/Jftwh) |
+| recommender system                                 | hệ thống đề xuất                          | [https://git.io/JUg62](https://git.io/JUg62) |
 | recognition                                        | nhận dạng                                 |                                              |
 | rectified linear unit (ReLU)                       | đơn vị tuyến tính chỉnh lưu               | [https://git.io/JvohI](https://git.io/JvohI) |
 | recurrent neural network                           | mạng nơ-ron hồi tiếp                      |                                              |
@@ -460,7 +461,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | semantic role labeling              | dán nhãn vai trò ngữ nghĩa              |                                              |
 | semantic segmentation               | phân vùng theo ngữ nghĩa                |                                              |
 | sentiment classification (analysis) | phân loại (phân tích) cảm xúc           |                                              |
-| sequence-aware (recommender system) | (hệ thống gợi ý có) nhận thức về chuỗi  | [https://git.io/JUWLM](https://git.io/JUWLM) |
+| sequence-aware (recommender system) | (hệ thống đề xuất) có nhận thức về chuỗi  | [https://git.io/JUWLM](https://git.io/JUWLM) |
 | sequence learning                   | học chuỗi                               | [https://git.io/JvQxa](https://git.io/JvQxa) |
 | sequence to sequence                | chuỗi sang chuỗi                        |                                              |
 | sequential partitioning             | phân tách tuần tự                       |                                              |
