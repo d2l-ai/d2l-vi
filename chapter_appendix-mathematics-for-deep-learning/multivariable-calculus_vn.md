@@ -1616,7 +1616,7 @@ $$
 This is a matrix product, and thus we can conclude that
 -->
 
-*dịch đoạn phía trên*
+Đây là tích một ma trận, vì thế ta có thể kết luận rằng 
 
 
 $$
@@ -1628,7 +1628,7 @@ $$
 and thus we may write the solution to :eqref:`eq_mat_goal_2`
 -->
 
-*dịch đoạn phía trên*
+nên vì thế ta có thể viết nghiệm cho :eqref:`eq_mat_goal_2`
 
 
 $$
@@ -1640,7 +1640,7 @@ $$
 This matches the solution we guessed above!
 -->
 
-*dịch đoạn phía trên*
+Điều này trùng hợp với nghiệm mà ta đã đoán phía trên!
 
 
 <!--
@@ -1651,7 +1651,11 @@ However, due to the plethora of ways matrix operations can be combined compared 
 It is often the case that it is best to work with the indices, or leave it up to automatic differentiation when appropriate.
 -->
 
-*dịch đoạn phía trên*
+Tại điểm này sẽ thật hợp lý để hỏi rằng "Tại sao tôi không thể cứ viết xuống phiên bản ma trận của tất cả các quy tắc giải tích tôi đã từng học?
+Điều này thật rõ ràng là máy móc. Tại sao ta không vượt qua nó?"
+Và thực sự có những quy tắc như vậy và :cite:`Petersen.Pedersen.ea.2008` cung cấp một bản tóm tắt tuyệt vời.
+Tuy nhiên, do có rất nhiều cách các phép toán ma trận có thể được kết hợp so với các giá trị đơn, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành hàm cho một biến.
+Thông thường, tốt nhất là làm việc với các chỉ mục, hoặc để nó tự động vi phân khi thích hợp.
 
 
 ## Tóm tắt
@@ -1731,6 +1735,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 11 -->
-* 
+* Trần Yến Thy
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
