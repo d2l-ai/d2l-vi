@@ -1616,7 +1616,7 @@ $$
 This is a matrix product, and thus we can conclude that
 -->
 
-Đây là tích một ma trận, vì thế ta có thể kết luận rằng 
+Đây là tích một ma trận, vì thế ta có thể kết luận 
 
 
 $$
@@ -1628,7 +1628,7 @@ $$
 and thus we may write the solution to :eqref:`eq_mat_goal_2`
 -->
 
-nên vì thế ta có thể viết nghiệm cho :eqref:`eq_mat_goal_2`
+nên vì vậy ta có thể viết nghiệm cho :eqref:`eq_mat_goal_2`
 
 
 $$
@@ -1640,7 +1640,7 @@ $$
 This matches the solution we guessed above!
 -->
 
-Điều này trùng hợp với nghiệm mà ta đã đoán phía trên!
+Nghiệm này trùng với nghiệm mà ta đoán ở phía trên!
 
 
 <!--
@@ -1651,10 +1651,10 @@ However, due to the plethora of ways matrix operations can be combined compared 
 It is often the case that it is best to work with the indices, or leave it up to automatic differentiation when appropriate.
 -->
 
-Tại điểm này sẽ thật hợp lý để hỏi rằng "Tại sao tôi không thể cứ viết xuống phiên bản ma trận của tất cả các quy tắc giải tích tôi đã từng học?
-Điều này thật rõ ràng là máy móc. Tại sao ta không vượt qua nó?"
-Và thực sự có những quy tắc như vậy và :cite:`Petersen.Pedersen.ea.2008` cung cấp một bản tóm tắt tuyệt vời.
-Tuy nhiên, do có rất nhiều cách các phép toán ma trận có thể được kết hợp so với các giá trị đơn, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành hàm cho một biến.
+Tại điểm này thật hợp lý nếu ta hỏi rằng "Tại sao tôi không thể cứ viết phiên bản ma trận của tất cả các quy tắc giải tích tôi đã từng học?
+Điều này rõ ràng là máy móc. Tại sao ta không đơn giản là bỏ qua nó?"
+Và thực sự có những quy tắc như thế và :cite:`Petersen.Pedersen.ea.2008` cho ta một bản tóm tắt tuyệt vời.
+Tuy nhiên, bởi vì có rất nhiều cách mà trong đó các phép toán ma trận có thể được kết hợp so với các giá trị đơn, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành hàm cho một biến.
 Thông thường, tốt nhất là làm việc với các chỉ mục, hoặc để nó tự động vi phân khi thích hợp.
 
 
@@ -1667,9 +1667,9 @@ These allow us to see how a multi-variable function changes when we make an arbi
 * Matrix calculus allows us to write the derivatives of matrix expressions in concise ways.
 -->
 
-* Ở các chiều cao hơn, chúng ta có thể định nghĩa gradient phục vụ mục đích giống như các đạo hàm trong một chiều.
+* Ở các chiều cao hơn, chúng ta có thể định nghĩa gradient phục vụ cùng mục đích như các đạo hàm trong một chiều.
 Điều này cho phép ta thấy cách một hàm đa biến thay đổi khi ta tạo ra bất kỳ thay đổi nhỏ nào đối với đầu vào.
-* Thuật toán lan truyền ngược có thể được xem như một phương pháp tổ chức của quy tắc dây chuyền đa biến để cho phép tính toán hiệu quả các đạo hàm riêng.
+* Thuật toán lan truyền ngược có thể được xem như một phương pháp trong việc tổ chức quy tắc dây chuyền đa biến để cho phép tính toán hiệu quả các đạo hàm riêng.
 * Giải tích ma trận cho phép chúng ta viết các đạo hàm của biểu thức ma trận một cách chính xác hơn.
 
 
@@ -1685,11 +1685,11 @@ and $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Why do you get the same
 How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $g$ and $h$?
 -->
 
-1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Tại sao bạn có cùng đáp án?
-2. Cho $\mathbf{v}$ là một vector có $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? là gì?
+1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Hãy cho biết tại sao bạn lại ra cùng đáp án?
+2. Cho $\mathbf{v}$ là một vector có $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? có ý nghĩa gì?
 3. Cho $L(x, y) = \log(e^x + e^y)$. Tính toán gradient. Tổng của các thành phần của gradient là gì?
-4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem $(0,0)$ là cực đại, cực tiểu hay không là cả hai.
-5. Giả sử ta đang tối thiểu một hàm $f(\mathbf{x}) = g(\mathbf{x}) + h(\mathbf{x})$.
+4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem nếu như $(0,0)$ là cực đại, cực tiểu hay không là cả hai.
+5. Giả sử ta đang tối thiểu hàm $f(\mathbf{x}) = g(\mathbf{x}) + h(\mathbf{x})$.
 Làm cách nào ta có thể diễn giải bằng hình học điều kiện $\nabla f = 0$ thông qua $g$ và $h$? 
 
 
