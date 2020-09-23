@@ -1667,7 +1667,10 @@ These allow us to see how a multi-variable function changes when we make an arbi
 * Matrix calculus allows us to write the derivatives of matrix expressions in concise ways.
 -->
 
-*dịch đoạn phía trên*
+* Ở các chiều cao hơn, chúng ta có thể định nghĩa gradient phục vụ mục đích giống như các đạo hàm trong một chiều.
+Điều này cho phép ta thấy cách một hàm đa biến thay đổi khi ta tạo ra bất kỳ thay đổi nhỏ nào đối với đầu vào.
+* Thuật toán lan truyền ngược có thể được xem như một phương pháp tổ chức của quy tắc dây chuyền đa biến để cho phép tính toán hiệu quả các đạo hàm riêng.
+* Giải tích ma trận cho phép chúng ta viết các đạo hàm của biểu thức ma trận một cách chính xác hơn.
 
 
 ## Bài tập
@@ -1682,7 +1685,8 @@ and $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Why do you get the same
 How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $g$ and $h$?
 -->
 
-*dịch đoạn phía trên*
+1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Tại sao bạn có cùng đáp án?
+2. Cho $\mathbf{v}$ là một vector có $n$ chiều. 
 
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
