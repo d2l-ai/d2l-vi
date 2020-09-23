@@ -389,7 +389,7 @@
          id="tspan223"
          x="30.228361"
          y="16.118376"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.75">Tầng đầu vào</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.75">Tầng đầu ra</tspan></text>
     <text
        id="text229"
        y="76.268204"
@@ -400,6 +400,6 @@
          y="76.268204"
          x="29.752323"
          id="tspan227"
-         sodipodi:role="line">Tầng đầu ra</tspan></text>
+         sodipodi:role="line">Tầng đầu vào</tspan></text>
   </g>
 </svg>
