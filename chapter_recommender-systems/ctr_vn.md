@@ -4,7 +4,7 @@
 # Feature-Rich Recommender Systems
 -->
 
-# Hệ thống Gợi ý Đặc trưng Phong phú
+# Hệ thống Đề xuất Giàu Đặc trưng
 
 
 <!--
@@ -27,13 +27,13 @@ Dữ liệu tương tác là dấu hiệu cơ bản nhất chỉ ra sở thích 
 đóng vai trò chủ chốt trong các mô hình được giới thiệu trong các phần trước.
 Tuy vậy, dữ liệu tương tác thường vô cùng thưa thớt và đôi lúc có thể có nhiễu.
 Để khắc phục vấn đề này, ta có thể tích hợp các thông tin phụ như đặc trưng của sản phẩm, hồ sơ người dùng,
-và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình gợi ý.
-Tận dụng các đặc trưng này có lợi trong việc đưa ra gợi ý, vì chúng có thể nói lên sở thích của người dùng, đặc biệt khi thiếu dữ liệu tương tác.
+và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình đề xuất.
+Tận dụng các đặc trưng này có lợi trong việc đưa ra đề xuất, vì chúng có thể nói lên sở thích của người dùng, đặc biệt khi thiếu dữ liệu tương tác.
 Do đó, các mô hình dự đoán nên có khả năng xử lý những đặc trưng này, để có thể nhận thức được phần nào bối cảnh/nội dung.
-Để mô tả loại mô hình gợi ý này, chúng tôi giới thiệu một tác vụ khác sử dụng tỉ lệ nhấp chuột (*click-through rate - CTR*)
-cho tác vụ gợi ý quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và cũng giới thiệu một tập dữ liệu quảng cáo vô danh.
-Dịch vụ quảng cáo nhắm đối tượng đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ gợi ý.
-Gợi ý quảng cáo phù hợp với thị hiếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
+Để mô tả loại mô hình đề xuất này, chúng tôi giới thiệu một tác vụ khác sử dụng tỉ lệ nhấp chuột (*click-through rate - CTR*)
+cho tác vụ đề xuất quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và cũng giới thiệu một tập dữ liệu quảng cáo vô danh.
+Dịch vụ quảng cáo nhắm đối tượng đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ đề xuất.
+Đề xuất quảng cáo phù hợp với thị hiếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
 
 
 <!--
@@ -62,7 +62,7 @@ and can be helpful in setting campaign goals as it can help advertisers to set r
 Tỉ lệ nhấp chuột là một dấu hiệu quan trọng cho thấy độ hiệu quả của thuật toán dự đoán.
 Dự đoán tỉ lệ nhấp chuột là tác vụ dự đoán tỉ lệ mà một đường dẫn trên mạng được nhấp vào.
 Mô hình dự đoán CTR không những có thể được áp dụng vào hệ thống quảng cáo nhắm đối tượng mà còn
-trong hệ thống gợi ý sản phẩm nói chung (như phim ảnh, tin tức, đồ dùng), chiến dịch quảng cáo qua thư điện tử, và thậm chí là công cụ tìm kiếm.
+trong hệ thống đề xuất sản phẩm nói chung (như phim ảnh, tin tức, đồ dùng), chiến dịch quảng cáo qua thư điện tử, và thậm chí là công cụ tìm kiếm.
 Nó cũng liên quan mật thiết đến độ hài lòng của khách hàng, tỉ lệ chuyển đổi,
 và có thể giúp ích trong việc thiết lập mục tiêu của chiến dịch quảng cáo do có thể giúp nhà quảng cáo đặt ra kỳ vọng thực tế.
 
@@ -223,7 +223,7 @@ và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.k
 * Click-through rate prediction is usually converted to a binary classification problem. The target is to predict whether an ad/item will be clicked or not based on given features.
 -->
 
-* Tỉ lệ nhấp chuột là một phép đo quan trọng được sử dụng để đo độ hiệu quả của hệ thống quảng cáo và hệ thống gợi ý.
+* Tỉ lệ nhấp chuột là một phép đo quan trọng được sử dụng để đo độ hiệu quả của hệ thống quảng cáo và hệ thống đề xuất.
 * Dự đoán tỉ lệ nhấp chuột thường được chuyển đổi thành bài toán phân loại nhị phân. Mục tiêu của bài toán là dự đoán liệu một quảng cáo/sản phẩm có được nhấp vào hay không dựa vào các đặc trưng cho trước.
 
 
