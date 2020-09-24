@@ -23,14 +23,14 @@ The technical details and implementations are described below.
 
 Máy phân rã ma trận (*Factorization machines - FM*) :cite:`Rendle.2010`, được đề xuất bởi Steffen Rendle vào năm 2010,
 là một thuật toán học có giám sát, có thể sử dụng trong các tác vụ phân loại, hồi quy và xếp hạng.
-Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp nổi tiếng và có sức ảnh hưởng trong dự đoán và gợi ý.
+Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp phổ biến và có ảnh hưởng lớn trong tác vụ dự đoán và đề xuất.
 Cụ thể, đây là sự tổng quát hoá của hồi quy tuyến tính và phân rã ma trận,
 hơn nữa còn gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
 Điểm mạnh của máy phân rã ma trận so với hồi quy tuyến tính và phân ra mã trận là:
 (1) Nó có thể mô hình hoá tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
 (2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm độ phức tạp tính toán từ đa thức về còn tuyến tính,
 hiệu quả đặc biệt cao với đầu vào thưa nhiều chiều.
-Với các lý do trên, máy phân rã được áp dụng rộng rãi trong quảng cáo hiện đại và gợi ý sản phẩm.
+Với các lý do trên, máy phân rã được áp dụng rộng rãi trong ngành quảng cáo hiện đại và đề xuất sản phẩm.
 Chi tiết kỹ thuật cũng như cách lập trình được mô tả dưới đây.
 
 
@@ -48,7 +48,7 @@ The model for a factorization machine of degree two is defined as:
 -->
 
 Gọi $x \in \mathbb{R}^d$ là vector đặc trưng của một mẫu, và $y$ là nhãn tương ứng,
-nhãn này có thể mang giá trị thực hoặc là nhãn lớp như lớp nhị phân "nhấp/chưa nhấp".
+nhãn này có thể mang giá trị thực hoặc là nhãn lớp như lớp nhị phân "nhấp chuột/chưa nhấp chuột".
 Mô hình của máy phân rã ma trận bậc hai được định nghĩa như sau:
 
 
@@ -85,7 +85,7 @@ Do đó việc tự động mô hình hoá tương tác đặc trưng có thể 
 Ta có thể thấy rõ rằng hai số hạng đầu tiên tương ứng với mô hình hồi quy tuyến tính và số hạng cuối cùng là dạng mở rộng của mô hình phân rã ma trận.
 Nếu đặc trưng $i$ biểu diễn một sản phẩm và đặc trưng $j$ biểu diễn một người dùng, số hạng thứ ba chính là tích vô hướng giữa embedding người dùng và sản phẩm.
 Đáng chú ý là FM cũng có thể khái quát hoá với bậc cao hơn (bậc > 2).
-Tuy vậy, tính ổn định số có thể cản trở sự khái quát hóa.
+Tuy vậy, tính ổn định số học khi tính toán có thể cản trở khả năng khái quát hóa.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -162,7 +162,7 @@ We apply a sigmoid function over the final score since we treat the CTR predicti
 -->
 
 Đoạn mã sau đây lập trình mô hình máy phân rã ma trận.
-Ta có thể thấy rõ rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu quả tốt.
+Ta có thể thấy rõ rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu suất cao.
 Ta áp dụng hàm sigmoid lên kết quả cuối cùng do ta coi dự đoán CTR như một tác vụ phân loại.
 
 
