@@ -452,7 +452,7 @@ Every integration rule derives from this one fact.
 ## Change of Variables
 -->
 
-## *dịch tiêu đề trên*
+## Thay đổi của Biến số
 :label:`integral_example`
 
 
@@ -463,14 +463,16 @@ has a corresponding rule for integral calculus (integration by parts, linearity 
 In this section, we will dive into what is arguably the most important from the list: the change of variables formula.
 -->
 
-*dịch đoạn phía trên*
+Cũng như vi phân, có một số quy tắc khiến việc tính tích phân trở nên dễ xử lý hơn.
+Thật ra, mọi quy tắc trong giải tích vi phân (như quy tắc tích, quy tắc tổng, và quy tắc dây chuyền) đều có một quy luật tương ứng cho giải tích tích phân (lần lượt là tích phân từng phần, tích phân của tổng, và quy tắc đổi biến số).
+Trong mục này, ta sẽ tìm hiểu quy tắc được cho là quan trọng nhất trong danh sách trên: quy tắc đổi biến số.
 
 
 <!--
 First, suppose that we have a function which is itself an integral:
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, giả sử ta có một hàm tích phân:
 
 
 $$
@@ -483,7 +485,7 @@ Let us suppose that we want to know how this function looks when we compose it w
 By the chain rule, we know
 -->
 
-*dịch đoạn phía trên*
+Cho là ta muốn biết hàm này trong như thế nào khi ta kết hợp nó với một hàm nữa để có được $F(u(x))$.
 
 
 $$
@@ -495,7 +497,7 @@ $$
 We can turn this into a statement about integration by using the fundamental theorem :eqref:`eq_ftc` as above. This gives
 -->
 
-*dịch đoạn phía trên*
+Ta có thể biến nó thành một mệnh đề tích phân bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc` ở trên. Cho ra
 
 
 $$
@@ -507,7 +509,7 @@ $$
 Recalling that $F$ is itself an integral gives that the left hand side may be rewritten to be
 -->
 
-*dịch đoạn phía trên*
+Biết rằng $F$ chính nó là một tích phân giúp vế bên trái có thể được viết lại là
 
 
 $$
@@ -519,7 +521,7 @@ $$
 Similarly, recalling that $F$ is an integral allows us to recognize that $\frac{dF}{dx} = f$ using the fundamental theorem :eqref:`eq_ftc`, and thus we may conclude
 -->
 
-*dịch đoạn phía trên*
+Tương tự, biết rằng $F$ là một tích phân cho phép ta nhận ra rằng $\frac{dF}{dx} = f$ sử dụng định lý cơ bản :eqref:`eq_ftc`, và do đó ta có thể kết luận
 
 
 $$\int_{u(0)}^{u(x)} f(y) \; dy = \int_0^x f(u(y))\cdot \frac{du}{dy} \;dy.$$
@@ -530,7 +532,7 @@ $$\int_{u(0)}^{u(x)} f(y) \; dy = \int_0^x f(u(y))\cdot \frac{du}{dy} \;dy.$$
 This is the *change of variables* formula.
 -->
 
-*dịch đoạn phía trên*
+Đây là quy tắc *đổi biến số*.
 
 
 <!--
@@ -541,14 +543,18 @@ We know that $u(x+\epsilon) \approx u(x) + \epsilon \frac{du}{dx}(x)$, so the ar
 Thus, to make the area of these two rectangles to agree, we need to multiply the first one by $\frac{du}{dx}(x)$ as is illustrated in :numref:`fig_rect-transform`.  
 -->
 
-*dịch đoạn phía trên*
+Để có một chứng minh trực quan hơn, xét chuyện gì sẽ xảy ra khi ta lấy tích phân hàm $f(u(x))$ giữa $x$ và $x+\epsilon$.
+Với $\epsilon$ nhỏ, tích phân này xấp xỉ $\epsilon f(u(x))$, phần diện tích của hình chữ nhật tương ứng.
+Bây giờ, hãy so sánh với tích phân của $f(y)$ từ $u(x)$ tới $u(x+\epsilon)$.
+Ta biết rằng $u(x+\epsilon) \approx u(x) + \epsilon \frac{du}{dx}(x)$, vậy nên phần diện tích của hình chữ nhật này xấp xỉ $\epsilon \frac{du}{dx}(x)f(u(x))$.
+Do đó, để khiến phần diện tích của hai hình chữ nhật này thống nhất, ta phải nhân phần thứ nhất cho $\frac{du}{dx}(x)$ như minh họa trong :numref:`fig_rect-transform`. 
 
 
 <!--
 ![Visualizing the transformation of a single thin rectangle under the change of variables.](../img/RectTrans.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/RectTrans.svg)
+![Minh họa cho biến đổi của một hình chữ nhật mỏng dưới sự thay đổi biến số.](../img/RectTrans.svg)
 :label:`fig_rect-transform`
 
 
@@ -556,7 +562,7 @@ Thus, to make the area of these two rectangles to agree, we need to multiply the
 This tells us that
 -->
 
-*dịch đoạn phía trên*
+Điều này cho ta biết
 
 
 $$
@@ -568,7 +574,7 @@ $$
 This is the change of variables formula expressed for a single small rectangle.
 -->
 
-*dịch đoạn phía trên*
+Đây là quy tắc đổi biến số được biểu diễn cho một hình chữ nhật nhỏ.
 
 
 <!--
@@ -576,7 +582,8 @@ If $u(x)$ and $f(x)$ are properly chosen, this can allow for the computation of 
 For instance, if we even chose $f(y) = 1$ and $u(x) = e^{-x^{2}}$ (which means $\frac{du}{dx}(x) = -2xe^{-x^{2}}$), this can show for instance that
 -->
 
-*dịch đoạn phía trên*
+Nếu $u(x)$ và $f(x)$ được chọn một cách đúng đắn, nó sẽ cho phép việc tính toán của những tích phân cực kỳ phức tạp.
+Ví dụ, nếu ta chọn $f(y) = 1$ và $u(x) = e^{-x^{2}}$ (có nghĩa là $\frac{du}{dx}(x) = -2xe^{-x^{2}}$)), có thể ví dụ cho biết là
 
 
 $$
@@ -588,7 +595,7 @@ $$
 and thus by rearranging that
 -->
 
-*dịch đoạn phía trên*
+và bằng cách sắp xếp lại sẽ được
 
 
 $$
