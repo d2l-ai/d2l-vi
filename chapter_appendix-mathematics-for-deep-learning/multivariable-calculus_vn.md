@@ -482,7 +482,7 @@ We can start to see visual hints of this connection in :numref:`fig_chain-1` if 
 -->
 
 Các chuỗi phương trình như vậy là thông dụng khi ta làm việc với các mạng nơ-ron, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là chìa khóa.
-Ta có thể bắt đầu xem gợi ý trực quan của kết nối này trong :numref:`fig_chain-1` nếu ta nhìn vào mỗi liên hệ trực tiếp giữa những biến này với biến khác.
+:numref:`fig_chain-1` biểu diễn trực quan mỗi liên hệ trực tiếp giữa biến này với biến khác.
 
 
 <!--
