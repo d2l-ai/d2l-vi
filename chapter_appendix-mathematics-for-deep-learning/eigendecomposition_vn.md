@@ -15,9 +15,9 @@ however, as a beginner, it is easy to overlook their importance.
 Below, we introduce eigendecomposition and try to convey some sense of just why it is so important. 
 -->
 
-Trị riêng thương là một trong những khái niệm hữu ích nhất mà chúng ta sẽ gặp phải khi học đại số tuyến tính,
+Trị riêng là một trong những khái niệm hữu ích nhất trong đại số tuyến tính,
 tuy nhiên người mới học thường bỏ qua tầm quan trọng của chúng.
-Dưới đây, chúng tôi giới thiệu phân tích trị riêng và cố gắng truyền tải một vài lý do về việc tại sao chúng lại quan trọng.
+Dưới đây, chúng tôi giới thiệu phân tích trị riêng (*eigendecomposition*) và cố gắng truyền tải tầm quan trọng của chúng.
 
 
 <!--
@@ -41,7 +41,7 @@ This has an intuitive interpretation: stretch the vector to be twice as wide in 
 -->
 
 Nếu ta áp dụng $A$ cho bất kỳ vector $\mathbf{v} = [x, y]^\top$ nào, ta nhận được một vector $\mathbf{A}\mathbf{v} = [2x, -y]^\top$.
-Đây là một diễn giải mang tính trực giác: giãn vector rộng gấp đôi theo hướng $x$, rồi lật nó lại theo hướng $y$.
+Có thể diễn giải theo trực giác như sau: kéo vector dài gấp đôi theo hướng $x$, rồi đảo ngược theo hướng $y$.
 
 
 <!--
@@ -52,9 +52,9 @@ We call such vectors *eigenvectors* and the factor they are stretched by *eigenv
 -->
 
 Tuy nhiên, có *một vài* vector mà với chúng có một số thứ không thay đổi.
-Gọi $[1, 0]^\top$ nhận từ $[2, 0]^\top$ và $[0, 1]^\top$ nhận từ $[0, -1]^\top$.
-Những vector này ở cùng dòng, và chỉ có tùy chỉnh là ma trận giãn lần lượt theo tỷ lệ bởi nhân tố $2$ và $-1$.
-Ta gọi những vector ấy là *vector riêng* và các nhân tố làm chúng giãn ra gọi là *trị riêng*.
+Ví dụ như $[1, 0]^\top$ được biến đổi thành $[2, 0]^\top$ và $[0, 1]^\top$ được biến đổi thành $[0, -1]^\top$.
+Những vector này không thay đổi phương, chỉ bị kéo giãn theo tỷ lệ với hệ số $2$ và $-1$.
+Ta gọi những vector ấy là *vector riêng* và các hệ số làm chúng giãn ra gọi là *trị riêng*.
 
 
 <!--
@@ -73,7 +73,7 @@ $$
 We say that $\mathbf{v}$ is an eigenvector for $A$ and $\lambda$ is an eigenvalue.
 -->
 
-Ta nói rằng $\mathbf{v}$ là một vector riêng cho $A$ và $\lambda$ là một trị riêng.
+Ta nói rằng $\mathbf{v}$ là một vector riêng và $\lambda$ là một trị riêng của $A$.
 
 
 <!--
@@ -87,7 +87,7 @@ Ta nói rằng $\mathbf{v}$ là một vector riêng cho $A$ và $\lambda$ là m�
 Let us figure out how to find them. By subtracting off the $\lambda \mathbf{v}$ from both sides, and then factoring out the vector, we see the above is equivalent to:
 -->
 
-Ta hãy tìm hiểu cách tìm chúng. Bằng cách trừ đi $\lambda \mathbf{v}$ từ hai phía, rồi sau đó phân rã vector, ta thấy phần phía trên tương đương với:
+Ta hãy tìm hiểu cách tìm trị riêng. Bằng cách trừ đi $\lambda \mathbf{v}$ ở cả hai vế, rồi sau đó nhóm thừa số chung là vector, ta thấy phần phía trên tương đương với:
 
 
 $$(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = 0.$$
@@ -101,7 +101,7 @@ Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \math
 -->
 
 Để :eqref:`eq_eigvalue_der` xảy ra, ta thấy rằng $(\mathbf{A} - \lambda \mathbf{I})$ phải nén một số chiều xuống không, vì thế nó không thể nghịch đảo, nên định thức vì thế bằng không.
-Vì thế, ta có thể tìm các *trị riêng* bằng cách tìm $\lambda$ is $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
+Vì thế, ta có thể tìm các *trị riêng* bằng cách giải phương trình $\lambda$ is $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
 Một khi ta tìm được các trị riêng, ta có thể giải bài toán $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
