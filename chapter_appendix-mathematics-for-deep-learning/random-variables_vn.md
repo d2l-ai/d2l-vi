@@ -885,7 +885,7 @@ plot_chebyshev(0.0, tf.constant(0.05))
 ### Means and Variances in the Continuum
 -->
 
-### *dịch tiêu đề trên*
+### Kỳ vọng và Phương sai trên Miền liên tục
 
 
 <!--
@@ -894,7 +894,9 @@ To intuitively understand how this works, imagine that we split the real number 
 Once we do this, our continuous random variable has been made discrete and we can use :eqref:`eq_exp_def` say that
 -->
 
-*dịch đoạn phía trên*
+Toàn bộ phần trên đều chỉ xét đến biến ngẫu nhiên rời rạc, tuy nhiên trường hợp biến ngẫu nhiên liên tục cũng tương tự.
+Để hiểu cách hoạt động của phần này một cách trực quan, hãy tưởng tượng ta chia trục số nguyên thành nhiều khoảng với độ dài $\epsilon$ trong khoảng $[\epsilon i, \epsilon (i+1)]$.
+Sau khi thực hiện điều này, biến ngẫu nhiên liên tục trên trở thành dạng rời rạc và ta có thể áp dụng :eqref:`eq_exp_def` dưới dạng
 
 
 $$
@@ -909,7 +911,7 @@ $$
 where $p_X$ is the density of $X$. This is an approximation to the integral of $xp_X(x)$, so we can conclude that
 -->
 
-*dịch đoạn phía trên*
+trong đó $p_X$ là mật độ của  $X$. Đây là xấp xỉ tích phân của  $xp_X(x)$, do đó ta có thể kết luận rằng
 
 
 $$
@@ -921,7 +923,7 @@ $$
 Similarly, using :eqref:`eq_var_def` the variance can be written as
 -->
 
-*dịch đoạn phía trên*
+Tương tự, áp dụng :eqref:`eq_var_def`, phương sai có thể biểu diễn như sau
 
 
 $$
@@ -934,7 +936,8 @@ Everything stated above about the mean, the variance, and the standard deviation
 For instance, if we consider the random variable with density
 -->
 
-*dịch đoạn phía trên*
+Tất cả những phát biểu trên về kỳ vọng, phương sai và độ lệch chuẩn đều có thể áp dụng trong trường hợp này.
+Ví dụ, nếu ta xét biến ngẫu nhiên với mật độ
 
 
 $$
@@ -949,7 +952,7 @@ $$
 we can compute
 -->
 
-*dịch đoạn phía trên*
+ta có thể tính
 
 
 $$
@@ -967,7 +970,7 @@ $$
 As a warning, let us examine one more example, known as the *Cauchy distribution*. This is the distribution with p.d.f. given by
 -->
 
-*dịch đoạn phía trên*
+Hãy cũng quan sát một ví dụ nữa như một cảnh báo, được gọi là *phân phối Cauchy (Cauchy distribution)*. Đây là phân phối với p.d.f có dạng
 
 
 $$
@@ -1005,14 +1008,14 @@ d2l.plot(x, p, 'x', 'p.d.f.')
 This function looks innocent, and indeed consulting a table of integrals will show it has area one under it, and thus it defines a continuous random variable.
 -->
 
-*dịch đoạn phía trên*
+Hàm này nhìn có vẻ vô hại, và quả thực qua tra cứu bảng tích phân chỉ ra rằng diện tích vùng dưới nó bằng 1, và do đó nó định nghĩa một biến ngẫu nhiên liên tục.
 
 
 <!--
 To see what goes astray, let us try to compute the variance of this.  This would involve using :eqref:`eq_var_def` computing
 -->
 
-*dịch đoạn phía trên*
+Để xem có vấn đề gì ở đây, hãy thử tính phương sai của hàm này. Việc này yêu cầu sử dụng :eqref:`eq_var_def` để tính
 
 
 $$
@@ -1024,7 +1027,7 @@ $$
 The function on the inside looks like this:
 -->
 
-*dịch đoạn phía trên*
+Hàm bên trong tích phân có dạng:
 
 
 ```{.python .input}
@@ -1058,7 +1061,7 @@ d2l.plot(x, p, 'x', 'integrand')
 This function clearly has infinite area under it since it is essentially the constant one with a small dip near zero, and indeed we could show that
 -->
 
-*dịch đoạn phía trên*
+Hàm này rõ ràng có phần diện tích vô hạn dưới nó do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực ta có thể chỉ ra rằng
 
 
 $$
@@ -1070,14 +1073,14 @@ $$
 This means it does not have a well-defined finite variance.
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là nó không có một phương sai hữu hạn đúng nghĩa.
 
 
 <!--
 However, looking deeper shows an even more disturbing result.  Let us try to compute the mean using :eqref:`eq_exp_def`.  Using the change of variables formula, we see
 -->
 
-*dịch đoạn phía trên*
+Tuy vậy, nếu quan sát kĩ hơn ta có thể thấy một kết quả khó hiểu hơn nhiều. Hãy thử tính kỳ vọng sử dụng :eqref:`eq_exp_def`. Thay vào các biến trong công thức, ta được
 
 
 $$
@@ -1089,7 +1092,7 @@ $$
 The integral inside is the definition of the logarithm, so this is in essence $\log(\infty) = \infty$, so there is no well-defined average value either!
 -->
 
-*dịch đoạn phía trên*
+Tích phân bên trong là định nghĩa của hàm logarit, do đó tích phân này thực chất là $\log(\infty) = \infty$, nên cũng không tồn tại giá trị trung bình đúng nghĩa!
 
 
 <!--
@@ -1099,14 +1102,17 @@ However, every so often random variables with *heavy tails* (that is those rando
 getting large values are large enough to make things like the mean or variance undefined) are helpful in modeling physical systems, thus it is worth knowing that they exist.
 -->
 
-*dịch đoạn phía trên*
+Các nhà khoa học học máy định nghĩa mô hình của họ sao cho ta thường không cần phải đối mặt với những vấn đề này,
+và trong đại đa số các trường hợp sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai đúng nghĩa.
+Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* (nghĩa là những biến ngẫu nhiên mà xác suất
+thu được các giá trị lớn đủ lớn để khiến các giá trị như kỳ vọng hay phương sai không xác định) có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
 
 
 <!--
 ### Joint Density Functions
 -->
 
-### *dịch tiêu đề trên*
+### Hàm Mật độ Đồng thời
 
 
 <!--
@@ -1120,7 +1126,14 @@ We cannot treat them as separate random variables, and expect to create a succes
 We need to develop the mathematical language to handle these correlated continuous random variables.
 -->
 
-*dịch đoạn phía trên*
+Toàn bộ công việc phía trên đều giả sử rằng ta đang làm việc với một biến ngẫu nhiên đơn lẻ mang giá trị thực.
+Nhưng nếu ta phải đối mặt với hai hay nhiều hơn những biến ngẫu nhiên có khả năng tương quan cao?
+Tình huống này rất thường gặp trong học máy: thử tưởng tượng các biến ngẫu nhiên như $R_{i, j}$
+mã hoá giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay $P_t$ là một biến ngẫu nhiên được xác định bởi giá chứng khoán tại thời điểm $t$.
+Những điểm ảnh lân cận thường có màu tương tự, và khoảng thời gian lân cận thường có giá tương tự.
+Ta không thể coi chúng như những biến ngẫu nhiên riêng biệt mà mong rằng có thể tạo một mô hình thành công
+(ta sẽ thấy trong :numref:`sec_naive_bayes` một mô hình hoạt động kém do một giả sử như vậy).
+Ta cần phát triển ngôn ngữ toán học để giải quyết những biến ngẫu nhiên liên tục tương quan với nhau này.
 
 
 <!--
@@ -1129,23 +1142,32 @@ Suppose that we have, for simplicity, two random variables $X, Y$ which can be c
 Then, similar to the case of a single variable, we can ask the question:
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, với tích phân bội trong :numref:`sec_integral_calculus` ta có thể phát triển một ngôn ngữ như vậy.
+Giả sử rằng ta có, để đơn giản, hai biến ngẫu nhiên $X, Y$ có thể tương quan với nhau.
+Sau đó, tương tự như trường hợp biến đơn, ta có thể đặt câu hỏi:
 
 
-$$
+<!-- $$
 P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and} \;Y \;\text{is in an}\; \epsilon \text{-sized interval around}\; y ).
-$$
+$$ -->
 
+$$
+P(X \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; y ).
+$$
 
 <!--
 Similar reasoning to the single variable case shows that this should be approximately
 -->
 
-*dịch đoạn phía trên*
+Suy luận tương tự như trường hợp biến đơn chỉ ra rằng mệnh đề trên có thể xấp xỉ với
 
+
+<!-- $$
+P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and} \;Y \;\text{is in an}\; \epsilon \text{-sized interval around}\; y ) \approx \epsilon^{2}p(x, y),
+$$ -->
 
 $$
-P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and} \;Y \;\text{is in an}\; \epsilon \text{-sized interval around}\; y ) \approx \epsilon^{2}p(x, y),
+P(X \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; y ) \approx \epsilon^{2}p(x, y),
 $$
 
 
@@ -1154,7 +1176,8 @@ for some function $p(x, y)$.  This is referred to as the joint density of $X$ an
 Similar properties are true for this as we saw in the single variable case. Namely:
 -->
 
-*dịch đoạn phía trên*
+với một số hàm $p(x, y)$. Điều này được gọi là mật độ đồng thời của $X$ và $Y$.
+Những thuộc tính tương tự là đúng với trường hợp này như ta đã thấy trong trường hợp biến đơn. Tức là:
 
 
 * $p(x, y) \ge 0$;
@@ -1168,7 +1191,9 @@ If we wish to work with more than two random variables, we can extend the multiv
 The same properties of being non-negative, and having total integral of one still hold.
 -->
 
-*dịch đoạn phía trên*
+Bằng cách này, ta có thể xử lý nhiều biến ngẫu nhiên có khả năng tương quan với nhau.
+Nếu ta cần phải làm việc với nhiều hơn hai biến ngẫu nhiên, ta có thể mở rộng mật độ nhiều chiều với bất kể số toạ độ nào ta cần bằng cách xét $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
+Những thuộc tính như không âm, có tổng tích phân bằng một vẫn đúng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1773,7 +1798,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
