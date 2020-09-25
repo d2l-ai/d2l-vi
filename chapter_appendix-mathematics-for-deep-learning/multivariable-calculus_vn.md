@@ -489,7 +489,7 @@ Ta có thể bắt đầu xem gợi ý trực quan của kết nối này trong 
 ![The function relations above where nodes represent values and edges show functional dependence.](../img/ChainNet1.svg)
 -->
 
-![Các quan hệ của hàm ở trên biểu diễn dưới dạng giá trị và cạnh của các nốt cho thấy sự tùy thuộc trong hàm.](../img/ChainNet1.svg)
+![Các quan hệ của hàm ở trên, các nút biểu diễn giá trị, và cạnh cho biết sự phụ thuộc hàm.](../img/ChainNet1.svg)
 :label:`fig_chain-1`
 
 
