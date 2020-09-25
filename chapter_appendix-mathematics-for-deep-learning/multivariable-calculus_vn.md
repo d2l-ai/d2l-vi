@@ -497,7 +497,7 @@ Ta có thể bắt đầu xem gợi ý trực quan của kết nối này trong 
 Nothing stops us from just composing everything from :eqref:`eq_multi_func_def` and writing out that
 -->
 
-Không có điều gì có thể cản ta khỏi việc tạo ra mọi thứ từ :eqref:`eq_multi_func_def` và viết ra như là
+Ta có thể kết hợp các phương trình trong :eqref:`eq_multi_func_def` để có
 
 
 $$
