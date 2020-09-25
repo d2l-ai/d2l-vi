@@ -19,7 +19,7 @@ but it is usually not adopted due to numerical instability and high computationa
 Việc học những tổ hợp đặc trưng hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỉ lệ nhấp chuột.
 Máy phân rã ma trận mô hình hoá tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
 Điều này thường không đủ đối với dữ liệu thực tế khi bản thân cấu trúc giao giữa các đặc trưng thường rất phức tạp và có dạng phi tuyến.
-Tệ hơn nữa, trong thực tế máy phân rã ma trận thường sử dụng tương tác đặc trưng bậc hai.
+Tệ hơn nữa, trong thực tế máy phân rã ma trận thường sử dụng các tương tác đặc trưng bậc hai.
 Mô hình hoá tổ hợp tương tác có bậc cao hơn là khả thi về lý thuyết
 nhưng thường không được sử dụng do tính bất ổn số học và độ phức tạp tính toán cao.
 
@@ -272,8 +272,8 @@ So với FM, DeepFM hội tụ nhanh hơn và đạt được hiệu năng tốt
 * Change the dataset to Criteo and compare it with the original FM model.
 -->
 
-* Thay đổi cấu trúc của MLP để kiểm tra ảnh hưởng của nó lên hiệu năng của mô hình.
-* Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM nguyên bản.
+* Thay đổi cấu trúc của MLP để kiểm tra ảnh hưởng của nó lên hiệu năng mô hình.
+* Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM gốc.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
