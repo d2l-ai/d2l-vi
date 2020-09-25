@@ -594,7 +594,7 @@ và $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respecti
 Imagine we have a different network of functions where the functions on the right depend on those that are connected to on the left as is shown in :numref:`fig_chain-2`.
 -->
 
-Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở bên phải tùy thuộc vào các hàm kết nối ở bên trai như thể hiện trong :numref:`fig_chain-2`.
+Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở bên phải tùy thuộc vào các hàm kết nối ở bên trái như trong :numref:`fig_chain-2`.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
