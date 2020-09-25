@@ -261,7 +261,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 -->
 
 * Thử FM trên một tập dữ liệu khác như Avazu, MovieLens, and Criteo.
-* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, liệu ảnh hưởng có tương tự như phân rã ma trận không?
+* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, so sánh với khi thay đổi kích thước embedding của phân rã ma trận.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
