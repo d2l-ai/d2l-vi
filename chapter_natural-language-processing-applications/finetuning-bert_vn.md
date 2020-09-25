@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Fine-Tuning BERT for Sequence-Level and Token-Level Applications
 -->
