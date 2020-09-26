@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Natural Language Inference and the Dataset
 -->
@@ -19,15 +16,16 @@ Instead, we need to be able to reason over pairs of text sequences.
 
 Trong :numref:`sec_sentiment`, chúng ta đã thảo luận về bài toán phân tích sắc thái cảm xúc (*sentiment analysis*).
 Mục đích của bài toán là phân loại một chuỗi văn bản vào các hạng mục đã định trước, chẳng hạn như các sắc thái đối lập.
-Tuy nhiên, trong trường hợp cần xác định liệu một câu có thể suy ra được từ một câu khác không, hoặc khi cần loại bỏ sự dư thừa bằng việc xác định các câu tương đương về ngữ nghĩa, việc phân lớp một chuỗi văn bản là không đủ. 
-Thay vào đó chúng ta cần khả năng suy luận trên các cặp chuỗi văn bản.
+Tuy nhiên, trong trường hợp cần xác định liệu một câu có thể suy ra được từ một câu khác không, 
+hoặc khi cần loại bỏ sự dư thừa bằng việc xác định các câu tương đương về ngữ nghĩa thì việc phân lớp một chuỗi văn bản là không đủ. 
+Thay vào đó ta cần khả năng suy luận trên các cặp chuỗi văn bản.
 
 
 <!--
 ## Natural Language Inference
 -->
 
-## Suy luận ngôn ngữ tự nhiên
+## Suy luận Ngôn ngữ Tự nhiên
 
 <!--
 *Natural language inference* studies whether a *hypothesis* can be inferred from a *premise*, where both are a text sequence.
@@ -125,9 +123,6 @@ Suy luận ngôn ngữ tự nhiên là một chủ đề trung tâm trong việc
 Nó có nhiều ứng dụng khác nhau, từ truy xuất thông tin đến hỏi đáp trong miền mở.
 Để nghiên cứu bài toán này, chúng ta sẽ bắt đầu bằng việc tìm hiểu một tập dữ liệu đánh giá xếp hạng phổ biến trong suy luận ngôn ngữ tự nhiên.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## The Stanford Natural Language Inference (SNLI) Dataset
@@ -168,7 +163,7 @@ data_dir = d2l.download_extract('SNLI')
 ### Reading the Dataset
 -->
 
-### Đọc tập dữ liệu
+### Đọc tập Dữ liệu
 
 
 <!--
@@ -240,7 +235,7 @@ for data in [train_data, test_data]:
 ### Defining a Class for Loading the Dataset
 -->
 
-### Định nghĩa Lớp để Nạp Tập dữ liệu
+### Định nghĩa Lớp để nạp Tập dữ liệu
 
 
 <!--
@@ -253,7 +248,8 @@ By implementing the `__getitem__` function, we can arbitrarily access the premis
 
 Dưới đây ta định nghĩa một lớp để nạp tập dữ liệu SNLI bằng cách kế thừa lớp `Dataset` trong Gluon.
 Đối số `num_steps` trong phương thức khởi tạo chỉ định độ dài chuỗi văn bản, do đó mỗi minibatch sẽ có cùng kích thước.
-Nói cách khác, các token phía sau `num_steps` token đầu tiên ở trong chuỗi dài hơn sẽ được loại bỏ, trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
+Nói cách khác, các token phía sau `num_steps` token đầu tiên ở trong chuỗi dài hơn sẽ được loại bỏ, 
+trong khi token đặc biệt “&lt;pad&gt;” sẽ được nối thêm vào các chuỗi ngắn hơn đến khi độ dài của chúng bằng `num_steps`.
 Bằng cách lập trình hàm `__getitem__`, ta có thể truy cập vào các tiền đề, giả thuyết và nhãn bất kỳ với chỉ số `idx`.
 
 
@@ -287,9 +283,6 @@ class SNLIDataset(gluon.data.Dataset):
         return len(self.premises)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Putting All Things Together
@@ -305,7 +298,8 @@ It is noteworthy that we must use the vocabulary constructed from the training s
 As a result, any new token from the testing set will be unknown to the model trained on the training set.
 -->
 
-Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, cùng với bộ từ vựng của tập huấn luyện.
+Bây giờ ta có thể gọi hàm `read_snli` và lớp `SNLIDataset` để tải xuống tập dữ liệu SNLI và trả về thực thể `DataLoader` cho cả hai tập huấn luyện và tập kiểm tra, 
+cùng với bộ từ vựng của tập huấn luyện.
 Lưu ý rằng ta phải sử dụng bộ từ vựng được xây dựng từ tập huấn luyện cho tập kiểm tra.
 Như vậy, mô hình được huấn luyện trên tập huấn luyện sẽ không biết bất kỳ token mới nào từ tập kiểm tra nếu có.
 
@@ -389,21 +383,13 @@ Can you design a measure for evaluating machine translation results by using nat
 Bạn có thể thiết kế một phép đo để đánh giá kết quả dịch máy bằng cách sử dụng suy luận ngôn ngữ tự nhiên không?
 2. Thay đổi siêu tham số như thế nào để giảm kích thước bộ từ vựng?
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/394)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/394)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Thái Bình
@@ -411,3 +397,5 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trần Yến Thy
 * Phạm Minh Đức
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

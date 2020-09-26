@@ -97,3 +97,5 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 03/04/2020)*
