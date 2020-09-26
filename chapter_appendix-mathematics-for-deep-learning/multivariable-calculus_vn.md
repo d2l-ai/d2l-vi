@@ -987,7 +987,7 @@ If we look at the value of the function, its gradient, and its Hessian :eqref:`e
 -->
 
 Hãy tham khảo một ví dụ. Giả sử rằng $f(x_1, x_2) = a + b_1x_1 + b_2x_2 + c_{11}x_1^{2} + c_{12}x_1x_2 + c_{22}x_2^{2}$.
-Thây là một dạng chung của hàm bậc hai 2 biến.
+Đây là một dạng tổng quát của hàm bậc hai 2 biến.
 Nếu chúng ta nhìn vào giá trị của hàm, gradient và Hessian của nó :eqref:`eq_hess_def`, tất cả tại điểm 0:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
