@@ -812,7 +812,7 @@ It is an astonishing fact that we have such a decomposition.
 -->
 
 Đây chính xác là những gì mỗi thuật toán học sâu thực thi để tính gradient của giá trị mất mát theo từng trọng số của mạng trong mỗi lượt lan truyền.
-Thật thú vị vì chúng ta có một phân tách như trên.
+Thật thú vị vì chúng ta có một sự phân tách như trên.
 
 
 <!--
