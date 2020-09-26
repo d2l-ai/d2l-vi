@@ -742,7 +742,7 @@ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}
 Nothing stops us from also including the equations:
 -->
 
-Lưu ý rằng cách áp dụng quy tắc dây chuyền này buộc chúng ta phải tính $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}{\partial a}, \frac{\partial f}{\partial b}, \; \text{and} \; \frac{\partial f}{\partial w}$.
+Lưu ý rằng cách áp dụng quy tắc dây chuyền này buộc chúng ta phải tính rõ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}{\partial a}, \frac{\partial f}{\partial b}, \; \text{và} \; \frac{\partial f}{\partial w}$.
 Chúng ta cũng có thể thêm vào các phương trình:
 
 
