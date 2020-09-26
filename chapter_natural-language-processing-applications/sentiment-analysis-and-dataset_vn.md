@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Sentiment Analysis and the Dataset
 -->
@@ -15,9 +12,9 @@ It is similar to the image classification, the most frequently used application 
 The only difference is that, rather than an image, text classification's example is a text sentence.
 -->
 
-Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài không cố định tới một hạng mục tương ứng. 
+Phân loại văn bản là một tác vụ phổ biến trong xử lý ngôn ngữ tự nhiên, ánh xạ chuỗi văn bản có độ dài không cố định tới một hạng mục tương ứng.
 Tác vụ này khá giống với phân loại ảnh, vốn là ứng dụng phổ biến nhất được giới thiệu trong cuốn sách này, ví dụ, :numref:`sec_naive_bayes`.
-Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh. 
+Điểm khác biệt duy nhất đó là, mẫu đầu vào của tác vụ phân loại là một câu văn bản thay vì một bức ảnh.
 
 
 <!--
@@ -31,7 +28,8 @@ or analyze user sentiments about market conditions and use it to predict future 
 Phần này sẽ tập trung vào việc nạp dữ liệu cho một trong số những câu hỏi của bài toán này:
 sử dụng tác vụ phân loại cảm xúc văn bản để phân tích cảm xúc của người viết.
 Bài toán này cũng có thể gọi là phân tích cảm xúc (sắc thái) và có rất nhiều ứng dụng.
-Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng, hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
+Ví dụ, ta có thể phân tích đánh giá của khách hàng về sản phẩm để thu được thống kê độ hài lòng, 
+hoặc phân tích cảm xúc của khách hàng về điều kiện thị trường và sử dụng kết quả này để dự đoán xu hướng tương lai.
 
 
 ```{.python .input  n=1}
@@ -55,9 +53,9 @@ This dataset is divided into two datasets for training and testing purposes, eac
 In each dataset, the number of comments labeled as "positive" and "negative" is equal.
 -->
 
-Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (_Large Movie Review Dataset_) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc. 
-Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb. 
-Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau. 
+Ta sử dụng [tập dữ liệu lớn về đánh giá phim ảnh](https://ai.stanford.edu/~amaas/data/sentiment/) (*Large Movie Review Dataset*) của Stanford làm dữ liệu cho tác vụ phân tích cảm xúc.
+Tập dữ liệu này được chia thành hai tập huấn luyện và kiểm tra, mỗi tập chứa 25,000 đánh giá phim tải về từ IMDb.
+Trong mỗi tập dữ liệu, số lượng đánh giá có nhãn "tích cực" (*positive*) và "tiêu cực" (*negative*) là bằng nhau.
 
 <!--
 ###  Reading the Dataset
@@ -112,22 +110,19 @@ for x, y in zip(train_data[0][:3], train_data[1][:3]):
     print('label:', y, 'review:', x[0:60])
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Tokenization and Vocabulary
 -->
 
-### Token hoá và Bộ từ Vựng
+### Token hoá và Bộ từ vựng
 
 
 <!--
 We use a word as a token, and then create a dictionary based on the training dataset.
 -->
 
-Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện. 
+Ta coi mỗi từ là một token, và tạo một từ điển dựa trên tập dữ liệu huấn luyện.
 
 
 ```{.python .input  n=4}
@@ -200,7 +195,7 @@ for X, y in train_iter:
 Last, we will save a function `load_data_imdb` into `d2l`, which returns the vocabulary and data iterators.
 -->
 
-Cuối cùng, ta lưu hàm `load_data_imdb` vào `d2l`, hàm này trả về bộ từ vựng và các iterator của dữ liệu.  
+Cuối cùng, ta lưu hàm `load_data_imdb` vào `d2l`, hàm này trả về bộ từ vựng và các iterator của dữ liệu.
 
 
 ```{.python .input  n=7}
@@ -231,8 +226,8 @@ Then we pad the text sequence for short reviews and create a data iterator.
 -->
 
 * Tác vụ phân loại văn bản có thể phân loại chuỗi văn bản theo hạng mục.
-* Để phân loại cảm xúc văn bản, ta nạp bộ dữ liệu IMDb và token hóa các từ trong đó. 
-Sau đó, ta đệm thêm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu. 
+* Để phân loại cảm xúc văn bản, ta nạp bộ dữ liệu IMDb và token hóa các từ trong đó.
+Sau đó, ta đệm thêm vào chuỗi văn bản của các câu đánh giá ngắn và tạo một iterator dữ liệu.
 
 
 ## Bài tập
@@ -246,28 +241,19 @@ Hãy khám phá một tập dữ liệu ngôn ngữ tự nhiên khác (ví dụ 
 và xây dựng một hàm `data_loader` tương tự như `load_data_imdb`.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/391)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/391)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Nguyễn Văn Quang
-
-<!-- Phần 2 -->
 * Nguyễn Văn Quang
 * Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
