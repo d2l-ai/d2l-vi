@@ -759,7 +759,7 @@ $$
 and then keeping track of how $f$ changes when we change *any* node in the entire network.  Let us implement it.
 -->
 
-và tiếp đó theo dõi $f$ biến đổi như thế nào khi chúng ta thay đổi *bất kỳ* nút nào trong toàn bộ mạng. Chúng ta hãy triển khai nó.
+và tiếp đó theo dõi $f$ biến đổi như thế nào khi chúng ta thay đổi *bất kỳ* nút nào trong toàn bộ mạng. Chúng ta hãy lập trình nó.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
