@@ -1160,7 +1160,7 @@ particularly given how central matrix operations are to deep learning applicatio
 -->
 
 Đạo hàm của các hàm có liên quan đến ma trận hoá ra rất đẹp.
-Phần này các thể trở nên nặng nề về mặt lý thuyết, vì vậy có thể bị bỏ qua trong lần đọc đầu tiên, nhưng rất hữu ích để biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thông thường thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là với cách thức hoạt động của ma trận trung tâm đối với các ứng dụng học sâu.
+Phần này các thể trở nên nặng nề về mặt lý thuyết, vì vậy có thể bị bỏ qua trong lần đọc đầu tiên, nhưng rất hữu ích để biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thông thường thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là với sự quan trọng của các phép toán ma trận đối với các ứng dụng học sâu.
 
 
 <!--
