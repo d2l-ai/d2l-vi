@@ -1149,7 +1149,7 @@ trong đó chúng ta thực lặp đi lặp lại việc tối ưu hoá số đ�
 ## A Little Matrix Calculus
 -->
 
-## Giải tích ma trận
+## Giải tích Ma trận
 
 
 <!--
