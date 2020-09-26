@@ -340,7 +340,7 @@ Use the gradient to find the direction that decreases the loss as rapidly as pos
 ## A Note on Mathematical Optimization
 -->
 
-## *dịch tiêu đề trên*
+## Một vài chú ý về Tối ưu hóa
 
 
 <!--
@@ -348,14 +348,14 @@ Throughout this book, we focus squarely on numerical optimization techniques for
 we encounter in the deep learning setting are too complex to minimize explicitly.
 -->
 
-*dịch đoạn phía trên*
+Xuyên suốt cuốn sách, ta chỉ tập trung vào những kỹ thuật tối ưu hóa số học vì một nguyên nhân thực tế là mọi hàm ta gặp phải trong học sâu quá phức tạp để có thể tối ưu hóa một cách tường minh.
 
 
 <!--
 However, it is a useful exercise to consider what the geometric understanding we obtained above tells us about optimizing functions directly.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, rất hữu ích nếu hiểu được những kiến thức hình học ta có được ở trên nói gì về tối ưu hóa các hàm một cách trực tiếp.
 
 
 <!--
@@ -364,14 +364,16 @@ Let us suppose that moreover someone gives us a value and tells us that it is th
 Is there anything we can check to see if their answer is even plausible?
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn tìm giá trị của $\mathbf{x}_0$ giúp cực tiểu hóa một hàm $L(\mathbf{x})$ nào đó.
+Và có một người nào đó đưa ta một giá trị và cho rằng đây là giá trị giúp cực tiểu hóa $L$.
+Bằng cách nào ta có thể kiểm chứng rằng đáp án của họ là hợp lý?
 
 
 <!--
 Again consider :eqref:`eq_nabla_use`:
 -->
 
-*dịch đoạn phía trên*
+Xét lại :eqref:`eq_nabla_use`:
 
 
 $$
@@ -386,21 +388,24 @@ We can conclude that if $\mathbf{x}_0$ is a minimum, then $\nabla_{\mathbf{x}} L
 We call points with $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$ *critical points*.
 -->
 
-*dịch đoạn phía trên*
+Nếu giá trị gradient khác không, ta biết rằng ta có thể bước một bước về hướng $-\epsilon \nabla_{\mathbf{x}} L(\mathbf{x}_0)$ để tìm một giá trị $L$ nhỏ hơn.
+Do đó, nếu ta thực sự ở điểm cực tiểu, sẽ không thể có trường hợp đó!
+Ta có thể kết luận rằng nếu $\mathbf{x}_0$ là một cực tiểu, thì $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$.
+Ta gọi những điểm mà tại đó $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$ là *các điểm tới hạn* (*critical points*).
 
 
 <!--
 This is nice, because in some rare settings, we *can* explicitly find all the points where the gradient is zero, and find the one with the smallest value.  
 -->
 
-*dịch đoạn phía trên*
+Điều này là tốt, bởi vì trong một vài thiết lập hiếm gặp, ta *có thể* tìm các điểm có gradient bằng không một cách tường minh, và tìm điểm có giá trị nhỏ nhất.
 
 
 <!--
 For a concrete example, consider the function
 -->
 
-*dịch đoạn phía trên*
+Với một ví dụ cụ thể, xét hàm
 
 
 $$
@@ -412,7 +417,7 @@ $$
 This function has derivative
 -->
 
-*dịch đoạn phía trên*
+Hàm này có đạo hàm
 
 
 $$
@@ -425,7 +430,8 @@ The only possible location of minima are at $x = -1, 0, 2$, where the function t
 and thus we can conclude that we minimize our function when $x = 2$. A quick plot confirms this.
 -->
 
-*dịch đoạn phía trên*
+Các điểm cực trị duy nhất khả dĩ là tại $x = -1, 0, 2$, khi hàm lấy giá trị lần lượt là $-5,0, -32$,
+và do đó ta có thể kết luận rằng ta cực tiểu hóa hàm khi $x = 2$. Ta có thể kiểm chứng nhanh bằng đồ thị.
 
 
 ```{.python .input}
@@ -458,7 +464,9 @@ the only possible points where we can minimize (or maximize) a function will hav
 however, not every point with gradient zero is the true *global* minimum (or maximum).
 -->
 
-*dịch đoạn phía trên*
+Điều này nhấn mạnh một thực tế quan trọng cần biết kể cả khi làm việc dưới dạng lý thuyết hay số học:
+các điểm khả dĩ duy nhất mà tại đó hàm là cực tiểu (hoặc cực đại) sẽ có đạo hàm tại đó bằng không,
+tuy nhiên, không phải tất cả các điểm có đạo hàm bằng không sẽ là cực tiểu (hay cực đại) *toàn cục*.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -1713,7 +1721,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
