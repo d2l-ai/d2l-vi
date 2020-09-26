@@ -920,7 +920,7 @@ As with single variable calculus, it is useful to consider higher-order derivati
 get a handle on how we can obtain a better approximation to a function than using the gradient alone.
 -->
 
-Như với giải tích đơn biến, việc xem xét đạo hàm bậc cao hơn cũng hữu ích để nắm được cách chúng ta có thể có được giá trị xấp xỉ tốt hơn cho một hàm so với việc chỉ sử dụng gradient.
+Như với giải tích đơn biến, việc xem xét đạo hàm bậc cao hơn cũng hữu ích để xấp xỉ tốt hơn một hàm so với việc chỉ sử dụng gradient.
 
 
 <!--
