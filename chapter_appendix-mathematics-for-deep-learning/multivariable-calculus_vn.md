@@ -597,7 +597,7 @@ Imagine we have a different network of functions where the functions on the righ
 To compute something like $\frac{\partial f}{\partial y}$, we need to sum over all (in this case $3$) paths from $y$ to $f$ giving
 -->
 
-Để tính toán $\frac{\partial f}{\partial y}$, chúng ta cần tính tổng toàn bộ đường đi từ $y$ đến $f$:
+Để tính toán $\frac{\partial f}{\partial y}$, chúng ta cần tính tổng toàn bộ đường đi từ $y$ đến $f$ (trường hợp này có 3 đường đi):
 
 
 $$
