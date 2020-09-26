@@ -717,7 +717,7 @@ Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn gi�
 Với cách này, chúng ta áp dụng quy tắc dây chuyền để xem $w$ thay đổi các biến khác như thế nào.
 Nếu đó là những gì chúng ta muốn thì cách này quả là một ý tưởng hay.
 Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào.
-Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào chúng ta còn có thể!
+Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào chúng ta có thể!
 
 
 <!--
