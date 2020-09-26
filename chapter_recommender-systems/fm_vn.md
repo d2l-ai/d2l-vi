@@ -22,16 +22,16 @@ The technical details and implementations are described below.
 -->
 
 Máy phân rã ma trận (*Factorization machines - FM*) :cite:`Rendle.2010`, được đề xuất bởi Steffen Rendle vào năm 2010,
-là một thuật toán học có giám sát, có thể được sử dụng trong các tác vụ phân loại, hồi quy hay xếp hạng.
-Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp nổi tiếng và có sức ảnh hưởng trong việc đưa ra dự đoán và gợi ý.
-Cụ thể, nó là phiên bản khái quát hoá của mô hình hồi quy tuyến tính và mô hình phân rã ma trận.
-Hơn nữa, nó còn làm gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
+là một thuật toán học có giám sát, có thể sử dụng trong các tác vụ phân loại, hồi quy và xếp hạng.
+Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp phổ biến và có ảnh hưởng lớn trong tác vụ dự đoán và đề xuất.
+Cụ thể, đây là sự tổng quát hoá của hồi quy tuyến tính và phân rã ma trận,
+hơn nữa còn gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
 Điểm mạnh của máy phân rã ma trận so với hồi quy tuyến tính và phân ra mã trận là:
 (1) Nó có thể mô hình hoá tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
-(2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm thời gian tính toán đa thức về độ phức tạp tuyến tính,
-giúp nó đạt hiệu quả cực tốt đặc biệt với đầu vào thưa nhiều chiều.
-Với các lý do trên, máy phân rã được áp dụng rộng rãi trong quảng cáo hiện đại và gợi ý sản phẩm.
-Chi tiết kỹ thuật cũng như cách lập trình được mô tả trong các phần dưới.
+(2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm độ phức tạp tính toán từ đa thức về còn tuyến tính,
+hiệu quả đặc biệt cao với đầu vào thưa nhiều chiều.
+Với các lý do trên, máy phân rã được áp dụng rộng rãi trong ngành quảng cáo hiện đại và đề xuất sản phẩm.
+Chi tiết kỹ thuật cũng như cách lập trình được mô tả dưới đây.
 
 
 <!--
@@ -48,7 +48,7 @@ The model for a factorization machine of degree two is defined as:
 -->
 
 Gọi $x \in \mathbb{R}^d$ là vector đặc trưng của một mẫu, và $y$ là nhãn tương ứng,
-nhãn này có thể mang giá trị thực hoặc là nhãn hạng mục ví dụ như hạng mục nhị phân "nhấp/chưa nhấp".
+nhãn này có thể mang giá trị thực hoặc là nhãn lớp như lớp nhị phân "nhấp chuột/chưa nhấp chuột".
 Mô hình của máy phân rã ma trận bậc hai được định nghĩa như sau:
 
 
@@ -74,18 +74,18 @@ Nevertheless, the numerical stability might weaken the generalization.
 -->
 
 trong đó $\mathbf{w}_0 \in \mathbb{R}$ là hệ số điều chỉnh toàn cục;
-$\mathbf{w} \in \mathbb{R}^d$ ký hiệu trọng số của biến thứ $i$;
-$\mathbf{V} \in \mathbb{R}^{d\times k}$ biểu diễn embedding đặc trưng;
+$\mathbf{w} \in \mathbb{R}^d$ là trọng số của biến thứ $i$;
+$\mathbf{V} \in \mathbb{R}^{d\times k}$ là embedding đặc trưng;
 $\mathbf{v}_i$ biểu diễn hàng thứ $i$ của $\mathbf{V}$; $k$ là số chiều của nhân tố tiềm ẩn;
 $\langle\cdot, \cdot \rangle$ là tích vô hướng của hai vector.
 $\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ mô hình hoá sự tương tác giữa đặc trưng thứ $i$ và thứ $j$.
 Một số tương tác đặc trưng có thể dễ dàng hiểu được cho nên chúng có thể được thiết kế bởi các chuyên gia.
-Tuy nhiên, đa số các tương tác đặc trưng khác thường ẩn trong dữ liệu và khó để có thể nhận biết.
-Do đó việc tự động mô hình hoá tương tác đặc trưng có thể giảm đáng kể công sức trong việc thiết kế đặc trưng (*feature engineering*).
-Ta có thể thấy rõ ràng rằng hai số hạng đầu tiên tương ứng với mô hình hồi quy tuyến tính và số hạng cuối cùng là dạng mở rộng của mô hình phân rã ma trận.
+Tuy nhiên, đa số các tương tác đặc trưng khác thường ẩn trong dữ liệu và khó có thể nhận biết.
+Do đó việc tự động mô hình hoá tương tác đặc trưng có thể giảm đáng kể công sức thiết kế đặc trưng (*feature engineering*).
+Ta có thể thấy rõ rằng hai số hạng đầu tiên tương ứng với mô hình hồi quy tuyến tính và số hạng cuối cùng là dạng mở rộng của mô hình phân rã ma trận.
 Nếu đặc trưng $i$ biểu diễn một sản phẩm và đặc trưng $j$ biểu diễn một người dùng, số hạng thứ ba chính là tích vô hướng giữa embedding người dùng và sản phẩm.
 Đáng chú ý là FM cũng có thể khái quát hoá với bậc cao hơn (bậc > 2).
-Tuy vậy, tính ổn định số có thể khiến sự khái quát bị suy giảm.
+Tuy vậy, tính ổn định số học khi tính toán có thể cản trở khả năng khái quát hóa.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -105,7 +105,7 @@ The reformulation of the pairwise interaction term is as follows:
 -->
 
 Tối ưu máy phân rã ma trận theo cách thức trực tiếp dẫn đến độ phức tạp $\mathcal{O}(kd^2)$ do ta phải tính toán toàn bộ các cặp tương tác.
-Để giải quyết vấn đề này, ta có thể biến đổi lại số hạng thứ ba của FM, giúp giảm đáng kể chi phí tính toán, dẫn đến độ phức tạp tăng tuyến tính ($\mathcal{O}(kd)$).
+Để giải quyết vấn đề này, ta có thể biến đổi lại số hạng thứ ba của FM để giảm đáng kể chi phí tính toán xuống còn tuyến tính ($\mathcal{O}(kd)$).
 Công thức biến đổi của số hạng tương tác theo cặp như sau:
 
 
@@ -126,7 +126,7 @@ Moreover, for sparse features, only non-zero elements needs to be computed so th
 -->
 
 Với biến đổi này, độ phức tạp của mô hình giảm đi đáng kể.
-Hơn nữa, với đặc trưng thưa, chỉ các phần tử khác 0 cần phải tính toán nên độ phức tạp toàn phần có quan hệ tuyến tính với số đặc trưng khác 0.
+Hơn nữa, với đặc trưng thưa, chỉ các phần tử khác 0 cần phải tính toán nên độ phức tạp toàn phần là tuyến tính với số đặc trưng khác 0.
 
 
 <!--
@@ -162,7 +162,7 @@ We apply a sigmoid function over the final score since we treat the CTR predicti
 -->
 
 Đoạn mã sau đây lập trình mô hình máy phân rã ma trận.
-Ta có thể thấy rõ ràng rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu quả tốt.
+Ta có thể thấy rõ rằng FM bao gồm một khối hồi quy tuyến tính và một khối tương tác đặc trưng có hiệu suất cao.
 Ta áp dụng hàm sigmoid lên kết quả cuối cùng do ta coi dự đoán CTR như một tác vụ phân loại.
 
 
@@ -249,8 +249,8 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 * Feature interaction/crossing is important for prediction tasks and the 2-way interaction can be efficiently modeled with FM.
 -->
 
-* FM là một framework khái quát có thể áp dụng cho nhiều tác vụ khác nhau như hồi quy, phân loại hay xếp hạng.
-* Tương tác/tương giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán và tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
+* FM là một framework tổng quát có thể áp dụng cho nhiều tác vụ khác nhau như hồi quy, phân loại hay xếp hạng.
+* Tương tác/tương giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán. Tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
 
 
 ## Bài tập
@@ -260,8 +260,8 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 * Vary the embedding size to check its impact on performance, can you observe a similar pattern as that of matrix factorization?
 -->
 
-* Bạn có thể kiểm tra FM trên một tập dữ liệu khác ví dụ như tập dữ liệu Avazu, MovieLens, and Criteo không?
-* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, liệu bạn có thể quan sát thấy khuôn mẫu tương tự đối với phân rã ma trận?
+* Thử FM trên một tập dữ liệu khác như Avazu, MovieLens, and Criteo.
+* Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, so sánh với khi thay đổi kích thước embedding của phân rã ma trận.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -280,14 +280,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
 * Phạm Hồng Vinh
-* Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
