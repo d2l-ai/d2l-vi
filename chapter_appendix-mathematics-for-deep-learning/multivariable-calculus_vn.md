@@ -954,7 +954,7 @@ and are continuous, we can say that for any $i$, and $j$,
 -->
 
 Không phải mọi đầu vào của ma trận đều độc lập.
-Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, chúng ta có thể nói rằng hàm số tồn tại và liên tục với mọi $i$ và $j$,
+Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, chúng ta có thể nói rằng hàm số tồn tại và liên tục với mọi $i$ và $j$,
 
 
 $$
