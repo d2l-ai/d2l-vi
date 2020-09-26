@@ -610,7 +610,7 @@ Understanding the chain rule in this way will pay great dividends when trying to
 and why various architectural choices like those in LSTMs (:numref:`sec_lstm`) or residual layers (:numref:`sec_resnet`) can help shape the learning process by controlling gradient flow.
 -->
 
-Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradients xuyên suốt mạng và vì sao một số lựa chọn kiến trúc trong LSTMs (:numref:`sec_lstm`) hoặc các residual layers (:numref:`sec_resnet`) có thể hình thành quá trình học bằng cách kiểm soát dòng chảy gradient.
+Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradient xuyên suốt mạng và vì sao một số lựa chọn kiến trúc như trong LSTM (:numref:`sec_lstm`) hoặc các tầng thặng dư (:numref:`sec_resnet`) có thể định hình quá trình học bằng cách kiểm soát dòng chảy gradient.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
