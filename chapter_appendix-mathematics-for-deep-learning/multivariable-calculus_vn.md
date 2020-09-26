@@ -1178,7 +1178,7 @@ where we assemble our partial derivatives into the shape of whatever vector, mat
 In this case, we will write
 -->
 
-Ký hiệu có tên *denominator layout matrix derivative* sẽ hữu ích khi làm việc với đạo hàm ma trận trong ML trong đó chúng ta tập hợp các đạo hàm riêng thành hình dạng của bất kỳ vector, matrix hoặc tensor ở mẫu số của vi phân.
+Ký hiệu có tên *biểu diễn đạo hàm ma trận mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với đạo hàm ma trận trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng ở mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor.
 Trong trường hợp này, chúng ta viết:
 
 
