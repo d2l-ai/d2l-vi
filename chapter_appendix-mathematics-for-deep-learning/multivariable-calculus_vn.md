@@ -793,7 +793,7 @@ The fact that we compute derivatives from $f$ back towards the inputs rather tha
 Note that there are two steps:
 -->
 
-Việc tính đạo hàm từ $f$ trở ngược về đầu vào hơn là từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn code ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán.
+Việc tính đạo hàm từ $f$ trở ngược về đầu vào hơn là từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán.
 Có hai bước:
 
 
