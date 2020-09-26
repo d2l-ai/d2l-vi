@@ -912,7 +912,7 @@ Tất cả những gì chúng ta làm ở trên có thể được thực hiện
 ## Hessians
 -->
 
-## Hessians
+## Hessian
 
 
 <!--
