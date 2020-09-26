@@ -714,7 +714,7 @@ In essence, we want to apply the chain rule keeping $\partial f$ in the numerato
 Tuy nhiên, cần lưu ý rằng điều này không làm cho việc tính toán các đạo hàm chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản.
 Lý do nằm ở *cách* chúng ta chọn để áp dụng quy tắc dây chuyền.
 Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn giữ $\partial w$ ở mẫu khi có thể.
-Với cách này, chúng ta áp dụng quy tắc dây chuyền để  $w$ thay đổi mỗi biến số như thế nào.
+Với cách này, chúng ta áp dụng quy tắc dây chuyền để xem $w$ thay đổi các biến khác như thế nào.
 Nếu đó là những gì chúng ta muốn thì cách này quả là một ý tưởng hay.
 Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào.
 Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào chúng ta còn có thể!
