@@ -968,7 +968,9 @@ and then perturbing it in $x_j$ and then comparing the result of that with what 
 with the knowledge that both of these orders lead to the same final change in the output of $f$.
 -->
 
-Tiếp theo, bằng cách xem xét đầu tiên sự xáo trộn của một hàm theo hướng $x_i$,và kế đó là sự xáo trộn của nó theo $x_j$ và rồi so sánh kết quả của nó với những gì xãy ra nếu chúng ta xáo trộn thứ tự, đầu tiên là với $x_j$ sau đó là với $x_i$, biết rằng cả hai trật tự này dẫn đến sự thay đổi đầu ra của $f$ một cách như nhau.
+Tiếp theo, bằng cách xem xét đầu tiên sự xáo trộn của một hàm theo $x_i$,
+rồi theo $x_j$, so sánh kết quả này với khi xáo trộn theo thứ tự $x_j$ rồi đến $x_i$, 
+biết rằng cả hai thứ tự này dẫn đến sự thay đổi đầu ra của $f$ một cách như nhau.
 
 
 <!--
