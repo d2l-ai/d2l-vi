@@ -819,7 +819,7 @@ Thật thú vị vì chúng ta có một phân tách như trên.
 To see how to encapsulated this, let us take a quick look at this example.
 -->
 
-Để tím gọn phần này, hãy xem nhanh ví dụ này.
+Để tóm gọn phần này, hãy xem nhanh ví dụ sau.
 
 
 ```{.python .input}
