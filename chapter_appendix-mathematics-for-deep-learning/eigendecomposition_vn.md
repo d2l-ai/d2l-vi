@@ -5,7 +5,7 @@
 # Eigendecompositions
 -->
 
-# *dịch tiêu đề trên*
+# Phân tích trị riêng
 :label:`sec_eigendecompositions`
 
 
@@ -15,14 +15,16 @@ however, as a beginner, it is easy to overlook their importance.
 Below, we introduce eigendecomposition and try to convey some sense of just why it is so important. 
 -->
 
-*dịch đoạn phía trên*
+Trị riêng là một trong những khái niệm hữu ích nhất trong đại số tuyến tính,
+tuy nhiên người mới học thường bỏ qua tầm quan trọng của chúng.
+Dưới đây, chúng tôi giới thiệu phân tích trị riêng (*eigendecomposition*) và cố gắng truyền tải tầm quan trọng của chúng.
 
 
 <!--
 Suppose that we have a matrix $A$ with the following entries:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một ma trận $A$ với các đầu vào sau:
 
 
 $$
@@ -38,7 +40,8 @@ If we apply $A$ to any vector $\mathbf{v} = [x, y]^\top$, we obtain a vector $\m
 This has an intuitive interpretation: stretch the vector to be twice as wide in the $x$-direction, and then flip it in the $y$-direction.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta áp dụng $A$ cho bất kỳ vector $\mathbf{v} = [x, y]^\top$ nào, ta nhận được một vector $\mathbf{A}\mathbf{v} = [2x, -y]^\top$.
+Có thể diễn giải theo trực giác như sau: kéo vector dài gấp đôi theo hướng $x$, rồi đảo ngược theo hướng $y$.
 
 
 <!--
@@ -48,14 +51,17 @@ These vectors are still in the same line, and the only modification is that the 
 We call such vectors *eigenvectors* and the factor they are stretched by *eigenvalues*.
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, có *một vài* vector mà với chúng có một số thứ không thay đổi.
+Ví dụ như $[1, 0]^\top$ được biến đổi thành $[2, 0]^\top$ và $[0, 1]^\top$ được biến đổi thành $[0, -1]^\top$.
+Những vector này không thay đổi phương, chỉ bị kéo giãn theo tỷ lệ với hệ số $2$ và $-1$.
+Ta gọi những vector ấy là *vector riêng* và các hệ số làm chúng giãn ra gọi là *trị riêng*.
 
 
 <!--
 In general, if we can find a number $\lambda$ and a vector $\mathbf{v}$ such that 
 -->
 
-*dịch đoạn phía trên*
+Tổng quát, nếu ta tìm được một số $\lambda$ và một vector $\mathbf{v}$ mà 
 
 
 $$
@@ -67,21 +73,21 @@ $$
 We say that $\mathbf{v}$ is an eigenvector for $A$ and $\lambda$ is an eigenvalue.
 -->
 
-*dịch đoạn phía trên*
+Ta nói rằng $\mathbf{v}$ là một vector riêng và $\lambda$ là một trị riêng của $A$.
 
 
 <!--
 ## Finding Eigenvalues
 -->
 
-## *dịch tiêu đề trên*
+## Tìm trị riêng
 
 
 <!--
 Let us figure out how to find them. By subtracting off the $\lambda \mathbf{v}$ from both sides, and then factoring out the vector, we see the above is equivalent to:
 -->
 
-*dịch đoạn phía trên*
+Ta hãy tìm hiểu cách tìm trị riêng. Bằng cách trừ đi $\lambda \mathbf{v}$ ở cả hai vế, rồi sau đó nhóm thừa số chung là vector, ta thấy phần phía trên tương đương với:
 
 
 $$(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = 0.$$
@@ -94,7 +100,9 @@ Thus, we can find the *eigenvalues* by finding for what $\lambda$ is $\det(\math
 Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ to find the associated *eigenvector(s)*.
 -->
 
-*dịch đoạn phía trên*
+Để :eqref:`eq_eigvalue_der` xảy ra, ta thấy rằng $(\mathbf{A} - \lambda \mathbf{I})$ phải nén một số chiều xuống không, vì thế nó không thể nghịch đảo, nên định thức vì thế bằng không.
+Vì thế, ta có thể tìm các *trị riêng* bằng cách giải phương trình $\lambda$ is $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
+Một khi ta tìm được các trị riêng, ta có thể giải bài toán $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -1084,7 +1092,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * Trần Yến Thy
