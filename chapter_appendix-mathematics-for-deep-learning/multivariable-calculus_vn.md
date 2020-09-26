@@ -928,7 +928,7 @@ There is one immediate problem one encounters when working with higher order der
 If we have a function $f(x_1, \ldots, x_n)$ of $n$ variables, then we can take $n^{2}$ many second derivatives, namely for any choice of $i$ and $j$:
 -->
 
-Một vấn đề trước mắt khi làm việc với đạo hàm bậc cao hơn của hàm đa biến đó là cần phải tnhs toán một số lượng lớn đạo hàm. Nếu chúng ta có một hàm $f(x_1, \ldots, x_n)$ với $n$ biến, chúng ta có thể cần $n^{2}$ đạo hàm bậc 2, chẳng hạn để lựa chọn $i$ và $j$:
+Một vấn đề trước mắt khi làm việc với đạo hàm bậc cao hơn của hàm đa biến đó là cần phải tính toán một số lượng lớn đạo hàm. Nếu chúng ta có một hàm $f(x_1, \ldots, x_n)$ với $n$ biến, chúng ta có thể cần $n^{2}$ đạo hàm bậc 2, chẳng hạn để lựa chọn $i$ và $j$:
 
 
 $$
