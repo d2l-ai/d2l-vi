@@ -462,7 +462,7 @@ however, not every point with gradient zero is the true *global* minimum (or max
 ## Multivariate Chain Rule
 -->
 
-## Quy tắc Đạo hàm Hàm hợp Đa biến
+## Quy tắc Dây chuyền cho Hàm đa biến
 
 
 <!--
