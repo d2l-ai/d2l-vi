@@ -1182,7 +1182,7 @@ The same properties of being non-negative, and having total integral of one stil
 ### Marginal Distributions
 -->
 
-### *dịch tiêu đề trên*
+### Phân phối Biên
 
 
 <!--
@@ -1190,7 +1190,8 @@ When dealing with multiple variables, we oftentimes want to be able to ignore th
 "how is this one variable distributed?"  Such a distribution is called a *marginal distribution*.
 -->
 
-*dịch đoạn phía trên*
+Khi đối mặt với nhiều biến, ta thường muốn có khả năng bỏ qua những mối tương quan và đặt câu hỏi,
+"biến này phân phối thế nào?" Một phân phối như vậy được gọi là *phân phối biên (marginal distribution)*.
 
 
 <!--
@@ -1199,7 +1200,9 @@ We will be using the subscript to indicate what random variables the density is 
 The question of finding the marginal distribution is taking this function, and using it to find $p _ X(x)$.
 -->
 
-*dịch đoạn phía trên*
+Cụ thể, giả sử rằng ta có hai biến ngẫu nhiên $X, Y$ với mật độ đồng thời cho bởi $p _ {X, Y}(x, y)$.
+Ta sẽ sử dụng chỉ số dưới để chỉ mật độ này của biến ngẫu nhiên nào.
+Nhiệm vụ tìm kiếm phân phối biên sẽ lợi dụng hàm này, và sử dụng nó để tìm $p _ X(x)$.
 
 
 <!--
@@ -1207,7 +1210,8 @@ As with most things, it is best to return to the intuitive picture to figure out
 Recall that the density is the function $p _ X$ so that
 -->
 
-*dịch đoạn phía trên*
+Giống như mọi việc khác, tốt nhất là đưa ra một bức tranh trực quan để có thể suy ra cái gì là đúng.
+Nhắc lại rằng mật độ là hàm $p _ X$ thoả mãn
 
 
 $$
@@ -1219,7 +1223,7 @@ $$
 There is no mention of $Y$, but if all we are given is $p _{X, Y}$, we need to include $Y$ somehow. We can first observe that this is the same as
 -->
 
-*dịch đoạn phía trên*
+Hàm này không nhắc đến $Y$, nhưng nếu ta chỉ có $p _{X, Y}$, ta cần phải đưa $Y$ vào bằng cách nào đó. Đầu tiên ta có thể coi hàm này giống với
 
 
 $$
@@ -1231,7 +1235,7 @@ $$
 Our density does not directly tell us about what happens in this case, we need to split into small intervals in $y$ as well, so we can write this as
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì xảy ra, ta cũng cần phải chia nhỏ $y$ thành hai khoảng, do đó ta có thể viết lại hàm này như sau
 
 
 $$
@@ -1246,7 +1250,7 @@ $$
 ![By summing along the columns of our array of probabilities, we are able to obtain the marginal distribution for just the random variable represented along the $x$-axis.](../img/Marginal.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/Marginal.svg)
+![Bằng cách lấy tổng xác suất theo cột trên mảng, ta có thể thu được phân phối biên cho biến ngẫu nhiên được biểu diễn theo trục $x$](../img/Marginal.svg)
 :label:`fig_marginal`
 
 
@@ -1255,7 +1259,8 @@ This tells us to add up the value of the density along a series of squares in a 
 Indeed, after canceling one factor of epsilon from both sides, and recognizing the sum on the right is the integral over $y$, we can conclude that
 -->
 
-*dịch đoạn phía trên*
+Điều này cho ta thấy rằng cần lấy tổng giá trị mật độ theo một chuỗi các hình vuông theo một đường thẳng như chỉ ra trong :numref:`fig_marginal`.
+Thực vậy, sau khi khử số hạng epsilon cả hai vế, và nhận ra tổng vế phải chính là tích phân trên $y$, ta có thể kết luận rằng
 
 
 $$
@@ -1270,7 +1275,7 @@ $$
 Thus we see
 -->
 
-*dịch đoạn phía trên*
+Do đó ta thấy
 
 
 $$
@@ -1283,14 +1288,15 @@ This tells us that to get a marginal distribution, we integrate over the variabl
 This process is often referred to as *integrating out* or *marginalized out* the unneeded variables.
 -->
 
-*dịch đoạn phía trên*
+Điều này cho thấy để thu được phân phối biên, ta cần lấy tích phân trên các biến ta không quan tâm đến.
+Quá trình này thường được gọi là *integrating out* hay *marginalized out* những biến không cần thiết.
 
 
 <!--
 ### Covariance
 -->
 
-### *dịch tiêu đề trên*
+### Hiệp phương sai
 
 
 <!--
@@ -1298,7 +1304,8 @@ When dealing with multiple random variables, there is one additional summary sta
 This measures the degree that two random variable fluctuate together.
 -->
 
-*dịch đoạn phía trên*
+Khi đối mặt với nhiều biến ngẫu nhiên, có thêm một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
+Thông số này đo mức độ biến thiên giữa hai biến ngẫu nhiên.
 
 
 <!--
@@ -1306,7 +1313,8 @@ Suppose that we have two random variables $X$ and $Y$, to begin with, let us sup
 In this case, the covariance is defined as
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có hai biến ngẫu nhiên $X$ và $Y$, để bắt đầu, hãy giả sử chúng rời rạc, mang giá trị $(x_i, y_j)$ với xác suất $p_{ij}$.
+Trong trường hợp này, hiệp phương sai được định nghĩa bằng
 
 
 $$\sigma_{XY} = \mathrm{Cov}(X, Y) = \sum_{i, j} (x_i - \mu_X) (y_j-\mu_Y) p_{ij}. = E[XY] - E[X]E[Y].$$
@@ -1319,7 +1327,9 @@ Suppose that $X$ takes the values $1$ and $3$, and $Y$ takes the values $-1$ and
 Suppose that we have the following probabilities
 -->
 
-*dịch đoạn phía trên*
+Để hiểu một cách trực quan về công thức trên: xét cặp biến ngẫu nhiên sau.
+Giả sử $X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$.
+Giả sử rằng ta có các xác suất sau
 
 
 $$
@@ -1340,7 +1350,11 @@ If $p=1/2$, then the four possibilities are all equally likely, and neither shou
 Let us compute the covariance. First, note $\mu_X = 2$ and $\mu_Y = 1$, so we may compute using :eqref:`eq_cov_def`:
 -->
 
-*dịch đoạn phía trên*
+trong đó $p$ là tham số trong đoạn $[0,1]$ ta có thể chọn.
+Chú ý rằng nếu $p=1$ thì chúng luôn luôn cùng là giá trị lớn nhất và giá trị nhỏ nhất của chúng,
+và nếu $p=0$ thì chúng chắc chắn mang giá trị ngược nhau (một biến lớn trong khi biến còn lại nhỏ và ngược lại).
+Nếu $p=1/2$ thì bốn khả năng có xác suất xảy ra bằng nhau, và không cái nào liên quan lẫn nhau.
+Hãy cùng tính hiệp phương sai. Đầu tiên, chú ý $\mu_X = 2$ và $\mu_Y = 1$, để ta có thể tính bằng :eqref:`eq_cov_def`:
 
 
 $$
@@ -1359,7 +1373,10 @@ Finally, when $p=1/2$ (the case where they are unrelated), the covariance is $0$
 Thus we see that the covariance measures how these two random variables are related.
 -->
 
-*dịch đoạn phía trên*
+Khi $p=1$ (trường hợp mà trong cùng một thời điểm chúng cùng là giá trị dương hoặc âm lớn nhất) có hiệp phương sai bằng $2$.
+Khi $p=0$ (trường hợp mà chúng ngược nhau) hiệp phương sai bằng $-2$.
+Cuối cùng, khi when $p=1/2$ (trường hợp chúng không liên quan với nhau), hiệp phương sai bằng $0$.
+Từ đó ta thấy rằng hiệp phương sai đo mức độ hai biến ngẫu nhiên này liên quan với nhau.
 
 
 <!--
@@ -1368,7 +1385,9 @@ More complex relationships like $X = Y^2$ where $Y$ is randomly chosen from $\{-
 Indeed a quick computation shows that these random variables have covariance zero, despite one being a deterministic function of the other.
 -->
 
-*dịch đoạn phía trên*
+Chú ý nhanh là hiệp phương sai chỉ đo mối quan hệ tuyến tính.
+Các quan hệ phức tạp hơn như $X = Y^2$ trong đó $Y$ được chọn ngẫu nhiên từ $\{-2, -1, 0, 1, 2\}$ với xác suất bằng nhau có thể bị bỏ qua.
+Quả thực qua tính toán nhanh có thể chỉ ra rằng hai biến ngẫu nhiên này có hiệp phương sai bằng không, mặc dù một biến là hàm tất định của biến còn lại.
 
 
 <!--
@@ -1377,7 +1396,9 @@ At this point, we are pretty comfortable with doing the transition between discr
 so we will provide the continuous analogue of :eqref:`eq_cov_def` without any derivation.
 -->
 
-*dịch đoạn phía trên*
+Với biến ngẫu nhiên liên tục, câu chuyện vẫn diễn ra như vậy.
+Vào thời điểm này, ta khá thoải mái trong việc biến đổi giữa rời rạc và liên tục,
+nên chúng tôi sẽ chỉ cung cấp dạng tương tự liên tục của :eqref:`eq_cov_def` mà không có giải thích.
 
 
 $$
@@ -1389,7 +1410,7 @@ $$
 For visualization, let us take a look at a collection of random variables with tunable covariance.
 -->
 
-*dịch đoạn phía trên*
+Để hiển thị, hãy quan sát tập các biến ngẫu nhiên có hiệp phương sai có thể điều chỉnh được.
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -1776,7 +1797,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 8 -->
 * 
