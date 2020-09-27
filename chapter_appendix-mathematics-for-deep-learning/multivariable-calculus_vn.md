@@ -565,7 +565,7 @@ as in the expression $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, so we of
 -->
 
 Dòng đầu tiên theo sau từ định nghĩa đạo hàm từng phần, và dòng thứ hai theo sau từ định nghĩa gradient.
-Thật khó khăn đáng kể để dò theo chính xác chỗ ta đánh giá mỗi phép vi phân,
+Thật khó khăn để lần theo các biến khi tính đạo hàm,
 như trong biểu thức $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, cho nên ta thường rút gọn nó để dễ nhớ hơn
 
 
