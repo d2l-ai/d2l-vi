@@ -546,7 +546,7 @@ We will reason as we did back when we worked with the gradient for the first tim
 
 Ta hãy chia nhỏ vấn đề này.
 Ta sẽ bắt đầu bằng cách thử hiểu $f$ thay đổi thế nào khi $a$ thay đổi, giả sử cần thiết là tất cả $w, x, y$, và $z$ không tồn tại.
-Ta sẽ giải thích như ta đã từng làm ở trước với gradient cho lần đầu tiên. Hãy lấy $a$ và cộng một lượng nhỏ $\epsilon$ vào nó.
+Ta sẽ tư duy như ta đã từng làm ở trước với gradient cho lần đầu tiên. Hãy lấy $a$ và cộng một lượng nhỏ $\epsilon$ vào nó.
 
 
 $$
