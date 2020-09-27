@@ -802,7 +802,8 @@ Có hai bước:
 2. Compute the gradient of $f$ from back to front.  We call this the *backwards pass*.
 -->
 
-1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù chưa được thực hiện ở trên, việc này có thể kết hợp vào *lượt truyền xuôi*.
+1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù không được thực hiện ở trên, 
+ hai việc này có thể được kết hợp vào một *lượt truyền xuôi* duy nhất.
 2. Tính toán đạo hàm của $f$ từ cuối về đầu. Chúng ta gọi đó là *lượt truyền ngược*.
 
 
