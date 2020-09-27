@@ -1271,7 +1271,7 @@ The core reason for this is the convention that we match the shape of the denomi
 we will need to take transposes to match back to the shape of the original term.
 -->
 
-* Đầu tiên, các phép tính sẽ liên quan khá mật thiết.
+* Đầu tiên, các tính toán sẽ trở nên khá phức tạp.
 * Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn giống với trường hợp đơn biến.
 Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau.
 * Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu.
