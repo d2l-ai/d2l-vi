@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Natural Language Inference: Using Attention
 -->
 
-# Suy luận ngôn ngữ tự nhiên: sử dụng cơ chế tập trung
+# Suy luận Ngôn ngữ Tự nhiên: Sử dụng Cơ chế Tập trung
 :label:`sec_natural-language-inference-attention`
 
 
@@ -18,9 +15,9 @@ In this section, we will describe and implement this attention-based method (wit
 -->
 
 Chúng tôi đã giới thiệu tác vụ suy luận ngôn ngữ tự nhiên và tập dữ liệu SNLI trong :numref:`sec_natural-language-inference-and-dataset`. 
-Dựa vào nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
+Trong nhiều mô hình dựa trên các kiến trúc sâu và phức tạp,
 Parikh và các cộng sự đề xuất hướng giải quyết bài toán suy luận ngôn ngữ tự nhiên bằng cơ chế tập trung và gọi nó là một "mô hình tập trung có thể phân tách" (*decomposable attention model*) :cite:`Parikh.Tackstrom.Das.ea.2016`. 
-Điều này dẫn tới một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất vào thời điểm đó trên tập dữ liệu SNLI với lượng tham số ít hơn nhiều. 
+Điều này dẫn đến một mô hình không có các tầng truy hồi hay tích chập, nhưng đạt được kết quả tốt nhất vào thời điểm đó trên tập dữ liệu SNLI với lượng tham số ít hơn nhiều. 
 Trong phần này, chúng tôi sẽ mô tả và lập trình phương pháp dựa trên cơ chế tập trung (cùng với MLP) để suy luận ngôn ngữ tự nhiên, như minh họa trong :numref:`fig_nlp-map-nli-attention`. 
 
 
@@ -67,9 +64,9 @@ At a high level, it consists of three jointly trained steps: attending, comparin
 We will illustrate them step by step in the following.
 -->
 
-:numref:`fig_nli_attention` minh họa phương pháp suy luận ngôn ngữ tự nhiên sử dụng cơ chế tập trung. 
-Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp. 
-Ta sẽ từng bước mô tả chúng trong phần tiếp theo. 
+:numref:`fig_nli_attention` minh họa phương pháp suy luận ngôn ngữ tự nhiên sử dụng cơ chế tập trung.
+Ở mức cao, nó bao gồm ba bước huấn luyện phối hợp: thực hiện tập trung, so sánh, và kết hợp.
+Ta sẽ từng bước mô tả chúng trong phần tiếp theo.
 
 
 ```{.python .input  n=1}
@@ -81,9 +78,6 @@ from mxnet.gluon import nn
 npx.set_np()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Attending
@@ -124,7 +118,7 @@ where $\mathbf{a}_i, \mathbf{b}_j \in \mathbb{R}^{d}$ ($i = 1, \ldots, m, j = 1,
 For soft alignment, we compute the attention weights $e_{ij} \in \mathbb{R}$ as
 -->
 
-Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn. 
+Bây giờ ta mô tả sự căn chỉnh mềm sử dụng cơ chế tập trung chi tiết hơn.
 Ký hiệu $\mathbf{A} = (\mathbf{a}_1, \ldots, \mathbf{a}_m)$ 
 và $\mathbf{B} = (\mathbf{b}_1, \ldots, \mathbf{b}_n)$ là câu tiền đề và câu giả thuyết, 
 với số từ lần lượt là $m$ và $n$.
@@ -137,12 +131,12 @@ $$e_{ij} = f(\mathbf{a}_i)^\top f(\mathbf{b}_j),$$
 
 
 <!--
-where the function $f$ is a multilayer perceptron defined in the following `mlp` function.
+where the function $f$ is an MLP defined in the following `mlp` function.
 The output dimension of $f$ is specified by the `num_hiddens` argument of `mlp`.
 -->
 
-ở đây hàm $f$ là một perceptron đa tầng được định nghĩa trong hàm 'mlp' dưới đây. 
-Chiều đầu ra của $f$ được thiết lập bởi đối số 'num_hiddens' của hàm 'mlp'. 
+ở đây hàm $f$ là một MLP được định nghĩa theo hàm `mlp`.
+Chiều đầu ra của $f$ được thiết lập bởi đối số `num_hiddens` của hàm `mlp`.
 
 
 ```{.python .input  n=2}
@@ -231,9 +225,6 @@ class Attend(nn.Block):
         return beta, alpha
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Comparing
@@ -259,10 +250,10 @@ Ví dụ, giả sử bước tập trung xác định rằng "need" và "sleep" 
 
 <!--
 In the comparing step, we feed the concatenation (operator $[\cdot, \cdot]$) of words from one sequence 
-and aligned words from the other sequence into a function $g$ (a multilayer perceptron):
+and aligned words from the other sequence into a function $g$ (an MLP):
 -->
 
-Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh của chuỗi còn lại vào hàm $g$ (một perceptron đa tầng): 
+Tại bước so sánh, chúng ta đưa những từ đã được ghép nối (toán tử $[\cdot, \cdot]$) và những từ đã căn chỉnh của chuỗi còn lại vào hàm $g$ (một MLP): 
 
 
 $$\mathbf{v}_{A,i} = g([\mathbf{a}_i, \boldsymbol{\beta}_i]), i = 1, \ldots, m\\ \mathbf{v}_{B,j} = g([\mathbf{b}_j, \boldsymbol{\alpha}_j]), j = 1, \ldots, n.$$
@@ -292,9 +283,6 @@ class Compare(nn.Block):
         return V_A, V_B
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Aggregating
@@ -309,7 +297,8 @@ in the last step we will aggregate such information to infer the logical relatio
 We begin by summing up both sets:
 -->
 
-Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) trong tay, ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic tại bước cuối cùng. 
+Với hai tập vector so sánh $\mathbf{v}_{A,i}$ ($i = 1, \ldots, m$) và $\mathbf{v}_{B, j}$ ($j = 1 , \ldots, n$) trong tay, 
+ta sẽ tổng hợp các thông tin đó để suy ra mối quan hệ logic tại bước cuối cùng. 
 Chúng ta bắt đầu bằng cách lấy tổng trên cả hai tập: 
 
 
@@ -319,9 +308,9 @@ $$
 
 
 <!--
-Next we feed the concatenation of both summarization results into function $h$ (a multilayer perceptron) to obtain the classification result of the logical relationship:
+Next we feed the concatenation of both summarization results into function $h$ (an MLP) to obtain the classification result of the logical relationship:
 -->
-Tiếp theo, chúng ta ghép nối hai kết quả tổng rồi đưa vào hàm $h$ (một perceptron đa tầng) để thu được kết quả phân loại của mối quan hệ logic: 
+Tiếp theo, chúng ta ghép nối hai kết quả tổng rồi đưa vào hàm $h$ (một MLP) để thu được kết quả phân loại của mối quan hệ logic: 
 
 
 $$
@@ -352,9 +341,6 @@ class Aggregate(nn.Block):
         return Y_hat
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ### Putting All Things Together
@@ -369,7 +355,7 @@ we define the decomposable attention model to jointly train these three steps.
 -->
 
 Bằng cách gộp các bước thực hiện tập trung, so sánh và tổng hợp lại với nhau,
-ta định nghĩa mô hình tập trung kết hợp để cùng huấn luyện cả ba bước này.
+ta định nghĩa mô hình tập trung có thể phân tách để cùng huấn luyện cả ba bước này.
 
 
 ```{.python .input  n=6}
@@ -405,7 +391,7 @@ Now we will train and evaluate the defined decomposable attention model on the S
 We begin by reading the dataset.
 -->
 
-Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung kết hợp được định nghĩa ở trên trên tập dữ liệu SNLI. 
+Bây giờ ta sẽ huấn luyện và đánh giá mô hình tập trung có thế phân tách vừa được định nghĩa trên tập dữ liệu SNLI.
 Ta bắt đầu bằng việc đọc tập dữ liệu. 
 
 <!--
@@ -445,11 +431,12 @@ Then we create a model instance, initialize its parameters,
 and load the GloVe embedding to initialize vectors of input tokens.
 -->
 
-Ta sử dụng embedding GloVe $100$-chiều đã tiền huấn luyện để biểu diễn các token đầu vào. 
-Do đó, ta định nghĩa trước chiều của các vector $\mathbf{a}_i$ và $\mathbf{b}_j$ trong :eqref:`eq_nli_e` là $100$. 
-Chiều đầu ra của hàm $f$ trong :eqref:`eq_nli_e` và $g$ trong :eqref:`eq_nli_v_ab` được đặt bằng $200$. 
-Sau đó ta tạo thực thể của mô hình, khởi tạo trọng số,
-và nạp embedding GloVe để khởi tạo các vector token đầu vào. 
+Ta sử dụng embedding GloVe $100$-chiều đã tiền huấn luyện để biểu diễn các token đầu vào.
+Do đó, ta định nghĩa trước chiều của các vector $\mathbf{a}_i$ và $\mathbf{b}_j$ trong :eqref:`eq_nli_e` là $100$.
+Chiều đầu ra của hàm $f$ trong :eqref:`eq_nli_e` và $g$ trong :eqref:`eq_nli_v_ab` được đặt bằng $200$.
+Sau đó ta tạo thực thể của mô hình, khởi tạo tham số,
+và nạp embedding GloVe để khởi tạo các vector token đầu vào.
+
 
 ```{.python .input  n=8}
 embed_size, num_hiddens, devices = 100, 200, d2l.try_all_gpus()
@@ -473,8 +460,8 @@ In contrast to the `split_batch` function in :numref:`sec_multi_gpu` that takes 
 we define a `split_batch_multi_inputs` function to take multiple inputs such as premises and hypotheses in minibatches.
 -->
 
-Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn, 
-ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào, ví dụ như cặp tiền đề và giả thuyết ở trong các minibatch. 
+Trái ngược với hàm `split_batch` trong :numref:`sec_multi_gpu` nhận đầu vào đơn như một chuỗi văn bản (hoặc ảnh) chẳng hạn,
+ta định nghĩa hàm `split_batch_multi_inputs` để nhận đa đầu vào, ví dụ như cặp tiền đề và giả thuyết ở trong các minibatch.
 
 
 ```{.python .input  n=10}
@@ -502,9 +489,6 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
                split_batch_multi_inputs)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Using the Model
@@ -517,7 +501,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices,
 Finally, define the prediction function to output the logical relationship between a pair of premise and hypothesis.
 -->
 
-Cuối cùng, định nghĩa hàm dự đoán để xuất ra mối quan hệ logic giữa cặp tiền đề và giả thuyết. 
+Cuối cùng, ta định nghĩa hàm dự đoán để xuất ra mối quan hệ logic giữa cặp tiền đề và giả thuyết.
 
 
 ```{.python .input  n=14}
@@ -554,9 +538,9 @@ Such alignment is soft using weighted average, where ideally large weights are a
 * We can use pretrained word embedding as the input representation for downstream natural language processing task such as natural language inference.
 -->
 
-* Mô hình tập trung kết hợp bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và tổng hợp. 
+* Mô hình tập trung có thể phân tách bao gồm 3 bước để dự đoán mối quan hệ logic giữa cặp tiền đề và giả thuyết: thực hiện tập trung, so sánh và tổng hợp.
 * Với cơ chế tập trung, ta có thể căn chỉnh các từ trong một chuỗi văn bản với tất cả các từ trong chuỗi văn bản còn lại, và ngược lại. 
-Đây là kỹ thuật căn chỉnh mềm, sử dụng trung bình có trọng số, trường hợp lý tưởng là trọng số lớn ứng với các từ sẽ được căn chỉnh. 
+Đây là kỹ thuật căn chỉnh mềm, sử dụng trung bình có trọng số, trong đó các trọng số có độ lớn hợp lý được gán với các từ sẽ được căn chỉnh.
 * Thủ thuật phân tách tầng tập trung giúp giảm độ phức tạp thành tuyến tính thay vì là bậc hai khi tính toán trọng số tập trung. 
 * Ta có thể sử dụng embedding từ đã tiền huấn luyện để biểu diễn đầu vào cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng, ví dụ như suy luận ngôn ngữ tự nhiên.
 
@@ -577,38 +561,21 @@ Ta sẽ thu thập và gán nhãn tập dữ liệu như thế nào?
 Bạn có thể thiết kế một mô hình với cơ chế tập trung không? 
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/395)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/395)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
+
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 3 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 4 -->
-* 
-
-<!-- Phần 5 -->
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
 * Phạm Minh Đức
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 19/09/2020)*

@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Fine-Tuning BERT for Sequence-Level and Token-Level Applications
 -->
@@ -23,9 +20,9 @@ we may consider fine-tuning BERT for downstream natural language processing appl
 -->
 
 Trong các phần trước, ta đã thiết kế các mô hình khác nhau cho
-các ứng dụng xử lý ngôn ngữ tự nhiên, dựa trên RNN, CNN, cơ chế tập trung và MLP.
-Những mô hình này rất hữu ích khi bị mô hình bị giới hạn về không gian bộ nhớ hoặc thời gian thực thi, tuy nhiên,
-việc thiết kế thủ công một mô hình cụ thể cho mọi tác vụ xử lý ngôn ngữ tự nhiên trong thực tế là điều không khả thi.
+các ứng dụng xử lý ngôn ngữ tự nhiên, dựa trên RNN, CNN, MLP và cơ chế tập trung.
+Những mô hình này rất hữu ích khi mô hình bị giới hạn về không gian bộ nhớ hoặc thời gian thực thi;
+tuy nhiên, việc thiết kế thủ công một mô hình cụ thể cho mọi tác vụ xử lý ngôn ngữ tự nhiên trong thực tế là điều không khả thi.
 Trong :numref:`sec_bert`, chúng ta đã giới thiệu mô hình BERT được tiền huấn luyện mà chỉ
 yêu cầu thay đổi kiến trúc tối thiểu cho một loạt các tác vụ xử lý ngôn ngữ tự nhiên.
 Một mặt, tại thời điểm BERT được đề xuất, nó đã cải thiện kết quả tốt nhất trên các tác vụ xử lý ngôn ngữ tự nhiên khác nhau.
@@ -74,7 +71,8 @@ For instance, "I should study." is acceptable but "I should studying." is not.
 
 Tác vụ *phân loại văn bản đơn* nhận một chuỗi văn bản đơn làm đầu vào và đầu ra là kết quả phân loại của văn bản đó.
 Bên cạnh tác vụ phân tích cảm xúc mà ta đã nghiên cứu trong chương này,
-tập dữ liệu CoLA (*Corpus of Linguistic Acceptability*) cũng được sử dụng cho tác vụ phân loại văn bản đơn, đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
+tập dữ liệu CoLA (*Corpus of Linguistic Acceptability*) cũng được sử dụng cho tác vụ phân loại văn bản đơn, 
+đánh giá xem một câu đã cho có chấp nhận được về mặt ngữ pháp hay không :cite:`Warstadt.Singh.Bowman.2019`.
 Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I should studying." thì không.
 
 
@@ -85,9 +83,6 @@ Ví dụ, câu "I should study." là chấp nhận được nhưng câu "I shoul
 ![Tinh chỉnh mô hình BERT cho các ứng dụng phân loại văn bản đơn, ví dụ như phân tích cảm xúc hay đánh giá khả năng chấp nhận được về ngôn ngữ học. Giả sử văn bản đơn đầu vào có sáu token.](../img/bert-one-seq.svg)
 :label:`fig_bert-one-seq`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 :numref:`sec_bert` describes the input representation of BERT.
@@ -104,7 +99,7 @@ to output the distribution of all the discrete label values.
 Chuỗi đầu vào BERT biểu diễn cả văn bản đơn và cặp văn bản một cách rạch ròi,
 trong đó token đặc biệt “&lt;cls&gt;” được sử dụng cho các tác vụ phân loại chuỗi, 
 và token đặc biệt “&lt;sep&gt;” đánh dấu vị trí kết thúc của văn bản đơn hoặc vị trí phân tách cặp văn bản.
-Như minh hoạ trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hoá thông tin của toàn bộ chuỗi văn bản đầu vào trong các tác vụ phân loại văn bản đơn.
+Như minh họa trong :numref:`fig_bert-one-seq`, biểu diễn BERT của token đặc biệt “&lt;cls&gt;” mã hóa thông tin của toàn bộ chuỗi văn bản đầu vào trong các tác vụ phân loại văn bản đơn.
 Là biểu diễn của văn bản đầu vào đơn, vector này sẽ được truyền vào một mạng MLP nhỏ chứa các tầng kết nối đầy đủ để biến đổi thành phân phối của các giá trị nhãn rời rạc.
 
 
@@ -121,7 +116,7 @@ It belongs to *text pair classification*, a type of application classifying a pa
 -->
 
 Ta cũng sẽ xem xét tác vụ suy luận ngôn ngữ tự nhiên trong chương này.
-Tác vụ này nằm trong bài toán *phân loại cặp văn bản* (_text pair classification_).
+Tác vụ này nằm trong bài toán *phân loại cặp văn bản* (*text pair classification*).
 
 
 <!--
@@ -133,9 +128,10 @@ The goal is to predict these scores.
 Examples from the Semantic Textual Similarity Benchmark dataset include (sentence 1, sentence 2, similarity score):
 -->
 
-Nhận một cặp văn bản làm đầu vào và cho ra một giá trị liên tục, đo độ tương tự ngữ nghĩa của văn bản (_semantic textual similarity_) là một tác vụ *hồi quy cặp văn bản* (*text pair regression*) rất phổ biến.
-Tác vụ này đo độ tương tự ngữ nghĩa của các câu đầu vào. <!-- câu phía dưới `The goal is to predict these scores` cùng nghĩa nên hơi thừa -->
-Ví dụ, trong tập dữ liệu đánh giá độ tương tự ngữ nghĩa của văn bản (_Semantic Textual Similarity Benchmark_), độ tương tự của một cặp câu nằm trong khoảng từ 0 (không trùng lặp ngữ nghĩa) tới 5 (tương tự ngữ nghĩa) :cite:`Cer.Diab.Agirre.ea.2017`.
+Nhận một cặp văn bản làm đầu vào và cho ra một giá trị liên tục, đo độ tương tự ngữ nghĩa của văn bản (*semantic textual similarity*) 
+là một tác vụ *hồi quy cặp văn bản* (*text pair regression*) rất phổ biến.
+Tác vụ này đo độ tương tự ngữ nghĩa của các câu đầu vào.
+Ví dụ, trong tập dữ liệu đánh giá độ tương tự ngữ nghĩa của văn bản (*Semantic Textual Similarity Benchmark*), độ tương tự của một cặp câu nằm trong khoảng từ 0 (không trùng lặp ngữ nghĩa) tới 5 (tương tự ngữ nghĩa) :cite:`Cer.Diab.Agirre.ea.2017`.
 Các mẫu dữ liệu trong tập dữ liệu này có dạng (câu thứ 1, câu thứ 2, độ tương tự):
 
 
@@ -169,19 +165,12 @@ So với tác vụ phân loại văn bản đơn trong :numref:`fig_bert-one-seq
 việc tinh chỉnh BERT để phân loại cặp văn bản trong :numref:`fig_bert-two-seqs` có khác biệt trong biểu diễn đầu vào.
 Đối với các tác vụ hồi quy cặp văn bản, chẳng hạn như đo độ tương tự ngữ nghĩa văn bản, một vài thay đổi nhỏ có thể được áp dụng như xuất ra giá trị nhãn liên tục và sử dụng trung bình bình phương mất mát.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Text Tagging
 -->
 
-## Gán thẻ văn bản
+## Gán thẻ Văn bản
 
 
 <!--
@@ -216,8 +205,7 @@ is fed into the same extra fully-connected layers to output the label of the tok
 -->
 
 Tinh chỉnh BERT cho ứng dụng gán thẻ văn bản được minh họa trong :numref:`fig_bert-tagging`.
-So với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất là
-biểu diễn BERT của *mỗi token* trong văn bản đầu vào
+So với :numref:`fig_bert-one-seq`, sự khác biệt duy nhất là biểu diễn BERT của *mỗi token* trong văn bản đầu vào
 được truyền vào cùng một mạng kết nối đầy đủ bổ sung để đưa ra nhãn của các token, ví dụ như thẻ từ loại.
 
 
@@ -225,7 +213,7 @@ biểu diễn BERT của *mỗi token* trong văn bản đầu vào
 ## Question Answering
 -->
 
-## Trả lời câu hỏi
+## Trả lời Câu hỏi
 
 
 <!--
@@ -257,9 +245,6 @@ Vì thế, mục đích trong SQuAD v1.1 là dự đoán điểm khởi đầu v
 ![Tinh chỉnh BERT cho trả lời câu hỏi. Giả sử rằng cặp văn bản đầu vào có hai và ba token.](../img/bert-qa.svg)
 :label:`fig_bert-qa`
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 To fine-tune BERT for question answering, the question and passage are packed as
@@ -275,7 +260,7 @@ When predicting the end, any passage token of position $i$ is transformed by the
 :numref:`fig_bert-qa` depicts fine-tuning BERT for question answering.
 -->
 
-Để tinh chỉnh BERT cho ứng dụng trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt là 
+Để tinh chỉnh BERT cho ứng dụng trả lời câu hỏi, câu hỏi và đoạn văn được đóng gói tương ứng lần lượt là
 chuỗi văn bản thứ nhất và thứ hai trong đầu vào của BERT.
 Để dự đoán vị trí của phần bắt đầu của khoảng văn bản, cùng một tầng kết nối đầy đủ được thêm vào sẽ chuyển hóa
 biểu diễn BERT của bất kỳ token nào từ đoạn văn bản có vị trí $i$ thành một giá trị vô hướng $s_i$. 
@@ -334,24 +319,19 @@ Làm cách nào để ta áp dụng phương pháp lấy mẫu âm (xem :numref:
 2. Làm thế nào để tận dụng BERT khi huấn luyện các mô hình ngôn ngữ?
 3. Làm thế nào để tận dụng BERT trong dịch máy?
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/396)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/396)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
+
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
 * Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

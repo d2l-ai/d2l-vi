@@ -11,7 +11,7 @@ Such pretrained text representations can be fed to various models for different 
 -->
 
 
-Chúng ta đã thấy cách biểu diễn token văn bản và huấn luyện các biểu diễn của chúng trong :numref:`chap_nlp_pretrain`.
+Ở :numref:`chap_nlp_pretrain`, chúng ta đã nhìn thấy cách biểu diễn token văn bản và huấn luyện các biểu diễn của chúng.
 Những biểu diễn văn bản được tiền huấn luyện như vậy có thể được truyền vào các mô hình cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác nhau.
 
 
@@ -26,11 +26,12 @@ These are popular and representative natural language processing applications: t
 -->
 
 Cuốn sách này không có ý định trình bày các ứng dụng xử lý ngôn ngữ tự nhiên một cách toàn diện.
-Trọng tâm của cuốn sách là *cách áp dụng học biểu diễn (sâu) của ngôn ngữ để giải quyết các bài toán xử lý ngôn ngữ tự nhiên*.
+Trọng tâm của cuốn sách là *làm sao để áp dụng học biểu diễn (sâu) của ngôn ngữ nhằm giải quyết các bài toán xử lý ngôn ngữ tự nhiên*.
 Tuy nhiên, chúng ta đã thảo luận về một số ứng dụng xử lý ngôn ngữ tự nhiên mà không cần tiền huấn luyện trong các chương trước, nhằm chỉ giải thích các kiến ​​trúc học sâu.
-Ví dụ, trong :numref:`chap_rnn`, chúng ta đã thiết kế các mô hình ngôn ngữ dựa trên RNN để sinh ra các văn bản có nội dung giống như tiểu thuyết.
-Trong :numref:`chap_modern_rnn` và :numref:`chap_attention`, chúng ta cũng đã thiết kế các mô hình ngôn ngữ dựa trên RNN và các cơ chế tập trung cho tác vụ dịch máy.
-Với các biểu diễn văn bản được tiền huấn luyện, trong chương này, chúng ta sẽ xem xét hai tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác đó là, phân tích cảm xúc (*sentiment analysis*) và suy luận ngôn ngữ tự nhiên (*natural language inference*).
+Như trong :numref:`chap_rnn`, chúng ta đã thiết kế các mô hình ngôn ngữ dựa trên RNN để sinh ra các văn bản có nội dung giống như tiểu thuyết.
+Trong :numref:`chap_modern_rnn` và :numref:`chap_attention`, ta cũng đã thiết kế các mô hình ngôn ngữ dựa trên RNN và các cơ chế tập trung cho tác vụ dịch máy.
+Trong chương này, cới những biểu diễn văn bản được tiền huấn luyện thì ta sẽ xem xét hai tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác đó là, 
+phân tích cảm xúc (*sentiment analysis*) và suy luận ngôn ngữ tự nhiên (*natural language inference*).
 Đây là những ứng dụng xử lý ngôn ngữ tự nhiên mang tính phổ biến và đại diện: ứng dụng trước phân tích văn bản đơn lẻ trong khi ứng dụng sau phân tích mối quan hệ của các cặp văn bản.
 
 
@@ -57,10 +58,10 @@ As a concrete empirical case, we will fine-tune BERT for natural language proces
 
 Như được mô tả trong :numref:`fig_nlp-map-app`, chương này sẽ tập trung vào việc mô tả các ý tưởng cơ bản trong thiết kế các mô hình xử lý ngôn ngữ tự nhiên
 sử dụng các loại kiến ​​trúc học sâu khác nhau, chẳng hạn như MLP, CNN, RNN và cơ chế tập trung.
-Mặc dù có thể kết hợp bất kỳ biểu diễn văn bản được tiền huấn luyện với bất kỳ kiến ​​trúc nào cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng trong :numref:`fig_nlp-map-app`, nhưng chúng ta chỉ chọn một vài kết hợp đại diện.
+Mặc dù có thể kết hợp bất kỳ biểu diễn văn bản được tiền huấn luyện với bất kỳ kiến ​​trúc nào cho các tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng trong :numref:`fig_nlp-map-app`, nhưng ta chỉ chọn một vài kết hợp đại diện mà thôi.
 Cụ thể, chúng ta sẽ khám phá các kiến ​​trúc phổ biến dựa trên RNN và CNN để phân tích cảm xúc.
-Đối với suy luận ngôn ngữ tự nhiên, chúng ta sẽ chọn cơ chế tập trung và MLP để minh hoạ cách phân tích quan hệ giữa các cặp văn bản.
-Cuối cùng, chúng ta sẽ giới thiệu cách tinh chỉnh mô hình BERT được tiền huấn luyện cho một loạt các ứng dụng xử lý ngôn ngữ tự nhiên,
+Đối với suy luận ngôn ngữ tự nhiên, ta sẽ chọn cơ chế tập trung và MLP để minh họa cách phân tích quan hệ giữa các cặp văn bản.
+Cuối cùng, ta sẽ giới thiệu cách tinh chỉnh mô hình BERT được tiền huấn luyện cho một loạt các ứng dụng xử lý ngôn ngữ tự nhiên,
 ví dụ như các tác vụ cấp chuỗi (phân loại đơn văn bản và phân loại cặp văn bản) và cấp token (gắn thẻ văn bản và trả lời câu hỏi).
 Chúng ta sẽ tinh chỉnh BERT để xử lý ngôn ngữ tự nhiên như một thực nghiệm cụ thể.
 
@@ -96,3 +97,5 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 03/04/2020)*
