@@ -1365,7 +1365,7 @@ Let us try and identify this outcome in terms of matrix operations.
 $a_{ki} + a_{ik}$ is the $k, i$-th component of $\mathbf{A} + \mathbf{A}^\top$. This gives
 -->
 
-Bây giờ, ta hãy bắt đầu luyện tập một chút để  hiểu hơn.
+Bây giờ, ta cần luyện tập một chút để hiểu hơn.
 Ta hãy thử xác định kết quả trên theo các phép toán ma trận.
 $a_{ki} + a_{ik}$ là phần tử thứ $k, i$ của $\mathbf{A} + \mathbf{A}^\top$. Từ đó, ta có
 
