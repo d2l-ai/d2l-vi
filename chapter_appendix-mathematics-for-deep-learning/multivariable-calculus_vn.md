@@ -1350,7 +1350,7 @@ Now, the names of the indices in Einstein notation are arbitrary---the fact that
 so we can re-index so that they both use $i$ to see that
 -->
 
-Hiện tại, tên của các chỉ số  trong ký hiệu Einstein là tùy ý - trên thực tế , $i$ và $j$ khác nhau là không quan trọng đối với phép tính trên tại thời điểm này,
+Hiện tại, tên của các chỉ số trong ký hiệu Einstein là tùy ý - trên thực tế , việc $i$ và $j$ khác nhau là không quan trọng đối với phép tính trên tại thời điểm này,
 vì thế ta có thể gán lại chỉ số  sao cho cả hai đều chứa $i$
 
 
