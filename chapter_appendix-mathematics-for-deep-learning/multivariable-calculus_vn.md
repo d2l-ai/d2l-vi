@@ -511,7 +511,7 @@ but if we did that we would quickly find ourself swamped with terms, many of whi
 Indeed, one can see that, for instance:
 -->
 
-Ta có thể kế đến lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến
+Tiếp theo ta có thể lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến
 nhưng nếu ta làm như thế ta sẽ nhanh chống nhận ra chính ta ngập trong các thành phần, nhiều trong số chúng là lặp lại!
 Thật vậy, như ta có thể thấy, chẳng hạn:
 
