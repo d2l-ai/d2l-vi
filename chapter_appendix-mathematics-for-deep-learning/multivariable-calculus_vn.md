@@ -564,7 +564,7 @@ It is notationally burdensome to track exactly where we evaluate every derivativ
 as in the expression $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, so we often abbreviate this to the much more memorable
 -->
 
-Dòng đầu tiên theo sau từ định nghĩa từ vi phân từng phần, và dòng thứ hai theo sau từ định nghĩa gradient.
+Dòng đầu tiên theo sau từ định nghĩa đạo hàm từng phần, và dòng thứ hai theo sau từ định nghĩa gradient.
 Thật khó khăn đáng kể để dò theo chính xác chỗ ta đánh giá mỗi phép vi phân,
 vì trong biểu thức $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, cho nên ta thường rút gọn nó để dễ nhớ hơn nhiều
 
