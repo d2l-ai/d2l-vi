@@ -481,7 +481,7 @@ Such chains of equations are common when working with neural networks, so trying
 We can start to see visual hints of this connection in :numref:`fig_chain-1` if we take a look at what variables directly relate to one another.
 -->
 
-Các chuỗi phương trình như vậy là thông dụng khi ta làm việc với các mạng nơ-ron, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là chìa khóa.
+Các chuỗi phương trình như vậy là thông dụng khi ta làm việc với các mạng nơ-ron, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là thiết yếu.
 :numref:`fig_chain-1` biểu diễn trực quan mỗi liên hệ trực tiếp giữa biến này với biến khác.
 
 
