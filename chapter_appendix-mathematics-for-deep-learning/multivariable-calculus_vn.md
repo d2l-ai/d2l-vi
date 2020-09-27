@@ -1259,7 +1259,7 @@ $$
 This illustrates a few factors about matrix calculus that we will often counter throughout this section:
 -->
 
-Dưới đây minh họa một vài yếu tố về  giải tích ma trận mà ta sẽ gặp trong suốt phần này:
+Dưới đây minh họa một vài yếu tố về giải tích ma trận mà ta sẽ gặp trong suốt phần này:
 
 
 <!--
