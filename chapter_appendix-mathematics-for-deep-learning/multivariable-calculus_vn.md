@@ -1276,7 +1276,7 @@ we will need to take transposes to match back to the shape of the original term.
 Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau.
 * Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu.
 Lý do chủ yếu là do quy ước đạo hàm sẽ có cùng kích thước với mẫu số, do đó khi nhân ma trận,
-ta cần lấy các chuyển vị tương ứng với kích thước của số hạng ban đầu.
+ta cần lấy chuyển vị tương ứng để có thể thực hiện nhân.
 
 
 <!--
