@@ -1297,7 +1297,7 @@ To drive towards easier to manipulate notation, let us consider this problem usi
 In this case we can write the function as
 -->
 
-Để  thuận tiện cho việc ký hiệu, ta hãy viết lại bài toán bằng ký hiệu Einstein.
+Để thuận tiện cho việc ký hiệu, ta hãy viết lại bài toán bằng ký hiệu Einstein.
 
 
 $$
