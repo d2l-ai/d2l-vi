@@ -489,7 +489,7 @@ Các chuỗi phương trình như vậy là thông dụng khi ta làm việc v�
 ![The function relations above where nodes represent values and edges show functional dependence.](../img/ChainNet1.svg)
 -->
 
-![Các quan hệ của hàm ở trên, các nút biểu diễn giá trị, và cạnh cho biết sự phụ thuộc hàm.](../img/ChainNet1.svg)
+![Các quan hệ của hàm ở trên với các nút biểu diễn giá trị, và cạnh cho biết sự phụ thuộc hàm.](../img/ChainNet1.svg)
 :label:`fig_chain-1`
 
 
