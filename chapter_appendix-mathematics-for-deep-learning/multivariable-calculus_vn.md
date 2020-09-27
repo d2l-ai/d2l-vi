@@ -1021,7 +1021,7 @@ $$
 we can get our original polynomial back by saying
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể thu lại được đa thức ban đầu bằng cách đặt:
 
 
 $$
@@ -1033,7 +1033,7 @@ $$
 In general, if we computed this expansion any point $\mathbf{x}_0$, we see that
 -->
 
-*dịch đoạn phía trên*
+Nhìn chung, nếu chúng ta tính toán khai triển này tại mọi điểm $\mathbf{x}_0$, chúng ta thấy rằng:
 
 
 $$
@@ -1046,7 +1046,8 @@ This works for any dimensional input, and provides the best approximating quadra
 To give an example, let us plot the function 
 -->
 
-*dịch đoạn phía trên*
+Cách này hoạt động cho bất cứ đầu vào thứ nguyên nào và cung hàm bậc hai gần đúng nhất cho bất kỳ một hàm nào tại một điểm.
+Lấy biểu đồ của hàm sau làm ví dụ.
 
 
 $$
@@ -1058,7 +1059,7 @@ $$
 One can compute that the gradient and Hessian are
 -->
 
-*dịch đoạn phía trên*
+Người ta có thể tính toán gradient và Hessian như sau:
 
 
 $$
@@ -1070,7 +1071,7 @@ $$
 And thus, with a little algebra, see that the approximating quadratic at $[-1,0]^\top$ is
 -->
 
-*dịch đoạn phía trên*
+Vì vậy, kết hợp một chút đại số, ta thấy rằng hàm bậc hai xấp xỉ tại $[-1,0]^\top$ là:
 
 
 $$
@@ -1158,7 +1159,8 @@ where we perform numerical optimization iteratively finding the best fitting qua
 and then exactly minimizing that quadratic.
 -->
 
-*dịch đoạn phía trên*
+Điều này tạo cơ sở cho Thuật toán Newton được thảo luận ở :numref:`sec_gd`,
+trong đó chúng ta thực lặp đi lặp lại việc tối ưu hoá số để tìm ra hàm bậc hai phù hợp nhất và sau đó cực tiểu hoá hàm bậc hai đó.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -1168,7 +1170,7 @@ and then exactly minimizing that quadratic.
 ## A Little Matrix Calculus
 -->
 
-## *dịch tiêu đề trên*
+## Giải tích Ma trận
 
 
 <!--
@@ -1178,7 +1180,8 @@ but it is useful to know how derivatives of functions involving common matrix op
 particularly given how central matrix operations are to deep learning applications.
 -->
 
-*dịch đoạn phía trên*
+Đạo hàm của các hàm có liên quan đến ma trận hoá ra rất đẹp.
+Phần này các thể trở nên nặng nề về mặt lý thuyết, vì vậy có thể bị bỏ qua trong lần đọc đầu tiên, nhưng rất hữu ích để biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thông thường thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là với sự quan trọng của các phép toán ma trận đối với các ứng dụng học sâu.
 
 
 <!--
@@ -1187,7 +1190,7 @@ and we want to take the product function $f(\mathbf{x}) = \boldsymbol{\beta}^\to
 and understand how the dot product changes when we change $\mathbf{x}$.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem một ví dụ. Giả sử chúng ta có một vài vector cột cố định $\boldsymbol{\beta}$, và chúng ta muốn lấy hàm tích $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$, và hiểu cách tích vô hướng thay đổi khi chúng ta thay đổi $\mathbf{x}$.
 
 
 <!--
@@ -1196,7 +1199,8 @@ where we assemble our partial derivatives into the shape of whatever vector, mat
 In this case, we will write
 -->
 
-*dịch đoạn phía trên*
+Ký hiệu có tên *biểu diễn đạo hàm ma trận mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với đạo hàm ma trận trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng ở mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor.
+Trong trường hợp này, chúng ta viết:
 
 
 $$
@@ -1212,14 +1216,14 @@ $$
 where we matched the shape of the column vector $\mathbf{x}$. 
 -->
 
-*dịch đoạn phía trên*
+trong đó chúng ta đối sánh hình dạng của vector cột $\mathbf{x}$.
 
 
 <!--
 If we write out our function into components this is
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta triển khai hàm của chúng ta thành các thành tố
 
 
 $$
