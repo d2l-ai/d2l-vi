@@ -1215,7 +1215,7 @@ which is just $x_1$ multiplied by $\beta_1$, so the we obtain that
 -->
 
 Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, cần lưu ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
-có giá trị bằng $x_1$ nhân với $\beta_1$. Vì thế , ta có
+là $x_1$ nhân với $\beta_1$. Vì thế , ta có
 
 
 $$
