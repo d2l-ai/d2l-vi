@@ -586,7 +586,7 @@ and $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respecti
 Rất có ích khi suy nghĩ về ý nghĩa của biến đổi này.
 Ta đang cố gắng hiểu làm thế nào một hàm có dạng $f(u(a, b), v(a, b))$ thay đổi giá trị của nó khi $a$ thay đổi.
 Có hai hướng có thể xảy ra: $a \rightarrow u \rightarrow f$ và $a \rightarrow v \rightarrow f$.
-Ta có thể tính đóng góp của hai đường này qua quy tắc đạo hàm hàm hợp: $\frac{\partial w}{\partial u} \cdot \frac{\partial u}{\partial x}$
+Ta có thể tính toán đóng góp của cả hai hướng này thông qua quy tắc dây chuyền: $\frac{\partial w}{\partial u} \cdot \frac{\partial u}{\partial x}$
 và $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respectively, và cộng gộp lại.
 
 
