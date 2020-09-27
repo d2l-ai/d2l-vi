@@ -5,7 +5,7 @@
 # Distributions
 -->
 
-# *dịch tiêu đề trên*
+# Phân phối
 :label:`sec_distributions`
 
 
@@ -16,7 +16,10 @@ This is, however, a good basic list to be familiar with.
 Let us first import some common libraries.
 -->
 
-*dịch đoạn phía trên*
+Lúc này ta đã học cách làm việc với xác suất trong tình huống thiết lập rời rạc và liên tục, ta hãy làm quen với một số phân phối phổ thường gặp.
+Tùy thuộc vào lĩnh vực học máy, ta có thể cần phải quen thuộc với lượng lớn hơn nhiều các phân phối đó, hoặc đối với một số lĩnh vực học sâu có khả năng không gặp chút nào.
+Tuy nhiên, đây là một danh sách cơ bản tốt để làm quen.
+Đầu tiên chúng ta hãy nhập một số thư viện phổ biến.
 
 
 ```{.python .input}
@@ -55,7 +58,7 @@ tf.pi = tf.acos(tf.zeros(1)) * 2  # Define pi in TensorFlow
 ## Bernoulli
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Bernoulli
 
 
 <!--
@@ -64,8 +67,9 @@ This random variable encodes a coin flip which comes up $1$ with probability $p$
 If we have a random variable $X$ with this distribution, we will write
 -->
 
-*dịch đoạn phía trên*
-
+Đây là biến ngẫu nhiên đơn giản nhất thường gặp.
+Biến ngẫu nhiên này mã hóa tung một đồng xu cho giá trị $1$ với xác suất $p$ và $0$ với xác suất $1-p$.
+Nếu ta có một biến ngẫu nhiên $X$ với phân phối này, ta sẽ viết
 
 $$
 X \sim \mathrm{Bernoulli}(p).
@@ -76,7 +80,7 @@ $$
 The cumulative distribution function is
 -->
 
-*dịch đoạn phía trên*
+Hàm phân phối tích lũy là
 
 
 $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cases}$$
@@ -87,7 +91,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cas
 The probability mass function is plotted below.
 -->
 
-*dịch đoạn phía trên*
+Hàm khối lượng xác suất được vẽ dưới đây
 
 
 ```{.python .input}
@@ -106,7 +110,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_bernoulli_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta hãy vẽ hàm phân phối tích lũy :eqref:`eq_bernoulli_cdf`.
 
 
 ```{.python .input}
@@ -143,7 +147,7 @@ d2l.plot(x, tf.constant([F(y) for y in x]), 'x', 'c.d.f.')
 If $X \sim \mathrm{Bernoulli}(p)$, then:
 -->
 
-*dịch đoạn phía trên*
+Nếu  $X \sim \mathrm{Bernoulli}(p)$, thì:
 
 
 * $\mu_X = p$,
@@ -154,7 +158,7 @@ If $X \sim \mathrm{Bernoulli}(p)$, then:
 We can sample an array of arbitrary shape from a Bernoulli random variable as follows.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên Bernoulli như sau.
 
 
 ```{.python .input}
@@ -176,7 +180,7 @@ tf.cast(tf.random.uniform((10, 10)) < p, dtype=tf.float32)
 ## Discrete Uniform
 -->
 
-## *dịch tiêu đề trên*
+##Phân phối đồng nhất rời rạc
 
 
 <!--
@@ -187,7 +191,11 @@ The probability for each value $i \in \{1, 2, 3, \ldots, n\}$ is $p_i = \frac{1}
 We will denote a random variable $X$ with this distribution as
 -->
 
-*dịch đoạn phía trên*
+Biến ngẫu nhiên thường gặp tiếp theo là biến đồng nhất rời rạc.
+Để thảo luận ở đây, ta sẽ giả định là biến này được phân bổ trên các số nguyên $\{1, 2, \ldots, n\}$, tuy nhiên, có thể tự do chọn bất kỳ tập giá trị nào khác.
+Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này có nghĩa là mọi giá trị có thể xảy ra đều có khả năng như nhau.
+Xác suất cho mỗi giá trị $i \in \{1, 2, 3, \ldots, n\}$ là $p_i = \frac{1}{n}$.
+Chúng ta sẽ ký hiệu một biến ngẫu nhiên $X$ với phân phối này là
 
 
 $$
@@ -199,7 +207,7 @@ $$
 The cumulative distribution function is 
 -->
 
-*dịch đoạn phía trên*
+Hàm phân phối tích lũy của nó là 
 
 
 $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1 \le k < n, \\ 1 & x >= n . \end{cases}$$
@@ -210,7 +218,7 @@ $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1
 Let us first plot the probability mass function.
 -->
 
-*dịch đoạn phía trên*
+Trước hết ta hãy vẽ hàm khối lượng xác suất.
 
 
 ```{.python .input}
@@ -228,7 +236,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_discrete_uniform_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta hãy vẽ hàm phân phối xác suất :eqref:`eq_discrete_uniform_cdf`.
 
 
 ```{.python .input}
@@ -265,8 +273,7 @@ d2l.plot(x, [F(y) for y in x], 'x', 'c.d.f.')
 If $X \sim U(n)$, then:
 -->
 
-*dịch đoạn phía trên*
-
+Nếu  $X \sim U(n)$, thì
 
 * $\mu_X = \frac{1+n}{2}$,
 * $\sigma_X^2 = \frac{n^2-1}{12}$.
@@ -276,7 +283,7 @@ If $X \sim U(n)$, then:
 We can sample an array of arbitrary shape from a discrete uniform random variable as follows.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên đồng nhất rời rạc như sau.
 
 
 ```{.python .input}
@@ -1335,7 +1342,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 2 -->
 * 
