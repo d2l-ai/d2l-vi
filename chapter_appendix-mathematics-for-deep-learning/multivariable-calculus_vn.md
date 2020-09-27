@@ -1272,7 +1272,7 @@ we will need to take transposes to match back to the shape of the original term.
 -->
 
 * Đầu tiên, các tính toán sẽ trở nên khá phức tạp.
-* Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn giống với trường hợp đơn biến.
+* Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn có bề ngoài giống với trường hợp đơn biến.
 Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau.
 * Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu.
 Lý do chủ yếu là do quy ước đạo hàm sẽ có cùng kích thước với mẫu số, do đó khi nhân ma trận,
