@@ -803,7 +803,7 @@ Có hai bước:
 -->
 
 1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù chưa được thực hiện ở trên, việc này có thể kết hợp vào *lượt truyền xuôi*.
-2. Tính toán đạo hàm của $f$ từ sau ra trước. Chúng ta gọi đó là *lược truyền ngược*.
+2. Tính toán đạo hàm của $f$ từ cuối về đầu. Chúng ta gọi đó là *lượt truyền ngược*.
 
 
 <!--
