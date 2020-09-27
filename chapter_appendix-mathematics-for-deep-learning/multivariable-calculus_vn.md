@@ -1309,7 +1309,7 @@ $$
 To compute our derivative, we need to understand for every $k$, what the value of
 -->
 
-Để tính đạo hàm, ta cần hiểu các giá trị sau với từng giá trị của biến $k$:
+Để tính đạo hàm, ta cần tính các giá trị sau với từng giá trị của biến $k$:
 
 
 $$
