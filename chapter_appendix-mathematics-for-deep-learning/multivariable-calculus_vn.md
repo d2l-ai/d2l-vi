@@ -469,7 +469,7 @@ however, not every point with gradient zero is the true *global* minimum (or max
 Let us suppose that we have a function of four variables ($w, x, y$, and $z$) which we can make by composing many terms:
 -->
 
-Giả sử là ta có một hàm bốn biến ($w, x, y$, and $z$) mà nó được tạo ra bằng cách kết hợp các hàm con: 
+Giả sử là ta có một hàm bốn biến ($w, x, y$, and $z$) được tạo ra bằng cách kết hợp các hàm con: 
 
 
 $$\begin{aligned}f(u, v) & = (u+v)^{2} \\u(a, b) & = (a+b)^{2}, \qquad v(a, b) = (a-b)^{2}, \\a(w, x, y, z) & = (w+x+y+z)^{2}, \qquad b(w, x, y, z) = (w+x-y-z)^2.\end{aligned}$$
