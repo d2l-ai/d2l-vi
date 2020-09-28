@@ -1470,7 +1470,7 @@ where, the derivative is rather standard.
 If we try to convert this back into a matrix expression we get
 -->
 
-trong đó, đạo hàm khá chuẩn.
+là một đạo hàm khá phổ thông.
 Nếu ta thử chuyển đổi nó thành một biểu thức ma trận, ta có
 
 
