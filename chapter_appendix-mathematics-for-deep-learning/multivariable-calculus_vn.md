@@ -1411,7 +1411,7 @@ Again, we get a result that looks rather like the single variable result but wit
 -->
 
 Tương đương với $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
-Một lần nữa, ta lại thu được kết quả khá giống với trường hợp đơn biến nhưng với một phép chuyển vị.
+Một lần nữa, ta lại thu được kết quả nhìn giống với trường hợp đơn biến nhưng với một phép chuyển vị.
 
 <!--
 At this point, the pattern should be looking rather suspicious, so let us try to figure out why.
