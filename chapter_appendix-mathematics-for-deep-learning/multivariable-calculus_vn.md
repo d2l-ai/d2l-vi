@@ -829,7 +829,8 @@ The fact that we compute derivatives from $f$ back towards the inputs rather tha
 Note that there are two steps:
 -->
 
-*dịch đoạn phía trên*
+Việc tính đạo hàm từ $f$ trở ngược về đầu vào hơn là từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán.
+Có hai bước:
 
 
 <!--
@@ -837,7 +838,9 @@ Note that there are two steps:
 2. Compute the gradient of $f$ from back to front.  We call this the *backwards pass*.
 -->
 
-*dịch đoạn phía trên*
+1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù không được thực hiện ở trên, 
+ hai việc này có thể được kết hợp vào một *lượt truyền xuôi* duy nhất.
+2. Tính toán đạo hàm của $f$ từ cuối về đầu. Chúng ta gọi đó là *lượt truyền ngược*.
 
 
 <!--
@@ -845,14 +848,15 @@ This is precisely what every deep learning algorithm implements to allow the com
 It is an astonishing fact that we have such a decomposition.
 -->
 
-*dịch đoạn phía trên*
+Đây chính xác là những gì mỗi thuật toán học sâu thực thi để tính gradient của giá trị mất mát theo từng trọng số của mạng trong mỗi lượt lan truyền.
+Thật thú vị vì chúng ta có một sự phân tách như trên.
 
 
 <!--
 To see how to encapsulated this, let us take a quick look at this example.
 -->
 
-*dịch đoạn phía trên*
+Để tóm gọn phần này, hãy xem nhanh ví dụ sau.
 
 
 ```{.python .input}
@@ -938,14 +942,14 @@ print(f'df/dz at {w.numpy()}, {x.numpy()}, {y.numpy()}, '
 All of what we did above can be done automatically by calling `f.backwards()`.
 -->
 
-*dịch đoạn phía trên*
+Tất cả những gì chúng ta làm ở trên có thể được thực hiện tự động bằng cách gọi hàm `f.backwards()`.
 
 
 <!--
 ## Hessians
 -->
 
-## *dịch tiêu đề trên*
+## Hessian
 
 
 <!--
@@ -953,7 +957,7 @@ As with single variable calculus, it is useful to consider higher-order derivati
 get a handle on how we can obtain a better approximation to a function than using the gradient alone.
 -->
 
-*dịch đoạn phía trên*
+Như với giải tích đơn biến, việc xem xét đạo hàm bậc cao hơn cũng hữu ích để xấp xỉ tốt hơn một hàm so với việc chỉ sử dụng gradient.
 
 
 <!--
@@ -961,7 +965,7 @@ There is one immediate problem one encounters when working with higher order der
 If we have a function $f(x_1, \ldots, x_n)$ of $n$ variables, then we can take $n^{2}$ many second derivatives, namely for any choice of $i$ and $j$:
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề trước mắt khi làm việc với đạo hàm bậc cao hơn của hàm đa biến đó là cần phải tính toán một số lượng lớn đạo hàm. Nếu chúng ta có một hàm $f(x_1, \ldots, x_n)$ với $n$ biến, chúng ta có thể cần $n^{2}$ đạo hàm bậc 2, chẳng hạn để lựa chọn $i$ và $j$:
 
 
 $$
@@ -973,7 +977,7 @@ $$
 This is traditionally assembled into a matrix called the *Hessian*:
 -->
 
-*dịch đoạn phía trên*
+Biểu thức này được hợp thành một ma trận gọi là *Hessian*:
 
 
 $$\mathbf{H}_f = \begin{bmatrix} \frac{d^2f}{dx_1dx_1} & \cdots & \frac{d^2f}{dx_1dx_n} \\ \vdots & \ddots & \vdots \\ \frac{d^2f}{dx_ndx_1} & \cdots & \frac{d^2f}{dx_ndx_n} \\ \end{bmatrix}.$$
@@ -986,7 +990,8 @@ Indeed, we can show that as long as both *mixed partials* (partial derivatives w
 and are continuous, we can say that for any $i$, and $j$,
 -->
 
-*dịch đoạn phía trên*
+Không phải mọi đầu vào của ma trận đều độc lập.
+Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, chúng ta có thể nói rằng hàm số tồn tại và liên tục với mọi $i$ và $j$,
 
 
 $$
@@ -1000,7 +1005,9 @@ and then perturbing it in $x_j$ and then comparing the result of that with what 
 with the knowledge that both of these orders lead to the same final change in the output of $f$.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, bằng cách xem xét đầu tiên sự xáo trộn của một hàm theo $x_i$,
+rồi theo $x_j$, so sánh kết quả này với khi xáo trộn theo thứ tự $x_j$ rồi đến $x_i$, 
+biết rằng cả hai thứ tự này dẫn đến sự thay đổi đầu ra của $f$ một cách như nhau.
 
 
 <!--
@@ -1008,7 +1015,8 @@ As with single variables, we can use these derivatives to get a far better idea 
 In particular, we can use it to find the best fitting quadratic near a point $\mathbf{x}_0$, as we saw in a single variable.
 -->
 
-*dịch đoạn phía trên*
+Như với các hàm đơn biến, chúng ta có thể sử dụng những đạo hàm này để hiểu rõ hơn về cách hàm hoạt động gần một điểm.
+Cụ thể, chúng ta có thể sử dụng nó để tìm hàm bậc hai phù hợp nhất gần một điểm $\mathbf{x}_0$, như chúng ta đã thấy trong giải tích đơn biến.
 
 
 <!--
@@ -1017,7 +1025,9 @@ This is the general form for a quadratic in two variables.
 If we look at the value of the function, its gradient, and its Hessian :eqref:`eq_hess_def`, all at the point zero:
 -->
 
-*dịch đoạn phía trên*
+Hãy tham khảo một ví dụ. Giả sử rằng $f(x_1, x_2) = a + b_1x_1 + b_2x_2 + c_{11}x_1^{2} + c_{12}x_1x_2 + c_{22}x_2^{2}$.
+Đây là một dạng tổng quát của hàm bậc hai 2 biến.
+Nếu chúng ta nhìn vào giá trị của hàm, gradient và Hessian của nó :eqref:`eq_hess_def`, tất cả tại điểm 0:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1769,7 +1779,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 7 -->
 * 
