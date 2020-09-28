@@ -1455,7 +1455,7 @@ Let us try to imaging what this would be for $1\times1$ matrices.
 In that case, we get the expression
 -->
 
-Phép tính này khá quan trọng trong ngành, và được gọi là phép phân rã ma trận.
+Phép tính này khá quan trọng trong phân rã ma trận.
 Tuy nhiên, ở đây nó chỉ đơn giản là một đạo hàm mà ta cần tính.
 Ta hãy thử tưởng tượng xem nó sẽ như thế nào đối với ma trận $1\times1$.
 Trong trường hợp này, ta có biểu thức sau
