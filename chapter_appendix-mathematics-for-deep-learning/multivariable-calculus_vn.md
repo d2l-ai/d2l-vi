@@ -1431,7 +1431,7 @@ Nếu một biểu thức như vậy tồn tại, nó sẽ phải đúng cho t�
 Do đó, nó sẽ đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số,
 tổng ma trận chỉ là tổng, và phép chuyển vị không có tác dụng gì!
 Nói cách khác, bất kỳ biểu thức nào chúng ta nhận được *phải* phù hợp với biểu thức đơn biến.
-Điều này có nghĩa là, trong một số trường hợp khi ta biết biểu thức đơn biến kết hợp, ta thường có thể đoán được các đạo hàm ma trận!
+Điều này có nghĩa là, trong một số trường hợp khi ta biết đạo hàm đơn biến tương ứng, ta thường có thể đoán được các đạo hàm ma trận!
 
 
 <!--
