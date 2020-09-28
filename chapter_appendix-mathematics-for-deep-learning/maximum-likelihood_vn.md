@@ -209,15 +209,14 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 ## Numerical Optimization and the Negative Log-Likelihood
 -->
 
-### *dịch tiêu đề trên*
+### Tối ưu hoá số và hàm log hợp lí âm
 
 
 <!--
 The previous example is nice, but what if we have billions of parameters and data examples.
 -->
 
-*dịch đoạn phía trên*
-
+Ví dụ trước rất hay, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẩu dữ liệu.
 
 <!--
 First notice that, if we make the assumption that all the data examples are independent, 
@@ -226,15 +225,15 @@ Indeed, each probability is in $[0,1]$, say typically of value about $1/2$, and 
 We cannot work with that directly.  
 -->
 
-*dịch đoạn phía trên*
-
+Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các ví dụ dữ liệu là độc lập, 
+thì trên thực tế chúng ta không còn có thể xem xét khả năng xảy ra vì nó là tích của nhiều xác suất.
+Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, thường thì có giá trị khoảng $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. Ta không thể làm việc với điều đó trực tiếp.
 
 <!--
 However, recall that the logarithm turns products to sums, in which case 
 -->
 
-*dịch đoạn phía trên*
-
+Tuy nhiên, hãy nhớ lại rằng lôgarit biến đổi tích số thành tổng, trong trường hợp đó thì
 
 $$
 \log((1/2)^{1000000000}) = 1000000000\cdot\log(1/2) \approx -301029995.6\ldots
@@ -246,8 +245,8 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-*dịch đoạn phía trên*
-
+Con số này hoàn toàn khớp với ngay cả một giá trị chính xác $32$-bit float.
+Vì vậy, chúng ta nên xem xét *log-likelihood*, chính là
 
 $$
 \log(P(X \mid \boldsymbol{\theta})).
@@ -259,23 +258,23 @@ Since the function $x \mapsto \log(x)$ is increasing, maximizing the likelihood 
 Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when working with the specific example of the naive Bayes classifier.
 -->
 
-*dịch đoạn phía trên*
-
+Vì giá trị hàm $x \mapsto \log(x)$ đang tăng lên, việc tối đa hóa độ hợp lý cũng giống như tối đa hóa log-likelihood.
+Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về trình phân loại Bayes ngây thơ.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
 We may turn maximum likelihood into the minimization of a loss by taking $-\log(P(X \mid \boldsymbol{\theta}))$, which is the *negative log-likelihood*.
 -->
 
-*dịch đoạn phía trên*
+Ta thường làm việc với các hàm mất mát, tại đó ta muốn giảm thiểu độ mất mát.
+Ta có thể biến đổi hợp lý cực đại thành giảm thiểu mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, là *negative log-likelihood*.
 
 
 <!--
 To illustrate this, consider the coin flipping problem from before, and pretend that we do not know the closed form solution. We may compute that
 -->
 
-*dịch đoạn phía trên*
-
+Để minh họa điều này, hãy để ý đến vấn đề lật đồng xu trước đó và giả vờ rằng ta không biết giải pháp dạng đóng. Ta có thể tính toán bài toán đó
 
 $$
 -\log(P(X \mid \boldsymbol{\theta})) = -\log(\theta^{n_H}(1-\theta)^{n_T}) = -(n_H\log(\theta) + n_T\log(1-\theta)).
@@ -286,8 +285,7 @@ $$
 This can be written into code, and freely optimized even for billions of coin flips.
 -->
 
-*dịch đoạn phía trên*
-
+Đẳng thức này có thể được viết thành đoạn mã và được tối ưu hóa thoải mái ngay cả với hàng tỷ đồng xu.
 
 ```{.python .input}
 # Set up our data
@@ -366,8 +364,7 @@ The second reason we consider the log-likelihood is the simplified application o
 As discussed above, due to independence assumptions, most probabilities we encounter in machine learning are products of individual probabilities.
 -->
 
-*dịch đoạn phía trên*
-
+Lý do thứ hai mà ta xem 
 
 $$
 P(X\mid\boldsymbol{\theta}) = p(x_1\mid\boldsymbol{\theta})\cdot p(x_2\mid\boldsymbol{\theta})\cdots p(x_n\mid\boldsymbol{\theta}).
@@ -377,9 +374,7 @@ $$
 <!--
 This means that if we directly apply the product rule to compute a derivative we get
 -->
-
-*dịch đoạn phía trên*
-
+Đẳng thức này có nghĩa là nếu chúng ta áp dựng trực tiếp quy tắc nhân để tính đạo hàm thì ta sẽ có được
 
 $$
 \begin{aligned}
@@ -409,8 +404,7 @@ $$
 which then gives
 -->
 
-*dịch đoạn phía trên*
-
+sau đó nhận được kết quả là
 
 $$
 - \frac{\partial}{\partial \boldsymbol{\theta}} \log\left(P(X\mid\boldsymbol{\theta})\right) = \frac{1}{P(x_1\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_1\mid\boldsymbol{\theta})\right) + \cdots + \frac{1}{P(x_n\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_n\mid\boldsymbol{\theta})\right).
