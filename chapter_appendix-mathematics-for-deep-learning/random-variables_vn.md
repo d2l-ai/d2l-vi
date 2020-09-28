@@ -1449,7 +1449,7 @@ d2l.plt.show()
 Let us see some properties of covariances:
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét một vài tính chất của hiệp phương sai:
 
 
 <!--
