@@ -5,7 +5,7 @@
 # Maximum Likelihood
 -->
 
-# *dịch tiêu đề trên*
+# Hợp lý cực đại
 :label:`sec_maximum_likelihood`
 
 
