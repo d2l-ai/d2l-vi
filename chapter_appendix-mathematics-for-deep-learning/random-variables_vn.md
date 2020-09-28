@@ -1562,7 +1562,7 @@ This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning m
 As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$. Then, one can compute that
 -->
 
-*dịch đoạn phía trên*
+Một ví dụ khác, xem xét $X$ như bất kỳ biến ngẫu nhiên nào, và $Y=aX+b$ như bất kỳ hàm tuyến tính xác định nào của $X$. Vậy, ta có thể tính 
 
 
 $$\sigma_{Y} = \sigma_{aX+b} = |a|\sigma_{X},$$
