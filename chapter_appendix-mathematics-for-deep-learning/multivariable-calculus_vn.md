@@ -1428,7 +1428,7 @@ Tại thời điểm này, cách thức tính có vẻ khá đáng ngờ, vì v�
 Khi ta lấy đạo hàm ma trận như trên, đầu tiên ta giả sử biểu thức ta nhận được sẽ là một biểu thức ma trận khác:
 một biểu thức mà ta có thể viết nó dưới dạng tích và tổng của các ma trận và chuyển vị của chúng.
 Nếu một biểu thức như vậy tồn tại, nó sẽ phải đúng cho tất cả các ma trận.
-Đặc biệt, nó sẽ phải đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số,
+Do đó, nó sẽ đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số,
 tổng ma trận chỉ là tổng, và phép chuyển vị không có tác dụng gì!
 Nói cách khác, bất kỳ biểu thức nào chúng ta nhận được *phải* phù hợp với biểu thức đơn biến.
 Điều này có nghĩa là, trong một số trường hợp khi ta biết biểu thức đơn biến kết hợp, ta thường có thể đoán được các đạo hàm ma trận!
