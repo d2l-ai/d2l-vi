@@ -1442,7 +1442,7 @@ Let us try to compute
 -->
 
 Ta hãy thử xem sao.
-Giả sử  $\mathbf{X}$ là ma trận $n \times m$, 
+Giả sử $\mathbf{X}$ là ma trận $n \times m$, 
 $\mathbf{U}$ là ma trận $n \times r$ và $\mathbf{V}$ là ma trận $r \times m$.
 Ta sẽ tính
 
