@@ -74,6 +74,7 @@ deepfm_vn
 Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
+* Nguyễn Lê Quang Nhật
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 
