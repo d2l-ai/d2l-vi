@@ -33,7 +33,7 @@ văn bản để đọc hay hàng hóa để mua, nhằm tạo nên một trải
 Hơn nữa, hệ thống đề xuất là một trong những hệ thống máy học mạnh mẽ nhất mà các công ty bán lẻ áp dụng với mục đích tăng doanh thu.
 Hệ thống đề xuất là công cụ thay thế cho các công cụ tìm kiếm bằng cách giảm nỗ lực tìm kiếm chủ động và tăng cơ hội tiếp cận của người dùng với những đề xuất mà họ không bao giờ tìm đến.
 Rất nhiều công ty đã vượt lên trên các đối thủ nhờ có hệ thống đề xuất hiệu quả hơn.
-Do đó, hệ thống đề xuất là trung tâm của không chỉ trong cuộc sống hàng ngày của chúng ta mà còn không thể thiếu trong một số lĩnh vực kinh doanh.
+Do đó, hệ thống đề xuất đã trở thành trung tâm không chỉ trong cuộc sống hàng ngày của chúng ta mà còn có vai trò quan trọng trong một số lĩnh vực kinh doanh.
 
 
 <!--
@@ -51,8 +51,8 @@ cùng với việc khám phá một số kỹ thuật cơ bản để xây dựn
 Cụ thể, bạn sẽ học được cách để dự đoán mức đánh giá mà một người dùng sẽ đánh giá một sản phẩm,
 cách để tạo ra danh sách các sản phẩm đề xuất và cách dự đoán tỷ lệ nhấp chuột (*click-through rate*) từ một lượng lớn đặc trưng.
 Những tác vụ này vô cùng phổ biến trong các ứng dụng thực tế.
-Thông qua việc học chương này, bạn sẽ có được trải nghiệm thực tiễn liên quan đến giải các bài toán đề xuất thực tế
-không những với những phương pháp cổ điển mà còn cả các mô hình tiên tiến hơn dựa trên học sâu.
+Thông qua việc học chương này, bạn sẽ có được trải nghiệm thực tiễn để giải các bài toán đề xuất thực tế
+không chỉ với những phương pháp cổ điển mà còn là những mô hình tiên tiến hơn dựa trên học sâu.
 
 
 ```toc
