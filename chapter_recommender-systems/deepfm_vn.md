@@ -17,10 +17,10 @@ but it is usually not adopted due to numerical instability and high computationa
 -->
 
 Việc học những tổ hợp đặc trưng hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỉ lệ nhấp chuột.
-Máy phân rã ma trận mô hình hoá tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
-Điều này thường không đủ đối với dữ liệu thực tế khi bản thân cấu trúc giao giữa các đặc trưng thường rất phức tạp và có dạng phi tuyến.
-Tệ hơn nữa, trong thực tế máy phân rã ma trận thường sử dụng các tương tác đặc trưng bậc hai.
-Mô hình hoá tổ hợp tương tác có bậc cao hơn là khả thi về lý thuyết
+Máy phân rã ma trận mô hình hoá các tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
+Điều này thường không đủ đối với dữ liệu thực tế khi bản thân việc kết hợp chéo các đặc trưng thường có cấu trúc rất phức tạp và có dạng phi tuyến.
+Tệ hơn, máy phân rã ma trận trong thực tế thường sử dụng các tương tác đặc trưng bậc hai.
+Mô hình hoá tổ hợp tương tác với bậc cao hơn tuy khả thi về lý thuyết
 nhưng thường không được sử dụng do tính bất ổn số học và độ phức tạp tính toán cao.
 
 
@@ -34,7 +34,7 @@ In this section, we will introduce a representative model named deep factorizati
 -->
 
 Một giải pháp hiệu quả hơn là sử dụng mạng nơ-ron sâu.
-Mạng nơ-ron sâu rất mạnh mẽ khi học biểu diễn đặc trưng và có thể học được những tương tác đặc trưng tinh xảo.
+Mạng nơ-ron sâu rất hiệu quả khi học biểu diễn đặc trưng và có thể học được những tương tác đặc trưng tinh xảo.
 Do đó, việc tích hợp chúng vào máy phân rã ma trận cũng dễ hiểu.
 Việc thêm các tầng biến đổi phi tuyến vào máy phân rã ma trận giúp mô hình hoá cả những tổ hợp đặc trưng bậc thấp và bậc cao.
 Hơn nữa, bản thân cấu trúc phi tuyến của đầu vào cũng có thể được nắm bắt thông qua mạng nơ-ron sâu.
@@ -61,8 +61,8 @@ DeepFM bao gồm một thành phần FM và một mạng sâu được tích h�
 FM là máy phân rã ma trận 2 chiều dùng để mô hình hoá tương tác đặc trưng bậc thấp.
 Mạng sâu là một perceptron đa tầng dùng để nắm bắt tương tác đặc trưng bậc cao và tính phi tuyến.
 Hai thành phần này có chung đầu vào/embedding và tổng đầu ra của chúng được lấy làm dự đoán cuối cùng.
-Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu mà có thể nắm bắt được cả sự ghi nhớ và tính khái quát.
-DeepFM có lợi thế hơn mô hình Rộng \& Sâu ở chỗ nó giảm tải việc thiết kế đặc trưng một cách thủ công bằng cách tự động nhận biết tổ hợp đặc trưng.
+Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu, là kiến trúc có thể nắm bắt được cả sự ghi nhớ và tính khái quát.
+DeepFM lợi thế hơn mô hình Rộng \& Sâu ở chỗ nó giảm tải việc thiết kế đặc trưng một cách thủ công bằng cách tự động nhận biết tổ hợp đặc trưng.
 
 
 <!--
