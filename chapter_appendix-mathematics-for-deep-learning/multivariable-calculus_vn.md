@@ -1383,7 +1383,7 @@ Thus, we see that the $k$-th entry of the desired derivative from :eqref:`eq_mat
 and thus the two are the same. Thus yields
 -->
 
-Vì thế, ta thấy phần tử thứ $k$ của đạo hàm ta mong muốn từ :eqref:`eq_mat_goal_1` đơn giản là phần tử thứ $k$ của vector bên tay phải,
+Vì thế, ta thấy phần tử thứ $k$ của đạo hàm ta mong muốn từ :eqref:`eq_mat_goal_1` đơn giản là phần tử thứ $k$ của vector bên vế phải,
 và do đó hai phần tử này là như nhau. Điều này dẫn đến
 
 
