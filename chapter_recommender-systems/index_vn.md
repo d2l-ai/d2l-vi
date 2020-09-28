@@ -32,7 +32,7 @@ Mục đích chính của các hệ thống đề xuất là giúp người dùn
 văn bản để đọc hay hàng hóa để mua, nhằm tạo nên một trải nghiệm thú vị cho người dùng.
 Hơn nữa, hệ thống đề xuất là một trong những hệ thống máy học mạnh mẽ nhất mà các công ty bán lẻ áp dụng với mục đích tăng doanh thu.
 Hệ thống đề xuất là công cụ thay thế cho các công cụ tìm kiếm bằng cách giảm nỗ lực tìm kiếm chủ động và tăng cơ hội tiếp cận của người dùng với những đề xuất mà họ không bao giờ tìm đến.
-Rất nhiều công ty đã có thể vượt lên trên các đối thủ nhờ có hệ thống đề xuất hiệu quả hơn.
+Rất nhiều công ty đã vượt lên trên các đối thủ nhờ có hệ thống đề xuất hiệu quả hơn.
 Do đó, hệ thống đề xuất là trung tâm của không chỉ trong cuộc sống hàng ngày của chúng ta mà còn không thể thiếu trong một số lĩnh vực kinh doanh.
 
 
