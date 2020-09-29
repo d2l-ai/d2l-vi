@@ -284,7 +284,7 @@ Using the geometric understanding of dot products from :numref:`sec_geometry-lin
 -->
 
 Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai.
-Ta gọi $\mathbf{v}$ là *hướng hạ giốc nhất*.
+Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất*.
 Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau
 
 
@@ -318,7 +318,7 @@ Thus our informal algorithm can be rewritten as follows.
 -->
 
 Điều này dẫn ta đến với một trong những thuật toán quan trọng nhất của học máy:
-hướng hạ giốc nhất cùng hướng với $-\nabla_{\mathbf{w}}L(\mathbf{w})$.
+hướng hạ dốc nhất cùng hướng với $-\nabla_{\mathbf{w}}L(\mathbf{w})$.
 Vậy nên thuật toán của ta sẽ được viết lại như sau.
 
 
@@ -1722,6 +1722,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
