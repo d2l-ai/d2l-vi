@@ -1458,7 +1458,9 @@ Hãy xem xét một vài tính chất của hiệp phương sai:
 * If $X$ and $Y$ are independent then $\mathrm{Cov}(X, Y) = 0$.
 -->
 
-*dịch đoạn phía trên*
+* Với bất kỳ biến $X$ ngẫu nhiên nào, $\mathrm{Cov}(X, X) = \mathrm{Var}(X)$.
+* Với bất kỳ biến ngẫu nhiên $X, Y$ và các số $a$ và $b$, $\mathrm{Cov}(aX+b, Y) = \mathrm{Cov}(X, aY+b) = a\mathrm{Cov}(X, Y)$.
+* Nếu $X$ và $Y$ độc lập thì $\mathrm{Cov}(X, Y) = 0$.
 
 
 <!--
@@ -1466,7 +1468,8 @@ In addition, we can use the covariance to expand a relationship we saw before.
 Recall that is $X$ and $Y$ are two independent random variables then
 -->
 
-*dịch đoạn phía trên*
+Ngoài ra, ta có thể sử dụng phương sai để mở rộng một hệ thức ta đã thấy trước đó.
+Hãy nhớ lại nếu $X$ và $Y$ là hai biến ngẫu nhiên độc lập thì
 
 
 $$
@@ -1478,7 +1481,7 @@ $$
 With knowledge of covariances, we can expand this relationship.  Indeed, some algebra can show that in general,
 -->
 
-*dịch đoạn phía trên*
+Với kiến thức về phương sai, ta có thể khai triển hệ thức này. Quả nhiên, một vài đại số có thể chứng minh điều đó nói chung,
 
 
 $$
@@ -1490,14 +1493,14 @@ $$
 This allows us to generalize the variance summation rule for correlated random variables.
 -->
 
-*dịch đoạn phía trên*
+Điều này cho phép ta tổng quát hóa quy tắc tổng phương sai dành cho biến ngẫu nhiên tương quan.
 
 
 <!--
 ### Correlation
 -->
 
-### *dịch tiêu đề trên*
+### Tương quan
 
 
 <!--
@@ -1508,7 +1511,8 @@ These units can be hard to interpret. What we will often want in this case is a 
 Indeed, often we do not care about exact quantitative correlation, but rather ask if the correlation is in the same direction, and how strong the relationship is.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã bàn về trường hợp của trung bình và phương sai, ta hãy xem xét đơn vị.
+Nếu $X$ được đo trong một đơn vị (cho là inch), và 
 
 
 <!--
