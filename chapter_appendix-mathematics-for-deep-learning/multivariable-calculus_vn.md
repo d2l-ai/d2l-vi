@@ -245,14 +245,14 @@ f'approximation: {grad_approx}, true Value: {true_value}'
 ## Geometry of Gradients and Gradient Descent
 -->
 
-## *dịch tiêu đề trên*
+## Hình học Gradient và Thuật toán Hạ Gradient
 
 
 <!--
 Consider the again :eqref:`eq_nabla_use`:
 -->
 
-*dịch đoạn phía trên*
+Nhìn lại :eqref:`eq_nabla_use`:
 
 
 $$
@@ -266,7 +266,9 @@ Let us understand geometrically the algorithm of gradient descent first describe
 What we will do is the following:
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta muốn sử dụng thông tin gradient để cực tiểu hóa mất mát $L$.
+Hãy cùng tìm hiểu cách hoạt động về mặt hình học của thuật toán hạ gradient được mô tả lần đầu ở :numref:`sec_autograd`.
+Những bước của thuật toán được miêu tả như sau:
 
 
 <!--
@@ -276,8 +278,10 @@ What we will do is the following:
 4. Repeat.
 -->
 
-*dịch đoạn phía trên*
-
+1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
+2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất.
+3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$.
+4. Lặp lại.
 
 <!--
 The only thing we do not know exactly how to do is to compute the vector $\mathbf{v}$ in the second step.
@@ -285,7 +289,9 @@ We will call such a direction the *direction of steepest descent*.
 Using the geometric understanding of dot products from :numref:`sec_geometry-linear-algebraic-ops`, we see that we can rewrite :eqref:`eq_nabla_use` as
 -->
 
-*dịch đoạn phía trên*
+Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai.
+Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất*.
+Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau
 
 
 $$
@@ -303,7 +309,12 @@ The only way to achieve this is to head in the exact opposite direction:
 pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 -->
 
-*dịch đoạn phía trên*
+Để thuận tiện, ta cho rằng hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$.
+Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn biểu diễn trên trở nên càng âm.
+Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể.
+Giờ, nhắc lại kiến thức của phép cô-sin, ta có thể biến nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ.
+Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
+chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 
 
 <!--
@@ -312,7 +323,9 @@ the direction of steepest decent points in the direction of $-\nabla_{\mathbf{w}
 Thus our informal algorithm can be rewritten as follows.
 -->
 
-*dịch đoạn phía trên*
+Điều này dẫn ta đến với một trong những thuật toán quan trọng nhất của học máy:
+hướng hạ dốc nhất cùng hướng với $-\nabla_{\mathbf{w}}L(\mathbf{w})$.
+Vậy nên thuật toán của ta sẽ được viết lại như sau.
 
 
 <!--
@@ -322,7 +335,10 @@ Thus our informal algorithm can be rewritten as follows.
 4. Repeat.
 -->
 
-*dịch đoạn phía trên*
+1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
+2. Tính toán $\nabla_{\mathbf{w}} L(\mathbf{w})$.
+3. Tiến một bước nhỏ về hướng ngược lại của nó: $\mathbf{w} \rightarrow \mathbf{w} - \epsilon\nabla_{\mathbf{w}} L(\mathbf{w})$.
+4. Lặp lại.
 
 
 <!--
@@ -330,7 +346,8 @@ This basic algorithm has been modified and adapted many ways by many researchers
 Use the gradient to find the direction that decreases the loss as rapidly as possible, and update the parameters to take a step in that direction.
 -->
 
-*dịch đoạn phía trên*
+Thuật toán cơ bản này dù đã được chỉnh sửa và kết hợp theo nhiều cách bởi các nhà nghiên cứu, nhưng khái niệm cốt lõi vẫn là như nhau.
+Sử dụng gradient để tìm hướng giảm mất mát nhanh nhất có thể và cập nhật các tham số để thực hiện di chuyển về hướng đó.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -1791,7 +1808,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * Phạm Hồng Vinh
