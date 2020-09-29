@@ -4,7 +4,7 @@
 # Sequence-Aware Recommender Systems
 -->
 
-# Hệ thống Gợi ý có Nhận thức về Chuỗi
+# Hệ thống Đề xuất có Nhận thức về Chuỗi
 
 
 <!--
@@ -14,10 +14,10 @@ It is a sequence-aware recommender :cite:`Quadrana.Cremonesi.Jannach.2018` where
 A number of recent literatures have demonstrated the usefulness of incorporating such information in modeling users' temporal behavioral patterns and discovering their interest drift.
 -->
 
-Trong phần trước, ta trừu tượng hoá tác vụ gợi ý như một bài toán hoàn thành ma trận mà không xét hành vi ngắn hạn của người dùng.
-Trong phần này, chúng tôi sẽ giới thiệu một mô hình gợi ý cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
-Đây là một hệ thống gợi ý có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường là có mốc thời gian diễn ra.
-Nhiều bài báo đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng trong sở thích của họ.
+Trong phần trước, ta trừu tượng hoá tác vụ đề xuất dưới dạng một bài toán hoàn thiện ma trận mà không xét đến hành vi ngắn hạn của người dùng.
+Trong phần này, chúng tôi sẽ giới thiệu một mô hình đề xuất cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
+Đây là một hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường đi kèm với mốc thời gian diễn ra.
+Nhiều bài báo gần đây đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng sở thích của họ.
 
 
 <!--
@@ -33,16 +33,16 @@ resulting in a more comprehensive modeling of user interests.
 Details of the model are described as follows.
 -->
 
-Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình gợi ý embedding chuỗi tích chập (*convolutional sequence embedding recommendation model*),
+Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, viết tắt của mô hình đề xuất embedding chuỗi tích chập (*convolutional sequence embedding recommendation model*),
 kế thừa mạng nơ-ron tích chập nhằm nắm bắt khuôn mẫu động có ảnh hưởng đến những hoạt động gần đây của người dùng.
 Thành phần chính của Caser bao gồm một mạng tích chập ngang và một mạng tích chập dọc,
-nhằm lần lượt khám phá khuôn mẫu mức liên kết (*union-level*) và mức điểm (*point-level*) của chuỗi.
-Khuôn mẫu mức điểm ám chỉ tác động của một điểm riêng lẻ trong lịch sử của chuỗi chứa điểm đó lên sản phẩm mục tiêu,
-trong khi khuôn mẫu mức liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu sau đó.
+nhằm lần lượt khám phá khuôn mẫu cấp liên kết (*union-level*) và cấp điểm (*point-level*) của chuỗi.
+Khuôn mẫu cấp điểm ám chỉ tác động của một sản phẩm riêng lẻ trong lịch sử của chuỗi lên sản phẩm mục tiêu,
+trong khi khuôn mẫu cấp liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu kế tiếp.
 Ví dụ, việc mua sữa cùng với bơ dẫn tới xác suất mua thêm cả bột mì cao hơn so với việc chỉ mua một trong hai.
-Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong tầng kết nối đầy đủ cuối,
-kết quả là sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
-Chi tiết về mô hình này sẽ được mô tả ở các phần dưới.
+Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong những tầng kết nối đầy đủ cuối cùng,
+dẫn đến sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
+Chi tiết về mô hình này sẽ được mô tả tiếp theo.
 
 
 <!--
@@ -59,10 +59,10 @@ The goal of Caser is to recommend item by considering user general tastes as wel
 Suppose we take the previous $L$ items into consideration, an embedding matrix that represents the former interactions for time step $t$ can be constructed:
 -->
 
-Trong hệ thống gợi ý có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm từ tập sản phẩm.
-Gọi $S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi đã sắp xếp.
-Mục tiêu của Caser là gợi ý sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như là dự định ngắn hạn.
-Giả sử ta xét đến $L$ sản phẩm trước, ma trận embedding biểu diễn những tương tác xảy ra trước bước thời gian $t$ có thể được xây dựng như sau:
+Trong hệ thống đề xuất có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm từ tập sản phẩm.
+$S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi có trình tự.
+Mục tiêu của Caser là đề xuất sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như dự định ngắn hạn.
+Giả sử ta xét $L$ sản phẩm trước, ma trận embedding biểu diễn những tương tác xảy ra trước bước thời gian $t$ có thể được xây dựng như sau:
 
 
 $$
@@ -77,8 +77,8 @@ We can view the input matrix $\mathbf{E}^{(u, t)}$ as an image which is the inpu
 -->
 
 trong đó $\mathbf{Q} \in \mathbb{R}^{n \times k}$ biểu diễn embedding sản phẩm và $\mathbf{q}_i$ ký hiệu hàng thứ $i$.
-$\mathbf{E}^{(u, t)} \in \mathbb{R}^{L \times k}$ có thể được sử dụng để ám chỉ sở thích nhất thời của người dùng $u$ tại bước thời gian $t$.
-Ta có thể coi ma trận đầu vào $\mathbf{E}^{(u, t)}$ như một ảnh và đây chính là đầu vào của hai thành phần tích chập kế tiếp.
+$\mathbf{E}^{(u, t)} \in \mathbb{R}^{L \times k}$ có thể được sử dụng để suy ra sở thích nhất thời của người dùng $u$ tại bước thời gian $t$.
+Ta có thể coi ma trận đầu vào $\mathbf{E}^{(u, t)}$ như một ảnh đầu vào của hai tầng tích chập kế tiếp.
 
 
 <!--
@@ -89,7 +89,7 @@ After a series of convolutional and pool operations, we get the two outputs:
 
 Tầng tích chập ngang có $d$ bộ lọc ngang $\mathbf{F}^j \in \mathbb{R}^{h \times k}, 1 \leq j \leq d, h = \{1, ..., L\}$,
 và tầng tích chập dọc có $d'$ bộ lọc dọc $\mathbf{G}^j \in \mathbb{R}^{ L \times 1}, 1 \leq j \leq d'$.
-Sau một chuỗi những thao tác tích chập và thao tác gộp, ta thu được hai đầu ra:
+Sau một chuỗi những thao tác tích chập và gộp, ta thu được hai đầu ra:
 
 
 $$
@@ -121,8 +121,8 @@ where $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ is the weight matrix and 
 The learned vector $\mathbf{z} \in \mathbb{R}^k$ is the representation of user's short-term intent.
 -->
 
-trong đó $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ là ma trận trọng số và $\mathbf{b} \in \mathbb{R}^k$ là độ chệch.
-Vector được học $\mathbf{z} \in \mathbb{R}^k$ chính là dạng biểu diễn cho sở thích ngắn hạn của người dùng.
+trong đó $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ là ma trận trọng số và $\mathbf{b} \in \mathbb{R}^k$ là hệ số điều chỉnh.
+Vector học được $\mathbf{z} \in \mathbb{R}^k$ chính là dạng biểu diễn cho sở thích ngắn hạn của người dùng.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -134,7 +134,7 @@ Vector được học $\mathbf{z} \in \mathbb{R}^k$ chính là dạng biểu di�
 At last, the prediction function combines users' short-term and general taste together, which is defined as:
 -->
 
-Cuối cùng, hàm dự đoán kết hợp thị hiếu ngắn hạn và thị hiếu chung của người dùng với nhau, hàm này được định nghĩa bằng:
+Cuối cùng, hàm dự đoán kết hợp thị hiếu ngắn hạn và thị hiếu chung của người dùng với nhau, hàm này được định nghĩa:
 
 
 $$
@@ -151,7 +151,7 @@ $\mathbf{p}_u \in \mathbb{R}^{ k}$ is the $u^\mathrm{th}$ row of $P$ and $\mathb
 
 trong đó $\mathbf{V} \in \mathbb{R}^{n \times 2k}$ là một ma trận embedding sản phẩm khác.
 $\mathbf{b}' \in \mathbb{R}^n$ là độ chệch đặc thù của sản phẩm.
-$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding thị hiếu chung của người dùng.
+$\mathbf{P} \in \mathbb{R}^{m \times k}$ là ma trận embedding thị hiếu chung của người dùng. 
 $\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của $P$ và $\mathbf{v}_i \in \mathbb{R}^{2k}$ là hàng thứ $i$ của $\mathbf{V}$.
 
 
@@ -254,7 +254,7 @@ class Caser(nn.Block):
 ## Sequential Dataset with Negative Sampling
 -->
 
-## Tập dữ liệu Tuần tự với Lấy mẫu Âm
+## Tập dữ liệu Tuần tự với phép Lấy mẫu Âm
 
 
 <!--
@@ -271,11 +271,11 @@ Negative samples are also included in the Customized dataset.
 Để xử lý dữ liệu tương tác tuần tự, ta cần lập trình lại lớp Dataset.
 Đoạn mã sau đây tạo một lớp dataset mới có tên là `SeqDataset`.
 Với mỗi mẫu, lớp này trả về id của người dùng, một chuỗi $L$ sản phẩm mà người này đã tương tác trước đó và sản phẩm tiếp theo mà người này sẽ tương tác làm mục tiêu.
-Hình dưới đây mô tả rõ ràng quá trình nạp dữ liệu với một người dùng.
+Hình dưới đây mô tả quá trình nạp dữ liệu với một người dùng.
 Giả sử người dùng này thích 9 bộ phim, ta sắp xếp 9 bộ phim này theo thứ tự thời gian.
 Bộ phim cuối cùng được bỏ ra ngoài để làm sản phẩm kiểm tra.
 Với 8 bộ phim còn lại, ta có thể tạo ba mẫu huấn luyện, với mỗi mẫu bao gồm một chuỗi gồm năm ($L=5$) bộ phim và bộ phim kế tiếp làm mục tiêu.
-Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu được tuỳ chỉnh.
+Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu tuỳ chỉnh.
 
 <!--
 ![Illustration of the data generation process](../img/rec-seq-data.svg)
@@ -350,7 +350,7 @@ class SeqDataset(gluon.data.Dataset):
 Afterwards, we read and split the MovieLens 100K dataset in sequence-aware mode and load the training data with sequential dataloader implemented above.
 -->
 
-Kế tiếp, ta đọc và chia nhỏ tập dữ liệu MovieLens 100K theo dạng nhận thức về chuỗi và nạp tập huấn luyện với bộ nạp dữ liệu tuần tự đã lập trình như trên.
+Kế tiếp, ta đọc và chia nhỏ tập dữ liệu MovieLens 100K ở chế độ nhận thức về chuỗi và nạp tập huấn luyện với bộ nạp dữ liệu tuần tự đã lập trình phía trên.
 
 
 ```{.python .input  n=6}
@@ -379,10 +379,8 @@ and the last element is the item this user liked after the five items.
 -->
 
 Cấu trúc dữ liệu huấn luyện được chỉ ra như trên.
-Phần tử đầu tiên là id người dùng, danh sách kế tiếp là ba sản phẩm đầu tiên mà người dùng này thích ($L=3$),
-tiếp theo là danh sách chứa phần tử mục tiêu, và phần tử cuối cùng là sản phẩm người dùng này thích sau các sản phẩm trước.
-<!-- Note: Phần này tác giả giải thích khác với kết quả code. -->
-
+Phần tử đầu tiên là id người dùng, kế tiếp là danh sách ba sản phẩm đầu tiên mà người dùng này thích ($L=3$),
+và phần tử cuối cùng là sản phẩm người dùng này thích sau ba sản phẩm trước.
 
 <!--
 ## Train the Model
@@ -423,7 +421,7 @@ d2l.train_ranking(net, train_iter, test_iter, loss, trainer, test_seq_iter,
 -->
 
 * Suy luận về sở thích ngắn hạn và dài hạn của một người dùng có thể giúp việc dự đoán sản phẩm tiếp theo người này thích trở nên hiệu quả hơn.
-* Mạng nơ-ron tích chập có thể được tận dụng để nắm bắt được sở thích ngắn hạn của người dùng dựa vào các tương tác tuần tự.
+* Mạng nơ-ron tích chập có thể được tận dụng để nắm bắt được sở thích ngắn hạn của người dùng từ chuỗi các tương tác.
 
 
 ## Bài tập
@@ -437,10 +435,10 @@ Can you explain the differences between these two tasks?
 -->
 
 * Thực hiện một nghiên cứu loại bỏ (*ablation study*) bằng cách bỏ một trong hai mạng tích chập ngang hoặc dọc, thành phần nào quan trọng hơn?
-* Thay đổi siêu tham số $L$. Liệu lịch sử tương tác lâu hơn có giúp tăng độ chính xác?
-* Ngoài tác vụ gợi ý nhận thức về chuỗi như chúng tôi giới thiệu ở trên,
-có một loại tác vụ gợi ý nhận thức về chuỗi khác được gọi là gợi ý dựa theo phiên (*session-based recommendation*) :cite:`Hidasi.Karatzoglou.Baltrunas.ea.2015`.
-Bạn có thể giải thích sự khác nhau giữa hai tác vụ này?
+* Thay đổi siêu tham số $L$. Liệu lịch sử tương tác dài hơn có giúp tăng độ chính xác?
+* Ngoài tác vụ đề xuất nhận thức về chuỗi như chúng tôi giới thiệu ở trên,
+có một loại tác vụ đề xuất nhận thức về chuỗi khác được gọi là đề xuất dựa theo phiên (*session-based recommendation*) :cite:`Hidasi.Karatzoglou.Baltrunas.ea.2015`.
+Bạn có thể giải thích sự khác nhau giữa hai tác vụ này không?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -461,12 +459,10 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
 * Phạm Hồng Vinh
+* Phạm Minh Đức
+* Nguyễn Lê Quang Nhật
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*
