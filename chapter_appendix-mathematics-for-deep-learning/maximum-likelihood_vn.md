@@ -216,7 +216,7 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 The previous example is nice, but what if we have billions of parameters and data examples.
 -->
 
-Ví dụ trước rất hay, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẩu dữ liệu.
+Ví dụ trước thật hay, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẩu dữ liệu.
 
 <!--
 First notice that, if we make the assumption that all the data examples are independent, 
@@ -259,7 +259,7 @@ Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when work
 -->
 
 Vì giá trị hàm $x \mapsto \log(x)$ đang tăng lên, việc tối đa hóa độ hợp lý cũng giống như tối đa hóa log-likelihood.
-Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về trình phân loại Bayes ngây thơ.
+Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về trình phân loại Naive Bayes.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
@@ -274,7 +274,7 @@ Ta có thể biến đổi hợp lý cực đại thành giảm thiểu mất m�
 To illustrate this, consider the coin flipping problem from before, and pretend that we do not know the closed form solution. We may compute that
 -->
 
-Để minh họa điều này, hãy để ý đến vấn đề lật đồng xu trước đó và giả vờ rằng ta không biết giải pháp dạng đóng. Ta có thể tính toán bài toán đó
+Để minh họa điều này, hãy để ý đến vấn đề lật đồng xu trước đó và giả vờ rằng ta không biết giải pháp dạng đóng. Ta có thể tính ra
 
 $$
 -\log(P(X \mid \boldsymbol{\theta})) = -\log(\theta^{n_H}(1-\theta)^{n_T}) = -(n_H\log(\theta) + n_T\log(1-\theta)).
@@ -356,15 +356,16 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-*dịch đoạn phía trên*
-
+Sự thuận tiện của số chỉ là một lý do duy nhất khiến mọi người thích dùng hợp lý đối log.
+Thật vậy, có một số lý do mà nó có thể được ưu tiên hơn.
 
 <!--
 The second reason we consider the log-likelihood is the simplified application of calculus rules.
 As discussed above, due to independence assumptions, most probabilities we encounter in machine learning are products of individual probabilities.
 -->
 
-Lý do thứ hai mà ta xem 
+Lý do thứ hai mà ta xem xét đến hàm hợp lý log là một ứng dụng đơn giản hoá đối với các quy tắc giải tích.
+Như đã thảo luận ở trên, do các giả định về tính độc lập, hầu hết các xác suất mà chúng ta gặp phải trong học máy là tích của các xác suất riêng lẻ.
 
 $$
 P(X\mid\boldsymbol{\theta}) = p(x_1\mid\boldsymbol{\theta})\cdot p(x_2\mid\boldsymbol{\theta})\cdots p(x_n\mid\boldsymbol{\theta}).
@@ -392,8 +393,9 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-*dịch đoạn phía trên*
-
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy nó tỉ lệ bình phương về thời gian so với số lượng các đầu vào!
+Sự khôn khéo vừa đủ trong việc chia nhóm các terms sẽ giảm độ phức tạp xuống còn tỉ lệ tuyến tính về thời gian, nhưng điều đó cần suy nghĩ nhiều.
+Đối với hàm đối log hợp lý, chúng ta có
 
 $$
 -\log\left(P(X\mid\boldsymbol{\theta})\right) = -\log(P(x_1\mid\boldsymbol{\theta})) - \log(P(x_2\mid\boldsymbol{\theta})) \cdots - \log(P(x_n\mid\boldsymbol{\theta})),
