@@ -1512,7 +1512,10 @@ Indeed, often we do not care about exact quantitative correlation, but rather as
 -->
 
 Như ta đã bàn về trường hợp của trung bình và phương sai, ta hãy xem xét đơn vị.
-Nếu $X$ được đo trong một đơn vị (cho là inch), và 
+Nếu $X$ được đo trong một đơn vị (giả sử là inch), và $Y$ được đo bởi đơn vị khác (giả sử là đô la),
+phương sai được tính bởi tích của hai đơn vị này $\text{inches} \times \text{dollars}$.
+Những đơn vị này khó để diễn giải. Điều ta thường mong muốn trong trường hợp này là một phép đo không đơn vị của sự tương quan.
+Thật vậy, ta thường không quan tâm về tương quan định lượng chính xác, nhưng thường hỏi xem nếu sự tương quan này cùng hướng, và mối liên hệ mạnh như thế nào.
 
 
 <!--
@@ -1524,7 +1527,10 @@ Thus, to find our unit-invariant measure of correlation, we will need to divide 
 Indeed we have a clear candidate, the standard deviation! Indeed if we define the *correlation coefficient* to be
 -->
 
-*dịch đoạn phía trên*
+Để xem điều gì có ý nghĩa, ta hãy thực hiện một thử nghiệm suy nghĩ.
+Giả sử ta chuyển đổi các biến ngẫu nhiên đơn vị inch và đô-la thành inch và xu.
+Trong trường hợp này biến ngẫu nhiên $Y$ được nhân bởi $100$. Nếu ta giải quyết vấn đề định nghĩa, điều này có nghĩa $\mathrm{Cov}(X, Y)$ sẽ được nhân bởi $100$.
+Thêm vào đó ta thấy rằng trường hợp này sự thay đổi về phương sai bởi hệ số $100$.
 
 
 $$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
