@@ -1542,7 +1542,8 @@ we see that this is a unit-less value. A little mathematics can show that this n
 between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $-1$ means maximally negatively correlated.
 -->
 
-*dịch đoạn phía trên*
+ta thấy rằng đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng con số này 
+nằm giữa $-1$ và $1$ với $1$ tương quan cực đại dương tính, với $-1$ mang ý nghĩa tương quan cực đại âm tính. 
 
 
 <!--
@@ -1550,8 +1551,8 @@ Returning to our explicit discrete example above, we can see that $\sigma_X = 1$
 so we can compute the correlation between the two random variables using :eqref:`eq_cor_def` to see that
 -->
 
-*dịch đoạn phía trên*
-
+Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta thấy rằng nếu $\sigma_X = 1$ và $\sigma_Y = 2$, 
+thì ta có thể tính toán tương quan giữa hai biến ngẫu nhiên sử dụng hệ thức :eqref:`eq_cor_def` để xem xét
 
 $$
 \rho(X, Y) = \frac{4p-2}{1\cdot 2} = 2p-1.
@@ -1562,7 +1563,7 @@ $$
 This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 -->
 
-*dịch đoạn phía trên*
+Điều này bây giờ nằm trong khoảng $-1$ và $1$ với kỳ vọng hành vi $1$ mang ý nghĩa nhiều tương quan nhất và $-1$ mang ý nghĩa ít tương quan nhất.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
