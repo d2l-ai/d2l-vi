@@ -380,7 +380,7 @@ and the last element is the item this user liked after the five items.
 
 Cấu trúc dữ liệu huấn luyện được chỉ ra như trên.
 Phần tử đầu tiên là id người dùng, kế tiếp là danh sách ba sản phẩm đầu tiên mà người dùng này thích ($L=3$),
-và phần tử cuối cùng là sản phẩm người dùng này thích sau năm sản phẩm trước.
+và phần tử cuối cùng là sản phẩm người dùng này thích sau ba sản phẩm trước.
 
 <!--
 ## Train the Model
