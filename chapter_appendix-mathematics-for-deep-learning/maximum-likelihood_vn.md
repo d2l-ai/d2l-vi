@@ -424,8 +424,7 @@ $$
 This requires only $n$ divides and $n-1$ sums, and thus is linear time in the inputs.
 -->
 
-*dịch đoạn phía trên*
-
+Đẳng thức này chỉ yêu cầu $n$ chia cho $n-1$ các tổng, và do đó thời gian tỉ lệ tuyến tính so với các đầu vào.
 
 <!--
 The third and final reason to consider the negative log-likelihood is the relationship to information theory, 
@@ -434,7 +433,10 @@ This is a rigorous mathematical theory which gives a way to measure the degree o
 The key object of study in that field is the entropy which is 
 -->
 
-*dịch đoạn phía trên*
+Lý do thứ ba và cũng là cuối cùng để xem xét hàm đối log hợp lý đó là mối tương quan với lý thuyết thông tin,
+mà chúng ta sẽ thảo luận chi tiết tại phần :numref:`sec_information_theory`.
+Đây là một lý thuyết toán học chặt chẽ đưa ra cách đo lường mức độ thông tin hoặc tính ngẫu nhiên trong một biến ngẫu nhiên.
+Đối tượng cần nghiên cứu thiết yếu trong lĩnh vực đó là entropy
 
 
 $$
@@ -448,30 +450,31 @@ and thus if we take our negative log-likelihood and divide by the number of data
 This theoretical interpretation alone would be sufficiently compelling to motivate reporting the average negative log-likelihood over the dataset as a way of measuring model performance.
 -->
 
-*dịch đoạn phía trên*
+công thức trên đo lường tính ngẫu nhiên của một nguồn. Cần lưu ý rằng phép tính này không khác gì giá trị xác suất $-\log$ trung bình,
+và do đó, nếu chúng ta lấy hàm đối log hợp lý và chia cho số lượng mẩu dữ liệu, chúng ta sẽ nhận được một giá trị tương đối của entropy được gọi là entropy chéo.
+Chỉ cần diễn giải lý thuyết này thôi cũng đủ sức thuyết phục để thúc đẩy việc báo cáo giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường hiệu suất của mô hình.
 
 
 <!--
 ## Maximum Likelihood for Continuous Variables
 -->
 
-## *dịch tiêu đề trên*
+## Hợp lý cực đại cho biến liên tục
 
 
 <!--
 Everything that we have done so far assumes we are working with discrete random variables, but what if we want to work with continuous ones?
 -->
 
-*dịch đoạn phía trên*
-
+Tất cả những gì chúng ta đã làm vừa nãy đều giả định rằng ta đang thực hiện vói biến ngẫu nhiên rời rạc, tuy nhiên nếu chúng ta muốn thực hiện với các biến liên tục thì sẽ ra sao?
 
 <!--
 The short summary is that nothing at all changes, except we replace all the instances of the probability with the probability density.
 Recalling that we write densities with lower case $p$, this means that for example we now say
 -->
 
-*dịch đoạn phía trên*
-
+Vắn tắt là không có điều gì thay đổi cả, trừ khi ta ay thế tất cả các trường hợp của xác suất bằng mật độ xác suất.
+Hãy nhớ lại rằng chúng ta viết mật độ với chữ thường $p$, điều này có nghĩa là ví dụ chúng ta nói đến hiện tại
 
 $$
 -\log\left(p(X\mid\boldsymbol{\theta})\right) = -\log(p(x_1\mid\boldsymbol{\theta})) - \log(p(x_2\mid\boldsymbol{\theta})) \cdots - \log(p(x_n\mid\boldsymbol{\theta})) = -\sum_i \log(p(x_i \mid \theta)).
@@ -480,19 +483,19 @@ $$
 
 <!--
 The question becomes, "Why is this OK?"
-After all, the reason we introduced densities was because probabilities of getting specific outcomes themselves was zero, 
+After all, the reason we introduced densities was because probabilities of getting specific outcomes themselves was zero,
 and thus is not the probability of generating our data for any set of parameters zero?
 -->
 
-*dịch đoạn phía trên*
-
+Câu hỏi lúc này trở thành, "Tại sao điều này lại ổn?"
+Rốt cuộc, lý do chúng tôi đưa ra mật độ là vì chính bản thân xác suất nhận được các kết quả cụ thể bằng không,
+và do đó không phải là xác suất sinh dữ liệu đối với bất kỳ tập hợp tham số bằng không?
 
 <!--
 Indeed, this is the case, and understanding why we can shift to densities is an exercise in tracing what happens to the epsilons.
 -->
 
-*dịch đoạn phía trên*
-
+Quả thật, đây là trường hợp, và hiểu tại sao chúng ta có thể chuyển sang mật độ dày đặc là một bài tập trong việc truy ra những gì xảy ra đối với epsilon.
 
 <!--
 Let us first re-define our goal.
@@ -502,8 +505,11 @@ For simplicity, we assume our data is repeated observations $x_1, \ldots, x_N$ o
 As we have seen previously, this can be written as
 -->
 
-*dịch đoạn phía trên*
-
+Đầu tiên ta hãy xác định lại mục tiêu của mình.
+Giả sử rằng đối với các biến ngẫu nhiên liên tục, chúng ta không còn muốn tính xác suất để nhận được giá trị chính xác phù hợp,
+nhưng thay vào đó đối chiếu với trong một số phạm vi $\epsilon$.
+Để đơn giản, ta giả định rằng dữ liệu là các mẩu quan sát lặp lại $x_1, \ldots, x_N$ của các biến ngẫu nhiên được phân phối giống nhau $X_1, \ldots, X_N$.
+Như chúng ta đã thấy trước đây, điều này có thể được viết là
 
 $$
 \begin{aligned}
@@ -517,8 +523,7 @@ $$
 Thus, if we take negative logarithms of this we obtain
 -->
 
-*dịch đoạn phía trên*
-
+Do đó, nếu ta lấy logarit âm cho kết quả này thì ta sẽ nhận được
 
 $$
 \begin{aligned}
@@ -534,7 +539,9 @@ This does not depend on the parameters $\boldsymbol{\theta}$ at all, so the opti
 If we demand four digits or four-hundred, the best choice of $\boldsymbol{\theta}$ remains the same, thus we may freely drop the epsilon to see that what we want to optimize is
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta kiểm nghiệm biểu thức này, vị trí duy nhất mà $\epsilon$ xuất hiện là tại hằng số cộng $-N\log(\epsilon)$.
+Điều này hoàn toàn không phụ thuộc vào các tham số $\boldsymbol{\theta}$, vì vậy lựa chọn tối ưu của $\boldsymbol{\theta}$ không phụ thuộc vào sự lựa chọn $\epsilon$ của bản thân!
+Nếu ta có yêu cầu bốn chữ số hoặc bốn trăm, lựa chọn tốt nhất của $\boldsymbol{\theta}$ vẫn nguyên vẹn, do đó ta có thể thoải mái điều chỉnh epsilon để thấy rằng những gì chúng ta muốn tối ưu hóa là
 
 
 $$
@@ -547,8 +554,7 @@ Thus, we see that the maximum likelihood point of view can operate with continuo
 as easily as with discrete ones by replacing the probabilities with probability densities.
 -->
 
-*dịch đoạn phía trên*
-
+Do đó, chúng ta thấy rằng quan điểm hợp lý cực đại có thể áp dụng được với các biến ngẫu nhiên liên tục dễ dàng như với các biến rời rạc bằng cách thay thế các xác suất bằng mật độ xác suất.
 
 ## Tóm tắt
 
@@ -559,7 +565,9 @@ conversion of products to sums (and the resulting simplification of gradient com
 * While simplest to motivate in the discrete setting, it may be freely generalized to the continuous setting as well by maximizing the probability density assigned to the datapoints.
 -->
 
-*dịch đoạn phía trên*
+* Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra dữ liệu với xác suất cao nhất.
+* Thường thì mọi người làm việc với hàm đối log nhiều hơn vì nhiều lý do: tính ổn định số, khả năng biến đổi tích thành tổng (và kết quả là đơn giản hóa các phép tính gradient) và từ lý thuyết liên kết với lý thuyết thông tin.
+* Trong khi đơn giản nhất để thúc đẩy trong tập hợp rời rạc, nó có thể được tổng quát hóa một cách tự do cho tập hợp liên tục cũng như bằng cách tối đa hóa mật độ xác suất được gán cho các điểm dữ liệu.
 
 
 ## Bài tập
@@ -571,8 +579,10 @@ You obtain a single observation from the random variable which is the number $3$
 What is the maximum likelihood estimate for the mean?
 -->
 
-*dịch đoạn phía trên*
-
+1. Giả sử rằng bạn biết rằng một biến ngẫu nhiên có mật độ bằng  $\frac{1}{\alpha}e^{-\alpha x}$ đối với một số giá trị $\alpha$.
+Bạn có được một quan sát duy nhất từ biến ngẫu nhiên là số $3$. Giá trị hợp lý cực đại đối với giá trị $\alpha$ là bao nhiêu?
+2. Giả sử rằng bạn có tập dữ liệu mẫu $\{x_i\}_{i=1}^N$ được lấy từ một phân phối Gaussian với giá trị trung bình chưa biết, nhưng phương sai bằng $1$.
+Giá trị hợp lý cực đại cho giá trị trung bình là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
