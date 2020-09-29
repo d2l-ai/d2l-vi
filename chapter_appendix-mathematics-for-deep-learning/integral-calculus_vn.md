@@ -33,7 +33,7 @@ Tuy nhiên, chúng tôi sẽ cung cấp một giới thiệu khái quát để �
 ## Geometric Interpretation
 -->
 
-## Minh họa Hình học
+## Diễn giải Hình học
 
 
 <!--
