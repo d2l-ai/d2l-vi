@@ -15,9 +15,9 @@ and transform them into samples that appear to match the distribution of some da
 And while our example of matching a 2D Gaussian distribution got the point across, it is not especially exciting.
 -->
 
-Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách hoạt động của GAN. 
-Ta đã thấy được quá trình tạo mẫu từ các phân phối đơn giản, dễ-lấy-mẫu như phân phối đều hay phân phối chuẩn, và biến đổi chúng thành các mẫu phù hợp với phân phối của tập dữ liệu nào đó.
-Dù ví dụ cho GAN khớp với phân phối Gauss 2 chiều đã làm rõ ý tưởng, nó không quá thú vị.
+Trong :numref:`sec_basic_gan`, ta đã giới thiệu về những ý tưởng cơ bản ẩn sau cách hoạt động của GAN.
+Ta đã thấy được quá trình tạo mẫu từ các phân phối đơn giản, dễ-lấy-mẫu như phân phối đều hay phân phối chuẩn, và biến đổi chúng thành các mẫu phù hợp với phân phối của tập dữ liệu nào đó. 
+Dù ví dụ cho GAN khớp với phân phối Gauss 2 chiều là một minh họa rõ ràng, nó không thực sự thú vị. 
 
 <!--
 In this section, we will demonstrate how you can use GANs to generate photorealistic images.
@@ -26,9 +26,9 @@ We will borrow the convolutional architecture that have proven so successful for
 they can be leveraged to generate photorealistic images.
 -->
 
-Trong phần này, ta sẽ trình bày cách dùng GANs để tạo ra những bức ảnh chân thực.
-Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`.
-Ta sẽ mượn kiến trúc tích chập đã được cho là thành công với bài toán thị giác máy tính phân biệt và bằng cách thông qua GAN, ta có thể tận dụng để tạo ra được hình ảnh chân thực.
+Trong phần này, ta sẽ trình bày cách dùng GANs để tạo ra những bức ảnh chân thực. 
+Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`. 
+Bằng cách mượn kiến trúc tích chập đã được chứng minh là thành công với bài toán thị giác máy tính phân biệt, và bằng cách thông qua GAN, ta có thể dùng chúng làm đòn bẩy để tạo ra các hình ảnh chân thực. 
 
 ```{.python .input}
 from mxnet import gluon, init, np, npx
@@ -60,8 +60,8 @@ The dataset we will use is a collection of Pokemon sprites obtained from [pokemo
 First download, extract and load this dataset.
 -->
 
-Tập dữ liệu ta sẽ thu thập các nhân vật Pokemon từ [pokemondb](https://pokemondb.net/sprites).
-Đầu tiên ta tải xuống, giải nén và nạp tập dữ liệu.
+Ta sẽ sử dụng tập dữ liệu các nhân vật Pokemon từ [pokemondb](https://pokemondb.net/sprites). 
+Đầu tiên ta tải xuống, giải nén và nạp tập dữ liệu. 
 
 ```{.python .input}
 #@save
@@ -89,9 +89,9 @@ The `ToTensor` transformation will project the pixel value into $[0, 1]$, while 
 Therefore we normalize the data with $0.5$ mean and $0.5$ standard deviation to match the value range.
 -->
 
-Ta sẽ thay đổi kích thước ảnh thành $64\times 64$.
-Phép biến đổi `ToTensor` sẽ chiếu từng giá trị điểm ảnh vào $[0,1]$, trong đó mạng sinh của ta sẽ dùng hàm tanh để đầu ra trong $[-1,1]$.
-Do đó ta chuẩn hóa dữ liệu với trung bình $0.5$ và độ lệch chuẩn $0.5$ để khớp với miền giá trị.
+Ta thay đổi kích thước ảnh thành $64\times 64$. 
+Phép biến đổi `ToTensor` sẽ chiếu từng giá trị điểm ảnh vào $[0,1]$, trong đó mạng sinh của ta sẽ dùng hàm tanh để nhận đầu ra trong $[-1,1]$. 
+Do đó ta chuẩn hóa dữ liệu với trung bình $0.5$ và độ lệch chuẩn $0.5$ để khớp với miền giá trị. 
 
 ```{.python .input}
 batch_size = 256
@@ -124,7 +124,7 @@ data_iter = torch.utils.data.DataLoader(
 Let us visualize the first 20 images.
 -->
 
-Ta sẽ xem thử 20 hình đầu tiên.
+Hãy em thử 20 hình đầu tiên. 
 
 ```{.python .input}
 d2l.set_figsize((4, 4))
@@ -157,9 +157,9 @@ In :numref:`sec_fcn` we introduced the fully convolutional network that uses tra
 The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
 -->
 
-Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$.
-Trong :numref:`sec_fcn` ta đã giới thiệu về mạng tích chập đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.
-Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị theo sau đó là chuẩn hóa theo batch và hàm kích hoạt ReLU.
+Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$. 
+Trong :numref:`sec_fcn` ta đã giới thiệu về mạng tích chập đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.  
+Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị, theo sau là chuẩn hóa theo batch và hàm kích hoạt ReLU. 
 
 ```{.python .input}
 class G_block(nn.Block):
@@ -196,8 +196,8 @@ In default, the transposed convolution layer uses a $k_h = k_w = 4$ kernel, a $s
 With a input shape of $n_h^{'} \times n_w^{'} = 16 \times 16$, the generator block will double input's width and height.
 -->
 
-Mặc định, tầng tích chập chuyển vị dùng nhân $k_h = k_w = 4$, sải bước $s_h = s_w = 2$ và đệm $p_h = p_w = 1$.
-Với kích thước đầu vào $n_h^{'} \times n_w^{'} = 16 \times 16$, khối bộ sinh sẽ nhân đôi chiều rộng và chiều cao của đầu vào.
+Mặc định, tầng tích chập chuyển vị dùng hạt nhân $k_h = k_w = 4$, sải bước $s_h = s_w = 2$ và đệm $p_h = p_w = 1$. 
+Với kích thước đầu vào $n_h^{'} \times n_w^{'} = 16 \times 16$, khối bộ sinh sẽ nhân đôi chiều rộng và chiều cao của đầu vào. 
 
 $$
 \begin{aligned}
@@ -232,8 +232,8 @@ If changing the transposed convolution layer to a $4\times 4$ kernel, $1\times 1
 With a input size of $1 \times 1$, the output will have its width and height increased by 3 respectively.
 -->
 
-Nếu đổi tầng tích chập chuyển vị này thành một hạt nhân $4\times 4$, sải bước $1\times 1$ và đệm không.
-Với kích thước đầu vào là $1 \times 1$, chiều rộng và chiều cao của đầu ra sẽ tăng thêm 3 giá trị.
+Giả sử ta đổi tầng tích chập chuyển vị này thành một hạt nhân $4\times 4$, sải bước $1\times 1$ và đệm không.
+Với kích thước đầu vào là $1 \times 1$, chiều rộng và chiều cao của đầu ra sẽ tăng thêm 3 giá trị. 
 
 
 ```{.python .input}
@@ -259,10 +259,10 @@ It further doubles the width and height to match the desired $64\times 64$ shape
 The tanh activation function is applied to project output values into the $(-1, 1)$ range.
 -->
 
-Bộ sinh bao gồm bốn khối cơ bản thực hiện tăng cả chiều rộng và chiều cao của đầu vào từ 1 lên 32.
-Cùng lúc đó, trước tiên nó chiếu biến tiềm ẩn này về $64\times 8$ kênh, rồi giảm một nửa số kênh sau mỗi lần.
+Bộ sinh bao gồm bốn khối cơ bản thực hiện tăng cả chiều rộng và chiều cao của đầu vào từ 1 lên 32. 
+Cùng lúc đó, nó trước tiên chiếu biến tiềm ẩn này về $64\times 8$ kênh, rồi giảm một nửa số kênh sau mỗi lần. 
 Cuối cùng, một tầng tích chập chuyển vị được sử dụng để sinh đầu ra.
-Nó tăng gấp đôi chiều rộng và chiều cao để khớp với kích thước mong muốn $64\times 64$, và giảm kích thước kênh xuống $3$.
+Nó tăng gấp đôi chiều rộng và chiều cao để khớp với kích thước mong muốn $64\times 64$, và giảm kích thước kênh xuống $3$. 
 Hàm kích hoạt tanh được áp dụng để đưa giá trị đầu ra về khoảng $(-1, 1)$. 
 
 
@@ -297,7 +297,7 @@ net_G = nn.Sequential(
 Generate a 100 dimensional latent variable to verify the generator's output shape.
 -->
 
-Hãy sinh một biến tiềm ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh. 
+Hãy sinh một biến tiềm ẩn có số chiều là 100 để xác thực kích thước đầu ra của bộ sinh.
 
 
 ```{.python .input}
@@ -325,8 +325,8 @@ The discriminator is a normal convolutional network network except that it uses 
 Given $\alpha \in[0, 1]$, its definition is
 -->
 
-Bộ phân biệt là một mạng tích chập thông thường ngoại trừ việc nó dùng hàm kích hoạt là ReLU rò rỉ.
-Với $\alpha \in[0, 1]$ cho trước, định nghĩa của nó là
+Bộ phân biệt là một mạng tích chập thông thường ngoại trừ việc nó dùng hàm kích hoạt ReLU rò rỉ. 
+Với $\alpha \in[0, 1]$ cho trước, định nghĩa của nó là 
 
 
 $$\textrm{leaky ReLU}(x) = \begin{cases}x & \text{if}\ x > 0\\ \alpha x &\text{otherwise}\end{cases}.$$
@@ -339,9 +339,9 @@ For $\alpha \in (0, 1)$, leaky ReLU is a nonlinear function that give a non-zero
 It aims to fix the "dying ReLU" problem that a neuron might always output a negative value and therefore cannot make any progress since the gradient of ReLU is 0.
 -->
 
-Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm đồng nhất nếu $\alpha=1$.
-Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến mà cho đầu ra khác không với giá trị đâu vào âm.
-Mục đích của hàm này là khắc phục vấn đề "ReLU chết" mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể cải thiện vì gradient của ReLU là 0.
+Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm đồng nhất nếu $\alpha=1$. 
+Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến cho đầu ra khác không với giá trị đầu vào âm. 
+Mục đích của hàm này là khắc phục vấn đề "ReLU chết", khi mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể cải thiện do gradient của ReLU luôn bằng 0. 
 
 
 ```{.python .input}
@@ -358,8 +358,8 @@ The basic block of the discriminator is a convolution layer followed by a batch 
 The hyperparameters of the convolution layer are similar to the transpose convolution layer in the generator block.
 -->
 
-Khối cơ bản của bộ phân biệt là một tầng tích chập theo sau bởi tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU rò rỉ.
-Các siêu tham số của tầng tích chập này tương tự như tầng tích chập chuyển vị trong khối sinh.
+Khối cơ bản của bộ phân biệt là một tầng tích chập, theo sau bởi tầng chuẩn hóa theo batch và một hàm kích hoạt ReLU rò rỉ. 
+Các siêu tham số của tầng tích chập này tương tự như tầng tích chập chuyển vị trong khối sinh. 
 
 
 ```{.python .input}
@@ -398,9 +398,9 @@ For example, given a input shape $n_h = n_w = 16$, with a kernel shape $k_h = k_
 a stride shape $s_h = s_w = 2$, and a padding shape $p_h = p_w = 1$, the output shape will be:
 -->
 
-Khối cơ bản với thiết lập mặc định sẽ giảm một nửa chiều rộng và chiều cao của đầu vào, như ta đã chứng tỏ trong :numref:`sec_padding`.
+Khối cơ bản với thiết lập mặc định sẽ giảm một nửa chiều rộng và chiều cao của đầu vào, như ta đã chứng tỏ trong :numref:`sec_padding`. 
 Chẳng hạn, cho kích thước đầu vào là $n_h = n_w = 16$, với một hạt nhân có kích thước $k_h = k_w = 4$,
-sải bước $s_h = s_w = 2$, và đệm $p_h = p_w = 1$, kích thước đầu ra sẽ là:
+sải bước $s_h = s_w = 2$, và đệm $p_h = p_w = 1$, kích thước đầu ra sẽ là: 
 
 
 $$
@@ -431,7 +431,7 @@ d_blk(x).shape
 The discriminator is a mirror of the generator.
 -->
 
-Bộ phân biệt này là một tấm gương phản chiếu của bộ sinh.
+Bộ phân biệt là một tấm gương phản chiếu của bộ sinh.
 
 
 ```{.python .input}
@@ -461,7 +461,7 @@ net_D = nn.Sequential(
 It uses a convolution layer with output channel $1$ as the last layer to obtain a single prediction value.
 -->
 
-Nó sử dụng một tầng tích chập với kênh đầu ra $1$ làm tầng cuối cùng để có được một giá trị dự đoán duy nhất.
+Nó sử dụng một tầng tích chập với kênh đầu ra $1$ làm tầng cuối cùng để có được giá trị dự đoán duy nhất. 
 
 
 ```{.python .input}
@@ -497,11 +497,11 @@ Besides, the random generated noise `Z`, is a 4-D tensor and we are using GPU to
 -->
 
 So với mô hình GAN cơ bản trong :numref:`sec_basic_gan`,
-ta sử dụng cùng tốc độ học cho cả bộ sinh và bộ phân biệt do chúng tương đồng với nhau.
-Thêm nữa, ta thay đổi $\beta_1$ trong Adam (:numref:`sec_adam`) từ $0.9$ về $0.5$.
-Việc này làm giảm độ mượt của động lượng, tức là trung bình động trọng số mũ của các gradient trước đó,
-nhằm đáp ứng sự thay đổi nhanh chóng của gradient do bộ sinh và bộ phân biệt đối kháng lẫn nhau.
-Bên cạnh đó, nhiễu ngẫu nhiên `Z` là một tensor 4-D và ta sử dụng GPU để tăng tốc độ tính toán.
+ta sử dụng cùng tốc độ học cho cả bộ sinh và bộ phân biệt do chúng tương đồng với nhau. 
+Thêm nữa, ta thay đổi $\beta_1$ trong Adam (:numref:`sec_adam`) từ $0.9$ về $0.5$. 
+Việc này làm giảm độ mượt của động lượng, tức là trung bình động trọng số mũ của các gradient trước đó, 
+nhằm đáp ứng sự thay đổi nhanh chóng của gradient do bộ sinh và bộ phân biệt đối kháng lẫn nhau. 
+Bên cạnh đó, nhiễu ngẫu nhiên `Z` là một tensor 4-D và ta sử dụng GPU để tăng tốc độ tính toán. 
 
 
 ```{.python .input}
@@ -593,8 +593,8 @@ We train the model with a small number of epochs just for demonstration.
 For better performance, the variable `num_epochs` can be set to a larger number.
 -->
 
-Chúng tôi chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ.
-Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn.
+Chúng tôi chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ. 
+Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn. 
 
 
 ```{.python .input}
@@ -612,10 +612,10 @@ train(net_D, net_G, data_iter, num_epochs, lr, latent_dim)
 It aims to fix the “dying ReLU” problem and helps the gradients flow easier through the architecture.
 -->
 
-* Kiến trúc DCGAN gồm có bốn tầng tích chập cho Bộ phân biệt và bốn tầng tích chập "sải bước một phần (*fractionally-strided*)" cho Bộ sinh.
-* Bộ phân biệt là một mạng 4 tầng bao gồm các tầng tích chập có sải bước và chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
+* Kiến trúc DCGAN gồm có bốn tầng tích chập cho Bộ phân biệt, và bốn tầng tích chập "sải bước một phần (*fractionally-strided*)" cho Bộ sinh.
+* Bộ phân biệt là một mạng 4 tầng bao gồm các tầng tích chập có sải bước, theo sau bởi tầng chuẩn hoá theo batch (trừ tầng đầu vào) và hàm kích hoạt ReLU rò rỉ.
 * ReLU rò rỉ là một hàm phi tuyến trả về kết quả khác không với đầu vào âm.
-Hàm này nhằm khắc phục vần đề "ReLU chết" và giúp gradient truyền một cách dễ dàng hơn xuyên suốt kiến trúc.
+Hàm này nhằm khắc phục vấn đề "ReLU chết", giúp gradient truyền đi dễ dàng hơn xuyên suốt kiến trúc.
 
 
 ## Bài tập
@@ -625,8 +625,8 @@ Hàm này nhằm khắc phục vần đề "ReLU chết" và giúp gradient truy
 2. Apply DCGAN on Fashion-MNIST and see which category works well and which does not.
 -->
 
-1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay vì ReLU rò rỉ?
-2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không.
+1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay vì ReLU rò rỉ? 
+2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không. 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -658,3 +658,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Đỗ Trường Giang
+* Nguyễn Lê Quang Nhật
