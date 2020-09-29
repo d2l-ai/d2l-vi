@@ -1432,7 +1432,7 @@ $$
 Similarly, this term is now the product of the matrix $\mathbf{A} + \mathbf{A}^\top$ by the vector $\mathbf{x}$, so we see that
 -->
 
-*dịch đoạn phía trên*
+Tương tự, hạng tử này là tích của ma trận $\mathbf{A} + \mathbf{A}^\top$ với vector $\mathbf{x}$, nên ta có
 
 
 $$
@@ -1445,7 +1445,8 @@ Thus, we see that the $k$-th entry of the desired derivative from :eqref:`eq_mat
 and thus the two are the same. Thus yields
 -->
 
-*dịch đoạn phía trên*
+Vì thế, ta thấy phần tử thứ $k$ của đạo hàm ta mong muốn từ :eqref:`eq_mat_goal_1` đơn giản là phần tử thứ $k$ của vector bên vế phải,
+và do đó hai phần tử này là như nhau. Điều này dẫn đến
 
 
 $$
@@ -1458,8 +1459,8 @@ This required significantly more work than our last one, but the final result is
 More than that, consider the following computation for traditional single variable derivatives:
 -->
 
-*dịch đoạn phía trên*
-
+Biểu thức trên cần nhiều tính toán hơn phần trước, nhưng kết quả cuối cùng sẽ gọn gàng.
+Hơn thế nữa, hãy xem xét tính toán dưới đây cho đạo hàm đơn biến thông thường:
 
 $$
 \frac{d}{dx}(xax) = \frac{dx}{dx}ax + xa\frac{dx}{dx} = (a+a)x.
@@ -1471,8 +1472,8 @@ Equivalently $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
 Again, we get a result that looks rather like the single variable result but with a transpose tossed in.
 -->
 
-*dịch đoạn phía trên*
-
+Tương đương với $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
+Một lần nữa, ta lại thu được kết quả nhìn giống với trường hợp đơn biến nhưng với một phép chuyển vị.
 
 <!--
 At this point, the pattern should be looking rather suspicious, so let us try to figure out why.
@@ -1485,7 +1486,14 @@ In other words, whatever expression we get *must* match the single variable expr
 This means that, with some practice, one can often guess matrix derivatives just by knowing what the associated single variable expression must look like!
 -->
 
-*dịch đoạn phía trên*
+Tại thời điểm này, cách thức tính có vẻ khá đáng ngờ, vì vậy ta hãy thử tìm hiểu lý do tại sao.
+Khi ta lấy đạo hàm ma trận như trên, đầu tiên ta giả sử biểu thức ta nhận được sẽ là một biểu thức ma trận khác:
+một biểu thức mà ta có thể viết nó dưới dạng tích và tổng của các ma trận và chuyển vị của chúng.
+Nếu một biểu thức như vậy tồn tại, nó sẽ phải đúng cho tất cả các ma trận.
+Do đó, nó sẽ đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số,
+tổng ma trận chỉ là tổng, và phép chuyển vị không có tác dụng gì!
+Nói cách khác, bất kỳ biểu thức nào chúng ta nhận được *phải* phù hợp với biểu thức đơn biến.
+Điều này có nghĩa là, trong một số trường hợp khi ta biết đạo hàm đơn biến tương ứng, ta thường có thể đoán được các đạo hàm ma trận!
 
 
 <!--
@@ -1495,21 +1503,24 @@ $\mathbf{U}$ is an $n \times r$ and $\mathbf{V}$ is an $r \times m$.
 Let us try to compute
 -->
 
-*dịch đoạn phía trên*
+Ta hãy thử xem sao.
+Giả sử $\mathbf{X}$ là ma trận $n \times m$, 
+$\mathbf{U}$ là ma trận $n \times r$ và $\mathbf{V}$ là ma trận $r \times m$.
+Ta sẽ tính
 
-
-<!--
 $$\frac{d}{d\mathbf{V}} \|\mathbf{X} - \mathbf{U}\mathbf{V}\|_2^{2} = \;?$$
 :eqlabel:`eq_mat_goal_2`
-
+<!--
 This computation is important in an area called matrix factorization.
 For us, however, it is just a derivative to compute.
 Let us try to imaging what this would be for $1\times1$ matrices.
 In that case, we get the expression
 -->
 
-*dịch đoạn phía trên*
-
+Phép tính này khá quan trọng trong phân rã ma trận.
+Tuy nhiên, ở đây nó chỉ đơn giản là một đạo hàm mà ta cần tính.
+Ta hãy thử tưởng tượng xem nó sẽ như thế nào đối với ma trận $1\times1$.
+Trong trường hợp này, ta có biểu thức sau
 
 $$ 
 \frac{d}{dv} (x-uv)^{2}= -2(x-uv)u,
@@ -1521,7 +1532,8 @@ where, the derivative is rather standard.
 If we try to convert this back into a matrix expression we get
 -->
 
-*dịch đoạn phía trên*
+là một đạo hàm khá phổ thông.
+Nếu ta thử chuyển đổi nó thành một biểu thức ma trận, ta có
 
 
 $$
@@ -1801,7 +1813,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Quang
 
 <!-- Phần 9 -->
-* 
+* Nguyễn Văn Quang
 
 <!-- Phần 10 -->
 * Trần Yến Thy
