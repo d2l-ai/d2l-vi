@@ -1539,7 +1539,10 @@ On the other hand $\mathbf{U}$ is $n \times r$,
 and we cannot multiply a $n \times m$ and a $n \times r$ matrix since the dimensions do not match! 
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu ta nhìn kỹ, điều này không hoàn toàn đúng. Hãy nhớ lại $\mathbf{X}$ có kích thước $n \times m$, giống $\mathbf{U}\mathbf{V}$,
+nên ma trận $2(\mathbf{X} - \mathbf{U}\mathbf{V})$ có kích thước $n \times m$.
+Mặt khác $\mathbf{U}$ có kích thước $n \times r$,
+và ta không thể nhân một ma trận $n \times m$ với một ma trận $n \times r$ vì số chiều của chúng không khớp nhau! 
 
 
 <!--
@@ -1549,7 +1552,10 @@ We can do this by multiplying $U^\top$ by $(\mathbf{X} - \mathbf{U}\mathbf{V})$.
 Thus, we can guess the solution to :eqref:`eq_mat_goal_2` is
 -->
 
-*dịch đoạn phía trên*
+Ta muốn nhận $\frac{d}{d\mathbf{V}}$, cùng kích thước với $\mathbf{V}$ có $r \times m$.
+Vì vậy ta bằng cách nào đó cần phải nhân một ma trận $n \times m$ với một ma trận $n \times r$ (có thể phải chuyển vị) để có ma trận $r \times m$.
+Ta có thể làm điều này bằng cách nhân $U^\top$ với $(\mathbf{X} - \mathbf{U}\mathbf{V})$.
+Vì vậy, ta có thể đoán nghiệm cho :eqref:`eq_mat_goal_2` là
 
 
 $$
@@ -1561,7 +1567,8 @@ To show that this works, we would be remiss to not provide a detailed computatio
 If we already believe that this rule-of-thumb works, feel free to skip past this derivation. To compute 
 -->
 
-*dịch đoạn phía trên*
+Để chứng minh rằng điều này hoạt động, ta cần một tính toán chi tiết.
+Nếu bạn chỉ cần biết cách thực hiện trên thực tế, vui lòng bỏ qua phần diễn giải lý thuyết này. Để tính toán
 
 
 $$
@@ -1573,7 +1580,7 @@ $$
 we must find for every $a$, and $b$
 -->
 
-*dịch đoạn phía trên*
+với mỗi $a$ và $b$, ta phải tính.
 
 
 $$
@@ -1586,7 +1593,8 @@ Recalling that all entries of $\mathbf{X}$ and $\mathbf{U}$ are constants as far
 we may push the derivative inside the sum, and apply the chain rule to the square to get
 -->
 
-*dịch đoạn phía trên*
+Hãy nhớ lại rằng tất cả các phần tử của $\mathbf{X}$ và $\mathbf{U}$ là hằng số khi tính $\frac{d}{dv_{ab}}$,
+chúng ta có thể đẩy đạo hàm bên trong tổng, và áp dụng quy tắc dây chuyền sau đó bình phương lên để có
 
 
 $$
@@ -1599,7 +1607,8 @@ As in the previous derivation, we may note that $\frac{dv_{kj}}{dv_{ab}}$ is onl
 If either of those conditions do not hold, the term in the sum is zero, and we may freely discard it. We see that
 -->
 
-*dịch đoạn phía trên*
+Cũng như các phần diễn giải trước, ta có thể để ý rằng $\frac{dv_{kj}}{dv_{ab}}$ chỉ khác không nếu $k=a$ và $j=b$.
+Nếu một trong hai điều kiện đó không thỏa, số hạng trong tổng bằng không, ta có thể tự do loại bỏ nó. Ta thấy rằng
 
 
 $$
@@ -1613,7 +1622,9 @@ that $k$ is a dummy variable which we are summing over inside the inner term.
 For a notationally cleaner example, consider why
 -->
 
-*dịch đoạn phía trên*
+Một sự tinh tế quan trọng ở đây là yêu cầu về $k=a$ không xảy ra bên trong tổng phía trong bởi vì
+$k$ chỉ là một biến tùy ý để tính tổng các số hạng trong tổng phía trong.
+Một ví dụ dễ hiểu hơn:
 
 
 $$
@@ -1625,7 +1636,7 @@ $$
 From this point, we may start identifying components of the sum. First, 
 -->
 
-*dịch đoạn phía trên*
+Từ đây, ta có thể bắt đầu xác định các thành phần của tổng. Đầu tiên,
 
 
 $$
@@ -1637,7 +1648,7 @@ $$
 So the entire expression in the inside of the sum is
 -->
 
-*dịch đoạn phía trên*
+Cho nên toàn bộ biểu thức bên trong tổng là
 
 
 $$
@@ -1649,7 +1660,7 @@ $$
 This means we may now write our derivative as
 -->
 
-*dịch đoạn phía trên*
+Điều này nghĩa là bây giờ ta có thể viết đạo hàm của ta dưới dạng
 
 
 $$
@@ -1663,7 +1674,9 @@ which means that we need to exchange the order of the indices on $u_{ia}$.
 If we notice that $u_{ia} = [\mathbf{U}^\top]_{ai}$, we can then write
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể muốn nó trông giống như phần tử $a, b$ của một ma trận để mà có thể sử dụng các kỹ thuật trong các ví dụ trước đó để đạt đến một biểu thức ma trận,
+nghĩa là ta cần phải hoán đổi thứ tự của các chỉ số trên $u_{ia}$.
+Nếu để ý $u_{ia} = [\mathbf{U}^\top]_{ai}$, ta có thể viết 
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -1791,7 +1804,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 10 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 11 -->
 * 
