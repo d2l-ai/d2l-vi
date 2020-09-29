@@ -452,7 +452,7 @@ Every integration rule derives from this one fact.
 ## Change of Variables
 -->
 
-## Thay đổi của Biến số
+## Quy tắc Đổi biến
 :label:`integral_example`
 
 
@@ -486,7 +486,7 @@ By the chain rule, we know
 -->
 
 Cho là ta muốn biết hàm này trong như thế nào khi ta kết hợp nó với một hàm nữa để có được $F(u(x))$.
-
+Bằng quy tắc dây chuyền, ta có
 
 $$
 \frac{d}{dx}F(u(x)) = \frac{dF}{du}(u(x))\cdot \frac{du}{dx}.
@@ -497,7 +497,7 @@ $$
 We can turn this into a statement about integration by using the fundamental theorem :eqref:`eq_ftc` as above. This gives
 -->
 
-Ta có thể biến nó thành một mệnh đề tích phân bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc` ở trên. Cho ra
+Ta có thể biến nó thành một mệnh đề tích phân bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc` ở trên, để có
 
 
 $$
@@ -582,7 +582,7 @@ If $u(x)$ and $f(x)$ are properly chosen, this can allow for the computation of 
 For instance, if we even chose $f(y) = 1$ and $u(x) = e^{-x^{2}}$ (which means $\frac{du}{dx}(x) = -2xe^{-x^{2}}$), this can show for instance that
 -->
 
-Nếu $u(x)$ và $f(x)$ được chọn một cách đúng đắn, nó sẽ cho phép việc tính toán của những tích phân cực kỳ phức tạp.
+Nếu $u(x)$ và $f(x)$ được chọn một cách thích hợp, nó sẽ cho phép tính toán những tích phân cực kỳ phức tạp.
 Ví dụ, nếu ta chọn $f(y) = 1$ và $u(x) = e^{-x^{2}}$ (có nghĩa là $\frac{du}{dx}(x) = -2xe^{-x^{2}}$)), có thể ví dụ cho biết là
 
 
@@ -1092,6 +1092,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 4 -->
 * 
