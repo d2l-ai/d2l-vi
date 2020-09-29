@@ -1720,7 +1720,7 @@ $$
 This is a matrix product, and thus we can conclude that
 -->
 
-*dịch đoạn phía trên*
+Đây là tích một ma trận, vì thế ta có thể kết luận 
 
 
 $$
@@ -1732,7 +1732,7 @@ $$
 and thus we may write the solution to :eqref:`eq_mat_goal_2`
 -->
 
-*dịch đoạn phía trên*
+nên vì vậy ta có thể viết nghiệm cho :eqref:`eq_mat_goal_2`
 
 
 $$
@@ -1744,7 +1744,7 @@ $$
 This matches the solution we guessed above!
 -->
 
-*dịch đoạn phía trên*
+Nghiệm này trùng với nghiệm mà ta đoán ở phía trên!
 
 
 <!--
@@ -1755,7 +1755,11 @@ However, due to the plethora of ways matrix operations can be combined compared 
 It is often the case that it is best to work with the indices, or leave it up to automatic differentiation when appropriate.
 -->
 
-*dịch đoạn phía trên*
+Lúc này cũng dễ hiểu nếu ta hỏi rằng "Tại sao không viết tất cả các quy tắc giải tích đã từng học thành dạng ma trận?
+Điều này rõ ràng là máy móc. Tại sao ta không đơn giản dùng ma trận cho tổng quát?"
+Và thực sự có những quy tắc như thế và :cite:`Petersen.Pedersen.ea.2008` cho ta một bản tóm tắt tuyệt vời.
+Tuy nhiên, vì số cách kết hợp các phép toán ma trận nhiều hơn hẳn so với các giá trị một biến, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành cho hàm cho một biến.
+Thông thường, tốt nhất là làm việc với các chỉ số, hoặc dùng vi phân tự động khi thích hợp.
 
 
 ## Tóm tắt
@@ -1767,7 +1771,10 @@ These allow us to see how a multi-variable function changes when we make an arbi
 * Matrix calculus allows us to write the derivatives of matrix expressions in concise ways.
 -->
 
-*dịch đoạn phía trên*
+* Với biến nhiều chiều, chúng ta có thể định nghĩa gradient cùng mục đích như các đạo hàm một chiều.
+Điều này cho phép ta thấy cách một hàm đa biến thay đổi khi ta tạo ra bất kỳ thay đổi nhỏ nào đối với đầu vào.
+* Thuật toán lan truyền ngược có thể được xem như một phương pháp trong việc tổ chức quy tắc dây chuyền đa biến để cho phép tính toán hiệu quả các đạo hàm riêng.
+* Giải tích ma trận cho phép chúng ta viết các đạo hàm của biểu thức ma trận một cách gọn gàng hơn.
 
 
 ## Bài tập
@@ -1782,7 +1789,12 @@ and $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Why do you get the same
 How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $g$ and $h$?
 -->
 
-*dịch đoạn phía trên*
+1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Hãy cho biết tại sao bạn lại ra cùng đáp án?
+2. Cho $\mathbf{v}$ là một vector $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? là gì?
+3. Cho $L(x, y) = \log(e^x + e^y)$. Tính toán gradient. Tổng của các thành phần của gradient là gì?
+4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem $(0,0)$ là cực đại, cực tiểu, hay không phải cả hai.
+5. Giả sử ta đang tối thiểu hàm $f(\mathbf{x}) = g(\mathbf{x}) + h(\mathbf{x})$.
+Làm cách nào ta có thể diễn giải bằng hình học điều kiện $\nabla f = 0$ thông qua $g$ và $h$? 
 
 
 <!-- ===================== Kết thúc dịch Phần 11 ===================== -->
@@ -1838,6 +1850,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 11 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
