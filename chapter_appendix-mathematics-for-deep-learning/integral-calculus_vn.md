@@ -5,7 +5,7 @@
 # Integral Calculus
 -->
 
-# *dịch tiêu đề trên*
+# Giải tích Tích phân
 :label:`sec_integral_calculus`
 
 
@@ -15,7 +15,9 @@ The other pillar, integration, starts out seeming a rather disjoint question, "W
 While seemingly unrelated, integration is tightly intertwined with the differentiation via what is known as the *fundamental theorem of calculus*.  
 -->
 
-*dịch đoạn phía trên*
+Phép vi phân mới chỉ là một nửa nội dung của môn giải tích truyền thống.
+Một cột trụ khác, phép tích phân, được bắt nguồn từ một câu hỏi khá lạc lõng, "Diện tích phía bên dưới của đường cong này là bao nhiêu?"
+Dù có vẻ không liên quan, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua thứ được gọi là *định lý cơ bản của giải tích* (_fundamental theorem of calculus_).
 
 
 <!--
@@ -23,14 +25,15 @@ At the level of machine learning we discuss in this book, we will not need a dee
 However, we will provide a brief introduction to lay the groundwork for any further applications we will encounter later on.
 -->
 
-*dịch đoạn phía trên*
+Ở mức độ kiến thức học máy ta thảo luận trong cuốn sách này, ta không nhất thiết cần một hiểu biết sâu sắc về phép tích phân.
+Tuy nhiên, chúng tôi sẽ cung cấp một giới thiệu khái quát để đặt nền tảng cho bất kỳ ứng dụng nào mà ta sẽ gặp sau này.
 
 
 <!--
 ## Geometric Interpretation
 -->
 
-## *dịch tiêu đề trên*
+## Diễn giải Hình học
 
 
 <!--
@@ -39,7 +42,9 @@ For simplicity, let us assume that $f(x)$ is non-negative (never takes a value l
 What we want to try and understand is: what is the area contained between $f(x)$ and the $x$-axis?
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta có một hàm $f(x)$.
+Để đơn giản, hãy cho rằng $f(x)$ không âm (không cho ra số bé hơn không).
+Những gì chúng ta muốn cố gắng tìm và hiểu là: diện tích giữa $f(x)$ và trục $x$ là bao nhiêu?
 
 
 ```{.python .input}
@@ -99,7 +104,8 @@ In most cases, this area will be infinite or undefined (consider the area under 
 so people will often talk about the area between a pair of ends, say $a$ and $b$.
 -->
 
-*dịch đoạn phía trên*
+Trong đa số trường hợp, diện tích của vùng này sẽ là vô cực hoặc không xác định (xét trường hợp diện tích dưới hàm $f(x) = x^{2}$),
+nên mọi người thường sẽ nói về diện tích trong một khoảng, ví dụ $a$ và $b$.
 
 
 ```{.python .input}
@@ -139,7 +145,7 @@ d2l.plt.show()
 We will denote this area by the integral symbol below:
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ ký hiệu phần diện tích này với dấu tích phân như bên dưới:
 
 
 $$
@@ -152,7 +158,8 @@ The inner variable is a dummy variable, much like the index of a sum in a $\sum$
 and so this can be equivalently written with any inner value we like:
 -->
 
-*dịch đoạn phía trên*
+Biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$,
+vậy nên biến này có thể được viết dưới bất kỳ dạng nào ta muốn:
 
 
 $$
@@ -169,7 +176,12 @@ Let us take a look at an example doing this in code.
 We will see how to get the true value in a later section.
 -->
 
-*dịch đoạn phía trên*
+Có một cách truyền thống để cố gắng hiểu cách ta có thể xấp xỉ phép tích phân:
+ta có thể tưởng tượng lấy phần giữa $a$ và $b$ rồi cắt nó thành $N$ lát theo chiều dọc.
+Nếu $N$ lớn, ta có thể xấp xỉ phần diện tích của mỗi lát bằng một hình chữ nhật,
+và sau đó tính tổng các diện tích để có được phần diện tích phía dưới đường cong.
+Hãy cùng xem một ví dụ thông qua lập trình.
+Ta sẽ biết cách để lấy được giá trị thật sự của phép tích phân ở mục sau.
 
 
 ```{.python .input}
@@ -240,7 +252,8 @@ The issue is that while it can be done numerically,
 we can do this approach analytically for only the simplest functions like
 -->
 
-*dịch đoạn phía trên*
+Một vấn đề đó là trong khi cách này có thể làm một cách số học,
+ta chỉ có thể sử dụng cách tiếp cận phân tích này đối với những hàm cực đơn giản như
 
 
 $$
@@ -252,7 +265,7 @@ $$
 Anything somewhat more complex like our example from the code above
 -->
 
-*dịch đoạn phía trên*
+Đối với những hàm có vẻ phức tạp hơn như trong ví dụ trình bày ở đoạn mã trên
 
 
 $$
@@ -264,7 +277,7 @@ $$
 is beyond what we can solve with such a direct method.
 -->
 
-*dịch đoạn phía trên*
+nằm ngoài những gì ta có thể giải quyết với phương pháp này.
 
 
 <!--
@@ -273,7 +286,9 @@ and learn the main computational tool used to find integrals: the *fundamental t
 This will be the basis for our study of integration.
 -->
 
-*dịch đoạn phía trên*
+Ta sẽ thay thế bằng một hướng tiếp cận khác.
+Ta sẽ làm việc một cách trực quan với khái niệm diện tích, và học công cụ tính toán chính được dùng để tính tích phân: *định lý cơ bản của giải tích*.
+Đây sẽ là nền tảng của ta trong quá trình học tích phân.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -1078,7 +1093,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Phạm Hồng Vinh
 
 <!-- Phần 2 -->
 * 
