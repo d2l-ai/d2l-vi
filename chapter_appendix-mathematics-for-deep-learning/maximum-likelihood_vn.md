@@ -610,7 +610,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Đăng Khoa
 
 
 *Lần cập nhật gần nhất: 11/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
