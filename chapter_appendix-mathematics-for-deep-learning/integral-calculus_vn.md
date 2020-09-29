@@ -317,7 +317,7 @@ This is a mathematical encoding of the fact that we can measure the area out to 
 and then subtract off the area to the near end point as indicated in :numref:`fig_area-subtract`.
 -->
 
-Đây là một cách ký hiệu toán học cho việc ta có thể tính diện tích của khoảng xa hơn rồi trừ đi cho diện tích của khoảng gần hơn như chỉ ra trong :numref:`fig_area-subtract`.
+Đây là một cách ký hiệu toán học cho việc ta có thể tính diện tích khoảng giữa hai cận bằng cách lấy diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như chỉ ra trong :numref:`fig_area-subtract`.
 
 <!--
 ![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/SubArea.svg)
@@ -408,7 +408,7 @@ This is a fact-of-life in the theory of integration.
 Thankfully, notice that when working with definite integrals, the constants drop out, and thus are irrelevant to the outcome.
 -->
 
-Nó lấy ý tưởng về tìm kiếm diện tích (*một tiên nghiệm* khá là khó), và giảm tải nó xuống thành một mệnh đề đạo hàm (một thứ dễ hiểu hơn nhiều).
+Nó lấy ý tưởng về tìm kiếm diện tích (một *tiên nghiệm* khá là khó), và giảm tải nó xuống thành một mệnh đề đạo hàm (một thứ dễ hiểu hơn nhiều).
 Một nhận xét cuối mà chúng tôi cần đưa ra đó là nó không cho ta biết $F(x)$ thực sự là gì.
 Thực chất, $F(x) + C$ với $C$ bất kỳ đều có đạo hàm như nhau.
 Đây là một sự thật mà chúng ta phải chấp nhận trong lý thuyết tích phân.
@@ -1098,6 +1098,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
