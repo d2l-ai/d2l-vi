@@ -16,12 +16,12 @@ Modeling higher degrees of feature combinations with factorization machines is p
 but it is usually not adopted due to numerical instability and high computational complexity.
 -->
 
-Việc học những tổ hợp đặc trưng một cách hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỉ lệ nhấp chuột.
-Máy phân rã ma trận mô hình hoá tương tác đặc trưng dưới dạng tuyến tính (tức tương tác song tuyến tính).
-Điều này thường không đủ đối với dữ liệu thực tế khi bản thân cấu trúc giao giữa các đặc trưng thường rất phức tạp và có dạng phi tuyến.
-Tệ hơn nữa, trong thực tế tương tác đặc trưng bậc hai lại thường được sử dụng trong máy phân rã ma trận.
-Việc mô hình hoá tổ hợp tương tác bậc cao hơn với máy phân rã ma trận về lý thuyết là khả thi
-nhưng thường không được sử dụng do tính bất ổn định số học và độ phức tạp tính toán cao.
+Việc học những tổ hợp đặc trưng hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỉ lệ nhấp chuột.
+Máy phân rã ma trận mô hình hoá các tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
+Điều này thường không đủ đối với dữ liệu thực tế khi bản thân việc kết hợp chéo các đặc trưng thường có cấu trúc rất phức tạp và có dạng phi tuyến.
+Tệ hơn, máy phân rã ma trận trong thực tế thường sử dụng các tương tác đặc trưng bậc hai.
+Mô hình hoá tổ hợp tương tác với bậc cao hơn tuy khả thi về lý thuyết
+nhưng thường không được sử dụng do tính bất ổn số học và độ phức tạp tính toán cao.
 
 
 <!--
@@ -33,10 +33,10 @@ Moreover, non-linear inherent structures from inputs can also be captured with d
 In this section, we will introduce a representative model named deep factorization machines (DeepFM) :cite:`Guo.Tang.Ye.ea.2017` which combine FM and deep neural networks. 
 -->
 
-Có một giải pháp hiệu quả hơn đó là sử dụng mạng nơ-ron sâu.
-Mạng nơ-ron sâu rất mạnh mẽ trong việc học dạng biểu diễn đặc trưng và có tiềm năng học được những tương tác đặc trưng tinh xảo.
-Do đó, việc tích hợp mạng nơ-ron sâu vào máy phân rã ma trận cũng là lẽ tự nhiên.
-Việc thêm các tầng biến đổi phi tuyến vào máy phân rã ma trận giúp mô hình có khả năng mô hình hoá cả những tổ hợp đặc trưng bậc thấp lẫn tổ hợp đặc trưng bậc cao.
+Một giải pháp hiệu quả hơn là sử dụng mạng nơ-ron sâu.
+Mạng nơ-ron sâu rất hiệu quả khi học biểu diễn đặc trưng và có thể học được những tương tác đặc trưng tinh xảo.
+Do đó, việc tích hợp chúng vào máy phân rã ma trận cũng dễ hiểu.
+Việc thêm các tầng biến đổi phi tuyến vào máy phân rã ma trận giúp mô hình hoá cả những tổ hợp đặc trưng bậc thấp và bậc cao.
 Hơn nữa, bản thân cấu trúc phi tuyến của đầu vào cũng có thể được nắm bắt thông qua mạng nơ-ron sâu.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình biểu diễn được gọi là máy phân rã ma trận sâu (*deep factorization machines - DeepFM*) :cite:`Guo.Tang.Ye.ea.2017` kết hợp giữa FM và mạng nơ-ron sâu.
 
@@ -57,12 +57,12 @@ It is worth pointing out that the spirit of DeepFM resembles that of the Wide \&
 The advantages of DeepFM over the Wide \& Deep model is that it reduces the effort of hand-crafted feature engineering by identifying feature combinations automatically. 
 -->
 
-DeepFM bao gồm một thành phần FM và một thành phần sâu được tích hợp theo cấu trúc song song.
-Thành phần FM giống với máy phân rã ma trận 2 chiều đã được sử dụng để mô hình hoá tương tác đặc trưng bậc thấp.
-Thành phần sâu là một perceptron đa tầng được sử dụng để nắm bắt tương tác đặc trưng bậc cao và tính phi tuyến.
+DeepFM bao gồm một thành phần FM và một mạng sâu được tích hợp theo cấu trúc song song.
+FM là máy phân rã ma trận 2 chiều dùng để mô hình hoá tương tác đặc trưng bậc thấp.
+Mạng sâu là một perceptron đa tầng dùng để nắm bắt tương tác đặc trưng bậc cao và tính phi tuyến.
 Hai thành phần này có chung đầu vào/embedding và tổng đầu ra của chúng được lấy làm dự đoán cuối cùng.
-Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu mà có thể nắm bắt được cả sự ghi nhớ và sự khái quát hoá.
-DeepFM có lợi thế hơn mô hình Rộng \& Sâu ở chỗ nó giảm tải việc thiết kế đặc trưng một cách thủ công bằng cách tự động nhận biết tổ hợp đặc trưng.
+Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu, là kiến trúc có thể nắm bắt được cả sự ghi nhớ và tính khái quát.
+DeepFM lợi thế hơn mô hình Rộng \& Sâu ở chỗ nó giảm tải việc thiết kế đặc trưng một cách thủ công bằng cách tự động nhận biết tổ hợp đặc trưng.
 
 
 <!--
@@ -73,11 +73,11 @@ The input of the deep component is the concatenation of the dense embeddings of 
 that are looked up with the sparse categorical feature input, denoted as:
 -->
 
-Để ngắn gọn, ta bỏ qua phần mô tả thành phần FM và ký hiệu đầu ra của thành phần này là $\hat{y}^{(FM)}$.
+Để ngắn gọn, ta bỏ qua phần mô tả FM và ký hiệu đầu ra của thành phần này là $\hat{y}^{(FM)}$.
 Bạn đọc có thể tham khảo phần trước để biết thêm chi tiết.
-Gọi $\mathbf{e}_i \in \mathbb{R}^{k}$ ký hiệu vector đặc trưng tiềm ẩn của trường thứ $i$.
-Đầu vào của thành phần sâu là tổ hợp của embedding dày đặc của tất cả các trường
-có thể được tra cứu bằng đầu vào là đặc trưng danh mục thưa, ký hiệu là:
+Gọi $\mathbf{e}_i \in \mathbb{R}^{k}$ là vector đặc trưng tiềm ẩn của trường thứ $i$.
+Đầu vào của  mạng sâu là tổ hợp của embedding dày đặc của tất cả các trường
+có thể được truy xuất với đầu vào đặc trưng danh mục thưa, ký hiệu là:
 
 
 $$
@@ -110,9 +110,9 @@ The ultimate prediction of DeepFM is the summation of the outputs from both FM a
 -->
 
 trong đó $\alpha$ là hàm kích hoạt.
-$\mathbf{W}_{l}$ và $\mathbf{b}_{l}$ là trọng số và độ chệch tại tầng thứ $l$.
-Gọi $y_{DNN}$ ký hiệu đầu ra của dự đoán.
-Dự đoán cuối cùng của DeepFM là tổng đầu ra từ cả FM và DNN. Từ đó ta có:
+$\mathbf{W}_{l}$ và $\mathbf{b}_{l}$ là trọng số và hệ số điều chỉnh tại tầng thứ $l$.
+Gọi $y_{DNN}$ là đầu ra của dự đoán.
+Dự đoán cuối cùng của DeepFM là tổng đầu ra từ cả FM và DNN:
 
 
 $$
@@ -159,7 +159,7 @@ npx.set_np()
 ## Implemenation of DeepFM
 -->
 
-## Cách lập trình DeepFM
+## Lập trình DeepFM
 
 
 <!--
@@ -170,7 +170,7 @@ The number of neurons of the MLP can be adjusted with the `mlp_dims` hyperparame
 -->
 
 Cách lập trình cho DeepFM tương tự như FM.
-Ta giữ nguyên phần FM và sử dụng khối MLP với `relu` làm hàm kích hoạt.
+Ta giữ nguyên FM và sử dụng khối MLP với hàm kích hoạt `relu`.
 Dropout cũng được sử dụng để điều chuẩn mô hình.
 Số nơ-ron của MLP có thể được điều chỉnh thông qua siêu tham số `mlp_dims`.
 
@@ -217,8 +217,8 @@ We set the MLP component of DeepFM to a three-layered dense network with the a p
 All other hyperparameters remain the same as FM.
 -->
 
-Quá trình nạp dữ liệu giống với phần FM.
-Ta đặt thành phần MLP của DeepFM bằng một mạng ba tầng kết nối đầy đủ với cấu trúc kim tự tháp (30-20-10).
+Quá trình nạp dữ liệu giống với FM.
+Ta đặt thành phần MLP của DeepFM là một mạng có ba tầng kết nối đầy đủ với cấu trúc kim tự tháp (30-20-10).
 Tất cả các siêu tham số khác được giữ nguyên so với FM.
 
 
@@ -272,8 +272,8 @@ So với FM, DeepFM hội tụ nhanh hơn và đạt được hiệu năng tốt
 * Change the dataset to Criteo and compare it with the original FM model.
 -->
 
-* Thay đổi cấu trúc của MLP để kiểm tra ảnh hưởng lên hiệu năng của mô hình.
-* Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM nguyên bản.
+* Thay đổi cấu trúc của MLP để kiểm tra ảnh hưởng của nó lên hiệu năng mô hình.
+* Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM gốc.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -294,11 +294,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
+* Phạm Hồng Vinh
+* Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
