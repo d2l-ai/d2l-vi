@@ -462,5 +462,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Phạm Hồng Vinh
+* Phạm Minh Đức
+* Nguyễn Lê Quang Nhật
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*
