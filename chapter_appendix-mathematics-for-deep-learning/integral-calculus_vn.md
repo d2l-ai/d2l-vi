@@ -158,7 +158,7 @@ The inner variable is a dummy variable, much like the index of a sum in a $\sum$
 and so this can be equivalently written with any inner value we like:
 -->
 
-Phần biến bên trong là biến giả, cũng giống như biến chỉ số của phép tổng trong $\sum$,
+Biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$,
 vậy nên biến này có thể được viết dưới bất kỳ dạng nào ta muốn:
 
 
