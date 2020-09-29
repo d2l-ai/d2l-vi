@@ -16,8 +16,8 @@ A number of recent literatures have demonstrated the usefulness of incorporating
 
 Trong phần trước, ta trừu tượng hoá tác vụ đề xuất dưới dạng một bài toán hoàn thiện ma trận mà không xét đến hành vi ngắn hạn của người dùng.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình đề xuất cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
-Đây là một hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường là có mốc thời gian diễn ra.
-Nhiều bài báo đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng trong sở thích của họ.
+Đây là một hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường đi kèm với mốc thời gian diễn ra.
+Nhiều bài báo gần đây đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng sở thích của họ.
 
 
 <!--
@@ -37,11 +37,11 @@ Mô hình mà chúng tôi sẽ giới thiệu, Caser :cite:`Tang.Wang.2018`, vi�
 kế thừa mạng nơ-ron tích chập nhằm nắm bắt khuôn mẫu động có ảnh hưởng đến những hoạt động gần đây của người dùng.
 Thành phần chính của Caser bao gồm một mạng tích chập ngang và một mạng tích chập dọc,
 nhằm lần lượt khám phá khuôn mẫu cấp liên kết (*union-level*) và cấp điểm (*point-level*) của chuỗi.
-Khuôn mẫu cấp điểm ám chỉ tác động của một điểm riêng lẻ trong lịch sử của chuỗi chứa điểm đó lên sản phẩm mục tiêu,
+Khuôn mẫu cấp điểm ám chỉ tác động của một sản phẩm riêng lẻ trong lịch sử của chuỗi lên sản phẩm mục tiêu,
 trong khi khuôn mẫu cấp liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu kế tiếp.
 Ví dụ, việc mua sữa cùng với bơ dẫn tới xác suất mua thêm cả bột mì cao hơn so với việc chỉ mua một trong hai.
 Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong những tầng kết nối đầy đủ cuối cùng,
-dẫn đến mô hình hoá một cách toàn diện hơn sở thích của người dùng.
+dẫn đến sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
 Chi tiết về mô hình này sẽ được mô tả tiếp theo.
 
 
@@ -61,7 +61,7 @@ Suppose we take the previous $L$ items into consideration, an embedding matrix t
 
 Trong hệ thống đề xuất có nhận thức về chuỗi, mỗi người dùng tương tác với một chuỗi các sản phẩm từ tập sản phẩm.
 $S^u = (S_1^u, ... S_{|S_u|}^u)$ ký hiệu chuỗi có trình tự.
-Mục tiêu của Caser là đề xuất sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như là dự định ngắn hạn.
+Mục tiêu của Caser là đề xuất sản phẩm bằng cách xét thị hiếu chung của người dùng cũng như dự định ngắn hạn.
 Giả sử ta xét $L$ sản phẩm trước, ma trận embedding biểu diễn những tương tác xảy ra trước bước thời gian $t$ có thể được xây dựng như sau:
 
 
@@ -78,7 +78,7 @@ We can view the input matrix $\mathbf{E}^{(u, t)}$ as an image which is the inpu
 
 trong đó $\mathbf{Q} \in \mathbb{R}^{n \times k}$ biểu diễn embedding sản phẩm và $\mathbf{q}_i$ ký hiệu hàng thứ $i$.
 $\mathbf{E}^{(u, t)} \in \mathbb{R}^{L \times k}$ có thể được sử dụng để suy ra sở thích nhất thời của người dùng $u$ tại bước thời gian $t$.
-Ta có thể coi ma trận đầu vào $\mathbf{E}^{(u, t)}$ như một ảnh và là đầu vào của hai tầng tích chập kế tiếp.
+Ta có thể coi ma trận đầu vào $\mathbf{E}^{(u, t)}$ như một ảnh đầu vào của hai tầng tích chập kế tiếp.
 
 
 <!--
@@ -438,7 +438,7 @@ Can you explain the differences between these two tasks?
 * Thay đổi siêu tham số $L$. Liệu lịch sử tương tác dài hơn có giúp tăng độ chính xác?
 * Ngoài tác vụ đề xuất nhận thức về chuỗi như chúng tôi giới thiệu ở trên,
 có một loại tác vụ đề xuất nhận thức về chuỗi khác được gọi là đề xuất dựa theo phiên (*session-based recommendation*) :cite:`Hidasi.Karatzoglou.Baltrunas.ea.2015`.
-Bạn có thể giải thích sự khác nhau giữa hai tác vụ này?
+Bạn có thể giải thích sự khác nhau giữa hai tác vụ này không?
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
