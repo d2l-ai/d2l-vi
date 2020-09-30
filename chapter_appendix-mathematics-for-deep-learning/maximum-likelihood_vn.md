@@ -75,8 +75,13 @@ any value in $[0,1]$ without any prior belief it is fair or not (often referred 
 Thus we see that our application of Bayes' rule shows that our best choice of $\boldsymbol{\theta}$ is the maximum likelihood estimate for $\boldsymbol{\theta}$:
 -->
 
-*dịch đoạn phía trên*
-
+Biểu thức $P(X)$, một tham số xác suất không phân biệt để tạo dữ liệu, hoàn toàn không phụ thuộc vào $\boldsymbol{\theta}$,
+và do đó, bạn có thể bỏ mà không thay đổi lựa chọn tốt nhất của $\boldsymbol{\theta}$.
+Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào tốt hơn bất kỳ bộ tham số nào khác,
+vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
+Ví dụ, điều này có ý nghĩa trong ví dụ lật đồng xu của chúng ta, trong đó xác suất để ra mặt ngửa có thể là
+bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ sự tin tưởng nào trước đó là giá trị công bằng hay không (thường được gọi là *không thông tin trước đó*).
+Do đó, chúng tôi thấy rằng việc áp dụng quy tắc Bayes cho thấy rằng lựa chọn tốt nhất của chúng tôi về $\boldsymbol{\theta}$ là ước tính khả năng xảy ra tối đa cho $\boldsymbol{\theta}$:
 
 $$
 \hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}} _ {\boldsymbol{\theta}} P(X \mid \boldsymbol{\theta}).
@@ -87,7 +92,7 @@ $$
 As a matter of common terminology, the probability of the data given the parameters ($P(X \mid \boldsymbol{\theta})$) is referred to as the *likelihood*.
 -->
 
-*dịch đoạn phía trên*
+Theo thuật ngữ thông thường, xác suất của dữ liệu cho trước các tham số ($P(X \mid \boldsymbol{\theta})$) được gọi là *hợp lý*.
 
 
 <!--
