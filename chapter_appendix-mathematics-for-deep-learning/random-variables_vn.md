@@ -1665,7 +1665,7 @@ Ta hãy lên danh sách một vài thuộc tính của tương quan dưới đâ
 -->
 
 * Đối với bất kỳ biến ngẫu nhiên $X$ nào, $\rho(X, X) = 1$.
-* Đối với bất kỳ biến ngẫu nhiên $X, Y$, số $a$ và $b$ nào, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* Đối với bất kỳ hai biến ngẫu nhiên $X, Y$, số $a$ và $b$ nào, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
 * Nếu $X$ và $Y$ độc lập với phương sai khác không thì $\rho(X, Y) = 0$.
 
 
@@ -1725,7 +1725,20 @@ We may marginalize joint densities by integrating over unwanted random variables
 * The covariance and correlation coefficient provide a way to measure any linear relationship between two correlated random variables.
 -->
 
-*dịch đoạn phía trên*
+* Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể lấy một dãy liên tục các giá trị. 
+Chúng có một vài cản trở kỹ thuật mà khó hơn để giải quyết hơn nếu so sánh với biến ngẫu nhiên rời rạc.
+* Xác suất của hàm mật độ cho phép ta làm việc cùng với các biến ngẫu nhiên liên tục bằng việc cung cấp 
+một hàm số mà diện tích dưới đường cong ở một khoảng cho xác suất tìm được một điểm mẫu ở khoảng ấy.
+* Hàm phân phối tích lũy là xác suất của quan sát biến ngẫu nhiên ít hơn một ngưỡng nhất định.
+Nó có thể cung cấp một quan điểm thay thế hữu ích hợp nhất các biến rời rạc và liên tục.
+* Giá trị trung bình là giá trị trung bình của một biến ngẫu nhiên.
+* Phương sai là bình phương kỳ vọng của sự khác biệt giữa biến ngẫu nhiên và giá trị trung bình của nó.
+* Độ lệch chuẩn là căn bậc hai của phương sai.
+Nó có thể được coi là việc đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
+* Bất đẳng thức Chebyshev cho phép ta làm cho trực giác này trở nên chặt chẽ bằng cách đưa ra một khoảng rõ ràng có chứa biến ngẫu nhiên hầu hết thời gian.
+* Mật độ chung cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan.
+Ta có thể loại bỏ mật độ chung bằng cách tích hợp các biến ngẫu nhiên không mong muốn để có được phân phối của biến ngẫu nhiên mong muốn.
+* Hiệp phương sai và hệ số tương quan cung cấp một cách để đo lường bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
 
 
 ## Bài tập
@@ -1741,7 +1754,14 @@ and I observed $25\%$ of my samples taking a value larger than $9$." Do you beli
 $x, y \in [0,1]$ and $p_{XY}(x, y) = 0$ otherwise. What is the covariance of $X$ and $Y$?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được cho bởi $p(x) = \frac{1}{x^2}$ với $x \ge 1$ và trái lại thì bằng $p(x) = 0$. Vậy $P(X > 2)$ là gì?
+2. Phân phối Laplace là một biến ngẫu nhiên có mật độ được cho bởi $p(x = \frac{1}{2}e^{-|x|}$.
+Giá trị trung bình và độ lệch chuẩn của hàm này là gì?
+Gợi ý $\int_0^\infty xe^{-x} \; dx = 1$ và $\int_0^\infty x^2e^{-x} \; dx = 2$.
+3. Tôi bước đến gần bạn trên phố và nói "Tôi có một biến ngẫu nhiên với giá trị trung bình là $1$, độ lệch chuẩn là $2$,
+và tôi quan sát thấy $25\%$ trong số các mẫu của tôi có giá trị lớn hơn $9$." Bạn có tin tôi không? Tại sao hoặc tại sao không?
+4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ chung cho bởi $p_{XY}(x, y) = 4xy$ đối với 
+$x, y \in [0,1]$ và trái lại thì $p_{XY}(x, y) = 0$. Vậy hiệp phương sai của $X$ và $Y$ là bao nhiêu?
 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
