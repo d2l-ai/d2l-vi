@@ -1574,7 +1574,7 @@ $$\mathrm{Cov}(X, Y) = \mathrm{Cov}(X, aX+b) = a\mathrm{Cov}(X, X) = a\mathrm{Va
 and thus by :eqref:`eq_cor_def` that
 -->
 
-*dịch đoạn phía trên*
+và do đó :eqref:`eq_cor_def` rằng
 
 
 $$
@@ -1587,14 +1587,15 @@ Thus we see that the correlation is $+1$ for any $a > 0$, and $-1$ for any $a < 
 that correlation measures the degree and directionality the two random variables are related, not the scale that the variation takes.
 -->
 
-*dịch đoạn phía trên*
+Đến đây ta thấy rằng tương quan là $+1$ cho bất kỳ $a > 0$, và $-1$ cho bất kỳ $a < 0$ mô tả
+rằng tương quan tính toán bậc và định hướng hai biến ngẫu nhiên giữa chúng, không phải tỷ lệ của sự biến đổi.
 
 
 <!--
 Let us again plot a collection of random variables with tunable correlation.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy lên một bộ sưu tập các biến ngẫu nhiên các tương quan có thể điều chỉnh.
 
 
 ```{.python .input}
@@ -1654,7 +1655,7 @@ d2l.plt.show()
 Let us list a few properties of the correlation below.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy lên danh sách một vài thuộc tính của tương quan dưới đây.
 
 
 <!--
@@ -1663,7 +1664,9 @@ Let us list a few properties of the correlation below.
 * If $X$ and $Y$ are independent with non-zero variance then $\rho(X, Y) = 0$.
 -->
 
-*dịch đoạn phía trên*
+* Đối với bất kỳ biến ngẫu nhiên $X$ nào, $\rho(X, X) = 1$.
+* Đối với bất kỳ biến ngẫu nhiên $X, Y$, số $a$ và $b$ nào, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* Nếu $X$ và $Y$ độc lập với phương sai khác không thì $\rho(X, Y) = 0$.
 
 
 <!--
@@ -1671,7 +1674,8 @@ As a final note, you may feel like some of these formulae are familiar.
 Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see that this is
 -->
 
-*dịch đoạn phía trên*
+Lưu ý cuối cùng, bạn có thể thấy rằng các công thức vừa rồi khá giống nhau.
+Quả nhiên, nếu ta khai triển tất cả giả sử $\mu_X = \mu_Y = 0$, ta thấy rằng đây là 
 
 
 $$
@@ -1684,7 +1688,8 @@ This looks like a sum of a product of terms divided by the square root of sums o
 This is exactly the formula for the cosine of the angle between two vectors $\mathbf{v}, \mathbf{w}$ with the different coordinates weighted by $p_{ij}$:
 -->
 
-*dịch đoạn phía trên*
+Phần này trông như tổng của một tích các số hạng được chia bởi căn bặc hai của tổng các số hạng.
+Điều này chính xác là công thức cho cô-sin của góc giữa hai vector  $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ khác bởi $p_{ij}$:
 
 
 $$
@@ -1697,7 +1702,8 @@ Indeed if we think of norms as being related to standard deviations, and correla
 much of the intuition we have from geometry can be applied to thinking about random variables.
 -->
 
-*dịch đoạn phía trên*
+Quả nhiên nếu ta nghĩ về các chuẩn liên quan tới độ lệch chuẩn, và tương quan là cô-sin của các góc,
+các trực giác ta có từ hình học có thể được áp dụng vào tư duy về các biến ngẫu nhiên. 
 
 
 ## Tóm tắt
@@ -1782,7 +1788,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 9 -->
-* 
+* Trần Yến Thy
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
