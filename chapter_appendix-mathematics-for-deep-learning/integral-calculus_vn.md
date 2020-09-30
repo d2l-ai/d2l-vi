@@ -995,7 +995,13 @@ of a little square (or little *hyper-cube*) by applying $\boldsymbol{\phi}$.
 If $\boldsymbol{\phi}$ was the multiplication by a matrix, then we know how the determinant already gives the answer.  
 -->
 
-*dịch đoạn phía trên*
+Xét kĩ hơn, ta nhận thấy rằng điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
+ngoại trừ việc chúng ta đã thay thế thuật ngữ $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$.
+Hãy cùng nhau xem ta có thể giải thích thuật ngữ này như nào.
+Hãy nhớ lại rằng số hạng $\frac{du}{dx}(x)$ cho thấy ta kéo dãn trục $x$ bằng cách áp dụng $u$ như thế nào.
+Tương tự, ở các không gian nhiều chiều hơn, $\left|\det(D\phi(\mathbf{x}))\right|$ cho thấy ta đã kéo dãn diện tích (hoặc thể tích, hoặc siêu thể tích)
+của một hình vuông (hoặc một *khối lập phương*) nhỏ ở mức độ như thế nào khi áp dụng $\boldsymbol{\phi}$.
+Nếu $\boldsymbol{\phi}$ là một phép nhân với ma trận, thì chúng ta biết ảnh hưởng của định thức như thế nào.
 
 
 <!--
@@ -1004,7 +1010,9 @@ a multivariable function $\boldsymbol{\phi}$ at a point by a matrix in the same 
 Thus the determinant of the Jacobian exactly mirrors the scaling factor we identified in one dimension.
 -->
 
-*dịch đoạn phía trên*
+Tính toán một chút, ta có thể chỉ ra rằng *Jacobian* đưa ra xấp xỉ tốt nhất cho
+một hàm đa biến $\boldsymbol{\phi}$ tại một điểm bằng ma trận theo cách giống như khi xấp xỉ đạo hàm và gradient bằng các đường hoặc mặt phẳng.
+Do đó, định thức Jacobian phản ánh chính xác hệ số tỷ lệ mà ta đã xác định trong không gian một chiều.
 
 
 <!--
@@ -1012,8 +1020,8 @@ It takes some work to fill in the details to this, so do not worry if they are n
 Let us see at least one example we will make use of later on. Consider the integral
 -->
 
-*dịch đoạn phía trên*
-
+Cần một số tính toán cho các chi tiết này, vì vậy đừng lo lắng nếu bạn chưa hiểu lúc này.
+Hãy cùng xem qua ít nhất một ví dụ mà ta dùng sau này. Xét tích phân
 
 $$
 \int _ {-\infty}^{\infty} \int _ {-\infty}^{\infty} e^{-x^{2}-y^{2}} \;dx\;dy.
@@ -1026,7 +1034,9 @@ If we let $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta), r\sin(\theta))$ (whic
 then we can apply the change of variable formula to see that this is the same thing as
 -->
 
-*dịch đoạn phía trên*
+Rất khó tính trực tiếp tích phân này, nhưng nếu ta đổi các biến, thì có thể đạt được tiến triển đáng kể.
+Nếu ta đặt $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta), r\sin(\theta))$ (nghĩa là $x = r \cos(\theta)$, $y = r \sin(\theta)$),
+thì chúng ta có thể áp dụng công thức đổi biến để có
 
 
 $$
@@ -1038,8 +1048,7 @@ $$
 where 
 -->
 
-*dịch đoạn phía trên*
-
+với
 
 $$
 \left|\det(D\mathbf{\phi}(\mathbf{x}))\right| = \left|\det\begin{bmatrix}
@@ -1053,7 +1062,7 @@ $$
 Thus, the integral is
 -->
 
-*dịch đoạn phía trên*
+Vì vậy, phép tích phân chính là
 
 
 $$
@@ -1065,14 +1074,13 @@ $$
 where the final equality follows by the same computation that we used in section :numref:`integral_example`.  
 -->
 
-*dịch đoạn phía trên*
-
+trong đó đẳng thức cuối cùng là phép tính mà ta đã sử dụng trong :numref:`integration_example`.
 
 <!--
 We will meet this integral again when we study continuous random variables in :numref:`sec_random_variables`.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta sẽ lại gặp tích phân này khi chúng ta học tới các biến ngẫu nhiên liên tục trong :numref:`sec_random_variables`.
 
 
 ## Tóm tắt
@@ -1084,7 +1092,10 @@ via the observation that the derivative of the area up to some point is given by
 * Integrals in higher dimensions can be computed by iterating single variable integrals.
 -->
 
-*dịch đoạn phía trên*
+* Lý thuyết tích phân cho phép chúng ta giải đáp các câu hỏi về các diện tích hoặc thể tích.
+* Định lý cơ bản của giải tích cho phép chúng ta vận dụng kiến thức về đạo hàm để tính toán các diện tích
+thông qua quan sát rằng đạo hàm của diện tích tới một điểm nào đó bởi giá trị tại điểm đó của hàm đang được tích phân.
+* Tích phân ở các không gian nhiều chiều hơn có thể được tính bằng cách lặp lại những phép tích phân đơn biến.
 
 
 ## Bài tập
@@ -1097,7 +1108,11 @@ via the observation that the derivative of the area up to some point is given by
 and $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ to see they are different.
 -->
 
-*dịch đoạn phía trên*
+1. $\int_1^2 \frac{1}{x} \;dx$ bằng bao nhiêu?
+2. Áp dụng công thức đổi biến để tính tích phân $\int_0^{\sqrt{\pi}}x\sin(x^2)\;dx$.
+3. $\int_{[0,1]^2} xy \;dx\;dy$ bằng bao nhiêu?
+4. Áp dụng công thức đổi biến để tính $\int_0^2\int_0^1xy(x^2-y^2)/(x^2+y^2)^3\;dy\;dx$ 
+và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để quan sát sự khác nhau giữa chúng.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -1133,7 +1148,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Đăng Khoa
 
 <!-- Phần 5 -->
-* 
+* Phạm Đăng Khoa
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
