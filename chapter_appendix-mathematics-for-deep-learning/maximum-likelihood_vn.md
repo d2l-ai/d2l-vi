@@ -15,14 +15,16 @@ This is the concept that when working with a probabilistic model with unknown pa
 the parameters which make the data have the highest probability are the most likely ones.
 -->
 
-*dịch đoạn phía trên*
+Một trong những cách tư duy thường gặp nhất trong học máy là quan điểm về hợp lý cực đại.
+Đây là khái niệm mà khi làm việc với một mô hình xác suất với các tham số chưa biết,
+các tham số làm cho dữ liệu có xác suất cao nhất là những tham số có nhiều khả năng nhất.
 
 
 <!--
 ## The Maximum Likelihood Principle
 -->
 
-## *dịch tiêu đề trên*
+## Định đề hợp lý cực đại
 
 
 <!--
@@ -33,14 +35,18 @@ and $X$ is a sequence of independent coin flips.
 We will look at this example in depth later.
 -->
 
-*dịch đoạn phía trên*
+Điều này có cách giải thích theo kiểu Bayes có thể hữu ích để suy nghĩ.
+Giả sử rằng ta có một mô hình với các tham số $\boldsymbol{\theta}$ và một tập hợp các mẫu dữ liệu $X$.
+Để rõ ràng, ta có thể tưởng tượng rằng $\boldsymbol{\theta}$ là một giá trị duy nhất đại diện cho xác suất một đồng xu xuất hiện khi lật,
+và $X$ là một chuỗi các lần tung đồng xu độc lập.
+Chúng ta sẽ xem xét ví dụ này sâu hơn ở phần sau.
 
 
 <!--
 If we want to find the most likely value for the parameters of our model, that means we want to find
 -->
 
-*dịch đoạn phía trên*
+Nếu ta muốn tìm giá trị có khả năng nhất cho các tham số của mô hình của mình, điều đó có nghĩa là ta muốn tìm
 
 
 $$\mathop{\mathrm{argmax}} P(\boldsymbol{\theta}\mid X).$$
@@ -51,7 +57,7 @@ $$\mathop{\mathrm{argmax}} P(\boldsymbol{\theta}\mid X).$$
 By Bayes' rule, this is the same thing as
 -->
 
-*dịch đoạn phía trên*
+Theo quy tắc Bayes, điều này giống với
 
 
 $$
