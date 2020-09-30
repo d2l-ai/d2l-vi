@@ -634,8 +634,8 @@ Mathematicians take the notion of signed areas. This manifests itself in two way
 First, if we consider a function $f(x)$ which is sometimes less than zero, then the area will also be negative. So for instance
 -->
 
-Các nhà toán học có khái niệm về các diện tích giới hạn. Điều này thể hiện theo hai cách.
-Đầu tiên, nếu ta xét một hàm $f(x)$ đôi khi nhỏ hơn 0, thì diện tích cũng sẽ là số âm. Vì thế, ví dụ
+Các nhà toán học có khái niệm về các diện tích có dấu. Điều này thể hiện theo hai cách.
+Đầu tiên, nếu ta xét một hàm $f(x)$ nhỏ hơn 0, thì diện tích cũng sẽ là số âm. Vì thế, ví dụ
 
 
 $$
@@ -664,8 +664,8 @@ And indeed, flipping twice will give a pair of negative signs that cancel out to
 
 Diện tích chuẩn (từ trái sang phải của một hàm số dương) thì luôn dương.
 Bất kỳ thứ gì thu được bằng cách lật nó (giả sử lật đối xứng qua trục $ x $ để lấy tích phân của một số âm,
-hoặc lật qua trục $ y $ để lấy một tích phân không đúng thứ tự) sẽ tạo ra một vùng âm.
-Và quả thực, việc lật hai lần sẽ tạo nên cặp dấu âm triệt tiêu nhau, từ đó có được diện tích có giá trị dương.
+hoặc lật qua trục $ y $ để lấy một tích phân ngược thứ tự) sẽ tạo ra diện tích âm.
+Và quả thực, việc lật hai lần sẽ tạo nên cặp dấu âm triệt tiêu nhau, từ đó có được diện tích dương.
 
 
 $$
@@ -677,7 +677,7 @@ $$
 If this discussion sounds familiar, it is! In :numref:`sec_geometry-linear-algebraic-ops` we discussed how the determinant represented the signed area in much the same way.
 -->
 
-Nếu cuộc thảo luận này nghe có vẻ quen thuộc, thì đó chính là! Trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách mà định thức biểu diễn diện tích giới hạn theo cùng một cách.
+Cuộc thảo luận này nghe có vẻ quen thuộc, thực tế, trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách mà định thức biểu diễn diện tích có dấu theo cùng cách thức.
 
 
 <!--
@@ -692,8 +692,8 @@ In some cases, we will need to work in higher dimensions. For instance, suppose 
 and we want to know the volume under $f$ when $x$ ranges over $[a, b]$ and $y$ ranges over $[c, d]$.
 -->
 
-Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng nhiều chiều hơn. Ví dụ: giả sử rằng chúng ta có một hàm gồm hai biến, như $f(x, y)$
-và chúng tôi muốn biết thể tích dưới $f$ khi $x$ nằm trong đoạn trên $[a, b]$ và $y$ trong đoạn trên $[c, d]$.
+Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng chiều nhiều hơn. Ví dụ: giả sử rằng chúng ta có một hàm gồm hai biến, như $f(x, y)$
+và chúng tôi muốn biết thể tích dưới $f$ khi $x$ nằm trong đoạn $[a, b]$ và $y$ trong đoạn $[c, d]$.
 
 ```{.python .input}
 # Construct grid and compute function
@@ -773,7 +773,7 @@ Suppose that we wish to compute this integral. My claim is that we can do this b
 and then shifting to the integral in $y$, that is to say
 -->
 
-Giả sử chúng ta muốn tính tích phân này. Tôi quả quyết rằng ta có thể làm được điều đó bằng cách đầu tiên tính toán theo vòng lặp tại cận $x$ và rồi chuyển sang tích phân tại cận $y$, nghĩa là
+Giả sử chúng ta muốn tính tích phân này. Ta có thể làm được điều đó bằng cách tính toán theo vòng lặp, đầu tiên tại cận $x$ và rồi chuyển sang tích phân tại cận $y$, nghĩa là
 
 
 $$
@@ -794,7 +794,7 @@ squares which we will index with integer coordinates $i, j$. In this case, our i
 -->
 
 Hãy xem xét hình trên, nơi chúng ta đã phân chia hàm thành $\epsilon \times \epsilon$
-các ô vuông mà ta sẽ lập chỉ số với các tọa độ nguyên $i, j$. Trong trường hợp này, tích phân của chúng ta xấp xỉ
+ô vuông mà ta sẽ lập chỉ số với các tọa độ nguyên $i, j$. Trong trường hợp này, tích phân của chúng ta xấp xỉ
 
 
 $$
@@ -807,7 +807,7 @@ Once we discretize the problem, we may add up the values on these squares in wha
 This is illustrated in :numref:`fig_sum-order`. In particular, we can say that
 -->
 
-Một khi ta đã giải quyết được bài toán, chúng ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà ta muốn và không phải lo lắng về việc các giá trị bị thay đổi.
+Một khi ta đã rời rạc hóa bài toán, chúng ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà ta muốn và không phải lo lắng về việc các giá trị bị thay đổi.
 Điều này được minh họa trong: numref: `fig_sum-order`. Đặc biệt, có thể nói rằng
 
 
@@ -819,7 +819,7 @@ $$
 ![Illustrating how to decompose a sum over many squares as a sum over first the columns (1), then adding the column sums together (2).](../img/SumOrder.svg)
 -->
 
-![*Minh họa cách phân rã một tổng trên nhiều ô vuông dưới dạng tổng trên đầu tiên các cột (1), sau đó cộng các tổng của cột với nhau (2).*](../img/SumOrder.svg)
+![*Minh họa cách phân rã một tổng trên nhiều ô vuông dưới dạng tổng trên các cột (1), sau đó cộng các tổng của cột với nhau (2).*](../img/SumOrder.svg)
 :label:`fig_sum-order`
 
 
@@ -827,7 +827,7 @@ $$
 The sum on the inside is precisely the discretization of the integral 
 -->
 
-Tổng bên trong chính xác là sự rời rạc của tích phân.
+Tổng bên trong chính xác là phiên bản rời rạc của tích phân.
 
 
 $$
@@ -866,10 +866,10 @@ For the type of mathematics encountered when doing machine learning (continuous 
 however it is possible to create examples where it fails (for example the function $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ over the rectangle $[0,2]\times[0,1]$).
 -->
 
-Lưu ý rằng, một khi đã xáo trộn, tất cả những gì ta cần làm đó là sắp xếp lại thứ tự mà ta đã thêm vào danh sách các số.
-Điều này có thể làm cho nó có vẻ như vô nghĩa, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
+Lưu ý rằng, một khi đã rời rạc hóa, tất cả những gì ta cần làm đó là sắp xếp lại thứ tự mà ta đã thêm vào danh sách các số.
+Điều này có vẻ là hiển nhiên, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
 Đối với loại toán học gặp phải khi thực hiện tác vụ máy học (các hàm liên tục), không có gì đáng lo ngại,
-tuy vậy có thể tạo các ví dụ không thành công (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
+tuy vậy có thể tạo các ví dụ mà cách này không hoạt động (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
 
 
 <!--
@@ -890,7 +890,7 @@ $$
 Often times, we will condense down to vector notation, and say that for $U = [a, b]\times [c, d]$ this is
 -->
 
-Thông thường, chúng ta sẽ rút gọn thành ký hiệu vectơ và nói rằng với $U = [a, b]\times [c, d]$ thì đây là
+Thông thường, chúng ta sẽ rút gọn thành ký hiệu vector và nói rằng tích phân trên miền $U = [a, b]\times [c, d]$ là
 
 
 $$
@@ -919,9 +919,9 @@ We can take this to be $\phi : \mathbb{R}^n \rightarrow \mathbb{R}^n$, that is a
 To keep the expressions clean, we will assume that $\phi$ is *injective* which is to say it never folds over itself ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).  
 -->
 
-Chúng ta cần một hàm để xác định lại miền tích hợp.
-Ta cũng có thể coi đây là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, đó là bất kỳ hàm nào nhận $n$ là biến thực và trả về kết quả $n$ có giá trị khác.
-Để giữ cho các biểu thức rõ ràng, ta sẽ giả định rằng $\phi$ là *injective* có nghĩa là nó không bao giờ tự gập lại ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
+Chúng ta cần một hàm để xác định lại miền tích phân.
+Ta cũng có thể coi hàm này là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, nhận $n$ biến thực và trả về $n$ giá trị thực khác.
+Để giữ cho các biểu thức rõ ràng, ta sẽ giả định rằng $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
 
 
 <!--
