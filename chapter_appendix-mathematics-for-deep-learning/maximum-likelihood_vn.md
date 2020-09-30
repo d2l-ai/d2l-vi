@@ -99,7 +99,7 @@ Theo thuật ngữ thông thường, xác suất của dữ liệu cho trước 
 ### A Concrete Example
 -->
 
-### *dịch tiêu đề trên*
+### Một ví dụ cụ thể
 
 
 <!--
@@ -109,7 +109,10 @@ Then the probability of getting a tails is $1-\theta$, and so if our observed da
 we can use the fact that independent probabilities multiply to see that 
 -->
 
-*dịch đoạn phía trên*
+Hãy để chúng tôi xem cách này hoạt động như thế nào trong một ví dụ cụ thể.
+Giả sử rằng chúng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất mà một lần lật đồng xu là mặt ngửa.
+Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ của chúng ta  là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
+chúng ta có thể sử dụng thực tế là các xác suất độc lập nhân lên để thấy rằng
 
 
 $$
@@ -121,7 +124,7 @@ $$
 If we flip $13$ coins and get the sequence "HHHTHTTHHHHHT", which has $n_H = 9$ and $n_T = 4$, we see that this is
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta lật $ 13 $ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", có $n_H = 9$ và $n_T = 4$, chúng ta thấy rằng đây là
 
 
 $$
@@ -136,14 +139,17 @@ everyone would correctly guess $9/13$.
 What this maximum likelihood method will give us is a way to get that number from first principals in a way that will generalize to vastly more complex situations.
 -->
 
-*dịch đoạn phía trên*
+Một điều thú vị về ví dụ này là chúng ta biết câu trả lời.
+Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã lật 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất của ta về xác suất đồng xu đến với chúng ta là bao nhiêu?"
+mọi người sẽ đoán đúng $9/13$.
+Điều mà phương pháp khả năng xảy ra tối đa này sẽ cung cấp cho chúng ta là một cách để lấy con số đó từ các nguyên tắc đầu tiên theo cách tổng quát hóa cho các tình huống phức tạp hơn rất nhiều.
 
 
 <!--
 For our example, the plot of $P(X \mid \theta)$ is as follows:
 -->
 
-*dịch đoạn phía trên*
+Để cho ví dụ của ta, cụ thể của $P(X \mid \theta)$ như sau:
 
 
 ```{.python .input}
@@ -191,7 +197,11 @@ Thus, we could find the maximum likelihood estimate :eqref:`eq_max_like` by find
 and finding the one that gives the highest probability. We compute:
 -->
 
-*dịch đoạn phía trên*
+Giá trị này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$.
+Để xem nó có chính xác ở đó không, chúng ta có thể chuyển sang giải tích.
+Chú ý rằng ở cực đại, hàm là đồng phẳng.
+Do đó, ta có thể tìm ước tính khả năng xảy ra tối đa :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ trong đó đạo hàm bằng 0,
+và tìm giá trị trả về xác suất cao nhất. Ta tính toán:
 
 
 $$
@@ -210,7 +220,10 @@ The first two are clearly minima, not maxima as they assign probability $0$ to o
 The final value does *not* assign zero probability to our sequence, and thus must be the maximum likelihood estimate $\hat \theta = 9/13$.
 -->
 
-*dịch đoạn phía trên*
+Hàm này có ba nghiệm: $0$, $1$ và $9/13$.
+Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng gán xác suất $0$ cho chuỗi của chúng ta.
+Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đó nó phải là ước tính hợp lý cực đại $\hat \theta = 9/13$.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
