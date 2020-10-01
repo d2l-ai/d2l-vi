@@ -222,7 +222,7 @@ d2l.show_images(images, 2, 9);
 ## The Probabilistic Model for Classification
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình xác suất trong phân loại 
 
 
 <!--
