@@ -44,14 +44,14 @@ Tập dữ liệu MovieLens có địa chỉ tại [GroupLens](https://grouplens
 Tập dữ liệu này bao gồm $100,000$ đánh giá, xếp hạng từ 1 tới 5 sao, từ 943 người dùng dành cho 1682 phim. 
 Nó được tiền xử lý sao cho mỗi người dùng đánh giá ít nhất 20 phim.
 Một vài thông tin nhân khẩu học cơ bản như tuổi và giới tính người dùng hay thể loại phim cũng được cung cấp. 
-Ta có thể tải về [ml-100k.zip](http://files.grouplens.org/datasets/movielens/ml-100k.zip) và giải nén tệp `u.data`, nơi chứa toàn bộ $100,000$ dưới định dạng csv. 
+Ta có thể tải về [ml-100k.zip](http://files.grouplens.org/datasets/movielens/ml-100k.zip) và giải nén tệp `u.data` chứa toàn bộ $100,000$ đánh giá ở định dạng csv. 
 Có nhiều tệp khác trong thư mục này, bản mô tả chi tiết cho mỗi tệp có thể được tìm thấy trong tệp [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) của tập dữ liệu. 
 
 <!--
 To begin with, let us import the packages required to run this section's experiments.
 -->
 
-Để bắt đầu, ta hãy nhập những gói cần thiết để chạy các thử nghiệm của phần này.
+Để bắt đầu, ta hãy nhập những gói thư viện cần thiết để chạy các thử nghiệm của phần này.
 
 
 ```{.python .input  n=1}
@@ -128,13 +128,13 @@ A viable solution is to use additional side information such as user/item featur
 Có thể thấy rằng mỗi dòng chứa bốn cột, bao gồm "user id" 1-943, "item id" 1-1682, "rating" 1-5 và "timestamp". 
 Ta có thể tạo ra một ma trận tương tác có kích thước $n \times m$, với $n$ và $m$ lần lượt là số người dùng và số bộ phim. 
 Tập dữ liệu này ghi lại các đánh giá đang tồn tại, vì thế ta có thể gọi nó là ma trận đánh giá.
-Ta sẽ sử dụng ma trận tương tác và ma trận đánh giá đối lẫn nhau trong trường hợp các giá trị của ma trận này biểu diễn chính xác các đánh giá.
+Ta sẽ sử dụng cả tên gọi ma trận tương tác và ma trận đánh giá trong trường hợp các giá trị của ma trận này biểu diễn chính xác các đánh giá.
 Hầu hết những giá trị trong ma trận đánh giá là chưa biết bởi đa số các bộ phim chưa được đánh giá bởi người dùng.
 Ta cũng có thể biểu diễn độ thưa thớt (*sparsity*) của tập dữ liệu này.
 Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng sản phẩm)`. 
 Rõ ràng, ma trận tương tác là cực kỳ thưa thớt (độ thưa = 93.695%). 
-Các tập dữ liệu trong thực tế thường phải chịu mức độ thưa thớt lớn hơn nhiều, và từ lâu đã trở thành thử thách trong việc xây dựng các hệ thống đề xuất.
-Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt độ thưa thớt.  
+Các tập dữ liệu trong thực tế thường có mức độ thưa thớt lớn hơn nhiều, và từ lâu đã trở thành thử thách trong việc xây dựng các hệ thống đề xuất.
+Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt tác động từ tính thưa thớt.  
 
 
 
@@ -182,7 +182,7 @@ Trong chế độ `random`, dữ liệu 100k tương tác sẽ được chia m�
 mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại là mẫu kiểm tra.
 Trong chế độ `seq-aware`, ta giữ lại sản phẩm mà người dùng đánh giá gần đây nhất cho tập kiểm tra, còn các tương tác trước đó sẽ được sử dụng cho tập huấn luyện. 
 Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian. 
-Chế độ này sẽ được sử dụng trong phần đề xuất nhận thức về chuỗi. 
+Chế độ này sẽ được sử dụng trong phần đề xuất có nhận thức về chuỗi. 
 
 
 ```{.python .input  n=5}
@@ -218,7 +218,7 @@ However, we omit that for the sake of brevity.
 In this case, our test set can be regarded as our held-out validation set.
 -->
 
-Lưu ý rằng trong thực tiễn, tốt hơn là nên sử dụng tập kiểm định thay vì chỉ một tập kiểm tra duy nhất.
+Lưu ý rằng trong thực tiễn, tốt hơn là nên sử dụng một tập kiểm định tách biệt thay vì chỉ có một tập kiểm tra duy nhất.
 Tuy nhiên, chúng tôi bỏ qua điều đó vì mục đích ngắn gọn. 
 Trong trường hợp này, có thể coi tập kiểm tra như một tập kiểm định bất đắc dĩ.
 
@@ -238,7 +238,7 @@ We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
 Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện. 
-Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
+Hàm dưới đây đọc dataframe vào theo từng dòng và duyệt qua từng chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
 Tiếp đó nó trả về danh sách người dùng, sản phẩm, đánh giá và một từ điển/ma trận chứa các tương tác. 
 Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*). 
 
@@ -272,7 +272,7 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 Cuối cùng ta kết hợp các bước trên lại để sử dụng ở phần tiếp theo. 
 Kết quả được gói gọn trong `Dataset` và `DataLoader`. 
 Lưu ý rằng tham số `last_batch` của `DataLoader` dùng cho dữ liệu huấn luyện được thiếp lập ở chế độ `rollover`
-(các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn. 
+(các mẫu còn lại được đưa vào epoch tiếp theo) với thứ tự được xáo trộn. 
 
 
 ```{.python .input  n=7}
