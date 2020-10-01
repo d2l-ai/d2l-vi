@@ -20,8 +20,8 @@ Classification accuracies on high-res images has gone from useless to human-leve
 We will spare you another spiel about all the other discriminative tasks where deep neural networks do astoundingly well.
 -->
 
-Xuyên suốt gần toàn bộ cuốn sách này, ta đã nói về việc làm thế nào để thực hiện các dự đoán. 
-Dưới dạng nào đi nữa, ta đã sử dụng mạng nơ-ron sâu học ánh xạ từ các mẫu dữ liệu sang các nhãn.
+Xuyên suốt gần như toàn bộ cuốn sách này, ta đã nói về việc làm thế nào để thực hiện các dự đoán. 
+Dưới dạng nào đi nữa, ta đã sử dụng mạng nơ-ron sâu học cách ánh xạ từ các mẫu dữ liệu sang các nhãn.
 Kiểu học này được gọi là học phân biệt,
 ví dụ như phân biệt ảnh chó và mèo. 
 Phân loại và hồi quy là hai ví dụ của việc học phân biệt. 
@@ -41,11 +41,11 @@ This kind of learning is called generative modeling.
 -->
 Nhưng học máy còn làm được nhiều hơn là chỉ giải quyết các tác vụ phân biệt. 
 Chẳng hạn, với một tập dữ liệu không nhãn cho trước,
-ta có lẽ xây dựng một mô hình nắm bắt chính xác các đặc tính của tập dữ liệu này. 
-Với một mô hình như vậy, ta có thể tạo các mẫu dữ liệu tổng hợp giống như phân phối của dữ liệu dùng để huấn luyện. 
+ta có thể xây dựng một mô hình nắm bắt chính xác các đặc tính của tập dữ liệu này. 
+Với một mô hình như vậy, ta có thể tổng hợp ra các mẫu dữ liệu mới giống như phân phối của dữ liệu dùng để huấn luyện. 
 Ví dụ, với một kho lớn dữ liệu ảnh khuôn mặt cho trước, ta có thể tạo ra
 một ảnh như thật, giống như nó được lấy từ cùng tập dữ liệu.
-Kiểu học này được gọi là mô hình sinh (*generative modelling*). 
+Kiểu học này được gọi là mô hình hóa tác vụ sinh (*generative modelling*). 
 
 
 <!--
@@ -117,7 +117,7 @@ This information, in turn is used to improve the generator network, and so on.
 -->
 
 Kiến trúc của mạng đối sinh được miêu tả trong hình :numref:`fig_gan`. 
-Như ta có thể thấy, có hai thành phần trong kiến trúc của GAN - đầu tiên, ta cần một thiết bị (giả sử, một mạng sâu nhưng nó có thể là bất kỳ thứ gì, chẳng hạn như công cụ render đồ họa trò chơi) có khả năng tạo ra dữ liệu giống thật. 
+Như ta có thể thấy, có hai thành phần trong kiến trúc của GAN - đầu tiên, ta cần một thiết bị (giả sử, một mạng sâu nhưng nó có thể là bất kỳ thứ gì, chẳng hạn như công cụ kết xuất đồ họa trò chơi) có khả năng tạo ra dữ liệu giống thật. 
 Nếu ta đang làm việc với hình ảnh, mô hình cần tạo ra hình ảnh. 
 Nếu ta đang làm việc với giọng nói, mô hình cần tạo ra được chuỗi âm thanh, v.v. 
 Ta gọi mô hình này là mạng sinh (_generator network_). Thành phần thứ hai là mạng phân biệt (_discriminator network_).
@@ -186,7 +186,7 @@ trong đó chỉ đưa $\mathbf x'=G(\mathbf z)$ vào mạng phân biệt nhưng
 To sum up, $D$ and $G$ are playing a "minimax" game with the comprehensive objective function:
 -->
 
-Nói tóm lại, $D$ và $G$ đang chơi trò chơi "cực tiểu/cực đại" với một hàm mục tiêu toàn diện như sau:
+Nói tóm lại, $D$ và $G$ đang chơi trò "minimax" (cực tiểu hoá cực đại) với một hàm mục tiêu toàn diện như sau:
 
 
 $$min_D max_G \{ -E_{x \sim \text{Data}} log D(\mathbf x) - E_{z \sim \text{Noise}} log(1 - D(G(\mathbf z))) \}.$$
@@ -442,7 +442,7 @@ We visualize both losses and generated examples.
 Cả bộ phân biệt lẫn bộ sinh hoạt động như một bộ hồi quy logistic nhị phân với mất mát entropy chéo. 
 Ta sử dụng Adam để làm mượt quá trình huấn luyện. 
 Với mỗi lần lặp, đầu tiên ta cập nhật bộ phân biệt và sau đó đến bộ sinh. 
-Ta sẽ theo dõi cả hai giá trị mất mát lẫn những dữ liệu được sinh ra.
+Ta sẽ theo dõi cả giá trị mất mát lẫn những dữ liệu được sinh ra.
 
 
 ```{.python .input}
@@ -554,7 +554,7 @@ train(net_D, net_G, data_iter, num_epochs, lr_D, lr_G,
 Does an equilibrium exist where the generator wins, *i.e.* the discriminator ends up unable to distinguish the two distributions on finite samples?
 -->
 
-Liệu có điểm cân bằng tồn tại khi mà bộ sinh là người chiến thắng, *nói cách khác*, bộ phân biệt không thể phân biệt được hai phân phối trên dữ liệu hữu hạn? 
+Liệu có tồn tại điểm cân bằng mà tại đó bộ sinh là người chiến thắng, *nói cách khác*, bộ phân biệt không thể phân biệt được hai phân phối trên dữ liệu hữu hạn? 
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
@@ -593,3 +593,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 4 -->
 * Phạm Hồng Vinh
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
