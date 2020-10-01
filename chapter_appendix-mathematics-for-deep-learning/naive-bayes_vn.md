@@ -626,7 +626,8 @@ If we now predict a few validation examples, we can see the Bayes
 classifier works pretty well.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta dự đoán một vài mẫu kiểm định, ta có thể thấy 
+bộ phân loại Bayes hoạt động khá tốt.
 
 
 ```{.python .input}
