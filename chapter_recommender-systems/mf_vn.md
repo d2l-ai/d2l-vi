@@ -10,8 +10,7 @@
 <!--
 Matrix Factorization :cite:`Koren.Bell.Volinsky.2009` is a well-established algorithm in the recommender systems literature.
 The first version of matrix factorization model is proposed by Simon Funk in a famous [blog post](https://sifter.org/~simon/journal/20061211.html) 
-in which he described the idea of factorizi
-ng the interaction matrix.
+in which he described the idea of factorizing the interaction matrix.
 It then became widely known due to the Netflix contest which was held in 2006.
 At that time, Netflix, a media-streaming and video-rental company, announced a contest to improve its recommender system performance.
 The best team that can improve on the Netflix baseline, i.e., Cinematch), by 10 percent would win a one million USD prize.
@@ -71,8 +70,8 @@ và các giá trị $\mathbf{R}$ biểu diễn đánh giá trực tiếp.
 Tương tác người dùng - sản phẩm được phân tích thành ma trận người dùng tiềm ẩn $\mathbf{P} \in \mathbb{R}^{m \times k}$
 và ma trận sản phẩm tiềm ẩn $\mathbf{Q} \in \mathbb{R}^{n \times k}$, trong đó $k \ll m, n$, là kích thước nhân tố tiềm ẩn. 
 Gọi $\mathbf{p}_u$ ký hiệu hàng thứ $u$ và của $\mathbf{P}$ và $\mathbf{q}_i$ ký hiệu hàng thứ $i$ của $\mathbf{Q}$. 
-Với một sản phẩm $i$ cho trước, các phần tử trong $\mathbf{q}_i$ đo lường mức độ mà sản phẩm sở hữu các đặc trưng ví dụ như thể loại hay ngôn ngữ của một bộ phim.
-Với một người dùng $u$ cho trước, các phần tử trong $\mathbf{p}_u$ đo mức độ ưa thích của người dùng này đối với các đặc trưng thuộc sản phẩm tương ứng. 
+Với một sản phẩm $i$ cho trước, các phần tử trong $\mathbf{q}_i$ đo lường mức độ mà sản phẩm đó sở hữu các đặc trưng, ví dụ như thể loại hay ngôn ngữ của một bộ phim.
+Với một người dùng $u$ cho trước, các phần tử trong $\mathbf{p}_u$ đo mức độ ưa thích của người dùng này đối với các đặc trưng tương ứng của các sản phẩm. 
 Các nhân tố tiềm ẩn này có thể là các đặc trưng rõ ràng như đã đề cập trong các ví dụ trên, hoặc hoàn toàn không thể giải thích được. 
 Đánh giá dự đoán có thể được ước lượng như sau
 
@@ -92,8 +91,8 @@ Specifically, the predicted rating user $u$ gives to item $i$ is calculated by
 trong đó $\hat{\mathbf{R}}\in \mathbb{R}^{m \times n}$ là ma trận đánh giá dự đoán và có cùng kích thước với $\mathbf{R}$. 
 Một vấn đề lớn của cách dự đoán này là độ chệch (*bias*) của người dùng/sản phẩm không được mô hình hoá. 
 Ví dụ, một số người dùng có thiên hướng đánh giá cao hơn, hoặc một số sản phẩm luôn bị đánh giá thấp hơn bởi chất lượng kém. 
-Các độ chệch này là rất bình thường trong những ứng dụng thực tế. 
-Để thu được các độ chệch này, số hạng độ chệch của người dùng và sản phẩm riêng biệt được sử dụng.
+Các độ chệch này là rất phổ biến trong những ứng dụng thực tế. 
+Để thu được các độ chệch này, số hạng độ chệch riêng biệt cho từng người dùng và sản phẩm được sử dụng.
 Cụ thể, đánh giá dự đoán của người dùng $u$ cho sản phẩm $i$ được tính theo công thức
 
 
@@ -183,7 +182,7 @@ In the `forward` function, user and item ids are used to look up the embeddings.
 Các nhân tố tiềm ẩn của người dùng và sản phẩm được tạo bằng `nn.Embedding`.
 Tham số `input_dim` là số sản phẩm/người dùng và `output_dim` là kích thước nhân tố tiềm ẩn ($k$). 
 Ta cũng có thể sử dụng `nn.Embedding` để tạo độ chệch cho người dùng/sản phẩm bằng cách gán `output_dim` bằng một. 
-Trong hàm `forward`, id người dùng và sản phẩm được sử dụng để tìm đến đối tượng embedding. 
+Trong hàm `forward`, id người dùng và sản phẩm được sử dụng để truy vấn tới embedding tương ứng. 
 
 
 ```{.python .input  n=4}
@@ -334,7 +333,7 @@ train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 Below, we use the trained model to predict the rating that a user (ID 20) might give to an item (ID 30).
 -->
 
-Ở dưới, ta sử dụng mô hình đã được huấn luyện để dự đoán đánh giá có thể của một người dùng (ID 20) cho một sản phẩm (ID 30). 
+Ở dưới, ta sử dụng mô hình đã được huấn luyện để dự đoán đánh giá mà một người dùng (ID 20) có thể gán cho một sản phẩm (ID 30). 
 
 
 ```{.python .input  n=6}
@@ -394,5 +393,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 15/08/2020)*
