@@ -5,7 +5,7 @@
 # Naive Bayes
 -->
 
-# *dịch tiêu đề trên*
+# Phân loại Naive Bayes
 :label:`sec_naive_bayes`
 
 
