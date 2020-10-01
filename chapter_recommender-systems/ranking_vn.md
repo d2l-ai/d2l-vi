@@ -4,7 +4,7 @@
 # Personalized Ranking for Recommender Systems
 -->
 
-# Cá nhân hoá Xếp hạng trong Hệ thống đề xuất
+# Cá nhân hoá Xếp hạng trong Hệ thống Đề xuất
 
 
 <!--
@@ -21,12 +21,12 @@ and are usually not suitable for personalized ranking tasks.
 -->
 
 Trong những phần trước, mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết và chỉ các phản hồi trực tiếp là được xét đến. 
-Phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không phải là trực tiếp mà là gián tiếp, 
+Phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không dưới dạng trực tiếp mà là gián tiếp, 
 và phản hồi trực tiếp thường khó thu thập hơn. 
 Thứ hai, những cặp người dùng - sản phẩm chưa biết lại hoàn toàn bị bỏ qua, dù chúng có thể được sử dụng để đự đoán sở thích người dùng.
-Điều này khiến cho các phương pháp trên không phù hợp khi mà những đánh giá không phải là thiếu do ngẫu nhiên mà là do sự thiên vị từ người dùng. 
-Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa phản ánh tiêu cực (người dùng không hứng thú với sản phẩm) 
-và giá trị còn thiếu (có lẽ sau này người dùng sẽ tương tác với sản phẩm). 
+Điều này khiến cho các phương pháp trên không phù hợp khi mà những đánh giá không phải là thiếu do ngẫu nhiên mà đến từ thị hiếu của người dùng. 
+Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa các phản ánh tiêu cực (người dùng không hứng thú với sản phẩm) 
+và các giá trị còn thiếu (có lẽ sau này người dùng sẽ tương tác với sản phẩm). 
 Ta đơn thuần bỏ qua những cặp chưa biết này trong phương pháp phân rã ma trận và AutoRec. 
 Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết 
 và thường không phù hợp với tác vụ cá nhân hoá xếp hạng (*personalized ranking*). 
@@ -47,7 +47,7 @@ In this section, we will introduce two pairwise objectives/losses, Bayesian Pers
 
 Từ đó, một nhóm mô hình đề xuất hướng tới việc tạo ra danh sách xếp hạng đề xuất từ phản hồi gián tiếp dần trở nên phổ biến.
 Thông thường, những mô hình cá nhân hoá xếp hạng có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, theo từng cặp hoặc theo danh sách.
-Cách tiếp cận từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích từng người. 
+Cách tiếp cận từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích cá nhân. 
 Phân rã ma trận và AutoRec được tối ưu với các mục tiêu theo từng điểm.
 Cách tiếp cận theo từng cặp xét một cặp sản phẩm với mỗi người dùng và nhắm tới việc xấp xỉ thứ bậc tối ưu của cặp sản phẩm đó. 
 Thường thì cách tiếp cận theo từng cặp phù hợp với tác vụ xếp hạng hơn do việc dự đoán thứ bậc tương đối gần với bản chất của việc xếp hạng. 
@@ -71,7 +71,7 @@ The training data of BPR consists of both positive and negative pairs (missing v
 It assumes that the user prefers the positive item over all other non-observed items.
 -->
 
-Cá nhân hoá Xếp hạng Bayes (BPR) :cite:`Rendle.Freudenthaler.Gantner.ea.2009` là một loại mất mát cá nhân hoá xếp hạng theo cặp, có xuất phát từ bộ ước lượng hậu nghiệm cực đại (*maximum posterior estimator*). 
+Cá nhân hoá Xếp hạng Bayes (BPR) :cite:`Rendle.Freudenthaler.Gantner.ea.2009` là một hàm mất mát cá nhân hoá xếp hạng theo cặp, có xuất phát từ bộ ước lượng hậu nghiệm cực đại (*maximum posterior estimator*). 
 Nó được sử dụng rộng rãi trong nhiều mô hình đề xuất hiện nay. 
 Dữ liệu huấn luyện cho BPR bao gồm cả các cặp tích cực lẫn tiêu cực (các giá trị còn thiếu). 
 Nó giả sử rằng người dùng ưa thích sản phẩm tích cực hơn tất cả các sản phẩm chưa biết. 
@@ -145,8 +145,8 @@ We will implement the base class `mxnet.gluon.loss.Loss` and override the `forwa
 We begin by importing the Loss class and the np module.
 -->
 
-Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng mất mát cá nhân hoá xếp hạng Bayes. 
-Ta bắt đầu bằng việc nhập lớp Loss và mô-đun np. 
+Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng hàm mất mát cá nhân hoá xếp hạng Bayes. 
+Ta bắt đầu bằng việc nhập lớp `Loss` và mô-đun `np`. 
 
 
 ```{.python .input  n=5}
@@ -159,7 +159,7 @@ npx.set_np()
 The implementation of BPR loss is as follows.
 -->
 
-Cách lập trình cho mất mát BPR như sau. 
+Lập trình cho mất mát BPR như sau. 
 
 
 ```{.python .input  n=2}
@@ -206,8 +206,8 @@ negative samples instead of absolute outputs, making it well suited to recommend
 -->
 
 trong đó $m$ là khoảng cách biên an toàn.
-Mất mát này nhằm mục đích đẩy sản phẩm tiêu cực ra xa khỏi các sản phẩm tích cực. 
-Giống như BPR, nó nhằm tối ưu cho khoảng cách thích đáng giữa mẫu dương và
+Mất mát này nhằm mục đích đẩy các sản phẩm tiêu cực ra xa khỏi các sản phẩm tích cực. 
+Giống như BPR, nó nhằm tối ưu hóa khoảng cách thích đáng giữa mẫu dương và
 mẫu âm thay vì đầu ra tuyệt đối, khiến cho nó phù hợp với hệ thống đề xuất. 
 
 
@@ -282,5 +282,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
