@@ -124,7 +124,7 @@ data_iter = torch.utils.data.DataLoader(
 Let us visualize the first 20 images.
 -->
 
-Hãy em thử 20 hình đầu tiên. 
+Hãy xem thử 20 hình đầu tiên. 
 
 ```{.python .input}
 d2l.set_figsize((4, 4))
@@ -157,7 +157,7 @@ In :numref:`sec_fcn` we introduced the fully convolutional network that uses tra
 The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
 -->
 
-Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector chiều dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$. 
+Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector độ dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$. 
 Trong :numref:`sec_fcn` ta đã giới thiệu về mạng tích chập đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.  
 Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị, theo sau là chuẩn hóa theo batch và hàm kích hoạt ReLU. 
 
@@ -329,7 +329,7 @@ Bộ phân biệt là một mạng tích chập thông thường ngoại trừ v
 Với $\alpha \in[0, 1]$ cho trước, định nghĩa của nó là 
 
 
-$$\textrm{leaky ReLU}(x) = \begin{cases}x & \text{if}\ x > 0\\ \alpha x &\text{otherwise}\end{cases}.$$
+$$\textrm{ReLU rò rỉ}(x) = \begin{cases}x & \text{nếu}\ x > 0\\ \alpha x &\text{ngược lại}\end{cases}.$$
 <!--dịch-->
 
 
@@ -341,7 +341,7 @@ It aims to fix the "dying ReLU" problem that a neuron might always output a nega
 
 Như có thể thấy, nó là ReLU thông thường nếu $\alpha=0$, và là hàm đồng nhất nếu $\alpha=1$. 
 Cho $\alpha \in (0, 1)$, ReLU rò rỉ là một hàm phi tuyến cho đầu ra khác không với giá trị đầu vào âm. 
-Mục đích của hàm này là khắc phục vấn đề "ReLU chết", khi mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể cải thiện do gradient của ReLU luôn bằng 0. 
+Mục đích của hàm này là khắc phục vấn đề "ReLU chết", khi mà một nơ-ron có thể luôn xuất giá trị âm và do đó không thể được cập nhật (gradient của ReLU luôn bằng 0.) 
 
 
 ```{.python .input}
@@ -626,7 +626,7 @@ Hàm này nhằm khắc phục vấn đề "ReLU chết", giúp gradient truyề
 -->
 
 1. Chuyện gì sẽ xảy ra nếu ta sử dụng hàm kích hoạt ReLU phổ thông thay vì ReLU rò rỉ? 
-2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không. 
+2. Áp dụng DCGAN trên Fashion-MNIST và quan sát xem đối với hạng mục nào thì nó hoạt động tốt, hạng mục nào thì không. 
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -659,3 +659,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 3 -->
 * Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
