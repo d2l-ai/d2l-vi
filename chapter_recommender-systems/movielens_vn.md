@@ -15,11 +15,11 @@ It is created in 1997 and run by GroupLens, a research lab at the University of 
 MovieLens data has been critical for several research studies including personalized recommendation and social psychology.
 -->
 
-Có rất nhiều tập dữ liệu có sẵn dùng cho nghiên cứu hệ thống gợi ý.
-Trong số đó, tập dữ liệu [MovieLens](https://movielens.org/) có lẽ là một trong những tập phổ biến nhất.
-MovieLens là một hệ thống gợi ý phim phi thương mại trên nền tảng web.
-Nó được tạo ra vào năm 1997 và vận hành bởi GroupLens, một phòng nghiên cứu tại trường Đại học Minnesota, nhằm thu thập dữ liệu đánh giá phim phục vụ mục đích nghiên cứu.
-Dữ liệu của MovieLens quan trọng cho một số nghiên cứu bao gồm cá nhân hóa gợi ý và tâm lý xã hội.
+Có rất nhiều tập dữ liệu có sẵn dùng cho nghiên cứu hệ thống đề xuất. 
+Trong số đó, tập dữ liệu [MovieLens](https://movielens.org/) có lẽ là một trong những tập phổ biến nhất. 
+MovieLens là một hệ thống đề xuất phim phi thương mại trên nền tảng web. 
+Nó được tạo ra vào năm 1997 và vận hành bởi GroupLens, một phòng nghiên cứu tại Đại học Minnesota, nhằm thu thập dữ liệu đánh giá phim phục vụ mục đích nghiên cứu. 
+MovieLens là một nguồn dữ liệu quan trọng cho các nghiên cứu về cá nhân hóa đề xuất và tâm lý học xã hội.
 
 
 <!--
@@ -39,19 +39,19 @@ We can download the [ml-100k.zip](http://files.grouplens.org/datasets/movielens/
 There are many other files in the folder, a detailed description for each file can be found in the [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) file of the dataset.
 -->
 
-Tập dữ liệu MovieLens có địa chỉ tại [GroupLens](https://grouplens.org/datasets/movielens/).
-Có một số phiên bản đã sẵn sàng. Chúng ta sẽ sử dụng tập dữ liệu MovieLens 100K :cite:`Herlocker.Konstan.Borchers.ea.1999`.
-Tập dữ liệu này bao gồm $100,000$ đánh giá, xếp hạng từ 1 tới 5 sao, từ 943 người dùng dành cho 1682 phim.
-Nó được làm sạch để mỗi người dùng đánh giá ít nhất 20 phim.
-Một vài thông tin nhân khẩu học cơ bản ví dụ như tuổi, giới tính, thể loại của người dùng và các bộ phim cũng khả dụng.
-Ta có thể tải về [ml-100k.zip](http://files.grouplens.org/datasets/movielens/ml-100k.zip) và giải nén tệp `u.data`, nơi chứa toàn bộ $100,000$ dưới định dạng csv.
-Có nhiều tệp khác trong thư mục này, bản mô tả chi tiết cho mỗi tệp có thể được tìm thấy trong tệp [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) của tập dữ liệu.
+Tập dữ liệu MovieLens có địa chỉ tại [GroupLens](https://grouplens.org/datasets/movielens/) với nhiều phiên bản khác nhau. 
+Ở đây chúng ta sẽ sử dụng tập dữ liệu MovieLens 100K :cite:`Herlocker.Konstan.Borchers.ea.1999`. 
+Tập dữ liệu này bao gồm $100,000$ đánh giá, xếp hạng từ 1 tới 5 sao, từ 943 người dùng dành cho 1682 phim. 
+Nó được tiền xử lý sao cho mỗi người dùng đánh giá ít nhất 20 phim.
+Một vài thông tin nhân khẩu học cơ bản như tuổi và giới tính người dùng hay thể loại phim cũng được cung cấp. 
+Ta có thể tải về [ml-100k.zip](http://files.grouplens.org/datasets/movielens/ml-100k.zip) và giải nén tệp `u.data` chứa toàn bộ $100,000$ đánh giá ở định dạng csv. 
+Có nhiều tệp khác trong thư mục này, bản mô tả chi tiết cho mỗi tệp có thể được tìm thấy trong tệp [README](http://files.grouplens.org/datasets/movielens/ml-100k-README.txt) của tập dữ liệu. 
 
 <!--
 To begin with, let us import the packages required to run this section's experiments.
 -->
 
-Để bắt đầu, ta hãy nhập các gói cần thiết để chạy các thí nghiệm của phần này.
+Để bắt đầu, ta hãy nhập những gói thư viện cần thiết để chạy các thử nghiệm của phần này.
 
 
 ```{.python .input  n=1}
@@ -66,7 +66,7 @@ import pandas as pd
 Then, we download the MovieLens 100k dataset and load the interactions as `DataFrame`.
 -->
 
-Sau đó, ta tải tập dữ liệu MovieLens 100k về và chuyển thành dạng `DataFrame`.
+Sau đó, ta tải tập dữ liệu MovieLens 100k và đưa về định dạng `DataFrame`. 
 
 
 ```{.python .input  n=2}
@@ -99,8 +99,8 @@ Let us load up the data and inspect the first five records manually.
 It is an effective way to learn the data structure and verify that they have been loaded properly.
 -->
 
-Hãy nạp dữ liệu và quan sát năm bản ghi đầu tiên một cách thủ công.
-Đây là một cách hữu hiệu để học được cấu trúc của dữ liệu và chắc chắn rằng dữ liệu đã được nạp đúng cách.
+Hãy nạp dữ liệu và quan sát năm bản ghi đầu tiên theo cách thủ công.
+Đây là một cách hiệu quả để học được cấu trúc dữ liệu cũng như chắc chắn rằng dữ liệu đã được nạp đúng. 
 
 
 ```{.python .input  n=3}
@@ -125,16 +125,17 @@ Real world datasets may suffer from a greater extent of sparsity and has been a 
 A viable solution is to use additional side information such as user/item features to alleviate the sparsity.
 -->
 
-Ta có thể thấy rằng mỗi dòng chứa bốn cột, bao gồm "user id" 1-943, "item id" 1-1682, "rating" 1-5 và "timestamp".
-Ta có thể tạo ra một ma trận tương tác có kích thước $n \times m$, với $n$ và $m$ lần lượt là số người dùng và số bộ phim.
-Tập dữ liệu này ghi lại các đánh giá đang tồn tại, vì thế ta có thể gọi nó là ma trận đánh giá và
-ta sẽ sử dụng ma trận tương tác và ma trận đánh giá thay thế cho nhau trong trường hợp các giá trị của ma trận này biểu diễn đánh giá chính xác.
-Hầu hết các giá trị trong ma trận đánh giá là chưa biết vì người dùng chưa đánh giá phần lớn các bộ phim. 
-Ta cũng có thể cho thấy độ thưa thớt (*sparsity*) của tập dữ liệu này.
-Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng sản phẩm)`.
-Rõ ràng, ma trận tương tác cực kỳ thưa thớt (độ thưa = 93.695%).
-Các tập dữ liệu trong thực tế thường phải chịu mức độ thưa thớt lớn hơn nhiều và đây vốn là thử thách có từ lâu trong việc xây dựng các hệ thống gợi ý.
-Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt độ thưa thớt.
+Có thể thấy rằng mỗi dòng chứa bốn cột, bao gồm "user id" 1-943, "item id" 1-1682, "rating" 1-5 và "timestamp". 
+Ta có thể tạo ra một ma trận tương tác có kích thước $n \times m$, với $n$ và $m$ lần lượt là số người dùng và số bộ phim. 
+Tập dữ liệu này ghi lại các đánh giá đang tồn tại, vì thế ta có thể gọi nó là ma trận đánh giá.
+Ta sẽ sử dụng cả tên gọi ma trận tương tác và ma trận đánh giá trong trường hợp các giá trị của ma trận này biểu diễn chính xác các đánh giá.
+Hầu hết những giá trị trong ma trận đánh giá là chưa biết bởi đa số các bộ phim chưa được đánh giá bởi người dùng.
+Ta cũng có thể biểu diễn độ thưa thớt (*sparsity*) của tập dữ liệu này.
+Độ thưa thớt được định nghĩa là `1 - số lượng các bản ghi khác không / ( số lượng người dùng * số lượng sản phẩm)`. 
+Rõ ràng, ma trận tương tác là cực kỳ thưa thớt (độ thưa = 93.695%). 
+Các tập dữ liệu trong thực tế thường có mức độ thưa thớt lớn hơn nhiều, và từ lâu đã trở thành thử thách trong việc xây dựng các hệ thống đề xuất.
+Một giải pháp khả thi đó là sử dụng các thông tin phụ như đặc trưng của người dùng/sản phẩm để giúp giảm bớt tác động từ tính thưa thớt.  
+
 
 
 <!--
@@ -142,8 +143,8 @@ We then plot the distribution of the count of different ratings.
 As expected, it appears to be a normal distribution, with most ratings centered at 3-4.
 -->
 
-Sau đó ta vẽ biểu đồ phân phối số lượng các đánh giá khác nhau.
-Đúng như mong đợi, nó trông giống một phân phối chuẩn, với hầu hết các đánh giá tập trung tại 3-4.
+Tiếp theo ta vẽ biểu đồ phân phối số lượng các đánh giá khác nhau.
+Đúng như mong đợi, nó trông giống một phân phối chuẩn, với hầu hết các đánh giá tập trung tại 3-4. 
 
 
 ```{.python .input  n=4}
@@ -175,13 +176,13 @@ User historical interactions are sorted from oldest to newest based on timestamp
 This mode will be used in the sequence-aware recommendation section.
 -->
 
-Ta chia tập dữ liệu thành các tập huấn luyện và kiểm tra.
-Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`.
-Trong chế độ `random`, hàm sẽ chia 100k tương tác một cách ngẫu nhiên mà không xét tới mốc thời gian
-và mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại là mẫu kiểm tra.
-Trong chế độ `seq-aware`, ta chừa lại sản phẩm mà người dùng đánh giá gần đây nhất để dùng trong kiểm tra, còn các tương tác trước đó làm tập huấn luyện.
-Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian.
-Chế độ này sẽ được sử dụng trong phần gợi ý nhận thức về chuỗi.
+Ta chia tập dữ liệu thành tập huấn luyện và tập kiểm tra. 
+Hàm dưới đây cung cấp hai chế độ chia bao gồm `random` và `seq-aware`. 
+Trong chế độ `random`, dữ liệu 100k tương tác sẽ được chia một cách ngẫu nhiên mà không xét tới mốc thời gian, 
+mặc định sử dụng 90% dữ liệu để làm mẫu huẫn luyện và 10% còn lại là mẫu kiểm tra.
+Trong chế độ `seq-aware`, ta giữ lại sản phẩm mà người dùng đánh giá gần đây nhất cho tập kiểm tra, còn các tương tác trước đó sẽ được sử dụng cho tập huấn luyện. 
+Lịch sử tương tác người dùng được sắp xếp từ cũ nhất tới mới nhất theo mốc thời gian. 
+Chế độ này sẽ được sử dụng trong phần đề xuất có nhận thức về chuỗi. 
 
 
 ```{.python .input  n=5}
@@ -217,9 +218,9 @@ However, we omit that for the sake of brevity.
 In this case, our test set can be regarded as our held-out validation set.
 -->
 
-Lưu ý rằng trong thực tiễn, ta tốt nhất nên sử dụng tập kiểm định, tách bạch khỏi một tập kiểm tra duy nhất.
+Lưu ý rằng trong thực tiễn, tốt hơn là nên sử dụng một tập kiểm định tách biệt thay vì chỉ có một tập kiểm tra duy nhất.
 Tuy nhiên, chúng tôi bỏ qua điều đó vì mục đích ngắn gọn. 
-Trong trường hợp này, tập kiểm tra của chúng ta có thể được coi là tập kiểm định bất đắc dĩ.
+Trong trường hợp này, có thể coi tập kiểm tra như một tập kiểm định bất đắc dĩ.
 
 
 <!--
@@ -236,10 +237,10 @@ The function then returns lists of users, items, ratings and a dictionary/matrix
 We can specify the type of feedback to either `explicit` or `implicit`.
 -->
 
-Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện.
-Hàm dưới đây đọc vào từng dòng dataframe và liệt kê chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
-Sau đó hàm trả về các danh sách người dùng, sản phẩm, đánh giá và một từ điển/ma trận mà ghi lại các tương tác. 
-Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*).
+Sau khi chia nhỏ tập dữ liệu, chúng ta sẽ biến đổi tập huấn luyện và tập kiểm tra thành các danh sách và từ điển/ma trận cho thuận tiện. 
+Hàm dưới đây đọc dataframe vào theo từng dòng và duyệt qua từng chỉ mục của người dùng/sản phẩm bắt đầu từ 0.
+Tiếp đó nó trả về danh sách người dùng, sản phẩm, đánh giá và một từ điển/ma trận chứa các tương tác. 
+Ta có thể chỉ rõ loại phản hồi là `explicit` (*trực tiếp*) hay `implicit` (*gián tiếp*). 
 
 
 ```{.python .input  n=6}
@@ -268,10 +269,10 @@ Note that the `last_batch` of `DataLoader` for training data is set to the `roll
 (The remaining samples are rolled over to the next epoch.) and orders are shuffled.
 -->
 
-Rồi ta kết hợp các bước ở trên lại để sử dụng ở phần tiếp theo.
-Kết quả được gói gọn trong `Dataset` và `DataLoader`.
+Cuối cùng ta kết hợp các bước trên lại để sử dụng ở phần tiếp theo. 
+Kết quả được gói gọn trong `Dataset` và `DataLoader`. 
 Lưu ý rằng tham số `last_batch` của `DataLoader` dùng cho dữ liệu huấn luyện được thiếp lập ở chế độ `rollover`
-(các mẫu còn lại được đưa vào epoch tiếp theo) và thứ tự được xáo trộn.
+(các mẫu còn lại được đưa vào epoch tiếp theo) với thứ tự được xáo trộn. 
 
 
 ```{.python .input  n=7}
@@ -304,8 +305,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * We define functions to download and preprocess the MovieLens 100k dataset for further use in later sections.
 -->
 
-* Tập dữ liệu MovieLens được sử dụng rộng rãi trong nghiên cứu hệ thống gợi ý. Tập dữ liệu này được công khai miễn phí sử dụng.
-* Ta định nghĩa các hàm để tải và tiền xử lý tập dữ liệu MovieLens 100k để sử dụng sau này trong các phần tiếp theo.
+* Tập dữ liệu MovieLens được sử dụng rộng rãi trong nghiên cứu hệ thống đề xuất. Đây là tập dữ liệu công khai và được sử dụng miễn phí. 
+* Ta định nghĩa các hàm tải và tiền xử lý tập dữ liệu MovieLens 100k để sử dụng trong những phần tiếp theo. 
 
 
 ## Bài tập
@@ -315,8 +316,8 @@ def split_and_load_ml100k(split_mode='seq-aware', feedback='explicit',
 * Go through the [https://movielens.org/](https://movielens.org/) site for more information about MovieLens.
 -->
 
-* Bạn có thể tìm được tập dữ liệu gợi ý nào khác tương tự như tập MovieLens không?
-* Xem qua trang [https://movielens.org/](https://movielens.org/) để biết thêm thông tin về MovieLens.
+* Bạn có thể tìm được tập dữ liệu đề xuất nào khác tương tự như tập MovieLens không? 
+* Xem qua trang [https://movielens.org/](https://movielens.org/) để biết thêm thông tin về MovieLens. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -344,5 +345,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trần Yến Thy
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 *Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 17/07/2020)*
