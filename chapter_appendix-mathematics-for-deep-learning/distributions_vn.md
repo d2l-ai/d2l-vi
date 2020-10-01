@@ -797,8 +797,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_poisson_cdf`.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ, ta hãy vẽ hàm phân phối tích lũy :eqref:`eq_poisson_cdf`.
 
 ```{.python .input}
 x = np.arange(-1, 21, 0.01)
@@ -835,7 +834,8 @@ As we saw above, the means and variances are particularly concise.
 If $X \sim \mathrm{Poisson}(\lambda)$, then:
 -->
 
-*dịch đoạn phía trên*
+Như ta thấy ở trên, trung bình và phương sai của phân phối này đặc biệt súc tích.
+Nếu $ X \ sim \ mathrm {Poisson} (\ lambda) $, thì:
 
 
 * $\mu_X = \lambda$,
@@ -846,8 +846,7 @@ If $X \sim \mathrm{Poisson}(\lambda)$, then:
 This can be sampled as follows.
 -->
 
-*dịch đoạn phía trên*
-
+Giá trị biến có thể lấy như sau.
 
 ```{.python .input}
 np.random.poisson(lam, size=(10, 10))
@@ -873,7 +872,7 @@ m.sample((10, 10))
 ## Gaussian
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Gaussian
 
 
 <!--
@@ -885,7 +884,12 @@ In this case $\mu_{X^{(n)}} = np \rightarrow \infty$ and $\sigma_{X^{(n)}}^2 = n
 so there is no reason to think this limit should be well defined.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta hãy thử một thử nghiệm khác nhưng có liên quan.
+Giả sử ta lại thực hiện $n$ phép đo $\mathrm {Bernoulli}(p)$ độc lập $ X_i $.
+Phân phối tổng của chúng là $X^{(n)} \sim \mathrm{Binomial}(n, p)$.
+Thay vì lấy giới hạn khi $n$ tăng và $p$ giảm, Ta hãy cố định $p$, rồi cho $n \rightarrow \infty$.
+Trong trường hợp này $\mu_{X^{(n)}} = np \rightarrow \infty$ và $\sigma_{X ^{(n)}}^2 = np (1-p) \rightarrow \infty$,
+vì vậy giới hạn này không thể xác định được.
 
 
 <!--
@@ -893,8 +897,8 @@ However, not all hope is lost!
 Let us just make the mean and variance be well behaved by defining
 -->
 
-*dịch đoạn phía trên*
-
+Tuy nhiên, vẫn có cách giải quyết khác!
+Đơn giản ta hãy thực hiện lấy trung bình và phương sai của một biến được định nghĩa bởi
 
 $$
 Y^{(n)} = \frac{X^{(n)} - \mu_{X^{(n)}}}{\sigma_{X^{(n)}}}.
@@ -906,7 +910,9 @@ This can be seen to have mean zero and variance one, and so it is plausible to b
 If we plot what these distributions look like, we will become even more convinced that it will work.
 -->
 
-*dịch đoạn phía trên*
+
+Biến này có thể được coi là biến có trung bình là không và phương sai là một, và do đó, thật hợp lý để tin rằng nó sẽ hội tụ đến một phân phối có giới hạn nào đó.
+Nếu ta biểu diễn các bản phân phối này xem chúng trông như thế nào, ta sẽ bị thuyết phục rằng cách làm này có tác dụng.
 
 
 ```{.python .input}
@@ -973,7 +979,8 @@ One thing to note: compared to the Poisson case, we are now dividing by the stan
 This is an indication that our limit will no longer be discrete, but rather a continuous.
 -->
 
-*dịch đoạn phía trên*
+Một điều cần lưu ý: so với trường hợp Poisson, ta hiện đang chia cho độ lệch chuẩn, có nghĩa là ta đang ép các kết quả có thể xảy ra vào các vùng ngày càng nhỏ hơn.
+Đây là một dấu hiệu cho thấy giới hạn này sẽ không còn rời rạc mà trở nên liên tục.
 
 
 <!--
@@ -982,7 +989,9 @@ this will yield the Gaussian Distribution (or sometimes normal distribution).
 More explicitly, for any $a, b$:
 -->
 
-*dịch đoạn phía trên*
+Suy luận ra kết quả sau cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm* phát biểu rằng khi $n \rightarrow \infty $,
+giới hạn này sẽ tiến tới Phân phối Gaussian (hoặc tên khác là phân phối chuẩn).
+Tường minh hơn, với bất kỳ $a, b$ nào:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
