@@ -27,7 +27,7 @@ they can be leveraged to generate photorealistic images.
 -->
 
 Trong phần này, ta sẽ trình bày cách dùng GANs để tạo ra những bức ảnh chân thực. 
-Ta sẽ xây dựng mô hình trên các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`. 
+Ta sẽ xây dựng mô hình dựa theo các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`. 
 Bằng cách mượn kiến trúc tích chập đã được chứng minh là thành công với bài toán thị giác máy tính phân biệt, và bằng cách thông qua GAN, ta có thể dùng chúng làm đòn bẩy để tạo ra các hình ảnh chân thực. 
 
 ```{.python .input}
@@ -90,7 +90,7 @@ Therefore we normalize the data with $0.5$ mean and $0.5$ standard deviation to 
 -->
 
 Ta thay đổi kích thước ảnh thành $64\times 64$. 
-Phép biến đổi `ToTensor` sẽ chiếu từng giá trị điểm ảnh vào $[0,1]$, trong đó mạng sinh của ta sẽ dùng hàm tanh để nhận đầu ra trong $[-1,1]$. 
+Phép biến đổi `ToTensor` sẽ chiếu từng giá trị điểm ảnh vào khoảng $[0,1]$, trong đó mạng sinh của ta sẽ dùng hàm tanh để thu được đầu ra trong khoảng $[-1,1]$. 
 Do đó ta chuẩn hóa dữ liệu với trung bình $0.5$ và độ lệch chuẩn $0.5$ để khớp với miền giá trị. 
 
 ```{.python .input}
@@ -157,7 +157,7 @@ In :numref:`sec_fcn` we introduced the fully convolutional network that uses tra
 The basic block of the generator contains a transposed convolution layer followed by the batch normalization and ReLU activation.
 -->
 
-Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector độ dài $d$ sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$. 
+Bộ sinh sẽ ánh xạ biến nhiễu $\mathbf z\in\mathbb R^d$, một vector $d$ chiều sang hình ảnh RGB với chiều rộng và chiều cao tương ứng là $64 \times 64$. 
 Trong :numref:`sec_fcn` ta đã giới thiệu về mạng tích chập đầy đủ, sử dụng tầng tích chập chuyển vị (tham khảo :numref:`sec_transposed_conv`) để phóng to kích thước đầu vào.  
 Khối cơ bản của bộ sinh gồm tầng tích chập chuyển vị, theo sau là chuẩn hóa theo batch và hàm kích hoạt ReLU. 
 
@@ -593,7 +593,7 @@ We train the model with a small number of epochs just for demonstration.
 For better performance, the variable `num_epochs` can be set to a larger number.
 -->
 
-Chúng tôi chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ. 
+Ta sẽ chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ. 
 Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn. 
 
 
@@ -660,3 +660,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật
 * Phạm Hồng Vinh
+* Phạm Minh Đức 
