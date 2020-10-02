@@ -17,7 +17,7 @@ In this section, we develop the theory of *continuous random variables*, which a
 
 Trong :numref:`sec_prob` ta đã thấy các phương pháp căn bản để làm việc với các biến ngẫu nhiên rời rạc, 
 mà trong trường hợp của ta là các biến ngẫu nhiên được lấy cả từ tập hữu hạn các giá trị khả dĩ, hay là các giá trị số nguyên.
-Trong phần này, ta phát triển lý thuyết cho *các biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
+Trong phần này, ta phát triển lý thuyết cho các *biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
 
 <!--
 ## Continuous Random Variables
@@ -32,7 +32,7 @@ A fair analogy to make is that the technical jump is comparable to the jump betw
 As such, we will need to take some time to develop the theory.
 -->
 
-Các biến ngẫu nhiên liên tục là chủ để vi tế hơn nhiều so với các biến ngẫu nhiên rời rạc.
+Biến ngẫu nhiên liên tục phức tạp hơn đáng kể so với biến ngẫu nhiên rời rạc.
 Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính cộng các dãy số sang tính tích phân hàm số.
 Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết trong lĩnh vực này.
 
@@ -50,7 +50,7 @@ Suppose that we are throwing a dart at the dart board, and we want to know the p
 -->
 
 Để hiểu các thách thức kỹ thuật cộng thêm khi làm việc với các biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
-Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác cách $2 \text{cm}$ tới hồng tâm. 
+Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$. 
 
 
 <!--
@@ -96,7 +96,7 @@ At least, we cannot conceive of a physically meaningful process which would forc
 Tuy nhiên, điều này không giải quyết bất cứ điều gì! Ta vừa đẩy bài toán xa hơn thêm một con số. Ta hãy tóm tắt lại một chút.
 Hình dung ta biết xác suất mà $k$ số đầu tiên khớp với $2.00000\ldots$ và ta muốn biết xác suất nó khớp với $k+1$ số đầu tiên.
 Khá hợp lý khi giả định là số thứ ${k+1}^{\mathrm{th}}$ là một số lựa chọn ngẫu nhiên từ tập số $\{0, 1, 2, \ldots, 9\}$.
-Ít nhất là ta không thể cảm nhận về ý nghĩa vật lý của việc ép độ chính xác tới micrometer cho khoảng cách từ trung tâm thông qua chọn số cuối tới $7$ thay vì $3$.
+Ít nhất là ta không thể cảm nhận về ý nghĩa vật lý của việc ép độ chính xác tới micro mét cho khoảng cách từ trung tâm thông qua chọn tới $7$ chữ số thập phân thay vì $3$.
 
 
 <!--
@@ -222,7 +222,7 @@ The locations where the function value is large indicates regions where we are m
 The low portions are areas where we are unlikely to find the random value.
 -->
 
-Các vị trí mà giá trị hàm là lớn cho biết các vùng mà ở đó chúng ta có nhiều khả năng sẽ thấy giá trị ngẫu nhiên hơn ở đó hơn.
+Các vị trí mà giá trị hàm là lớn cho biết có nhiều khả năng giá trị ngẫu nhiên sẽ rơi vào các vị trí đó hơn.
 Các phần thấp là những vùng mà ta ít có khả năng sẽ thấy giá trị ngẫu nhiên xuất hiện trong đó.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
