@@ -476,7 +476,7 @@ khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc tr
 ### Means
 -->
 
-### *dịch tiêu đề trên*
+### Giá trị trung bình
 
 
 <!--
@@ -487,7 +487,11 @@ Numbers that help us capture the behavior of a random variable are called *summa
 The most commonly encountered ones are the *mean*, the *variance*, and the *standard deviation*.
 -->
 
-*dịch đoạn phía trên*
+Giả sử ta đang làm việc với một biến ngẫu nhiên $X$.
+Phân phối của biến này có thể khó để diễn giải.
+Thường sẽ hữu dụng nếu ta có thể tóm lược hành vi của một biến ngẫu nhiên một cách xúc tích.
+Những giá trị giúp ta nắm bắt được hành vi của một biến ngẫu nhiên được gọi là *thống kê tóm tắt*.
+Những giá trị thường gặp nhất là *giá trị trung bình*, *phương sai* và *độ lệch chuẩn*.
 
 
 <!--
@@ -496,7 +500,9 @@ If we have a discrete random variable $X$, which takes the values $x_i$ with pro
 then the mean is given by the weighted average: sum the values times the probability that the random variable takes on that value:
 -->
 
-*dịch đoạn phía trên*
+*Giá trị trung bình* là trung bình các giá trị của một biến ngẫu nhiên.
+Nếu ta có một biến ngẫu nhiên rời rạc $X$, mà biến này lấy các giá trị $x_i$ với xác suất $p_i$,
+thì giá trị trung bình được tính từ trung bình trọng số: tổng các tích của giá trị biến nhân với xác suất mà biến ngẫu nhiên nhận giá trị đó:
 
 
 $$\mu_X = E[X] = \sum_i x_i p_i.$$
@@ -507,7 +513,7 @@ $$\mu_X = E[X] = \sum_i x_i p_i.$$
 The way we should interpret the mean (albeit with caution) is that it tells us essentially where the random variable tends to be located.
 -->
 
-*dịch đoạn phía trên*
+Cách ta nên diễn đạt giá trị trung bình này (với sự thận trọng) là nó cho ta biết về cơ bản vị trí của biến ngẫu nhiên có xu hướng nằm ở đâu.
 
 
 <!--
@@ -516,7 +522,9 @@ let us take $X$ to be the random variable which takes the value $a-2$ with proba
 We can compute using :eqref:`eq_exp_def` that, for any possible choice of $a$ and $p$, the mean is
 -->
 
-*dịch đoạn phía trên*
+Như một ví dụ tối giản mà ta sẽ xem xét xuyên suốt phần này,
+ta hãy lấy $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a + 2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Ta có thể tính toán bằng cách sử dụng : eqref:`eq_exp_def`, với bất kỳ giá trị có thể có nào của $a$ và $p$, giá trị trung bình là
 
 
 $$
@@ -528,14 +536,14 @@ $$
 Thus we see that the mean is $a$. This matches the intuition since $a$ is the location around which we centered our random variable.
 -->
 
-*dịch đoạn phía trên*
+Do đó, Ta thấy rằng giá trị trung bình là $a$. Điều này phù hợp với trực giác vì $a$ là vị trí mà ta đặt trung tâm cho biến ngẫu nhiên này.
 
 
 <!--
 Because they are helpful, let us summarize a few properties.
 -->
 
-*dịch đoạn phía trên*
+Bởi sự hữu dụng của chúng, ta hãy cô đọng một vài tính chất của chúng.
 
 
 <!--
@@ -543,8 +551,8 @@ Because they are helpful, let us summarize a few properties.
 * If we have two random variables $X$ and $Y$, we have $\mu_{X+Y} = \mu_X+\mu_Y$.
 -->
 
-*dịch đoạn phía trên*
-
+* Với bất kỳ biến ngẫu nhiên $X$ nào và hai số $a$ và $b$, ta có $\mu_{aX + b} = a\mu_X + b$.
+* Nếu ta có hai biến ngẫu nhiên $X$ và $Y$, ta có $\mu_{X + Y} = \mu_X+\mu_Y$.
 
 <!--
 Means are useful for understanding the average behavior of a random variable, however the mean is not sufficient to even have a full intuitive understanding.
@@ -553,7 +561,10 @@ The second one has a much larger degree of fluctuation, and thus represents a mu
 Thus, to understand the behavior of a random variable, we will need at minimum one more measure: some measure of how widely a random variable fluctuates.
 -->
 
-*dịch đoạn phía trên*
+Giá trị trung bình hữu ích cho việc hiểu hành vi trung bình của một biến ngẫu nhiên, tuy nhiên giá trị trung bình không đủ để có được sự hiểu biết trực quan đầy đủ.
+Tạo ra lợi nhuận $\$10 \pm \$1$ rất khác với việc tạo ra $\$10 \pm \$15$ cho mỗi lần bán hàng mặc dù cả hai có cùng giá trị trung bình.
+Trường hợp thứ hai có mức độ dao động lớn hơn nhiều và do đó rủi ro cũng lớn hơn nhiều.
+Vì vậy, để hiểu hành vi của một biến ngẫu nhiên, chúng ta sẽ cần tối thiểu thêm một thước đo nữa: một thước đo thể hiện biên độ dao động của một biến ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -1796,7 +1807,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hòang Long
 
 <!-- Phần 4 -->
 * Phạm Đăng Khoa
