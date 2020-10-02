@@ -997,7 +997,7 @@ $$
 where we say a random variable is normally distributed with given mean $\mu$ and variance $\sigma^2$, written $X \sim \mathcal{N}(\mu, \sigma^2)$ if $X$ has density
 -->
 
-*dịch đoạn phía trên*
+trong đó ta gọi một biến ngẫu nhiên có phân phối chuẩn với kỳ vọng $\mu$ và phương sai $\sigma^2$, ký hiệu $X \sim \mathcal{N}(\mu, \sigma^2)$ nếu $X$ có mật độ
 
 
 $$p_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
@@ -1008,7 +1008,7 @@ $$p_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
 Let us first plot the probability density function :eqref:`eq_gaussian_pdf`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên hãy cùng vẽ đồ thị của hàm mật độ xác suất :eqref:`eq_gaussian_pdf`.
 
 
 ```{.python .input}
@@ -1049,7 +1049,9 @@ It is beyond the scope of this appendix, but the Gaussian c.d.f. does not have a
 We will use `erf` which provides a way to compute this integral numerically.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy cũng vẽ đồ thị hàm phân phối tích luỹ.
+Tuy nằm ngoài phạm vi của phụ lục này nhưng c.d.f Gaussian không có công thức dạng đóng dưới dạng hàm có nhiều phần tử.
+Ta sẽ sử dụng `erf` để tính toán xấp xỉ tích phân này.
 
 
 ```{.python .input}
@@ -1081,8 +1083,10 @@ Keen-eyed readers will recognize some of these terms.
 Indeed, we encountered this integral in :numref:`sec_integral_calculus`.
 Indeed we need exactly that computation to see that this $p_X(x)$ has total area one and is thus a valid density.
 -->
+Những bạn đọc tinh ý sẽ nhận ra một vài số hạng ở đây.
+Quả thực, ta đã gặp tích phân này trong :numref:`sec_integral_calculus`.
+Và quả thực ta cần chính phép tính này để xem liệu $p_X(x)$ có tổng diện tích bằng một và theo đó là một mật độ hợp lệ.
 
-*dịch đoạn phía trên*
 
 
 <!--
@@ -1090,7 +1094,8 @@ Our choice of working with coin flips made computations shorter, but nothing abo
 Indeed, if we take any collection of independent identically distributed random variables $X_i$, and form
 -->
 
-*dịch đoạn phía trên*
+Việc lựa chọn làm việc với tung đồng xu giúp tính toán ngắn hơn, nhưng không có gì trong lựa chọn này là nền tảng.
+Quả thực, nếu ta lấy một tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$, và gọi
 
 
 $$
@@ -1102,7 +1107,7 @@ $$
 Then
 -->
 
-*dịch đoạn phía trên*
+Thì
 
 
 $$
@@ -1115,7 +1120,8 @@ will be approximately Gaussian.
 There are additional requirements needed to make it work, most commonly $E[X^4] < \infty$, but the philosophy is clear.
 -->
 
-*dịch đoạn phía trên*
+sẽ xấp xỉ phân phối Gauss.
+Để công thức trên đúng ta sẽ cần thêm vài điều kiện bổ sung, phổ biến nhất là $E[X^4] < \infty$, nhưng triết lý đã đầy đủ.
 
 
 <!--
@@ -1123,7 +1129,8 @@ The central limit theorem is the reason that the Gaussian is fundamental to prob
 Whenever we can say that something we measured is a sum of many small independent contributions, we can assume that the thing being measured will be close to Gaussian.  
 -->
 
-*dịch đoạn phía trên*
+Định lý giới hạn trung tâm (*central limit theorem*) là lý do mà phân phối Gauss là nền tảng của xác suất, thống kê, và học máy.
+Mỗi khi ta có thể nói rằng thứ gì đó ta đo được là tổng của nhiều phần nhỏ độc lập, ta có thể giả sử rằng thứ được đo sẽ gần với phân phối Gauss.
 
 
 <!--
@@ -1134,14 +1141,18 @@ In a rigorous mathematical sense, we can think of the Gaussian as the *most* ran
 Thus, if we know that our random variable has some mean and variance, the Gaussian is in a sense the most conservative choice of distribution we can make.
 -->
 
-*dịch đoạn phía trên*
+Có rất nhiều tính chất hấp dẫn khác của hàm Gauss, và chúng tôi muốn thảo luận thêm một tính chất nữa ở đây.
+Phân phối Gauss được biết tới là *phân phối entropy cực đại*.
+Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó đo sự ngẫu nhiên.
+Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn ngẫu nhiên *nhiều nhất* với kỳ vọng và phương sai cố định.
+Do đó, nếu ta biết biến ngẫu nhiên có kỳ vọng và phương sai nào đó, phân phối Gauss theo một nghĩa là lựa chọn phải chăng nhất trong phân phối mà ta có thể chọn.
 
 
 <!--
 To close the section, Let us recall that if $X \sim \mathcal{N}(\mu, \sigma^2)$, then:
 -->
 
-*dịch đoạn phía trên*
+Để kết lại phần này, hãy nhớ lại rằng nếu $X \sim \mathcal{N}(\mu, \sigma^2)$, thì:
 
 
 * $\mu_X = \mu$,
@@ -1152,7 +1163,7 @@ To close the section, Let us recall that if $X \sim \mathcal{N}(\mu, \sigma^2)$,
 We can sample from the Gaussian (or standard normal) distribution as shown below.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu từ phân phối Gauss (hay chuẩn) như mô tả dưới.
 
 
 ```{.python .input}
@@ -1347,7 +1358,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 5 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 6 -->
 * 
