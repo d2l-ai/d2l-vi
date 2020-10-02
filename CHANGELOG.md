@@ -2,6 +2,8 @@
 Xem toàn bộ thay đổi từ kho chứa **[tại đây](https://github.com/aivivn/d2l-vn/commits/master)**.
 <!--[](https://github.com/)-->
 
+## v0.14.4
+
 ## v0.14.3
 ### Tuần 36 (31/08/2020 – 06/09/2020)
 
