@@ -566,7 +566,7 @@ This value can be positive or negative, so we need to do something to make it po
 
 Điều này khiến chúng ta xem xét đến *phương sai* của một biến ngẫu nhiên.
 Đây là một thước đo định lượng một biến ngẫu nhiên bị lệch so với giá trị trung bình đến mức thế nào.
-Xem xét biểu thức $X - \mu_X$. Đây là độ lệch của biến ngẫu nhiên so với giá trị trung bình của nó.
+Xem xét biểu thức $X - \mu_X$. Đây là độ lệch (*deviation*) của biến ngẫu nhiên so với giá trị trung bình của nó.
 Giá trị này có thể dương hoặc âm, vì vậy chúng ta cần thực hiện điều gì đó để biến nó thành giá trị dương để chúng ta tính toán độ lớn của độ lệch này.
 
 
@@ -575,7 +575,7 @@ A reasonable thing to try is to look at $\left|X-\mu_X\right|$, and indeed this 
 however due to connections with other areas of mathematics and statistics, people often use a different solution.
 -->
 
-Một điều hợp lý để thử là hãy quan sát $\left|X-\mu_X\right|$, và thực sự điều này dẫn đến một đại lượng hữu dụng được gọi là *độ lệch tuyệt đối trung bình*,
+Một điều hợp lý để thử là hãy quan sát $\left|X-\mu_X\right|$, và thực sự điều này dẫn đến một đại lượng hữu dụng được gọi là *trung bình độ lệch tuyệt đối - mean absolute deviation*,
 tuy nhiên do mối liên hệ với các lĩnh vực toán học và thống kê khác, người ta thường dùng đến một giải pháp khác.
 
 
@@ -583,7 +583,7 @@ tuy nhiên do mối liên hệ với các lĩnh vực toán học và thống k�
 In particular, they look at $(X-\mu_X)^2.$.  If we look at the typical size of this quantity by taking the mean, we arrive at the variance
 -->
 
-Đặc biệt, họ quan sát $(X-\mu_X)^2.$. Nếu chúng ta xem xét kích thước điển hình của đại lượng này bằng cách lấy giá trị trung bình, chúng ta có được phương sai
+Đặc biệt, họ quan sát $(X-\mu_X)^2.$. Nếu chúng ta xét đến kích thước của đại lượng này bằng cách lấy giá trị trung bình, chúng ta có được phương sai
 
 $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 :eqlabel:`eq_var_def`
@@ -593,7 +593,7 @@ $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 The last equality in :eqref:`eq_var_def` holds by expanding out the definition in the middle, and applying the properties of expectation.
 -->
 
-Đẳng thức cuối cùng trong :eqref:`eq_var_def` được giữ nguyên bằng cách mở rộng định nghĩa ở vế giữa và vận dụng các tính chất của kỳ vọng.
+Đẳng thức cuối cùng trong :eqref:`eq_var_def` được giữ nguyên bằng cách mở rộng số hạng ở vế giữa và vận dụng các tính chất của kỳ vọng.
 
 <!--
 Let us look at our example where $X$ is the random variable which takes the value $a-2$ with probability $p$, $a+2$ with probability $p$ and $a$ with probability $1-2p$.
@@ -613,7 +613,7 @@ $$
 Thus, we see that by :eqref:`eq_var_def` our variance is
 -->
 
-Do đó, chúng ta thấy rằng :eqref:`eq_var_def` phương sai của chúng ta bằng
+Do đó, chúng ta thấy rằng :eqref:`eq_var_def` cho phương sai bằng
 
 $$
 \sigma_X^2 = \mathrm{Var}(X) = E[X^2] - \mu_X^2 = a^2 + 8p - a^2 = 8p.
@@ -626,9 +626,9 @@ The variance of this being $4$ corresponds to the fact that both $a-2$ and $a+2$
 On the other end of the spectrum, if $p=0$, this random variable always takes the value $0$ and so it has no variance at all.
 -->
 
-Kết quả này cũng lại mang ý nghĩa. $P$ có giá trị lớn nhất có thể là $1/2$ tương ứng với việc chọn $a-2$ hoặc $a+2$ khi tung đồng xu.
-Giá trị của phương sai bằng $4$, tương ứng với thực tế là cả $a-2$ và $a+2$ cùng lệch giá trị trung bình 2$ đơn vị và $2^2 = 4$.
-Ở đầu kia của phổ, nếu $p=0$, tức là biến ngẫu nhiên này luôn nhận giá trị $0$ và vì thế không có phương sai nào cả.
+Kết quả này cũng hợp lý. Giá trị lớn nhất có thể của $p$ là $1/2$ tương ứng với việc chọn $a-2$ hoặc $a+2$ (tương tự khi tung đồng xu).
+Lúc này giá trị của phương sai tính theo công thức trên bằng $4$, đúng với thực tế là cả $a-2$ và $a+2$ cùng có độ lệch khỏi giá trị trung bình là $2$ và $2^2 = 4$.
+Ngược lại, nếu $p=0$, tức là biến ngẫu nhiên này luôn nhận giá trị $0$ và vì thế không có phương sai nào cả.
 
 <!--
 We will list a few properties of variance below:
@@ -657,13 +657,13 @@ This means that the variance itself is not comparable to the original measuremen
 To make it interpretable, we will need to return to our original units.
 -->
 
-Khi giải thích các giá trị này, có thể có một chút trục trặc.
-Cụ thể, chúng ta hãy thử tưởng tượng điều gì sẽ xảy ra nếu chúng ta theo dõi các đơn vị thông qua phép tính này.
-Giả sử rằng ta đang thực hiện công việc được giao là đánh giá sao một sản phẩm trên trang web.
+Khi giải thích các giá trị này, có thể có một chút khó hiểu.
+Cụ thể, hãy để ý đến đơn vị của các phép tính.
+Giả sử rằng ta đang thực hiện công việc là đánh giá số sao cho một sản phẩm trên trang web.
 Sau đó $a$, $a-2$, and $a+2$ đều được đo bằng đơn vị ngôi sao.
 Tương tự, giá trị trung bình $\mu_X$ sau đó cũng được tính bằng số ngôi sao (là trung bình có trọng số).
-Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức gặp phải một vấn đề, đó là chúng ta muốn xem xét $(X-\mu_X)^2$, tính bằng đơn vị *bình phương sao*.
-Điều này có nghĩa là bản thân giá trị phương sai không thể so sánh được với các phép đo ban đầu.
+Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức gặp phải một vấn đề, đó là chúng ta muốn xem xét $(X-\mu_X)^2$, có đơn vị *bình phương* của sao.
+Điều này có nghĩa là bản thân giá trị phương sai không thể dùng để so sánh trong phép đo ban đầu.
 Để có thể diễn giải được nó, chúng ta sẽ cần quay lại các đơn vị gốc.
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
