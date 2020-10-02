@@ -301,7 +301,7 @@ tf.random.uniform((10, 10), 1, n, dtype=tf.int32)
 ## Continuous Uniform
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Đều Liên tục
 
 
 <!--
@@ -311,7 +311,9 @@ and then scale it to fit within the interval $[a, b]$, we will approach a contin
 We will denote this distribution as
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, hãy thảo luận về phân phối đều liên tục.
+Ý tưởng phía sau biến ngẫu nhiên này là nếu ta tăng $n$ trong phân phối đều, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
+Ta sẽ ký hiệu phân phối này bằng
 
 
 $$
@@ -323,7 +325,7 @@ $$
 The probability density function is
 -->
 
-*dịch đoạn phía trên*
+Hàm mật độ xác suất là
 
 
 $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\end{cases}$$
@@ -334,7 +336,7 @@ $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\en
 The cumulative distribution function is
 -->
 
-*dịch đoạn phía trên*
+Hàm phân phối tích lũy là
 
 
 $$F(x) = \begin{cases} 0 & x < a, \\ \frac{x-a}{b-a} & x \in [a, b], \\ 1 & x >= b . \end{cases}$$
@@ -345,7 +347,7 @@ $$F(x) = \begin{cases} 0 & x < a, \\ \frac{x-a}{b-a} & x \in [a, b], \\ 1 & x >=
 Let us first plot the probability density function :eqref:`eq_cont_uniform_pdf`.
 -->
 
-*dịch đoạn phía trên*
+Trước hết hãy vẽ hàm mật độ xác suất :eqref:`eq_cont_uniform_pdf`.
 
 
 ```{.python .input}
@@ -380,7 +382,7 @@ d2l.plot(x, p, 'x', 'p.d.f.')
 Now, let us plot the cumulative distribution function :eqref:`eq_cont_uniform_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy vẽ hàm phân phối tích lũy :eqref:`eq_cont_uniform_cdf`.
 
 
 ```{.python .input}
@@ -411,7 +413,7 @@ d2l.plot(x, [F(y) for y in x], 'x', 'c.d.f.')
 If $X \sim U(a, b)$, then:
 -->
 
-*dịch đoạn phía trên*
+Nếu $X \sim U(a, b)$, thì:
 
 
 * $\mu_X = \frac{a+b}{2}$,
@@ -423,7 +425,8 @@ We can sample an array of arbitrary shape from a uniform random variable as foll
 Note that it by default samples from a $U(0,1)$, so if we want a different range we need to scale it.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu một mảng với kích thước bất kỳ từ một biến ngẫu nhiên đều như sau.
+Chú ý rằng theo mặc định việc lấy mẫu là từ $U(0,1)$, nên nếu ta muốn một miền giá trị khác, ta cần phải biến đổi tỷ lệ nó.
 
 
 ```{.python .input}
@@ -445,7 +448,7 @@ Note that it by default samples from a $U(0,1)$, so if we want a different range
 ## Binomial
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Nhị thức
 
 
 <!--
@@ -454,7 +457,9 @@ This random variable originates from performing a sequence of $n$ independent ex
 each of which has probability $p$ of succeeding, and asking how many successes we expect to see.
 -->
 
-*dịch đoạn phía trên*
+Hãy khiến mọi thứ trở nên phức tạp hơn một chút bằng cách xét biến ngẫu nhiên *nhị thức*.
+Biến ngẫu nhiên này bắt nguồn từ việc thực hiện liên tiếp $n$ thí nghiệm độc lập,
+mỗi thí nghiệm có xác suất thành công $p$, và hỏi xem số lần thành công kỳ vọng là bao nhiêu. 
 
 
 <!--
