@@ -487,9 +487,9 @@ If we have a discrete random variable $X$, which takes the values $x_i$ with pro
 then the mean is given by the weighted average: sum the values times the probability that the random variable takes on that value:
 -->
 
-*Giá trị trung bình* mã hóa giá trị trung bình của một biến ngẫu nhiên.
+*Giá trị trung bình* là trung bình các giá trị của một biến ngẫu nhiên.
 Nếu ta có một biến ngẫu nhiên rời rạc $X$, mà biến này lấy các giá trị $x_i$ với xác suất $p_i$,
-thì giá trị trung bình được tính từ trung bình trọng số: tổng các giá trị biến nhân với xác suất mà biến ngẫu nhiên nhận giá trị đó:
+thì giá trị trung bình được tính từ trung bình trọng số: tổng các tích của giá trị biến nhân với xác suất mà biến ngẫu nhiên nhận giá trị đó:
 
 
 $$\mu_X = E[X] = \sum_i x_i p_i.$$
@@ -550,7 +550,7 @@ Thus, to understand the behavior of a random variable, we will need at minimum o
 
 Giá trị trung bình hữu ích cho việc hiểu hành vi trung bình của một biến ngẫu nhiên, tuy nhiên giá trị trung bình không đủ để có được sự hiểu biết trực quan đầy đủ.
 Tạo ra lợi nhuận $\$10 \pm \$1$ rất khác với việc tạo ra $\$10 \pm \$15$ cho mỗi lần bán hàng mặc dù cả hai có cùng giá trị trung bình.
-Trường hợp thứ hai có mức độ dao động lớn hơn nhiều và do đó thể hiện rủi ro lớn hơn nhiều.
+Trường hợp thứ hai có mức độ dao động lớn hơn nhiều và do đó rủi ro cũng lớn hơn nhiều.
 Vì vậy, để hiểu hành vi của một biến ngẫu nhiên, chúng ta sẽ cần tối thiểu thêm một thước đo nữa: một thước đo thể hiện biên độ dao động của một biến ngẫu nhiên.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
