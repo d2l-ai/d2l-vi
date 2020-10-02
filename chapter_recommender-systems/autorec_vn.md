@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-
 <!--
 # AutoRec: Rating Prediction with Autoencoders
 -->
