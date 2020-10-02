@@ -33,6 +33,9 @@ chapter_optimization/index_vn
 chapter_computational-performance/index_vn
 chapter_computer-vision/index_vn
 chapter_natural-language-processing-pretraining/index_vn
+chapter_natural-language-processing-applications/index_vn
+chapter_recommender-systems/index_vn
+chapter_generative-adversarial-networks/index_vn
 ```
 
 ```toc
