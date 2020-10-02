@@ -23,7 +23,7 @@ Cuốn này hội tụ đủ các yếu tố: có giải thích toán dễ hiể
 cập nhật đầy đủ những khía cạnh của học sâu, và quan trọng nhất là không đòi hỏi bản quyền để dịch. 
 Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi cuốn sách sắp được phổ biến rộng rãi hơn nữa.
 
-Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản 0.8.0 mới nhất. 
+Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản 0.14.0 mới nhất. 
 Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `numpy` (tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo
 chúng tôi, người làm về học máy, học sâu và khoa học dữ liệu cần biết. Và chúng tôi cũng đang cập nhật dần những thư viện khác như `Pytorch` và `TensorFlow` vào nhằm đa dạng hóa
 lựa chọn hơn cho độc giả.
@@ -34,33 +34,6 @@ Và sau đó nó có thể trở thành giáo trình trong các trường đại
 Hy vọng một ngày chúng ta có thể nhìn thấy một trường của Việt Nam trong danh sách này:
 
 ![Danh sách các trường đại học sử dụng cuốn sách này](https://i.ibb.co/M2ZXzP6/Screen-Shot-2019-11-27-at-6-37-04-PM.png)
-
-### Trình tự dịch
-Đây cũng là các nội dung được đề cập trong cuốn sách:
-
-* Preface (**Đã hoàn thành**)
-* Installation (**Đã hoàn thành**)
-* Notation (**Đã hoàn thành**)
-* Introduction (**Đã hoàn thành**)
-* Preliminaries (**Đã hoàn thành**)
-* Linear Neural Networks (**Đã hoàn thành**)
-* Multilayer Perceptrons (**Đã hoàn thành**)
-* Deep Learning Computation (**Đã hoàn thành**)
-* Convolutional Neural Networks (**Đã hoàn thành**)
-* Modern Convolutional Neural Networks (**Đã hoàn thành**)
-* Recurrent Neural Networks (**Đã hoàn thành**)
-* Modern Recurrent Neural Networks (**Đã hoàn thành**)
-* Attention Mechanisms (**Đã hoàn thành**)
-* Optimization Algorithms (**Đã hoàn thành**)
-* Computational Performance (**Đã hoàn thành**)
-* Computer Vision (**Đã hoàn thành**)
-* Natural Language Processing: Pretraining (**Đã hoàn thành**)
-* Natural Language Processing: Applications (*Đang tiến hành*)
-* Recommender Systems (*Đang tiến hành*)
-* Generative Adversarial Networks (*Đang tiến hành*)
-* Appendix: Mathematics for Deep Learning (*Đang tiến hành*)
-* Appendix: Tools for Deep Learning (*Đang tiến hành*)
-* References
 
 ### Diễn đàn
 
