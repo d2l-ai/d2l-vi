@@ -26,7 +26,7 @@ We will borrow the convolutional architecture that have proven so successful for
 they can be leveraged to generate photorealistic images.
 -->
 
-Trong phần này, ta sẽ trình bày cách dùng GANs để tạo ra những bức ảnh chân thực. 
+Trong phần này, chúng tôi sẽ trình bày cách dùng GAN để tạo ra những bức ảnh chân thực. 
 Ta sẽ xây dựng mô hình dựa theo các mô hình GAN tích chập sâu (*deep convolutional GANs - DCGAN*) được giới thiệu trong :cite:`Radford.Metz.Chintala.2015`. 
 Bằng cách mượn kiến trúc tích chập đã được chứng minh là thành công với bài toán thị giác máy tính phân biệt, và bằng cách thông qua GAN, ta có thể dùng chúng làm đòn bẩy để tạo ra các hình ảnh chân thực. 
 
@@ -594,7 +594,7 @@ For better performance, the variable `num_epochs` can be set to a larger number.
 -->
 
 Ta sẽ chỉ huấn luyện mô hình với số epoch nhỏ để minh hoạ. 
-Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một số lớn hơn. 
+Để đạt chất lượng mô hình tốt hơn, bạn có thể đặt biến `num_epochs` bằng một giá trị lớn hơn. 
 
 
 ```{.python .input}
