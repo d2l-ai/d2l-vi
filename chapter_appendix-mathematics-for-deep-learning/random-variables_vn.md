@@ -248,7 +248,7 @@ Thứ hai, Ta hãy tưởng tượng cắt $\mathbb{R}$ thành vô số lát c�
 
 
 $$
-P(X \; \text{is in an}\; \epsilon\text{-sized interval around}\; x ) \approx \epsilon \cdot p(\epsilon \cdot i),
+P(X \; \text{nằm trong khoảng có độ rộng}\; \epsilon\text{xung quanh}\; x ) \approx \epsilon \cdot p(\epsilon \cdot i),
 $$
 
 
