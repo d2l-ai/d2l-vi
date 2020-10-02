@@ -216,11 +216,11 @@ Let us now investigate this further.
 We have already seen what a probability density function is intuitively for a random variable $X$, namely the density function is a function $p(x)$ so that
 -->
 
-Bây giờ ta hãy tìm hiểu về hàm này sâu hơn.
-Chúng ta đã cảm nhận được hàm mật độ xác suất là gì đối với một biến ngẫu nhiên $X$, gọi tên hàm mật độ này là $p(x)$ sao cho
+Bây giờ ta hãy tìm hiểu sâu hơn.
+Chúng ta đã cảm nhận được hàm mật độ xác suất là gì đối với một biến ngẫu nhiên $X$, cụ thể hàm mật độ $p(x)$ này thỏa mãn
 
 
-$$P(X \; \text{is in an}\; \epsilon \text{-sized interval around}\; x ) \approx \epsilon \cdot p(x).$$
+$$P(X \; \text{nằm trong khoảng có độ rộng}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(x).$$
 :eqlabel:`eq_pdf_def`
 
 
@@ -280,7 +280,7 @@ $$
 We know that $P(X\in\mathbb{R}) = 1$, since the random variable must take on *some* number, we can conclude that for any density
 -->
 
-Ta biết là $P(X\in\mathbb{R}) = 1$, vì biến ngẫu nhiên này bao gồm tất cả các sự kiện trên một khoảng số *nào đó*, ta có thể kết luận rằng với bất kỳ hàm mật độ nào
+Ta biết là $P(X\in\mathbb{R}) = 1$, vì biến ngẫu nhiên này phải nhận một giá trị thực *nào đó*, ta có thể kết luận rằng với bất kỳ hàm mật độ nào
 
 
 $$
@@ -292,7 +292,7 @@ $$
 Indeed, digging into this further shows that for any $a$, and $b$, we see that
 -->
 
-Thật vậy, đào sâu hơn vào phương trình này cho ta thấy rằng với bất kỳ $ a $ và $ b $ nào thì 
+Thật vậy, đào sâu hơn vào phương trình này cho ta thấy rằng với bất kỳ $a$ và $b$ nào thì 
 
 
 $$
@@ -385,7 +385,7 @@ $$P(X\in(a, b]) = \int _ {a}^{b} p(x) \; dx.$$
 In :numref:`sec_distributions` we will see a number of common distributions, but let us continue working in the abstract.
 -->
 
-Trong :numref:`sec_distributions`, ta sẽ thấy một số phân phối thông dụng, nhưng ta hãy tiếp tục việc này trong phần tóm tắt.
+Trong :numref:`sec_distributions`, ta sẽ thấy một số phân phối thông dụng, giờ hãy tiếp tục tìm hiểu các khái niệm trừu tượng.
 
 
 <!--
@@ -407,7 +407,7 @@ Trong phần trước, chúng ta đã thấy khái niệm về p.d.f.
 Trong thực tế, đây là một phương pháp thường gặp để thảo luận về các biến ngẫu nhiên liên tục,
 nhưng nó có một nhược điểm quan trọng: đó là các giá trị của p.d.f. bản thân chúng không phải là các giá trị xác suất, mà là một hàm mà ta phải tích phân để sinh ra xác suất.
 Không có gì sai với môt hàm mật độ lớn hơn $10$, miễn là nó không lớn hơn $10$ trong khoảng có chiều dài $1/10$.
-Điều này có thể gây khó hiểu, do đó người ta cũng thường nghĩ tới thuật ngữ *hàm phân phối tích lũy* hoặc c.d.f., chính nó *là* giá trị xác suất.
+Điều này có thể gây khó hiểu, do đó người ta cũng thường nghĩ tới thuật ngữ *hàm phân phối tích lũy - cumulative distribution function* hoặc c.d.f., chính nó *là* giá trị xác suất.
 
 <!--
 In particular, by using :eqref:`eq_pdf_int_int`, we define the c.d.f. for a random variable $X$ with density $p(x)$ by
@@ -446,7 +446,7 @@ Ta hãy quan sát một vài tính chất của hàm này
 With the fourth bullet point, note that this would not be true if $X$ were discrete, say taking the values $0$ and $1$ both with probability $1/2$. In that case
 -->
 
-Với gạch đầu dòng thứ tư, lưu ý rằng điều này sẽ không đúng nếu $X$ rời rạc, ví dụ như ta lấy cả hai giá trị $0$ và $1$ với xác suất $1/2$. Trong trường hợp như thế
+Với gạch đầu dòng thứ tư, lưu ý rằng điều này sẽ không đúng nếu $X$ rời rạc, ví dụ như chỉ nhận hai giá trị $0$ và $1$ với xác suất $1/2$. Trong trường hợp như thế
 
 
 $$
@@ -465,7 +465,7 @@ the ability to deal with continuous or discrete random variables in the same fra
 -->
 
 Trong ví dụ này, ta thấy một trong các lợi ích của việc làm việc với c.d.f.,
-khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc trong cùng một khuôn khổ, hay thậm chí là hỗn hợp của hai
+khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc trong cùng một khuôn khổ, hay thậm chí là hỗn hợp của cả hai
 (tung một đồng xu: nếu mặt ngửa thì trả về giá trị thả một con xúc xắc, nếu mặt xấp thì trả về khoảng cách ném phi tiêu từ tâm của bảng hồng tâm).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
