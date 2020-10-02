@@ -16,8 +16,8 @@ In this section, we develop the theory of *continuous random variables*, which a
 -->
 
 Trong :numref:`sec_prob` ta đã thấy các phương pháp căn bản để làm việc với các biến ngẫu nhiên rời rạc, 
-mà trong trường hợp của ta liên quan tới các biến ngẫu nhiên được lấy cả từ tập hữu hạn các giá trị có thể có, hay từ các số nguyên.
-Trong phần này, ta phát triển lý thuyết cho *các biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị thực nào.
+mà trong trường hợp của ta là các biến ngẫu nhiên được lấy cả từ tập hữu hạn các giá trị khả dĩ, hay là các giá trị số nguyên.
+Trong phần này, ta phát triển lý thuyết cho *các biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
 
 <!--
 ## Continuous Random Variables
@@ -33,15 +33,15 @@ As such, we will need to take some time to develop the theory.
 -->
 
 Các biến ngẫu nhiên liên tục là chủ để vi tế hơn nhiều so với các biến ngẫu nhiên rời rạc.
-Một sự so sánh công tâm phải làm là nhảy kỹ thuật là có thể so sánh để nhảy giữa các danh sách các số và các hàm tích phân.
-Như vậy, ta sẽ cần giành một chút thời gian để phát triển lý thuyết này.
+Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính cộng các dãy số sang tính tích phân hàm số.
+Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết trong lĩnh vực này.
 
 
 <!--
 ### From Discrete to Continuous
 -->
 
-### Từ rời rác đến liên tục
+### Từ rời rạc đến liên tục
 
 
 <!--
@@ -49,8 +49,8 @@ To understand the additional technical challenges encountered when working with 
 Suppose that we are throwing a dart at the dart board, and we want to know the probability that it hits exactly $2 \text{cm}$ from the center of the board.
 -->
 
-Để hiểu các thách thức kỹ thuật cộng phải đối mặt khi làm việc với các biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
-Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác $2 \text{cm}$ từ tâm của tấm hồng tâm. 
+Để hiểu các thách thức kỹ thuật cộng thêm khi làm việc với các biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
+Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác cách $2 \text{cm}$ tới hồng tâm. 
 
 
 <!--
@@ -59,7 +59,7 @@ We throw say $100$ darts at the dart board, and if $20$ of them fall into the bi
 we conclude that $20\%$ of the darts we throw hit the board $2 \text{cm}$ away from the center.
 -->
 
-Để bắt đầu, ta hình dung thực hiện đo với độ chính xác một chữ số, với các phân vùng $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, và tiếp theo.
+Để bắt đầu, ta hình dung thực hiện phép đo với độ chính xác một chữ số, tức là các phân vùng $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, và tiếp theo.
 Ta phóng $100$ phi tiêu vào tấm hồng tâm, và nếu $20$ trong số đó rơi vào vùng $2\text{cm}$
 ta kết luận là $20\%$ phi tiêu ta phóng cắm vào bảng có khoảng cách $2 \text{cm}$ tính từ tâm.
 
@@ -70,7 +70,7 @@ We wanted exact equality, whereas these bins hold all that fell between say $1.5
 -->
 
 Tuy nhiên, khi ta soi kỹ hơn, câu trả lời này sẽ không thỏa với câu hỏi của ta!
-Ta muốn chính xác giá trị, nơi vùng mà nó chứa tất cả các phi tiêu rơi vào giữa $1.5\text{cm}$ và $2.5\text{cm}$.
+Ta muốn một giá trị chính xác, trong khi các vùng đó lại chứa tất cả các phi tiêu rơi vào giữa $1.5\text{cm}$ và $2.5\text{cm}$.
 
 
 <!--
@@ -105,7 +105,7 @@ Or put another way, we would expect that
 -->
 
 
-Ý nghĩa về cơ bản là mỗi chữ số chính xác thêm vào mà ta đòi hỏi sẽ giảm xác suất khớp xuống 10.
+Về cơ bản nó có ý nghĩa là tăng độ chính xác thêm một chữ số đòi hỏi xác suất khớp sẽ giảm xuống 10 lần.
 Hay nói cách khác, ta kỳ vọng là
 
 
@@ -147,11 +147,11 @@ This tells us that we should expect
 -->
 
 Ta hãy thực hiện thêm một bước cuối cùng này.
-Ta đang nghĩ về điểm $ 2 $ trong toàn thời gian, nhưng chưa nghĩ đến các điểm khác.
-Về cơ bản không có gì khác biệt ở đó, nhưng đó là trường hợp mà giá trị $p$ có thể sẽ khác.
-Ít nhất ta hy vọng rằng một người ném phi tiêu có nhiều khả năng bắn trúng điểm gần tâm hơn, như là $ 2 \ text {cm} $ thay vì $ 20 \ text {cm} $.
+Trong suốt thời gian qua ta chỉ đang nghĩ về điểm $2$ , nhưng chưa nghĩ đến các điểm khác.
+Về cơ bản là không có gì khác biệt, chỉ là giá trị $p$ tại điểm đó có thể sẽ khác.
+Ít nhất ta hy vọng rằng một người ném phi tiêu có nhiều khả năng bắn trúng điểm gần tâm hơn, như là $2 \text{cm}$ thay vì $20 \text{cm} $.
 Do đó, giá trị $p$ là  không cố định, mà phụ thuộc vào điểm $x$.
-Điều này cho chúng ta biết cái chúng ta nên kỳ vọng.
+Điều này cho chúng ta biết ta nên kỳ vọng
 
 
 $$P(\text{distance is in an}\; \epsilon \text{-sized interval around}\; x ) \approx \epsilon \cdot p(x).$$
@@ -222,8 +222,8 @@ The locations where the function value is large indicates regions where we are m
 The low portions are areas where we are unlikely to find the random value.
 -->
 
-Các vị trí mà giá trị hàm lớn cho biết các vùng mà ở đó chúng ta có nhiều khả năng hơn để tìm giá trị ngẫu nhiên hơn.
-Các phần thấp là những vùng mà nơi chúng ta không có khả năng tìm thấy giá trị ngẫu nhiên.
+Các vị trí mà giá trị hàm là lớn cho biết các vùng mà ở đó chúng ta có nhiều khả năng sẽ thấy giá trị ngẫu nhiên hơn ở đó hơn.
+Các phần thấp là những vùng mà ta ít có khả năng sẽ thấy giá trị ngẫu nhiên xuất hiện trong đó.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
