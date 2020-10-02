@@ -686,15 +686,14 @@ Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức 
 ### Standard Deviations
 -->
 
-### *dịch tiêu đề trên*
+### Độ lệch chuẩn
 
 
 <!--
 This summary statistics can always be deduced from the variance by taking the square root! Thus we define the *standard deviation* to be
 -->
 
-*dịch đoạn phía trên*
-
+Phép thống kê này luôn có thể suy ra được từ phương sai bằng cách lấy căn bậc hai của nó! Do đó, ta xác định *độ lệch chuẩn* là
 
 $$
 \sigma_X = \sqrt{\mathrm{Var}(X)}.
@@ -706,15 +705,14 @@ In our example, this means we now have the standard deviation is $\sigma_X = 2\s
 If we are dealing with units of stars for our review example, $\sigma_X$ is again in units of stars.
 -->
 
-*dịch đoạn phía trên*
-
+Trong ví dụ trên, ta có độ lệch chuẩn là $\sigma_X = 2\sqrt{2p}$.
+Nếu đơn vị ta đang xét là số sao trong ví dụ đánh giá của mình, $\sigma_X$ vẫn có đơn vị này.
 
 <!--
 The properties we had for the variance can be restated for the standard deviation.
 -->
 
-*dịch đoạn phía trên*
-
+Các tính chất chúng ta có được ở phương sai có thể được trình bày lại cho độ lệch chuẩn.
 
 <!--
 * For any random variable $X$, $\sigma_{X} \ge 0$.
@@ -722,8 +720,9 @@ The properties we had for the variance can be restated for the standard deviatio
 * If we have two *independent* random variables $X$ and $Y$, we have $\sigma_{X+Y} = \sqrt{\sigma_{X}^2 + \sigma_{Y}^2}$.
 -->
 
-*dịch đoạn phía trên*
-
+* Đối với bất kỳ biến ngẫu nhiên $X$ nào, thì $\sigma_{X} \ge 0$.
+* Với mọi biến ngẫu nhiên $X$ và các số $a$ và $b$, chúng ta có $\sigma_{aX+b} = |a|\sigma_{X}$
+* Nếu chúng ta có hai biến ngẫu nhiên *độc lập* $X$ và $Y$, chúng ta có $\sigma_{X+Y} = \sqrt{\sigma_{X}^2 + \sigma_{Y}^2}$.
 
 <!--
 It is natural at this moment to ask, "If the standard deviation is in the units of our original random variable, does it represent something we can draw with regards to that random variable?"
@@ -731,7 +730,9 @@ The answer is a resounding yes! Indeed much like the mean told we the typical lo
 We can make this rigorous with what is known as Chebyshev's inequality:
 -->
 
-*dịch đoạn phía trên*
+Điều hiển vào lúc này là đặt câu hỏi, "Nếu độ lệch cuẩn tính bằng đơn vị của biến ngẫu nhiên ban đầu của chúng ta, thì nó có đại diện cho điều ta rút ra liên quan đến biến ngẫu nhiên đó không?"
+Câu trả lời là có! Thật vậy, giống như giá trị trung bình cho chúng ta biết vị trí điển hình của biến ngẫu nhiên, độ lệch chuẩn cung cấp khoảng giá trị biến động điển hình của chính biến ngẫu nhiên đó.
+Chúng ta có thể chứng minh chặt chẽ bằng bất đẳng thức Chebyshev:
 
 
 $$P\left(X \not\in [\mu_X - \alpha\sigma_X, \mu_X + \alpha\sigma_X]\right) \le \frac{1}{\alpha^2}.$$
@@ -743,8 +744,8 @@ Or to state it verbally in the case of $\alpha=10$, $99\%$ of the samples from a
 This gives an immediate interpretation to our standard summary statistics.
 -->
 
-*dịch đoạn phía trên*
-
+Diễn giải bằng lời như sau, ví dụ khi $\alpha=10$, $99\%$ số mẫu của bất kỳ biến ngẫu nhiên nào sẽ nằm trong khoảng độ lệch chuẩn bằng $10$ về 2 phía của giá trị trung bình.
+Điều này đưa ra một lời giải thích ngay lập tức cho thống kê tóm tắt tiêu chuẩn của chúng ta.
 
 <!--
 To see how this statement is rather subtle, let us take a look at our running example again where $X$ is the random variable 
@@ -753,8 +754,10 @@ We saw that the mean was $a$ and the standard deviation was $2\sqrt{2p}$.
 This means, if we take Chebyshev's inequality :eqref:`eq_chebyshev` with $\alpha = 2$, we see that the expression is
 -->
 
-*dịch đoạn phía trên*
-
+Để thấy phát biểu này tinh tế như thế nào, chúng ta hãy xem xét lại ví dụ vừa nãy của mình trong đó $X$ là biến ngẫu nhiên
+trong đó nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Chúng ta thấy rằng giá trị trung bình là $a$ và độ lệch chuẩn là $2\sqrt{2p}$.
+Điều này có nghĩa là, từ bất đẳng thức Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, ta có
 
 $$
 P\left(X \not\in [a - 4\sqrt{2p}, a + 4\sqrt{2p}]\right) \le \frac{1}{4}.
@@ -770,7 +773,12 @@ which is *exactly* the first $p$ where it could possibly happen without violatin
 the distribution would fall outside the interval ($1/8$ to the left, and $1/8$ to the right).
 -->
 
-*dịch đoạn phía trên*
+Điều này có nghĩa là trong $75\%$ số lần lấy mẫu, giá trị của biến ngẫu nhiên này sẽ rơi vào khoảng trên bất kể giá trị của $p$.
+Bây giờ, hãy lưu ý rằng khi $p \rightarrow 0$, thì khoảng này cũng hội tụ đến điểm duy nhất là $a$.
+Tuy nhiên chúng ta cũng biết rằng biến ngẫu nhiên của ta chỉ nhận các giá trị $a-2, a$ và $a + 2$ nên cuối cùng chúng ta có thể chắc chắn rằng $a-2$ và $a+2$ sẽ nằm ngoài khoảng giá trị này!
+Câu hỏi đặt ra là giá trị $p$ bằng bao nhiêu để $a-2$ và $a+2$ nằm trong khoảng đó? Ta có thể giải phương trình: $a+4\sqrt{2p} = a+2$ để ra nghiệm $p=1/8$,
+đó *chính xác* là giá trị $p$ nhỏ nhất thỏa mãn yêu cầu rằng không quá $1/4$ số mẫu từ
+phân phối sẽ nằm ngoài khoảng ($1/8$ về phía bên trái và $1/8$ về phía bên phải giá trị trung bình).
 
 
 <!--
@@ -778,8 +786,8 @@ Let us visualize this. We will show the probability of getting the three values 
 The interval will be drawn as a horizontal line in the middle. The first plot shows what happens for $p > 1/8$ where the interval safely contains all points.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy cùng trực quan hoá điều này. Chúng ta sẽ đưa ra xác suất nhận được ba giá trị tương ứng là ba thanh dọc có chiều cao tỷ lệ với xác suất.
+Khoảng sẽ được vẽ dưới dạng một đường ngang ở giữa. Biểu đồ đầu tiên cho thấy khi $p> 1/8$, khoảng chứa hoàn toàn các điểm.
 
 ```{.python .input}
 # Define a helper to plot these figures
@@ -852,8 +860,8 @@ The second shows that at $p = 1/8$, the interval exactly touches the two points.
 This shows that the inequality is *sharp*, since no smaller interval could be taken while keeping the inequality true.
 -->
 
-*dịch đoạn phía trên*
-
+Biểu đồ thứ hai cho thấy rằng tại $p = 1/8$, khoảng giá trị tiếp xúc chính xác với hai điểm.
+Khoảng này là *vừa đủ*, vì không thể chọn lấy khoảng nhỏ hơn mà vẫn giữ cho bất đẳng thức đúng.
 
 ```{.python .input}
 # Plot interval when p = 1/8
@@ -879,7 +887,9 @@ This does not invalidate the inequality since we only needed to ensure that no m
 which means that once $p < 1/8$, the two points at $a-2$ and $a+2$ can be discarded.
 -->
 
-*dịch đoạn phía trên*
+Biểu đồ thứ ba cho thấy rằng với $p < 1/8$ thì khoảng chỉ chứa giá trị trung tâm.
+Điều này không làm mất đi tính tổng quát của bất đẳng thức vì chúng ta chỉ cần đảm bảo rằng không quá $1/4$ xác suất nằm ngoài khoảng,
+có nghĩa là khi $p < 1/8$, hai điểm tại $a-2$ và $a+2$ có thể bị loại bỏ.
 
 
 ```{.python .input}
@@ -1792,7 +1802,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Đăng Khoa
 
 <!-- Phần 5 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 6 -->
 * 
