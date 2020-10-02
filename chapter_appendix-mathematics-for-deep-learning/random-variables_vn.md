@@ -567,7 +567,7 @@ Thus, to understand the behavior of a random variable, we will need at minimum o
 ### Variances
 -->
 
-### *dịch tiêu đề trên*
+### Phương sai
 
 
 <!--
@@ -577,7 +577,10 @@ Consider the expression $X - \mu_X$. This is the deviation of the random variabl
 This value can be positive or negative, so we need to do something to make it positive so that we are measuring the magnitude of the deviation.
 -->
 
-*dịch đoạn phía trên*
+Điều này khiến chúng ta xem xét đến *phương sai* của một biến ngẫu nhiên.
+Đây là một thước đo định lượng một biến ngẫu nhiên bị lệch so với giá trị trung bình đến mức thế nào.
+Xem xét biểu thức $X - \mu_X$. Đây là độ lệch (*deviation*) của biến ngẫu nhiên so với giá trị trung bình của nó.
+Giá trị này có thể dương hoặc âm, vì vậy chúng ta cần thực hiện điều gì đó để biến nó thành giá trị dương để chúng ta tính toán độ lớn của độ lệch này.
 
 
 <!--
@@ -585,15 +588,15 @@ A reasonable thing to try is to look at $\left|X-\mu_X\right|$, and indeed this 
 however due to connections with other areas of mathematics and statistics, people often use a different solution.
 -->
 
-*dịch đoạn phía trên*
+Một điều hợp lý để thử là hãy quan sát $\left|X-\mu_X\right|$, và thực sự điều này dẫn đến một đại lượng hữu dụng được gọi là *trung bình độ lệch tuyệt đối - mean absolute deviation*,
+tuy nhiên do mối liên hệ với các lĩnh vực toán học và thống kê khác, người ta thường dùng đến một giải pháp khác.
 
 
 <!--
 In particular, they look at $(X-\mu_X)^2.$.  If we look at the typical size of this quantity by taking the mean, we arrive at the variance
 -->
 
-*dịch đoạn phía trên*
-
+Đặc biệt, họ quan sát $(X-\mu_X)^2.$. Nếu chúng ta xét đến kích thước của đại lượng này bằng cách lấy giá trị trung bình, chúng ta có được phương sai
 
 $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 :eqlabel:`eq_var_def`
@@ -603,15 +606,15 @@ $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 The last equality in :eqref:`eq_var_def` holds by expanding out the definition in the middle, and applying the properties of expectation.
 -->
 
-*dịch đoạn phía trên*
-
+Đẳng thức cuối cùng trong :eqref:`eq_var_def` được giữ nguyên bằng cách mở rộng số hạng ở vế giữa và vận dụng các tính chất của kỳ vọng.
 
 <!--
 Let us look at our example where $X$ is the random variable which takes the value $a-2$ with probability $p$, $a+2$ with probability $p$ and $a$ with probability $1-2p$.
 In this case $\mu_X = a$, so all we need to compute is $E\left[X^2\right]$. This can readily be done:
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xem ví dụ, trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Trong trường hợp này thì $\mu_X = a$, vì vậy toàn bộ những gì chúng ta cần tính là $E\left[X^2\right]$. Việc này có thể được tính một cách dễ dàng:
 
 
 $$
@@ -623,8 +626,7 @@ $$
 Thus, we see that by :eqref:`eq_var_def` our variance is
 -->
 
-*dịch đoạn phía trên*
-
+Do đó, chúng ta thấy rằng :eqref:`eq_var_def` cho phương sai bằng
 
 $$
 \sigma_X^2 = \mathrm{Var}(X) = E[X^2] - \mu_X^2 = a^2 + 8p - a^2 = 8p.
@@ -637,15 +639,15 @@ The variance of this being $4$ corresponds to the fact that both $a-2$ and $a+2$
 On the other end of the spectrum, if $p=0$, this random variable always takes the value $0$ and so it has no variance at all.
 -->
 
-*dịch đoạn phía trên*
-
+Kết quả này cũng hợp lý. Giá trị lớn nhất có thể của $p$ là $1/2$ tương ứng với việc chọn $a-2$ hoặc $a+2$ (tương tự khi tung đồng xu).
+Lúc này giá trị của phương sai tính theo công thức trên bằng $4$, đúng với thực tế là cả $a-2$ và $a+2$ cùng có độ lệch khỏi giá trị trung bình là $2$ và $2^2 = 4$.
+Ngược lại, nếu $p=0$, tức là biến ngẫu nhiên này luôn nhận giá trị $0$ và vì thế không có phương sai nào cả.
 
 <!--
 We will list a few properties of variance below:
 -->
 
-*dịch đoạn phía trên*
-
+Chúng tôi sẽ nêu ra một số tính chất của phương sai dưới đây:
 
 <!--
 * For any random variable $X$, $\mathrm{Var}(X) \ge 0$, with $\mathrm{Var}(X) = 0$ if and only if $X$ is a constant.
@@ -653,8 +655,9 @@ We will list a few properties of variance below:
 * If we have two *independent* random variables $X$ and $Y$, we have $\mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y)$.
 -->
 
-*dịch đoạn phía trên*
-
+* Đối với bất kỳ biến ngẫu nhiên $X$ nào, thì  $\mathrm{Var}(X) \ge 0$, với $\mathrm{Var}(X) = 0$ khi và chỉ khi $X$ là hằng số.
+* Với bất kỳ biến ngẫu nhiên $X$ nào và các số $a$ và $b$, thì chúng ta có $\mathrm{Var}(aX+b) = a^2\mathrm{Var}(X)$.
+* Nếu tồn tại hai biến ngẫu nhiên *độc lập* $X$ và $Y$, thì ta có đẳng thức $\mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y)$.
 
 <!--
 When interpreting these values, there can be a bit of a hiccup.
@@ -667,8 +670,14 @@ This means that the variance itself is not comparable to the original measuremen
 To make it interpretable, we will need to return to our original units.
 -->
 
-*dịch đoạn phía trên*
-
+Khi giải thích các giá trị này, có thể có một chút khó hiểu.
+Cụ thể, hãy để ý đến đơn vị của các phép tính.
+Giả sử rằng ta đang thực hiện công việc là đánh giá số sao cho một sản phẩm trên trang web.
+Sau đó $a$, $a-2$, and $a+2$ đều được đo bằng đơn vị ngôi sao.
+Tương tự, giá trị trung bình $\mu_X$ sau đó cũng được tính bằng số ngôi sao (là trung bình có trọng số).
+Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức gặp phải một vấn đề, đó là chúng ta muốn xem xét $(X-\mu_X)^2$, có đơn vị *bình phương* của sao.
+Điều này có nghĩa là bản thân giá trị phương sai không thể dùng để so sánh trong phép đo ban đầu.
+Để có thể diễn giải được nó, chúng ta sẽ cần quay lại các đơn vị gốc.
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -1780,7 +1789,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 4 -->
-* 
+* Phạm Đăng Khoa
 
 <!-- Phần 5 -->
 * 
