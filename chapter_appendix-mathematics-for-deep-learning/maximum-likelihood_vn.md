@@ -5,7 +5,7 @@
 # Maximum Likelihood
 -->
 
-# Hợp lý cực đại
+# Hợp lý Cực đại
 :label:`sec_maximum_likelihood`
 
 
@@ -99,7 +99,7 @@ Theo thuật ngữ thông thường, xác suất của dữ liệu biết các t
 ### A Concrete Example
 -->
 
-### Một ví dụ cụ thể
+### Một ví dụ Cụ thể
 
 
 <!--
