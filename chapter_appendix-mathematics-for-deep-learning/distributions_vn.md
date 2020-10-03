@@ -18,7 +18,7 @@ Let us first import some common libraries.
 
 Lúc này ta đã học cách làm việc với xác suất trong tình huống thiết lập rời rạc và liên tục, ta hãy làm quen với một số phân phối phổ thường gặp.
 Tùy thuộc vào lĩnh vực học máy, ta có thể cần phải quen thuộc với lượng lớn hơn nhiều các phân phối đó, hoặc đối với một số lĩnh vực học sâu có khả năng không gặp chút nào.
-Tuy nhiên, đây là một danh sách cơ bản tốt để làm quen.
+Tuy nhiên, đây là một danh sách tốt các phân phối cơ bản để làm quen.
 Đầu tiên chúng ta hãy nhập một số thư viện phổ biến.
 
 
