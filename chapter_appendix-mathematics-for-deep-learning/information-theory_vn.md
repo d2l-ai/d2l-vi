@@ -421,7 +421,7 @@ $$H(S) = \sum_i {p_i \cdot I(s_i)} = - \sum_i {p_i \cdot \log p_i}.$$
 ### Properties of Entropy
 -->
 
-### *dịch tiêu đề trên*
+### Tính chất của Entropy
 
 
 <!--
@@ -429,8 +429,8 @@ By the above examples and interpretations, we can derive the following propertie
 Here, we refer to $X$ as an event and $P$ as the probability distribution of $X$.
 -->
 
-*dịch đoạn phía trên*
-
+Bằng các ví dụ và sự giải thích phía trên, ta có thể rút ra các tính chất sau của entropy :eqref:`eq_ent_def`.
+Ở đây, ta xem $X$ là một biến cố và $P$ là phân phối xác suất của $X$.
 
 <!--
 * Entropy is non-negative, i.e., $H(X) \geq 0, \forall X$.
@@ -445,14 +445,15 @@ However, if we additionally impose that $P$ is supported on a finite interval (w
 then $P$ has the highest entropy if it is the uniform distribution on that interval.
 -->
 
-*dịch đoạn phía trên*
-
+* Entropy luôn có giá trị không âm, tức $H(X) \geq 0, \forall X$.
+* Nếu $X \sim P$ với p.d.f. hoặc p.m.f. $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với p.d.f. hặc p.m.f. $q(x)$, ta sẽ có
+$$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
 
 <!--
 ## Mutual Information
 -->
 
-## *dịch tiêu đề trên*
+## Thông tin Tương hỗ
 
 
 <!--
@@ -462,30 +463,31 @@ We can think of these techniques as trying to answer the following type of quest
 Is there redundant information, or is it all unique?"
 -->
 
-*dịch đoạn phía trên*
-
+Trước đó ta đã định nghĩa entropy của một biễn ngẫu nhiên duy nhất $X$, vậy còn entropy của một cặp biến ngẫu nhiên $(X,Y)$ thì sao?
+Ta có thể xem những kỹ thuật này như lời giải cho câu hỏi sau:
+"Thông tin chứa trong cả $X$ và $Y$ sẽ trông như thế nào so với thông tin trong từng biến?
+Có thông tin thừa không, hay chúng đều độc nhất?"
 
 <!--
 For the following discussion, we always use $(X, Y)$ as a pair of random variables that follows 
 a joint probability distribution $P$ with a p.d.f. or a p.m.f. $p_{X, Y}(x, y)$, while $X$ and $Y$ follow probability distribution $p_X(x)$ and $p_Y(y)$, respectively. 
 -->
 
-*dịch đoạn phía trên*
-
+Trong phần bàn luận tiếp theo, chúng tôi sẽ luôn dùng $(X,Y)$ để ký hiệu cho một cặp biễn ngẫu nhiên tuân theo
+phân phối xác suất đồng thời $P$ với p.d.f. hoặc p.m.f. $p_{X,Y}(x,y)$, còn $X$ và $Y$ lần lượt tuân theo phân phối xác suất $p_X(x)$ and $p_Y(y)$.
 
 <!--
 ### Joint Entropy 
 -->
 
-### *dịch tiêu đề trên*
+### Entropy Đồng thời
 
 
 <!--
 Similar to entropy of a single random variable :eqref:`eq_ent_def`, we define the *joint entropy* $H(X, Y)$ of a pair random variables $(X, Y)$ as
 -->
 
-*dịch đoạn phía trên*
-
+Tương tự như entropy của một biến ngẫu nhiên duy nhất :eqref:`eq_ent_def`, ta định nghĩa *entropy đồng thời* $H(X,Y)$ của một cặp biến ngẫu nhiên $(X,Y)$ như sau
 
 $$H(X, Y) = −E_{(x, y) \sim P} [\log p_{X, Y}(x, y)]. $$
 :eqlabel:`eq_joint_ent_def`
@@ -495,8 +497,7 @@ $$H(X, Y) = −E_{(x, y) \sim P} [\log p_{X, Y}(x, y)]. $$
 Precisely, on the one hand, if $(X, Y)$ is a pair of discrete random variables, then 
 -->
 
-*dịch đoạn phía trên*
-
+Cụ thể ở một mặt, nếu $(X,Y)$ là một cặp biến ngẫu nhiên rời rạc thì
 
 $$H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log p_{X, Y}(x, y).$$
 
@@ -505,7 +506,7 @@ $$H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log p_{X, Y}(x, y).$$
 On the other hand, if $(X, Y)$ is a pair of continuous random variables, then we define the *differential joint entropy* as 
 -->
 
-*dịch đoạn phía trên*
+Mặt khác, nếu $(X,Y)$ là một cặp biến ngẫu nhiên liên tục, ta định nghĩa *entropy đồng thời vi phân* như sau
 
 
 $$H(X, Y) = - \int_{x, y} p_{X, Y}(x, y) \ \log p_{X, Y}(x, y) \;dx \;dy.$$
