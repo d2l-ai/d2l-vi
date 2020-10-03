@@ -911,7 +911,7 @@ $$
 where $p_X$ is the density of $X$. This is an approximation to the integral of $xp_X(x)$, so we can conclude that
 -->
 
-trong đó $p_X$ là mật độ của $X$. Đây là xấp xỉ tích phân của  $xp_X(x)$, do đó ta có thể kết luận rằng
+trong đó $p_X$ là mật độ của $X$. Đây là xấp xỉ tích phân của $xp_X(x)$, do đó ta có thể kết luận rằng
 
 
 $$
