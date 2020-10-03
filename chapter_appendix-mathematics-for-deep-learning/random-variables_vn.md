@@ -1538,7 +1538,7 @@ d2l.plt.show()
 Let us see some properties of covariances:
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét một vài tính chất của hiệp phương sai:
 
 
 <!--
@@ -1547,7 +1547,9 @@ Let us see some properties of covariances:
 * If $X$ and $Y$ are independent then $\mathrm{Cov}(X, Y) = 0$.
 -->
 
-*dịch đoạn phía trên*
+* Với bất kỳ biến $X$ ngẫu nhiên nào, $\mathrm{Cov}(X, X) = \mathrm{Var}(X)$.
+* Với bất kỳ biến ngẫu nhiên $X, Y$ và các số $a$ và $b$, $\mathrm{Cov}(aX+b, Y) = \mathrm{Cov}(X, aY+b) = a\mathrm{Cov}(X, Y)$.
+* Nếu $X$ và $Y$ độc lập thì $\mathrm{Cov}(X, Y) = 0$.
 
 
 <!--
@@ -1555,7 +1557,8 @@ In addition, we can use the covariance to expand a relationship we saw before.
 Recall that is $X$ and $Y$ are two independent random variables then
 -->
 
-*dịch đoạn phía trên*
+Ngoài ra, ta có thể sử dụng phương sai để mở rộng một hệ thức ta đã thấy trước đó.
+Hãy nhớ lại nếu $X$ và $Y$ là hai biến ngẫu nhiên độc lập thì
 
 
 $$
@@ -1567,7 +1570,7 @@ $$
 With knowledge of covariances, we can expand this relationship.  Indeed, some algebra can show that in general,
 -->
 
-*dịch đoạn phía trên*
+Với kiến thức về phương sai, ta có thể khai triển hệ thức này. Quả nhiên, một vài đại số có thể chứng minh tổng quát rằng
 
 
 $$
@@ -1579,14 +1582,14 @@ $$
 This allows us to generalize the variance summation rule for correlated random variables.
 -->
 
-*dịch đoạn phía trên*
+Điều này cho phép ta tổng quát hóa quy tắc tổng phương sai dành cho biến ngẫu nhiên tương quan.
 
 
 <!--
 ### Correlation
 -->
 
-### *dịch tiêu đề trên*
+### Tương quan
 
 
 <!--
@@ -1597,7 +1600,11 @@ These units can be hard to interpret. What we will often want in this case is a 
 Indeed, often we do not care about exact quantitative correlation, but rather ask if the correlation is in the same direction, and how strong the relationship is.
 -->
 
-*dịch đoạn phía trên*
+Như ta đã bàn về trường hợp của trung bình và phương sai, ta hãy xem xét đơn vị.
+Nếu $X$ được đo trong một đơn vị (giả sử là inch), và $Y$ được đo bởi đơn vị khác (giả sử là đô la),
+phương sai được tính bởi tích của hai đơn vị này $\text{inches} \times \text{dollars}$.
+Những đơn vị này khó để diễn giải. Điều ta thường mong muốn trong trường hợp này là một phép đo không đơn vị của sự tương quan.
+Thật vậy, ta thường không quan tâm về tương quan định lượng chính xác, nhưng thường hỏi xem nếu sự tương quan này cùng hướng, và mối liên hệ mạnh như thế nào.
 
 
 <!--
@@ -1609,7 +1616,10 @@ Thus, to find our unit-invariant measure of correlation, we will need to divide 
 Indeed we have a clear candidate, the standard deviation! Indeed if we define the *correlation coefficient* to be
 -->
 
-*dịch đoạn phía trên*
+Để xem điều gì có ý nghĩa, ta hãy thực hiện một thử nghiệm suy nghĩ.
+Giả sử ta chuyển đổi các biến ngẫu nhiên đơn vị inch và đô-la thành inch và xu.
+Trong trường hợp này biến ngẫu nhiên $Y$ được nhân bởi $100$. Nếu ta giải quyết vấn đề định nghĩa, điều này có nghĩa $\mathrm{Cov}(X, Y)$ sẽ được nhân bởi $100$.
+Thêm vào đó ta thấy rằng trường hợp này sự thay đổi về phương sai bởi hệ số $100$.
 
 
 $$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
@@ -1621,7 +1631,8 @@ we see that this is a unit-less value. A little mathematics can show that this n
 between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $-1$ means maximally negatively correlated.
 -->
 
-*dịch đoạn phía trên*
+ta thấy rằng đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng con số này 
+nằm giữa $-1$ và $1$ với $1$ tương quan cực đại dương, với $-1$ mang ý nghĩa tương quan cực đại âm. 
 
 
 <!--
@@ -1629,8 +1640,8 @@ Returning to our explicit discrete example above, we can see that $\sigma_X = 1$
 so we can compute the correlation between the two random variables using :eqref:`eq_cor_def` to see that
 -->
 
-*dịch đoạn phía trên*
-
+Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta thấy rằng nếu $\sigma_X = 1$ và $\sigma_Y = 2$, 
+thì ta có thể tính toán tương quan giữa hai biến ngẫu nhiên sử dụng hệ thức :eqref:`eq_cor_def` để có
 
 $$
 \rho(X, Y) = \frac{4p-2}{1\cdot 2} = 2p-1.
@@ -1641,7 +1652,7 @@ $$
 This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 -->
 
-*dịch đoạn phía trên*
+Điều này bây giờ nằm trong khoảng $-1$ và $1$ với kỳ vọng hành vi $1$ mang ý nghĩa tương quan nhiều nhất và $-1$ mang ý nghĩa tương quan ít nhất.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -1868,7 +1879,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 8 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 <!-- Phần 9 -->
 * 
