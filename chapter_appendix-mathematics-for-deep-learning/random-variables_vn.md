@@ -1202,7 +1202,7 @@ The question of finding the marginal distribution is taking this function, and u
 
 Cụ thể, giả sử rằng ta có hai biến ngẫu nhiên $X, Y$ với mật độ đồng thời cho bởi $p _ {X, Y}(x, y)$.
 Ta sẽ sử dụng chỉ số dưới để chỉ mật độ này của biến ngẫu nhiên nào.
-Nhiệm vụ tìm kiếm phân phối biên sẽ lợi dụng hàm này, và sử dụng nó để tìm $p _ X(x)$.
+Nhiệm vụ tìm kiếm phân phối biên sẽ sử dụng hàm này để tìm $p _ X(x)$.
 
 
 <!--
@@ -1211,7 +1211,7 @@ Recall that the density is the function $p _ X$ so that
 -->
 
 Giống như mọi việc khác, tốt nhất là đưa ra một bức tranh trực quan để có thể suy ra cái gì là đúng.
-Nhắc lại rằng mật độ là hàm $p _ X$ thoả mãn
+Nhắc lại rằng hàm mật độ $p _ X$ thoả mãn
 
 
 $$
@@ -1250,7 +1250,7 @@ $$
 ![By summing along the columns of our array of probabilities, we are able to obtain the marginal distribution for just the random variable represented along the $x$-axis.](../img/Marginal.svg)
 -->
 
-![Bằng cách lấy tổng xác suất theo cột trên mảng, ta có thể thu được phân phối biên cho biến ngẫu nhiên được biểu diễn theo trục $x$](../img/Marginal.svg)
+![Bằng cách lấy tổng theo cột trên mảng xác suất, ta có thể thu được phân phối biên cho biến ngẫu nhiên được biểu diễn theo trục $x$](../img/Marginal.svg)
 :label:`fig_marginal`
 
 
@@ -1259,7 +1259,7 @@ This tells us to add up the value of the density along a series of squares in a 
 Indeed, after canceling one factor of epsilon from both sides, and recognizing the sum on the right is the integral over $y$, we can conclude that
 -->
 
-Điều này cho ta thấy rằng cần lấy tổng giá trị mật độ theo một chuỗi các hình vuông theo một đường thẳng như chỉ ra trong :numref:`fig_marginal`.
+Điều này tức là lấy tổng giá trị mật độ trên chuỗi các hình vuông theo cột như trong :numref:`fig_marginal`.
 Thực vậy, sau khi khử số hạng epsilon cả hai vế, và nhận ra tổng vế phải chính là tích phân trên $y$, ta có thể kết luận rằng
 
 
@@ -1288,8 +1288,8 @@ This tells us that to get a marginal distribution, we integrate over the variabl
 This process is often referred to as *integrating out* or *marginalized out* the unneeded variables.
 -->
 
-Điều này cho thấy để thu được phân phối biên, ta cần lấy tích phân trên các biến ta không quan tâm đến.
-Quá trình này thường được gọi là *integrating out* hay *marginalized out* những biến không cần thiết.
+Điều này cho thấy để thu được phân phối biên của một biến, ta cần lấy tích phân trên các biến còn lại.
+Quá trình này thường được gọi là *lấy tích phân - integrating out* hay *biên hóa - marginalized out* những biến không cần thiết.
 
 
 <!--
@@ -1305,7 +1305,7 @@ This measures the degree that two random variable fluctuate together.
 -->
 
 Khi đối mặt với nhiều biến ngẫu nhiên, có thêm một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
-Thông số này đo mức độ biến thiên giữa hai biến ngẫu nhiên.
+Thông số này đo mức độ biến thiên cùng nhau của hai biến ngẫu nhiên.
 
 
 <!--
@@ -1351,7 +1351,7 @@ Let us compute the covariance. First, note $\mu_X = 2$ and $\mu_Y = 1$, so we ma
 -->
 
 trong đó $p$ là tham số trong đoạn $[0,1]$ ta có thể chọn.
-Chú ý rằng nếu $p=1$ thì chúng luôn luôn cùng là giá trị lớn nhất và giá trị nhỏ nhất của chúng,
+Chú ý rằng nếu $p=1$ thì chúng luôn là giá trị lớn nhất và nhỏ nhất một cách đồng thời,
 và nếu $p=0$ thì chúng chắc chắn mang giá trị ngược nhau (một biến lớn trong khi biến còn lại nhỏ và ngược lại).
 Nếu $p=1/2$ thì bốn khả năng có xác suất xảy ra bằng nhau, và không cái nào liên quan lẫn nhau.
 Hãy cùng tính hiệp phương sai. Đầu tiên, chú ý $\mu_X = 2$ và $\mu_Y = 1$, để ta có thể tính bằng :eqref:`eq_cov_def`:
@@ -1386,7 +1386,7 @@ Indeed a quick computation shows that these random variables have covariance zer
 -->
 
 Chú ý nhanh là hiệp phương sai chỉ đo mối quan hệ tuyến tính.
-Các quan hệ phức tạp hơn như $X = Y^2$ trong đó $Y$ được chọn ngẫu nhiên từ $\{-2, -1, 0, 1, 2\}$ với xác suất bằng nhau có thể bị bỏ qua.
+Các quan hệ phức tạp hơn như $X = Y^2$, trong đó $Y$ được chọn ngẫu nhiên với xác suất bằng nhau từ $\{-2, -1, 0, 1, 2\}$, có thể bị bỏ qua.
 Quả thực qua tính toán nhanh có thể chỉ ra rằng hai biến ngẫu nhiên này có hiệp phương sai bằng không, mặc dù một biến là hàm tất định của biến còn lại.
 
 
