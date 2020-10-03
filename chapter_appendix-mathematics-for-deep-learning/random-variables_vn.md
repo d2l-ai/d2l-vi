@@ -1481,7 +1481,7 @@ $$
 With knowledge of covariances, we can expand this relationship.  Indeed, some algebra can show that in general,
 -->
 
-Với kiến thức về phương sai, ta có thể khai triển hệ thức này. Quả nhiên, một vài đại số có thể chứng minh điều đó nói chung,
+Với kiến thức về phương sai, ta có thể khai triển hệ thức này. Quả nhiên, một vài đại số có thể chứng minh tổng quát rằng
 
 
 $$
@@ -1543,7 +1543,7 @@ between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $
 -->
 
 ta thấy rằng đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng con số này 
-nằm giữa $-1$ và $1$ với $1$ tương quan cực đại dương tính, với $-1$ mang ý nghĩa tương quan cực đại âm tính. 
+nằm giữa $-1$ và $1$ với $1$ tương quan cực đại dương, với $-1$ mang ý nghĩa tương quan cực đại âm. 
 
 
 <!--
@@ -1552,7 +1552,7 @@ so we can compute the correlation between the two random variables using :eqref:
 -->
 
 Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta thấy rằng nếu $\sigma_X = 1$ và $\sigma_Y = 2$, 
-thì ta có thể tính toán tương quan giữa hai biến ngẫu nhiên sử dụng hệ thức :eqref:`eq_cor_def` để xem xét
+thì ta có thể tính toán tương quan giữa hai biến ngẫu nhiên sử dụng hệ thức :eqref:`eq_cor_def` để có
 
 $$
 \rho(X, Y) = \frac{4p-2}{1\cdot 2} = 2p-1.
@@ -1563,7 +1563,7 @@ $$
 This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 -->
 
-Điều này bây giờ nằm trong khoảng $-1$ và $1$ với kỳ vọng hành vi $1$ mang ý nghĩa nhiều tương quan nhất và $-1$ mang ý nghĩa ít tương quan nhất.
+Điều này bây giờ nằm trong khoảng $-1$ và $1$ với kỳ vọng hành vi $1$ mang ý nghĩa tương quan nhiều nhất và $-1$ mang ý nghĩa tương quan ít nhất.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
