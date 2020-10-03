@@ -521,8 +521,10 @@ On the other extreme, if $X$ and $Y$ are independent then $H(X, Y) = H(X) + H(Y)
 Indeed we will always have that the information contained in a pair of random variables is no smaller than the entropy of either random variable and no more than the sum of both.
 -->
 
-*dịch đoạn phía trên*
-
+Ta có thể xem :eqref:`eq_joint_ent_def` như tổng sự ngẫu nhiên của cặp biến ngẫu nhiên.
+Ở một cực, nếu $X = Y$ là hai biến ngẫu nhiên giống hệt nhau, thông tin trong cặp biến này chính là thông tin của từng biến và ta sẽ có $H(X,Y) = H(X) = H(Y)$.
+Ở cực còn lại, nếu $X$ và $Y$ độc lập thì $H(X,Y) = H(X) + H(Y)$.
+Tất nhiên, thông tin chứa đựng trong một cặp biến ngẫu nhiên sẽ không thể nhỏ hơn entropy của từng biến ngẫu nhiên và không thể lớn hơn tổng entropy của cả hai.
 
 $$
 H(X), H(Y) \le H(X, Y) \le H(X) + H(Y).
@@ -533,8 +535,7 @@ $$
 Let us implement joint entropy from scratch.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy cùng lập trình entropy đồng thời từ đầu.
 
 ```{.python .input}
 def joint_entropy(p_xy):
@@ -573,7 +574,7 @@ joint_entropy(tf.constant([[0.1, 0.5], [0.1, 0.3]]))
 Notice that this is the same *code* as before, but now we interpret it differently as working on the joint distribution of the two random variables.
 -->
 
-*dịch đoạn phía trên*
+Hãy để ý rằng đây chính là đoạn *mã* từ trước, nhưng giờ ta hiểu nó theo cách khác bởi nó đang làm việc với phân phối đồng thời của hai biến ngẫu nhiên.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -583,7 +584,7 @@ Notice that this is the same *code* as before, but now we interpret it different
 ### Conditional Entropy
 -->
 
-### *dịch tiêu đề trên*
+### Entropy có Điều kiện
 
 
 <!--
@@ -596,16 +597,20 @@ Indeed, the image of a digit should already contain the information about what d
 Thus, to continue to extend our vocabulary of information theory, we need to be able to reason about the information content in a random variable conditional on another.
 -->
 
-*dịch đoạn phía trên*
-
+Entropy đồng thời định nghĩa phía trên là lượng thông tin chứa đựng trong một cặp biến ngẫu nhiên.
+Đại lượng này khá hữu ích, nhưng thường nó không phải là thứ mà ta quan tâm. Hãy xem xét ngữ cảnh học máy.
+Gọi $X$ là biến ngẫu nhiên (hoặc vector biến ngẫu nhiên) mô tả giá trị các điểm ảnh trong một bức ảnh, và $Y$ là biến ngẫu nhiên mô tả nhãn lớp.
+$X$ nên chứa một lượng thông tin rất lớn---một bức ảnh tự nhiên là một thứ khá phức tạp.
+Tuy nhiên, lượng thông tin chứa đựng trong $Y$ nên nhỏ một khi ta đã thấy bức ảnh.
+Tất nhiên, bức ảnh chứa một chữ số cũng nên chứa thông tin về việc đó là chữ số nào, trừ khi chữ số trong ảnh không thể đọc được.
+Vì vậy, để tiếp tục mở rộng kho từ vựng về lý thuyết thông tin, ta cần phải suy luận được lượng thông tin trong một biến ngẫu nhiên khi biết một biến khác.
 
 <!--
 In the probability theory, we saw the definition of the *conditional probability* to measure the relationship between variables.
 We now want to analogously define the *conditional entropy* $H(Y \mid X)$.  We can write this as 
 -->
 
-*dịch đoạn phía trên*
-
+Trong lý thuyết xác suất, ta đã thấy định nghĩa của *xác suất có điều kiện* dùng để đo lường mối quan hệ giữa các biến.
 
 $$ H(Y \mid X) = - E_{(x, y) \sim P} [\log p(y \mid x)],$$
 :eqlabel:`eq_cond_ent_def`
@@ -616,8 +621,8 @@ where $p(y \mid x) = \frac{p_{X, Y}(x, y)}{p_X(x)}$ is the conditional probabili
 Specifically, if $(X, Y)$ is a pair of discrete random variables, then 
 -->
 
-*dịch đoạn phía trên*
-
+trong đó $p(y \mid x) = \frac{p_{X, Y}(x, y)}{p_X(x)}$ là xác suất có điều kiện.
+Cụ thể, nếu $(X,Y)$ là một cặp biến ngẫu nhiên rời rạc, ta có
 
 $$H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log p(y \mid x).$$
 
@@ -626,8 +631,7 @@ $$H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log p(y \mid x).$$
 If $(X, Y)$ is a pair of continuous random variables, then the *differential conditional entropy* is similarly defined as 
 -->
 
-*dịch đoạn phía trên*
-
+Nếu $(X,Y)$ là một cặp biến ngẫu nhiên liện tục, *entropy có điều kiện vi phân* được định nghĩa tương tự như sau
 
 $$H(Y \mid X) = - \int_x \int_y p(x, y) \ \log p(y \mid x) \;dx \;dy.$$
 
@@ -637,8 +641,8 @@ It is now natural to ask, how does the *conditional entropy* $H(Y \mid X)$ relat
 Using the definitions above, we can express this cleanly:
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ một câu hỏi tự nhiên là: *entropy có điều kiện* $H(Y \mid X)$ có mối quan hệ gì với entropy $H(X)$ và entropy đồng thời $H(X,Y)$?
+Sử dụng các định nghĩa ở trên, ta có thể biểu diễn mối quan hệ đó một cách gọn gàng:
 
 $$H(Y \mid X) = H(X, Y) - H(X).$$
 
