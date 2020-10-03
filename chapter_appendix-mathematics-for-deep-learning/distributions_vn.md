@@ -236,7 +236,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_discrete_uniform_cdf`.
 -->
 
-Bây giờ, ta hãy vẽ hàm phân phối xác suất :eqref:`eq_discrete_uniform_cdf`.
+Bây giờ, ta hãy vẽ hàm phân phối tích luỹ :eqref:`eq_discrete_uniform_cdf`.
 
 
 ```{.python .input}
