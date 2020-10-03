@@ -91,7 +91,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cas
 The probability mass function is plotted below.
 -->
 
-Hàm khối lượng xác suất được vẽ dưới đây
+Hàm khối xác suất được vẽ dưới đây
 
 
 ```{.python .input}
