@@ -1562,7 +1562,7 @@ This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning m
 As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$. Then, one can compute that
 -->
 
-Một ví dụ khác, xem xét $X$ như bất kỳ biến ngẫu nhiên nào, và $Y=aX+b$ như bất kỳ hàm tuyến tính xác định nào của $X$. Vậy, ta có thể tính 
+Một ví dụ khác, xem xét biến ngẫu nhiên $X$ bất kỳ, và $Y=aX+b$ là một hàm tuyến tính tất định của $X$. Vậy, ta có thể tính 
 
 
 $$\sigma_{Y} = \sigma_{aX+b} = |a|\sigma_{X},$$
@@ -1574,7 +1574,7 @@ $$\mathrm{Cov}(X, Y) = \mathrm{Cov}(X, aX+b) = a\mathrm{Cov}(X, X) = a\mathrm{Va
 and thus by :eqref:`eq_cor_def` that
 -->
 
-và do đó :eqref:`eq_cor_def` rằng
+và do đó nhờ :eqref:`eq_cor_def` ta có
 
 
 $$
@@ -1595,7 +1595,7 @@ rằng tương quan tính toán bậc và định hướng hai biến ngẫu nhi
 Let us again plot a collection of random variables with tunable correlation.
 -->
 
-Ta hãy lên một bộ sưu tập các biến ngẫu nhiên các tương quan có thể điều chỉnh.
+Ta hãy minh họa một vài biến ngẫu nhiên với tương quan có thể điều chỉnh.
 
 
 ```{.python .input}
@@ -1655,7 +1655,7 @@ d2l.plt.show()
 Let us list a few properties of the correlation below.
 -->
 
-Ta hãy lên danh sách một vài thuộc tính của tương quan dưới đây.
+Ta liệt kê một vài tính chất của tương quan dưới đây.
 
 
 <!--
@@ -1665,7 +1665,7 @@ Ta hãy lên danh sách một vài thuộc tính của tương quan dưới đâ
 -->
 
 * Đối với bất kỳ biến ngẫu nhiên $X$ nào, $\rho(X, X) = 1$.
-* Đối với bất kỳ hai biến ngẫu nhiên $X, Y$, số $a$ và $b$ nào, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* Đối với hai biến ngẫu nhiên $X, Y$ và hai số $a$ và $b$ bất kỳ, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
 * Nếu $X$ và $Y$ độc lập với phương sai khác không thì $\rho(X, Y) = 0$.
 
 
@@ -1688,8 +1688,8 @@ This looks like a sum of a product of terms divided by the square root of sums o
 This is exactly the formula for the cosine of the angle between two vectors $\mathbf{v}, \mathbf{w}$ with the different coordinates weighted by $p_{ij}$:
 -->
 
-Phần này trông như tổng của một tích các số hạng được chia bởi căn bặc hai của tổng các số hạng.
-Điều này chính xác là công thức cho cô-sin của góc giữa hai vector  $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ khác bởi $p_{ij}$:
+Đây giống như tổng của một tích các số hạng chia cho căn bặc hai của tổng bình phương các số hạng.
+Điều này chính xác là công thức cho cô-sin của góc giữa hai vector  $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ $p_{ij}$:
 
 
 $$
@@ -1702,7 +1702,7 @@ Indeed if we think of norms as being related to standard deviations, and correla
 much of the intuition we have from geometry can be applied to thinking about random variables.
 -->
 
-Quả nhiên nếu ta nghĩ về các chuẩn liên quan tới độ lệch chuẩn, và tương quan là cô-sin của các góc,
+Quả nhiên nếu ta nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và tương quan là cô-sin của các góc,
 các trực giác ta có từ hình học có thể được áp dụng vào tư duy về các biến ngẫu nhiên. 
 
 
@@ -1727,17 +1727,17 @@ We may marginalize joint densities by integrating over unwanted random variables
 
 * Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể lấy một dãy liên tục các giá trị. 
 Chúng có một vài cản trở kỹ thuật mà khó hơn để giải quyết hơn nếu so sánh với biến ngẫu nhiên rời rạc.
-* Xác suất của hàm mật độ cho phép ta làm việc cùng với các biến ngẫu nhiên liên tục bằng việc cung cấp 
-một hàm số mà diện tích dưới đường cong ở một khoảng cho xác suất tìm được một điểm mẫu ở khoảng ấy.
-* Hàm phân phối tích lũy là xác suất của quan sát biến ngẫu nhiên ít hơn một ngưỡng nhất định.
-Nó có thể cung cấp một quan điểm thay thế hữu ích hợp nhất các biến rời rạc và liên tục.
-* Giá trị trung bình là giá trị trung bình của một biến ngẫu nhiên.
-* Phương sai là bình phương kỳ vọng của sự khác biệt giữa biến ngẫu nhiên và giá trị trung bình của nó.
+* Hàm mật độ xác suất cho phép ta làm việc cùng với các biến ngẫu nhiên liên tục bằng việc cung cấp 
+một hàm số mà diện tích dưới đường cong ở một khoảng là xác suất tìm được một điểm mẫu trong khoảng đó.
+* Hàm phân phối tích lũy là xác suất biến ngẫu nhiên nhận giá trị nhỏ hơn một ngưỡng nhất định.
+Đây là quan điểm thay thế hữu ích có thể hợp nhất các biến rời rạc và liên tục.
+* Giá trị kỳ vọng là giá trị trung bình của một biến ngẫu nhiên.
+* Phương sai là bình phương kỳ vọng của sự chênh lệch giữa biến ngẫu nhiên và giá trị trung bình của nó.
 * Độ lệch chuẩn là căn bậc hai của phương sai.
-Nó có thể được coi là việc đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
-* Bất đẳng thức Chebyshev cho phép ta làm cho trực giác này trở nên chặt chẽ bằng cách đưa ra một khoảng rõ ràng có chứa biến ngẫu nhiên hầu hết thời gian.
-* Mật độ chung cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan.
-Ta có thể loại bỏ mật độ chung bằng cách tích hợp các biến ngẫu nhiên không mong muốn để có được phân phối của biến ngẫu nhiên mong muốn.
+Nó có thể dùng để đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
+* Bất đẳng thức Chebyshev chặt chẽ hóa điều này bằng cách đưa ra một khoảng rõ ràng mà biến ngẫu nhiên hầu hết sẽ rơi vào.
+* Mật độ kết hợp (*joint density*) cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan.
+Ta có thể loại bỏ mật độ kết hợp bằng cách tích phân trên miền của các biến ngẫu nhiên khác để có được phân phối của biến ngẫu nhiên mong muốn.
 * Hiệp phương sai và hệ số tương quan cung cấp một cách để đo lường bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
 
 
@@ -1754,13 +1754,13 @@ and I observed $25\%$ of my samples taking a value larger than $9$." Do you beli
 $x, y \in [0,1]$ and $p_{XY}(x, y) = 0$ otherwise. What is the covariance of $X$ and $Y$?
 -->
 
-1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được cho bởi $p(x) = \frac{1}{x^2}$ với $x \ge 1$ và trái lại thì bằng $p(x) = 0$. Vậy $P(X > 2)$ là gì?
+1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được cho bởi $p(x) = \frac{1}{x^2}$ nếu $x \ge 1$ và trái lại thì $p(x) = 0$. Tính $P(X > 2)$.
 2. Phân phối Laplace là một biến ngẫu nhiên có mật độ được cho bởi $p(x = \frac{1}{2}e^{-|x|}$.
 Giá trị trung bình và độ lệch chuẩn của hàm này là gì?
 Gợi ý $\int_0^\infty xe^{-x} \; dx = 1$ và $\int_0^\infty x^2e^{-x} \; dx = 2$.
 3. Tôi bước đến gần bạn trên phố và nói "Tôi có một biến ngẫu nhiên với giá trị trung bình là $1$, độ lệch chuẩn là $2$,
 và tôi quan sát thấy $25\%$ trong số các mẫu của tôi có giá trị lớn hơn $9$." Bạn có tin tôi không? Tại sao hoặc tại sao không?
-4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ chung cho bởi $p_{XY}(x, y) = 4xy$ đối với 
+4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ kết hợp $p_{XY}(x, y) = 4xy$ nếu 
 $x, y \in [0,1]$ và trái lại thì $p_{XY}(x, y) = 0$. Vậy hiệp phương sai của $X$ và $Y$ là bao nhiêu?
 
 
