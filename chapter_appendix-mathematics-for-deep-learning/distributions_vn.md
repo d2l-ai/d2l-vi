@@ -68,7 +68,7 @@ If we have a random variable $X$ with this distribution, we will write
 -->
 
 Đây là biến ngẫu nhiên đơn giản nhất thường gặp.
-Biến ngẫu nhiên này mã hóa tung một đồng xu cho giá trị $1$ với xác suất $p$ và $0$ với xác suất $1-p$.
+Biến ngẫu nhiên này biểu diễn giá trị mặt ngửa $1$ khi tung một đồng xu với xác suất $p$ và mặt sấp $0$ với xác suất $1-p$.
 Nếu ta có một biến ngẫu nhiên $X$ với phân phối này, ta sẽ viết
 
 $$
