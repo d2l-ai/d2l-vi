@@ -180,7 +180,7 @@ tf.cast(tf.random.uniform((10, 10)) < p, dtype=tf.float32)
 ## Discrete Uniform
 -->
 
-##Phân phối đồng nhất rời rạc
+## Phân phối Đồng nhất Rời rạc
 
 
 <!--
