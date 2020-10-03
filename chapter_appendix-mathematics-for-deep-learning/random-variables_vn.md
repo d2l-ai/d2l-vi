@@ -895,7 +895,7 @@ Once we do this, our continuous random variable has been made discrete and we ca
 -->
 
 Toàn bộ phần trên đều chỉ xét đến biến ngẫu nhiên rời rạc, tuy nhiên trường hợp biến ngẫu nhiên liên tục cũng tương tự.
-Để hiểu cách hoạt động của phần này một cách trực quan, hãy tưởng tượng ta chia trục số nguyên thành nhiều khoảng với độ dài $\epsilon$ trong khoảng $[\epsilon i, \epsilon (i+1)]$.
+Để hiểu cách hoạt động của các biến liên tục một cách trực quan, hãy tưởng tượng ta chia trục số nguyên thành nhiều khoảng với độ dài $\epsilon$ trong khoảng $[\epsilon i, \epsilon (i+1)]$.
 Sau khi thực hiện điều này, biến ngẫu nhiên liên tục trên trở thành dạng rời rạc và ta có thể áp dụng :eqref:`eq_exp_def` dưới dạng
 
 
@@ -911,7 +911,7 @@ $$
 where $p_X$ is the density of $X$. This is an approximation to the integral of $xp_X(x)$, so we can conclude that
 -->
 
-trong đó $p_X$ là mật độ của  $X$. Đây là xấp xỉ tích phân của  $xp_X(x)$, do đó ta có thể kết luận rằng
+trong đó $p_X$ là mật độ của $X$. Đây là xấp xỉ tích phân của  $xp_X(x)$, do đó ta có thể kết luận rằng
 
 
 $$
@@ -923,7 +923,7 @@ $$
 Similarly, using :eqref:`eq_var_def` the variance can be written as
 -->
 
-Tương tự, áp dụng :eqref:`eq_var_def`, phương sai có thể biểu diễn như sau
+Tương tự, áp dụng :eqref:`eq_var_def`, phương sai có thể được biểu diễn như sau
 
 
 $$
@@ -936,7 +936,7 @@ Everything stated above about the mean, the variance, and the standard deviation
 For instance, if we consider the random variable with density
 -->
 
-Tất cả những phát biểu trên về kỳ vọng, phương sai và độ lệch chuẩn đều có thể áp dụng trong trường hợp này.
+Tất cả những gì đã nêu phía trên về kỳ vọng, phương sai và độ lệch chuẩn đều có thể áp dụng trong trường hợp này.
 Ví dụ, nếu ta xét biến ngẫu nhiên với mật độ
 
 
@@ -970,7 +970,7 @@ $$
 As a warning, let us examine one more example, known as the *Cauchy distribution*. This is the distribution with p.d.f. given by
 -->
 
-Hãy cũng quan sát một ví dụ nữa như một cảnh báo, được gọi là *phân phối Cauchy (Cauchy distribution)*. Đây là phân phối với p.d.f có dạng
+Để lưu ý, hãy cũng quan sát thêm một ví dụ là *phân phối Cauchy (Cauchy distribution)*. Đây là phân phối với p.d.f có dạng
 
 
 $$
@@ -1061,7 +1061,7 @@ d2l.plot(x, p, 'x', 'integrand')
 This function clearly has infinite area under it since it is essentially the constant one with a small dip near zero, and indeed we could show that
 -->
 
-Hàm này rõ ràng có phần diện tích vô hạn dưới nó do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực ta có thể chỉ ra rằng
+Hàm này rõ ràng có phần diện tích bên dưới là vô hạn do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực ta có thể chỉ ra rằng
 
 
 $$
@@ -1104,8 +1104,8 @@ getting large values are large enough to make things like the mean or variance u
 
 Các nhà khoa học học máy định nghĩa mô hình của họ sao cho ta thường không cần phải đối mặt với những vấn đề này,
 và trong đại đa số các trường hợp sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai đúng nghĩa.
-Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* (nghĩa là những biến ngẫu nhiên mà xác suất
-thu được các giá trị lớn đủ lớn để khiến các giá trị như kỳ vọng hay phương sai không xác định) có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
+Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* (tức những biến ngẫu nhiên mà xác suất
+thu được các giá trị lớn đủ lớn để khiến các giá trị như kỳ vọng hay phương sai không xác định) vẫn có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
 
 
 <!--
@@ -1127,7 +1127,7 @@ We need to develop the mathematical language to handle these correlated continuo
 -->
 
 Toàn bộ công việc phía trên đều giả sử rằng ta đang làm việc với một biến ngẫu nhiên đơn lẻ mang giá trị thực.
-Nhưng nếu ta phải đối mặt với hai hay nhiều hơn những biến ngẫu nhiên có khả năng tương quan cao?
+Nhưng nếu ta phải đối mặt với hai hay nhiều biến ngẫu nhiên hơn, mà thường giữa chúng còn có mối tương quan cao, thì sao?
 Tình huống này rất thường gặp trong học máy: thử tưởng tượng các biến ngẫu nhiên như $R_{i, j}$
 mã hoá giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay $P_t$ là một biến ngẫu nhiên được xác định bởi giá chứng khoán tại thời điểm $t$.
 Những điểm ảnh lân cận thường có màu tương tự, và khoảng thời gian lân cận thường có giá tương tự.
@@ -1176,7 +1176,7 @@ for some function $p(x, y)$.  This is referred to as the joint density of $X$ an
 Similar properties are true for this as we saw in the single variable case. Namely:
 -->
 
-với một số hàm $p(x, y)$. Điều này được gọi là mật độ đồng thời của $X$ và $Y$.
+với một hàm $p(x, y)$ nào đó. Đây được gọi là mật độ đồng thời của $X$ và $Y$.
 Những thuộc tính tương tự là đúng với trường hợp này như ta đã thấy trong trường hợp biến đơn. Tức là:
 
 
@@ -1192,7 +1192,7 @@ The same properties of being non-negative, and having total integral of one stil
 -->
 
 Bằng cách này, ta có thể xử lý nhiều biến ngẫu nhiên có khả năng tương quan với nhau.
-Nếu ta cần phải làm việc với nhiều hơn hai biến ngẫu nhiên, ta có thể mở rộng mật độ nhiều chiều với bất kể số toạ độ nào ta cần bằng cách xét $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
+Nếu ta cần phải làm việc với nhiều hơn hai biến ngẫu nhiên, ta có thể mở rộng hàm mật độ đa chiều với bất kể số toạ độ nào ta cần bằng cách xét $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
 Những thuộc tính như không âm, có tổng tích phân bằng một vẫn đúng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
