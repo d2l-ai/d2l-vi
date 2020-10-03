@@ -218,7 +218,7 @@ $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1
 Let us first plot the probability mass function.
 -->
 
-Trước hết ta hãy vẽ hàm khối lượng xác suất.
+Trước hết ta hãy vẽ hàm khối xác suất.
 
 
 ```{.python .input}
