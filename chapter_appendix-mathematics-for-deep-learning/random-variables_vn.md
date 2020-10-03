@@ -1662,7 +1662,7 @@ This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning m
 As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$. Then, one can compute that
 -->
 
-*dịch đoạn phía trên*
+Một ví dụ khác, xem xét biến ngẫu nhiên $X$ bất kỳ, và $Y=aX+b$ là một hàm tuyến tính tất định của $X$. Vậy, ta có thể tính 
 
 
 $$\sigma_{Y} = \sigma_{aX+b} = |a|\sigma_{X},$$
@@ -1674,7 +1674,7 @@ $$\mathrm{Cov}(X, Y) = \mathrm{Cov}(X, aX+b) = a\mathrm{Cov}(X, X) = a\mathrm{Va
 and thus by :eqref:`eq_cor_def` that
 -->
 
-*dịch đoạn phía trên*
+và do đó nhờ :eqref:`eq_cor_def` ta có
 
 
 $$
@@ -1687,14 +1687,15 @@ Thus we see that the correlation is $+1$ for any $a > 0$, and $-1$ for any $a < 
 that correlation measures the degree and directionality the two random variables are related, not the scale that the variation takes.
 -->
 
-*dịch đoạn phía trên*
+Đến đây ta thấy rằng tương quan là $+1$ cho bất kỳ $a > 0$, và $-1$ cho bất kỳ $a < 0$ mô tả
+rằng tương quan tính toán bậc và định hướng hai biến ngẫu nhiên giữa chúng, không phải tỷ lệ của sự biến đổi.
 
 
 <!--
 Let us again plot a collection of random variables with tunable correlation.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy minh họa một vài biến ngẫu nhiên với tương quan có thể điều chỉnh.
 
 
 ```{.python .input}
@@ -1754,7 +1755,7 @@ d2l.plt.show()
 Let us list a few properties of the correlation below.
 -->
 
-*dịch đoạn phía trên*
+Ta liệt kê một vài tính chất của tương quan dưới đây.
 
 
 <!--
@@ -1763,7 +1764,9 @@ Let us list a few properties of the correlation below.
 * If $X$ and $Y$ are independent with non-zero variance then $\rho(X, Y) = 0$.
 -->
 
-*dịch đoạn phía trên*
+* Đối với bất kỳ biến ngẫu nhiên $X$ nào, $\rho(X, X) = 1$.
+* Đối với hai biến ngẫu nhiên $X, Y$ và hai số $a$ và $b$ bất kỳ, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* Nếu $X$ và $Y$ độc lập với phương sai khác không thì $\rho(X, Y) = 0$.
 
 
 <!--
@@ -1771,7 +1774,8 @@ As a final note, you may feel like some of these formulae are familiar.
 Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see that this is
 -->
 
-*dịch đoạn phía trên*
+Lưu ý cuối cùng, bạn có thể thấy rằng các công thức vừa rồi khá giống nhau.
+Quả nhiên, nếu ta khai triển tất cả giả sử $\mu_X = \mu_Y = 0$, ta thấy rằng đây là 
 
 
 $$
@@ -1784,7 +1788,8 @@ This looks like a sum of a product of terms divided by the square root of sums o
 This is exactly the formula for the cosine of the angle between two vectors $\mathbf{v}, \mathbf{w}$ with the different coordinates weighted by $p_{ij}$:
 -->
 
-*dịch đoạn phía trên*
+Đây giống như tổng của một tích các số hạng chia cho căn bặc hai của tổng bình phương các số hạng.
+Điều này chính xác là công thức cho cô-sin của góc giữa hai vector  $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ $p_{ij}$:
 
 
 $$
@@ -1797,7 +1802,8 @@ Indeed if we think of norms as being related to standard deviations, and correla
 much of the intuition we have from geometry can be applied to thinking about random variables.
 -->
 
-*dịch đoạn phía trên*
+Quả nhiên nếu ta nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và tương quan là cô-sin của các góc,
+các trực giác ta có từ hình học có thể được áp dụng vào tư duy về các biến ngẫu nhiên. 
 
 
 ## Tóm tắt
@@ -1819,7 +1825,20 @@ We may marginalize joint densities by integrating over unwanted random variables
 * The covariance and correlation coefficient provide a way to measure any linear relationship between two correlated random variables.
 -->
 
-*dịch đoạn phía trên*
+* Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể lấy một dãy liên tục các giá trị. 
+Chúng có một vài cản trở kỹ thuật mà khó hơn để giải quyết hơn nếu so sánh với biến ngẫu nhiên rời rạc.
+* Hàm mật độ xác suất cho phép ta làm việc cùng với các biến ngẫu nhiên liên tục bằng việc cung cấp 
+một hàm số mà diện tích dưới đường cong ở một khoảng là xác suất tìm được một điểm mẫu trong khoảng đó.
+* Hàm phân phối tích lũy là xác suất biến ngẫu nhiên nhận giá trị nhỏ hơn một ngưỡng nhất định.
+Đây là quan điểm thay thế hữu ích có thể hợp nhất các biến rời rạc và liên tục.
+* Giá trị kỳ vọng là giá trị trung bình của một biến ngẫu nhiên.
+* Phương sai là bình phương kỳ vọng của sự chênh lệch giữa biến ngẫu nhiên và giá trị trung bình của nó.
+* Độ lệch chuẩn là căn bậc hai của phương sai.
+Nó có thể dùng để đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
+* Bất đẳng thức Chebyshev chặt chẽ hóa điều này bằng cách đưa ra một khoảng rõ ràng mà biến ngẫu nhiên hầu hết sẽ rơi vào.
+* Mật độ kết hợp (*joint density*) cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan.
+Ta có thể loại bỏ mật độ kết hợp bằng cách tích phân trên miền của các biến ngẫu nhiên khác để có được phân phối của biến ngẫu nhiên mong muốn.
+* Hiệp phương sai và hệ số tương quan cung cấp một cách để đo lường bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
 
 
 ## Bài tập
@@ -1835,7 +1854,14 @@ and I observed $25\%$ of my samples taking a value larger than $9$." Do you beli
 $x, y \in [0,1]$ and $p_{XY}(x, y) = 0$ otherwise. What is the covariance of $X$ and $Y$?
 -->
 
-*dịch đoạn phía trên*
+1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được cho bởi $p(x) = \frac{1}{x^2}$ nếu $x \ge 1$ và trái lại thì $p(x) = 0$. Tính $P(X > 2)$.
+2. Phân phối Laplace là một biến ngẫu nhiên có mật độ được cho bởi $p(x = \frac{1}{2}e^{-|x|}$.
+Giá trị trung bình và độ lệch chuẩn của hàm này là gì?
+Gợi ý $\int_0^\infty xe^{-x} \; dx = 1$ và $\int_0^\infty x^2e^{-x} \; dx = 2$.
+3. Tôi bước đến gần bạn trên phố và nói "Tôi có một biến ngẫu nhiên với giá trị trung bình là $1$, độ lệch chuẩn là $2$,
+và tôi quan sát thấy $25\%$ trong số các mẫu của tôi có giá trị lớn hơn $9$." Bạn có tin tôi không? Tại sao hoặc tại sao không?
+4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ kết hợp $p_{XY}(x, y) = 4xy$ nếu 
+$x, y \in [0,1]$ và trái lại thì $p_{XY}(x, y) = 0$. Vậy hiệp phương sai của $X$ và $Y$ là bao nhiêu?
 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
@@ -1883,7 +1909,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 9 -->
-* 
+* Trần Yến Thy
+* Nguyễn Văn Cường
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
