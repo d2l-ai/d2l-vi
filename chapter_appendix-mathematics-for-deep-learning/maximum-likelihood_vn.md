@@ -17,14 +17,14 @@ the parameters which make the data have the highest probability are the most lik
 
 Một trong những cách tư duy thường gặp nhất trong học máy là quan điểm về hợp lý cực đại.
 Đây là khái niệm mà khi làm việc với một mô hình xác suất với các tham số chưa biết,
-các tham số làm cho dữ liệu có xác suất cao nhất là những tham số có nhiều khả năng nhất.
+các tham số làm cho dữ liệu có xác suất cao nhất là những tham số hợp lý nhất.
 
 
 <!--
 ## The Maximum Likelihood Principle
 -->
 
-## Định đề hợp lý cực đại
+## Nguyên lý Hợp lý Cực đại
 
 
 <!--
@@ -35,9 +35,9 @@ and $X$ is a sequence of independent coin flips.
 We will look at this example in depth later.
 -->
 
-Điều này có cách giải thích theo kiểu Bayes có thể hữu ích để suy nghĩ.
+Nguyên lý này có cách hiểu theo hướng Bayes khá hữu ích.
 Giả sử rằng ta có một mô hình với các tham số $\boldsymbol{\theta}$ và một tập hợp các mẫu dữ liệu $X$.
-Để rõ ràng, ta có thể tưởng tượng rằng $\boldsymbol{\theta}$ là một giá trị duy nhất đại diện cho xác suất một đồng xu xuất hiện khi lật,
+Cụ thể hơn, ta có thể tưởng tượng rằng $\boldsymbol{\theta}$ là một giá trị duy nhất đại diện cho xác suất một đồng xu ngửa khi tung,
 và $X$ là một chuỗi các lần tung đồng xu độc lập.
 Chúng ta sẽ xem xét ví dụ này sâu hơn ở phần sau.
 
@@ -46,7 +46,7 @@ Chúng ta sẽ xem xét ví dụ này sâu hơn ở phần sau.
 If we want to find the most likely value for the parameters of our model, that means we want to find
 -->
 
-Nếu ta muốn tìm giá trị có khả năng nhất cho các tham số của mô hình của mình, điều đó có nghĩa là ta muốn tìm
+Nếu ta muốn tìm giá trị hợp lý nhất cho các tham số của mô hình, điều đó có nghĩa là ta muốn tìm
 
 
 $$\mathop{\mathrm{argmax}} P(\boldsymbol{\theta}\mid X).$$
@@ -75,13 +75,13 @@ any value in $[0,1]$ without any prior belief it is fair or not (often referred 
 Thus we see that our application of Bayes' rule shows that our best choice of $\boldsymbol{\theta}$ is the maximum likelihood estimate for $\boldsymbol{\theta}$:
 -->
 
-Biểu thức $P(X)$, một tham số xác suất không phân biệt để tạo dữ liệu, hoàn toàn không phụ thuộc vào $\boldsymbol{\theta}$,
-và do đó, bạn có thể bỏ mà không thay đổi lựa chọn tốt nhất của $\boldsymbol{\theta}$.
+Biểu thức $P(X)$ là xác suất tạo dữ liệu hoàn toàn không phụ thuộc vào tham số, tức $\boldsymbol{\theta}$,
+do đó ta có thể bỏ nó mà lựa chọn tốt nhất của $\boldsymbol{\theta}$ vẫn không thay đổi.
 Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào tốt hơn bất kỳ bộ tham số nào khác,
 vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
-Ví dụ, điều này có ý nghĩa trong ví dụ lật đồng xu của chúng ta, trong đó xác suất để ra mặt ngửa có thể là
-bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ sự tin tưởng nào trước đó là giá trị công bằng hay không (thường được gọi là *không thông tin trước đó*).
-Do đó, chúng tôi thấy rằng việc áp dụng quy tắc Bayes cho thấy rằng lựa chọn tốt nhất của chúng tôi về $\boldsymbol{\theta}$ là ước tính khả năng xảy ra tối đa cho $\boldsymbol{\theta}$:
+Điều này có vẻ hợp lý trong ví dụ lật đồng xu, trong đó xác suất để ra mặt ngửa có thể là
+bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ sự tin tưởng nào trước đó rằng đồng xu có công bằng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
+Do đó, ta thấy rằng việc áp dụng quy tắc Bayes sẽ chỉ ra lựa chọn tốt nhất cho $\boldsymbol{\theta}$ là ước lượng hợp lý cực đại cho $\boldsymbol{\theta}$:
 
 $$
 \hat{\boldsymbol{\theta}} = \mathop{\mathrm{argmax}} _ {\boldsymbol{\theta}} P(X \mid \boldsymbol{\theta}).
@@ -92,7 +92,7 @@ $$
 As a matter of common terminology, the probability of the data given the parameters ($P(X \mid \boldsymbol{\theta})$) is referred to as the *likelihood*.
 -->
 
-Theo thuật ngữ thông thường, xác suất của dữ liệu cho trước các tham số ($P(X \mid \boldsymbol{\theta})$) được gọi là *hợp lý*.
+Theo thuật ngữ thông thường, xác suất của dữ liệu biết các tham số ($P(X \mid \boldsymbol{\theta})$) được gọi là *độ hợp lý*.
 
 
 <!--
@@ -109,10 +109,10 @@ Then the probability of getting a tails is $1-\theta$, and so if our observed da
 we can use the fact that independent probabilities multiply to see that 
 -->
 
-Hãy để chúng tôi xem cách này hoạt động như thế nào trong một ví dụ cụ thể.
-Giả sử rằng chúng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất mà một lần lật đồng xu là mặt ngửa.
-Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ của chúng ta  là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
-chúng ta có thể sử dụng thực tế là các xác suất độc lập nhân lên để thấy rằng
+Hãy cùng xem phương pháp này hoạt động như thế nào trong một ví dụ cụ thể.
+Giả sử rằng chúng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất tung đồng xu một lần được mặt ngửa.
+Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ của chúng ta là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
+chúng ta có thể tận dụng việc các xác suất độc lập nhân được với nhau để thấy
 
 
 $$
@@ -124,7 +124,7 @@ $$
 If we flip $13$ coins and get the sequence "HHHTHTTHHHHHT", which has $n_H = 9$ and $n_T = 4$, we see that this is
 -->
 
-Nếu chúng ta lật $ 13 $ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", có $n_H = 9$ và $n_T = 4$, chúng ta thấy rằng đây là
+Nếu chúng ta tung $ 13 $ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", có $n_H = 9$ và $n_T = 4$, chúng ta thấy rằng đây là
 
 
 $$
@@ -139,17 +139,17 @@ everyone would correctly guess $9/13$.
 What this maximum likelihood method will give us is a way to get that number from first principals in a way that will generalize to vastly more complex situations.
 -->
 
-Một điều thú vị về ví dụ này là chúng ta biết câu trả lời.
-Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã lật 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất của ta về xác suất đồng xu đến với chúng ta là bao nhiêu?"
-mọi người sẽ đoán đúng $9/13$.
-Điều mà phương pháp khả năng xảy ra tối đa này sẽ cung cấp cho chúng ta là một cách để lấy con số đó từ các nguyên tắc đầu tiên theo cách tổng quát hóa cho các tình huống phức tạp hơn rất nhiều.
+Một điều thú vị về ví dụ này là chúng ta biết trước câu trả lời.
+Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã tung 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất cho xác suất tung đồng xu được mặt ngửa là bao nhiêu?"
+mọi người sẽ đều đoán đúng $9/13$.
+Điều mà phương pháp khả năng hợp lý cực đại cung cấp cho chúng ta là một cách để thu được con số đó từ các nguyên tắc cơ bản sao cho có thể khái quát được cho các tình huống phức tạp hơn rất nhiều.
 
 
 <!--
 For our example, the plot of $P(X \mid \theta)$ is as follows:
 -->
 
-Để cho ví dụ của ta, cụ thể của $P(X \mid \theta)$ như sau:
+Với ví dụ của ta, đồ thị của $P(X \mid \theta)$ có dạng như sau:
 
 
 ```{.python .input}
@@ -197,11 +197,11 @@ Thus, we could find the maximum likelihood estimate :eqref:`eq_max_like` by find
 and finding the one that gives the highest probability. We compute:
 -->
 
-Giá trị này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$.
-Để xem nó có chính xác ở đó không, chúng ta có thể chuyển sang giải tích.
-Chú ý rằng ở cực đại, hàm là đồng phẳng.
-Do đó, ta có thể tìm ước tính khả năng xảy ra tối đa :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ trong đó đạo hàm bằng 0,
-và tìm giá trị trả về xác suất cao nhất. Ta tính toán:
+Xác suất này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$ như đã dự đoán.
+Để kiếm tra xem nó có nằm chính xác ở đó không, chúng ta có thể tận dụng giải tích.
+Chú ý rằng ở điểm cực đại, hàm số sẽ nằm ngang.
+Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ có đạo hàm bằng 0,
+rồi xem giá trị nào trả về xác suất cao nhất. Ta tính toán:
 
 
 $$
@@ -220,9 +220,9 @@ The first two are clearly minima, not maxima as they assign probability $0$ to o
 The final value does *not* assign zero probability to our sequence, and thus must be the maximum likelihood estimate $\hat \theta = 9/13$.
 -->
 
-Hàm này có ba nghiệm: $0$, $1$ và $9/13$.
-Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng gán xác suất $0$ cho chuỗi của chúng ta.
-Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đó nó phải là ước tính hợp lý cực đại $\hat \theta = 9/13$.
+Phương trình này có ba nghiệm: $0$, $1$ và $9/13$.
+Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng gán xác suất bằng $0$ cho chuỗi kết quả tung đồng xu.
+Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
