@@ -154,7 +154,7 @@ and then follow the directions given by the other, as is seen in :numref:`fig_ad
 
 Một trong những lợi ích của cách hiểu này là phép cộng vector có thể được hiểu theo nghĩa hình học.
 Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
-sau đó tiếp tục đi theo một hướng cho bởi một vector khác, như trong :numref:`fig_add-vec`.
+sau đó tiếp tục đi theo hướng cho bởi một vector khác, như trong :numref:`fig_add-vec`.
 
 <!--
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
