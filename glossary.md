@@ -448,56 +448,57 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | running time                                       | thời gian chạy                            |                                              |
 
 ## S
-| English                             | Tiếng Việt                               | Thảo luận tại                                |
-|-------------------------------------|------------------------------------------|----------------------------------------------|
-| sampling with replacement           | lấy mẫu có hoàn lại                      | [https://git.io/JvQxu](https://git.io/JvQxu) |
-| sampling without replacement        | lấy mẫu không hoàn lại                   | [https://git.io/JvQxu](https://git.io/JvQxu) |
-| satisficing metric                  | phép đo thỏa mãn                         | [https://git.io/JvQxY](https://git.io/JvQxY) |
-| scale                               | (phép) biến đổi tỉ lệ                    |                                              |
-| scalar                              | số vô hướng                              | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| scale invariant                     | bất biến quy mô                          | [https://git.io/Jftwj](https://git.io/Jftwj) |
-| scoring function                    | hàm tính điểm                            |                                              |
-| serialization (programming)         | chuỗi hóa                                |                                              |
-| semantic role labeling              | dán nhãn vai trò ngữ nghĩa               |                                              |
-| semantic segmentation               | phân vùng theo ngữ nghĩa                 |                                              |
-| sentiment classification (analysis) | phân loại (phân tích) cảm xúc            |                                              |
-| sequence-aware (recommender system) | (hệ thống đề xuất) có nhận thức về chuỗi | [https://git.io/JUWLM](https://git.io/JUWLM) |
-| sequence learning                   | học chuỗi                                | [https://git.io/JvQxa](https://git.io/JvQxa) |
-| sequence to sequence                | chuỗi sang chuỗi                         |                                              |
-| sequential partitioning             | phân tách tuần tự                        |                                              |
-| server                              | máy chủ                                  |                                              |
-| sensitivity                         | độ nhạy                                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| shape (in linear algebra)           | kích thước                               | [https://git.io/Jvojn](https://git.io/Jvojn) |
-| significance test                   | kiểm định ý nghĩa                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| skip-gram (model)                   | (mô hình) skip-gram                      |                                              |
-| significance test                   | kiểm định ý nghĩa                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| slicing (an array)                  | cắt chọn (mảng)                          | [https://git.io/JvohH](https://git.io/JvohH) |
-| source data / distribution          | dữ liệu / phân phối gốc                  | [https://git.io/JvQAy](https://git.io/JvQAy) |
-| spam email                          | email rác                                |                                              |
-| speech recognition                  | nhận dạng giọng nói                      |                                              |
-| squashing function                  | hàm ép                                   | [https://git.io/JvQA5](https://git.io/JvQA5) |
-| standard deviation                  | độ lệch chuẩn                            | [https://git.io/Jvohb](https://git.io/Jvohb) |
-| standardize                         | chuẩn tắc hóa                            |                                              |
-| state-of-the-art                    | tân tiến nhất                            |                                              |
-| stationary point                    | điểm dừng                                | [https://git.io/JvohC](https://git.io/JvohC) |
-| statistical inference               | suy luận thống kê                        |                                              |
-| statistical power                   | năng lực thống kê                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| statistical significance            | ý nghĩa thống kê                         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
-| statistical significant             | có ý nghĩa thống kê                      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
-| stochastic gradient descent         | hạ gradient ngẫu nhiên                   |                                              |
-| stop word                           | từ dừng                                  |                                              |
-| style loss (in style transfer)      | mất mát phong cách                       | [https://git.io/JJyeI](https://git.io/JJyeI) |
-| stride                              | sải bước                                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
-| subscript                           | chỉ số dưới                              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
-| subspace estimation                 | ước lượng không gian con                 | [https://git.io/JvojD](https://git.io/JvojD) |
-| subword (NLP)                       | từ con                                   | [https://git.io/JUkWJ](https://git.io/JUkWJ) |
-| superscript                         | chỉ số trên                              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
-| supervised learning                 | học có giám sát                          |                                              |
-| support vector machine (SVM)        | Máy vector hỗ trợ                        |                                              |
-| surprisal (in information theory)   | lượng tin                                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
-| surrogate objective                 | mục tiêu thay thế                        | [https://git.io/JvQxV](https://git.io/JvQxV) |
-| switch                              | bộ chuyển mạch                           |                                              |
-| symbolic graph                      | đồ thị biểu tượng                        | [https://git.io/JvojU](https://git.io/JvojU) |
+| English                               | Tiếng Việt                               | Thảo luận tại                                |
+|:--------------------------------------|:-----------------------------------------|:---------------------------------------------|
+| sampling with replacement             | lấy mẫu có hoàn lại                      | [https://git.io/JvQxu](https://git.io/JvQxu) |
+| sampling without replacement          | lấy mẫu không hoàn lại                   | [https://git.io/JvQxu](https://git.io/JvQxu) |
+| satisficing metric                    | phép đo thỏa mãn                         | [https://git.io/JvQxY](https://git.io/JvQxY) |
+| scale                                 | (phép) biến đổi tỉ lệ                    |                                              |
+| scalar                                | số vô hướng                              | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| scale invariant                       | bất biến quy mô                          | [https://git.io/Jftwj](https://git.io/Jftwj) |
+| scoring function                      | hàm tính điểm                            |                                              |
+| self-information (Information theory) | Hàm lượng thông tin                      |                                              |
+| serialization (programming)           | chuỗi hóa                                |                                              |
+| semantic role labeling                | dán nhãn vai trò ngữ nghĩa               |                                              |
+| semantic segmentation                 | phân vùng theo ngữ nghĩa                 |                                              |
+| sentiment classification (analysis)   | phân loại (phân tích) cảm xúc            |                                              |
+| sequence-aware (recommender system)   | (hệ thống đề xuất) có nhận thức về chuỗi | [https://git.io/JUWLM](https://git.io/JUWLM) |
+| sequence learning                     | học chuỗi                                | [https://git.io/JvQxa](https://git.io/JvQxa) |
+| sequence to sequence                  | chuỗi sang chuỗi                         |                                              |
+| sequential partitioning               | phân tách tuần tự                        |                                              |
+| server                                | máy chủ                                  |                                              |
+| sensitivity                           | độ nhạy                                  | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| shape (in linear algebra)             | kích thước                               | [https://git.io/Jvojn](https://git.io/Jvojn) |
+| significance test                     | kiểm định ý nghĩa                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| skip-gram (model)                     | (mô hình) skip-gram                      |                                              |
+| significance test                     | kiểm định ý nghĩa                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| slicing (an array)                    | cắt chọn (mảng)                          | [https://git.io/JvohH](https://git.io/JvohH) |
+| source data / distribution            | dữ liệu / phân phối gốc                  | [https://git.io/JvQAy](https://git.io/JvQAy) |
+| spam email                            | email rác                                |                                              |
+| speech recognition                    | nhận dạng giọng nói                      |                                              |
+| squashing function                    | hàm ép                                   | [https://git.io/JvQA5](https://git.io/JvQA5) |
+| standard deviation                    | độ lệch chuẩn                            | [https://git.io/Jvohb](https://git.io/Jvohb) |
+| standardize                           | chuẩn tắc hóa                            |                                              |
+| state-of-the-art                      | tân tiến nhất                            |                                              |
+| stationary point                      | điểm dừng                                | [https://git.io/JvohC](https://git.io/JvohC) |
+| statistical inference                 | suy luận thống kê                        |                                              |
+| statistical power                     | năng lực thống kê                        | [https://git.io/Jvoja](https://git.io/Jvoja) |
+| statistical significance              | ý nghĩa thống kê                         | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
+| statistical significant               | có ý nghĩa thống kê                      | [https://git.io/Jvoj1](https://git.io/Jvoj1) |
+| stochastic gradient descent           | hạ gradient ngẫu nhiên                   |                                              |
+| stop word                             | từ dừng                                  |                                              |
+| style loss (in style transfer)        | mất mát phong cách                       | [https://git.io/JJyeI](https://git.io/JJyeI) |
+| stride                                | sải bước                                 | [https://git.io/Jfe1I](https://git.io/Jfe1I) |
+| subscript                             | chỉ số dưới                              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
+| subspace estimation                   | ước lượng không gian con                 | [https://git.io/JvojD](https://git.io/JvojD) |
+| subword (NLP)                         | từ con                                   | [https://git.io/JUkWJ](https://git.io/JUkWJ) |
+| superscript                           | chỉ số trên                              | [https://git.io/Jvoh1](https://git.io/Jvoj1) |
+| supervised learning                   | học có giám sát                          |                                              |
+| support vector machine (SVM)          | Máy vector hỗ trợ                        |                                              |
+| surprisal (in information theory)     | lượng tin                                | [https://git.io/Jvoh3](https://git.io/Jvoh3) |
+| surrogate objective                   | mục tiêu thay thế                        | [https://git.io/JvQxV](https://git.io/JvQxV) |
+| switch                                | bộ chuyển mạch                           |                                              |
+| symbolic graph                        | đồ thị biểu tượng                        | [https://git.io/JvojU](https://git.io/JvojU) |
 
 ## T
 | English                                | Tiếng Việt                                | Thảo luận tại                                |
