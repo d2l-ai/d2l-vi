@@ -469,7 +469,9 @@ Since each is an independent coin flip which is successful with probability $p$,
 Then, the binomial random variable is
 -->
 
-*dịch đoạn phía trên*
+Biểu diễn dưới dạng toán học.
+Mỗi thí nghiệm là một biến ngẫu nhiên độc lập $X_i$ với $1$ có nghĩa là thành công, và $0$ có nghĩa là thất bại.
+Vì mỗi thí nghiệm là một lần tung đồng xu độc lập với xác suất thành công $p$, ta có thể nói $X_i \sim \mathrm{Bernoulli}(p)$.
 
 
 $$
@@ -481,7 +483,7 @@ $$
 In this case, we will write
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta sẽ viết
 
 
 $$
@@ -495,10 +497,11 @@ in $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ ways each of which has a probability of 
 Thus the cumulative distribution function is
 -->
 
-*dịch đoạn phía trên*
+Để lấy hàm phân phối tích lũy, ta cần chú ý rằng có được chính xác $k$ lần thành công có thể xảy ra theo $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ cách, với mỗi cách có xác suất xảy ra $p^k(1-p)^{n-k}$.
+Do đó, hàm phân phối tích lũy là
 
 
-$$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m}  & k \le x < k+1 \text{ with } 0 \le k < n, \\ 1 & x >= n . \end{cases}$$
+$$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m}  & k \le x < k+1 \text{ với } 0 \le k < n, \\ 1 & x >= n . \end{cases}$$
 :eqlabel:`eq_binomial_cdf`
 
 
@@ -506,7 +509,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m} 
 Let us first plot the probability mass function.
 -->
 
-*dịch đoạn phía trên*
+Trước hết hãy vẽ hàm khối xác suất.
 
 
 ```{.python .input}
@@ -570,7 +573,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_binomial_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy vẽ hàm phân phối tích lũy :eqref:`eq_binomial_cdf`.
 
 
 ```{.python .input}
@@ -611,7 +614,8 @@ While this result is not simple, the means and variances are.
 If $X \sim \mathrm{Binomial}(n, p)$, then:
 -->
 
-*dịch đoạn phía trên*
+Dù không dễ để suy ra công thức, trung bình và phương sai của phân phối được tính như sau.
+Nếu $X \sim \mathrm{Binomial}(n, p)$, thì:
 
 
 * $\mu_X = np$,
@@ -622,7 +626,7 @@ If $X \sim \mathrm{Binomial}(n, p)$, then:
 This can be sampled as follows.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu từ phân phối này theo cách bên dưới.
 
 
 ```{.python .input}
@@ -1343,7 +1347,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
