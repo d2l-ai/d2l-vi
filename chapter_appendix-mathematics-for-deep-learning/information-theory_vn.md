@@ -234,7 +234,7 @@ self_information(1 / 64)
 ## Entropy 
 -->
 
-## *dịch tiêu đề trên*
+## Entropy
 
 
 <!--
@@ -242,7 +242,7 @@ As self-information only measures the information of a single discrete event,
 we need a more generalized measure for any random variable of either discrete or continuous distribution. 
 -->
 
-*dịch đoạn phía trên*
+Do hàm lượng thông tin (*self-information*) chỉ đo lường thông tin từ một biến cố không liên tục đơn lẻ, chúng ta cần một chỉ số khái quát hơn cho bất kỳ một biến ngẫu nhiên cả liên tục và không liên tục.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -252,7 +252,7 @@ we need a more generalized measure for any random variable of either discrete or
 ### Motivating Entropy
 -->
 
-### *dịch tiêu đề trên*
+### Entropy động lực (*Motivating Entropy*)
 
 
 <!--
@@ -261,7 +261,9 @@ It will turn out that the following collection of common-sense statements force 
 A formal version of these axioms, along with several others may be found in :cite:`Csiszar.2008`.
 -->
 
-*dịch đoạn phía trên*
+Hãy thử phân tích cụ thể hơn điều chúng ta muốn. Đây sẽ là một phát biểu không chính thức về những gì chúng ta đã biết về *tiền đề của entropy Shannon*.
+Hoá ra những phát biểu quen thuộc sau đây buộc chúng ta phải có một định nghĩa thống nhất.
+Một phiên bản chính thức của những tiền đề này cùng với một số tiền đề khác có thể được tìm thấy trong :cite:`Csiszar.2008`.
 
 
 <!--
@@ -271,7 +273,10 @@ If they are independent, then it is exactly the sum.
 3.  The information gained when observing (nearly) certain events is (nearly) zero.
 -->
 
-*dịch đoạn phía trên*
+1. Thông tin chúng ta thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào những gì chúng ta gọi là yếu tố, hoặc sự có mặt của các yếu tố bổ sung có xác suất bằng 0.
+2. Thông tin chúng ta thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin chúng ta thu được bằng cách quan sát chúng một cách riêng rẽ.
+Nếu chúng độc lập thì thông tin thu được từ hai cách đều bằng nhau.
+3. Thông tin thu được khi quan sát những biến cố (gần như) chắc chắn thì (gần như) bằng 0.
 
 
 <!--
@@ -280,14 +285,15 @@ The only ambiguity that these allow is in the choice of fundamental units, which
 we saw before that the information provided by a single fair coin flip is one bit.
 -->
 
-*dịch đoạn phía trên*
+Việc chứng minh này nằm ngoài phạm vi của quyển sách nhưng biết được khái niệm thống nhất về entropy này rất quan trọng.
+Chỉ có một điều mơ hồ duy nhất đó là những phát biểu này cho phép lựa chọn các đơn vị cơ bản, điều này thường được chuẩn hoá bằng cách đưa ra lựa chọn mà chúng ta đã thấy trước đó rằng thông tin cung cấp bởi một lần lật đồng xu công bằng là một bit.
 
 
 <!--
 ### Definition
 -->
 
-### *dịch tiêu đề trên*
+### Định nghĩa
 
 
 <!--
@@ -295,7 +301,7 @@ For any random variable $X$ that follows a probability distribution $P$ with a p
 a probability mass function (p.m.f.) $p(x)$, we measure the expected amount of information through *entropy* (or *Shannon entropy*)
 -->
 
-*dịch đoạn phía trên*
+Cho bất cứ một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất (p.d.f) hoặc hàm khối xác suất (p.m.f) $p(x)$, chúng ta tính lượng thông tin cố thể thu được thông qua *entropy* (hoặc *Shannon entropy*)
 
 
 $$H(X) = - E_{x \sim P} [\log p(x)].$$
@@ -306,7 +312,7 @@ $$H(X) = - E_{x \sim P} [\log p(x)].$$
 To be specific, if $X$ is discrete, 
 -->
 
-*dịch đoạn phía trên*
+Cụ thể hơn, nếu $X$ rời rạc,
 
 
 $$H(X) = - \sum_i p_i \log p_i \text{, where } p_i = P(X_i).$$ 
@@ -316,7 +322,7 @@ $$H(X) = - \sum_i p_i \log p_i \text{, where } p_i = P(X_i).$$
 Otherwise, if $X$ is continuous, we also refer entropy as *differential entropy* 
 -->
 
-*dịch đoạn phía trên*
+Ngược lại, nếu $X$ liên tục, chúng ta gọi entropy là *entropy vi phân* (*differential entropy*)
 
 
 $$H(X) = - \int_x p(x) \log p(x) \; dx.$$
@@ -326,7 +332,7 @@ $$H(X) = - \int_x p(x) \log p(x) \; dx.$$
 We can define entropy as below.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể định nghĩa entropy như sau.
 
 
 ```{.python .input}
@@ -366,14 +372,14 @@ entropy(tf.constant([0.1, 0.5, 0.1, 0.3]))
 ### Interpretations
 -->
 
-### *dịch tiêu đề trên*
+### Diễn giải
 
 
 <!--
 You may be curious: in the entropy definition :eqref:`eq_ent_def`, why do we use an expectation of a negative logarithm? Here are some intuitions.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thắc mắc: trong định nghĩa entropy :eqref:`eq_ent_def`, tại sao chúng ta sử dụng kỳ vọng của một logarith âm? Đây là một số giải thích.
 
 
 <!--
@@ -384,7 +390,11 @@ As discussed above, we want the entropy formula to be additive over independent 
 Luckily, $\log$ can naturally turn a product of probability distributions to a summation of the individual terms.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, tài sao chúng ta sử dụng hàm *logarith*  $\log$?
+Giả sử $p(x) = f_1(x) f_2(x) \ldots, f_n(x)$, khi mỗi thành tố của hàm $f_i(x)$ độc lập lẫn nhau.
+Điều này nghĩa là mỗi $f_i(x)$ đóng góp một cách độc lập vào tổng thông tin thu được từ $p(x)$.
+Như đã thảo luận ở trên, chúng ta muốn công thức entropy cho phép cộng trên các biến ngẫu nhiên độc lập.
+May mắn thay, $\log$ có thể chuyển tích của phân phối xác suất thành tổng của chúng.
 
 
 <!--
@@ -396,7 +406,10 @@ which will ideally be always positive (for nothing we observe should force us to
 Hence, we add a negative sign in front of $\log$ function.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, tại sao chúng ta sử dụng *âm* $\log$? Một cách trực giác, những biến cố thường xuyên hơn chứa ít thông tin hơn những biến cố thông thường bởi vì chúng ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường hơn là những trường hợp bình thường.
+Tuy nhiên, $\log$ đơn điệu đồng biến với xác suất, và có gía trị âm trong đoạn $[0, 1]$.
+Chúng ta cần thiết lập mối quan hệ đơn điệu nghịch biến giữa xác suất của biến cố và entropy của chúng, những giá trị mà sẽ luôn luôn dương (hoặc không có gì chúng ta quan sát được có thể buộc chúng ta phải quên đi những gì chúng ta đã biết).
+Vậy nên, chúng ta thêm dấu trừ vào trướ hàm $\log$.
 
 
 <!--
@@ -408,7 +421,11 @@ For example, imagine that a slot machine system emits statistical independently 
 Then the entropy of this system equals to the average self-information from observing each output, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, hàm kỳ vọng đến từ đâu? Xét một biến ngẫn nhiên $X$.
+Chúng ta có thể diễn giải hàm lượng thông tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi chúng ta thấy một kết quả cụ thể nào đó.
+Thật vậy, khi xác suất xấp xỉ bằng 0, mức độ bất ngờ tiến tới vô cực.
+Tương tự, chúng ta có thể diễn giải entropy như một lượng bất ngờ trung bình từ việc quan sát $X$.
+Ví dụ, tưởng tượng một hệ thống máy đánh bạc phát ra các ký hiệu độc lập ${s_1, \ldots, s_k}$ with probabilities ${p_1, \ldots, p_k}$. Khi đó, entropy của hệ thống này bằng với hàm lượng thông tin trung bình từ việc quan sát kết quả, chẳng hạn:
 
 
 $$H(S) = \sum_i {p_i \cdot I(s_i)} = - \sum_i {p_i \cdot \log p_i}.$$
@@ -1527,7 +1544,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Thanh Hoà
 
 <!-- Phần 4 -->
 * 
