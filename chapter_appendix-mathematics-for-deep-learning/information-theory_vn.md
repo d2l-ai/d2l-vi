@@ -896,7 +896,8 @@ This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as th
 we were surprised to see two outcomes occurring together compared to what we would expect if they were independent.
 -->
 
-Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai đầu ra xảy ra đồng thời so với khi chúng là hai đầu ra độc lập. <!-- Đoạn này mình vẫn lấn cấn vì không thể dịch toàn bộ ý tác giả --!>
+Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai đầu ra xảy ra đồng thời so với khi chúng là hai đầu ra độc lập. 
+<!-- Đoạn này mình vẫn lấn cấn vì chưa thể dịch toàn bộ ý tác giả --!>
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
