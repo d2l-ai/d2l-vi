@@ -216,7 +216,7 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 The previous example is nice, but what if we have billions of parameters and data examples.
 -->
 
-Ví dụ trước thật hay, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẩu dữ liệu.
+Ví dụ trước khá ổn, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẫu dữ liệu.
 
 <!--
 First notice that, if we make the assumption that all the data examples are independent, 
@@ -225,15 +225,16 @@ Indeed, each probability is in $[0,1]$, say typically of value about $1/2$, and 
 We cannot work with that directly.  
 -->
 
-Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các ví dụ dữ liệu là độc lập, 
-thì trên thực tế chúng ta không còn có thể xem xét khả năng xảy ra vì nó là tích của nhiều xác suất.
-Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, thường thì có giá trị khoảng $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. Ta không thể làm việc với điều đó trực tiếp.
+Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
+thì chúng ta gần như không thể xem xét độ hợp lý vì nó là tích của nhiều xác suất.
+Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, ví dụ như $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. 
+Ta không thể làm việc trực tiếp với biểu thức này.
 
 <!--
 However, recall that the logarithm turns products to sums, in which case 
 -->
 
-Tuy nhiên, hãy nhớ lại rằng lôgarit biến đổi tích số thành tổng, trong trường hợp đó thì
+Tuy nhiên, hãy nhớ lại rằng hàm log biến đổi tích thành tổng, trong trường hợp đó thì
 
 $$
 \log((1/2)^{1000000000}) = 1000000000\cdot\log(1/2) \approx -301029995.6\ldots
@@ -245,7 +246,7 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-Con số này hoàn toàn khớp với ngay cả một giá trị chính xác $32$-bit float.
+Con số này hoàn toàn nằm vừa trong một số thực $32$-bit với độ chính xác đơn.
 Vì vậy, chúng ta nên xem xét *log-likelihood*, chính là
 
 $$
@@ -258,23 +259,23 @@ Since the function $x \mapsto \log(x)$ is increasing, maximizing the likelihood 
 Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when working with the specific example of the naive Bayes classifier.
 -->
 
-Vì giá trị hàm $x \mapsto \log(x)$ đang tăng lên, việc tối đa hóa độ hợp lý cũng giống như tối đa hóa log-likelihood.
-Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về trình phân loại Naive Bayes.
+Vì hàm $x \mapsto \log(x)$ đồng biến, việc cực đại hóa độ hợp lý đồng nghĩa với việc cực đại hóa log hợp lý.
+Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về bộ phân loại Naive Bayes.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
 We may turn maximum likelihood into the minimization of a loss by taking $-\log(P(X \mid \boldsymbol{\theta}))$, which is the *negative log-likelihood*.
 -->
 
-Ta thường làm việc với các hàm mất mát, tại đó ta muốn giảm thiểu độ mất mát.
-Ta có thể biến đổi hợp lý cực đại thành giảm thiểu mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, là *negative log-likelihood*.
+Ta thường làm việc với các hàm mất mát, thứ mà ta muốn cực tiểu hóa.
+Ta có thể biến đổi hợp lý cực đại thành việc cực tiểu hóa mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
 
 
 <!--
 To illustrate this, consider the coin flipping problem from before, and pretend that we do not know the closed form solution. We may compute that
 -->
 
-Để minh họa điều này, hãy để ý đến vấn đề lật đồng xu trước đó và giả vờ rằng ta không biết giải pháp dạng đóng. Ta có thể tính ra
+Để minh họa điều này, hãy xem xét bài toán tung đồng xu trước đó và giả vờ rằng ta không biết nghiệm dạng đóng. Ta có thể tính ra
 
 $$
 -\log(P(X \mid \boldsymbol{\theta})) = -\log(\theta^{n_H}(1-\theta)^{n_T}) = -(n_H\log(\theta) + n_T\log(1-\theta)).
@@ -285,7 +286,7 @@ $$
 This can be written into code, and freely optimized even for billions of coin flips.
 -->
 
-Đẳng thức này có thể được viết thành đoạn mã và được tối ưu hóa thoải mái ngay cả với hàng tỷ đồng xu.
+Đẳng thức này có thể được viết thành đoạn mã và được tối ưu hóa thoải mái ngay cả với hàng tỷ lần tung đồng xu.
 
 ```{.python .input}
 # Set up our data
@@ -356,15 +357,15 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-Sự thuận tiện của số chỉ là một lý do duy nhất khiến mọi người thích dùng hợp lý đối log.
-Thật vậy, có một số lý do mà nó có thể được ưu tiên hơn.
+Sự thuận tiện số học chỉ là một lý do khiến mọi người thích dùng hàm đối log hợp lý.
+Thật vậy, còn có một số lý do khác cho việc nó được ưa chuộng.
 
 <!--
 The second reason we consider the log-likelihood is the simplified application of calculus rules.
 As discussed above, due to independence assumptions, most probabilities we encounter in machine learning are products of individual probabilities.
 -->
 
-Lý do thứ hai mà ta xem xét đến hàm hợp lý log là một ứng dụng đơn giản hoá đối với các quy tắc giải tích.
+Lý do thứ hai mà ta xem xét đến hàm log hợp lý là việc áp dụng các quy tắc giải tích trở nên đơn giản hơn.
 Như đã thảo luận ở trên, do các giả định về tính độc lập, hầu hết các xác suất mà chúng ta gặp phải trong học máy là tích của các xác suất riêng lẻ.
 
 $$
@@ -393,8 +394,8 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy nó tỉ lệ bình phương về thời gian so với số lượng các đầu vào!
-Sự khôn khéo vừa đủ trong việc chia nhóm các terms sẽ giảm độ phức tạp xuống còn tỉ lệ tuyến tính về thời gian, nhưng điều đó cần suy nghĩ nhiều.
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy thời gian chạy tỉ lệ bình phương so với số lượng các đầu vào!
+Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp thời gian sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
 Đối với hàm đối log hợp lý, chúng ta có
 
 $$
