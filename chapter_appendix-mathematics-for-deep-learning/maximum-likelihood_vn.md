@@ -209,7 +209,7 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 ## Numerical Optimization and the Negative Log-Likelihood
 -->
 
-### Tối ưu hoá số và hàm log hợp lí âm
+### Tối ưu hoá Số học và hàm Log hợp lí Âm
 
 
 <!--
@@ -247,7 +247,7 @@ Thus, we should consider the *log-likelihood*, which is
 -->
 
 Con số này hoàn toàn nằm vừa trong một số thực $32$-bit với độ chính xác đơn.
-Vì vậy, chúng ta nên xem xét *log-likelihood*, chính là
+Vì vậy, chúng ta nên xem xét *log hợp lý* (*log-likelihood*), chính là
 
 $$
 \log(P(X \mid \boldsymbol{\theta})).
@@ -286,7 +286,7 @@ $$
 This can be written into code, and freely optimized even for billions of coin flips.
 -->
 
-Đẳng thức này có thể được viết thành đoạn mã và được tối ưu hóa thoải mái ngay cả với hàng tỷ lần tung đồng xu.
+Đẳng thức này có thể được lập trình và được tối ưu hóa thoải mái ngay cả với hàng tỷ lần tung đồng xu.
 
 ```{.python .input}
 # Set up our data
@@ -394,7 +394,7 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy thời gian chạy tỉ lệ bình phương so với số lượng các đầu vào!
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy thời gian chạy tỉ lệ bình phương so với số lượng đầu vào!
 Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp thời gian sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
 Đối với hàm đối log hợp lý, chúng ta có
 
