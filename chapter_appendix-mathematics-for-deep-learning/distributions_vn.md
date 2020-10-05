@@ -16,8 +16,8 @@ This is, however, a good basic list to be familiar with.
 Let us first import some common libraries.
 -->
 
-Lúc này ta đã học cách làm việc với xác suất trong tình huống thiết lập rời rạc và liên tục, ta hãy làm quen với một số phân phối phổ thường gặp.
-Tùy thuộc vào lĩnh vực học máy, ta có thể cần phải làm quen với một lượng các phân phối lớn hơn nhiều, hoặc đối với một số lĩnh vực học sâu thì có khả năng là hoàn toàn không gặp tới.
+Lúc này ta đã học cách làm việc với xác suất trong tình huống rời rạc và liên tục, hãy làm quen với một số phân phối thường gặp.
+Tùy thuộc vào lĩnh vực học máy, ta có thể cần phải làm quen với một lượng các phân phối lớn hơn nhiều, hoặc đối với một số lĩnh vực học sâu thì có khả năng là hoàn toàn không gặp.
 Tuy nhiên, đây là một danh sách tốt các phân phối cơ bản để làm quen.
 Đầu tiên chúng ta hãy nhập một số thư viện phổ biến.
 
@@ -91,7 +91,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cas
 The probability mass function is plotted below.
 -->
 
-Hàm khối xác suất được vẽ dưới đây
+Hàm khối xác suất có đồ thị như dưới đây.
 
 
 ```{.python .input}
@@ -110,7 +110,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_bernoulli_cdf`.
 -->
 
-Bây giờ, ta hãy vẽ hàm phân phối tích lũy :eqref:`eq_bernoulli_cdf`.
+Bây giờ, hãy vẽ đồ thị cho hàm phân phối tích lũy :eqref:`eq_bernoulli_cdf`.
 
 
 ```{.python .input}
@@ -193,7 +193,7 @@ We will denote a random variable $X$ with this distribution as
 
 Biến ngẫu nhiên thường gặp tiếp theo là biến đồng nhất rời rạc.
 Để thảo luận ở đây, ta sẽ giả định là biến này được phân bổ trên các số nguyên $\{1, 2, \ldots, n\}$, tuy nhiên, có thể tự do chọn bất kỳ tập giá trị nào khác.
-Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này có nghĩa là mọi giá trị có thể xảy ra đều có khả năng như nhau.
+Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này có nghĩa là mọi giá trị đều có thể xảy ra với khả năng như nhau.
 Xác suất cho mỗi giá trị $i \in \{1, 2, 3, \ldots, n\}$ là $p_i = \frac{1}{n}$.
 Chúng ta sẽ ký hiệu một biến ngẫu nhiên $X$ với phân phối này là
 
@@ -218,7 +218,7 @@ $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1
 Let us first plot the probability mass function.
 -->
 
-Trước hết ta hãy vẽ hàm khối xác suất.
+Trước hết ta hãy vẽ đồ thị cho hàm khối xác suất.
 
 
 ```{.python .input}
@@ -236,7 +236,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_discrete_uniform_cdf`.
 -->
 
-Bây giờ, ta hãy vẽ hàm phân phối tích luỹ :eqref:`eq_discrete_uniform_cdf`.
+Bây giờ hãy vẽ đồ thị cho hàm phân phối tích luỹ :eqref:`eq_discrete_uniform_cdf`.
 
 
 ```{.python .input}
