@@ -630,7 +630,7 @@ Hàm này nhằm khắc phục vấn đề "ReLU chết", giúp gradient truyề
 
 
 ## Thảo luận
-* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/409), [PyTorch](https://discuss.d2l.ai/t/836)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/409), [PyTorch](https://discuss.d2l.ai/t/1083)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
@@ -645,3 +645,5 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
+
+*Lần cập nhật gần nhất: 05/10/2020. (Cập nhật lần cuối từ nội dung gốc: 17/09/2020)*
