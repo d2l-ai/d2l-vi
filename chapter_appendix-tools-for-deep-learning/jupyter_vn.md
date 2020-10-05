@@ -240,14 +240,14 @@ c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'
 After that, you only need to run the `jupyter notebook` command to turn on the notedown plugin by default.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, bạn chỉ cần chạy dòng lệnh `jupyter notebook` để bật plugin sổ tay theo mặc định.
 
 
 <!--
 ### Running Jupyter Notebook on a Remote Server
 -->
 
-### *dịch tiêu đề trên*
+### Chạy Jupyter Notebook trên Máy chủ Từ xa
 
 
 <!--
@@ -255,7 +255,8 @@ Sometimes, you may want to run Jupyter Notebook on a remote server and access it
 If Linux or MacOS is installed on your local machine (Windows can also support this function through third-party software such as PuTTY), you can use port forwarding:
 -->
 
-*dịch đoạn phía trên*
+Đôi khi, bạn sẽ muốn chạy Jupyter Notebook trên một máy chủ từ xa và truy cập nó thông qua một trình duyệt dưới máy.
+Nếu Linux hoặc MacOS được cài dưới máy của bạn (Windows cũng có thể hỗ trợ tính năng này thông qua phần mềm bên thứ ba như PuTTY), bạn có thể sử dụng chuyển tiếp cổng:
 
 
 ```
@@ -269,14 +270,16 @@ Then we can use http://localhost:8888 to access the remote server `myserver` tha
 We will detail on how to run Jupyter Notebook on AWS instances in the next section.
 -->
 
-*dịch đoạn phía trên*
+Ở trên là địa chỉ của máy chủ `myserver`.
+Tiếp đến ta có thể sử dụng http://localhost:8888 để truy cập máy chủ `myserver` chạy Jupyter Notebook.
+Ta sẽ hướng dẫn chi tiết cách chạy Jupyter Notebook trên máy chủ AWS trong mục kế tiếp.
 
 
 <!--
 ### Timing
 -->
 
-### *dịch tiêu đề trên*
+### Đo thời gian
 
 
 <!--
@@ -284,7 +287,8 @@ We can use the `ExecuteTime` plugin to time the execution of each code cell in a
 Use the following commands to install the plugin:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể sử dụng plugin `ExecuteTime` để đo thời gian thực thi của mỗi ô mã nguồn trong Jupyter Notebook.
+Sử dụng lệnh dưới để cài đặt plugin:
 
 
 ```
@@ -301,7 +305,8 @@ jupyter nbextension enable execute_time/ExecuteTime
 * You can run servers remotely using port forwarding.
 -->
 
-*dịch đoạn phía trên*
+* Để chỉnh sửa các chương của cuốn sách, bạn cần kích hoạt định dạng đánh dấu trong Jupyter.
+* Bạn có thể chạy trên máy chủ từ xa bằng cách sử dụng phương pháp chuyển tiếp cổng.
 
 
 ## Bài tập
@@ -312,7 +317,9 @@ jupyter nbextension enable execute_time/ExecuteTime
 3. Measure $\mathbf{A}^\top \mathbf{B}$ vs. $\mathbf{A} \mathbf{B}$ for two square matrices in $\mathbb{R}^{1024 \times 1024}$. Which one is faster?
 -->
 
-*dịch đoạn phía trên*
+1. Hãy thử chỉnh sửa và chạy mã nguồn của cuốn sách này dưới máy.
+2. Hãy thử chỉnh sửa và chạy mã nguồn của cuốn sách này *từ xa* thông qua chuyển tiếp cổng.
+3. Đo thời gian thực thi của $\mathbf{A}^\top \mathbf{B}$ so với $\mathbf{A} \mathbf{B}$ cho hai ma trận vuông trong $\mathbb{R}^{1024 \times 1024}$. Cách nào nhanh hơn?
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -340,6 +347,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Phạm Hồng Vinh
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
