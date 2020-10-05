@@ -595,6 +595,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 2 -->
 * Phạm Đăng Khoa
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
