@@ -563,14 +563,14 @@ Now that we understand what eigenvectors are in principle, let us see how they c
 of a problem central to neural network behavior: proper weight initialization. 
 -->
 
-*dịch đoạn phía trên*
+Giờ ta đã hiểu bản chất của vector riêng, hãy xem có thể sử dụng chúng như thế nào để hiểu sâu hơn một vấn đề quan trọng trong mạng nơ-ron: khởi tạo trọng số thích hợp.
 
 
 <!--
 ### Eigenvectors as Long Term Behavior
 -->
 
-### *dịch tiêu đề trên*
+### Vector riêng là Hành vi Dài hạn
 
 
 <!--
@@ -581,7 +581,11 @@ For simplicity here, we will assume that there is no non-linearity,
 and that the transformation is a single repeated matrix operation $A$,so that the output of our model is
 -->
 
-*dịch đoạn phía trên*
+Việc nghiên cứu việc khởi tạo chặt chẽ về mặt toán học nằm ngoài phạm vi phần này,
+tuy vậy ta có thể phân tích một ví dụ đơn giản dưới đây để xem các trị riêng giúp ta hiểu cách các mô hình hoạt động như thế nào.
+Như đã biết, mạng nơ-ron hoạt động bằng cách chồng chập các tầng biến đổi tuyến tính và phi tuyến.
+Để đơn giản, ở đây ta giả sử không có biến đổi phi tuyến,
+và giả sử phép biến đổi chỉ là liên tục áp dụng ma trận $A$, ta có đầu ra của mô hình là
 
 
 $$
@@ -594,7 +598,8 @@ When these models are initialized, $A$ is taken to be a random matrix with Gauss
 To be concrete, we start with a mean zero, variance one Gaussian distributed $5 \times 5$ matrix.
 -->
 
-*dịch đoạn phía trên*
+Khi mô hình trên được khởi tạo, $A$ nhận các giá trị ngẫu nhiên theo phân phối Gauss, hãy thử lại điều này.
+Cụ thể ta bắt đầu bằng một ma trận kích thước $5 \times 5$ với giá trị trung bình bằng 0, phương sai bằng 1.
 
 
 ```{.python .input}
