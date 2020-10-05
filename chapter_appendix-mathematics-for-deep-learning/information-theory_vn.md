@@ -900,7 +900,7 @@ we were surprised to see two outcomes occurring together compared to what we wou
 ### Applications of Mutual Information
 -->
 
-### *dịch tiêu đề trên*
+### Ứng dụng thông tin hỗ tương
 
 
 <!--
@@ -910,7 +910,10 @@ For example, recently a headline in the news reported that "Amazon is on fire".
 You may wonder whether the company Amazon has a building on fire, or the Amazon rain forest is on fire. 
 -->
 
-*dịch đoạn phía trên*
+Thông tin tương hỗ có thể hơi trừu tượng theo định nghĩa thuần túy, vậy nó liên quan như thế nào đến học máy? Trong xử lý ngôn ngữ tự nhiên,
+một trong những vấn đề khó khăn nhất là *giải quyết sự mơ hồ*, hoặc vấn đề về nghĩa của từ đang không rõ ràng so với ngữ cảnh.
+Ví dụ, gần đây một tiêu đề trong bản tin thông báo rằng "Amazon đang cháy".
+Bạn có thể tự hỏi là liệu công ty Amazon có một tòa nhà bị cháy, hay rừng Amazon đang bốc cháy.
 
 
 <!--
@@ -921,14 +924,18 @@ When we need to disambiguate "Amazon", we can compare which group has more occur
 In this case the article would go on to describe the forest, and make the context clear.
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, thông tin tương hỗ có thể giúp ta giải quyết sự mơ hồ này.
+Đầu tiên, ta tìm nhóm từ mà mỗi từ có thông tin tương hỗ tương đối lớn tới công ty Amazon, chẳng hạn như thương mại điện tử, công nghệ và trực tuyến.
+Thứ hai, ta tìm thấy một nhóm từ khác mà mỗi từ có một thông tin tương hỗ tương đối lớn tới rừng mưa Amazon, chẳng hạn như mưa, rừng và nhiệt đới.
+Khi ta cần phân biệt "Amazon", chúng ta có thể so sánh nhóm nào xuất hiện nhiều hơn trong ngữ cảnh của từ Amazon.
+Trong trường hợp này, bài báo sẽ tiếp tục mô tả khu rừng và làm rõ bối cảnh.
 
 
 <!--
 ## Kullback–Leibler Divergence
 -->
 
-## *dịch tiêu đề trên*
+## Kullback–Leibler khoảng cách
 
 
 <!--
@@ -938,14 +945,17 @@ There are many ways to go about this, but information theory provides one of the
 We now explore the *Kullback–Leibler (KL) divergence*, which provides a way to measure if two distributions are close together or not. 
 -->
 
-*dịch đoạn phía trên*
+Như những gì ta đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (norms) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
+Ta muốn có thể thực hiện một công việc tương tự với các phân phối xác suất.
+Có nhiều cách để giải quyết vấn đề này, nhưng lý thuyết thông tin cung cấp một trong những cách tốt nhất.
+Bây giờ ta khảo sát *khoảng cách Kullback – Leibler (KL)*, là phương pháp đo lường xem hai phân phối có gần nhau hay không.
 
 
 <!--
 ### Definition
 -->
 
-### *dịch tiêu đề trên*
+### Định nghĩa
 
 
 <!--
@@ -954,8 +964,9 @@ and we estimate $P$ by another probability distribution $Q$ with a p.d.f. or a p
 Then the *Kullback–Leibler (KL) divergence* (or *relative entropy*) between $P$ and $Q$ is
 -->
 
-*dịch đoạn phía trên*
-
+Cho một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với p.d.f. hay p.m.f. là $p(x)$,
+và ta ước lượng $P$ bằng một phân phối xác suất khác $Q$ với p.d.f. hoặc p.m.f. $q(x)$.
+Khi đó, sự *Khoảng cách Kullback – Leibler (KL)* (hoặc *entropy tương đối*) giữa $P$ và $Q$ là
 
 $$D_{\mathrm{KL}}(P\|Q) = E_{x \sim P} \left[ \log \frac{p(x)}{q(x)} \right].$$
 :eqlabel:`eq_kl_def`
@@ -968,14 +979,17 @@ and large and negative if we see the outcome far less than expected.
 In this way, we can interpret it as our *relative* surprise at observing the outcome compared to how surprised we would be observing it from our reference distribution.
 -->
 
-*dịch đoạn phía trên*
+Như với thông tin tương hỗ điểm-điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể cung cấp cách diễn giải thuật ngữ logarit:
+$-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
+và lớn và âm nếu chúng ta thấy kết quả ít hơn nhiều so với kỳ vọng.
+Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối* của ta khi quan sát kết quả so với mức độ ngạc nhiên khi ta quan sát nó từ phân phối tham chiếu.
 
 
 <!--
 Let us implement the KL divergence from Scratch.
 -->
 
-*dịch đoạn phía trên*
+Ta hãy thực hiện tính khoảng cách KL từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
@@ -1545,7 +1559,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 9 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 10 -->
 * 
