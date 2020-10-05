@@ -1343,6 +1343,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * 
