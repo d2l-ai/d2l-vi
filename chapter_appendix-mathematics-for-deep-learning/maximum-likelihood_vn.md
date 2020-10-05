@@ -233,15 +233,14 @@ Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đ
 ## Numerical Optimization and the Negative Log-Likelihood
 -->
 
-### *dịch tiêu đề trên*
+### Tối ưu hoá Số học và hàm Log hợp lí Âm
 
 
 <!--
 The previous example is nice, but what if we have billions of parameters and data examples.
 -->
 
-*dịch đoạn phía trên*
-
+Ví dụ trước khá ổn, nhưng điều gì sẽ xảy ra nếu chúng ta có hàng tỷ tham số và mẫu dữ liệu.
 
 <!--
 First notice that, if we make the assumption that all the data examples are independent, 
@@ -250,15 +249,16 @@ Indeed, each probability is in $[0,1]$, say typically of value about $1/2$, and 
 We cannot work with that directly.  
 -->
 
-*dịch đoạn phía trên*
-
+Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
+thì chúng ta gần như không thể xem xét độ hợp lý vì nó là tích của nhiều xác suất.
+Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, ví dụ như $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. 
+Ta không thể làm việc trực tiếp với biểu thức này.
 
 <!--
 However, recall that the logarithm turns products to sums, in which case 
 -->
 
-*dịch đoạn phía trên*
-
+Tuy nhiên, hãy nhớ lại rằng hàm log biến đổi tích thành tổng, trong trường hợp đó thì
 
 $$
 \log((1/2)^{1000000000}) = 1000000000\cdot\log(1/2) \approx -301029995.6\ldots
@@ -270,8 +270,8 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-*dịch đoạn phía trên*
-
+Con số này hoàn toàn nằm vừa trong một số thực $32$-bit với độ chính xác đơn.
+Vì vậy, chúng ta nên xem xét *log hợp lý* (*log-likelihood*), chính là
 
 $$
 \log(P(X \mid \boldsymbol{\theta})).
@@ -283,23 +283,23 @@ Since the function $x \mapsto \log(x)$ is increasing, maximizing the likelihood 
 Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when working with the specific example of the naive Bayes classifier.
 -->
 
-*dịch đoạn phía trên*
-
+Vì hàm $x \mapsto \log(x)$ đồng biến, việc cực đại hóa độ hợp lý đồng nghĩa với việc cực đại hóa log hợp lý.
+Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về bộ phân loại Naive Bayes.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
 We may turn maximum likelihood into the minimization of a loss by taking $-\log(P(X \mid \boldsymbol{\theta}))$, which is the *negative log-likelihood*.
 -->
 
-*dịch đoạn phía trên*
+Ta thường làm việc với các hàm mất mát, thứ mà ta muốn cực tiểu hóa.
+Ta có thể biến đổi hợp lý cực đại thành việc cực tiểu hóa mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
 
 
 <!--
 To illustrate this, consider the coin flipping problem from before, and pretend that we do not know the closed form solution. We may compute that
 -->
 
-*dịch đoạn phía trên*
-
+Để minh họa điều này, hãy xem xét bài toán tung đồng xu trước đó và giả vờ rằng ta không biết nghiệm dạng đóng. Ta có thể tính ra
 
 $$
 -\log(P(X \mid \boldsymbol{\theta})) = -\log(\theta^{n_H}(1-\theta)^{n_T}) = -(n_H\log(\theta) + n_T\log(1-\theta)).
@@ -310,8 +310,7 @@ $$
 This can be written into code, and freely optimized even for billions of coin flips.
 -->
 
-*dịch đoạn phía trên*
-
+Đẳng thức này có thể được lập trình và được tối ưu hóa thoải mái ngay cả với hàng tỷ lần tung đồng xu.
 
 ```{.python .input}
 # Set up our data
@@ -382,16 +381,16 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-*dịch đoạn phía trên*
-
+Sự thuận tiện số học chỉ là một lý do khiến mọi người thích dùng hàm đối log hợp lý.
+Thật vậy, còn có một số lý do khác cho việc nó được ưa chuộng.
 
 <!--
 The second reason we consider the log-likelihood is the simplified application of calculus rules.
 As discussed above, due to independence assumptions, most probabilities we encounter in machine learning are products of individual probabilities.
 -->
 
-*dịch đoạn phía trên*
-
+Lý do thứ hai mà ta xem xét đến hàm log hợp lý là việc áp dụng các quy tắc giải tích trở nên đơn giản hơn.
+Như đã thảo luận ở trên, do các giả định về tính độc lập, hầu hết các xác suất mà chúng ta gặp phải trong học máy là tích của các xác suất riêng lẻ.
 
 $$
 P(X\mid\boldsymbol{\theta}) = p(x_1\mid\boldsymbol{\theta})\cdot p(x_2\mid\boldsymbol{\theta})\cdots p(x_n\mid\boldsymbol{\theta}).
@@ -401,9 +400,7 @@ $$
 <!--
 This means that if we directly apply the product rule to compute a derivative we get
 -->
-
-*dịch đoạn phía trên*
-
+Đẳng thức này có nghĩa là nếu chúng ta áp dựng trực tiếp quy tắc nhân để tính đạo hàm thì ta sẽ có được
 
 $$
 \begin{aligned}
@@ -421,8 +418,9 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-*dịch đoạn phía trên*
-
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy thời gian chạy tỉ lệ bình phương so với số lượng đầu vào!
+Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp thời gian sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
+Đối với hàm đối log hợp lý, chúng ta có
 
 $$
 -\log\left(P(X\mid\boldsymbol{\theta})\right) = -\log(P(x_1\mid\boldsymbol{\theta})) - \log(P(x_2\mid\boldsymbol{\theta})) \cdots - \log(P(x_n\mid\boldsymbol{\theta})),
@@ -433,8 +431,7 @@ $$
 which then gives
 -->
 
-*dịch đoạn phía trên*
-
+sau đó nhận được kết quả là
 
 $$
 - \frac{\partial}{\partial \boldsymbol{\theta}} \log\left(P(X\mid\boldsymbol{\theta})\right) = \frac{1}{P(x_1\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_1\mid\boldsymbol{\theta})\right) + \cdots + \frac{1}{P(x_n\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_n\mid\boldsymbol{\theta})\right).
@@ -622,7 +619,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 
 <!-- Phần 2 -->
-* 
+* Phạm Đăng Khoa
+* Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
