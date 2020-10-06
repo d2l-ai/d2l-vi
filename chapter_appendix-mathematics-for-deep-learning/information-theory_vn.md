@@ -1564,7 +1564,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 11 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 12 -->
 * 
