@@ -158,7 +158,7 @@ By clicking "Help" $\rightarrow$ "Edit Keyboard Shortcuts" in the menu bar,
 you can edit the shortcuts according to your preferences.
 -->
 
-Khi một sổ tay chứa nhiều ô, ta có thể nhấp vào "Kernel" $\rightarrow$ "Restart & Run All" trong thanh menu để chạy tất cả các ô trong sổ tay.
+Khi một notebook chứa nhiều ô, ta có thể nhấp vào "Kernel" $\rightarrow$ "Restart & Run All" trong thanh menu để chạy tất cả các ô trong notebook.
 Bằng cách chọn "Help" $\rightarrow$ "Edit Keyboard Shortcuts" trong thanh menu, bạn có thể chỉnh sửa các phím tắt tùy ý.
 
 
@@ -178,9 +178,9 @@ This is confusing for Git and it makes merging contributions very difficult.
 Fortunately there is an alternative---native editing in Markdown.
 -->
 
-Ngoài việc chỉnh sửa được thực hiện dưới máy, có hai thứ khác khá là quan trọng: chỉnh sửa sổ tay dưới định dạng đánh dấu và chạy Jupyter từ xa.
+Ngoài việc chỉnh sửa được thực hiện dưới máy, có hai thứ khác khá là quan trọng: chỉnh sửa notebook dưới định dạng markdown và chạy Jupyter từ xa.
 Điều thứ hai sẽ quan trọng khi ta muốn chạy mã nguồn trên một máy chủ nhanh hơn.
-Điều thứ nhất sẽ quan trọng vì định dạng đơn giản .ipynb chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về những gì có trong sổ tay, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
+Điều thứ nhất sẽ quan trọng vì định dạng đơn giản .ipynb chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về những gì có trong notebook, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
 Điều này khiến Git hoang mang dẫn đến việc gộp các đóng góp là cực kỳ khó.
 May thay có một cách làm khác---chỉnh sửa thuần dưới định dạng Markdown.
 
@@ -198,14 +198,14 @@ Using the notedown plugin we can modify notebooks in md format directly in Jupyt
 -->
 
 Nếu bạn muốn đóng góp vào phần nội dung của cuốn sách này, bạn sẽ cần chỉnh sửa tệp tin mã nguồn (tệp md, không phải ipynb) trên GitHub.
-Sử dụng plugin của sổ tay, ta có thể chỉnh sửa sổ tay dưới định dạng md trong Jupyter một cách trực tiếp.
+Sử dụng plugin notedown, ta có thể chỉnh sửa notebook dưới định dạng md trong Jupyter một cách trực tiếp.
 
 
 <!--
 First, install the notedown plugin, run Jupyter Notebook, and load the plugin:
 -->
 
-Đầu tiên, cài đặt plugin sổ tay, chạy Jupyter Notebook, và nạp plugin:
+Đầu tiên, cài đặt plugin notedown, chạy Jupyter Notebook, và nạp plugin:
 
 
 ```
@@ -219,7 +219,7 @@ To turn on the notedown plugin by default whenever you run Jupyter Notebook do t
 First, generate a Jupyter Notebook configuration file (if it has already been generated, you can skip this step).
 -->
 
-Để bật plugin sổ tay một cách mặc định mỗi khi bạn chạy Jupyter Notebook, hãy làm theo cách sau:
+Để bật plugin notedown một cách mặc định mỗi khi bạn chạy Jupyter Notebook, hãy làm theo cách sau:
 Đầu tiên, sinh một tệp cấu hình Jupyter Notebook (nếu tệp đã có sẵn, bước này có thể bỏ qua).
 
 
