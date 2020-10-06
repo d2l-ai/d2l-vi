@@ -149,7 +149,7 @@ bạn có thể mở một chủ đề thảo luận tại thẻ **[Discussions]
 | edge (in computer vision)           | biên                        | [https://git.io/JfGiw](https://git.io/JfGiw) |
 | edge detector                       | bộ phát hiện biên           | [https://git.io/JfGiw](https://git.io/JfGiw) |
 | effect size                         | hệ số ảnh hưởng             | [https://git.io/Jvoja](https://git.io/Jvoja) |
-| eigen-decomposition                 | phân tích trị riêng         |                                              |
+| eigen-decomposition                 | phân rã trị riêng           | [https://git.io/JUsrl](https://git.io/JUsrl) |
 | eigenvalue                          | trị riêng                   |                                              |
 | eigenvector                         | vector riêng                |                                              |
 | elementwise                         | (theo) từng phần tử         | [https://git.io/Jvojn](https://git.io/Jvojn) |
