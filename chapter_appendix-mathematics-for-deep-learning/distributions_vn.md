@@ -1050,7 +1050,7 @@ We will use `erf` which provides a way to compute this integral numerically.
 -->
 
 Giờ hãy cũng vẽ đồ thị hàm phân phối tích luỹ.
-Tuy nằm ngoài phạm vi của phụ lục này nhưng c.d.f Gaussian không có công thức dạng đóng dưới dạng hàm có nhiều phần tử.
+Tuy nằm ngoài phạm vi của phụ lục này nhưng hàm phân phối tích lũy của phân phối Gauss không có công thức dạng đóng dưới dạng các hàm số sơ cấp.
 Ta sẽ sử dụng `erf` để tính toán xấp xỉ tích phân này.
 
 
@@ -1095,7 +1095,7 @@ Indeed, if we take any collection of independent identically distributed random 
 -->
 
 Việc lựa chọn làm việc với tung đồng xu giúp tính toán ngắn hơn, nhưng không có gì trong lựa chọn này là nền tảng.
-Quả thực, nếu ta lấy một tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$, và gọi
+Quả thực, nếu ta lấy bất kỳ tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$ nào, và gọi
 
 
 $$
@@ -1121,7 +1121,7 @@ There are additional requirements needed to make it work, most commonly $E[X^4] 
 -->
 
 sẽ xấp xỉ phân phối Gauss.
-Để công thức trên đúng ta sẽ cần thêm vài điều kiện bổ sung, phổ biến nhất là $E[X^4] < \infty$, nhưng triết lý đã đầy đủ.
+Để công thức trên đúng ta sẽ cần thêm vài điều kiện bổ sung, phổ biến nhất là $E[X^4] < \infty$, nhưng phần cốt lõi đã rõ.
 
 
 <!--
@@ -1141,9 +1141,9 @@ In a rigorous mathematical sense, we can think of the Gaussian as the *most* ran
 Thus, if we know that our random variable has some mean and variance, the Gaussian is in a sense the most conservative choice of distribution we can make.
 -->
 
-Có rất nhiều tính chất hấp dẫn khác của hàm Gauss, và chúng tôi muốn thảo luận thêm một tính chất nữa ở đây.
+Có rất nhiều tính chất hấp dẫn khác của phân phối Gauss, và chúng tôi muốn thảo luận thêm một tính chất nữa ở đây.
 Phân phối Gauss được biết tới là *phân phối entropy cực đại*.
-Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó đo sự ngẫu nhiên.
+Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó là một phép đo của sự ngẫu nhiên.
 Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn ngẫu nhiên *nhiều nhất* với kỳ vọng và phương sai cố định.
 Do đó, nếu ta biết biến ngẫu nhiên có kỳ vọng và phương sai nào đó, phân phối Gauss theo một nghĩa là lựa chọn phải chăng nhất trong phân phối mà ta có thể chọn.
 
