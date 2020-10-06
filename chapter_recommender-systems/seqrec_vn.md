@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Sequence-Aware Recommender Systems
 -->
@@ -14,10 +12,12 @@ It is a sequence-aware recommender :cite:`Quadrana.Cremonesi.Jannach.2018` where
 A number of recent literatures have demonstrated the usefulness of incorporating such information in modeling users' temporal behavioral patterns and discovering their interest drift.
 -->
 
-Trong phần trước, ta trừu tượng hoá tác vụ đề xuất dưới dạng một bài toán hoàn thiện ma trận mà không xét đến hành vi ngắn hạn của người dùng.
-Trong phần này, chúng tôi sẽ giới thiệu một mô hình đề xuất cân nhắc đến nhật kí tương tác được sắp xếp theo trình tự thời gian của người dùng.
-Đây là một hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường đi kèm với mốc thời gian diễn ra.
-Nhiều bài báo gần đây đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc mô hình hoá khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng sở thích của họ.
+Trong phần trước, ta trừu tượng hóa tác vụ đề xuất dưới dạng một bài toán hoàn thiện ma trận mà không xét đến hành vi ngắn hạn của người dùng.
+Trong phần này, chúng tôi sẽ giới thiệu một mô hình đề xuất cân nhắc đến nhật ký tương tác được sắp xếp theo trình tự thời gian của người dùng.
+Đây là một hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware recommender*) :cite:`Quadrana.Cremonesi.Jannach.2018` 
+với đầu vào là danh sách lịch sử thao tác của người dùng đã được sắp xếp và thường đi kèm với mốc thời gian diễn ra.
+Nhiều bài báo gần đây đã chứng minh được lợi ích của việc tích hợp những thông tin này vào việc 
+mô hình hóa khuôn mẫu hành vi theo thời gian của người dùng và tìm ra được khuynh hướng sở thích của họ.
 
 
 <!--
@@ -40,8 +40,8 @@ nhằm lần lượt khám phá khuôn mẫu cấp liên kết (*union-level*) v
 Khuôn mẫu cấp điểm ám chỉ tác động của một sản phẩm riêng lẻ trong lịch sử của chuỗi lên sản phẩm mục tiêu,
 trong khi khuôn mẫu cấp liên kết ám chỉ ảnh hưởng của nhiều thao tác trước đó lên các mục tiêu kế tiếp.
 Ví dụ, việc mua sữa cùng với bơ dẫn tới xác suất mua thêm cả bột mì cao hơn so với việc chỉ mua một trong hai.
-Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hoá trong những tầng kết nối đầy đủ cuối cùng,
-dẫn đến sở thích của người dùng được mô hình hoá một cách toàn diện hơn.
+Hơn nữa, sở thích chung của người dùng, hay sở thích dài hạn cũng được mô hình hóa trong những tầng kết nối đầy đủ cuối cùng,
+dẫn đến sở thích của người dùng được mô hình hóa một cách toàn diện hơn.
 Chi tiết về mô hình này sẽ được mô tả tiếp theo.
 
 
@@ -125,11 +125,6 @@ trong đó $\mathbf{W} \in \mathbb{R}^{k \times (d + kd')}$ là ma trận trọn
 Vector học được $\mathbf{z} \in \mathbb{R}^k$ chính là dạng biểu diễn cho sở thích ngắn hạn của người dùng.
 
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
-
 <!--
 At last, the prediction function combines users' short-term and general taste together, which is defined as:
 -->
@@ -165,7 +160,7 @@ Mô hình này có thể được học với mất mát BPR hoặc mất mát H
 ![Illustration of the Caser Model](../img/rec-caser.svg)
 -->
 
-![Minh hoạ Mô hình Caser](../img/rec-caser.svg)
+![Minh họa Mô hình Caser.](../img/rec-caser.svg)
 
 
 <!--
@@ -262,9 +257,9 @@ To process the sequential interaction data, we need to reimplement the Dataset c
 The following code creates a new dataset class named `SeqDataset`.
 In each sample, it outputs the user identity, his previous $L$ interacted items as a sequence and the next item he interacts as the target.
 The following figure demonstrates the data loading process for one user.
-Suppose that this user liked 8 movies, we organize these eight movies in chronological order.
+Suppose that this user liked 9 movies, we organize these nine movies in chronological order.
 The latest movie is left out as the test item.
-For the remaining seven movies, we can get three training samples, with each sample containing a sequence of five ($L=5$) movies and its subsequent item as the target item.
+For the remaining eight movies, we can get three training samples, with each sample containing a sequence of five ($L=5$) movies and its subsequent item as the target item.
 Negative samples are also included in the Customized dataset.
 -->
 
@@ -281,7 +276,7 @@ Các mẫu âm cũng có thể được đưa vào trong tập dữ liệu tuỳ
 ![Illustration of the data generation process](../img/rec-seq-data.svg)
 -->
 
-![Minh hoạ quá trình sinh dữ liệu](../img/rec-seq-data.svg)
+![Minh họa quá trình sinh dữ liệu](../img/rec-seq-data.svg)
 
 
 ```{.python .input  n=5}
@@ -354,7 +349,7 @@ Kế tiếp, ta đọc và chia nhỏ tập dữ liệu MovieLens 100K ở chế
 
 
 ```{.python .input  n=6}
-TARGET_NUM, L, batch_size = 1, 3, 4096
+TARGET_NUM, L, batch_size = 1, 5, 4096
 df, num_users, num_items = d2l.read_data_ml100k()
 train_data, test_data = d2l.split_data_ml100k(df, num_users, num_items,
                                               'seq-aware')
@@ -441,22 +436,13 @@ có một loại tác vụ đề xuất nhận thức về chuỗi khác đượ
 Bạn có thể giải thích sự khác nhau giữa hai tác vụ này không?
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/404)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/404)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
@@ -465,4 +451,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 29/08/2020)*
+*Cập nhật lần cuối: 06/10/2020. (Cập nhật lần cuối từ nội dung gốc: 01/10/2020)*

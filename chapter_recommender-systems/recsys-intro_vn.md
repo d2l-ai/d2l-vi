@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Overview of Recommender Systems
 -->
@@ -26,12 +24,12 @@ with deep learning in the field of recommender systems, together with implemente
 
 Trong thập kỷ vừa qua, mạng Internet đã phát triển thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn,
 đồng thời thay đổi sâu sắc cách ta giao tiếp, đọc tin tức, mua sắm và xem phim.
-Trong khi đó, một lượng lớn chưa từng có các sản phẩm (chúng tôi sử dụng từ *sản phẩm (item)* cho phim ảnh, tin tức, sách và hàng hoá)
+Trong khi đó, một lượng lớn chưa từng có các sản phẩm (chúng tôi sử dụng từ *sản phẩm (item)* cho phim ảnh, tin tức, sách và hàng hóa)
 được bày bán trực tuyến yêu cầu một hệ thống có thể giúp ta tìm những sản phẩm ưa thích hơn.
 Do đó, hệ thống đề xuất là công cụ lọc thông tin mạnh mẽ
-có thể thúc đẩy các dịch vụ cá nhân hoá và cung cấp trải nghiệm riêng biệt cho từng người dùng.
+có thể thúc đẩy các dịch vụ cá nhân hóa và cung cấp trải nghiệm riêng biệt cho từng người dùng.
 Nói ngắn gọn, hệ thống đề xuất đóng vai trò nòng cốt trong việc tận dụng nguồn dữ liệu dồi dào hiện có để giúp việc đưa ra lựa chọn dễ dàng hơn.
-Ngày nay, hệ thống đề xuất là là thành phần trung tâm của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
+Ngày nay, hệ thống đề xuất là thành phần trung tâm của nhiều nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix, và YouTube.
 Nhớ lại ví dụ Amazon đưa ra đề xuất các sách Học sâu trong :numref:`subsec_recommender_systems`.
 Có hai lợi ích của việc sử dụng hệ thống đề xuất:
 Một mặt, nó có thể giảm lượng lớn công sức tìm kiếm sản phẩm của người dùng và giảm thiểu vấn đề quá tải thông tin.
@@ -98,9 +96,6 @@ Ngoài CF, hệ thống đề xuất dựa trên nội dung (*content-based*) v�
 nội dung mô tả của sản phẩm/người dùng và các dấu hiệu ngữ cảnh như mốc thời gian và địa điểm.
 Đương nhiên, ta cần phải điều chỉnh cấu trúc/loại mô hình khi dữ liệu đầu vào khả dụng khác nhau.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Explicit Feedback and Implicit Feedback
@@ -116,7 +111,7 @@ For example, [IMDB](https://www.imdb.com/) collects star ratings ranging from on
 YouTube provides the thumbs-up and thumbs-down buttons for users to show their preferences.
 It is apparent that gathering explicit feedback requires users to indicate their interests proactively.
 Nonetheless, explicit feedback is not always readily available as many users may be reluctant to rate products.
-Relatively speaking, implicit feedback is often readily available since it is mainly concerned with modeling implicit behavior such user clicks.
+Relatively speaking, implicit feedback is often readily available since it is mainly concerned with modeling implicit behavior such as user clicks.
 As such, many recommender systems are centered on implicit feedback which indirectly reflects user's opinion through observing user behavior.
 There are diverse forms of implicit feedback including purchase history, browsing history, watches and even mouse movements.
 For example, a user that purchased many books by the same author probably likes that author.
@@ -131,7 +126,7 @@ Ví dụ, [IMDB](https://www.imdb.com/) thu thập đánh giá số lượng ng�
 Youtube đưa ra nút thích (*thumps-up*) và không thích (*thumps-down*) cho người dùng để bảy tỏ sở thích.
 Rõ ràng là việc thu thập phản hồi trực tiếp yêu cầu người dùng phải chủ động chỉ rõ sự quan tâm.
 Tuy nhiên, không phải lúc nào cũng dễ dàng thu thập phản hồi trực tiếp do nhiều người dùng thường không hay đánh giá sản phẩm.
-Xét một cách tương đối, phản hồi gián tiếp thường dễ thu thập hơn do chủ yếu liên quan đến việc mô hình hoá hành vi gián tiếp như số lần nhấp chuột của người dùng.
+Xét một cách tương đối, phản hồi gián tiếp thường dễ thu thập hơn do chủ yếu liên quan đến việc mô hình hóa hành vi gián tiếp như số lần nhấp chuột của người dùng.
 Do đó, nhiều hệ thống đề xuất xoay quanh phản hồi gián tiếp, phản ánh ý kiến người dùng thông qua việc quan sát hành vi của họ.
 Có nhiều dạng phản hồi gián tiếp bao gồm lịch sử mua hàng, lịch sử duyệt web, lượt xem và thậm chí là thao tác chuột.
 Ví dụ, một người dùng mua nhiều sách của cùng tác giả thì khả năng cao là thích tác giả đó.
@@ -162,7 +157,7 @@ Dựa trên phạm vi ứng dụng, các tác vụ này bao gồm đề xuất p
 Ta cũng có thể phân biệt các tác vụ này dựa trên loại phản hồi và dữ liệu đầu vào, ví dụ như tác vụ trực tiếp dự đoán đánh giá.
 Đề xuất $n$ sản phẩm hàng đầu (*top-$n$ recommendation*) (theo thứ tự sản phẩm) xếp loại tất cả các sản phẩm cho mỗi người dùng dựa trên phản hồi gián tiếp.
 Nếu có cả thông tin mốc thời gian, ta có thể xây dựng hệ thống đề xuất có nhận thức về chuỗi (*sequence-aware*) :cite:`Quadrana.Cremonesi.Jannach.2018`.
-Một tác vụ phổ biến khác là dự đoán tỉ lệ nhấp chuột, cũng dựa trên phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng rời rạc cũng có thể được tận dụng.
+Một tác vụ phổ biến khác là dự đoán tỷ lệ nhấp chuột, cũng dựa trên phản hồi gián tiếp, tuy nhiên rất nhiều đặc trưng rời rạc cũng có thể được tận dụng.
 Đưa ra đề xuất cho người dùng mới và đề xuất sản phẩm mới cho người dùng hiện còn được gọi là đề xuất khởi động nguội (*cold-start recommendation*) :cite:`Schein.Popescul.Ungar.ea.2002`.
 
 
@@ -188,25 +183,18 @@ Một tác vụ phổ biến khác là dự đoán tỉ lệ nhấp chuột, cũ
 1. Hệ thống đề xuất ảnh hưởng đến cuộc sống hằng ngày của bạn như thế nào?
 2. Có ứng dụng đề xuất nào đáng chú ý mà bạn nghĩ đáng được nghiên cứu?
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 ## Thảo luận
-* [Tiếng Anh](https://discuss.d2l.ai/t/398)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/398)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+*Cập nhật lần cuối: 06/10/2020. (Cập nhật lần cuối từ nội dung gốc: 12/09/2020)*

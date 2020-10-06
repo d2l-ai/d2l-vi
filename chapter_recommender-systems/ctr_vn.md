@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Feature-Rich Recommender Systems
 -->
@@ -30,10 +28,10 @@ Tuy vậy, dữ liệu tương tác thường vô cùng thưa thớt và đôi l
 và thậm chí là bối cảnh diễn ra sự tương tác vào mô hình đề xuất.
 Tận dụng các đặc trưng này có lợi trong việc đưa ra đề xuất, vì chúng có thể nói lên sở thích của người dùng, đặc biệt khi thiếu dữ liệu tương tác.
 Do đó, các mô hình dự đoán nên có khả năng xử lý những đặc trưng này, để có thể nhận thức được phần nào bối cảnh/nội dung.
-Để mô tả loại mô hình đề xuất này, chúng tôi giới thiệu một tác vụ khác sử dụng tỉ lệ nhấp chuột (*click-through rate - CTR*)
+Để mô tả loại mô hình đề xuất này, chúng tôi giới thiệu một tác vụ khác sử dụng tỷ lệ nhấp chuột (*click-through rate - CTR*)
 cho tác vụ đề xuất quảng cáo trực tuyến :cite:`McMahan.Holt.Sculley.ea.2013` và cũng giới thiệu một tập dữ liệu quảng cáo vô danh.
 Dịch vụ quảng cáo nhắm đối tượng đã thu hút sự chú ý rộng rãi và thường được coi như một công cụ đề xuất.
-Đề xuất quảng cáo phù hợp với thị hiếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỉ lệ nhấp chuột.
+Đề xuất quảng cáo phù hợp với thị hiếu và sở thích cá nhân của người dùng là rất quan trọng trong việc cải thiện tỷ lệ nhấp chuột.
 
 
 <!--
@@ -43,11 +41,11 @@ their ads per number of impressions and it is expressed as a percentage calculat
 -->
 
 Các nhà tiếp thị số sử dụng quảng cáo trực tuyến để phát quảng cáo tới khách hàng.
-Tỉ lệ nhấp chuột là tỉ lệ số lần nhấp chuột nhận được
+Tỷ lệ nhấp chuột là tỷ lệ số lần nhấp chuột nhận được
 trên số lần hiển thị quảng cáo, được biểu diễn dưới dạng phần trăm theo công thức:
 
 
-$$ \text{CTR} = \frac{\#\text{Clicks}} {\#\text{Impressions}} \times 100 \% .$$
+$$ \text{CTR} = \frac{\#\text{số lần nhấp chuột}} {\#\text{số lần hiển thị}} \times 100 \% .$$
 
 
 <!--
@@ -59,12 +57,12 @@ It is also closely related to user satisfaction, conversion rate,
 and can be helpful in setting campaign goals as it can help advertisers to set realistic expectations.
 -->
 
-Tỉ lệ nhấp chuột là một dấu hiệu quan trọng cho thấy độ hiệu quả của thuật toán dự đoán.
-Dự đoán tỉ lệ nhấp chuột là tác vụ dự đoán tỉ lệ mà một đường dẫn trên mạng được nhấp vào.
+Tỷ lệ nhấp chuột là một dấu hiệu quan trọng cho thấy độ hiệu quả của thuật toán dự đoán.
+Dự đoán tỷ lệ nhấp chuột là tác vụ dự đoán tỷ lệ mà một đường dẫn trên mạng được nhấp vào.
 Mô hình dự đoán CTR không những có thể được áp dụng vào hệ thống quảng cáo nhắm đối tượng mà còn
-trong hệ thống đề xuất sản phẩm nói chung (như phim ảnh, tin tức, đồ dùng), chiến dịch quảng cáo qua thư điện tử, và thậm chí là công cụ tìm kiếm.
-Nó cũng liên quan mật thiết đến độ hài lòng của khách hàng, tỉ lệ chuyển đổi,
-và có thể giúp ích trong việc thiết lập mục tiêu của chiến dịch quảng cáo do có thể giúp nhà quảng cáo đặt ra kỳ vọng thực tế.
+trong hệ thống đề xuất sản phẩm nói chung (như phim ảnh, tin tức, đồ dùng), chiến dịch quảng cáo qua thư điện tử, và thậm chí là những công cụ tìm kiếm.
+Nó cũng liên quan mật thiết đến độ hài lòng của khách hàng, tỷ lệ chuyển đổi,
+và có thể giúp ích trong việc thiết lập mục tiêu của chiến dịch quảng cáo do có thể giúp nhà quảng cáo đặt ra những kỳ vọng phù hợp.
 
 
 ```{.python .input}
@@ -95,17 +93,13 @@ The real semantics of the features are undisclosed due to anonymization and priv
 
 Với những bước tiến đáng kể của Internet và công nghệ di động,
 quảng cáo trực tuyến đã trở thành một nguồn thu nhập quan trọng và sản sinh phần lớn doanh thu trong ngành công nghiệp Internet.
-Việc hiện thị quảng cáo có liên quan và thu hút sự chú ý của người dùng là rất quan trọng để biến những khách thăm bình thường trở thành khách hàng trả tiền.
+Việc hiển thị quảng cáo có liên quan và thu hút sự chú ý của người dùng là rất quan trọng để biến những người dùng vãng lai trở thành những khách hàng trả tiền tiềm năng.
 Tập dữ liệu chúng tôi giới thiệu là một tập dữ liệu quảng cáo trực tuyến.
 Nó bao gồm 34 trường, với cột đầu tiên biểu diễn biến mục tiêu cho biết liệu một quảng cáo được nhấp vào (1) hay không (0).
 Tất cả các cột còn lại là các đặc trưng theo hạng mục.
 Các cột này có thể biểu diễn id của quảng cáo, id trang web hay ứng dụng, id thiết bị, thời gian, hồ sơ người dùng, v.v.
 Ngữ nghĩa thực tế của các đặc trưng này không được tiết lộ để ẩn danh hoá dữ liệu và bảo mật thông tin cá nhân.
 
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 The following code downloads the dataset from our server and saves it into the local data folder.
@@ -212,8 +206,8 @@ and the Avazu click-through rate prediction [Dataset](https://www.kaggle.com/c/a
 Như có thể thấy, toàn bộ 34 trường đều là đặc trưng theo hạng mục.
 Mỗi giá trị biểu diễn chỉ số one-hot của trường tương ứng.
 Nhãn $0$ nghĩa là quảng cáo này không được nhấp vào.
-Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong cuộc thi hiển thị quảng cáo [Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
-và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
+Lớp `CTRDataset` này cũng có thể được sử dụng để nạp các tập dữ liệu khác như tập dữ liệu trong [cuộc thi hiển thị quảng cáo Criteo](https://labs.criteo.com/2014/02/kaggle-display-advertising-challenge-dataset/).
+và tập dữ liệu dự đoán tỷ lệ nhấp chuột [Avazu](https://www.kaggle.com/c/avazu-ctr-prediction).
 
 
 ## Tóm tắt
@@ -223,8 +217,9 @@ và tập dữ liệu dự đoán tỉ lệ nhấp chuột [Avazu](https://www.k
 * Click-through rate prediction is usually converted to a binary classification problem. The target is to predict whether an ad/item will be clicked or not based on given features.
 -->
 
-* Tỉ lệ nhấp chuột là một phép đo quan trọng được sử dụng để đo độ hiệu quả của hệ thống quảng cáo và hệ thống đề xuất.
-* Dự đoán tỉ lệ nhấp chuột thường được chuyển đổi thành bài toán phân loại nhị phân. Mục tiêu của bài toán là dự đoán liệu một quảng cáo/sản phẩm có được nhấp vào hay không dựa vào các đặc trưng cho trước.
+* Tỷ lệ nhấp chuột là một phép đo quan trọng được sử dụng để đo độ hiệu quả của hệ thống quảng cáo và hệ thống đề xuất.
+* Dự đoán tỷ lệ nhấp chuột thường được chuyển đổi thành bài toán phân loại nhị phân. 
+Mục tiêu của bài toán là dự đoán liệu một quảng cáo/sản phẩm có được nhấp vào hay không dựa vào các đặc trưng cho trước.
 
 
 ## Bài tập
@@ -238,22 +233,13 @@ Bạn có thể nạp tập dữ liệu Criteo và Avazu với `CTRDataset` đã
 Chú ý rằng tập dữ liệu Criteo gồm các đặc trưng mang giá trị số thực nên bạn có thể phải chỉnh sửa lại đoạn mã một chút.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/405)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/405)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
@@ -261,4 +247,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+*Cập nhật lần cuối: 05/10/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

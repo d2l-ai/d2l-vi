@@ -1,10 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Personalized Ranking for Recommender Systems
 -->
 
-# Cá nhân hoá Xếp hạng trong Hệ thống Đề xuất
+# Cá nhân hóa Xếp hạng trong Hệ thống Đề xuất
 
 
 <!--
@@ -20,16 +18,16 @@ Clearly, these models are incapable of distinguishing between observed and non-o
 and are usually not suitable for personalized ranking tasks.
 -->
 
-Trong những phần trước, mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết và chỉ các phản hồi trực tiếp là được xét đến. 
-Phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không dưới dạng trực tiếp mà là gián tiếp, 
-và phản hồi trực tiếp thường khó thu thập hơn. 
-Thứ hai, những cặp người dùng - sản phẩm chưa biết lại hoàn toàn bị bỏ qua, dù chúng có thể được sử dụng để đự đoán sở thích người dùng.
-Điều này khiến cho các phương pháp trên không phù hợp khi mà những đánh giá không phải là thiếu do ngẫu nhiên mà đến từ thị hiếu của người dùng. 
-Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa các phản ánh tiêu cực (người dùng không hứng thú với sản phẩm) 
-và các giá trị còn thiếu (có lẽ sau này người dùng sẽ tương tác với sản phẩm). 
-Ta đơn thuần bỏ qua những cặp chưa biết này trong phương pháp phân rã ma trận và AutoRec. 
-Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết 
-và thường không phù hợp với tác vụ cá nhân hoá xếp hạng (*personalized ranking*). 
+Trong những phần trước, mô hình được huấn luyện và kiểm tra trên các đánh giá đã biết và chỉ các phản hồi trực tiếp là được xét đến.
+Phương pháp này có hai khuyết điểm: Thứ nhất, đa phần các phản hồi trong thực tế không dưới dạng trực tiếp mà là gián tiếp,
+và phản hồi trực tiếp thường khó thu thập hơn.
+Thứ hai, những cặp người dùng - sản phẩm chưa biết lại hoàn toàn bị bỏ qua, dù chúng có thể được sử dụng để dự đoán sở thích người dùng.
+Điều này khiến cho các phương pháp trên không phù hợp khi mà những đánh giá không phải là thiếu do ngẫu nhiên mà đến từ thị hiếu của người dùng.
+Những cặp người dùng - sản phẩm chưa biết là sự pha trộn giữa các phản ánh tiêu cực (người dùng không hứng thú với sản phẩm)
+và các giá trị còn thiếu (có lẽ sau này người dùng sẽ tương tác với sản phẩm).
+Ta đơn thuần bỏ qua những cặp chưa biết này trong phương pháp phân rã ma trận và AutoRec.
+Rõ ràng là những mô hình này không có khả năng phân biệt giữa những cặp đã biết và cặp chưa biết
+và thường không phù hợp với tác vụ cá nhân hóa xếp hạng (*personalized ranking*).
 
 
 <!--
@@ -46,22 +44,23 @@ In this section, we will introduce two pairwise objectives/losses, Bayesian Pers
 -->
 
 Từ đó, một nhóm mô hình đề xuất hướng tới việc tạo ra danh sách xếp hạng đề xuất từ phản hồi gián tiếp dần trở nên phổ biến.
-Thông thường, những mô hình cá nhân hoá xếp hạng có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, theo từng cặp hoặc theo danh sách.
-Cách tiếp cận từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích cá nhân. 
+Thông thường, những mô hình cá nhân hóa xếp hạng có thể được tối ưu bằng các phương thức tiếp cận theo từng điểm, theo từng cặp hoặc theo danh sách.
+Cách tiếp cận từng điểm xét từng tương tác một và huấn luyện một bộ phân loại hoặc một bộ hồi quy để dự đoán sở thích cá nhân.
 Phân rã ma trận và AutoRec được tối ưu với các mục tiêu theo từng điểm.
-Cách tiếp cận theo từng cặp xét một cặp sản phẩm với mỗi người dùng và nhắm tới việc xấp xỉ thứ bậc tối ưu của cặp sản phẩm đó. 
-Thường thì cách tiếp cận theo từng cặp phù hợp với tác vụ xếp hạng hơn do việc dự đoán thứ bậc tương đối gần với bản chất của việc xếp hạng. 
+Cách tiếp cận theo từng cặp xét một cặp sản phẩm với mỗi người dùng và nhắm tới việc xấp xỉ thứ bậc tối ưu của cặp sản phẩm đó.
+Thường thì cách tiếp cận theo từng cặp phù hợp với tác vụ xếp hạng hơn do việc dự đoán thứ bậc tương đối gần với bản chất của việc xếp hạng.
 Cách tiếp cận theo danh sách ước chừng thứ bậc của toàn bộ danh sách các sản phẩm, ví dụ như
-trực tiếp tối ưu hệ số Độ lợi Chiết khấu Tích luỹ Chuẩn ([Normalized Discounted Cumulative Gain - NDCG](https://en.wikipedia.org/wiki/Discounted_cumulative_gain)). 
-Tuy nhiên, cách tiếp cận theo danh sách phức tạp hơn và đòi hỏi tài nguyên tính toán cao hơn so với cách tiếp cận theo từng điểm và theo từng cặp. 
-Trong phần này, chúng tôi sẽ giới thiệu hai loại mất mát/mục tiêu của cách tiếp cận theo từng cặp, mất mát Cá nhân hoá Xếp hạng Bayes (*Bayesian Personalized Ranking*) và mất mát Hinge, cùng với cách lập trình từng loại mất mát tương ứng. 
+trực tiếp tối ưu hệ số Độ lợi Chiết khấu Tích luỹ Chuẩn (*[Normalized Discounted Cumulative Gain - NDCG](https://en.wikipedia.org/wiki/Discounted_cumulative_gain)*).
+Tuy nhiên, cách tiếp cận theo danh sách phức tạp hơn và đòi hỏi tài nguyên tính toán cao hơn so với cách tiếp cận theo từng điểm và theo từng cặp.
+Trong phần này, chúng tôi sẽ giới thiệu hai loại mất mát/mục tiêu của cách tiếp cận theo từng cặp, 
+mất mát Cá nhân hóa Xếp hạng Bayes (*Bayesian Personalized Ranking*) và mất mát Hinge, cùng với cách lập trình từng loại mất mát tương ứng.
 
 
 <!--
 ## Bayesian Personalized Ranking Loss and its Implementation
 -->
 
-## Mất mát Cá nhân hoá Xếp hạng Bayes và Cách lập trình 
+## Mất mát Cá nhân hóa Xếp hạng Bayes và Cách lập trình
 
 
 <!--
@@ -71,10 +70,11 @@ The training data of BPR consists of both positive and negative pairs (missing v
 It assumes that the user prefers the positive item over all other non-observed items.
 -->
 
-Cá nhân hoá Xếp hạng Bayes (BPR) :cite:`Rendle.Freudenthaler.Gantner.ea.2009` là một hàm mất mát cá nhân hoá xếp hạng theo cặp, có xuất phát từ bộ ước lượng hậu nghiệm cực đại (*maximum posterior estimator*). 
-Nó được sử dụng rộng rãi trong nhiều mô hình đề xuất hiện nay. 
-Dữ liệu huấn luyện cho BPR bao gồm cả các cặp tích cực lẫn tiêu cực (các giá trị còn thiếu). 
-Nó giả sử rằng người dùng ưa thích sản phẩm tích cực hơn tất cả các sản phẩm chưa biết. 
+Cá nhân hóa Xếp hạng Bayes (BPR) :cite:`Rendle.Freudenthaler.Gantner.ea.2009` là một hàm mất mát cá nhân hóa xếp hạng theo cặp, 
+có xuất phát từ bộ ước lượng hậu nghiệm cực đại (*maximum posterior estimator*).
+Nó được sử dụng rộng rãi trong nhiều mô hình đề xuất hiện nay.
+Dữ liệu huấn luyện cho BPR bao gồm cả các cặp tích cực lẫn tiêu cực (các giá trị còn thiếu).
+Nó giả sử rằng người dùng ưa thích sản phẩm tích cực hơn tất cả các sản phẩm chưa biết.
 
 
 <!--
@@ -82,8 +82,8 @@ In formal, the training data is constructed by tuples in the form of $(u, i, j)$
 The Bayesian formulation of BPR which aims to maximize the posterior probability is given below:
 -->
 
-Trong công thức, dữ liệu huấn luyện được xây dựng bằng tuple dưới dạng $(u, i, j)$, tức biểu diễn rằng người dùng $u$ ưa thích sản phẩm $i$ hơn sản phẩm $j$. 
-Công thức Bayes trong BPR được cho dưới đây nhắm tới việc cực đại hoá xác suất hậu nghiệm: 
+Trong công thức, dữ liệu huấn luyện được xây dựng bằng tuple dưới dạng $(u, i, j)$, tức biểu diễn rằng người dùng $u$ ưa thích sản phẩm $i$ hơn sản phẩm $j$.
+Công thức Bayes trong BPR được cho dưới đây nhắm tới việc cực đại hóa xác suất hậu nghiệm:
 
 
 $$
@@ -101,8 +101,8 @@ Where $\Theta$ represents the parameters of an arbitrary recommendation model, $
 We can formulate the maximum posterior estimator to derive the generic optimization criterion for the personalized ranking task.
 -->
 
-trong đó $\Theta$ biểu diễn các tham số của một mô hình đề xuất bất kỳ, $>_u$ biểu diễn tổng xếp hạng mong muốn cá nhân hoá của tất cả sản phẩm cho người dùng $u$.
-Ta có thể xây dựng công thức của bộ ước lượng hậu nghiệm cực đại để rút ra tiêu chuẩn tối ưu khái quát của tác vụ cá nhân hoá xếp hạng. 
+trong đó $\Theta$ biểu diễn các tham số của một mô hình đề xuất bất kỳ, $>_u$ biểu diễn tổng xếp hạng mong muốn cá nhân hóa của tất cả sản phẩm cho người dùng $u$.
+Ta có thể xây dựng công thức của bộ ước lượng hậu nghiệm cực đại để rút ra tiêu chuẩn tối ưu khái quát của tác vụ cá nhân hóa xếp hạng.
 
 
 $$
@@ -125,10 +125,10 @@ Here, we let $\Sigma_\Theta = \lambda_\Theta I$.
 -->
 
 trong đó $D := \{(u, i, j) \mid i \in I^+_u \wedge j \in I \backslash I^+_u \}$ là tập huấn luyện, 
-với $I^+_u$ ký hiệu cho sản phẩm mà người dùng $u$ thích, $I$ ký hiệu cho toàn bộ sản phẩm, và $I \backslash I^+_u$ là toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó ưa thích. 
-$\hat{y}_{ui}$ và $\hat{y}_{uj}$ lần lượt là điểm số dự đoán của người dùng $u$ đối với sản phẩm $i$ và $j$. 
-Tiên nghiệm $p(\Theta)$ là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$. 
-Ở đây ta coi $\Sigma_\Theta = \lambda_\Theta I$. 
+với $I^+_u$ ký hiệu cho sản phẩm mà người dùng $u$ thích, $I$ ký hiệu cho toàn bộ sản phẩm, và $I \backslash I^+_u$ là toàn bộ sản phẩm khác ngoại trừ các sản phẩm mà người dùng đó ưa thích.
+$\hat{y}_{ui}$ và $\hat{y}_{uj}$ lần lượt là điểm số dự đoán của người dùng $u$ đối với sản phẩm $i$ và $j$.
+Tiên nghiệm $p(\Theta)$ là một phân phối chuẩn với kỳ vọng bằng không và ma trận phương sai - hiệp phương sai $\Sigma_\Theta$.
+Ở đây ta coi $\Sigma_\Theta = \lambda_\Theta I$.
 
 
 
@@ -136,7 +136,7 @@ Tiên nghiệm $p(\Theta)$ là một phân phối chuẩn với kỳ vọng bằ
 ![Illustration of Bayesian Personalized Ranking](../img/rec-ranking.svg)
 -->
 
-![Minh hoạ Cá nhân hoá Xếp hạng Bayes](../img/rec-ranking.svg)
+![Minh họa Cá nhân hóa Xếp hạng Bayes.](../img/rec-ranking.svg)
 
 
 
@@ -145,8 +145,8 @@ We will implement the base class `mxnet.gluon.loss.Loss` and override the `forwa
 We begin by importing the Loss class and the np module.
 -->
 
-Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng hàm mất mát cá nhân hoá xếp hạng Bayes. 
-Ta bắt đầu bằng việc nhập lớp `Loss` và mô-đun `np`. 
+Ta sẽ lập trình lớp cơ sở `mxnet.gluon.loss.Loss` và ghi đè phương thức `forward` để xây dựng hàm mất mát cá nhân hóa xếp hạng Bayes.
+Ta bắt đầu bằng việc nhập lớp `Loss` và mô-đun `np`.
 
 
 ```{.python .input  n=5}
@@ -159,7 +159,7 @@ npx.set_np()
 The implementation of BPR loss is as follows.
 -->
 
-Lập trình cho mất mát BPR như sau. 
+Lập trình cho mất mát BPR như sau.
 
 
 ```{.python .input  n=2}
@@ -189,7 +189,7 @@ The loss used for ranking in recommender systems has the following form.
 -->
 
 Mất mát Hinge trong tác vụ xếp hạng có sự khác biệt so với [mất mát Hinge](https://mxnet.incubator.apache.org/api/python/gluon/loss.html#mxnet.gluon.loss.HingeLoss) 
-được cung cấp trong thư viện gluon thường sử dụng trong các bộ phân loại như SVM. 
+được cung cấp trong thư viện gluon thường sử dụng trong các bộ phân loại như SVM.
 Mất mát được sử dụng cho tác vụ xếp hạng trong hệ thống đề xuất có dạng như sau.
 
 
@@ -206,9 +206,9 @@ negative samples instead of absolute outputs, making it well suited to recommend
 -->
 
 trong đó $m$ là khoảng cách biên an toàn.
-Mất mát này nhằm mục đích đẩy các sản phẩm tiêu cực ra xa khỏi các sản phẩm tích cực. 
+Mất mát này nhằm mục đích đẩy các sản phẩm tiêu cực ra xa khỏi các sản phẩm tích cực.
 Giống như BPR, nó nhằm tối ưu hóa khoảng cách thích đáng giữa mẫu dương và
-mẫu âm thay vì đầu ra tuyệt đối, khiến cho nó phù hợp với hệ thống đề xuất. 
+mẫu âm thay vì đầu ra tuyệt đối, khiến cho nó phù hợp với hệ thống đề xuất.
 
 
 ```{.python .input  n=3}
@@ -229,7 +229,7 @@ class HingeLossbRec(gluon.loss.Loss):
 These two losses are interchangeable for personalized ranking in recommendation.
 -->
 
-Hai loại mất mát này có thể thay thế lẫn nhau cho tác vụ cá nhân hoá xếp hạng trong hệ thống đề xuất. 
+Hai loại mất mát này có thể thay thế lẫn nhau cho tác vụ cá nhân hóa xếp hạng trong hệ thống đề xuất.
 
 
 ## Tóm tắt
@@ -239,8 +239,8 @@ Hai loại mất mát này có thể thay thế lẫn nhau cho tác vụ cá nh�
 * The two pairwise loses, Bayesian personalized ranking loss and hinge loss, can be used interchangeably.
 -->
 
-* Có ba loại mất mát xếp hạng hiện có trong tác vụ cá nhân hoá xếp hạng trong hệ thống đề xuất, bao gồm các phương pháp theo từng điểm, theo từng cặp và theo danh sách. 
-* Hai loại mất mát theo cặp: mất mát cá nhân hoá xếp hạng Bayes và mất mát Hinge, có thể được sử dụng thay thế lẫn nhau.
+* Có ba loại mất mát xếp hạng hiện có trong tác vụ cá nhân hóa xếp hạng trong hệ thống đề xuất, bao gồm các phương pháp theo từng điểm, theo từng cặp và theo danh sách.
+* Hai loại mất mát theo cặp: mất mát cá nhân hóa xếp hạng Bayes và mất mát Hinge, có thể được sử dụng thay thế lẫn nhau.
 
 
 ## Bài tập
@@ -254,34 +254,19 @@ Hai loại mất mát này có thể thay thế lẫn nhau cho tác vụ cá nh�
 * Bạn có thể tìm mô hình đề xuất nào khác sử dụng mất mát BPR hoặc mất mát Hinge không? 
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/402)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/402)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Đỗ Trường Giang
-* Phạm Hồng Vinh
-* Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Phạm Hồng Vinh
 * Phạm Minh Đức
 * Nguyễn Lê Quang Nhật
 * Lê Khắc Hồng Phúc
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+*Cập nhật lần cuối: 06/10/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

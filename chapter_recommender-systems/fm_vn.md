@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Factorization Machines
 -->
@@ -24,10 +22,10 @@ The technical details and implementations are described below.
 Máy phân rã ma trận (*Factorization machines - FM*) :cite:`Rendle.2010`, được đề xuất bởi Steffen Rendle vào năm 2010,
 là một thuật toán học có giám sát, có thể sử dụng trong các tác vụ phân loại, hồi quy và xếp hạng.
 Nó nhanh chóng nhận được sự chú ý và trở thành một phương pháp phổ biến và có ảnh hưởng lớn trong tác vụ dự đoán và đề xuất.
-Cụ thể, đây là sự tổng quát hoá của hồi quy tuyến tính và phân rã ma trận,
+Cụ thể, đây là sự tổng quát hóa của hồi quy tuyến tính và phân rã ma trận,
 hơn nữa còn gợi nhớ đến máy vector hỗ trợ với hạt nhân đa thức.
 Điểm mạnh của máy phân rã ma trận so với hồi quy tuyến tính và phân ra mã trận là:
-(1) Nó có thể mô hình hoá tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
+(1) Nó có thể mô hình hóa tương tác biến $\chi$ chiều, với $\chi$ là bậc của đa thức và thường được đặt bằng hai.
 (2) Một thuật toán tối ưu tốc độ cao đi kèm với máy phân rã ma trận có thể giảm độ phức tạp tính toán từ đa thức về còn tuyến tính,
 hiệu quả đặc biệt cao với đầu vào thưa nhiều chiều.
 Với các lý do trên, máy phân rã được áp dụng rộng rãi trong ngành quảng cáo hiện đại và đề xuất sản phẩm.
@@ -68,28 +66,26 @@ Some feature interactions can be easily understood so they can be designed by ex
 However, most other feature interactions are hidden in data and difficult to identify.
 So modeling feature interactions automatically can greatly reduce the efforts in feature engineering.
 It is obvious that the first two terms correspond to the linear regression model and the last term is an extension of the matrix factorization model.
-If the feature $i$ represents a item and the feature $j$ represents a user, the third term is exactly the dot product between user and item embeddings.
+If the feature $i$ represents an item and the feature $j$ represents a user, the third term is exactly the dot product between user and item embeddings.
 It is worth noting that FM can also generalize to higher orders (degree > 2).
 Nevertheless, the numerical stability might weaken the generalization.
 -->
+
 
 trong đó $\mathbf{w}_0 \in \mathbb{R}$ là hệ số điều chỉnh toàn cục;
 $\mathbf{w} \in \mathbb{R}^d$ là trọng số của biến thứ $i$;
 $\mathbf{V} \in \mathbb{R}^{d\times k}$ là embedding đặc trưng;
 $\mathbf{v}_i$ biểu diễn hàng thứ $i$ của $\mathbf{V}$; $k$ là số chiều của nhân tố tiềm ẩn;
 $\langle\cdot, \cdot \rangle$ là tích vô hướng của hai vector.
-$\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ mô hình hoá sự tương tác giữa đặc trưng thứ $i$ và thứ $j$.
+$\langle \mathbf{v}_i, \mathbf{v}_j \rangle$ mô hình hóa sự tương tác giữa đặc trưng thứ $i$ và thứ $j$.
 Một số tương tác đặc trưng có thể dễ dàng hiểu được cho nên chúng có thể được thiết kế bởi các chuyên gia.
 Tuy nhiên, đa số các tương tác đặc trưng khác thường ẩn trong dữ liệu và khó có thể nhận biết.
-Do đó việc tự động mô hình hoá tương tác đặc trưng có thể giảm đáng kể công sức thiết kế đặc trưng (*feature engineering*).
+Do đó việc tự động mô hình hóa tương tác đặc trưng có thể giảm đáng kể công sức thiết kế đặc trưng (*feature engineering*).
 Ta có thể thấy rõ rằng hai số hạng đầu tiên tương ứng với mô hình hồi quy tuyến tính và số hạng cuối cùng là dạng mở rộng của mô hình phân rã ma trận.
 Nếu đặc trưng $i$ biểu diễn một sản phẩm và đặc trưng $j$ biểu diễn một người dùng, số hạng thứ ba chính là tích vô hướng giữa embedding người dùng và sản phẩm.
-Đáng chú ý là FM cũng có thể khái quát hoá với bậc cao hơn (bậc > 2).
+Đáng chú ý là FM cũng có thể khái quát hóa với bậc cao hơn (bậc > 2).
 Tuy vậy, tính ổn định số học khi tính toán có thể cản trở khả năng khái quát hóa.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## An Efficient Optimization Criterion
@@ -223,7 +219,7 @@ test_iter = gluon.data.DataLoader(
 
 
 <!--
-Afterwards, we train the model. The learning rate is set to 0.01 and the embedding size is set to 20 by default.
+Afterwards, we train the model. The learning rate is set to 0.02 and the embedding size is set to 20 by default.
 The `Adam` optimizer and the `SigmoidBinaryCrossEntropyLoss` loss are used for model training.
 -->
 
@@ -250,7 +246,7 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 -->
 
 * FM là một framework tổng quát có thể áp dụng cho nhiều tác vụ khác nhau như hồi quy, phân loại hay xếp hạng.
-* Tương tác/tương giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán. Tương tác hai chiều có thể được mô hình hoá một cách hiệu quả với FM.
+* Tương tác/tương giao đặc trưng (*feature interaction/crossing*) rất quan trọng trong tác vụ dự đoán. Tương tác hai chiều có thể được mô hình hóa một cách hiệu quả với FM.
 
 
 ## Bài tập
@@ -263,21 +259,14 @@ d2l.train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs, devices)
 * Thử FM trên một tập dữ liệu khác như Avazu, MovieLens, and Criteo.
 * Thay đổi kích thước embedding để kiểm tra ảnh hưởng của nó lên hiệu năng, so sánh với khi thay đổi kích thước embedding của phân rã ma trận.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/406)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/406)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
@@ -285,4 +274,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
+*Cập nhật lần cuối: 05/10/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
