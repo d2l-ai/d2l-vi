@@ -1184,7 +1184,7 @@ tf.random.normal((10, 10), mu, sigma)
 ## Exponential Family
 -->
 
-## *dịch tiêu đề trên*
+## Họ hàm Mũ
 :label:`subsec_exponential_family`
 
 
@@ -1193,7 +1193,8 @@ One shared property for all the distributions listed above is that they all belo
 The exponential family is a set of distributions whose density can be expressed in the following form:
 -->
 
-*dịch đoạn phía trên*
+Một tính chất chung của tất cả các phân phối liệt kê ở trên là chúng đều thuộc họ được gọi là *họ hàm mũ (exponential family)*.
+Họ hàm mũ là tập các phân phối có mật độ có thể được biểu diễn dưới dạng sau:
 
 
 $$p(\mathbf{x} | \mathbf{\eta}) = h(\mathbf{x}) \cdot \mathrm{exp} \big{(} \eta^{\top} \cdot T\mathbf(x) - A(\mathbf{\eta}) \big{)}$$
@@ -1204,7 +1205,7 @@ $$p(\mathbf{x} | \mathbf{\eta}) = h(\mathbf{x}) \cdot \mathrm{exp} \big{(} \eta^
 As this definition can be a little subtle, let us examine it closely.  
 -->
 
-*dịch đoạn phía trên*
+Do định nghĩa này có thể hơi khó hiểu, hãy cùng xem xét kĩ lưỡng hơn.
 
 
 <!--
@@ -1212,7 +1213,8 @@ First, $h(\mathbf{x})$ is known as the *underlying measure* or the *base measure
 This can be viewed as an original choice of measure we are modifying with our exponential weight.  
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, $h(\mathbf{x})$ được gọi là *phép đo cơ bản (underlying measure)* hay *phép đo cơ sở (base measure)*.
+Đây có thể được coi như lựa chọn ban đầu cho phép đo mà ta đang điều chỉnh với trọng số mũ.
 
 
 <!--
@@ -1225,7 +1227,13 @@ This name is used since the information represented by $T(\mathbf{x})$ is suffic
 probability density and no other information from the sample $\mathbf{x}$'s are required.
 -->
 
-*dịch đoạn phía trên*
+Thứ hai, ta có vector $\mathbf{\eta} = (\eta_1, \eta_2, ..., \eta_l) \in \mathbb{R}^l$ được gọi là *tham số tự nhiên (natural parameters)* hay *tham số chính tắc (canonical parameters)*.
+Các vector này xác định phép đo cơ sở sẽ được điều chỉnh thế nào.
+Các tham số tự nhiên tiến hành phép đo mới bằng cách tính tích vô hướng của các tham số này với hàm
+$T(\cdot)$ nào đó của $\mathbf{x}= (x_1, x_2, ..., x_n) \in \mathbb{R}^n$ và lấy luỹ thừa.
+$T(\mathbf{x})= (T_1(\mathbf{x}), T_2(\mathbf{x}), ..., T_l(\mathbf{x}))$ được gọi là *thống kê đủ (sufficient statistics)* của $\eta$.
+Cái tên này được sử dụng do thông tin biểu diễn bởi $T(\mathbf{x})$ đủ để tính
+mật độ xác suất và không cần thêm bất cứ thông tin nào khác từ mẫu của $\mathbf{x}$.
 
 
 <!--
@@ -1233,7 +1241,8 @@ Third, we have $A(\mathbf{\eta})$, which is referred to as the *cumulant functio
 which ensures that the above distribution :eqref:`eq_exp_pdf` integrates to one, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Thứ ba, ta có $A(\mathbf{\eta})$, được gọi là *hàm tích luỹ (cumulant function)*,
+hàm này đảm bảo phân phối trên :eqref:`eq_exp_pdf` có tích phân bằng 1, ví dụ như
 
 
 $$  A(\mathbf{\eta}) = \log \left[\int h(\mathbf{x}) \cdot \mathrm{exp} 
@@ -1245,7 +1254,8 @@ To be concrete, let us consider the Gaussian.
 Assuming that $\mathbf{x}$ is an univariate variable, we saw that it had a density of
 -->
 
-*dịch đoạn phía trên*
+Để ngắn gọn, ta xét phân phối Gauss.
+Giả sử rằng $\mathbf{x}$ là biến đơn thuộc tính (*univariate variable*), ta thấy rằng nó có mật độ bằng
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1359,7 +1369,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 6 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 7 -->
 * 
