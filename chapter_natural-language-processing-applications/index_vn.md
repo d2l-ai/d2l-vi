@@ -30,7 +30,7 @@ Trọng tâm của cuốn sách là *làm sao để áp dụng học biểu di�
 Tuy nhiên, chúng ta đã thảo luận về một số ứng dụng xử lý ngôn ngữ tự nhiên mà không cần tiền huấn luyện trong các chương trước, nhằm chỉ giải thích các kiến ​​trúc học sâu.
 Như trong :numref:`chap_rnn`, chúng ta đã thiết kế các mô hình ngôn ngữ dựa trên RNN để sinh ra các văn bản có nội dung giống như tiểu thuyết.
 Trong :numref:`chap_modern_rnn` và :numref:`chap_attention`, ta cũng đã thiết kế các mô hình ngôn ngữ dựa trên RNN và các cơ chế tập trung cho tác vụ dịch máy.
-Trong chương này, cới những biểu diễn văn bản được tiền huấn luyện thì ta sẽ xem xét hai tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác đó là, 
+Trong chương này, với những biểu diễn văn bản được tiền huấn luyện thì ta sẽ xem xét hai tác vụ xử lý ngôn ngữ tự nhiên xuôi dòng khác đó là, 
 phân tích cảm xúc (*sentiment analysis*) và suy luận ngôn ngữ tự nhiên (*natural language inference*).
 Đây là những ứng dụng xử lý ngôn ngữ tự nhiên mang tính phổ biến và đại diện: ứng dụng trước phân tích văn bản đơn lẻ trong khi ứng dụng sau phân tích mối quan hệ của các cặp văn bản.
 
@@ -98,4 +98,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Nguyễn Văn Quang
 * Nguyễn Văn Cường
 
-*Lần cập nhật gần nhất: 26/09/2020. (Cập nhật lần cuối từ nội dung gốc: 03/04/2020)*
+*Lần cập nhật gần nhất: 06/10/2020. (Cập nhật lần cuối từ nội dung gốc: 03/04/2020)*
