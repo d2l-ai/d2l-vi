@@ -56,12 +56,12 @@ The content in the markdown cell includes "This is A Title" and "This is text".
 The code cell contains two lines of Python code.
 -->
 
-Bạn có thể truy cập tệp tin sổ tay bằng cách nhấp vào thư mục được hiển thị trên trang web.
+Bạn có thể truy cập tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web.
 Chúng thường có đuôi ".ipynb".
 Để ngắn gọn, ta sẽ tạo một tệp tin tạm thời "test.ipynb".
 Phần nội dung hiển thị sau khi bạn nhấp vào nhìn sẽ giống như :numref:`fig_jupyter01`.
-Sổ tay này bao gồm một ô đánh dấu và một ô mã nguồn.
-Nội dung của ô đánh dấu bao gồm "This is A Title" và "This is text".
+Notebook này bao gồm một ô markdown và một ô mã nguồn.
+Nội dung của ô markdown bao gồm "This is A Title" và "This is text".
 Ô mã nguồn chứa hai dòng mã Python.
 
 
@@ -69,7 +69,7 @@ Nội dung của ô đánh dấu bao gồm "This is A Title" và "This is text".
 ![Markdown and code cells in the "text.ipynb" file.](../img/jupyter01.png)
 -->
 
-![Ô đánh dấu và ô mã nguồn trong tệp tin "text.ipynb".](../img/jupyter01.png)
+![Ô markdown và ô mã nguồn trong tệp tin "text.ipynb".](../img/jupyter01.png)
 :width:`600px`
 :label:`fig_jupyter01`
 
@@ -79,7 +79,7 @@ Double click on the markdown cell to enter edit mode.
 Add a new text string "Hello world." at the end of the cell, as shown in :numref:`fig_jupyter02`.
 -->
 
-Nhấp đúp vào ô đánh dấu để tiến vào chế độ chỉnh sửa.
+Nhấp đúp vào ô markdown để tiến vào chế độ chỉnh sửa.
 Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, như minh họa trong :numref:`fig_jupyter02`.
 
 
@@ -87,7 +87,7 @@ Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, nh
 ![Edit the markdown cell.](../img/jupyter02.png)
 -->
 
-![Chỉnh sửa ô đánh dấu](../img/jupyter02.png)
+![Chỉnh sửa ô markdown](../img/jupyter02.png)
 :width:`600px`
 :label:`fig_jupyter02`
 
@@ -112,14 +112,14 @@ Như minh họa trong :numref:`fig_jupyter03`, chọn "Cell" $\rightarrow$ "Run 
 After running, the markdown cell is as shown in :numref:`fig_jupyter04`.
 -->
 
-Sau khi chạy, ô đánh dấu sẽ trông như :numref:`fig_jupyter04`.
+Sau khi chạy, ô markdown sẽ trông như :numref:`fig_jupyter04`.
 
 
 <!--
 ![The markdown cell after editing.](../img/jupyter04.png)
 -->
 
-![Ô đánh dấu sau khi chỉnh sửa](../img/jupyter04.png)
+![Ô markdown sau khi chỉnh sửa](../img/jupyter04.png)
 :width:`600px`
 :label:`fig_jupyter04`
 
