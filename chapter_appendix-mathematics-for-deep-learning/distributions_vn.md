@@ -1207,7 +1207,7 @@ This can be viewed as an original choice of measure we are modifying with our ex
 -->
 
 Đầu tiên, $h(\mathbf{x})$ được gọi là *phép đo cơ bản (underlying measure)* hay *phép đo cơ sở (base measure)*.
-Đây có thể được coi như lựa chọn gốc cho phép đo mà ta đang điều chỉnh với trọng số mũ.
+Đây có thể được coi như lựa chọn ban đầu cho phép đo mà ta đang điều chỉnh với trọng số mũ.
 
 
 <!--
@@ -1221,7 +1221,7 @@ probability density and no other information from the sample $\mathbf{x}$'s are 
 -->
 
 Thứ hai, ta có vector $\mathbf{\eta} = (\eta_1, \eta_2, ..., \eta_l) \in \mathbb{R}^l$ được gọi là *tham số tự nhiên (natural parameters)* hay *tham số chính tắc (canonical parameters)*.
-Các vector này xác định phép đo sẽ được điều chỉnh thế nào.
+Các vector này xác định phép đo cơ sở sẽ được điều chỉnh thế nào.
 Các tham số tự nhiên tiến hành phép đo mới bằng cách tính tích vô hướng của các tham số này với hàm
 $T(\cdot)$ nào đó của $\mathbf{x}= (x_1, x_2, ..., x_n) \in \mathbb{R}^n$ và lấy luỹ thừa.
 $T(\mathbf{x})= (T_1(\mathbf{x}), T_2(\mathbf{x}), ..., T_l(\mathbf{x}))$ được gọi là *thống kê đủ (sufficient statistics)* của $\eta$.
