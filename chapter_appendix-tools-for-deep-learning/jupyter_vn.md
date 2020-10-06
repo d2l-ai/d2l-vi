@@ -240,7 +240,7 @@ c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'
 After that, you only need to run the `jupyter notebook` command to turn on the notedown plugin by default.
 -->
 
-Sau đó, bạn chỉ cần chạy dòng lệnh `jupyter notebook` để bật plugin sổ tay theo mặc định.
+Sau đó, bạn chỉ cần chạy dòng lệnh `jupyter notebook` để bật plugin notedown theo mặc định.
 
 
 <!--
@@ -305,7 +305,7 @@ jupyter nbextension enable execute_time/ExecuteTime
 * You can run servers remotely using port forwarding.
 -->
 
-* Để chỉnh sửa các chương của cuốn sách, bạn cần kích hoạt định dạng đánh dấu trong Jupyter.
+* Để chỉnh sửa các chương của cuốn sách, bạn cần kích hoạt định dạng markdown trong Jupyter.
 * Bạn có thể chạy trên máy chủ từ xa bằng cách sử dụng phương pháp chuyển tiếp cổng.
 
 
