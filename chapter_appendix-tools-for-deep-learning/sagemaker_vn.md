@@ -15,14 +15,17 @@ Cloud computing services give you access to more powerful computers to run the G
 This tutorial will guide you through Amazon SageMaker: a service that allows you to run this book easily.
 -->
 
-*dịch đoạn phía trên*
+Nhiều ứng dụng của học sâu yêu cầu một lượng lớn các phép tính.
+Máy tính của bạn có thể là quá chậm để giải quyết vấn đề này trong một khoảng thời gian hợp lý.
+Các dịch vụ điện toán đám mây cho phép bạn truy cập vào những máy tính mạnh mẽ hơn để chạy các phần yêu cầu GPU cao trong cuốn sách này.
+Hướng dẫn này sẽ dẫn bạn đi qua Amazon SageMaker: một dịch vụ cho phép bạn chạy cuốn sách này một cách dễ dàng.
 
 
 <!--
 ## Registering and Logging In
 -->
 
-## *dịch tiêu đề trên*
+## Đăng ký và Đăng nhập
 
 
 <!--
@@ -34,14 +37,18 @@ After logging into your AWS account, go to your [console](http://console.aws.ama
 and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the SageMaker panel.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta cần đăng ký tài khoản tại https://aws.amazon.com/.
+Chúng tôi khuyến khích sử dụng xác thực hai yếu tố để tăng cường bảo mật.
+Cũng là một ý tưởng tốt khi cài đặt mức trả chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy dịch vụ đang chạy.
+Lưu ý rằng bạn cũng sẽ cần một thẻ tín dụng.
+Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](http://console.aws.amazon.com/) của bạn và tìm kiếm từ khóa "Sagemaker" (như trong :numref:`fig_sagemaker`) rồi nhấp vào SageMaker.
 
 
 <!--
 ![Open the SageMaker panel.](../img/sagemaker.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker.png)
+![Mở SageMaker](../img/sagemaker.png)
 :width:`300px`
 :label:`fig_sagemaker`
 
@@ -50,7 +57,7 @@ and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the 
 ## Creating a SageMaker Instance
 -->
 
-## *dịch tiêu đề trên*
+## Tạo một SageMaker Instance
 
 
 <!--
