@@ -469,7 +469,7 @@ Since each is an independent coin flip which is successful with probability $p$,
 Then, the binomial random variable is
 -->
 
-Biểu diễn dưới dạng toán học.
+Hãy biểu diễn điều trên dưới dạng toán học.
 Mỗi thí nghiệm là một biến ngẫu nhiên độc lập $X_i$ với $1$ có nghĩa là thành công, và $0$ có nghĩa là thất bại.
 Vì mỗi thí nghiệm là một lần tung đồng xu độc lập với xác suất thành công $p$, ta có thể nói $X_i \sim \mathrm{Bernoulli}(p)$.
 
