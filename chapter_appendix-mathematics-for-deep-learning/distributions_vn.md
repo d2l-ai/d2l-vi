@@ -997,7 +997,7 @@ $$
 where we say a random variable is normally distributed with given mean $\mu$ and variance $\sigma^2$, written $X \sim \mathcal{N}(\mu, \sigma^2)$ if $X$ has density
 -->
 
-trong đó ta gọi một biến ngẫu nhiên có phân phối chuẩn với kỳ vọng $\mu$ và phương sai $\sigma^2$, ký hiệu $X \sim \mathcal{N}(\mu, \sigma^2)$ nếu $X$ có mật độ
+trong đó, ta gọi một biến ngẫu nhiên có phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$, ký hiệu $X \sim \mathcal{N}(\mu, \sigma^2)$ nếu $X$ có mật độ
 
 
 $$p_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
@@ -1144,8 +1144,8 @@ Thus, if we know that our random variable has some mean and variance, the Gaussi
 Có rất nhiều tính chất hấp dẫn khác của phân phối Gauss, và chúng tôi muốn thảo luận thêm một tính chất nữa ở đây.
 Phân phối Gauss được biết tới là *phân phối entropy cực đại*.
 Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó là một phép đo của sự ngẫu nhiên.
-Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn ngẫu nhiên *nhiều nhất* với kỳ vọng và phương sai cố định.
-Do đó, nếu ta biết biến ngẫu nhiên có kỳ vọng và phương sai nào đó, phân phối Gauss theo một nghĩa là lựa chọn phải chăng nhất trong phân phối mà ta có thể chọn.
+Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn một cách ngẫu nhiên *nhất* với trung bình và phương sai cố định.
+Do đó, nếu ta biết biến ngẫu nhiên có trung bình và phương sai nào đó, về trực giác phân phối Gauss là lựa chọn phải chăng nhất trong những phân phối mà ta có thể chọn.
 
 
 <!--
