@@ -1285,7 +1285,7 @@ $$
 This matches the definition of the exponential family with:
 -->
 
-*dịch đoạn phía trên*
+Hàm này phù hợp với định nghĩa của họ hàm mũ với:
 
 
 <!--
@@ -1295,7 +1295,10 @@ This matches the definition of the exponential family with:
 * *cumulant function*: $A(\eta) = \frac{1}{2 \sigma^2} \mu^2 + \log(\sigma) = \frac{\eta_1^2}{4 \eta_2} - \frac{1}{2}\log(2 \eta_2)$.
 -->
 
-*dịch đoạn phía trên*
+* *phép đo cơ sở*: $h(x) = \frac{1}{\sqrt{2 \pi}}$,
+* *tham số tự nhiên*: $\eta = \begin{bmatrix} \eta_1 \\ \eta_2 \end{bmatrix} = \begin{bmatrix} \frac{\mu}{\sigma^2} \\ \frac{1}{2 \sigma^2}  \end{bmatrix}$,
+* *thống kê đủ*: $T(x) = \begin{bmatrix}x\\-x^2\end{bmatrix}$, và
+* *hàm tích luỹ*: $A(\eta) = \frac{1}{2 \sigma^2} \mu^2 + \log(\sigma) = \frac{\eta_1^2}{4 \eta_2} - \frac{1}{2}\log(2 \eta_2)$.
 
 
 <!--
@@ -1303,7 +1306,8 @@ It is worth noting that the exact choice of each of above terms is somewhat arbi
 Indeed, the important feature is that the distribution can be expressed in this form, not the exact form itself.
 -->
 
-*dịch đoạn phía trên*
+Đáng chú ý rằng việc lựa chọn chính xác cho từng số hạng trên hơi có phần tuỳ ý.
+Quả thực, đặc trưng quan trọng nhất chính là việc phân phối có thể được biểu diễn ở dạng này, chứ không phải dạng chuẩn của nó.
 
 
 <!--
@@ -1311,7 +1315,8 @@ As we allude to in :numref:`subsec_softmax_and_derivatives`, a widely used techn
 The exponential family is a common and powerful family of distributions encountered frequently in machine learning.
 -->
 
-*dịch đoạn phía trên*
+Như ta ám chỉ trong :numref:`subsec_softmax_and_derivatives`, một kỹ thuật được sử dụng rộng rãi là giả sử rằng kết quả cuối cùng $\mathbf{y}$ tuân theo họ phân phối mũ.
+Họ hàm mũ là một họ phân phối phổ biến và mạnh mẽ, bắt gặp thường xuyên trong học máy.
 
 
 ## Tóm tắt
@@ -1326,7 +1331,13 @@ The exponential family is a common and powerful family of distributions encounte
 * All the above distributions belong to exponential family.
 -->
 
-*dịch đoạn phía trên*
+* Biến ngẫu nhiên Bernoulli có thể được sử dụng để mô hình hoá sự kiện cho ra kết quả có/không.
+* Mô hình phân phối đều rời rạc chọn từ một tập hữu hạn những khả năng.
+* Phân phối đều liên tục chọn từ một khoảng liên tục.
+* Phân phối nhị thức mô hình hoá một chuỗi các biến Bernoulli ngẫu nhiên, và đếm số kết quả.
+* Biến ngẫu nhiên Poisson mô hình hoá các sự kiện hiếm khi xuất hiện.
+* Biến ngẫu nhiên Gauss mô hình hoá kết quả của việc tính tổng một lượng lớn các biến ngẫu nhiên độc lập.
+* Tất cả các phân phối trên đều thuộc họ hàm mũ.
 
 
 ## Bài tập
@@ -1338,7 +1349,10 @@ we can show that this becomes approximately Gaussian. Why does this make sense?
 3. What is the probability mass function for a sum of two discrete uniform random variables on $n$ elements?
 -->
 
-*dịch đoạn phía trên*
+1. Độ lệch chuẩn của một biến ngẫu nhiên mô tả hiệu $X-Y$ của hai biến ngẫu nhiên nhị thức độc lập $X, Y \sim \mathrm{Binomial}(16, 1/2)$ là gì.
+2. Nếu ta lấy một biến ngẫu nhiên Poisson $X \sim \mathrm{Poisson}(\lambda)$ và xét $(X - \lambda)/\sqrt{\lambda}$ với $\lambda \rightarrow \infty$,
+ta có thể chỉ ra rằng phân phối này xấp xỉ phân phối Gauss. Tại sao điều này lại hợp lý?
+3. Hàm khối xác suất của tổng của hai biến ngẫu nhiên rời rạc phân phối đều trên $n$ phần tử là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -1381,6 +1395,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 7 -->
-* 
+* Đỗ Trường Giang
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
