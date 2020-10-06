@@ -436,7 +436,7 @@ The key object of study in that field is the entropy which is
 Lý do thứ ba và cũng là cuối cùng để xem xét hàm đối log hợp lý đó là mối tương quan với lý thuyết thông tin,
 mà chúng ta sẽ thảo luận chi tiết tại phần :numref:`sec_information_theory`.
 Đây là một lý thuyết toán học chặt chẽ đưa ra cách đo lường mức độ thông tin hoặc tính ngẫu nhiên trong một biến ngẫu nhiên.
-Đối tượng chính cần nghiên cứu trong lĩnh vực đó là entropy
+Đối tượng nghiên cứu chính trong lĩnh vực đó là entropy
 
 
 $$
@@ -452,7 +452,7 @@ This theoretical interpretation alone would be sufficiently compelling to motiva
 
 công thức trên đo lường tính ngẫu nhiên của một nguồn. Cần lưu ý rằng đây chỉ là giá trị $-\log$ xác suất trung bình,
 và do đó, nếu chúng ta lấy hàm đối log hợp lý và chia cho số lượng mẫu dữ liệu, chúng ta sẽ nhận được một đại lượng liên quan khác được gọi là entropy chéo.
-Chỉ cần diễn giải lý thuyết này thôi cũng đủ sức thuyết phục để thúc đẩy việc sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
+Chỉ cần diễn giải lý thuyết này thôi cũng đủ thuyết phục để thúc đẩy việc sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
 
 
 <!--
@@ -488,14 +488,14 @@ and thus is not the probability of generating our data for any set of parameters
 -->
 
 Câu hỏi lúc này trở thành, "Tại sao điều này lại ổn?"
-Rốt cuộc, lý do chúng tôi đưa ra mật độ là vì chính bản thân xác suất nhận được các kết quả cụ thể bằng không,
-và do đó chẳng phải xác suất sinh dữ liệu đối với tập hợp tham số bất kỳ lại bằng không sao?
+Rốt cuộc, lý do chúng ta đưa ra khái niệm mật độ là vì chính bản thân xác suất nhận được một kết quả cụ thể là bằng không,
+và do đó chẳng phải xác suất sinh dữ liệu đối với tập hợp tham số bất kỳ sẽ bằng không sao?
 
 <!--
 Indeed, this is the case, and understanding why we can shift to densities is an exercise in tracing what happens to the epsilons.
 -->
 
-Quả thật điều này là đúng, và việc hiểu tại sao chúng ta có thể chuyển sang mật độ là một bài tập trong việc truy ra những gì xảy ra đối với epsilon.
+Quả thật điều này là đúng, và việc hiểu tại sao chúng ta có thể chuyển sang mật độ là một bài tập trong việc truy ra những gì xảy ra đối với các epsilon.
 
 <!--
 Let us first re-define our goal.
@@ -566,8 +566,8 @@ conversion of products to sums (and the resulting simplification of gradient com
 -->
 
 * Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra dữ liệu với xác suất cao nhất.
-* Thường thì mọi người hay làm việc với hàm đối log hợp lý hơn vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tời việc đơn giản hóa các phép tính gradient) và mối liên hệ về mặt lý thuyết tới lý thuyết thông tin.
-* Dù việc thúc đẩy phương pháp này trong tình huống rời rạc là đơn giản nhất, nó hoàn toàn có thể được tổng quát hóa cho tình huống liên tục bằng cách cực đại hóa mật độ xác suất được gán cho các điểm dữ liệu.
+* Thường thì mọi người hay làm việc với hàm đối log hợp lý hơn vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ về mặt lý thuyết tới lý thuyết thông tin.
+* Dù việc áp dụng phương pháp này trong tình huống rời rạc là đơn giản nhất, nó hoàn toàn có thể được tổng quát hóa cho tình huống liên tục bằng cách cực đại hóa mật độ xác suất được gán cho các điểm dữ liệu.
 
 
 ## Bài tập
@@ -582,7 +582,7 @@ What is the maximum likelihood estimate for the mean?
 1. Giả sử bạn biết rằng một biến ngẫu nhiên có mật độ bằng  $\frac{1}{\alpha}e^{-\alpha x}$ đối với một giá trị $\alpha$ nào đó.
 Bạn có được một quan sát duy nhất từ biến ngẫu nhiên là số $3$. Giá trị ước lượng hợp lý cực đại cho $\alpha$ là bao nhiêu?
 2. Giả sử rằng bạn có tập dữ liệu với các mẫu $\{x_i\}_{i=1}^N$ được lấy từ một phân phối Gauss với giá trị trung bình chưa biết, nhưng phương sai bằng $1$.
-Giá trị ước lượng hợp lý cực đại cho giá trị trung bình là bao nhiêu?
+Giá trị ước lượng hợp lý cực đại của trung bình là bao nhiêu?
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 <!-- ========================================= REVISE - KẾT THÚC ===================================-->
