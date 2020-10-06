@@ -1,10 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Deep Factorization Machines
 -->
 
-# Máy Phân rã ma trận Sâu
+# Máy Phân rã Ma trận Sâu
 
 
 <!--
@@ -16,11 +14,11 @@ Modeling higher degrees of feature combinations with factorization machines is p
 but it is usually not adopted due to numerical instability and high computational complexity.
 -->
 
-Việc học những tổ hợp đặc trưng hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỉ lệ nhấp chuột.
-Máy phân rã ma trận mô hình hoá các tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
+Việc học những tổ hợp đặc trưng hiệu quả rất quan trọng đối với sự thành công của tác vụ dự đoán tỷ lệ nhấp chuột.
+Máy phân rã ma trận mô hình hóa các tương tác đặc trưng dưới dạng tuyến tính (ví dụ như tương tác song tuyến tính).
 Điều này thường không đủ đối với dữ liệu thực tế khi bản thân việc kết hợp chéo các đặc trưng thường có cấu trúc rất phức tạp và có dạng phi tuyến.
 Tệ hơn, máy phân rã ma trận trong thực tế thường sử dụng các tương tác đặc trưng bậc hai.
-Mô hình hoá tổ hợp tương tác với bậc cao hơn tuy khả thi về lý thuyết
+Mô hình hóa tổ hợp tương tác với bậc cao hơn tuy khả thi về lý thuyết
 nhưng thường không được sử dụng do tính bất ổn số học và độ phức tạp tính toán cao.
 
 
@@ -36,7 +34,7 @@ In this section, we will introduce a representative model named deep factorizati
 Một giải pháp hiệu quả hơn là sử dụng mạng nơ-ron sâu.
 Mạng nơ-ron sâu rất hiệu quả khi học biểu diễn đặc trưng và có thể học được những tương tác đặc trưng tinh xảo.
 Do đó, việc tích hợp chúng vào máy phân rã ma trận cũng dễ hiểu.
-Việc thêm các tầng biến đổi phi tuyến vào máy phân rã ma trận giúp mô hình hoá cả những tổ hợp đặc trưng bậc thấp và bậc cao.
+Việc thêm các tầng biến đổi phi tuyến vào máy phân rã ma trận giúp mô hình hóa cả những tổ hợp đặc trưng bậc thấp và bậc cao.
 Hơn nữa, bản thân cấu trúc phi tuyến của đầu vào cũng có thể được nắm bắt thông qua mạng nơ-ron sâu.
 Trong phần này, chúng tôi sẽ giới thiệu một mô hình biểu diễn được gọi là máy phân rã ma trận sâu (*deep factorization machines - DeepFM*) :cite:`Guo.Tang.Ye.ea.2017` kết hợp giữa FM và mạng nơ-ron sâu.
 
@@ -58,7 +56,7 @@ The advantages of DeepFM over the Wide \& Deep model is that it reduces the effo
 -->
 
 DeepFM bao gồm một thành phần FM và một mạng sâu được tích hợp theo cấu trúc song song.
-FM là máy phân rã ma trận 2 chiều dùng để mô hình hoá tương tác đặc trưng bậc thấp.
+FM là máy phân rã ma trận 2 chiều dùng để mô hình hóa tương tác đặc trưng bậc thấp.
 Mạng sâu là một perceptron đa tầng dùng để nắm bắt tương tác đặc trưng bậc cao và tính phi tuyến.
 Hai thành phần này có chung đầu vào/embedding và tổng đầu ra của chúng được lấy làm dự đoán cuối cùng.
 Điều đáng nói là ý tưởng của DeepFM tương tự với kiến trúc Rộng \& Sâu, là kiến trúc có thể nắm bắt được cả sự ghi nhớ và tính khái quát.
@@ -74,9 +72,9 @@ that are looked up with the sparse categorical feature input, denoted as:
 -->
 
 Để ngắn gọn, ta bỏ qua phần mô tả FM và ký hiệu đầu ra của thành phần này là $\hat{y}^{(FM)}$.
-Bạn đọc có thể tham khảo phần trước để biết thêm chi tiết.
+Độc giả có thể tham khảo phần trước để biết thêm chi tiết.
 Gọi $\mathbf{e}_i \in \mathbb{R}^{k}$ là vector đặc trưng tiềm ẩn của trường thứ $i$.
-Đầu vào của  mạng sâu là tổ hợp của embedding dày đặc của tất cả các trường
+Đầu vào của mạng sâu là tổ hợp của embedding dày đặc của tất cả các trường
 có thể được truy xuất với đầu vào đặc trưng danh mục thưa, ký hiệu là:
 
 
@@ -95,11 +93,6 @@ trong đó $f$ là số trường. Sau đó nó được đưa vào mạng nơ-r
 $$
 \mathbf{z}^{(l)}  = \alpha(\mathbf{W}^{(l)}\mathbf{z}^{(l-1)} + \mathbf{b}^{(l)}),
 $$
-
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 <!--
@@ -126,14 +119,14 @@ The architecture of DeepFM is illustrated below.
 -->
 
 Trong đó $\sigma$ là hàm sigmoid.
-Kiến trúc của DeepFM được minh hoạ như hình dưới.
+Kiến trúc của DeepFM được minh họa như hình dưới.
 
 
 <!--
 ![Illustration of the DeepFM model](../img/rec-deepfm.svg)
 -->
 
-![Minh hoạ mô hình DeepFM](../img/rec-deepfm.svg)
+![Minh họa mô hình DeepFM.](../img/rec-deepfm.svg)
 
 
 <!--
@@ -261,7 +254,7 @@ So với FM, DeepFM hội tụ nhanh hơn và đạt được hiệu năng tốt
 * DeepFM outperforms the original FM on the advertising dataset.
 -->
 
-* Việc tích hợp mạng nơ-ron vào FM cho phép mô hình hoá các tương tác phức tạp và có bậc cao.
+* Việc tích hợp mạng nơ-ron vào FM cho phép mô hình hóa các tương tác phức tạp và có bậc cao.
 * DeepFM vượt trội so với FM nguyên bản trên tập dữ liệu quảng cáo.
 
 
@@ -276,22 +269,13 @@ So với FM, DeepFM hội tụ nhanh hơn và đạt được hiệu năng tốt
 * Sử dụng tập dữ liệu Criteo và so sánh DeepFM với mô hình FM gốc.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/407)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/407)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
@@ -299,4 +283,4 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Lê Quang Nhật
 * Nguyễn Văn Cường
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
+*Cập nhật lần cuối: 05/10/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*

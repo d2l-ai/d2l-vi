@@ -6,7 +6,7 @@
 :label:`chap_recsys`
 
 
-**Shuai Zhang** (*Amazon*), **Aston Zhang** (*Amazon*), và **Yi Tay** (*Google*)
+**Shuai Zhang** (*Amazon*), **Aston Zhang** (*Amazon*), và **Yi Tay** (*Google*).
 
 <!--
 Recommender systems are widely employed in industry and are ubiquitous in our daily lives. 

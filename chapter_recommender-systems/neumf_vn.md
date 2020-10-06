@@ -1,10 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Neural Collaborative Filtering for Personalized Ranking
 -->
 
-# Lọc Cộng tác Nơ-ron cho Cá nhân hoá Xếp hạng 
+# Lọc Cộng tác Nơ-ron cho Cá nhân hóa Xếp hạng 
 
 
 <!--
@@ -19,12 +17,14 @@ Unlike the rating prediction task in AutoRec, this model generates a ranked reco
 We will use the personalized ranking loss introduced in the last section to train this model.
 -->
 
-Vượt ra khỏi phản hồi trực tiếp, phần này sẽ giới thiệu một framework nơ-ron lọc cộng tác (NCF _neural collaborative filtering framework_) cho bài toán đề xuất sử dụng phản hồi gián tiếp.
+Vượt ra khỏi phản hồi trực tiếp, phần này sẽ giới thiệu một framework nơ-ron lọc cộng tác (*neural collaborative filtering framework* - NCF) cho bài toán đề xuất sử dụng phản hồi gián tiếp.
 Phản hồi gián tiếp có mặt khắp mọi nơi trong các hệ thống đề xuất.
-Các hành động như nhấp chuột, mua và xem là những phản hồi gián tiếp phổ biến có thể dễ dàng thu thập và thể hiện được sở thích của người dùng.
-Mô hình được giới thiệu là phân rã ma trận nơ-ron (*neural matrix factorization*) viết tắt là NeuMF :cite:`He.Liao.Zhang.ea.2017`, hướng tới việc giải quyết tác vụ xếp hạng cá nhân hóa sử dụng phản hồi gián tiếp.
+Các hành động như nhấn chọn, mua và xem là những phản hồi gián tiếp phổ biến có thể dễ dàng thu thập và thể hiện được sở thích của người dùng.
+Mô hình được giới thiệu là phân rã ma trận nơ-ron (*neural matrix factorization*) viết tắt là NeuMF :cite:`He.Liao.Zhang.ea.2017`, 
+hướng tới việc giải quyết tác vụ xếp hạng cá nhân hóa sử dụng phản hồi gián tiếp.
 Mô hình này tận dụng tính linh hoạt và tính phi tuyến của mạng nơ-ron để thay thế tích vô hướng trong phân rã ma trận, nhằm nâng cao tính biểu diễn của mô hình.
-Cụ thể, mô hình này gồm hai mạng con là GMF (phân rã ma trận tổng quát - *Generalized Matrix Factorization*) và MLP, và mô hình hóa các tương tác theo hai mạng này thay vì các tích vô hướng đơn giản.
+Cụ thể, mô hình này gồm hai mạng con là phân rã ma trận tổng quát (*Generalized Matrix Factorization* - GMF) và MLP, 
+và mô hình hóa các tương tác theo hai mạng này thay vì các tích vô hướng đơn giản.
 Kết quả đầu ra của hai mạng này được ghép nối với nhau để tính điểm dự đoán cuối cùng.
 Không giống như tác vụ dự đoán đánh giá trong AutoRec, mô hình này sinh ra danh sách đề xuất đã được xếp hạng cho từng người dùng dựa trên phản hồi gián tiếp.
 Chúng ta sẽ sử dụng mất mát xếp hạng cá nhân hóa đã được giới thiệu trong phần trước để huấn luyện mô hình này.
@@ -64,7 +64,7 @@ $\hat{y}_{ui}$ is the prediction score of the user $u$ might give to the item $i
 
 trong đó $\odot$ là phép nhân Hadamard của hai vector.
 $\mathbf{P} \in \mathbb{R}^{m \times k}$ và $\mathbf{Q} \in \mathbb{R}^{n \times k}$ lần lượt là ma trận đặc trưng tiềm ẩn của người dùng và sản phẩm.
-$\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của ma trận $P$ và $\mathbf{q}_i \in \mathbb{R}^{ k}$ hàng thứ $i$ của ma trận $Q$. 
+$\mathbf{p}_u \in \mathbb{R}^{ k}$ là hàng thứ $u$ của ma trận $P$ và $\mathbf{q}_i \in \mathbb{R}^{ k}$ hàng thứ $i$ của ma trận $Q$.
 $\alpha$ và $h$ ký hiệu hàm kích hoạt và trọng số của tầng đầu ra.
 $\hat{y}_{ui}$ là điểm dự đoán mà người dùng $u$ có thể đưa ra cho sản phẩm $i$.
 
@@ -73,14 +73,14 @@ $\hat{y}_{ui}$ là điểm dự đoán mà người dùng $u$ có thể đưa ra
 Another component of this model is MLP.
 To enrich model flexibility, the MLP subnetwork does not share user and item embeddings with GMF.
 It uses the concatenation of user and item embeddings as input.
-With the complicated connections and nonlinear transformations, it is capable of eastimating the intricate interactions between users and items.
+With the complicated connections and nonlinear transformations, it is capable of estimating the intricate interactions between users and items.
 More precisely, the MLP subnetwork is defined as:
 -->
 
 Thành phần còn lại của mô hình này là MLP.
 Để tăng tính linh hoạt của mô hình, MLP không dùng chung các embedding người dùng và sản phẩm với GMF,
 mà có đầu vào là vector ghép nối của hai embedding người dùng và sản phẩm.
-Với các kết nối phức tạp và các phép biến đổi phi tuyến, nó có thể ước lượng các tương tác phức tạp giữa người dùng và sản phảm.
+Với các kết nối phức tạp và các phép biến đổi phi tuyến, nó có thể ước lượng các tương tác phức tạp giữa người dùng và sản phẩm.
 Chính xác hơn, MLP được định nghĩa như sau:
 
 
@@ -90,7 +90,7 @@ z^{(1)} &= \phi_1(\mathbf{U}_u, \mathbf{V}_i) = \left[ \mathbf{U}_u, \mathbf{V}_
 \phi^{(2)}(z^{(1)})  &= \alpha^1(\mathbf{W}^{(2)} z^{(1)} + b^{(2)}) \\
 &... \\
 \phi^{(L)}(z^{(L-1)}) &= \alpha^L(\mathbf{W}^{(L)} z^{(L-1)} + b^{(L)})) \\
-\hat{y}_{ui} &= \alpha(\mathbf{h}^\top\phi^L(z^{(L)}))
+\hat{y}_{ui} &= \alpha(\mathbf{h}^\top\phi^L(z^{(L-1)}))
 \end{aligned}
 $$
 
@@ -120,7 +120,7 @@ Tầng dự đoán có công thức như sau:
 
 
 $$
-\hat{y}_{ui} = \sigma(\mathbf{h}^\top[\mathbf{x}, \phi^L(z^{(L)})]).
+\hat{y}_{ui} = \sigma(\mathbf{h}^\top[\mathbf{x}, \phi^L(z^{(L-1)})]).
 $$
 
 
@@ -128,12 +128,12 @@ $$
 The following figure illustrates the model architecture of NeuMF.
 -->
 
-Hình dưới đây minh hoạ kiến trúc mô hình NeuMF.
+Hình dưới đây minh họa kiến trúc mô hình NeuMF.
 
 
 <!-- ![Illustration of the NeuMF model](../img/rec-neumf.svg) -->
 
-![Minh hoạ mô hình NeuMF](../img/rec-neumf.svg)
+![Minh họa mô hình NeuMF](../img/rec-neumf.svg)
 
 
 ```{.python .input  n=1}
@@ -180,6 +180,7 @@ class NeuMF(nn.Block):
         for num_hiddens in nums_hiddens:
             self.mlp.add(nn.Dense(num_hiddens, activation='relu',
                                   use_bias=True))
+        self.prediction_layer = nn.Dense(1, activation='sigmoid', use_bias=False)
 
     def forward(self, user_id, item_id):
         p_mf = self.P(user_id)
@@ -189,13 +190,8 @@ class NeuMF(nn.Block):
         q_mlp = self.V(item_id)
         mlp = self.mlp(np.concatenate([p_mlp, q_mlp], axis=1))
         con_res = np.concatenate([gmf, mlp], axis=1)
-        return np.sum(con_res, axis=-1)
+        return self.prediction_layer(con_res)
 ```
-
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 
 <!--
@@ -414,9 +410,9 @@ Here, we split the dataset in the `seq-aware` mode where users' latest interacte
 -->
 
 Lúc này ta có thể nạp tập dữ liệu MovieLens 100k và huấn luyện mô hình.
-Vì tập dữ liệu MovieLens chỉ chứa các đánh giá xếp hạng, ta sẽ nhị phân hoá các đánh giá xếp hạng này thành 0 và 1 với một vài mất mát về độ chính xác.
-Nếu một người dùng đã đánh giá một sản phẩm, ta coi phản hồi gián tiếp bằng 1, bằng 0 nếu ngược lại.
-Hành động đánh giá một sản phẩm có thể được coi như là một hình thức cung cấp phản hồi gián tiếp.
+Vì tập dữ liệu MovieLens chỉ chứa các đánh giá xếp hạng, ta sẽ nhị phân hóa các đánh giá xếp hạng này thành 0 và 1 với một vài mất mát về độ chính xác.
+Nếu một người dùng đã đánh giá một sản phẩm, ta xem phản hồi gián tiếp bằng 1, bằng 0 nếu ngược lại.
+Hành động đánh giá một sản phẩm có thể được xem như là một hình thức cung cấp phản hồi gián tiếp.
 Ở đây, ta phân tách tập dữ liệu ở chế độ `seq-aware`, trong đó các sản phẩm được tương tác gần đây nhất sẽ được tách ra để kiểm tra.
 
 
@@ -470,7 +466,7 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 
 <!--
 * Adding nonlinearity to matrix factorization model is beneficial for improving the model capability and effectiveness.
-* NeuMF is a combination of matrix factorization and Multilayer perceptron. The multilayer perceptron takes the concatenation of user and item embeddings as the input.
+* NeuMF is a combination of matrix factorization and multilayer perceptron. The multilayer perceptron takes the concatenation of user and item embeddings as the input.
 -->
 
 * Bổ sung thêm tính phi tuyến vào mô hình phân rã ma trận giúp cải thiện khả năng và tính hiệu quả của mô hình.
@@ -493,9 +489,6 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 * Hãy thử sử dụng mất mát hinge được định nghĩa ở phần trước để tối ưu mô hình này.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
 * [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/403)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
@@ -503,15 +496,10 @@ train_ranking(net, train_iter, test_iter, loss, trainer, None, num_users,
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Văn Quang
+* Đỗ Trường Giang
 * Nguyễn Văn Cường
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 31/07/2020)*
+*Cập nhật lần cuối: 06/10/2020. (Cập nhật lần cuối từ nội dung gốc: 20/09/2020)*

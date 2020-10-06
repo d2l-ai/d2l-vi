@@ -1,10 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-
 <!--
 # AutoRec: Rating Prediction with Autoencoders
 -->
 
-# AutoRec: Dự đoán Đánh giá với Bộ tự mã hoá
+# AutoRec: Dự đoán Đánh giá với Bộ tự Mã hóa
 
 
 <!--
@@ -16,10 +14,11 @@ Neural networks have been proven to be capable of approximating any continuous f
 making it suitable to address the limitation of matrix factorization and enrich the expressiveness of matrix factorization.
 -->
 
-Mặc dù mô hình phân rã ma trận đạt hiệu năng tương đối ổn với bài toán dự đoán đánh giá, về căn bản nó là một mô hình tuyến tính. 
-Do đó, mô hình dạng này không có khả năng nắm bắt được mối quan hệ phi tuyến phức tạp và rắc rối mà có khả năng dự đoán sở thích người dùng. 
-Trong phần này, chúng tôi sẽ giới thiệu một mô hình mạng nơ-ron lọc cộng tác phi tuyến, AutoRec :cite:`Sedhain.Menon.Sanner.ea.2015`. 
-Nó áp dụng lọc cộng tác (*collaborative filtering - CF*) với kiến trúc của một bộ tự mã hoá (*autoencoder*), nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa trên cơ sở các phản hồi trực tiếp. 
+Mặc dù mô hình phân rã ma trận đạt hiệu năng tương đối ổn với bài toán dự đoán đánh giá, nhưng về căn bản nó là một mô hình tuyến tính.
+Do đó, mô hình dạng này không có khả năng nắm bắt được mối quan hệ phi tuyến phức tạp và rắc rối, mà có thể có khả năng dự đoán sở thích người dùng.
+Trong phần này, chúng tôi sẽ giới thiệu một mô hình mạng nơ-ron lọc cộng tác phi tuyến, gọi là AutoRec :cite:`Sedhain.Menon.Sanner.ea.2015`.
+Nó áp dụng lọc cộng tác (*collaborative filtering - CF*) với kiến trúc của một bộ tự mã hóa (*autoencoder*), 
+nhằm mục đích tích hợp biến đổi phi tuyến vào CF dựa trên cơ sở các phản hồi trực tiếp.
 Mạng nơ-ron đã được chứng minh là có khả năng xấp xỉ bất kì hàm liên tục nào,
 điều này khiến nó phù hợp để khắc phục các hạn chế và tăng cường khả năng biểu diễn của mô hình phân rã ma trận. 
 
@@ -31,10 +30,10 @@ In AutoRec, instead of explicitly embedding users/items into low-dimensional spa
 it uses the column/row of the interaction matrix as the input, then reconstructs the interaction matrix in the output layer.
 -->
 
-Một mặt, AutoRec có cùng cấu trúc với một bộ tự mã hoá gồm một tầng đầu vào, một tầng ẩn và một tầng khôi phục (đầu ra). 
-Bộ tự mã hoá là một mạng nơ-ron học cách sao chép đầu vào sang đầu ra nhằm mã hoá đầu vào thành dạng biểu diễn ẩn (và thường có kích thước nhỏ). 
+Một mặt, AutoRec có cùng cấu trúc với một bộ tự mã hóa gồm một tầng đầu vào, một tầng ẩn và một tầng khôi phục (đầu ra).
+Bộ tự mã hóa là một mạng nơ-ron học cách sao chép đầu vào sang đầu ra nhằm mã hóa đầu vào thành dạng biểu diễn ẩn (và thường có kích thước nhỏ).
 Trong AutoRec, thay vì trực tiếp tạo embedding của người dùng/sản phẩm trong không gian kích thước nhỏ hơn,
-ta sử dụng các cột/hàng của ma trận tương tác làm đầu vào, sau đó khôi phục lại ma trận tương tác ở tầng đầu ra. 
+ta sử dụng các cột/hàng của ma trận tương tác làm đầu vào, sau đó khôi phục lại ma trận tương tác ở tầng đầu ra.
 
 
 <!--
@@ -43,9 +42,9 @@ It uses a partially observed interaction matrix as the input, aiming to reconstr
 In the meantime, the missing entries of the input are filled in the output layer via reconstruction for the purpose of recommendation.
 -->
 
-Mặt khác, AutoRec khác với bộ tự mã hoá truyền thống ở chỗ: thay vì học dạng biểu diễn ẩn, AutoRec tập trung vào học/khôi phục tầng đầu ra. 
+Mặt khác, AutoRec khác với bộ tự mã hóa truyền thống ở chỗ: thay vì học dạng biểu diễn ẩn, AutoRec tập trung vào học/khôi phục tầng đầu ra.
 Nó sử dụng phần đã biết của ma trận tương tác làm đầu vào, nhằm khôi phục lại ma trận đánh giá hoàn chỉnh.
-Trong khi đó, các phần tử còn thiếu trong đầu vào được điền vào tầng đầu ra thông qua quá trình khôi phục cho mục đích đề xuất. 
+Trong khi đó, các phần tử còn thiếu trong đầu vào được điền vào tầng đầu ra thông qua quá trình khôi phục cho mục đích đề xuất.
 
 
 <!--
@@ -54,14 +53,10 @@ For brevity, here we only introduce the item-based AutoRec.
 User-based AutoRec can be derived accordingly.
 -->
 
-Có hai dạng AutoRec: dựa trên người dùng (*user-based*) và dựa trên sản phẩm (*item-based*). 
-Để ngắn gọn, ở đây chúng tôi chỉ giới thiệu AutoRec dựa trên sản phẩm. 
-AutoRec dựa trên người dùng có thể được suy ra một cách tương tự. 
+Có hai dạng AutoRec: dựa trên người dùng (*user-based*) và dựa trên sản phẩm (*item-based*).
+Để ngắn gọn, ở đây chúng tôi chỉ giới thiệu AutoRec dựa trên sản phẩm.
+AutoRec dựa trên người dùng có thể được suy ra một cách tương tự.
 
-
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Model
@@ -77,7 +72,7 @@ The neural architecture is defined as:
 -->
 
 Gọi $\mathbf{R}_{*i}$ ký hiệu cột thứ $i$ của ma trận đánh giá.
-Những đánh giá chưa biết được gán mặc định bằng không. 
+Những đánh giá chưa biết được gán mặc định bằng không.
 Kiến trúc nơ-ron được định nghĩa như sau:
 
 
@@ -101,7 +96,7 @@ Gọi $h( \cdot )$ ký hiệu cho toàn bộ mạng AutoRec.
 The following objective function aims to minimize the reconstruction error:
 -->
 
-Hàm mục tiêu sau hướng tới việc cực tiểu hoá sai số khôi phục: 
+Hàm mục tiêu sau hướng tới việc cực tiểu hóa sai số khôi phục:
 
 
 $$
@@ -115,7 +110,7 @@ that is, only weights that are associated with observed inputs are updated durin
 -->
 
 trong đó $\| \cdot \|_{\mathcal{O}}$ nghĩa là chỉ có phần đánh giá đã biết là được xét,
-tức là, chỉ các trọng số tương ứng với những đầu vào đã biết mới được cập nhật trong lan truyền ngược. 
+tức chỉ các trọng số tương ứng với những đầu vào đã biết mới được cập nhật trong lan truyền ngược.
 
 
 ```{.python .input  n=3}
@@ -144,11 +139,11 @@ Dropout is included after the encoding transformation to reduce over-fitting.
 The gradients of unobserved inputs are masked out to ensure that only observed ratings contribute to the model learning process.
 -->
 
-Một bộ tự mã hoá điển hình bao gồm một bộ mã hoá và một bộ giải mã. 
-Bộ mã hoá chiếu đầu vào thành dạng biểu diễn ẩn và bộ giải mã ánh xạ tầng ẩn tới tầng khôi phục. 
-Ta tuân theo cấu trúc này và tạo bộ mã hoá và bộ giải mã với các tầng kết nối dày đặc. 
-Hàm kích hoạt của bộ mã hoá được đặt mặc định bằng `sigmoid` và ta sẽ không áp dụng hàm kích hoạt nào lên tầng giải mã. 
-Dropout được thêm vào sau khi mã hoá nhằm giảm hiện tượng quá khớp. 
+Một bộ tự mã hóa điển hình bao gồm một bộ mã hóa và một bộ giải mã.
+Bộ mã hóa chiếu đầu vào thành dạng biểu diễn ẩn và bộ giải mã ánh xạ tầng ẩn tới tầng khôi phục.
+Ta tuân theo cấu trúc này và tạo bộ mã hóa cùng bộ giải mã với các tầng kết nối dày đặc.
+Hàm kích hoạt của bộ mã hóa được đặt mặc định bằng `sigmoid` và ta sẽ không áp dụng hàm kích hoạt nào lên tầng giải mã.
+Dropout được thêm vào sau khi mã hóa nhằm giảm hiện tượng quá khớp.
 Gradient của các đầu vào chưa biết được che lại để đảm bảo rằng chỉ có các đánh giá đã biết tham gia vào quá trình học của mô hình. 
 
 
@@ -170,22 +165,19 @@ class AutoRec(nn.Block):
             return pred
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Reimplementing the Evaluator
 -->
 
-## Lập trình lại Bộ đánh giá 
+## Lập trình lại Bộ Đánh giá 
 
 
 <!--
 Since the input and output have been changed, we need to reimplement the evaluation function, while we still use RMSE as the accuracy measure.
 -->
 
-Do đầu vào và đầu ra thay đổi nên ta cần phải lập trình lại hàm đánh giá, nhưng vẫn sử dụng RMSE làm phép đo độ chính xác. 
+Do đầu vào và đầu ra thay đổi nên ta cần phải lập trình lại hàm đánh giá, nhưng vẫn sử dụng RMSE làm phép đo độ chính xác.
 
 
 ```{.python .input  n=3}
@@ -215,9 +207,9 @@ We can clearly see that the test RMSE is lower than the matrix factorization mod
 confirming the effectiveness of neural networks in the rating prediction task.
 -->
 
-Giờ hãy cùng huấn luyện và đánh giá AutoRec trên tập dữ liệu MovieLens. 
-Ta có thể thấy rõ ràng rằng RMSE kiểm tra thấp hơn so với mô hình phân rã ma trận, 
-điều này xác thực độ hiệu quả của mạng nơ-ron trong nhiệm vụ dự đoán đánh giá. 
+Giờ hãy cùng huấn luyện và đánh giá AutoRec trên tập dữ liệu MovieLens.
+Ta có thể thấy rõ ràng rằng RMSE kiểm tra thấp hơn so với mô hình phân rã ma trận,
+điều này xác thực độ hiệu quả của mạng nơ-ron trong nhiệm vụ dự đoán đánh giá.
 
 
 ```{.python .input  n=4}
@@ -254,8 +246,8 @@ d2l.train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 * Experiments on the MovieLens 100K dataset show that AutoRec achieves superior performance than matrix factorization.
 -->
 
-* Ta có thể thiết kế thuật toán phân rã ma trận với bộ tự giải mã, cùng lúc tích hợp các tầng phi tuyến và điều chuẩn dropout. 
-* Thí nghiệm trên tập dữ liệu MovieLens 100K cho thấy AutoRec đạt hiệu năng vượt trội so với phân rã ma trận. 
+* Ta có thể thiết kế thuật toán phân rã ma trận với bộ tự giải mã, cùng lúc tích hợp các tầng phi tuyến và điều chuẩn dropout.
+* Thí nghiệm trên tập dữ liệu MovieLens 100K cho thấy AutoRec đạt hiệu năng vượt trội so với phân rã ma trận.
 
 
 ## Bài tập
@@ -267,40 +259,25 @@ d2l.train_recsys_rating(net, train_iter, test_iter, loss, trainer, num_epochs,
 -->
 
 * Thay đổi kích thước ẩn của AutoRec để quan sát ảnh hưởng của việc này lên hiệu năng mô hình.
-* Hãy thử thêm vào nhiều tầng ẩn. Việc này có giúp cải thiện hiệu năng mô hình không? 
-* Liệu bạn có thể tìm một bộ hàm kích hoạt nào khác tốt hơn cho bộ giải mã và bộ mã hoá? 
+* Hãy thử thêm vào nhiều tầng ẩn. Việc này có giúp cải thiện hiệu năng mô hình không?
+* Liệu bạn có thể tìm một bộ hàm kích hoạt nào khác tốt hơn cho bộ giải mã và bộ mã hóa?
 
-
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
 
 ## Thảo luận
-* [Tiếng Anh - MXNet](https://discuss.d2l.ai/t/401)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/401)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Nguyễn Thái Bình
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
 * Nguyễn Lê Quang Nhật
 * Phạm Hồng Vinh
 * Lê Khắc Hồng Phúc
 
-*Cập nhật lần cuối: 03/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
+*Cập nhật lần cuối: 05/10/2020. (Cập nhật lần cuối từ nội dung gốc: 21/07/2020)*
