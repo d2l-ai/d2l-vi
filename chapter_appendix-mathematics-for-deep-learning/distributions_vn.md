@@ -835,7 +835,7 @@ If $X \sim \mathrm{Poisson}(\lambda)$, then:
 -->
 
 Như ta thấy ở trên, trung bình và phương sai của phân phối này đặc biệt súc tích.
-Nếu $ X \ sim \ mathrm {Poisson} (\ lambda) $, thì:
+Nếu $X \sim \mathrm{Poisson}(\lambda)$, thì:
 
 
 * $\mu_X = \lambda$,
@@ -846,7 +846,7 @@ Nếu $ X \ sim \ mathrm {Poisson} (\ lambda) $, thì:
 This can be sampled as follows.
 -->
 
-Giá trị biến có thể lấy như sau.
+Ta có thể lấy mẫu từ phân phối này theo cách bên dưới.
 
 ```{.python .input}
 np.random.poisson(lam, size=(10, 10))
@@ -872,7 +872,7 @@ m.sample((10, 10))
 ## Gaussian
 -->
 
-## Phân phối Gaussian
+## Phân phối Gauss
 
 
 <!--
@@ -885,8 +885,8 @@ so there is no reason to think this limit should be well defined.
 -->
 
 Bây giờ ta hãy thử một thử nghiệm khác nhưng có liên quan.
-Giả sử ta lại thực hiện $n$ phép đo $\mathrm {Bernoulli}(p)$ độc lập $ X_i $.
-Phân phối tổng của chúng là $X^{(n)} \sim \mathrm{Binomial}(n, p)$.
+Giả sử ta lại thực hiện $n$ phép đo $\mathrm{Bernoulli}(p)$ độc lập $X_i$.
+Tổng của chúng có phân phối là $X^{(n)} \sim \mathrm{Binomial}(n, p)$.
 Thay vì lấy giới hạn khi $n$ tăng và $p$ giảm, Ta hãy cố định $p$, rồi cho $n \rightarrow \infty$.
 Trong trường hợp này $\mu_{X^{(n)}} = np \rightarrow \infty$ và $\sigma_{X ^{(n)}}^2 = np (1-p) \rightarrow \infty$,
 vì vậy giới hạn này không thể xác định được.
@@ -912,7 +912,7 @@ If we plot what these distributions look like, we will become even more convince
 
 
 Biến này có thể được coi là biến có trung bình là không và phương sai là một, và do đó, thật hợp lý để tin rằng nó sẽ hội tụ đến một phân phối có giới hạn nào đó.
-Nếu ta biểu diễn các bản phân phối này xem chúng trông như thế nào, ta sẽ bị thuyết phục rằng cách làm này có tác dụng.
+Nếu ta vẽ các phân phối này xem chúng trông như thế nào, ta có thể kiểm chứng giả thuyết trên.
 
 
 ```{.python .input}
@@ -979,7 +979,7 @@ One thing to note: compared to the Poisson case, we are now dividing by the stan
 This is an indication that our limit will no longer be discrete, but rather a continuous.
 -->
 
-Một điều cần lưu ý: so với trường hợp Poisson, ta hiện đang chia cho độ lệch chuẩn, có nghĩa là ta đang ép các kết quả có thể xảy ra vào các vùng ngày càng nhỏ hơn.
+Một điều cần lưu ý: so với trường hợp của phân phối Poisson, ta hiện đang chia cho độ lệch chuẩn, có nghĩa là ta đang ép các kết quả có thể xảy ra vào các vùng ngày càng nhỏ hơn.
 Đây là một dấu hiệu cho thấy giới hạn này sẽ không còn rời rạc mà trở nên liên tục.
 
 
@@ -990,7 +990,7 @@ More explicitly, for any $a, b$:
 -->
 
 Suy luận ra kết quả sau cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm* phát biểu rằng khi $n \rightarrow \infty $,
-giới hạn này sẽ tiến tới Phân phối Gaussian (hoặc tên khác là phân phối chuẩn).
+giới hạn này sẽ tiến tới Phân phối Gauss (hoặc tên khác là phân phối chuẩn).
 Tường minh hơn, với bất kỳ $a, b$ nào:
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
