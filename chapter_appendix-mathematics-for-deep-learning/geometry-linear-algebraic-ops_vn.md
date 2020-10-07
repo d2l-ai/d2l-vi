@@ -15,9 +15,9 @@ In this section, we will go deeper, highlighting some geometric interpretations 
 and introducing a few fundamental concepts, including of eigenvalues and eigenvectors.
 -->
 
-Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản trong đại số tuyến tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
+Trong :numref:`sec_linear-algebra`, chúng ta đã đề cập tới những kiến thức cơ bản về đại số tuyến tính và cách nó được dùng để thể hiện các phép biến đổi dữ liệu cơ bản.
 Đại số tuyến tính là một trong những trụ cột toán học chính hỗ trợ học sâu và rộng hơn là học máy.
-Trong khi :numref:`sec_linear-algebra` chứa đựng đầy đủ kiến thức cần thiết cho các mô hình học sâu hiện đại, vẫn còn rất nhiều điều cần thảo luận trong lĩnh vực này.
+Dù :numref:`sec_linear-algebra` đề cập đủ kiến thức cần thiết để tìm hiểu các mô hình học sâu hiện đại, vẫn còn rất nhiều điều cần thảo luận trong lĩnh vực này.
 Trong mục này, chúng ta sẽ đi sâu hơn, nhấn mạnh một số diễn giải hình học của các phép toán đại số tuyến tính, và giới thiệu một vài khái niệm cơ bản, bao gồm trị riêng và vector riêng.
 
 <!--
@@ -32,8 +32,8 @@ Fundamentally, a vector is a list of numbers such as the Python list below.
 -->
 
 Trước hết, chúng ta cần thảo luận hai diễn giải hình học phổ biến của vector:
-điểm hoặc hướng trong không gian. Về cơ bản, một vector là một danh sách các
-số giống như danh sách trong Python dưới đây:
+điểm hoặc hướng trong không gian.
+Về cơ bản, một vector là một danh sách các số giống như danh sách trong Python dưới đây:
 
 
 ```{.python .input}
@@ -77,22 +77,11 @@ As we have described in :numref:`sec_linear-algebra`, though a single vector's d
 for any matrix representing a tabular dataset, treating each data example as a row vector in the matrix is more conventional.
 -->
 
-Những biểu diễn này thường có những cách diễn giải khác nhau. Các điểm dữ liệu
-được biểu diễn bằng các vector cột và các trọng số dùng trong các tổng có
-trọng số được biểu diễn bằng các vector hàng. Tuy nhiên, việc linh động sử
-dụng các cách biểu diễn này mang lại nhiều lợi ích. Ma trận là những
-cấu trúc dữ liệu hữu ích: chúng cho phép chúng ta tổ chức dữ liệu với nhiều
-biến thể khác nhau. Ví dụ, các hàng của ma trận có thể tương ứng với các nhà
-(điểm dữ liệu) khác nhau, trong khi các cột có thể tương ứng với các thuộc tính
-khác nhau. Việc này nghe quen thuộc nếu bạn từng sử dụng các phần mềm dạng bảng
-(spreadsheet) hoặc đã từng đọc :numref:`sec_pandas`. Bởi vậy, mặc dù chiều mặc
-định của một vector là một vector cột, trong một ma trận biểu diễn một tập dữ
-liệu dạng bảng, sẽ thuận tiện hơn khi coi mỗi điểm dữ liệu là một vector hàng
-trong ma trận đó. Và như chúng ta sẽ thấy trong các chương sau, cách biểu diễn
-này phù hợp với cách triển khai các mô hình học sâu.
-Lấy ví dụ, dọc theo trục ngoài cùng của một `ndarray`, ta có thể truy cập hoặc đếm số
-minibatch chứa điểm dữ liệu, hoặc chỉ đơn giản là các điểm dữ liệu nếu minibatch không tồn tại.
-
+Những biểu diễn này thường có những cách diễn giải khác nhau. 
+Các mẫu dữ liệu được biểu diễn bằng các vector cột và các trọng số dùng để để tính các tổng có trọng số được biểu diễn bằng các vector hàng.
+Tuy nhiên, việc linh động sử dụng 2 cách biểu diễn này mang lại nhiều lợi ích.
+Như mô tả trong :numref:`sec_linear-algebra`, dù cách biểu diễn mặc định của một vector đơn là theo cột,
+trong các ma trận biểu diễn các tập dữ liệu dạng bảng, các mẫu dữ liệu thường được coi như các vector hàng.
 
 <!--
 Given a vector, the first interpretation that we should give it is as a point in space.
@@ -101,16 +90,16 @@ the vectors to define the location of the points in space compared to a fixed re
 This can be seen in :numref:`fig_grid`.
 -->
 
-Cách thứ nhất để giải thích một vector là coi nó như một điểm trong không gian.
-Trong không gian hai hoặc ba chiều, chúng ta có thể biểu diễn các điểm này bằng
-việc sử dụng các thành phần của vector để định nghĩa vị trí của điểm trong
-không gian so với một điểm tham chiều được gọi là *gốc tọa độ*. Xem :numref:`fig_grid`.
+Cho trước một vector bất kỳ, cách hiểu thứ nhất là coi nó như một điểm trong không gian.
+Trong không gian hai hoặc ba chiều, chúng ta có thể biểu diễn điểm này bằng
+việc sử dụng các thành phần của vector để định nghĩa vị trí của điểm đó trong
+không gian so với một điểm tham chiếu được gọi là *gốc tọa độ*, như trong :numref:`fig_grid`.
 
 <!--
 ![An illustration of visualizing vectors as points in the plane.  The first component of the vector gives the $x$-coordinate, the second component gives the $y$-coordinate.  Higher dimensions are analogous, although much harder to visualize.](../img/GridPoints.svg)
 -->
 
-![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tọa độ $x$, thành phần thứ hai là tọa độ $y$. Tương tự với số chiều cao hơn, mặc dù khó hình dung hơn](../img/GridPoints.svg)
+![Mô tả việc biểu diễn vector như các điểm trong mặt phẳng. Thành phần thứ nhất của vector là tọa độ $x$, thành phần thứ hai là tọa độ $y$. Biểu diễn tương tự với vector nhiều chiều hơn, mặc dù khó hình dung hơn.](../img/GridPoints.svg)
 :label:`fig_grid`
 
 <!--
@@ -122,10 +111,9 @@ as collections of points in space and picturing the task
 as discovering how to separate two distinct clusters of points.
 -->
 
-Góc nhìn hình học này cho phép chúng ta xem xét bài toán ở một mức trừu tượng hơn.
-Không giống như khi đối mặt với các bài toán khó hình dung như phân loại ảnh chó mèo, chúng ta có thể bắt đầu xem xét các bài toán này một cách trừu tượng hơn như là
-một tập hợp của các điểm trong không gian. Việc phân loại ảnh chó mèo có thể coi
-như việc tìm ra cách phân biệt hai nhóm điểm riêng biệt trong không gian.
+Góc nhìn hình học này cho phép chúng ta xem xét bài toán ở mức trừu tượng hơn.
+Không giống như khi đối mặt với các bài toán khó hình dung như phân loại ảnh chó mèo, chúng ta có thể bắt đầu xem xét các bài toán dạng này một cách trừu tượng hơn:
+cho một tập hợp các điểm trong không gian, hãy tìm cách phân biệt hai nhóm điểm riêng biệt.
 
 <!--
 In parallel, there is a second point of view
@@ -144,11 +132,11 @@ we can also think of it as the direction itself to take $3$ steps to the right a
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
-Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian. Chúng ta không những
-có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
+Cách thứ hai để giải thích một vector là coi nó như một phương hướng trong không gian.
+Chúng ta không những có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
 và bên trên $3$ đơn vị so với gốc tọa độ, chúng ta cũng có thể coi nó thể hiện
-một hướng -- hướng $2$ bước về bên phải và $3$ bước lên trên. Theo cách này,
-ta coi tất cả các vector trong hình :numref:`fig_arrow` là như nhau.
+một hướng -- hướng về bên phải $2$ đơn vị và hướng lên phía trên $3$ đơn vị.
+Theo cách này, ta coi tất cả các vector trong :numref:`fig_arrow` là như nhau.
 
 <!--
 ![Any vector can be visualized as an arrow in the plane. In this case, every vector drawn is a representation of the vector $(3,2)^\top$.](../img/ParVec.svg)
@@ -164,9 +152,9 @@ In particular, we follow the directions given by one vector,
 and then follow the directions given by the other, as is seen in :numref:`fig_add-vec`.
 -->
 
-Một trong những lợi ý của việc chuyển cách hiểu này là phép cộng vector có thể được
-hiểu theo nghĩa hình học. Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
-sau đó đi theo một hướng cho bởi một vector khác, như được cho trong :numref:`fig_add-vec`.
+Một trong những lợi ích của cách hiểu này là phép cộng vector có thể được hiểu theo nghĩa hình học.
+Cụ thể, chúng ta đi theo một hướng được cho bởi một vector,
+sau đó tiếp tục đi theo hướng cho bởi một vector khác, như trong :numref:`fig_add-vec`.
 
 <!--
 ![We can visualize vector addition by first following one vector, and then another.](../img/VecAdd.svg)
@@ -182,7 +170,7 @@ we see that the vector $\mathbf{u}-\mathbf{v}$ is the direction
 that takes us from the point $\mathbf{v}$ to the point $\mathbf{u}$.
 -->
 
-Hiệu của hai vector có một cách diễn giải tương tự.
+Hiệu của hai vector có cách diễn giải tương tự.
 Bằng cách biểu diễn $\mathbf{u} = \mathbf{v} + (\mathbf{u}-\mathbf{v})$,
 ta thấy rằng vector $\mathbf{u}-\mathbf{v}$ là hướng mang điểm $\mathbf{v}$ tới
 điểm $\mathbf{u}$.
@@ -1790,5 +1778,6 @@ Bản dịch trong trang này được thực hiện bởi:
 * Trần Thị Hồng Hạnh
 * Nguyễn Lê Quang Nhật
 * Mai Sơn Hải
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 08/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
