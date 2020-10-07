@@ -11,21 +11,22 @@ We introduced how to run this book on AWS in :numref:`sec_sagemaker` and :numref
 Another option is running this book on [Google Colab](https://colab.research.google.com/), which provides free GPU if you have a Google account.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đã giới thiệu cách chạy cuốn sách này với AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
+Có một phương án khác là chạy cuốn sách này trên [Google Colab](https://colab.research.google.com/), nó cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
 
 
 <!--
 To run a section on Colab, you can simply click the `Colab` button to the right of the title of that section, such as in :numref:`fig_colab`. 
 -->
 
-*dịch đoạn phía trên*
+Để chạy một phần nào đó trên Colab, bạn có thể đơn giản nhấp vào nút `Colab` phía bên phải tiêu đề của phần đó, ví dụ như trong :numref:`fig_colab`.
 
 
 <!--
 ![Open a section on Colab](../img/colab.png)
 -->
 
-![*dịch mô tả phía trên*](../img/colab.png)
+![Mở một phần trong Colab](../img/colab.png)
 :width:`300px`
 :label:`fig_colab`
 
@@ -35,14 +36,15 @@ When it is the first time you execute a code cell, you will receive a warning me
 You may click "RUN ANYWAY" to ignore it.
 -->
 
-*dịch đoạn phía trên*
+Khi bạn lần đầu thực thi một ô mã nguồn, bạn sẽ nhận được một cảnh báo như trong :numref:`fig_colab2`.
+Bạn có thể nhấn "RUN ANYWAY" để bỏ qua nó.
 
 
 <!--
 ![The warning message for running a section on Colab](../img/colab-2.png)
 -->
 
-![*dịch mô tả phía trên*](../img/colab-2.png)
+![Thông tin cảnh báo cho việc chạy một phần trong Colab](../img/colab-2.png)
 :width:`300px`
 :label:`fig_colab2`
 
@@ -52,7 +54,8 @@ Next, Colab will connect you to an instance to run this notebook. Specifically, 
 such as when invoking the `d2l.try_gpu()` function, we will request Colab to connect to a GPU instance automatically.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, Colab sẽ kết nối bạn tới một máy ảo để chạy notebook này. Cụ thể, nếu cần GPU,
+ví dụ như khi gọi đến hàm `d2l.try_gpu()`, ta sẽ yêu cầu Colab tự động kết nối tới một máy ảo GPU.
 
 ## Tóm tắt
 
@@ -60,7 +63,7 @@ such as when invoking the `d2l.try_gpu()` function, we will request Colab to con
 You can use Google Colab to run each section of this book with GPUs.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể sử dụng Google Colab để chạy từng phần của cuốn sách này với GPU.
 
 
 ## Bài tập
@@ -69,7 +72,7 @@ You can use Google Colab to run each section of this book with GPUs.
 Try to edit and run the code in this book using Google Colab.
 -->
 
-*dịch đoạn phía trên*
+Thử chỉnh sửa và chạy mã nguồn của cuốn sách này sử dụng Google Colab.
 
 
 ## Thảo luận
@@ -81,6 +84,6 @@ Try to edit and run the code in this book using Google Colab.
 Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
-* 
+* Đỗ Trường Giang
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
