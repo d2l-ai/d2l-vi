@@ -132,7 +132,7 @@ we can also think of it as the direction itself to take $3$ steps to the right a
 In this way, we consider all the vectors in figure :numref:`fig_arrow` the same.
 -->
 
-Cách thứ hai để giải thích một vector là coi nó như một hướng trong không gian.
+Cách thứ hai để giải thích một vector là coi nó như một phương hướng trong không gian.
 Chúng ta không những có thể coi vector $\mathbf{v} = [2,3]^\top$ là một điểm nằm bên phải $2$ đơn vị
 và bên trên $3$ đơn vị so với gốc tọa độ, chúng ta cũng có thể coi nó thể hiện
 một hướng -- hướng về bên phải $2$ đơn vị và hướng lên phía trên $3$ đơn vị.
