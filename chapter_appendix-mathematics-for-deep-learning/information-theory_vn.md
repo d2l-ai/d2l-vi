@@ -429,7 +429,7 @@ By the above examples and interpretations, we can derive the following propertie
 Here, we refer to $X$ as an event and $P$ as the probability distribution of $X$.
 -->
 
-Bằng các ví dụ và sự giải thích phía trên, ta có thể rút ra các tính chất sau của entropy :eqref:`eq_ent_def`.
+Bằng các ví dụ và diễn giải phía trên, ta có thể rút ra các tính chất sau của entropy :eqref:`eq_ent_def`.
 Ở đây, ta xem $X$ là một biến cố và $P$ là phân phối xác suất của $X$.
 
 <!--
@@ -446,7 +446,7 @@ then $P$ has the highest entropy if it is the uniform distribution on that inter
 -->
 
 * Entropy luôn có giá trị không âm, tức $H(X) \geq 0, \forall X$.
-* Nếu $X \sim P$ với p.d.f. hoặc p.m.f. $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với p.d.f. hặc p.m.f. $q(x)$, ta sẽ có
+* Nếu $X \sim P$ với hàm mật độ xác suất hoặc hàm khối xác suất $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$, ta sẽ có
 $$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
 Ngoài ra, $H(X)$ còn là cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
 * Nếu $X \sim P$, $x$ sẽ chứa lượng thông tin cực đại nếu thông tin được chia đều cho mọi đầu ra có thể thu được.
@@ -481,7 +481,7 @@ a joint probability distribution $P$ with a p.d.f. or a p.m.f. $p_{X, Y}(x, y)$,
 -->
 
 Trong phần bàn luận tiếp theo, chúng tôi sẽ luôn dùng $(X,Y)$ để ký hiệu cho một cặp biễn ngẫu nhiên tuân theo
-phân phối xác suất đồng thời $P$ với p.d.f. hoặc p.m.f. $p_{X,Y}(x,y)$, còn $X$ và $Y$ lần lượt tuân theo phân phối xác suất $p_X(x)$ and $p_Y(y)$.
+phân phối xác suất đồng thời $P$ với hàm mật độ xác suất hoặc hàm khối xác suất $p_{X,Y}(x,y)$, còn $X$ và $Y$ lần lượt tuân theo phân phối xác suất $p_X(x)$ và $p_Y(y)$.
 
 <!--
 ### Joint Entropy 
@@ -494,7 +494,7 @@ phân phối xác suất đồng thời $P$ với p.d.f. hoặc p.m.f. $p_{X,Y}(
 Similar to entropy of a single random variable :eqref:`eq_ent_def`, we define the *joint entropy* $H(X, Y)$ of a pair random variables $(X, Y)$ as
 -->
 
-Tương tự như entropy của một biến ngẫu nhiên duy nhất :eqref:`eq_ent_def`, ta định nghĩa *entropy đồng thời* $H(X,Y)$ của một cặp biến ngẫu nhiên $(X,Y)$ như sau
+Tương tự như entropy của một biến ngẫu nhiên duy nhất :eqref:`eq_ent_def`, ta định nghĩa *entropy đồng thời* (*joint entropy*) $H(X,Y)$ của một cặp biến ngẫu nhiên $(X,Y)$ như sau
 
 $$H(X, Y) = −E_{(x, y) \sim P} [\log p_{X, Y}(x, y)]. $$
 :eqlabel:`eq_joint_ent_def`
