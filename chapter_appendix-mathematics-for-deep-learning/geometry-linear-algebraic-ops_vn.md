@@ -748,19 +748,19 @@ and is beyond the scope of this appendix.
 However, we can start building up intuition in two dimensions.
 -->
 
-Thông qua :numref:`sec_linear-algebra` và các thảo luận phía trên, ta có một cái
-nhìn trọn vẹn về ý nghĩa hình học của vector, độ dài, và góc. Tuy nhiên, có một
+Thông qua :numref:`sec_linear-algebra` và các thảo luận phía trên, ta đã có một cái 
+nhìn trọn vẹn về ý nghĩa hình học của vector, độ dài, và góc. Tuy nhiên, có một 
 khái niệm quan trọng chúng ta đã bỏ qua, đó là ý nghĩa hình học của
-các phép biến đổi tuyến tính thể hiện bởi các ma trận. Hiểu một cách đầy đủ cách
-ma trận được dùng để biến đổi dữ liệu giữa hai không gian nhiều chiều khác nhau
-cần một lượng thực hành đáng kể và nằm ngoài phạm vi của phần phụ lục này. Tuy nhiên,
-chúng ta có thể xây dựng ý niệm trong không gian hai chiều.
+các phép biến đổi tuyến tính thể hiện bởi các ma trận. Hiểu một cách đầy đủ cách 
+ma trận được dùng để biến đổi dữ liệu giữa hai không gian nhiều chiều khác nhau 
+cần một khối lượng thực hành đáng kể và nằm ngoài phạm vi của phần phụ lục này. Tuy nhiên, 
+chúng ta có thể xây dựng ý niệm trong không gian hai chiều. 
 
 <!--
 Suppose that we have some matrix:
 -->
 
-Giả sử ta có một ma trận:
+Giả sử ta có một ma trận: 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -802,20 +802,20 @@ where we can write any vector in our space
 as a weighted sum of these *basis vectors*.
 -->
 
-Thoạt nhìn đây là một phép tính khá kỳ lạ, nó biến một thứ vốn rõ ràng thành một thứ khó hiểu.
-Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào
+Thoạt nhìn đây là một phép tính khá kỳ lạ, nó biến một thứ vốn rõ ràng trở nên khó hiểu. 
+Tuy nhiên, điều này cho ta thấy cách một ma trận biến đổi *bất kỳ* vector nào 
 thông qua cách nó biến đổi *hai vector cụ thể*:
-$[1,0]^\top$ và $[0,1]^\top$.
+$[1,0]^\top$ và $[0,1]^\top$. 
 Quan sát một chút, chúng ta thực tế đã thu gọn một bài toán vô hạn
 (tính toán cho bất kỳ vector nào) thành một bài toán hữu hạn
-(tính toán cho chỉ hai vector).
-Hai vector này còn có tên gọi khác là vector cơ sở - có nghĩa là vector bất kỳ nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này.
+(tính toán cho chỉ hai vector). 
+Hai vector này còn có tên gọi khác là *vector cơ sở* (*basic vectors*) - có nghĩa là bất kì vector nào trong không gian đều có thể biểu diễn dưới dạng tổng có trọng số của những vector này. 
 
 <!--
 Let's draw what happens when we use the specific matrix
 -->
 
-Cùng xét ví dụ với một ma trận cụ thể
+Cùng xét ví dụ với một ma trận cụ thể 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -836,10 +836,10 @@ can skew, rotate, and scale the grid,
 but the grid structure must remain as you see in :numref:`fig_grid-transform`.
 -->
 
-Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng $2\cdot[1,0]^\top + -1\cdot[0,1]^\top$,
-và bởi vậy ta biết ma trận $A$ sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$.
-Bằng cách xem lưới của tất cả các điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm xiên, 
-xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ nguyên như trong :numref:`fig_grid-transform`.
+Xét vector $\mathbf{v} = [2, -1]^\top$, ta thấy rằng vector này chính bằng $2\cdot[1,0]^\top + -1\cdot[0,1]^\top$. 
+Biết trước ma trận $A$, ta có thể sẽ biến đổi nó thành $2(\mathbf{A}[1,0]^\top) + -1(\mathbf{A}[0,1])^\top = 2[1, -1]^\top - [2,3]^\top = [0, -5]^\top$. 
+Bằng cách xét lưới của tất cả các cặp điểm có tọa độ nguyên, ta có thể thấy rằng phép nhân ma trận có thể làm nghiêng, 
+xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ nguyên như minh họa trong :numref:`fig_grid-transform`. 
 
 <!-- câu này mấy bác Tàu viết quá rườm rà, mình sẽ xem lại và tách thành nhiều câu -->
 
@@ -847,7 +847,7 @@ xoay và co giãn lưới đó, nhưng cấu trúc của lưới phải giữ ng
 ![The matrix $\mathbf{A}$ acting on the given basis vectors.  Notice how the entire grid is transported along with it.](../img/GridTransform.svg)
 -->
 
-![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg)
+![Ma trận $\mathbf{A}$ biến đổi các vector cơ sở cho trước. Hãy chú ý việc toàn bộ lưới cũng bị biến đổi theo như thế nào.](../img/GridTransform.svg) 
 :label:`fig_grid-transform`
 
 <!--
@@ -858,14 +858,14 @@ All they can do is take the original coordinates on our space
 and skew, rotate, and scale them.
 -->
 
-Đây là điểm quan trọng nhất để hình dung các phép biến đổi tuyến tính thông qua ma trận.
-Ma trận không thể làm biến dạng một vài phần của không gian khác với các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm xiên, xoay và co giãn chúng.
+Đây là điểm quan trọng nhất để hình dung các phép biến đổi tuyến tính thông qua ma trận. 
+Ma trận không thể làm biến dạng một vài phần của không gian với các phần khác. Chúng chỉ có thể lấy các tọa độ ban đầu và làm nghiêng, xoay và co giãn chúng. 
 
 <!--
 Some distortions can be severe.  For instance the matrix
 -->
 
-Một vài phép biển đổi có thể rất kỳ dị. Chẳng hạn ma trận
+Một vài phép biển đổi có thể rất kỳ dị. Chẳng hạn ma trận 
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -884,9 +884,9 @@ it $[1,1]^\top$ or $[0, -1]^\top$?
 -->
 
 nén toàn bộ mặt phẳng hai chiều thành một đường thẳng.
-Xác định và làm việc với các phép biến đổi này là chủ đề của phần sau, nhưng nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này cơ bản khác so với các phép biến đổi ở trên.
-Ví dụ, kết quả từ ma trận $\mathbf{A}$ có thể bị "bẻ cong lại" thành dạng ban đầu.
-Kết quả từ ma trận $\mathbf{B}$ thì không thể vì sẽ không thể biết vector $[1,2]^\top$ đến từ đâu -- từ $[1,1]^\top$ hay $[0, -1]^\top$?
+Nhận dạng và làm việc với các phép biến đổi này là chủ đề của phần sau, nhưng nhìn trên khía cạnh hình học, ta có thể thấy rằng điều này cơ bản khác biệt so với các phép biến đổi ở trên. 
+Ví dụ, kết quả từ ma trận $\mathbf{A}$ có thể bị "bẻ cong lại" thành dạng ban đầu. 
+Kết quả từ ma trận $\mathbf{B}$ thì không vì ta không biết vector $[1,2]^\top$ đến từ đâu -- từ $[1,1]^\top$ hay $[0, -1]^\top$? 
 
 <!--
 While this picture was for a $2\times2$ matrix,
@@ -897,9 +897,9 @@ we can start to get a feeling for how the matrix multiplication
 distorts the entire space in whatever dimension space we are dealing with.
 -->
 
-Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho ma trận bậc cao hơn.
-Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem ma trận đó biến đổi các vector này như thế nào, 
-ta có thể phần nào hình dung được phép nhân ma trận đã làm biến dạng toàn bộ không gian đa chiều như thế nào.
+Trong khi hình vẽ này áp dụng cho ma trận $2\times2$, kết quả tương tự cũng có thể được mở rộng cho ma trận bậc cao hơn. 
+Nếu chúng ta lấy các vector cơ sở như $[1,0, \ldots,0]$ và xem cách ma trận đó biến đổi các vector này, 
+ta có thể phần nào hình dung được phép nhân ma trận đã làm biến dạng toàn bộ không gian đa chiều như thế nào. 
 
 <!--
 ## Linear Dependence
@@ -936,14 +936,14 @@ entirely in terms of say $\mathbf{b}_2$ since
 -->
 
 Ma trận này nén toàn bộ mặt phẳng xuống thành một đường thằng $y = 2x$.
-Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu chỉ nhìn vào ma trận?
-Câu trả lời là có thể.
+Câu hỏi đặt ra là: có cách nào phát hiện ra điều này nếu chỉ nhìn vào ma trận? 
+Câu trả lời là có thể. 
 Đặt $\mathbf{b}_1 = [2,4]^\top$ và $\mathbf{b}_2 = [-1, -2]^\top$
-là hai cột của $\mathbf{B}$.
-Nhắc lại rằng chúng ta có thể viết bất cứ vector nào được biến đổi bằng ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, 
+là hai cột của $\mathbf{B}$. 
+Nhắc lại rằng chúng ta có thể biểu diễn bất cứ vector nào bằng cách biến đổi ma trận $\mathbf{B}$ dưới dạng tổng có trọng số các cột của ma trận này, 
 chẳng hạn $a_1\mathbf{b}_1 + a_2\mathbf{b}_2$.
 Tổng này được gọi là *tổ hợp tuyến tính* (*linear combination*).
-Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể viết tổ hợp bất kỳ của hai cột này mà chỉ dùng $\mathbf{b}_2$:
+Vì $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$, ta có thể biểu diễn tổ hợp bất kỳ của hai cột này mà chỉ dùng $\mathbf{b}_2$:
 
 
 $$
@@ -962,9 +962,9 @@ $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$ captures this.
 To make this more symmetrical between the two vectors, we will write this as
 -->
 
-Điều này chỉ ra rằng một trong hai cột là dư thừa vì nó không định nghĩa một hướng độc nhất trong không gian.
-Việc này cũng không quá bất ngờ bởi vì ma trận này đã biến toàn bộ mặt phẳng xuống thành một đường thẳng.
-Hơn nữa, điều này có thể được nhận thấy do hai cột trên phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng
+Điều này chỉ ra rằng một trong hai cột là dư thừa vì nó không định nghĩa một hướng độc nhất trong không gian. 
+Việc này cũng không quá bất ngờ bởi ma trận này đã biến toàn bộ mặt phẳng xuống thành một đường thẳng. 
+Hơn nữa, điều này có thể được nhận thấy do hai cột trên phụ thuộc tuyến tính $\mathbf{b}_1 = -2\cdot\mathbf{b}_2$. Để thấy sự đối xứng giữa hai vector này, ta sẽ viết dưới dạng  
 
 $$
 \mathbf{b}_1  + 2\cdot\mathbf{b}_2 = 0.
@@ -976,8 +976,8 @@ $\mathbf{v}_1, \ldots, \mathbf{v}_k$ are *linearly dependent*
 if there exist coefficients $a_1, \ldots, a_k$ *not all equal to zero* so that
 -->
 
-Tổng quát, ta sẽ nói rằng: một tập hợp các vector $\mathbf{v}_1, \ldots, \mathbf{v}_k$ 
-là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k$ *không đồng thời bằng không* sao cho
+Tổng quát, ta sẽ nói rằng: một tập hợp các vector $\mathbf{v}_1, \ldots, \mathbf{v}_k$  
+là *phụ thuộc tuyến tính* nếu tồn tại các hệ số $a_1, \ldots, a_k$ *không đồng thời bằng không* sao cho 
 
 $$
 \sum_{i=1}^k a_i\mathbf{v_i} = 0.
@@ -995,10 +995,10 @@ If the columns of a matrix are linearly independent,
 no compression occurs and the operation can be undone.
 -->
 
-Trong trường hợp này, ta có thể biểu diễn một vector dưới dạng một tổ hợp nào đó của các vector khác, điều này khiến cho sự tồn tại của nó trở nên dư thừa.
-Bởi vậy, sự phụ thuộc tuyến tính giữa các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang làm giảm số chiều không gian.
-Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*).
-Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể đảo ngược (khả nghịch) được.
+Trong trường hợp này, ta có thể biểu diễn một vector dưới dạng một tổ hợp nào đó của các vector khác, điều này khiến cho sự tồn tại của nó trở nên dư thừa. 
+Bởi vậy, sự phụ thuộc tuyến tính giữa các cột của một ma trận là một bằng chứng cho thấy ma trận đó đang làm giảm số chiều không gian. 
+Nếu không có sự phụ thuộc tuyến tính, chúng ta nói rằng các vector này *độc lập tuyến tính* (*linearly independent*). 
+Nếu các cột của một ma trận là độc lập tuyến tính, không có việc nén nào xảy ra và phép toán này có thể đảo ngược (khả nghịch) được. 
 
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
