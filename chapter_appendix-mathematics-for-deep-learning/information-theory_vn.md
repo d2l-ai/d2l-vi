@@ -448,6 +448,13 @@ then $P$ has the highest entropy if it is the uniform distribution on that inter
 * Entropy luôn có giá trị không âm, tức $H(X) \geq 0, \forall X$.
 * Nếu $X \sim P$ với p.d.f. hoặc p.m.f. $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với p.d.f. hặc p.m.f. $q(x)$, ta sẽ có
 $$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
+Ngoài ra, $H(X)$ còn là cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
+* Nếu $X \sim P$, $x$ sẽ chứa lượng thông tin cực đại nếu thông tin được chia đều cho mọi đầu ra có thể thu được.
+Cụ thể, nếu phân phối xác suất $P$ là phân phối rời rạc với $k$ lớp $\{p_1, \ldots, p_k \}$, ta sẽ có 
+$$H(X) \leq \log(k), \text{ dấu bằng xảy ra khi và chỉ khi } p_i = \frac{1}{k}, \forall i.$$
+Nếu $P$ là một phân phối liên tục thì mọi thứ sẽ trở nên phức tạp hơn nhiều.
+Tuy nhiên, nếu ta giả sử thêm rằng $P$ có miền giá trị nằm trong khoảng hữu hạn (giá trị nằm trong khoảng $0$ và $1$),
+$P$ sẽ có entropy cực đại nếu nó là phân phối đồng nhất trong khoảng đó.
 
 <!--
 ## Mutual Information
