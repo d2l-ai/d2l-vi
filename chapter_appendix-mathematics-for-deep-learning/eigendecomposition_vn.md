@@ -5,7 +5,7 @@
 # Eigendecompositions
 -->
 
-# Phân tích trị riêng
+# Phân rã trị riêng
 :label:`sec_eigendecompositions`
 
 
@@ -17,14 +17,14 @@ Below, we introduce eigendecomposition and try to convey some sense of just why 
 
 Trị riêng là một trong những khái niệm hữu ích nhất trong đại số tuyến tính,
 tuy nhiên người mới học thường bỏ qua tầm quan trọng của chúng.
-Dưới đây, chúng tôi giới thiệu phân tích trị riêng (*eigendecomposition*) và cố gắng truyền tải tầm quan trọng của chúng.
+Dưới đây, chúng tôi sẽ giới thiệu về phân rã trị riêng (*eigendecomposition*) và cố gắng truyền tải tầm quan trọng của chúng.
 
 
 <!--
 Suppose that we have a matrix $A$ with the following entries:
 -->
 
-Giả sử ta có một ma trận $A$ với các đầu vào sau:
+Giả sử ta có một ma trận $A$ sau:
 
 
 $$
@@ -40,8 +40,8 @@ If we apply $A$ to any vector $\mathbf{v} = [x, y]^\top$, we obtain a vector $\m
 This has an intuitive interpretation: stretch the vector to be twice as wide in the $x$-direction, and then flip it in the $y$-direction.
 -->
 
-Nếu ta áp dụng $A$ cho bất kỳ vector $\mathbf{v} = [x, y]^\top$ nào, ta nhận được một vector $\mathbf{A}\mathbf{v} = [2x, -y]^\top$.
-Có thể diễn giải theo trực giác như sau: kéo vector dài gấp đôi theo hướng $x$, rồi đảo ngược theo hướng $y$.
+Nếu ta áp dụng $A$ lên bất kỳ vector $\mathbf{v} = [x, y]^\top$ nào, ta nhận được vector $\mathbf{A}\mathbf{v} = [2x, -y]^\top$.
+Điều này có thể được diễn giải trực quan như sau: kéo giãn vector $\mathbf{v}$ dài gấp đôi theo phương $x$, rồi lấy đối xứng theo phương $y$.
 
 
 <!--
@@ -51,10 +51,10 @@ These vectors are still in the same line, and the only modification is that the 
 We call such vectors *eigenvectors* and the factor they are stretched by *eigenvalues*.
 -->
 
-Tuy nhiên, có *một vài* vector mà với chúng có một số thứ không thay đổi.
+Tuy nhiên, sẽ có *một vài* vector với một tính chất không thay đổi.
 Ví dụ như $[1, 0]^\top$ được biến đổi thành $[2, 0]^\top$ và $[0, 1]^\top$ được biến đổi thành $[0, -1]^\top$.
-Những vector này không thay đổi phương, chỉ bị kéo giãn theo tỷ lệ với hệ số $2$ và $-1$.
-Ta gọi những vector ấy là *vector riêng* và các hệ số làm chúng giãn ra gọi là *trị riêng*.
+Những vector này không thay đổi phương, chỉ bị kéo giãn với hệ số $2$ và $-1$.
+Ta gọi những vector ấy là *vector riêng* và các hệ số mà chúng giãn ra là *trị riêng*.
 
 
 <!--
@@ -87,7 +87,7 @@ Ta nói rằng $\mathbf{v}$ là một vector riêng và $\lambda$ là một tr�
 Let us figure out how to find them. By subtracting off the $\lambda \mathbf{v}$ from both sides, and then factoring out the vector, we see the above is equivalent to:
 -->
 
-Ta hãy tìm hiểu cách tìm trị riêng. Bằng cách trừ đi $\lambda \mathbf{v}$ ở cả hai vế, rồi sau đó nhóm thừa số chung là vector, ta thấy phần phía trên tương đương với:
+Hãy cùng tìm hiểu cách tìm trị riêng. Bằng cách trừ đi $\lambda \mathbf{v}$ ở cả hai vế của đẳng thức trên, rồi sau đó nhóm thừa số chung là vector, ta có:
 
 
 $$(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = 0.$$
@@ -100,9 +100,9 @@ Thus, we can find the *eigenvalues* by finding for what $\lambda$ is $\det(\math
 Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ to find the associated *eigenvector(s)*.
 -->
 
-Để :eqref:`eq_eigvalue_der` xảy ra, ta thấy rằng $(\mathbf{A} - \lambda \mathbf{I})$ phải nén một số chiều xuống không, vì thế nó không thể nghịch đảo, nên định thức vì thế bằng không.
-Vì thế, ta có thể tìm các *trị riêng* bằng cách giải phương trình $\lambda$ is $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
-Một khi ta tìm được các trị riêng, ta có thể giải bài toán $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
+Để :eqref:`eq_eigvalue_der` xảy ra, $(\mathbf{A} - \lambda \mathbf{I})$ phải nén một số chiều xuống không, vì thế nó không thể nghịch đảo được nên có định thức bằng không.
+Do đó, ta có thể tìm các *trị riêng* bằng cách tìm giá trị $\lambda$ sao cho $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
+Một khi tìm được các trị riêng, ta có thể giải phương trình $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -136,16 +136,16 @@ Thus, two eigenvalues are $4$ and $1$.
 To find the associated vectors, we then need to solve
 -->
 
-Nếu ta để ý $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$, ta thấy rằng điều này tương đương với phương trình đa thức $0 = (2-\lambda)(3-\lambda)-2 = (4-\lambda)(1-\lambda)$.
-Như vậy, hai trị riêng đó là $4$ và $1$.
-Để tìm các vector tương đương, ta cần phải giải hệ phương trình 
+Nếu để ý $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$, ta thấy rằng phương trình này tương đương với phương trình đa thức $0 = (2-\lambda)(3-\lambda)-2 = (4-\lambda)(1-\lambda)$.
+Như vậy, hai trị riêng tìm được là $4$ và $1$.
+Để tìm các vector tương ứng, ta cần giải hệ 
 
 
 $$
 \begin{bmatrix}
 2 & 1\\
 2 & 3 
-\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} = \begin{bmatrix}x \\ y\end{bmatrix}  \; \text{and} \;
+\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix} = \begin{bmatrix}x \\ y\end{bmatrix}  \; \text{và} \;
 \begin{bmatrix}
 2 & 1\\
 2 & 3 
@@ -157,14 +157,14 @@ $$
 We can solve this with the vectors $[1, -1]^\top$ and $[1, 2]^\top$ respectively.
 -->
 
-Ta có thể giải bài toán lần lượt với các vector $[1, -1]^\top$ và $[1, 2]^\top$.
+Ta thu được nghiệm tương ứng là hai vector $[1, -1]^\top$ và $[1, 2]^\top$.
 
 
 <!--
 We can check this in code using the built-in `numpy.linalg.eig` routine.
 -->
 
-Ta có thể kiểm tra điều này bằng đoạn mã sử dụng trong chương trình con có sẵn `numpy.linalg.eig`.
+Ta có thể kiểm tra lại bằng đoạn mã với hàm `numpy.linalg.eig` xây dựng sẵn.
 
 
 ```{.python .input}
@@ -204,9 +204,9 @@ Additionally, the choice of sign is arbitrary.
 However, the vectors computed are parallel to the ones we found by hand with the same eigenvalues.
 -->
 
-Lưu ý rằng `numpy` chuẩn hóa các vector riêng trở về độ dài bằng một, trong khi các vector của chúng tôi có độ dài tùy ý.
+Lưu ý rằng `numpy` chuẩn hóa các vector riêng để có độ dài bằng 1, trong khi các vector ta tìm được bằng cách giải phương trình có độ dài tùy ý.
 Thêm vào đó, việc chọn dấu cũng là tùy ý.
-Tuy nhiên, các vector được tính toán thì song song với các vector chúng ta đã tìm ra theo cách thủ công khi sử dụng cùng trị riêng. 
+Tuy nhiên, các vector được tính ra bởi thư viện sẽ song song với các vector có được bằng cách giải thủ công với cùng trị riêng. 
 
 
 <!--
@@ -220,7 +220,7 @@ Tuy nhiên, các vector được tính toán thì song song với các vector ch
 Let us continue the previous example one step further.  Let
 -->
 
-Hãy tiếp tục với ví dụ trước đó bằng cách tiến xa hơn một bước. Cho
+Hãy tiếp tục với ví dụ trước đó. Gọi
 
 
 $$
@@ -235,7 +235,7 @@ $$
 be the matrix where the columns are the eigenvectors of the matrix $\mathbf{A}$. Let
 -->
 
-là ma trận có các cột là vector riêng của ma trận $\mathbf{A}$. Cho
+là ma trận có các cột là vector riêng của ma trận $\mathbf{A}$. Gọi
 
 
 $$
@@ -252,7 +252,7 @@ Then the definition of eigenvalues and eigenvectors tells us that
 -->
 
 là ma trận với các trị riêng tương ứng nằm trên đường chéo.
-Rồi từ định nghĩa của trị riêng và vector riêng, ta có
+Từ định nghĩa của trị riêng và vector riêng, ta có
 
 $$
 \mathbf{A}\mathbf{W} =\mathbf{W} \boldsymbol{\Sigma} .
@@ -263,7 +263,7 @@ $$
 The matrix $W$ is invertible, so we may multiply both sides by $W^{-1}$ on the right, we see that we may write
 -->
 
-Ma trận $W$ là khả nghịch, nên ta có thể nhân hai vế với $W^{-1}$ phía bên phải, để có
+Ma trận $W$ là khả nghịch, nên ta có thể nhân hai vế với $W^{-1}$ về phía phải, để có
 
 
 $$\mathbf{A} = \mathbf{W} \boldsymbol{\Sigma} \mathbf{W}^{-1}.$$
@@ -275,8 +275,8 @@ In the next section we will see some nice consequences of this, but for now we n
 will exist as long as we can find a full collection of linearly independent eigenvectors (so that $W$ is invertible).
 -->
 
-Trong phần tiếp theo ta sẽ thấy một số hệ quả hay ho từ diều này, nhưng bây giờ ta chỉ cần biết rằng phân rã như vậy 
-sẽ tồn tại nếu ta có thể tìm tất cả các vector riêng độc lập tuyến tính (để ma trận $W$ khả nghịch). 
+Trong phần tiếp theo ta sẽ thấy một số hệ quả thú vị từ diều này, nhưng hiện giờ bạn đọc chỉ cần biết rằng tồn tại phân rã như vậy 
+nếu ta có thể tìm tất cả các vector riêng độc lập tuyến tính (để ma trận $W$ khả nghịch). 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -286,7 +286,7 @@ sẽ tồn tại nếu ta có thể tìm tất cả các vector riêng độc l�
 ## Operations on Eigendecompositions
 -->
 
-## Các phép toán dùng phân tích trị riêng
+## Các phép toán dùng Phân rã Trị riêng
 
 
 <!--
@@ -294,8 +294,8 @@ One nice thing about eigendecompositions :eqref:`eq_eig_decomp` is that we can w
 in terms of the eigendecomposition. As a first example, consider:
 -->
 
-Một điều hay về phân tích trị riêng :eqref:`eq_eig_decomp` là ta có thể viết nhiều phép toán thường gặp một cách gọn gàng
-về mặt phân tích trị riêng. Ví dụ đầu tiên, xem xét:
+Một điều thú vị về phân rã trị riêng :eqref:`eq_eig_decomp` là ta có thể viết nhiều phép toán thường gặp một cách gọn gàng khi sử dụng phân rã trị riêng.
+Ví dụ đầu tiên, xét:
 
 
 $$
@@ -308,8 +308,8 @@ This tells us that for any positive power of a matrix, the eigendecomposition is
 The same can be shown for negative powers, so if we want to invert a matrix we need only consider
 -->
 
-Điều này cho chúng ta biết rằng với bất kỳ số mũ dương nào của một ma trận, phân tích trị riêng đạt được bằng cách lũy thừa các trị riêng lên cùng số mũ.
-Điều tương tự cũng có thể được chứng minh cho các số mũ âm, vì nếu ta muốn nghịch đảo một ma trận ta chỉ cần xét
+Điều này cho thấy khi lũy thừa ma trận với bất kỳ số mũ dương nào, ta chỉ cần lũy thừa các trị riêng lên cùng số mũ nếu sử dụng phân rã trị riêng.
+Tương tự, cũng có thể áp dụng cho các số mũ âm, khi nghịch đảo ma trận ta có
 
 
 $$
@@ -322,15 +322,15 @@ or in other words, just invert each eigenvalue.
 This will work as long as each eigenvalue is non-zero, so we see that invertible is the same as having no zero eigenvalues.  
 -->
 
-hay nói cách khác, chỉ cần nghịch đảo từng trị riêng một.
-Điều này có thể thực hiện chỉ cần các trị riêng khác không, vì thế khả nghịch tương đương với không có trị riêng bằng không.
+hay nói cách khác, chỉ cần nghịch đảo từng trị riêng, với điều kiện các trị riêng khác không. 
+Do đó sự khả nghịch tương đương với việc không có trị riêng nào bằng không.
 
 
 <!--
 Indeed, additional work can show that if $\lambda_1, \ldots, \lambda_n$ are the eigenvalues of a matrix, then the determinant of that matrix is
 -->
 
-Thật sự, có thể chứng minh rằng nếu $\lambda_1, \ldots, \lambda_n$ là các trị riêng của một ma trận, định thức của ma trận đó sẽ là 
+Thật vậy, có thể chứng minh rằng nếu $\lambda_1, \ldots, \lambda_n$ là các trị riêng của một ma trận, định thức của ma trận đó là tích của tất cả các trị riêng:
 
 
 $$
@@ -344,8 +344,8 @@ This makes sense intuitively because whatever stretching $\mathbf{W}$ does, $W^{
 by multiplication by the diagonal matrix $\boldsymbol{\Sigma}$, which stretches volumes by the product of the diagonal elements.
 -->
 
-hay là tích của tất cả các trị riêng.
-Điều này hợp lý theo trực giác vì nếu kéo giãn ma trận $\mathbf{W}$ thế nào, thì $W^{-1}$ sẽ hoàn tác nó, vì thế cuối cùng kéo giãn duy nhất là việc nhân với ma trận đường chéo $\boldsymbol{\Sigma}$, sẽ kéo giãn độ lớn bằng tích của các phần tử trên đường chéo.
+Điều này hợp lý về trực giác vì dù ma trận $\mathbf{W}$ có kéo giãn như thế nào thì $W^{-1}$ cũng sẽ hoàn tác hành động đó, vì thế cuối cùng phép kéo giãn duy nhất được áp dụng là nhân với ma trận đường chéo $\boldsymbol{\Sigma}$.
+Phép nhân này sẽ kéo giãn thể tích không gian với hệ số bằng tích của các phần tử trên đường chéo.
 
 
 <!--
@@ -353,8 +353,8 @@ Finally, recall that the rank was the maximum number of linearly independent col
 By examining the eigendecomposition closely, we can see that the rank is the same as the number of non-zero eigenvalues of $\mathbf{A}$.
 -->
 
-Cuối cùng, ta hãy nhớ lại rằng hạng ma trận là số lượng cột độc lập tuyến tính lớn nhất của ma trận.
-Bằng cách kiểm nghiệm phân tích trị riêng một cách chặt chẽ, ta có thể thấy rằng hạng bằng số lượng các trị riêng khác không của $\mathbf{A}$.
+Cuối cùng, ta hãy nhớ lại rằng hạng của ma trận là số lượng tối đa các vector cột độc lập tuyến tính trong một ma trận.
+Bằng cách nghiên cứu kỹ phân rã trị riêng, ta có thể thấy rằng hạng của $\mathbf{A}$ bằng số lượng các trị riêng khác không của $\mathbf{A}$.
 
 
 <!--
@@ -362,8 +362,8 @@ The examples could continue, but hopefully the point is clear: eigendecompositio
 and is a fundamental operation underlying many numerical algorithms and much of the analysis that we do in linear algebra. 
 -->
 
-Trước khi tiếp tục, hy vọng bạn đọc hiểu được luận điểm: phân tích trị riêng có thể đơn giản hóa nhiều phép tính đại số tuyến tính
-và là một phép toán cơ bản phía sau nhiều thuật toán số và nhiều phân tích mà ta thực hiện trong đại số tuyến tính. 
+Trước khi tiếp tục, hy vọng bạn đọc đã hiểu được ý tưởng: phân rã trị riêng có thể đơn giản hóa nhiều phép tính đại số tuyến tính
+và là một phép toán cơ bản phía sau nhiều thuật toán số và phân tích trong đại số tuyến tính. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -373,14 +373,14 @@ và là một phép toán cơ bản phía sau nhiều thuật toán số và nhi
 ## Eigendecompositions of Symmetric Matrices
 -->
 
-## Phân tích trị riêng của ma trận đối xứng
+## Phân rã trị riêng của Ma trận Đối xứng
 
 
 <!--
 It is not always possible to find enough linearly independent eigenvectors for the above process to work. For instance the matrix
 -->
 
-Không phải lúc nào ta cũng có thể tìm đủ các vector riêng độc lập tuyến tính để quy trình phía trên hoạt động. Ví dụ ma trận sau
+Không phải lúc nào ta cũng có thể tìm đủ các vector riêng độc lập tuyến tính để thuật toán phía trên hoạt động. Ví dụ ma trận sau
 
 
 $$
@@ -397,9 +397,9 @@ To handle such matrices, we require more advanced techniques than we can cover (
 We will often need to restrict our attention to those matrices where we can guarantee the existence of a full set of eigenvectors.
 -->
 
-chỉ có duy nhất một vector riêng, gọi là $(1, 0)^\top$. 
-Để xử lý những ma trận như thế, ta cần những kỹ thuật cao cấp hơn những gì đã đề cập (ví dụ như dạng chuẩn Jordan, hay phân tích đơn trị). 
-Ta thường sẽ cần hạn chế chú ý đến những ma trận mà ta có thể đảm bảo tồn tại một bộ đầy đủ các vector riêng. 
+chỉ có duy nhất một vector riêng là $(1, 0)^\top$. 
+Để xử lý những ma trận như vậy, ta cần những kỹ thuật cao cấp hơn (ví dụ như dạng chuẩn Jordan - *Jordan Normal Form*, hay phân rã đơn trị - *Singular Value Decomposition*). 
+Ta thường phải giới hạn mức độ và chỉ tập trung đến những ma trận mà ta có thể đảm bảo rằng có tồn tại một tập đầy đủ vector riêng. 
 
 <!--
 The most commonly encountered family are the *symmetric matrices*, which are those matrices where $\mathbf{A} = \mathbf{A}^\top$. 
@@ -409,9 +409,9 @@ Thus, in this special case, we can write :eqref:`eq_eig_decomp` as
 -->
 
 Họ vector thường gặp nhất là *ma trận đối xứng*, là những ma trận mà $\mathbf{A} = \mathbf{A}^\top$. 
-Trong trường hợp này, ta có thể lấy $W$ trở thành *ma trận trực giao* - ma trận mà các cột của nó là các vector có độ dài bằng một và vuông góc với nhau,
-tại $\mathbf{W}^\top = \mathbf{W}^{-1}$ - và tất cả các trị riêng sẽ là số thực.
-Do đó, trong trường hợp đặc biệt này, ta có thể viết :eqref:`eq_eig_decomp` như là
+Trong trường hợp này, ta có thể lấy $W$ là *ma trận trực giao* - ma trận có các cột là các vector có độ dài bằng một và vuông góc với nhau,
+đồng thời $\mathbf{W}^\top = \mathbf{W}^{-1}$ - và tất cả các trị riêng là số thực.
+Trong trường hợp đặc biệt này, ta có thể viết :eqref:`eq_eig_decomp` như sau
 
 
 $$
@@ -423,7 +423,7 @@ $$
 ## Gershgorin Circle Theorem
 -->
 
-## Định lý vòng tròn Gershgorin
+## Định lý Vòng tròn Gershgorin
 
 
 <!--
@@ -432,9 +432,9 @@ If presented an arbitrary matrix, there is little that can be said about what th
 There is, however, one theorem that can make it easy to approximate well if the largest values are on the diagonal.
 -->
 
-Các trị riêng thường khó để tư duy bằng trực giác.
-Nếu tồn tại một ma trận bất kỳ, ta chỉ có thể nói rất ít về trị riêng nếu không tính toán chúng.
-Tuy nhiên, tồn tại một định lý giúp dễ dàng xấp xỉ tốt trị riêng nếu các giá trị lớn nhất của ma trận nằm trên đường chéo. 
+Các trị riêng thường rất khó để suy luận bằng trực giác.
+Nếu tồn tại một ma trận bất kỳ, ta khó có thể nói được gì nhiều về các trị riêng nếu không tính toán chúng ra.
+Tuy nhiên, tồn tại một định lý giúp dễ dàng xấp xỉ tốt trị riêng nếu các giá trị lớn nhất của ma trận nằm trên đường chéo.
 
 <!--
 Let $\mathbf{A} = (a_{ij})$ be any square matrix ($n\times n$).
@@ -443,10 +443,10 @@ Let $\mathcal{D}_i$ represent the disc in the complex plane with center $a_{ii}$
 Then, every eigenvalue of $\mathbf{A}$ is contained in one of the $\mathcal{D}_i$.
 -->
 
-Cho $\mathbf{A} = (a_{ij})$ là ma trận vuông bất kỳ ($n\times n$).
-Ta sẽ định nghĩa $r_i = \sum_{j \neq i} |a_{ij}|$.
-Cho $\mathcal{D}_i$ biểu diễn hình tròn trong mặt phẳng phức với tâm là $a_{ii}$, bán kính $r_i$.
-Kế đó, mỗi trị riêng của $\mathbf{A}$ được chứa ở một trong các $\mathcal{D}_i$.
+Cho $\mathbf{A} = (a_{ij})$ là ma trận vuông bất kỳ với kích thước $n\times n$.
+Đặt $r_i = \sum_{j \neq i} |a_{ij}|$.
+Cho $\mathcal{D}_i$ biểu diễn hình tròn trong mặt phẳng phức với tâm $a_{ii}$, bán kính $r_i$.
+Khi đó, mỗi trị riêng của $\mathbf{A}$ được chứa trong một $\mathcal{D}_i$.
 
 
 <!--
@@ -454,8 +454,8 @@ This can be a bit to unpack, so let us look at an example.
 Consider the matrix:
 -->
 
-Điều này có thể hơi khó hiểu một chút, nên ta hãy nhìn vào ví dụ sau.
-Xem xét ma trận:
+Điều này hơi khó hiểu, nên hãy quan sát ví dụ sau.
+Xét ma trận:
 
 
 $$
@@ -475,8 +475,8 @@ This means that all of our eigenvalues will be in one of the ranges of
 -->
 
 Ta có $r_1 = 0.3$, $r_2 = 0.6$, $r_3 = 0.8$ và $r_4 = 0.9$.
-Ma trận này đối xứng, tất cả các trị riêng đều là số thực.
-Điều này có nghĩa tất cả các trị riêng sẽ là một trong các khoảng của 
+Ma trận này là đối xứng nên tất cả các trị riêng đều là số thực.
+Điều này có nghĩa tất cả các trị riêng sẽ nằm trong một trong các khoảng sau 
 
 
 $$[a_{11}-r_1, a_{11}+r_1] = [0.7, 1.3], $$
@@ -494,9 +494,8 @@ that the eigenvalues are approximately $0.99$, $2.97$, $4.95$, $9.08$,
 all comfortably inside the ranges provided.
 -->
 
-Thực hiện việc tính toán số cho thấy
-rằng các trị riêng xấp xỉ ở $0.99$, $2.97$, $4.95$, $9.08$,
-đều nằm trong các khoảng cho trước một cách thoải mái.
+Thực hiện việc tính toán số ta có các trị riêng xấp xỉ là $0.99$, $2.97$, $4.95$, $9.08$,
+đều nằm hoàn toàn trong các khoảng trên.
 
 
 ```{.python .input}
@@ -537,8 +536,8 @@ In this way, eigenvalues can be approximated, and the approximations will be fai
 in the case that the diagonal is significantly larger than all the other elements.  
 -->
 
-Bằng cách này, các trị riêng có thể được tính xấp xỉ khá chính xác
-trong trường hợp đường chéo lớn hơn hẳn so với các phần tử còn lại.
+Bằng cách này, các trị riêng có thể được xấp xỉ khá chính xác
+trong trường hợp các phần tử trên đường chéo lớn hơn hẳn so với các phần tử còn lại.
 
 
 <!--
@@ -546,8 +545,8 @@ It is a small thing, but with a complex and subtle topic like eigendecomposition
 it is good to get any intuitive grasp we can.
 -->
 
-Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tinh vi như phân tích trị riêng,
-thật tốt nếu có thể hiểu bất kỳ trực quan nào.
+Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tinh vi như phân rã trị riêng,
+thật tốt nếu có thể hiểu bất kỳ điều gì theo cách trực quan.
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -557,7 +556,7 @@ thật tốt nếu có thể hiểu bất kỳ trực quan nào.
 ## A Useful Application: The Growth of Iterated Maps
 -->
 
-## *dịch tiêu đề trên*
+## Một Ứng dụng hữu ích: Mức tăng trưởng của các Ánh xạ Lặp lại
 
 
 <!--
@@ -565,14 +564,14 @@ Now that we understand what eigenvectors are in principle, let us see how they c
 of a problem central to neural network behavior: proper weight initialization. 
 -->
 
-*dịch đoạn phía trên*
+Giờ ta đã hiểu bản chất của vector riêng, hãy xem có thể sử dụng chúng như thế nào để hiểu sâu hơn một vấn đề quan trọng trong mạng nơ-ron: khởi tạo trọng số thích hợp.
 
 
 <!--
 ### Eigenvectors as Long Term Behavior
 -->
 
-### *dịch tiêu đề trên*
+### Vector riêng biểu thị Hành vi Dài hạn
 
 
 <!--
@@ -583,7 +582,11 @@ For simplicity here, we will assume that there is no non-linearity,
 and that the transformation is a single repeated matrix operation $A$,so that the output of our model is
 -->
 
-*dịch đoạn phía trên*
+Tìm hiểu đầy đủ về cách khởi tạo mạng nơ-ron dưới góc nhìn toán học nằm ngoài phạm vi phần này,
+tuy vậy ta có thể phân tích một ví dụ đơn giản dưới đây để xem các trị riêng giúp ta hiểu cách các mô hình hoạt động như thế nào.
+Như đã biết, mạng nơ-ron hoạt động bằng cách xen kẽ các phép biến đổi tuyến tính và phi tuyến.
+Để đơn giản, ở đây ta giả sử không có biến đổi phi tuyến
+và phép biến đổi chỉ là việc liên tục áp dụng ma trận $A$, do đó đầu ra của mô hình là
 
 
 $$
@@ -596,7 +599,8 @@ When these models are initialized, $A$ is taken to be a random matrix with Gauss
 To be concrete, we start with a mean zero, variance one Gaussian distributed $5 \times 5$ matrix.
 -->
 
-*dịch đoạn phía trên*
+Khi mô hình trên được khởi tạo, $A$ nhận các giá trị ngẫu nhiên theo phân phối Gauss.
+Lấy ví dụ cụ thể, ta bắt đầu bằng một ma trận kích thước $5 \times 5$ với giá trị trung bình bằng 0, phương sai bằng 1.
 
 
 ```{.python .input}
