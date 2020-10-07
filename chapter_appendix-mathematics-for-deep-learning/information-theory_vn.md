@@ -574,7 +574,7 @@ joint_entropy(tf.constant([[0.1, 0.5], [0.1, 0.3]]))
 Notice that this is the same *code* as before, but now we interpret it differently as working on the joint distribution of the two random variables.
 -->
 
-Hãy để ý rằng đây chính là đoạn *mã* từ trước, nhưng giờ ta hiểu nó theo cách khác bởi nó đang làm việc với phân phối đồng thời của hai biến ngẫu nhiên.
+Hãy để ý rằng đây chính là *đoạn mã* từ trước, nhưng giờ ta hiểu nó theo cách khác bởi nó đang làm việc với phân phối đồng thời của hai biến ngẫu nhiên.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
@@ -598,12 +598,12 @@ Thus, to continue to extend our vocabulary of information theory, we need to be 
 -->
 
 Entropy đồng thời định nghĩa phía trên là lượng thông tin chứa đựng trong một cặp biến ngẫu nhiên.
-Đại lượng này khá hữu ích, nhưng thường nó không phải là thứ mà ta quan tâm. Hãy xem xét ngữ cảnh học máy.
+Đại lượng này khá hữu ích, nhưng thường nó không phải là thứ mà ta quan tâm. Hãy xem xét trong ngữ cảnh học máy.
 Gọi $X$ là biến ngẫu nhiên (hoặc vector biến ngẫu nhiên) mô tả giá trị các điểm ảnh trong một bức ảnh, và $Y$ là biến ngẫu nhiên mô tả nhãn lớp.
 $X$ nên chứa một lượng thông tin rất lớn---một bức ảnh tự nhiên là một thứ khá phức tạp.
 Tuy nhiên, lượng thông tin chứa đựng trong $Y$ nên nhỏ một khi ta đã thấy bức ảnh.
 Tất nhiên, bức ảnh chứa một chữ số cũng nên chứa thông tin về việc đó là chữ số nào, trừ khi chữ số trong ảnh không thể đọc được.
-Vì vậy, để tiếp tục mở rộng kho từ vựng về lý thuyết thông tin, ta cần phải suy luận được lượng thông tin trong một biến ngẫu nhiên khi biết một biến khác.
+Vì vậy, để tiếp tục mở rộng kho từ vựng về lý thuyết thông tin, ta cần phải suy luận được lượng thông tin trong một biến ngẫu nhiên khi nó phụ thuộc vào một biến khác.
 
 <!--
 In the probability theory, we saw the definition of the *conditional probability* to measure the relationship between variables.
@@ -611,6 +611,7 @@ We now want to analogously define the *conditional entropy* $H(Y \mid X)$.  We c
 -->
 
 Trong lý thuyết xác suất, ta đã thấy định nghĩa của *xác suất có điều kiện* dùng để đo lường mối quan hệ giữa các biến.
+Bây giờ ta muốn định nghĩa *entropy có điều kiện* (*conditional entropy*) $H(Y \mid X)$ theo một cách tương tự. Ta có thể viết nó dưới dạng
 
 $$ H(Y \mid X) = - E_{(x, y) \sim P} [\log p(y \mid x)],$$
 :eqlabel:`eq_cond_ent_def`
@@ -1541,6 +1542,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 6 -->
 * Phạm Minh Đức
+* Phạm Hồng Vinh
 
 <!-- Phần 7 -->
 * 
