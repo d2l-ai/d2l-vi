@@ -475,7 +475,7 @@ This means that all of our eigenvalues will be in one of the ranges of
 -->
 
 Ta có $r_1 = 0.3$, $r_2 = 0.6$, $r_3 = 0.8$ và $r_4 = 0.9$.
-Ma trận này đối xứng, tất cả các trị riêng đều là số thực.
+Ma trận này là đối xứng nên tất cả các trị riêng đều là số thực.
 Điều này có nghĩa tất cả các trị riêng sẽ nằm trong một trong các khoảng sau 
 
 
