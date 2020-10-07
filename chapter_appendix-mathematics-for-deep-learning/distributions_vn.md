@@ -658,8 +658,8 @@ We may never see more than one bus in a minute.
 Hãy cùng thực hiện một thí nghiệm tưởng tượng.
 Ta đang đứng ở một trạm xe buýt và muốn biết có bao nhiêu chiếc xe buýt sẽ đi qua trong phút tiếp theo.
 Hãy bắt đầu bằng việc coi $X^{(1)} \sim \mathrm{Bernoulli}(p)$ đơn giản là xác suất một chiếc xe buýt sẽ đến trong khoảng thời gian một phút tiếp theo.
-Với những trạm xe buýt xa trung tâm thành phố, đây có thể là một xấp xỉ rất tốt.
-Ta hầu như sẽ không bao giờ thấy nhiều hơn một chiếc xe buýt trong một phút.
+Với những trạm xe buýt xa trung tâm thành phố, đây có thể là một xấp xỉ rất tốt
+vì ta hầu như sẽ không bao giờ thấy nhiều hơn một chiếc xe buýt trong một phút.
 
 
 <!--
@@ -668,7 +668,7 @@ We can model this by splitting our random variable into two parts for the first 
 In this case we can write
 -->
 
-Tuy nhiên, nếu như ta đang trong một khu vực tấp nập, rất có thể và khả năng cao là sẽ có hai chiếc xe buýt đi qua.
+Tuy nhiên, nếu như ta đang trong một khu vực tấp nập, ta có thể và thậm chí là còn có khả năng cao là sẽ thấy hai chiếc xe buýt đi qua.
 Ta có thể mô hình hóa điều này bằng cách chia nhỏ biến độc lập của ta thành hai phần với khoảng thời gian 30 giây.
 Trong trường hợp này ta có thể viết
 
@@ -707,7 +707,7 @@ If we take $n \rightarrow \infty$, we can see that these numbers stabilize to $\
 This indicates that there *could be* some random variable we can define in this infinite subdivision limit.
 -->
 
-Coi chúng như các biến ngẫu nhiên.
+Hãy xem xét các biến ngẫu nhiên này.
 Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có trung bình $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
 Nếu ta cho $n \rightarrow \infty$, ta có thể thấy rằng những con số này dần tiến về  $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
 Điều này chỉ ra rằng ta *có thể* định nghĩa một biến ngẫu nhiên nữa với trường hợp việc chia nhỏ này tiến ra vô cùng. 
@@ -721,7 +721,7 @@ This discussion can be made formal as the *law of rare events*.
 
 Điều này không có gì là ngạc nhiên, vì trong thực tế ta có thể chỉ cần đếm số lần xe buýt đến,
 tuy nhiên sẽ là tốt nếu có một mô hình toán học được định nghĩa hoàn chỉnh.
-Thảo luận này còn một cách gọi khác là *định luật của những biến cố hiếm*.
+Đoạn thảo luận này có thể được trình bày một cách chính quy hơn, được biết đến dưới tên gọi là *định luật của những biến cố hiếm*.
 
 
 <!--
@@ -730,7 +730,7 @@ We will say that $X \sim \mathrm{Poisson}(\lambda)$ if it is a random variable w
 -->
 
 Bám sát chuỗi lập luận một cách cẩn thận, ta có thể suy ra một mô hình như sau.
-Ta nói $X \sim \mathrm{Poisson}(\lambda)$ nếu nó là một biến ngẫu nhiên nhận các giá trị $\{0,1,2, \ldots\}$ với xác suất.
+Ta nói $X \sim \mathrm{Poisson}(\lambda)$ nếu nó là một biến ngẫu nhiên nhận các giá trị $\{0,1,2, \ldots\}$ với xác suất
 
 
 $$p_k = \frac{\lambda^ke^{-\lambda}}{k!}.$$
@@ -1356,6 +1356,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 3 -->
 * Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * 
