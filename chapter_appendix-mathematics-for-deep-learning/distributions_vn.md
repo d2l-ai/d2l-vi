@@ -1145,7 +1145,7 @@ Có rất nhiều tính chất hấp dẫn khác của phân phối Gauss, và c
 Phân phối Gauss được biết tới là *phân phối entropy cực đại*.
 Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó là một phép đo của sự ngẫu nhiên.
 Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn một cách ngẫu nhiên *nhất* với trung bình và phương sai cố định.
-Do đó, nếu ta biết biến ngẫu nhiên có trung bình và phương sai nào đó, về trực giác phân phối Gauss là lựa chọn phải chăng nhất trong những phân phối mà ta có thể chọn.
+Do đó, nếu ta biết biến ngẫu nhiên có trung bình và phương sai nào đó, về trực giác phân phối Gauss là lựa chọn an toàn nhất trong những phân phối mà ta có thể chọn.
 
 
 <!--
@@ -1163,7 +1163,7 @@ To close the section, Let us recall that if $X \sim \mathcal{N}(\mu, \sigma^2)$,
 We can sample from the Gaussian (or standard normal) distribution as shown below.
 -->
 
-Ta có thể lấy mẫu từ phân phối Gauss (hay chuẩn) như mô tả dưới.
+Ta có thể lấy mẫu từ phân phối Gauss (chuẩn tắc) như mô tả dưới.
 
 
 ```{.python .input}
