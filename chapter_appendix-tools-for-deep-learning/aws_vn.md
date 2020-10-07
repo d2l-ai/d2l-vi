@@ -174,13 +174,13 @@ Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy cho�
 | g4   | Turing T4   | inference optimized FP16/INT8 |
 -->
 
-| Tên | GPU          | Ghi chú                       |
-|------|-------------|-------------------------------|
-| g2   | Grid K520   | cũ kỹ                         |
-| p2   | Kepler K80  | cũ nhưng thường rẻ như bèo    |
-| g3   | Maxwell M60 | cân bằng tốt                  |
-| p3   | Volta V100  | hiệu năng cao cho FP16        |
-| g4   | Turing T4   | kết quả tối ưu cho FP16/INT8  |
+| Tên | GPU          | Ghi chú                              |
+|------|-------------|--------------------------------------|
+| g2   | Grid K520   | cũ kỹ                                |
+| p2   | Kepler K80  | cũ nhưng thường rẻ như máy ảo spot   |
+| g3   | Maxwell M60 | cân bằng tốt                         |
+| p3   | Volta V100  | hiệu năng cao cho FP16               |
+| g4   | Turing T4   | kết quả tối ưu cho FP16/INT8         |
 
 
 <!--
