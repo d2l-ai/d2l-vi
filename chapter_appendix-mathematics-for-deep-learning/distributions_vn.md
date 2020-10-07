@@ -308,7 +308,7 @@ tf.random.uniform((10, 10), 1, n, dtype=tf.int32)
 ## Continuous Uniform
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Đều Liên tục
 
 
 <!--
@@ -318,7 +318,9 @@ and then scale it to fit within the interval $[a, b]$, we will approach a contin
 We will denote this distribution as
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, hãy thảo luận về phân phối đều liên tục.
+Ý tưởng phía sau biến ngẫu nhiên này là nếu ta tăng $n$ trong phân phối đều, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
+Ta sẽ ký hiệu phân phối này bằng
 
 
 $$
@@ -330,7 +332,7 @@ $$
 The probability density function is
 -->
 
-*dịch đoạn phía trên*
+Hàm mật độ xác suất là
 
 
 $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\end{cases}$$
@@ -341,7 +343,7 @@ $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\en
 The cumulative distribution function is
 -->
 
-*dịch đoạn phía trên*
+Hàm phân phối tích lũy là
 
 
 $$F(x) = \begin{cases} 0 & x < a, \\ \frac{x-a}{b-a} & x \in [a, b], \\ 1 & x >= b . \end{cases}$$
@@ -352,7 +354,7 @@ $$F(x) = \begin{cases} 0 & x < a, \\ \frac{x-a}{b-a} & x \in [a, b], \\ 1 & x >=
 Let us first plot the probability density function :eqref:`eq_cont_uniform_pdf`.
 -->
 
-*dịch đoạn phía trên*
+Trước hết hãy vẽ hàm mật độ xác suất :eqref:`eq_cont_uniform_pdf`.
 
 
 ```{.python .input}
@@ -387,7 +389,7 @@ d2l.plot(x, p, 'x', 'p.d.f.')
 Now, let us plot the cumulative distribution function :eqref:`eq_cont_uniform_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy vẽ hàm phân phối tích lũy :eqref:`eq_cont_uniform_cdf`.
 
 
 ```{.python .input}
@@ -418,7 +420,7 @@ d2l.plot(x, [F(y) for y in x], 'x', 'c.d.f.')
 If $X \sim U(a, b)$, then:
 -->
 
-*dịch đoạn phía trên*
+Nếu $X \sim U(a, b)$, thì:
 
 
 * $\mu_X = \frac{a+b}{2}$,
@@ -430,7 +432,8 @@ We can sample an array of arbitrary shape from a uniform random variable as foll
 Note that it by default samples from a $U(0,1)$, so if we want a different range we need to scale it.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu một mảng với kích thước bất kỳ từ một biến ngẫu nhiên đều như sau.
+Chú ý rằng theo mặc định việc lấy mẫu là từ $U(0,1)$, nên nếu ta muốn một miền giá trị khác, ta cần phải biến đổi tỷ lệ nó.
 
 
 ```{.python .input}
@@ -452,7 +455,7 @@ Note that it by default samples from a $U(0,1)$, so if we want a different range
 ## Binomial
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Nhị thức
 
 
 <!--
@@ -461,7 +464,9 @@ This random variable originates from performing a sequence of $n$ independent ex
 each of which has probability $p$ of succeeding, and asking how many successes we expect to see.
 -->
 
-*dịch đoạn phía trên*
+Hãy khiến mọi thứ trở nên phức tạp hơn một chút bằng cách xét biến ngẫu nhiên *nhị thức*.
+Biến ngẫu nhiên này bắt nguồn từ việc thực hiện liên tiếp $n$ thí nghiệm độc lập,
+mỗi thí nghiệm có xác suất thành công $p$, và hỏi xem số lần thành công kỳ vọng là bao nhiêu. 
 
 
 <!--
@@ -471,7 +476,9 @@ Since each is an independent coin flip which is successful with probability $p$,
 Then, the binomial random variable is
 -->
 
-*dịch đoạn phía trên*
+Hãy biểu diễn điều trên dưới dạng toán học.
+Mỗi thí nghiệm là một biến ngẫu nhiên độc lập $X_i$ với $1$ có nghĩa là thành công, và $0$ có nghĩa là thất bại.
+Vì mỗi thí nghiệm là một lần tung đồng xu độc lập với xác suất thành công $p$, ta có thể nói $X_i \sim \mathrm{Bernoulli}(p)$.
 
 
 $$
@@ -483,7 +490,7 @@ $$
 In this case, we will write
 -->
 
-*dịch đoạn phía trên*
+Trong trường hợp này, ta sẽ viết
 
 
 $$
@@ -497,10 +504,11 @@ in $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ ways each of which has a probability of 
 Thus the cumulative distribution function is
 -->
 
-*dịch đoạn phía trên*
+Để lấy hàm phân phối tích lũy, ta cần chú ý rằng có được chính xác $k$ lần thành công có thể xảy ra theo $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ cách, với mỗi cách có xác suất xảy ra $p^k(1-p)^{n-k}$.
+Do đó, hàm phân phối tích lũy là
 
 
-$$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m}  & k \le x < k+1 \text{ with } 0 \le k < n, \\ 1 & x >= n . \end{cases}$$
+$$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m}  & k \le x < k+1 \text{ với } 0 \le k < n, \\ 1 & x >= n . \end{cases}$$
 :eqlabel:`eq_binomial_cdf`
 
 
@@ -508,7 +516,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m} 
 Let us first plot the probability mass function.
 -->
 
-*dịch đoạn phía trên*
+Trước hết hãy vẽ hàm khối xác suất.
 
 
 ```{.python .input}
@@ -572,7 +580,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_binomial_cdf`.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy vẽ hàm phân phối tích lũy :eqref:`eq_binomial_cdf`.
 
 
 ```{.python .input}
@@ -613,7 +621,8 @@ While this result is not simple, the means and variances are.
 If $X \sim \mathrm{Binomial}(n, p)$, then:
 -->
 
-*dịch đoạn phía trên*
+Dù không dễ để suy ra công thức, trung bình và phương sai của phân phối được tính như sau.
+Nếu $X \sim \mathrm{Binomial}(n, p)$, thì:
 
 
 * $\mu_X = np$,
@@ -624,7 +633,7 @@ If $X \sim \mathrm{Binomial}(n, p)$, then:
 This can be sampled as follows.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy mẫu từ phân phối này theo cách bên dưới.
 
 
 ```{.python .input}
@@ -1380,7 +1389,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
