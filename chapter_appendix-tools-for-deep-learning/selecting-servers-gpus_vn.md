@@ -138,7 +138,7 @@ For a lab or a small to medium company with 10+ servers the NVIDIA RTX series is
 You can buy preconfigured servers with Supermicro or Asus chassis that hold 4-8 GPUs efficiently.
 -->
 
-Nếu bạn là một công ty lớn với 100+ máy chủ, bạn nên cân nhắc dòng NVIDIA Tesla hoặc sử dụng máy chủ GPU thay thế trên đám mây.
+Nếu bạn là một công ty lớn với 100+ máy chủ, bạn nên cân nhắc dòng NVIDIA Tesla hoặc thay thế bằng cách sử dụng máy chủ GPU trên đám mây.
 Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ là có hiệu quả chi phí tốt nhất.
 Bạn có thể mua máy chủ cấu hình sẵn với vỏ Supermicro hay Asus có thể chứa hiệu quả 4-8 GPU.
 
