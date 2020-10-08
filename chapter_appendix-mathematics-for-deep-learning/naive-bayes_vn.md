@@ -414,7 +414,7 @@ tổng số lần xuất hiện của $y$, tức là $n_y$.
 Nhưng có một điều hơi gây rắc rối: một số điểm ảnh nhất định có thể không bao giờ có màu đen (ví dụ: đối với các ảnh được cắt xén tốt, các điểm ảnh ở góc có thể luôn là màu trắng).
 Một cách thuận tiện để các giải quyết vấn đề này là cộng thêm một số đếm giả vào tất cả các lần xuất hiện.
 Do đó, thay vì $n_{iy} $, ta dùng $n_{iy} + 1$ và thay vì $n_y$, ta dùng $n_{y} + 1 $.
-Điều này còn được gọi là *Laplace Smoothing*. Nó có vẻ không chính thống, tuy nhiên nó có thể được chào đón từ quan điểm Bayes.
+Phương pháp này còn được gọi là *Làm mượt Laplace* (*Laplace Smoothing*). Nó có vẻ không chính thống, tuy nhiên nó có thể được chào đón từ quan điểm Bayes.
 
 
 ```{.python .input}
