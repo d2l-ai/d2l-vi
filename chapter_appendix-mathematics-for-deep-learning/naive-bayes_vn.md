@@ -521,7 +521,7 @@ Even if both $a$ and $b$ are small numbers, the logarithm values should be in a 
 -->
 
 Như đã thảo luận trong phần đó, ta khắc phục điều này bằng cách sử dụng tính chất $\log a b = \log a + \log b$, cụ thể là ta chuyển sang tính tổng các logarit.
-Nhờ vậy ngay cả khi cả $a$ và $b$ đều là các số nhỏ, giá trị các logarit sẽ nằm trong vùng thích hợp.
+Nhờ vậy ngay cả khi cả $a$ và $b$ đều là các số nhỏ, giá trị các logarit sẽ nằm trong miền thích hợp.
 
 
 ```{.python .input}
