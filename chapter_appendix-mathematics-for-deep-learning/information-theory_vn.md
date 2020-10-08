@@ -980,7 +980,7 @@ In this way, we can interpret it as our *relative* surprise at observing the out
 -->
 
 Như với thông tin tương hỗ điểm-điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể cung cấp cách diễn giải thuật ngữ logarit:
-$-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
+$-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ xuất hiện thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
 và lớn và âm nếu chúng ta thấy kết quả ít hơn nhiều so với kỳ vọng.
 Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối* của ta khi quan sát kết quả so với mức độ ngạc nhiên khi ta quan sát nó từ phân phối tham chiếu.
 
