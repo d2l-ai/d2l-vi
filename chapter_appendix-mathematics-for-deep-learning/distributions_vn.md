@@ -660,7 +660,7 @@ m.sample(sample_shape=(10, 10))
 ## Poisson
 -->
 
-## *dịch tiêu đề trên*
+## Phân phối Poisson
 
 
 <!--
@@ -671,7 +671,11 @@ For bus stops far from an urban center, this might be a pretty good approximatio
 We may never see more than one bus in a minute.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng thực hiện một thí nghiệm tưởng tượng.
+Ta đang đứng ở một trạm xe buýt và muốn biết có bao nhiêu chiếc xe buýt sẽ đi qua trong phút tiếp theo.
+Hãy bắt đầu bằng việc coi $X^{(1)} \sim \mathrm{Bernoulli}(p)$ đơn giản là xác suất một chiếc xe buýt sẽ đến trong khoảng thời gian một phút tiếp theo.
+Với những trạm xe buýt xa trung tâm thành phố, đây có thể là một xấp xỉ rất tốt
+vì ta hầu như sẽ không bao giờ thấy nhiều hơn một chiếc xe buýt trong một phút.
 
 
 <!--
@@ -680,7 +684,9 @@ We can model this by splitting our random variable into two parts for the first 
 In this case we can write
 -->
 
-*dịch đoạn phía trên*
+Tuy nhiên, nếu như ta đang trong một khu vực tấp nập, ta có thể và thậm chí là còn có khả năng cao là sẽ thấy hai chiếc xe buýt đi qua.
+Ta có thể mô hình hóa điều này bằng cách chia nhỏ biến độc lập của ta thành hai phần với khoảng thời gian 30 giây.
+Trong trường hợp này ta có thể viết
 
 
 $$
@@ -693,7 +699,8 @@ where $X^{(2)}$ is the total sum, and $X^{(2)}_i \sim \mathrm{Bernoulli}(p/2)$.
 The total distribution is then $X^{(2)} \sim \mathrm{Binomial}(2, p/2)$.
 -->
 
-*dịch đoạn phía trên*
+với $X^{(2)}$ là tổng toàn phần, và $X^{(2)}_i \sim \mathrm{Bernoulli}(p/2)$.
+Toàn bộ phân phối vì thế sẽ là $X^{(2)} \sim \mathrm{Binomial}(2, p/2)$.
 
 
 <!--
@@ -701,7 +708,8 @@ Why stop here?  Let us continue to split that minute into $n$ parts.
 By the same reasoning as above, we see that
 -->
 
-*dịch đoạn phía trên*
+Tại sao lại chỉ dừng ở đây? Hãy tiếp tục chia nhỏ một phút này thành $n$ phần.
+Bằng cách lập luận tương tự ở trên, ta thấy rằng
 
 
 $$X^{(n)} \sim \mathrm{Binomial}(n, p/n).$$
@@ -715,7 +723,10 @@ If we take $n \rightarrow \infty$, we can see that these numbers stabilize to $\
 This indicates that there *could be* some random variable we can define in this infinite subdivision limit.
 -->
 
-*dịch đoạn phía trên*
+Hãy xem xét các biến ngẫu nhiên này.
+Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có trung bình $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
+Nếu ta cho $n \rightarrow \infty$, ta có thể thấy rằng những con số này dần tiến về $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
+Điều này chỉ ra rằng ta *có thể* định nghĩa thêm một biến ngẫu nhiên nào đó với trường hợp việc chia nhỏ này tiến ra vô cùng. 
 
 
 <!--
@@ -724,7 +735,9 @@ however it is nice to see that our mathematical model is well defined.
 This discussion can be made formal as the *law of rare events*.
 -->
 
-*dịch đoạn phía trên*
+Điều này không có gì là ngạc nhiên, vì trong thực tế ta có thể chỉ cần đếm số lần xe buýt đến,
+tuy nhiên sẽ tốt hơn nếu có một mô hình toán học được định nghĩa hoàn chỉnh.
+Đoạn thảo luận này có thể được trình bày một cách chính quy hơn, được biết đến dưới tên gọi là *định luật của những biến cố hiếm*.
 
 
 <!--
@@ -732,7 +745,8 @@ Following through this reasoning carefully, we can arrive at the following model
 We will say that $X \sim \mathrm{Poisson}(\lambda)$ if it is a random variable which takes the values $\{0,1,2, \ldots\}$ with probability
 -->
 
-*dịch đoạn phía trên*
+Bám sát chuỗi lập luận một cách cẩn thận, ta có thể suy ra một mô hình như sau.
+Ta nói $X \sim \mathrm{Poisson}(\lambda)$ nếu nó là một biến ngẫu nhiên nhận các giá trị $\{0,1,2, \ldots\}$ với xác suất
 
 
 $$p_k = \frac{\lambda^ke^{-\lambda}}{k!}.$$
@@ -743,17 +757,17 @@ $$p_k = \frac{\lambda^ke^{-\lambda}}{k!}.$$
 The value $\lambda > 0$ is known as the *rate* (or the *shape* parameter), and denotes the average number of arrivals we expect in one unit of time.
 -->
 
-*dịch đoạn phía trên*
+Giá trị $\lambda > 0$ được gọi là *mức độ* (hoặc tham số *hình dạng*), và tượng trưng cho số lần xuất hiện trung bình kỳ vọng trong một đơn vị thời gian.
 
 
 <!--
 We may sum this probability mass function to get the cumulative distribution function.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lấy tổng hàm khối xác suất này để có được hàm phân phối tích lũy.
 
 
-$$F(x) = \begin{cases} 0 & x < 0, \\ e^{-\lambda}\sum_{m = 0}^k \frac{\lambda^m}{m!} & k \le x < k+1 \text{ with } 0 \le k. \end{cases}$$
+$$F(x) = \begin{cases} 0 & x < 0, \\ e^{-\lambda}\sum_{m = 0}^k \frac{\lambda^m}{m!} & k \le x < k+1 \text{ với } 0 \le k. \end{cases}$$
 :eqlabel:`eq_poisson_cdf`
 
 
@@ -761,7 +775,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ e^{-\lambda}\sum_{m = 0}^k \frac{\lambda^m}
 Let us first plot the probability mass function :eqref:`eq_poisson_mass`.
 -->
 
-*dịch đoạn phía trên*
+Trước hết hãy vẽ hàm khối xác suất :eqref:`eq_poisson_mass`.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -1403,7 +1417,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 3 -->
-* 
+* Phạm Hồng Vinh
+* Lê Khắc Hồng Phúc
 
 <!-- Phần 4 -->
 * Nguyễn Mai Hoàng Long
