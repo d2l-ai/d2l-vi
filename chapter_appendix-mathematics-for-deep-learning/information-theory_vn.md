@@ -965,7 +965,7 @@ Then the *Kullback–Leibler (KL) divergence* (or *relative entropy*) between $P
 -->
 
 Cho một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất hay hàm khối xác suất là $p(x)$,
-và ta ước lượng $P$ bằng một phân phối xác suất khác $Q$ với p.d.f. hoặc p.m.f. $q(x)$.
+và ta ước lượng $P$ bằng một phân phối xác suất khác $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$.
 Khi đó, sự *Khoảng cách Kullback – Leibler (KL)* (hoặc *entropy tương đối*) giữa $P$ và $Q$ là
 
 $$D_{\mathrm{KL}}(P\|Q) = E_{x \sim P} \left[ \log \frac{p(x)}{q(x)} \right].$$
