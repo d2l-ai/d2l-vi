@@ -222,7 +222,7 @@ d2l.show_images(images, 2, 9);
 ## The Probabilistic Model for Classification
 -->
 
-## Mô hình xác suất trong phân loại 
+## Mô hình xác suất để Phân loại
 
 
 <!--
@@ -237,11 +237,11 @@ which are $p(y  \mid  \mathbf{x})$ for $y=0, \ldots,9$ in our example, then the 
 -->
 
 Trong nhiệm vụ phân loại, chúng tôi ánh xạ một mẫu thành một danh mục.
-Dưới đây là một ví dụ là  ảnh xám kích thước $28\times 28$  và danh mục là một chữ số.
-(Tham khảo :numref:`sec_softmax` để được giải thích chi tiết hơn.)
-Một cách tự nhiên để thể hiện nhiệm vụ phân loại là thông qua câu hỏi xác suất: nhãn nào có nhiều khả năng nhất là các đặc trưng cho trước (tức là pixel hình ảnh)?
-Biểu thị toán học cho các đặc trưng của mẫu bằng $\mathbf x\in\mathbb R^d$ và nhãn bằng $y\in\mathbb R$.
-Các đặc trưng ở đây là các pixel hình ảnh, nơi ta có đổi kích thước của ảnh có số chiều bằng $2$ thành một vector sao cho $d=28^2=784$ và nhãn là các chữ số.
+Dưới đây là một ví dụ ảnh xám kích thước $28\times 28$ và hạng mục là một chữ số.
+(Tham khảo :numref:`sec_softmax` để xem giải thích chi tiết hơn.)
+Một cách tự nhiên để thể hiện tác vụ phân loại là thông qua câu hỏi xác suất: nhãn nào là hợp lý nhất với các đặc trưng cho trước (tức là các pixel trong ảnh)?
+Ký hiệu $\mathbf x\in\mathbb R^d$  là các đặc trưng và $y\in\mathbb R$ là nhãn của một mẫu.
+Đặc trưng ở đây là các pixel trong ảnh $2$ chiều mà ta có thể đổi kích thước thành một vector với $d=28^2=784$, và nhãn là các chữ số.
 Xác suất của nhãn cho đặc trưng cho trước là $p(y  \mid  \mathbf{x})$. Nếu chúng ta có thể tính toán những xác suất này,
 là $p(y  \mid  \mathbf{x})$ cho $y=0, \ldots,9$ trong mẫu của chúng ta, sau đó bộ phân loại sẽ xuất ra dự đoán $\hat{y}$ được đưa ra bởi biểu thức:
 
@@ -259,8 +259,8 @@ If we had $30$ such binary features, that would mean that we need to be prepared
 
 Rất tiếc, điều này yêu cầu ta ước tính $p(y  \mid  \mathbf{x})$ cho mọi giá trị của $\mathbf{x} = x_1, ..., x_d$.
 Tưởng tượng rằng mỗi đặc trưng nhận lấy một trong các giá trị $2$.
-Ví dụ, đặc trưng $x_1 = 1$ có thể biểu thị rằng từ apple xuất hiện trong một tài liệu nhất định và $x_1 = 0$ sẽ biểu thị rằng nó không xuất hiện.
-Nếu chúng ta có $30$ các đặc trưng nhị phân như vậy, điều đó có nghĩa là chúng ta cần phải chuẩn bị để phân loại bất kỳ giá trị nào trong số $2^{30}$ (hơn 1 tỷ!) có thể có của vector đầu vào $\mathbf{x}$.
+Ví dụ, đặc trưng $x_1 = 1$ có thể biểu thị rằng từ "quả táo" xuất hiện trong một tài liệu nhất định và $x_1 = 0$ sẽ biểu thị rằng từ đó không xuất hiện.
+Nếu chúng ta có $30$ đặc trưng nhị phân như vậy, điều đó có nghĩa là chúng ta cần phải chuẩn bị để phân loại bất kỳ giá trị nào trong số $2^{30}$ (hơn 1 tỷ!) các vector đầu khả dĩ của $\mathbf{x}$.
 
 
 <!--
@@ -268,8 +268,8 @@ Moreover, where is the learning? If we need to see every single possible example
 the corresponding label then we are not really learning a pattern but just memorizing the dataset.
 -->
 
-Hơn nữa, việc học ở đâu? Nếu chúng ta cần xem từng ví dụ có thể để dự đoán
-nhãn tương ứng thì chúng ta không thực sự học một mẫu mà chỉ đang ghi nhớ tập dữ liệu.
+Hơn nữa, như vậy đâu có phải là học. Nếu chúng ta cần xem qua tất cả các ví dụ có thể có để dự đoán
+nhãn tương ứng thì chúng ta không thực sự đang học một khuôn mẫu nào mà chỉ là đang ghi nhớ tập dữ liệu.
 
 
 <!--
@@ -286,7 +286,7 @@ To begin, let us use Bayes theorem, to express the classifier as
 -->
 
 May mắn thay, bằng cách đưa ra một số giả định về tính độc lập có điều kiện,
-ta có thể giới thiệu một số sai lệch quy nạp và xây dựng một mô hình có khả năng tổng quát hóa từ một lựa chọn tương đối khiêm tốn của các mẫu huấn luyện.
+ta có thể đưa vào một số thiên kiến quy nạp và xây dựng một mô hình có khả năng tổng quát hóa từ một nhóm các mẫu huấn luyện với kích thước tương đối khiêm tốn.
 Để bắt đầu, ta hãy sử dụng định lý Bayes, để biểu thị bộ phân loại bằng biểu thức sau
 
 
@@ -302,9 +302,9 @@ We can always recover the normalization term since $\sum_y p(y  \mid  \mathbf{x}
 -->
 
 Lưu ý rằng mẫu số là số hạng chuẩn hóa $p(\mathbf{x})$ không phụ thuộc vào giá trị của nhãn $y$.
-Do đó, chúng ta chỉ cần lo lắng về việc so sánh tử số giữa các giá trị khác nhau của $y$.
-Ngay cả khi việc tính toán mẫu số hóa ra là khó, chúng ta có thể bỏ qua nó, miễn là chúng ta có thể đánh giá tử số.
-May mắn thay, ngay cả khi ta muốn khôi phục hằng số chuẩn hóa, ta có thể làm như thế.
+Do đó, chúng ta chỉ cần quan tâm về việc so sánh tử số giữa các giá trị khác nhau của $y$.
+Ngay cả khi việc tính toán mẫu số hóa ra là không thể, chúng ta có thể bỏ qua nó, miễn là chúng ta có thể tính được phần tử số.
+May mắn thay, ta vẫn có thể khôi phục lại hằng số chuẩn hóa nếu ta muốn.
 Ta luôn có thể khôi phục số hạng chuẩn hóa vì $\sum_y p(y  \mid  \mathbf{x}) = 1$.
 
 
@@ -321,13 +321,13 @@ $$p(x_1  \mid y) \cdot p(x_2  \mid  x_1, y) \cdot ... \cdot p( x_d  \mid  x_1, .
 
 
 <!--
-By itself, this expression does not get us any further. We still must estimate roughly  parameters.
+By itself, this expression does not get us any further. We still must estimate roughly $2^d$ parameters.
 However, if we assume that *the features are conditionally independent of each other, given the label*, 
 then suddenly we are in much better shape, as this term simplifies to $\prod_i p(x_i  \mid  y)$, giving us the predictor
 -->
 
-Tự nó, biểu thức này không giúp ta hiểu thêm điều gì. Ta vẫn phải ước tính khoảng $2^d$ các tham số.
-Tuy nhiên, nếu chúng ta giả định rằng *các đặc trưng độc lập với nhau theo điều kiện, với nhãn cho trước*,
+Tự nó, biểu thức này không giúp ta được thêm điều gì. Ta vẫn phải ước tính khoảng $2^d$ các tham số.
+Tuy nhiên, nếu chúng ta giả định rằng *các đặc trưng độc lập có điều kiện với nhau, với nhãn cho trước*,
 thì đột nhiên ta đang ở trong tình trạng tốt hơn nhiều, vì số hạng này đơn giản hóa thành $\prod_i p(x_i  \mid  y)$, cho ta hàm dự đoán
 
 
@@ -341,8 +341,8 @@ In addition, we estimate $p(y)$ for every $y$ and save it in $P_y[y]$, with $P_y
 Then for any new example $\mathbf x$, we could compute
 -->
 
-Nếu ta có thể ước lượng $\prod_i p(x_i=1  \mid  y)$ cho mỗi $y$, và lưu giá trị của nó trong $P_{xy}[i, y]$, 
-từ đây $P_{xy}$ là một ma trận có kích thước $d\times n$ với $n$ là số lượng các lớp và $y\in\{1, \ldots, n\}$.
+Nếu ta có thể ước lượng $\prod_i p(x_i=1  \mid  y)$ cho mỗi $i$ và $y$, và lưu giá trị của nó trong $P_{xy}[i, y]$, 
+ở đây $P_{xy}$ là một ma trận có kích thước $d\times n$ với $n$ là số lượng các lớp và $y\in\{1, \ldots, n\}$.
 Bổ sung thêm, ta ước lượng $p(y)$ cho mỗi $y$ và lưu nó trong $P_y[y]$, với $P_y$ là một vector có độ dài $n$.
 Sau đó, đối với bất kỳ mẫu mới nào $\mathbf x$, ta có thể tính
 
