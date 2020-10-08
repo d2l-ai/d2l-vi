@@ -509,7 +509,7 @@ We discussed this as a theoretical issue in :numref:`sec_maximum_likelihood`, bu
 -->
 
 Điều này đã dẫn tới sai lầm khủng khiếp! Để tìm hiểu lý do tại sao, ta hãy xem xét xác suất trên mỗi điểm ảnh.
-Chúng thường là những con số từ $0.001$ đến $1$. Ta đang nhân $784$ trong số đó.
+Chúng thường là những con số từ $0.001$ đến $1$ và ta đang nhân chúng $784$ lần.
 Tại điểm này, điều đáng nói là ta đang tính những con số này trên máy tính, do đó với một phạm vi cố định cho số mũ.
 Điều xảy ra là chúng ta gặp phải *rò rỉ số (underflow)*, tức là tích tất cả các số nhỏ hơn một sẽ dẫn đến một số dần nhỏ đi cho đến khi kết quả được làm tròn thành không.
 Ta đã thảo luận vấn đề này dưới dạng vấn đề lý thuyết trong: numref: `sec_maximum_likelkel`, nhưng ta thấy hiện tượng này rõ ràng ở đây trong thực tế.
