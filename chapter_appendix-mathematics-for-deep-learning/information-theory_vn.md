@@ -935,7 +935,7 @@ Trong trường hợp này, bài báo sẽ tiếp tục mô tả khu rừng và 
 ## Kullback–Leibler Divergence
 -->
 
-## Kullback–Leibler khoảng cách
+## Phân kỳ Kullback–Leibler 
 
 
 <!--
