@@ -5,7 +5,7 @@
 # Information Theory
 -->
 
-# *dịch tiêu đề trên*
+# Lý thuyết thông tin
 :label:`sec_information_theory`
 
 <!--
@@ -18,7 +18,13 @@ With information theory, we can measure and compare how much information is pres
 In this section, we will investigate the fundamental concepts of information theory and applications of information theory in machine learning.
 -->
 
-*dịch đoạn phía trên*
+Vũ trụ đang tràn ngập thông tin.
+Thông tin cung cấp một ngôn ngữ chung cho các rạn nứt kỷ luật: từ Sonnet của Shakespeare đến bài báo của các nhà nghiên cứu trên Cornell ArXiv,
+từ bản in Đêm Đầy Sao của Van Gogh đến Bản Giao Hưởng Số 5 của Beethoven,
+từ ngôn ngữ lập trình đầu tiên Plankalkül đến các thuật toán học máy hiện đại nhất.
+Mọi thứ phải tuân theo các quy tắc của lý thuyết thông tin, bất kể chúng ở định dạng nào.
+Với lý thuyết thông tin, chúng ta có thể đo lường và so sánh lượng thông tin có trong các tín hiệu khác nhau.
+Trong phần này, chúng ta sẽ nghiên cứu các khái niệm cơ bản của lý thuyết thông tin và các ứng dụng của lý thuyết thông tin trong học máy.
 
 
 <!--
@@ -30,14 +36,19 @@ For example, many machine learning applications use the cross entropy loss as de
 This loss can be directly derived from information theoretic considerations. 
 -->
 
-*dịch đoạn phía trên*
+Trước khi bắt đầu, chúng ta hãy phác thảo mối quan hệ giữa học máy và lý thuyết thông tin.
+Học máy nhằm mục đích trích xuất các tín hiệu thú vị từ dữ liệu và đưa ra các dự đoán quan trọng.
+Mặt khác, lý thuyết thông tin nghiên cứu mã hóa, giải mã, truyền và thao tác thông tin.
+Kết quả là, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống máy học.
+Ví dụ: nhiều ứng dụng học máy sử dụng mất mát entropy chéo như được mô tả trong :numref:`sec_softmax`.
+Mất mát này có thể trực tiếp bắt nguồn từ những cân nhắc về mặt lý thuyết thông tin.
 
 
 <!--
 ## Information
 -->
 
-## *dịch tiêu đề trên*
+## Thông tin
 
 
 <!-- 
@@ -47,7 +58,10 @@ Suppose that we task ourselves with trying to define a notion of information.
 What could be our starting point?  
 -->
 
-*dịch đoạn phía trên*
+Ta hãy bắt đầu với "linh hồn" của lý thuyết thông tin: thông tin.
+*Thông tin* có thể được mã hóa bằng bất kỳ thứ gì với một chuỗi cụ thể của một hoặc nhiều định dạng mã hóa.
+Giả sử rằng chúng ta tự đặt nhiệm vụ cố gắng xác định một khái niệm thông tin.
+Điểm xuất phát của chúng ta có thể là gì?
 
 
 <!--
@@ -57,8 +71,10 @@ They will shuffle the deck, flip over some cards, and tell us statements about t
 We will try to assess the information content of each statement.
 -->
 
-*dịch đoạn phía trên*
-
+Hãy xem xét thí nghiệm suy nghĩ sau đây.
+Ta có một người bạn với một bộ bài.
+Họ sẽ xáo trộn bộ bài, lật qua một số lá bài và cho chúng ta biết các tuyên bố về các quân bài.
+Chúng ta sẽ cố gắng đánh giá nội dung thông tin của từng tuyên bố.
 
 <!--
 First, they flip over a card and tell us, "I see a card."
@@ -66,7 +82,9 @@ This provides us with no information at all.
 We were already certain that this was the case so we hope the information should be zero.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, họ lật một thẻ và nói với chúng tôi, "Tôi thấy một lá bài."
+Điều này cung cấp cho ta không có thông tin nào.
+Chúng ta đã chắc chắn đúng là vậy nên chúng ta hy vọng thông tin sẽ là 0.
 
 
 <!--
@@ -75,7 +93,9 @@ This provides us some information, but in reality there are only $4$ different s
 We hope that whatever the measure of information, this event should have low information content.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, họ lật một tấm thẻ và nói, "Tôi thấy một lá cơ."
+Điều này cung cấp cho ta một số thông tin, nhưng trên thực tế chỉ có thể có $4$ chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
+Ta hy vọng rằng bất kể hình thức thông tin nào, sự kiện này nên có hàm lượng thông tin thấp.
 
 
 <!--
@@ -83,7 +103,9 @@ Next, they flip over a card and say, "This is the $3$ of spades." This is more i
 Indeed there were $52$ equally likely possible outcomes, and our friend told us which one it was. This should be a medium amount of information.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, họ lật một lá bài và nói, "Đây là quân $3$ bích." Đây là thêm thông tin.
+Quả thực có những kết quả có thể xảy ra tương đương $52$, và người bạn của chúng tôi cho chúng tôi biết đó là kết quả nào. Đây phải là một lượng thông tin trung bình.
+
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
