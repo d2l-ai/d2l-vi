@@ -844,7 +844,7 @@ applied to a random vector is *exactly* (accurate to thirteen decimal places!) t
 This is clearly not a coincidence!
 -->
 
-Ta quan sát thấy một chút bất thường ở đây: số mà ta xác định từ trước cho quá trình giãn dài hạn khi áp dụng ma trận $\mathbf{A}$
+Ta quan sát thấy một chút bất thường ở đây: hệ số mà ta đã xác định cho quá trình giãn dài hạn khi áp dụng ma trận $\mathbf{A}$
 lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
 Điều này rõ ràng không phải một sự trùng hợp.
 
@@ -1031,7 +1031,7 @@ Mối quan hệ giữa các trị riêng (và một đại lượng liên quan �
 1. What are the eigenvalues and eigenvectors of
 -->
 
-1. Tìm các trị riêng và vector riêng của
+1. Tìm các trị riêng và vector riêng của 
 
 
 $$
@@ -1046,7 +1046,7 @@ $$
 2. What are the eigenvalues and eigenvectors of the following matrix, and what is strange about this example compared to the previous one?
 -->
 
-2. Tìm các trị riêng và vector riêng của ma trận sau đây, và cho biết có điều gì lạ ở ví dụ này so với ví dụ trước?
+2. Tìm các trị riêng và vector riêng của ma trận sau đây, và cho biết có điều gì lạ ở ví dụ này so với ví dụ trước? 
 
 
 $$
