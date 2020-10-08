@@ -964,7 +964,7 @@ and we estimate $P$ by another probability distribution $Q$ with a p.d.f. or a p
 Then the *Kullback–Leibler (KL) divergence* (or *relative entropy*) between $P$ and $Q$ is
 -->
 
-Cho một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với p.d.f. hay p.m.f. là $p(x)$,
+Cho một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất hay hàm khối xác suất là $p(x)$,
 và ta ước lượng $P$ bằng một phân phối xác suất khác $Q$ với p.d.f. hoặc p.m.f. $q(x)$.
 Khi đó, sự *Khoảng cách Kullback – Leibler (KL)* (hoặc *entropy tương đối*) giữa $P$ và $Q$ là
 
