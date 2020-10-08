@@ -95,7 +95,9 @@ Suppose that finally they flip over every card from the deck and read off the en
 There are $52!$ different orders to the deck, again all equally likely, so we need a lot of information to know which one it is.
 -->
 
-*dịch đoạn phía trên*
+Hãy để chúng tôi đưa điều này đến cực hợp lý.
+Giả sử rằng cuối cùng họ lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
+Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng tôi cần nhiều thông tin để biết đó là cái nào.
 
 
 <!--
@@ -104,7 +106,9 @@ Indeed, in the next sections we will learn how to compute that these events have
 $2\text{ bits}$, $~5.7\text{ bits}$, and $~225.6\text{ bits}$ of information respectively.
 -->
 
-*dịch đoạn phía trên*
+Bất kỳ khái niệm thông tin nào chúng ta phát triển phải phù hợp với trực giác này.
+Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện này có $0\text{ bits}$, 
+$2\text{ bits}$, $~5.7\text{ bits}$, và $~225.6\text{ bits}$ của thông tin tương ứng.
 
 
 <!--
@@ -115,7 +119,11 @@ For example, if we want to describe an unusual event, we need a lot information.
 For a common event, we may not need much information.
 -->
 
-*dịch đoạn phía trên*
+Nếu chúng ta đọc qua những thí nghiệm suy nghĩ này, chúng ta thấy một ý tưởng tự nhiên.
+Như một điểm khởi đầu, thay vì quan tâm đến kiến thức,
+chúng ta có thể xây dựng ý tưởng rằng thông tin đại diện cho mức độ bất ngờ hoặc khả năng trừu tượng của sự kiện.
+Ví dụ, nếu chúng ta muốn mô tả một sự kiện bất thường, chúng ta cần rất nhiều thông tin.
+Đối với một sự kiện thông thường, chúng ta có thể không cần nhiều thông tin.
 
 
 <!--
@@ -123,14 +131,15 @@ In 1948, Claude E. Shannon published *A Mathematical Theory of Communication* :c
 In his article, Shannon introduced the concept of information entropy for the first time. We will begin our journey here.
 -->
 
-*dịch đoạn phía trên*
+Năm 1948, Claude E. Shannon xuất bản *Lý thuyết toán học về giao tiếp* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
+Trong bài báo của mình, Shannon lần đầu tiên giới thiệu khái niệm entropy thông tin. Chúng ta sẽ bắt đầu cuộc hành trình của mình tại đây.
 
 
 <!--
 ### Self-information
 -->
 
-### *dịch tiêu đề trên*
+### Thông tin tự thân
 
 
 <!--
