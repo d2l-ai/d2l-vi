@@ -709,8 +709,8 @@ This indicates that there *could be* some random variable we can define in this 
 
 Hãy xem xét các biến ngẫu nhiên này.
 Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có trung bình $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
-Nếu ta cho $n \rightarrow \infty$, ta có thể thấy rằng những con số này dần tiến về  $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
-Điều này chỉ ra rằng ta *có thể* định nghĩa một biến ngẫu nhiên nữa với trường hợp việc chia nhỏ này tiến ra vô cùng. 
+Nếu ta cho $n \rightarrow \infty$, ta có thể thấy rằng những con số này dần tiến về $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
+Điều này chỉ ra rằng ta *có thể* định nghĩa thêm một biến ngẫu nhiên nào đó với trường hợp việc chia nhỏ này tiến ra vô cùng. 
 
 
 <!--
@@ -720,7 +720,7 @@ This discussion can be made formal as the *law of rare events*.
 -->
 
 Điều này không có gì là ngạc nhiên, vì trong thực tế ta có thể chỉ cần đếm số lần xe buýt đến,
-tuy nhiên sẽ là tốt nếu có một mô hình toán học được định nghĩa hoàn chỉnh.
+tuy nhiên sẽ tốt hơn nếu có một mô hình toán học được định nghĩa hoàn chỉnh.
 Đoạn thảo luận này có thể được trình bày một cách chính quy hơn, được biết đến dưới tên gọi là *định luật của những biến cố hiếm*.
 
 
