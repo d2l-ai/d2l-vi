@@ -114,7 +114,9 @@ NVIDIA was the first to enter the deep learning field and provides better suppor
 Therefore, most buyers choose NVIDIA GPUs.
 -->
 
-*dịch đoạn phía trên*
+Hiện nay, AMD và NVIDIA là hai nhà sản xuất chính tập trung vào GPU.
+NVIDIA là tiên phong trong tham gia lĩnh vực học sâu và cung cấp hỗ trợ tốt hơn cho các framework học sâu thông qua CUDA.
+Do đó, phần lớn người mua chọn GPU của NVIDIA.
 
 
 <!--
@@ -124,7 +126,10 @@ However, the enterprise user GPUs generally use (passive) forced cooling, more m
 These GPUs are more suitable for data centers and usually cost ten times more than consumer GPUs.
 -->
 
-*dịch đoạn phía trên*
+NVIDIA cung cấp hai loại GPU, nhắm tới người dùng đơn lẻ (ví dụ như dòng GTX và RTX) và người dùng doanh nghiệp (thông qua dòng Tesla của họ).
+Hai loại GPU cung cấp khả năng tính toán tương đương nhau.
+Tuy nhiên, GPU dành cho người dùng doanh nghiệp thường sử dụng tản nhiệt cưỡng bức (thụ động), nhiều bộ nhớ, và bộ nhớ ECC (sửa sai - *error correcting*).
+Những GPU này phù hợp hơn cho trung tâm dữ liệu và thường có giá cao hơn 10 lần so với GPU tiêu dùng.
 
 
 <!--
@@ -133,7 +138,9 @@ For a lab or a small to medium company with 10+ servers the NVIDIA RTX series is
 You can buy preconfigured servers with Supermicro or Asus chassis that hold 4-8 GPUs efficiently.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn là một công ty lớn với 100+ máy chủ, bạn nên cân nhắc dòng NVIDIA Tesla hoặc sử dụng máy chủ GPU thay thế trên đám mây.
+Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ là có hiệu quả chi phí tốt nhất.
+Bạn có thể mua máy chủ cấu hình sẵn với vỏ Supermicro hay Asus có thể chứa hiệu quả 4-8 GPU.
 
 
 <!--
@@ -143,7 +150,10 @@ Each series offers several different models that provide different performance l
 GPU performance is primarily a combination of the following three parameters:
 -->
 
-*dịch đoạn phía trên*
+Nhà cung cấp GPU thương ra mắt thế hệ mới mỗi 1-2 năm,
+ví dụ như dòng GTX 1000 (Pascal) ra mắt vào 2017 và dòng RTX 2000 (Turing) ra mắt vào 2019.
+Mỗi dòng gồm có nhiều mẫu khác nhau cung cấp mức hiệu năng khác nhau.
+Hiệu năng GPU chủ yếu là sự kết hợp của ba thông số sau:
 
 
 <!--
@@ -158,7 +168,15 @@ Check for HBM2 (High Bandwidth Memory) vs. GDDR6 (Graphics DDR) memory. HBM2 is 
 Look for wide memory buses if using GDDR6.
 -->
 
-*dịch đoạn phía trên*
+1. **Khả năng tính toán**. Thông thường ta tìm kiếm khả năng tính toán dấu phẩy động 32-bit (*32-bit floating-point*).
+Huấn luyện dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng tham gia vào dòng chính.
+Nếu bản chỉ quan tâm đến tác vụ dự đoán, bạn cũng có thể sử dụng số nguyên 8-bit (*8-bit integer*).
+Thế hệ mới nhất của GPU Turing cung cấp tăng tốc 4-bit.
+Không may là hiện nay, các thuật toán huấn luyện mạng độ chính xác thấp vẫn chưa được phổ biến.
+1. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay các batch được sử dụng trong huấn luyện tăng kích thước, bạn sẽ cần nhiều bộ nhớ GPU hơn.
+Hãy kiểm tra HBM2 (Bộ nhớ Băng thông cao - *High Bandwidth Memory*) và GDDR6 (DDR Đồ hoạ - *Graphics DDR*). HBM2 nhanh hơn nhưng đắt hơn nhiều.
+3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ.
+Hãy tìm bus bộ nhớ rộng nếu sử dụng GDDR6.
 
 
 <!--
@@ -170,7 +188,12 @@ Try to avoid using the GPU also for displaying a GUI (use the built-in graphics 
 If you cannot avoid it, add an extra 2 GB of RAM for safety.
 -->
 
-*dịch đoạn phía trên*
+Với phần lớn người dùng, nhìn vào khả năng tính toán là đủ.
+Chú ý rằng nhiều GPU cung cấp loại tăng tốc khắc nhau.
+Ví dụ TensorCores của NVIDIA tăng tốc một tập con các toán tử lên 5x.
+Bảo đảm rằng thư viện của bạn hỗ trợ việc này. Bộ nhớ GPU không nên thấp hơn 4 GB (8 GB thì hơn).
+Hãy cố gắng tránh sử dụng GPU để hiện thị một GUI (thay vào đó hãy sử dụng đồ hoạ tích hợp).
+Nếu bạn không thể tránh việc này, hãy thêm vào 2 GB RAM cho an toàn.
 
 
 <!--
@@ -178,7 +201,8 @@ If you cannot avoid it, add an extra 2 GB of RAM for safety.
 The prices are the suggested prices found on Wikipedia.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_flopsvsprice` so sánh khả năng tính toán dấu phẩy động 32-bit và giá của các mẫu khác nhau của các dòng GTX 900, GTX 1000 và RTX 2000.
+Bảng giá là giá đề xuất được tìm thấy trên Wikipedia.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -267,7 +291,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
