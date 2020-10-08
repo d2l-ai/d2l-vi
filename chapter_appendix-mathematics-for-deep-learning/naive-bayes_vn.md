@@ -5,7 +5,7 @@
 # Naive Bayes
 -->
 
-# *dịch tiêu đề trên*
+# Bộ phân loại Naive Bayes
 :label:`sec_naive_bayes`
 
 
@@ -15,7 +15,9 @@ To put this theory to work, let us introduce the *naive Bayes* classifier.
 This uses nothing but probabilistic fundamentals to allow us to perform classification of digits.
 -->
 
-*dịch đoạn phía trên*
+Xuyên suốt các phần trước, chúng ta đã học về lý thuyết xác suất và các biến ngẫu nhiên.
+Để áp dụng lý thuyết này vào thực tiễn, chúng tôi giới thiệu về bộ phân loại *naive Bayes*.
+Phương pháp này không sử dụng bất kỳ điều gì ngoài các lý thuyết căn bản về xác suất nhằm cho phép chúng ta thực hiện phân loại các chữ số.
 
 
 <!--
@@ -25,7 +27,10 @@ The naive Bayes classifier, a popular and remarkably clear algorithm, assumes al
 In this section, we will apply this model to recognize characters in images.
 -->
 
-*dịch đoạn phía trên*
+Quá trình học hoàn toàn xoay quanh việc đưa ra các giả định. Nếu chúng ta muốn phân loại một mẫu dữ liệu mới
+mà ta chưa bao giờ thấy trước đó, ta cần phải đưa ra một giả định nào đó cho câu hỏi những mẫu dữ liệu nào giống nhau.
+Bộ phân loại Naive Bayes này, một thuật toán thông dụng và khá dễ hiểu, giả định rằng tất cả các đặc trưng đều độc lập với nhau để đơn giản hóa việc tính toán.
+Trong phần này, chúng tôi sẽ áp dụng mô hình đó để nhận dạng các ký tự trong ảnh.
 
 
 ```{.python .input}
@@ -61,7 +66,7 @@ d2l.use_svg_display()
 ## Optical Character Recognition
 -->
 
-## *dịch tiêu đề trên*
+## Nhận diện Ký tự Quang học
 
 
 <!--
@@ -71,7 +76,10 @@ Each image contains a handwritten digit from 0 to 9.
 The task is classifying each image into the corresponding digit.
 -->
 
-*dịch đoạn phía trên*
+MNIST :cite:`LeCun.Bottou.Bengio.ea.1998` là một trong các tập dữ liệu được sử dụng rộng rãi.
+Nó chứa 60.000 hình ảnh để huấn luyện và 10.000 hình ảnh để kiểm định.
+Mỗi hình ảnh chứa một chữ số viết tay từ 0 đến 9.
+Nhiệm vụ là phân loại từng hình ảnh với chữ số tương ứng.
 
 
 <!--
@@ -86,7 +94,16 @@ In addition, the dataset represents each pixel by an unsigned $8$-bit integer.
 We quantize them into binary features to simplify the problem.
 -->
 
-*dịch đoạn phía trên*
+Gluon cung cấp một lớp `MNIST` trong mô-đun `data.vision` để
+tự động truy xuất tập dữ liệu từ Internet. 
+Sau đó, Gluon sẽ sử dụng bản sao cục bộ đã được tải xuống.
+Chúng ta chỉ định rằng ta đang yêu cầu tập huấn luyện hay tập kiểm tra
+bằng cách đặt giá trị của tham số `train` thành` True` hoặc `False` tương ứng.
+Mỗi hình ảnh là một hình ảnh thang màu xám có cả chiều rộng và chiều cao là $28$ với kích thước ($28$,$28$,$1$).
+Ta sẽ sử dụng một phép biến đổi tùy chỉnh để loại bỏ chiều kênh cuối cùng.
+Ngoài ra, tập dữ liệu biểu diễn mỗi điểm ảnh bằng một số nguyên $8$-bit không dấu.
+Ta lượng hóa (*quantize*) chúng thành các đặc trưng nhị phân để đơn giản hóa vấn đề.
+
 
 
 ```{.python .input}
@@ -118,7 +135,7 @@ mnist_test = torchvision.datasets.MNIST(
 We can access a particular example, which contains the image and the corresponding label.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể truy cập vào từng mẫu cụ thể, có chứa hình ảnh và nhãn tương ứng.
 
 
 ```{.python .input}
@@ -143,7 +160,7 @@ image.shape, label
 Our example, stored here in the variable `image`, corresponds to an image with a height and width of $28$ pixels.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ của ta ở đây được lưu trữ ở đây trong biến `image`, tương ứng với một hình ảnh có chiều cao và chiều rộng là $28$ pixel.
 
 
 ```{.python .input}
@@ -156,7 +173,7 @@ image.shape, image.dtype
 Our code stores the label of each image as a scalar. Its type is a $32$-bit integer.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã của chúng ta lưu trữ nhãn của mỗi hình ảnh dưới dạng số vô hướng với kiểu dữ liệu là số nguyên $32$-bit.
 
 
 ```{.python .input}
@@ -178,7 +195,7 @@ label, type(label)
 We can also access multiple examples at the same time.
 -->
 
-*dịch đoạn phía trên*
+Ta cũng có thể truy cập vào nhiều mẫu cùng một lúc.
 
 
 ```{.python .input}
@@ -206,7 +223,7 @@ images.shape, labels.shape
 Let us visualize these examples.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng minh họa các mẫu sau.
 
 
 ```{.python .input}
@@ -753,7 +770,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Trần Yến Thy
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 <!-- Phần 2 -->
 * 
