@@ -236,7 +236,15 @@ The probability of the label given the features is $p(y  \mid  \mathbf{x})$. If 
 which are $p(y  \mid  \mathbf{x})$ for $y=0, \ldots,9$ in our example, then the classifier will output the prediction $\hat{y}$ given by the expression:
 -->
 
-*dịch đoạn phía trên*
+Trong nhiệm vụ phân loại, chúng tôi ánh xạ một mẫu thành một danh mục.
+Dưới đây là một ví dụ là  ảnh xám kích thước $28\times 28$  và danh mục là một chữ số.
+(Tham khảo :numref:`sec_softmax` để được giải thích chi tiết hơn.)
+Một cách tự nhiên để thể hiện nhiệm vụ phân loại là thông qua câu hỏi xác suất: nhãn nào có nhiều khả năng nhất là các đặc trưng cho trước (tức là pixel hình ảnh)?
+Biểu thị toán học cho các đặc trưng của mẫu bằng $\mathbf x\in\mathbb R^d$ và nhãn bằng $y\in\mathbb R$.
+Các đặc trưng ở đây là các pixel hình ảnh, nơi ta có đổi kích thước của ảnh có số chiều bằng $2$ thành một vector sao cho $d=28^2=784$ và nhãn là các chữ số.
+Xác suất của nhãn cho đặc trưng cho trước là $p(y  \mid  \mathbf{x})$. Nếu chúng ta có thể tính toán những xác suất này,
+là $p(y  \mid  \mathbf{x})$ cho $y=0, \ldots,9$ trong ví dụ của chúng ta, sau đó bộ phân loại sẽ xuất ra dự đoán $\hat{y}$ được đưa ra bởi biểu thức:
+
 
 
 $$\hat{y} = \mathrm{argmax} \> p(y  \mid  \mathbf{x}).$$
@@ -249,7 +257,8 @@ For example, the feature $x_1 = 1$ might signify that the word apple appears in 
 If we had $30$ such binary features, that would mean that we need to be prepared to classify any of $2^{30}$ (over 1 billion!) possible values of the input vector $\mathbf{x}$.
 -->
 
-*dịch đoạn phía trên*
+Rất tiếc, điều này yêu cầu ta ước tính $p(y  \mid  \mathbf{x})$ cho mọi giá trị của $\mathbf{x} = x_1, ..., x_d$.
+
 
 
 <!--
