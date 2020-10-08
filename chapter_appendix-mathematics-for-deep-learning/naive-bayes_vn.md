@@ -559,7 +559,7 @@ $$ \hat{y} = \mathrm{argmax}_y \> \sum_{i=1}^d \log P_{xy}[x_i, y] + \log P_y[y]
 We can implement the following stable version:
 -->
 
-Ta có thể thực hiện phiên bản ổn định sau:
+Ta có thể lập trình phiên bản ổn định sau:
 
 
 ```{.python .input}
