@@ -239,7 +239,7 @@ d2l.show_images(images, 2, 9);
 ## The Probabilistic Model for Classification
 -->
 
-## *dịch tiêu đề trên*
+## Mô hình xác suất để Phân loại
 
 
 <!--
@@ -253,7 +253,15 @@ The probability of the label given the features is $p(y  \mid  \mathbf{x})$. If 
 which are $p(y  \mid  \mathbf{x})$ for $y=0, \ldots,9$ in our example, then the classifier will output the prediction $\hat{y}$ given by the expression:
 -->
 
-*dịch đoạn phía trên*
+Trong nhiệm vụ phân loại, chúng tôi ánh xạ một mẫu thành một danh mục.
+Dưới đây là một ví dụ ảnh xám kích thước $28\times 28$ và hạng mục là một chữ số.
+(Tham khảo :numref:`sec_softmax` để xem giải thích chi tiết hơn.)
+Một cách tự nhiên để thể hiện tác vụ phân loại là thông qua câu hỏi xác suất: nhãn nào là hợp lý nhất với các đặc trưng cho trước (tức là các pixel trong ảnh)?
+Ký hiệu $\mathbf x\in\mathbb R^d$  là các đặc trưng và $y\in\mathbb R$ là nhãn của một mẫu.
+Đặc trưng ở đây là các pixel trong ảnh $2$ chiều mà ta có thể đổi kích thước thành một vector với $d=28^2=784$, và nhãn là các chữ số.
+Xác suất của nhãn cho đặc trưng cho trước là $p(y  \mid  \mathbf{x})$. Nếu chúng ta có thể tính toán những xác suất này,
+là $p(y  \mid  \mathbf{x})$ cho $y=0, \ldots,9$ trong mẫu của chúng ta, sau đó bộ phân loại sẽ xuất ra dự đoán $\hat{y}$ được đưa ra bởi biểu thức:
+
 
 
 $$\hat{y} = \mathrm{argmax} \> p(y  \mid  \mathbf{x}).$$
@@ -266,7 +274,10 @@ For example, the feature $x_1 = 1$ might signify that the word apple appears in 
 If we had $30$ such binary features, that would mean that we need to be prepared to classify any of $2^{30}$ (over 1 billion!) possible values of the input vector $\mathbf{x}$.
 -->
 
-*dịch đoạn phía trên*
+Rất tiếc, điều này yêu cầu ta ước tính $p(y  \mid  \mathbf{x})$ cho mọi giá trị của $\mathbf{x} = x_1, ..., x_d$.
+Tưởng tượng rằng mỗi đặc trưng nhận lấy một trong các giá trị $2$.
+Ví dụ, đặc trưng $x_1 = 1$ có thể biểu thị rằng từ "quả táo" xuất hiện trong một tài liệu nhất định và $x_1 = 0$ sẽ biểu thị rằng từ đó không xuất hiện.
+Nếu chúng ta có $30$ đặc trưng nhị phân như vậy, điều đó có nghĩa là chúng ta cần phải chuẩn bị để phân loại bất kỳ giá trị nào trong số $2^{30}$ (hơn 1 tỷ!) các vector đầu khả dĩ của $\mathbf{x}$.
 
 
 <!--
@@ -274,14 +285,15 @@ Moreover, where is the learning? If we need to see every single possible example
 the corresponding label then we are not really learning a pattern but just memorizing the dataset.
 -->
 
-*dịch đoạn phía trên*
+Hơn nữa, như vậy đâu có phải là học. Nếu chúng ta cần xem qua tất cả các ví dụ có thể có để dự đoán
+nhãn tương ứng thì chúng ta không thực sự đang học một khuôn mẫu nào mà chỉ là đang ghi nhớ tập dữ liệu.
 
 
 <!--
 ## The Naive Bayes Classifier
 -->
 
-## *dịch tiêu đề trên*
+## Bộ phân loại Naive Bayes
 
 
 <!--
@@ -290,7 +302,9 @@ we can introduce some inductive bias and build a model capable of generalizing f
 To begin, let us use Bayes theorem, to express the classifier as
 -->
 
-*dịch đoạn phía trên*
+May mắn thay, bằng cách đưa ra một số giả định về tính độc lập có điều kiện,
+ta có thể đưa vào một số thiên kiến quy nạp và xây dựng một mô hình có khả năng tổng quát hóa từ một nhóm các mẫu huấn luyện với kích thước tương đối khiêm tốn.
+Để bắt đầu, ta hãy sử dụng định lý Bayes, để biểu thị bộ phân loại bằng biểu thức sau
 
 
 $$\hat{y} = \mathrm{argmax}_y \> p(y  \mid  \mathbf{x}) = \mathrm{argmax}_y \> \frac{p( \mathbf{x}  \mid  y) p(y)}{p(\mathbf{x})}.$$
@@ -304,7 +318,11 @@ Fortunately, even if we wanted to recover the normalizing constant, we could.
 We can always recover the normalization term since $\sum_y p(y  \mid  \mathbf{x}) = 1$.
 -->
 
-*dịch đoạn phía trên*
+Lưu ý rằng mẫu số là số hạng chuẩn hóa $p(\mathbf{x})$ không phụ thuộc vào giá trị của nhãn $y$.
+Do đó, chúng ta chỉ cần quan tâm về việc so sánh tử số giữa các giá trị khác nhau của $y$.
+Ngay cả khi việc tính toán mẫu số hóa ra là không thể, chúng ta có thể bỏ qua nó, miễn là chúng ta có thể tính được phần tử số.
+May mắn thay, ta vẫn có thể khôi phục lại hằng số chuẩn hóa nếu ta muốn.
+Ta luôn có thể khôi phục số hạng chuẩn hóa vì $\sum_y p(y  \mid  \mathbf{x}) = 1$.
 
 
 <!--
@@ -312,7 +330,8 @@ Now, let us focus on $p( \mathbf{x}  \mid  y)$.
 Using the chain rule of probability, we can express the term $p( \mathbf{x}  \mid  y)$ as
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, ta hãy tập trung vào biểu thức $p( \mathbf{x}  \mid  y)$.
+Sử dụng quy tắc chuỗi cho xác suất, chúng ta có thể biểu thị số hạng $p( \mathbf{x}  \mid  y)$ dưới dạng toán học 
 
 
 $$p(x_1  \mid y) \cdot p(x_2  \mid  x_1, y) \cdot ... \cdot p( x_d  \mid  x_1, ..., x_{d-1}, y).$$
@@ -324,7 +343,9 @@ However, if we assume that *the features are conditionally independent of each o
 then suddenly we are in much better shape, as this term simplifies to $\prod_i p(x_i  \mid  y)$, giving us the predictor
 -->
 
-*dịch đoạn phía trên*
+Tự nó, biểu thức này không giúp ta được thêm điều gì. Ta vẫn phải ước tính khoảng $2^d$ các tham số.
+Tuy nhiên, nếu chúng ta giả định rằng *các đặc trưng độc lập có điều kiện với nhau, với nhãn cho trước*,
+thì đột nhiên ta đang ở trong tình trạng tốt hơn nhiều, vì số hạng này đơn giản hóa thành $\prod_i p(x_i  \mid  y)$, cho ta hàm dự đoán
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \prod_{i=1}^d p(x_i  \mid  y) p(y).$$
@@ -337,7 +358,10 @@ In addition, we estimate $p(y)$ for every $y$ and save it in $P_y[y]$, with $P_y
 Then for any new example $\mathbf x$, we could compute
 -->
 
-*dịch đoạn phía trên*
+Nếu ta có thể ước lượng $\prod_i p(x_i=1  \mid  y)$ cho mỗi $i$ và $y$, và lưu giá trị của nó trong $P_{xy}[i, y]$, 
+ở đây $P_{xy}$ là một ma trận có kích thước $d\times n$ với $n$ là số lượng các lớp và $y\in\{1, \ldots, n\}$.
+Bổ sung thêm, ta ước lượng $p(y)$ cho mỗi $y$ và lưu nó trong $P_y[y]$, với $P_y$ là một vector có độ dài $n$.
+Sau đó, đối với bất kỳ mẫu mới nào $\mathbf x$, ta có thể tính
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \prod_{i=1}^d P_{xy}[x_i, y]P_y[y],$$
@@ -349,7 +373,8 @@ for any $y$. So our assumption of conditional independence has taken the complex
 an exponential dependence on the number of features $\mathcal{O}(2^dn)$ to a linear dependence, which is $\mathcal{O}(dn)$.
 -->
 
-*dịch đoạn phía trên*
+cho $y$ bất kỳ. Vì vậy, giả định của chúng ta về sự độc lập có điều kiện đã làm giảm độ phức tạp của mô hình từ
+phụ thuộc theo cấp số nhân vào số lượng các đặc trưng $\mathcal{O}(2^dn)$ thành phụ thuộc tuyến tính, tức là $\mathcal{O}(dn)$.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -775,7 +800,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Minh Đức
 
 <!-- Phần 2 -->
-* 
+* Trần Yến Thy
 
 <!-- Phần 3 -->
 * 
