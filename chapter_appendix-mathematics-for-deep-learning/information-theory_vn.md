@@ -989,7 +989,7 @@ Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối*
 Let us implement the KL divergence from Scratch.
 -->
 
-Ta hãy thực hiện tính khoảng cách KL từ đầu.
+Ta hãy thực hiện tính phân kỳ KL từ đầu.
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
 
