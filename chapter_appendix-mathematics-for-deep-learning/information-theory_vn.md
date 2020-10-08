@@ -151,7 +151,12 @@ In this way, any information is encoded by a series of $0$ and $1$.
 And hence, a series of binary digits of length $n$ contains $n$ bits of information.
 -->
 
-*dịch đoạn phía trên*
+Vì thông tin là hiện thân của khả năng trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ khả năng xảy ra với số lượng bit?
+Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu được tạo ra bởi John Tukey.
+Vậy "bit" là gì và tại sao chúng ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
+Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
+Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
+Và do đó, một chuỗi các chữ số nhị phân có độ dài $n$ chứa $n$ bit thông tin.
 
 
 <!--
@@ -162,7 +167,11 @@ So, can we generalize to a math function which can transfer the probability $p$ 
 Shannon gave the answer by defining *self-information*
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, mỗi $0$ hoặc $1$ xảy ra với xác suất là $\frac{1}{2}$.
+Do đó, sự kiện $X$ với một chuỗi mã có độ dài $n$, xảy ra với xác suất $\frac{1}{2^n}$.
+Đồng thời, như chúng tôi đã đề cập trước đây, chuỗi số này chứa $n$ bit thông tin.
+Vì vậy, chúng ta có thể tổng quát hóa thành một hàm toán học có thể chuyển xác suất $p$ thành số bit không?
+Shannon đưa ra câu trả lời bằng cách định nghĩa *thông tin tự thân*
 
 
 $$I(X) = - \log_2 (p),$$
@@ -175,7 +184,10 @@ For the sake of simplicity, the rest of this section will omit the subscript 2 i
 For example, the code "0010" has a self-information
 -->
 
-*dịch đoạn phía trên*
+như là các *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
+Lưu ý rằng ta sẽ luôn sử dụng logarit cơ số 2 trong phần này.
+Để đơn giản, phần còn lại của phần này sẽ bỏ qua chỉ số phụ 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
+Ví dụ: mã "0010" có thông tin tự thân
 
 
 $$I(\text{"0010"}) = - \log (p(\text{"0010"})) = - \log \left( \frac{1}{2^4} \right) = 4 \text{ bits}.$$
@@ -186,7 +198,8 @@ We can calculate self information as shown below.
 Before that, let us first import all the necessary packages in this section.
 -->
 
-*dịch đoạn phía trên*
+Chúng ta có thể tính toán thông tin tự thân như hình dưới đây.
+Trước đó, hãy nhập tất cả các gói cần thiết trong phần này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
