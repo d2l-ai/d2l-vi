@@ -252,7 +252,7 @@ Do lượng tin (*self-information*) chỉ đo lường thông tin từ một bi
 ### Motivating Entropy
 -->
 
-### Entropy động lực (*Motivating Entropy*)
+### Nguồn gốc phát triển của Entropy
 
 
 <!--
