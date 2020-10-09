@@ -290,7 +290,7 @@ Assume we have modified a typo in the file `~/d2l-en/chapter_appendix_tools/how-
 You can then check which files you have changed:
 -->
 
-Giờ là lúc để chỉnh sửa cuốn sách, Tốt nhất là chỉnh sửa các notebook trên Jupyter theo hướng dẫn trong :numref:`sec_jupyter`.
+Giờ là lúc để chỉnh sửa cuốn sách. Tốt nhất là chỉnh sửa các notebook trên Jupyter theo hướng dẫn trong :numref:`sec_jupyter`.
 Tạo thay đổi và kiểm tra xem chúng OK chưa.
 Giả sử bạn đã điều chỉnh một lỗi đánh máy trong tệp `~/d2l-en/chapter_appendix_tools/how-to-contribute.md`.
 Sau đó bạn có thể kiểm tra xem bạn đã sửa đổi những tệp nào.
@@ -335,8 +335,8 @@ The changed code will then be in your personal fork of the repository.
 To request the addition of your change, you have to create a pull request for the official repository of the book.
 -->
 
-Đoạn mã được chỉnh sửa lúc này sẽ nằm trong bản rẽ nhánh cá nhân của bạn của kho chứa.
-Để đề nghị thêm thay đổi của bạn, bạn cần phải tạo một pull request đối với kho chứa chính thức của cuốn sách.
+Đoạn mã được chỉnh sửa lúc này sẽ nằm trong bản fork cá nhân của bạn của repo này.
+Để đề nghị thêm thay đổi của bạn, bạn cần phải tạo một pull request đối với repo chính thức của cuốn sách.
 
 
 <!--
@@ -351,8 +351,8 @@ As shown in :numref:`fig_git_newpr`, go to your fork of the repository on GitHub
 This will open up a screen that shows you the changes between your edits and what is current in the main repository of the book.
 -->
 
-Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản rẽ nhánh của kho chứa trên Github và chọn "New pull request".
-Thao tác này sẽ mở ra một cửa sổ hiển thị những điểm khác nhau giữa bản chỉnh sửa của bạn và bản hiện trong kho chứa chính của cuốn sách.
+Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản forkcủa repo trên Github và chọn "New pull request".
+Thao tác này sẽ mở ra một cửa sổ hiển thị những điểm khác nhau giữa bản chỉnh sửa của bạn và bản hiện trong repo chính của cuốn sách.
 
 
 <!--
@@ -381,7 +381,7 @@ Once you have incorporated them, you are good to go.
 
 Cuối cùng, đăng một pull request lên bằng cách nhấn vào nút như chỉ ra trong :numref:`fig_git_createpr`.
 Hãy đảm bảo mô tả các thay đổi bạn đã thực hiện trong pull request này.
-Việc này sẽ giúp tác giả dễ dàng hơn trong việc kiểm tra và hợp nhất nó với cuốn sách.
+Việc này sẽ giúp tác giả dễ dàng hơn trong việc kiểm tra và gộp nó với cuốn sách.
 Tuỳ thuộc vào các thay đổi, pull request này có thể được chấp thuận ngay lập tức, bác bỏ, hoặc khả năng cao hơn là bạn sẽ nhận được phản hồi trên các thay đổi này.
 Một khi bạn hợp nhất chúng, bạn đã sẵn sàng để tiến hành.
 
@@ -400,7 +400,7 @@ Your pull request will appear among the list of requests in the main repository.
 We will make every effort to process it quickly.
 -->
 
-Pull request của bạn sẽ xuất hiện giữa một danh sách các yêu cầu trong kho chứa chính.
+Pull request của bạn sẽ xuất hiện giữa một danh sách các yêu cầu trong repo chính.
 Chúng tôi sẽ làm mọi thứ có thể để xử lý nó nhanh chóng.
 
 
@@ -416,7 +416,7 @@ Try not to submit huge pull requests since this makes them hard to understand an
 
 * Bạn có thể sử dụng Github để đóng góp cho cuốn sách này.
 * Bạn có thể chỉnh sửa tệp trực tiếp trên Github với những thay đổi nhỏ.
-* Với một thay đổi lớn, xin vui lòng tạo rẽ nhánh kho chứa, tạo chỉnh sửa nội bộ và chỉ đóng góp một khi bạn sẵn sàng.
+* Với một thay đổi lớn, xin vui lòng tạo fork của repo này, tạo chỉnh sửa nội bộ và chỉ đóng góp một khi bạn sẵn sàng.
 * Pull request là cách mà các đóng góp được gói lại.
 Cố gắng đừng đăng một pull request quá lớn do điều này khiến chúng khó hiểu và khó để hợp nhất. Tốt nhất là gửi nhiều pull request nhỏ hơn.
 
@@ -431,11 +431,11 @@ Cố gắng đừng đăng một pull request quá lớn do điều này khiến
 Learn how to do it with [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 -->
 
-1. Star và tạo rẽ nhánh kho chứa `d2l-en`.
+1. Star và tạo fork của repo `d2l-en`.
 2. Tìm các đoạn mã cần cải thiện và đăng một pull request.
 3. Tìm một tham khảo mà chúng tôi bỏ qua và đăng một pull request.
 4. Thường thì trong thực hành, tốt hơn hết là khi tạo một pull request thì sử dụng một nhánh (*branch*) mới.
-Học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
+Hãy học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
