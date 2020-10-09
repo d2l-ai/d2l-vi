@@ -652,7 +652,8 @@ the information in both $X$ and $Y$ together ($H(X, Y)$) minus the information a
 This gives us the information in $Y$ which is not also represented in $X$.  
 -->
 
-Điều này có thể được giải thích một cách trực quan như sau: thông tin trong $Y$ khi biết $X$ ($H(Y \mid X)$) bằng với thông tin trong cả $X$ và $Y($H(X, Y)$) trừ đi thông tin đã có trong $X$.
+Điều này có thể được giải thích một cách trực quan như sau: thông tin trong $Y$ khi biết $X$ ($H(Y \mid X)$) bằng với thông tin trong cả $X$ và $Y$ ($H(X, Y)$) trừ đi thông tin đã có trong $X$.
+Nó cho ta biết thông tin có trong $Y$ mà không hiển thị trong $X$.
 
 <!--
 Now, let us implement conditional entropy :eqref:`eq_cond_ent_def` from scratch.
@@ -712,7 +713,7 @@ can we similarly ask how much information is shared between $X$ and $Y$?" The an
 -->
 
 Với định nghĩa trước đó về các biến ngẫu nhiên $(X, Y)$, bạn có thể tự hỏi:" Giờ đây ta biết có bao nhiêu thông tin nằm trong Y nhưng không nằm ở trong X,
-liệu chúng ta có thể biết được có bao nhiêu thông tin giống nhau giữa $X$ và §Y§ không?". Đáp án cho câu hỏi trên chính là *thông tin tương hỗ* của $(X, Y)$, hay còn được viết dưới dạng $I(X, Y)$.
+liệu chúng ta có thể biết được có bao nhiêu thông tin giống nhau giữa $X$ và $Y$ không?". Đáp án cho câu hỏi trên chính là *thông tin tương hỗ* của $(X, Y)$, hay còn được viết dưới dạng $I(X, Y)$.
 
 
 <!--
@@ -728,12 +729,12 @@ Thus, we have that the mutual information should be
 -->
 
 Thay vì đề cập ngay đến định nghĩa chính thức, hãy cùng luyện tập trực giác của chúng ta bằng cách suy luận biểu thức thông tin tương hỗ dựa trên những khái niệm mà chúng ta đã xây dựng trước đó. 
-Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa các biến ngẫu nhiên. 
+Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa hai biến ngẫu nhiên. 
 Một cách mà chúng ta có thể thử đó là bắt đầu với tất cả những thông tin chứa trong cả biến $X$ and $Y$,
 sau đó bỏ đi những phần không giống nhau. 
 Thông tin chứa trong cả $X$ and $Y$ được viết dưới dạng $H(X, Y)$.
 Ta muốn lược bỏ đi thông tin nằm trong $X$ nhưng không nằm trong $Y$, cũng như thông tin nằm trong $Y$ nhưng không nằm trong $X$.
-Như chúng ta đã thấy trong phần trước, chúng được biểu diễn lần lượt là H(X \mid Y)$ và $H(Y \mid X)$.
+Như chúng ta đã thấy trong mục trước, chúng được biểu diễn lần lượt là H(X \mid Y)$ và $H(Y \mid X)$.
 Do đó, ta có thông tin tương hỗ được tính như sau
 
 
