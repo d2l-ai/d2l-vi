@@ -871,7 +871,7 @@ We may give a similar interpretation to the logarithmic term in the mutual infor
 -->
 
 Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã có thể cung cấp lời giải cho $-\log(p_X(x))$, và đã khá *ngạc nhiên* với kết quả đó. 
-Chúng ta có thể cung cấp một lời giải tương tự với thuật ngữ logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ cấp điểm*:
+Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ cấp điểm*:
 
 
 $$\mathrm{pmi}(x, y) = \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)}.$$
@@ -886,17 +886,17 @@ If it is large and positive, then these two specific outcomes occur much more fr
 whereas if it is large and negative it represents the two outcomes happening far less than we would expect by random chance.  
 -->
 
-Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường độ nhiều hơn/ít hơn giữa kết hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra độc lập bất kì. 
-Nếu nó lớn và là số dương, thì hai đầu ra cụ thể trên có xác xuất xảy ra cao hơn nhiều so với xác xuất ngẫu nhiên. 
+Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường độ nhiều hơn/ít hơn giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra độc lập bất kì. 
+Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác xuất xảy ra cao hơn nhiều so với xác xuất ngẫu nhiên. 
 (*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác xuất của hai đầu ra độc lập*),
-ngược lại nếu nó lớn và là số âm, thì xác xuất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác xuất ngẫu nhiên.
+ngược lại nếu kết quả lớn và là số âm, thì xác xuất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác xuất ngẫu nhiên.
 
 <!--
 This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as the average amount that 
 we were surprised to see two outcomes occurring together compared to what we would expect if they were independent.
 -->
 
-Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai đầu ra xảy ra đồng thời so với khi chúng là hai đầu ra độc lập. 
+Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
 <!-- Đoạn này mình vẫn lấn cấn vì chưa thể dịch toàn bộ ý tác giả --!>
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
