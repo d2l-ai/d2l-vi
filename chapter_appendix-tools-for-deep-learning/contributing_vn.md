@@ -21,11 +21,11 @@ When your pull request is merged into the code repository by the author, you wil
 
 Đóng góp từ [bạn đọc](https://github.com/d2l-ai/d2l-en/graphs/contributors) sẽ giúp chúng tôi cái thiện cuốn sách này.
 Nếu bạn tìm thấy một lỗi đánh máy, một đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
-phần mã nguồn không được thanh nhã hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ bạn đọc cuốn sách.
-Với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
-thông thường chỉ cần vài giờ hoặc ngày để đưa một cải thiện vào cuốn sách này.
+phần mã nguồn không được thanh thoát hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ bạn đọc cuốn sách.
+Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
+thông thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào cuốn sách này.
 Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/d2l-ai/d2l-en/pulls) tới kho lưu trữ Github.
-Khi pull request của bạn được hợp nhất vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
+Khi pull request của bạn được gộp vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
 
 
 <!--
