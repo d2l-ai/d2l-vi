@@ -280,7 +280,7 @@ git clone https://github.com/your_github_username/d2l-en.git
 ### Editing the Book and Push
 -->
 
-### *dịch tiêu đề trên*
+### Chỉnh sửa Cuốn sách và Đẩy lên
 
 
 <!--
@@ -290,14 +290,17 @@ Assume we have modified a typo in the file `~/d2l-en/chapter_appendix_tools/how-
 You can then check which files you have changed:
 -->
 
-*dịch đoạn phía trên*
+Giờ là lúc để chỉnh sửa cuốn sách, Tốt nhất là chỉnh sửa các notebook trên Jupyter theo hướng dẫn trong :numref:`sec_jupyter`.
+Tạo thay đổi và kiểm tra xem chúng OK chưa.
+Giả sử bạn đã điều chỉnh một lỗi đánh máy trong tệp `~/d2l-en/chapter_appendix_tools/how-to-contribute.md`.
+Sau đó bạn có thể kiểm tra xem bạn đã sửa đổi những tệp nào.
 
 
 <!--
 At this point Git will prompt that the `chapter_appendix_tools/how-to-contribute.md` file has been modified.
 -->
 
-*dịch đoạn phía trên*
+Vào thời điểm này Git sẽ thông báo là tệp `chapter_appendix_tools/how-to-contribute.md` đã được sửa đổi.
 
 
 ```
@@ -317,7 +320,7 @@ Changes not staged for commit:
 After confirming that this is what you want, execute the following command:
 -->
 
-*dịch đoạn phía trên*
+Sau khi xác nhận đây là những sửa đổi bạn muốn, thực thi lệnh sau:
 
 
 ```
@@ -332,14 +335,15 @@ The changed code will then be in your personal fork of the repository.
 To request the addition of your change, you have to create a pull request for the official repository of the book.
 -->
 
-*dịch đoạn phía trên*
+Đoạn mã được chỉnh sửa lúc này sẽ nằm trong bản rẽ nhánh cá nhân của bạn của kho chứa.
+Để đề nghị thêm thay đổi của bạn, bạn cần phải tạo một pull request đối với kho chứa chính thức của cuốn sách.
 
 
 <!--
 ### Pull Request
 -->
 
-### *dịch tiêu đề trên*
+### Pull Request
 
 
 <!--
@@ -347,14 +351,15 @@ As shown in :numref:`fig_git_newpr`, go to your fork of the repository on GitHub
 This will open up a screen that shows you the changes between your edits and what is current in the main repository of the book.
 -->
 
-*dịch đoạn phía trên*
+Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản rẽ nhánh của kho chứa trên Github và chọn "New pull request".
+Thao tác này sẽ mở ra một cửa sổ hiển thị những điểm khác nhau giữa bản chỉnh sửa của bạn và bản hiện trong kho chứa chính của cuốn sách.
 
 
 <!--
 ![Pull Request.](../img/git-newpr.png)
 -->
 
-![*dịch mô tả phía trên*](../img/git-newpr.png)
+![Pull Request.](../img/git-newpr.png)
 :width:`700px`
 :label:`fig_git_newpr`
 
@@ -363,7 +368,7 @@ This will open up a screen that shows you the changes between your edits and wha
 ### Submitting Pull Request
 -->
 
-### *dịch tiêu đề trên*
+### Đăng Pull Request lên
 
 
 <!--
@@ -374,14 +379,18 @@ Depending on the changes, this might get accepted right away, rejected, or more 
 Once you have incorporated them, you are good to go.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, đăng một pull request lên bằng cách nhấn vào nút như chỉ ra trong :numref:`fig_git_createpr`.
+Hãy đảm bảo mô tả các thay đổi bạn đã thực hiện trong pull request này.
+Việc này sẽ giúp tác giả dễ dàng hơn trong việc kiểm tra và hợp nhất nó với cuốn sách.
+Tuỳ thuộc vào các thay đổi, pull request này có thể được chấp thuận ngay lập tức, bác bỏ, hoặc khả năng cao hơn là bạn sẽ nhận được phản hồi trên các thay đổi này.
+Một khi bạn hợp nhất chúng, bạn đã sẵn sàng để tiến hành.
 
 
 <!--
 ![Create Pull Request.](../img/git-createpr.png)
 -->
 
-![*dịch mô tả phía trên*](../img/git-createpr.png)
+![Tạo Pull Request.](../img/git-createpr.png)
 :width:`700px`
 :label:`fig_git_createpr`
 
@@ -391,7 +400,8 @@ Your pull request will appear among the list of requests in the main repository.
 We will make every effort to process it quickly.
 -->
 
-*dịch đoạn phía trên*
+Pull request của bạn sẽ xuất hiện giữa một danh sách các yêu cầu trong kho chứa chính.
+Chúng tôi sẽ làm mọi thứ có thể để xử lý nó nhanh chóng.
 
 
 ## Tóm tắt
@@ -404,7 +414,11 @@ We will make every effort to process it quickly.
 Try not to submit huge pull requests since this makes them hard to understand and incorporate. Better send several smaller ones.
 -->
 
-*dịch đoạn phía trên*
+* Bạn có thể sử dụng Github để đóng góp cho cuốn sách này.
+* Bạn có thể chỉnh sửa tệp trực tiếp trên Github với những thay đổi nhỏ.
+* Với một thay đổi lớn, xin vui lòng tạo rẽ nhánh kho chứa, tạo chỉnh sửa nội bộ và chỉ đóng góp một khi bạn sẵn sàng.
+* Pull request là cách mà các đóng góp được gói lại.
+Cố gắng đừng đăng một pull request quá lớn do điều này khiến chúng khó hiểu và khó để hợp nhất. Tốt nhất là gửi nhiều pull request nhỏ hơn.
 
 
 ## Bài tập
@@ -417,7 +431,11 @@ Try not to submit huge pull requests since this makes them hard to understand an
 Learn how to do it with [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 -->
 
-*dịch đoạn phía trên*
+1. Star và tạo rẽ nhánh kho chứa `d2l-en`.
+2. Tìm các đoạn mã cần cải thiện và đăng một pull request.
+3. Tìm một tham khảo mà chúng tôi bỏ qua và đăng một pull request.
+4. Thường thì trong thực hành, tốt hơn hết là khi tạo một pull request thì sử dụng một nhánh (*branch*) mới.
+Học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -445,6 +463,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/08/2020)*
