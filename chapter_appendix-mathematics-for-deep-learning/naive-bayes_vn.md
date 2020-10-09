@@ -384,7 +384,7 @@ phụ thuộc theo cấp số nhân vào số lượng các đặc trưng $\math
 ## Training
 -->
 
-## *dịch tiêu đề trên*
+## Huấn luyện
 
 
 <!--
@@ -395,7 +395,11 @@ Since we are only dealing with $10$ classes, we may count the number of occurren
 For instance, if digit 8 occurs $n_8 = 5,800$ times and we have a total of $n = 60,000$ images, the probability estimate is $p(y=8) = 0.0967$.
 -->
 
-*dịch đoạn phía trên*
+Vấn đề bây giờ là ta không biết $P_{xy}$ và $P_y$.
+Vì vậy, ta cần ước lượng giá trị của chúng với dữ liệu nào đó đã có.
+Đây là *việc huấn luyện* mô hình. Ước lượng $P_y$ không quá khó.
+Vì ta chỉ đang làm việc với $10$ lớp, ta có thể đếm số lần xuất hiện $n_y$ cho mỗi chữ số và chia nó cho tổng số dữ liệu $n$.
+Chẳng hạn, nếu chữ số 8 xảy ra $n_8 = 5,800$ lần và ta có tổng số hình ảnh là $n = 60.000$, Ước lượng xác suất sẽ là $p(y=8) = 0.0967$.
 
 
 ```{.python .input}
@@ -445,7 +449,14 @@ Hence, rather than $n_{iy}$ we use $n_{iy}+1$ and instead of $n_y$ we use $n_{y}
 This is also called *Laplace Smoothing*. It may seem ad-hoc, however it may be well motivated from a Bayesian point-of-view.
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy chuyển sang vấn đề khó hơn một chút là tính $P_{xy}$. Vì ta lấy các ảnh đen trắng,
+$p(x_i \mid y)$ biểu thị xác suất điểm ảnh $i$ được kích hoạt cho lớp $y$.
+Đơn giản giống như trước đây, ta có thể duyệt và đếm số lần $n_{iy}$ để một sự kiện xảy ra và chia nó cho
+tổng số lần xuất hiện của $y$, tức là $n_y$.
+Nhưng có một điều hơi gây rắc rối: một số điểm ảnh nhất định có thể không bao giờ có màu đen (ví dụ: đối với các ảnh được cắt xén tốt, các điểm ảnh ở góc có thể luôn là màu trắng).
+Một cách thuận tiện để các giải quyết vấn đề này là cộng thêm một số đếm giả vào tất cả các lần xuất hiện.
+Do đó, thay vì $n_{iy} $, ta dùng $n_{iy} + 1$ và thay vì $n_y$, ta dùng $n_{y} + 1 $.
+Phương pháp này còn được gọi là *Làm mượt Laplace* (*Laplace Smoothing*). Nó có vẻ không chính thống, tuy nhiên nó có thể được chào đón từ quan điểm Bayes.
 
 
 ```{.python .input}
@@ -483,7 +494,8 @@ d2l.show_images(P_xy, 2, 5);
 By visualizing these $10\times 28\times 28$ probabilities (for each pixel for each class) we could get some mean looking digits.
 -->
 
-*dịch đoạn phía trên*
+
+Bằng cách trực quan hóa các xác suất $10\times 28\times 28$ này (cho mỗi điểm ảnh đối với mỗi lớp), ta có thể lấy được hình ảnh trung bình của các chữ số.
 
 
 <!--
@@ -491,8 +503,8 @@ Now we can use :eqref:`eq_naive_bayes_estimation` to predict a new image.
 Given $\mathbf x$, the following functions computes $p(\mathbf x \mid y)p(y)$ for every $y$.
 -->
 
-*dịch đoạn phía trên*
-
+Bây giờ ta có thể sử dụng :eqref:`eq_naive_bayes_estimation` để dự đoán một hình ảnh mới.
+Cho $\mathbf x$, các hàm sau sẽ tính $p(\mathbf x \mid y)p(y)$ với mỗi $y$.
 
 ```{.python .input}
 def bayes_pred(x):
@@ -538,7 +550,11 @@ What happens is that we experience *numerical underflow*, i.e., multiplying all 
 We discussed this as a theoretical issue in :numref:`sec_maximum_likelihood`, but we see the phenomena clearly here in practice.
 -->
 
-*dịch đoạn phía trên*
+Điều này đã dẫn tới sai lầm khủng khiếp! Để tìm hiểu lý do tại sao, ta hãy xem xét xác suất trên mỗi điểm ảnh.
+Chúng thường là những con số từ $0.001$ đến $1$ và ta đang nhân chúng $784$ lần.
+Tại điểm này, điều đáng nói là ta đang tính những con số này trên máy tính, do đó với một phạm vi cố định cho số mũ.
+Điều xảy ra là chúng ta gặp phải *rò rỉ số (underflow)*, tức là tích tất cả các số nhỏ hơn một sẽ dẫn đến một số dần nhỏ đi cho đến khi kết quả được làm tròn thành không.
+Ta đã thảo luận vấn đề này dưới dạng vấn đề lý thuyết trong: numref: `sec_maximum_likelkel`, nhưng ta thấy hiện tượng này rõ ràng ở đây trong thực tế.
 
 
 <!--
@@ -546,7 +562,8 @@ As discussed in that section, we fix this by use the fact that $\log a b = \log 
 Even if both $a$ and $b$ are small numbers, the logarithm values should be in a proper range.
 -->
 
-*dịch đoạn phía trên*
+Như đã thảo luận trong phần đó, ta khắc phục điều này bằng cách sử dụng tính chất $\log a b = \log a + \log b$, cụ thể là ta chuyển sang tính tổng các logarit.
+Nhờ vậy ngay cả khi cả $a$ và $b$ đều là các số nhỏ, giá trị các logarit sẽ nằm trong miền thích hợp.
 
 
 ```{.python .input}
@@ -574,7 +591,7 @@ print('logarithm is normal:', 784*tf.math.log(a).numpy())
 Since the logarithm is an increasing function, we can rewrite :eqref:`eq_naive_bayes_estimation` as
 -->
 
-*dịch đoạn phía trên*
+Vì logarit là một hàm tăng dần, ta có thể viết lại :eqref: `eq_naive_bayes_estimation` thành
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \sum_{i=1}^d \log P_{xy}[x_i, y] + \log P_y[y].$$
@@ -584,7 +601,7 @@ $$ \hat{y} = \mathrm{argmax}_y \> \sum_{i=1}^d \log P_{xy}[x_i, y] + \log P_y[y]
 We can implement the following stable version:
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lập trình phiên bản ổn định sau:
 
 
 ```{.python .input}
@@ -640,7 +657,7 @@ py
 We may now check if the prediction is correct.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ ta có thể kiểm tra liệu dự đoán này có đúng hay không.
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -803,7 +820,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trần Yến Thy
 
 <!-- Phần 3 -->
-* 
+* Nguyễn Mai Hoàng Long
 
 <!-- Phần 4 -->
 * 
