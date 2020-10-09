@@ -217,8 +217,8 @@ Click on the `Fork` button in the red box at the top-right of :numref:`fig_git_f
 This is now *your copy* and you can change it any way you want.
 -->
 
-Điền [địa chỉ](https://github.com/d2l-ai/d2l-en/) của kho chứa mã nguồn cuốn sách này vào trình duyệt web của bạn.
-Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của kho chứa của cuốn sách này.
+Điền [địa chỉ](https://github.com/d2l-ai/d2l-en/) của repo chứa mã nguồn cuốn sách này vào trình duyệt web của bạn.
+Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của repo của cuốn sách này.
 Đây giờ là *bản sao của bạn* và bạn có thể tuỳ ý thay đổi nó.
 
 
@@ -226,7 +226,7 @@ Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`
 ![The code repository page.](../img/git-fork.png)
 -->
 
-![Trang kho chứa mã nguồn.](../img/git-fork.png)
+![Trang repo chứa mã nguồn.](../img/git-fork.png)
 :width:`700px`
 :label:`fig_git_fork`
 
@@ -236,7 +236,7 @@ Now, the code repository of this book will be forked (i.e., copied) to your user
 such as `astonzhang/d2l-en` shown at the top-left of the screenshot :numref:`fig_git_forked`.
 -->
 
-Giờ thì kho chứa mã nguồn của cuốn sách đã được chia nhánh (tức sao chép) tới tên người dùng của bạn,
+Giờ thì repo chứa mã nguồn của cuốn sách đã được fork (tức sao chép) tới tên người dùng của bạn,
 ví dụ như `astonzhang/d2l-en` được chỉ ra phía trên bên trái của ảnh chụp màn hình :numref:`fig_git_forked`.
 
 
@@ -244,7 +244,7 @@ ví dụ như `astonzhang/d2l-en` được chỉ ra phía trên bên trái của
 ![Fork the code repository.](../img/git-forked.png)
 -->
 
-![Chia nhánh kho chứa mã nguồn.](../img/git-forked.png)
+![Fork repo chứa mã nguồn.](../img/git-forked.png)
 :width:`700px`
 :label:`fig_git_forked`
 
@@ -264,11 +264,11 @@ For now simply follow the instructions in :ref:`chap_installation` to get starte
 The main difference is that you are now downloading *your own fork* of the repository.
 -->
 
-Để clone kho chứa (tức là tạo bản sao nội bộ) ta cần phải có địa chỉ của khó chứa.
+Để clone một repo (tức là tạo bản sao nội bộ) ta cần phải có địa chỉ của repo đó.
 Nút màu xanh trong :numref:`fig_git_clone` hiển thị địa chỉ này.
-Đảm bảo rằng bản sao nội bộ của bạn cập nhật với kho chứa chính nếu bạn quyết định giữ bản rẽ nhánh này lâu dài.
+Hãy đảm bảo rằng bản sao nội bộ của bạn cập nhật với repo chính nếu bạn quyết định giữ bản fork này lâu dài.
 Còn bây giờ chỉ cần đơn giản làm theo các hướng dẫn trong :ref:`chap_installation` để bắt đầu.
-Điểm khác biệt chính ở đây là bạn đang tải về *bản sao của riêng bạn* của kho chứa này.
+Điểm khác biệt chính ở đây là bạn đang tải về *bản fork của riêng bạn* của repo này.
 
 
 <!--
