@@ -242,7 +242,7 @@ As self-information only measures the information of a single discrete event,
 we need a more generalized measure for any random variable of either discrete or continuous distribution. 
 -->
 
-Do hàm lượng thông tin (*self-information*) chỉ đo lường thông tin từ một biến cố không liên tục đơn lẻ, chúng ta cần một chỉ số khái quát hơn cho bất kỳ một biến ngẫu nhiên cả liên tục và không liên tục.
+Do lượng tin (*self-information*) chỉ đo lường thông tin từ một biến cố rời rạc đơn lẻ, chúng ta cần một thước đo khái quát hơn cho một biến ngẫu nhiên cả liên tục và không liên tục bất kỳ.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -261,9 +261,9 @@ It will turn out that the following collection of common-sense statements force 
 A formal version of these axioms, along with several others may be found in :cite:`Csiszar.2008`.
 -->
 
-Hãy thử phân tích cụ thể hơn điều chúng ta muốn. Đây sẽ là một phát biểu không chính thức về những gì chúng ta đã biết về *tiền đề của entropy Shannon*.
-Hoá ra những phát biểu quen thuộc sau đây buộc chúng ta phải có một định nghĩa thống nhất.
-Một phiên bản chính thức của những tiền đề này cùng với một số tiền đề khác có thể được tìm thấy trong :cite:`Csiszar.2008`.
+Hãy thử phân tích cụ thể hơn điều chúng ta muốn. Đây sẽ là một phát biểu không chính thức về cái mà được biết đến dưới tên gọi là *các tiên đề của entropy Shannon*.
+Hoá ra những phát biểu quen thuộc sau đây buộc chúng ta phải đi tới một định nghĩa độc nhất về thông tin.
+Một phiên bản chính quy của những tiên đề này cùng với một số tiên đề khác có thể được tìm thấy trong :cite:`Csiszar.2008`.
 
 
 <!--
@@ -273,7 +273,7 @@ If they are independent, then it is exactly the sum.
 3.  The information gained when observing (nearly) certain events is (nearly) zero.
 -->
 
-1. Thông tin chúng ta thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào những gì chúng ta gọi là yếu tố, hoặc sự có mặt của các yếu tố bổ sung có xác suất bằng 0.
+1. Thông tin chúng ta thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào các yếu tố, hay sự xuất hiện của các yếu tố bổ sung mà có xác suất bằng 0.
 2. Thông tin chúng ta thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin chúng ta thu được bằng cách quan sát chúng một cách riêng rẽ.
 Nếu chúng độc lập thì thông tin thu được từ hai cách đều bằng nhau.
 3. Thông tin thu được khi quan sát những biến cố (gần như) chắc chắn thì (gần như) bằng 0.
@@ -285,8 +285,8 @@ The only ambiguity that these allow is in the choice of fundamental units, which
 we saw before that the information provided by a single fair coin flip is one bit.
 -->
 
-Việc chứng minh này nằm ngoài phạm vi của quyển sách nhưng biết được khái niệm thống nhất về entropy này rất quan trọng.
-Chỉ có một điều mơ hồ duy nhất đó là những phát biểu này cho phép lựa chọn các đơn vị cơ bản, điều này thường được chuẩn hoá bằng cách đưa ra lựa chọn mà chúng ta đã thấy trước đó rằng thông tin cung cấp bởi một lần lật đồng xu công bằng là một bit.
+Việc chứng minh các điều trên nằm ngoài phạm vi của quyển sách này, nhưng điều quan trọng cần phải biết là các mệnh đề trên xác định độc nhất hình thái mà entropy phải có.
+Chỉ có duy nhất một điều không xác định từ những phát biểu trên là về việc chọn các đơn vị cơ bản, mà điều này thường được chuẩn hoá bằng cách đặt thông tin cung cấp bởi một lần lật đồng xu công bằng là một bit, như ta đã thấy ở trước đó. 
 
 
 <!--
@@ -301,7 +301,7 @@ For any random variable $X$ that follows a probability distribution $P$ with a p
 a probability mass function (p.m.f.) $p(x)$, we measure the expected amount of information through *entropy* (or *Shannon entropy*)
 -->
 
-Cho bất cứ một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất (p.d.f) hoặc hàm khối xác suất (p.m.f) $p(x)$, chúng ta tính lượng thông tin cố thể thu được thông qua *entropy* (hoặc *Shannon entropy*)
+Cho bất cứ một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất (p.d.f) hoặc hàm khối xác suất (p.m.f) $p(x)$, chúng ta đo lượng thông tin kỳ vọng thu được thông qua *entropy* (hoặc *Shannon entropy*)
 
 
 $$H(X) = - E_{x \sim P} [\log p(x)].$$
