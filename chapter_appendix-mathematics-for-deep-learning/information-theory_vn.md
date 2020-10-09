@@ -671,14 +671,14 @@ the information in both $X$ and $Y$ together ($H(X, Y)$) minus the information a
 This gives us the information in $Y$ which is not also represented in $X$.  
 -->
 
-*dịch đoạn phía trên*
-
+Điều này có thể được giải thích một cách trực quan như sau: thông tin trong $Y$ khi biết $X$ ($H(Y \mid X)$) bằng với thông tin trong cả $X$ và $Y$ ($H(X, Y)$) trừ đi thông tin đã có trong $X$.
+Nó cho ta biết thông tin có trong $Y$ mà không hiển thị trong $X$.
 
 <!--
 Now, let us implement conditional entropy :eqref:`eq_cond_ent_def` from scratch.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy cùng lập trình entropy có điều kiện :eqref:`eq_cond_ent_def` từ đầu.
 
 
 ```{.python .input}
@@ -723,7 +723,7 @@ conditional_entropy(tf.constant([[0.1, 0.5], [0.2, 0.3]]),
 ### Mutual Information
 -->
 
-### *dịch tiêu đề trên*
+### Thông tin Tương hỗ
 
 
 <!--
@@ -731,7 +731,8 @@ Given the previous setting of random variables $(X, Y)$, you may wonder: "Now th
 can we similarly ask how much information is shared between $X$ and $Y$?" The answer will be the *mutual information* of $(X, Y)$, which we will write as $I(X, Y)$.  
 -->
 
-*dịch đoạn phía trên*
+Với định nghĩa trước đó về các biến ngẫu nhiên $(X, Y)$, bạn có thể tự hỏi:" Giờ đây ta biết có bao nhiêu thông tin nằm trong Y nhưng không nằm ở trong X,
+liệu chúng ta có thể biết được có bao nhiêu thông tin giống nhau giữa $X$ và $Y$ không?". Đáp án cho câu hỏi trên chính là *thông tin tương hỗ* của $(X, Y)$, hay còn được viết dưới dạng $I(X, Y)$.
 
 
 <!--
@@ -746,7 +747,14 @@ As we saw in the previous section, this is given by $H(X \mid Y)$ and $H(Y \mid 
 Thus, we have that the mutual information should be
 -->
 
-*dịch đoạn phía trên*
+Thay vì đề cập ngay đến định nghĩa chính thức, hãy cùng luyện tập trực giác của chúng ta bằng cách suy luận biểu thức thông tin tương hỗ dựa trên những khái niệm mà chúng ta đã xây dựng trước đó. 
+Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa hai biến ngẫu nhiên. 
+Một cách mà chúng ta có thể thử đó là bắt đầu với tất cả những thông tin chứa trong cả biến $X$ and $Y$,
+sau đó bỏ đi những phần không giống nhau. 
+Thông tin chứa trong cả $X$ and $Y$ được viết dưới dạng $H(X, Y)$.
+Ta muốn lược bỏ đi thông tin nằm trong $X$ nhưng không nằm trong $Y$, cũng như thông tin nằm trong $Y$ nhưng không nằm trong $X$.
+Như chúng ta đã thấy trong mục trước, chúng được biểu diễn lần lượt là H(X \mid Y)$ và $H(Y \mid X)$.
+Do đó, ta có thông tin tương hỗ được tính như sau
 
 
 $$
@@ -759,7 +767,7 @@ Indeed, this is a valid definition for the mutual information.
 If we expand out the definitions of these terms and combine them, a little algebra shows that this is the same as
 -->
 
-*dịch đoạn phía trên*
+Thật vậy, đây là định nghĩa hợp lệ của thông tin tương hỗ. Mở rộng thêm định nghĩa của các khái niệm đó rồi tổng hợp lại, ta có biểu thức đại số tương tự sau
 
 
 $$I(X, Y) = E_{x} E_{y} \left\{ p_{X, Y}(x, y) \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)} \right\}. $$
@@ -771,7 +779,8 @@ We can summarize all of these relationships in image :numref:`fig_mutual_informa
 It is an excellent test of intuition to see why the following statements are all also equivalent to $I(X, Y)$.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể rút gọn tất cả những mối quan hệ nêu trên ở hình :numref:`fig_mutual_information`. 
+Đây là một bài kiểm tra trực giác tuyệt vời để hiểu được tại sao các mệnh đề sau đây đều tương đương với $I(X, Y)$.
 
 
 * $H(X) − H(X \mid Y)$
@@ -783,7 +792,7 @@ It is an excellent test of intuition to see why the following statements are all
 ![Mutual information's relationship with joint entropy and conditional entropy.](../img/mutual_information.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/mutual_information.svg)
+![Mối quan hệ giữa thông tin tương hỗ với entropy đồng thời và entropy có điều kiện.](../img/mutual_information.svg)
 :label:`fig_mutual_information`
 
 
@@ -792,14 +801,15 @@ In many ways we can think of the mutual information :eqref:`eq_mut_ent_def` as p
 This allows us to ask not only for linear relationships between variables, but for the maximum information shared between the two random variables of any kind.
 -->
 
-*dịch đoạn phía trên*
+Theo nhiều cách ta có thể xem thông tin tương hỗ :eqref:`eq_mut_ent_def` như là phần mở rộng nguyên thủy của hệ số tương quan trong :numref:`sec_random_variables`.
+Điều này cho phép chúng ta đặt câu hỏi không chỉ về mối quan hệ tuyến tính của các biến, mà còn cả lượng thông tin tối đa mà hai biến bất kì chia sẻ với nhau. 
 
 
 <!--
 Now, let us implement mutual information from scratch.
 -->
 
-*dịch đoạn phía trên*
+Bây giờ, hãy cùng lập trình thông tin tương hỗ từ đầu. 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
@@ -1559,7 +1569,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 
 <!-- Phần 7 -->
-* 
+* Nguyễn Lê Quang Nhật
 
 <!-- Phần 8 -->
 * 
