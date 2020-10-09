@@ -19,14 +19,20 @@ To do so you need to submit a [pull request](https://github.com/d2l-ai/d2l-en/pu
 When your pull request is merged into the code repository by the author, you will become a contributor.
 -->
 
-*dịch đoạn phía trên*
+Đóng góp từ [bạn đọc](https://github.com/d2l-ai/d2l-en/graphs/contributors) sẽ giúp chúng tôi cái thiện cuốn sách này.
+Nếu bạn tìm thấy một lỗi đánh máy, một đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
+phần mã nguồn không được thanh nhã hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ bạn đọc cuốn sách.
+Với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
+thông thường chỉ cần vài giờ hoặc ngày để đưa một cải thiện vào cuốn sách này.
+Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/d2l-ai/d2l-en/pulls) tới kho lưu trữ Github.
+Khi pull request của bạn được hợp nhất vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
 
 
 <!--
 ## Minor Text Changes
 -->
 
-## *dịch tiêu đề trên*
+## Thay đổi nhỏ trong Văn bản
 
 
 <!--
@@ -37,14 +43,18 @@ button (:numref:`fig_edit_file`) to locate the source file, which is a markdown 
 Then you click the "Edit this file" button on the top-right corner to make your changes in the markdown file.
 -->
 
-*dịch đoạn phía trên*
+Đóng góp phổ biến nhất là chỉnh sửa một câu hoặc chữa lỗi đánh máy.
+Chúng tôi khuyến nghị bạn nên tìm tệp gốc trong [kho github](https://github.com/d2l-ai/d2l-en) và trực tiếp chỉnh sửa tệp.
+Ví dụ, bạn có thể tìm tệp thông qua nút [Find file](https://github.com/d2l-ai/d2l-en/find/master)
+(:numref:`fig_edit_file`) để định vị tệp gốc, tệp ở đây là một tệp markdown.
+Sau đó bạn nhấn nút "Edit this file" ở góc trên bên phải để thay đổi tệp markdown này.
 
 
 <!--
 ![Edit the file on Github.](../img/edit-file.png)
 -->
 
-![*dịch mô tả phía trên*](../img/edit-file.png)
+![Chỉnh sửa tệp trên Github.](../img/edit-file.png)
 :width:`300px`
 :label:`fig_edit_file`
 
@@ -55,14 +65,16 @@ It will redirect you to a new page to review your changes (:numref:`fig_git_crea
 If everything is good, you can submit a pull request by clicking the "Create pull request" button.
 -->
 
-*dịch đoạn phía trên*
+Sau khi hoàn thành, điền mô tả thay đổi của bạn vào ô "Propose file change" ở cuối trang và sau đó nhấn nút "Propose file change".
+Trang sẽ tự chuyển hướng đến một trang mới để bạn có thể kiểm tra lại thay đổi của bạn (:numref:`fig_git_createpr`).
+Nếu mọi thứ đều ổn, bạn có thể đăng một pull request bằng cách nhấn vào nút "Create pull request".
 
 
 <!--
 ## Propose a Major Change
 -->
 
-## *dịch tiêu đề trên*
+## Đề xuất một Thay đổi Lớn
 
 
 <!--
@@ -72,7 +84,10 @@ of extensions through the [d2lbook](http://book.d2l.ai/user/markdown.html) packa
 You can use any Markdown editors to open these files and make your changes.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn có dự định cập nhật một phần lớn văn bản hay mã nguồn thì bạn cần phải biết thêm một chút về định dạng mà cuốn sách này sử dụng.
+Tệp nguồn được dựa trên [định dạng markdown](https://daringfireball.net/projects/markdown/syntax) với một tập
+các gói mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham khảo đến phương trình, hình ảnh, chương và trích dẫn.
+Bạn có thể sử dụng bất kì trình chỉnh sửa Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
 
 
 <!--
@@ -81,7 +96,9 @@ So that you can run and test your changes. Please remember to clear all outputs 
 our CI system will execute the sections you updated to generate outputs.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn muốn thay đổi mã nguồn, chúng tôi khuyến nghị các bạn sử dụng Jupyter để mở các tệp Markdown này như mô tả trong :numref:`sec_jupyter`.
+Nhờ đó bạn có thể chạy và kiểm tra thay đổi của bạn. Xin vui lòng xoá toàn bộ các ô kết quả trước khi đăng thay đổi của bạn,
+hệ thống CI của chúng tôi sẽ thực thi phần bạn cập nhật để sinh kết quả.
 
 
 <!--
@@ -89,7 +106,8 @@ Some sections may support multiple framework implementations, you can use `d2lbo
 so other framework implementations become Markdown code blocks and will not be executed when you "Run All" in Jupyter. In other words, first install `d2lbook` by running
 -->
 
-*dịch đoạn phía trên*
+Một số phần có thể hỗ trợ lập trình đa framework, bạn có thể sử dụng `d2lbook` để kích hoạt một framework cụ thể,
+khi đó phần lập trình các framework khác trở thành đoạn mã Markdown và sẽ không được thực thi khi bạn "Run All" trong Jupyter. Nói một cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
 
 
 ```bash
@@ -101,7 +119,7 @@ pip install git+https://github.com/d2l-ai/d2l-book
 Then in the root directory of `d2l-en`, you can activate a particular implementation by running one of the following commands:
 -->
 
-*dịch đoạn phía trên*
+Sau đó trong thư mục gốc `d2l-en`, bạn có thể kích hoạt một cách lập trình cụ thể bằng cách chạy một trong các lệnh sau:
 
 
 ```bash
@@ -115,7 +133,7 @@ d2lbook activate tensorflow chapter_multilayer-perceptrons/mlp-scratch.md
 Before submitting your changes, please clear all code block outputs and activate all by
 -->
 
-*dịch đoạn phía trên*
+Trước khi đăng thay đổi của bạn lên, xin vui lòng xoá toàn bộ các ô đầu ra và kích hoạt tất cả bằng
 
 
 ```bash
@@ -128,8 +146,9 @@ If you add a new code block not for the default implementation, which is MXNet, 
 For example, `#@tab pytorch` for a PyTorch code block, `#@tab tensorflow` for a TensorFlow code block, or `#@tab all` a shared code block for all implementations.
 You may refer to [d2lbook](http://book.d2l.ai/user/code_tabs.html) for more information.
 -->
-
-*dịch đoạn phía trên*
+Nếu bạn thêm một khối mã nguồn mới không có trong cách lập trình mặc định, tức MXNet, xin vui lòng sử dụng `#@tab` để đánh dấu khối này tại dòng đầu tiên.
+Ví dụ, `#@tab pytorch` cho khối mã PyTorch, `#@tab tensorflow` cho khối mã TensorFlow, hoặc `#@tab all` cho khối mã được dùng chung cho tất cả các cách lập trình.
+Bạn có thể tham khảo [d2lbook](http://book.d2l.ai/user/code_tabs.html) để biết thêm thông tin.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -439,7 +458,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 2 -->
 * 
