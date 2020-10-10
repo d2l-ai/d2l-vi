@@ -1010,14 +1010,14 @@ def kl_divergence(p, q):
 ### KL Divergence Properties
 -->
 
-### Các tính chất của Khoảng cách KL
+### Các tính chất của Phân kỳ KL
 
 
 <!--
 Let us take a look at some properties of the KL divergence :eqref:`eq_kl_def`.
 -->
 
-Hãy cùng xem xét một số tính chất của khoảng cách KL :eqref:`eq_kl_def`.
+Hãy cùng xem xét một số tính chất của phân kỳ KL :eqref:`eq_kl_def`.
 
 
 <!--
@@ -1036,16 +1036,16 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
   that results from learning the value of the $X$'s distribution. Similarly to the third term.
 -->
 
-* Khoảng cách KL là bất đối xứng, tức là tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
-* Khoảng cách KL là không âm, tức là $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
+* Phân kỳ KL là bất đối xứng, tức là tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
+* Phân kỳ KL là không âm, tức là $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
 * Nếu tồn tại $x$ sao cho $p(x) > 0$ và $q(x) = 0$ thì $D_{\mathrm{KL}}(P\|Q) = \infty$.
-* Khoảng cách KL có mối quan hệ gần với thông tin tương hỗ.
+* Phân kỳ KL có mối quan hệ gần với thông tin tương hỗ.
 Ngoài mối quan hệ đã chỉ ra trong :numref:`fig_mutual_information`, $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
     1. $D_{\mathrm{KL}}(P(X, Y)  \ \| \ P(X)P(Y))$;
     2. $E_Y \{ D_{\mathrm{KL}}(P(X \mid Y) \ \| \ P(X)) \}$;
     3. $E_X \{ D_{\mathrm{KL}}(P(Y \mid X) \ \| \ P(Y)) \}$.
     
-    Với dạng đầu tiên, chúng tôi giải thích thông tin tương quan giống như khoảng cách KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
+    Với dạng đầu tiên, chúng tôi giải thích thông tin tương quan giống như phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
     và do đó nó là phép đo mức độ khác nhau của phân phối đồng thời so với phân phối ban đầu nếu chúng độc lập.
     Với dạng thứ hai, thông tin tương quan cho ta biết mức giảm trung bình trong độ bất định của $Y$
     gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba tương tự.
@@ -1124,7 +1124,7 @@ As you can see below, there is only a less than 3% off between $D_{\mathrm{KL}}(
 -->
 
 Do $q_1$ và $q_2$ đối xứng qua trục y (tức trục $x=0$), ta đoán rằng
-khoảng cách KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là tương tự nhau.
+phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là tương tự nhau.
 Như bạn có thể thấy ở dưới, $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ chỉ chênh nhau không đến 3%.
 
 
@@ -1183,7 +1183,7 @@ Hence, the log-likelihood function would be
 -->
 
 Coi rằng ta cần giải bài toán phân loại nhị phân dựa vào $n$ dữ liệu cho trước {$x_1, \ldots, x_n$}.
-Giả sử ta mã hoá $1$ và $0$ lần lượt là lớp dương và âm cho nhãn $y_i$, và mạng nơ ron được tham số hoá bởi $\theta$.
+Giả sử ta mã hoá $1$ và $0$ lần lượt là lớp dương và âm cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
 Nếu ta tập trung vào việc tìm $\theta$ tốt nhất sao cho $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
 việc áp dụng hướng tiếp cận log hợp lý cực đại (*maximum log-likelihood*) là hoàn toàn tự nhiên như ta thấy trong :numref:`sec_maximum_likelihood`.
 Cụ thể hơn, với nhãn thực $y_i$ và các dự đoán $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
