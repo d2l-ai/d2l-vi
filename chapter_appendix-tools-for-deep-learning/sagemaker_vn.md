@@ -39,7 +39,7 @@ and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the 
 
 Đầu tiên, ta cần đăng ký tài khoản tại https://aws.amazon.com/.
 Chúng tôi khuyến khích sử dụng xác thực hai yếu tố để tăng cường bảo mật.
-Cũng là một ý tưởng tốt khi cài đặt mức trả chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy dịch vụ đang chạy.
+Cũng là một ý tưởng tốt khi cài đặt mức trả chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy ảo đang chạy.
 Lưu ý rằng bạn cũng sẽ cần một thẻ tín dụng.
 Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](http://console.aws.amazon.com/) của bạn và tìm kiếm từ khóa "Sagemaker" (như trong :numref:`fig_sagemaker`) rồi nhấp vào SageMaker.
 
@@ -57,21 +57,21 @@ Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](
 ## Creating a SageMaker Instance
 -->
 
-## Tạo một SageMaker Instance
+## Tạo một Máy ảo SageMaker
 
 
 <!--
 Next, let us create a notebook instance as described in :numref:`fig_sagemaker-create`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp đến, hãy tạo một máy ảo notebok như đề cập trong :numref:`fig_sagemaker-create`.
 
 
 <!--
 ![Create a SageMaker instance.](../img/sagemaker-create.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-create.png)
+![Tạo một máy ảo Sagemaker](../img/sagemaker-create.png)
 :width:`400px`
 :label:`fig_sagemaker-create`
 
@@ -82,14 +82,17 @@ When creating an instance, we can specify the instance name and choose its type.
 In :numref:`fig_sagemaker-create-2`, we choose `ml.p3.2xlarge`. With one Tesla V100 GPU and an 8-core CPU, this instance is powerful enough for most chapters.
 -->
 
-*dịch đoạn phía trên*
+Sagemaker cung cấp đa dạng [các loại máy ảo](https://aws.amazon.com/sagemaker/pricing/instance-types/) với sức mạnh tính toán và mức giá khác nhau.
+Khi tạo một máy ảo, ta có thể nêu chi tiết tên máy ảo và lựa chọn loại máy ảo mong muốn.
+Trong :numref:`fig_sagemaker-create-2`, ta chọn `ml.p3.2xlarge`.
+Với một GPU Tesla V100 và một CPU 8-nhân. máy ảo này là đã đủ mạnh mẽ cho hầu hết các chương. 
 
 
 <!--
 ![Choose the instance type.](../img/sagemaker-create-2.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-create-2.png)
+![Chọn loại máy ảo](../img/sagemaker-create-2.png)
 :width:`400px`
 :label:`fig_sagemaker-create-2`
 
@@ -100,7 +103,8 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-*dịch đoạn phía trên*
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-en-sagemaker.
+Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
 
@@ -110,7 +114,8 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-*dịch đoạn phía trên*
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-pytorch-sagemaker.
+Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
 
@@ -120,7 +125,8 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-*dịch đoạn phía trên*
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-tensorflow-sagemaker.
+Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
 
@@ -129,7 +135,7 @@ We can specify this GitHub repository URL to let SageMaker clone this repository
 ![Specify the GitHub repository.](../img/sagemaker-create-3.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-create-3.png)
+![Nêu chi tiếp Github repository.](../img/sagemaker-create-3.png)
 :width:`400px`
 :label:`fig_sagemaker-create-3`
 
