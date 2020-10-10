@@ -1215,7 +1215,7 @@ và đây là một dấu hiệu vững chắc cho thấy rằng ta có thể hi
 Like KL divergence, for a random variable $X$, we can also measure the divergence between the estimating distribution $Q$ and the true distribution $P$ via *cross entropy*,
 -->
 
-Giống với khoảng cách KL, với biến ngẫu nhiên $X$, ta cũng có thể đo được khoảng cách giữa phân phối ước lượng $Q$ và phân phối thực $P$ thông qua *entropy chéo*,
+Giống với phân kỳ KL, với biến ngẫu nhiên $X$, ta cũng có thể đo được khoảng cách giữa phân phối ước lượng $Q$ và phân phối thực $P$ thông qua *entropy chéo*,
 
 
 $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
@@ -1226,7 +1226,7 @@ $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
 By using properties of entropy discussed above, we can also interpret it as the summation of the entropy $H(P)$ and the KL divergence between $P$ and $Q$, i.e.,
 -->
 
-Bằng cách sử dụng các tính chất của entropy như đã bàn luận ở trên, ta cũng có thể giải thích công thức trên là tổng giữa entropy $H(P)$ và khoảng cách KL giữa $P$ và $Q$, tức
+Bằng cách sử dụng các tính chất của entropy như đã bàn luận ở trên, ta cũng có thể giải thích công thức trên là tổng giữa entropy $H(P)$ và phân kỳ KL giữa $P$ và $Q$, tức
 
 
 $$\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q).$$
@@ -1315,7 +1315,7 @@ Hoá ra rằng các mục tiêu sau là tương đương:
 
 1. Cực đại hoá xác suất dự đoán của $Q$ cho phân phối $P$, tức $E_{x \sim P} [\log (q(x))]$);
 2. Cực tiểu hoá entropy chéo $\mathrm{CE} (P, Q)$;
-3. Cực tiểu hoá khoảng cách KL $D_{\mathrm{KL}}(P\|Q)$.
+3. Cực tiểu hoá phân kỳ KL $D_{\mathrm{KL}}(P\|Q)$.
 
 
 <!--
