@@ -830,7 +830,7 @@ mutual_information(tf.constant([[0.1, 0.5], [0.1, 0.3]]),
 ### Properties of Mutual Information
 -->
 
-### Đặc tính của Thông tin Tương Hỗ
+### Tính chất của Thông tin Tương Hỗ
 
 
 <!--
@@ -850,8 +850,8 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 
 * Thông tin tương hỗ có tính đối xứng: $I(X, Y) = I(Y, X)$.
 * Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$.
-* $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ là độc lập, thì việc biết thông tin của $Y$ không cho ta thông tin của $X$, do đó thông tin tương hỗ của chúng bằng 0. 
-* Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung thông tin và $$I(X, Y) = H(Y) = H(X).$$
+* $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ độc lập thì việc biết thông tin của $Y$ không cho ta thông tin của $X$ và ngược lại, do đó thông tin tương hỗ của chúng bằng 0. 
+* Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung toàn bộ thông tin và $$I(X, Y) = H(Y) = H(X).$$
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -870,7 +870,7 @@ When we worked with entropy at the beginning of this chapter, we were able to pr
 We may give a similar interpretation to the logarithmic term in the mutual information, which is often referred to as the *pointwise mutual information*:
 -->
 
-Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã có thể cung cấp lời giải cho $-\log(p_X(x))$, và đã khá *ngạc nhiên* với kết quả đó. 
+Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã cung cấp được một cách diễn giải cho $-\log(p_X(x))$ như mức độ *ngạc nhiên* với kết quả cụ thể của biến ngẫu nhiên. 
 Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ cấp điểm*:
 
 
@@ -886,9 +886,9 @@ If it is large and positive, then these two specific outcomes occur much more fr
 whereas if it is large and negative it represents the two outcomes happening far less than we would expect by random chance.  
 -->
 
-Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường độ nhiều hơn/ít hơn giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra độc lập bất kì. 
+Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường mức tăng/giảm độ hợp lý giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra ngẫu nhiên độc lập. 
 Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác xuất xảy ra cao hơn nhiều so với xác xuất ngẫu nhiên. 
-(*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác xuất của hai đầu ra độc lập*),
+(*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác suất của hai đầu ra độc lập*),
 ngược lại nếu kết quả lớn và là số âm, thì xác xuất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác xuất ngẫu nhiên.
 
 <!--
@@ -1550,6 +1550,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 8 -->
 * Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
+* Phạm Minh Đức
 
 <!-- Phần 9 -->
 * 
