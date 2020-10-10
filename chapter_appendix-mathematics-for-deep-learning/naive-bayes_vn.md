@@ -718,9 +718,9 @@ ta đã giả định rằng mỗi và mọi pixel được tạo *một cách �
 * This classifier was the gold standard for decades for tasks such as spam detection.
 -->
 
-* Sử dụng quy tắc Bayes, một bộ phân loại có thể được tạo ra bằng cách giả sử tất cả các đặc trưng quan sát được là độc lập.
+* Sử dụng quy tắc Bayes, một bộ phân loại có thể được tạo ra bằng cách giả định tất cả các đặc trưng quan sát được là độc lập.
 * Bộ phân loại này có thể được huấn luyện trên tập dữ liệu bằng cách đếm số lần xuất hiện của các tổ hợp nhãn và giá trị pixel.
-* Bộ phân loại này là tiêu chuẩn vàng trong nhiều thập kỷ cho các nhiệm vụ như phát hiện thư rác.
+* Bộ phân loại này là tiêu chuẩn vàng trong nhiều thập kỷ cho các tác vụ như phát hiện thư rác.
 
 
 ## Bài tập
@@ -737,13 +737,13 @@ explain why allowing explicit dependence between the two input variables in the 
 -->
 
 1. Xem xét tập dữ liệu $[[0,0], [0,1], [1,0], [1,1]]$ với các nhãn được cung cấp bởi phép XOR của hai phần tử $[0,1,1,0]$.
-Các xác suất cho bộ phân loại Naive Bayes được xây dựng trên tập dữ liệu này là gì.
-Nó có phân loại thành công điểm của chúng ta không? Nếu không, những giả định nào bị vi phạm?
+Các xác suất cho bộ phân loại Naive Bayes được xây dựng trên tập dữ liệu này là bao nhiêu?
+Nó có phân loại thành công các điểm dữ liệu không? Nếu không, những giả định nào bị vi phạm?
 2. Giả sử rằng ta không sử dụng phép làm mượt Laplace khi ước tính xác suất và có một mẫu dữ liệu tại thời điểm kiểm tra chứa một giá trị chưa bao giờ được quan sát trong quá trình huấn luyện.
 Lúc này mô hình sẽ trả về giá trị gì?
-3. Trình phân loại Bayes ngây thơ là một ví dụ cụ thể của mạng Bayes, trong đó sự phụ thuộc của các biến ngẫu nhiên được mã hóa bằng cấu trúc đồ thị.
+3. Bộ phân loại Naive Bayes là một ví dụ cụ thể của mạng Bayes, trong đó sự phụ thuộc của các biến ngẫu nhiên được mã hóa bằng cấu trúc đồ thị.
 Mặc dù lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xem :cite:`Koller.Friedman.2009` để biết đầy đủ chi tiết),
-giải thích tại sao việc cho phép sự phụ thuộc tường minh giữa hai biến đầu vào trong mô hình XOR lại có thể tạo ra một bộ phân loại thành công.
+hãy giải thích tại sao việc đưa sự phụ thuộc tường minh giữa hai biến đầu vào trong mô hình XOR lại có thể tạo ra một bộ phân loại thành công.
 
 
 
