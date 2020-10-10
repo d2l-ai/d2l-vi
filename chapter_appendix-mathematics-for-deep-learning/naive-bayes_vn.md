@@ -777,6 +777,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 <!-- Phần 4 -->
 * Trần Yến Thy
-
+* Lê Khắc Hồng Phúc
+* Phạm Minh Đức
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
