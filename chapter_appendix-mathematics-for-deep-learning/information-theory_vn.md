@@ -1410,7 +1410,7 @@ Hence, the log-likelihood function would be
 
 Nó có thể được xem như nhãn của từng mẫu dữ liệu, $\mathbf{y}_i$,
 tuân theo một phân phối đa thức $k$ lớp với xác suất $\boldsymbol{\pi} =$ ($\pi_{1}, \ldots, \pi_{k}$).
-Do đó, p.m.f. đồng thời của mỗi mẫu dữ liệu $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
+Do đó, hàm khối xác suất đồng thời của mỗi mẫu dữ liệu $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
 Từ đây, hàm loh hợp lý sẽ là
 
 
@@ -1484,7 +1484,7 @@ Minimizing cross entropy loss is equivalent to maximizing the log-likelihood fun
 
 * Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và thao túng thông tin.
 * Entropy là đơn vị đo lượng thông tin có trong các tín hiệu khác nhau.
-* Khoảng cách KL cũng có thể đo khoảng cách giữa hai phân phối.
+* Phân kỳ KL cũng có thể đo khoảng cách giữa hai phân phối.
 * Entropy Chéo có thể được coi như một hàm mục tiêu của phân loại đa lớp.
 Việc cực tiểu hoá mất mát entropy chéo tương đương với việc cực đại hoá hàm log hợp lý.
 
@@ -1515,7 +1515,7 @@ Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex fun
 -->
 
 1. Kiểm chứng rằng ví dụ lá bài ở phần đầu quả thực là có entropy như đã nhận định.
-2. Chỉ ra rằng khoảng cách KL $D(p\|q)$ là không âm với mọi phân phối $p$ và $q$.
+2. Chỉ ra rằng phân kỳ KL $D(p\|q)$ là không âm với mọi phân phối $p$ và $q$.
 Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực tế là $-\log x$ là một hàm lồi.
 3. Hãy tính entropy từ một số nguồn dữ liệu sau:
     * Giả sử bạn đang theo dõi văn bản sinh bởi một con khỉ với một máy đánh chữ.
@@ -1533,7 +1533,7 @@ Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực 
     $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
     Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
 4. Giải thích một cách trực quan tại sao $I(X, Y) = H(X) - H(X|Y)$. Sau đó, chỉ ra rằng biểu thức này là đúng bằng cách biểu diễn hai vế như một kỳ vọng so với phân phối đồng thời.
-5. Khoảng cách KL giữa hai phân phối Gauss $\mathcal{N}(\mu_1, \sigma_1^2)$ và $\mathcal{N}(\mu_2, \sigma_2^2)$ là gì?
+5. Phân kỳ KL giữa hai phân phối Gauss $\mathcal{N}(\mu_1, \sigma_1^2)$ và $\mathcal{N}(\mu_2, \sigma_2^2)$ là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
