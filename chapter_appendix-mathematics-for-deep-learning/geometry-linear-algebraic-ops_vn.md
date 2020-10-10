@@ -1272,8 +1272,8 @@ to interpret a fundamental quantity known as the *determinant*.
 Consider the grid image from before, but now with a highlighted region (:numref:`fig_grid-filled`).
 -->
 
-Góc nhìn hình học của đại số tuyến tính cung cấp một cái nhìn trực quan để diễn giải một đại lượng cơ bản được gọi là *định thức*.
-Xét hình lưới trước đây với một vùng được tô màu (:numref:`fig_grid-filled`).
+Góc nhìn hình học của đại số tuyến tính cung cấp một cái nhìn trực quan để diễn giải một đại lượng cơ bản được gọi là *định thức*. 
+Xét hình lưới trước đây với một vùng được tô màu (:numref:`fig_grid-filled`). 
 
 <!--
 ![The matrix $\mathbf{A}$ again distorting the grid.  This time, I want to draw particular attention to what happens to the highlighted square.](../img/GridTransformFilled.svg)
@@ -1291,9 +1291,9 @@ There is no reason this parallelogram should have the same area
 that we started with, and indeed in the specific case shown here of
 -->
 
-Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được tạo bởi $(0, 1)$ và $(1, 0)$.
-Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng nó trở thành một hình bình hành.
-Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này
+Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được tạo bởi $(0, 1)$ và $(1, 0)$. 
+Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng nó trở thành một hình bình hành. 
+Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1307,13 +1307,13 @@ it is an exercise in coordinate geometry to compute
 the area of this parallelogram and obtain that the area is $5$.
 -->
 
-bạn có thể tính được diện tích hình bình hành bằng $5$ như một bài tập hình học tọa độ nhỏ.
+bạn có thể tính được diện tích hình bình hành bằng $5$ như một bài tập hình học tọa độ đơn giản. 
 
 <!--
 In general, if we have a matrix
 -->
 
-Tổng quát, nếu ta có một ma trận
+Tổng quát, nếu ta có một ma trận 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1327,14 +1327,14 @@ we can see with some computation that the area of the resulting parallelogram is
 This area is referred to as the *determinant*.
 -->
 
-với một vài phép tính, ta có thể thấy rằng diện tích của hình bình hành là $ad-bc$.
-Diện tích này được coi là *định thức*.
+với một vài phép tính, ta có thể thấy rằng diện tích của hình bình hành là $ad-bc$. 
+Diện tích này được coi là *định thức*. 
 
 <!--
 Let's check this quickly with some example code.
 -->
 
-Cùng kiểm tra nhanh điều này với một đoạn mã ví dụ.
+Cùng kiểm tra nhanh điều này với một đoạn mã ví dụ. 
 
 ```{.python .input}
 import numpy as np
@@ -1358,9 +1358,9 @@ if the matrix flips the figure, we say the area is negated.
 Let's see now that when the determinant is zero, we learn more.
 -->
 
-Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm.
-Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu.
-Còn khi định thức bằng không thì sao?
+Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm. 
+Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu. 
+Còn khi định thức bằng không thì sao? 
 
 <!--
 Let's consider
@@ -1383,10 +1383,10 @@ Thus we see the following result is true:
 a matrix $A$ is invertible if and only if the determinant is not equal to zero.
 -->
 
-Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$.
-Điều này là có lý bởi ma trận $\mathbf{B}$ đã nén hình vuông ban đầu xuống thành một đoạn thẳng với diện tích bằng không.
-Thật vậy, nén một hình xuống không gian mới với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi.
-Do đó chúng ta suy ra được kết quả sau: một ma trận $A$ khả nghịch nếu và chỉ nếu định thức khác không.
+Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$. 
+Điều này là có lý bởi ma trận $\mathbf{B}$ đã nén hình vuông ban đầu xuống thành một đoạn thẳng với diện tích bằng không. 
+Thật vậy, nén một hình xuống không gian mới với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi. 
+Do đó chúng ta suy ra được kết quả sau: một ma trận $A$ khả nghịch khi và chỉ khi định thức khác không. 
 
 
 <!--
@@ -1398,10 +1398,10 @@ each one of which has area given by the determinant.
 We see that for any figure, the determinant gives the (signed) number that a matrix scales the area of any figure.
 -->
 
-Hãy tưởng tượng ta có một hình bất kỳ trên mặt phẳng.
-Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nhỏ sao cho diện tính của hình đó bằng số lượng hình vuông trong cách chia này.
-Bây giờ nếu ta biến đổi hình đó bằng một ma trận, ta biến đổi các hình vuông nhỏ thành các hình bình hành với diện tích bằng với định thức của ma trận.
-Ta thấy rằng với bất kỳ hình nào, định thức cho ta một con số (có dấu) mà ma trận co giãn diện tích của một hình bất kỳ.
+Hãy tưởng tượng ta có một hình bất kỳ trên mặt phẳng. 
+Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nhỏ, như vậy ta có diện tính của hình đó sẽ bằng tổng diện tích các hình vuông nhỏ.
+Bây giờ nếu ta biến đổi hình đó bằng một ma trận, các hình vuông nhỏ sẽ được biến đổi thành các hình bình hành với diện tích bằng với định thức của ma trận. 
+Ta thấy rằng với bất kỳ hình nào, định thức cho ta một con số (có dấu) thể hiện độ co dãn diện tích của một hình bất kỳ gây ra bởi một ma trận. 
 
 
 <!--
@@ -1409,8 +1409,8 @@ Computing determinants for larger matrices can be laborious, but the intuition i
 The determinant remains the factor that $n\times n$ matrices scale $n$-dimensional volumes.
 -->
 
-Việc tính định thức cho các ma trận lớn có thể phức tạp hơn, nhưng ý tưởng là như nhau.
-Định thức vẫn có tính chất rằng ma trận $n\times n$ co giãn các khối thể tích trong không gian $n$ chiều.
+Việc tính định thức cho các ma trận lớn có thể phức tạp hơn, nhưng ý tưởng là như nhau. 
+Định thức giữ nguyên tính chất rằng ma trận $n\times n$ co giãn các khối thể tích trong không gian $n$ chiều. 
 
 <!--
 ## Tensors and Common Linear Algebra Operations
@@ -1424,9 +1424,9 @@ In this section, we will dive more deeply into tensor contractions (the tensor e
 and see how it can provide a unified view on a number of matrix and vector operations.
 -->
 
-Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`.
-Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận), 
-và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán trên ma trận và vector.
+Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`. 
+Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận),
+và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán ma trận và vector. 
 
 <!--
 With matrices and vectors we knew how to multiply them to transform data.
@@ -1434,9 +1434,9 @@ We need to have a similar definition for tensors if they are to be useful to us.
 Think about matrix multiplication:
 -->
 
-Chúng ta đã biết cách nhân với ma trận và vector như thế nào để biến đổi dữ liệu.
+Chúng ta đã biết cách nhân với ma trận và vector như thế nào để biến đổi dữ liệu. 
 Để tensor trở nên hữu ích, ta cần một định nghĩa tương tự như thế.
-Xem lại phép nhân ma trận:
+Xem lại phép nhân ma trận:  
 
 $$
 \mathbf{C} = \mathbf{A}\mathbf{B},
@@ -1446,7 +1446,7 @@ $$
 or equivalently
 -->
 
-hoặc tương đương
+hoặc tương đương 
 
 
 $$ c_{i, j} = \sum_{k} a_{i, k}b_{k, j}.$$
@@ -1458,10 +1458,10 @@ For tensors, there is no one case of what to sum over that can be universally ch
 For instance we could consider
 -->
 
-Cách thức biểu diễn này có thể lặp lại với tensor.
-Với tensor, không có một trường hợp tổng quát để chọn tính tổng theo chỉ số nào.
-Bởi vậy, ta cần chỉ ra chính xác những chỉ số nào mà ta muốn tính tổng theo.
-Ví dụ, ta có thể xét
+Cách thức biểu diễn này có thể lặp lại với tensor. 
+Với tensor, không có một trường hợp tổng quát để chọn tính tổng theo chỉ số nào. 
+Bởi vậy, ta cần chỉ ra chính xác những chỉ số nào mà ta muốn tính tổng theo. 
+Ví dụ, ta có thể xét 
 
 $$
 y_{il} = \sum_{jk} x_{ijkl}a_{jk}.
@@ -1472,8 +1472,8 @@ Such a transformation is called a *tensor contraction*.
 It can represent a far more flexible family of transformations that matrix multiplication alone.
 -->
 
-Phép biến đổi này được gọi là một phép *co tensor*.
-Nó có thể biểu diễn được các phép biến đổi một cách linh động hơn nhiều so với phép nhân ma trận đơn thuần.
+Phép biến đổi này được gọi là một phép *co tensor* (*tensor contraction*).
+Nó có thể biểu diễn được các phép biến đổi một cách linh động hơn nhiều so với phép nhân ma trận đơn thuần. 
 
 <!--
 As a often-used notational simplification, we can notice that the sum is over exactly those indices that occur more than once in the expression, 
@@ -1481,9 +1481,9 @@ thus people often work with *Einstein notation*, where the summation is implicit
 This gives the compact expression:
 -->
 
-Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng chỉ được tính theo những chỉ số mà xuất hiện nhiều hơn một lần trong biểu thức.
+Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng chỉ được tính theo những chỉ số xuất hiện nhiều hơn một lần trong biểu thức.
 Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* với quy ước rằng phép tính tổng sẽ được lấy trên các chỉ số xuất hiện nhiều lần.
-Từ đó, ta có một phép biểu diễn ngắn gọn:
+Từ đó, ta có một phép biểu diễn ngắn gọn: 
 $$
 y_{il} = x_{ijkl}a_{jk}.
 $$
