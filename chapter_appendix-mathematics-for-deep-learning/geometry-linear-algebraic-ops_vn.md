@@ -1024,11 +1024,11 @@ is the largest number of linearly independent columns
 amongst all subsets of columns. For example, the matrix
 -->
 
-Với một ma trận tổng quát $n\times m$, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào không gian có bao nhiêu chiều.
-Để trả lời cho câu hỏi này, ta dùng khái niệm *hạng* (_rank_).
-Trong mục trước, chúng ta lưu ý rằng một hệ phụ thuộc tuyến tính *nén* không gian xuống một không gian khác với số chiều thấp hơn.
-Chúng ta sẽ sử dụng tính chất này để định nghĩa hạng.
-Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng lớn nhất các cột độc lập tuyến tính trong mọi tập con các cột của ma trận đó. Ví dụ, ma trận
+Với một ma trận tổng quát $n\times m$, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào chiều không gian nào.
+Để trả lời cho câu hỏi này, ta dùng khái niệm *hạng* (_rank_). 
+Trong mục trước, chúng ta lưu ý rằng một hệ phụ thuộc tuyến tính *nén* không gian xuống một không gian khác với số chiều thấp hơn. 
+Chúng ta sẽ sử dụng tính chất này để định nghĩa hạng. 
+Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng lớn nhất các cột độc lập tuyến tính trong mọi tập con các cột của ma trận đó. Ví dụ, ma trận 
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -1042,8 +1042,8 @@ but either column by itself is not linearly dependent.
 For a more challenging example, we can consider
 -->
 
-có $\mathrm{rank}(B)=1$ vì hai cột của nó là phụ thuộc tuyến tính và bản thân mỗi cột là không phụ thuộc tuyến tính.
-Xét một ví dụ phức tạp hơn
+có $\mathrm{rank}(B)=1$ vì hai cột của nó là phụ thuộc tuyến tính và bản thân mỗi cột là không phụ thuộc tuyến tính. 
+Xét một ví dụ phức tạp hơn 
 
 $$
 \mathbf{C} = \begin{bmatrix}
@@ -1060,8 +1060,8 @@ the first two columns are linearly independent,
 however any of the four collections of three columns are dependent.
 -->
 
-Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính, 
-trong khi tập hợp ba cột bất kỳ trong ma trận đều phụ thuộc tuyến tính.
+Ta có thể chứng minh được $\mathbf{C}$ có hạng bằng hai, bởi hai cột đầu tiên là độc lập tuyến tính,  
+trong khi tập hợp ba cột bất kỳ trong ma trận đều phụ thuộc tuyến tính. 
 
 <!--
 This procedure, as described, is very inefficient.
@@ -1073,9 +1073,9 @@ this is sufficient to see that the concept
 is well defined and understand the meaning.
 -->
 
-Quá trình được mô tả ở trên rất không hiệu quả.
-Nó đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên.
-Sau này chúng ta sẽ thấy một cách hiệu quả hơn để tính hạng của ma trận, nhưng bây giờ những gì được nói đến ở trên là đủ để hiểu khái niệm và ý nghĩa của hạng.
+Quá trình được mô tả ở trên rất không hiệu quả. 
+Nó đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên. 
+Sau này chúng ta sẽ thấy một cách hiệu quả hơn để tính hạng của ma trận, hiện tại định nghĩa trên là đủ để hiểu khái niệm và ý nghĩa của hạng.
 
 <!--
 ## Invertibility
@@ -1090,8 +1090,8 @@ cannot be undone, i.e., there is no inverse operation that can always recover th
 we should always be able to undo it.  Consider the matrix
 -->
 
-Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không tồn tại thao tác đảo nào có thể khôi phục lại đầu vào. 
-Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận $\mathbf{A}$ kích thước $n \times n$ nào đó với hạng $n$), chúng ta luôn có thể hoàn tác nó. 
+Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không tồn tại thao tác nghịch đảo nào có thể khôi phục lại ma trận đầu vào. 
+Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận $\mathbf{A}$ kích thước $n \times n$ nào đó với hạng $n$), chúng ta luôn có thể hoàn tác nó.
 Xét ma trận
 
 $$
@@ -1111,10 +1111,10 @@ To find a matrix which undoes what our matrix $\mathbf{A}$ has done,
 we want to find a matrix $\mathbf{A}^{-1}$ such that
 -->
 
-đây là ma trận với các phần tử trên đường chéo có giá trị 1 và các phẩn tử còn lại có giá trị 0.
-Ma trận này được gọi là ma trận *đơn vị*.
-Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này.
-Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho
+đây là ma trận với các phần tử trên đường chéo có giá trị 1 và các phẩn tử còn lại có giá trị 0. 
+Ma trận này được gọi là ma trận *đơn vị* (*inentity matrix*). 
+Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này. 
+Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho 
 
 
 $$
@@ -1134,10 +1134,10 @@ As an example, if $\mathbf{A}$ is the general $2 \times 2$ matrix
 
 Nếu coi đây là một hệ phương trình, ta có $n \times n$ biến (các giá trị của $\mathbf{A}^{-1}$) và $n \times n$ phương trình
 (đẳng thức cần thỏa mãn giữa mỗi giá trị của tích $\mathbf{A}^{-1}\mathbf{A}$ và giá trị tương ứng của $\mathbf{I}$)
-nên nhìn chung hệ phương trình có nghiệm.
-Thật vậy, phần tiếp theo sẽ giới thiệu một đại lượng được gọi là *định thức* với tính chất: nghiệm tồn tại khi đại lượng này khác 0.
+nên nhìn chung hệ phương trình có nghiệm. 
+Thật vậy, phần tiếp theo sẽ giới thiệu một đại lượng được gọi là *định thức* (*determinant*) với tính chất: nghiệm tồn tại khi đại lượng này khác 0. 
 Ma trận $\mathbf{A}^{-1}$ như vậy được gọi là ma trận *nghịch đảo*.
-Ví dụ, nếu $\mathbf{A}$ là ma trận $2 \times 2$
+Ví dụ, nếu $\mathbf{A}$ là ma trận $2 \times 2$ 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1194,7 +1194,7 @@ tf.matmul(M_inv, M)
 ### Numerical Issues
 -->
 
-### Vấn đề tính toán
+### Vấn đề Tính toán
 
 <!--
 While the inverse of a matrix is useful in theory,
@@ -1204,8 +1204,8 @@ In general, there are far more numerically stable algorithms
 for solving linear equations like
 -->
 
-Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, chúng ta nên tránh *sử dụng* chúng khi giải quyết các bài toán thực tế.
-Nhìn chung, có rất nhiều phương pháp tính toán ổn định hơn trong việc giải các phương trình tuyến tính dạng
+Mặc dù ma trận nghịch đảo khá hữu dụng trong lý thuyết, chúng ta nên tránh *sử dụng* chúng khi giải quyết các bài toán thực tế. 
+Nhìn chung, có rất nhiều phương pháp tính toán ổn định hơn trong việc giải các phương trình tuyến tính dạng 
 
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b},
@@ -1215,7 +1215,7 @@ $$
 than computing the inverse and multiplying to get
 -->
 
-so với việc tính ma trận nghịch đảo và thực hiện phép nhân để có
+so với việc tính ma trận nghịch đảo và thực hiện phép nhân để có 
 
 $$
 \mathbf{x} = \mathbf{A}^{-1}\mathbf{b}.
@@ -1226,7 +1226,7 @@ Just as division by a small number can lead to numerical instability,
 so can inversion of a matrix which is close to having low rank.
 -->
 
-Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận gần với hạng thấp cũng đưa lại hệ quả tương tự.
+Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận gần với hạng thấp cũng đưa lại hệ quả tương tự. 
 
 <!--
 Moreover, it is common that the matrix $\mathbf{A}$ is *sparse*,
@@ -1240,10 +1240,10 @@ the inverse will typically have almost every entry non-negative,
 requiring us to store all $1\text{M}^2$ entries---that is $1$ trillion entries!
 -->
 
-Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (*sparse*), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0.
-Nếu thử một vài ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là một ma trận thưa.
-Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó), 
-ma trận nghịch đảo vẫn hầu như có tất cả các thành phần không âm và đòi hỏi chúng ta phải lưu trữ $1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử!
+Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (*sparse*), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0. 
+Nếu thử một vài ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là một ma trận thưa. 
+Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó),
+ma trận nghịch đảo thông thường vẫn giữ lại các thành phần không âm và đòi hỏi chúng ta phải lưu trữ $1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử! 
 
 
 <!--
@@ -1253,8 +1253,8 @@ we want to provide you with some intuition about when to proceed with caution,
 and generally avoiding inversion in practice is a good rule of thumb.
 -->
 
-Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính, 
-chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý, và quy tắc chung trong thực hành là hạn chế việc tính nghịch đảo.
+Mặc dù không đủ thời gian để đi sâu vào các vấn đề tính toán phức tạp thường gặp khi làm việc với đại số tuyến tính,
+chúng tôi vẫn mong muốn có thể cung cấp một vài lưu ý quan trọng, và quy tắc chung trong thực tiễn là hạn chế việc tính nghịch đảo. 
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
 
