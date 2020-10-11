@@ -1228,7 +1228,10 @@ To generalize the above loss to any distributions, we also called $-l(\theta)$ t
 where $y$ follows the true distribution $P$ and $\hat{y}$ follows the estimated distribution $Q$. 
 -->
 
-*dịch đoạn phía trên*
+Việc cực đại hoá hàm log hợp lý $l(\theta)$ giống hệt với việc cực tiểu hoá $- l(\theta)$,
+và do đó ta có thể tìm $\theta$ tốt nhất từ đây.
+Để khái quát hoá mất mát trên với mọi phân phối, ta cũng có thể gọi $-l(\theta)$ là *mất mát entropy chéo* $\mathrm{CE}(y, \hat{y})$,
+trong đó $y$ tuân theo phân phối thực $P$ và $\hat{y}$ tuân theo phân phối ước lượng $Q$.
 
 
 <!--
@@ -1237,21 +1240,23 @@ However, if we look closely we can see that terms like $\log(\pi_i)$ have entere
 which is a solid indication that we can understand the expression from an information theoretic point of view.    
 -->
 
-*dịch đoạn phía trên*
+Điều này hoàn toàn có thể được suy ra thông qua việc xét theo góc nhìn của hợp lý cực đại.
+Tuy nhiên, nếu quan sát kĩ hơn ta có thể thấy rằng các số hạng như $\log(\pi_i)$ có tham gia vào phép tính
+và đây là một dấu hiệu vững chắc cho thấy rằng ta có thể hiểu được biểu thức theo góc nhìn của lý thuyết thông tin.
 
 
 <!--
 ### Formal Definition
 -->
 
-### *dịch tiêu đề trên*
+### Định nghĩa Chuẩn
 
 
 <!--
 Like KL divergence, for a random variable $X$, we can also measure the divergence between the estimating distribution $Q$ and the true distribution $P$ via *cross entropy*,
 -->
 
-*dịch đoạn phía trên*
+Giống với phân kỳ KL, với biến ngẫu nhiên $X$, ta cũng có thể đo được độ phân kỳ giữa phân phối ước lượng $Q$ và phân phối thực $P$ thông qua *entropy chéo*,
 
 
 $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
@@ -1262,7 +1267,7 @@ $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
 By using properties of entropy discussed above, we can also interpret it as the summation of the entropy $H(P)$ and the KL divergence between $P$ and $Q$, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Bằng cách sử dụng các tính chất của entropy như đã bàn luận ở trên, ta cũng có thể giải thích công thức trên là tổng giữa entropy $H(P)$ và phân kỳ KL giữa $P$ và $Q$, tức
 
 
 $$\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q).$$
@@ -1272,7 +1277,7 @@ $$\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q).$$
 We can implement the cross entropy loss as below.
 -->
 
-*dịch đoạn phía trên*
+Ta có thể lập trình mất mát entropy chéo như dưới đây.
 
 
 ```{.python .input}
@@ -1300,7 +1305,7 @@ def cross_entropy(y_hat, y):
 Now define two tensors for the labels and predictions, and calculate the cross entropy loss of them.
 -->
 
-*dịch đoạn phía trên*
+Giờ ta định nghĩa hai tensor cho nhãn và dự đoán, và tính mất mát entropy chéo của chúng.
 
 
 ```{.python .input}
@@ -1331,7 +1336,7 @@ cross_entropy(preds, labels)
 ### Properties
 -->
 
-### *dịch tiêu đề trên*
+### Tính chất
 
 
 <!--
@@ -1339,7 +1344,8 @@ As alluded in the beginning of this section, cross entropy :eqref:`eq_ce_def` ca
 It turns out that the following are equivalent:
 -->
 
-*dịch đoạn phía trên*
+Như đã ám chỉ ở đoạn đầu của phần này, entropy chéo :eqref:`eq_ce_def` có thể được sử dụng để định nghĩa hàm mất mát trong bài toán tối ưu.
+Hoá ra rằng các mục tiêu sau là tương đương:
 
 
 <!--
@@ -1348,14 +1354,16 @@ It turns out that the following are equivalent:
 3. Minimizing the KL divergence $D_{\mathrm{KL}}(P\|Q)$.
 -->
 
-*dịch đoạn phía trên*
+1. Cực đại hoá xác suất dự đoán của $Q$ cho phân phối $P$, tức $E_{x \sim P} [\log (q(x))]$);
+2. Cực tiểu hoá entropy chéo $\mathrm{CE} (P, Q)$;
+3. Cực tiểu hoá phân kỳ KL $D_{\mathrm{KL}}(P\|Q)$.
 
 
 <!--
 The definition of cross entropy indirectly proves the equivalent relationship between objective 2 and objective 3, as long as the entropy of true data $H(P)$ is constant.
 -->
 
-*dịch đoạn phía trên*
+Định nghĩa của entropy chéo gián tiếp chứng minh mối quan hệ tương đồng giữa mục tiêu 2 và mục tiêu 3, miễn là entropy của dữ liệu thực $H(P)$ là hằng số.
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
 
@@ -1365,7 +1373,7 @@ The definition of cross entropy indirectly proves the equivalent relationship be
 ### Cross Entropy as An Objective Function of Multi-class Classification
 -->
 
-### *dịch tiêu đề trên*
+### Entropy Chéo như Hàm Mục tiêu của Phân loại Đa lớp
 
 
 <!--
@@ -1373,7 +1381,8 @@ If we dive deep into the classification objective function with cross entropy lo
 we will find minimizing $\mathrm{CE}$ is equivalent to maximizing the log-likelihood function $L$.
 -->
 
-*dịch đoạn phía trên*
+Nếu ta đi sâu vào hàm mục tiêu phân loại với mất mát entropy chéo $\mathrm{CE}$,
+ta sẽ thấy rằng cực tiểu hoá $\mathrm{CE}$ tương đương với cực đại hoá hàm log hợp lý $L$.
 
 
 <!--
@@ -1382,7 +1391,9 @@ For each data example $i$, we represent any $k$-class label $\mathbf{y}_i = (y_{
 To be specific, if the  example $i$ belongs to class $j$, then we set the $j$-th entry to $1$, and all other components to $0$, i.e., 
 -->
 
-*dịch đoạn phía trên*
+Đề bắt đầu, giả sử rằng ta có tập dữ liệu với $n$ mẫu, và có thể được phân loại thành $k$ lớp.
+Với mỗi mẫu dữ liệu $i$, ta biểu diễn nhãn lớp $k$ bất kì $\mathbf{y}_i = (y_{i1}, \ldots, y_{ik})$ bằng *biểu diễn one-hot*.
+Cụ thể, nếu mẫu $i$ thuộc về lớp $j$ thì ta đặt phần tử thứ $j$ bằng $1$, và tât cả các phần tử khác bằng $0$, tức
 
 
 $$ y_{ij} = \begin{cases}1 & j \in J; \\ 0 &\text{otherwise.}\end{cases}$$
@@ -1393,7 +1404,8 @@ For instance, if a multi-class classification problem contains three classes $A$
 then the labels $\mathbf{y}_i$ can be encoded in {$A: (1, 0, 0); B: (0, 1, 0); C: (0, 0, 1)$}.
 -->
 
-*dịch đoạn phía trên*
+Ví dụ, nếu một bài toán phân loại đa lớp gồm có ba lớp $A$, $B$, và $C$,
+thì các nhãn $\mathbf{y}_i$ có thể được mã hoá thành {$A: (1, 0, 0); B: (0, 1, 0); C: (0, 0, 1)$}.
 
 
 <!--
@@ -1401,7 +1413,8 @@ Assume that our neural network is parameterized by $\theta$.
 For true label vectors $\mathbf{y}_i$ and predictions 
 -->
 
-*dịch đoạn phía trên*
+Giả sử mạng nơ-ron được tham số hoá bởi $\theta$.
+Với vector nhãn thực $\mathbf{y}_i$ và dự đoán
 
 
 $$\hat{\mathbf{y}}_i= p_{\theta}(\mathbf{y}_i \mid \mathbf{x}_i) = \sum_{j=1}^k y_{ij} p_{\theta} (y_{ij}  \mid  \mathbf{x}_i).$$
@@ -1411,7 +1424,7 @@ $$\hat{\mathbf{y}}_i= p_{\theta}(\mathbf{y}_i \mid \mathbf{x}_i) = \sum_{j=1}^k 
 Hence, the *cross entropy loss* would be
 -->
 
-*dịch đoạn phía trên*
+Từ đó, *mất mát entropy chéo* sẽ là
 
 
 $$
@@ -1593,7 +1606,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 11 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 12 -->
 * 
