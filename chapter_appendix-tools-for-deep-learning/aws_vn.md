@@ -275,7 +275,7 @@ right-click the instance and select `Connect` to view the instance access method
 -->
 
 Như đã chỉ ra trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển màu xanh,
-nhấp chuột phải vào máy ảo và chọn `Kết nối - Connect` để quan sát phương thức truy cập máy ảo.
+nhấp chuột phải vào máy ảo và chọn `Connect` để quan sát phương thức truy cập máy ảo.
 
 
 <!--
@@ -315,7 +315,7 @@ chmod 400 D2L_key.pem
 Now, copy the ssh command in the lower red box of :numref:`fig_chmod` and paste onto the command line:
 -->
 
-Giờ hãy sao chép lệnh ssh trong khung đỏ phía dưới trong :numref:`fig_chmod` và dán vào command line:
+Giờ hãy sao chép lệnh ssh trong khung đỏ phía dưới trong :numref:`fig_chmod` và dán vào cửa sổ dòng lệnh:
 
 
 ```bash
@@ -327,7 +327,7 @@ ssh -i "D2L_key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.y.compute.amazonaws.com
 When the command line prompts "Are you sure you want to continue connecting (yes/no)", enter "yes" and press Enter to log into the instance.
 -->
 
-Khi command line thông báo "Are you sure you want to continue connecting (yes/no)", nhập "yes" và nhấn Enter để đăng nhập vào máy ảo.
+Khi cửa sổ dòng lệnh thông báo "Are you sure you want to continue connecting (yes/no)", nhập "yes" và nhấn Enter để đăng nhập vào máy ảo.
 
 
 <!--
@@ -381,7 +381,7 @@ to find the download link of CUDA 10.1 as shown in :numref:`fig_cuda`.
 Copy the instructions and paste them into the terminal to install CUDA 10.1.
 -->
 
-Sao chép các lệnh và dán vào terminal để cài đặt CUDA 10.1.
+Sao chép các lệnh và dán vào cửa sổ dòng lệnh để cài đặt CUDA 10.1.
 
 
 ```bash
@@ -433,7 +433,7 @@ The download link and file name are subject to changes, so please go the Minicon
 -->
 
 Đầu tiên, để đơn giản hoá quá trình cài đặt, bạn cần cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html) cho Linux.
-Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Sao chép đường dẫn tải về - Copy Link Address" như chỉ ra trong :numref:`fig_miniconda`.
+Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như chỉ ra trong :numref:`fig_miniconda`.
 
 
 <!--
