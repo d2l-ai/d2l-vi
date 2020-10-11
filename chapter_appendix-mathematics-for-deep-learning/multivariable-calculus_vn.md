@@ -10,12 +10,12 @@
 
 
 <!--
-Now that we have a fairly strong understanding of derivatives of a function of a single variable, 
+Now that we have a fairly strong understandsing of derivatives of a function of a single variable, 
 let us return to our original question where we were considering a loss function of potentially billions of weights.
 -->
 
-Bây giờ chúng ta đã có hiểu biết vững chắc về đạo hàm của một hàm đơn biến,
-hãy cùng trở lại câu hỏi ban đầu về hàm mất mát của (nhiều khả năng là) hàng tỷ trọng số.
+Bây giờ chúng ta đã có hiểu biết vững chắc về đạo hàm của một hàm đơn biến, 
+hãy cùng trở lại câu hỏi ban đầu về hàm mất mát của (nhiều khả năng là) hàng tỷ trọng số. 
 
 
 <!--
@@ -30,8 +30,8 @@ What :numref:`sec_single_variable_calculus` tells us is that if we change a sing
 This is nothing more than a function of a single variable, so we can write
 -->
 
-Những gì được nói trong :numref:`sec_single_variable_calculus` là ta sẽ biết điều gì sẽ xảy ra nếu ta thay đổi chỉ một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại.
-Trường hợp này cũng không khác với một hàm đa biến là mấy, nên ta có thể viết
+Nhớ lại :numref:`sec_single_variable_calculus`, ta đã bàn luận về điều gì sẽ xảy ra nếu chỉ thay đổi một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại. 
+Điều này cũng không khác với một hàm đơn biến là mấy, nên ta có thể viết 
 
 $$L(w_1+\epsilon_1, w_2, \ldots, w_N) \approx L(w_1, w_2, \ldots, w_N) + \epsilon_1 \frac{d}{dw_1} L(w_1, w_2, \ldots, w_N).$$
 :eqlabel:`eq_part_der`
@@ -42,8 +42,8 @@ We will call the derivative in one variable while fixing the other the *partial 
 and we will use the notation $\frac{\partial}{\partial w_1}$ for the derivative in :eqref:`eq_part_der`.
 -->
 
-Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_),
-và ta ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`.
+Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_), 
+và ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`. 
 
 <!--
 Now, let us take this and change $w_2$ a little bit to $w_2 + \epsilon_2$:
@@ -72,7 +72,7 @@ the same way we could discard $\epsilon^{2}$ in the previous section, along with
 By continuing in this manner, we may write that
 -->
 
-Một lần nữa, ta lại sử dụng những gì ta đã thấy ở :eqref:`eq_part_der` và ý tưởng rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước.
+Một lần nữa, ta lại sử dụng những gì ta đã thấy ở :eqref:`eq_part_der` và ý tưởng rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước. 
 Cứ tiếp tục theo cách này, ta có thể viết được
 
 
@@ -85,7 +85,7 @@ $$
 This may look like a mess, but we can make this more familiar by noting that the sum on the right looks exactly like a dot product, so if we let
 -->
 
-Thoạt nhìn có vẻ là một mớ hỗn độn, chú ý rằng phép tổng bên phải chính là biểu diễn của phép tích vô hướng và ta có thể khiến chúng trở nên quen thuộc hơn bằng cách cho
+Thoạt nhìn đây có vẻ là một mớ hỗn độn, tuy nhiên chú ý rằng phép tổng bên phải chính là biểu diễn của phép tích vô hướng và ta có thể khiến chúng trở nên quen thuộc hơn. Với
 
 
 $$
@@ -98,7 +98,7 @@ $$
 then
 -->
 
-thì
+ta có
 
 
 $$L(\mathbf{w} + \boldsymbol{\epsilon}) \approx L(\mathbf{w}) + \boldsymbol{\epsilon}\cdot \nabla_{\mathbf{w}} L(\mathbf{w}).$$
@@ -119,10 +119,10 @@ It allows us to tell approximately how the function $L$ will change given any pe
 As we will see in the next section, this will provide us with an important tool in understanding geometrically how we can learn using information contained in the gradient.
 -->
 
-Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút.
-Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ là chúng ta chuyển tất cả về dạng vector và tích vô hướng.
-Nó cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào.
-Như ta sẽ thấy trong mục tiếp theo, điều này sẽ cung cấp cho chúng ta một công cụ quan trọng để hiểu dưới dạng hình học cách ta có thể học từ thông tin chứa trong gradient.
+Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút. 
+Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ khác là tất cả đã được biến đổi về dạng vector và tích vô hướng.
+Điều này cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào. 
+Như ta sẽ thấy trong mục tiếp theo, đây sẽ là một công cụ quan trọng giúp chúng ta hiểu được cách học từ thông tin chứa trong gradient dưới dạng hình học.
 
 
 <!--
@@ -131,7 +131,7 @@ Suppose that we are working with the function
 -->
 
 Nhưng trước tiên, hãy cùng kiểm tra phép xấp xỉ này với một ví dụ.
-Giả sử ta đang làm việc với hàm
+Giả sử ta đang làm việc với hàm 
 
 
 $$
@@ -143,7 +143,7 @@ $$
 If we look at a point like $(0, \log(2))$, we see that
 -->
 
-Nếu ta nhìn vào một điểm như $(0, \log(2))$, ta thấy được rằng
+Xét một điểm $(0, \log(2))$, ta có 
 
 
 $$
@@ -156,7 +156,7 @@ Thus, if we want to approximate $f$ at $(\epsilon_1, \log(2) + \epsilon_2)$,
 we see that we should have the specific instance of :eqref:`eq_nabla_use`:
 -->
 
-Vì thế, nếu muốn xấp xỉ $f$ tại $(\epsilon_1, \log(2) + \epsilon_2)$, ta thấy rằng ta sẽ có được một ví dụ cụ thể của :eqref:`eq_nabla_use`:
+Vì thế, nếu muốn tính xấp xỉ $f$ tại $(\epsilon_1, \log(2) + \epsilon_2)$, ta có một ví dụ cụ thể của :eqref:`eq_nabla_use`: 
 
 
 $$
@@ -168,7 +168,7 @@ $$
 We can test this in code to see how good the approximation is.
 -->
 
-Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác mức nào.
+Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác mức nào. 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
