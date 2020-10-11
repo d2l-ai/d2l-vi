@@ -256,7 +256,7 @@ If Linux or MacOS is installed on your local machine (Windows can also support t
 -->
 
 Đôi khi, bạn sẽ muốn chạy Jupyter Notebook trên một máy chủ từ xa và truy cập nó thông qua một trình duyệt dưới máy.
-Nếu Linux hoặc MacOS được cài dưới máy của bạn (Windows cũng có thể hỗ trợ tính năng này thông qua phần mềm bên thứ ba như PuTTY), bạn có thể sử dụng chuyển tiếp cổng:
+Nếu hệ điều hành máy tính của bạn là Linux hoặc MacOS (Windows cũng có thể hỗ trợ tính năng này thông qua phần mềm bên thứ ba như PuTTY), bạn có thể sử dụng chuyển tiếp cổng (*port forwarding*):
 
 
 ```
@@ -271,7 +271,7 @@ We will detail on how to run Jupyter Notebook on AWS instances in the next secti
 -->
 
 Ở trên là địa chỉ của máy chủ `myserver`.
-Tiếp đến ta có thể sử dụng http://localhost:8888 để truy cập máy chủ `myserver` chạy Jupyter Notebook.
+Tiếp đến ta có thể sử dụng http://localhost:8888 để truy cập máy chủ `myserver` để chạy Jupyter Notebook trên máy chủ này.
 Ta sẽ hướng dẫn chi tiết cách chạy Jupyter Notebook trên máy chủ AWS trong mục kế tiếp.
 
 
