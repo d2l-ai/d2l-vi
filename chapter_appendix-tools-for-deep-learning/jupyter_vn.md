@@ -141,7 +141,7 @@ Nhân kết quả của dòng mã cuối cùng cho 2, như minh họa trong :num
 ![Edit the code cell.](../img/jupyter05.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter05.png)
+![Chỉnh sửa ô mã nguồn.](../img/jupyter05.png)
 :width:`600px`
 :label:`fig_jupyter05`
 
@@ -151,14 +151,14 @@ You can also run the cell with a shortcut ("Ctrl + Enter" by default)
 and obtain the output result from :numref:`fig_jupyter06`.
 -->
 
-*dịch đoạn phía trên*
+Bạn cũng có thể chạy ô này với một tổ hợp phím tắt ("Ctrl + Enter" theo mặc định) và nhận về kết quả đầu ra của :numref:`fig_jupyter06`.
 
 
 <!--
 ![Run the code cell to obtain the output.](../img/jupyter06.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter06.png)
+![Chạy ô mã nguồn để nhận được đầu ra.](../img/jupyter06.png)
 :width:`600px`
 :label:`fig_jupyter06`
 
@@ -170,14 +170,15 @@ By clicking "Help" $\rightarrow$ "Edit Keyboard Shortcuts" in the menu bar,
 you can edit the shortcuts according to your preferences.
 -->
 
-*dịch đoạn phía trên*
+Khi một notebook chứa nhiều ô, ta có thể nhấp vào "Kernel" $\rightarrow$ "Restart & Run All" trong thanh menu để chạy tất cả các ô trong notebook.
+Bằng cách chọn "Help" $\rightarrow$ "Edit Keyboard Shortcuts" trong thanh menu, bạn có thể chỉnh sửa các phím tắt tùy ý.
 
 
 <!--
 ## Advanced Options
 -->
 
-## *dịch tiêu đề trên*
+## Các Lựa chọn Nâng cao
 
 
 <!--
@@ -189,14 +190,18 @@ This is confusing for Git and it makes merging contributions very difficult.
 Fortunately there is an alternative---native editing in Markdown.
 -->
 
-*dịch đoạn phía trên*
+Ngoài việc chỉnh sửa được thực hiện dưới máy, có hai thứ khác khá là quan trọng: chỉnh sửa notebook dưới định dạng markdown và chạy Jupyter từ xa.
+Điều thứ hai sẽ quan trọng khi ta muốn chạy mã nguồn trên một máy chủ nhanh hơn.
+Điều thứ nhất sẽ quan trọng vì định dạng gốc `.ipynb` chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về nội dung notebook, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
+Điều này khiến việc sử dụng Git để gộp các đóng góp là cực kỳ khó.
+May thay có một cách làm khác---chỉnh sửa thuần dưới định dạng Markdown.
 
 
 <!--
 ### Markdown Files in Jupyter
 -->
 
-### *dịch tiêu đề trên*
+### Các tệp tin Markdown trong Jupyter
 
 
 <!--
@@ -204,14 +209,15 @@ If you wish to contribute to the content of this book, you need to modify the so
 Using the notedown plugin we can modify notebooks in md format directly in Jupyter.
 -->
 
-*dịch đoạn phía trên*
+Nếu muốn đóng góp vào phần nội dung của cuốn sách này, bạn cần chỉnh sửa tệp tin mã nguồn (tệp `md`, không phải `ipynb`) trên GitHub.
+Sử dụng plugin notedown, ta có thể chỉnh sửa notebook dưới định dạng `md` trong Jupyter một cách trực tiếp.
 
 
 <!--
 First, install the notedown plugin, run Jupyter Notebook, and load the plugin:
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, cài đặt plugin notedown, chạy Jupyter Notebook, và nạp plugin:
 
 
 ```
@@ -225,7 +231,8 @@ To turn on the notedown plugin by default whenever you run Jupyter Notebook do t
 First, generate a Jupyter Notebook configuration file (if it has already been generated, you can skip this step).
 -->
 
-*dịch đoạn phía trên*
+Để bật plugin notedown một cách mặc định mỗi khi bạn chạy Jupyter Notebook, hãy làm theo cách sau:
+Đầu tiên, sinh một tệp cấu hình Jupyter Notebook (nếu tệp đã có sẵn, bước này có thể bỏ qua).
 
 
 ```
@@ -237,7 +244,7 @@ jupyter notebook --generate-config
 Then, add the following line to the end of the Jupyter Notebook configuration file (for Linux/macOS, usually in the path `~/.jupyter/jupyter_notebook_config.py`):
 -->
 
-*dịch đoạn phía trên*
+Tiếp đến, thêm dòng dưới vào cuối tệp cấu hình Jupyter Notebook (với Linux/macOS, tệp sẽ nằm ở `~/.jupyter/jupyter_notebook_config.py`):
 
 
 ```
@@ -350,7 +357,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
 
 <!-- Phần 3 -->
 * 
