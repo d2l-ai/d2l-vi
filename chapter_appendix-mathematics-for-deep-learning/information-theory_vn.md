@@ -372,14 +372,14 @@ entropy(tf.constant([0.1, 0.5, 0.1, 0.3]))
 ### Interpretations
 -->
 
-### *dịch tiêu đề trên*
+### Diễn giải
 
 
 <!--
 You may be curious: in the entropy definition :eqref:`eq_ent_def`, why do we use an expectation of a negative logarithm? Here are some intuitions.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thắc mắc: trong định nghĩa entropy :eqref:`eq_ent_def`, tại sao chúng ta sử dụng kỳ vọng của logarit âm? Đây là một số cách giải thích trực quan.
 
 
 <!--
@@ -390,7 +390,11 @@ As discussed above, we want the entropy formula to be additive over independent 
 Luckily, $\log$ can naturally turn a product of probability distributions to a summation of the individual terms.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, tại sao chúng ta sử dụng hàm *logarit* $\log$?
+Giả sử $p(x) = f_1(x) f_2(x) \ldots, f_n(x)$, khi mỗi hàm thành tố $f_i(x)$ độc lập lẫn nhau.
+Điều này nghĩa là mỗi $f_i(x)$ đóng góp một cách độc lập vào tổng thông tin thu được từ $p(x)$.
+Như đã thảo luận ở trên, chúng ta muốn một công thức entropy là phép cộng trên các biến ngẫu nhiên độc lập.
+May mắn thay, $\log$ có thể chuyển tích các phân phối xác suất thành một tổng.
 
 
 <!--
@@ -402,7 +406,10 @@ which will ideally be always positive (for nothing we observe should force us to
 Hence, we add a negative sign in front of $\log$ function.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, tại sao chúng ta sử dụng $\log$ *âm*? Một cách trực giác, những biến cố xảy ra thường xuyên hơn chứa ít thông tin hơn những biến cố thông thường bởi vì chúng ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường hơn là những trường hợp bình thường.
+Tuy nhiên, $\log$ đơn điệu đồng biến với xác suất, và có giá trị âm trong đoạn $[0, 1]$.
+Chúng ta cần thiết lập mối quan hệ đơn điệu nghịch biến giữa xác suất của biến cố và entropy của chúng, những giá trị luôn luôn dương (vì các quan sát mới không nên buộc chúng ta phải quên đi những gì đã biết).
+Vậy nên, chúng ta thêm dấu trừ vào trước hàm $\log$.
 
 
 <!--
@@ -414,7 +421,12 @@ For example, imagine that a slot machine system emits statistical independently 
 Then the entropy of this system equals to the average self-information from observing each output, i.e.,
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, hàm *kỳ vọng* đến từ đâu? Xét một biến ngẫu nhiên $X$.
+Chúng ta có thể diễn giải hàm lượng thông tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi chúng ta thấy một kết quả cụ thể nào đó.
+Thật vậy, khi xác suất xấp xỉ bằng 0, mức độ bất ngờ tiến tới vô cực.
+Tương tự, chúng ta có thể diễn giải entropy như mức độ bất ngờ trung bình từ việc quan sát $X$.
+Ví dụ, tưởng tượng một hệ thống máy đánh bạc đưa ra các ký hiệu độc lập ${s_1, \ldots, s_k}$ với xác suất lần lượt là ${p_1, \ldots, p_k}$. 
+Khi đó, entropy của hệ thống này bằng với hàm lượng thông tin trung bình thu được từ việc quan sát mỗi kết quả, tức:
 
 
 $$H(S) = \sum_i {p_i \cdot I(s_i)} = - \sum_i {p_i \cdot \log p_i}.$$
@@ -1559,7 +1571,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Thanh Hoà
 
 <!-- Phần 4 -->
-* 
+* Nguyễn Thanh Hòa
 
 <!-- Phần 5 -->
 * 
