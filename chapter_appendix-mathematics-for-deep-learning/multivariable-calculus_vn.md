@@ -673,7 +673,7 @@ Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được d
 Let us return to the example of :eqref:`eq_multi_func_def` the previous section where
 -->
 
-Hãy xem lại ví dụ :eqref:`eq_multi_func_def` ở phần trước:
+Hãy xem lại ví dụ :eqref:`eq_multi_func_def` ở phần trước: 
 
 
 $$
@@ -689,7 +689,7 @@ $$
 If we want to compute say $\frac{\partial f}{\partial w}$ we may apply the multi-variate chain rule to see:
 -->
 
-Nếu chúng ta muốn tính $\frac{\partial f}{\partial w}$, chúng ta có thể áp dụng quy tắc dây chuyền:
+Nếu chúng ta muốn tính $\frac{\partial f}{\partial w}$, chúng ta có thể áp dụng quy tắc dây chuyền: 
 
 
 $$
@@ -706,8 +706,8 @@ Let us try using this decomposition to compute $\frac{\partial f}{\partial w}$.
 Notice that all we need here are the various single step partials:
 -->
 
-Chúng ta hãy thử sử dụng cách phân tách này để tính $\frac{\partial f}{\partial w}$.
-Tất cả những gì chúng ta cần làm là thực hiện một số tính toán đạo hàm riêng:
+Chúng ta hãy thử sử dụng cách phân tách này để tính $\frac{\partial f}{\partial w}$. 
+Tất cả những gì chúng ta cần làm là thực hiện một số tính toán đạo hàm riêng: 
 
 $$
 \begin{aligned}
@@ -723,7 +723,7 @@ $$
 If we write this out into code this becomes a fairly manageable expression.
 -->
 
-Khi lập trình, các tính toán này trở thành một biểu thức khá dễ quản lý.
+Khi lập trình, các tính toán này trở thành một biểu thức khá dễ quản lý. 
 
 
 ```{.python .input}
@@ -757,20 +757,20 @@ However, think back to our motivation from deep learning: we want to see how eve
 In essence, we want to apply the chain rule keeping $\partial f$ in the numerator whenever we can!
 -->
 
-Tuy nhiên, cần lưu ý rằng điều này không làm cho việc tính toán các đạo hàm chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản.
+Tuy nhiên, cần lưu ý rằng điều này không làm cho việc tính toán các đạo hàm chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản. 
 Lý do nằm ở *cách* chúng ta chọn để áp dụng quy tắc dây chuyền.
-Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn giữ $\partial w$ ở mẫu khi có thể.
-Với cách này, chúng ta áp dụng quy tắc dây chuyền để xem $w$ thay đổi các biến khác như thế nào.
+Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn giữ $\partial w$ ở mẫu khi có thể. 
+Với cách này, chúng ta áp dụng quy tắc dây chuyền để xem $w$ thay đổi các biến khác như thế nào. 
 Nếu đó là những gì chúng ta muốn thì cách này quả là một ý tưởng hay.
-Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào.
-Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào chúng ta có thể!
+Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào. 
+Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào có thể! 
 
 
 <!--
 To be more explicit, note that we can write
 -->
 
-Cụ thể hơn, chúng ta có thể viết như sau:
+Cụ thể hơn, chúng ta có thể viết như sau: 
 
 
 $$
@@ -788,7 +788,7 @@ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}
 Nothing stops us from also including the equations:
 -->
 
-Lưu ý rằng cách áp dụng quy tắc dây chuyền này buộc chúng ta phải tính rõ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}{\partial a}, \frac{\partial f}{\partial b}, \; \text{và} \; \frac{\partial f}{\partial w}$.
+Lưu ý rằng cách áp dụng quy tắc dây chuyền này buộc chúng ta phải tính rõ $\frac{\partial f}{\partial u}, \frac{\partial f}{\partial v}, \frac{\partial f}{\partial a}, \frac{\partial f}{\partial b}, \; \text{và} \; \frac{\partial f}{\partial w}$. 
 Chúng ta cũng có thể thêm vào các phương trình:
 
 
@@ -805,7 +805,7 @@ $$
 and then keeping track of how $f$ changes when we change *any* node in the entire network.  Let us implement it.
 -->
 
-và tiếp đó theo dõi $f$ biến đổi như thế nào khi chúng ta thay đổi *bất kỳ* nút nào trong toàn bộ mạng. Chúng ta hãy lập trình nó.
+và tiếp đó theo dõi $f$ biến đổi như thế nào khi chúng ta thay đổi *bất kỳ* nút nào trong toàn bộ mạng. Hãy cùng lập trình nó. 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -846,8 +846,8 @@ The fact that we compute derivatives from $f$ back towards the inputs rather tha
 Note that there are two steps:
 -->
 
-Việc tính đạo hàm từ $f$ trở ngược về đầu vào hơn là từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán.
-Có hai bước:
+Việc tính đạo hàm từ $f$ trở ngược về đầu vào thay vì từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán. 
+Có hai bước: 
 
 
 <!--
@@ -855,9 +855,8 @@ Có hai bước:
 2. Compute the gradient of $f$ from back to front.  We call this the *backwards pass*.
 -->
 
-1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù không được thực hiện ở trên, 
- hai việc này có thể được kết hợp vào một *lượt truyền xuôi* duy nhất.
-2. Tính toán đạo hàm của $f$ từ cuối về đầu. Chúng ta gọi đó là *lượt truyền ngược*.
+1. Tính giá trị của hàm và đạo hàm riêng theo từng bước đơn lẻ từ đầu đến cuối. Mặc dù không được thực hiện ở trên, hai việc này có thể được kết hợp vào một *lượt truyền xuôi* duy nhất. 
+2. Tính toán đạo hàm của $f$ từ cuối về đầu. Chúng ta gọi đó là *lượt truyền ngược*. 
 
 
 <!--
@@ -865,15 +864,15 @@ This is precisely what every deep learning algorithm implements to allow the com
 It is an astonishing fact that we have such a decomposition.
 -->
 
-Đây chính xác là những gì mỗi thuật toán học sâu thực thi để tính gradient của giá trị mất mát theo từng trọng số của mạng trong mỗi lượt lan truyền.
-Thật thú vị vì chúng ta có một sự phân tách như trên.
+Đây chính xác là những gì mỗi thuật toán học sâu thực thi để tính gradient của giá trị mất mát theo từng trọng số của mạng trong mỗi lượt lan truyền. 
+Thật thú vị vì chúng ta có một sự phân tách như trên. 
 
 
 <!--
 To see how to encapsulated this, let us take a quick look at this example.
 -->
 
-Để tóm gọn phần này, hãy xem nhanh ví dụ sau.
+Để tóm gọn phần này, hãy xem nhanh ví dụ sau. 
 
 
 ```{.python .input}
@@ -959,7 +958,7 @@ print(f'df/dz at {w.numpy()}, {x.numpy()}, {y.numpy()}, '
 All of what we did above can be done automatically by calling `f.backwards()`.
 -->
 
-Tất cả những gì chúng ta làm ở trên có thể được thực hiện tự động bằng cách gọi hàm `f.backwards()`.
+Tất cả những gì chúng ta làm ở trên có thể được thực hiện tự động bằng cách gọi hàm `f.backwards()`. 
 
 
 <!--
@@ -974,7 +973,7 @@ As with single variable calculus, it is useful to consider higher-order derivati
 get a handle on how we can obtain a better approximation to a function than using the gradient alone.
 -->
 
-Như với giải tích đơn biến, việc xem xét đạo hàm bậc cao hơn cũng hữu ích để xấp xỉ tốt hơn một hàm so với việc chỉ sử dụng gradient.
+Như với giải tích đơn biến, việc xem xét đạo hàm bậc cao hơn cũng hữu ích để xấp xỉ tốt hơn một hàm so với việc chỉ sử dụng gradient. 
 
 
 <!--
@@ -982,7 +981,7 @@ There is one immediate problem one encounters when working with higher order der
 If we have a function $f(x_1, \ldots, x_n)$ of $n$ variables, then we can take $n^{2}$ many second derivatives, namely for any choice of $i$ and $j$:
 -->
 
-Một vấn đề trước mắt khi làm việc với đạo hàm bậc cao hơn của hàm đa biến đó là cần phải tính toán một số lượng lớn đạo hàm. Nếu chúng ta có một hàm $f(x_1, \ldots, x_n)$ với $n$ biến, chúng ta có thể cần $n^{2}$ đạo hàm bậc 2, chẳng hạn để lựa chọn $i$ và $j$:
+Một vấn đề trước mắt khi làm việc với đạo hàm bậc cao hơn của hàm đa biến đó là cần phải tính toán một số lượng lớn đạo hàm. Nếu chúng ta có một hàm $f(x_1, \ldots, x_n)$ với $n$ biến, chúng ta có thể cần $n^{2}$ đạo hàm bậc 2, chẳng hạn để lựa chọn $i$ và $j$: 
 
 
 $$
@@ -994,7 +993,7 @@ $$
 This is traditionally assembled into a matrix called the *Hessian*:
 -->
 
-Biểu thức này được hợp thành một ma trận gọi là *Hessian*:
+Biểu thức này được hợp thành một ma trận gọi là *Hessian*: 
 
 
 $$\mathbf{H}_f = \begin{bmatrix} \frac{d^2f}{dx_1dx_1} & \cdots & \frac{d^2f}{dx_1dx_n} \\ \vdots & \ddots & \vdots \\ \frac{d^2f}{dx_ndx_1} & \cdots & \frac{d^2f}{dx_ndx_n} \\ \end{bmatrix}.$$
@@ -1007,8 +1006,8 @@ Indeed, we can show that as long as both *mixed partials* (partial derivatives w
 and are continuous, we can say that for any $i$, and $j$,
 -->
 
-Không phải mọi đầu vào của ma trận đều độc lập.
-Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, chúng ta có thể nói rằng hàm số tồn tại và liên tục với mọi $i$ và $j$,
+Không phải mọi đầu vào của ma trận đều độc lập. 
+Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, thì hàm số tồn tại và liên tục với mọi $i$ và $j$, 
 
 
 $$
@@ -1022,9 +1021,8 @@ and then perturbing it in $x_j$ and then comparing the result of that with what 
 with the knowledge that both of these orders lead to the same final change in the output of $f$.
 -->
 
-Tiếp theo, bằng cách xem xét đầu tiên sự xáo trộn của một hàm theo $x_i$,
-rồi theo $x_j$, so sánh kết quả này với khi xáo trộn theo thứ tự $x_j$ rồi đến $x_i$, 
-biết rằng cả hai thứ tự này dẫn đến sự thay đổi đầu ra của $f$ một cách như nhau.
+Tiếp theo, ta gây xáo trộn một hàm lần lượt theo $x_i$ rồi $x_j$, sau đó đảo ngược và so sánh hai kết quả này, 
+biết rằng cả hai thứ tự này ảnh hưởng đến đầu ra của $f$ như nhau.
 
 
 <!--
@@ -1032,8 +1030,8 @@ As with single variables, we can use these derivatives to get a far better idea 
 In particular, we can use it to find the best fitting quadratic near a point $\mathbf{x}_0$, as we saw in a single variable.
 -->
 
-Như với các hàm đơn biến, chúng ta có thể sử dụng những đạo hàm này để hiểu rõ hơn về cách hàm hoạt động gần một điểm.
-Cụ thể, chúng ta có thể sử dụng nó để tìm hàm bậc hai phù hợp nhất gần một điểm $\mathbf{x}_0$, như chúng ta đã thấy trong giải tích đơn biến.
+Như với các hàm đơn biến, chúng ta có thể sử dụng những đạo hàm này để hiểu rõ hơn về cách hàm hoạt động khi tiệm cận một điểm. 
+Cụ thể, chúng ta có thể sử dụng nó để tìm hàm bậc hai phù hợp nhất tiệm cận điểm $\mathbf{x}_0$ tương tự như trong giải tích đơn biến. 
 
 
 <!--
@@ -1042,9 +1040,9 @@ This is the general form for a quadratic in two variables.
 If we look at the value of the function, its gradient, and its Hessian :eqref:`eq_hess_def`, all at the point zero:
 -->
 
-Hãy tham khảo một ví dụ. Giả sử rằng $f(x_1, x_2) = a + b_1x_1 + b_2x_2 + c_{11}x_1^{2} + c_{12}x_1x_2 + c_{22}x_2^{2}$.
+Hãy tham khảo một ví dụ. Giả sử rằng $f(x_1, x_2) = a + b_1x_1 + b_2x_2 + c_{11}x_1^{2} + c_{12}x_1x_2 + c_{22}x_2^{2}$. 
 Đây là một dạng tổng quát của hàm bậc hai 2 biến.
-Nếu chúng ta nhìn vào giá trị của hàm, gradient và Hessian của nó :eqref:`eq_hess_def`, tất cả tại điểm 0:
+Nếu chúng ta nhìn vào giá trị của hàm, gradient và Hessian của nó :eqref:`eq_hess_def`, tất cả tại điểm 0: 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1063,7 +1061,7 @@ $$
 we can get our original polynomial back by saying
 -->
 
-Chúng ta có thể thu lại được đa thức ban đầu bằng cách đặt:
+Chúng ta có thể thu lại được đa thức ban đầu bằng cách đặt: 
 
 
 $$
@@ -1075,7 +1073,7 @@ $$
 In general, if we computed this expansion any point $\mathbf{x}_0$, we see that
 -->
 
-Nhìn chung, nếu chúng ta tính toán khai triển này tại mọi điểm $\mathbf{x}_0$, chúng ta thấy rằng:
+Nhìn chung, nếu chúng ta tính toán khai triển này tại mọi điểm $\mathbf{x}_0$, ta có: 
 
 
 $$
@@ -1088,8 +1086,8 @@ This works for any dimensional input, and provides the best approximating quadra
 To give an example, let us plot the function 
 -->
 
-Cách này hoạt động cho bất cứ đầu vào thứ nguyên nào và cung hàm bậc hai gần đúng nhất cho bất kỳ một hàm nào tại một điểm.
-Lấy biểu đồ của hàm sau làm ví dụ.
+Cách này hoạt động cho bất cứ đầu vào thứ nguyên nào và cung cấp gần đúng nhất hàm bậc hai cho một hàm bất kỳ tại một điểm.
+Lấy biểu đồ của hàm sau làm ví dụ. 
 
 
 $$
@@ -1101,7 +1099,7 @@ $$
 One can compute that the gradient and Hessian are
 -->
 
-Người ta có thể tính toán gradient và Hessian như sau:
+Có thể tính toán gradient và Hessian như sau:
 
 
 $$
@@ -1113,7 +1111,7 @@ $$
 And thus, with a little algebra, see that the approximating quadratic at $[-1,0]^\top$ is
 -->
 
-Vì vậy, kết hợp một chút đại số, ta thấy rằng hàm bậc hai xấp xỉ tại $[-1,0]^\top$ là:
+Kết hợp một chút đại số, ta thấy rằng hàm bậc hai xấp xỉ tại $[-1,0]^\top$ là:
 
 
 $$
@@ -1201,8 +1199,8 @@ where we perform numerical optimization iteratively finding the best fitting qua
 and then exactly minimizing that quadratic.
 -->
 
-Điều này tạo cơ sở cho Thuật toán Newton được thảo luận ở :numref:`sec_gd`,
-trong đó chúng ta thực lặp đi lặp lại việc tối ưu hoá số để tìm ra hàm bậc hai phù hợp nhất và sau đó cực tiểu hoá hàm bậc hai đó.
+Điều này tạo cơ sở cho Thuật toán Newton được thảo luận ở :numref:`sec_gd`, 
+trong đó chúng ta lặp đi lặp lại việc tối ưu hoá để tìm ra hàm bậc hai phù hợp nhất và sau đó cực tiểu hoá hàm bậc hai đó. 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
