@@ -10,7 +10,7 @@ The implementations of the following members of the `d2l` package and sections
 where they are defined and explained can be found in the [source file](https://github.com/d2l-ai/d2l-en/tree/master/d2l).
 -->
 
-*dịch đoạn phía trên*
+Mã nguồn của những thành phần dưới đây trong gói `d2l` và các mục mà trong đó chúng được định nghĩa và giải thích có thể được tìm thấy tại [tập tin mã nguồn](https://github.com/d2l-ai/d2l-en/tree/master/d2l).
 
 :begin_tab:`mxnet`
 
@@ -53,6 +53,6 @@ where they are defined and explained can be found in the [source file](https://g
 Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
-* 
+* Phạm Hồng Vinh
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 02/07/2020)*
