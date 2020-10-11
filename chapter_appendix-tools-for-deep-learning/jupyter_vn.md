@@ -139,7 +139,7 @@ You can also run the cell with a shortcut ("Ctrl + Enter" by default)
 and obtain the output result from :numref:`fig_jupyter06`.
 -->
 
-Bạn cũng có thể chạy ô này với một phím tắt ("Ctrl + Enter" theo mặc định) và nhận về kết quả đầu ra của :numref:`fig_jupyter06`.
+Bạn cũng có thể chạy ô này với một tổ hợp phím tắt ("Ctrl + Enter" theo mặc định) và nhận về kết quả đầu ra của :numref:`fig_jupyter06`.
 
 
 <!--
@@ -180,8 +180,8 @@ Fortunately there is an alternative---native editing in Markdown.
 
 Ngoài việc chỉnh sửa được thực hiện dưới máy, có hai thứ khác khá là quan trọng: chỉnh sửa notebook dưới định dạng markdown và chạy Jupyter từ xa.
 Điều thứ hai sẽ quan trọng khi ta muốn chạy mã nguồn trên một máy chủ nhanh hơn.
-Điều thứ nhất sẽ quan trọng vì định dạng đơn giản .ipynb chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về những gì có trong notebook, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
-Điều này khiến Git hoang mang dẫn đến việc gộp các đóng góp là cực kỳ khó.
+Điều thứ nhất sẽ quan trọng vì định dạng gốc `.ipynb` chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về nội dung notebook, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
+Điều này khiến việc sử dụng Git để gộp các đóng góp là cực kỳ khó.
 May thay có một cách làm khác---chỉnh sửa thuần dưới định dạng Markdown.
 
 
@@ -197,8 +197,8 @@ If you wish to contribute to the content of this book, you need to modify the so
 Using the notedown plugin we can modify notebooks in md format directly in Jupyter.
 -->
 
-Nếu bạn muốn đóng góp vào phần nội dung của cuốn sách này, bạn sẽ cần chỉnh sửa tệp tin mã nguồn (tệp md, không phải ipynb) trên GitHub.
-Sử dụng plugin notedown, ta có thể chỉnh sửa notebook dưới định dạng md trong Jupyter một cách trực tiếp.
+Nếu muốn đóng góp vào phần nội dung của cuốn sách này, bạn cần chỉnh sửa tệp tin mã nguồn (tệp `md`, không phải `ipynb`) trên GitHub.
+Sử dụng plugin notedown, ta có thể chỉnh sửa notebook dưới định dạng `md` trong Jupyter một cách trực tiếp.
 
 
 <!--
