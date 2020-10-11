@@ -95,9 +95,9 @@ Suppose that finally they flip over every card from the deck and read off the en
 There are $52!$ different orders to the deck, again all equally likely, so we need a lot of information to know which one it is.
 -->
 
-Hãy để chúng tôi đưa điều này đến cực hợp lý.
-Giả sử rằng cuối cùng họ lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
-Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng tôi cần nhiều thông tin để biết đó là cái nào.
+Hãy đi đến cực hạn.
+Giả sử rằng cuối cùng người kia lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
+Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng ta có được rất nhiều thông tin từ câu nói trên.
 
 
 <!--
@@ -107,8 +107,8 @@ $2\text{ bits}$, $~5.7\text{ bits}$, and $~225.6\text{ bits}$ of information res
 -->
 
 Bất kỳ khái niệm thông tin nào chúng ta phát triển phải phù hợp với trực giác này.
-Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện này có $0\text{ bits}$, 
-$2\text{ bits}$, $~5.7\text{ bits}$, và $~225.6\text{ bits}$ của thông tin tương ứng.
+Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có $0\text{ bit}$, 
+$2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ của thông tin tương ứng.
 
 
 <!--
@@ -121,7 +121,7 @@ For a common event, we may not need much information.
 
 Nếu chúng ta đọc qua những thí nghiệm suy nghĩ này, chúng ta thấy một ý tưởng tự nhiên.
 Như một điểm khởi đầu, thay vì quan tâm đến kiến thức,
-chúng ta có thể xây dựng ý tưởng rằng thông tin đại diện cho mức độ bất ngờ hoặc khả năng trừu tượng của sự kiện.
+chúng ta có thể xây dựng ý tưởng rằng thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
 Ví dụ, nếu chúng ta muốn mô tả một sự kiện bất thường, chúng ta cần rất nhiều thông tin.
 Đối với một sự kiện thông thường, chúng ta có thể không cần nhiều thông tin.
 
@@ -131,15 +131,15 @@ In 1948, Claude E. Shannon published *A Mathematical Theory of Communication* :c
 In his article, Shannon introduced the concept of information entropy for the first time. We will begin our journey here.
 -->
 
-Năm 1948, Claude E. Shannon xuất bản *Lý thuyết toán học về giao tiếp* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
-Trong bài báo của mình, Shannon lần đầu tiên giới thiệu khái niệm entropy thông tin. Chúng ta sẽ bắt đầu cuộc hành trình của mình tại đây.
+Năm 1948, Claude E. Shannon xuất bản *Lý thuyết Toán học về Truyền tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
+Trong bài báo của mình, Shannon lần đầu tiên giới thiệu khái niệm entropy thông tin. Chúng ta sẽ bắt đầu tại đây.
 
 
 <!--
 ### Self-information
 -->
 
-### Thông tin tự thân
+### Lượng tin
 
 
 <!--
@@ -151,7 +151,7 @@ In this way, any information is encoded by a series of $0$ and $1$.
 And hence, a series of binary digits of length $n$ contains $n$ bits of information.
 -->
 
-Vì thông tin là hiện thân của khả năng trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ khả năng xảy ra với số lượng bit?
+Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó với số lượng bit?
 Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu được tạo ra bởi John Tukey.
 Vậy "bit" là gì và tại sao chúng ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
 Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
@@ -167,11 +167,11 @@ So, can we generalize to a math function which can transfer the probability $p$ 
 Shannon gave the answer by defining *self-information*
 -->
 
-Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, mỗi $0$ hoặc $1$ xảy ra với xác suất là $\frac{1}{2}$.
+Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, $0$ hoặc $1$ xuất hiện với xác suất là $\frac{1}{2}$.
 Do đó, sự kiện $X$ với một chuỗi mã có độ dài $n$, xảy ra với xác suất $\frac{1}{2^n}$.
 Đồng thời, như chúng tôi đã đề cập trước đây, chuỗi số này chứa $n$ bit thông tin.
-Vì vậy, chúng ta có thể tổng quát hóa thành một hàm toán học có thể chuyển xác suất $p$ thành số bit không?
-Shannon đưa ra câu trả lời bằng cách định nghĩa *thông tin tự thân*
+Vì vậy, liệu có thể tổng quát hóa thành một hàm toán học ánh xạ xác suất $p$ thành số bit không?
+Shannon đưa ra câu trả lời bằng cách định nghĩa *lượng tin*
 
 
 $$I(X) = - \log_2 (p),$$
@@ -198,7 +198,7 @@ We can calculate self information as shown below.
 Before that, let us first import all the necessary packages in this section.
 -->
 
-Chúng ta có thể tính toán thông tin tự thân như hình dưới đây.
+Chúng ta có thể tính toán lượng tin như hình dưới đây.
 Trước đó, hãy nhập tất cả các gói cần thiết trong phần này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
