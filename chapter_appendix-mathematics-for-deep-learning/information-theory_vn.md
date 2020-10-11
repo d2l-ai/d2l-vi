@@ -1446,7 +1446,13 @@ then the joint probability mass function(p.m.f.) of $\mathbf{z}$ is
 $$\mathbf{p}^\mathbf{z} = \prod_{j=1}^k p_{j}^{z_{j}}.$$
 -->
 
-*dịch đoạn phía trên*
+Mặt khác, ta cũng có thể tiếp cận bài toán thông qua ước lượng hợp lý cực đại.
+Đề bắt đầu, hãy để chúng tôi giới thiệu nhanh về phân phối đa thức (*multinoulli distribution*) $k$ lớp.
+Đây là một dạng mở rộng của phân phối Bernoulli từ hai lớp thành nhiều lớp.
+Nếu một biến ngẫu nhiên $\mathbf{z} = (z_{1}, \ldots, z_{k})$ tuân theo *phân phối đa thức* $k$ lớp với xác suất $\mathbf{p} =$ ($p_{1}, \ldots, p_{k}$), tức
+$$p(\mathbf{z}) = p(z_1, \ldots, z_k) = \mathrm{Multi} (p_1, \ldots, p_k), \text{ where } \sum_{i=1}^k p_i = 1,$$
+thì hàm khối xác suất (*probability mass function - p.m.f*) đồng thời của $\mathbf{z}$ bằng
+$$\mathbf{p}^\mathbf{z} = \prod_{j=1}^k p_{j}^{z_{j}}.$$
 
 
 <!--
@@ -1456,7 +1462,10 @@ Therefore, the joint p.m.f. of each data example $\mathbf{y}_i$ is  $\mathbf{\pi
 Hence, the log-likelihood function would be
 -->
 
-*dịch đoạn phía trên*
+Nó có thể được xem như nhãn của từng mẫu dữ liệu, $\mathbf{y}_i$,
+tuân theo một phân phối đa thức $k$ lớp với xác suất $\boldsymbol{\pi} =$ ($\pi_{1}, \ldots, \pi_{k}$).
+Do đó, hàm khối xác suất đồng thời của mỗi mẫu dữ liệu $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
+Từ đây, hàm log hợp lý sẽ là
 
 
 $$
@@ -1475,7 +1484,9 @@ Since in maximum likelihood estimation, we maximizing the objective function $l(
 Therefore, for any multi-class classification, maximizing the above log-likelihood function $l(\theta)$ is equivalent to minimizing the CE loss $\mathrm{CE}(y, \hat{y})$.
 -->
 
-*dịch đoạn phía trên*
+Do trong ước lượng hợp lý cực đại, ta cực đại hoá hàm mục tiêu $l(\theta)$ với $\pi_{j} = p_{\theta} (y_{ij}  \mid  \mathbf{x}_i)$.
+Vậy nên với bài toán phân loại đa lớp bất kì, việc cực đại hoá hàm log hợp lý trên $l(\theta)$ tương đương với việc cực tiểu hoá mất mát CE $\mathrm{CE}(y, \hat{y})$.
+
 
 
 <!--
@@ -1483,7 +1494,8 @@ To test the above proof, let us apply the built-in measure `NegativeLogLikelihoo
 Using the same `labels` and `preds` as in the earlier example, we will get the same numerical loss as the previous example up to the 5 decimal place.
 -->
 
-*dịch đoạn phía trên*
+Để kiểm tra chứng minh trên, hãy áp dụng phép đo`NegativeLogLikelihood` được tích hợp sẵn.
+Với việc sử dụng `labels` và `preds` giống như ví dụ trước, ta sẽ thu được mất mát xấp xỉ giống ví dụ trước tới 5 số thập phân sau dấu phẩy.
 
 
 ```{.python .input}
@@ -1524,7 +1536,11 @@ loss
 Minimizing cross entropy loss is equivalent to maximizing the log-likelihood function.
 -->
 
-*dịch đoạn phía trên*
+* Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và thao túng thông tin.
+* Entropy là đơn vị đo lượng thông tin có trong các tín hiệu khác nhau.
+* Phân kỳ KL cũng có thể đo khoảng cách giữa hai phân phối.
+* Entropy Chéo có thể được coi như một hàm mục tiêu của phân loại đa lớp.
+Việc cực tiểu hoá mất mát entropy chéo tương đương với việc cực đại hoá hàm log hợp lý.
 
 
 ## Bài tập
@@ -1552,7 +1568,26 @@ Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex fun
 5. What is the KL Divergence between the two Gaussian distributions $\mathcal{N}(\mu_1, \sigma_1^2)$ and $\mathcal{N}(\mu_2, \sigma_2^2)$?
 -->
 
-*dịch đoạn phía trên*
+1. Kiểm chứng rằng ví dụ lá bài ở phần đầu quả thực là có entropy như đã nhận định.
+2. Chỉ ra rằng phân kỳ KL $D(p\|q)$ là không âm với mọi phân phối $p$ và $q$.
+Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực tế là $-\log x$ là một hàm lồi.
+3. Hãy tính entropy từ một số nguồn dữ liệu sau:
+    * Giả sử bạn đang theo dõi văn bản sinh bởi một con khỉ với một máy đánh chữ.
+    Con khỉ nhấn bất kì phím ngẫu nhiên nào trong $44$ phím của máy đánh chữ (bạn có thể giả sử rằng nó chưa phát hiện ra bất kì phím đặc biệt nào hay phím shift).
+    Có bao nhiêu bit sự ngẫu nhiên trên mỗi kí tự bạn quan sát được?
+    * Không hài lòng với con khỉ, bạn thay thế nó với một máy xếp chữ say xỉn.
+    Nó có thể tạo ra các từ, mặc dù không được mạch lạc.
+    Thay vào đó, nó chọn một từ ngẫu nhiên trong bảng từ vựng gồm $2,000$ từ.
+    Hãy giả sử rằng độ dài trung bình của một từ là $4.5$ chữ cái trong Tiếng Anh.
+    Lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
+    * Vẫn không hài lòng với kết quả, bạn thay máy xếp chữ bằng một mô hình ngôn ngữ chất lượng cao.
+    Mô hình ngôn ngữ lúc này có thể thu được perplexity trên $15$ điểm cho mỗi từ.
+    *Perplexity* ký tự của một mô hình ngôn ngữ trên một từ kiểm tra được định nghĩa là tích của xác suất nghịch đảo của mỗi ký tự xuất hiện trong từ kiểm tra,
+    được chuẩn hoá bằng độ dài của từ, tức
+    $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
+    Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
+4. Giải thích một cách trực quan tại sao $I(X, Y) = H(X) - H(X|Y)$. Sau đó, chỉ ra rằng biểu thức này là đúng bằng cách biểu diễn hai vế như một kỳ vọng so với phân phối đồng thời.
+5. Phân kỳ KL giữa hai phân phối Gauss $\mathcal{N}(\mu_1, \sigma_1^2)$ và $\mathcal{N}(\mu_2, \sigma_2^2)$ là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 12 ===================== -->
@@ -1609,7 +1644,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 
 <!-- Phần 12 -->
-* 
+* Đỗ Trường Giang
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 25/08/2020)*
