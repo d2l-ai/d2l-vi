@@ -18,7 +18,7 @@ This tutorial will guide you through Amazon SageMaker: a service that allows you
 Nhiều ứng dụng của học sâu yêu cầu một lượng lớn các phép tính.
 Máy tính của bạn có thể là quá chậm để giải quyết vấn đề này trong một khoảng thời gian hợp lý.
 Các dịch vụ điện toán đám mây cho phép bạn truy cập vào những máy tính mạnh mẽ hơn để chạy các phần yêu cầu GPU cao trong cuốn sách này.
-Hướng dẫn này sẽ dẫn bạn đi qua Amazon SageMaker: một dịch vụ cho phép bạn chạy cuốn sách này một cách dễ dàng.
+Phần này sẽ cung cấp hướng dẫn về Amazon SageMaker: một dịch vụ cho phép bạn chạy cuốn sách này một cách dễ dàng.
 
 
 <!--
@@ -37,7 +37,7 @@ After logging into your AWS account, go to your [console](http://console.aws.ama
 and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the SageMaker panel.
 -->
 
-Đầu tiên, ta cần đăng ký tài khoản tại https://aws.amazon.com/.
+Đầu tiên, ta cần đăng ký tài khoản tại [https://aws.amazon.com/](https://aws.amazon.com/).
 Chúng tôi khuyến khích sử dụng xác thực hai yếu tố để tăng cường bảo mật.
 Cũng là một ý tưởng tốt khi cài đặt mức trả chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy ảo đang chạy.
 Lưu ý rằng bạn cũng sẽ cần một thẻ tín dụng.
@@ -64,7 +64,7 @@ Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](
 Next, let us create a notebook instance as described in :numref:`fig_sagemaker-create`.
 -->
 
-Tiếp đến, hãy tạo một máy ảo notebok như đề cập trong :numref:`fig_sagemaker-create`.
+Tiếp đến, hãy tạo một máy ảo notebook như đề cập trong :numref:`fig_sagemaker-create`.
 
 
 <!--
@@ -103,7 +103,7 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-en-sagemaker.
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại [https://github.com/d2l-ai/d2l-en-sagemaker](https://github.com/d2l-ai/d2l-en-sagemaker).
 Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
@@ -114,7 +114,7 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-pytorch-sagemaker.
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại [https://github.com/d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker).
 Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
@@ -125,7 +125,7 @@ A Jupyter notebook version of this book for fitting SageMaker is available at ht
 We can specify this GitHub repository URL to let SageMaker clone this repository during instance creation, as shown in :numref:`fig_sagemaker-create-3`.
 -->
 
-Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại https://github.com/d2l-ai/d2l-tensorflow-sagemaker.
+Một phiên bản Jupyter notebook tương thích với Sagemaker có thể tìm thấy tại [https://github.com/d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker).
 Ta có thể nêu chi tiết URL của Github repository này để Sagemaker clone về trong lúc tạo máy ảo, như minh họa ở :numref:`fig_sagemaker-create-3`.
 :end_tab:
 
@@ -135,7 +135,7 @@ Ta có thể nêu chi tiết URL của Github repository này để Sagemaker cl
 ![Specify the GitHub repository.](../img/sagemaker-create-3.png)
 -->
 
-![Nêu chi tiếp Github repository.](../img/sagemaker-create-3.png)
+![Nêu chi tiết Github repository.](../img/sagemaker-create-3.png)
 :width:`400px`
 :label:`fig_sagemaker-create-3`
 
