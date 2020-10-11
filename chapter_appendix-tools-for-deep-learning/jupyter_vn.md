@@ -13,14 +13,16 @@ Make sure you have Jupyter installed and downloaded the code as described in :re
 If you want to know more about Jupyter see the excellent tutorial in their [Documentation](https://jupyter.readthedocs.io/en/latest/).
 -->
 
-*dịch đoạn phía trên*
+Mục này trình bày cách để thay đổi và chạy đoạn mã trong các chương của cuốn sách này thông qua Jupyter Notebooks.
+Hãy đảm bảo rằng bạn đã cài đặt Jupyter và tải các đoạn mã như chỉ dẫn trong :ref:`chap_installation`.
+Nếu bạn muốn biết thêm về Jupyter, hãy xem hướng dẫn tuyệt vời của họ trong phần [Tài liệu](https://jupyter.readthedocs.io/en/latest/).
 
 
 <!--
 ## Editing and Running the Code Locally
 -->
 
-## *dịch tiêu đề trên*
+## Chỉnh sửa và Chạy Mã nguồn dưới Máy
 
 
 <!--
@@ -30,14 +32,16 @@ If your browser does not do this automatically, open http://localhost:8888 and
 you will see the interface of Jupyter and all the folders containing the code of the book, as shown in :numref:`fig_jupyter00`.
 -->
 
-*dịch đoạn phía trên*
+Giả sử đường dẫn tới mã nguồn của cuốn sách này là "xx/yy/d2l-en/".
+Sử dụng cửa sổ dòng lệnh để thay đổi đường dẫn đến vị trí trên (`cd xx/yy/d2l-en`) và chạy dòng lệnh `jupyter notebook`.
+Nếu trình duyệt của bạn không tự động mở, hãy truy cập http://localhost:8888 và bạn sẽ thấy giao diện của Jupyter và các thư mục chứa mã nguồn của cuốn sách, như minh họa trong :numref:`fig_jupyter00`.
 
 
 <!--
 ![The folders containing the code in this book.](../img/jupyter00.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter00.png)
+![Các thư mục chứa mã nguồn của cuốn sách.](../img/jupyter00.png)
 :width:`600px`
 :label:`fig_jupyter00`
 
@@ -52,14 +56,20 @@ The content in the markdown cell includes "This is A Title" and "This is text".
 The code cell contains two lines of Python code.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể truy cập tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web.
+Chúng thường có đuôi ".ipynb".
+Để ngắn gọn, ta sẽ tạo một tệp tin tạm thời "test.ipynb".
+Phần nội dung hiển thị sau khi bạn nhấp vào nhìn sẽ giống như :numref:`fig_jupyter01`.
+Notebook này bao gồm một ô markdown và một ô mã nguồn.
+Nội dung của ô markdown bao gồm "This is A Title" và "This is text".
+Ô mã nguồn chứa hai dòng mã Python.
 
 
 <!--
 ![Markdown and code cells in the "text.ipynb" file.](../img/jupyter01.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter01.png)
+![Ô markdown và ô mã nguồn trong tệp tin "text.ipynb".](../img/jupyter01.png)
 :width:`600px`
 :label:`fig_jupyter01`
 
@@ -69,14 +79,15 @@ Double click on the markdown cell to enter edit mode.
 Add a new text string "Hello world." at the end of the cell, as shown in :numref:`fig_jupyter02`.
 -->
 
-*dịch đoạn phía trên*
+Nhấp đúp vào ô markdown để chuyển qua chế độ chỉnh sửa.
+Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, như minh họa trong :numref:`fig_jupyter02`.
 
 
 <!--
 ![Edit the markdown cell.](../img/jupyter02.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter02.png)
+![Chỉnh sửa ô markdown](../img/jupyter02.png)
 :width:`600px`
 :label:`fig_jupyter02`
 
@@ -85,14 +96,14 @@ Add a new text string "Hello world." at the end of the cell, as shown in :numref
 As shown in :numref:`fig_jupyter03`, click "Cell" $\rightarrow$ "Run Cells" in the menu bar to run the edited cell.
 -->
 
-*dịch đoạn phía trên*
+Như minh họa trong :numref:`fig_jupyter03`, chọn "Cell" $\rightarrow$ "Run Cells" trong thanh menu để chạy ô đã chỉnh sửa.
 
 
 <!--
 ![Run the cell.](../img/jupyter03.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter03.png)
+![Chạy ô](../img/jupyter03.png)
 :width:`600px`
 :label:`fig_jupyter03`
 
@@ -101,14 +112,14 @@ As shown in :numref:`fig_jupyter03`, click "Cell" $\rightarrow$ "Run Cells" in t
 After running, the markdown cell is as shown in :numref:`fig_jupyter04`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi chạy, ô markdown sẽ trông như :numref:`fig_jupyter04`.
 
 
 <!--
 ![The markdown cell after editing.](../img/jupyter04.png)
 -->
 
-![*dịch mô tả phía trên*](../img/jupyter04.png)
+![Ô markdown sau khi chỉnh sửa](../img/jupyter04.png)
 :width:`600px`
 :label:`fig_jupyter04`
 
@@ -119,7 +130,8 @@ Multiply the elements by 2 after the last line of code,
 as shown in :numref:`fig_jupyter05`.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, nhấp vào ô mã nguồn.
+Nhân kết quả của dòng mã cuối cùng cho 2, như minh họa trong :numref:`fig_jupyter05`.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -334,7 +346,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
-* 
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
