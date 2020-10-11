@@ -37,5 +37,6 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 15/01/2020)*
