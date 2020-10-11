@@ -142,8 +142,8 @@ It may take a few minutes before the instance is ready.
 When it is ready, you can click on the "Open Jupyter" link as shown in :numref:`fig_sagemaker-open`.
 -->
 
-Có thể mất vài phút để chuẩn bị máy ảo.
-Khi đã chuẩn bị xong, bạn có thể nhấp vào "Open Jupyter" như trong :numref:`fig_sagemaker-open`.
+Có thể mất vài phút để khởi động máy ảo.
+Khi đã khởi động xong, bạn có thể nhấp vào "Open Jupyter" như trong :numref:`fig_sagemaker-open`.
 
 
 <!--
@@ -202,7 +202,7 @@ We will regularly update the notebooks in the [d2l-ai/d2l-en-sagemaker](https://
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-Chúng tôi sẽ thường xuyên cập nhật notebooj tại [d2l-ai/d2l-en-sagemaker](https://github.com/d2l-ai/d2l-en-sagemaker) GitHub repository.
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-en-sagemaker](https://github.com/d2l-ai/d2l-en-sagemaker).
 Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
@@ -213,7 +213,7 @@ We will regularly update the notebooks in the [d2l-ai/d2l-pytorch-sagemaker](htt
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-Chúng tôi sẽ thường xuyên cập nhật notebooj tại [d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker) GitHub repository.
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker).
 Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
@@ -224,7 +224,7 @@ We will regularly update the notebooks in the [d2l-ai/d2l-tensorflow-sagemaker](
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-Chúng tôi sẽ thường xuyên cập nhật notebooj tại [d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker) GitHub repository.
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker).
 Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
