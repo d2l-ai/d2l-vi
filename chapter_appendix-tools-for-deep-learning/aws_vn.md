@@ -125,14 +125,14 @@ Generally, it takes one business day to process an application.
 ### Launching Instance
 -->
 
-### *dịch tiêu đề trên*
+### Khởi động Máy ảo
 
 
 <!--
 Next, click the "Launch Instance" button marked by the red box in :numref:`fig_ec2` to launch your instance.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, nhấn vào nút "Launch Instance" được đánh dấu bởi khung đỏ trong :numref:`fig_ec2` để khởi động máy ảo của bạn.
 
 
 <!--
@@ -140,14 +140,15 @@ We begin by selecting a suitable AMI (AWS Machine Image).
 Enter "Ubuntu" in the search box (marked by the red box in :numref:`fig_ubuntu`).
 -->
 
-*dịch đoạn phía trên*
+Ta bắt đầu bằng việc chọn một AMI (*AWS Machine Image*) phù hợp.
+Nhập "Ubuntu" vào ô tìm kiếm (đánh dấu bởi khung đỏ trong :numref:`fig_ubuntu`).
 
 
 <!--
 ![Choose an operating system.](../img/ubuntu_new.png)
 -->
 
-![*dịch mô tả phía trên*](../img/ubuntu_new.png)
+![Chọn hệ điều hành.](../img/ubuntu_new.png)
 :width:`700px`
 :label:`fig_ubuntu`
 
@@ -158,7 +159,9 @@ This can sometimes feel overwhelming to a beginner.
 Here's a table of suitable machines:
 -->
 
-*dịch đoạn phía trên*
+EC2 cung cấp rất nhiều cấu hình máy ảo khác nhau để bạn có thể lựa chọn.
+Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy choáng ngợp.
+Ở đây là bảng liệt kê các máy phù hợp:
 
 
 <!--
@@ -171,7 +174,13 @@ Here's a table of suitable machines:
 | g4   | Turing T4   | inference optimized FP16/INT8 |
 -->
 
-*dịch bảng thông tin phía trên*
+| Tên | GPU          | Ghi chú                              |
+|------|-------------|--------------------------------------|
+| g2   | Grid K520   | cũ kỹ                                |
+| p2   | Kepler K80  | cũ nhưng thường rẻ như máy ảo spot   |
+| g3   | Maxwell M60 | cân bằng tốt                         |
+| p3   | Volta V100  | hiệu năng cao cho FP16               |
+| g4   | Turing T4   | tối ưu suy luận cho FP16/INT8         |
 
 
 <!--
@@ -181,7 +190,10 @@ For more details, see the [AWS EC2 documentation](https://aws.amazon.com/ec2/ins
 For the purpose of illustration, a p2.xlarge will suffice (marked in red box of :numref:`fig_p2x`).
 -->
 
-*dịch đoạn phía trên*
+Tất cả các máy chủ trên đều đa dạng về số GPU được sử dụng.
+Ví dụ, một máy chủ p2.xlarge có 1 GPU và p2.16xlarge có 16 GPU với nhiều bộ nhớ hơn.
+Để biết thêm chi tiết, xem [tài liệu của AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc [trang tổng hợp](https://www.ec2instances.info).
+Nhằm mục đích minh hoạ, một máy chủ p2.xlarge là đủ (đánh dấu bởi khung đỏ trong :numref:`fig_p2x`).
 
 
 <!--
@@ -189,14 +201,15 @@ For the purpose of illustration, a p2.xlarge will suffice (marked in red box of 
 Otherwise you will not see any benefit from using GPUs.
 -->
 
-*dịch đoạn phía trên*
+**Chú ý:** bạn buộc phải sử dụng một máy chủ có kích hoạt GPU với trình điều khiển (*driver*) phù hợp cùng với phiên bản MXNet có kích hoạt GPU.
+Nếu không bạn sẽ không thấy được bất cứ khác biệt nào từ việc sử dụng GPU.
 
 
 <!--
 ![Choose an instance.](../img/p2x.png)
 -->
 
-![*dịch mô tả phía trên*](../img/p2x.png)
+![Chọn một máy ảo.](../img/p2x.png)
 :width:`700px`
 :label:`fig_p2x`
 
@@ -209,14 +222,15 @@ Tap on "4. Add Storage" and increase the default hard disk size to 64 GB (marked
 Note that CUDA by itself already takes up 4 GB.
 -->
 
-*dịch đoạn phía trên*
+Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khợi động một máy ảo EC2, như được chỉ ra trong :numref:`fig_disk`.
+Trong ví dụ này, ta giữ nguyên cấu hình mặc định trong bước "3. Configure Instance", "5. Add Tags", và "6. Configure Security Group".
 
 
 <!--
 ![Modify instance hard disk size.](../img/disk.png)
 -->
 
-![*dịch mô tả phía trên*](../img/disk.png)
+![Điều chỉnh kích thước ổ cứng của máy ảo.](../img/disk.png)
 :width:`700px`
 :label:`fig_disk`
 
@@ -229,14 +243,18 @@ Subsequently, you can select "Choose an existing key pair" for this menu and the
 Click "Launch Instances" to launch the created instance.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, đi tới bước "7. Review" và nhấn "Launch" để khởi động máy ảo đã được cấu hình.
+Lúc này hệ thống sẽ nhắc bạn lựa chọn một cặp khoá để truy cập vào máy ảo.
+Nếu bạn không có cặp khoá nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá.
+Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong bảng chọn này và sau đó chọn cặp khoá vừa được tạo.
+Nhấn "Launch Instances" để khởi động máy ảo vừa tạo.
 
 
 <!--
 ![Select a key pair.](../img/keypair.png)
 -->
 
-![*dịch mô tả phía trên*](../img/keypair.png)
+![Chọn một cặp khoá.](../img/keypair.png)
 :width:`500px`
 :label:`fig_keypair`
 
@@ -247,14 +265,16 @@ This is your only way to SSH into the server.
 Click the instance ID shown in :numref:`fig_launching` to view the status of this instance.
 -->
 
-*dịch đoạn phía trên*
+Đảm bảo rằng bạn tải cặp khoá về và lưu nó ở một vị trí an toàn nếu bạn tạo một cặp khoá mới.
+Đây là cách duy nhất để SSH vào máy chủ.
+Nhấn vào ID máy ảo như trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
 
 
 <!--
 ![Click the instance ID.](../img/launching.png)
 -->
 
-![*dịch mô tả phía trên*](../img/launching.png)
+![Nhấn vào ID máy ảo.](../img/launching.png)
 :width:`700px`
 :label:`fig_launching`
 
@@ -663,7 +683,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 <!-- Phần 3 -->
 * 
