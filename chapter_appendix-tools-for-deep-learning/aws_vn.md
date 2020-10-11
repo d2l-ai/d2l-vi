@@ -286,7 +286,7 @@ Nhấn vào ID máy ảo như trong :numref:`fig_launching` để quan sát tr�
 ### Connecting to the Instance
 -->
 
-### *dịch tiêu đề trên*
+### Kết nối tới Máy ảo
 
 
 <!--
@@ -294,14 +294,15 @@ As shown in :numref:`fig_connect`, after the instance state turns green,
 right-click the instance and select `Connect` to view the instance access method.
 -->
 
-*dịch đoạn phía trên*
+Như đã chỉ ra trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển màu xanh,
+nhấp chuột phải vào máy ảo và chọn `Connect` để quan sát phương thức truy cập máy ảo.
 
 
 <!--
 ![View instance access and startup method.](../img/connect.png)
 -->
 
-![*dịch mô tả phía trên*](../img/connect.png)
+![Quan sát phương thức truy cập và khởi động máy ảo.](../img/connect.png)
 :width:`700px`
 :label:`fig_connect`
 
@@ -311,7 +312,8 @@ If this is a new key, it must not be publicly viewable for SSH to work. Go to th
 (e.g., the Downloads folder) and make sure that the key is not publicly viewable.
 -->
 
-*dịch đoạn phía trên*
+Nếu đây là một khoá mới, nó không thể xem được một cách công khai để SSH có thể hoạt động. Đi đến thư mục mà bạn lưu `D2L_key.pem`
+(ví dụ như thư mục Downloads) và đảm bảo rằng khoá này không thể xem một cách công khai.
 
 
 ```bash
@@ -324,7 +326,7 @@ chmod 400 D2L_key.pem
 ![View instance access and startup method.](../img/chmod.png)
 -->
 
-![*dịch mô tả phía trên*](../img/chmod.png)
+![Quan sát phương thức truy cập và khởi động máy ảo.](../img/chmod.png)
 :width:`400px`
 :label:`fig_chmod`
 
@@ -333,7 +335,7 @@ chmod 400 D2L_key.pem
 Now, copy the ssh command in the lower red box of :numref:`fig_chmod` and paste onto the command line:
 -->
 
-*dịch đoạn phía trên*
+Giờ hãy sao chép lệnh ssh trong khung đỏ phía dưới trong :numref:`fig_chmod` và dán vào cửa sổ dòng lệnh:
 
 
 ```bash
@@ -345,14 +347,14 @@ ssh -i "D2L_key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.y.compute.amazonaws.com
 When the command line prompts "Are you sure you want to continue connecting (yes/no)", enter "yes" and press Enter to log into the instance.
 -->
 
-*dịch đoạn phía trên*
+Khi cửa sổ dòng lệnh thông báo "Are you sure you want to continue connecting (yes/no)", nhập "yes" và nhấn Enter để đăng nhập vào máy ảo.
 
 
 <!--
 Your server is ready now.
 -->
 
-*dịch đoạn phía trên*
+Lúc này máy chủ của bạn đã sẵn sàng.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -362,14 +364,14 @@ Your server is ready now.
 ## Installing CUDA
 -->
 
-## *dịch tiêu đề trên*
+## Cài đặt CUDA
 
 
 <!--
 Before installing CUDA, be sure to update the instance with the latest drivers.
 -->
 
-*dịch đoạn phía trên*
+Trước khi cài đặt CUDA, đừng quên cập nhật máy ảo với trình điều khiển mới nhất.
 
 
 ```bash
@@ -382,14 +384,15 @@ Here we download CUDA 10.1. Visit NVIDIA's [official repository](https://develop
 to find the download link of CUDA 10.1 as shown in :numref:`fig_cuda`.
 -->
 
-*dịch đoạn phía trên*
+Ở đây ta tải về CUDA 10.1. Truy cập [trang chứa chính thức](https://developer.nvidia.com/cuda-downloads) của NVIDIA
+để tìm đường dẫn tải về của CUDA 10.1 như chỉ ra trong :numref:`fig_cuda`.
 
 
 <!--
 ![Find the CUDA 10.1 download address.](../img/cuda101.png)
 -->
 
-![*dịch mô tả phía trên*](../img/cuda101.png)
+![Tìm địa chỉ tải về của CUDA 10.1.](../img/cuda101.png)
 :width:`500px`
 :label:`fig_cuda`
 
@@ -398,7 +401,7 @@ to find the download link of CUDA 10.1 as shown in :numref:`fig_cuda`.
 Copy the instructions and paste them into the terminal to install CUDA 10.1.
 -->
 
-*dịch đoạn phía trên*
+Sao chép các lệnh và dán vào cửa sổ dòng lệnh để cài đặt CUDA 10.1.
 
 
 ```bash
@@ -417,7 +420,7 @@ sudo apt-get -y install cuda
 After installing the program, run the following command to view the GPUs.
 -->
 
-*dịch đoạn phía trên*
+Sau khi cài đặt chương trình, chạy lệnh sau để xem các GPU.
 
 
 ```bash
@@ -429,7 +432,7 @@ nvidia-smi
 Finally, add CUDA to the library path to help other libraries find it.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, thêm CUDA vào đường dẫn thư viện để giúp các thư viện khác tìm đến nó.
 
 
 ```bash
@@ -441,7 +444,7 @@ echo "export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:/usr/local/cuda/lib64" >> ~/.ba
 ## Installing MXNet and Downloading the D2L Notebooks
 -->
 
-## *dịch tiêu đề trên*
+## Cài đặt MXNet và Tải Notebook của D2L
 
 
 <!--
@@ -449,14 +452,15 @@ First, to simplify the installation, you need to install [Miniconda](https://con
 The download link and file name are subject to changes, so please go the Miniconda website and click "Copy Link Address" as shown in :numref:`fig_miniconda`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, để đơn giản hoá quá trình cài đặt, bạn cần cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html) cho Linux.
+Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như chỉ ra trong :numref:`fig_miniconda`.
 
 
 <!--
 ![Download Miniconda.](../img/miniconda.png)
 -->
 
-![*dịch mô tả phía trên*](../img/miniconda.png)
+![Tải Miniconda](../img/miniconda.png)
 :width:`700px`
 :label:`fig_miniconda`
 
@@ -472,7 +476,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 After the Miniconda installation, run the following command to activate CUDA and conda.
 -->
 
-*dịch đoạn phía trên*
+Sau khi cài đặt Miniconda, chạy lệnh sau để kích hoạt CUDA và conda.
 
 
 ```bash
@@ -485,7 +489,7 @@ source ~/.bashrc
 Next, download the code for this book.
 -->
 
-*dịch đoạn phía trên*
+Tiếp theo, tải về mã nguồn của cuốn sách này.
 
 
 ```bash
@@ -500,7 +504,7 @@ unzip d2l-en.zip && rm d2l-en.zip
 Then create the conda `d2l` environment and enter `y` to proceed with the installation.
 -->
 
-*dịch đoạn phía trên*
+Sau đó tạo môi trường conda `d2l` và nhập `y` để tiến hành cài đặt.
 
 
 ```bash
@@ -512,7 +516,7 @@ conda create --name d2l -y
 After creating the `d2l` environment, activate it and install `pip`.
 -->
 
-*dịch đoạn phía trên*
+Sau khi tạo môi trường `d2l`, kích hoạt nó và cài đặt `pip`.
 
 
 ```bash
@@ -527,7 +531,9 @@ The postfix `cu101` means that this is the CUDA 10.1 variant.
 For different versions, say only CUDA 10.0, you would want to choose `cu100` instead.
 -->
 
-*dịch đoạn phía trên*
+Cuối cùng, cài đặt MXNet và gói `d2l`.
+Hậu tố `cu101` nghĩa là đây là biến thể sử dụng CUDA 10.1.
+Với các phiên bản khác, giả sử như CUDA 10.0, bạn sẽ muốn thay bằng `cu100`.
 
 
 ```bash
@@ -541,7 +547,7 @@ pip install git+https://github.com/d2l-ai/d2l-en
 You can quickly test whether everything went well as follows:
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể nhanh chóng kiểm tra mọi thứ đều ổn như sau:
 
 
 ```
@@ -687,7 +693,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 4 -->
 * 
