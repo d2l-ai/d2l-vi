@@ -1095,14 +1095,14 @@ def kl_divergence(p, q):
 ### KL Divergence Properties
 -->
 
-### *dịch tiêu đề trên*
+### Các tính chất của Phân kỳ KL
 
 
 <!--
 Let us take a look at some properties of the KL divergence :eqref:`eq_kl_def`.
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xem xét một số tính chất của phân kỳ KL :eqref:`eq_kl_def`.
 
 
 <!--
@@ -1121,7 +1121,19 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
   that results from learning the value of the $X$'s distribution. Similarly to the third term.
 -->
 
-*dịch đoạn phía trên*
+* Phân kỳ KL là bất đối xứng, tức là tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
+* Phân kỳ KL là không âm, tức là $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
+* Nếu tồn tại $x$ sao cho $p(x) > 0$ và $q(x) = 0$ thì $D_{\mathrm{KL}}(P\|Q) = \infty$.
+* Phân kỳ KL có mối quan hệ mật thiết với thông tin tương hỗ.
+Ngoài mối quan hệ đã chỉ ra trong :numref:`fig_mutual_information`, $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
+    1. $D_{\mathrm{KL}}(P(X, Y)  \ \| \ P(X)P(Y))$;
+    2. $E_Y \{ D_{\mathrm{KL}}(P(X \mid Y) \ \| \ P(X)) \}$;
+    3. $E_X \{ D_{\mathrm{KL}}(P(Y \mid X) \ \| \ P(Y)) \}$.
+    
+    Với dạng đầu tiên, ta diễn giải thông tin tương hỗ dưới dạng phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
+    do đó nó là phép đo mức độ khác nhau của phân phối đồng thời so với phân phối khi coi chúng là các biến cố độc lập.
+    Với dạng thứ hai, thông tin tương hỗ cho ta biết mức giảm trung bình trong độ bất định của $Y$
+    gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba cũng cung cấp một diễn giải tương tự.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -1131,14 +1143,14 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
 ### Example
 -->
 
-### *dịch tiêu đề trên*
+### Ví dụ
 
 
 <!--
 Let us go through a toy example to see the non-symmetry explicitly. 
 -->
 
-*dịch đoạn phía trên*
+Hãy cùng xét một ví dụ đơn giản để thấy rõ hơn tính bất đối xứng.
 
 
 <!--
@@ -1146,7 +1158,8 @@ First, let us generate and sort three tensors of length $10,000$: an objective t
 and two candidate tensors $q_1$ and $q_2$ which follow normal distributions $N(-1, 1)$ and $N(1, 1)$ respectively.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, ta sinh ba tensor có độ dài $10,000$ và sắp xếp chúng: một tensor mục tiêu $p$ tuân theo phân phối chuẩn $N(0, 1)$,
+và hai tensor tiềm năng $q_1$ và $q_2$ lần lượt tuân theo phân phối chuẩn $N(-1, 1)$ và $N(1, 1)$.
 
 
 ```{.python .input}
@@ -1195,7 +1208,9 @@ KL divergence between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 As you can see below, there is only a less than 3% off between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 -->
 
-*dịch đoạn phía trên*
+Do $q_1$ và $q_2$ đối xứng qua trục y (tức trục $x=0$), ta đoán rằng
+phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là tương tự nhau.
+Như bạn có thể thấy ở dưới, $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ chỉ chênh nhau không đến 3%.
 
 
 ```{.python .input}
@@ -1212,7 +1227,7 @@ kl_pq1, kl_pq2, similar_percentage
 In contrast, you may find that $D_{\mathrm{KL}}(q_2 \|p)$ and $D_{\mathrm{KL}}(p \| q_2)$ are off a lot, with around 40% off as shown below.
 -->
 
-*dịch đoạn phía trên*
+Trái lại, bạn có thể tính ra $D_{\mathrm{KL}}(q_2 \|p)$ và $D_{\mathrm{KL}}(p \| q_2)$ chênh nhau nhiều, với độ sai khác khoảng 40% như chỉ ra ở dưới.
 
 
 ```{.python .input}
@@ -1228,7 +1243,7 @@ kl_q2p, differ_percentage
 ## Cross Entropy
 -->
 
-## *dịch tiêu đề trên*
+## Entropy Chéo
 
 
 <!--
@@ -1237,7 +1252,9 @@ We define the true distribution $P$ with probability distribution $p(x)$,
 and the estimated distribution $Q$ with probability distribution $q(x)$, and we will use them in the rest of this section.
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn tò mò về ứng dụng của lý thuyết thông tin trong học sâu, đây là một ví dụ nhanh.
+Ta định nghĩa phân phối thực là $P$ với phân phối xác suất $p(x)$,
+và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$, và ta sẽ sử dụng chúng trong suốt phần còn lại.
 
 
 <!--
@@ -1250,7 +1267,14 @@ the probability to be classified as positive is $\pi_i= p_{\theta}(y_i = 1 \mid 
 Hence, the log-likelihood function would be
 -->
 
-*dịch đoạn phía trên*
+Coi rằng ta cần giải bài toán phân loại nhị phân dựa vào $n$ dữ liệu cho trước {$x_1, \ldots, x_n$}.
+Giả sử ta mã hoá $1$ và $0$ lần lượt là lớp dương và âm cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
+Nếu ta tập trung vào việc tìm $\theta$ tốt nhất sao cho $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
+việc áp dụng hướng tiếp cận log hợp lý cực đại (*maximum log-likelihood*) là hoàn toàn tự nhiên như ta thấy trong :numref:`sec_maximum_likelihood`.
+Cụ thể hơn, với nhãn thực $y_i$ và các dự đoán $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
+xác suất được phân loại thành nhãn dương là $\pi_i= p_{\theta}(y_i = 1 \mid x_i)$.
+Do đó, hàm log hợp lý sẽ là
+
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -1682,7 +1706,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * 
 
 <!-- Phần 10 -->
-* 
+* Đỗ Trường Giang
+* Phạm Hồng Vinh
 
 <!-- Phần 11 -->
 * Đỗ Trường Giang
