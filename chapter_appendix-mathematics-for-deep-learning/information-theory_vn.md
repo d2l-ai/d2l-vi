@@ -1039,16 +1039,16 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
 * Phân kỳ KL là bất đối xứng, tức là tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
 * Phân kỳ KL là không âm, tức là $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
 * Nếu tồn tại $x$ sao cho $p(x) > 0$ và $q(x) = 0$ thì $D_{\mathrm{KL}}(P\|Q) = \infty$.
-* Phân kỳ KL có mối quan hệ gần với thông tin tương hỗ.
+* Phân kỳ KL có mối quan hệ mật thiết với thông tin tương hỗ.
 Ngoài mối quan hệ đã chỉ ra trong :numref:`fig_mutual_information`, $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
     1. $D_{\mathrm{KL}}(P(X, Y)  \ \| \ P(X)P(Y))$;
     2. $E_Y \{ D_{\mathrm{KL}}(P(X \mid Y) \ \| \ P(X)) \}$;
     3. $E_X \{ D_{\mathrm{KL}}(P(Y \mid X) \ \| \ P(Y)) \}$.
     
-    Với dạng đầu tiên, chúng tôi giải thích thông tin tương quan giống như phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
-    và do đó nó là phép đo mức độ khác nhau của phân phối đồng thời so với phân phối ban đầu nếu chúng độc lập.
-    Với dạng thứ hai, thông tin tương quan cho ta biết mức giảm trung bình trong độ bất định của $Y$
-    gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba tương tự.
+    Với dạng đầu tiên, ta diễn giải thông tin tương hỗ dưới dạng phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
+    do đó nó là phép đo mức độ khác nhau của phân phối đồng thời so với phân phối khi coi chúng là các biến cố độc lập.
+    Với dạng thứ hai, thông tin tương hỗ cho ta biết mức giảm trung bình trong độ bất định của $Y$
+    gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba cũng cung cấp một diễn giải tương tự.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
@@ -1065,7 +1065,7 @@ Ngoài mối quan hệ đã chỉ ra trong :numref:`fig_mutual_information`, $I(
 Let us go through a toy example to see the non-symmetry explicitly. 
 -->
 
-Hãy cùng xét một ví dụ đơn giản để xem rõ hơn tính bất đối xứng.
+Hãy cùng xét một ví dụ đơn giản để thấy rõ hơn tính bất đối xứng.
 
 
 <!--
@@ -1168,7 +1168,7 @@ and the estimated distribution $Q$ with probability distribution $q(x)$, and we 
 -->
 
 Nếu bạn tò mò về ứng dụng của lý thuyết thông tin trong học sâu, đây là một ví dụ nhanh.
-Ta định nghĩa phân phối thật là $P$ với phân phối xác suất $p(x)$,
+Ta định nghĩa phân phối thực là $P$ với phân phối xác suất $p(x)$,
 và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$, và ta sẽ sử dụng chúng trong suốt phần còn lại.
 
 
