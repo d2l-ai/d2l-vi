@@ -132,7 +132,7 @@ Generally, it takes one business day to process an application.
 Next, click the "Launch Instance" button marked by the red box in :numref:`fig_ec2` to launch your instance.
 -->
 
-Tiếp theo, nhấn vào nút "Khởi động Máy ảo (*Launch Instance*)" được đánh dấu bởi khung đỏ trong :numref:`fig_ec2` để khởi động máy ảo của bạn.
+Tiếp theo, nhấn vào nút "Launch Instance" được đánh dấu bởi khung đỏ trong :numref:`fig_ec2` để khởi động máy ảo của bạn.
 
 
 <!--
@@ -180,7 +180,7 @@ Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy cho�
 | p2   | Kepler K80  | cũ nhưng thường rẻ như máy ảo spot   |
 | g3   | Maxwell M60 | cân bằng tốt                         |
 | p3   | Volta V100  | hiệu năng cao cho FP16               |
-| g4   | Turing T4   | kết quả tối ưu cho FP16/INT8         |
+| g4   | Turing T4   | tối ưu suy luận cho FP16/INT8         |
 
 
 <!--
@@ -190,9 +190,9 @@ For more details, see the [AWS EC2 documentation](https://aws.amazon.com/ec2/ins
 For the purpose of illustration, a p2.xlarge will suffice (marked in red box of :numref:`fig_p2x`).
 -->
 
-Tất cả các máy chủ trên đều đa dạng trong số GPU được sử dụng.
+Tất cả các máy chủ trên đều đa dạng về số GPU được sử dụng.
 Ví dụ, một máy chủ p2.xlarge có 1 GPU và p2.16xlarge có 16 GPU với nhiều bộ nhớ hơn.
-Để biết thêm chi tiết, xem [tài liệu của AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc một [trang tổng hợp](https://www.ec2instances.info).
+Để biết thêm chi tiết, xem [tài liệu của AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc [trang tổng hợp](https://www.ec2instances.info).
 Nhằm mục đích minh hoạ, một máy chủ p2.xlarge là đủ (đánh dấu bởi khung đỏ trong :numref:`fig_p2x`).
 
 
@@ -202,7 +202,7 @@ Otherwise you will not see any benefit from using GPUs.
 -->
 
 **Chú ý:** bạn buộc phải sử dụng một máy chủ có kích hoạt GPU với trình điều khiển (*driver*) phù hợp cùng với phiên bản MXNet có kích hoạt GPU.
-Nếu không bạn sẽ không thấy được bất cứ lợi ích nào từ việc sử dụng GPU.
+Nếu không bạn sẽ không thấy được bất cứ khác biệt nào từ việc sử dụng GPU.
 
 
 <!--
@@ -222,9 +222,8 @@ Tap on "4. Add Storage" and increase the default hard disk size to 64 GB (marked
 Note that CUDA by itself already takes up 4 GB.
 -->
 
-Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khợi động một máy ảo EC2, như được chỉ ra trong phía trên của :numref:`fig_disk`.
-Trong ví dụ này, ta giữ nguyên cấu hình mặc định trong bước "3. Cấu hình Máy ảo - Configure Instance", "5.
-Thêm thẻ - Add Tags", và "6. Cấu hình Nhóm Bảo mật - Configure Security Group".
+Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khợi động một máy ảo EC2, như được chỉ ra trong :numref:`fig_disk`.
+Trong ví dụ này, ta giữ nguyên cấu hình mặc định trong bước "3. Configure Instance", "5. Add Tags", và "6. Configure Security Group".
 
 
 <!--
@@ -244,11 +243,11 @@ Subsequently, you can select "Choose an existing key pair" for this menu and the
 Click "Launch Instances" to launch the created instance.
 -->
 
-Cuối cùng, đi tới bước "7. Xem lại - Review" và nhấn "Khởi động - Launch" để khởi động máy ảo đã được cấu hình.
+Cuối cùng, đi tới bước "7. Review" và nhấn "Launch" để khởi động máy ảo đã được cấu hình.
 Lúc này hệ thống sẽ nhắc bạn lựa chọn một cặp khoá để truy cập vào máy ảo.
-Nếu bạn không có cặp khoá nào, chọn "Tạo một cặp khoá mới - Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá.
-Tiếp theo, bạn có thể chọn "Chọn một cặp khoá hiện có - Choose an existing key pair" trong bảng chọn này và sau đó chọn cặp khoá vừa được tạo.
-Nhấn "Khởi động Máy ảo - Launch Instances" để khởi động máy ảo vừa tạo.
+Nếu bạn không có cặp khoá nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá.
+Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong bảng chọn này và sau đó chọn cặp khoá vừa được tạo.
+Nhấn "Launch Instances" để khởi động máy ảo vừa tạo.
 
 
 <!--
@@ -267,7 +266,7 @@ Click the instance ID shown in :numref:`fig_launching` to view the status of thi
 -->
 
 Đảm bảo rằng bạn tải cặp khoá về và lưu nó ở một vị trí an toàn nếu bạn tạo một cặp khoá mới.
-Đây là cách duy nhất của bạn để SSH vào máy chủ.
+Đây là cách duy nhất để SSH vào máy chủ.
 Nhấn vào ID máy ảo như trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
 
 
