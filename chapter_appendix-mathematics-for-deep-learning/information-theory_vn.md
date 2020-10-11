@@ -1411,7 +1411,7 @@ Hence, the log-likelihood function would be
 Nó có thể được xem như nhãn của từng mẫu dữ liệu, $\mathbf{y}_i$,
 tuân theo một phân phối đa thức $k$ lớp với xác suất $\boldsymbol{\pi} =$ ($\pi_{1}, \ldots, \pi_{k}$).
 Do đó, hàm khối xác suất đồng thời của mỗi mẫu dữ liệu $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
-Từ đây, hàm loh hợp lý sẽ là
+Từ đây, hàm log hợp lý sẽ là
 
 
 $$
