@@ -1199,7 +1199,7 @@ However, if we look closely we can see that terms like $\log(\pi_i)$ have entere
 which is a solid indication that we can understand the expression from an information theoretic point of view.    
 -->
 
-Điều này hoàn toàn có thể được suy ra thông qua việc xét góc nhìn của hợp lý cực đại.
+Điều này hoàn toàn có thể được suy ra thông qua việc xét theo góc nhìn của hợp lý cực đại.
 Tuy nhiên, nếu quan sát kĩ hơn ta có thể thấy rằng các số hạng như $\log(\pi_i)$ có tham gia vào phép tính
 và đây là một dấu hiệu vững chắc cho thấy rằng ta có thể hiểu được biểu thức theo góc nhìn của lý thuyết thông tin.
 
@@ -1215,7 +1215,7 @@ và đây là một dấu hiệu vững chắc cho thấy rằng ta có thể hi
 Like KL divergence, for a random variable $X$, we can also measure the divergence between the estimating distribution $Q$ and the true distribution $P$ via *cross entropy*,
 -->
 
-Giống với phân kỳ KL, với biến ngẫu nhiên $X$, ta cũng có thể đo được khoảng cách giữa phân phối ước lượng $Q$ và phân phối thực $P$ thông qua *entropy chéo*,
+Giống với phân kỳ KL, với biến ngẫu nhiên $X$, ta cũng có thể đo được độ phân kỳ giữa phân phối ước lượng $Q$ và phân phối thực $P$ thông qua *entropy chéo*,
 
 
 $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
@@ -1341,7 +1341,7 @@ we will find minimizing $\mathrm{CE}$ is equivalent to maximizing the log-likeli
 -->
 
 Nếu ta đi sâu vào hàm mục tiêu phân loại với mất mát entropy chéo $\mathrm{CE}$,
-ta sẽ thấy rằng cực tiểu hoá $\mathrm{CE}$ tương đương với cực địa hoá hàm log hợp lý $L$.
+ta sẽ thấy rằng cực tiểu hoá $\mathrm{CE}$ tương đương với cực đại hoá hàm log hợp lý $L$.
 
 
 <!--
