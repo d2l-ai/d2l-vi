@@ -1527,8 +1527,8 @@ Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực 
     Hãy giả sử rằng độ dài trung bình của một từ là $4.5$ chữ cái trong Tiếng Anh.
     Lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
     * Vẫn không hài lòng với kết quả, bạn thay máy xếp chữ bằng một mô hình ngôn ngữ chất lượng cao.
-    Mô hình ngôn ngữ lúc này có thể thu được độ phức tạp (*perplexity*) trên $15$ điểm cho mỗi từ.
-    *Độ phức tạp* kí tự của một mô hình ngôn ngữ trên một từ kiểm tra được định nghĩa là tích của xác suất nghịch đảo của mỗi kí tự xuất hiện trong từ kiểm tra,
+    Mô hình ngôn ngữ lúc này có thể thu được perplexity trên $15$ điểm cho mỗi từ.
+    *Perplexity* ký tự của một mô hình ngôn ngữ trên một từ kiểm tra được định nghĩa là tích của xác suất nghịch đảo của mỗi ký tự xuất hiện trong từ kiểm tra,
     được chuẩn hoá bằng độ dài của từ, tức
     $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
     Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
