@@ -147,7 +147,7 @@ Ta có thể nêu chi tiết URL của Github repository này để Sagemaker cl
 ## Running and Stopping an Instance
 -->
 
-## *dịch tiêu đề trên*
+## Chạy và Dừng một Máy ảo
 
 
 <!--
@@ -155,14 +155,15 @@ It may take a few minutes before the instance is ready.
 When it is ready, you can click on the "Open Jupyter" link as shown in :numref:`fig_sagemaker-open`.
 -->
 
-*dịch đoạn phía trên*
+Có thể mất vài phút để khởi động máy ảo.
+Khi đã khởi động xong, bạn có thể nhấp vào "Open Jupyter" như trong :numref:`fig_sagemaker-open`.
 
 
 <!--
 ![Open Jupyter on the created SageMaker instance.](../img/sagemaker-open.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-open.png)
+![Mở Jupyter trong máy ảo Sagemaker đã khởi tạo](../img/sagemaker-open.png)
 :width:`400px`
 :label:`fig_sagemaker-open`
 
@@ -171,14 +172,14 @@ When it is ready, you can click on the "Open Jupyter" link as shown in :numref:`
 Then, as shown in :numref:`fig_sagemaker-jupyter`, you may navigate through the Jupyter server running on this instance.
 -->
 
-*dịch đoạn phía trên*
+Sau đó, như minh họa trong :numref:`fig_sagemaker-jupyter`, bạn có thể điều hướng thông qua máy chủ Jupyter đang chạy trên máy ảo này.
 
 
 <!--
 ![The Jupyter server running on the SageMaker instance.](../img/sagemaker-jupyter.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-jupyter.png)
+![Máy chủ Jupyter chạy trên máy ảo Sagemaker](../img/sagemaker-jupyter.png)
 :width:`400px`
 :label:`fig_sagemaker-jupyter`
 
@@ -188,14 +189,15 @@ Running and editing Jupyter notebooks on the SageMaker instance is similar to wh
 After finishing your work, do not forget to stop the instance to avoid further charging, as shown in :numref:`fig_sagemaker-stop`.
 -->
 
-*dịch đoạn phía trên*
+Chạy và chỉnh sửa các Jupyter notebook trên máy ảo Sagemaker cũng tương tự như những gì ta đã bàn luận ở :numref:`sec_jupyter`.
+Sau khi xong việc, đừng quên dừng máy ảo để tránh tính thêm phí, như minh họa trong :numref:`fig_sagemaker-stop`.
 
 
 <!--
 ![Stop a SageMaker instance.](../img/sagemaker-stop.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-stop.png)
+![Dừng một máy ảo Sagemaker](../img/sagemaker-stop.png)
 :width:`300px`
 :label:`fig_sagemaker-stop`
 
@@ -204,7 +206,7 @@ After finishing your work, do not forget to stop the instance to avoid further c
 ## Updating Notebooks
 -->
 
-## *dịch tiêu đề trên*
+## Cập nhật Notebook
 
 
 :begin_tab:`mxnet`
@@ -213,7 +215,8 @@ We will regularly update the notebooks in the [d2l-ai/d2l-en-sagemaker](https://
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-*dịch đoạn phía trên*
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-en-sagemaker](https://github.com/d2l-ai/d2l-en-sagemaker).
+Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
 
@@ -223,7 +226,8 @@ We will regularly update the notebooks in the [d2l-ai/d2l-pytorch-sagemaker](htt
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-*dịch đoạn phía trên*
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker).
+Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
 
@@ -233,7 +237,8 @@ We will regularly update the notebooks in the [d2l-ai/d2l-tensorflow-sagemaker](
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-*dịch đoạn phía trên*
+Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker).
+Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
 
@@ -241,14 +246,14 @@ You can simply use the `git pull` command to update to the latest version.
 First, you need to open a terminal as shown in :numref:`fig_sagemaker-terminal`.
 -->
 
-*dịch đoạn phía trên*
+Đầu tiên, bạn cần mở một cửa sổ dòng lệnh như trong :numref:`fig_sagemaker-terminal`.
 
 
 <!--
 ![Open a terminal on the SageMaker instance.](../img/sagemaker-terminal.png)
 -->
 
-![*dịch mô tả phía trên*](../img/sagemaker-terminal.png)
+![Mở một cửa sổ dòng lệnh trên máy ảo Sagemaker.](../img/sagemaker-terminal.png)
 :width:`300px`
 :label:`fig_sagemaker-terminal`
 
@@ -258,7 +263,8 @@ You may want to commit your local changes before pulling the updates.
 Alternatively, you can simply ignore all your local changes with the following commands in the terminal.
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể muốn commit lại những thay đổi dưới máy trước khi kéo về những cập nhật mới.
+Mặt khác, bạn có thể đơn giản phớt lờ những thay đổi của bạn với những dòng lệnh sau.
 
 
 :begin_tab:`mxnet`
@@ -293,7 +299,8 @@ git pull
 * We can update notebooks via the terminal on the Amazon SageMaker instance.
 -->
 
-*dịch đoạn phía trên*
+* Ta có thể kích hoạt và dừng một máy chủ Jupyter thông qua Amazon Sagemaker để chạy cuốn sách này.
+* Ta có thể cập nhật các notebook thông qua cửa sổ dòng lệnh trên máy ảo Amazon Sagemaker.
 
 
 ## Bài tập
@@ -303,7 +310,8 @@ git pull
 2. Access the source code directory via the terminal.
 -->
 
-*dịch đoạn phía trên*
+1. Thử thay đổi và chạy mã nguồn của cuốn sách này trên Amazon Sagemaker.
+2. Truy cập vào thư mục mã nguồn thông qua cửa sổ dòng lệnh.
 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -329,6 +337,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Phạm Hồng Vinh
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 22/08/2020)*
