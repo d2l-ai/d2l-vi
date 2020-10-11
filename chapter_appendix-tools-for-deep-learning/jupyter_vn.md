@@ -22,7 +22,7 @@ Nếu bạn muốn biết thêm về Jupyter, hãy xem hướng dẫn tuyệt v�
 ## Editing and Running the Code Locally
 -->
 
-## Thay đổi và Chạy Mã nguồn dưới Máy
+## Chỉnh sửa và Chạy Mã nguồn dưới Máy
 
 
 <!--
@@ -32,7 +32,7 @@ If your browser does not do this automatically, open http://localhost:8888 and
 you will see the interface of Jupyter and all the folders containing the code of the book, as shown in :numref:`fig_jupyter00`.
 -->
 
-Giả sử đường dẫn của mã nguồn của cuốn sách này ở "xx/yy/d2l-en/".
+Giả sử đường dẫn tới mã nguồn của cuốn sách này là "xx/yy/d2l-en/".
 Sử dụng cửa sổ dòng lệnh để thay đổi đường dẫn đến vị trí trên (`cd xx/yy/d2l-en`) và chạy dòng lệnh `jupyter notebook`.
 Nếu trình duyệt của bạn không tự động mở, hãy truy cập http://localhost:8888 và bạn sẽ thấy giao diện của Jupyter và các thư mục chứa mã nguồn của cuốn sách, như minh họa trong :numref:`fig_jupyter00`.
 
@@ -79,7 +79,7 @@ Double click on the markdown cell to enter edit mode.
 Add a new text string "Hello world." at the end of the cell, as shown in :numref:`fig_jupyter02`.
 -->
 
-Nhấp đúp vào ô markdown để tiến vào chế độ chỉnh sửa.
+Nhấp đúp vào ô markdown để chuyển qua chế độ chỉnh sửa.
 Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, như minh họa trong :numref:`fig_jupyter02`.
 
 
@@ -96,7 +96,7 @@ Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, nh
 As shown in :numref:`fig_jupyter03`, click "Cell" $\rightarrow$ "Run Cells" in the menu bar to run the edited cell.
 -->
 
-Như minh họa trong :numref:`fig_jupyter03`, chọn "Cell" $\rightarrow$ "Run Cells" trong thanh menu để chạy ô đã chỉnh sửa
+Như minh họa trong :numref:`fig_jupyter03`, chọn "Cell" $\rightarrow$ "Run Cells" trong thanh menu để chạy ô đã chỉnh sửa.
 
 
 <!--
@@ -347,6 +347,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 <!-- Phần 1 -->
 * Phạm Hồng Vinh
+* Nguyễn Văn Cường
 
 <!-- Phần 2 -->
 * 
