@@ -547,7 +547,7 @@ After all, the server in the cloud does not have a monitor or keyboard.
 For this, log into your server from your desktop (or laptop) as follows.
 -->
 
-Để chạy Jupyter từ xa bạn cần sử dụng cổng SSH phía trước.
+Để chạy Jupyter từ xa bạn cần sử dụng chuyển tiếp cổng SSH.
 Suy cho cùng thì máy chủ trên đám mây không có màn hình hay bàn phím.
 Để thực hiện việc này, truy cập vào máy chủ của bạn từ máy tính (hay laptop) như sau.
 
@@ -583,8 +583,8 @@ Since you used port forwarding to port 8889 you will need to replace the port nu
 and use the secret as given by Jupyter when opening the URL in your local browser.
 -->
 
-Do bạn sử dụng cổng ngay trước cổng 8889 bạn cần phải sửa đổi chỉ số cổng
-và sử dụng cổng bí mật cho bởi Jupyter khi bạn mở URL trên trình duyệt web trong máy của bạn.
+Do sử dụng chuyển tiếp cổng cho cổng 8889, bạn cần phải đổi chỉ số 8888 thành 8889
+và sử dụng token cho bởi Jupyter để mở URL trên trình duyệt web trong máy của bạn.
 
 
 <!--
@@ -605,10 +605,10 @@ Only do this if you know that you will not need it in the future.
 -->
 
 Do dịch vụ đám mây tính hoá đơn theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
-Chú ý rằng có phương án thay thế: "dừng - stopping" một máy ảo nghĩa là bạn có thể khởi động nó lại.
+Chú ý rằng có phương án thay thế: "stop" một máy ảo nghĩa là bạn có thể khởi động nó lại.
 Việc này khá giống với việc tắt nguồn máy chủ bình thường của bạn.
 Tuy nhiên, việc dừng một máy chủ vẫn sẽ tính một lượng nhỏ vào hoá đơn cho kích thước ổ cứng được giữ lại.
-"Chấm dứt - Terminate" xoá toàn bộ dữ liệu liên quan đến nó.
+"Terminate" xoá toàn bộ dữ liệu liên quan đến nó.
 Dữ liệu này bao gồm cả ổ cứng, vậy nên bạn sẽ không thể khởi động lại nó.
 Chỉ thực hiện thao tác này nếu bạn chắc rằng bạn sẽ không cần đến nó trong tương lai.
 
@@ -625,10 +625,10 @@ The created instance will retain the information stored on the image hard disk.
 For example, you will not have to reinstall CUDA and other runtime environments.
 -->
 
-Nếu bạn muốn sử dụng máy ảo làm khuôn mẫu cho nhiều máy ảo khác,
-nhấp chuột phải vào ví dụ trong :numref:`fig_connect` và chọn "Ảnh - Image" $\rightarrow$ "Tạo - Create" để tạo một ảnh (*image*) của máy ảo này.
-Sau khi thao tác này hoàn thành, chọn "Trạng thái máy ảo - Instance State" $\rightarrow$ "Chấm dứt - Terminate" để chấm dứt máy ảo này.
-Tới lần tiếp theo bạn muốn sử dụng máy ảo này, bạn có thể thực hiện theo các bước tạo và
+Nếu bạn muốn sử dụng máy ảo làm khuôn mẫu (*template*) cho nhiều máy ảo khác,
+nhấp chuột phải vào ví dụ trong :numref:`fig_connect` và chọn "Image" $\rightarrow$ "Create" để tạo một ảnh (*image*) của máy ảo này.
+Sau khi thao tác này hoàn thành, chọn "Instance State" $\rightarrow$ "Terminate" để xóa máy ảo này.
+Lần tiếp theo bạn muốn sử dụng máy ảo này, bạn có thể thực hiện theo các bước tạo và
 chạy một máy ảo EC2 như mô tả trong phần này để tạo một máy ảo dựa trên ảnh đã lưu.
 Điểm khác biệt duy nhất nằm ở bước "1. Choose AMI" như trong :numref:`fig_ubuntu`,
 bạn phải chọn mục "My AMIs" phía bên trái để lựa chọn ảnh bạn đã lưu.
