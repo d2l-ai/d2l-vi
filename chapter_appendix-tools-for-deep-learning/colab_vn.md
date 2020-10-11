@@ -11,8 +11,8 @@ We introduced how to run this book on AWS in :numref:`sec_sagemaker` and :numref
 Another option is running this book on [Google Colab](https://colab.research.google.com/), which provides free GPU if you have a Google account.
 -->
 
-Chúng tôi đã giới thiệu cách chạy cuốn sách này với AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
-Có một phương án khác là chạy cuốn sách này trên [Google Colab](https://colab.research.google.com/), nó cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
+Chúng tôi đã giới thiệu cách chạy cuốn sách này trên AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
+Có một phương án khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nó cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
 
 
 <!--
