@@ -21,10 +21,10 @@ When your pull request is merged into the code repository by the author, you wil
 
 Những đóng góp từ [quý độc giả](https://github.com/d2l-ai/d2l-en/graphs/contributors) sẽ giúp chúng tôi cải thiện cuốn sách này.
 Nếu bạn tìm thấy một lỗi đánh máy, một đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
-phần mã nguồn không được thanh thoát hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ bạn đọc cuốn sách.
+phần mã nguồn không được thanh thoát hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ các độc giả khác.
 Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
 thông thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào cuốn sách này.
-Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/d2l-ai/d2l-en/pulls) tới kho lưu trữ Github.
+Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của cuốn sách này.
 Khi pull request của bạn được gộp vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
 
 
@@ -44,8 +44,8 @@ Then you click the "Edit this file" button on the top-right corner to make your 
 -->
 
 Đóng góp phổ biến nhất là chỉnh sửa một câu hoặc chữa lỗi đánh máy.
-Chúng tôi khuyến nghị bạn nên tìm tệp gốc trong [kho github](https://github.com/d2l-ai/d2l-en) và trực tiếp chỉnh sửa tệp.
-Ví dụ, bạn có thể tìm tệp thông qua nút [Find file](https://github.com/d2l-ai/d2l-en/find/master)
+Chúng tôi khuyến nghị bạn nên tìm tệp gốc trên [github](https://github.com/aivivn/d2l-vn) và trực tiếp chỉnh sửa tệp.
+Ví dụ, bạn có thể tìm tệp thông qua nút [Find file](https://github.com/aivivn/d2l-vn/find/master)
 (:numref:`fig_edit_file`) để định vị tệp gốc, tệp ở đây là một tệp markdown.
 Sau đó bạn nhấn nút "Edit this file" ở góc trên bên phải để thay đổi tệp markdown này.
 
@@ -54,7 +54,7 @@ Sau đó bạn nhấn nút "Edit this file" ở góc trên bên phải để tha
 ![Edit the file on Github.](../img/edit-file.png)
 -->
 
-![Chỉnh sửa tệp trên Github.](../img/edit-file.png)
+![Chỉnh sửa tệp trên GitHub.](../img/edit-file.png)
 :width:`300px`
 :label:`fig_edit_file`
 
@@ -86,7 +86,7 @@ You can use any Markdown editors to open these files and make your changes.
 
 Nếu bạn có dự định cập nhật một phần lớn văn bản hay mã nguồn thì bạn cần phải biết thêm một chút về định dạng mà cuốn sách này sử dụng.
 Tệp nguồn được dựa trên [định dạng markdown](https://daringfireball.net/projects/markdown/syntax) với một tập
-các gói mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham khảo đến phương trình, hình ảnh, chương và trích dẫn.
+các phần mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham chiếu đến phương trình, hình ảnh, chương và trích dẫn.
 Bạn có thể sử dụng bất kì trình chỉnh sửa Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
 
 
@@ -119,7 +119,7 @@ pip install git+https://github.com/d2l-ai/d2l-book
 Then in the root directory of `d2l-en`, you can activate a particular implementation by running one of the following commands:
 -->
 
-Sau đó trong thư mục gốc `d2l-en`, bạn có thể kích hoạt một cách lập trình cụ thể bằng cách chạy một trong các lệnh sau:
+Sau đó trong thư mục gốc `d2l-en`, bạn có thể kích hoạt một đoạn mã cụ thể bằng cách chạy một trong các lệnh sau:
 
 
 ```bash
