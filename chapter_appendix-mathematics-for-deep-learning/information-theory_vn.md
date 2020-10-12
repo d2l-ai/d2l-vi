@@ -900,7 +900,7 @@ we were surprised to see two outcomes occurring together compared to what we wou
 ### Applications of Mutual Information
 -->
 
-### Ứng dụng thông tin hỗ tương
+### Ứng dụng Thông tin Tương hỗ
 
 
 <!--
@@ -948,7 +948,7 @@ We now explore the *Kullback–Leibler (KL) divergence*, which provides a way to
 Như những gì ta đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (norms) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
 Ta muốn có thể thực hiện một công việc tương tự với các phân phối xác suất.
 Có nhiều cách để giải quyết vấn đề này, nhưng lý thuyết thông tin cung cấp một trong những cách tốt nhất.
-Bây giờ ta khảo sát *khoảng cách Kullback – Leibler (KL)*, là phương pháp đo lường xem hai phân phối có gần nhau hay không.
+Bây giờ ta khảo sát *phân kỳ Kullback–Leibler (KL)* (*Kullback–Leibler divergence*), là phương pháp đo lường xem hai phân phối có gần nhau hay không.
 
 
 <!--
@@ -966,7 +966,7 @@ Then the *Kullback–Leibler (KL) divergence* (or *relative entropy*) between $P
 
 Cho một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất hay hàm khối xác suất là $p(x)$,
 và ta ước lượng $P$ bằng một phân phối xác suất khác $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$.
-Khi đó, *phân kỳ Kullback – Leibler (KL)* (hoặc *entropy tương đối*) giữa $P$ và $Q$ là
+Khi đó, *phân kỳ Kullback–Leibler* (hoặc *entropy tương đối*) giữa $P$ và $Q$ là
 
 $$D_{\mathrm{KL}}(P\|Q) = E_{x \sim P} \left[ \log \frac{p(x)}{q(x)} \right].$$
 :eqlabel:`eq_kl_def`
@@ -979,7 +979,7 @@ and large and negative if we see the outcome far less than expected.
 In this way, we can interpret it as our *relative* surprise at observing the outcome compared to how surprised we would be observing it from our reference distribution.
 -->
 
-Như với thông tin tương hỗ điểm-điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể cung cấp cách diễn giải thuật ngữ logarit:
+Như với thông tin tương hỗ theo từng điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể cung cấp cách diễn giải thuật ngữ logarit:
 $-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ xuất hiện thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
 và lớn và âm nếu chúng ta thấy kết quả ít hơn nhiều so với kỳ vọng.
 Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối* của ta khi quan sát kết quả so với mức độ ngạc nhiên khi ta quan sát nó từ phân phối tham chiếu.
