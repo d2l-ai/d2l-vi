@@ -5,7 +5,7 @@
 # Random Variables
 -->
 
-# Biến ngẫu nhiên
+# Biến Ngẫu nhiên
 :label:`sec_random_variables`
 
 
@@ -15,15 +15,15 @@ which in our case refer to those random variables which take either a finite set
 In this section, we develop the theory of *continuous random variables*, which are random variables which can take on any real value.
 -->
 
-Trong :numref:`sec_prob` ta đã thấy các phương pháp căn bản để làm việc với các biến ngẫu nhiên rời rạc, 
-mà trong trường hợp của ta là các biến ngẫu nhiên được lấy cả từ tập hữu hạn các giá trị khả dĩ, hay là các giá trị số nguyên.
-Trong phần này, ta phát triển lý thuyết cho các *biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
+:numref:`sec_prob` đã giới thiệu các phương pháp cơ bản để làm việc với biến ngẫu nhiên rời rạc, 
+mà trong trường hợp của ta các biến ngẫu nhiên này có thể chỉ có một tập hữu hạn các giá trị khả dĩ, hoặc có thể là toàn bộ các số nguyên.
+Trong phần này, ta phát triển lý thuyết cho *biến ngẫu nhiên liên tục*, có thể lấy bất cứ giá trị số thực nào.
 
 <!--
 ## Continuous Random Variables
 -->
 
-## Biến ngẫu nhiên liên tục
+## Biến Ngẫu nhiên Liên tục
 
 
 <!--
@@ -33,15 +33,15 @@ As such, we will need to take some time to develop the theory.
 -->
 
 Biến ngẫu nhiên liên tục phức tạp hơn đáng kể so với biến ngẫu nhiên rời rạc.
-Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính cộng các dãy số sang tính tích phân hàm số.
-Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết trong lĩnh vực này.
+Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính tổng các số sang tính tích phân hàm số.
+Như vậy, ta cần dành một chút thời gian để phát triển lý thuyết.
 
 
 <!--
 ### From Discrete to Continuous
 -->
 
-### Từ rời rạc đến liên tục
+### Từ Rời rạc đến Liên tục
 
 
 <!--
@@ -49,7 +49,7 @@ To understand the additional technical challenges encountered when working with 
 Suppose that we are throwing a dart at the dart board, and we want to know the probability that it hits exactly $2 \text{cm}$ from the center of the board.
 -->
 
-Để hiểu các thách thức kỹ thuật cộng thêm khi làm việc với các biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
+Để hiểu các thách thức kỹ thuật thêm vào khi làm việc với biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
 Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$. 
 
 
@@ -59,9 +59,9 @@ We throw say $100$ darts at the dart board, and if $20$ of them fall into the bi
 we conclude that $20\%$ of the darts we throw hit the board $2 \text{cm}$ away from the center.
 -->
 
-Để bắt đầu, ta hình dung thực hiện phép đo với độ chính xác một chữ số, tức là các phân vùng $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, và tiếp theo.
-Ta phóng $100$ phi tiêu vào tấm hồng tâm, và nếu $20$ trong số đó rơi vào vùng $2\text{cm}$
-ta kết luận là $20\%$ phi tiêu ta phóng cắm vào bảng có khoảng cách $2 \text{cm}$ tính từ tâm.
+Để bắt đầu, hãy hình dung ta thực hiện phép đo với độ chính xác một chữ số, tức là chia thành các vùng $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, v.v.
+Phóng $100$ phi tiêu vào tấm hồng tâm, và nếu $20$ trong số đó rơi vào vùng $2\text{cm}$,
+ta kết luận là $20\%$ phi tiêu ta phóng cắm vào điểm cách tâm $2 \text{cm}$.
 
 
 <!--
@@ -69,8 +69,8 @@ However, when we look closer, this does not match our question!
 We wanted exact equality, whereas these bins hold all that fell between say $1.5\text{cm}$ and $2.5\text{cm}$.
 -->
 
-Tuy nhiên, khi ta soi kỹ hơn, câu trả lời này sẽ không thỏa với câu hỏi của ta!
-Ta muốn một giá trị chính xác, trong khi các vùng đó lại chứa tất cả các phi tiêu rơi vào giữa $1.5\text{cm}$ và $2.5\text{cm}$.
+Tuy nhiên, khi xét kỹ hơn, câu trả lời này không thỏa đáng!
+Ta muốn một giá trị chính xác, trong khi các vùng đó lại chứa tất cả điểm nằm giữa $1.5\text{cm}$ và $2.5\text{cm}$.
 
 
 <!--
@@ -80,10 +80,9 @@ and now see that perhaps $3$ of the $100$ darts hit the board in the $2.0\text{c
 Thus we conclude the probability is $3\%$.
 -->
 
-Không nản lòng, ta tiếp tục đi xa hơn.
-Chúng ta thậm chí đo chính xác hơn, như là $1.9\text{cm}$, $2.0\text{cm}$, $2.1\text{cm}$,
-và bây giờ ta thấy rằng có lẽ $3$ trong số $100$ phi tiêu cắm vào bảng trong vùng $2.0\text{cm}$. 
-Do đó ta kết luận xác suất lúc này là  $3\%$.
+Hãy tiếp tục với độ chính xác cao hơn, như là $1.9\text{cm}$, $2.0\text{cm}$, $2.1\text{cm}$,
+và bây giờ ta thấy khoảng $3$ trong số $100$ phi tiêu cắm vào bảng trong vùng $2.0\text{cm}$. 
+Do đó ta kết luận xác suất lúc này là $3\%$.
 
 
 <!--
@@ -93,10 +92,10 @@ It is fairly reasonable to assume that the ${k+1}^{\mathrm{th}}$ digit is essent
 At least, we cannot conceive of a physically meaningful process which would force the number of micrometers away form the center to prefer to end in a $7$ vs a $3$.
 -->
 
-Tuy nhiên, điều này không giải quyết bất cứ điều gì! Ta vừa đẩy bài toán xa hơn thêm một con số. Ta hãy tóm tắt lại một chút.
-Hình dung ta biết xác suất mà $k$ số đầu tiên khớp với $2.00000\ldots$ và ta muốn biết xác suất nó khớp với $k+1$ số đầu tiên.
-Khá hợp lý khi giả định là số thứ ${k+1}^{\mathrm{th}}$ là một số lựa chọn ngẫu nhiên từ tập số $\{0, 1, 2, \ldots, 9\}$.
-Ít nhất là ta không thể cảm nhận về ý nghĩa vật lý của việc ép độ chính xác tới micro mét cho khoảng cách từ trung tâm thông qua chọn tới $7$ chữ số thập phân thay vì $3$.
+Tuy nhiên, điều này chưa giải quyết bất cứ điều gì! Ta vừa tăng độ chính xác thêm một con số. Ta hãy tóm tắt lại một chút.
+Hình dung ta biết xác suất mà $k$ chữ số đầu tiên khớp với $2.00000\ldots$ và ta muốn biết xác suất nó khớp với $k+1$ chữ số đầu tiên.
+Khá hợp lý khi giả định là chữ số thứ $k+1$ có thể nhận giá trị ngẫu nhiên từ tập $\{0, 1, 2, \ldots, 9\}$.
+Ít nhất là ta không thể cảm nhận ý nghĩa vật lý và sự khác biệt của việc ép độ chính xác tới micro mét, và kết thúc bằng chữ số $7$ thay vì $3$.
 
 
 <!--
@@ -105,12 +104,12 @@ Or put another way, we would expect that
 -->
 
 
-Về cơ bản nó có ý nghĩa là tăng độ chính xác thêm một chữ số đòi hỏi xác suất khớp sẽ giảm xuống 10 lần.
+Về cơ bản, tăng độ chính xác thêm một chữ số đòi hỏi xác suất khớp sẽ giảm xuống 10 lần.
 Hay nói cách khác, ta kỳ vọng là
 
 
 $$
-P(\text{distance is}\; 2.00\ldots, \;\text{to}\; k \;\text{digits} ) \approx p\cdot10^{-k}.
+P(\text{khoảng cách là}\; 2.00\ldots, \;\text{đến}\; k \;\text{chữ số} ) \approx p\cdot10^{-k}.
 $$
 
 
@@ -118,7 +117,7 @@ $$
 The value $p$ essentially encodes what happens with the first few digits, and the $10^{-k}$ handles the rest.
 -->
 
-Giá trị $p$ thể hiện những gì xảy ra với một vài số đầu tiên, và $10^{-k}$ mô tả cho phần còn lại.
+Giá trị $p$ là xác suất khớp các chữ số đầu, và $10^{-k}$ mô tả cho phần còn lại.
 
 
 <!--
@@ -127,13 +126,13 @@ That means we know the value falls within the interval say $[(1.99995,2.00005]$ 
 Thus, if we call the length of this interval $\epsilon$, we can say
 -->
 
-Lưu ý rằng nếu chúng ta biết vị trí chính xác đến $ k = 4 $ chữ số sau số thập phân.
-Điều đó có nghĩa là chúng ta biết giá trị nằm trong khoảng giá trị  $[(1.99995,2.00005]$ là khoảng có độ dài $2.00005-1.99995 = 10^{-4}$.
-Do đó, nếu chúng ta gọi độ dài của khoảng này là $ \ epsilon $, chúng ta có thể nói
+Lưu ý rằng nếu ta biết vị trí chính xác đến $k = 4$ chữ số thập phân.
+Điều đó có nghĩa là ta biết giá trị sẽ nằm trong khoảng  $[(1.99995,2.00005]$ có độ dài $2.00005-1.99995 = 10^{-4}$.
+Do đó, nếu gọi độ dài của khoảng này là $\epsilon$, ta có:
 
 
 $$
-P(\text{distance is in an}\; \epsilon\text{-sized interval around}\; 2 ) \approx \epsilon \cdot p.
+P(\text{khoảng cách nằm trong khoảng dài}\; \epsilon\text{xung quanh}\; 2 ) \approx \epsilon \cdot p.
 $$
 
 
@@ -146,15 +145,15 @@ Thus, the value $p$ is not fixed, but rather should depend on the point $x$.
 This tells us that we should expect
 -->
 
-Ta hãy thực hiện thêm một bước cuối cùng này.
-Trong suốt thời gian qua ta chỉ đang nghĩ về điểm $2$ , nhưng chưa nghĩ đến các điểm khác.
-Về cơ bản là không có gì khác biệt, chỉ là giá trị $p$ tại điểm đó có thể sẽ khác.
-Ít nhất ta hy vọng rằng một người ném phi tiêu có nhiều khả năng bắn trúng điểm gần tâm hơn, như là $2 \text{cm}$ thay vì $20 \text{cm} $.
-Do đó, giá trị $p$ là  không cố định, mà phụ thuộc vào điểm $x$.
-Điều này cho chúng ta biết ta nên kỳ vọng
+Ta hãy thực hiện thêm một bước cuối.
+Ta hiện chỉ đang xét điểm $2$, chưa nghĩ đến các điểm khác.
+Về cơ bản, giá trị $p$ tại các điểm khác nhau có thể sẽ khác nhau.
+Ít nhất ta hy vọng rằng người ném phi tiêu nhiều khả năng sẽ ngắm trúng vùng gần tâm, $2 \text{cm}$ hơn là $20 \text{cm}$.
+Do đó, giá trị $p$ là không cố định, mà phụ thuộc vào điểm $x$.
+Điều này cho thấy ta nên kỳ vọng:
 
 
-$$P(\text{distance is in an}\; \epsilon \text{-sized interval around}\; x ) \approx \epsilon \cdot p(x).$$
+$$P(\text{khoảng cách nằm trong khoảng dài}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(x).$$
 :eqlabel:`eq_pdf_deriv`
 
 
@@ -164,9 +163,9 @@ It is a function $p(x)$ which encodes the relative probability of hitting near o
 Let us visualize what such a function might look like.
 -->
 
-Thật vậy, :eqref:`eq_pdf_deriv` định nghĩa chính xác *hàm mật độ xác suất*.
-Nó là một hàm $p(x)$ biểu diễn xác suất tương đối của việc ghi điểm gần vị trí này so với vị trí khác.
-Ta hãy trực quan hóa một hàm như vậy sẽ trông như thế nào.
+:eqref:`eq_pdf_deriv` định nghĩa *hàm mật độ xác suất*,
+là hàm $p(x)$ biểu diễn xác suất tương đối của việc ghi điểm gần vị trí này so với vị trí khác.
+Ta hãy trực quan hóa một hàm như vậy.
 
 
 ```{.python .input}
@@ -222,8 +221,8 @@ The locations where the function value is large indicates regions where we are m
 The low portions are areas where we are unlikely to find the random value.
 -->
 
-Các vị trí mà giá trị hàm là lớn cho biết có nhiều khả năng giá trị ngẫu nhiên sẽ rơi vào các vị trí đó hơn.
-Các phần thấp là những vùng mà ta ít có khả năng sẽ thấy giá trị ngẫu nhiên xuất hiện trong đó.
+Các vị trí mà giá trị hàm lớn cho biết có nhiều khả năng giá trị ngẫu nhiên sẽ rơi vào đó.
+Các phần giá trị thấp là những vùng ít có khả năng giá trị ngẫu nhiên xuất hiện.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
