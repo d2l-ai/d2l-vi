@@ -19,7 +19,7 @@ To do so you need to submit a [pull request](https://github.com/d2l-ai/d2l-en/pu
 When your pull request is merged into the code repository by the author, you will become a contributor.
 -->
 
-Những đóng góp từ [quý độc giả](https://github.com/d2l-ai/d2l-en/graphs/contributors) sẽ giúp chúng tôi cải thiện cuốn sách này.
+Những đóng góp từ [cộng đồng](https://github.com/aivivn/d2l-vn/graphs/contributors) giúp chúng tôi cải thiện cuốn sách này.
 Nếu bạn tìm thấy một lỗi đánh máy, một đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
 phần mã nguồn không được thanh thoát hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ các độc giả khác.
 Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
