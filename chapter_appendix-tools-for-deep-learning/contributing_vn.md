@@ -148,7 +148,7 @@ such as TensorFlow, please contact the authors first, either by emailing or usin
 -->
 
 Nếu bạn muốn tạo một chương mới, ví dụ như học tăng cường, hoặc thêm một cách lập trình cho một framework mới,
-ví dụ như TensorFlow, trước tiên xin vui lòng liên hệ với tác giả, có thể bằng email hoặc sử dụng [github issues](https://github.com/d2l-ai/d2l-en/issues).
+ví dụ như TensorFlow, trước tiên xin vui lòng liên hệ với nhóm dịch, có thể bằng email hoặc sử dụng [github issues](https://github.com/aivivn/d2l-vn/issues).
 
 
 <!--
@@ -198,17 +198,17 @@ or by using GitHub's [desktop client](https://desktop.github.com).
 If you do not have a GitHub account, you need to sign up for one.
 -->
 
-Cuốn sách mã nguồn mở của Git mô tả [cách cài đặt Git](https://git-scm.com/book/en/v2).
+Cuốn sách mã nguồn mở của Git mô tả chi tiết [cách cài đặt Git](https://git-scm.com/book/en/v2).
 Việc này có thể được thực hiện thông qua `apt install git` trên Ubuntu Linux, bằng cách cài đặt công cụ phát triển Xcode trên macOS,
-hoặc bằng cách sử dụng [desktop client](https://desktop.github.com) của Github.
-Nếu bạn không có tài khoản Github, bạn cần phải đăng ký một tài khoản.
+hoặc bằng cách sử dụng [desktop client](https://desktop.github.com) của GitHub.
+Nếu bạn không có tài khoản GitHub, bạn cần phải đăng ký một tài khoản.
 
 
 <!--
 ### Logging in to GitHub
 -->
 
-### Đăng nhập vào Github
+### Đăng nhập vào GitHub
 
 
 <!--
@@ -217,7 +217,7 @@ Click on the `Fork` button in the red box at the top-right of :numref:`fig_git_f
 This is now *your copy* and you can change it any way you want.
 -->
 
-Điền [địa chỉ](https://github.com/d2l-ai/d2l-en/) của repo chứa mã nguồn cuốn sách này vào trình duyệt web của bạn.
+Điền [địa chỉ](https://github.com/aivivn/d2l-vn/) của repo chứa mã nguồn bản dịch cuốn sách này vào trình duyệt web của bạn.
 Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của repo của cuốn sách này.
 Đây giờ là *bản sao của bạn* và bạn có thể tuỳ ý thay đổi nó.
 
@@ -253,7 +253,7 @@ ví dụ như `astonzhang/d2l-en` được chỉ ra phía trên bên trái của
 ### Cloning the Repository
 -->
 
-### Clone Kho chứa
+### Clone Repo
 
 
 <!--
