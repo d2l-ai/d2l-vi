@@ -862,7 +862,7 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 ### Pointwise Mutual Information
 -->
 
-### Thông tin Tương Hỗ Cấp điểm
+### Thông tin Tương hỗ theo từng Điểm
 
 
 <!--
@@ -871,7 +871,7 @@ We may give a similar interpretation to the logarithmic term in the mutual infor
 -->
 
 Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã cung cấp được một cách diễn giải cho $-\log(p_X(x))$ như mức độ *ngạc nhiên* với kết quả cụ thể của biến ngẫu nhiên. 
-Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ cấp điểm*:
+Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ theo từng điểm*:
 
 
 $$\mathrm{pmi}(x, y) = \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)}.$$
