@@ -887,9 +887,9 @@ whereas if it is large and negative it represents the two outcomes happening far
 -->
 
 Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường mức tăng/giảm độ hợp lý giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra ngẫu nhiên độc lập. 
-Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác xuất xảy ra cao hơn nhiều so với xác xuất ngẫu nhiên. 
+Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác suất xảy ra cao hơn nhiều so với xác suất được chia đều. 
 (*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác suất của hai đầu ra độc lập*),
-ngược lại nếu kết quả lớn và là số âm, thì xác xuất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác xuất ngẫu nhiên.
+ngược lại nếu kết quả lớn và là số âm, thì xác suất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác suất được chia đều.
 
 <!--
 This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as the average amount that 
