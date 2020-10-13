@@ -10,7 +10,7 @@
 
 
 <!--
-Now that we have a fairly strong understandsing of derivatives of a function of a single variable, 
+Now that we have a fairly strong understanding of derivatives of a function of a single variable, 
 let us return to our original question where we were considering a loss function of potentially billions of weights.
 -->
 
