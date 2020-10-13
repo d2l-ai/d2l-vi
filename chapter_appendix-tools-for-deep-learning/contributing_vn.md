@@ -158,7 +158,7 @@ Bạn có thể tham khảo [d2lbook](http://book.d2l.ai/user/code_tabs.html) đ
 ## Adding a New Section or a New Framework Implementation
 -->
 
-## *dịch tiêu đề trên*
+## Thêm một Phần Mới hoặc một Cách lập trình cho Framework Mới
 
 
 <!--
@@ -166,14 +166,15 @@ If you want to create a new chapter, e.g. reinforcement learning, or add impleme
 such as TensorFlow, please contact the authors first, either by emailing or using [github issues](https://github.com/d2l-ai/d2l-en/issues).
 -->
 
-*dịch đoạn phía trên*
+Nếu bạn muốn tạo một chương mới, ví dụ như học tăng cường, hoặc thêm một cách lập trình cho một framework mới,
+ví dụ như TensorFlow, trước tiên xin vui lòng liên hệ với nhóm dịch, có thể bằng email hoặc sử dụng [github issues](https://github.com/aivivn/d2l-vn/issues).
 
 
 <!--
 ## Submitting a Major Change
 -->
 
-## *dịch tiêu đề trên*
+## Đăng một Thay đổi Lớn
 
 
 <!--
@@ -181,14 +182,15 @@ We suggest you to use the standard `git` process to submit a major change.
 In a nutshell the process works as described in :numref:`fig_contribute`.
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi đề nghị bạn phải sử dụng quy trình `git` chuẩn để đăng một thay đổi lớn.
+Tóm lại, quy trình này hoạt động như mô tả trong :numref:`fig_contribute`.
 
 
 <!--
 ![Contributing to the book.](../img/contribute.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/contribute.svg)
+![Đóng góp cho quyển sách.](../img/contribute.svg)
 :label:`fig_contribute`
 
 
@@ -197,14 +199,15 @@ We will walk you through the steps in detail. If you are already familiar with G
 For concreteness we assume that the contributor's user name is "astonzhang".
 -->
 
-*dịch đoạn phía trên*
+Chúng tôi sẽ hướng dẫn chi tiết từng bước. Nếu bạn quen thuộc với Git bạn có thể bỏ qua phần này.
+Để ngắn gọn chúng tôi giả sử tên người dùng của người đóng góp là "astonzhang".
 
 
 <!--
 ### Installing Git
 -->
 
-### *dịch tiêu đề trên*
+### Cài đặt Git
 
 
 <!--
@@ -214,14 +217,17 @@ or by using GitHub's [desktop client](https://desktop.github.com).
 If you do not have a GitHub account, you need to sign up for one.
 -->
 
-*dịch đoạn phía trên*
+Cuốn sách mã nguồn mở của Git mô tả chi tiết [cách cài đặt Git](https://git-scm.com/book/en/v2).
+Việc này có thể được thực hiện thông qua `apt install git` trên Ubuntu Linux, bằng cách cài đặt công cụ phát triển Xcode trên macOS,
+hoặc bằng cách sử dụng [desktop client](https://desktop.github.com) của GitHub.
+Nếu bạn không có tài khoản GitHub, bạn cần phải đăng ký một tài khoản.
 
 
 <!--
 ### Logging in to GitHub
 -->
 
-### *dịch tiêu đề trên*
+### Đăng nhập vào GitHub
 
 
 <!--
@@ -230,14 +236,16 @@ Click on the `Fork` button in the red box at the top-right of :numref:`fig_git_f
 This is now *your copy* and you can change it any way you want.
 -->
 
-*dịch đoạn phía trên*
+Điền [địa chỉ](https://github.com/aivivn/d2l-vn/) của repo chứa mã nguồn bản dịch cuốn sách này vào trình duyệt web của bạn.
+Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của repo của cuốn sách này.
+Đây giờ là *bản sao của bạn* và bạn có thể tuỳ ý thay đổi nó.
 
 
 <!--
 ![The code repository page.](../img/git-fork.png)
 -->
 
-![*dịch mô tả phía trên*](../img/git-fork.png)
+![Trang repo chứa mã nguồn.](../img/git-fork.png)
 :width:`700px`
 :label:`fig_git_fork`
 
@@ -247,14 +255,15 @@ Now, the code repository of this book will be forked (i.e., copied) to your user
 such as `astonzhang/d2l-en` shown at the top-left of the screenshot :numref:`fig_git_forked`.
 -->
 
-*dịch đoạn phía trên*
+Giờ thì repo chứa mã nguồn của cuốn sách đã được fork (tức sao chép) tới tên người dùng của bạn,
+ví dụ như `astonzhang/d2l-en` được chỉ ra phía trên bên trái của ảnh chụp màn hình :numref:`fig_git_forked`.
 
 
 <!--
 ![Fork the code repository.](../img/git-forked.png)
 -->
 
-![*dịch mô tả phía trên*](../img/git-forked.png)
+![Fork repo chứa mã nguồn.](../img/git-forked.png)
 :width:`700px`
 :label:`fig_git_forked`
 
@@ -263,7 +272,7 @@ such as `astonzhang/d2l-en` shown at the top-left of the screenshot :numref:`fig
 ### Cloning the Repository
 -->
 
-### *dịch tiêu đề trên*
+### Clone Repo
 
 
 <!--
@@ -274,14 +283,18 @@ For now simply follow the instructions in :ref:`chap_installation` to get starte
 The main difference is that you are now downloading *your own fork* of the repository.
 -->
 
-*dịch đoạn phía trên*
+Để clone một repo (tức là tạo bản sao nội bộ) ta cần phải có địa chỉ của repo đó.
+Nút màu xanh trong :numref:`fig_git_clone` hiển thị địa chỉ này.
+Hãy đảm bảo rằng bản sao nội bộ của bạn cập nhật với repo chính nếu bạn quyết định giữ bản fork này lâu dài.
+Còn bây giờ chỉ cần đơn giản làm theo các hướng dẫn trong :ref:`chap_installation` để bắt đầu.
+Điểm khác biệt chính ở đây là bạn đang tải về *bản fork của riêng bạn* của repo này.
 
 
 <!--
 ![Git clone.](../img/git-clone.png)
 -->
 
-![*dịch mô tả phía trên*](../img/git-clone.png)
+![Git clone.](../img/git-clone.png)
 :width:`700px`
 :label:`fig_git_clone`
 
@@ -462,7 +475,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 2 -->
-* 
+* Đỗ Trường Giang
 
 <!-- Phần 3 -->
 * 
