@@ -915,14 +915,14 @@ mutual_information(tf.constant([[0.1, 0.5], [0.1, 0.3]]),
 ### Properties of Mutual Information
 -->
 
-### *dịch tiêu đề trên*
+### Tính chất của Thông tin Tương Hỗ
 
 
 <!--
 Rather than memorizing the definition of mutual information :eqref:`eq_mut_ent_def`, you only need to keep in mind its notable properties:
 -->
 
-*dịch đoạn phía trên*
+Thay vì phải ghi nhớ định nghĩa thông tin tương hỗ :eqref:`eq_mut_ent_def`, bạn chỉ cần lưu ý những đặc tính nổi trội của nó:
 
 
 <!--
@@ -933,7 +933,10 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 * Alternatively, if $X$ is an invertible function of $Y$, then $Y$ and $X$ share all information and $$I(X, Y) = H(Y) = H(X).$$
 -->
 
-*dịch đoạn phía trên*
+* Thông tin tương hỗ có tính đối xứng: $I(X, Y) = I(Y, X)$.
+* Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$.
+* $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ độc lập thì việc biết thông tin của $Y$ không cho ta thông tin của $X$ và ngược lại, do đó thông tin tương hỗ của chúng bằng 0. 
+* Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung toàn bộ thông tin và $$I(X, Y) = H(Y) = H(X).$$
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
@@ -944,7 +947,7 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 ### Pointwise Mutual Information
 -->
 
-### *dịch tiêu đề trên*
+### Thông tin Tương hỗ theo từng Điểm
 
 
 <!--
@@ -952,7 +955,8 @@ When we worked with entropy at the beginning of this chapter, we were able to pr
 We may give a similar interpretation to the logarithmic term in the mutual information, which is often referred to as the *pointwise mutual information*:
 -->
 
-*dịch đoạn phía trên*
+Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã cung cấp được một cách diễn giải cho $-\log(p_X(x))$ như mức độ *ngạc nhiên* với kết quả cụ thể của biến ngẫu nhiên. 
+Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ theo từng điểm*:
 
 
 $$\mathrm{pmi}(x, y) = \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)}.$$
@@ -967,15 +971,17 @@ If it is large and positive, then these two specific outcomes occur much more fr
 whereas if it is large and negative it represents the two outcomes happening far less than we would expect by random chance.  
 -->
 
-*dịch đoạn phía trên*
-
+Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường mức tăng/giảm độ hợp lý giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra ngẫu nhiên độc lập. 
+Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác suất xảy ra cao hơn nhiều so với xác suất được chia đều. 
+(*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác suất của hai đầu ra độc lập*),
+ngược lại nếu kết quả lớn và là số âm, thì xác suất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác suất được chia đều.
 
 <!--
 This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as the average amount that 
 we were surprised to see two outcomes occurring together compared to what we would expect if they were independent.
 -->
 
-*dịch đoạn phía trên*
+Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -1700,7 +1706,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Lê Quang Nhật
 
 <!-- Phần 8 -->
-* 
+* Nguyễn Lê Quang Nhật
+* Phạm Hồng Vinh
+* Phạm Minh Đức
 
 <!-- Phần 9 -->
 * 
