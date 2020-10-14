@@ -25,7 +25,7 @@ Việc huấn luyện học sâu thông thường đòi hỏi một lượng l�
 Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng có hiệu quả về chi phí nhất cho việc học sâu.
 Cụ thể, so với CPU, GPU rẻ hơn và cung cấp hiệu suất cao hơn, thường là hơn một bậc.
 Hơn nữa, một máy chủ đơn có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
-Số GPU điển hình hơn là đến 4 cho một máy trạm kỹ thuật,
+Số GPU điển hình hơn là 4 cho một máy trạm kỹ thuật,
 vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt  vượt quá khả năng một tòa nhà văn phòng có thể cung cấp.
 Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như các máy ảo [P3](https://aws.amazon.com/ec2/instance-types/p3/) và [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) của Amazon là một giải pháp thực tế hơn nhiều.
 
