@@ -237,7 +237,7 @@ mật thiết tới góc giữa hai vector. Xem góc hiển thị trong :numref:
 ![Between any two vectors in the plane there is a well defined angle $\theta$.  We will see this angle is intimately tied to the dot product.](../img/VecAngle.svg)
 -->
 
-![Có một định nghĩa về góc ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg)
+![Có một định nghĩa về góc ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg) 
 :label:`fig_angle`
 
 <!--
