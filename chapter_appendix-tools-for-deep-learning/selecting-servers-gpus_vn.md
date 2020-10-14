@@ -47,7 +47,7 @@ This requires very good cooling and a large enough chassis to use the GPUs.
 Follow the guidelines below if possible:
 -->
 
-*dịch đoạn phía trên*
+*dịch đoạn phía trên* 
 
 
 <!--
