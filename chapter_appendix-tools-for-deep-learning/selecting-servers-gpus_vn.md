@@ -128,7 +128,7 @@ Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
 * **4 GPU **. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
 Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một con AMD Threadripper.
 Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
-Mua GPU có thiết kế chuẩn hẹp và cho không khí đi giữa các GPU.
+Mua GPU có thiết kế sẵn, hẹp và cho không khí đi giữa các GPU.
 Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
 Máy chủ này có thể sẽ tạo ra *tiếng ồn và nóng*. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn.
 Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng để cấu hình RAID cho lưu trữ dữ liệu của bạn.
