@@ -945,7 +945,7 @@ There are many ways to go about this, but information theory provides one of the
 We now explore the *Kullback–Leibler (KL) divergence*, which provides a way to measure if two distributions are close together or not. 
 -->
 
-Như những gì ta đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (norms) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
+Như những gì ta đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (*norms*) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
 Ta muốn có thể thực hiện một công việc tương tự với các phân phối xác suất.
 Có nhiều cách để giải quyết vấn đề này, nhưng lý thuyết thông tin cung cấp một trong những cách tốt nhất.
 Bây giờ ta khảo sát *phân kỳ Kullback–Leibler (KL)* (*Kullback–Leibler divergence*), là phương pháp đo lường xem hai phân phối có gần nhau hay không.
