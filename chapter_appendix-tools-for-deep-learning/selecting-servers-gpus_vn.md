@@ -137,7 +137,7 @@ Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để l
 và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *yếu tố vật lý* cho GPU hay không.
 Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
 Điều này có nghĩa là bạn có thể không lắp đặt được GPU tiêu dùng vào máy chủ do không đủ khoảng trống cho cáp nguồn
-hoặc thiếu dây đai phù hợp (như một trong những đồng tác giả đau đớn phát hiện ra).
+hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đau đớn phát hiện ra).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
