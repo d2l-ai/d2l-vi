@@ -114,7 +114,7 @@ NVIDIA was the first to enter the deep learning field and provides better suppor
 Therefore, most buyers choose NVIDIA GPUs.
 -->
 
-Hiện nay, AMD và NVIDIA là hai nhà sản xuất chính tập trung vào GPU.
+Hiện nay, AMD và NVIDIA là hai nhà sản xuất GPU chính.
 NVIDIA là tiên phong trong tham gia lĩnh vực học sâu và cung cấp hỗ trợ tốt hơn cho các framework học sâu thông qua CUDA.
 Do đó, phần lớn người mua chọn GPU của NVIDIA.
 
@@ -139,8 +139,8 @@ You can buy preconfigured servers with Supermicro or Asus chassis that hold 4-8 
 -->
 
 Nếu bạn là một công ty lớn với 100+ máy chủ, bạn nên cân nhắc dòng NVIDIA Tesla hoặc thay thế bằng cách sử dụng máy chủ GPU trên đám mây.
-Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ là có hiệu quả chi phí tốt nhất.
-Bạn có thể mua máy chủ cấu hình sẵn với vỏ Supermicro hay Asus có thể chứa hiệu quả 4-8 GPU.
+Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ sẽ có hiệu quả chi phí tốt nhất.
+Bạn có thể mua máy chủ cấu hình sẵn với khung chứa Supermicro hay Asus, có thể chứa hiệu quả 4-8 GPU.
 
 
 <!--
@@ -169,14 +169,14 @@ Look for wide memory buses if using GDDR6.
 -->
 
 1. **Khả năng tính toán**. Thông thường ta tìm kiếm khả năng tính toán dấu phẩy động 32-bit (*32-bit floating-point*).
-Huấn luyện dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng tham gia vào dòng chính.
+Huấn luyện dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng đang phổ biến.
 Nếu bản chỉ quan tâm đến tác vụ dự đoán, bạn cũng có thể sử dụng số nguyên 8-bit (*8-bit integer*).
-Thế hệ mới nhất của GPU Turing cung cấp tăng tốc 4-bit.
-Không may là hiện nay, các thuật toán huấn luyện mạng độ chính xác thấp vẫn chưa được phổ biến.
-1. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay các batch được sử dụng trong huấn luyện tăng kích thước, bạn sẽ cần nhiều bộ nhớ GPU hơn.
+Thế hệ mới nhất của GPU Turing cung cấp tăng tốc 4-bit (*4-bit acceleration*).
+Không may là hiện nay, các thuật toán huấn luyện với số thực độ chính xác thấp vẫn chưa được phổ biến.
+2. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay khi tăng kích thước batch khi huấn luyện , bạn sẽ cần nhiều bộ nhớ GPU hơn.
 Hãy kiểm tra HBM2 (Bộ nhớ Băng thông cao - *High Bandwidth Memory*) và GDDR6 (DDR Đồ hoạ - *Graphics DDR*). HBM2 nhanh hơn nhưng đắt hơn nhiều.
 3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ.
-Hãy tìm bus bộ nhớ rộng nếu sử dụng GDDR6.
+Hãy chọn bus bộ nhớ rộng nếu sử dụng GDDR6.
 
 
 <!--
@@ -189,11 +189,11 @@ If you cannot avoid it, add an extra 2 GB of RAM for safety.
 -->
 
 Với phần lớn người dùng, nhìn vào khả năng tính toán là đủ.
-Chú ý rằng nhiều GPU cung cấp loại tăng tốc khắc nhau.
+Chú ý rằng nhiều GPU cung cấp loại tăng tốc khác nhau.
 Ví dụ TensorCores của NVIDIA tăng tốc một tập con các toán tử lên 5x.
 Bảo đảm rằng thư viện của bạn hỗ trợ việc này. Bộ nhớ GPU không nên thấp hơn 4 GB (8 GB thì hơn).
-Hãy cố gắng tránh sử dụng GPU để hiện thị một GUI (thay vào đó hãy sử dụng đồ hoạ tích hợp).
-Nếu bạn không thể tránh việc này, hãy thêm vào 2 GB RAM cho an toàn.
+Hãy cố gắng tránh sử dụng GPU để hiện thị giao diện đồ họa người dùng (GUI), thay vào đó nếu cần hãy sử dụng card đồ hoạ tích hợp sẵn trong máy.
+Nếu bắt buộc phải dùng GPU để hiển thị GUI, hãy thêm vào 2 GB RAM cho an toàn.
 
 
 <!--
