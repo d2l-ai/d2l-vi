@@ -22,7 +22,7 @@ and [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvi
 
 
 Việc huấn luyện học sâu thông thường đòi hỏi một lượng lớn tính toán.
-Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng chi phí hiệu quả nhất cho việc học sâu.
+Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng có hiệu quả về chi phí nhất cho việc học sâu.
 Cụ thể, so với CPU, GPU rẻ hơn và cung cấp hiệu suất cao hơn, thường là hơn một bậc.
 Hơn nữa, một máy chủ đơn có thể hỗ trợ đa GPU, tới 8 bộ cho các máy chủ cao cấp.
 Số GPU điển hình hơn là đến 4 cho một máy trạm kỹ thuật,
