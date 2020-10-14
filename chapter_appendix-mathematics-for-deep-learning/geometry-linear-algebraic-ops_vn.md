@@ -774,7 +774,7 @@ $\mathbf{v} = [x, y]^\top$,
 we multiply and see that
 -->
 
-Nếu muốn áp dụng ma trận này vào một vector bất kỳ
+Nếu muốn áp dụng ma trận này vào một vector bất kỳ 
 $\mathbf{v} = [x, y]^\top$, ta thực hiện phép nhân và thấy rằng
 
 $$
