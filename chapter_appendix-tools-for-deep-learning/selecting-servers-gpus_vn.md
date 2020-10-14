@@ -70,16 +70,16 @@ This is partly due to the number of PCIe lanes that the CPU offers.
 
 1. **Bộ Nguồn Cấp Điện **. GPU sử dụng một lượng điện năng đáng kể.
 Nguồn cung lên đến 350W cho mỗi thiết bị (kiểm tra *công suất đỉnh* của card đồ họa thay vì công suất trung bình,
-vì mã hiệu quả cho việc triển khai có thể sử dụng nhiều năng lượng).
+vì mã nguồn hiệu quả có thể ngốn nhiều năng lượng).
 Nếu nguồn điện của bạn không đáp ứng được nhu cầu, bạn sẽ thấy rằng hệ thống của mình trở nên không ổn định.
-1. **Kích thước khung**. GPU có kích thước lớn và các đầu nối nguồn phụ trợ thường cần thêm không gian.
+2. **Kích thước khung chứa**. GPU có kích thước lớn và các đầu nối nguồn phụ trợ thường cần thêm không gian.
 Thêm nữa, khung máy lớn giúp dễ làm mát hơn.
-1. **Làm mát GPU**. Nếu bạn có số lượng lớn GPU, bạn có thể muốn đầu tư vào tản nhiệt nước.
-Ngoài ra, với mục tiêu làm *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép hút gió giữa các thiết bị.
-Nếu bạn mua một GPU có nhiều quạt, nó có thể quá dày để nhận đủ không khí khi lắp đặt nhiều GPU và bạn sẽ gặp phải tình trạng điều tiết nhiệt.
-1. **Khe cắm PCIe**. Việc dịich chuyển dữ liệu đến và đi từ GPU (và trao đổi giữa các GPU) đòi hỏi nhiều băng thông.
+3. **Làm mát GPU**. Nếu bạn có số lượng lớn GPU, bạn có thể muốn đầu tư vào tản nhiệt nước.
+Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị.
+Nếu bạn mua một GPU có nhiều quạt, nó có thể quá dày để nhận đủ không khí khi lắp đặt nhiều GPU và bạn sẽ gặp phải tình trạng khó tản nhiệt.
+4. **Khe cắm PCIe**. Việc dịich chuyển dữ liệu đến và đi từ GPU (và trao đổi giữa các GPU) đòi hỏi nhiều băng thông.
 Chúng tôi đề xuất khe cắm PCIe 3.0 với 16 làn. Nếu bạn lắp nhiều GPU, hãy đảm bảo là bạn đọc kỹ mô tả bo mạch chủ để chắc chắn 
-băng thông 16x đó vẫn khả dụng khi nhiều GPU được sử dụng cùng lúc và nó có nghĩa là bạn đang nhận được tốc độ PCIe 3.0 thay vì PCIe 2.0 cho các khe cắm bổ sung.
+băng thông 16x đó vẫn khả dụng khi nhiều GPU được sử dụng cùng lúc và tốc độ PCIe là 3.0 thay vì PCIe cho các khe cắm bổ sung.
 Một số bo mạch chủ sẽ hạ xuống băng thông 8x hoặc thậm chí 4x khi nhiều GPU được cài đặt.
 Điều này một phần là do số lượng làn PCIe mà CPU đó cung cấp.
 
