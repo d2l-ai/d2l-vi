@@ -212,7 +212,7 @@ Bảng giá là giá đề xuất được tìm thấy trên Wikipedia.
 ![Floating-point compute power and price comparison.](../img/flopsvsprice.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/flopsvsprice.svg)
+![So sánh khả năng tính toán dấu phẩy động và giá.](../img/flopsvsprice.svg)
 :label:`fig_flopsvsprice`
 
 
@@ -220,7 +220,7 @@ Bảng giá là giá đề xuất được tìm thấy trên Wikipedia.
 We can see a number of things:
 -->
 
-*dịch đoạn phía trên*
+Bạn có thể thấy một số điểm sau:
 
 
 <!--
@@ -233,14 +233,20 @@ However, this is due to the fact that they offer far superior low precision perf
 3. For the RTX 2000 series the price is an *affine* function of the price.
 -->
 
-*dịch đoạn phía trên*
+1. Trong cùng một dòng, giá và hiệu năng gần như tỉ lệ với nhau.
+Mẫu Titan yêu cầu một khoản tiền đáng kể để đổi lấy lợi ích của lượng lớn bộ nhớ GPU.
+Tuy nhiên, những mẫu mới hơn cung cấp hiệu quả chi phí tốt hơn, như có thể thấy qua so sánh giữa 980 Ti và 1080 Ti.
+Giá dường như không cải thiện nhiều đối với dòng RTX 2000.
+Tuy nhiên, việc này là do chúng cung cấp hiệu năng hoàn toàn vượt trội đối với các giá trị có độ chính xác thấp  (FP16, INT8 và INT4).
+2. Tỉ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900.
+3. Với dòng RTX 2000, giá là một hàm *affine* của giá.
 
 
 <!--
 ![Floating-point compute power and energy consumption.](../img/wattvsprice.svg)
 -->
 
-![*dịch mô tả phía trên*](../img/wattvsprice.svg)
+![Khả năng tính toán dấu phẩy động và năng lượng tiêu hao.](../img/wattvsprice.svg)
 :label:`fig_wattvsprice`
 
 
@@ -251,7 +257,10 @@ This seems to be contradicted by the graph corresponding to the RTX 2000 series.
 However, this is a consequence of the TensorCores which draw disproportionately much energy.
 -->
 
-*dịch đoạn phía trên*
+:numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỉ lệ tuyến tính với khối lượng tính toán.
+Thứ hai, các thế hệ sau có hiệu quả tốt hơn.
+Đồ thị của dòng RTX 2000 có vẻ như mâu thuẫn với điều này.
+Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn.
 
 
 ## Tóm tắt
@@ -265,7 +274,12 @@ Check the mechanical and cooling specifications before you buy.
 * Use FP16 or lower precision for high efficiency.
 -->
 
-*dịch đoạn phía trên*
+* Chú ý nguồn, luồng bus PCIe, tốc độ CPU đơn luồng và tản nhiệt khi xây dựng máy chủ.
+* Bạn nên mua thế hệ GPU mới nhất nếu có thể.
+* Sử dụng đám mây để triển khai các dự án lớn.
+* Máy chủ chạy nhiều ứng dụng có thể sẽ không tương thích với tất cả các GPU.
+Kiểm tra các thông số cơ học và tản nhiệt trước khi mua.
+* Sử dụng FP16 hoặc độ chính xác thấp hơn để có được hiệu năng tốt hơn.
 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
@@ -295,6 +309,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Văn Cường
 
 <!-- Phần 3 -->
-* 
+* Đỗ Trường Giang
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
