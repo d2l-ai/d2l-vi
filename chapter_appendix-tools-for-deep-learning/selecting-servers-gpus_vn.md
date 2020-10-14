@@ -135,7 +135,7 @@ Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để l
 * **8 GPU **. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
 Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
 và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *yếu tố vật lý* cho GPU hay không.
-Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ  (cụ thể ở đây là RTX 2080 so với Tesla V100).
+Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
 Điều này có nghĩa là bạn có thể không lắp đặt được GPU tiêu dùng vào máy chủ do không đủ khoảng trống cho cáp nguồn
 hoặc thiếu dây đai phù hợp (như một trong những đồng tác giả đau đớn phát hiện ra).
 
