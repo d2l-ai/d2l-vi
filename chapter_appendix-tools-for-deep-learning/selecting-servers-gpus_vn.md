@@ -27,8 +27,7 @@ Cụ thể, so với CPU, GPU rẻ hơn và cung cấp hiệu suất cao hơn, t
 Hơn nữa, một máy chủ đơn có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
 Số GPU điển hình hơn là đến 4 cho một máy trạm kỹ thuật,
 vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt  vượt quá khả năng một tòa nhà văn phòng có thể cung cấp.
-Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như [P3] của Amazon (https://aws.amazon.com/ec2/instance-types/p3/)
-và các bản mẫu [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) là một giải pháp thực tế hơn nhiều.
+Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như các máy ảo [P3](https://aws.amazon.com/ec2/instance-types/p3/) và [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) của Amazon là một giải pháp thực tế hơn nhiều.
 
 
 <!--
