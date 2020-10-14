@@ -209,11 +209,11 @@ However, this is due to the fact that they offer far superior low precision perf
 3. For the RTX 2000 series the price is an *affine* function of the price.
 -->
 
-1. Trong cùng một dòng, giá và hiệu năng tỉ lệ xấp xỉ nhau.
+1. Trong cùng một dòng, giá và hiệu năng gần như tỉ lệ với nhau.
 Mẫu Titan yêu cầu một khoản tiền đáng kể để đổi lấy lợi ích của lượng lớn bộ nhớ GPU.
 Tuy nhiên, những mẫu mới hơn cung cấp hiệu quả chi phí tốt hơn, như có thể thấy qua so sánh giữa 980 Ti và 1080 Ti.
 Giá dường như không cải thiện nhiều đối với dòng RTX 2000.
-Tuy nhiên, việc này là do chúng cung cấp hiệu năng độ chính xác thấp hoàn toàn vượt trội (FP16, INT8 và INT4).
+Tuy nhiên, việc này là do chúng cung cấp hiệu năng hoàn toàn vượt trội đối với các giá trị có độ chính xác thấp  (FP16, INT8 và INT4).
 2. Tỉ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900.
 3. Với dòng RTX 2000, giá là một hàm *affine* của giá.
 
@@ -233,10 +233,10 @@ This seems to be contradicted by the graph corresponding to the RTX 2000 series.
 However, this is a consequence of the TensorCores which draw disproportionately much energy.
 -->
 
-:numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỉ lệ tuyến tính với lượng tính toán.
+:numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỉ lệ tuyến tính với khối lượng tính toán.
 Thứ hai, các thế hệ sau có hiệu quả tốt hơn.
-Đây có vẻ như mâu thuẫn với đồ thị của dòng RTX 2000.
-Tuy nhiên, đây là hệ quả của TensorCore yêu cầu lượng năng lượng không tương xứng.
+Đồ thị của dòng RTX 2000 có vẻ như mâu thuẫn với điều này.
+Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn.
 
 
 ## Tóm tắt
@@ -252,8 +252,8 @@ Check the mechanical and cooling specifications before you buy.
 
 * Chú ý nguồn, luồng bus PCIe, tốc độ CPU đơn luồng và tản nhiệt khi xây dựng máy chủ.
 * Bạn nên mua thế hệ GPU mới nhất nếu có thể.
-* Sử dụng đám mây cho sự phát triển lớn.
-* Máy chủ mật đọ cao có thể sẽ không tương thích với tất cả các GPU.
+* Sử dụng đám mây để triển khai các dự án lớn.
+* Máy chủ chạy nhiều ứng dụng có thể sẽ không tương thích với tất cả các GPU.
 Kiểm tra các thông số cơ học và tản nhiệt trước khi mua.
 * Sử dụng FP16 hoặc độ chính xác thấp hơn để có được hiệu năng tốt hơn.
 
