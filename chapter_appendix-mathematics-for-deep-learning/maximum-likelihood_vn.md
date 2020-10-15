@@ -15,9 +15,9 @@ This is the concept that when working with a probabilistic model with unknown pa
 the parameters which make the data have the highest probability are the most likely ones.
 -->
 
-Một trong những cách tư duy thường gặp nhất trong học máy là quan điểm về hợp lý cực đại.
-Đây là khái niệm mà khi làm việc với một mô hình xác suất với các tham số chưa biết,
-các tham số làm cho dữ liệu có xác suất cao nhất là những tham số hợp lý nhất.
+Một trong những cách tư duy thường thấy nhất trong học máy là quan điểm về hợp lý cực đại.
+Đây là khái niệm mà khi làm việc với một mô hình xác suất mà các tham số chưa biết,
+các tham số làm cho dữ kiện có xác suất cao nhất là những tham số hợp lý nhất.
 
 
 <!--
@@ -35,7 +35,7 @@ and $X$ is a sequence of independent coin flips.
 We will look at this example in depth later.
 -->
 
-Nguyên lý này có cách hiểu theo hướng Bayes khá hữu ích.
+Nguyên lý này có cách diễn giải theo trường phái Bayes khá hữu ích.
 Giả sử rằng ta có một mô hình với các tham số $\boldsymbol{\theta}$ và một tập hợp các mẫu dữ liệu $X$.
 Cụ thể hơn, ta có thể tưởng tượng rằng $\boldsymbol{\theta}$ là một giá trị duy nhất đại diện cho xác suất một đồng xu ngửa khi tung,
 và $X$ là một chuỗi các lần tung đồng xu độc lập.
@@ -75,12 +75,12 @@ any value in $[0,1]$ without any prior belief it is fair or not (often referred 
 Thus we see that our application of Bayes' rule shows that our best choice of $\boldsymbol{\theta}$ is the maximum likelihood estimate for $\boldsymbol{\theta}$:
 -->
 
-Biểu thức $P(X)$ là xác suất tạo dữ liệu hoàn toàn không phụ thuộc vào tham số, tức $\boldsymbol{\theta}$,
-do đó ta có thể bỏ nó mà lựa chọn tốt nhất của $\boldsymbol{\theta}$ vẫn không thay đổi.
-Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào tốt hơn bất kỳ bộ tham số nào khác,
+Biểu thức $P(X)$ là xác suất chưa biết tham số của dữ liệu đã có, và nó hoàn toàn không phụ thuộc vào tham số $\boldsymbol{\theta}$,
+do đó ta có thể bỏ qua nó mà không ảnh hưởng tới việc chọn ra $\boldsymbol{\theta}$ tốt nhất.
+Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào là tốt hơn hết,
 vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
-Điều này có vẻ hợp lý trong ví dụ lật đồng xu, trong đó xác suất để ra mặt ngửa có thể là
-bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ sự tin tưởng nào trước đó rằng đồng xu có công bằng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
+Điều này là hợp lý chẳng hạn trong ví dụ lật đồng xu, ở đây xác suất để ra mặt ngửa có thể là
+bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ niềm tin nào trước đó rằng đồng xu có cân xứng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
 Do đó, ta thấy rằng việc áp dụng quy tắc Bayes sẽ chỉ ra lựa chọn tốt nhất cho $\boldsymbol{\theta}$ là ước lượng hợp lý cực đại cho $\boldsymbol{\theta}$:
 
 $$
@@ -92,7 +92,7 @@ $$
 As a matter of common terminology, the probability of the data given the parameters ($P(X \mid \boldsymbol{\theta})$) is referred to as the *likelihood*.
 -->
 
-Theo thuật ngữ thông thường, xác suất của dữ liệu biết các tham số ($P(X \mid \boldsymbol{\theta})$) được gọi là *độ hợp lý*.
+Theo thuật ngữ thông thường, xác suất của dữ liệu với các tham số đã cho ($P(X \mid \boldsymbol{\theta})$) được gọi là *độ hợp lý*.
 
 
 <!--
@@ -110,9 +110,9 @@ we can use the fact that independent probabilities multiply to see that
 -->
 
 Hãy cùng xem phương pháp này hoạt động như thế nào trong một ví dụ cụ thể.
-Giả sử rằng chúng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất tung đồng xu một lần được mặt ngửa.
-Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ của chúng ta là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
-chúng ta có thể tận dụng việc các xác suất độc lập nhân được với nhau để thấy
+Giả sử rằng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất tung đồng xu một lần được mặt ngửa.
+Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
+ta có thể sử dụng tính chất tích các xác suất độc lập với nhau để có được
 
 
 $$
@@ -124,7 +124,7 @@ $$
 If we flip $13$ coins and get the sequence "HHHTHTTHHHHHT", which has $n_H = 9$ and $n_T = 4$, we see that this is
 -->
 
-Nếu chúng ta tung $ 13 $ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", có $n_H = 9$ và $n_T = 4$, chúng ta thấy rằng đây là
+Nếu ta tung $13$ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", tức ta có $n_H = 9$ và $n_T = 4$, thì ta nhận được ở đây là
 
 
 $$
@@ -139,7 +139,7 @@ everyone would correctly guess $9/13$.
 What this maximum likelihood method will give us is a way to get that number from first principals in a way that will generalize to vastly more complex situations.
 -->
 
-Một điều thú vị về ví dụ này là chúng ta biết trước câu trả lời.
+Một điều thú vị ở ví dụ này là ta biết trước câu trả lời.
 Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã tung 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất cho xác suất tung đồng xu được mặt ngửa là bao nhiêu?"
 mọi người sẽ đều đoán đúng $9/13$.
 Điều mà phương pháp khả năng hợp lý cực đại cung cấp cho chúng ta là một cách để thu được con số đó từ các nguyên tắc cơ bản sao cho có thể khái quát được cho các tình huống phức tạp hơn rất nhiều.
@@ -149,7 +149,7 @@ mọi người sẽ đều đoán đúng $9/13$.
 For our example, the plot of $P(X \mid \theta)$ is as follows:
 -->
 
-Với ví dụ của ta, đồ thị của $P(X \mid \theta)$ có dạng như sau:
+Với ví dụ này, đồ thị của $P(X \mid \theta)$ có dạng như sau:
 
 
 ```{.python .input}
@@ -198,9 +198,9 @@ and finding the one that gives the highest probability. We compute:
 -->
 
 Xác suất này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$ như đã dự đoán.
-Để kiếm tra xem nó có nằm chính xác ở đó không, chúng ta có thể tận dụng giải tích.
-Chú ý rằng ở điểm cực đại, hàm số sẽ nằm ngang.
-Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ có đạo hàm bằng 0,
+Để kiểm tra xem nó có nằm chính xác ở đó không, chúng ta có thể chuyển sang giải tích.
+Chú ý rằng ở điểm cực đại, hàm này sẽ phẳng.
+Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ để đạo hàm bằng 0,
 rồi xem giá trị nào trả về xác suất cao nhất. Ta tính toán:
 
 
@@ -221,8 +221,8 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 -->
 
 Phương trình này có ba nghiệm: $0$, $1$ và $9/13$.
-Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng gán xác suất bằng $0$ cho chuỗi kết quả tung đồng xu.
-Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
+Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng cho xác suất bằng $0$ đối với chuỗi kết quả tung đồng xu.
+Giá trị cuối cùng *không* cho xác suất bằng 0 với chuỗi đã cho và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -249,16 +249,16 @@ Indeed, each probability is in $[0,1]$, say typically of value about $1/2$, and 
 We cannot work with that directly.  
 -->
 
-Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
-thì chúng ta gần như không thể xem xét độ hợp lý vì nó là tích của nhiều xác suất.
-Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, ví dụ như $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. 
+Trước tiên, hãy lưu ý rằng, nếu chúng ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
+thì ta có thể không còn thấy tính khả thi từ độ hợp lý khi chính nó là tích của nhiều xác suất.
+Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, giá trị thường là $1/2$ và tích của $(1/2)^{1000000000}$ nhỏ hơn nhiều so với độ chính xác của máy. 
 Ta không thể làm việc trực tiếp với biểu thức này.
 
 <!--
 However, recall that the logarithm turns products to sums, in which case 
 -->
 
-Tuy nhiên, hãy nhớ lại rằng hàm log biến đổi tích thành tổng, trong trường hợp đó thì
+Tuy nhiên, nhắc lại rằng hàm log chuyển đổi tích thành tổng, trong trường hợp này thì
 
 $$
 \log((1/2)^{1000000000}) = 1000000000\cdot\log(1/2) \approx -301029995.6\ldots
@@ -270,8 +270,8 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-Con số này hoàn toàn nằm vừa trong một số thực $32$-bit với độ chính xác đơn.
-Vì vậy, chúng ta nên xem xét *log hợp lý* (*log-likelihood*), chính là
+Con số này hoàn toàn nằm trong một số thực dấu chấm động $32$-bit với độ chính xác đơn.
+Vì vậy, chúng ta nên xem xét *độ hợp lý thang log* (*log-likelihood*), chính là
 
 $$
 \log(P(X \mid \boldsymbol{\theta})).
@@ -284,15 +284,15 @@ Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when work
 -->
 
 Vì hàm $x \mapsto \log(x)$ đồng biến, việc cực đại hóa độ hợp lý đồng nghĩa với việc cực đại hóa log hợp lý.
-Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về bộ phân loại Naive Bayes.
+Thật vậy trong :numref:`sec_naive_bayes`, ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể cho bộ phân loại Naive Bayes.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
 We may turn maximum likelihood into the minimization of a loss by taking $-\log(P(X \mid \boldsymbol{\theta}))$, which is the *negative log-likelihood*.
 -->
 
-Ta thường làm việc với các hàm mất mát, thứ mà ta muốn cực tiểu hóa.
-Ta có thể biến đổi hợp lý cực đại thành việc cực tiểu hóa mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
+Ta thường làm việc với các hàm mất mát, với mong muốn cực tiểu hóa chúng.
+Ta có thể đổi từ việc tìm hợp lý cực đại thành việc tìm cực tiểu mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
 
 
 <!--
@@ -381,8 +381,8 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-Sự thuận tiện số học là lý duy nhất khiến mọi người thích dùng hàm đối log hợp lý.
-Thật ra còn có một vài lý do khác mà nó được ưa chuộng.
+Sự thuận tiện số học là lý do duy nhất khiến mọi người thích dùng hàm đối log hợp lý.
+Thật ra còn có một vài lý do khác mà nó có thể được lựa chọn.
 
 <!--
 The second reason we consider the log-likelihood is the simplified application of calculus rules.
