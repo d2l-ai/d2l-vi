@@ -20,7 +20,14 @@ For larger deployments cloud computing, such as Amazon's [P3](https://aws.amazon
 and [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) instances are a much more practical solution.
 -->
 
-*dịch đoạn phía trên*
+
+Việc huấn luyện học sâu thông thường đòi hỏi một lượng lớn tính toán.
+Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng có hiệu quả về chi phí nhất cho việc học sâu.
+Cụ thể, so với CPU, GPU rẻ hơn và cung cấp hiệu suất cao hơn, thường là hơn một bậc.
+Hơn nữa, một máy chủ đơn có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
+Số GPU điển hình hơn là 4 cho một máy trạm kỹ thuật,
+vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt  vượt quá khả năng một tòa nhà văn phòng có thể cung cấp.
+Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như các máy ảo [P3](https://aws.amazon.com/ec2/instance-types/p3/) và [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) của Amazon là một giải pháp thực tế hơn nhiều.
 
 
 <!--
@@ -40,7 +47,13 @@ This requires very good cooling and a large enough chassis to use the GPUs.
 Follow the guidelines below if possible:
 -->
 
-*dịch đoạn phía trên*
+Thông thường không cần mua các dòng CPU cao cấp với nhiều luồng vì phần lớn việc tính toán diễn ra trên GPU.
+Điều đó nói rằng, do Khóa trình thông dịch toàn cục (GIL) trong Python, hiệu suất đơn luồng của CPU có thể là vấn đề trong các tình huống mà chúng ta có 4-8 GPU.
+Tất cả mọi thứ đều bằng nhau, điều này cho thấy rằng các CPU với số lượng nhân nhỏ hơn nhưng có xung nhịp cao hơn có thể là sự lựa chọn kinh tế hơn.
+Chẳng hạn khi lựa chọn giữa CPU 6-nhân 4 GHz và 8-nhân 3.5 GHz, thì cái trước sẽ được ưu tiên chọn hơn nhiều, mặc dù tốc độ tổng hợp của nó thấp hơn.
+Một lưu ý quan trọng là các GPU sử dụng rất nhiều năng lượng và do đó tỏa nhiệt rất nhiều.
+Điều này đòi hỏi khả năng làm mát rất tốt và một khung máy đủ lớn để sử dụng các GPU đó.
+Tuân theo theo các nguyên tắc bên dưới nếu có thể:
 
 
 <!--
@@ -60,15 +73,28 @@ Some motherboards downgrade to 8x or even 4x bandwidth with multiple GPUs instal
 This is partly due to the number of PCIe lanes that the CPU offers.
 -->
 
-*dịch đoạn phía trên*
+
+1. **Bộ Nguồn Cấp Điện **. GPU sử dụng một lượng điện năng đáng kể.
+Nguồn cung lên đến 350W cho mỗi thiết bị (kiểm tra *công suất đỉnh* của card đồ họa thay vì công suất trung bình,
+vì mã nguồn hiệu quả có thể ngốn nhiều năng lượng).
+Nếu nguồn điện của bạn không đáp ứng được nhu cầu, bạn sẽ thấy rằng hệ thống của mình trở nên không ổn định.
+2. **Kích thước khung chứa**. GPU có kích thước lớn và các đầu nối nguồn phụ trợ thường cần thêm không gian.
+Thêm nữa, khung máy lớn giúp dễ làm mát hơn.
+3. **Làm mát GPU**. Nếu bạn có số lượng lớn GPU, bạn có thể muốn đầu tư vào tản nhiệt nước.
+Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị.
+Nếu bạn mua một GPU có nhiều quạt, nó có thể quá dày để nhận đủ không khí khi lắp đặt nhiều GPU và bạn sẽ gặp phải tình trạng khó tản nhiệt.
+4. **Khe cắm PCIe**. Việc dịich chuyển dữ liệu đến và đi từ GPU (và trao đổi giữa các GPU) đòi hỏi nhiều băng thông.
+Chúng tôi đề xuất khe cắm PCIe 3.0 với 16 làn. Nếu bạn lắp nhiều GPU, hãy đảm bảo là bạn đọc kỹ mô tả bo mạch chủ để chắc chắn 
+băng thông 16x đó vẫn khả dụng khi nhiều GPU được sử dụng cùng lúc và tốc độ PCIe là 3.0 thay vì PCIe cho các khe cắm bổ sung.
+Một số bo mạch chủ sẽ hạ xuống băng thông 8x hoặc thậm chí 4x khi nhiều GPU được cài đặt.
+Điều này một phần là do số lượng làn PCIe mà CPU đó cung cấp.
 
 
 <!--
 In short, here are some recommendations for building a deep learning server:
 -->
 
-*dịch đoạn phía trên*
-
+Tóm lại, dưới đây là một số khuyến nghị để bạn xây dựng một máy chủ học sâu:
 
 <!--
 * **Beginner**. Buy a low end GPU with low power consumption (cheap gaming GPUs suitable for deep learning use 150-200W).
@@ -95,7 +121,29 @@ This means that you might not be able to install the consumer GPU in a server du
 or lack of a suitable wiring harness (as one of the coauthors painfully discovered).
 -->
 
-*dịch đoạn phía trên*
+
+* **Người mới bắt đầu**. Một GPU cấp thấp với mức tiêu thụ điện năng thấp (GPU dành cho chơi game giá rẻ phù hợp cho việc sử dụng học sâu 150-200W).
+Nếu bạn may mắn, máy tính hiện tại của bạn sẽ hỗ trợ nó.
+* **1  GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đáp ứng được.
+ Hãy nhắm đến DRAM với ít nhất 32 GB và đầu tư vào một ổ SSD để truy cập dữ liệu cục bộ.
+ Nên sử dụng nguồn cung cấp 600W là đủ. Mua GPU có nhiều quạt.
+* **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến DRAM 64 GB và đầu tư vào một ổ SSD.
+Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạch chủ, hãy đảm bảo rằng chúng có *hai* khe cắm PCIe 3.0 x16.
+Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí.
+Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
+* **4 GPU **. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
+Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một con AMD Threadripper.
+Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
+Mua GPU có thiết kế sẵn, hẹp và cho không khí đi giữa các GPU.
+Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
+Máy chủ này có thể sẽ tạo ra *tiếng ồn và nóng*. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn.
+Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng theo cấu hình RAID để lưu trữ dữ liệu của bạn.
+* **8 GPU **. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
+Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
+và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *yếu tố vật lý* cho GPU hay không.
+Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
+Điều này có nghĩa là bạn có thể không lắp đặt được GPU tiêu dùng vào máy chủ do không đủ khoảng trống cho cáp nguồn
+hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đau đớn phát hiện ra).
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
