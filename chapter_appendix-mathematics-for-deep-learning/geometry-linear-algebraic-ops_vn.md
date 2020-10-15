@@ -204,7 +204,7 @@ we can form their dot product by computing:
 -->
 
 Như đã thấy trong :numref:`sec_linear-algebra`, tích vô hướng của hai vector cột
-$\mathbf{u}$ và $\mathbf{v}$ có thể được tính bởi: 
+$\mathbf{u}$ và $\mathbf{v}$ có thể được tính như sau:
 
 $$\mathbf{u}^\top\mathbf{v} = \sum_i u_i\cdot v_i.$$
 :eqlabel:`eq_dot_def`
@@ -214,7 +214,7 @@ Because :eqref:`eq_dot_def` is symmetric, we will mirror the notation
 of classical multiplication and write
 -->
 
-Vì biểu thức :eqref:`eq_dot_def` đối xứng, chúng ta có thể viết: 
+Vì biểu thức :eqref:`eq_dot_def` là đối xứng, chúng ta có thể mượn kí hiệu của phép nhân truyền thống và viết: 
 
 $$
 \mathbf{u}\cdot\mathbf{v} = \mathbf{u}^\top\mathbf{v} = \mathbf{v}^\top\mathbf{u},
@@ -224,20 +224,20 @@ $$
 to highlight the fact that exchanging the order of the vectors will yield the same answer.
 -->
 
-để nhấn mạnh rằng phép đổi chỗ hai vector sẽ cho kết quả như nhau. 
+để nhấn mạnh rằng việc đổi chỗ hai vector sẽ cho kết quả như nhau. 
 
 <!--
 The dot product :eqref:`eq_dot_def` also admits a geometric interpretation: it is closely related to the angle between two vectors.  Consider the angle shown in :numref:`fig_angle`.
 -->
 
-Tích vô hướng :eqref:`eq_dot_def` cũng có diễn giải hình học: nó liên quan 
-mật thiết tới góc giữa hai vector. Xem góc hiển thị trong :numref:`fig_angle`. 
+Tích vô hướng :eqref:`eq_dot_def` cũng có một cách diễn giải hình học: nó liên quan 
+mật thiết tới góc giữa hai vector. Hãy xem xét góc trong :numref:`fig_angle`. 
 
 <!--
 ![Between any two vectors in the plane there is a well defined angle $\theta$.  We will see this angle is intimately tied to the dot product.](../img/VecAngle.svg)
 -->
 
-![Có một định nghĩa về góc ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg) 
+![Luôn tồn tại một góc xác định ($\theta$) giữa hai vector bất kỳ trong không gian. Ta sẽ thấy rằng góc này có liên hệ chặt chẽ tới tích vô hướng.](../img/VecAngle.svg)
 :label:`fig_angle`
 
 <!--
@@ -269,7 +269,7 @@ $$
 With some simple algebraic manipulation, we can rearrange terms to obtain
 -->
 
-Với một vài biến đổi đơn giản, chúng ta có thể sắp xếp lại các thành phần để được 
+Với một vài phép biến đổi đại số đơn giản, chúng ta có thể sắp xếp lại các thành phần để được 
 
 $$
 \theta = \arccos\left(\frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}\right).
@@ -286,8 +286,8 @@ the angle between the two vectors is
 -->
 
 Một cách ngắn gọn, với hai vector cụ thể này,
-tích vô hướng kết hợp với chuẩn (*norm*) thể hiện góc giữa hai vector.  Việc này cũng đúng trong trường hợp tổng quát.  
-Ta sẽ không viết biểu diễn ở đây, tuy nhiên, nếu viết $\|\mathbf{v} - \mathbf{w}\|^2$ 
+tích vô hướng kết hợp với chuẩn (*norm*) cho ta góc giữa hai vector. Điều này cũng đúng trong trường hợp tổng quát.  
+Chúng tôi sẽ không suy ra biểu thức đó ở đây, tuy nhiên, nếu viết $\|\mathbf{v} - \mathbf{w}\|^2$ 
 bằng hai cách: cách thứ nhất với tích vô hướng, và cách thứ hai sử dụng công thức tính cos, 
 ta có thể thấy được quan hệ giữa chúng. 
 Thật vậy, với hai vector $\mathbf{v}$ và $\mathbf{w}$ bất kỳ, góc giữa chúng là 
@@ -300,7 +300,8 @@ This is a nice result since nothing in the computation references two-dimensions
 Indeed, we can use this in three or three million dimensions without issue.
 -->
 
-Kết quả này tổng quát cho không gian nhiều chiều vì nó không sử dụng điều gì đặc biệt trong không gian hai chiều. 
+Đây là một điều tốt vì trong công thức không hề chỉ định bất cứ điều gì đặc biệt về không gian hai chiều.
+Thực vậy, ta có thể sử dụng công thức này trong không gian ba chiều hoặc ba triệu chiều mà không gặp vấn đề gì.
 
 <!--
 As a simple example, let's us see how to compute the angle between a pair of vectors:
@@ -382,15 +383,15 @@ keeps the same direction and just changes the length.
 The angle considers the darker image identical.
 -->
 
-Ta sẽ tự hỏi tại sao tính góc lại hữu ích? 
+Ta sẽ tự hỏi tại sao việc tính góc lại hữu ích? 
 Câu trả lời nằm ở tính bất biến ta mong đợi từ dữ liệu. Xét một bức ảnh,
 và một bức ảnh thứ hai giống hệt nhưng với các điểm ảnh với độ sáng chỉ bằng $10\%$ 
 ảnh ban đầu. Giá trị của từng điểm ảnh trong ảnh thứ hai nhìn chung khác xa 
 so với ảnh ban đầu. Bởi vậy, nếu tính khoảng cách giữa ảnh ban đầu và ảnh tối hơn, 
-giá trị này có thể rất lớn. Tuy nhiên, trong hầu hết các ứng dụng ML, *nội dung* 
-của hai bức ảnh là như nhau -- nó vẫn là một bức ảnh của một con mèo đối với 
+giá trị này có thể rất lớn. Tuy nhiên, trong hầu hết các ứng dụng học máy, *nội dung* 
+của hai bức ảnh là như nhau -- nó vẫn là bức ảnh của một con mèo đối với 
 một bộ phân loại chó mèo. Tuy nhiên, nếu xem xét góc giữa hai ảnh, không khó 
-để thấy rằng với bất kỳ vector $\mathbf{v}$, góc giữa $\mathbf{v}$ và $0.1\cdot\mathbf{v}$
+để thấy rằng với vector $\mathbf{v}$ bất kỳ, góc giữa $\mathbf{v}$ và $0.1\cdot\mathbf{v}$
 bằng không. Việc này tương ứng với việc nhân vector với một số (dương)
 đồng hướng và chỉ thay đổi độ dài của vector đó. Như vậy khi xét tới góc, hai bức
 ảnh được coi là như nhau.
@@ -423,8 +424,8 @@ practitioners adopt the term *cosine similarity*
 to refer to the portion
 -->
 
-Trong văn cảnh học máy với góc được dùng để chỉ khoảng cách giữa hai vector, 
-người làm ML sử dụng thuật ngữ *độ tương tự cosin* để chỉ đại lượng 
+Trong văn cảnh học máy với góc được dùng để đo lường khoảng cách giữa hai vector, 
+người làm học máy sử dụng thuật ngữ *độ tương tự cosin* để chỉ đại lượng 
 
 $$
 \cos(\theta) = \frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}.
@@ -440,8 +441,8 @@ are sampled randomly with mean $0$,
 their cosine will nearly always be close to $0$.
 -->
 
-Hàm cosin lấy giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá 
-trị nhỏ nhất bằng $-1$ khi chúng cùng phương khác hướng, và $0$ khi hai vector 
+Hàm cosin có giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá 
+trị nhỏ nhất bằng $-1$ khi chúng cùng phương nhưng ngược hướng, và $0$ khi hai vector 
 trực giao. Chú ý rằng nếu các thành phần của hai vector nhiều chiều được lấy 
 mẫu ngẫu nhiên với kỳ vọng $0$, cosin giữa chúng sẽ luôn gần với $0$. 
 
