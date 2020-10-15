@@ -800,8 +800,8 @@ nhưng chỉ đối với các vector cụ thể và các phép co giãn cụ th
 Hãy cùng xét xem chúng là gì đối với $\mathbf{A}$.
 Nói trước một chút: hoá ra là để có thể quan sát được mọi giá trị, ta cần xét tới số phức.
 Bạn có thể coi số phức như phép co giãn và phép quay.
-Bằng cách tính mô-đun của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
-ta có thể đo hệ số co giãn. Ta cũng cần phải sắp xếp chúng.
+Bằng cách tính chuẩn của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
+ta có thể đo hệ số co giãn. Hãy sắp xếp chúng theo thứ tự.
 
 
 ```{.python .input}
@@ -844,7 +844,7 @@ applied to a random vector is *exactly* (accurate to thirteen decimal places!) t
 This is clearly not a coincidence!
 -->
 
-Ta quan sát thấy một chút bất thường ở đây: hệ số mà ta đã xác định cho quá trình giãn dài hạn khi áp dụng ma trận $\mathbf{A}$
+Ta quan sát thấy một chút bất thường ở đây: hệ số mà ta đã xác định cho quá trình giãn về dài hạn khi áp dụng ma trận $\mathbf{A}$
 lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
 Điều này rõ ràng không phải một sự trùng hợp.
 
@@ -880,7 +880,7 @@ vector này gần như trở thành vector riêng chính.
 ### Fixing the Normalization
 -->
 
-### Khắc phục việc Chuẩn hoá
+### Khắc phục bằng Chuẩn hoá
 
 
 <!--
