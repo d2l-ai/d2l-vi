@@ -16,10 +16,10 @@ This is, however, a good basic list to be familiar with.
 Let us first import some common libraries.
 -->
 
-Lúc này ta đã học cách làm việc với xác suất trong tình huống rời rạc và liên tục, hãy làm quen với một số phân phối thường gặp.
-Tùy thuộc vào lĩnh vực học máy, ta có thể cần phải làm quen với một lượng các phân phối lớn hơn nhiều, hoặc đối với một số lĩnh vực học sâu thì có khả năng là hoàn toàn không gặp.
-Tuy nhiên, đây là một danh sách tốt các phân phối cơ bản để làm quen.
-Đầu tiên chúng ta hãy nhập một số thư viện phổ biến.
+Lúc này ta đã hiểu cách làm việc với xác suất cho biến ngẫu nhiên rời rạc và liên tục, hãy làm quen với một số phân phối xác suất thường gặp.
+Tùy thuộc vào lĩnh vực học máy, ta có thể phải làm quen với nhiều phân phối hơn, hoặc đối với một số lĩnh vực trong học sâu thì có khả năng sẽ không gặp.
+Tuy nhiên, ta nên biết các phân phối cơ bản.
+Đầu tiên hãy nhập một số thư viện phổ biến.
 
 
 ```{.python .input}
@@ -67,9 +67,9 @@ This random variable encodes a coin flip which comes up $1$ with probability $p$
 If we have a random variable $X$ with this distribution, we will write
 -->
 
-Đây là biến ngẫu nhiên đơn giản nhất thường gặp.
-Biến ngẫu nhiên này biểu diễn giá trị mặt ngửa $1$ khi tung một đồng xu với xác suất $p$ và mặt sấp $0$ với xác suất $1-p$.
-Nếu ta có một biến ngẫu nhiên $X$ với phân phối này, ta sẽ viết
+Đây là phân phối thường gặp đơn giản nhất.
+Giả sử khi tung một đồng xu, biến ngẫu nhiên $X$ tuân theo phân phối này lấy giá trị mặt ngửa $1$ với xác suất $p$ và mặt sấp $0$ với xác suất $1-p$.
+Ta viết: 
 
 $$
 X \sim \mathrm{Bernoulli}(p).
@@ -80,7 +80,7 @@ $$
 The cumulative distribution function is
 -->
 
-Hàm phân phối tích lũy là
+Hàm phân phối tích lũy là:
 
 
 $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cases}$$
@@ -91,7 +91,7 @@ $$F(x) = \begin{cases} 0 & x < 0, \\ 1-p & 0 \le x < 1, \\ 1 & x >= 1 . \end{cas
 The probability mass function is plotted below.
 -->
 
-Hàm khối xác suất có đồ thị như dưới đây.
+Hàm khối xác suất (*probability mass function*) được minh họa dưới đây:
 
 
 ```{.python .input}
@@ -158,7 +158,7 @@ Nếu  $X \sim \mathrm{Bernoulli}(p)$, thì:
 We can sample an array of arbitrary shape from a Bernoulli random variable as follows.
 -->
 
-Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên Bernoulli như sau.
+Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên Bernoulli như sau:
 
 
 ```{.python .input}
@@ -180,7 +180,7 @@ tf.cast(tf.random.uniform((10, 10)) < p, dtype=tf.float32)
 ## Discrete Uniform
 -->
 
-## Phân phối Đồng nhất Rời rạc
+## Phân phối Đều Rời rạc
 
 
 <!--
@@ -191,11 +191,11 @@ The probability for each value $i \in \{1, 2, 3, \ldots, n\}$ is $p_i = \frac{1}
 We will denote a random variable $X$ with this distribution as
 -->
 
-Biến ngẫu nhiên thường gặp tiếp theo là biến đồng nhất rời rạc.
-Để thảo luận ở đây, ta sẽ giả định là biến này được phân bổ trên các số nguyên $\{1, 2, \ldots, n\}$, tuy nhiên, có thể tự do chọn bất kỳ tập giá trị nào khác.
-Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này có nghĩa là mọi giá trị đều có thể xảy ra với khả năng như nhau.
+Biến ngẫu nhiên thường gặp tiếp theo là biến phân phối đều rời rạc.
+Ta giả sử biến này được phân phối trên tập các số nguyên $\{1, 2, \ldots, n\}$, tuy nhiên, có thể chọn bất kỳ tập giá trị nào khác.
+Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này là mọi giá trị đều có thể xảy ra với khả năng như nhau.
 Xác suất cho mỗi giá trị $i \in \{1, 2, 3, \ldots, n\}$ là $p_i = \frac{1}{n}$.
-Chúng ta sẽ ký hiệu một biến ngẫu nhiên $X$ với phân phối này là
+Ta ký hiệu một biến ngẫu nhiên $X$ tuân theo phân phối này là:
 
 
 $$
@@ -207,7 +207,7 @@ $$
 The cumulative distribution function is 
 -->
 
-Hàm phân phối tích lũy của nó là 
+Hàm phân phối tích lũy là: 
 
 
 $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1 \le k < n, \\ 1 & x >= n . \end{cases}$$
@@ -218,7 +218,7 @@ $$F(x) = \begin{cases} 0 & x < 1, \\ \frac{k}{n} & k \le x < k+1 \text{ with } 1
 Let us first plot the probability mass function.
 -->
 
-Trước hết ta hãy vẽ đồ thị cho hàm khối xác suất.
+Trước hết ta hãy vẽ đồ thị hàm khối xác suất:
 
 
 ```{.python .input}
@@ -236,7 +236,7 @@ d2l.plt.show()
 Now, let us plot the cumulative distribution function :eqref:`eq_discrete_uniform_cdf`.
 -->
 
-Bây giờ hãy vẽ đồ thị cho hàm phân phối tích luỹ :eqref:`eq_discrete_uniform_cdf`.
+Tiếp theo hãy vẽ đồ thị hàm phân phối tích luỹ :eqref:`eq_discrete_uniform_cdf`.
 
 
 ```{.python .input}
@@ -273,7 +273,7 @@ d2l.plot(x, [F(y) for y in x], 'x', 'c.d.f.')
 If $X \sim U(n)$, then:
 -->
 
-Nếu  $X \sim U(n)$, thì
+Nếu  $X \sim U(n)$, thì:
 
 * $\mu_X = \frac{1+n}{2}$,
 * $\sigma_X^2 = \frac{n^2-1}{12}$.
@@ -283,7 +283,7 @@ Nếu  $X \sim U(n)$, thì
 We can sample an array of arbitrary shape from a discrete uniform random variable as follows.
 -->
 
-Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên đồng nhất rời rạc như sau.
+Ta có thể lấy mẫu một mảng có kích thước tùy ý từ một biến ngẫu nhiên rời rạc tuân theo phân phối đều như sau:
 
 
 ```{.python .input}
@@ -319,7 +319,7 @@ We will denote this distribution as
 -->
 
 Tiếp theo, hãy thảo luận về phân phối đều liên tục.
-Ý tưởng phía sau biến ngẫu nhiên này là nếu ta tăng $n$ trong phân phối đều, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
+Ý tưởng phía sau là nếu ta tăng $n$ trong phân phối đều rời rạc, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
 Ta sẽ ký hiệu phân phối này bằng
 
 
@@ -332,7 +332,7 @@ $$
 The probability density function is
 -->
 
-Hàm mật độ xác suất là
+Hàm mật độ xác suất là:
 
 
 $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\end{cases}$$
@@ -343,7 +343,7 @@ $$p(x) = \begin{cases} \frac{1}{b-a} & x \in [a, b], \\ 0 & x \not\in [a, b].\en
 The cumulative distribution function is
 -->
 
-Hàm phân phối tích lũy là
+Hàm phân phối tích lũy là:
 
 
 $$F(x) = \begin{cases} 0 & x < a, \\ \frac{x-a}{b-a} & x \in [a, b], \\ 1 & x >= b . \end{cases}$$
@@ -432,8 +432,8 @@ We can sample an array of arbitrary shape from a uniform random variable as foll
 Note that it by default samples from a $U(0,1)$, so if we want a different range we need to scale it.
 -->
 
-Ta có thể lấy mẫu một mảng với kích thước bất kỳ từ một biến ngẫu nhiên đều như sau.
-Chú ý rằng theo mặc định việc lấy mẫu là từ $U(0,1)$, nên nếu ta muốn một miền giá trị khác, ta cần phải biến đổi tỷ lệ nó.
+Ta có thể lấy mẫu một mảng với kích thước bất kỳ từ một biến ngẫu nhiên liên tục tuân theo phân phối đều như sau.
+Chú ý rằng theo mặc định việc lấy mẫu là từ $U(0,1)$, nên nếu lấy mẫu trên miền giá trị khác, ta cần phải biến đổi tỷ lệ.
 
 
 ```{.python .input}
@@ -464,7 +464,7 @@ This random variable originates from performing a sequence of $n$ independent ex
 each of which has probability $p$ of succeeding, and asking how many successes we expect to see.
 -->
 
-Hãy khiến mọi thứ trở nên phức tạp hơn một chút bằng cách xét biến ngẫu nhiên *nhị thức*.
+Biến ngẫu nhiên *nhị thức* phức tạp hơn một chút.
 Biến ngẫu nhiên này bắt nguồn từ việc thực hiện liên tiếp $n$ thí nghiệm độc lập,
 mỗi thí nghiệm có xác suất thành công $p$, và hỏi xem số lần thành công kỳ vọng là bao nhiêu. 
 
@@ -476,10 +476,10 @@ Since each is an independent coin flip which is successful with probability $p$,
 Then, the binomial random variable is
 -->
 
-Hãy biểu diễn điều trên dưới dạng toán học.
-Mỗi thí nghiệm là một biến ngẫu nhiên độc lập $X_i$ với $1$ có nghĩa là thành công, và $0$ có nghĩa là thất bại.
+Hãy biểu diễn dưới dạng toán học.
+Mỗi thí nghiệm là một biến ngẫu nhiên độc lập $X_i$ với $1$ có nghĩa là thành công, $0$ có nghĩa là thất bại.
 Vì mỗi thí nghiệm là một lần tung đồng xu độc lập với xác suất thành công $p$, ta có thể nói $X_i \sim \mathrm{Bernoulli}(p)$.
-
+Biến ngẫu nhiên nhị thức là:
 
 $$
 X = \sum_{i=1}^n X_i.
@@ -490,7 +490,7 @@ $$
 In this case, we will write
 -->
 
-Trong trường hợp này, ta sẽ viết
+Trong trường hợp này, ta viết:
 
 
 $$
@@ -504,8 +504,8 @@ in $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ ways each of which has a probability of 
 Thus the cumulative distribution function is
 -->
 
-Để lấy hàm phân phối tích lũy, ta cần chú ý rằng có được chính xác $k$ lần thành công có thể xảy ra theo $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ cách, với mỗi cách có xác suất xảy ra $p^k(1-p)^{n-k}$.
-Do đó, hàm phân phối tích lũy là
+Để lấy hàm phân phối tích lũy, ta cần chú ý rằng $k$ lần thành công có thể xảy ra theo $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ cách, với mỗi cách có xác suất xảy ra $p^k(1-p)^{n-k}$.
+Do đó, hàm phân phối tích lũy là:
 
 
 $$F(x) = \begin{cases} 0 & x < 0, \\ \sum_{m \le k} \binom{n}{m} p^m(1-p)^{n-m}  & k \le x < k+1 \text{ với } 0 \le k < n, \\ 1 & x >= n . \end{cases}$$
@@ -621,9 +621,7 @@ While this result is not simple, the means and variances are.
 If $X \sim \mathrm{Binomial}(n, p)$, then:
 -->
 
-Dù không dễ để suy ra công thức, trung bình và phương sai của phân phối được tính như sau.
-Nếu $X \sim \mathrm{Binomial}(n, p)$, thì:
-
+Dù không dễ để suy ra công thức, trung bình và phương sai của phân phối được tính như sau:
 
 * $\mu_X = np$,
 * $\sigma_X^2 = np(1-p)$.
@@ -673,7 +671,7 @@ We may never see more than one bus in a minute.
 
 Hãy cùng thực hiện một thí nghiệm tưởng tượng.
 Ta đang đứng ở một trạm xe buýt và muốn biết có bao nhiêu chiếc xe buýt sẽ đi qua trong phút tiếp theo.
-Hãy bắt đầu bằng việc coi $X^{(1)} \sim \mathrm{Bernoulli}(p)$ đơn giản là xác suất một chiếc xe buýt sẽ đến trong khoảng thời gian một phút tiếp theo.
+Hãy bắt đầu bằng việc coi $X^{(1)} \sim \mathrm{Bernoulli}(p)$ đơn giản là xác suất một chiếc xe buýt sẽ đến trong khoảng một phút tiếp theo.
 Với những trạm xe buýt xa trung tâm thành phố, đây có thể là một xấp xỉ rất tốt
 vì ta hầu như sẽ không bao giờ thấy nhiều hơn một chiếc xe buýt trong một phút.
 
@@ -684,9 +682,9 @@ We can model this by splitting our random variable into two parts for the first 
 In this case we can write
 -->
 
-Tuy nhiên, nếu như ta đang trong một khu vực tấp nập, ta có thể và thậm chí là còn có khả năng cao là sẽ thấy hai chiếc xe buýt đi qua.
+Tuy nhiên, trong một khu vực đông đúc, ta có thể và thậm chí khả năng cao sẽ thấy hai chiếc xe buýt đi qua.
 Ta có thể mô hình hóa điều này bằng cách chia nhỏ biến độc lập của ta thành hai phần với khoảng thời gian 30 giây.
-Trong trường hợp này ta có thể viết
+Trong trường hợp này ta có thể viết:
 
 
 $$
@@ -708,8 +706,8 @@ Why stop here?  Let us continue to split that minute into $n$ parts.
 By the same reasoning as above, we see that
 -->
 
-Tại sao lại chỉ dừng ở đây? Hãy tiếp tục chia nhỏ một phút này thành $n$ phần.
-Bằng cách lập luận tương tự ở trên, ta thấy rằng
+Hãy tiếp tục chia nhỏ một phút này thành $n$ phần.
+Lập luận tương tự như trên, ta có:
 
 
 $$X^{(n)} \sim \mathrm{Binomial}(n, p/n).$$
@@ -725,8 +723,8 @@ This indicates that there *could be* some random variable we can define in this 
 
 Hãy xem xét các biến ngẫu nhiên này.
 Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có trung bình $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
-Nếu ta cho $n \rightarrow \infty$, ta có thể thấy rằng những con số này dần tiến về $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
-Điều này chỉ ra rằng ta *có thể* định nghĩa thêm một biến ngẫu nhiên nào đó với trường hợp việc chia nhỏ này tiến ra vô cùng. 
+Nếu cho $n \rightarrow \infty$, ta có thể thấy rằng hai giá trị này dần tiến về $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
+Điều này gợi ý rằng ta *có thể* định nghĩa thêm một biến ngẫu nhiên nào đó trong trường hợp việc chia nhỏ này tiến ra vô cùng. 
 
 
 <!--
@@ -735,9 +733,9 @@ however it is nice to see that our mathematical model is well defined.
 This discussion can be made formal as the *law of rare events*.
 -->
 
-Điều này không có gì là ngạc nhiên, vì trong thực tế ta có thể chỉ cần đếm số lần xe buýt đến,
-tuy nhiên sẽ tốt hơn nếu có một mô hình toán học được định nghĩa hoàn chỉnh.
-Đoạn thảo luận này có thể được trình bày một cách chính quy hơn, được biết đến dưới tên gọi là *định luật của những biến cố hiếm*.
+Điều này không có gì ngạc nhiên, trong thực tế ta có thể chỉ cần đếm số lần xe buýt đến,
+tuy nhiên sẽ tốt hơn nếu định nghĩa một mô hình toán học hoàn chỉnh,
+được biết đến là *định luật của biến cố hiếm - law of rare events*.
 
 
 <!--
@@ -746,7 +744,7 @@ We will say that $X \sim \mathrm{Poisson}(\lambda)$ if it is a random variable w
 -->
 
 Bám sát chuỗi lập luận một cách cẩn thận, ta có thể suy ra một mô hình như sau.
-Ta nói $X \sim \mathrm{Poisson}(\lambda)$ nếu nó là một biến ngẫu nhiên nhận các giá trị $\{0,1,2, \ldots\}$ với xác suất
+Ta nói $X \sim \mathrm{Poisson}(\lambda)$ nếu nó là một biến ngẫu nhiên nhận các giá trị $\{0,1,2, \ldots\}$ với xác suất:
 
 
 $$p_k = \frac{\lambda^ke^{-\lambda}}{k!}.$$
@@ -757,7 +755,7 @@ $$p_k = \frac{\lambda^ke^{-\lambda}}{k!}.$$
 The value $\lambda > 0$ is known as the *rate* (or the *shape* parameter), and denotes the average number of arrivals we expect in one unit of time.
 -->
 
-Giá trị $\lambda > 0$ được gọi là *mức độ* (hoặc tham số *hình dạng*), và tượng trưng cho số lần xuất hiện trung bình kỳ vọng trong một đơn vị thời gian.
+Giá trị $\lambda > 0$ được gọi là *tốc độ* (hoặc tham số *hình dạng*), tượng trưng cho số lần xuất hiện trung bình trong một đơn vị thời gian.
 
 
 <!--
@@ -865,7 +863,7 @@ If $X \sim \mathrm{Poisson}(\lambda)$, then:
 -->
 
 Như ta thấy ở trên, trung bình và phương sai của phân phối này đặc biệt súc tích.
-Nếu $X \sim \mathrm{Poisson}(\lambda)$, thì:
+Nếu $X \sim \mathrm{Poisson}(\lambda)$:
 
 
 * $\mu_X = \lambda$,
@@ -876,7 +874,7 @@ Nếu $X \sim \mathrm{Poisson}(\lambda)$, thì:
 This can be sampled as follows.
 -->
 
-Ta có thể lấy mẫu từ phân phối này theo cách bên dưới.
+Ta có thể lấy mẫu từ phân phối này như sau.
 
 ```{.python .input}
 np.random.poisson(lam, size=(10, 10))
