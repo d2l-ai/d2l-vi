@@ -1022,7 +1022,7 @@ Mối quan hệ giữa các trị riêng (và một đại lượng liên quan �
 * Trị riêng là mức độ mà các vector riêng đó bị giãn bởi việc áp dụng ma trận.
 * Phân rã trị riêng của ma trận cho phép nhiều phép toán trên ma trận có thể được rút gọn thành các phép toán trên trị riêng.
 * Định lý Đường tròn Gershgorin (*Gershgorin Circle Theorem*) có thể cung cấp giá trị xấp xỉ cho các trị riêng của một ma trận.
-* Hành vi của lặp lũy thừa cho ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo mạng nơ-ron.
+* Hành vi của phép lặp lũy thừa cho ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo mạng nơ-ron.
 
 
 ## Bài tập
