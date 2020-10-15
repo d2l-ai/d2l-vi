@@ -635,7 +635,7 @@ A
 ### Behavior on Random Data
 -->
 
-### Hành vi trên Dữ liệu Ngẫu nhiên
+### Hành vi trên Dữ liệu Ngẫu nhiên 
 
 
 <!--
@@ -647,12 +647,12 @@ then small changes in input will be amplified into large changes in output---tin
 This does not seem right!
 -->
 
-Ttrong mô hình đơn giản, ta giả sử rằng vector dữ liệu ta đưa vào trong $\mathbf{v}_{in}$ là một vector Gauss ngẫu nhiên năm chiều.
-Hãy thử nghĩ xem ta sẽ muốn cái gì xảy ra.
-Trong ngữ cảnh này, hãy liên tưởng tới một bài toán ML nói chung, trong đó ta đang cố biến dữ liệu đầu vào, như một ảnh, thành một dự đoán, như xác suất ảnh đó là bức ảnh một con mèo.
-Nếu phép khai triển liên tục của $\mathbf{A}$ khiến một vector ngẫu liên bị kéo dãn lên quá dài
-thì chỉ với một thay đổi nhỏ trên đầu vào cũng có thể khuếch đại thành một thay đổi lớn trên đầu ra -- các sự biến đổi nhỏ trên ảnh đầu vào cũng có thể dẫn tới các dự đoán vô cùng khác.
-Việc này dường như không hợp lý!
+Trong mô hình đơn giản, ta giả sử rằng vector dữ liệu ta đưa vào $\mathbf{v}_{in}$ là một vector Gauss ngẫu nhiên năm chiều.
+Hãy thử nghĩ xem ta sẽ muốn điều gì xảy ra.
+Trong ngữ cảnh này, hãy liên tưởng tới một bài toán học máy nói chung, trong đó ta đang cố biến dữ liệu đầu vào, như một ảnh, thành một dự đoán, như xác suất ảnh đó là bức ảnh một con mèo.
+Nếu việc áp dụng liên tục $\mathbf{A}$ khiến một vector ngẫu nhiên bị kéo giãn lên quá dài
+thì chỉ với một thay đổi nhỏ trên đầu vào cũng có thể khuếch đại thành một thay đổi lớn trên đầu ra -- các sự biến đổi nhỏ trên ảnh đầu vào cũng có thể dẫn tới các dự đoán khác hẳn nhau.
+Việc này dường như không hợp lý chút nào!
 
 
 <!--
@@ -663,7 +663,7 @@ and the output will not depend on the input. This is also clearly not right eith
 
 Trái lại, nếu $\mathbf{A}$ khiến các vector ngẫu nhiên co ngắn lại,
 thì sau khi đi qua nhiều tầng, vector này về cơ bản sẽ co đến mức chẳng còn lại gì,
-và đầu ra sẽ không còn phụ thuộc vào đầu vào. Rõ ràng là việc này cũng không hề hợp lý!
+và đầu ra sẽ không còn phụ thuộc vào đầu vào. Rõ ràng việc này cũng không hề hợp lý!
 
 
 <!--
@@ -672,7 +672,7 @@ to make sure that our output changes depending on our input, but not much!
 -->
 
 Ta cần tìm ra ranh giới giữa tăng trưởng và suy giảm
-để đảm bảo rằng thay đổi trên đầu ra phụ thuộc vào đầu vào của ta, nhưng không quá phụ thuộc!
+để đảm bảo rằng thay đổi ở đầu ra phụ thuộc vào đầu vào, nhưng cũng không quá phụ thuộc!
 
 
 <!--
@@ -728,7 +728,7 @@ The norm is growing uncontrollably!
 Indeed if we take the list of quotients, we will see a pattern.
 -->
 
-Giá trị chuẩn tăng một cách không thể kiểm soát được!
+Giá trị chuẩn tăng một cách không thể kiểm soát được! 
 Quả thực, nếu ta lấy ra danh sách các tỉ số, ta sẽ thấy một khuôn mẫu.
 
 
@@ -769,10 +769,10 @@ where the portion at the end shifts a little,
 but the stretching factor is stable.  
 -->
 
-Nếu quan sát phần cuối của phép tính trên,
-ta có thể thấy rằng vector ngẫu nhiên bị kéo dãn `1.974459321485[...]` lần,
+Nếu ta quan sát phần cuối của phép tính trên,
+ta có thể thấy rằng vector ngẫu nhiên bị kéo giãn với hệ số là `1.974459321485[...]`,
 với phần số thập phân ở cuối có thay đổi một chút,
-nhưng hệ số dãn đã ổn định.
+nhưng hệ số kéo giãn thì ổn định.
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
 
@@ -795,13 +795,13 @@ By taking the norm of the complex number (square root of the sums of squares of 
 we can measure that stretching factor. Let us also sort them.
 -->
 
-Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ co dãn của thứ gì đó,
-nhưng đó là với các vector cụ thể, và các phép co dãn cụ thể.
-Hãy cùng xét xem đó là gì đối với $\mathbf{A}$.
-Nói trước một chút: hoá ra là để có thể quan sát toàn bộ các mức độ đó, ta cần xét tới số phức.
-Bạn có thể coi chúng như phép co dãn và phép quay.
-Bằng cách tính mô-đun của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
-ta có thể đo hệ số co dãn. Ta cũng cần phải sắp xếp chúng.
+Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ co giãn của thứ gì đó,
+nhưng chỉ đối với các vector cụ thể và các phép co giãn cụ thể.
+Hãy cùng xét xem chúng là gì đối với $\mathbf{A}$.
+Nói trước một chút: hoá ra là để có thể quan sát được mọi giá trị, ta cần xét tới số phức.
+Bạn có thể coi số phức như phép co giãn và phép quay.
+Bằng cách tính chuẩn của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
+ta có thể đo hệ số co giãn. Hãy sắp xếp chúng theo thứ tự.
 
 
 ```{.python .input}
@@ -835,7 +835,7 @@ print(f'norms of eigenvalues: {norm_eigs}')
 ### An Observation
 -->
 
-### Nhận xét
+### Nhận xét 
 
 
 <!--
@@ -844,8 +844,8 @@ applied to a random vector is *exactly* (accurate to thirteen decimal places!) t
 This is clearly not a coincidence!
 -->
 
-Ta quan sát thấy một chút bất thường ở đây: rằng số mà ta xác định từ trước cho quá trình dãn liên tục trên ma trận $\mathbf{A}$
-khai triển lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
+Ta quan sát thấy một chút bất thường ở đây: hệ số mà ta đã xác định cho quá trình giãn về dài hạn khi áp dụng ma trận $\mathbf{A}$
+lên một vector ngẫu nhiên lại *chính là* trị riêng lớn nhất của $\mathbf{A}$ (chính xác đến 13 số thập phân).
 Điều này rõ ràng không phải một sự trùng hợp.
 
 
@@ -863,24 +863,24 @@ Indeed this algorithm is the basis for what is known as the *power iteration* fo
 For details see, for example, :cite:`Van-Loan.Golub.1983`.
 -->
 
-Tuy nhiên, nếu ta thực sự suy ngẫm chuyện gì đang xảy ra trên phương diện hình học, điều này bắt đầu hợp lý. Xét một vector ngẫu nhiên.
+Tuy nhiên, nếu ta thực sự suy ngẫm chuyện gì đang xảy ra trên phương diện hình học, điều này bắt đầu trở nên hợp lý. Xét một vector ngẫu nhiên.
 Vector ngẫu nhiên này trỏ tới mỗi hướng một chút, nên cụ thể, nó chút ít cũng trỏ tới
 cùng hướng với vector riêng của $\mathbf{A}$ tương ứng với trị riêng lớn nhất.
-Trị riêng này quan trọng đến mức nó được gọi là *trị riêng chính (principle eigenvalue)* và *vector riêng chính (principle eigenvector)*.
-Sau khi khai triển $\mathbf{A}$, vector ngẫu nhiên trên bị dãn ra theo mọi hướng có thể,
-do nó liên kết với mọi vector riêng có thể, nhưng nó bị dãn nhiều nhất trên hướng liên kết với vector riêng chính.
-Điều này có nghĩa là sau khi khai triển trên $A$, vector ngẫu nhiên trên dài ra, và ngày càng cùng hướng với vector riêng chính.
-Sau khi áp dụng ma trận nhiều lần, vector ngẫu nhiên ngày càng gần vector riêng chính cho tới khi,
-nhằm mọi mục định thực tế, vector này trở thành vector riêng chính.
-Đây là cơ sở cho thuật toán *lặp lũy thừa - (power iteration)* để tìm trị riêng và vector riêng lớn nhất của một ma trận.
-Chi tiết có thể tham khảo tại :cite:`Van-Loan.Golub.1983`.
+Trị riêng và vector riêng này quan trọng đến mức chúng được gọi là *trị riêng chính (principle eigenvalue)* và *vector riêng chính (principle eigenvector)*.
+Sau khi áp dụng $\mathbf{A}$, vector ngẫu nhiên trên bị giãn ra theo mọi hướng khả dĩ,
+do nó liên kết với mọi vector riêng khả dĩ, nhưng nó bị giãn nhiều nhất theo hướng liên kết với vector riêng chính.
+Điều này có nghĩa là sau khi áp dụng $A$, vector ngẫu nhiên trên dài ra, và ngày càng cùng hướng với vector riêng chính.
+Sau khi áp dụng ma trận nhiều lần, vector ngẫu nhiên ngày càng gần vector riêng chính cho tới khi
+vector này gần như trở thành vector riêng chính.
+Đây chính là cơ sở cho thuật toán *lặp lũy thừa - (power iteration)* để tìm trị riêng và vector riêng lớn nhất của một ma trận.
+Để biết chi tiết hơn, bạn đọc có thể tham khảo tại :cite:`Van-Loan.Golub.1983`.
 
 
 <!--
 ### Fixing the Normalization
 -->
 
-### Khắc phục với Chuẩn hoá
+### Khắc phục bằng Chuẩn hoá
 
 
 <!--
@@ -890,8 +890,8 @@ To do so, we now rescale our matrix by this principle eigenvalue so that the lar
 Let us see what happens in this case.
 -->
 
-Từ phần thảo luận trên, lúc này ta kết luận rằng ta không hề muốn một vector ngẫu nhiên bị dãn hoặc co mất,
-mà ta muốn vector ngẫu nhiên giữ nguyên kích thước trong suốt toàn bộ quá trình.
+Từ phần thảo luận trên, lúc này ta kết luận rằng ta không hề muốn một vector ngẫu nhiên bị giãn hoặc co lại,
+mà ta muốn vector ngẫu nhiên giữ nguyên kích thước trong suốt toàn bộ quá trình tính toán.
 Để làm được điều đó, ta cần tái tỉ lệ ma trận bằng cách chia cho trị riêng chính, tức sao cho trị riêng lớn nhất giờ có giá trị 1.
 Hãy xem chuyện gì sẽ xảy ra trong trường hợp này.
 
@@ -948,7 +948,7 @@ d2l.plot(tf.range(0, 100), norm_list, 'Iteration', 'Value')
 We can also plot the ratio between consecutive norms as before and see that indeed it stabilizes.
 -->
 
-Ta cũng có thể biểu diễn tỉ lệ các chuẩn liên tục so với trước và xem liệu rằng nó có ổn định.
+Ta cũng có thể vẽ đồ thị tỉ lệ các chuẩn liên tiếp như trước và quan sát được rằng nó đã ổn định. 
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -983,7 +983,7 @@ for i in range(1, 100):
 d2l.plot(tf.range(1, 100), norm_ratio_list, 'Iteration', 'Ratio')
 ```
 
-## Kết lại
+## Kết luận
 
 <!--
 We now see exactly what we hoped for!
@@ -999,13 +999,13 @@ has been shown to have deep connections to proper initialization of neural netwo
 
 Giờ ta có thể thấy được điều mà ta mong muốn!
 Sau khi chuẩn hoá ma trận bằng trị riêng chính, ta thấy rằng dữ liệu ngẫu nhiên không còn bùng nổ như trước nữa,
-thay vào đó lại cân bằng quanh một giá trị nhất định.
+thay vào đó nó cân bằng quanh một giá trị nhất định.
 Sẽ thật tuyệt nếu ta có thể thực hiện việc này bằng các định đề cơ bản, và hoá ra là nếu ta tìm hiểu sâu về mặt toán học của nó,
-ta có thể thấy rằng trị riêng lớn nhất của một ma trận lớn ngẫu nhiên theo phân phối Gauss, với kỳ vọng độc lập bằng 0,
+ta có thể thấy rằng trị riêng lớn nhất của một ma trận ngẫu nhiên lớn với các phần tử tuân theo phân phối Gauss một cách độc lập với kỳ vọng bằng 0,
 phương sai bằng 1, về trung bình sẽ xấp xỉ bằng $\sqrt{n}$, hay trong trường hợp của ta là $\sqrt{5} \approx 2.2$,
-tuân theo một luật tuyệt vời là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
+tuân theo một định luật thú vị là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
 Mối quan hệ giữa các trị riêng (và một đại lượng liên quan được gọi là trị đơn (*singular value*)) của ma trận ngẫu nhiên
-đã được chứng minh là có liên hệ sâu sắc tới việc khởi tạo mạng nơ-ron một cách thích hợp như đã thảo luận trong :cite:`Pennington.Schoenholz.Ganguli.2017` và các nghiên cứu liên quan.
+đã được chứng minh là có liên hệ sâu sắc tới việc khởi tạo mạng nơ-ron một cách thích hợp như đã thảo luận trong :cite:`Pennington.Schoenholz.Ganguli.2017` và các nghiên cứu liên quan sau đó.
 
 
 ## Tóm tắt
@@ -1018,11 +1018,11 @@ Mối quan hệ giữa các trị riêng (và một đại lượng liên quan �
 * The behavior of iterated matrix powers depends primarily on the size of the largest eigenvalue.  This understanding has many applications in the theory of neural network initialization.
 -->
 
-* Vector riêng là các vector bị dãn bởi một ma trận mà không thay đổi hướng.
-* Trị riêng là mức độ mà các vector riêng đó bị dãn bởi khai triển ma trận.
-* Phân tích trị riêng của ma trận cho phép nhiều thao tác trên ma trận có thể rút gọn thành các thao tác trên trị riêng.
+* Vector riêng là các vector bị giãn bởi một ma trận mà không thay đổi hướng.
+* Trị riêng là mức độ mà các vector riêng đó bị giãn bởi việc áp dụng ma trận.
+* Phân rã trị riêng của ma trận cho phép nhiều phép toán trên ma trận có thể được rút gọn thành các phép toán trên trị riêng.
 * Định lý Đường tròn Gershgorin (*Gershgorin Circle Theorem*) có thể cung cấp giá trị xấp xỉ cho các trị riêng của một ma trận.
-* Hành vi của lặp lũy thừa cho ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo cho mạng nơ-ron.
+* Hành vi của phép lặp lũy thừa cho ma trận chủ yếu phụ thuộc vào độ lớn của trị riêng lớn nhất. Điều này có rất nhiều ứng dụng trong lý thuyết khởi tạo mạng nơ-ron.
 
 
 ## Bài tập
@@ -1031,7 +1031,7 @@ Mối quan hệ giữa các trị riêng (và một đại lượng liên quan �
 1. What are the eigenvalues and eigenvectors of
 -->
 
-1. Tìm các trị riêng và vector riêng của
+1. Tìm các trị riêng và vector riêng của 
 
 
 $$
@@ -1046,7 +1046,7 @@ $$
 2. What are the eigenvalues and eigenvectors of the following matrix, and what is strange about this example compared to the previous one?
 -->
 
-2. Tìm các trị riêng và vector riêng của ma trận sau đây, và cho biết có điều gì lạ ở ví dụ này so với ví dụ trước?
+2. Tìm các trị riêng và vector riêng của ma trận sau đây, và cho biết có điều gì lạ ở ví dụ này so với ví dụ trước? 
 
 
 $$
@@ -1062,7 +1062,7 @@ $$
 *Note*: this problem can be done in your head.
 -->
 
-3. Không tính các trị riêng, liệu có khả năng trị riêng nhỏ nhất của ma trận sau nhỏ hơn $0.5$?
+3. Không tính các trị riêng, trị riêng nhỏ nhất của ma trận sau có nhỏ hơn $0.5$ được không?
 *Ghi chú*: bài tập này có thể nhẩm được trong đầu.
 
 
@@ -1095,30 +1095,11 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 5 -->
 * Đỗ Trường Giang
-
-<!-- Phần 6 -->
-* Đỗ Trường Giang
-
-<!-- Phần 7 -->
-* Đỗ Trường Giang
+* Phạm Minh Đức
+* Lê Khắc Hồng Phúc
 
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 24/07/2020)*
