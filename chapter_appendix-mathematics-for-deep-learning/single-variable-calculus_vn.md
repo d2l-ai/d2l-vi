@@ -578,7 +578,7 @@ approximates the value of $f$ by a line which passes through the point $(x, f(x)
 In this way we say that the derivative gives a linear approximation to the function $f$, as illustrated below:
 -->
 
-xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$.
+xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$. 
 Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
 
 
@@ -629,7 +629,7 @@ Take a function $f$ and compute the derivative $\frac{df}{dx}$.
 This gives us the rate of change of $f$ at any point.
 -->
 
-Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ lạ.
+Bây giờ, hãy cùng làm một việc mà nhìn sơ qua thì có vẻ kỳ quặc.
 Bắt đầu bằng việc lấy một hàm số $f$ và tính đạo hàm $\frac{df}{dx}$.
 Nó sẽ cho chúng ta tốc độ thay đổi của $f$ tại bất cứ điểm nào.
 
@@ -644,7 +644,7 @@ To keep the notation clean, we will denote the $n$-th derivative as
 
 Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của 
 $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
-Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
+Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$. 
 Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
 Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
 Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
@@ -673,17 +673,17 @@ In other words, the function $f$ curves up, and has a single minimum as is shown
 -->
 
 Đầu tiên, xét trường hợp đạo hàm bậc hai $f^{(2)}(x)$ là một hằng số dương.
-Điều này nghĩa là độ nghiêng của đạo hàm bậc nhất là dương.
-Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi tăng lên dương ở cuối cùng.
-Điều này cho chúng ta biết độ nghiêng của hàm gốc $f$ và do đó, hàm $f$ tự thân sẽ giảm xuống, đi ngang, rồi tăng lên.
-Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu đơn như trong :numref:`fig_positive-second`.
+Điều này nghĩa là độ dốc của đạo hàm bậc nhất là dương.
+Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi cuối cùng tăng lên dương.
+Điều này cho chúng ta biết độ dốc của hàm $f$ ban đầu và do đó, giá trị hàm $f$ sẽ giảm xuống, bất biến, rồi tăng lên.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu như trong :numref:`fig_positive-second`.
 
 
 <!--
 ![If we assume the second derivative is a positive constant, then the fist derivative in increasing, which implies the function itself has a minimum.](../img/posSecDer.svg)
 -->
 
-![Nếu giả định rằng đạo hàm bậc hai là hằng số dương, thì đạo hàm bậc nhất đồng biến, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
+![Nếu giả định rằng đạo hàm bậc hai là một hằng số dương, thì đạo hàm bậc nhất đồng biến, nghĩa là bản thân hàm đó có một cực tiểu.](../img/posSecDer.svg)
 :label:`fig_positive-second`
 
 
@@ -694,10 +694,10 @@ Hence, the function $f$ itself increases, flattens out, then decreases.
 In other words, the function $f$ curves down, and has a single maximum as is shown in :numref:`fig_negative-second`.
 -->
 
-Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất là nghịch biến.
-Nghĩa là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
-Do vậy, hàm số $f$ tăng lên, đi ngang, rồi giảm.
-Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại đơn như trong :numref:`fig_negative-second`.
+Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất nghịch biến.
+Vậy tức là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
+Do vậy, giá trị hàm $f$ tăng lên, bất biến, rồi giảm xuống.
+Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại như trong :numref:`fig_negative-second`.
 
 <!--
 ![If we assume the second derivative is a negative constant, then the fist derivative in decreasing, which implies the function itself has a maximum.](../img/negSecDer.svg)
@@ -712,7 +712,7 @@ Third, if the second derivative is a always zero, then the first derivative will
 This means that $f$ increases (or decreases) at a fixed rate, and $f$ is itself a straight line  as is shown in :numref:`fig_zero-second`.
 -->
 
-Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất là hằng số!
+Thứ ba là, nếu đạo hàm bậc hai luôn luôn bằng không, thì đạo hàm bậc nhất là hằng số! 
 Nghĩa là hàm $f$ tăng (hoặc giảm) với tốc độ cố định, và đồ thị $f$ là một đường thẳng giống như trong :numref:`fig_zero-second`.
 
 <!--
@@ -727,7 +727,7 @@ To summarize, the second derivative can be interpreted as describing the way tha
 A positive second derivative leads to a upwards curve, while a negative second derivative means that $f$ curves downwards, and a zero second derivative means that $f$ does not curve at all.
 -->
 
-Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
+Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$. 
 Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
 
@@ -736,7 +736,7 @@ Let us take this one step further. Consider the function $g(x) = ax^{2}+ bx + c$
 -->
 
 Hãy thử tiến xa hơn một bước.
-Xét hàm $g(x) = ax^{2}+ bx + c$.
+Xét hàm $g(x) = ax^{2}+ bx + c$. 
 Ta có thể tính được
 
 
@@ -755,8 +755,8 @@ this construction provides the best approximation by a quadratic.  Let us visual
 -->
 
 Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
-Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một là xấp xỉ tốt nhất của một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
-Cùng minh hoạ với trường hợp $f(x) = \sin(x)$.
+Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một cho ra xấp xỉ tốt nhất bằng một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
+Hãy minh hoạ với trường hợp $f(x) = \sin(x)$.
 
 
 ```{.python .input}
@@ -801,7 +801,7 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 We will extend this idea to the idea of a *Taylor series* in the next section.
 -->
 
-Ta sẽ mở rộng từ ý tưởng này tới ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
+Ta sẽ mở rộng ý tưởng này thành ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
 
 <!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
 
