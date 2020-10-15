@@ -47,7 +47,13 @@ This requires very good cooling and a large enough chassis to use the GPUs.
 Follow the guidelines below if possible:
 -->
 
-*dịch đoạn phía trên* 
+Thông thường không cần mua các dòng CPU cao cấp với nhiều luồng vì phần lớn việc tính toán diễn ra trên GPU.
+Điều đó nói rằng, do Khóa trình thông dịch toàn cục (GIL) trong Python, hiệu suất đơn luồng của CPU có thể là vấn đề trong các tình huống mà chúng ta có 4-8 GPU.
+Tất cả mọi thứ đều bằng nhau, điều này cho thấy rằng các CPU với số lượng nhân nhỏ hơn nhưng có xung nhịp cao hơn có thể là sự lựa chọn kinh tế hơn.
+Chẳng hạn khi lựa chọn giữa CPU 6-nhân 4 GHz và 8-nhân 3.5 GHz, thì cái trước sẽ được ưu tiên chọn hơn nhiều, mặc dù tốc độ tổng hợp của nó thấp hơn.
+Một lưu ý quan trọng là các GPU sử dụng rất nhiều năng lượng và do đó tỏa nhiệt rất nhiều.
+Điều này đòi hỏi khả năng làm mát rất tốt và một khung máy đủ lớn để sử dụng các GPU đó.
+Tuân theo theo các nguyên tắc bên dưới nếu có thể:
 
 
 <!--
