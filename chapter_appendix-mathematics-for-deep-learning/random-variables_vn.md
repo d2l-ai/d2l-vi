@@ -1283,8 +1283,8 @@ When dealing with multiple variables, we oftentimes want to be able to ignore th
 "how is this one variable distributed?"  Such a distribution is called a *marginal distribution*.
 -->
 
-Khi đối mặt với nhiều biến, ta thường muốn có khả năng bỏ qua những mối tương quan và đặt câu hỏi,
-"biến này phân phối thế nào?" Một phân phối như vậy được gọi là *phân phối biên (marginal distribution)*.
+Khi làm việc với nhiều biến ngẫu nhiên, ta thường muốn bỏ qua các tương quan và đặt câu hỏi,
+"biến này có phân phối như thế nào?" Phân phối như vậy được gọi là *phân phối biên (marginal distribution)*.
 
 
 <!--
@@ -1293,9 +1293,9 @@ We will be using the subscript to indicate what random variables the density is 
 The question of finding the marginal distribution is taking this function, and using it to find $p _ X(x)$.
 -->
 
-Cụ thể, giả sử rằng ta có hai biến ngẫu nhiên $X, Y$ với mật độ đồng thời cho bởi $p _ {X, Y}(x, y)$.
+Cụ thể, giả sử ta có hai biến ngẫu nhiên $X, Y$ với mật độ kết hợp $p _ {X, Y}(x, y)$.
 Ta sẽ sử dụng chỉ số dưới để chỉ mật độ này của biến ngẫu nhiên nào.
-Nhiệm vụ tìm kiếm phân phối biên sẽ sử dụng hàm này để tìm $p _ X(x)$.
+Hàm này được dùng để để tìm phân phối biên $p _ X(x)$.
 
 
 <!--
@@ -1303,7 +1303,7 @@ As with most things, it is best to return to the intuitive picture to figure out
 Recall that the density is the function $p _ X$ so that
 -->
 
-Giống như mọi việc khác, tốt nhất là đưa ra một bức tranh trực quan để có thể suy ra cái gì là đúng.
+Hãy đưa ra một bức tranh trực quan để hiểu các logic.
 Nhắc lại rằng hàm mật độ $p _ X$ thoả mãn
 
 
@@ -1316,11 +1316,11 @@ $$
 There is no mention of $Y$, but if all we are given is $p _{X, Y}$, we need to include $Y$ somehow. We can first observe that this is the same as
 -->
 
-Hàm này không nhắc đến $Y$, nhưng nếu ta chỉ có $p _{X, Y}$, ta cần phải đưa $Y$ vào bằng cách nào đó. Đầu tiên ta có thể coi hàm này giống với
+Hàm này không nhắc đến $Y$, nhưng nếu ta chỉ có $p _{X, Y}$, ta cần đưa $Y$ vào bằng cách nào đó. Đầu tiên ta thấy hàm này giống với:
 
 
 $$
-P(X \in [x, x+\epsilon] \text{, and } Y \in \mathbb{R}) \approx \epsilon \cdot p _ X(x).
+P(X \in [x, x+\epsilon] \text{, và } Y \in \mathbb{R}) \approx \epsilon \cdot p _ X(x).
 $$
 
 
@@ -1328,12 +1328,12 @@ $$
 Our density does not directly tell us about what happens in this case, we need to split into small intervals in $y$ as well, so we can write this as
 -->
 
-Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì xảy ra, ta cũng cần phải chia nhỏ $y$ thành hai khoảng, do đó ta có thể viết lại hàm này như sau
+Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì, ta cũng cần chia nhỏ $y$ thành các khoảng nhỏ, do đó ta có thể viết lại hàm này như sau
 
 
 $$
 \begin{aligned}
-\epsilon \cdot p _ X(x) & \approx \sum _ {i} P(X \in [x, x+\epsilon] \text{, and } Y \in [\epsilon \cdot i, \epsilon \cdot (i+1)]) \\
+\epsilon \cdot p _ X(x) & \approx \sum _ {i} P(X \in [x, x+\epsilon] \text{, và } Y \in [\epsilon \cdot i, \epsilon \cdot (i+1)]) \\
 & \approx \sum _ {i} \epsilon^{2} p _ {X, Y}(x, \epsilon\cdot i).
 \end{aligned}
 $$
@@ -1353,7 +1353,7 @@ Indeed, after canceling one factor of epsilon from both sides, and recognizing t
 -->
 
 Điều này tức là lấy tổng giá trị mật độ trên chuỗi các hình vuông theo cột như trong :numref:`fig_marginal`.
-Thực vậy, sau khi khử số hạng epsilon cả hai vế, và nhận ra tổng vế phải chính là tích phân trên $y$, ta có thể kết luận rằng
+Thực vậy, sau khi khử số hạng epsilon ở cả hai vế, tổng vế phải chính là tích phân theo $y$, ta có thể kết luận rằng:
 
 
 $$
@@ -1368,7 +1368,7 @@ $$
 Thus we see
 -->
 
-Do đó ta thấy
+Do đó:
 
 
 $$
@@ -1381,7 +1381,7 @@ This tells us that to get a marginal distribution, we integrate over the variabl
 This process is often referred to as *integrating out* or *marginalized out* the unneeded variables.
 -->
 
-Điều này cho thấy để thu được phân phối biên của một biến, ta cần lấy tích phân trên các biến còn lại.
+Tức để thu được phân phối biên của một biến, ta cần lấy tích phân trên các biến còn lại.
 Quá trình này thường được gọi là *lấy tích phân - integrating out* hay *biên hóa - marginalized out* những biến không cần thiết.
 
 
@@ -1397,7 +1397,7 @@ When dealing with multiple random variables, there is one additional summary sta
 This measures the degree that two random variable fluctuate together.
 -->
 
-Khi đối mặt với nhiều biến ngẫu nhiên, có thêm một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
+Khi làm việc với nhiều biến ngẫu nhiên, có thêm một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
 Thông số này đo mức độ biến thiên cùng nhau của hai biến ngẫu nhiên.
 
 
@@ -1406,8 +1406,8 @@ Suppose that we have two random variables $X$ and $Y$, to begin with, let us sup
 In this case, the covariance is defined as
 -->
 
-Giả sử ta có hai biến ngẫu nhiên $X$ và $Y$, để bắt đầu, hãy giả sử chúng rời rạc, mang giá trị $(x_i, y_j)$ với xác suất $p_{ij}$.
-Trong trường hợp này, hiệp phương sai được định nghĩa bằng
+Để bắt đầu, giả sử ta có hai biến ngẫu nhiên rời rạc $X$ và $Y$, xác suất mang giá trị $(x_i, y_j)$ là $p_{ij}$.
+Trong trường hợp này, hiệp phương sai được định nghĩa như sau:
 
 
 $$\sigma_{XY} = \mathrm{Cov}(X, Y) = \sum_{i, j} (x_i - \mu_X) (y_j-\mu_Y) p_{ij}. = E[XY] - E[X]E[Y].$$
@@ -1420,9 +1420,9 @@ Suppose that $X$ takes the values $1$ and $3$, and $Y$ takes the values $-1$ and
 Suppose that we have the following probabilities
 -->
 
-Để hiểu một cách trực quan về công thức trên: xét cặp biến ngẫu nhiên sau.
-Giả sử $X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$.
-Giả sử rằng ta có các xác suất sau
+Để hiểu một cách trực quan về công thức trên: ví dụ
+$X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$,
+các xác suất:
 
 
 $$
@@ -1443,11 +1443,11 @@ If $p=1/2$, then the four possibilities are all equally likely, and neither shou
 Let us compute the covariance. First, note $\mu_X = 2$ and $\mu_Y = 1$, so we may compute using :eqref:`eq_cov_def`:
 -->
 
-trong đó $p$ là tham số trong đoạn $[0,1]$ ta có thể chọn.
-Chú ý rằng nếu $p=1$ thì chúng luôn là giá trị lớn nhất và nhỏ nhất một cách đồng thời,
-và nếu $p=0$ thì chúng chắc chắn mang giá trị ngược nhau (một biến lớn trong khi biến còn lại nhỏ và ngược lại).
-Nếu $p=1/2$ thì bốn khả năng có xác suất xảy ra bằng nhau, và không cái nào liên quan lẫn nhau.
-Hãy cùng tính hiệp phương sai. Đầu tiên, chú ý $\mu_X = 2$ và $\mu_Y = 1$, để ta có thể tính bằng :eqref:`eq_cov_def`:
+trong đó $p$ là tham số tùy ý trong đoạn $[0,1]$.
+Nếu $p=1$ thì $X$ và $Y$ luôn đồng thời mang giá trị lớn nhất hoặc nhỏ nhất của chúng,
+và nếu $p=0$ thì một biến mang giá trị lớn nhất trong khi biến còn lại mang giá trị nhỏ nhất.
+Nếu $p=1/2$ thì bốn khả năng có xác suất xảy ra như nhau, và không liên quan đến nhau.
+Hãy cùng tính hiệp phương sai. Đầu tiên, $\mu_X = 2$ và $\mu_Y = 1$, do đó theo :eqref:`eq_cov_def`:
 
 
 $$
@@ -1466,9 +1466,9 @@ Finally, when $p=1/2$ (the case where they are unrelated), the covariance is $0$
 Thus we see that the covariance measures how these two random variables are related.
 -->
 
-Khi $p=1$ (trường hợp mà trong cùng một thời điểm chúng cùng là giá trị dương hoặc âm lớn nhất) có hiệp phương sai bằng $2$.
+Khi $p=1$ (trường hợp mà trong cùng một thời điểm chúng cùng là giá trị lớn nhất hoặc nhỏ nhất) có hiệp phương sai bằng $2$.
 Khi $p=0$ (trường hợp mà chúng ngược nhau) hiệp phương sai bằng $-2$.
-Cuối cùng, khi when $p=1/2$ (trường hợp chúng không liên quan với nhau), hiệp phương sai bằng $0$.
+Cuối cùng, khi $p=1/2$ (trường hợp chúng không liên quan đến nhau), hiệp phương sai bằng $0$.
 Từ đó ta thấy rằng hiệp phương sai đo mức độ hai biến ngẫu nhiên này liên quan với nhau.
 
 
@@ -1478,9 +1478,9 @@ More complex relationships like $X = Y^2$ where $Y$ is randomly chosen from $\{-
 Indeed a quick computation shows that these random variables have covariance zero, despite one being a deterministic function of the other.
 -->
 
-Chú ý nhanh là hiệp phương sai chỉ đo mối quan hệ tuyến tính.
-Các quan hệ phức tạp hơn như $X = Y^2$, trong đó $Y$ được chọn ngẫu nhiên với xác suất bằng nhau từ $\{-2, -1, 0, 1, 2\}$, có thể bị bỏ qua.
-Quả thực qua tính toán nhanh có thể chỉ ra rằng hai biến ngẫu nhiên này có hiệp phương sai bằng không, mặc dù một biến là hàm tất định của biến còn lại.
+Chú ý là hiệp phương sai chỉ đo mối quan hệ tuyến tính.
+Các quan hệ phức tạp hơn như $X = Y^2$, trong đó $Y$ được chọn ngẫu nhiên với xác suất bằng nhau từ tập $\{-2, -1, 0, 1, 2\}$, có thể không được thể hiện.
+Quả thực qua tính toán có thể chỉ ra rằng hai biến ngẫu nhiên này có hiệp phương sai bằng không, mặc dù một biến là hàm tất định của biến còn lại.
 
 
 <!--
@@ -1489,9 +1489,9 @@ At this point, we are pretty comfortable with doing the transition between discr
 so we will provide the continuous analogue of :eqref:`eq_cov_def` without any derivation.
 -->
 
-Với biến ngẫu nhiên liên tục, câu chuyện vẫn diễn ra như vậy.
-Vào thời điểm này, ta khá thoải mái trong việc biến đổi giữa rời rạc và liên tục,
-nên chúng tôi sẽ chỉ cung cấp dạng tương tự liên tục của :eqref:`eq_cov_def` mà không có giải thích.
+Với biến ngẫu nhiên liên tục, mọi chuyện cũng tương tự.
+Lúc này ta dễ dàng biến đổi giữa rời rạc và liên tục,
+nên chúng tôi sẽ chỉ cung cấp dạng liên tục của :eqref:`eq_cov_def` mà không giải thích thêm:
 
 
 $$
@@ -1572,9 +1572,9 @@ Hãy xem xét một vài tính chất của hiệp phương sai:
 * If $X$ and $Y$ are independent then $\mathrm{Cov}(X, Y) = 0$.
 -->
 
-* Với bất kỳ biến $X$ ngẫu nhiên nào, $\mathrm{Cov}(X, X) = \mathrm{Var}(X)$.
-* Với bất kỳ biến ngẫu nhiên $X, Y$ và các số $a$ và $b$, $\mathrm{Cov}(aX+b, Y) = \mathrm{Cov}(X, aY+b) = a\mathrm{Cov}(X, Y)$.
-* Nếu $X$ và $Y$ độc lập thì $\mathrm{Cov}(X, Y) = 0$.
+* Với biến ngẫu nhiên $X$ bất kỳ: $\mathrm{Cov}(X, X) = \mathrm{Var}(X)$.
+* Với hai biến ngẫu nhiên $X, Y$ và hai số $a$, $b$ bất kỳ: $\mathrm{Cov}(aX+b, Y) = \mathrm{Cov}(X, aY+b) = a\mathrm{Cov}(X, Y)$.
+* Nếu $X$ và $Y$ độc lập: $\mathrm{Cov}(X, Y) = 0$.
 
 
 <!--
@@ -1582,8 +1582,8 @@ In addition, we can use the covariance to expand a relationship we saw before.
 Recall that is $X$ and $Y$ are two independent random variables then
 -->
 
-Ngoài ra, ta có thể sử dụng phương sai để mở rộng một hệ thức ta đã thấy trước đó.
-Hãy nhớ lại nếu $X$ và $Y$ là hai biến ngẫu nhiên độc lập thì
+Ngoài ra, ta có thể sử dụng hiệp phương sai để mở rộng một hệ thức ta đã thấy trước đó.
+Hãy nhớ lại nếu $X$ và $Y$ là hai biến ngẫu nhiên độc lập thì:
 
 
 $$
@@ -1595,7 +1595,7 @@ $$
 With knowledge of covariances, we can expand this relationship.  Indeed, some algebra can show that in general,
 -->
 
-Với kiến thức về phương sai, ta có thể khai triển hệ thức này. Quả nhiên, một vài đại số có thể chứng minh tổng quát rằng
+Với kiến thức về hiệp phương sai, ta có thể khai triển hệ thức này. Quả nhiên, sử dụng đại số có thể chứng minh tổng quát rằng:
 
 
 $$
@@ -1607,14 +1607,14 @@ $$
 This allows us to generalize the variance summation rule for correlated random variables.
 -->
 
-Điều này cho phép ta tổng quát hóa quy tắc tổng phương sai dành cho biến ngẫu nhiên tương quan.
+Công thức này là dạng tổng quát của tổng phương sai cho các biến ngẫu nhiên tương quan.
 
 
 <!--
 ### Correlation
 -->
 
-### Tương quan
+### Độ tương quan
 
 
 <!--
@@ -1625,11 +1625,11 @@ These units can be hard to interpret. What we will often want in this case is a 
 Indeed, often we do not care about exact quantitative correlation, but rather ask if the correlation is in the same direction, and how strong the relationship is.
 -->
 
-Như ta đã bàn về trường hợp của trung bình và phương sai, ta hãy xem xét đơn vị.
-Nếu $X$ được đo trong một đơn vị (giả sử là inch), và $Y$ được đo bởi đơn vị khác (giả sử là đô la),
-phương sai được tính bởi tích của hai đơn vị này $\text{inches} \times \text{dollars}$.
-Những đơn vị này khó để diễn giải. Điều ta thường mong muốn trong trường hợp này là một phép đo không đơn vị của sự tương quan.
-Thật vậy, ta thường không quan tâm về tương quan định lượng chính xác, nhưng thường hỏi xem nếu sự tương quan này cùng hướng, và mối liên hệ mạnh như thế nào.
+Như trong trường hợp của kỳ vọng và phương sai, hãy xét đến đơn vị.
+Nếu $X$ được đo bằng một đơn vị (giả sử là inch), và $Y$ được đo bởi đơn vị khác (giả sử là đô-la),
+phương sai được tính bởi tích của hai đơn vị này $\text{inch} \times \text{đô-la}$.
+Những đơn vị này khó diễn giải, nên ta muốn có một phép đo sự tương quan mà không phụ thuộc vào đơn vị.
+Thật vậy, ta thường không quan tâm định lượng tương quan một cách chính xác, mà thường cân nhắc sự tương quan này cùng hay ngược hướng, và mối liên hệ mạnh như thế nào.
 
 
 <!--
@@ -1641,11 +1641,12 @@ Thus, to find our unit-invariant measure of correlation, we will need to divide 
 Indeed we have a clear candidate, the standard deviation! Indeed if we define the *correlation coefficient* to be
 -->
 
-Để xem điều gì có ý nghĩa, ta hãy thực hiện một thử nghiệm suy nghĩ.
+Để cắt nghĩa, hãy thực hiện một thí nghiệm suy nghĩ.
 Giả sử ta chuyển đổi các biến ngẫu nhiên đơn vị inch và đô-la thành inch và xu.
-Trong trường hợp này biến ngẫu nhiên $Y$ được nhân bởi $100$. Nếu ta giải quyết vấn đề định nghĩa, điều này có nghĩa $\mathrm{Cov}(X, Y)$ sẽ được nhân bởi $100$.
-Thêm vào đó ta thấy rằng trường hợp này sự thay đổi về phương sai bởi hệ số $100$.
-
+Trong trường hợp này biến ngẫu nhiên $Y$ được nhân thêm $100$. Theo định nghĩa, $\mathrm{Cov}(X, Y)$ cũng sẽ được nhân thêm $100$.
+Như vậy sự thay đổi đơn vị làm tăng hiệp phương sai $100$ lần.
+Do đó, để có độ tương quan không phụ thuộc vào đơn vị, ta cần chia cho một hạng tử nào đó cũng tăng $100$ lần.
+Ta có một ứng viên sáng giá, là độ lệch chuẩn! Có thể định nghĩa *hệ số tương quan - correlation coefficient* như sau:
 
 $$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
 :eqlabel:`eq_cor_def`
@@ -1656,8 +1657,8 @@ we see that this is a unit-less value. A little mathematics can show that this n
 between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $-1$ means maximally negatively correlated.
 -->
 
-ta thấy rằng đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng con số này 
-nằm giữa $-1$ và $1$ với $1$ tương quan cực đại dương, với $-1$ mang ý nghĩa tương quan cực đại âm. 
+ta thấy đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng $\rho(X, Y)$
+nằm giữa $-1$ và $1$ với $1$ ứng với tương quan cực đại dương, còn $-1$ ứng với tương quan cực đại âm. 
 
 
 <!--
@@ -1665,8 +1666,8 @@ Returning to our explicit discrete example above, we can see that $\sigma_X = 1$
 so we can compute the correlation between the two random variables using :eqref:`eq_cor_def` to see that
 -->
 
-Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta thấy rằng nếu $\sigma_X = 1$ và $\sigma_Y = 2$, 
-thì ta có thể tính toán tương quan giữa hai biến ngẫu nhiên sử dụng hệ thức :eqref:`eq_cor_def` để có
+Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta có $\sigma_X = 1$ và $\sigma_Y = 2$, 
+và tương quan giữa hai biến ngẫu nhiên có thể tính bằng :eqref:`eq_cor_def`:
 
 $$
 \rho(X, Y) = \frac{4p-2}{1\cdot 2} = 2p-1.
@@ -1677,7 +1678,7 @@ $$
 This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 -->
 
-Điều này bây giờ nằm trong khoảng $-1$ và $1$ với kỳ vọng hành vi $1$ mang ý nghĩa tương quan nhiều nhất và $-1$ mang ý nghĩa tương quan ít nhất.
+Con số này bây giờ nằm trong khoảng $-1$ và $1$ với $1$ mang ý nghĩa tương quan nhiều nhất và $-1$ mang ý nghĩa tương quan ít nhất.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -1687,7 +1688,7 @@ This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning m
 As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$. Then, one can compute that
 -->
 
-Một ví dụ khác, xem xét biến ngẫu nhiên $X$ bất kỳ, và $Y=aX+b$ là một hàm tuyến tính tất định của $X$. Vậy, ta có thể tính 
+Một ví dụ khác, xét biến ngẫu nhiên $X$ bất kỳ, và $Y=aX+b$ là một hàm tuyến tính tất định của $X$. Ta có:
 
 
 $$\sigma_{Y} = \sigma_{aX+b} = |a|\sigma_{X},$$
@@ -1699,7 +1700,7 @@ $$\mathrm{Cov}(X, Y) = \mathrm{Cov}(X, aX+b) = a\mathrm{Cov}(X, X) = a\mathrm{Va
 and thus by :eqref:`eq_cor_def` that
 -->
 
-và do đó nhờ :eqref:`eq_cor_def` ta có
+và do đó theo :eqref:`eq_cor_def` ta có:
 
 
 $$
@@ -1712,8 +1713,8 @@ Thus we see that the correlation is $+1$ for any $a > 0$, and $-1$ for any $a < 
 that correlation measures the degree and directionality the two random variables are related, not the scale that the variation takes.
 -->
 
-Đến đây ta thấy rằng tương quan là $+1$ cho bất kỳ $a > 0$, và $-1$ cho bất kỳ $a < 0$ mô tả
-rằng tương quan tính toán bậc và định hướng hai biến ngẫu nhiên giữa chúng, không phải tỷ lệ của sự biến đổi.
+Ta thấy rằng độ tương quan là $+1$ cho $a > 0$, và $-1$ cho $a < 0$, tức
+độ tương quan đo mức độ và hướng của sự tương quan giữa hai biến ngẫu nhiên, không phải tỷ lệ biến đổi.
 
 
 <!--
@@ -1780,7 +1781,7 @@ d2l.plt.show()
 Let us list a few properties of the correlation below.
 -->
 
-Ta liệt kê một vài tính chất của tương quan dưới đây.
+Ta liệt kê một vài tính chất của tương quan:
 
 
 <!--
@@ -1789,9 +1790,9 @@ Ta liệt kê một vài tính chất của tương quan dưới đây.
 * If $X$ and $Y$ are independent with non-zero variance then $\rho(X, Y) = 0$.
 -->
 
-* Đối với bất kỳ biến ngẫu nhiên $X$ nào, $\rho(X, X) = 1$.
-* Đối với hai biến ngẫu nhiên $X, Y$ và hai số $a$ và $b$ bất kỳ, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
-* Nếu $X$ và $Y$ độc lập với phương sai khác không thì $\rho(X, Y) = 0$.
+* Với biến ngẫu nhiên $X$ bất kỳ, $\rho(X, X) = 1$.
+* Với hai biến ngẫu nhiên $X, Y$ và hai số $a$, $b$ bất kỳ, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* Nếu $X$ và $Y$ độc lập với phương sai khác không: $\rho(X, Y) = 0$.
 
 
 <!--
@@ -1799,8 +1800,8 @@ As a final note, you may feel like some of these formulae are familiar.
 Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see that this is
 -->
 
-Lưu ý cuối cùng, bạn có thể thấy rằng các công thức vừa rồi khá giống nhau.
-Quả nhiên, nếu ta khai triển tất cả giả sử $\mu_X = \mu_Y = 0$, ta thấy rằng đây là 
+Lưu ý cuối cùng, bạn có thể thấy rằng một vài công thức khá giống nhau.
+Quả thực, nếu khai triển tất cả giả sử $\mu_X = \mu_Y = 0$, ta có:
 
 
 $$
@@ -1813,8 +1814,8 @@ This looks like a sum of a product of terms divided by the square root of sums o
 This is exactly the formula for the cosine of the angle between two vectors $\mathbf{v}, \mathbf{w}$ with the different coordinates weighted by $p_{ij}$:
 -->
 
-Đây giống như tổng của một tích các số hạng chia cho căn bặc hai của tổng bình phương các số hạng.
-Điều này chính xác là công thức cho cô-sin của góc giữa hai vector  $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ $p_{ij}$:
+Đây giống như tổng của tích các số hạng chia cho căn bặc hai của tổng bình phương các số hạng.
+Đó chính xác là công thức cho cô-sin của góc giữa hai vector $\mathbf{v}, \mathbf{w}$ với trọng số tọa độ $p_{ij}$:
 
 
 $$
@@ -1827,7 +1828,7 @@ Indeed if we think of norms as being related to standard deviations, and correla
 much of the intuition we have from geometry can be applied to thinking about random variables.
 -->
 
-Quả nhiên nếu ta nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và tương quan là cô-sin của các góc,
+Quả thực nếu nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và độ tương quan là cô-sin của các góc,
 các trực giác ta có từ hình học có thể được áp dụng vào tư duy về các biến ngẫu nhiên. 
 
 
@@ -1850,20 +1851,18 @@ We may marginalize joint densities by integrating over unwanted random variables
 * The covariance and correlation coefficient provide a way to measure any linear relationship between two correlated random variables.
 -->
 
-* Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể lấy một dãy liên tục các giá trị. 
-Chúng có một vài cản trở kỹ thuật mà khó hơn để giải quyết hơn nếu so sánh với biến ngẫu nhiên rời rạc.
-* Hàm mật độ xác suất cho phép ta làm việc cùng với các biến ngẫu nhiên liên tục bằng việc cung cấp 
-một hàm số mà diện tích dưới đường cong ở một khoảng là xác suất tìm được một điểm mẫu trong khoảng đó.
+* Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể lấy một dãy các giá trị liên tục. 
+Chúng có một vài cản trở kỹ thuật khó giải quyết hơn so với biến ngẫu nhiên rời rạc.
+* Hàm mật độ xác suất cho phép làm việc với các biến ngẫu nhiên liên tục bằng một hàm số mà diện tích dưới đường cong ở một khoảng là xác suất tìm được một mẫu trong khoảng đó.
 * Hàm phân phối tích lũy là xác suất biến ngẫu nhiên nhận giá trị nhỏ hơn một ngưỡng nhất định.
-Đây là quan điểm thay thế hữu ích có thể hợp nhất các biến rời rạc và liên tục.
-* Giá trị kỳ vọng là giá trị trung bình của một biến ngẫu nhiên.
-* Phương sai là bình phương kỳ vọng của sự chênh lệch giữa biến ngẫu nhiên và giá trị trung bình của nó.
-* Độ lệch chuẩn là căn bậc hai của phương sai.
-Nó có thể dùng để đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
+Đây là một góc nhìn hữu ích để hợp nhất các biến rời rạc và liên tục.
+* Kỳ vọng là giá trị trung bình của một biến ngẫu nhiên.
+* Phương sai là trung bình bình phương sự chênh lệch giữa biến ngẫu nhiên và kỳ vọng của nó.
+* Độ lệch chuẩn là căn bậc hai của phương sai, đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
 * Bất đẳng thức Chebyshev chặt chẽ hóa điều này bằng cách đưa ra một khoảng rõ ràng mà biến ngẫu nhiên hầu hết sẽ rơi vào.
-* Mật độ kết hợp (*joint density*) cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan.
-Ta có thể loại bỏ mật độ kết hợp bằng cách tích phân trên miền của các biến ngẫu nhiên khác để có được phân phối của biến ngẫu nhiên mong muốn.
-* Hiệp phương sai và hệ số tương quan cung cấp một cách để đo lường bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
+* Mật độ kết hợp (*joint density*) cho phép ta làm việc với các biến ngẫu nhiên tương quan.
+Ta có thể loại bỏ mật độ kết hợp bằng cách tích phân trên miền của các biến ngẫu nhiên khác để có phân phối của biến ngẫu nhiên mong muốn.
+* Hiệp phương sai và hệ số tương quan là một cách đo bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
 
 
 ## Bài tập
@@ -1879,14 +1878,14 @@ and I observed $25\%$ of my samples taking a value larger than $9$." Do you beli
 $x, y \in [0,1]$ and $p_{XY}(x, y) = 0$ otherwise. What is the covariance of $X$ and $Y$?
 -->
 
-1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được cho bởi $p(x) = \frac{1}{x^2}$ nếu $x \ge 1$ và trái lại thì $p(x) = 0$. Tính $P(X > 2)$.
-2. Phân phối Laplace là một biến ngẫu nhiên có mật độ được cho bởi $p(x = \frac{1}{2}e^{-|x|}$.
-Giá trị trung bình và độ lệch chuẩn của hàm này là gì?
+1. Giả sử ta có biến ngẫu nhiên với mật độ $p(x) = \frac{1}{x^2}$ nếu $x \ge 1$, ngược lại $p(x) = 0$. Tính $P(X > 2)$.
+2. Phân phối Laplace là một biến ngẫu nhiên có mật độ $p(x = \frac{1}{2}e^{-|x|}$.
+Tính kỳ vọng và độ lệch chuẩn của biến ngẫu nhiên này.
 Gợi ý $\int_0^\infty xe^{-x} \; dx = 1$ và $\int_0^\infty x^2e^{-x} \; dx = 2$.
-3. Tôi bước đến gần bạn trên phố và nói "Tôi có một biến ngẫu nhiên với giá trị trung bình là $1$, độ lệch chuẩn là $2$,
-và tôi quan sát thấy $25\%$ trong số các mẫu của tôi có giá trị lớn hơn $9$." Bạn có tin tôi không? Tại sao hoặc tại sao không?
-4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ kết hợp $p_{XY}(x, y) = 4xy$ nếu 
-$x, y \in [0,1]$ và trái lại thì $p_{XY}(x, y) = 0$. Vậy hiệp phương sai của $X$ và $Y$ là bao nhiêu?
+3. Tôi nói "Tôi có một biến ngẫu nhiên với kỳ vọng là $1$, độ lệch chuẩn là $2$,
+và tôi quan sát thấy $25\%$ các mẫu của tôi có giá trị lớn hơn $9$." Bạn có tin tôi không? Tại sao?
+4. Giả sử bạn có hai biến ngẫu nhiên $X, Y$, với mật độ kết hợp $p_{XY}(x, y) = 4xy$ nếu 
+$x, y \in [0,1]$, ngược lại $p_{XY}(x, y) = 0$. Hiệp phương sai của $X$ và $Y$ là bao nhiêu?
 
 
 <!-- ===================== Kết thúc dịch Phần 9 ===================== -->
@@ -1908,33 +1907,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 3 -->
-* Nguyễn Mai Hòang Long
-
-<!-- Phần 4 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 5 -->
-* Phạm Đăng Khoa
-
-<!-- Phần 6 -->
 * Đỗ Trường Giang
-
-<!-- Phần 7 -->
-* Đỗ Trường Giang
-
-<!-- Phần 8 -->
-* Trần Yến Thy
-* Nguyễn Văn Cường
-
-<!-- Phần 9 -->
-* Trần Yến Thy
 * Nguyễn Văn Cường
 
 
