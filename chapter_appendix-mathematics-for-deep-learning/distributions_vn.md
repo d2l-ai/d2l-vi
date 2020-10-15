@@ -914,10 +914,10 @@ In this case $\mu_{X^{(n)}} = np \rightarrow \infty$ and $\sigma_{X^{(n)}}^2 = n
 so there is no reason to think this limit should be well defined.
 -->
 
-Bây giờ ta hãy thử một thử nghiệm khác nhưng có liên quan.
+Bây giờ ta hãy thử một thí nghiệm khác có liên quan.
 Giả sử ta lại thực hiện $n$ phép đo $\mathrm{Bernoulli}(p)$ độc lập $X_i$.
 Tổng của chúng có phân phối là $X^{(n)} \sim \mathrm{Binomial}(n, p)$.
-Thay vì lấy giới hạn khi $n$ tăng và $p$ giảm, Ta hãy cố định $p$, rồi cho $n \rightarrow \infty$.
+Thay vì lấy giới hạn khi $n$ tăng và $p$ giảm, hãy cố định $p$, rồi cho $n \rightarrow \infty$.
 Trong trường hợp này $\mu_{X^{(n)}} = np \rightarrow \infty$ và $\sigma_{X ^{(n)}}^2 = np (1-p) \rightarrow \infty$,
 vì vậy giới hạn này không thể xác định được.
 
@@ -928,7 +928,7 @@ Let us just make the mean and variance be well behaved by defining
 -->
 
 Tuy nhiên, vẫn có cách giải quyết khác!
-Đơn giản ta hãy thực hiện lấy trung bình và phương sai của một biến được định nghĩa bởi
+Có thể làm kỳ vọng và phương sai xác định bằng cách định nghĩa:
 
 $$
 Y^{(n)} = \frac{X^{(n)} - \mu_{X^{(n)}}}{\sigma_{X^{(n)}}}.
@@ -941,8 +941,8 @@ If we plot what these distributions look like, we will become even more convince
 -->
 
 
-Biến này có thể được coi là biến có trung bình là không và phương sai là một, và do đó, thật hợp lý để tin rằng nó sẽ hội tụ đến một phân phối có giới hạn nào đó.
-Nếu ta vẽ các phân phối này xem chúng trông như thế nào, ta có thể kiểm chứng giả thuyết trên.
+Biến này được coi là có kỳ vọng là không và phương sai là một, và do đó là hợp lý để tin rằng nó sẽ hội tụ đến một phân phối giới hạn nào đó.
+Nếu vẽ phân phối này, ta có thể kiểm chứng giả thuyết trên.
 
 
 ```{.python .input}
@@ -1009,7 +1009,7 @@ One thing to note: compared to the Poisson case, we are now dividing by the stan
 This is an indication that our limit will no longer be discrete, but rather a continuous.
 -->
 
-Một điều cần lưu ý: so với trường hợp của phân phối Poisson, ta hiện đang chia cho độ lệch chuẩn, có nghĩa là ta đang ép các kết quả có thể xảy ra vào các vùng ngày càng nhỏ hơn.
+Một điều cần lưu ý: so với phân phối Poisson, ta đang chia cho độ lệch chuẩn, có nghĩa là ta đang ép các kết quả có thể xảy ra vào các vùng ngày càng nhỏ hơn.
 Đây là một dấu hiệu cho thấy giới hạn này sẽ không còn rời rạc mà trở nên liên tục.
 
 
@@ -1019,7 +1019,7 @@ this will yield the Gaussian Distribution (or sometimes normal distribution).
 More explicitly, for any $a, b$:
 -->
 
-Suy luận ra kết quả sau cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm* phát biểu rằng khi $n \rightarrow \infty $,
+Suy luận ra kết quả sau cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm - central limit theorem* phát biểu rằng khi $n \rightarrow \infty $,
 giới hạn này sẽ tiến tới Phân phối Gauss (hoặc tên khác là phân phối chuẩn).
 Tường minh hơn, với bất kỳ $a, b$ nào:
 
@@ -1036,7 +1036,7 @@ $$
 where we say a random variable is normally distributed with given mean $\mu$ and variance $\sigma^2$, written $X \sim \mathcal{N}(\mu, \sigma^2)$ if $X$ has density
 -->
 
-trong đó, ta gọi một biến ngẫu nhiên có phân phối chuẩn với trung bình $\mu$ và phương sai $\sigma^2$, ký hiệu $X \sim \mathcal{N}(\mu, \sigma^2)$ nếu $X$ có mật độ
+trong đó, một biến ngẫu nhiên $X$ tuân theo phân phối chuẩn với kỳ vọng $\mu$ và phương sai $\sigma^2$, ký hiệu $X \sim \mathcal{N}(\mu, \sigma^2)$ nếu nó có mật độ:
 
 
 $$p_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
@@ -1047,7 +1047,7 @@ $$p_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}.$$
 Let us first plot the probability density function :eqref:`eq_gaussian_pdf`.
 -->
 
-Đầu tiên hãy cùng vẽ đồ thị của hàm mật độ xác suất :eqref:`eq_gaussian_pdf`.
+Đầu tiên hãy vẽ đồ thị của hàm mật độ xác suất :eqref:`eq_gaussian_pdf`.
 
 
 ```{.python .input}
@@ -1088,7 +1088,7 @@ It is beyond the scope of this appendix, but the Gaussian c.d.f. does not have a
 We will use `erf` which provides a way to compute this integral numerically.
 -->
 
-Giờ hãy cũng vẽ đồ thị hàm phân phối tích luỹ.
+Giờ hãy vẽ đồ thị hàm phân phối tích luỹ.
 Tuy nằm ngoài phạm vi của phụ lục này nhưng hàm phân phối tích lũy của phân phối Gauss không có công thức dạng đóng dưới dạng các hàm số sơ cấp.
 Ta sẽ sử dụng `erf` để tính toán xấp xỉ tích phân này.
 
@@ -1122,9 +1122,10 @@ Keen-eyed readers will recognize some of these terms.
 Indeed, we encountered this integral in :numref:`sec_integral_calculus`.
 Indeed we need exactly that computation to see that this $p_X(x)$ has total area one and is thus a valid density.
 -->
+
 Những bạn đọc tinh ý sẽ nhận ra một vài số hạng ở đây.
 Quả thực, ta đã gặp tích phân này trong :numref:`sec_integral_calculus`.
-Và quả thực ta cần chính phép tính này để xem liệu $p_X(x)$ có tổng diện tích bằng một và theo đó là một mật độ hợp lệ.
+Và ta cần chính phép tính này để xem liệu $p_X(x)$ có tổng diện tích bằng một và do đó là một hàm mật độ hợp lệ.
 
 
 
@@ -1133,8 +1134,8 @@ Our choice of working with coin flips made computations shorter, but nothing abo
 Indeed, if we take any collection of independent identically distributed random variables $X_i$, and form
 -->
 
-Việc lựa chọn làm việc với tung đồng xu giúp tính toán ngắn hơn, nhưng không có gì trong lựa chọn này là nền tảng.
-Quả thực, nếu ta lấy bất kỳ tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$ nào, và gọi
+Việc lựa chọn làm việc với tung đồng xu giúp tính toán ngắn hơn, nhưng không phải là nền tảng.
+Thật vậy, nếu lấy bất kỳ tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$ nào, và gọi:
 
 
 $$
@@ -1160,7 +1161,7 @@ There are additional requirements needed to make it work, most commonly $E[X^4] 
 -->
 
 sẽ xấp xỉ phân phối Gauss.
-Để công thức trên đúng ta sẽ cần thêm vài điều kiện bổ sung, phổ biến nhất là $E[X^4] < \infty$, nhưng phần cốt lõi đã rõ.
+Ta sẽ cần thêm vài điều kiện bổ sung, phổ biến nhất là $E[X^4] < \infty$, nhưng ý tưởng cốt lõi đã rõ ràng.
 
 
 <!--
@@ -1168,7 +1169,7 @@ The central limit theorem is the reason that the Gaussian is fundamental to prob
 Whenever we can say that something we measured is a sum of many small independent contributions, we can assume that the thing being measured will be close to Gaussian.  
 -->
 
-Định lý giới hạn trung tâm (*central limit theorem*) là lý do mà phân phối Gauss là nền tảng của xác suất, thống kê, và học máy.
+Định lý giới hạn trung tâm là lý do mà phân phối Gauss là nền tảng của xác suất, thống kê, và học máy.
 Mỗi khi ta có thể nói rằng thứ gì đó ta đo được là tổng của nhiều phần nhỏ độc lập, ta có thể giả sử rằng thứ được đo sẽ gần với phân phối Gauss.
 
 
@@ -1182,9 +1183,9 @@ Thus, if we know that our random variable has some mean and variance, the Gaussi
 
 Có rất nhiều tính chất hấp dẫn khác của phân phối Gauss, và chúng tôi muốn thảo luận thêm một tính chất nữa ở đây.
 Phân phối Gauss được biết tới là *phân phối entropy cực đại*.
-Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên tất cả ta cần biết vào lúc này là nó là một phép đo của sự ngẫu nhiên.
-Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss như biến ngẫu nhiên được chọn một cách ngẫu nhiên *nhất* với trung bình và phương sai cố định.
-Do đó, nếu ta biết biến ngẫu nhiên có trung bình và phương sai nào đó, về trực giác phân phối Gauss là lựa chọn an toàn nhất trong những phân phối mà ta có thể chọn.
+Ta sẽ phân tích entropy sâu hơn trong :numref:`sec_information_theory`, tuy nhiên lúc này chỉ cần biết nó là một phép đo sự ngẫu nhiên.
+Theo nghĩa toán học một cách chặt chẽ, ta có thể hiểu phân phối Gauss là cách chọn ngẫu nhiên *nhất* với kỳ vọng và phương sai cố định.
+Do đó, nếu ta biết biến ngẫu nhiên có kỳ vọng và phương sai nào đó, về trực giác phân phối Gauss là lựa chọn an toàn nhất trong những phân phối mà ta có thể chọn.
 
 
 <!--
@@ -1237,7 +1238,7 @@ The exponential family is a set of distributions whose density can be expressed 
 -->
 
 Một tính chất chung của tất cả các phân phối liệt kê ở trên là chúng đều thuộc họ được gọi là *họ hàm mũ (exponential family)*.
-Họ hàm mũ là tập các phân phối có mật độ có thể được biểu diễn dưới dạng sau:
+Họ hàm mũ là tập các phân phối có mật độ được biểu diễn dưới dạng sau:
 
 
 $$p(\mathbf{x} | \mathbf{\eta}) = h(\mathbf{x}) \cdot \mathrm{exp} \big{(} \eta^{\top} \cdot T\mathbf(x) - A(\mathbf{\eta}) \big{)}$$
@@ -1248,7 +1249,7 @@ $$p(\mathbf{x} | \mathbf{\eta}) = h(\mathbf{x}) \cdot \mathrm{exp} \big{(} \eta^
 As this definition can be a little subtle, let us examine it closely.  
 -->
 
-Do định nghĩa này có thể hơi khó hiểu, hãy cùng xem xét kĩ lưỡng hơn.
+Định nghĩa này có thể hơi khó hiểu, hãy cùng xem xét kĩ lưỡng hơn.
 
 
 <!--
@@ -1257,7 +1258,7 @@ This can be viewed as an original choice of measure we are modifying with our ex
 -->
 
 Đầu tiên, $h(\mathbf{x})$ được gọi là *phép đo cơ bản (underlying measure)* hay *phép đo cơ sở (base measure)*.
-Đây có thể được coi như lựa chọn ban đầu cho phép đo mà ta đang điều chỉnh với trọng số mũ.
+Đây có thể coi là lựa chọn ban đầu khi điều chỉnh trọng số mũ.
 
 
 <!--
@@ -1272,11 +1273,11 @@ probability density and no other information from the sample $\mathbf{x}$'s are 
 
 Thứ hai, ta có vector $\mathbf{\eta} = (\eta_1, \eta_2, ..., \eta_l) \in \mathbb{R}^l$ được gọi là *tham số tự nhiên (natural parameters)* hay *tham số chính tắc (canonical parameters)*.
 Các vector này xác định phép đo cơ sở sẽ được điều chỉnh thế nào.
-Các tham số tự nhiên tiến hành phép đo mới bằng cách tính tích vô hướng của các tham số này với hàm
+Ta tiến hành phép đo mới bằng cách tính tích vô hướng của các tham số tự nhiên với hàm
 $T(\cdot)$ nào đó của $\mathbf{x}= (x_1, x_2, ..., x_n) \in \mathbb{R}^n$ và lấy luỹ thừa.
-$T(\mathbf{x})= (T_1(\mathbf{x}), T_2(\mathbf{x}), ..., T_l(\mathbf{x}))$ được gọi là *thống kê đủ (sufficient statistics)* của $\eta$.
-Cái tên này được sử dụng do thông tin biểu diễn bởi $T(\mathbf{x})$ đủ để tính
-mật độ xác suất và không cần thêm bất cứ thông tin nào khác từ mẫu của $\mathbf{x}$.
+$T(\mathbf{x})= (T_1(\mathbf{x}), T_2(\mathbf{x}), ..., T_l(\mathbf{x}))$ được gọi là *thống kê đầy đủ (sufficient statistics)* của $\eta$,
+do thông tin biểu diễn bởi $T(\mathbf{x})$ là đủ để tính
+mật độ xác suất và không cần thêm bất cứ thông tin nào khác từ mẫu $\mathbf{x}$.
 
 
 <!--
@@ -1285,7 +1286,7 @@ which ensures that the above distribution :eqref:`eq_exp_pdf` integrates to one,
 -->
 
 Thứ ba, ta có $A(\mathbf{\eta})$, được gọi là *hàm tích luỹ (cumulant function)*,
-hàm này đảm bảo phân phối trên :eqref:`eq_exp_pdf` có tích phân bằng 1, ví dụ như
+hàm này đảm bảo phân phối trên :eqref:`eq_exp_pdf` có tích phân bằng 1, và có dạng:
 
 
 $$  A(\mathbf{\eta}) = \log \left[\int h(\mathbf{x}) \cdot \mathrm{exp} 
@@ -1298,7 +1299,7 @@ Assuming that $\mathbf{x}$ is an univariate variable, we saw that it had a densi
 -->
 
 Để ngắn gọn, ta xét phân phối Gauss.
-Giả sử rằng $\mathbf{x}$ là biến đơn thuộc tính (*univariate variable*), ta thấy rằng nó có mật độ bằng
+Giả sử $\mathbf{x}$ là đơn biến (*univariate variable*) và có mật độ là:
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
 
@@ -1331,7 +1332,7 @@ Hàm này phù hợp với định nghĩa của họ hàm mũ với:
 
 * *phép đo cơ sở*: $h(x) = \frac{1}{\sqrt{2 \pi}}$,
 * *tham số tự nhiên*: $\eta = \begin{bmatrix} \eta_1 \\ \eta_2 \end{bmatrix} = \begin{bmatrix} \frac{\mu}{\sigma^2} \\ \frac{1}{2 \sigma^2}  \end{bmatrix}$,
-* *thống kê đủ*: $T(x) = \begin{bmatrix}x\\-x^2\end{bmatrix}$, và
+* *thống kê đầy đủ*: $T(x) = \begin{bmatrix}x\\-x^2\end{bmatrix}$, và
 * *hàm tích luỹ*: $A(\eta) = \frac{1}{2 \sigma^2} \mu^2 + \log(\sigma) = \frac{\eta_1^2}{4 \eta_2} - \frac{1}{2}\log(2 \eta_2)$.
 
 
@@ -1340,16 +1341,15 @@ It is worth noting that the exact choice of each of above terms is somewhat arbi
 Indeed, the important feature is that the distribution can be expressed in this form, not the exact form itself.
 -->
 
-Đáng chú ý rằng việc lựa chọn chính xác cho từng số hạng trên hơi có phần tuỳ ý.
-Quả thực, đặc trưng quan trọng nhất chính là việc phân phối có thể được biểu diễn ở dạng này, chứ không phải dạng chuẩn của nó.
-
+Đáng chú ý rằng việc lựa chọn chính xác từng số hạng trên hơi có phần tuỳ ý.
+Quả thực, đặc trưng quan trọng nhất chính là việc phân phối có thể được biểu diễn ở dạng này, chứ không cần bất kỳ dạng chính xác nào.
 
 <!--
 As we allude to in :numref:`subsec_softmax_and_derivatives`, a widely used technique is to assume that the final output $\mathbf{y}$ follows an exponential family distribution.
 The exponential family is a common and powerful family of distributions encountered frequently in machine learning.
 -->
 
-Như ta ám chỉ trong :numref:`subsec_softmax_and_derivatives`, một kỹ thuật được sử dụng rộng rãi là giả sử rằng kết quả cuối cùng $\mathbf{y}$ tuân theo họ phân phối mũ.
+Như đề cập trong :numref:`subsec_softmax_and_derivatives`, một kỹ thuật hay dùng là giả sử kết quả cuối cùng $\mathbf{y}$ tuân theo họ phân phối mũ.
 Họ hàm mũ là một họ phân phối phổ biến và mạnh mẽ, bắt gặp thường xuyên trong học máy.
 
 
@@ -1365,12 +1365,12 @@ Họ hàm mũ là một họ phân phối phổ biến và mạnh mẽ, bắt g�
 * All the above distributions belong to exponential family.
 -->
 
-* Biến ngẫu nhiên Bernoulli có thể được sử dụng để mô hình hoá sự kiện cho ra kết quả có/không.
-* Mô hình phân phối đều rời rạc chọn từ một tập hữu hạn những khả năng.
+* Phân phối Bernoulli có thể mô hình hoá sự kiện có kết quả có/không.
+* Phân phối đều rời rạc chọn từ một tập hữu hạn các khả năng.
 * Phân phối đều liên tục chọn từ một khoảng liên tục.
 * Phân phối nhị thức mô hình hoá một chuỗi các biến Bernoulli ngẫu nhiên, và đếm số kết quả.
-* Biến ngẫu nhiên Poisson mô hình hoá các sự kiện hiếm khi xuất hiện.
-* Biến ngẫu nhiên Gauss mô hình hoá kết quả của việc tính tổng một lượng lớn các biến ngẫu nhiên độc lập.
+* Phân phối Poisson mô hình hoá các sự kiện hiếm khi xuất hiện.
+* Phân phối Gauss mô hình hoá kết quả của việc tính tổng một lượng lớn các biến ngẫu nhiên độc lập.
 * Tất cả các phân phối trên đều thuộc họ hàm mũ.
 
 
@@ -1383,10 +1383,10 @@ we can show that this becomes approximately Gaussian. Why does this make sense?
 3. What is the probability mass function for a sum of two discrete uniform random variables on $n$ elements?
 -->
 
-1. Độ lệch chuẩn của một biến ngẫu nhiên mô tả hiệu $X-Y$ của hai biến ngẫu nhiên nhị thức độc lập $X, Y \sim \mathrm{Binomial}(16, 1/2)$ là gì.
+1. Tính độ lệch chuẩn của một biến ngẫu nhiên mô tả hiệu $X-Y$ của hai biến ngẫu nhiên nhị thức độc lập $X, Y \sim \mathrm{Binomial}(16, 1/2)$.
 2. Nếu ta lấy một biến ngẫu nhiên Poisson $X \sim \mathrm{Poisson}(\lambda)$ và xét $(X - \lambda)/\sqrt{\lambda}$ với $\lambda \rightarrow \infty$,
 ta có thể chỉ ra rằng phân phối này xấp xỉ phân phối Gauss. Tại sao điều này lại hợp lý?
-3. Hàm khối xác suất của tổng của hai biến ngẫu nhiên rời rạc phân phối đều trên $n$ phần tử là gì?
+3. Hàm khối xác suất của tổng của hai biến ngẫu nhiên rời rạc theo phân phối đều trên $n$ phần tử là gì?
 
 
 <!-- ===================== Kết thúc dịch Phần 7 ===================== -->
@@ -1408,28 +1408,11 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Nguyễn Mai Hoàng Long
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Phạm Hồng Vinh
-* Lê Khắc Hồng Phúc
-
-<!-- Phần 4 -->
-* Nguyễn Mai Hoàng Long
-
-<!-- Phần 5 -->
 * Đỗ Trường Giang
-
-<!-- Phần 6 -->
-* Đỗ Trường Giang
-
-<!-- Phần 7 -->
-* Đỗ Trường Giang
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
