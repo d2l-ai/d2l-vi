@@ -450,15 +450,15 @@ In addition to working with vectors, another key object
 that you must understand to go far in linear algebra
 is the *hyperplane*, a generalization to higher dimensions
 of a line (two dimensions) or of a plane (three dimensions).
-In an $n$-dimensional vector space, a hyperplane has $d-1$ dimensions
+In an $d$-dimensional vector space, a hyperplane has $d-1$ dimensions
 and divides the space into two half-spaces.
 -->
 
-Ngoài việc làm việc với vector, một khái niệm quan trọng khác bạn phải nắm vững
-khi đi sâu vào đại số tuyến tính là *siêu phẳng*, một khái niệm tổng quát của
-đường thẳng (trong không gian hai chiều) hoặc một mặt phẳng (trong không gian
-ba chiều). Trong một không gian vector $d$ chiều, một siêu phẳng có $d-1$ chiều
-và chia không gian thành hai nửa không gian.
+Ngoài làm việc với vector, một đối tượng quan trọng khác bạn phải nắm vững 
+khi đi sâu vào đại số tuyến tính là *siêu phẳng*, một khái niệm tổng quát của 
+đường thẳng (trong không gian hai chiều) hoặc một mặt phẳng (trong không gian 
+ba chiều). Trong một không gian vector $d$ chiều, một siêu phẳng có $d-1$ chiều 
+và chia không gian thành hai nửa không gian. 
 
 <!--
 Let us start with an example.
@@ -467,10 +467,10 @@ By recalling the connection between dot products and angles above :eqref:`eq_ang
 we can see that this is equivalent to
 -->
 
-Xét ví dụ sau. Giả sử ta có một vector cột $\mathbf{w}=[2,1]^\top$. Ta muốn
-biết "tập hợp những điểm $\mathbf{v}$ sao cho $\mathbf{w}\cdot\mathbf{v} = 1$?"
-Sử dụng mối quan hệ giữa tích vô hướng và góc ở :eqref:`eq_angle_forumla` ở trên,
-ta có thể thấy điều này tương đương với
+Xét ví dụ sau. Giả sử ta có một vector cột $\mathbf{w}=[2,1]^\top$. Ta muốn 
+biết "những điểm $\mathbf{v}$ nào thỏa mãn $\mathbf{w}\cdot\mathbf{v} = 1$?" 
+Sử dụng mối quan hệ giữa tích vô hướng và góc ở :eqref:`eq_angle_forumla` phía trên, 
+ta có thể thấy điều này tương đương với 
 
 $$
 \|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta) = 1 \; \iff \; \|\mathbf{v}\|\cos(\theta) = \frac{1}{\|\mathbf{w}\|} = \frac{1}{\sqrt{5}}.
@@ -480,8 +480,8 @@ $$
 ![Recalling trigonometry, we see the formula $\|\mathbf{v}\|\cos(\theta)$ is the length of the projection of the vector $\mathbf{v}$ onto the direction of $\mathbf{w}$](../img/ProjVec.svg)
 -->
 
-![Nhắc lại trong lượng giác, chúng ta coi $\|\mathbf{v}\|\cos(\theta)$ là độ
-dài hình chiếu của vector $\mathbf{v}$ lên hướng của vector $\mathbf{w}$](../img/ProjVec.svg)
+![Nhắc lại trong lượng giác, chúng ta coi $\|\mathbf{v}\|\cos(\theta)$ là độ 
+dài hình chiếu của vector $\mathbf{v}$ lên hướng của vector $\mathbf{w}$](../img/ProjVec.svg) 
 :label:`fig_vector-project`
 
 <!--
@@ -495,11 +495,11 @@ If we wanted, we could find the equation for this line
 and see that it is $2x + y = 1$ or equivalently $y = 1 - 2x$.
 -->
 
-Nếu xem xét ý nghĩa hình học của biểu diễn này, chúng ta thấy rằng việc này
-tương đương với việc độ dài hình chiếu của $\mathbf{v}$ lên hướng của
-$\mathbf{w}$ chính là $1/\|\mathbf{w}\|$ như được biểu diễn trong :numref:`fig_vector-project`. Tập hợp các điểm thỏa mãn điều kiện này là một đường
-thẳng vuông góc với vector $\mathbf{w}$. Ta có thể tìm được phương trình của
-đường thẳng này là $2x + y = 1$ hoặc $y = 1 - 2x$.
+Nếu xem xét ý nghĩa hình học của biểu thức này, chúng ta thấy rằng nó
+tương đương với việc độ dài hình chiếu của $\mathbf{v}$ lên hướng của 
+$\mathbf{w}$ chính là $1/\|\mathbf{w}\|$, như được biểu diễn trong  :numref:`fig_vector-project`. Tập hợp các điểm thỏa mãn điều kiện này là một đường 
+thẳng vuông góc với vector $\mathbf{w}$. Ta có thể tìm được phương trình của 
+đường thẳng này là $2x + y = 1$ hoặc $y = 1 - 2x$. 
 
 
 <!--
@@ -513,20 +513,19 @@ where all the points on one side have dot product below a threshold,
 and the other side above as we see in :numref:`fig_space-division`.
 -->
 
-Tiếp theo, nếu tự hỏi về tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$
-hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường
-hợp mà hình chiếu của chúng lên $\mathbf{w}$ lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$.
-Vì thế, hai bất phương trình này định nghĩa hai phía của đường thẳng. Bằng cách này, ta có
-thể cắt mặt phẳng thành hai nửa: một nửa chứa tất cả điểm có tích vô
-hướng nhỏ hơn một mức ngưỡng và nửa còn lại chứa những điểm có tích vô hướng lớn
-hơn mức ngưỡng đó. Xem hình :numref:`fig_space-division`.
+Tiếp theo, nếu ta muốn biết tập hợp các điểm thỏa mãn $\mathbf{w}\cdot\mathbf{v} > 1$ 
+hoặc $\mathbf{w}\cdot\mathbf{v} < 1$, ta có thể thấy rằng đây là những trường 
+hợp mà hình chiếu của chúng lên $\mathbf{w}$ lần lượt dài hơn hoặc ngắn hơn $1/\|\mathbf{w}\|$. 
+Vì thế, hai bất phương trình này định nghĩa hai phía của đường thẳng.  Bằng cách này, ta có
+thể cắt mặt phẳng thành hai nửa: một nửa chứa tất cả các điểm có tích vô
+hướng nhỏ hơn một mức ngưỡng và nửa còn lại chứa những điểm có tích vô hướng lớn 
+hơn mức ngưỡng đó, như trong hình :numref:`fig_space-division`. 
 
 <!--
 ![If we now consider the inequality version of the expression, we see that our hyperplane (in this case: just a line) separates the space into two halves.](../img/SpaceDivision.svg)
 -->
 
-![Nếu nhìn từ dạng bất phương trình, ta thấy rằng siêu phẳng (chỉ là một đường thẳng
-trong trường hợp này) chia không gian ra thành hai nửa.](../img/SpaceDivision.svg)
+![Nếu nhìn từ dạng bất phương trình, ta thấy rằng siêu phẳng (trong trường hợp này là một đường thẳng) chia không gian ra thành hai nửa.](../img/SpaceDivision.svg)
 :label:`fig_space-division`
 
 <!--
@@ -537,16 +536,16 @@ we obtain a plane at right angles to the given vector $\mathbf{w}$.
 The two inequalities again define the two sides of the plane as is shown in :numref:`fig_higher-division`.
 -->
 
-Tương tự với không gian đa chiều. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm
-các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một
-mặt phẳng vuông góc với vectơ cho trước $\mathbf{w}$. Hai bất phương trình một lần nữa
-định nghĩa hai phía của mặt bẳng như trong hình :numref:`fig_higher-division`.
+Câu chuyện trong không gian đa chiều cũng tương tự. Nếu lấy $\mathbf{w} = [1,2,3]^\top$ và đi tìm 
+các điểm trong không gian ba chiều với $\mathbf{w}\cdot\mathbf{v} = 1$, ta có một 
+mặt phẳng vuông góc với vector cho trước $\mathbf{w}$. Hai bất phương trình một lần nữa 
+định nghĩa hai phía của mặt phẳng như trong hình :numref:`fig_higher-division`. 
 
 <!--
 ![Hyperplanes in any dimension separate the space into two halves.](../img/SpaceDivision3D.svg)
 -->
 
-![Siêu phẳng trong bất kỳ không gian nào chia không gian đó ra thành hai nửa](../img/SpaceDivision3D.svg)
+![Siêu phẳng trong bất kỳ không gian nào chia không gian đó ra thành hai nửa.](../img/SpaceDivision3D.svg)
 :label:`fig_higher-division`
 
 <!--
@@ -564,16 +563,16 @@ to be to find a non-linear embedding such that the target classes
 can be separated cleanly by hyperplanes.
 -->
 
-Mặc dù không thể minh hoạ trong không gian nhiều chiều hơn, ta vẫn có thể tổng
-quát điều này cho không gian mười, một trăm hay một tỷ chiều. Việc này thường
-xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể hiểu các
-mô hình phân loại tuyến tính trong :numref:`sec_softmax` cũng giống như những phương pháp
-đi tìm siêu phẳng để phân chia các lớp mục tiêu khác nhau. Ở trường hợp này, những
-siêu phẳng như trên thường được gọi là *mặt phẳng quyết định*. Phần lớn các mô hình
-phân loại tìm được qua học sâu đều kết thúc bởi một tầng tuyến tính và theo sau là một tầng
-softmax, bởi vậy ta có thể diễn giải ý nghĩa của mạng nơ-ron sâu giống như việc tìm một
-embedding phi tuyến sao cho các lớp mục tiêu có thể được phân chia bởi các
-siêu phẳng một cách gọn gàng.
+Mặc dù không thể minh hoạ trong không gian nhiều chiều hơn, ta vẫn có thể tổng 
+quát điều này cho không gian mười, một trăm hay một tỷ chiều. Việc này thường 
+xuyên xảy ra khi nghĩ về các mô hình học máy. Chẳng hạn, ta có thể hiểu các 
+mô hình phân loại tuyến tính trong :numref:`sec_softmax` cũng giống như những phương pháp 
+đi tìm siêu phẳng để phân chia các lớp mục tiêu khác nhau. Ở trường hợp này, những 
+siêu phẳng như trên thường được gọi là *các mặt phẳng quyết định*. Phần lớn các mô hình 
+phân loại tìm được qua học sâu đều kết thúc với một tầng tuyến tính và theo sau là một tầng 
+softmax, bởi vậy ta có thể diễn giải ý nghĩa của mạng nơ-ron sâu giống như việc tìm một 
+embedding phi tuyến sao cho các lớp mục tiêu có thể được phân chia bởi các 
+siêu phẳng một cách gọn gàng. 
 
 <!--
 To give a hand-built example, notice that we can produce a reasonable model
@@ -583,10 +582,10 @@ by just taking the vector between their means to define the decision plane
 and eyeball a crude threshold.  First we will load the data and compute the averages.
 -->
 
-Xét ví dụ sau. Chú ý rằng, ta có thể tạo một mô hình đủ tốt để phân loại
-những bức ảnh nhỏ xíu có áo thun và quần từ tập dữ liệu Fashion MNIST (Xem :numref:`sec_fashion_mnist`) bằng cách lấy vector giữa điểm trung bình của mỗi lớp để
-định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên, chúng
-ta tải dữ liệu và tính hai ảnh trung bình:
+Xét ví dụ sau. Để ý rằng, ta có thể tạo một mô hình đủ tốt để phân loại
+những bức ảnh áo thun và quần với kích thước nhỏ từ tập dữ liệu Fashion MNIST (Xem :numref:`sec_fashion_mnist`) bằng cách lấy vector giữa điểm trung bình của mỗi lớp để 
+định nghĩa một mặt phẳng quyết định và chọn thủ công một ngưỡng. Trước tiên, chúng 
+ta nạp dữ liệu và tính hai ảnh trung bình: 
 
 ```{.python .input}
 # Load in the dataset
@@ -650,9 +649,8 @@ ave_1 = tf.reduce_mean(X_train_1, axis=0)
 It can be informative to examine these averages in detail, so let's plot what they look like.  In this case, we see that the average indeed resembles a blurry image of a t-shirt.
 -->
 
-Để có cái nhìn rõ hơn, ta có thể biểu diễn các ảnh trung bình này. Trong trường
-hợp này, chúng ta thấy rằng ảnh trung bình của áo thun cũng ở dạng
-một phiên bản mờ của một chiếc áo thun.
+Để có cái nhìn rõ hơn, ta có thể xem xét chi tiết các ảnh trung bình này bằng cách in chúng ra màn hình. 
+Quả thực, ảnh đầu tiên trông như một chiếc áo thun bị mờ.
 
 
 ```{.python .input}
@@ -676,8 +674,8 @@ d2l.plt.show()
 In the second case, we again see that the average resembles a blurry image of trousers.
 -->
 
-Trong trường hợp thứ hai, chúng ta cũng thấy ảnh trung bình có dạng
-một ảnh phiên bản mờ một chiếc quần dài.
+Trong ảnh thứ hai, chúng ta cũng thấy ảnh trung bình chứa
+một chiếc quần dài bị mờ.
 
 ```{.python .input}
 #@tab mxnet, pytorch
@@ -697,8 +695,8 @@ d2l.plt.show()
 In a fully machine learned solution, we would learn the threshold from the dataset.  In this case, I simply eyeballed a threshold that looked good on the training data by hand.
 -->
 
-Trong lời giải học máy hoàn chỉnh, ta sẽ học được mức ngưỡng từ tập dữ liệu. Trong trường
-hợp này, tôi chỉ đơn giản chọn thủ công một ngưỡng mà cho kết quả khá tốt trên tập huấn luyện.
+Trong một lời giải học máy hoàn chỉnh thì mức ngưỡng cũng sẽ được học từ tập dữ liệu. Trong trường
+hợp này, ta chỉ đơn thuần chọn thủ công một ngưỡng mang lại kết quả khá tốt trên tập huấn luyện. 
 
 ```{.python .input}
 # Print test set accuracy with eyeballed threshold
