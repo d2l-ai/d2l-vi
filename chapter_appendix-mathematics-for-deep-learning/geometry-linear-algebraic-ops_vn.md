@@ -415,7 +415,7 @@ của văn bản, bởi vậy chúng ta lại có thể sử dụng góc.
 ### Cosine Similarity
 -->
 
-### Độ tương tự Cosin
+### Độ tương tự Cô-sin
 
 <!--
 In ML contexts where the angle is employed
@@ -425,7 +425,7 @@ to refer to the portion
 -->
 
 Trong văn cảnh học máy với góc được dùng để đo lường khoảng cách giữa hai vector, 
-người làm học máy sử dụng thuật ngữ *độ tương tự cosin* để chỉ đại lượng 
+người làm học máy sử dụng thuật ngữ *độ tương tự cô-sin* để chỉ đại lượng 
 
 $$
 \cos(\theta) = \frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}.
@@ -441,10 +441,10 @@ are sampled randomly with mean $0$,
 their cosine will nearly always be close to $0$.
 -->
 
-Hàm cosin có giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá 
+Hàm cô-sin có giá trị lớn nhất bằng $1$ khi hai vector chỉ cùng một hướng, giá 
 trị nhỏ nhất bằng $-1$ khi chúng cùng phương nhưng ngược hướng, và $0$ khi hai vector 
 trực giao. Chú ý rằng nếu các thành phần của hai vector nhiều chiều được lấy 
-mẫu ngẫu nhiên với kỳ vọng $0$, cosin giữa chúng sẽ luôn gần với $0$. 
+mẫu ngẫu nhiên với kỳ vọng $0$, cô-sin giữa chúng sẽ luôn gần với $0$. 
 
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
