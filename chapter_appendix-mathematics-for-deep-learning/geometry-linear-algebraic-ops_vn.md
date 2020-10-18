@@ -1675,7 +1675,7 @@ A nonzero determinant implies an invertible (non-singular) matrix and a zero-val
 * Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ. 
 * Siêu phẳng (*hyperplane*) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
 Chúng có thể được dùng để định nghĩa các mặt phẳng quyết định dùng trong bước cuối cùng của bài toán phân loại.
-* Ta có thể hiểu phép nhân ma trận theo cách hình học là việc biến đổi một cách đồng nhất các các hệ tọa độ.
+* Ta có thể hiểu phép nhân ma trận theo cách hình học là việc biến đổi một cách đồng nhất các hệ tọa độ.
 Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học. 
 * Phụ thuộc tuyến tính cho biết khi một tập các vector tồn tại trong một không gian ít chiều hơn 
 so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chúng chỉ nằm trong không gian $2$ chiều). 
