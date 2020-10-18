@@ -1502,7 +1502,7 @@ Let us see how many of the linear algebraic definitions
 we have seen before can be expressed in this compressed tensor notation:
 -->
 
-Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã học dưới biểu diễn tensor nén gọn này:
+Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến tính đã biết với biểu thức tensor thu gọn này:
 
 * $\mathbf{v} \cdot \mathbf{w} = \sum_i v_iw_i$
 * $\|\mathbf{v}\|_2^{2} = \sum_i v_iv_i$
@@ -1514,7 +1514,7 @@ Hãy xem ta có thể biểu diễn bao nhiêu khái niệm đại số tuyến 
 In this way, we can replace a myriad of specialized notations with short tensor expressions.
 -->
 
-Với cách này, ta có thể thay thế hàng loạt ký hiệu chuyên dụng chỉ với những biểu diễn tensor ngắn.
+Với cách này, ta có thể thay thế hàng loạt ký hiệu chi tiết bằng những biểu diễn tensor ngắn. 
 
 <!--
 ### Expressing in Code
@@ -1527,8 +1527,8 @@ Tensors may flexibly be operated on in code as well.
 As seen in :numref:`sec_linear-algebra`, we can create tensors as is shown below.
 -->
 
-Tensor cũng có thể được thao tác linh hoạt dưới dạng mã.
-Như đã thấy ở :numref:`sec_linear-algebra`, ta có thể tạo tensor bằng những cách bên dưới.
+Tensor cũng có thể được thao tác linh hoạt dưới dạng mã. 
+Như trong :numref:`sec_linear-algebra`, ta có thể tạo các tensor như sau. 
 
 ```{.python .input}
 # Define tensors
@@ -1566,9 +1566,9 @@ For instance, to implement matrix multiplication, we can consider the Einstein s
 ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) and strip out the indices themselves to get the implementation:
 -->
 
-Phép tính tổng Einstein đã được lập trình trực tiếp.
-Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor để thao tác trên đó.
-Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách ra riêng những indices để có được cài đặt mong muốn:
+Phép tính tổng Einstein đã được lập trình sẵn và có thể sử dụng một cách trực tiếp.
+Các chỉ số xuất hiện trong phép tổng Einstein có thể được truyền vào dưới dạng chuỗi ký tự, theo sau là những tensor cần thao tác. 
+Ví dụ, để thực hiện phép nhân ma trận, ta có thể sử dụng phép tổng Einstein ở trên ($\mathbf{A}\mathbf{v} = a_{ij}v_j$) và tách riêng các chỉ số như sau: 
 
 ```{.python .input}
 # Reimplement matrix multiplication
@@ -1593,7 +1593,7 @@ For instance if we want to compute what would be traditionally written as
 -->
 
 Đây là một ký hiệu cực kỳ linh hoạt.
-Giả sử ta muốn tính toán một phép tính thường được ghi một cách truyền thống là
+Giả sử ta muốn tính toán một phép tính thường được ghi một cách truyền thống là 
 
 $$
 c_{kl} = \sum_{ij} \mathbf{b}_{ijk}\mathbf{a}_{il}v_j.
@@ -1603,7 +1603,7 @@ $$
 it can be implemented via Einstein summation as:
 -->
 
-nó có thể được thực hiện thông qua phép tổng Einstein như sau:
+nó có thể được thực hiện thông qua phép tổng Einstein như sau: 
 
 ```{.python .input}
 np.einsum("ijk, il, j -> kl", B, A, v)
@@ -1625,9 +1625,9 @@ For this reason, `einsum` provides an alternative notation by providing integer 
 For example, the same tensor contraction can also be written as:
 -->
 
-Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách lập trình.
+Cách ký hiệu này vừa dễ đọc và hiệu quả cho chúng ta, tuy nhiên lại khá rườm rà nếu ta cần tạo ra một phép co tensor tự động bằng cách lập trình. 
 Vì lý do này, `einsum` có một cách ký hiệu thay thế bằng cách cung cấp các chỉ số nguyên cho mỗi tensor.
-Ví dụ, cùng một phép co tensor, có thể viết lại bằng:
+Ví dụ, cùng phép co tensor ở trên có thể viết lại như sau:
 
 
 ```{.python .input}
@@ -1648,7 +1648,7 @@ np.einsum(B, [0, 1, 2], A, [0, 3], v, [1], [2, 3])
 Either notation allows for concise and efficient representation of tensor contractions in code.
 -->
 
-Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chính xác và hiệu quả.
+Cả hai cách ký hiệu đều biểu diễn phép co tensor một cách chính xác và hiệu quả. 
 
 
 ## Tóm tắt
@@ -1670,20 +1670,20 @@ A nonzero determinant implies an invertible (non-singular) matrix and a zero-val
 * Tensor contractions and Einstein summation provide for a neat and clean notation for expressing many of the computations that are seen in machine learning.
 -->
 
-* Về phương diện hình học vector có thể được hiểu như là điểm hoặc hướng trong không gian.
-* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ.
+* Về phương diện hình học, vector có thể được hiểu như là điểm hoặc hướng trong không gian. 
+* Tích vô hướng định nghĩa khái niệm góc trong không gian đa chiều bất kỳ. 
 * Siêu phẳng (*hyperplane*) là sự khái quát hóa của đường thẳng và mặt phẳng trong không gian đa chiều.
-Chúng có thể được dùng để định nghĩa mặt phẳng quyết định được dùng trong bước cuối cùng của bài toán phân loại.
-* Phép nhân ma trận có thể được biểu diễn hình học như việc biến dạng một cách đồng nhất các các điểm tọa độ.
-Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học.
-* Độc lập tuyến tính là cách nói khi một tập hợp các vector lại ở trong một không gian ít chiều hơn 
-so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chỉ nằm trong không gian $2$ chiều).
-Hạng của ma trận là kích thước của tập con lớn nhất của ma trận đó có tính chất độc lập tuyến tính.
-* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác mà hoàn tác lại hành động trước đó.
-Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (*numerical instability*) của nó.
-* Các định thức cho phép ta đo đạc mức độ mở rộng hoặc co hẹp của một ma trận trong một không gian.
-Một ma trận là khả nghịch khi và chỉ khi định thức của nó khác không.
-* Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và sạch sẽ cho nhiều phép toán thường gặp trong học máy.
+Chúng có thể được dùng để định nghĩa các mặt phẳng quyết định dùng trong bước cuối cùng của bài toán phân loại.
+* Ta có thể hiểu phép nhân ma trận theo cách hình học là việc biến đổi một cách đồng nhất các hệ tọa độ.
+Cách biểu diễn sự biến đổi vector này tuy có nhiều hạn chế nhưng lại gọn gàng về mặt toán học. 
+* Phụ thuộc tuyến tính cho biết khi một tập các vector tồn tại trong một không gian ít chiều hơn 
+so với dự kiến (chẳng hạn bạn có $3$ vector nhưng chúng chỉ nằm trong không gian $2$ chiều). 
+Hạng của ma trận là số lượng cột độc lập tuyến tính lớn nhất trong ma trận đó. 
+* Khi phép nghịch đảo của một ma trận là xác định, việc nghịch đảo ma trận cho phép chúng ta tìm một ma trận khác giúp hoàn tác lại thao tác trước đó.
+Việc nghịch đảo ma trận hữu dụng trong lý thuyết, nhưng yêu cầu cẩn trọng khi sử dụng vì tính bất ổn định số học (*numerical instability*) của nó. 
+* Định thức cho phép đo lường mức độ một ma trận làm co dãn không gian.
+Một ma trận là khả nghịch khi và chỉ khi định thức của nó khác không. 
+* Phép co tensor và phép lấy tổng Einstein cho ta cách biểu diễn gọn gàng và súc tích các phép toán thường gặp trong học máy.
 
 
 ## Bài tập
@@ -1692,7 +1692,7 @@ Một ma trận là khả nghịch khi và chỉ khi định thức của nó kh
 1. What is the angle between
 -->
 
-1. Góc giữa hai vectors dưới đây là bao nhiêu?
+1. Góc giữa hai vectors dưới đây là bao nhiêu? 
 
 $$
 \vec v_1 = \begin{bmatrix}
@@ -1706,15 +1706,15 @@ $$
 2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
 -->
 
-2. Đúng hay sai: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ và $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ có phải là nghịch đảo của nhau?
+2. $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ và $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ là nghịch đảo của nhau, đúng hay sai?
 
 <!--
 3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.
 What is the area after transforming the figure by the matrix
 -->
 
-Giả sử ta vẽ ra một hình trong mặt phẳng với diện tích $100\mathrm{m}^2$.
-Diện tích đó sẽ bằng bao nhiêu sau khi biến đổi hình đó bằng ma trận
+3. Giả sử ta vẽ một hình trong mặt phẳng với diện tích $100\mathrm{m}^2$. 
+Diện tích hình đó sẽ bằng bao nhiêu sau khi biến đổi nó với ma trận 
 
 $$
 \begin{bmatrix}
@@ -1727,7 +1727,7 @@ $$
 4. Which of the following sets of vectors are linearly independent?
 -->
 
-4. Trong các nhóm vector sau, nhóm nào là độc lập tuyến tính?
+4. Trong các nhóm vector sau, nhóm nào là độc lập tuyến tính? 
 
  * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
  * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
@@ -1738,8 +1738,8 @@ $$
 True or false: the determinant of such a matrix is always $0$?
 -->
 
-5. Giả sử ta có ma trận viết là $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với các giá trị $a, b, c$, và $d$ nào đó.
-Đúng hay sai: một ma trận như thế luôn có định thức bằng $0$?
+5. Giả sử ta có ma trận $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ với các giá trị $a, b, c$, và $d$ nào đó. 
+Ma trận đó luôn có định thức bằng $0$, đúng hay sai?
 
 <!--
 6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.
@@ -1747,13 +1747,13 @@ What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
 -->
 
 6. Các vector $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ và $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao.
-Cần điều kiện gì với ma trận $A$ để $Ae_1$ và $Ae_2$ trực giao?
+Ma trận $A$ cần thỏa mãn điều kiện gì để $Ae_1$ và $Ae_2$ trực giao? 
 
 <!--
 7. How can you write $\mathrm{tr}(\mathbf{A}^4)$ in Einstein notation for an arbitrary matrix $A$?
 -->
 
-7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý?
+7. Viết $\mathrm{tr}(\mathbf{A}^4)$ theo cách biểu diễn Einstein như thế nào với ma trận $A$? tùy ý? 
 
 
 <!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================-->
