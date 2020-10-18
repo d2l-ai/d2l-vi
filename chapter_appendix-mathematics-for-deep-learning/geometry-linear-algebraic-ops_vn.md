@@ -1272,8 +1272,8 @@ to interpret a fundamental quantity known as the *determinant*.
 Consider the grid image from before, but now with a highlighted region (:numref:`fig_grid-filled`).
 -->
 
-Góc nhìn hình học của đại số tuyến tính cung cấp một cái nhìn trực quan để diễn giải một đại lượng cơ bản được gọi là *định thức*. 
-Xét hình lưới trước đây với một vùng được tô màu (:numref:`fig_grid-filled`). 
+Góc nhìn hình học của đại số tuyến tính cung cấp một cách hiểu trực quan về một đại lượng cơ bản được gọi là *định thức*. 
+Xét lưới không gian trong phần trước với một vùng in đậm (:numref:`fig_grid-filled`). 
 
 <!--
 ![The matrix $\mathbf{A}$ again distorting the grid.  This time, I want to draw particular attention to what happens to the highlighted square.](../img/GridTransformFilled.svg)
@@ -1291,9 +1291,9 @@ There is no reason this parallelogram should have the same area
 that we started with, and indeed in the specific case shown here of
 -->
 
-Cùng nhìn vào hình vuông được tô màu. Đây là một hình vuông có diện tích bằng một với các cạnh được tạo bởi $(0, 1)$ và $(1, 0)$. 
+Cùng nhìn vào hình vuông được tô màu, nó có diện tích bằng một với các cạnh được tạo bởi $(0, 1)$ và $(1, 0)$. 
 Sau khi ma trận $\mathbf{A}$ biến đổi hình vuông này, ta thấy rằng nó trở thành một hình bình hành. 
-Không có lý do nào để nói hình bình hành này có cùng diện tích với hình vuông, và trong trường hợp đặc biệt này 
+Không có lý do nào để hình bình hành này có cùng diện tích với hình vuông ban đầu. Ví dụ, với ma trận 
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1313,7 +1313,7 @@ bạn có thể tính được diện tích hình bình hành bằng $5$ như m�
 In general, if we have a matrix
 -->
 
-Tổng quát, nếu ta có một ma trận 
+Tổng quát, với:
 
 $$
 \mathbf{A} = \begin{bmatrix}
@@ -1327,7 +1327,7 @@ we can see with some computation that the area of the resulting parallelogram is
 This area is referred to as the *determinant*.
 -->
 
-với một vài phép tính, ta có thể thấy rằng diện tích của hình bình hành là $ad-bc$. 
+ta có thể tính ra diện tích của hình bình hành là $ad-bc$. 
 Diện tích này được coi là *định thức*. 
 
 <!--
@@ -1358,8 +1358,8 @@ if the matrix flips the figure, we say the area is negated.
 Let's see now that when the determinant is zero, we learn more.
 -->
 
-Không khó để nhận ra rằng biểu thức này có thể bằng không hoặc thậm chí âm. 
-Khi biểu thức này âm, đó là quy ước thường dùng trong toán học: nếu ma trận đó "lật" một hình, ta nói diện tính bị đảo dấu. 
+Bạn đọc tinh mắt có thể nhận ra biểu thức này có thể bằng không hoặc thậm chí âm. 
+Khi biểu thức này âm, đó là quy ước toán học thường dùng: nếu ma trận đó "lật" một hình, nó sẽ đảo dấu diện tích hình đó. 
 Còn khi định thức bằng không thì sao? 
 
 <!--
@@ -1383,10 +1383,10 @@ Thus we see the following result is true:
 a matrix $A$ is invertible if and only if the determinant is not equal to zero.
 -->
 
-Nếu ta tính định thức của ma trận này, ta nhận được $2\cdot(-2 ) - 4\cdot(-1) = 0$. 
-Điều này là có lý bởi ma trận $\mathbf{B}$ đã nén hình vuông ban đầu xuống thành một đoạn thẳng với diện tích bằng không. 
-Thật vậy, nén một hình xuống không gian mới với số chiều thấp hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi. 
-Do đó chúng ta suy ra được kết quả sau: một ma trận $A$ khả nghịch khi và chỉ khi định thức khác không. 
+Định thức của ma trận này là $2\cdot(-2 ) - 4\cdot(-1) = 0$. 
+Điều này là hợp lý bởi ma trận $\mathbf{B}$ đã nén hình vuông ban đầu xuống thành một đoạn thẳng với diện tích bằng không. 
+Thật vậy, nén không gian xuống ít chiều hơn là cách duy nhất để có diện tích bằng không sau phép biến đổi. 
+Do đó chúng ta suy ra được hệ quả sau: ma trận $A$ khả nghịch khi và chỉ khi nó có định thức khác không. 
 
 
 <!--
@@ -1399,9 +1399,9 @@ We see that for any figure, the determinant gives the (signed) number that a mat
 -->
 
 Hãy tưởng tượng ta có một hình bất kỳ trên mặt phẳng. 
-Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nhỏ, như vậy ta có diện tính của hình đó sẽ bằng tổng diện tích các hình vuông nhỏ.
+Ta có thể chia nhỏ hình này thành một tập hợp các hình vuông nhỏ, như vậy diện tích hình đó sẽ bằng tổng diện tích các hình vuông nhỏ.
 Bây giờ nếu ta biến đổi hình đó bằng một ma trận, các hình vuông nhỏ sẽ được biến đổi thành các hình bình hành với diện tích bằng với định thức của ma trận. 
-Ta thấy rằng với bất kỳ hình nào, định thức cho ta một con số (có dấu) thể hiện độ co dãn diện tích của một hình bất kỳ gây ra bởi một ma trận. 
+Ta thấy rằng với một hình bất kỳ, định thức của một ma trận là hệ số co dãn diện tích (có dấu) của hình đó gây ra bởi ma trận. 
 
 
 <!--
@@ -1426,7 +1426,7 @@ and see how it can provide a unified view on a number of matrix and vector opera
 
 Khái niệm về tensor đã được giới thiệu ở :numref:`sec_linear-algebra`. 
 Trong mục này, chúng ta sẽ đi sâu hơn vào phép co tensor (tương đương với phép nhân ma trận),
-và xem cách chúng có thể cung cấp một cái nhìn nhất quán như thế nào đối với một số phép toán ma trận và vector. 
+và xem chúng cung cấp cái nhìn nhất quán về một số phép toán ma trận và vector như thế nào. 
 
 <!--
 With matrices and vectors we knew how to multiply them to transform data.
@@ -1434,7 +1434,7 @@ We need to have a similar definition for tensors if they are to be useful to us.
 Think about matrix multiplication:
 -->
 
-Chúng ta đã biết cách nhân với ma trận và vector như thế nào để biến đổi dữ liệu. 
+Chúng ta đã biết biến đổi dữ liệu bằng cách nhân với ma trận và vector. 
 Để tensor trở nên hữu ích, ta cần một định nghĩa tương tự như thế.
 Xem lại phép nhân ma trận:  
 
@@ -1446,7 +1446,7 @@ $$
 or equivalently
 -->
 
-hoặc tương đương 
+tương đương với:
 
 
 $$ c_{i, j} = \sum_{k} a_{i, k}b_{k, j}.$$
@@ -1459,9 +1459,9 @@ For instance we could consider
 -->
 
 Cách thức biểu diễn này có thể lặp lại với tensor. 
-Với tensor, không có một trường hợp tổng quát để chọn tính tổng theo chỉ số nào. 
-Bởi vậy, ta cần chỉ ra chính xác những chỉ số nào mà ta muốn tính tổng theo. 
-Ví dụ, ta có thể xét 
+Với tensor, không có thứ tự tổng quát để chọn tính tổng theo chỉ số nào. 
+Bởi vậy, cần chỉ ra chính xác ta muốn tính tổng trên chỉ số nào. 
+Ví dụ, xét:
 
 $$
 y_{il} = \sum_{jk} x_{ijkl}a_{jk}.
@@ -1482,7 +1482,7 @@ This gives the compact expression:
 -->
 
 Để đơn giản cho việc ký hiệu, ta có thể để ý rằng tổng chỉ được tính theo những chỉ số xuất hiện nhiều hơn một lần trong biểu thức.
-Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* với quy ước rằng phép tính tổng sẽ được lấy trên các chỉ số xuất hiện nhiều lần.
+Bởi vậy, người ta thường làm việc với *ký hiệu Einstein* với quy ước rằng phép tính tổng sẽ được lấy trên các chỉ số xuất hiện lặp lại.
 Từ đó, ta có một phép biểu diễn ngắn gọn: 
 $$
 y_{il} = x_{ijkl}a_{jk}.
