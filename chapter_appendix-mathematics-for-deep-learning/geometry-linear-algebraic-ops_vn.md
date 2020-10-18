@@ -1024,11 +1024,11 @@ is the largest number of linearly independent columns
 amongst all subsets of columns. For example, the matrix
 -->
 
-Với một ma trận tổng quát $n\times m$, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào chiều không gian nào.
+Với một ma trận tổng quát $n\times m$, câu hỏi tự nhiên được đặt ra là ma trận đó ánh xạ vào không gian bao nhiêu chiều.
 Để trả lời cho câu hỏi này, ta dùng khái niệm *hạng* (_rank_). 
-Trong mục trước, chúng ta lưu ý rằng một hệ phụ thuộc tuyến tính *nén* không gian xuống một không gian khác với số chiều thấp hơn. 
+Trong mục trước, ta thấy một hệ phụ thuộc tuyến tính *nén* không gian xuống một không gian khác có số chiều ít hơn. 
 Chúng ta sẽ sử dụng tính chất này để định nghĩa hạng. 
-Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng lớn nhất các cột độc lập tuyến tính trong mọi tập con các cột của ma trận đó. Ví dụ, ma trận 
+Cụ thể, hạng của một ma trận $\mathbf{A}$ là số lượng cột độc lập tuyến tính lớn nhất trong mọi tập con các cột của ma trận đó. Ví dụ, ma trận 
 
 $$
 \mathbf{B} = \begin{bmatrix}
@@ -1042,7 +1042,7 @@ but either column by itself is not linearly dependent.
 For a more challenging example, we can consider
 -->
 
-có $\mathrm{rank}(B)=1$ vì hai cột của nó là phụ thuộc tuyến tính và bản thân mỗi cột là không phụ thuộc tuyến tính. 
+có $\mathrm{rank}(B)=1$ vì hai cột của nó phụ thuộc tuyến tính và mỗi cột đơn lẻ không phụ thuộc tuyến tính. 
 Xét một ví dụ phức tạp hơn 
 
 $$
@@ -1073,8 +1073,8 @@ this is sufficient to see that the concept
 is well defined and understand the meaning.
 -->
 
-Quá trình được mô tả ở trên rất không hiệu quả. 
-Nó đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên. 
+Quá trình trên rất không hiệu quả,
+vì đòi hỏi xét mọi tập con các cột của một ma trận cho trước, số tập con này tăng theo hàm mũ khi số cột tăng lên. 
 Sau này chúng ta sẽ thấy một cách hiệu quả hơn để tính hạng của ma trận, hiện tại định nghĩa trên là đủ để hiểu khái niệm và ý nghĩa của hạng.
 
 <!--
@@ -1090,8 +1090,8 @@ cannot be undone, i.e., there is no inverse operation that can always recover th
 we should always be able to undo it.  Consider the matrix
 -->
 
-Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không tồn tại thao tác nghịch đảo nào có thể khôi phục lại ma trận đầu vào. 
-Tuy nhiên, nhân một ma trận hạng đầy đủ (ví dụ, một ma trận $\mathbf{A}$ kích thước $n \times n$ nào đó với hạng $n$), chúng ta luôn có thể hoàn tác nó.
+Như chúng ta đã thấy ở trên, phép nhân một ma trận có các cột phụ thuộc tuyến tính là không thể hoàn tác, tức là không tồn tại thao tác nghịch đảo nào có thể khôi phục lại đầu vào. 
+Tuy nhiên, trong phép biến đổi bằng một ma trận có hạng đầy đủ (ví dụ, với ma trận $\mathbf{A}$ nào đó kích thước $n \times n$ có hạng $n$), ta luôn có thể hoàn tác nó.
 Xét ma trận
 
 $$
@@ -1112,7 +1112,7 @@ we want to find a matrix $\mathbf{A}^{-1}$ such that
 -->
 
 đây là ma trận với các phần tử trên đường chéo có giá trị 1 và các phẩn tử còn lại có giá trị 0. 
-Ma trận này được gọi là ma trận *đơn vị* (*inentity matrix*). 
+Ma trận này được gọi là ma trận *đơn vị* (*identity matrix*). 
 Dữ liệu sẽ không bị thay đổi khi nhân với ma trận này. 
 Để có một ma trận hoàn tác những gì ma trận $\mathbf{A}$ đã làm, ta tìm một ma trận $\mathbf{A}^{-1}$ sao cho 
 
@@ -1226,7 +1226,7 @@ Just as division by a small number can lead to numerical instability,
 so can inversion of a matrix which is close to having low rank.
 -->
 
-Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận gần với hạng thấp cũng đưa lại hệ quả tương tự. 
+Giống như việc thực hiện phép chia một số nhỏ có thể dẫn đến sự mất ổn định tính toán, việc nghịch đảo một ma trận có hạng thấp cũng có ảnh hưởng tương tự. 
 
 <!--
 Moreover, it is common that the matrix $\mathbf{A}$ is *sparse*,
@@ -1240,7 +1240,7 @@ the inverse will typically have almost every entry non-negative,
 requiring us to store all $1\text{M}^2$ entries---that is $1$ trillion entries!
 -->
 
-Thêm vào đó, thông thường ma trận $\mathbf{A}$ là ma trận *thưa* (*sparse*), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0. 
+Thêm vào đó, thông thường $\mathbf{A}$ là ma trận *thưa* (*sparse*), có nghĩa là nó chỉ chứa một số lượng nhỏ các số khác 0. 
 Nếu thử một vài ví dụ, chúng ta có thể thấy điều này không có nghĩa ma trận nghịch đảo cũng là một ma trận thưa. 
 Kể cả khi ma trận A là ma trận $1$ triệu nhân $1$ triệu với chỉ $5$ triệu giá trị khác 0 (có nghĩa là chúng ta chỉ cần lưu trữ $5$ triệu giá trị đó),
 ma trận nghịch đảo thông thường vẫn giữ lại các thành phần không âm và đòi hỏi chúng ta phải lưu trữ $1\text{M}^2$ phần tử---tương đương với $1$ nghìn tỉ phần tử! 
