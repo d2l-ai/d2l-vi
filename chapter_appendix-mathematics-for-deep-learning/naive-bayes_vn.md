@@ -15,9 +15,9 @@ To put this theory to work, let us introduce the *naive Bayes* classifier.
 This uses nothing but probabilistic fundamentals to allow us to perform classification of digits.
 -->
 
-Xuyên suốt các phần trước, chúng ta đã học về lý thuyết xác suất và biến ngẫu nhiên.
-Để áp dụng lý thuyết này vào thực tiễn, chúng tôi xin giới thiệu bộ phân loại *naive Bayes*.
-Phương pháp này không sử dụng bất kỳ điều gì khác ngoài các lý thuyết căn bản về xác suất nhằm cho phép ta thực hiện việc phân loại chữ số.
+Trong các phần trước, ta đã học lý thuyết về xác suất và biến ngẫu nhiên.
+Để áp dụng lý thuyết này, ta sẽ lấy một ví dụ sử dụng bộ phân loại *naive Bayes* cho bài toán phân loại chữ số.
+Phương pháp này không sử dụng bất kỳ điều gì khác ngoài các lý thuyết căn bản về xác suất.
 
 
 <!--
@@ -27,10 +27,10 @@ The naive Bayes classifier, a popular and remarkably clear algorithm, assumes al
 In this section, we will apply this model to recognize characters in images.
 -->
 
-Quá trình học hoàn toàn xoay quanh việc đưa ra các giả định. Nếu chúng ta muốn phân loại một mẫu dữ liệu mới
-mà ta chưa thấy bao giờ, ta cần phải đưa ra một giả định nào đó cho câu hỏi những mẫu dữ liệu nào là tương đồng với nhau.
+Quá trình học hoàn toàn xoay quanh việc đưa ra các giả định. Nếu muốn phân loại một mẫu dữ liệu mới
+chưa thấy bao giờ, ta cần phải đưa ra một giả định nào đó về sự tương đồng giữa các mẫu dữ liệu.
 Bộ phân loại Naive Bayes, một thuật toán thông dụng và dễ hiểu, giả định rằng tất cả các đặc trưng đều độc lập với nhau nhằm đơn giản hóa việc tính toán.
-Trong phần này, chúng tôi sẽ áp dụng mô hình này để nhận dạng ký tự trong ảnh.
+Trong phần này, chúng tôi sẽ sử dụng mô hình này để nhận dạng ký tự trong ảnh.
 
 
 ```{.python .input}
@@ -95,11 +95,11 @@ We quantize them into binary features to simplify the problem.
 -->
 
 Gluon cung cấp lớp `MNIST` trong mô-đun `data.vision` để
-tự động truy xuất tập dữ liệu từ Internet. 
-Sau đó, Gluon sẽ sử dụng bản sao cục bộ đã được tải xuống.
+tự động lấy dữ liệu từ Internet. 
+Sau đó, Gluon sẽ sử dụng dữ liệu đã được tải xuống.
 Chúng ta xác định rằng ta đang yêu cầu tập huấn luyện hay tập kiểm tra
 bằng cách đặt giá trị tham số `train` thành` True` hoặc `False` tương ứng.
-Mỗi hình ảnh là một ảnh thang màu xám có cả chiều rộng và chiều cao là $28$ với kích thước ($28$,$28$,$1$).
+Mỗi hình ảnh là một ảnh xám có cả chiều rộng và chiều cao là $28$, kích thước ($28$,$28$,$1$).
 Ta sẽ sử dụng một phép biến đổi được tùy chỉnh để loại bỏ chiều của kênh cuối cùng.
 Ngoài ra, tập dữ liệu biểu diễn mỗi điểm ảnh bằng một số nguyên $8$-bit không âm.
 Ta lượng tử hóa (*quantize*) chúng thành các đặc trưng nhị phân để đơn giản hóa bài toán.
@@ -160,7 +160,7 @@ image.shape, label
 Our example, stored here in the variable `image`, corresponds to an image with a height and width of $28$ pixels.
 -->
 
-Mẫu ở đây được lưu trữ trong biến `image` trên tương ứng với một ảnh có chiều cao và chiều rộng là $28$ pixel.
+Mẫu được lưu trữ trong biến `image` trên tương ứng với một ảnh có chiều cao và chiều rộng là $28$ pixel.
 
 
 ```{.python .input}
@@ -173,7 +173,7 @@ image.shape, image.dtype
 Our code stores the label of each image as a scalar. Its type is a $32$-bit integer.
 -->
 
-Đoạn mã của chúng ta lưu nhãn của từng ảnh dưới dạng số vô hướng với kiểu dữ liệu là số nguyên $32$-bit.
+Đoạn mã lưu nhãn của từng ảnh dưới dạng số nguyên $32$-bit.
 
 
 ```{.python .input}
@@ -254,13 +254,13 @@ which are $p(y  \mid  \mathbf{x})$ for $y=0, \ldots,9$ in our example, then the 
 -->
 
 Trong tác vụ phân loại, ta ánh xạ một mẫu tới một hạng mục.
-Dưới đây là ví dụ một ảnh xám kích thước $28\times 28$ và hạng mục là một chữ số.
+Ví dụ, ở đây ta ánh xạ một ảnh xám kích thước $28\times 28$ tới hạng mục là một chữ số.
 (Tham khảo :numref:`sec_softmax` để xem giải thích chi tiết hơn.)
-Một cách tự nhiên để biểu diễn tác vụ phân loại là thông qua câu hỏi xác suất: nhãn nào là hợp lý nhất với các đặc trưng cho trước (tức là các pixel trong ảnh)?
+Một cách diễn đạt tự nhiên về tác vụ phân loại là câu hỏi xác suất: nhãn nào là hợp lý nhất với các đặc trưng cho trước (tức là các pixel trong ảnh)?
 Ký hiệu $\mathbf x\in\mathbb R^d$ là các đặc trưng và $y\in\mathbb R$ là nhãn của một mẫu.
 Đặc trưng ở đây là các pixel trong ảnh $2$ chiều mà ta có thể đổi kích thước thành một vector với $d=28^2=784$, và nhãn là các chữ số.
-Xác suất của nhãn cho đặc trưng cho trước là $p(y  \mid  \mathbf{x})$. Nếu chúng ta có thể tính toán những xác suất này,
-bằng $p(y  \mid  \mathbf{x})$ với $y=0, \ldots,9$ trong ví dụ của chúng ta, sau đó bộ phân loại sẽ xuất ra dự đoán $\hat{y}$ được đưa ra bởi biểu thức:
+Xác suất của nhãn khi biết trước đặc trưng là $p(y  \mid  \mathbf{x})$. Trong ví dụ của ta, nếu có thể tính toán các xác suất
+$p(y  \mid  \mathbf{x})$ với $y=0, \ldots,9$, bộ phân loại sẽ đưa ra dự đoán $\hat{y}$ theo công thức:
 
 
 
@@ -274,10 +274,10 @@ For example, the feature $x_1 = 1$ might signify that the word apple appears in 
 If we had $30$ such binary features, that would mean that we need to be prepared to classify any of $2^{30}$ (over 1 billion!) possible values of the input vector $\mathbf{x}$.
 -->
 
-Không may là việc này yêu cầu ta ước lượng $p(y  \mid  \mathbf{x})$ cho mọi giá trị của $\mathbf{x} = x_1, ..., x_d$.
-Hãy tưởng tượng mỗi đặc trưng nhận một trong $2$ giá trị.
-Ví dụ, đặc trưng $x_1 = 1$ có thể biểu thị rằng từ "quả táo" xuất hiện trong văn bản cho trước và $x_1 = 0$ biểu thị rằng từ này không xuất hiện.
-Nếu chúng ta có $30$ đặc trưng nhị phân như vậy, điều đó có nghĩa là ta cần phải chuẩn bị để phân loại bất kỳ giá trị nào trong số $2^{30}$ (hơn 1 tỷ!) các vector đầu vào khả dĩ của $\mathbf{x}$.
+Không may là việc này yêu cầu ước lượng $p(y  \mid  \mathbf{x})$ cho mọi giá trị $\mathbf{x} = x_1, ..., x_d$.
+Hãy tưởng tượng mỗi đặc trưng nhận một giá trị nhị phân,
+ví dụ, đặc trưng $x_1 = 1$ cho biết từ "quả táo" xuất hiện trong văn bản cho trước và $x_1 = 0$ biểu thị ngược lại.
+Nếu có $30$ đặc trưng nhị phân như vậy, ta cần phân loại $2^{30}$ (hơn 1 tỷ!) vector đầu vào khả dĩ của $\mathbf{x}$.
 
 
 <!--
@@ -285,7 +285,7 @@ Moreover, where is the learning? If we need to see every single possible example
 the corresponding label then we are not really learning a pattern but just memorizing the dataset.
 -->
 
-Hơn nữa, như vậy đâu phải là học. Nếu chúng ta cần xem qua toàn bộ các ví dụ khả dĩ để dự đoán
+Hơn nữa, như vậy không phải là học. Nếu cần xem qua toàn bộ các ví dụ khả dĩ để dự đoán
 nhãn tương ứng thì chúng ta không thực sự đang học một khuôn mẫu nào mà chỉ là đang ghi nhớ tập dữ liệu.
 
 
@@ -344,8 +344,8 @@ then suddenly we are in much better shape, as this term simplifies to $\prod_i p
 -->
 
 Biểu thức này tự nó không giúp ta được thêm điều gì. Ta vẫn phải ước lượng khoảng $2^d$ các tham số.
-Tuy nhiên, nếu chúng ta giả định rằng *các đặc trưng độc lập có điều kiện với nhau, với nhãn cho trước*,
-thì đột nhiên ta lại ở trong trạng thái tốt hơn nhiều, do số hạng này đơn giản hóa thành $\prod_i p(x_i  \mid  y)$, cho ta hàm dự đoán
+Tuy nhiên, nếu chúng ta giả định rằng *các đặc trưng khi biết nhãn cho trước là độc lập với nhau*,
+thì số hạng này đơn giản hóa thành $\prod_i p(x_i  \mid  y)$, và ta có hàm dự đoán:
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \prod_{i=1}^d p(x_i  \mid  y) p(y).$$
@@ -358,10 +358,10 @@ In addition, we estimate $p(y)$ for every $y$ and save it in $P_y[y]$, with $P_y
 Then for any new example $\mathbf x$, we could compute
 -->
 
-Nếu ta có thể ước lượng $\prod_i p(x_i=1  \mid  y)$ cho mỗi $i$ và $y$, và lưu giá trị của nó trong $P_{xy}[i, y]$, 
+Ta có thể ước lượng $\prod_i p(x_i=1  \mid  y)$ với mỗi $i$ và $y$, và lưu giá trị của nó trong $P_{xy}[i, y]$, 
 ở đây $P_{xy}$ là một ma trận có kích thước $d\times n$ với $n$ là số lượng các lớp và $y\in\{1, \ldots, n\}$.
-Cùng với đó, ta ước lượng $p(y)$ cho mỗi $y$ và lưu nó trong $P_y[y]$, với $P_y$ là một vector có độ dài $n$.
-Sau đó, đối với bất kỳ mẫu mới nào $\mathbf x$, ta có thể tính
+Cùng với đó, ta ước lượng $p(y)$ cho mỗi $y$ và lưu trong $P_y[y]$, với $P_y$ là một vector có độ dài $n$.
+Sau đó, đối với bất kỳ mẫu mới $\mathbf x$ nào, ta có thể tính:
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \prod_{i=1}^d P_{xy}[x_i, y]P_y[y],$$
@@ -397,8 +397,8 @@ For instance, if digit 8 occurs $n_8 = 5,800$ times and we have a total of $n = 
 
 Vấn đề bây giờ là ta không biết $P_{xy}$ và $P_y$.
 Vì vậy, ta trước tiên cần ước lượng giá trị của chúng với dữ liệu huấn luyện.
-Đây là *việc huấn luyện* mô hình. Ước lượng $P_y$ không quá khó.
-Vì ta chỉ đang làm việc với $10$ lớp, ta có thể đếm số lần xuất hiện $n_y$ của mỗi chữ số và chia nó cho tổng số dữ liệu $n$.
+Đây là việc *huấn luyện* mô hình. Ước lượng $P_y$ không quá khó.
+Do chỉ đang làm việc với $10$ lớp, ta có thể đếm số lần xuất hiện $n_y$ của mỗi chữ số và chia nó cho tổng số dữ liệu $n$.
 Chẳng hạn, nếu chữ số 8 xuất hiện $n_8 = 5,800$ lần và ta có tổng số hình ảnh là $n = 60.000$, xác suất ước lượng sẽ là $p(y=8) = 0.0967$.
 
 
@@ -450,13 +450,13 @@ This is also called *Laplace Smoothing*. It may seem ad-hoc, however it may be w
 -->
 
 Giờ hãy chuyển sang vấn đề khó hơn một chút là tính $P_{xy}$. Vì ta lấy các ảnh đen trắng,
-$p(x_i \mid y)$ biểu thị xác suất điểm ảnh $i$ được kích hoạt cho lớp $y$.
-Đơn giản giống như trên, ta có thể duyệt và đếm số lần $n_{iy}$ mà một sự kiện xảy ra và chia nó cho
-tổng số lần xuất hiện của $y$, tức là $n_y$.
+$p(x_i \mid y)$ biểu thị xác suất điểm ảnh $i$ mang nhãn $y$.
+Đơn giản giống như trên, ta có thể duyệt và đếm số lần $n_{iy}$ mà điểm ảnh $i$ mang nhãn $y$ và chia nó cho
+tổng số lần xuất hiện $n_y$ của $y$.
 Nhưng có một điểm hơi rắc rối: một số điểm ảnh nhất định có thể không bao giờ có màu đen (ví dụ, đối với các ảnh được cắt xén tốt, các điểm ảnh ở góc có thể luôn là màu trắng).
 Một cách thuận tiện cho các nhà thống kê học để giải quyết vấn đề này là cộng thêm một số đếm giả vào tất cả các lần xuất hiện.
 Do đó, thay vì $n_{iy} $, ta dùng $n_{iy} + 1$ và thay vì $n_y$, ta dùng $n_{y} + 1 $.
-Phương pháp này còn được gọi là *Làm mượt Laplace* (*Laplace Smoothing*). Nó có vẻ không chính thống, tuy nhiên nó có thể được chào đón từ quan điểm Bayes.
+Phương pháp này còn được gọi là *Làm mượt Laplace* (*Laplace Smoothing*), có vẻ không chính thống nhưng hợp với quan điểm Bayes.
 
 
 ```{.python .input}
@@ -504,7 +504,7 @@ Given $\mathbf x$, the following functions computes $p(\mathbf x \mid y)p(y)$ fo
 -->
 
 Giờ ta có thể sử dụng :eqref:`eq_naive_bayes_estimation` để dự đoán một hình ảnh mới.
-Cho $\mathbf x$, các hàm sau sẽ tính $p(\mathbf x \mid y)p(y)$ với mỗi $y$.
+Cho $\mathbf x$, hàm sau sẽ tính $p(\mathbf x \mid y)p(y)$ với mỗi $y$.
 
 ```{.python .input}
 def bayes_pred(x):
@@ -551,10 +551,10 @@ We discussed this as a theoretical issue in :numref:`sec_maximum_likelihood`, bu
 -->
 
 Điều này đã dẫn tới sai lầm khủng khiếp! Để tìm hiểu lý do tại sao, ta hãy xem xét xác suất trên mỗi điểm ảnh.
-Chúng thường là những con số từ $0.001$ đến $1$ và ta đang nhân chúng $784$ lần.
-Tại điểm này, điều đáng nói là ta đang tính những con số này trên máy tính, do đó với một phạm vi cố định cho số mũ.
-Điều xảy ra là chúng ta gặp phải *rò rỉ số (underflow)*, tức là tích tất cả các số nhỏ hơn một sẽ dẫn đến một số dần nhỏ đi cho đến khi kết quả được làm tròn thành không.
-Ta đã thảo luận vấn đề này dưới dạng vấn đề lý thuyết trong: numref: `sec_maximum_likelkel`, nhưng ở đây ta thấy hiện tượng này trong thực tế một cách rõ ràng.
+Chúng thường mang giá trị từ $0.001$ đến $1$ và ta đang nhân $784$ con số như vậy.
+Ta đang tính những con số này trên máy tính, do đó sẽ có một phạm vi cố định cho số mũ.
+Ta đã gặp vấn đề *tràn số dưới (underflow)*, tức là tích tất cả các số nhỏ hơn một sẽ dẫn đến một số nhỏ dần cho đến khi kết quả được làm tròn thành 0.
+Ta đã thảo luận lý thuyết về vấn đề này trong: numref: `sec_maximum_likelihood`, và ở đây ta thấy hiện tượng này trong thực tế một cách rõ ràng.
 
 
 <!--
@@ -764,9 +764,9 @@ This is clearly not how humans write digits, and this wrong assumption led to th
 -->
 
 Các mạng sâu hiện đại đạt tỷ lệ lỗi dưới $0,01$.
-Hiệu suất tương đối kém ở đây là do các giả định thống kê không chính xác mà ta đã đưa vào trong mô hình của mình:
+Hiệu suất tương đối kém ở đây là do các giả định thống kê không chính xác mà ta đã đưa vào trong mô hình:
 ta đã giả định rằng mỗi và mọi pixel được tạo *một cách độc lập*, chỉ phụ thuộc vào nhãn.
-Đây rõ ràng không phải là cách con người viết các chữ số, và giả định sai lầm này đã dẫn đến sự thua kém của bộ phân loại quá ngây thơ (*naive* Bayes) của chúng ta.
+Đây rõ ràng không phải là cách con người viết các chữ số, và giả định sai lầm này đã dẫn đến sự kém hiệu quả của bộ phân loại ngây thơ (*naive* Bayes) của chúng ta.
 
 
 ## Tóm tắt
@@ -795,13 +795,13 @@ While the full theory is beyond the scope of this section (see :cite:`Koller.Fri
 explain why allowing explicit dependence between the two input variables in the XOR model allows for the creation of a successful classifier.
 -->
 
-1. Xem xét tập dữ liệu $[[0,0], [0,1], [1,0], [1,1]]$ với các nhãn được là kết quả phép XOR của hai phần tử $[0,1,1,0]$.
+1. Xem xét tập dữ liệu $[[0,0], [0,1], [1,0], [1,1]]$ với các nhãn tương ứng là kết quả phép XOR của cặp số trong mỗi mẫu, tức $[0,1,1,0]$.
 Các xác suất cho bộ phân loại Naive Bayes được xây dựng trên tập dữ liệu này là bao nhiêu?
 Nó có phân loại thành công các điểm dữ liệu không? Nếu không, những giả định nào bị vi phạm?
-2. Giả sử rằng ta không sử dụng phép làm mượt Laplace khi ước lượng xác suất và có một mẫu dữ liệu tại thời điểm kiểm tra chứa một giá trị chưa bao giờ được quan sát trong quá trình huấn luyện.
+2. Giả sử ta không sử dụng làm mượt Laplace khi ước lượng xác suất và có một mẫu dữ liệu tại thời điểm kiểm tra chứa một giá trị chưa bao giờ được quan sát trong quá trình huấn luyện.
 Lúc này mô hình sẽ trả về giá trị gì?
 3. Bộ phân loại Naive Bayes là một ví dụ cụ thể của mạng Bayes, trong đó sự phụ thuộc của các biến ngẫu nhiên được mã hóa bằng cấu trúc đồ thị.
-Mặc dù lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xem :cite:`Koller.Friedman.2009` để biết đầy đủ chi tiết),
+Mặc dù lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xem :cite:`Koller.Friedman.2009` để biết chi tiết),
 hãy giải thích tại sao việc đưa sự phụ thuộc tường minh giữa hai biến đầu vào trong mô hình XOR lại có thể tạo ra một bộ phân loại thành công.
 
 
