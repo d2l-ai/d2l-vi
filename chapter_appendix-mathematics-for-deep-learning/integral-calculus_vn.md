@@ -16,7 +16,7 @@ While seemingly unrelated, integration is tightly intertwined with the different
 -->
 
 Phép vi phân mới chỉ là một nửa nội dung của môn giải tích truyền thống.
-Một nửa quan trọng khác, phép tích phân, bắt nguồn từ một câu hỏi có vẻ không mấy liên quan, "Diện tích phía bên dưới của đường cong này là bao nhiêu?"
+Một nửa quan trọng khác, phép tích phân, bắt nguồn từ một câu hỏi có vẻ không mấy liên quan, "Diện tích của phần bên dưới đường cong này là bao nhiêu?"
 Dù vậy, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua *định lý cơ bản của giải tích* (_fundamental theorem of calculus_).
 
 
@@ -44,7 +44,7 @@ What we want to try and understand is: what is the area contained between $f(x)$
 
 Giả sử ta có hàm $f(x)$.
 Để đơn giản, giả sử $f(x)$ không âm (không cho ra số bé hơn không).
-Điều chúng ta muốn tìm hiểu là: diện tích giữa $f(x)$ và trục $x$ là bao nhiêu?
+Điều chúng ta muốn tìm hiểu là: diện tích của phần được giới hạn giữa $f(x)$ và trục $x$ là bao nhiêu?
 
 
 ```{.python .input}
@@ -158,7 +158,7 @@ The inner variable is a dummy variable, much like the index of a sum in a $\sum$
 and so this can be equivalently written with any inner value we like:
 -->
 
-Biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$:
+Ta có thể sử dụng bất kỳ kí hiệu nào vì biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$:
 
 
 $$
@@ -175,11 +175,11 @@ Let us take a look at an example doing this in code.
 We will see how to get the true value in a later section.
 -->
 
-Có một cách truyền thống để cố gắng hiểu cách ta có thể xấp xỉ phép tích phân:
+Có một cách truyền thống để hiểu rõ hơn cách ta có thể xấp xỉ phép tích phân:
 ta có thể tưởng tượng cắt phần giữa $a$ và $b$ thành $N$ lát theo chiều dọc.
 Nếu $N$ lớn, ta có thể xấp xỉ phần diện tích mỗi lát bằng một hình chữ nhật,
 và sau đó tính tổng các diện tích để có được phần diện tích phía dưới đường cong.
-Hãy cùng xem một ví dụ thông qua lập trình.
+Hãy cùng lập trình và xét qua một ví dụ.
 Ta sẽ biết cách tính được giá trị thật sự của phép tích phân ở mục sau.
 
 
@@ -264,7 +264,7 @@ $$
 Anything somewhat more complex like our example from the code above
 -->
 
-Đối với những hàm có vẻ phức tạp hơn như trong ví dụ trình bày ở đoạn mã trên 
+Bất kì hàm số nào hơi phức tạp hơn một chút như trong ví dụ trình bày ở đoạn mã trên 
 
 
 $$
@@ -276,7 +276,7 @@ $$
 is beyond what we can solve with such a direct method.
 -->
 
-nằm ngoài những gì ta có thể giải quyết với phương pháp này. 
+nằm ngoài phạm vi ta có thể giải quyết bằng phương pháp này. 
 
 
 <!--
@@ -318,7 +318,7 @@ Notice that this is everything we need since
 -->
 
 Hàm này tính diện tích giữa $0$ và $x$ tùy thuộc vào việc $x$ thay đổi như thế nào.
-Thật ra đây là tất cả những gì ta cần vì
+Để ý rằng đây là tất cả những gì ta cần, bởi vì
 
 
 $$
@@ -331,7 +331,7 @@ This is a mathematical encoding of the fact that we can measure the area out to 
 and then subtract off the area to the near end point as indicated in :numref:`fig_area-subtract`.
 -->
 
-Đây là một cách ký hiệu toán học biểu diễn diện tích khoảng giữa hai cận bằng hiệu diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như trong :numref:`fig_area-subtract`.
+Đây là một ký hiệu toán học biểu diễn diện tích khoảng giữa hai cận bằng hiệu diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như trong :numref:`fig_area-subtract`.
 
 <!--
 ![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/SubArea.svg)
@@ -378,7 +378,7 @@ Indeed, one can show that as $\epsilon \rightarrow 0$ this approximation becomes
 Thus we can conclude:
 -->
 
-Đây là lúc ta sẽ sử dụng xấp xỉ.
+Đây là lúc mà ta cần xấp xỉ.
 Nếu nhìn vào phần diện tích nhỏ đó, ta thấy phần diện tích này gần với diện tích của một hình chữ nhật với chiều cao là giá trị tại $f(x)$ và chiều rộng là $\epsilon$.
 Thật vậy, khi $\epsilon \rightarrow 0$ phép xấp xỉ này càng chính xác.
 Vì thế, ta có thể kết luận
@@ -422,7 +422,7 @@ This is a fact-of-life in the theory of integration.
 Thankfully, notice that when working with definite integrals, the constants drop out, and thus are irrelevant to the outcome.
 -->
 
-Nó lấy ý tưởng về tìm kiếm diện tích (một *tiên nghiệm* khá khó), và giảm tải thành một mệnh đề đạo hàm (một khái niệm toán học dễ hiểu hơn).
+Nó lấy ý tưởng về tìm kiếm diện tích (một *tiên nghiệm* khá khó), và giảm tải thành một mệnh đề đạo hàm (một khái niệm toán học đã được nghiên cứu sâu).
 Một lưu ý cuối là định lý này không cho ta biết dạng thực sự của $F(x)$.
 Thực chất, $F(x) + C$ với $C$ bất kỳ đều có đạo hàm như nhau.
 Đây là sự thật chúng ta chấp nhận trong lý thuyết tích phân.
@@ -443,7 +443,7 @@ Thus, we can say using the fundamental theorem :eqref:`eq_ftc` that
 -->
 
 Công thức trên có thể khá trừu tượng và vô nghĩa, nhưng nó cho ta một góc nhìn mới trong việc tính tích phân.
-Cách thức của ta không còn là làm một vài thao tác cắt-và-cộng để cố gắng tính toán diện tích, mà chỉ cần tìm một hàm có đạo hàm là hàm hiện có!
+Cách tiếp cận của ta không còn là phải "cắt ra và cộng lại" để tính diện tích, mà chỉ cần tìm một hàm số có đạo hàm là hàm hiện có!
 Đây là một điều tuyệt vời vì giờ ta có thể liệt kê hàng loạt các phép tích phân phức tạp chỉ bằng cách đảo ngược lại bảng trong :numref:`sec_derivative_table`.
 Ví dụ, ta biết đạo hàm của $x^{n}$ là $nx^{n-1}$.
 Vì thế, bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc`, ta có:
@@ -471,7 +471,7 @@ In this way, we can develop the entire theory of integration leveraging ideas fr
 Every integration rule derives from this one fact.
 -->
 
-Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân một cách tự do bằng cách tận dụng những ý tưởng từ giải tích vi phân.
+Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân bằng cách tự do tận dụng những ý tưởng từ giải tích vi phân.
 Mỗi quy tắc tích phân đều bắt nguồn từ đây.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
