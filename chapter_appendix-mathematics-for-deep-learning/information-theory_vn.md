@@ -37,11 +37,11 @@ This loss can be directly derived from information theoretic considerations.
 -->
 
 Trước khi bắt đầu, chúng ta hãy phác thảo mối quan hệ giữa học máy và lý thuyết thông tin.
-Học máy nhằm mục đích trích xuất các đặc trưng thú vị từ dữ liệu và đưa ra các dự đoán quan trọng.
+Học máy nhằm mục đích trích xuất các đặc trưng đáng chú ý từ dữ liệu và đưa ra các dự đoán quan trọng.
 Mặt khác, lý thuyết thông tin nghiên cứu mã hóa, giải mã, truyền và thao tác thông tin.
 Kết quả là, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống học máy.
 Ví dụ: nhiều ứng dụng học máy sử dụng mất mát entropy chéo như được mô tả trong :numref:`sec_softmax`.
-Mất mát này có thể trực tiếp bắt nguồn từ lý thuyết thông tin.
+Mất mát này có thể trực tiếp rút ra từ các quan điểm lý thuyết thông tin.
 
 
 <!--
@@ -59,9 +59,9 @@ What could be our starting point?
 -->
 
 Ta hãy bắt đầu với "linh hồn" của lý thuyết thông tin: thông tin.
-*Thông tin* có thể được mã hóa vào bất kỳ điều gì với một hoặc nhiều chuỗi định dạng mã hóa.
-Giả sử rằng chúng ta tự đặt nhiệm vụ cố gắng xác định một khái niệm thông tin.
-Điểm xuất phát của chúng ta có thể là gì?
+*Thông tin* có thể được mã hóa trong bất kỳ thứ gì với một hoặc nhiều chuỗi định dạng mã hóa.
+Giả sử chính chúng ta đề ra nhiệm vụ thử định nghĩa một khái niệm thông tin.
+Điểm chúng ta có thể bắt đầu là gì?
 
 
 <!--
@@ -71,10 +71,10 @@ They will shuffle the deck, flip over some cards, and tell us statements about t
 We will try to assess the information content of each statement.
 -->
 
-Hãy xem xét thí nghiệm suy nghĩ sau đây.
+Hãy xem thí nghiệm tưởng tượng sau đây.
 Ta có một người bạn với một bộ bài.
 Họ sẽ xáo trộn bộ bài, lật qua một số lá bài và cho chúng ta biết vài điều về các quân bài.
-Chúng ta sẽ cố gắng đánh giá nội dung thông tin của từng câu nói.
+Chúng ta sẽ thử đánh giá nội dung thông tin của từng phát biểu sau đây.
 
 <!--
 First, they flip over a card and tell us, "I see a card."
@@ -84,7 +84,7 @@ We were already certain that this was the case so we hope the information should
 
 Đầu tiên, họ lật một lá và nói, "Tôi thấy một lá bài."
 Điều này không cung cấp cho ta thông tin nào.
-Nên chúng ta hy vọng thông tin sẽ là 0.
+Nên chúng ta rõ ràng chắc chắn rằng trong trường hợp này thông tin sẽ là 0.
 
 
 <!--
@@ -94,7 +94,7 @@ We hope that whatever the measure of information, this event should have low inf
 -->
 
 Tiếp theo, họ lật một lá khác và nói, "Tôi thấy một lá cơ."
-Điều này cung cấp cho ta một số thông tin, nhưng trên thực tế chỉ có thể có $4$ chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
+Điều này cung cấp cho ta một chút thông tin, mà trên thực tế chỉ có thể có $4$ loại chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
 Ta hy vọng rằng với bất kể hình thức đo đạc thông tin nào, sự kiện này nên có hàm lượng thông tin thấp.
 
 
@@ -103,8 +103,8 @@ Next, they flip over a card and say, "This is the $3$ of spades." This is more i
 Indeed there were $52$ equally likely possible outcomes, and our friend told us which one it was. This should be a medium amount of information.
 -->
 
-Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Có thêm thông tin.
-Quả thực có $52$ kết quả tương đương có thể xảy ra, và ta cho biết đó là kết quả nào. Đây là một lượng thông tin trung bình.
+Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Đây là thông tin thêm.
+Quả thực có $52$ kết quả tương đương có thể xảy ra, và ta đã được cho biết đó là lá bài nào. Đây là một lượng thông tin trung bình.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
