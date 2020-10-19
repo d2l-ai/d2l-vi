@@ -258,7 +258,7 @@ Ví dụ, ở đây ta ánh xạ một ảnh xám kích thước $28\times 28$ t
 (Tham khảo :numref:`sec_softmax` để xem giải thích chi tiết hơn.)
 Một cách diễn đạt tự nhiên về tác vụ phân loại là câu hỏi xác suất: nhãn nào là hợp lý nhất với các đặc trưng cho trước (tức là các pixel trong ảnh)?
 Ký hiệu $\mathbf x\in\mathbb R^d$ là các đặc trưng và $y\in\mathbb R$ là nhãn của một mẫu.
-Đặc trưng ở đây là các pixel trong ảnh $2$ chiều mà ta có thể đổi kích thước thành một vector với $d=28^2=784$, và nhãn là các chữ số.
+Đặc trưng ở đây là các pixel trong ảnh $2$ chiều mà ta có thể biến đổi thành vector kích thước $d=28^2=784$, và nhãn là các chữ số.
 Xác suất của nhãn khi biết trước đặc trưng là $p(y  \mid  \mathbf{x})$. Trong ví dụ của ta, nếu có thể tính toán các xác suất
 $p(y  \mid  \mathbf{x})$ với $y=0, \ldots,9$, bộ phân loại sẽ đưa ra dự đoán $\hat{y}$ theo công thức:
 
