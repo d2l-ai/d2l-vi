@@ -264,7 +264,7 @@ $$
 Anything somewhat more complex like our example from the code above
 -->
 
-Đối với những hàm có vẻ phức tạp hơn như trong ví dụ trình bày ở đoạn mã trên
+Đối với những hàm có vẻ phức tạp hơn như trong ví dụ trình bày ở đoạn mã trên 
 
 
 $$
