@@ -296,7 +296,7 @@ Do lượng tin (*self-information*) chỉ đo lường thông tin từ một bi
 ### Motivating Entropy
 -->
 
-### Nguồn gốc phát triển của Entropy
+### Phát triển Lý thuyết Entropy
 
 
 <!--
@@ -305,8 +305,8 @@ It will turn out that the following collection of common-sense statements force 
 A formal version of these axioms, along with several others may be found in :cite:`Csiszar.2008`.
 -->
 
-Hãy thử phân tích cụ thể hơn điều chúng ta muốn. Đây sẽ là một phát biểu không chính thức về cái mà được biết đến dưới tên gọi là *các tiên đề của entropy Shannon*.
-Hoá ra những phát biểu quen thuộc sau đây buộc chúng ta phải đi tới một định nghĩa độc nhất về thông tin.
+Hãy phân tích cụ thể hơn. Dưới đây là các phát biểu không chính thức của *các tiên đề Shannon về entropy*.
+Chúng buộc ta đi tới một định nghĩa độc nhất về thông tin.
 Một phiên bản chính quy của những tiên đề này cùng với một số tiên đề khác có thể được tìm thấy trong :cite:`Csiszar.2008`.
 
 
@@ -317,9 +317,9 @@ If they are independent, then it is exactly the sum.
 3.  The information gained when observing (nearly) certain events is (nearly) zero.
 -->
 
-1. Thông tin chúng ta thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào các yếu tố, hay sự xuất hiện của các yếu tố bổ sung mà có xác suất bằng 0.
-2. Thông tin chúng ta thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin chúng ta thu được bằng cách quan sát chúng một cách riêng rẽ.
-Nếu chúng độc lập thì thông tin thu được từ hai cách đều bằng nhau.
+1. Thông tin thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào cách gọi các yếu tố, hay sự xuất hiện của các yếu tố bổ sung mà có xác suất bằng 0.
+2. Thông tin thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin thu được khi cách quan sát chúng một cách riêng rẽ.
+Nếu hai biến ngẫu nhiên là độc lập thì thông tin thu được từ hai cách bằng nhau.
 3. Thông tin thu được khi quan sát những biến cố (gần như) chắc chắn thì (gần như) bằng 0.
 
 
@@ -329,8 +329,8 @@ The only ambiguity that these allow is in the choice of fundamental units, which
 we saw before that the information provided by a single fair coin flip is one bit.
 -->
 
-Việc chứng minh các điều trên nằm ngoài phạm vi của quyển sách này, nhưng điều quan trọng cần phải biết là các mệnh đề trên xác định độc nhất hình thái mà entropy phải có.
-Chỉ có duy nhất một điều không xác định từ những phát biểu trên là về việc chọn các đơn vị cơ bản, mà điều này thường được chuẩn hoá bằng cách đặt thông tin cung cấp bởi một lần lật đồng xu công bằng là một bit, như ta đã thấy ở trước đó. 
+Việc chứng minh các tiên đề trên nằm ngoài phạm vi của cuốn sách, điều quan trọng cần nhớ là chúng xác định một cách độc nhất hình thái mà entropy phải có.
+Chỉ có duy nhất một điều không xác định từ những phát biểu trên là về việc chọn đơn vị cho entropy, mà điều này thường được chuẩn hoá bằng cách đặt thông tin cung cấp bởi một lần lật đồng xu cân đối đồng chất là một bit, như đã thấy trước đó. 
 
 
 <!--
@@ -345,7 +345,7 @@ For any random variable $X$ that follows a probability distribution $P$ with a p
 a probability mass function (p.m.f.) $p(x)$, we measure the expected amount of information through *entropy* (or *Shannon entropy*)
 -->
 
-Cho bất cứ một biến ngẫu nhiên $X$ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất (p.d.f) hoặc hàm khối xác suất (p.m.f) $p(x)$, chúng ta đo lượng thông tin kỳ vọng thu được thông qua *entropy* (hoặc *Shannon entropy*)
+Cho một biến ngẫu nhiên $X$ bất kỳ tuân theo phân phối xác suất $P$ với hàm mật độ xác suất (p.d.f) hoặc hàm khối xác suất (p.m.f) $p(x)$, ta đo lượng thông tin kỳ vọng thu được thông qua *entropy* (hoặc *entropy Shannon*):
 
 
 $$H(X) = - E_{x \sim P} [\log p(x)].$$
@@ -356,7 +356,7 @@ $$H(X) = - E_{x \sim P} [\log p(x)].$$
 To be specific, if $X$ is discrete, 
 -->
 
-Cụ thể hơn, nếu $X$ rời rạc,
+Cụ thể hơn, nếu $X$ rời rạc:
 
 
 $$H(X) = - \sum_i p_i \log p_i \text{, where } p_i = P(X_i).$$ 
@@ -366,7 +366,7 @@ $$H(X) = - \sum_i p_i \log p_i \text{, where } p_i = P(X_i).$$
 Otherwise, if $X$ is continuous, we also refer entropy as *differential entropy* 
 -->
 
-Ngược lại, nếu $X$ liên tục, chúng ta gọi entropy là *entropy vi phân* (*differential entropy*)
+Ngược lại, nếu $X$ liên tục, ta gọi là *entropy vi phân* (*differential entropy*):
 
 
 $$H(X) = - \int_x p(x) \log p(x) \; dx.$$
@@ -423,7 +423,7 @@ entropy(tf.constant([0.1, 0.5, 0.1, 0.3]))
 You may be curious: in the entropy definition :eqref:`eq_ent_def`, why do we use an expectation of a negative logarithm? Here are some intuitions.
 -->
 
-Bạn có thể thắc mắc: trong định nghĩa entropy :eqref:`eq_ent_def`, tại sao chúng ta sử dụng kỳ vọng của logarit âm? Đây là một số cách giải thích trực quan.
+Bạn có thể thắc mắc: trong định nghĩa entropy :eqref:`eq_ent_def`, tại sao chúng ta sử dụng kỳ vọng của logarit âm? Dưới đây là một số cách giải thích trực quan.
 
 
 <!--
@@ -437,8 +437,8 @@ Luckily, $\log$ can naturally turn a product of probability distributions to a s
 Đầu tiên, tại sao chúng ta sử dụng hàm *logarit* $\log$?
 Giả sử $p(x) = f_1(x) f_2(x) \ldots, f_n(x)$, khi mỗi hàm thành tố $f_i(x)$ độc lập lẫn nhau.
 Điều này nghĩa là mỗi $f_i(x)$ đóng góp một cách độc lập vào tổng thông tin thu được từ $p(x)$.
-Như đã thảo luận ở trên, chúng ta muốn một công thức entropy là phép cộng trên các biến ngẫu nhiên độc lập.
-May mắn thay, $\log$ có thể chuyển tích các phân phối xác suất thành một tổng.
+Như đã thảo luận ở trên, ta muốn công thức entropy là phép cộng trên các biến ngẫu nhiên độc lập.
+May mắn thay, hàm $\log$ có thể chuyển tích thành tổng.
 
 
 <!--
@@ -450,10 +450,10 @@ which will ideally be always positive (for nothing we observe should force us to
 Hence, we add a negative sign in front of $\log$ function.
 -->
 
-Tiếp theo, tại sao chúng ta sử dụng $\log$ *âm*? Một cách trực giác, những biến cố xảy ra thường xuyên hơn chứa ít thông tin hơn những biến cố thông thường bởi vì chúng ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường hơn là những trường hợp bình thường.
-Tuy nhiên, $\log$ đơn điệu đồng biến với xác suất, và có giá trị âm trong đoạn $[0, 1]$.
-Chúng ta cần thiết lập mối quan hệ đơn điệu nghịch biến giữa xác suất của biến cố và entropy của chúng, những giá trị luôn luôn dương (vì các quan sát mới không nên buộc chúng ta phải quên đi những gì đã biết).
-Vậy nên, chúng ta thêm dấu trừ vào trước hàm $\log$.
+Tiếp theo, tại sao chúng ta sử dụng $\log$ *âm*? Một cách trực giác, những biến cố xảy ra thường xuyên sẽ chứa ít thông tin hơn những biến cố hiếm vì ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường.
+Do đó, ta cần thiết lập mối quan hệ đơn điệu giảm giữa xác suất của biến cố và entropy của chúng, và muốn entropy luôn dương (vì các quan sát mới không nên buộc ta quên đi những gì đã biết).
+Tuy nhiên, hàm $\log$ lại là đơn điệu tăng, và có giá trị âm với xác suất trong đoạn $[0, 1]$.
+Vậy nên, ta thêm dấu âm vào trước hàm $\log$.
 
 
 <!--
@@ -466,11 +466,11 @@ Then the entropy of this system equals to the average self-information from obse
 -->
 
 Cuối cùng, hàm *kỳ vọng* đến từ đâu? Xét một biến ngẫu nhiên $X$.
-Chúng ta có thể diễn giải hàm lượng thông tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi chúng ta thấy một kết quả cụ thể nào đó.
-Thật vậy, khi xác suất xấp xỉ bằng 0, mức độ bất ngờ tiến tới vô cực.
+Ta có thể diễn giải lượng tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi thấy một kết quả cụ thể nào đó.
+Thật vậy, khi xác suất xấp xỉ bằng 0, mức độ bất ngờ tiến tới vô cùng.
 Tương tự, chúng ta có thể diễn giải entropy như mức độ bất ngờ trung bình từ việc quan sát $X$.
 Ví dụ, tưởng tượng một hệ thống máy đánh bạc đưa ra các ký hiệu độc lập ${s_1, \ldots, s_k}$ với xác suất lần lượt là ${p_1, \ldots, p_k}$. 
-Khi đó, entropy của hệ thống này bằng với hàm lượng thông tin trung bình thu được từ việc quan sát mỗi kết quả, tức:
+Khi đó, entropy của hệ thống này bằng với lượng tin trung bình thu được từ việc quan sát mỗi kết quả, tức:
 
 
 $$H(S) = \sum_i {p_i \cdot I(s_i)} = - \sum_i {p_i \cdot \log p_i}.$$
@@ -507,15 +507,15 @@ However, if we additionally impose that $P$ is supported on a finite interval (w
 then $P$ has the highest entropy if it is the uniform distribution on that interval.
 -->
 
-* Entropy luôn có giá trị không âm, tức $H(X) \geq 0, \forall X$.
-* Nếu $X \sim P$ với hàm mật độ xác suất hoặc hàm khối xác suất $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$, ta sẽ có
+* Entropy là không âm, tức $H(X) \geq 0, \forall X$.
+* Nếu $X \sim P$ có hàm mật độ xác suất hoặc hàm khối xác suất $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$, ta có:
 $$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
-Ngoài ra, $H(X)$ còn là cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
-* Nếu $X \sim P$, $x$ sẽ chứa lượng thông tin cực đại nếu thông tin được chia đều cho mọi biến cố khả dĩ.
-Cụ thể, nếu phân phối xác suất $P$ là phân phối rời rạc với $k$ lớp $\{p_1, \ldots, p_k \}$, ta sẽ có 
+Ngoài ra, $H(X)$ cho biết cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
+* Nếu $X \sim P$, $x$ sẽ chứa lượng thông tin cực đại nếu mọi biến cố khả dĩ chứa lượng thông tin như nhau.
+Cụ thể, nếu $P$ là phân phối rời rạc với $k$ lớp $\{p_1, \ldots, p_k \}$:
 $$H(X) \leq \log(k), \text{ dấu bằng xảy ra khi và chỉ khi } p_i = \frac{1}{k}, \forall i.$$
-Nếu $P$ là một phân phối liên tục thì mọi thứ sẽ trở nên phức tạp hơn nhiều.
-Tuy nhiên, nếu ta giả sử thêm rằng $P$ có miền giá trị nằm trong khoảng hữu hạn (giá trị nằm trong khoảng $0$ và $1$),
+Nếu $P$ là phân phối liên tục thì sẽ phức tạp hơn.
+Tuy nhiên, nếu ta giả sử thêm rằng $P$ có miền giá trị nằm trong một khoảng hữu hạn (với tất cả giá trị nằm trong khoảng $0$ và $1$),
 $P$ sẽ có entropy cực đại nếu nó là phân phối đều trong khoảng đó.
 
 <!--
@@ -532,8 +532,8 @@ We can think of these techniques as trying to answer the following type of quest
 Is there redundant information, or is it all unique?"
 -->
 
-Trước đó ta đã định nghĩa entropy của một biễn ngẫu nhiên duy nhất $X$, vậy còn entropy của một cặp biến ngẫu nhiên $(X,Y)$ thì sao?
-Ta có thể xem những kỹ thuật này như lời giải cho câu hỏi sau:
+Ta đã định nghĩa entropy của một biễn ngẫu nhiên $X$ duy nhất, vậy còn entropy của một cặp biến ngẫu nhiên $(X,Y)$ thì sao?
+Ta xem xét khái niệm này để trả lời các câu hỏi:
 "Thông tin chứa trong cả $X$ và $Y$ sẽ trông như thế nào so với thông tin trong từng biến?
 Có thông tin thừa không, hay chúng đều độc nhất?"
 
@@ -542,21 +542,21 @@ For the following discussion, we always use $(X, Y)$ as a pair of random variabl
 a joint probability distribution $P$ with a p.d.f. or a p.m.f. $p_{X, Y}(x, y)$, while $X$ and $Y$ follow probability distribution $p_X(x)$ and $p_Y(y)$, respectively. 
 -->
 
-Trong phần bàn luận tiếp theo, chúng tôi sẽ luôn dùng $(X,Y)$ để ký hiệu cho một cặp biễn ngẫu nhiên tuân theo
-phân phối xác suất đồng thời $P$ với hàm mật độ xác suất hoặc hàm khối xác suất $p_{X,Y}(x,y)$, còn $X$ và $Y$ lần lượt tuân theo phân phối xác suất $p_X(x)$ và $p_Y(y)$.
+Trong phần thảo luận dưới đây, chúng tôi sẽ luôn dùng $(X,Y)$ để ký hiệu một cặp biễn ngẫu nhiên tuân theo
+phân phối xác suất kết hợp $P$ với hàm mật độ xác suất hoặc hàm khối xác suất $p_{X,Y}(x,y)$, còn $X$ và $Y$ lần lượt tuân theo phân phối xác suất $p_X(x)$ và $p_Y(y)$.
 
 <!--
 ### Joint Entropy 
 -->
 
-### Entropy Đồng thời
+### Entropy Kết hợp
 
 
 <!--
 Similar to entropy of a single random variable :eqref:`eq_ent_def`, we define the *joint entropy* $H(X, Y)$ of a pair random variables $(X, Y)$ as
 -->
 
-Tương tự như entropy của một biến ngẫu nhiên duy nhất :eqref:`eq_ent_def`, ta định nghĩa *entropy đồng thời* (*joint entropy*) $H(X,Y)$ của một cặp biến ngẫu nhiên $(X,Y)$ như sau
+Tương tự như entropy của một biến ngẫu nhiên :eqref:`eq_ent_def`, ta định nghĩa *entropy kết hợp* (*joint entropy*) $H(X,Y)$ của cặp biến ngẫu nhiên $(X,Y)$ như sau
 
 $$H(X, Y) = −E_{(x, y) \sim P} [\log p_{X, Y}(x, y)]. $$
 :eqlabel:`eq_joint_ent_def`
@@ -566,7 +566,7 @@ $$H(X, Y) = −E_{(x, y) \sim P} [\log p_{X, Y}(x, y)]. $$
 Precisely, on the one hand, if $(X, Y)$ is a pair of discrete random variables, then 
 -->
 
-Cụ thể ở một mặt, nếu $(X,Y)$ là một cặp biến ngẫu nhiên rời rạc thì
+Nếu $(X,Y)$ là rời rạc:
 
 $$H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log p_{X, Y}(x, y).$$
 
@@ -575,7 +575,7 @@ $$H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log p_{X, Y}(x, y).$$
 On the other hand, if $(X, Y)$ is a pair of continuous random variables, then we define the *differential joint entropy* as 
 -->
 
-Mặt khác, nếu $(X,Y)$ là một cặp biến ngẫu nhiên liên tục, ta định nghĩa *entropy đồng thời vi phân* như sau
+Mặt khác, nếu $(X,Y)$ là liên tục, ta định nghĩa *entropy kết hợp vi phân (differential joint entropy)* như sau:
 
 
 $$H(X, Y) = - \int_{x, y} p_{X, Y}(x, y) \ \log p_{X, Y}(x, y) \;dx \;dy.$$
@@ -591,10 +591,10 @@ On the other extreme, if $X$ and $Y$ are independent then $H(X, Y) = H(X) + H(Y)
 Indeed we will always have that the information contained in a pair of random variables is no smaller than the entropy of either random variable and no more than the sum of both.
 -->
 
-Ta có thể xem :eqref:`eq_joint_ent_def` như tổng sự ngẫu nhiên của cặp biến ngẫu nhiên.
-Ở một cực, nếu $X = Y$ là hai biến ngẫu nhiên giống hệt nhau, thông tin trong cặp biến này chính là thông tin của từng biến và ta sẽ có $H(X,Y) = H(X) = H(Y)$.
-Ở cực còn lại, nếu $X$ và $Y$ độc lập thì $H(X,Y) = H(X) + H(Y)$.
-Tất nhiên, thông tin chứa đựng trong một cặp biến ngẫu nhiên sẽ không thể nhỏ hơn entropy của từng biến ngẫu nhiên và không thể lớn hơn tổng entropy của cả hai.
+Ta có thể xem :eqref:`eq_joint_ent_def` như tổng mức độ ngẫu nhiên của cặp biến ngẫu nhiên.
+Ở một cực trị, nếu chúng giống hệt nhau ($X = Y$), thông tin của cặp biến này chính là thông tin của từng biến: $H(X,Y) = H(X) = H(Y)$.
+Ở cực trị còn lại, nếu $X$ và $Y$ độc lập thì $H(X,Y) = H(X) + H(Y)$.
+Tất nhiên, thông tin chứa trong một cặp biến ngẫu nhiên sẽ không thể nhỏ hơn entropy của từng biến ngẫu nhiên và không thể lớn hơn tổng entropy của chúng.
 
 $$
 H(X), H(Y) \le H(X, Y) \le H(X) + H(Y).
@@ -605,7 +605,7 @@ $$
 Let us implement joint entropy from scratch.
 -->
 
-Hãy cùng lập trình entropy đồng thời từ đầu.
+Hãy cùng lập trình entropy kết hợp từ đầu.
 
 ```{.python .input}
 def joint_entropy(p_xy):
@@ -644,7 +644,7 @@ joint_entropy(tf.constant([[0.1, 0.5], [0.1, 0.3]]))
 Notice that this is the same *code* as before, but now we interpret it differently as working on the joint distribution of the two random variables.
 -->
 
-Hãy để ý rằng đây chính là *đoạn mã* từ trước, nhưng giờ ta hiểu nó theo cách khác bởi nó đang làm việc với phân phối đồng thời của hai biến ngẫu nhiên.
+Hãy để ý rằng đây chính là *đoạn mã* từ trước, nhưng giờ ta hiểu nó theo cách khác khi làm việc với phân phối kết hợp của hai biến ngẫu nhiên.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
