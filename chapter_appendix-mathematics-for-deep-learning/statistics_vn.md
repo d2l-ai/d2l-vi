@@ -101,7 +101,7 @@ These estimators will almost never give the true value of the parameter, but ide
 Ta đã thấy nhiều ví dụ đơn giản của bộ ước lượng trong phần :numref:`sec_maximum_likelihood`. 
 Nếu bạn có một số mẫu ngẫu nhiên từ phân phối Bernoulli, thì ước lượng hợp lý cực đại (*maximum likelihood estimate*) 
 cho xác xuất của biến ngẫu nhiên có thể được tính bằng cách đếm số lần biến cố xuất hiện rồi chia cho tổng số mẫu.
-Tương tự, đã có một bài tập yêu cầu bạn chứng minh rằng ước lượng hợp lý cực đại của trung bình phân phối Gauss với một số lượng mẫu cho trước là giá trị trung bình của tập mẫu đó. 
+Tương tự, đã có một bài tập yêu cầu bạn chứng minh rằng ước lượng hợp lý cực đại của kỳ vọng phân phối Gauss với một số lượng mẫu cho trước là giá trị trung bình của tập mẫu đó. 
 Các bộ ước lượng này dường như sẽ không bao giờ cho ra giá trị chính xác của tham số, nhưng với số lượng mẫu đủ lớn, ước lượng có được sẽ gần với giá trị thực. 
 
 
