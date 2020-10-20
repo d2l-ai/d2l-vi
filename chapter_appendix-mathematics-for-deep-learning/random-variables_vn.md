@@ -17,7 +17,7 @@ In this section, we develop the theory of *continuous random variables*, which a
 
 :numref:`sec_prob` đã giới thiệu các phương pháp cơ bản để làm việc với biến ngẫu nhiên rời rạc, 
 mà trong trường hợp của ta các biến ngẫu nhiên này có thể chỉ có một tập hữu hạn các giá trị khả dĩ, hoặc có thể là toàn bộ các số nguyên.
-Trong phần này, ta phát triển lý thuyết cho *biến ngẫu nhiên liên tục*, có thể lấy bất cứ giá trị số thực nào.
+Trong phần này, ta tìm hiểu lý thuyết cho *biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
 
 <!--
 ## Continuous Random Variables
@@ -34,7 +34,7 @@ As such, we will need to take some time to develop the theory.
 
 Biến ngẫu nhiên liên tục phức tạp hơn đáng kể so với biến ngẫu nhiên rời rạc.
 Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính tổng các số sang tính tích phân hàm số.
-Như vậy, ta cần dành một chút thời gian để phát triển lý thuyết.
+Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết.
 
 
 <!--
@@ -49,8 +49,8 @@ To understand the additional technical challenges encountered when working with 
 Suppose that we are throwing a dart at the dart board, and we want to know the probability that it hits exactly $2 \text{cm}$ from the center of the board.
 -->
 
-Để hiểu các thách thức kỹ thuật thêm vào khi làm việc với biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
-Giả sử ta chơi phóng phi tiêu vào một tấm hồng tâm, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$. 
+Để hiểu các thách thức kỹ thuật phát sinh khi làm việc với biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
+Giả sử ta chơi phóng phi tiêu vào một bảng phi tiêu, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$. 
 
 
 <!--
@@ -60,7 +60,7 @@ we conclude that $20\%$ of the darts we throw hit the board $2 \text{cm}$ away f
 -->
 
 Để bắt đầu, hãy hình dung ta thực hiện phép đo với độ chính xác một chữ số, tức là chia thành các vùng $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, v.v.
-Phóng $100$ phi tiêu vào tấm hồng tâm, và nếu $20$ trong số đó rơi vào vùng $2\text{cm}$,
+Phóng $100$ phi tiêu vào bảng phi tiêu, và nếu $20$ trong số đó rơi vào vùng $2\text{cm}$,
 ta kết luận là $20\%$ phi tiêu ta phóng cắm vào điểm cách tâm $2 \text{cm}$.
 
 
