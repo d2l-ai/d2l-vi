@@ -664,7 +664,7 @@ $$
 can produce negative numbers. When thinking about areas, it can be strange to see a negative value, and so it is worth digging into what the convention is.
 -->
 
-có thể âm. Khi nghĩ về các diện tích, có thể hơi lạ khi thấy một giá trị âm, và vì vậy đáng để tìm hiểu quy ước.
+có thể âm. Khi nghĩ về các diện tích, có thể là hơi lạ khi ta thấy một giá trị âm, vậy nên nó đáng để ta tìm hiểu kĩ hơn về các quy ước này.
 
 
 <!--
@@ -685,7 +685,7 @@ $$
 Similarly, integrals which progress from right to left, rather than left to right are also taken to be negative areas
 -->
 
-Thứ hai, đường tích phân tiến từ phải sang trái, thay vì từ trái sang phải, cũng có diện tích âm
+Thứ hai, tích phân tiến từ phải sang trái, thay vì từ trái sang phải, cũng có diện tích âm
 
 
 $$
@@ -703,7 +703,7 @@ And indeed, flipping twice will give a pair of negative signs that cancel out to
 Diện tích chuẩn (từ trái sang phải của một hàm số dương) thì luôn dương.
 Bất kỳ kết quả nào thu được bằng cách lật hàm này (giả sử lật đối xứng qua trục $x$ để lấy tích phân của một hàm âm,
 hoặc lật đối xứng qua trục $y$ để lấy tích phân ngược thứ tự) sẽ tạo ra diện tích âm.
-Và, việc lật hai lần sẽ làm cặp dấu âm triệt tiêu nhau, từ đó lại có diện tích dương.
+Và việc lật hai lần sẽ làm cặp dấu âm triệt tiêu nhau, từ đó lại có diện tích dương.
 
 
 $$
@@ -715,7 +715,7 @@ $$
 If this discussion sounds familiar, it is! In :numref:`sec_geometry-linear-algebraic-ops` we discussed how the determinant represented the signed area in much the same way.
 -->
 
-Thực tế, trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách định thức biểu diễn diện tích có dấu theo cùng cách thức.
+Thực tế, trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách định thức biểu diễn diện tích có dấu theo cách tương tự.
 
 
 <!--
@@ -904,10 +904,10 @@ For the type of mathematics encountered when doing machine learning (continuous 
 however it is possible to create examples where it fails (for example the function $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ over the rectangle $[0,2]\times[0,1]$).
 -->
 
-Lưu ý rằng, một khi đã rời rạc hóa, tất cả những gì ta làm là sắp xếp lại thứ tự của danh sách các số.
+Lưu ý rằng, một khi đã rời rạc hóa, tất cả những gì ta làm là sắp xếp lại thứ tự tính tổng một danh sách các số.
 Điều này có vẻ hiển nhiên, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
 Đối với loại toán học gặp phải khi thực hiện tác vụ học máy (các hàm liên tục), không có gì đáng lo ngại,
-tuy vậy có thể tạo các ví dụ mà cách này không sử dụng được (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
+tuy vậy ta có thể tạo các ví dụ mà cách này không áp dụng được (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
 
 
 <!--
@@ -958,7 +958,7 @@ We can take this to be $\phi : \mathbb{R}^n \rightarrow \mathbb{R}^n$, that is a
 To keep the expressions clean, we will assume that $\phi$ is *injective* which is to say it never folds over itself ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).  
 -->
 
-Chúng ta cần một hàm để xác định lại miền tích phân.
+Chúng ta cần một hàm để tái tham số hoá miền tích phân.
 Ta có thể coi hàm này là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, nhận $n$ biến thực và trả về $n$ giá trị thực khác.
 Để giữ cho các biểu thức rõ ràng, ta giả sử $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
 
@@ -1006,11 +1006,11 @@ If $\boldsymbol{\phi}$ was the multiplication by a matrix, then we know how the 
 
 Xét kĩ hơn, ta nhận thấy điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
 ngoại trừ việc ta đã thay thế $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$.
-Hãy cùng nhau xem ta có thể giải thích hạng tử này như nào.
+Hãy cùng xem ta có thể giải thích hạng tử này như thế nào.
 Hãy nhớ lại rằng $\frac{du}{dx}(x)$ cho thấy việc áp dụng $u$ kéo dãn trục $x$ như thế nào.
 Tương tự, ở không gian nhiều chiều, $\left|\det(D\phi(\mathbf{x}))\right|$ cho thấy áp dụng $\boldsymbol{\phi}$ sẽ kéo dãn diện tích (hoặc thể tích, siêu thể tích)
 của một hình vuông nhỏ (hoặc một *khối lập phương* nhỏ) như thế nào.
-Nếu $\boldsymbol{\phi}$ là một phép nhân với ma trận, thì ta đã biết định thức ảnh hưởng như thế nào.
+Nếu $\boldsymbol{\phi}$ là một phép nhân với ma trận, thì ta đã biết định thức có ảnh hưởng như thế nào.
 
 
 <!--
@@ -1019,7 +1019,7 @@ a multivariable function $\boldsymbol{\phi}$ at a point by a matrix in the same 
 Thus the determinant of the Jacobian exactly mirrors the scaling factor we identified in one dimension.
 -->
 
-Tính toán một chút, ta có thể chỉ ra rằng *Jacobian* đưa ra xấp xỉ tốt nhất cho
+Đi sâu hơn một chút, ta có thể chỉ ra rằng *Jacobian* đưa ra xấp xỉ tốt nhất cho
 một hàm đa biến $\boldsymbol{\phi}$ tại một điểm bằng ma trận theo cách giống như khi xấp xỉ đạo hàm và gradient bằng các đường hoặc mặt phẳng.
 Do đó, định thức Jacobian tương ứng với hệ số tỷ lệ ta đã xác định trong không gian một chiều.
 
@@ -1029,7 +1029,7 @@ It takes some work to fill in the details to this, so do not worry if they are n
 Let us see at least one example we will make use of later on. Consider the integral
 -->
 
-Việc này cần một số tính toán chi tiết, vì vậy đừng lo lắng nếu bạn chưa hiểu ngay.
+Việc này cần đi sâu vào một số chi tiết, vì vậy đừng lo lắng nếu bạn chưa hiểu ngay.
 Hãy cùng xem qua một ví dụ mà ta sẽ dùng sau này. Xét tích phân:
 
 $$
@@ -1104,7 +1104,7 @@ via the observation that the derivative of the area up to some point is given by
 * Lý thuyết tích phân cho phép chúng ta giải đáp các câu hỏi về các diện tích hoặc thể tích.
 * Định lý cơ bản của giải tích cho phép vận dụng kiến thức về đạo hàm để tính toán các diện tích
 thông qua quan sát rằng đạo hàm của diện tích tới một điểm nào đó được xác định bởi giá trị tại điểm đó của hàm đang được tích phân.
-* Tích phân trong không gian nhiều chiều có thể được tính bằng cách lặp lại các tích phân đơn biến.
+* Tích phân trong không gian nhiều chiều có thể được tính bằng cách lặp qua các tích phân đơn biến.
 
 
 ## Bài tập
@@ -1145,6 +1145,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
 * Phạm Đăng Khoa
+* Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
