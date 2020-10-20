@@ -118,8 +118,8 @@ There are $52!$ different orders to the deck, again all equally likely, so we ne
 -->
 
 Hãy đi đến cực hạn.
-Giả sử rằng cuối cùng người kia lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
-Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng ta có được rất nhiều thông tin từ câu nói trên.
+Giả sử rằng cuối cùng họ lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
+Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng ta cần rất nhiều thông tin để biết trình từ nào của việc rút bài xảy ra.
 
 
 <!--
@@ -141,10 +141,10 @@ For example, if we want to describe an unusual event, we need a lot information.
 For a common event, we may not need much information.
 -->
 
-Nếu chúng ta đọc qua những thí nghiệm suy nghĩ này, chúng ta thấy một ý tưởng tự nhiên.
-Như một điểm khởi đầu, thay vì quan tâm đến kiến thức,
-chúng ta có thể xây dựng ý tưởng rằng thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
-Ví dụ, nếu chúng ta muốn mô tả một sự kiện bất thường, chúng ta cần rất nhiều thông tin.
+Nếu đọc hết những thí nghiệm tưởng tượng này, chúng ta thấy một ý tưởng tự nhiên.
+Như một điểm khởi đầu, thay vì quan tâm đến điều đã biết,
+chúng ta có thể xây dựng ý tưởng là thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
+Ví dụ, nếu chúng ta muốn mô tả một sự kiện hiếm gặp, chúng ta cần rất nhiều thông tin.
 Đối với một sự kiện thông thường, chúng ta có thể không cần nhiều thông tin.
 
 
@@ -153,8 +153,8 @@ In 1948, Claude E. Shannon published *A Mathematical Theory of Communication* :c
 In his article, Shannon introduced the concept of information entropy for the first time. We will begin our journey here.
 -->
 
-Năm 1948, Claude E. Shannon xuất bản *Lý thuyết Toán học về Truyền tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
-Trong bài báo của mình, Shannon lần đầu tiên giới thiệu khái niệm entropy thông tin. Chúng ta sẽ bắt đầu tại đây.
+Năm 1948, Claude E. Shannon xuất bản *Lý thuyết Toán cho Truyền tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
+Trong bài báo của mình, Shannon đưa ra khái niệm entropy thông tin. Chúng ta sẽ bắt đầu từ đây.
 
 
 <!--
@@ -173,9 +173,9 @@ In this way, any information is encoded by a series of $0$ and $1$.
 And hence, a series of binary digits of length $n$ contains $n$ bits of information.
 -->
 
-Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó với số lượng bit?
-Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu được tạo ra bởi John Tukey.
-Vậy "bit" là gì và tại sao chúng ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
+Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó thành số lượng bit?
+Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu do John Tukey tạo ra.
+Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
 Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
 Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
 Và do đó, một chuỗi các chữ số nhị phân có độ dài $n$ chứa $n$ bit thông tin.
@@ -189,10 +189,10 @@ So, can we generalize to a math function which can transfer the probability $p$ 
 Shannon gave the answer by defining *self-information*
 -->
 
-Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, $0$ hoặc $1$ xuất hiện với xác suất là $\frac{1}{2}$.
+Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, mỗi giá trị $0$ hoặc $1$ xuất hiện với xác suất là $\frac{1}{2}$.
 Do đó, sự kiện $X$ với một chuỗi mã có độ dài $n$, xảy ra với xác suất $\frac{1}{2^n}$.
 Đồng thời, như chúng tôi đã đề cập trước đây, chuỗi số này chứa $n$ bit thông tin.
-Vì vậy, liệu có thể tổng quát hóa thành một hàm toán học ánh xạ xác suất $p$ thành số bit không?
+Vì vậy, liệu có thể tổng quát hóa thành một hàm toán học chuyển xác suất $p$ thành số lượng bit không?
 Shannon đưa ra câu trả lời bằng cách định nghĩa *lượng tin*
 
 
@@ -206,10 +206,10 @@ For the sake of simplicity, the rest of this section will omit the subscript 2 i
 For example, the code "0010" has a self-information
 -->
 
-như là các *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
+như là số *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
 Lưu ý rằng ta sẽ luôn sử dụng logarit cơ số 2 trong phần này.
-Để đơn giản, phần còn lại của phần này sẽ bỏ qua chỉ số phụ 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
-Ví dụ: mã "0010" có thông tin tự thân
+Để đơn giản, phần còn lại của phần này sẽ bỏ qua cơ số 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
+Ví dụ: mã "0010" có lượng tin là
 
 
 $$I(\text{"0010"}) = - \log (p(\text{"0010"})) = - \log \left( \frac{1}{2^4} \right) = 4 \text{ bits}.$$
@@ -286,7 +286,7 @@ As self-information only measures the information of a single discrete event,
 we need a more generalized measure for any random variable of either discrete or continuous distribution. 
 -->
 
-Do lượng tin (*self-information*) chỉ đo lường thông tin từ một biến cố rời rạc đơn lẻ, chúng ta cần một thước đo khái quát hơn cho một biến ngẫu nhiên cả liên tục và không liên tục bất kỳ.
+Do lượng tin chỉ đo lường thông tin từ một biến cố rời rạc đơn lẻ, chúng ta cần một thước đo khái quát hơn cho cả biến ngẫu nhiên có phân bố rời rạc và liên tục.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
