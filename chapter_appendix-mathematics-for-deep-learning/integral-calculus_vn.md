@@ -368,7 +368,7 @@ $$
 This tells us that the function changes by the area under a tiny sliver of a function.
 -->
 
-Diện tích phía dưới phần thay đổi cực nhỏ của hàm cho ta biết hàm này có thay đổi.
+Điều này cho ta biết hàm số $F(x)$ thay đổi bằng với diện tích phía dưới một đoạn cực nhỏ của hàm $f(y)$.
 
 
 <!--
