@@ -644,14 +644,14 @@ $$
 ## A Comment on Sign Conventions
 -->
 
-## Nhận xét về quy ước kí hiệu
+## Nhận xét về Quy ước Ký hiệu
 
 
 <!--
 Keen-eyed readers will observe something strange about the computations above. Namely, computations like
 -->
 
-Những độc giả nào tinh mắt sẽ nhận thấy điều kì lạ từ những phép tính trên. Cụ thể, là các phép tính như
+Những độc giả tinh mắt sẽ nhận thấy điều kì lạ từ những phép tính trên. Ví dụ như
 
 
 $$
@@ -663,7 +663,7 @@ $$
 can produce negative numbers. When thinking about areas, it can be strange to see a negative value, and so it is worth digging into what the convention is.
 -->
 
-có thể tạo ra số âm. Khi nghĩ về các diện tích, có thể hơi lạ khi thấy một giá trị âm, và vì vậy nó đáng để đào sâu tìm hiểu quy ước là gì.
+có thể âm. Khi nghĩ về các diện tích, có thể là hơi lạ khi ta thấy một giá trị âm, vậy nên nó đáng để ta tìm hiểu kĩ hơn về các quy ước này.
 
 
 <!--
@@ -671,8 +671,8 @@ Mathematicians take the notion of signed areas. This manifests itself in two way
 First, if we consider a function $f(x)$ which is sometimes less than zero, then the area will also be negative. So for instance
 -->
 
-Các nhà toán học có khái niệm về các diện tích có dấu. Điều này thể hiện theo hai cách.
-Đầu tiên, nếu ta xét một hàm $f(x)$ nhỏ hơn 0, thì diện tích cũng sẽ là số âm. Vì thế, ví dụ
+Các nhà toán học có khái niệm về diện tích có dấu. Điều này thể hiện theo hai cách.
+Đầu tiên, với $f(x)$ nhỏ hơn 0, thì diện tích cũng sẽ âm. Ví dụ:
 
 
 $$
@@ -684,7 +684,7 @@ $$
 Similarly, integrals which progress from right to left, rather than left to right are also taken to be negative areas
 -->
 
-Tương tự, đường tích phân tiến từ phải sang trái, thay vì từ trái sang phải, cũng được coi là vùng có diện tích âm
+Thứ hai, tích phân tiến từ phải sang trái, thay vì từ trái sang phải, cũng có diện tích âm
 
 
 $$
@@ -700,9 +700,9 @@ And indeed, flipping twice will give a pair of negative signs that cancel out to
 -->
 
 Diện tích chuẩn (từ trái sang phải của một hàm số dương) thì luôn dương.
-Bất kỳ thứ gì thu được bằng cách lật nó (giả sử lật đối xứng qua trục $ x $ để lấy tích phân của một số âm,
-hoặc lật qua trục $ y $ để lấy một tích phân ngược thứ tự) sẽ tạo ra diện tích âm.
-Và quả thực, việc lật hai lần sẽ tạo nên cặp dấu âm triệt tiêu nhau, từ đó có được diện tích dương.
+Bất kỳ kết quả nào thu được bằng cách lật hàm này (giả sử lật đối xứng qua trục $x$ để lấy tích phân của một hàm âm,
+hoặc lật đối xứng qua trục $y$ để lấy tích phân ngược thứ tự) sẽ tạo ra diện tích âm.
+Và việc lật hai lần sẽ làm cặp dấu âm triệt tiêu nhau, từ đó lại có diện tích dương.
 
 
 $$
@@ -714,7 +714,7 @@ $$
 If this discussion sounds familiar, it is! In :numref:`sec_geometry-linear-algebraic-ops` we discussed how the determinant represented the signed area in much the same way.
 -->
 
-Cuộc thảo luận này nghe có vẻ quen thuộc, thực tế, trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách mà định thức biểu diễn diện tích có dấu theo cùng cách thức.
+Thực tế, trong: numref:`sec_geometry-linear-algebraic-ops`, ta đã bàn về cách định thức biểu diễn diện tích có dấu theo cách tương tự.
 
 
 <!--
@@ -729,8 +729,8 @@ In some cases, we will need to work in higher dimensions. For instance, suppose 
 and we want to know the volume under $f$ when $x$ ranges over $[a, b]$ and $y$ ranges over $[c, d]$.
 -->
 
-Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng chiều nhiều hơn. Ví dụ: giả sử rằng chúng ta có một hàm gồm hai biến, như $f(x, y)$
-và chúng tôi muốn biết thể tích dưới $f$ khi $x$ nằm trong đoạn $[a, b]$ và $y$ trong đoạn $[c, d]$.
+Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng chiều lớn hơn. Ví dụ: giả sử ta có một hàm hai biến $f(x, y)$
+và muốn biết thể tích phía dưới $f$ khi $x$ nằm trong đoạn $[a, b]$ và $y$ trong đoạn $[c, d]$.
 
 ```{.python .input}
 # Construct grid and compute function
@@ -797,7 +797,7 @@ ax.dist = 12
 We write this as 
 -->
 
-Ta viết đoạn này tương tự là
+Ta có thể viết thành tích phân sau:
 
 
 $$
@@ -810,7 +810,7 @@ Suppose that we wish to compute this integral. My claim is that we can do this b
 and then shifting to the integral in $y$, that is to say
 -->
 
-Giả sử chúng ta muốn tính tích phân này. Ta có thể làm được điều đó bằng cách tính toán theo vòng lặp, đầu tiên tại cận $x$ và rồi chuyển sang tích phân tại cận $y$, nghĩa là
+Giả sử ta muốn tính tích phân này. Ta có thể tính tích phân theo cận $x$ trước rồi chuyển sang cận $y$, nghĩa là:
 
 
 $$
@@ -830,8 +830,8 @@ Consider the figure above where we have split the function into $\epsilon \times
 squares which we will index with integer coordinates $i, j$. In this case, our integral is approximately
 -->
 
-Hãy xem xét hình trên, nơi chúng ta đã phân chia hàm thành $\epsilon \times \epsilon$
-ô vuông mà ta sẽ lập chỉ số với các tọa độ nguyên $i, j$. Trong trường hợp này, tích phân của chúng ta xấp xỉ
+Hãy xem xét hình trên, nơi ta đã phân chia hàm thành $\epsilon \times \epsilon$
+ô vuông với chỉ số nguyên $i, j$. Trong trường hợp này, tích phân xấp xỉ:
 
 
 $$
@@ -844,7 +844,7 @@ Once we discretize the problem, we may add up the values on these squares in wha
 This is illustrated in :numref:`fig_sum-order`. In particular, we can say that
 -->
 
-Một khi ta đã rời rạc hóa bài toán, chúng ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà ta muốn và không phải lo lắng về việc các giá trị bị thay đổi.
+Một khi đã rời rạc hóa bài toán, ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà không phải lo lắng về việc giá trị cuối cùng thay đổi.
 Điều này được minh họa trong: numref: `fig_sum-order`. Đặc biệt, có thể nói rằng
 
 
@@ -864,7 +864,7 @@ $$
 The sum on the inside is precisely the discretization of the integral 
 -->
 
-Tổng bên trong chính xác là phiên bản rời rạc của tích phân.
+Tổng bên trong chính xác là phiên bản rời rạc của tích phân:
 
 
 $$
@@ -876,7 +876,7 @@ $$
 Finally, notice that if we combine these two expressions we get 
 -->
 
-Sau cùng, lưu ý rằng nếu ta kết hợp hai biểu thức này với nhau, chúng ta nhận được
+Sau cùng, nếu kết hợp hai biểu thức này với nhau, ta có:
 
 
 $$
@@ -888,7 +888,7 @@ $$
 Thus putting it all together, we have that
 -->
 
-Vì thế khi kết hợp tất cả lại với nhau, chúng ta có được
+Kết hợp tất cả lại:
 
 
 $$
@@ -903,10 +903,10 @@ For the type of mathematics encountered when doing machine learning (continuous 
 however it is possible to create examples where it fails (for example the function $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ over the rectangle $[0,2]\times[0,1]$).
 -->
 
-Lưu ý rằng, một khi đã rời rạc hóa, tất cả những gì ta cần làm đó là sắp xếp lại thứ tự mà ta đã thêm vào danh sách các số.
-Điều này có vẻ là hiển nhiên, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
-Đối với loại toán học gặp phải khi thực hiện tác vụ máy học (các hàm liên tục), không có gì đáng lo ngại,
-tuy vậy có thể tạo các ví dụ mà cách này không hoạt động (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
+Lưu ý rằng, một khi đã rời rạc hóa, tất cả những gì ta làm là sắp xếp lại thứ tự tính tổng một danh sách các số.
+Điều này có vẻ hiển nhiên, tuy nhiên kết quả này (được gọi là *Định lý Fubini*) không phải lúc nào cũng đúng!
+Đối với loại toán học gặp phải khi thực hiện tác vụ học máy (các hàm liên tục), không có gì đáng lo ngại,
+tuy vậy ta có thể tạo các ví dụ mà cách này không áp dụng được (ví dụ: hàm $f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3$ trên hình chữ nhật $[0,2]\times[0,1]$).
 
 
 <!--
@@ -914,8 +914,8 @@ Note that the choice to do the integral in $x$ first, and then the integral in $
 We could have equally well chosen to do $y$ first and then $x$ to see
 -->
 
-Lưu ý rằng việc lựa chọn để tính tích phân tại cận $x$ trước tiên, và sau đó tích phân tại cận $y$ là tùy ý.
-Ta cũng có thể chọn thực hiện $y$ trước rồi đến $x$ sau
+Lưu ý rằng việc chọn tính tích phân theo cận $x$ trước, cận $y$ sau là tùy ý.
+Ta cũng có thể chọn thực hiện $y$ trước, $x$ sau:
 
 
 $$
@@ -927,7 +927,7 @@ $$
 Often times, we will condense down to vector notation, and say that for $U = [a, b]\times [c, d]$ this is
 -->
 
-Thông thường, chúng ta sẽ rút gọn thành ký hiệu vector và nói rằng tích phân trên miền $U = [a, b]\times [c, d]$ là
+Thông thường, ta sẽ rút gọn thành ký hiệu vector và nói rằng tích phân trên miền $U = [a, b]\times [c, d]$ là:
 
 
 $$
@@ -947,7 +947,8 @@ As with single variables in :eqref:`eq_change_var`, the ability to change variab
 Let us summarize the result without derivation.  
 -->
 
-*dịch đoạn phía trên*
+Tương tự như tích phân đơn biến, việc đổi biến trong tích phân bội là một kỹ thuật quan trọng.
+Chúng tôi sẽ tổng hợp kết quả mà không chứng minh và trình bày.
 
 
 <!--
@@ -956,16 +957,16 @@ We can take this to be $\phi : \mathbb{R}^n \rightarrow \mathbb{R}^n$, that is a
 To keep the expressions clean, we will assume that $\phi$ is *injective* which is to say it never folds over itself ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).  
 -->
 
-Chúng ta cần một hàm để xác định lại miền tích phân.
-Ta cũng có thể coi hàm này là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, nhận $n$ biến thực và trả về $n$ giá trị thực khác.
-Để giữ cho các biểu thức rõ ràng, ta sẽ giả định rằng $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
+Chúng ta cần một hàm để tái tham số hoá miền tích phân.
+Ta có thể coi hàm này là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, nhận $n$ biến thực và trả về $n$ giá trị thực khác.
+Để giữ cho các biểu thức rõ ràng, ta giả sử $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
 
 
 <!--
 In this case, we can say that
 -->
 
-Trong trường hợp này, ta có thể phát biểu rằng
+Trong trường hợp này, ta có:
 
 
 $$
@@ -977,7 +978,8 @@ $$
 where $D\phi$ is the *Jacobian* of $\phi$, which is the matrix of partial derivatives of $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
 -->
 
-trong đó $D\phi$ là *Jacobian* của $\phi$, là ma trận của các đạo hàm riêng của $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
+trong đó $D\phi$ là *Jacobian* của $\phi$, ma trận của các đạo hàm riêng của $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
+
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -1001,13 +1003,13 @@ of a little square (or little *hyper-cube*) by applying $\boldsymbol{\phi}$.
 If $\boldsymbol{\phi}$ was the multiplication by a matrix, then we know how the determinant already gives the answer.  
 -->
 
-Xét kĩ hơn, ta nhận thấy rằng điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
-ngoại trừ việc chúng ta đã thay thế thuật ngữ $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$.
-Hãy cùng nhau xem ta có thể giải thích thuật ngữ này như nào.
-Hãy nhớ lại rằng số hạng $\frac{du}{dx}(x)$ cho thấy ta kéo dãn trục $x$ bằng cách áp dụng $u$ như thế nào.
-Tương tự, ở các không gian nhiều chiều hơn, $\left|\det(D\phi(\mathbf{x}))\right|$ cho thấy ta đã kéo dãn diện tích (hoặc thể tích, hoặc siêu thể tích)
-của một hình vuông (hoặc một *khối lập phương*) nhỏ ở mức độ như thế nào khi áp dụng $\boldsymbol{\phi}$.
-Nếu $\boldsymbol{\phi}$ là một phép nhân với ma trận, thì chúng ta biết ảnh hưởng của định thức như thế nào.
+Xét kĩ hơn, ta nhận thấy điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
+ngoại trừ việc ta đã thay thế $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$.
+Hãy cùng xem ta có thể giải thích hạng tử này như thế nào.
+Hãy nhớ lại rằng $\frac{du}{dx}(x)$ cho thấy việc áp dụng $u$ kéo dãn trục $x$ như thế nào.
+Tương tự, ở không gian nhiều chiều, $\left|\det(D\phi(\mathbf{x}))\right|$ cho thấy áp dụng $\boldsymbol{\phi}$ sẽ kéo dãn diện tích (hoặc thể tích, siêu thể tích)
+của một hình vuông nhỏ (hoặc một *khối lập phương* nhỏ) như thế nào.
+Nếu $\boldsymbol{\phi}$ là một phép nhân với ma trận, thì ta đã biết định thức có ảnh hưởng như thế nào.
 
 
 <!--
@@ -1016,9 +1018,9 @@ a multivariable function $\boldsymbol{\phi}$ at a point by a matrix in the same 
 Thus the determinant of the Jacobian exactly mirrors the scaling factor we identified in one dimension.
 -->
 
-Tính toán một chút, ta có thể chỉ ra rằng *Jacobian* đưa ra xấp xỉ tốt nhất cho
+Đi sâu hơn một chút, ta có thể chỉ ra rằng *Jacobian* đưa ra xấp xỉ tốt nhất cho
 một hàm đa biến $\boldsymbol{\phi}$ tại một điểm bằng ma trận theo cách giống như khi xấp xỉ đạo hàm và gradient bằng các đường hoặc mặt phẳng.
-Do đó, định thức Jacobian phản ánh chính xác hệ số tỷ lệ mà ta đã xác định trong không gian một chiều.
+Do đó, định thức Jacobian tương ứng với hệ số tỷ lệ ta đã xác định trong không gian một chiều.
 
 
 <!--
@@ -1026,8 +1028,8 @@ It takes some work to fill in the details to this, so do not worry if they are n
 Let us see at least one example we will make use of later on. Consider the integral
 -->
 
-Cần một số tính toán cho các chi tiết này, vì vậy đừng lo lắng nếu bạn chưa hiểu lúc này.
-Hãy cùng xem qua ít nhất một ví dụ mà ta dùng sau này. Xét tích phân
+Việc này cần đi sâu vào một số chi tiết, vì vậy đừng lo lắng nếu bạn chưa hiểu ngay.
+Hãy cùng xem qua một ví dụ mà ta sẽ dùng sau này. Xét tích phân:
 
 $$
 \int _ {-\infty}^{\infty} \int _ {-\infty}^{\infty} e^{-x^{2}-y^{2}} \;dx\;dy.
@@ -1040,9 +1042,9 @@ If we let $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta), r\sin(\theta))$ (whic
 then we can apply the change of variable formula to see that this is the same thing as
 -->
 
-Rất khó tính trực tiếp tích phân này, nhưng nếu ta đổi các biến, thì có thể đạt được tiến triển đáng kể.
-Nếu ta đặt $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta), r\sin(\theta))$ (nghĩa là $x = r \cos(\theta)$, $y = r \sin(\theta)$),
-thì chúng ta có thể áp dụng công thức đổi biến để có
+Rất khó tính trực tiếp tích phân này, nhưng nếu đổi biến, thì ta có thể đạt được tiến triển đáng kể.
+Nếu đặt $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta), r\sin(\theta))$ (nghĩa là $x = r \cos(\theta)$, $y = r \sin(\theta)$),
+thì ta có thể áp dụng công thức đổi biến để có:
 
 
 $$
@@ -1054,7 +1056,7 @@ $$
 where 
 -->
 
-với
+với:
 
 $$
 \left|\det(D\mathbf{\phi}(\mathbf{x}))\right| = \left|\det\begin{bmatrix}
@@ -1068,7 +1070,7 @@ $$
 Thus, the integral is
 -->
 
-Vì vậy, phép tích phân chính là
+Vì vậy, tích phân được viết lại là:
 
 
 $$
@@ -1086,7 +1088,7 @@ trong đó đẳng thức cuối cùng là phép tính mà ta đã sử dụng t
 We will meet this integral again when we study continuous random variables in :numref:`sec_random_variables`.
 -->
 
-Chúng ta sẽ lại gặp tích phân này khi chúng ta học tới các biến ngẫu nhiên liên tục trong :numref:`sec_random_variables`.
+Chúng ta sẽ lại gặp tích phân này khi chúng ta học về các biến ngẫu nhiên liên tục trong :numref:`sec_random_variables`.
 
 
 ## Tóm tắt
@@ -1099,9 +1101,9 @@ via the observation that the derivative of the area up to some point is given by
 -->
 
 * Lý thuyết tích phân cho phép chúng ta giải đáp các câu hỏi về các diện tích hoặc thể tích.
-* Định lý cơ bản của giải tích cho phép chúng ta vận dụng kiến thức về đạo hàm để tính toán các diện tích
-thông qua quan sát rằng đạo hàm của diện tích tới một điểm nào đó bởi giá trị tại điểm đó của hàm đang được tích phân.
-* Tích phân ở các không gian nhiều chiều hơn có thể được tính bằng cách lặp lại những phép tích phân đơn biến.
+* Định lý cơ bản của giải tích cho phép vận dụng kiến thức về đạo hàm để tính toán các diện tích
+thông qua quan sát rằng đạo hàm của diện tích tới một điểm nào đó được xác định bởi giá trị tại điểm đó của hàm đang được tích phân.
+* Tích phân trong không gian nhiều chiều có thể được tính bằng cách lặp qua các tích phân đơn biến.
 
 
 ## Bài tập
@@ -1114,11 +1116,11 @@ thông qua quan sát rằng đạo hàm của diện tích tới một điểm n
 and $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ to see they are different.
 -->
 
-1. $\int_1^2 \frac{1}{x} \;dx$ bằng bao nhiêu?
-2. Áp dụng công thức đổi biến để tính tích phân $\int_0^{\sqrt{\pi}}x\sin(x^2)\;dx$.
-3. $\int_{[0,1]^2} xy \;dx\;dy$ bằng bao nhiêu?
+1. Tính $\int_1^2 \frac{1}{x} \;dx$.
+2. Áp dụng công thức đổi biến để tính $\int_0^{\sqrt{\pi}}x\sin(x^2)\;dx$.
+3. Tính $\int_{[0,1]^2} xy \;dx\;dy$.
 4. Áp dụng công thức đổi biến để tính $\int_0^2\int_0^1xy(x^2-y^2)/(x^2+y^2)^3\;dy\;dx$ 
-và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để quan sát sự khác nhau giữa chúng.
+và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để thấy sự khác nhau giữa chúng.
 
 
 <!-- ===================== Kết thúc dịch Phần 5 ===================== -->
@@ -1140,22 +1142,9 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Phạm Hồng Vinh
-
-<!-- Phần 2 -->
-* Phạm Hồng Vinh
-* Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Phạm Hồng Vinh
-* Nguyễn Văn Cường
-
-<!-- Phần 4 -->
 * Phạm Đăng Khoa
-
-<!-- Phần 5 -->
-* Phạm Đăng Khoa
-
+* Lê Khắc Hồng Phúc
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
