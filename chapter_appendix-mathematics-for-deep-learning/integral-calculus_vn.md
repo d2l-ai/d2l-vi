@@ -16,8 +16,8 @@ While seemingly unrelated, integration is tightly intertwined with the different
 -->
 
 Phép vi phân mới chỉ là một nửa nội dung của môn giải tích truyền thống.
-Một cột trụ khác, phép tích phân, được bắt nguồn từ một câu hỏi khá lạc lõng, "Diện tích phía bên dưới của đường cong này là bao nhiêu?"
-Dù có vẻ không liên quan, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua thứ được gọi là *định lý cơ bản của giải tích* (_fundamental theorem of calculus_).
+Một nửa quan trọng khác, phép tích phân, bắt nguồn từ một câu hỏi có vẻ không mấy liên quan, "Diện tích của phần bên dưới đường cong này là bao nhiêu?"
+Dù vậy, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua *định lý cơ bản của giải tích* (_fundamental theorem of calculus_).
 
 
 <!--
@@ -25,8 +25,8 @@ At the level of machine learning we discuss in this book, we will not need a dee
 However, we will provide a brief introduction to lay the groundwork for any further applications we will encounter later on.
 -->
 
-Ở mức độ kiến thức học máy ta thảo luận trong cuốn sách này, ta không nhất thiết cần một hiểu biết sâu sắc về phép tích phân.
-Tuy nhiên, chúng tôi sẽ cung cấp một giới thiệu khái quát để đặt nền tảng cho bất kỳ ứng dụng nào mà ta sẽ gặp sau này.
+Ở mức độ kiến thức học máy ta thảo luận trong cuốn sách này, ta không cần thiết phải hiểu sâu sắc về phép tích phân.
+Tuy nhiên, chúng tôi sẽ giới thiệu khái quát để đặt nền tảng cho bất kỳ ứng dụng nào ta sẽ gặp sau này.
 
 
 <!--
@@ -42,9 +42,9 @@ For simplicity, let us assume that $f(x)$ is non-negative (never takes a value l
 What we want to try and understand is: what is the area contained between $f(x)$ and the $x$-axis?
 -->
 
-Giả sử ta có một hàm $f(x)$.
-Để đơn giản, hãy cho rằng $f(x)$ không âm (không cho ra số bé hơn không).
-Những gì chúng ta muốn cố gắng tìm và hiểu là: diện tích giữa $f(x)$ và trục $x$ là bao nhiêu?
+Giả sử ta có hàm $f(x)$.
+Để đơn giản, giả sử $f(x)$ không âm (không cho ra số bé hơn không).
+Điều chúng ta muốn tìm hiểu là: diện tích của phần được giới hạn giữa $f(x)$ và trục $x$ là bao nhiêu?
 
 
 ```{.python .input}
@@ -104,8 +104,8 @@ In most cases, this area will be infinite or undefined (consider the area under 
 so people will often talk about the area between a pair of ends, say $a$ and $b$.
 -->
 
-Trong đa số trường hợp, diện tích của vùng này sẽ là vô cực hoặc không xác định (xét trường hợp diện tích dưới hàm $f(x) = x^{2}$),
-nên mọi người thường sẽ nói về diện tích trong một khoảng, ví dụ $a$ và $b$.
+Trong đa số trường hợp, diện tích của vùng này sẽ là vô cực hoặc không xác định (ví dụ như hàm $f(x) = x^{2}$),
+nên ta thường nói về diện tích trong một khoảng giữa hai cận, ví dụ $a$ và $b$.
 
 
 ```{.python .input}
@@ -145,7 +145,7 @@ d2l.plt.show()
 We will denote this area by the integral symbol below:
 -->
 
-Ta sẽ ký hiệu phần diện tích này với dấu tích phân như bên dưới:
+Ta sẽ ký hiệu phần diện tích này với dấu tích phân như dưới đây:
 
 
 $$
@@ -158,8 +158,7 @@ The inner variable is a dummy variable, much like the index of a sum in a $\sum$
 and so this can be equivalently written with any inner value we like:
 -->
 
-Biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$,
-vậy nên biến này có thể được viết dưới bất kỳ dạng nào ta muốn:
+Ta có thể sử dụng bất kỳ kí hiệu nào vì biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$:
 
 
 $$
@@ -176,12 +175,12 @@ Let us take a look at an example doing this in code.
 We will see how to get the true value in a later section.
 -->
 
-Có một cách truyền thống để cố gắng hiểu cách ta có thể xấp xỉ phép tích phân:
-ta có thể tưởng tượng lấy phần giữa $a$ và $b$ rồi cắt nó thành $N$ lát theo chiều dọc.
-Nếu $N$ lớn, ta có thể xấp xỉ phần diện tích của mỗi lát bằng một hình chữ nhật,
+Có một cách truyền thống để hiểu rõ hơn cách ta có thể xấp xỉ phép tích phân:
+ta có thể tưởng tượng cắt phần giữa $a$ và $b$ thành $N$ lát theo chiều dọc.
+Nếu $N$ lớn, ta có thể xấp xỉ phần diện tích mỗi lát bằng một hình chữ nhật,
 và sau đó tính tổng các diện tích để có được phần diện tích phía dưới đường cong.
-Hãy cùng xem một ví dụ thông qua lập trình.
-Ta sẽ biết cách để lấy được giá trị thật sự của phép tích phân ở mục sau.
+Hãy cùng lập trình và xét qua một ví dụ.
+Ta sẽ biết cách tính được giá trị thật sự của phép tích phân ở mục sau.
 
 
 ```{.python .input}
@@ -253,7 +252,7 @@ we can do this approach analytically for only the simplest functions like
 -->
 
 Một vấn đề đó là trong khi cách này có thể làm một cách số học,
-ta chỉ có thể sử dụng cách tiếp cận phân tích này đối với những hàm cực đơn giản như
+ta chỉ có thể sử dụng cách tiếp cận phân tích này cho các hàm cực đơn giản như
 
 
 $$
@@ -265,7 +264,7 @@ $$
 Anything somewhat more complex like our example from the code above
 -->
 
-Đối với những hàm có vẻ phức tạp hơn như trong ví dụ trình bày ở đoạn mã trên
+Bất kì hàm số nào hơi phức tạp hơn một chút như trong ví dụ trình bày ở đoạn mã trên 
 
 
 $$
@@ -277,7 +276,7 @@ $$
 is beyond what we can solve with such a direct method.
 -->
 
-nằm ngoài những gì ta có thể giải quyết với phương pháp này.
+nằm ngoài phạm vi ta có thể giải quyết bằng phương pháp này. 
 
 
 <!--
@@ -286,7 +285,7 @@ and learn the main computational tool used to find integrals: the *fundamental t
 This will be the basis for our study of integration.
 -->
 
-Ta sẽ thay thế bằng một hướng tiếp cận khác.
+Thay vào đó, ta sẽ tiếp cận theo hướng khác.
 Ta sẽ làm việc một cách trực quan với khái niệm diện tích, và học công cụ tính toán chính được dùng để tính tích phân: *định lý cơ bản của giải tích*.
 Đây sẽ là nền tảng của ta trong quá trình học tích phân.
 
@@ -305,7 +304,7 @@ Ta sẽ làm việc một cách trực quan với khái niệm diện tích, và
 To dive deeper into the theory of integration, let us introduce a function 
 -->
 
-Để đào sâu hơn nữa vào lý thuyết tích phân, chúng tôi xin phép giới thiệu một hàm
+Để đào sâu hơn nữa vào lý thuyết tích phân, chúng tôi xin phép giới thiệu hàm
 
 
 $$
@@ -318,8 +317,8 @@ This function measures the area between $0$ and $x$ depending on how we change $
 Notice that this is everything we need since
 -->
 
-Hàm này tính toán diện tích giữa $0$ và $x$ tùy thuộc vào việc chúng ta thay đổi $x$ như thế nào.
-Thật ra đây là tất cả những gì ta cần vì
+Hàm này tính diện tích giữa $0$ và $x$ tùy thuộc vào việc $x$ thay đổi như thế nào.
+Để ý rằng đây là tất cả những gì ta cần, bởi vì
 
 
 $$
@@ -332,13 +331,13 @@ This is a mathematical encoding of the fact that we can measure the area out to 
 and then subtract off the area to the near end point as indicated in :numref:`fig_area-subtract`.
 -->
 
-Đây là một cách ký hiệu toán học cho việc ta có thể tính diện tích khoảng giữa hai cận bằng cách lấy diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như chỉ ra trong :numref:`fig_area-subtract`.
+Đây là một ký hiệu toán học biểu diễn diện tích khoảng giữa hai cận bằng hiệu diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như trong :numref:`fig_area-subtract`.
 
 <!--
 ![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/SubArea.svg)
 -->
 
-![Minh họa cho việc tại sao ta có thể đơn giản bài toán tính diện tích dưới đường cong giữa hai điểm thành bài toán tính toán phần diện tích phía bên trái của một điểm](../img/SubArea.svg)
+![Minh họa tại sao ta có thể đơn giản bài toán tính diện tích dưới đường cong giữa hai điểm thành bài toán tính toán phần diện tích phía bên trái của một điểm](../img/SubArea.svg)
 :label:`fig_area-subtract`
 
 
@@ -346,7 +345,7 @@ and then subtract off the area to the near end point as indicated in :numref:`fi
 Thus, we can figure out what the integral over any interval is by figuring out what $F(x)$ is.  
 -->
 
-Vì thế, ta có thể biết được tích phân giữa hai khoảng bất kỳ là bao nhiêu bằng việc biết được $F(x)$.
+Vì thế, ta có thể tính tích phân trong khoảng bất kỳ bằng việc tìm $F(x)$.
 
 
 <!--
@@ -355,9 +354,9 @@ As we often do in calculus, let us imagine what happens when we shift the value 
 From the comment above, we know that
 -->
 
-Để làm điều đó, hãy xem xét một thí nghiệm.
-Như ta thường làm trong giải tích, hãy tưởng tượng điều gì sẽ xảy ra khi ta dịch chuyển $x$ một khoảng nhỏ.
-Bằng nhận xét phía trên, ta biết rằng
+Để làm điều này, hãy xem xét một thí nghiệm.
+Như thường làm trong giải tích, hãy tưởng tượng điều gì sẽ xảy ra khi ta dịch chuyển $x$ một khoảng nhỏ.
+Bằng nhận xét phía trên, ta có
 
 
 $$
@@ -369,7 +368,7 @@ $$
 This tells us that the function changes by the area under a tiny sliver of a function.
 -->
 
-Nó cho ta biết hàm này thay đổi một khoảng bằng với diện tích phía dưới phần thay đổi cực nhỏ của hàm.
+Điều này cho ta biết hàm số $F(x)$ thay đổi bằng với diện tích phía dưới một đoạn cực nhỏ của hàm $f(y)$.
 
 
 <!--
@@ -379,9 +378,9 @@ Indeed, one can show that as $\epsilon \rightarrow 0$ this approximation becomes
 Thus we can conclude:
 -->
 
-Đây là điểm mà ta sẽ sử dụng việc xấp xỉ.
-Nếu ta nhìn vào phần diện tích nhỏ đó, ta thấy phần diện tích này gần với diện tích của một hình chữ nhật với chiều cao là giá trị tại $f(x)$ và chiều rộng là $\epsilon$.
-Thật vậy, ta có thể thấy khi $\epsilon \rightarrow 0$ phép xấp xỉ này càng trở nên chính xác hơn.
+Đây là lúc mà ta cần xấp xỉ.
+Nếu nhìn vào phần diện tích nhỏ đó, ta thấy phần diện tích này gần với diện tích của một hình chữ nhật với chiều cao là giá trị tại $f(x)$ và chiều rộng là $\epsilon$.
+Thật vậy, khi $\epsilon \rightarrow 0$ phép xấp xỉ này càng chính xác.
 Vì thế, ta có thể kết luận
 
 
@@ -395,7 +394,7 @@ However, we can now notice: this is exactly the pattern we expect if we were com
 Thus we see the following rather surprising fact:
 -->
 
-Tuy nhiên, ta có thể để ý rằng: đây chính là dạng phương trình mong muốn nếu ta muốn tính toán đạo hàm của $F$!
+Tuy nhiên, ta có thể để ý rằng: phương trình này có dạng giống với khi ta tính đạo hàm của $F$!
 Vì thế ta có được một sự thật khá bất ngờ rằng:
 
 
@@ -423,10 +422,10 @@ This is a fact-of-life in the theory of integration.
 Thankfully, notice that when working with definite integrals, the constants drop out, and thus are irrelevant to the outcome.
 -->
 
-Nó lấy ý tưởng về tìm kiếm diện tích (một *tiên nghiệm* khá là khó), và giảm tải nó xuống thành một mệnh đề đạo hàm (một thứ dễ hiểu hơn nhiều).
-Một nhận xét cuối mà chúng tôi cần đưa ra đó là nó không cho ta biết $F(x)$ thực sự là gì.
+Nó lấy ý tưởng về tìm kiếm diện tích (một *tiên nghiệm* khá khó), và giảm tải thành một mệnh đề đạo hàm (một khái niệm toán học đã được nghiên cứu sâu).
+Một lưu ý cuối là định lý này không cho ta biết dạng thực sự của $F(x)$.
 Thực chất, $F(x) + C$ với $C$ bất kỳ đều có đạo hàm như nhau.
-Đây là một sự thật mà chúng ta phải chấp nhận trong lý thuyết tích phân.
+Đây là sự thật chúng ta chấp nhận trong lý thuyết tích phân.
 Đáng mừng là khi làm việc với tích phân hữu hạn, phần hằng số bị loại bỏ, và vì thế không ảnh hưởng đến kết quả.
 
 
@@ -443,11 +442,11 @@ For instance, we know that the derivative of $x^{n}$ is $nx^{n-1}$.
 Thus, we can say using the fundamental theorem :eqref:`eq_ftc` that
 -->
 
-Đây có thể trông như là một đống trừu tượng vô nghĩa, nhưng biết ơn vì nó đã cho ta một góc nhìn mới trong việc tính toán tích phân.
-Mục tiêu của ta không còn là làm một vài thao tác chặt-và-cộng để cố gắng tính toán phần diện tích, mà ta chỉ cần tìm một hàm có đạo hàm là hàm ta hiện có!
+Công thức trên có thể khá trừu tượng và vô nghĩa, nhưng nó cho ta một góc nhìn mới trong việc tính tích phân.
+Cách tiếp cận của ta không còn là phải "cắt ra và cộng lại" để tính diện tích, mà chỉ cần tìm một hàm số có đạo hàm là hàm hiện có!
 Đây là một điều tuyệt vời vì giờ ta có thể liệt kê hàng loạt các phép tích phân phức tạp chỉ bằng cách đảo ngược lại bảng trong :numref:`sec_derivative_table`.
 Ví dụ, ta biết đạo hàm của $x^{n}$ là $nx^{n-1}$.
-Vì thế, bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc`, ta có thể nói rằng
+Vì thế, bằng cách sử dụng định lý cơ bản :eqref:`eq_ftc`, ta có:
 
 
 $$
@@ -459,7 +458,7 @@ $$
 Similarly, we know that the derivative of $e^{x}$ is itself, so that means
 -->
 
-Tương tự, ta biết đạo hàm của $e^{x}$ là chính nó, vậy có nghĩa là
+Tương tự, ta biết đạo hàm của $e^{x}$ là chính nó, nên:
 
 
 $$
@@ -472,8 +471,8 @@ In this way, we can develop the entire theory of integration leveraging ideas fr
 Every integration rule derives from this one fact.
 -->
 
-Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân một cách tự do bằng cách tận dụng những ý tưởng từ giải tích vi phân.
-Mỗi quy tắc tích phân đều bắt nguồn từ sự thật này.
+Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân bằng cách tự do tận dụng những ý tưởng từ giải tích vi phân.
+Mỗi quy tắc tích phân đều bắt nguồn từ đây.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -494,7 +493,7 @@ has a corresponding rule for integral calculus (integration by parts, linearity 
 In this section, we will dive into what is arguably the most important from the list: the change of variables formula.
 -->
 
-Cũng như vi phân, có một số quy tắc khiến việc tính tích phân trở nên dễ xử lý hơn.
+Cũng như vi phân, có một số quy tắc giúp việc tính tích phân dễ xử lý hơn.
 Thật ra, mọi quy tắc trong giải tích vi phân (như quy tắc tích, quy tắc tổng, và quy tắc dây chuyền) đều có một quy luật tương ứng cho giải tích tích phân (lần lượt là tích phân từng phần, tích phân của tổng, và quy tắc đổi biến số).
 Trong mục này, ta sẽ tìm hiểu quy tắc được cho là quan trọng nhất trong danh sách trên: quy tắc đổi biến số.
 
@@ -516,7 +515,7 @@ Let us suppose that we want to know how this function looks when we compose it w
 By the chain rule, we know
 -->
 
-Cho là ta muốn biết hàm này trong như thế nào khi ta kết hợp nó với một hàm nữa để có được $F(u(x))$.
+Giả sử ta muốn biết hàm này trông như thế nào khi kết hợp nó với một hàm nữa để có được $F(u(x))$.
 Bằng quy tắc dây chuyền, ta có
 
 $$
@@ -552,7 +551,7 @@ $$
 Similarly, recalling that $F$ is an integral allows us to recognize that $\frac{dF}{dx} = f$ using the fundamental theorem :eqref:`eq_ftc`, and thus we may conclude
 -->
 
-Tương tự, biết rằng $F$ là một tích phân cho phép ta nhận ra rằng $\frac{dF}{dx} = f$ sử dụng định lý cơ bản :eqref:`eq_ftc`, và do đó ta có thể kết luận
+Tương tự, $F$ là một tích phân nên theo định lý cơ bản :eqref:`eq_ftc`, $\frac{dF}{dx} = f$, do đó:
 
 
 $$\int_{u(0)}^{u(x)} f(y) \; dy = \int_0^x f(u(y))\cdot \frac{du}{dy} \;dy.$$
@@ -578,7 +577,7 @@ Thus, to make the area of these two rectangles to agree, we need to multiply the
 Với $\epsilon$ nhỏ, tích phân này xấp xỉ $\epsilon f(u(x))$, phần diện tích của hình chữ nhật tương ứng.
 Bây giờ, hãy so sánh với tích phân của $f(y)$ từ $u(x)$ tới $u(x+\epsilon)$.
 Ta biết rằng $u(x+\epsilon) \approx u(x) + \epsilon \frac{du}{dx}(x)$, vậy nên phần diện tích của hình chữ nhật này xấp xỉ $\epsilon \frac{du}{dx}(x)f(u(x))$.
-Do đó, để khiến phần diện tích của hai hình chữ nhật này thống nhất, ta phải nhân phần thứ nhất cho $\frac{du}{dx}(x)$ như minh họa trong :numref:`fig_rect-transform`. 
+Do đó, để đồng hóa diện tích hai hình chữ nhật này, ta phải nhân phần thứ nhất với $\frac{du}{dx}(x)$ như minh họa trong :numref:`fig_rect-transform`. 
 
 
 <!--
@@ -613,8 +612,8 @@ If $u(x)$ and $f(x)$ are properly chosen, this can allow for the computation of 
 For instance, if we even chose $f(y) = 1$ and $u(x) = e^{-x^{2}}$ (which means $\frac{du}{dx}(x) = -2xe^{-x^{2}}$), this can show for instance that
 -->
 
-Nếu $u(x)$ và $f(x)$ được chọn một cách thích hợp, nó sẽ cho phép tính toán những tích phân cực kỳ phức tạp.
-Ví dụ, nếu ta chọn $f(y) = 1$ và $u(x) = e^{-x^{2}}$ (có nghĩa là $\frac{du}{dx}(x) = -2xe^{-x^{2}}$)), có thể ví dụ cho biết là
+Chọn $u(x)$ và $f(x)$ một cách thích hợp sẽ cho phép tính những tích phân cực kỳ phức tạp.
+Ví dụ, nếu ta chọn $f(y) = 1$ và $u(x) = e^{-x^{2}}$ (có nghĩa là $\frac{du}{dx}(x) = -2xe^{-x^{2}}$)):
 
 
 $$
@@ -626,7 +625,7 @@ $$
 and thus by rearranging that
 -->
 
-và bằng cách sắp xếp lại sẽ được
+và khi sắp xếp lại ta có
 
 
 $$
