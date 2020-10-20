@@ -949,7 +949,7 @@ Let us summarize the result without derivation.
 -->
 
 Tương tự như tích phân đơn biến, việc đổi biến trong tích phân bội là một kỹ thuật quan trọng.
-Hãy tổng hợp kết quả mà không đưa ra kết luận.
+Chúng tôi sẽ tổng hợp kết quả mà không chứng minh và trình bày.
 
 
 <!--
