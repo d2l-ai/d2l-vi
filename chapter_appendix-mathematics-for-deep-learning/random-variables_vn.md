@@ -706,12 +706,12 @@ This means that the variance itself is not comparable to the original measuremen
 To make it interpretable, we will need to return to our original units.
 -->
 
-Khi giải thích các giá trị này, có thể có một chút khó hiểu.
+Khi diễn giải các giá trị này, ta có thể gặp một chút vướng mắc.
 Cụ thể, hãy để ý đến đơn vị của các phép tính.
 Giả sử ta đang làm việc với số sao được đánh giá cho một sản phẩm trên trang web.
 Khi đó $a$, $a-2$, and $a+2$ đều được đo bằng đơn vị ngôi sao.
 Tương tự, kỳ vọng $\mu_X$ sau đó cũng có đơn vị là ngôi sao (được tính là trung bình có trọng số).
-Tuy nhiên, nếu xét đến phương sai, ta ngay lập tức gặp phải vấn đề, đó là $(X-\mu_X)^2$ sẽ có đơn vị *bình phương* của sao.
+Tuy nhiên, nếu xét đến phương sai, ta ngay lập tức gặp phải vấn đề, đó là $(X-\mu_X)^2$ sẽ có đơn vị *bình phương* số sao.
 Điều này có nghĩa là bản thân phương sai không thể dùng để so sánh trong phép đo ban đầu.
 Để có thể diễn giải được nó, ta cần quay lại đơn vị gốc.
 
@@ -781,8 +781,8 @@ Or to state it verbally in the case of $\alpha=10$, $99\%$ of the samples from a
 This gives an immediate interpretation to our standard summary statistics.
 -->
 
-Diễn giải bằng lời như sau: ví dụ khi $\alpha=10$, $99\%$ số mẫu của bất kỳ biến ngẫu nhiên nào sẽ nằm trong khoảng độ lệch chuẩn bằng $10$ về 2 phía của giá trị trung bình.
-Điều này giải thích ngay lập tức thống kê tóm tắt tiêu chuẩn của chúng ta.
+Diễn giải bằng lời như sau: ví dụ khi $\alpha=10$, $99\%$ số mẫu của bất kỳ biến ngẫu nhiên nào sẽ nằm trong khoảng $10$ độ lệch chuẩn về 2 phía của giá trị kỳ vọng.
+Điều này cho ta một cách giải thích trực tiếp các thống kê tóm tắt tiêu chuẩn.
 
 <!--
 To see how this statement is rather subtle, let us take a look at our running example again where $X$ is the random variable 
@@ -791,7 +791,7 @@ We saw that the mean was $a$ and the standard deviation was $2\sqrt{2p}$.
 This means, if we take Chebyshev's inequality :eqref:`eq_chebyshev` with $\alpha = 2$, we see that the expression is
 -->
 
-Để thấy phát biểu này tinh tế như thế nào, hãy xét lại ví dụ trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Để thấy sự tinh tế của mệnh đề này, hãy xét lại ví dụ trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
 Ta có kỳ vọng là $a$ và độ lệch chuẩn là $2\sqrt{2p}$.
 Từ bất đẳng thức Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, ta có
 
@@ -961,7 +961,7 @@ To intuitively understand how this works, imagine that we split the real number 
 Once we do this, our continuous random variable has been made discrete and we can use :eqref:`eq_exp_def` say that
 -->
 
-Toàn bộ phần trên đều chỉ xét biến ngẫu nhiên rời rạc, trường hợp biến ngẫu nhiên liên tục cũng tương tự.
+Tới giờ ta đều mới chỉ xét biến ngẫu nhiên rời rạc, tuy nhiên trường hợp biến ngẫu nhiên liên tục cũng tương tự.
 Để hiểu cách hoạt động của các biến liên tục một cách trực quan, hãy tưởng tượng ta chia trục số nguyên thành nhiều khoảng với độ dài $\epsilon$ trong khoảng $[\epsilon i, \epsilon (i+1)]$.
 Sau khi thực hiện điều này, biến ngẫu nhiên liên tục trên trở thành dạng rời rạc và ta có thể áp dụng :eqref:`eq_exp_def` dưới dạng:
 
@@ -1159,7 +1159,7 @@ $$
 The integral inside is the definition of the logarithm, so this is in essence $\log(\infty) = \infty$, so there is no well-defined average value either!
 -->
 
-Tích phân hàm bên trong sẽ cho ra logarit, do đó tích phân này có kết quả $\log(\infty) = \infty$, nên cũng không tồn tại giá trị kỳ vọng đúng nghĩa!
+Hàm tích phân bên trong chính là định nghĩa của hàm logarit, do đó tích phân này có kết quả $\log(\infty) = \infty$, nên cũng không tồn tại giá trị kỳ vọng xác định!
 
 
 <!--
@@ -1170,7 +1170,7 @@ getting large values are large enough to make things like the mean or variance u
 -->
 
 Các nhà khoa học học máy định nghĩa mô hình của họ để thường không phải đối mặt với những vấn đề này,
-và trong đại đa số các trường hợp, ta sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai đúng nghĩa.
+và trong đại đa số các trường hợp, ta sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai xác định.
 Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* 
 (có xác suất thu được các giá trị lớn là đủ lớn để khiến kỳ vọng hay phương sai không xác định) vẫn có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
 
