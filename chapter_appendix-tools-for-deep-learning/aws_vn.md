@@ -5,7 +5,7 @@
 # Using AWS EC2 Instances
 -->
 
-# Sử dụng máy ảo AWS EC2
+# Sử dụng Máy ảo AWS EC2
 :label:`sec_aws`
 
 
@@ -16,7 +16,7 @@ while building an instance by yourself costs less on AWS.
 The walkthrough includes a number of steps:
 -->
 
-Trong phần này, chúng tôi sẽ hướng dẫn bạn cách cài đặt tất cả các thư viện trên một máy Linux thô.
+Trong phần này, chúng tôi sẽ hướng dẫn bạn cách cài đặt tất cả các thư viện trên một máy Linux sơ khai.
 Ghi nhớ rằng trong :numref:`sec_sagemaker`, ta đã thảo luận về cách sử dụng Amazon SageMaker,
 trong khi việc bạn tự xây dựng một máy ảo sẽ tốn ít chi phí hơn với AWS.
 Hướng dẫn bao gồm một số bước:
@@ -39,28 +39,28 @@ Before going forward, you need to create an AWS account, see :numref:`sec_sagema
 -->
 
 Quá trình này cũng áp dụng cho các máy ảo khác (và các dịch vụ đám mây khác ngoài AWS), với một số chỉnh sửa nhỏ.
-Trước khi tiếp tục, bạn cần tạo tài khoản AWS, hãy xem :numref:`sec_sagemaker` để biết thêm chi tiết.
+Trước khi tiếp tục, bạn cần tạo một tài khoản AWS, tham khảo :numref:`sec_sagemaker` để biết thêm chi tiết.
 
 
 <!--
 ## Creating and Running an EC2 Instance
 -->
 
-## Thực hiện tạo và chạy một máy ảo EC2
+## Khởi tạo và Chạy Một Máy ảo EC2
 
 
 <!--
 After logging into your AWS account, click "EC2" (marked by the red box in :numref:`fig_aws`) to go to the EC2 panel.
 -->
 
-Sau khi đăng nhập vào tài khoản AWS của bạn, hãy nhấp vào "EC2" (được đánh dấu bằng khung màu đỏ trong :numref:`fig_aws`) để chuyển đến bảng điều khiển cho EC2.
+Sau khi đăng nhập vào tài khoản AWS của bạn, hãy nhấp vào "EC2" (được đánh dấu bằng khung màu đỏ trong :numref:`fig_aws`) để chuyển đến bảng điều khiển EC2.
 
 
 <!--
 ![Open the EC2 console.](../img/aws.png)
 -->
 
-![Mở bảng điều khiển EC2](../img/aws.png)
+![Mở bảng điều khiển EC2.](../img/aws.png)
 :width:`400px`
 :label:`fig_aws`
 
@@ -69,14 +69,14 @@ Sau khi đăng nhập vào tài khoản AWS của bạn, hãy nhấp vào "EC2" 
 :numref:`fig_ec2` shows the EC2 panel with sensitive account information greyed out.
 -->
 
-:numref:`fig_ec2` hiển thị bảng EC2 với thông tin tài khoản nhạy cảm được che đi.
+:numref:`fig_ec2` hiển thị bảng điều khiển EC2 với thông tin tài khoản nhạy cảm được che đi.
 
 
 <!--
 ![EC2 panel.](../img/ec2.png)
 -->
 
-![Bảng điều khiển EC2](../img/ec2.png)
+![Bảng điều khiển EC2.](../img/ec2.png)
 :width:`700px`
 :label:`fig_ec2`
 
@@ -85,7 +85,7 @@ Sau khi đăng nhập vào tài khoản AWS của bạn, hãy nhấp vào "EC2" 
 ### Presetting Location
 -->
 
-### Thiếp lập trước Vị trí địa lý
+### Thiếp lập trước Vị trí Địa lý
 
 
 <!--
@@ -94,7 +94,7 @@ If you are located in China, you can select a nearby Asia Pacific region, such a
 Please note that some data centers may not have GPU instances.
 -->
 
-Lựa chọn một trung tâm dữ liệu gần đó để giảm độ trễ, ví dụ ở đây là "Oregon" (được đánh dấu bằng ô màu đỏ ở trên cùng bên phải :numref:`fig_ec2`).
+Lựa chọn một trung tâm dữ liệu gần bạn để giảm độ trễ, ví dụ ở đây là "Oregon" (được đánh dấu bằng ô màu đỏ ở trên cùng bên phải trong :numref:`fig_ec2`).
 Nếu bạn ở Việt Nam, bạn có thể chọn một khu vực Châu Á Thái Bình Dương gần đó, chẳng hạn như Singapore, Seoul hoặc Tokyo.
 Xin lưu ý rằng một số trung tâm dữ liệu có thể không có máy ảo GPU.
 
@@ -115,9 +115,9 @@ Generally, it takes one business day to process an application.
 -->
 
 Trước khi chọn một máy ảo, hãy kiểm tra xem liệu AWS có hạn chế số lượng máy ảo đó không bằng cách nhấp vào nhãn "Limits" trong thanh bên trái như trong :numref:`fig_ec2`.
-:numref:`fig_limits` cho thấy một ví dụ về giới hạn như vậy.
+:numref:`fig_limits` minh hoạ ví dụ về giới hạn như vậy.
 Tài khoản hiện thời không thể mở máy ảo "p2.xlarge" trong khu vực đó.
-Nếu bạn cần mở một hoặc nhiều máy ảo, hãy nhấp vào liên kết "Request limit increase" để đăng ký một hạn ngạch bản mẫu cao hơn.
+Nếu bạn cần mở một hoặc nhiều máy ảo, hãy nhấp vào "Request limit increase" để đăng ký số lượng máy ảo cao hơn.
 Nói chung, sẽ mất một ngày làm việc để xử lý đơn đăng ký.
 
 
@@ -144,7 +144,7 @@ Nói chung, sẽ mất một ngày làm việc để xử lý đơn đăng ký.
 Next, click the "Launch Instance" button marked by the red box in :numref:`fig_ec2` to launch your instance.
 -->
 
-Tiếp theo, nhấn vào nút "Launch Instance" được đánh dấu bởi khung đỏ trong :numref:`fig_ec2` để khởi động máy ảo của bạn.
+Tiếp theo, nhấp vào nút "Launch Instance" được đánh dấu bởi khung đỏ trong :numref:`fig_ec2` để khởi động máy ảo của bạn.
 
 
 <!--
@@ -186,13 +186,13 @@ Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy cho�
 | g4   | Turing T4   | inference optimized FP16/INT8 |
 -->
 
-| Tên | GPU          | Ghi chú                              |
+| Tên  | GPU         | Ghi chú                              |
 |------|-------------|--------------------------------------|
 | g2   | Grid K520   | cũ kỹ                                |
 | p2   | Kepler K80  | cũ nhưng thường rẻ như máy ảo spot   |
 | g3   | Maxwell M60 | cân bằng tốt                         |
 | p3   | Volta V100  | hiệu năng cao cho FP16               |
-| g4   | Turing T4   | tối ưu suy luận cho FP16/INT8         |
+| g4   | Turing T4   | tối ưu suy luận cho FP16/INT8        |
 
 
 <!--
@@ -202,9 +202,9 @@ For more details, see the [AWS EC2 documentation](https://aws.amazon.com/ec2/ins
 For the purpose of illustration, a p2.xlarge will suffice (marked in red box of :numref:`fig_p2x`).
 -->
 
-Tất cả các máy chủ trên đều đa dạng về số GPU được sử dụng.
-Ví dụ, một máy chủ p2.xlarge có 1 GPU và p2.16xlarge có 16 GPU với nhiều bộ nhớ hơn.
-Để biết thêm chi tiết, xem [tài liệu của AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc [trang tổng hợp](https://www.ec2instances.info).
+Tất cả các máy chủ trên đều đa dạng về số lượng GPU được sử dụng.
+Ví dụ, một máy chủ p2.xlarge có 1 GPU và p2.16xlarge có 16 GPU và nhiều bộ nhớ hơn.
+Để biết thêm chi tiết, tham khảo [tài liệu về AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc [trang tổng hợp](https://www.ec2instances.info).
 Nhằm mục đích minh hoạ, một máy chủ p2.xlarge là đủ (đánh dấu bởi khung đỏ trong :numref:`fig_p2x`).
 
 
@@ -213,8 +213,8 @@ Nhằm mục đích minh hoạ, một máy chủ p2.xlarge là đủ (đánh d�
 Otherwise you will not see any benefit from using GPUs.
 -->
 
-**Chú ý:** bạn buộc phải sử dụng một máy chủ có kích hoạt GPU với trình điều khiển (*driver*) phù hợp cùng với phiên bản MXNet có kích hoạt GPU.
-Nếu không bạn sẽ không thấy được bất cứ khác biệt nào từ việc sử dụng GPU.
+**Lưu ý:** bạn phải sử dụng một máy chủ có kích hoạt GPU với trình điều khiển (*driver*) phù hợp cùng với phiên bản MXNet có kích hoạt GPU.
+Nếu không, bạn sẽ không thấy được bất cứ khác biệt nào từ việc sử dụng GPU.
 
 
 <!--
@@ -234,7 +234,7 @@ Tap on "4. Add Storage" and increase the default hard disk size to 64 GB (marked
 Note that CUDA by itself already takes up 4 GB.
 -->
 
-Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khợi động một máy ảo EC2, như được chỉ ra trong :numref:`fig_disk`.
+Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khởi động một máy ảo EC2, như minh hoạ trong :numref:`fig_disk`.
 Trong ví dụ này, ta giữ nguyên cấu hình mặc định trong bước "3. Configure Instance", "5. Add Tags", và "6. Configure Security Group".
 
 
@@ -255,11 +255,11 @@ Subsequently, you can select "Choose an existing key pair" for this menu and the
 Click "Launch Instances" to launch the created instance.
 -->
 
-Cuối cùng, đi tới bước "7. Review" và nhấn "Launch" để khởi động máy ảo đã được cấu hình.
+Cuối cùng, đi tới bước "7. Review" và nhấp "Launch" để khởi động một máy ảo đã được cấu hình.
 Lúc này hệ thống sẽ nhắc bạn lựa chọn một cặp khoá để truy cập vào máy ảo.
-Nếu bạn không có cặp khoá nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá.
-Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong bảng chọn này và sau đó chọn cặp khoá vừa được tạo.
-Nhấn "Launch Instances" để khởi động máy ảo vừa tạo.
+Nếu bạn không có cặp khoá nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá mới.
+Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong menu này và sau đó chọn cặp khoá vừa được tạo.
+Nhấp "Launch Instances" để khởi động máy ảo vừa tạo.
 
 
 <!--
@@ -277,16 +277,16 @@ This is your only way to SSH into the server.
 Click the instance ID shown in :numref:`fig_launching` to view the status of this instance.
 -->
 
-Đảm bảo rằng bạn tải cặp khoá về và lưu nó ở một vị trí an toàn nếu bạn tạo một cặp khoá mới.
+Đảm bảo rằng bạn sẽ tải cặp khoá về và lưu nó ở một thư mục an toàn nếu bạn tạo một cặp khoá mới.
 Đây là cách duy nhất để SSH vào máy chủ.
-Nhấn vào ID máy ảo như trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
+Nhấp vào ID máy ảo như minh hoạ trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
 
 
 <!--
 ![Click the instance ID.](../img/launching.png)
 -->
 
-![Nhấn vào ID máy ảo.](../img/launching.png)
+![Nhấp vào ID máy ảo.](../img/launching.png)
 :width:`700px`
 :label:`fig_launching`
 
@@ -306,8 +306,8 @@ As shown in :numref:`fig_connect`, after the instance state turns green,
 right-click the instance and select `Connect` to view the instance access method.
 -->
 
-Như đã chỉ ra trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển màu xanh,
-nhấp chuột phải vào máy ảo và chọn `Connect` để quan sát phương thức truy cập máy ảo.
+Như minh hoạ trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển sang màu xanh,
+hãy nhấp chuột phải vào máy ảo và chọn `Connect` để quan sát phương thức truy cập máy ảo.
 
 
 <!--
@@ -324,8 +324,8 @@ If this is a new key, it must not be publicly viewable for SSH to work. Go to th
 (e.g., the Downloads folder) and make sure that the key is not publicly viewable.
 -->
 
-Nếu đây là một khoá mới, nó không thể xem được một cách công khai để SSH có thể hoạt động. Đi đến thư mục mà bạn lưu `D2L_key.pem`
-(ví dụ như thư mục Downloads) và đảm bảo rằng khoá này không thể xem một cách công khai.
+Nếu đây là một khoá mới, nó không thể xem được một cách công khai để SSH có thể hoạt động. Đi đến thư mục mà bạn lưu khoá `D2L_key.pem`
+(ví dụ như thư mục Downloads) và đảm bảo rằng khoá này không thể xem được một cách công khai.
 
 
 ```bash
@@ -359,7 +359,7 @@ ssh -i "D2L_key.pem" ubuntu@ec2-xx-xxx-xxx-xxx.y.compute.amazonaws.com
 When the command line prompts "Are you sure you want to continue connecting (yes/no)", enter "yes" and press Enter to log into the instance.
 -->
 
-Khi cửa sổ dòng lệnh thông báo "Are you sure you want to continue connecting (yes/no)", nhập "yes" và nhấn Enter để đăng nhập vào máy ảo.
+Khi cửa sổ dòng lệnh thông báo "Are you sure you want to continue connecting (yes/no)", nhập "yes" và nhấp Enter để đăng nhập vào máy ảo.
 
 
 <!--
