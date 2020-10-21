@@ -612,10 +612,10 @@ Consider the expression $X - \mu_X$. This is the deviation of the random variabl
 This value can be positive or negative, so we need to do something to make it positive so that we are measuring the magnitude of the deviation.
 -->
 
-Điều này khiến chúng ta xem xét đến *phương sai* của một biến ngẫu nhiên.
-Đây là một thước đo định lượng một biến ngẫu nhiên bị lệch so với giá trị trung bình đến mức thế nào.
-Xem xét biểu thức $X - \mu_X$. Đây là độ lệch (*deviation*) của biến ngẫu nhiên so với giá trị trung bình của nó.
-Giá trị này có thể dương hoặc âm, vì vậy chúng ta cần thực hiện điều gì đó để biến nó thành giá trị dương để chúng ta tính toán độ lớn của độ lệch này.
+Điều này dẫn tới khái niệm *phương sai* của biến ngẫu nhiên.
+Đây là một thước đo định lượng khoảng dao động quanh giá trị kỳ vọng của một biến ngẫu nhiên.
+Xét biểu thức $X - \mu_X$. Đây là độ lệch (*deviation*) của biến ngẫu nhiên so với kỳ vọng của nó.
+Giá trị này có thể dương hoặc âm, vì vậy ta cần thực hiện thêm thao tác để lấy độ lớn (luôn dương) của độ lệch này.
 
 
 <!--
@@ -623,15 +623,15 @@ A reasonable thing to try is to look at $\left|X-\mu_X\right|$, and indeed this 
 however due to connections with other areas of mathematics and statistics, people often use a different solution.
 -->
 
-Một điều hợp lý để thử là hãy quan sát $\left|X-\mu_X\right|$, và thực sự điều này dẫn đến một đại lượng hữu dụng được gọi là *trung bình độ lệch tuyệt đối - mean absolute deviation*,
-tuy nhiên do mối liên hệ với các lĩnh vực toán học và thống kê khác, người ta thường dùng đến một giải pháp khác.
+Một cách hợp lý là lấy $\left|X-\mu_X\right|$, và thực sự điều này dẫn đến một đại lượng hữu dụng là *trung bình độ lệch tuyệt đối - mean absolute deviation*,
+tuy nhiên do mối liên hệ với các lĩnh vực toán học và thống kê khác, người ta thường dùng một giải pháp khác.
 
 
 <!--
 In particular, they look at $(X-\mu_X)^2.$.  If we look at the typical size of this quantity by taking the mean, we arrive at the variance
 -->
 
-Đặc biệt, họ quan sát $(X-\mu_X)^2.$. Nếu chúng ta xét đến kích thước của đại lượng này bằng cách lấy giá trị trung bình, chúng ta có được phương sai
+Cụ thể là $(X-\mu_X)^2.$. Nếu lấy giá trị kỳ vọng của đại lượng này, ta có phương sai:
 
 $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 :eqlabel:`eq_var_def`
@@ -641,15 +641,15 @@ $$\sigma_X^2 = \mathrm{Var}(X) = E\left[(X-\mu_X)^2\right] = E[X^2] - \mu_X^2.$$
 The last equality in :eqref:`eq_var_def` holds by expanding out the definition in the middle, and applying the properties of expectation.
 -->
 
-Đẳng thức cuối cùng trong :eqref:`eq_var_def` được giữ nguyên bằng cách mở rộng số hạng ở vế giữa và vận dụng các tính chất của kỳ vọng.
+Đẳng thức cuối cùng trong :eqref:`eq_var_def` có được bằng cách khai triển các số hạng trong vế giữa và vận dụng các tính chất của kỳ vọng.
 
 <!--
 Let us look at our example where $X$ is the random variable which takes the value $a-2$ with probability $p$, $a+2$ with probability $p$ and $a$ with probability $1-2p$.
 In this case $\mu_X = a$, so all we need to compute is $E\left[X^2\right]$. This can readily be done:
 -->
 
-Hãy cùng xem ví dụ, trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
-Trong trường hợp này thì $\mu_X = a$, vì vậy toàn bộ những gì chúng ta cần tính là $E\left[X^2\right]$. Việc này có thể được tính một cách dễ dàng:
+Hãy cùng xem lại ví dụ trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Trong trường hợp này, ta đã biết $\mu_X = a$, vì vậy chỉ cần tính $E\left[X^2\right]$ như sau:
 
 
 $$
@@ -661,7 +661,7 @@ $$
 Thus, we see that by :eqref:`eq_var_def` our variance is
 -->
 
-Do đó, chúng ta thấy rằng :eqref:`eq_var_def` cho phương sai bằng
+Sau đó, theo :eqref:`eq_var_def` ta có phương sai:
 
 $$
 \sigma_X^2 = \mathrm{Var}(X) = E[X^2] - \mu_X^2 = a^2 + 8p - a^2 = 8p.
@@ -674,15 +674,15 @@ The variance of this being $4$ corresponds to the fact that both $a-2$ and $a+2$
 On the other end of the spectrum, if $p=0$, this random variable always takes the value $0$ and so it has no variance at all.
 -->
 
-Kết quả này cũng hợp lý. Giá trị lớn nhất có thể của $p$ là $1/2$ tương ứng với việc chọn $a-2$ hoặc $a+2$ (tương tự khi tung đồng xu).
-Lúc này giá trị của phương sai tính theo công thức trên bằng $4$, đúng với thực tế là cả $a-2$ và $a+2$ cùng có độ lệch khỏi giá trị trung bình là $2$ và $2^2 = 4$.
-Ngược lại, nếu $p=0$, tức là biến ngẫu nhiên này luôn nhận giá trị $0$ và vì thế không có phương sai nào cả.
+Kết quả này cũng hợp lý. Giá trị lớn nhất có thể của $p$ là $1/2$, tương ứng với việc chọn $a-2$ hoặc $a+2$ (tương tự khi tung đồng xu).
+Lúc này giá trị phương sai tính theo công thức trên bằng $4$, đúng với thực tế là cả $a-2$ và $a+2$ cùng có độ lệch khỏi giá trị trung bình là $2$ và $2^2 = 4$.
+Ngược lại, nếu $p=0$, tức biến ngẫu nhiên này luôn nhận giá trị $0$ và vì thế có phương sai bằng $0$.
 
 <!--
 We will list a few properties of variance below:
 -->
 
-Chúng tôi sẽ nêu ra một số tính chất của phương sai dưới đây:
+Hãy liệt kê một vài tính chất của phương sai:
 
 <!--
 * For any random variable $X$, $\mathrm{Var}(X) \ge 0$, with $\mathrm{Var}(X) = 0$ if and only if $X$ is a constant.
@@ -690,9 +690,9 @@ Chúng tôi sẽ nêu ra một số tính chất của phương sai dưới đâ
 * If we have two *independent* random variables $X$ and $Y$, we have $\mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y)$.
 -->
 
-* Đối với bất kỳ biến ngẫu nhiên $X$ nào, thì  $\mathrm{Var}(X) \ge 0$, với $\mathrm{Var}(X) = 0$ khi và chỉ khi $X$ là hằng số.
-* Với bất kỳ biến ngẫu nhiên $X$ nào và các số $a$ và $b$, thì chúng ta có $\mathrm{Var}(aX+b) = a^2\mathrm{Var}(X)$.
-* Nếu tồn tại hai biến ngẫu nhiên *độc lập* $X$ và $Y$, thì ta có đẳng thức $\mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y)$.
+* Với biến ngẫu nhiên $X$ bất kỳ: $\mathrm{Var}(X) \ge 0$, với $\mathrm{Var}(X) = 0$ khi và chỉ khi $X$ là hằng số.
+* Với biến ngẫu nhiên $X$ và hai số $a$, $b$ bất kỳ: $\mathrm{Var}(aX+b) = a^2\mathrm{Var}(X)$.
+* Nếu hai biến ngẫu nhiên $X$ và $Y$ là *độc lập*: $\mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y)$.
 
 <!--
 When interpreting these values, there can be a bit of a hiccup.
@@ -705,14 +705,15 @@ This means that the variance itself is not comparable to the original measuremen
 To make it interpretable, we will need to return to our original units.
 -->
 
-Khi giải thích các giá trị này, có thể có một chút khó hiểu.
+Khi diễn giải các giá trị này, ta có thể gặp một chút vướng mắc.
 Cụ thể, hãy để ý đến đơn vị của các phép tính.
-Giả sử rằng ta đang thực hiện công việc là đánh giá số sao cho một sản phẩm trên trang web.
-Sau đó $a$, $a-2$, and $a+2$ đều được đo bằng đơn vị ngôi sao.
-Tương tự, giá trị trung bình $\mu_X$ sau đó cũng được tính bằng số ngôi sao (là trung bình có trọng số).
-Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức gặp phải một vấn đề, đó là chúng ta muốn xem xét $(X-\mu_X)^2$, có đơn vị *bình phương* của sao.
-Điều này có nghĩa là bản thân giá trị phương sai không thể dùng để so sánh trong phép đo ban đầu.
-Để có thể diễn giải được nó, chúng ta sẽ cần quay lại các đơn vị gốc.
+Giả sử ta đang làm việc với số sao được đánh giá cho một sản phẩm trên trang web.
+Khi đó $a$, $a-2$, and $a+2$ đều được đo bằng đơn vị ngôi sao.
+Tương tự, kỳ vọng $\mu_X$ sau đó cũng có đơn vị là ngôi sao (được tính là trung bình có trọng số).
+Tuy nhiên, nếu xét đến phương sai, ta ngay lập tức gặp phải vấn đề, đó là $(X-\mu_X)^2$ sẽ có đơn vị *bình phương* số sao.
+Điều này có nghĩa là bản thân phương sai không thể dùng để so sánh trong phép đo ban đầu.
+Để có thể diễn giải được nó, ta cần quay lại đơn vị gốc.
+
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
@@ -728,7 +729,7 @@ Tuy nhiên, nếu chúng ta đi đến phương sai, chúng ta ngay lập tức 
 This summary statistics can always be deduced from the variance by taking the square root! Thus we define the *standard deviation* to be
 -->
 
-Phép thống kê này luôn có thể suy ra được từ phương sai bằng cách lấy căn bậc hai của nó! Do đó, ta xác định *độ lệch chuẩn* là
+*Độ lệch chuẩn* luôn có thể suy ra bằng cách lấy căn bậc hai của phương sai:
 
 $$
 \sigma_X = \sqrt{\mathrm{Var}(X)}.
@@ -740,14 +741,14 @@ In our example, this means we now have the standard deviation is $\sigma_X = 2\s
 If we are dealing with units of stars for our review example, $\sigma_X$ is again in units of stars.
 -->
 
-Trong ví dụ trên, ta có độ lệch chuẩn là $\sigma_X = 2\sqrt{2p}$.
+Trong ví dụ trên, ta có độ lệch chuẩn $\sigma_X = 2\sqrt{2p}$.
 Nếu đơn vị ta đang xét là số sao trong ví dụ đánh giá của mình, $\sigma_X$ vẫn có đơn vị này.
 
 <!--
 The properties we had for the variance can be restated for the standard deviation.
 -->
 
-Các tính chất chúng ta có được ở phương sai có thể được trình bày lại cho độ lệch chuẩn.
+Các tính chất của phương sai có thể được áp dụng lại cho độ lệch chuẩn.
 
 <!--
 * For any random variable $X$, $\sigma_{X} \ge 0$.
@@ -755,9 +756,9 @@ Các tính chất chúng ta có được ở phương sai có thể được tr�
 * If we have two *independent* random variables $X$ and $Y$, we have $\sigma_{X+Y} = \sqrt{\sigma_{X}^2 + \sigma_{Y}^2}$.
 -->
 
-* Đối với bất kỳ biến ngẫu nhiên $X$ nào, thì $\sigma_{X} \ge 0$.
-* Với mọi biến ngẫu nhiên $X$ và các số $a$ và $b$, chúng ta có $\sigma_{aX+b} = |a|\sigma_{X}$
-* Nếu chúng ta có hai biến ngẫu nhiên *độc lập* $X$ và $Y$, chúng ta có $\sigma_{X+Y} = \sqrt{\sigma_{X}^2 + \sigma_{Y}^2}$.
+* Với biến ngẫu nhiên $X$ bất kỳ: $\sigma_{X} \ge 0$.
+* Với biến ngẫu nhiên $X$ và hai số $a$, $b$ bất kỳ: $\sigma_{aX+b} = |a|\sigma_{X}$
+* Nếu hai biến ngẫu nhiên $X$ và $Y$ là *độc lập*: $\sigma_{X+Y} = \sqrt{\sigma_{X}^2 + \sigma_{Y}^2}$.
 
 <!--
 It is natural at this moment to ask, "If the standard deviation is in the units of our original random variable, does it represent something we can draw with regards to that random variable?"
@@ -765,9 +766,9 @@ The answer is a resounding yes! Indeed much like the mean told we the typical lo
 We can make this rigorous with what is known as Chebyshev's inequality:
 -->
 
-Điều hiển vào lúc này là đặt câu hỏi, "Nếu độ lệch cuẩn tính bằng đơn vị của biến ngẫu nhiên ban đầu của chúng ta, thì nó có đại diện cho điều ta rút ra liên quan đến biến ngẫu nhiên đó không?"
-Câu trả lời là có! Thật vậy, giống như giá trị trung bình cho chúng ta biết vị trí điển hình của biến ngẫu nhiên, độ lệch chuẩn cung cấp khoảng giá trị biến động điển hình của chính biến ngẫu nhiên đó.
-Chúng ta có thể chứng minh chặt chẽ bằng bất đẳng thức Chebyshev:
+Lúc này hãy đặt câu hỏi, "Nếu độ lệch chuẩn cùng đơn vị với biến ngẫu nhiên ban đầu, nó có cung cấp thông tin gì về biến ngẫu nhiên đó không?"
+Câu trả lời là có! Thật vậy, giống như kỳ vọng cho biết vị trí điển hình, độ lệch chuẩn cho biết khoảng biến thiên thường gặp của biến ngẫu nhiên đó.
+Ta có thể chứng minh chặt chẽ bằng bất đẳng thức Chebyshev:
 
 
 $$P\left(X \not\in [\mu_X - \alpha\sigma_X, \mu_X + \alpha\sigma_X]\right) \le \frac{1}{\alpha^2}.$$
@@ -779,8 +780,8 @@ Or to state it verbally in the case of $\alpha=10$, $99\%$ of the samples from a
 This gives an immediate interpretation to our standard summary statistics.
 -->
 
-Diễn giải bằng lời như sau, ví dụ khi $\alpha=10$, $99\%$ số mẫu của bất kỳ biến ngẫu nhiên nào sẽ nằm trong khoảng độ lệch chuẩn bằng $10$ về 2 phía của giá trị trung bình.
-Điều này đưa ra một lời giải thích ngay lập tức cho thống kê tóm tắt tiêu chuẩn của chúng ta.
+Diễn giải bằng lời như sau: ví dụ khi $\alpha=10$, $99\%$ số mẫu của bất kỳ biến ngẫu nhiên nào sẽ nằm trong khoảng $10$ độ lệch chuẩn về 2 phía của giá trị kỳ vọng.
+Điều này cho ta một cách giải thích trực tiếp các thống kê tóm tắt tiêu chuẩn.
 
 <!--
 To see how this statement is rather subtle, let us take a look at our running example again where $X$ is the random variable 
@@ -789,10 +790,9 @@ We saw that the mean was $a$ and the standard deviation was $2\sqrt{2p}$.
 This means, if we take Chebyshev's inequality :eqref:`eq_chebyshev` with $\alpha = 2$, we see that the expression is
 -->
 
-Để thấy phát biểu này tinh tế như thế nào, chúng ta hãy xem xét lại ví dụ vừa nãy của mình trong đó $X$ là biến ngẫu nhiên
-trong đó nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
-Chúng ta thấy rằng giá trị trung bình là $a$ và độ lệch chuẩn là $2\sqrt{2p}$.
-Điều này có nghĩa là, từ bất đẳng thức Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, ta có
+Để thấy sự tinh tế của mệnh đề này, hãy xét lại ví dụ trong đó $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
+Ta có kỳ vọng là $a$ và độ lệch chuẩn là $2\sqrt{2p}$.
+Từ bất đẳng thức Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, ta có
 
 $$
 P\left(X \not\in [a - 4\sqrt{2p}, a + 4\sqrt{2p}]\right) \le \frac{1}{4}.
@@ -808,12 +808,11 @@ which is *exactly* the first $p$ where it could possibly happen without violatin
 the distribution would fall outside the interval ($1/8$ to the left, and $1/8$ to the right).
 -->
 
-Điều này có nghĩa là trong $75\%$ số lần lấy mẫu, giá trị của biến ngẫu nhiên này sẽ rơi vào khoảng trên bất kể giá trị của $p$.
+Điều này có nghĩa là trong $75\%$ số lần lấy mẫu, biến ngẫu nhiên sẽ rơi vào khoảng trên, bất kể giá trị của $p$.
 Bây giờ, hãy lưu ý rằng khi $p \rightarrow 0$, thì khoảng này cũng hội tụ đến điểm duy nhất là $a$.
-Tuy nhiên chúng ta cũng biết rằng biến ngẫu nhiên của ta chỉ nhận các giá trị $a-2, a$ và $a + 2$ nên cuối cùng chúng ta có thể chắc chắn rằng $a-2$ và $a+2$ sẽ nằm ngoài khoảng giá trị này!
-Câu hỏi đặt ra là giá trị $p$ bằng bao nhiêu để $a-2$ và $a+2$ nằm trong khoảng đó? Ta có thể giải phương trình: $a+4\sqrt{2p} = a+2$ để ra nghiệm $p=1/8$,
-đó *chính xác* là giá trị $p$ nhỏ nhất thỏa mãn yêu cầu rằng không quá $1/4$ số mẫu từ
-phân phối sẽ nằm ngoài khoảng ($1/8$ về phía bên trái và $1/8$ về phía bên phải giá trị trung bình).
+Tuy nhiên biến ngẫu nhiên chỉ nhận các giá trị $a-2, a$ và $a+2$ nên $a-2$ và $a+2$ chắc chắn sẽ nằm ngoài khoảng này!
+Câu hỏi đặt ra là giá trị $p$ bằng bao nhiêu để $a-2$ và $a+2$ nằm trong khoảng đó? Ta cần giải phương trình: $a+4\sqrt{2p} = a+2$ để ra nghiệm $p=1/8$,
+đó *chính xác* là giá trị $p$ nhỏ nhất thỏa mãn yêu cầu rằng không quá $1/4$ số mẫu nằm ngoài khoảng ($1/8$ về phía trái và $1/8$ về phía phải giá trị kỳ vọng).
 
 
 <!--
@@ -822,7 +821,7 @@ The interval will be drawn as a horizontal line in the middle. The first plot sh
 -->
 
 Hãy cùng trực quan hoá điều này. Chúng ta sẽ đưa ra xác suất nhận được ba giá trị tương ứng là ba thanh dọc có chiều cao tỷ lệ với xác suất.
-Khoảng sẽ được vẽ dưới dạng một đường ngang ở giữa. Biểu đồ đầu tiên cho thấy khi $p> 1/8$, khoảng chứa hoàn toàn các điểm.
+Khoảng trên sẽ được biểu diễn dưới dạng một đường ngang ở giữa. Biểu đồ đầu tiên cho thấy khi $p> 1/8$, khoảng này chứa hoàn toàn các điểm.
 
 ```{.python .input}
 # Define a helper to plot these figures
@@ -895,8 +894,8 @@ The second shows that at $p = 1/8$, the interval exactly touches the two points.
 This shows that the inequality is *sharp*, since no smaller interval could be taken while keeping the inequality true.
 -->
 
-Biểu đồ thứ hai cho thấy rằng tại $p = 1/8$, khoảng giá trị tiếp xúc chính xác với hai điểm.
-Khoảng này là *vừa đủ*, vì không thể chọn lấy khoảng nhỏ hơn mà vẫn giữ cho bất đẳng thức đúng.
+Biểu đồ thứ hai cho thấy tại $p = 1/8$, khoảng này tiếp xúc với hai điểm.
+Khoảng này là *vừa đủ*, vì không thể chọn khoảng nhỏ hơn mà bất đẳng thức vẫn đúng.
 
 ```{.python .input}
 # Plot interval when p = 1/8
@@ -922,9 +921,9 @@ This does not invalidate the inequality since we only needed to ensure that no m
 which means that once $p < 1/8$, the two points at $a-2$ and $a+2$ can be discarded.
 -->
 
-Biểu đồ thứ ba cho thấy rằng với $p < 1/8$ thì khoảng chỉ chứa giá trị trung tâm.
-Điều này không làm mất đi tính tổng quát của bất đẳng thức vì chúng ta chỉ cần đảm bảo rằng không quá $1/4$ xác suất nằm ngoài khoảng,
-có nghĩa là khi $p < 1/8$, hai điểm tại $a-2$ và $a+2$ có thể bị loại bỏ.
+Biểu đồ thứ ba cho thấy với $p < 1/8$ thì khoảng chỉ chứa giá trị trung tâm.
+Điều này không vi phạm bất đẳng thức vì ta chỉ cần đảm bảo rằng không quá $1/4$ xác suất nằm ngoài khoảng,
+trên thực tế khi $p < 1/8$, biến ngẫu nhiên không thể nhận hai giá trị $a-2$ và $a+2$.
 
 
 ```{.python .input}
@@ -961,9 +960,9 @@ To intuitively understand how this works, imagine that we split the real number 
 Once we do this, our continuous random variable has been made discrete and we can use :eqref:`eq_exp_def` say that
 -->
 
-Toàn bộ phần trên đều chỉ xét đến biến ngẫu nhiên rời rạc, tuy nhiên trường hợp biến ngẫu nhiên liên tục cũng tương tự.
+Tới giờ ta đều mới chỉ xét biến ngẫu nhiên rời rạc, tuy nhiên trường hợp biến ngẫu nhiên liên tục cũng tương tự.
 Để hiểu cách hoạt động của các biến liên tục một cách trực quan, hãy tưởng tượng ta chia trục số nguyên thành nhiều khoảng với độ dài $\epsilon$ trong khoảng $[\epsilon i, \epsilon (i+1)]$.
-Sau khi thực hiện điều này, biến ngẫu nhiên liên tục trên trở thành dạng rời rạc và ta có thể áp dụng :eqref:`eq_exp_def` dưới dạng
+Sau khi thực hiện điều này, biến ngẫu nhiên liên tục trên trở thành dạng rời rạc và ta có thể áp dụng :eqref:`eq_exp_def` dưới dạng:
 
 
 $$
@@ -978,7 +977,7 @@ $$
 where $p_X$ is the density of $X$. This is an approximation to the integral of $xp_X(x)$, so we can conclude that
 -->
 
-trong đó $p_X$ là mật độ của $X$. Đây là xấp xỉ tích phân của $xp_X(x)$, do đó ta có thể kết luận rằng
+trong đó $p_X$ là hàm mật độ của $X$. Đây là xấp xỉ tích phân của $xp_X(x)$, do đó ta có thể kết luận rằng:
 
 
 $$
@@ -990,7 +989,7 @@ $$
 Similarly, using :eqref:`eq_var_def` the variance can be written as
 -->
 
-Tương tự, áp dụng :eqref:`eq_var_def`, phương sai có thể được biểu diễn như sau
+Tương tự, áp dụng :eqref:`eq_var_def`, phương sai có thể được biểu diễn như sau:
 
 
 $$
@@ -1003,8 +1002,8 @@ Everything stated above about the mean, the variance, and the standard deviation
 For instance, if we consider the random variable with density
 -->
 
-Tất cả những gì đã nêu phía trên về kỳ vọng, phương sai và độ lệch chuẩn đều có thể áp dụng trong trường hợp này.
-Ví dụ, nếu ta xét biến ngẫu nhiên với mật độ
+Tất cả những tính chất về kỳ vọng, phương sai và độ lệch chuẩn cho biến ngẫu nhiên rời rạc đều có thể áp dụng trong trường hợp liên tục.
+Ví dụ, xét biến ngẫu nhiên với hàm mật độ:
 
 
 $$
@@ -1019,7 +1018,7 @@ $$
 we can compute
 -->
 
-ta có thể tính
+ta có thể tính:
 
 
 $$
@@ -1037,7 +1036,7 @@ $$
 As a warning, let us examine one more example, known as the *Cauchy distribution*. This is the distribution with p.d.f. given by
 -->
 
-Để lưu ý, hãy cũng quan sát thêm một ví dụ là *phân phối Cauchy (Cauchy distribution)*. Đây là phân phối với p.d.f có dạng
+Để lưu ý, hãy quan sát thêm một ví dụ về *phân phối Cauchy*, với hàm mật độ:
 
 
 $$
@@ -1075,14 +1074,14 @@ d2l.plot(x, p, 'x', 'p.d.f.')
 This function looks innocent, and indeed consulting a table of integrals will show it has area one under it, and thus it defines a continuous random variable.
 -->
 
-Hàm này nhìn có vẻ vô hại, và quả thực qua tra cứu bảng tích phân chỉ ra rằng diện tích vùng dưới nó bằng 1, và do đó nó định nghĩa một biến ngẫu nhiên liên tục.
+Hàm này nhìn có vẻ không có vấn đề gì, và quả thực tra cứu bảng tích phân chỉ ra rằng diện tích vùng dưới nó bằng 1, và do đó nó định nghĩa một biến ngẫu nhiên liên tục.
 
 
 <!--
 To see what goes astray, let us try to compute the variance of this.  This would involve using :eqref:`eq_var_def` computing
 -->
 
-Để xem có vấn đề gì ở đây, hãy thử tính phương sai của hàm này. Việc này yêu cầu sử dụng :eqref:`eq_var_def` để tính
+Để xem có vấn đề gì ở đây, hãy thử tính phương sai của hàm này bằng :eqref:`eq_var_def`:
 
 
 $$
@@ -1128,7 +1127,7 @@ d2l.plot(x, p, 'x', 'integrand')
 This function clearly has infinite area under it since it is essentially the constant one with a small dip near zero, and indeed we could show that
 -->
 
-Hàm này rõ ràng có phần diện tích bên dưới là vô hạn do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực ta có thể chỉ ra rằng
+Hàm này rõ ràng có phần diện tích bên dưới là vô hạn do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực:
 
 
 $$
@@ -1147,7 +1146,7 @@ This means it does not have a well-defined finite variance.
 However, looking deeper shows an even more disturbing result.  Let us try to compute the mean using :eqref:`eq_exp_def`.  Using the change of variables formula, we see
 -->
 
-Tuy vậy, nếu quan sát kĩ hơn ta có thể thấy một kết quả khó hiểu hơn nhiều. Hãy thử tính kỳ vọng sử dụng :eqref:`eq_exp_def`. Thay vào các biến trong công thức, ta được
+Tuy vậy, nếu quan sát kĩ hơn ta có thể thấy một kết quả khó hiểu hơn nhiều. Hãy thử tính kỳ vọng sử dụng :eqref:`eq_exp_def`. Sử dụng đổi biến, ta được:
 
 
 $$
@@ -1159,7 +1158,7 @@ $$
 The integral inside is the definition of the logarithm, so this is in essence $\log(\infty) = \infty$, so there is no well-defined average value either!
 -->
 
-Tích phân bên trong là định nghĩa của hàm logarit, do đó tích phân này thực chất là $\log(\infty) = \infty$, nên cũng không tồn tại giá trị trung bình đúng nghĩa!
+Hàm tích phân bên trong chính là định nghĩa của hàm logarit, do đó tích phân này có kết quả $\log(\infty) = \infty$, nên cũng không tồn tại giá trị kỳ vọng xác định!
 
 
 <!--
@@ -1169,17 +1168,17 @@ However, every so often random variables with *heavy tails* (that is those rando
 getting large values are large enough to make things like the mean or variance undefined) are helpful in modeling physical systems, thus it is worth knowing that they exist.
 -->
 
-Các nhà khoa học học máy định nghĩa mô hình của họ sao cho ta thường không cần phải đối mặt với những vấn đề này,
-và trong đại đa số các trường hợp sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai đúng nghĩa.
-Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* (tức những biến ngẫu nhiên mà xác suất
-thu được các giá trị lớn đủ lớn để khiến các giá trị như kỳ vọng hay phương sai không xác định) vẫn có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
+Các nhà khoa học học máy định nghĩa mô hình của họ để thường không phải đối mặt với những vấn đề này,
+và trong đại đa số các trường hợp, ta sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai xác định.
+Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* 
+(có xác suất thu được các giá trị lớn là đủ lớn để khiến kỳ vọng hay phương sai không xác định) vẫn có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
 
 
 <!--
 ### Joint Density Functions
 -->
 
-### Hàm Mật độ Đồng thời
+### Hàm Mật độ Kết hợp
 
 
 <!--
@@ -1193,14 +1192,14 @@ We cannot treat them as separate random variables, and expect to create a succes
 We need to develop the mathematical language to handle these correlated continuous random variables.
 -->
 
-Toàn bộ công việc phía trên đều giả sử rằng ta đang làm việc với một biến ngẫu nhiên đơn lẻ mang giá trị thực.
-Nhưng nếu ta phải đối mặt với hai hay nhiều biến ngẫu nhiên hơn, mà thường giữa chúng còn có mối tương quan cao, thì sao?
-Tình huống này rất thường gặp trong học máy: thử tưởng tượng các biến ngẫu nhiên như $R_{i, j}$
-mã hoá giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay $P_t$ là một biến ngẫu nhiên được xác định bởi giá chứng khoán tại thời điểm $t$.
-Những điểm ảnh lân cận thường có màu tương tự, và khoảng thời gian lân cận thường có giá tương tự.
-Ta không thể coi chúng như những biến ngẫu nhiên riêng biệt mà mong rằng có thể tạo một mô hình thành công
-(ta sẽ thấy trong :numref:`sec_naive_bayes` một mô hình hoạt động kém do một giả sử như vậy).
-Ta cần phát triển ngôn ngữ toán học để giải quyết những biến ngẫu nhiên liên tục tương quan với nhau này.
+Toàn bộ phần phía trên đều chỉ xét biến ngẫu nhiên đơn lẻ có giá trị thực.
+Trường hợp có hai hay nhiều biến ngẫu nhiên hơn, mà thường giữa chúng có mối tương quan cao, thì sao?
+Tình huống này rất hay gặp trong học máy: tưởng tượng biến ngẫu nhiên $R_{i, j}$
+mã hoá giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay biến $P_t$ biểu diễn giá chứng khoán tại thời điểm $t$.
+Những điểm ảnh lân cận thường có màu tương tự, và giá tại các thời điểm lân cận thường tương tự.
+Ta không thể coi chúng như những biến ngẫu nhiên riêng biệt, và cũng không thể xây dựng một mô hình tốt
+(trong :numref:`sec_naive_bayes` có ví dụ một mô hình hoạt động kém do giả sử như vậy).
+Ta cần phát triển lý thuyết toán học để làm việc với những biến ngẫu nhiên liên tục có tương quan với nhau như vậy.
 
 
 <!--
@@ -1209,9 +1208,9 @@ Suppose that we have, for simplicity, two random variables $X, Y$ which can be c
 Then, similar to the case of a single variable, we can ask the question:
 -->
 
-May mắn thay, với tích phân bội trong :numref:`sec_integral_calculus` ta có thể phát triển một ngôn ngữ như vậy.
-Giả sử rằng ta có, để đơn giản, hai biến ngẫu nhiên $X, Y$ có thể tương quan với nhau.
-Sau đó, tương tự như trường hợp biến đơn, ta có thể đặt câu hỏi:
+May mắn thay, với tích phân bội trong :numref:`sec_integral_calculus`, ta có thể phát triển một lý thuyết như vậy.
+Để đơn giản, giả sử ta có hai biến ngẫu nhiên $X, Y$ có thể tương quan với nhau.
+Sau đó, tương tự như trường hợp đơn biến, ta có thể đặt câu hỏi:
 
 
 <!-- $$
@@ -1219,14 +1218,14 @@ P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and}
 $$ -->
 
 $$
-P(X \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; y ).
+P(X \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; y ).
 $$
 
 <!--
 Similar reasoning to the single variable case shows that this should be approximately
 -->
 
-Suy luận tương tự như trường hợp biến đơn chỉ ra rằng mệnh đề trên có thể xấp xỉ với
+Suy luận tương tự như trường hợp biến đơn chỉ ra rằng mệnh đề trên có thể xấp xỉ với:
 
 
 <!-- $$
@@ -1234,7 +1233,7 @@ P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and}
 $$ -->
 
 $$
-P(X \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng có kích thước}\; \epsilon \text{quanh}\; y ) \approx \epsilon^{2}p(x, y),
+P(X \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; y ) \approx \epsilon^{2}p(x, y),
 $$
 
 
@@ -1243,8 +1242,8 @@ for some function $p(x, y)$.  This is referred to as the joint density of $X$ an
 Similar properties are true for this as we saw in the single variable case. Namely:
 -->
 
-với một hàm $p(x, y)$ nào đó. Đây được gọi là mật độ đồng thời của $X$ và $Y$.
-Những thuộc tính tương tự là đúng với trường hợp này như ta đã thấy trong trường hợp biến đơn. Tức là:
+với một hàm $p(x, y)$ nào đó. Đây được gọi là mật độ kết hợp của $X$ và $Y$.
+Những tính chất của hàm mật độ cho biến đơn vẫn đúng cho trường hợp này:
 
 
 * $p(x, y) \ge 0$;
@@ -1258,8 +1257,8 @@ If we wish to work with more than two random variables, we can extend the multiv
 The same properties of being non-negative, and having total integral of one still hold.
 -->
 
-Bằng cách này, ta có thể xử lý nhiều biến ngẫu nhiên có khả năng tương quan với nhau.
-Nếu ta cần phải làm việc với nhiều hơn hai biến ngẫu nhiên, ta có thể mở rộng hàm mật độ đa chiều với bất kể số toạ độ nào ta cần bằng cách xét $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
+Bằng cách này, ta có thể làm việc với nhiều biến ngẫu nhiên tương quan với nhau.
+Nếu số biến ngẫu nhiên nhiều hơn 2, ta có thể mở rộng hàm mật độ nhiều chiều: $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
 Những thuộc tính như không âm, có tổng tích phân bằng một vẫn đúng.
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
