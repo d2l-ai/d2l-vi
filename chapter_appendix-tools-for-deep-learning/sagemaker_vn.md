@@ -15,10 +15,10 @@ Cloud computing services give you access to more powerful computers to run the G
 This tutorial will guide you through Amazon SageMaker: a service that allows you to run this book easily.
 -->
 
-Nhiều ứng dụng của học sâu yêu cầu một lượng lớn các phép tính.
-Máy tính của bạn có thể là quá chậm để giải quyết vấn đề này trong một khoảng thời gian hợp lý.
+Nhiều ứng dụng học sâu yêu cầu một lượng lớn các phép tính.
+Máy tính của bạn có thể quá chậm để giải quyết vấn đề này trong một khoảng thời gian hợp lý.
 Các dịch vụ điện toán đám mây cho phép bạn truy cập vào những máy tính mạnh mẽ hơn để chạy các phần yêu cầu GPU cao trong cuốn sách này.
-Phần này sẽ cung cấp hướng dẫn về Amazon SageMaker: một dịch vụ cho phép bạn chạy cuốn sách này một cách dễ dàng.
+Phần này sẽ cung cấp hướng dẫn về Amazon SageMaker: một dịch vụ cho phép bạn chạy các đoạn mã nguồn trong cuốn sách này một cách dễ dàng.
 
 
 <!--
@@ -39,8 +39,8 @@ and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the 
 
 Đầu tiên, ta cần đăng ký tài khoản tại [https://aws.amazon.com/](https://aws.amazon.com/).
 Chúng tôi khuyến khích sử dụng xác thực hai yếu tố để tăng cường bảo mật.
-Cũng là một ý tưởng tốt khi cài đặt mức trả chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy ảo đang chạy.
-Lưu ý rằng bạn cũng sẽ cần một thẻ tín dụng.
+Cũng là một ý tưởng tốt khi cài đặt thông tin thanh toán chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy ảo đang chạy.
+Lưu ý rằng bạn sẽ cần một thẻ tín dụng.
 Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](http://console.aws.amazon.com/) của bạn và tìm kiếm từ khóa "Sagemaker" (như trong :numref:`fig_sagemaker`) rồi nhấp vào SageMaker.
 
 
@@ -48,7 +48,7 @@ Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](
 ![Open the SageMaker panel.](../img/sagemaker.png)
 -->
 
-![Mở SageMaker](../img/sagemaker.png)
+![Mở SageMaker.](../img/sagemaker.png)
 :width:`300px`
 :label:`fig_sagemaker`
 
@@ -71,7 +71,7 @@ Tiếp đến, hãy tạo một máy ảo notebook như đề cập trong :numre
 ![Create a SageMaker instance.](../img/sagemaker-create.png)
 -->
 
-![Tạo một máy ảo Sagemaker](../img/sagemaker-create.png)
+![Tạo một máy ảo Sagemaker.](../img/sagemaker-create.png)
 :width:`400px`
 :label:`fig_sagemaker-create`
 
@@ -85,14 +85,14 @@ In :numref:`fig_sagemaker-create-2`, we choose `ml.p3.2xlarge`. With one Tesla V
 Sagemaker cung cấp đa dạng [các loại máy ảo](https://aws.amazon.com/sagemaker/pricing/instance-types/) với sức mạnh tính toán và mức giá khác nhau.
 Khi tạo một máy ảo, ta có thể nêu chi tiết tên máy ảo và lựa chọn loại máy ảo mong muốn.
 Trong :numref:`fig_sagemaker-create-2`, ta chọn `ml.p3.2xlarge`.
-Với một GPU Tesla V100 và một CPU 8-nhân. máy ảo này là đã đủ mạnh mẽ cho hầu hết các chương. 
+Với một GPU Tesla V100 và một CPU 8-nhân, máy ảo này là đã đủ mạnh mẽ cho hầu hết các chương.
 
 
 <!--
 ![Choose the instance type.](../img/sagemaker-create-2.png)
 -->
 
-![Chọn loại máy ảo](../img/sagemaker-create-2.png)
+![Chọn loại máy ảo.](../img/sagemaker-create-2.png)
 :width:`400px`
 :label:`fig_sagemaker-create-2`
 
@@ -163,7 +163,7 @@ Khi đã khởi động xong, bạn có thể nhấp vào "Open Jupyter" như tr
 ![Open Jupyter on the created SageMaker instance.](../img/sagemaker-open.png)
 -->
 
-![Mở Jupyter trong máy ảo Sagemaker đã khởi tạo](../img/sagemaker-open.png)
+![Mở Jupyter trong máy ảo Sagemaker đã khởi tạo.](../img/sagemaker-open.png)
 :width:`400px`
 :label:`fig_sagemaker-open`
 
@@ -179,7 +179,7 @@ Sau đó, như minh họa trong :numref:`fig_sagemaker-jupyter`, bạn có thể
 ![The Jupyter server running on the SageMaker instance.](../img/sagemaker-jupyter.png)
 -->
 
-![Máy chủ Jupyter chạy trên máy ảo Sagemaker](../img/sagemaker-jupyter.png)
+![Máy chủ Jupyter chạy trên máy ảo Sagemaker.](../img/sagemaker-jupyter.png)
 :width:`400px`
 :label:`fig_sagemaker-jupyter`
 
@@ -190,14 +190,14 @@ After finishing your work, do not forget to stop the instance to avoid further c
 -->
 
 Chạy và chỉnh sửa các Jupyter notebook trên máy ảo Sagemaker cũng tương tự như những gì ta đã bàn luận ở :numref:`sec_jupyter`.
-Sau khi xong việc, đừng quên dừng máy ảo để tránh tính thêm phí, như minh họa trong :numref:`fig_sagemaker-stop`.
+Sau khi xong việc, đừng quên dừng máy ảo để tránh bị tính thêm phí, như minh họa trong :numref:`fig_sagemaker-stop`.
 
 
 <!--
 ![Stop a SageMaker instance.](../img/sagemaker-stop.png)
 -->
 
-![Dừng một máy ảo Sagemaker](../img/sagemaker-stop.png)
+![Dừng một máy ảo Sagemaker.](../img/sagemaker-stop.png)
 :width:`300px`
 :label:`fig_sagemaker-stop`
 
@@ -226,7 +226,7 @@ We will regularly update the notebooks in the [d2l-ai/d2l-pytorch-sagemaker](htt
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker).
+Các notebook bản tiếng Anh sử dụng Pytorch sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-pytorch-sagemaker](https://github.com/d2l-ai/d2l-pytorch-sagemaker).
 Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
@@ -237,7 +237,7 @@ We will regularly update the notebooks in the [d2l-ai/d2l-tensorflow-sagemaker](
 You can simply use the `git pull` command to update to the latest version.
 -->
 
-Các notebook bản tiếng Anh sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker).
+Các notebook bản tiếng Anh sử dụng Tensorflow sẽ thường xuyên được cập nhật tại GitHub repo [d2l-ai/d2l-tensorflow-sagemaker](https://github.com/d2l-ai/d2l-tensorflow-sagemaker).
 Bạn có thể đơn giản sử dụng lệnh `git pull` để cập nhật phiên bản mới nhất.
 :end_tab:
 
@@ -263,8 +263,8 @@ You may want to commit your local changes before pulling the updates.
 Alternatively, you can simply ignore all your local changes with the following commands in the terminal.
 -->
 
-Bạn có thể muốn commit lại những thay đổi dưới máy trước khi kéo về những cập nhật mới.
-Mặt khác, bạn có thể đơn giản phớt lờ những thay đổi của bạn với những dòng lệnh sau.
+Bạn có thể muốn commit những thay đổi được thực hiện trên máy tính trước khi kéo (*pull*) về những cập nhật mới.
+Mặt khác, bạn có thể đơn giản phớt lờ những thay đổi của bạn với những dòng lệnh sau trong cửa sổ dòng lệnh.
 
 
 :begin_tab:`mxnet`
@@ -310,7 +310,7 @@ git pull
 2. Access the source code directory via the terminal.
 -->
 
-1. Thử thay đổi và chạy mã nguồn của cuốn sách này trên Amazon Sagemaker.
+1. Thử thay đổi và chạy mã nguồn trong cuốn sách này trên Amazon Sagemaker.
 2. Truy cập vào thư mục mã nguồn thông qua cửa sổ dòng lệnh.
 
 
