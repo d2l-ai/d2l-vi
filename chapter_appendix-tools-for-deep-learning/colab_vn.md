@@ -12,7 +12,7 @@ Another option is running this book on [Google Colab](https://colab.research.goo
 -->
 
 Chúng tôi đã giới thiệu cách chạy cuốn sách này trên AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
-Có một phương án khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nó cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
+Có một lựa chọn khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nền tảng cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
 
 
 <!--
@@ -54,7 +54,7 @@ Next, Colab will connect you to an instance to run this notebook. Specifically, 
 such as when invoking the `d2l.try_gpu()` function, we will request Colab to connect to a GPU instance automatically.
 -->
 
-Tiếp theo, Colab sẽ kết nối bạn tới một máy ảo để chạy notebook này. Cụ thể, nếu cần GPU,
+Tiếp theo, Colab sẽ kết nối bạn tới một máy ảo để chạy notebook này.Cụ thể, nếu cần GPU,
 ví dụ như khi gọi đến hàm `d2l.try_gpu()`, ta sẽ yêu cầu Colab tự động kết nối tới một máy ảo GPU.
 
 ## Tóm tắt
@@ -86,4 +86,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
 
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+
