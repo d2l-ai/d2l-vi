@@ -1910,6 +1910,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Nguyễn Mai Hoàng Long
 * Phạm Đăng Khoa
 * Đỗ Trường Giang
+* Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
 * Phạm Minh Đức
