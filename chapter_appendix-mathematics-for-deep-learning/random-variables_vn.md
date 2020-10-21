@@ -17,7 +17,7 @@ In this section, we develop the theory of *continuous random variables*, which a
 
 :numref:`sec_prob` đã giới thiệu các phương pháp cơ bản để làm việc với biến ngẫu nhiên rời rạc, 
 mà trong trường hợp của ta các biến ngẫu nhiên này có thể chỉ có một tập hữu hạn các giá trị khả dĩ, hoặc có thể là toàn bộ các số nguyên.
-Trong phần này, ta tìm hiểu lý thuyết cho *biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể lấy bất cứ giá trị số thực nào.
+Trong phần này, ta tìm hiểu lý thuyết cho *biến ngẫu nhiên liên tục*, là các biến ngẫu nhiên có thể nhận bất cứ giá trị số thực nào.
 
 <!--
 ## Continuous Random Variables
@@ -33,7 +33,7 @@ As such, we will need to take some time to develop the theory.
 -->
 
 Biến ngẫu nhiên liên tục phức tạp hơn đáng kể so với biến ngẫu nhiên rời rạc.
-Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính tổng các số sang tính tích phân hàm số.
+Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính tổng dãy số sang tính tích phân hàm số.
 Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết.
 
 
@@ -92,10 +92,10 @@ It is fairly reasonable to assume that the ${k+1}^{\mathrm{th}}$ digit is essent
 At least, we cannot conceive of a physically meaningful process which would force the number of micrometers away form the center to prefer to end in a $7$ vs a $3$.
 -->
 
-Tuy nhiên, điều này chưa giải quyết bất cứ điều gì! Ta vừa tăng độ chính xác thêm một con số. Ta hãy tóm tắt lại một chút.
+Tuy nhiên, điều này chưa giải quyết bất cứ điều gì! Ta chỉ vừa đẩy vấn đề độ chính xác lên thêm một chữ số thập phân. Thay vào đó hãy trừu tượng hoá vấn đề lên một chút.
 Hình dung ta biết xác suất mà $k$ chữ số đầu tiên khớp với $2.00000\ldots$ và ta muốn biết xác suất nó khớp với $k+1$ chữ số đầu tiên.
 Khá hợp lý khi giả định là chữ số thứ $k+1$ có thể nhận giá trị ngẫu nhiên từ tập $\{0, 1, 2, \ldots, 9\}$.
-Ít nhất là ta không thể cảm nhận ý nghĩa vật lý và sự khác biệt của việc ép độ chính xác tới micro mét, và kết thúc bằng chữ số $7$ thay vì $3$.
+Ít nhất là ta không thể nghĩ ra được bất kỳ tác nhân vật lý có ý nghĩa nào mà lại có ảnh hưởng tới độ chính xác ở mức micro mét, để chữ số cuối cùng là chữ số $7$ thay vì chữ số $3$ chẳng hạn.
 
 
 <!--
@@ -104,7 +104,7 @@ Or put another way, we would expect that
 -->
 
 
-Về cơ bản, tăng độ chính xác thêm một chữ số đòi hỏi xác suất khớp sẽ giảm xuống 10 lần.
+Về cơ bản, việc tăng độ chính xác thêm một chữ số đòi hỏi xác suất khớp sẽ giảm xuống 10 lần.
 Hay nói cách khác, ta kỳ vọng là
 
 
@@ -126,8 +126,8 @@ That means we know the value falls within the interval say $[(1.99995,2.00005]$ 
 Thus, if we call the length of this interval $\epsilon$, we can say
 -->
 
-Lưu ý rằng nếu ta biết vị trí chính xác đến $k = 4$ chữ số thập phân.
-Điều đó có nghĩa là ta biết giá trị sẽ nằm trong khoảng  $[(1.99995,2.00005]$ có độ dài $2.00005-1.99995 = 10^{-4}$.
+Lưu ý rằng nếu ta biết vị trí chính xác đến $k = 4$ chữ số thập phân,
+có nghĩa là ta biết giá trị sẽ nằm trong khoảng  $[(1.99995,2.00005]$ có độ dài $2.00005-1.99995 = 10^{-4}$.
 Do đó, nếu gọi độ dài của khoảng này là $\epsilon$, ta có:
 
 
@@ -145,7 +145,7 @@ Thus, the value $p$ is not fixed, but rather should depend on the point $x$.
 This tells us that we should expect
 -->
 
-Ta hãy thực hiện thêm một bước cuối.
+Ta hãy tổng quát hoá thêm một bước cuối.
 Ta hiện chỉ đang xét điểm $2$, chưa nghĩ đến các điểm khác.
 Về cơ bản, giá trị $p$ tại các điểm khác nhau có thể sẽ khác nhau.
 Ít nhất ta hy vọng rằng người ném phi tiêu nhiều khả năng sẽ ngắm trúng vùng gần tâm, $2 \text{cm}$ hơn là $20 \text{cm}$.
@@ -164,7 +164,7 @@ Let us visualize what such a function might look like.
 -->
 
 :eqref:`eq_pdf_deriv` định nghĩa *hàm mật độ xác suất - probability density function (p.d.f.)*,
-là hàm $p(x)$ biểu diễn xác suất tương đối của việc ghi điểm gần vị trí này so với vị trí khác.
+là hàm $p(x)$ biểu diễn xác suất tương đối của việc ném trúng gần vị trí này so với vị trí khác.
 Ta hãy trực quan hóa một hàm như vậy.
 
 
@@ -241,7 +241,7 @@ We have already seen what a probability density function is intuitively for a ra
 -->
 
 Bây giờ ta hãy tìm hiểu sâu hơn.
-Chúng ta đã cảm nhận được hàm mật độ xác suất $p(x)$ là gì đối với một biến ngẫu nhiên $X$, cụ thể:
+Chúng ta đã quan sát trực quan hàm mật độ xác suất $p(x)$ là gì đối với một biến ngẫu nhiên $X$, cụ thể:
 
 
 $$P(X \; \text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(x).$$
@@ -267,7 +267,7 @@ Second, let us imagine that we slice up the $\mathbb{R}$ into an infinite number
 For each of these, we know from :eqref:`eq_pdf_def` the probability is approximately
 -->
 
-Thứ hai, hãy tưởng tượng cắt $\mathbb{R}$ thành vô số lát cắt có chiều rộng $\epsilon$, mỗi lắt cắt có độ rộng $(\epsilon\cdot i, \epsilon \cdot (i + 1)]$.
+Thứ hai, hãy tưởng tượng việc cắt $\mathbb{R}$ thành vô số lát cắt có chiều rộng $\epsilon$, mỗi lát cắt là nửa khoảng $(\epsilon\cdot i, \epsilon \cdot (i + 1)]$.
 Đối với mỗi lắt cắt này, ta biết từ: eqref: `eq_pdf_def`, thì xác suất xấp xỉ
 
 
@@ -292,7 +292,7 @@ $$
 This is nothing more than the approximation of an integral discussed in :numref:`sec_integral_calculus`, thus we can say that
 -->
 
-Điều này là xấp xỉ của một tích phân đã thảo luận trong :numref:`sec_integral_calculus`, do đó có thể nói rằng
+Đây chỉ là xấp xỉ của một tích phân mà ta đã thảo luận trong :numref:`sec_integral_calculus`, do đó có thể nói rằng
 
 
 $$
@@ -329,7 +329,7 @@ We may approximate this in code by using the same discrete approximation methods
 In this case we can approximate the probability of falling in the blue region.
 -->
 
-Ta có thể xấp xỉ phương trình này trong chương trình bằng cách sử dụng các phương pháp xấp xỉ rời rạc như trước đây. 
+Ta có thể xấp xỉ phương trình này trong chương trình máy tính bằng cách sử dụng các phương pháp xấp xỉ rời rạc như trước đây. 
 Trong trường hợp này, ta có thể ước tính xác suất nằm trong vùng màu xanh lam.
 
 
@@ -386,7 +386,7 @@ It turns out that these two properties describe exactly the space of possible pr
 They are non-negative functions $p(x) \ge 0$ such that
 -->
 
-Hai thuộc tính trên mô tả chính xác không gian của các hàm mật độ xác suất.
+Hai tính chất trên mô tả chính xác không gian của các hàm mật độ xác suất.
 Chúng là các hàm không âm $p(x) \ge 0$ sao cho
 
 
@@ -398,7 +398,7 @@ $$\int_{-\infty}^{\infty} p(x) \; dx = 1.$$
 We interpret this function by using integration to obtain the probability our random variable is in a specific interval:
 -->
 
-Ta cũng có thể thu được xác suất biến ngẫu nhiên nằm trong một khoảng cụ thể:
+Ta cũng có thể thu được xác suất biến ngẫu nhiên nằm trong một khoảng cụ thể bằng cách tính tích phân:
 
 
 $$P(X\in(a, b]) = \int _ {a}^{b} p(x) \; dx.$$
@@ -429,9 +429,9 @@ This can be counter-intuitive, so people often also think in terms of the *cumul
 
 Trong phần trước, chúng ta đã biết về hàm mật độ xác suất (p.d.f).
 Trong thực tế, đây là một phương pháp thường dùng để thảo luận về các biến ngẫu nhiên liên tục,
-nhưng nó có một nhược điểm quan trọng: các giá trị của p.d.f. bản thân chúng không phải là các giá trị xác suất, mà là một hàm mà ta phải tích phân để có xác suất.
-Không có gì sai với môt hàm mật độ lớn hơn $10$, miễn là nó không lớn hơn $10$ trong khoảng có chiều dài $1/10$.
-Điều này có thể gây khó hình dung, do đó người ta thường dùng *hàm phân phối tích lũy - cumulative distribution function* hoặc c.d.f., đó *là* một giá trị xác suất.
+nhưng nó có một nhược điểm khá lớn: bản thân các giá trị của p.d.f. không phải là các giá trị xác suất, mà ta phải tích phân hàm này để có xác suất.
+Không có gì sai với môt hàm mật độ lớn hơn $10$, miễn là nó không lớn hơn $10$ trong khoảng có chiều dài lớn hơn $1/10$.
+Điều này có thể hơi phản trực giác, do đó người ta thường dùng *hàm phân phối tích lũy - cumulative distribution function* hoặc c.d.f., mà có giá trị trả về *là* xác suất.
 
 <!--
 In particular, by using :eqref:`eq_pdf_int_int`, we define the c.d.f. for a random variable $X$ with density $p(x)$ by
@@ -470,7 +470,7 @@ Hãy quan sát một vài tính chất của hàm này
 With the fourth bullet point, note that this would not be true if $X$ were discrete, say taking the values $0$ and $1$ both with probability $1/2$. In that case
 -->
 
-Ở gạch đầu dòng thứ tư, lưu ý rằng điều này không đúng nếu $X$ là rời rạc, ví dụ như chỉ nhận hai giá trị $0$ và $1$ với xác suất $1/2$. Trong trường hợp đó:
+Ở gạch đầu dòng thứ tư, lưu ý rằng điều này không đúng nếu $X$ là rời rạc, ví dụ như khi $X$ chỉ nhận hai giá trị $0$ và $1$ với xác suất $1/2$. Trong trường hợp đó:
 
 
 $$
@@ -489,7 +489,7 @@ the ability to deal with continuous or discrete random variables in the same fra
 -->
 
 Trong ví dụ này, ta thấy một trong các lợi ích của việc sử dụng c.d.f.,
-khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc trong cùng một khuôn khổ, hay thậm chí là hỗn hợp của cả hai
+khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc với cùng một công cụ, hay thậm chí là hỗn hợp của cả hai
 (tung một đồng xu: nếu mặt ngửa thì trả về giá trị khi thả xúc xắc, nếu mặt sấp thì trả về khoảng cách ném phi tiêu từ tâm của bảng hồng tâm).
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -513,7 +513,7 @@ The most commonly encountered ones are the *mean*, the *variance*, and the *stan
 
 Giả sử ta đang làm việc với một biến ngẫu nhiên $X$.
 Phân phối của biến này có thể khó để diễn giải.
-Thường sẽ có ích nếu ta có thể tóm lược hành vi của một biến ngẫu nhiên một cách xúc tích.
+Thường sẽ có ích nếu ta có thể tóm lược hành vi của một biến ngẫu nhiên một cách súc tích.
 Những giá trị giúp ta nắm bắt được hành vi của một biến ngẫu nhiên được gọi là *thống kê tóm tắt*.
 Các thống kê tóm tắt thường gặp nhất là *kỳ vọng*, *phương sai* và *độ lệch chuẩn*.
 
@@ -524,7 +524,7 @@ If we have a discrete random variable $X$, which takes the values $x_i$ with pro
 then the mean is given by the weighted average: sum the values times the probability that the random variable takes on that value:
 -->
 
-*Kỳ vọng* là trung bình các giá trị của một biến ngẫu nhiên.
+*Kỳ vọng* là giá trị trung bình của một biến ngẫu nhiên.
 Nếu ta có một biến ngẫu nhiên rời rạc $X$, nhận giá trị $x_i$ với xác suất $p_i$,
 thì kỳ vọng được tính từ trung bình có trọng số: tổng các tích của giá trị biến với xác suất nhận giá trị đó:
 
@@ -537,7 +537,7 @@ $$\mu_X = E[X] = \sum_i x_i p_i.$$
 The way we should interpret the mean (albeit with caution) is that it tells us essentially where the random variable tends to be located.
 -->
 
-Giá trị kỳ vọng này về cơ bản (nên thận trọng) cho ta biết biến ngẫu nhiên có xu hướng nhận giá trị nào.
+Với một vài lưu ý, giá trị kỳ vọng này về cơ bản cho ta biết biến ngẫu nhiên có xu hướng nhận giá trị nào.
 
 
 <!--
@@ -546,9 +546,9 @@ let us take $X$ to be the random variable which takes the value $a-2$ with proba
 We can compute using :eqref:`eq_exp_def` that, for any possible choice of $a$ and $p$, the mean is
 -->
 
-Như một ví dụ tối giản mà ta sẽ xem xét xuyên suốt phần này,
+Xét một ví dụ tối giản xuyên suốt phần này,
 gọi $X$ là biến ngẫu nhiên nhận giá trị $a-2$ với xác suất $p$, $a + 2$ với xác suất $p$ và $a$ với xác suất $1-2p$.
-Theo :eqref:`eq_exp_def`, với bất kỳ giá trị có thể có nào của $a$ và $p$, giá trị kỳ vọng là:
+Theo :eqref:`eq_exp_def`, với bất kỳ giá trị khả dĩ nào của $a$ và $p$, giá trị kỳ vọng là:
 
 
 $$
@@ -560,7 +560,7 @@ $$
 Thus we see that the mean is $a$. This matches the intuition since $a$ is the location around which we centered our random variable.
 -->
 
-Ta thấy rằng giá trị kỳ vọng là $a$. Điều này phù hợp với trực giác vì $a$ là vị trí trung tâm của biến ngẫu nhiên này.
+Ta thấy rằng giá trị kỳ vọng là $a$. Điều này đúng với trực giác vì $a$ là vị trí trung tâm của biến ngẫu nhiên này.
 
 
 <!--
@@ -585,7 +585,7 @@ The second one has a much larger degree of fluctuation, and thus represents a mu
 Thus, to understand the behavior of a random variable, we will need at minimum one more measure: some measure of how widely a random variable fluctuates.
 -->
 
-Kỳ vọng rất hữu ích để hiểu hành vi trung bình của một biến ngẫu nhiên, tuy nhiên không đủ để có được sự hiểu biết trực quan đầy đủ.
+Kỳ vọng rất hữu ích để hiểu hành vi trung bình của một biến ngẫu nhiên, tuy nhiên nó vẫn không đủ để ta có được một cách nhìn trực quan toàn diện.
 Tạo ra lợi nhuận $\$10 \pm \$1$ rất khác với việc tạo ra $\$10 \pm \$15$ cho mỗi giao dịch mặc dù cả hai có cùng kỳ vọng.
 Trường hợp thứ hai có mức độ dao động lớn hơn nhiều và do đó rủi ro cũng lớn hơn nhiều.
 Vì vậy, để hiểu hành vi của một biến ngẫu nhiên, ta sẽ cần thêm tối thiểu một thước đo nữa thể hiện biên độ dao động của biến ngẫu nhiên đó.
