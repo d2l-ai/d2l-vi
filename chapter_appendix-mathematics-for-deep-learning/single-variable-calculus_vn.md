@@ -34,7 +34,7 @@ Given a training dataset, we consider the loss of our neural network on this dat
 -->
 
 Giả sử chúng ta có một mạng nơ-ron sâu với các trọng số được biễu diễn bằng một vector duy nhất $\mathbf{w} = (w_1, \ldots, w_n)$.
-Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát của mạng nơ-ron trên tập huấn luyện đấy và ký hiệu nó bằng $\mathcal{L}(\mathbf{w})$. 
+Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát $\mathcal{L}(\mathbf{w})$ của mạng nơ-ron trên tập huấn luyện đó. 
 
 <!--
 This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, 
@@ -43,8 +43,8 @@ Thus, in practice, we often start by initializing our weights *randomly*,
 and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
 -->
 
-Đây là một hàm số cực kì phức tạp, mã hóa chất lượng của tất cả các mô hình khả dĩ với một cấu trúc cho trước trên tập dữ liệu này, 
-nên gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
+Đây là một hàm số cực kì phức tạp, biểu diễn chất lượng của tất cả các mô hình khả dĩ của một cấu trúc mạng cho trước trên tập dữ liệu này, 
+nên gần như không thể chỉ ra được ngay một tập các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
 Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và tiến từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--
@@ -52,7 +52,7 @@ The question then becomes something that on the surface is no easier: how do we 
 To dig into this, let us first examine the case with only a single weight: $L(\mathbf{w}) = L(x)$ for a single real value $x$.
 -->
 
-Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể?
+Vấn đề bây giờ thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể?
 Để trả lời câu hỏi này, trước hết ta hãy xét trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  với một số thực $x$ duy nhất.
 
 
@@ -64,7 +64,7 @@ To help us visualize what happens, Let us graph an example function, $f(x) = \si
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
 Nếu bạn muốn một con số rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
-Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
+Để minh hoạ chuyện gì sẽ diễn ra, hãy vẽ ví dụ đồ thị của hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 
 ```{.python .input}
@@ -143,7 +143,7 @@ d2l.plot(x_med, ys, 'x', 'f(x)')
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
-Đỉnh điểm, nếu ta phóng gần vào một đoạn rất nhỏ, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
+Đỉnh điểm, nếu ta phóng gần vào một đoạn rất nhỏ, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: chỉ là một đường thẳng. 
 
 
 ```{.python .input}
@@ -178,8 +178,8 @@ Is it half as large?  Twice as large?"
 -->
 
 Đây là một trong những quan sát cốt lõi nhất trong giải tích: hành vi của các hàm số phổ biến có thể được mô hình hóa bằng một đường thẳng trên một khoảng đủ nhỏ.
-Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi ta dịch chuyển giá trị $x$ một khoảng nhỏ, kết quả trả về của $f(x)$ cũng sẽ bị dịch chuyển theo một khoảng nhỏ.
-Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi trong giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi trên giá trị đầu vào? Nó sẽ bằng một nửa? Hay nó sẽ lớn gấp đôi?" 
+Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi dịch chuyển $x$ một khoảng nhỏ, $f(x)$ cũng sẽ dịch chuyển một khoảng nhỏ.
+Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi của giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi của giá trị đầu vào? Bằng một nửa? Hay sẽ lớn gấp đôi?" 
 
 <!--
 Thus, we can consider the ratio of the change in the output of a function for a small change in the input of the function.  We can write this formally as
@@ -198,8 +198,8 @@ This is already enough to start to play around with in code.
 For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we can see how large this value is at the point $x = 4$ as follows.
 -->
 
-Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành lập trình.
-Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
+Những kiến thức trên đã đủ để chúng ta bắt đầu thực hành lập trình.
+Ví dụ, giả sử $L(x) = x^{2} + 1701(x-4)^3$, ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
 
 ```{.python .input}
@@ -222,7 +222,7 @@ The way that a mathematician encodes this fact is
 
 Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này xấp xỉ $8$.
 Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$. 
-Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
+Vì vậy chúng ta có thể kết luận một cách chính xác, rằng mức độ thay đổi của đầu ra khi đầu vào thay đổi là $8$ tại điểm $x=4$.
 Một nhà toán học sẽ mã hóa vấn đề trên như sau:
 
 
@@ -241,11 +241,11 @@ It was not solved until 1986 that the *backpropagation algorithm* introduced in 
 a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, 
-các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của các nghiên cứu mạng nơ-ron, 
+các nhà khoa học đã sử dụng thuật toán này (*sai phân hữu hạn - finite differences*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
 chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
 Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.
-Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
+Thậm chí nếu chúng ta sử dụng phương pháp này với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi phải chạy mạng nơ-ron hàng nghìn lần trên toàn bộ dữ liệu. 
 Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (*backpropagation algorithm*) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` 
 đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát 
 với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
@@ -279,7 +279,7 @@ It is best to be familiar with all of these.
 We will use the notation $\frac{df}{dx}$ throughout this text, unless we want to take the derivative of a complex expression, in which case we will use $\frac{d}{dx}f$ to write expressions like
 -->
 
-Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất để sử dụng xuyên suốt, tuy nhiên không phải lúc nào điều ấy cũng được đảm bảo.
+Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất để sử dụng xuyên suốt, tuy nhiên không phải lúc nào điều này cũng được đảm bảo.
 Tốt hơn hết là chúng ta nên làm quen với tất cả các ký hiệu này.
 Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, 
 khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
@@ -314,7 +314,7 @@ Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và t
 In this way, we can understand the derivative as the scaling factor that tells us how large of change we get in the output from a change in the input.
 -->
 
-Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra nhận được từ một biến thiên của đầu vào. 
+Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra khi đầu vào thay đổi. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
