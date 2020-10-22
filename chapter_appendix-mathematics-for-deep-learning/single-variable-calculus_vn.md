@@ -820,8 +820,8 @@ the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0),
 The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
 -->
 
-*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, 
-nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. 
+*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$:
+$\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. 
 Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
@@ -842,8 +842,8 @@ As we can see above, the denominator of $2$ is there to cancel out the $2$ we ge
 Same logic applies for the first derivative and the value itself.
 -->
 
-Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn với số $2$ ta có khi lấy đạo hàm của $x^2$ hai lần, khi mà những thành phần khác đều bằng không.
-Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị. 
+Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn thừa số $2$ khi lấy đạo hàm bậc hai của $x^2$, các đạo hàm bậc cao hơn đều bằng không.
+Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị $f(x_0)$. 
 
 <!--
 If we push the logic further to $n=3$, we will conclude that
@@ -891,7 +891,7 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-Quả thật, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$. 
+Quả thật, $P_n(x)$ có thể được xem là đa thức bậc $n$ xấp xỉ tốt nhất của hàm $f(x)$. 
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
@@ -982,7 +982,7 @@ Chuỗi Taylor có hai ứng dụng chính:
 -->
 
 1. *Ứng dụng lý thuyết*:
-Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng. 
+Khi muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức để có thể làm việc trực tiếp. 
 
 <!--
 2. *Numerical applications*: Some functions like $e^{x}$ or $\cos(x)$ are  difficult for machines to compute.  
@@ -1006,7 +1006,7 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 * Using information in the derivatives of a single data example, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
 
-* Đạo hàm có thể được sử dụng để biểu diễn độ thay đổi của hàm số khi đầu vào thay đổi một lượng nhỏ.
+* Đạo hàm có thể được sử dụng để biểu diễn mức độ thay đổi của hàm số khi đầu vào thay đổi một lượng nhỏ.
 * Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo các quy tắc đạo hàm để tính những đạo hàm phức tạp tùy ý.
 * Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc các cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta thông tin chi tiết hơn về hành vi của hàm số.
 * Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ chuỗi Taylor.
