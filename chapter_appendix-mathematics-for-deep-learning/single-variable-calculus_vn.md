@@ -223,7 +223,7 @@ The way that a mathematician encodes this fact is
 Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này xấp xỉ $8$.
 Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$. 
 Vì vậy chúng ta có thể kết luận một cách chính xác, rằng mức độ thay đổi của đầu ra khi đầu vào thay đổi là $8$ tại điểm $x=4$.
-Một nhà toán học sẽ mã hóa vấn đề trên như sau:
+Có thể viết dưới dạng toán học như sau:
 
 
 $$
