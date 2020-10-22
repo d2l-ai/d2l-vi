@@ -1420,9 +1420,9 @@ Suppose that $X$ takes the values $1$ and $3$, and $Y$ takes the values $-1$ and
 Suppose that we have the following probabilities
 -->
 
-Để hiểu một cách trực quan về công thức trên: ví dụ
-$X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$,
-các xác suất:
+Để hiểu một cách trực quan về công thức trên, xét cặp biến ngẫu nhiên:
+$X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$.
+Giả sử ta có các xác suất sau:
 
 
 $$
