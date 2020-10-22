@@ -362,7 +362,7 @@ Chúng tôi sẽ nhắc lại chúng ở đây để bạn đọc dễ tham kh�
 
 * **Đạo hàm hằng số:** $\frac{d}{dx}c = 0$.
 * **Đạo hàm hàm tuyến tính:** $\frac{d}{dx}(ax) = a$.
-* **Quy tắc số mũ** $\frac{d}{dx}x^n = nx^{n-1}$. 
+* **Quy tắc lũy thừa:** $\frac{d}{dx}x^n = nx^{n-1}$. 
 * **Đạo hàm hàm mũ cơ số tự nhiên:** $\frac{d}{dx}e^x = e^x$.
 * **Đạo hàm hàm logarit cơ số tự nhiên:** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 
