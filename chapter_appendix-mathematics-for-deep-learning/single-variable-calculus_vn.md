@@ -755,7 +755,7 @@ this construction provides the best approximation by a quadratic.  Let us visual
 -->
 
 Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
-Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một cho ra xấp xỉ tốt nhất bằng một đường thẳng, cách xây dựng trên cung cấp một xấp xỉ tốt nhất bằng một phương trình bậc hai.
+Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một cho ra xấp xỉ tốt nhất bằng một đường thẳng, đạo hàm bậc hai cung cấp một xấp xỉ tốt nhất bằng một parabol.
 Hãy minh hoạ với trường hợp $f(x) = \sin(x)$.
 
 
