@@ -1427,10 +1427,10 @@ các xác suất:
 
 $$
 \begin{aligned}
-P(X = 1 \; \text{and} \; Y = -1) & = \frac{p}{2}, \\
-P(X = 1 \; \text{and} \; Y = 3) & = \frac{1-p}{2}, \\
-P(X = 3 \; \text{and} \; Y = -1) & = \frac{1-p}{2}, \\
-P(X = 3 \; \text{and} \; Y = 3) & = \frac{p}{2},
+P(X = 1 \; \text{và} \; Y = -1) & = \frac{p}{2}, \\
+P(X = 1 \; \text{và} \; Y = 3) & = \frac{1-p}{2}, \\
+P(X = 3 \; \text{và} \; Y = -1) & = \frac{1-p}{2}, \\
+P(X = 3 \; \text{và} \; Y = 3) & = \frac{p}{2},
 \end{aligned}
 $$
 
