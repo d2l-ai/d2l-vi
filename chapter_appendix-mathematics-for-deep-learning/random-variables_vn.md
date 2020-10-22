@@ -1284,7 +1284,7 @@ When dealing with multiple variables, we oftentimes want to be able to ignore th
 -->
 
 Khi làm việc với nhiều biến ngẫu nhiên, ta thường muốn bỏ qua các tương quan và đặt câu hỏi,
-"biến này có phân phối như thế nào?" Phân phối như vậy được gọi là *phân phối biên (marginal distribution)*.
+"biến ngẫu nhiên đơn lẻ này có phân phối như thế nào?" Phân phối như vậy được gọi là *phân phối biên (marginal distribution)*.
 
 
 <!--
@@ -1295,7 +1295,7 @@ The question of finding the marginal distribution is taking this function, and u
 
 Cụ thể, giả sử ta có hai biến ngẫu nhiên $X, Y$ với mật độ kết hợp $p _ {X, Y}(x, y)$.
 Ta sẽ sử dụng chỉ số dưới để chỉ mật độ này của biến ngẫu nhiên nào.
-Hàm này được dùng để để tìm phân phối biên $p _ X(x)$.
+Bài toán trở thành sử dụng hàm này để tìm phân phối biên $p _ X(x)$.
 
 
 <!--
@@ -1303,7 +1303,7 @@ As with most things, it is best to return to the intuitive picture to figure out
 Recall that the density is the function $p _ X$ so that
 -->
 
-Hãy đưa ra một bức tranh trực quan để hiểu các logic.
+Như đa số trường hợp, hãy đưa ra một bức tranh trực quan để hiểu tường tận khái niệm.
 Nhắc lại rằng hàm mật độ $p _ X$ thoả mãn
 
 
@@ -1328,7 +1328,7 @@ $$
 Our density does not directly tell us about what happens in this case, we need to split into small intervals in $y$ as well, so we can write this as
 -->
 
-Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì, ta cũng cần chia nhỏ $y$ thành các khoảng nhỏ, do đó ta có thể viết lại hàm này như sau
+Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì, ta cũng cần chia nhỏ $y$ thành các khoảng nhỏ, do đó ta có thể viết lại hàm này như sau:
 
 
 $$
