@@ -861,7 +861,7 @@ $$
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
 -->
 
-với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được nếu ta lấy đạo hàm của $x^3$ ba lần. 
+với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được khi lấy đạo hàm bậc 3 của $x^3$. 
 
 
 <!--
