@@ -26,7 +26,7 @@ Differential calculus is fundamentally the study of how functions behave under s
 -->
 
 Giải tích vi phân là nhánh toán học nghiên cứu về hành vi của các hàm số dưới các biến đổi nhỏ.
-Để thấy được tại sao đây lại là cốt lõi của học sâu, hãy cùng xem ví dụ dưới đây.
+Để thấy được tại sao đây lại là phần cốt lõi của học sâu, hãy cùng xem xét một ví dụ dưới đây.
 
 <!--
 Suppose that we have a deep neural network where the weights are, for convenience, concatenated into a single vector $\mathbf{w} = (w_1, \ldots, w_n)$.  
@@ -34,7 +34,7 @@ Given a training dataset, we consider the loss of our neural network on this dat
 -->
 
 Giả sử chúng ta có một mạng nơ-ron sâu với các trọng số được biễu diễn bằng một vector duy nhất $\mathbf{w} = (w_1, \ldots, w_n)$.
-Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát của mạng nơ-ron trên tập huấn luyện đấy và ký hiệu nó bằng $\mathcal{L}(\mathbf{w})$.
+Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát $\mathcal{L}(\mathbf{w})$ của mạng nơ-ron trên tập huấn luyện đó. 
 
 <!--
 This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, 
@@ -43,17 +43,17 @@ Thus, in practice, we often start by initializing our weights *randomly*,
 and then iteratively take small steps in the direction which makes the loss decrease as rapidly as possible.
 -->
 
-Đây là một hàm số cực kì phức tạp, là dạng tổng quát của tất cả mô hình có thể của một cấu trúc cho trước trên tập dữ liệu này, 
-do vậy gần như không thể chỉ ra được một tập hợp các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
-Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và đi từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
+Đây là một hàm số cực kì phức tạp, biểu diễn chất lượng của tất cả các mô hình khả dĩ của một cấu trúc mạng cho trước trên tập dữ liệu này, 
+nên gần như không thể chỉ ra được ngay một tập các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
+Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và tiến từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--
 The question then becomes something that on the surface is no easier: how do we find the direction which makes the weights decrease as quickly as possible?
 To dig into this, let us first examine the case with only a single weight: $L(\mathbf{w}) = L(x)$ for a single real value $x$.
 -->
 
-Vấn đề trên bây giờ trở thành một câu hỏi mà thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể?
-Để trả lời câu hỏi này, trước hết ta hãy xét trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  cho một số thực $x$ duy nhất.
+Vấn đề bây giờ thoạt nhìn cũng không dễ hơn bao nhiêu: làm thế nào để tìm được hướng đi sẽ giảm giá trị hàm mất mát nhanh nhất có thể?
+Để trả lời câu hỏi này, trước hết ta hãy xét trường hợp chỉ có một trọng số: $L(\mathbf{w}) = L(x)$  với một số thực $x$ duy nhất.
 
 
 <!--
@@ -63,8 +63,8 @@ To help us visualize what happens, Let us graph an example function, $f(x) = \si
 -->
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
-Nếu bạn muốn mọi thứ thật rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
-Để giúp ta minh hoạ chuyện gì sẽ diễn ra, hãy cùng vẽ ví dụ đồ thị của một hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
+Nếu bạn muốn một con số rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
+Để minh hoạ chuyện gì sẽ diễn ra, hãy vẽ ví dụ đồ thị của hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 
 ```{.python .input}
@@ -111,8 +111,8 @@ At this large scale, the function's behavior is not simple.
 However, if we reduce our range to something smaller like $[1.75,2.25]$, we see that the graph becomes much simpler.
 -->
 
-Trong một khoảng lớn thế này, cách biến đổi của hàm số không hề đơn giản.
-Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25]$, ta thấy đồ thị trở nên đơn giản hơn nhiều.
+Trong một khoảng lớn thế này, cách hàm số biến đổi rất khó nắm bắt.
+Tuy nhiên, nếu ta thu nhỏ khoảng xuống ví dụ như thành $[1.75,2.25]$, ta thấy đồ thị trở nên đơn giản hơn rất nhiều.
 
 
 ```{.python .input}
@@ -143,7 +143,7 @@ d2l.plot(x_med, ys, 'x', 'f(x)')
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
-Đỉnh điểm, nếu ta muốn phóng to một đoạn rất nhỏ ra, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: nó chỉ là một đường thẳng. 
+Đỉnh điểm, nếu ta phóng gần vào một đoạn rất nhỏ, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: chỉ là một đường thẳng. 
 
 
 ```{.python .input}
@@ -177,15 +177,15 @@ The only question we need to answer is, "How large is the change in the output c
 Is it half as large?  Twice as large?"
 -->
 
-Đây là một trong những quan sát căn bản nhất trong giải tích: hành vi của các hàm số phổ biến có thể được mô hình bằng một đường thẳng trên một khoảng đủ nhỏ.
-Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi ta dịch chuyển giá trị $x$ với một giá trị nhỏ, kết quả trả về của $f(x)$ sẽ cũng chỉ bị dịch chuyển với một giá trị nhỏ.
-Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi trong giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi trong giá trị đầu vào? Nó sẽ bằng một nửa? Hay nó sẽ lớn gấp đôi?" 
+Đây là một trong những quan sát cốt lõi nhất trong giải tích: hành vi của các hàm số phổ biến có thể được mô hình hóa bằng một đường thẳng trên một khoảng đủ nhỏ.
+Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi dịch chuyển $x$ một khoảng nhỏ, $f(x)$ cũng sẽ dịch chuyển một khoảng nhỏ.
+Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi của giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi của giá trị đầu vào? Bằng một nửa? Hay sẽ lớn gấp đôi?" 
 
 <!--
 Thus, we can consider the ratio of the change in the output of a function for a small change in the input of the function.  We can write this formally as
 -->
 
-Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với thay đổi nhỏ của đầu vào trong một hàm số. Chúng ta biễu diễn nó một cách toán học là:
+Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với sự thay đổi nhỏ trong đầu vào của một hàm số. Chúng ta có thể biễu diễn nó dưới dạng toán học là:
 
 
 $$
@@ -198,8 +198,8 @@ This is already enough to start to play around with in code.
 For instance, suppose that we know that $L(x) = x^{2} + 1701(x-4)^3$, then we can see how large this value is at the point $x = 4$ as follows.
 -->
 
-Với những kiến thức trên đã đủ để chúng ta bắt đầu thực hành viết mã.
-Ví dụ, giả sử ta có $L(x) = x^{2} + 1701(x-4)^3$, thì ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
+Những kiến thức trên đã đủ để chúng ta bắt đầu thực hành lập trình.
+Ví dụ, giả sử $L(x) = x^{2} + 1701(x-4)^3$, ta có thể biết được độ lớn của giá trị này tại điểm $x = 4$ như sau:
 
 
 ```{.python .input}
@@ -220,10 +220,10 @@ Thus we may conclude, correctly, that the value we seek (the degree a change in 
 The way that a mathematician encodes this fact is
 -->
 
-Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này là xấp xỉ $8$.
-Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$.
-Vì vậy chúng ta có thể kết luận một cách chính xác, rằng giá trị mà chúng ta tìm kiếm (độ biến thiên đầu vào thay đổi đầu ra) là $8$ tại điểm $x=4$.
-Cách mà một nhà toán học giải mã vấn đề trên là:
+Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này xấp xỉ $8$.
+Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$. 
+Vì vậy chúng ta có thể kết luận một cách chính xác, rằng mức độ thay đổi của đầu ra khi đầu vào thay đổi là $8$ tại điểm $x=4$.
+Có thể viết dưới dạng toán học như sau:
 
 
 $$
@@ -241,11 +241,11 @@ It was not solved until 1986 that the *backpropagation algorithm* introduced in 
 a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của ngành nghiên cứu mạng nơ-ron, 
-các nhà khoa học đã sử dụng thuật toán này (*phương pháp biến thiên hữu hạn*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của các nghiên cứu mạng nơ-ron, 
+các nhà khoa học đã sử dụng thuật toán này (*sai phân hữu hạn - finite differences*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
 chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
-Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.  
-Nếu chúng ta sử dụng phương pháp này chỉ với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi hàng nghìn đánh giá của mạng nơ-ron trên toàn bộ dữ liệu. 
+Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.
+Thậm chí nếu chúng ta sử dụng phương pháp này với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi phải chạy mạng nơ-ron hàng nghìn lần trên toàn bộ dữ liệu. 
 Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (*backpropagation algorithm*) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` 
 đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát 
 với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
@@ -256,7 +256,7 @@ More formally, this value dependent rate of change is referred to as the *deriva
 -->
 
 Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
-Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là:
+Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là: 
 
 $$\frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon}.$$
 :eqlabel:`eq_der_def`
@@ -267,7 +267,7 @@ For instance, all of the below notations indicate the same thing:
 -->
 
 Các văn bản khác nhau sẽ sử dụng các ký hiệu khác nhau cho đạo hàm.
-Chẳng hạn, tất cả các ký hiệu dưới đây diễn giải cùng một ý nghĩa:
+Chẳng hạn, tất cả các ký hiệu dưới đây đều diễn giải cùng một ý nghĩa:
 
 $$
 \frac{df}{dx} = \frac{d}{dx}f = f' = \nabla_xf = D_xf = f_x.
@@ -279,8 +279,8 @@ It is best to be familiar with all of these.
 We will use the notation $\frac{df}{dx}$ throughout this text, unless we want to take the derivative of a complex expression, in which case we will use $\frac{d}{dx}f$ to write expressions like
 -->
 
-Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất sử dụng nó xuyên suốt, tuy nhiên cũng có những tác giả không như vậy.
-Tốt hơn là chúng ta nên làm quen với tất cả các ký hiệu này.
+Phần lớn các tác giả sẽ chọn một ký hiệu duy nhất để sử dụng xuyên suốt, tuy nhiên không phải lúc nào điều này cũng được đảm bảo.
+Tốt hơn hết là chúng ta nên làm quen với tất cả các ký hiệu này.
 Ký hiệu $\frac{df}{dx}$ sẽ được sử dụng trong toàn bộ cuốn sách này, trừ trường hợp chúng ta cần lấy đạo hàm của một biểu thức phức tạp, 
 khi đó chúng ta sẽ sử dụng $\frac{d}{dx}f$ để biểu diễn những biểu thức như
 
@@ -294,7 +294,7 @@ $$
 Oftentimes, it is intuitively useful to unravel the definition of derivative :eqref:`eq_der_def` again to see how a function changes when we make a small change of $x$:
 -->
 
-*dịch đoạn phía trên*
+Đôi khi, việc sử dụng định nghĩa của đạo hàm :eqref:`eq_der_def` để thấy một cách trực quan cách một hàm thay đổi khi $x$ thay đổi một khoảng nhỏ là rất hữu ích:
 
 
 
@@ -307,14 +307,14 @@ The last equation is worth explicitly calling out.
 It tells us that if you take any function and change the input by a small amount, the output would change by that small amount scaled by the derivative.
 -->
 
-Cần phải nói rõ hơn về phương trình cuối cùng.
+Cần phải nói rõ hơn về phương trình cuối cùng. 
 Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và thay đổi đầu vào một lượng nhỏ, sự thay đổi của đầu ra sẽ bằng với lượng nhỏ đó nhân với đạo hàm.
 
 <!--
 In this way, we can understand the derivative as the scaling factor that tells us how large of change we get in the output from a change in the input.
 -->
 
-Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra nhận được từ một biến thiên của đầu vào.
+Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra khi đầu vào thay đổi. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
