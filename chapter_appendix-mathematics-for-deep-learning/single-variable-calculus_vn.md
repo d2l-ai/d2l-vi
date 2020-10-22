@@ -579,7 +579,7 @@ In this way we say that the derivative gives a linear approximation to the funct
 -->
 
 xấp xỉ giá trị của $f$ bằng một đường thẳng đi qua điểm $(x, f(x))$ và có độ dốc $\frac{df}{dx}(x)$. 
-Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như trong ví dụ sau:
+Với cách hiểu này, ta nói rằng đạo hàm cho ta một xấp xỉ tuyến tính của hàm số $f$, như minh họa dưới đây:
 
 
 ```{.python .input}
@@ -675,7 +675,7 @@ In other words, the function $f$ curves up, and has a single minimum as is shown
 Đầu tiên, xét trường hợp đạo hàm bậc hai $f^{(2)}(x)$ là một hằng số dương.
 Điều này nghĩa là độ dốc của đạo hàm bậc nhất là dương.
 Hệ quả là, đạo hàm bậc nhất $f^{(1)}(x)$ có thể khởi đầu ở âm, bằng không tại một điểm nào đó, rồi cuối cùng tăng lên dương.
-Điều này cho chúng ta biết độ dốc của hàm $f$ ban đầu và do đó, giá trị hàm $f$ sẽ giảm xuống, bất biến, rồi tăng lên.
+Điều này cho chúng ta biết độ dốc của hàm $f$ ban đầu và do đó, giá trị hàm $f$ sẽ giảm xuống đến điểm nào đó rồi tăng lên.
 Nói cách khác, đồ thị hàm $f$ là đường cong đi lên, có một cực tiểu như trong :numref:`fig_positive-second`.
 
 
@@ -696,7 +696,7 @@ In other words, the function $f$ curves down, and has a single maximum as is sho
 
 Thứ hai là, nếu đạo hàm bậc hai là một hằng số âm, nghĩa là đạo hàm bậc nhất nghịch biến.
 Vậy tức là đạo hàm bậc nhất có thể khời đầu là dương, bằng không ở điểm nào đó, rồi giảm xuống âm.
-Do vậy, giá trị hàm $f$ tăng lên, bất biến, rồi giảm xuống.
+Do vậy, giá trị hàm $f$ tăng lên đến điểm nào đó rồi giảm xuống.
 Nói cách khác, đồ thị hàm $f$ là đường cong đi xuống, có một cực đại như trong :numref:`fig_negative-second`.
 
 <!--
