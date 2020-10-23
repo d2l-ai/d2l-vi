@@ -212,7 +212,7 @@ Ta có thể sử dụng các quy tắc lấy đạo hàm của các hàm thông
 -->
 
 * $DC = 0$ ($C$ là một hằng số),
-* $Dx^n = nx^{n-1}$ (*quy tắc số mũ*, $n$ là số thực bất kỳ),
+* $Dx^n = nx^{n-1}$ (*quy tắc lũy thừa*, $n$ là số thực bất kỳ),
 * $De^x = e^x$,
 * $D\ln(x) = 1/x.$
 
