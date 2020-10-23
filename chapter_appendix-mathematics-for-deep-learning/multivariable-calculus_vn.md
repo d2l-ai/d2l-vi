@@ -689,7 +689,7 @@ $$
 If we want to compute say $\frac{\partial f}{\partial w}$ we may apply the multi-variate chain rule to see:
 -->
 
-Nếu chúng ta muốn tính $\frac{\partial f}{\partial w}$, chúng ta có thể áp dụng quy tắc dây chuyền: 
+Nếu muốn tính $\frac{\partial f}{\partial w}$ chẳng hạn, ta có thể áp dụng quy tắc dây chuyền đa biến để thấy: 
 
 
 $$
@@ -707,7 +707,7 @@ Notice that all we need here are the various single step partials:
 -->
 
 Chúng ta hãy thử sử dụng cách phân tách này để tính $\frac{\partial f}{\partial w}$. 
-Tất cả những gì chúng ta cần làm là thực hiện một số tính toán đạo hàm riêng: 
+Tất cả những gì chúng ta cần ở đây là các đạo hàm riêng: 
 
 $$
 \begin{aligned}
@@ -757,13 +757,13 @@ However, think back to our motivation from deep learning: we want to see how eve
 In essence, we want to apply the chain rule keeping $\partial f$ in the numerator whenever we can!
 -->
 
-Tuy nhiên, cần lưu ý rằng điều này không làm cho việc tính toán các đạo hàm chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản. 
+Tuy nhiên, cần lưu ý rằng điều này không làm cho các phép tính chẳng hạn như $\frac{\partial f}{\partial x}$ trở nên đơn giản. 
 Lý do nằm ở *cách* chúng ta chọn để áp dụng quy tắc dây chuyền.
 Nếu nhìn vào những gì chúng ta đã làm ở trên, chúng ta luôn giữ $\partial w$ ở mẫu khi có thể. 
 Với cách này, chúng ta áp dụng quy tắc dây chuyền để xem $w$ thay đổi các biến khác như thế nào. 
 Nếu đó là những gì chúng ta muốn thì cách này quả là một ý tưởng hay.
-Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* (*loss*) như thế nào. 
-Về bản chất, chúng ta muốn áp dụng quy tắc dây chuyền để giữ $\partial f$ ở tử số bất cứ khi nào có thể! 
+Tuy nhiên, nghĩ lại về mục tiêu của học sâu: chúng ta muốn thấy từng tham số thay đổi giá trị *mất mát* như thế nào. 
+Về cốt lõi, chúng ta luôn muốn áp dụng quy tắc dây chuyền và giữ $\partial f$ ở tử số bất cứ khi nào có thể! 
 
 
 <!--
@@ -846,7 +846,7 @@ The fact that we compute derivatives from $f$ back towards the inputs rather tha
 Note that there are two steps:
 -->
 
-Việc tính đạo hàm từ $f$ trở ngược về đầu vào thay vì từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán. 
+Việc tính đạo hàm từ $f$ trở ngược về đầu vào thay vì từ đầu vào đến đầu ra (như chúng ta đã thực hiện ở đoạn mã đầu tiên ở trên) là lý do cho cái tên *lan truyền ngược* (*backpropagation*) của thuật toán. 
 Có hai bước: 
 
 
@@ -1006,8 +1006,8 @@ Indeed, we can show that as long as both *mixed partials* (partial derivatives w
 and are continuous, we can say that for any $i$, and $j$,
 -->
 
-Không phải mọi đầu vào của ma trận đều độc lập. 
-Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) luôn tồn tại và liên tục, thì hàm số tồn tại và liên tục với mọi $i$ và $j$, 
+Không phải mọi hạng tử của ma trận này đều độc lập. 
+Thật vậy, chúng ta có thể chứng minh rằng miễn là cả hai *đạo hàm riêng hỗn hợp - mixed partials* (đạo hàm riêng theo nhiều hơn một biến số) có tồn tại và liên tục, thì hàm số luôn tồn tại và liên tục với mọi $i$ và $j$, 
 
 
 $$
@@ -1021,7 +1021,7 @@ and then perturbing it in $x_j$ and then comparing the result of that with what 
 with the knowledge that both of these orders lead to the same final change in the output of $f$.
 -->
 
-Tiếp theo, ta gây xáo trộn một hàm lần lượt theo $x_i$ rồi $x_j$, sau đó đảo ngược và so sánh hai kết quả này, 
+Điều này suy ra được bằng việc xem xét khi ta thay đổi hàm lần lượt theo $x_i$ rồi $x_j$, và ngược lại thay đổi $x_j$ rồi $x_i$, và so sánh hai kết quả này, 
 biết rằng cả hai thứ tự này ảnh hưởng đến đầu ra của $f$ như nhau.
 
 
@@ -1030,8 +1030,8 @@ As with single variables, we can use these derivatives to get a far better idea 
 In particular, we can use it to find the best fitting quadratic near a point $\mathbf{x}_0$, as we saw in a single variable.
 -->
 
-Như với các hàm đơn biến, chúng ta có thể sử dụng những đạo hàm này để hiểu rõ hơn về cách hàm hoạt động khi tiệm cận một điểm. 
-Cụ thể, chúng ta có thể sử dụng nó để tìm hàm bậc hai phù hợp nhất tiệm cận điểm $\mathbf{x}_0$ tương tự như trong giải tích đơn biến. 
+Như với các hàm đơn biến, chúng ta có thể sử dụng những đạo hàm này để hiểu rõ hơn về hành vi của hàm số lân cận một điểm. 
+Cụ thể, chúng ta có thể sử dụng nó để tìm hàm bậc hai phù hợp nhất lân cận $\mathbf{x}_0$ tương tự như trong giải tích đơn biến. 
 
 
 <!--
