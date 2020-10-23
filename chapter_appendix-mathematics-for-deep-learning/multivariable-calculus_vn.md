@@ -31,7 +31,7 @@ This is nothing more than a function of a single variable, so we can write
 -->
 
 Nhớ lại :numref:`sec_single_variable_calculus`, ta đã bàn luận về điều gì sẽ xảy ra nếu chỉ thay đổi một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại. 
-Điều này cũng không khác với một hàm đơn biến là mấy, nên ta có thể viết 
+Điều này hoàn toàn không có gì khác với một hàm đơn biến, nên ta có thể viết 
 
 $$L(w_1+\epsilon_1, w_2, \ldots, w_N) \approx L(w_1, w_2, \ldots, w_N) + \epsilon_1 \frac{d}{dw_1} L(w_1, w_2, \ldots, w_N).$$
 :eqlabel:`eq_part_der`
@@ -72,7 +72,7 @@ the same way we could discard $\epsilon^{2}$ in the previous section, along with
 By continuing in this manner, we may write that
 -->
 
-Một lần nữa, ta lại sử dụng những gì ta đã thấy ở :eqref:`eq_part_der` và ý tưởng rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước. 
+Một lần nữa, ta lại sử dụng ý tưởng đã thấy ở :eqref:`eq_part_der` rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước. 
 Cứ tiếp tục theo cách này, ta có thể viết được
 
 
@@ -119,10 +119,10 @@ It allows us to tell approximately how the function $L$ will change given any pe
 As we will see in the next section, this will provide us with an important tool in understanding geometrically how we can learn using information contained in the gradient.
 -->
 
-Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút. 
+Phương trình :eqref:`eq_nabla_use` đáng để ta suy ngẫm.
 Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ khác là tất cả đã được biến đổi về dạng vector và tích vô hướng.
-Điều này cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào. 
-Như ta sẽ thấy trong mục tiếp theo, đây sẽ là một công cụ quan trọng giúp chúng ta hiểu được cách học từ thông tin chứa trong gradient dưới dạng hình học.
+Điều này cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với một nhiễu loạn bất kỳ ở đầu vào. 
+Như ta sẽ thấy trong mục tiếp theo, đây sẽ là một công cụ quan trọng giúp chúng ta hiểu được cách học từ thông tin chứa trong gradient dưới góc nhìn hình học.
 
 
 <!--
@@ -168,7 +168,7 @@ $$
 We can test this in code to see how good the approximation is.
 -->
 
-Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác mức nào. 
+Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác tới mức nào.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -245,7 +245,7 @@ f'approximation: {grad_approx}, true Value: {true_value}'
 ## Geometry of Gradients and Gradient Descent
 -->
 
-## Hình học Gradient và Thuật toán Hạ Gradient 
+## Ý nghĩa Hình học của Gradient và Thuật toán Hạ Gradient 
 
 
 <!--
@@ -268,7 +268,7 @@ What we will do is the following:
 
 Giả sử ta muốn sử dụng thông tin gradient để cực tiểu hóa mất mát $L$. 
 Hãy cùng tìm hiểu cách hoạt động về mặt hình học của thuật toán hạ gradient được mô tả lần đầu ở :numref:`sec_autograd`. 
-Những bước của thuật toán được miêu tả như sau: 
+Các bước của thuật toán được miêu tả dưới đây:
 
 
 <!--
@@ -310,11 +310,11 @@ pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w
 -->
 
 Để thuận tiện, ta giả định hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$. 
-Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn biểu diễn trên trở nên càng âm. 
+Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn giá trị của biểu thức trên trở nên càng âm. 
 Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể. 
-Nhắc lại kiến thức của phép cô-sin, ta có thể biến đổi nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ. 
+Nhắc lại kiến thức của phép cô-sin, ta có thể biến đổi nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ radian hay $180$ độ. 
 Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
-chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều $\nabla_{\mathbf{w}} L(\mathbf{w})$! 
+chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều với $\nabla_{\mathbf{w}} L(\mathbf{w})$! 
 
 
 <!--
@@ -543,7 +543,7 @@ Indeed, one can see that, for instance:
 -->
 
 Tiếp theo ta có thể lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến 
-nhưng nếu làm vậy ta sẽ nhanh chóng bị ngợp trong các số hạng, nhiều trong số chúng là lặp lại! 
+nhưng nếu làm vậy ta sẽ nhanh chóng bị ngợp trong các số hạng, mà đa phần là bị lặp lại! 
 Thật vậy, ta có thể thấy ở ví dụ dưới đây:
 
 
@@ -656,7 +656,7 @@ Understanding the chain rule in this way will pay great dividends when trying to
 and why various architectural choices like those in LSTMs (:numref:`sec_lstm`) or residual layers (:numref:`sec_resnet`) can help shape the learning process by controlling gradient flow.
 -->
 
-Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradient xuyên suốt mạng và vì sao một số lựa chọn kiến trúc như trong LSTM (:numref:`sec_lstm`) hoặc các tầng hồi tiếp (:numref:`sec_resnet`) có thể định hình quá trình học bằng cách kiểm soát dòng chảy gradient. 
+Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradient xuyên suốt mạng và vì sao một số lựa chọn kiến trúc như trong LSTM (:numref:`sec_lstm`) hoặc các tầng phần dư (:numref:`sec_resnet`) có thể định hình quá trình học bằng cách kiểm soát dòng chảy gradient. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
