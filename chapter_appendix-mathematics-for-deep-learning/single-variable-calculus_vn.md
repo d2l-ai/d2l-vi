@@ -818,8 +818,8 @@ the first $n$ derivatives at a point $x_0$, i.e., $\left\{ f(x_0), f^{(1)}(x_0),
 The idea will be to find a degree $n$ polynomial that matches all the given derivatives at $x_0$.
 -->
 
-*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$, 
-nghĩa là ta đã có $\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
+*Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$:
+$\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. 
 Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
@@ -840,8 +840,8 @@ As we can see above, the denominator of $2$ is there to cancel out the $2$ we ge
 Same logic applies for the first derivative and the value itself.
 -->
 
-Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn với số $2$ ta có khi lấy đạo hàm của $x^2$ hai lần, khi mà những thành phần khác đều bằng không.
-Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị.
+Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn thừa số $2$ khi lấy đạo hàm bậc hai của $x^2$, các đạo hàm bậc cao hơn đều bằng không.
+Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị $f(x_0)$. 
 
 <!--
 If we push the logic further to $n=3$, we will conclude that
@@ -859,14 +859,14 @@ $$
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
 -->
 
-với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được nếu ta lấy đạo hàm của $x^3$ ba lần.
+với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được khi lấy đạo hàm bậc 3 của $x^3$. 
 
 
 <!--
 Furthermore, we can get a degree $n$ polynomial by
 -->
 
-Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách
+Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách 
 
 
 $$
@@ -877,7 +877,7 @@ $$
 where the notation
 -->
 
-với quy ước
+với quy ước 
 
 
 $$
@@ -889,15 +889,15 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-Quả thật, $P_n(x)$ có thể được xem là đa thức xấp xỉ bậc $n$ tốt nhất của hàm $f(x)$.
+Quả thật, $P_n(x)$ có thể được xem là đa thức bậc $n$ xấp xỉ tốt nhất của hàm $f(x)$. 
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
 In this case, for well behaved functions (known as real analytic functions) like $\cos(x)$ or $e^{x}$, we can write out the infinite number of terms and approximate the exactly same function
 -->
 
-Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
-Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn chính xác bằng vô số các số hạng.
+Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng. 
+Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn xấp xỉ bằng vô số các số hạng.
 
 
 $$
@@ -911,8 +911,8 @@ Therefore, $e^{x}$ can be reconstructed by taking the Taylor series at $x_0 = 0$
 -->
 
 Lấy hàm $f(x) = e^{x}$ làm ví dụ. 
-Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$.
-Do đó, hàm $e^{x}$ có thể được dựng lại bằng cách tính chuỗi Taylor tại $x_0 = 0$:
+Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$. 
+Do đó, hàm $e^{x}$ có thể được tái tạo bằng cách tính chuỗi Taylor tại $x_0 = 0$:
 
 
 $$
@@ -924,7 +924,7 @@ $$
 Let us see how this works in code and observe how increasing the degree of the Taylor approximation brings us closer to the desired function $e^x$.
 -->
 
-Hãy cùng tìm hiểu điều này bằng cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
+Hãy cùng tìm hiểu cách lập trình và quan sát xem việc tăng bậc của xấp xỉ Taylor đưa ta đến gần hơn với hàm mong muốn $e^x$ như thế nào.
 
 
 ```{.python .input}
@@ -973,14 +973,14 @@ d2l.plot(xs, [ys, P1, P2, P5], 'x', 'f(x)', legend=[
 Taylor series have two primary applications:
 -->
 
-Chuỗi Taylor có hai ứng dụng chính:
+Chuỗi Taylor có hai ứng dụng chính: 
 
 <!--
 1. *Theoretical applications*: Often when we try to understand a too complex function, using Taylor series enables us to turn it into a polynomial that we can work with directly.
 -->
 
 1. *Ứng dụng lý thuyết*:
-Khi ta muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức mà ta có thể làm việc trực tiếp cùng.
+Khi muốn tìm hiểu một hàm số quá phức tạp, ta thường dùng chuỗi Taylor để biến nó thành một đa thức để có thể làm việc trực tiếp. 
 
 <!--
 2. *Numerical applications*: Some functions like $e^{x}$ or $\cos(x)$ are  difficult for machines to compute.  
@@ -988,10 +988,10 @@ They can store tables of values at a fixed precision (and this is often done), b
 Taylor series are often helpful to answer such questions.
 -->
 
-2. *Ứng dụng số*:
+2. *Ứng dụng số học*:
 Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
 Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), 
-nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
+nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?". 
 Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
 
 
@@ -1004,10 +1004,10 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 * Using information in the derivatives of a single data example, we can approximate well behaved functions by polynomials obtained from the Taylor series.
 -->
 
-* Đạo hàm có thể được sử dụng để biểu diễn độ thay đổi của hàm số khi biến đầu vào thay đổi một lượng nhỏ.
-* Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo quy tắc để tính đạo hàm phức tạp tùy ý.
-* Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta nhiều thông tin chi tiết hơn về hành vi của hàm số.
-* Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ khai triển Taylor.
+* Đạo hàm có thể được sử dụng để biểu diễn mức độ thay đổi của hàm số khi đầu vào thay đổi một lượng nhỏ.
+* Các phép lấy đạo hàm cơ bản có thể kết hợp với nhau theo các quy tắc đạo hàm để tính những đạo hàm phức tạp tùy ý.
+* Đạo hàm có thể được tính nhiều lần để lấy đạo hàm cấp hai hoặc các cấp cao hơn. Mỗi lần tăng cấp đạo hàm cho ta thông tin chi tiết hơn về hành vi của hàm số.
+* Bằng việc sử dụng thông tin từ đạo hàm của một điểm dữ liệu, ta có thể xấp xỉ các hàm khả vi vô hạn lần bằng các đa thức lấy từ chuỗi Taylor.
 
 
 ## Bài tập
@@ -1020,7 +1020,7 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 -->
 
 1. Đạo hàm của $x^3-4x+1$ là gì?
-2. Đạo hàm của $\log(\frac{1}{x})$ là gì?
+2. Đạo hàm của $\log(\frac{1}{x})$ là gì? 
 3. Đúng hay Sai: Nếu $f'(x) = 0$ thì $f$ có cực đại hoặc cực tiểu tại $x$?
 4. Cực tiểu của $f(x) = x\log(x)$ với $x\ge0$ ở đâu (ở đây ta giả sử rằng $f$ có giới hạn bằng $0$ tại $f(0)$)?
 
@@ -1043,5 +1043,6 @@ Bản dịch trong trang này được thực hiện bởi:
 * Mai Sơn Hải
 * Phạm Minh Đức
 * Nguyễn Văn Tâm
+
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
