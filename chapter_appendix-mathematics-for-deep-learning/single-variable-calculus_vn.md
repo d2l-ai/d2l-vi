@@ -335,14 +335,14 @@ We will not indulge in this temptation here, but rather provide an understanding
 -->
 
 Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm cụ thể.
-Để trình bày giải tích một cách chính quy thì ta sẽ cần phải chứng minh tất cả mọi thứ từ những định đề căn bản nhất.
-Tuy nhiên bây giờ chúng ta sẽ không làm theo sự cám dỗ này mà thay vào đó cung cấp một nền tảng giúp hiểu những quy tắc phổ biến thường gặp.
+Dạy giải tích một cách chính quy sẽ phải chứng minh lại tất cả mọi thứ từ những định đề căn bản nhất. 
+Tuy nhiên chúng tôi sẽ không làm như vậy mà sẽ cung cấp các quy tắc tính đạo hàm phổ biến thường gặp.
 
 <!--
 ### Common Derivatives
 -->
 
-### Đạo hàm phổ biến
+### Các Đạo hàm phổ biến
 
 <!--
 As was seen in :numref:`sec_calculus`, when computing derivatives one can oftentimes use a series of rules to reduce the computation to a few core functions.  
@@ -350,7 +350,7 @@ We repeat them here for ease of reference.
 -->
 
 Như ở :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ tính toán thành các hàm cơ bản. 
-Chúng tôi nhắc lại chúng ở đây để tham khảo. 
+Chúng tôi sẽ nhắc lại chúng ở đây để bạn đọc dễ tham khảo. 
 
 <!--
 * **Derivative of constants.** $\frac{d}{dx}c = 0$.
@@ -360,27 +360,27 @@ Chúng tôi nhắc lại chúng ở đây để tham khảo.
 * **Derivative of the logarithm.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 -->
 
-* **Đạo hàm hằng số.** $\frac{d}{dx}c = 0$.
-* **Đạo hàm hàm tuyến tính.** $\frac{d}{dx}(ax) = a$.
-* **Quy tắc số mũ** $\frac{d}{dx}x^n = nx^{n-1}$.
-* **Đạo hàm hàm mũ e.** $\frac{d}{dx}e^x = e^x$.
-* **Đàm hàm hàm logarit.** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
+* **Đạo hàm hằng số:** $\frac{d}{dx}c = 0$.
+* **Đạo hàm hàm tuyến tính:** $\frac{d}{dx}(ax) = a$.
+* **Quy tắc lũy thừa:** $\frac{d}{dx}x^n = nx^{n-1}$. 
+* **Đạo hàm hàm mũ cơ số tự nhiên:** $\frac{d}{dx}e^x = e^x$.
+* **Đạo hàm hàm logarit cơ số tự nhiên:** $\frac{d}{dx}\log(x) = \frac{1}{x}$.
 
 
 <!--
 ### Derivative Rules
 -->
 
-### Quy tắc tính đạo hàm
+### Các Quy tắc tính Đạo hàm
 
 <!--
 If every derivative needed to be separately computed and stored in a table, differential calculus would be near impossible.  
 It is a gift of mathematics that we can generalize the above derivatives and compute more complex derivatives like finding the derivative of $f(x) = \log\left(1+(x-1)^{10}\right)$.  As was mentioned in :numref:`sec_calculus`, the key to doing so is to codify what happens when we take functions and combine them in various ways, most importantly: sums, products, and compositions.
 -->
 
-Nếu mọi đạo hàm cần được tính riêng biệt và lưu vào một bảng, giải tích vi phân sẽ gần như là không khả thi.
-Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạp hơn như tìm đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$.
-Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là chuẩn hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
+Nếu mọi đạo hàm cần được tính một cách riêng biệt và lưu vào một bảng, giải tích vi phân sẽ gần như bất khả thi.
+Toán học đã mang lại một món quà giúp tổng quát hóa các đạo hàm ở phần trên và giúp tính các đạo hàm phức tạp hơn như đạo hàm của $f(x) = \log\left(1+(x-1)^{10}\right)$. 
+Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực hiện việc này là hệ thống hóa việc tính đạo hàm cho các hàm kết hợp theo nhiều cách: tổng, tích và hợp.
 
 <!--
 * **Sum rule.** $\frac{d}{dx}\left(g(x) + h(x)\right) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$.
@@ -396,8 +396,7 @@ Như được đề cập trong :numref:`sec_calculus`, chìa khóa để thực
 Let us see how we may use :eqref:`eq_small_change` to understand these rules.  For the sum rule, consider following chain of reasoning:
 -->
 
-* Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này.
-* Với quy tắc tổng, xét dãy suy luận sau đây:
+Cùng xem chúng ta có thể sử dụng :eqref:`eq_small_change` như thế nào để hiểu những quy tắc này. Với quy tắc tổng, xét chuỗi biến đổi sau đây:
 
 
 $$
@@ -415,16 +414,16 @@ By comparing this result with the fact that $f(x+\epsilon) \approx f(x) + \epsil
 The intuition here is: when we change the input $x$, $g$ and $h$ jointly contribute to the change of the output by $\frac{dg}{dx}(x)$ and $\frac{dh}{dx}(x)$.
 -->
 
-Bằng cách so sánh các kết quả này với xấp xỉ $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta thấy rằng $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi.
-Việc này có thể giải thích như sau: khi ta thay đổi đầu vào $x$, $g$ và $h$ cùng đóng góp tới sự thay đổi $\frac{dg}{dx}(x)$ và $\frac{dh}{dx}(x)$ ở đầu ra.
+Đồng nhất hệ số với $f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x)$, ta có $\frac{df}{dx}(x) = \frac{dg}{dx}(x) + \frac{dh}{dx}(x)$ như mong đợi.
+Một cách trực quan, ta có thể giải thích như sau: khi thay đổi đầu vào $x$, $g$ và $h$ cùng đóng góp tới sự thay đổi của $\frac{dg}{dx}(x)$ và $\frac{dh}{dx}(x)$ ở đầu ra.
 
 
 <!--
 The product is more subtle, and will require a new observation about how to work with these expressions.  We will begin as before using :eqref:`eq_small_change`:
 -->
 
-Đối với tích thì phức tạp hơn một chút và đòi hỏi một quan sát mới để tìm ra cách làm việc với các biểu thức trên.
-Cùng bắt đầu giống như trước đây bằng cách sử dụng :eqref:`eq_small_change`:
+Đối với quy tắc tích thì phức tạp hơn một chút và đòi hỏi một quan sát mới khi xử lý các biểu thức này.
+Cũng giống như trước, ta bắt đầu bằng :eqref:`eq_small_change`:
 
 
 $$
@@ -449,10 +448,10 @@ However, if we wish to be more formal we may examine the difference quotient
 Việc này giống với những tính toán trước đây, và dễ thấy kết quả của ta ($\frac{df}{dx}(x) = g(x)\frac{dh}{dx}(x) + \frac{dg}{dx}(x)h(x)$) 
 là số hạng được nhân với $\epsilon$, nhưng vấn đề là ở số hạng nhân với giá trị $\epsilon^{2}$.
 Chúng ta sẽ gọi số hạng này là *số hạng bậc cao*, bởi số mũ của $\epsilon^2$ cao hơn số mũ của $\epsilon^1$.
-Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên bây giờ ta có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số rất nhỏ.
-Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao hơn.
+Về sau ta sẽ thấy rằng thi thoảng ta muốn giữ các số hạng này, tuy nhiên hiện tại có thể thấy rằng nếu $\epsilon = 0.0000001$, thì $\epsilon^{2}= 0.0000000000001$, là một số nhỏ hơn rất nhiều.
+Khi đưa $\epsilon \rightarrow 0$, ta có thể bỏ qua các số hạng bậc cao.
 Ta sẽ quy ước sử dụng "$\approx$" để ký hiệu rằng hai số hạng bằng nhau với sai số là các thành phần bậc cao.
-Tuy nhiên, nếu ta muốn chứng minh một cách toán học hơn, ta có thể xét phương trình
+Nếu muốn biểu diễn chính quy hơn, ta có thể xét phương trình
 
 
 $$
@@ -470,7 +469,7 @@ và thấy rằng khi $\epsilon \rightarrow 0$, số hạng bên phải cũng ti
 Finally, with the chain rule, we can again progress as before using :eqref:`eq_small_change` and see that
 -->
 
-Cuối cùng, theo quy tắc dây chuyền, chúng ta có thể tiếp tục khai triển như lúc trước, sử dụng :eqref:`eq_small_change` và thấy rằng:
+Cuối cùng, với quy tắc dây chuyền, ta vẫn có thể tiếp tục khai triển sử dụng :eqref:`eq_small_change` và thấy rằng:
 
 $$
 \begin{aligned}
@@ -493,7 +492,7 @@ Chú ý là ở dòng thứ hai trong chuỗi khai triển trên, chúng ta đã
 These rule provide us with a flexible set of tools to compute essentially any expression desired.  For instance,
 -->
 
-Các quy tắc này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như là bất kỳ biểu thức nào mà ta muốn.
+Các quy tắc này cung cấp cho chúng ta một tập hợp các công cụ linh hoạt để tính toán đạo hàm của hầu như bất kỳ biểu thức nào ta muốn.
 Chẳng hạn như trong ví dụ sau:
 
 
@@ -521,7 +520,7 @@ Mỗi dòng của ví dụ này đã sử dụng các quy tắc sau:
 4. The sum rule, derivative of linear functions, derivative of constants.
 -->
 
-1. Quy tắc dây chuyền và công thức đạo hàm của hàm logarithm.
+1. Quy tắc dây chuyền và công thức đạo hàm của hàm logarit.
 2. Quy tắc đạo hàm của tổng.
 3. Đạo hàm của hằng số, quy tắc dây chuyền, và quy tắc đạo hàm của lũy thừa.
 4. Quy tắc đạo hàm của tổng, đạo hàm của hàm tuyến tính, đạo hàm của hằng số.
@@ -538,9 +537,8 @@ Từ ví dụ trên, chúng ta có thể dễ dàng rút ra được hai điều
 2. Having a human follow these rules can be tedious and error prone!
 -->
 
-1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, hàm mũ, và hàm logarithms, 
-2. bằng cách sử dụng những quy tắc trên một cách máy móc.
-3. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ bị mắc lỗi.
+1. Chúng ta có thể lấy đạo hàm của bất kỳ hàm số nào mà có thể diễn tả được bằng tổng, tích, hằng số, lũy thừa, hàm mũ, và hàm logarit bằng cách sử dụng những quy tắc trên một cách máy móc.
+2. Quá trình dùng những quy tắc này để tính đạo hàm bằng tay có thể sẽ rất tẻ nhạt và dễ mắc lỗi.
 
 <!--
 Thankfully, these two facts together hint towards a way forward: this is a perfect candidate for mechanization!
@@ -548,7 +546,7 @@ Indeed backpropagation, which we will revisit later in this section, is exactly 
 -->
 
 Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! 
-Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau đây, không gì khác hơn là một cách hiện thực hóa ý tưởng này.
+Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau ở mục này, là một cách hiện thực hóa ý tưởng này.
 
 <!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
 
