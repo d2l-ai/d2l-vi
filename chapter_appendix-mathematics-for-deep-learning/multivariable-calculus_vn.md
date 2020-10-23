@@ -1223,7 +1223,7 @@ particularly given how central matrix operations are to deep learning applicatio
 -->
 
 Đạo hàm của các hàm có liên quan đến ma trận hoá ra rất đẹp. 
-Phần này sẽ nặng về mặt lý thuyết, vì vậy bạn đọc có thể bỏ qua trong lần đọc đầu tiên. Tuy nhiên sẽ rất hữu ích khi biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là sự quan trọng của chúng đối với các ứng dụng học sâu.  
+Phần này sẽ nặng về mặt kí hiệu, vì vậy bạn đọc có thể bỏ qua trong lần đọc đầu tiên. Tuy nhiên sẽ rất hữu ích khi biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là bởi sự quan trọng của các phép tính ma trận trong các ứng dụng học sâu.  
 
 
 <!--
@@ -1241,7 +1241,7 @@ where we assemble our partial derivatives into the shape of whatever vector, mat
 In this case, we will write
 -->
 
-Ký hiệu có tên *biểu diễn đạo hàm ma trận mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với đạo hàm ma trận trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng ở mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor. 
+Ký hiệu có tên *ma trận đạo hàm sắp xếp theo mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với ma trận đạo hàm trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng theo mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor. 
 Trong trường hợp này, chúng ta viết: 
 
 
@@ -1258,7 +1258,7 @@ $$
 where we matched the shape of the column vector $\mathbf{x}$. 
 -->
 
-trong đó chúng ta khới với hình dạng của vector cột $\mathbf{x}$. 
+mà ở đây nó khớp với hình dạng của vector cột $\mathbf{x}$. 
 
 
 <!--
@@ -1281,7 +1281,7 @@ If we now take the partial derivative with respect to say $\beta_1$, note that e
 which is just $x_1$ multiplied by $\beta_1$, so the we obtain that
 -->
 
-Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, cần lưu ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
+Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, để ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
 là $x_1$ nhân với $\beta_1$. Vì thế, ta có 
 
 
@@ -1326,7 +1326,7 @@ $$
 This illustrates a few factors about matrix calculus that we will often counter throughout this section:
 -->
 
-Dưới đây minh họa một vài yếu tố về giải tích ma trận mà ta sẽ gặp trong suốt phần này: 
+Biểu thức trên minh họa một vài yếu tố về giải tích ma trận mà ta sẽ gặp trong suốt phần này: 
 
 
 <!--
@@ -1341,9 +1341,9 @@ we will need to take transposes to match back to the shape of the original term.
 * Đầu tiên, các tính toán sẽ trở nên khá phức tạp. 
 * Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn có bề ngoài giống với trường hợp đơn biến. 
 Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau. 
-* Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu. 
+* Thứ ba, các chuyển vị có thể xuất hiện mà thoạt nhìn không biết chính xác từ đâu ra. 
 Lý do chủ yếu là do ta quy ước đạo hàm sẽ có cùng kích thước với mẫu số, do đó khi nhân ma trận,
-ta cần lấy chuyển vị tương ứng để khớp với hình dạng ban đầu. 
+ta cần lấy chuyển vị tương ứng để khớp với kích thước ban đầu. 
 
 
 <!--
@@ -1403,7 +1403,7 @@ The same reasoning holds for the second term where we need $j=k$. This gives
 -->
 
 Với số hạng như $\frac{dx_i}{dx_k}$, không khó để thấy rằng đạo hàm trên có giá trị bằng 1 khi $i=k$, ngược lại nó sẽ bằng 0. 
-Điều này có nghĩa là mọi số hạng, với $i$ và $k$ khác nhau, sẽ biến mất khỏi tổng trên, vì thế các số hạng duy nhất còn lại trong tổng đầu tiên đó là những số hạng với $i=k$. 
+Điều này có nghĩa là mọi số hạng với $i$ và $k$ khác nhau sẽ biến mất khỏi tổng trên, vì thế các số hạng duy nhất còn lại trong tổng đầu tiên đó là những số hạng với $i=k$. 
 Lập luận tương tự cũng áp dụng cho số hạng thứ hai khi ta cần $j=k$. Từ đó, ta có 
 
 
@@ -1476,7 +1476,7 @@ This required significantly more work than our last one, but the final result is
 More than that, consider the following computation for traditional single variable derivatives:
 -->
 
-Biểu thức trên cần nhiều tính toán hơn phần trước, nhưng kết quả cuối cùng sẽ gọn gàng. 
+Biểu thức trên cần nhiều biến đổi để suy ra được hơn ở phần trước, nhưng kết quả cuối cùng vẫn sẽ gọn gàng. 
 Hơn thế nữa, hãy xem xét tính toán dưới đây cho đạo hàm đơn biến thông thường: 
 
 $$
@@ -1489,7 +1489,7 @@ Equivalently $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
 Again, we get a result that looks rather like the single variable result but with a transpose tossed in.
 -->
 
-Tương đương với $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
+Tương tự, $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
 Một lần nữa, ta lại thu được kết quả nhìn giống với trường hợp đơn biến nhưng với một phép chuyển vị. 
 
 <!--
@@ -1596,8 +1596,8 @@ To show that this works, we would be remiss to not provide a detailed computatio
 If we already believe that this rule-of-thumb works, feel free to skip past this derivation. To compute 
 -->
 
-Để chứng minh rằng điều này khả thi, ta cần một tính toán chi tiết.
-Nếu bạn chỉ cần biết cách thực hiện trên thực tế, vui lòng bỏ qua phần diễn giải lý thuyết này. Để tính toán
+Để chứng minh rằng điều này là đúng, ta cần một tính toán chi tiết.
+Nếu bạn tin rằng quy tắc trực quan ở trên là đúng, bạn có thể bỏ qua phần trình bày này. Để tính toán
 
 
 $$
@@ -1651,7 +1651,7 @@ that $k$ is a dummy variable which we are summing over inside the inner term.
 For a notationally cleaner example, consider why
 -->
 
-Một sự tinh tế quan trọng ở đây là yêu cầu về $k=a$ không xảy ra bên trong tổng phía trong bởi
+Một điểm tinh tế quan trọng ở đây là yêu cầu về $k=a$ không xảy ra bên trong tổng phía trong bởi
 $k$ chỉ là một biến tùy ý để tính tổng các số hạng trong tổng phía trong. 
 Một ví dụ dễ hiểu hơn: 
 
@@ -1756,7 +1756,7 @@ It is often the case that it is best to work with the indices, or leave it up to
 -->
 
 Lúc này cũng dễ hiểu nếu ta tự hỏi "Tại sao không viết tất cả các quy tắc giải tích đã từng học thành dạng ma trận?
-Điều này rõ ràng là máy móc. Tại sao ta không đơn giản dùng ma trận cho tổng quát?" 
+Điều này rõ ràng là công việc máy móc. Tại sao ta không đơn giản là làm hết một lần cho xong?" 
 Và thực sự có những quy tắc như thế, :cite:`Petersen.Pedersen.ea.2008` cho ta một bản tóm tắt tuyệt vời.
 Tuy nhiên, vì số cách kết hợp các phép toán ma trận nhiều hơn hẳn so với các giá trị một biến, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành cho hàm cho một biến. 
 Thông thường, tốt nhất là làm việc với các chỉ số, hoặc dùng vi phân tự động khi thích hợp. 
@@ -1853,5 +1853,6 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Trần Yến Thy
 * Nguyễn Văn Cường
 * Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
