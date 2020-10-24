@@ -1222,8 +1222,8 @@ but it is useful to know how derivatives of functions involving common matrix op
 particularly given how central matrix operations are to deep learning applications.
 -->
 
-Đạo hàm của các hàm có liên quan đến ma trận hoá ra rất đẹp.
-Phần này các thể trở nên nặng nề về mặt lý thuyết, vì vậy có thể bị bỏ qua trong lần đọc đầu tiên, nhưng rất hữu ích để biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thông thường thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là với sự quan trọng của các phép toán ma trận đối với các ứng dụng học sâu.
+Đạo hàm của các hàm có liên quan đến ma trận hoá ra rất đẹp. 
+Phần này sẽ nặng về mặt kí hiệu, vì vậy bạn đọc có thể bỏ qua trong lần đọc đầu tiên. Tuy nhiên sẽ rất hữu ích khi biết rằng đạo hàm của các hàm liên quan đến các phép toán ma trận thường gọn gàng hơn nhiều so với suy nghĩ ban đầu của chúng ta, đặc biệt là bởi sự quan trọng của các phép tính ma trận trong các ứng dụng học sâu.  
 
 
 <!--
@@ -1232,7 +1232,7 @@ and we want to take the product function $f(\mathbf{x}) = \boldsymbol{\beta}^\to
 and understand how the dot product changes when we change $\mathbf{x}$.
 -->
 
-Hãy xem một ví dụ. Giả sử chúng ta có một vài vector cột cố định $\boldsymbol{\beta}$, và chúng ta muốn lấy hàm tích $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$, và hiểu cách tích vô hướng thay đổi khi chúng ta thay đổi $\mathbf{x}$.
+Hãy xem một ví dụ. Giả sử chúng ta có một vài vector cột cố định $\boldsymbol{\beta}$, và chúng ta muốn lấy hàm tích $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$, và hiểu cách tích vô hướng thay đổi khi chúng ta thay đổi $\mathbf{x}$. 
 
 
 <!--
@@ -1241,8 +1241,8 @@ where we assemble our partial derivatives into the shape of whatever vector, mat
 In this case, we will write
 -->
 
-Ký hiệu có tên *biểu diễn đạo hàm ma trận mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với đạo hàm ma trận trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng ở mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor.
-Trong trường hợp này, chúng ta viết:
+Ký hiệu có tên *ma trận đạo hàm sắp xếp theo mẫu số - denominator layout matrix derivative* sẽ hữu ích khi làm việc với ma trận đạo hàm trong học máy, trong đó chúng ta tập hợp các đạo hàm riêng theo mẫu số của vi phân, biểu diễn thành các dạng vector, ma trận hoặc tensor. 
+Trong trường hợp này, chúng ta viết: 
 
 
 $$
@@ -1258,14 +1258,14 @@ $$
 where we matched the shape of the column vector $\mathbf{x}$. 
 -->
 
-trong đó chúng ta đối sánh hình dạng của vector cột $\mathbf{x}$.
+mà ở đây nó khớp với hình dạng của vector cột $\mathbf{x}$. 
 
 
 <!--
 If we write out our function into components this is
 -->
 
-Nếu chúng ta triển khai hàm của chúng ta thành các thành tố
+Triển khai hàm của chúng ta thành các thành tố 
 
 
 $$
@@ -1281,8 +1281,8 @@ If we now take the partial derivative with respect to say $\beta_1$, note that e
 which is just $x_1$ multiplied by $\beta_1$, so the we obtain that
 -->
 
-Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, cần lưu ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
-là $x_1$ nhân với $\beta_1$. Vì thế , ta có
+Nếu bây giờ ta tính đạo hàm riêng theo $\beta_1$ chẳng hạn, để ý rằng tất cả các phần tử bằng không ngoại trừ số hạng đầu tiên
+là $x_1$ nhân với $\beta_1$. Vì thế, ta có 
 
 
 $$
@@ -1294,7 +1294,7 @@ $$
 or more generally that 
 -->
 
-hoặc tổng quát hơn đó là
+hoặc tổng quát hơn đó là 
 
 
 $$
@@ -1306,7 +1306,7 @@ $$
 We can now reassemble this into a matrix to see
 -->
 
-Bây giờ ta có thể  gộp chúng lại thành một ma trận như sau
+Bây giờ ta có thể gộp chúng lại thành một ma trận như sau 
 
 
 $$
@@ -1326,7 +1326,7 @@ $$
 This illustrates a few factors about matrix calculus that we will often counter throughout this section:
 -->
 
-Dưới đây minh họa một vài yếu tố về giải tích ma trận mà ta sẽ gặp trong suốt phần này:
+Biểu thức trên minh họa một vài yếu tố về giải tích ma trận mà ta sẽ gặp trong suốt phần này: 
 
 
 <!--
@@ -1338,12 +1338,12 @@ The core reason for this is the convention that we match the shape of the denomi
 we will need to take transposes to match back to the shape of the original term.
 -->
 
-* Đầu tiên, các tính toán sẽ trở nên khá phức tạp.
-* Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn có bề ngoài giống với trường hợp đơn biến.
-Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau.
-* Thứ ba, các chuyển vị có thể xuất hiện mà ta không biết chính xác từ đâu.
-Lý do chủ yếu là do quy ước đạo hàm sẽ có cùng kích thước với mẫu số, do đó khi nhân ma trận,
-ta cần lấy chuyển vị tương ứng để có thể thực hiện nhân.
+* Đầu tiên, các tính toán sẽ trở nên khá phức tạp. 
+* Thứ hai, kết quả cuối cùng sẽ gọn gàng hơn quá trình tính toán trung gian, và sẽ luôn có bề ngoài giống với trường hợp đơn biến. 
+Trong trường hợp này, hãy lưu ý rằng $\frac{d}{dx}(bx) = b$ và $\frac{d}{d\mathbf{x}} (\boldsymbol{\beta}^\top\mathbf{x}) = \boldsymbol{\beta}$ là như nhau. 
+* Thứ ba, các chuyển vị có thể xuất hiện mà thoạt nhìn không biết chính xác từ đâu ra. 
+Lý do chủ yếu là do ta quy ước đạo hàm sẽ có cùng kích thước với mẫu số, do đó khi nhân ma trận,
+ta cần lấy chuyển vị tương ứng để khớp với kích thước ban đầu. 
 
 
 <!--
@@ -1351,8 +1351,8 @@ To keep building intuition, let us try a computation that is a little harder.
 Suppose that we have a column vector $\mathbf{x}$, and a square matrix $A$ and we want to compute
 -->
 
-Ta hãy thử một phép tính khó hơn làm một ví dụ minh họa trực quan.
-Giả sử ta có một vector cột $\mathbf{x}$ và một ma trận vuông $A$, và ta ta muốn tính biểu thức sau:
+Ta hãy thử một phép tính khó hơn làm ví dụ minh họa trực quan.
+Giả sử ta có một vector cột $\mathbf{x}$ và một ma trận vuông $A$, và ta ta muốn tính biểu thức sau: 
 
 
 $$\frac{d}{d\mathbf{x}}(\mathbf{x}^\top A \mathbf{x}).$$
@@ -1364,7 +1364,7 @@ To drive towards easier to manipulate notation, let us consider this problem usi
 In this case we can write the function as
 -->
 
-Để thuận tiện cho việc ký hiệu, ta hãy viết lại bài toán bằng ký hiệu Einstein.
+Để thuận tiện cho việc ký hiệu, ta hãy viết lại bài toán bằng ký hiệu Einstein. 
 
 
 $$
@@ -1376,7 +1376,7 @@ $$
 To compute our derivative, we need to understand for every $k$, what the value of
 -->
 
-Để tính đạo hàm, ta cần tính các giá trị sau với từng giá trị của biến $k$:
+Để tính đạo hàm, ta cần tính các giá trị sau với từng giá trị của biến $k$: 
 
 
 $$
@@ -1388,7 +1388,7 @@ $$
 By the product rule, this is
 -->
 
-Theo quy tắc nhân, ta có
+Theo quy tắc nhân, ta có 
 
 
 $$
@@ -1402,9 +1402,9 @@ This means that every term where $i$ and $k$ are different vanish from this sum,
 The same reasoning holds for the second term where we need $j=k$. This gives
 -->
 
-Với số hạng  như $\frac{dx_i}{dx_k}$, không khó để thấy rằng đạo hàm trên có giá trị bằng 1 khi $i=k$, ngược lại nó sẽ bằng 0.
-Điều này có nghĩa là mọi số hạng, với $i$ và $k$ khác nhau, sẽ biến mất khỏi tổng trên, vì thế các số hạng duy nhất còn lại trong tổng đầu tiên đó là những số hạng có $i=k$.
-Lập luận tương tự cũng áp dụng cho số hạng thứ hai khi ta cần $j=k$. Từ đó, ta có
+Với số hạng như $\frac{dx_i}{dx_k}$, không khó để thấy rằng đạo hàm trên có giá trị bằng 1 khi $i=k$, ngược lại nó sẽ bằng 0. 
+Điều này có nghĩa là mọi số hạng với $i$ và $k$ khác nhau sẽ biến mất khỏi tổng trên, vì thế các số hạng duy nhất còn lại trong tổng đầu tiên đó là những số hạng với $i=k$. 
+Lập luận tương tự cũng áp dụng cho số hạng thứ hai khi ta cần $j=k$. Từ đó, ta có 
 
 
 $$
@@ -1417,7 +1417,7 @@ Now, the names of the indices in Einstein notation are arbitrary---the fact that
 so we can re-index so that they both use $i$ to see that
 -->
 
-Hiện tại, tên của các chỉ số trong ký hiệu Einstein là tùy ý - trên thực tế , việc $i$ và $j$ khác nhau là không quan trọng đối với phép tính trên tại thời điểm này,
+Hiện tại, tên của các chỉ số trong ký hiệu Einstein là tùy ý - việc $i$ và $j$ khác nhau không quan trọng cho tính toán tại thời điểm này,
 vì thế ta có thể gán lại chỉ số sao cho cả hai đều chứa $i$
 
 
@@ -1432,7 +1432,7 @@ Let us try and identify this outcome in terms of matrix operations.
 $a_{ki} + a_{ik}$ is the $k, i$-th component of $\mathbf{A} + \mathbf{A}^\top$. This gives
 -->
 
-Bây giờ, ta cần luyện tập một chút để hiểu hơn.
+Bây giờ, ta cần luyện tập một chút để có thể đi sâu hơn.
 Ta hãy thử xác định kết quả trên theo các phép toán ma trận.
 $a_{ki} + a_{ik}$ là phần tử thứ $k, i$ của $\mathbf{A} + \mathbf{A}^\top$. Từ đó, ta có
 
@@ -1449,7 +1449,7 @@ $$
 Similarly, this term is now the product of the matrix $\mathbf{A} + \mathbf{A}^\top$ by the vector $\mathbf{x}$, so we see that
 -->
 
-Tương tự, hạng tử này là tích của ma trận $\mathbf{A} + \mathbf{A}^\top$ với vector $\mathbf{x}$, nên ta có
+Tương tự, hạng tử này là tích của ma trận $\mathbf{A} + \mathbf{A}^\top$ với vector $\mathbf{x}$, nên ta có 
 
 
 $$
@@ -1462,8 +1462,8 @@ Thus, we see that the $k$-th entry of the desired derivative from :eqref:`eq_mat
 and thus the two are the same. Thus yields
 -->
 
-Vì thế, ta thấy phần tử thứ $k$ của đạo hàm ta mong muốn từ :eqref:`eq_mat_goal_1` đơn giản là phần tử thứ $k$ của vector bên vế phải,
-và do đó hai phần tử này là như nhau. Điều này dẫn đến
+Ta thấy phần tử thứ $k$ của đạo hàm mong muốn từ :eqref:`eq_mat_goal_1` đơn giản là phần tử thứ $k$ của vector bên vế phải,
+và do đó hai phần tử này là như nhau. Điều này dẫn đến 
 
 
 $$
@@ -1476,8 +1476,8 @@ This required significantly more work than our last one, but the final result is
 More than that, consider the following computation for traditional single variable derivatives:
 -->
 
-Biểu thức trên cần nhiều tính toán hơn phần trước, nhưng kết quả cuối cùng sẽ gọn gàng.
-Hơn thế nữa, hãy xem xét tính toán dưới đây cho đạo hàm đơn biến thông thường:
+Biểu thức trên cần nhiều biến đổi để suy ra được hơn ở phần trước, nhưng kết quả cuối cùng vẫn sẽ gọn gàng. 
+Hơn thế nữa, hãy xem xét tính toán dưới đây cho đạo hàm đơn biến thông thường: 
 
 $$
 \frac{d}{dx}(xax) = \frac{dx}{dx}ax + xa\frac{dx}{dx} = (a+a)x.
@@ -1489,8 +1489,8 @@ Equivalently $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
 Again, we get a result that looks rather like the single variable result but with a transpose tossed in.
 -->
 
-Tương đương với $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
-Một lần nữa, ta lại thu được kết quả nhìn giống với trường hợp đơn biến nhưng với một phép chuyển vị.
+Tương tự, $\frac{d}{dx}(ax^2) = 2ax = (a+a)x$.
+Một lần nữa, ta lại thu được kết quả nhìn giống với trường hợp đơn biến nhưng với một phép chuyển vị. 
 
 <!--
 At this point, the pattern should be looking rather suspicious, so let us try to figure out why.
@@ -1503,14 +1503,14 @@ In other words, whatever expression we get *must* match the single variable expr
 This means that, with some practice, one can often guess matrix derivatives just by knowing what the associated single variable expression must look like!
 -->
 
-Tại thời điểm này, cách thức tính có vẻ khá đáng ngờ, vì vậy ta hãy thử tìm hiểu lý do tại sao.
-Khi ta lấy đạo hàm ma trận như trên, đầu tiên ta giả sử biểu thức ta nhận được sẽ là một biểu thức ma trận khác:
-một biểu thức mà ta có thể viết nó dưới dạng tích và tổng của các ma trận và chuyển vị của chúng.
-Nếu một biểu thức như vậy tồn tại, nó sẽ phải đúng cho tất cả các ma trận.
-Do đó, nó sẽ đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số,
+Tại thời điểm này, cách tính trên có vẻ khá đáng ngờ, vì vậy ta hãy thử tìm hiểu lý do tại sao.
+Khi ta lấy đạo hàm ma trận như trên, đầu tiên ta giả sử biểu thức ta nhận được sẽ là một biểu thức ma trận khác: 
+một biểu thức mà ta có thể viết nó dưới dạng tích và tổng của các ma trận và chuyển vị của chúng. 
+Nếu một biểu thức như vậy tồn tại, nó sẽ phải đúng cho tất cả các ma trận. 
+Do đó, nó sẽ đúng với ma trận $1 \times 1$, trong đó tích ma trận chỉ là tích của các số, 
 tổng ma trận chỉ là tổng, và phép chuyển vị không có tác dụng gì!
-Nói cách khác, bất kỳ biểu thức nào chúng ta nhận được *phải* phù hợp với biểu thức đơn biến.
-Điều này có nghĩa là, trong một số trường hợp khi ta biết đạo hàm đơn biến tương ứng, ta thường có thể đoán được các đạo hàm ma trận!
+Nói cách khác, bất kỳ biểu thức nào chúng ta nhận được *phải* phù hợp với biểu thức đơn biến. 
+Điều này có nghĩa là khi ta biết đạo hàm đơn biến tương ứng, với một chút luyện tập ta có thể đoán được các đạo hàm ma trận! 
 
 
 <!--
@@ -1520,7 +1520,7 @@ $\mathbf{U}$ is an $n \times r$ and $\mathbf{V}$ is an $r \times m$.
 Let us try to compute
 -->
 
-Ta hãy thử xem sao.
+Cùng kiểm nghiệm điều này.
 Giả sử $\mathbf{X}$ là ma trận $n \times m$, 
 $\mathbf{U}$ là ma trận $n \times r$ và $\mathbf{V}$ là ma trận $r \times m$.
 Ta sẽ tính
@@ -1534,9 +1534,9 @@ Let us try to imaging what this would be for $1\times1$ matrices.
 In that case, we get the expression
 -->
 
-Phép tính này khá quan trọng trong phân rã ma trận.
-Tuy nhiên, ở đây nó chỉ đơn giản là một đạo hàm mà ta cần tính.
-Ta hãy thử tưởng tượng xem nó sẽ như thế nào đối với ma trận $1\times1$.
+Phép tính này khá quan trọng trong phân rã ma trận. 
+Tuy nhiên, ở đây nó chỉ đơn giản là một đạo hàm mà ta cần tính. 
+Hãy thử tưởng tượng xem nó sẽ như thế nào đối với ma trận $1\times1$.
 Trong trường hợp này, ta có biểu thức sau
 
 $$ 
@@ -1549,8 +1549,8 @@ where, the derivative is rather standard.
 If we try to convert this back into a matrix expression we get
 -->
 
-là một đạo hàm khá phổ thông.
-Nếu ta thử chuyển đổi nó thành một biểu thức ma trận, ta có
+Có thể thấy, đây là một đạo hàm khá phổ thông.
+Nếu ta thử chuyển đổi nó thành một biểu thức ma trận, ta có 
 
 
 $$
@@ -1569,9 +1569,9 @@ and we cannot multiply a $n \times m$ and a $n \times r$ matrix since the dimens
 -->
 
 Tuy nhiên, nếu ta nhìn kỹ, điều này không hoàn toàn đúng. Hãy nhớ lại $\mathbf{X}$ có kích thước $n \times m$, giống $\mathbf{U}\mathbf{V}$,
-nên ma trận $2(\mathbf{X} - \mathbf{U}\mathbf{V})$ có kích thước $n \times m$.
-Mặt khác $\mathbf{U}$ có kích thước $n \times r$,
-và ta không thể nhân một ma trận $n \times m$ với một ma trận $n \times r$ vì số chiều của chúng không khớp nhau! 
+nên ma trận $2(\mathbf{X} - \mathbf{U}\mathbf{V})$ có kích thước $n \times m$. 
+Mặt khác $\mathbf{U}$ có kích thước $n \times r$, 
+và ta không thể nhân một ma trận $n \times m$ với một ma trận $n \times r$ vì số chiều của chúng không khớp nhau!  
 
 
 <!--
@@ -1581,10 +1581,10 @@ We can do this by multiplying $U^\top$ by $(\mathbf{X} - \mathbf{U}\mathbf{V})$.
 Thus, we can guess the solution to :eqref:`eq_mat_goal_2` is
 -->
 
-Ta muốn nhận $\frac{d}{d\mathbf{V}}$, cùng kích thước với $\mathbf{V}$ có $r \times m$.
-Vì vậy ta bằng cách nào đó cần phải nhân một ma trận $n \times m$ với một ma trận $n \times r$ (có thể phải chuyển vị) để có ma trận $r \times m$.
-Ta có thể làm điều này bằng cách nhân $U^\top$ với $(\mathbf{X} - \mathbf{U}\mathbf{V})$.
-Vì vậy, ta có thể đoán nghiệm cho :eqref:`eq_mat_goal_2` là
+Ta muốn nhận $\frac{d}{d\mathbf{V}}$, cùng kích thước với $\mathbf{V}$ là $r \times m$.
+Vì vậy ta bằng cách nào đó cần phải nhân một ma trận $n \times m$ với một ma trận $n \times r$ (có thể phải chuyển vị) để có ma trận $r \times m$. 
+Ta có thể làm điều này bằng cách nhân $U^\top$ với $(\mathbf{X} - \mathbf{U}\mathbf{V})$. 
+Vì vậy, ta có thể đoán nghiệm cho :eqref:`eq_mat_goal_2` là 
 
 
 $$
@@ -1596,8 +1596,8 @@ To show that this works, we would be remiss to not provide a detailed computatio
 If we already believe that this rule-of-thumb works, feel free to skip past this derivation. To compute 
 -->
 
-Để chứng minh rằng điều này hoạt động, ta cần một tính toán chi tiết.
-Nếu bạn chỉ cần biết cách thực hiện trên thực tế, vui lòng bỏ qua phần diễn giải lý thuyết này. Để tính toán
+Để chứng minh rằng điều này là đúng, ta cần một tính toán chi tiết.
+Nếu bạn tin rằng quy tắc trực quan ở trên là đúng, bạn có thể bỏ qua phần trình bày này. Để tính toán
 
 
 $$
@@ -1622,8 +1622,8 @@ Recalling that all entries of $\mathbf{X}$ and $\mathbf{U}$ are constants as far
 we may push the derivative inside the sum, and apply the chain rule to the square to get
 -->
 
-Hãy nhớ lại rằng tất cả các phần tử của $\mathbf{X}$ và $\mathbf{U}$ là hằng số khi tính $\frac{d}{dv_{ab}}$,
-chúng ta có thể đẩy đạo hàm bên trong tổng, và áp dụng quy tắc dây chuyền sau đó bình phương lên để có
+Hãy nhớ lại rằng tất cả các phần tử của $\mathbf{X}$ và $\mathbf{U}$ là hằng số khi tính $\frac{d}{dv_{ab}}$, 
+chúng ta có thể đẩy đạo hàm bên trong tổng, và áp dụng quy tắc dây chuyền sau đó bình phương lên để có 
 
 
 $$
@@ -1636,7 +1636,7 @@ As in the previous derivation, we may note that $\frac{dv_{kj}}{dv_{ab}}$ is onl
 If either of those conditions do not hold, the term in the sum is zero, and we may freely discard it. We see that
 -->
 
-Cũng như các phần diễn giải trước, ta có thể để ý rằng $\frac{dv_{kj}}{dv_{ab}}$ chỉ khác không nếu $k=a$ và $j=b$.
+Tương tự phần diễn giải trước, ta có thể để ý rằng $\frac{dv_{kj}}{dv_{ab}}$ chỉ khác không nếu $k=a$ và $j=b$.
 Nếu một trong hai điều kiện đó không thỏa, số hạng trong tổng bằng không, ta có thể tự do loại bỏ nó. Ta thấy rằng
 
 
@@ -1651,9 +1651,9 @@ that $k$ is a dummy variable which we are summing over inside the inner term.
 For a notationally cleaner example, consider why
 -->
 
-Một sự tinh tế quan trọng ở đây là yêu cầu về $k=a$ không xảy ra bên trong tổng phía trong bởi vì
-$k$ chỉ là một biến tùy ý để tính tổng các số hạng trong tổng phía trong.
-Một ví dụ dễ hiểu hơn:
+Một điểm tinh tế quan trọng ở đây là yêu cầu về $k=a$ không xảy ra bên trong tổng phía trong bởi
+$k$ chỉ là một biến tùy ý để tính tổng các số hạng trong tổng phía trong. 
+Một ví dụ dễ hiểu hơn: 
 
 
 $$
@@ -1665,7 +1665,7 @@ $$
 From this point, we may start identifying components of the sum. First, 
 -->
 
-Từ đây, ta có thể bắt đầu xác định các thành phần của tổng. Đầu tiên,
+Từ đây, ta có thể bắt đầu xác định các thành phần của tổng. Đầu tiên, 
 
 
 $$
@@ -1677,7 +1677,7 @@ $$
 So the entire expression in the inside of the sum is
 -->
 
-Cho nên toàn bộ biểu thức bên trong tổng là
+Cho nên toàn bộ biểu thức bên trong tổng là 
 
 
 $$
@@ -1689,7 +1689,7 @@ $$
 This means we may now write our derivative as
 -->
 
-Điều này nghĩa là bây giờ ta có thể viết đạo hàm của ta dưới dạng
+Điều này nghĩa là giờ đây đạo hàm của ta có thể viết dưới dạng
 
 
 $$
@@ -1703,9 +1703,9 @@ which means that we need to exchange the order of the indices on $u_{ia}$.
 If we notice that $u_{ia} = [\mathbf{U}^\top]_{ai}$, we can then write
 -->
 
-Chúng ta có thể muốn nó trông giống như phần tử $a, b$ của một ma trận để mà có thể sử dụng các kỹ thuật trong các ví dụ trước đó để đạt đến một biểu thức ma trận,
-nghĩa là ta cần phải hoán đổi thứ tự của các chỉ số trên $u_{ia}$.
-Nếu để ý $u_{ia} = [\mathbf{U}^\top]_{ai}$, ta có thể viết 
+Chúng ta có thể muốn nó trông giống như phần tử $a, b$ của một ma trận để có thể sử dụng các kỹ thuật trong các ví dụ trước đó nhằm đạt được một biểu thức ma trận, 
+nghĩa là ta cần phải hoán đổi thứ tự của các chỉ số trên $u_{ia}$. 
+Nếu để ý $u_{ia} = [\mathbf{U}^\top]_{ai}$, ta có thể viết  
 
 <!-- ===================== Kết thúc dịch Phần 10 ===================== -->
 
@@ -1720,7 +1720,7 @@ $$
 This is a matrix product, and thus we can conclude that
 -->
 
-Đây là tích một ma trận, vì thế ta có thể kết luận 
+Đây là tích một ma trận, vì thế ta có thể kết luận  
 
 
 $$
@@ -1732,7 +1732,7 @@ $$
 and thus we may write the solution to :eqref:`eq_mat_goal_2`
 -->
 
-nên vì vậy ta có thể viết nghiệm cho :eqref:`eq_mat_goal_2`
+và vì vậy ta có lời giải cho :eqref:`eq_mat_goal_2` 
 
 
 $$
@@ -1744,7 +1744,7 @@ $$
 This matches the solution we guessed above!
 -->
 
-Nghiệm này trùng với nghiệm mà ta đoán ở phía trên!
+Lời giải này trùng với biểu thức mà ta đoán ở phía trên! 
 
 
 <!--
@@ -1755,11 +1755,11 @@ However, due to the plethora of ways matrix operations can be combined compared 
 It is often the case that it is best to work with the indices, or leave it up to automatic differentiation when appropriate.
 -->
 
-Lúc này cũng dễ hiểu nếu ta hỏi rằng "Tại sao không viết tất cả các quy tắc giải tích đã từng học thành dạng ma trận?
-Điều này rõ ràng là máy móc. Tại sao ta không đơn giản dùng ma trận cho tổng quát?"
-Và thực sự có những quy tắc như thế và :cite:`Petersen.Pedersen.ea.2008` cho ta một bản tóm tắt tuyệt vời.
-Tuy nhiên, vì số cách kết hợp các phép toán ma trận nhiều hơn hẳn so với các giá trị một biến, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành cho hàm cho một biến.
-Thông thường, tốt nhất là làm việc với các chỉ số, hoặc dùng vi phân tự động khi thích hợp.
+Lúc này cũng dễ hiểu nếu ta tự hỏi "Tại sao không viết tất cả các quy tắc giải tích đã từng học thành dạng ma trận?
+Điều này rõ ràng là công việc máy móc. Tại sao ta không đơn giản là làm hết một lần cho xong?" 
+Và thực sự có những quy tắc như thế, :cite:`Petersen.Pedersen.ea.2008` cho ta một bản tóm tắt tuyệt vời.
+Tuy nhiên, vì số cách kết hợp các phép toán ma trận nhiều hơn hẳn so với các giá trị một biến, nên có nhiều quy tắc đạo hàm ma trận hơn các quy tắc dành cho hàm cho một biến. 
+Thông thường, tốt nhất là làm việc với các chỉ số, hoặc dùng vi phân tự động khi thích hợp. 
 
 
 ## Tóm tắt
@@ -1771,10 +1771,10 @@ These allow us to see how a multi-variable function changes when we make an arbi
 * Matrix calculus allows us to write the derivatives of matrix expressions in concise ways.
 -->
 
-* Với biến nhiều chiều, chúng ta có thể định nghĩa gradient cùng mục đích như các đạo hàm một chiều.
-Điều này cho phép ta thấy cách một hàm đa biến thay đổi khi ta tạo ra bất kỳ thay đổi nhỏ nào đối với đầu vào.
-* Thuật toán lan truyền ngược có thể được xem như một phương pháp trong việc tổ chức quy tắc dây chuyền đa biến để cho phép tính toán hiệu quả các đạo hàm riêng.
-* Giải tích ma trận cho phép chúng ta viết các đạo hàm của biểu thức ma trận một cách gọn gàng hơn.
+* Với không gian nhiều chiều, chúng ta có thể định nghĩa gradient cùng mục đích như các đạo hàm một chiều. 
+Điều này cho phép ta thấy cách một hàm đa biến thay đổi như thế nào khi có bất kỳ thay đổi nhỏ xảy ra ở đầu vào. 
+* Thuật toán lan truyền ngược có thể được xem như một phương pháp trong việc tổ chức quy tắc dây chuyền đa biến cho phép tính toán hiệu quả các đạo hàm riêng. 
+* Giải tích ma trận cho phép chúng ta viết các đạo hàm của biểu thức ma trận một cách gọn gàng hơn. 
 
 
 ## Bài tập
@@ -1789,10 +1789,10 @@ and $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Why do you get the same
 How can we geometrically interpret the condition of $\nabla f = 0$ in terms of $g$ and $h$?
 -->
 
-1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Hãy cho biết tại sao bạn lại ra cùng đáp án?
-2. Cho $\mathbf{v}$ là một vector $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? là gì?
-3. Cho $L(x, y) = \log(e^x + e^y)$. Tính toán gradient. Tổng của các thành phần của gradient là gì?
-4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem $(0,0)$ là cực đại, cực tiểu, hay không phải cả hai.
+1. Cho một vector cột $\boldsymbol{\beta}$, tính các đạo hàm của cả hai ma trận $f(\mathbf{x}) = \boldsymbol{\beta}^\top\mathbf{x}$ và ma trận $g(\mathbf{x}) = \mathbf{x}^\top\boldsymbol{\beta}$. Hãy cho biết tại sao bạn lại ra cùng đáp án? 
+2. Cho $\mathbf{v}$ là một vector $n$ chiều. Vậy $\frac{\partial}{\partial\mathbf{v}}\|\mathbf{v}\|_2$? là gì? 
+3. Cho $L(x, y) = \log(e^x + e^y)$. Tính toán gradient. Tổng của các thành phần của gradient là gì? 
+4. Cho $f(x, y) = x^2y + xy^2$. Chứng minh rằng điểm tới hạn duy nhất là $(0,0)$. Bằng việc xem xét $f(x, x)$, hãy xác định xem $(0,0)$ là cực đại, cực tiểu, hay không phải cả hai. 
 5. Giả sử ta đang tối thiểu hàm $f(\mathbf{x}) = g(\mathbf{x}) + h(\mathbf{x})$.
 Làm cách nào ta có thể diễn giải bằng hình học điều kiện $\nabla f = 0$ thông qua $g$ và $h$? 
 
@@ -1852,5 +1852,7 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 <!-- Phần 11 -->
 * Trần Yến Thy
 * Nguyễn Văn Cường
+* Nguyễn Lê Quang Nhật
+* Lê Khắc Hồng Phúc
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
