@@ -43,7 +43,7 @@ and we will use the notation $\frac{\partial}{\partial w_1}$ for the derivative 
 -->
 
 Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_), 
-và ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`. 
+và ký hiệu đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`. 
 
 <!--
 Now, let us take this and change $w_2$ a little bit to $w_2 + \epsilon_2$:
@@ -73,7 +73,7 @@ By continuing in this manner, we may write that
 -->
 
 Một lần nữa, ta lại sử dụng ý tưởng đã thấy ở :eqref:`eq_part_der` rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước. 
-Cứ tiếp tục theo cách này, ta có thể viết được
+Cứ tiếp tục theo cách này, ta có
 
 
 $$
@@ -278,7 +278,7 @@ Các bước của thuật toán được miêu tả dưới đây:
 4. Repeat.
 -->
 
-1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$. 
+1. Bắt đầu với giá trị ban đầu ngẫu nhiên của tham số $\mathbf{w}$. 
 2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất. 
 3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$. 
 4. Lặp lại. 
@@ -310,9 +310,9 @@ pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w
 -->
 
 Để thuận tiện, ta giả định hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$. 
-Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn giá trị của biểu thức trên trở nên càng âm. 
-Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể. 
-Nhắc lại kiến thức của phép cô-sin, ta có thể biến đổi nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ radian hay $180$ độ. 
+Nếu muốn $L$ giảm càng nhanh, ta sẽ muốn giá trị của biểu thức trên càng âm càng tốt. 
+Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị này âm nhất có thể. 
+Nhắc lại kiến thức của hàm cô-sin, giá trị âm nhất của hàm này là $\cos(\theta) = -1$, là khi góc giữa vector gradient và hướng cần chọn là $\pi$ radian hay $180$ độ. 
 Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
 chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều với $\nabla_{\mathbf{w}} L(\mathbf{w})$! 
 
