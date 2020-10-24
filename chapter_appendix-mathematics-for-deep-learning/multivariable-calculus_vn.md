@@ -290,7 +290,7 @@ Using the geometric understanding of dot products from :numref:`sec_geometry-lin
 -->
 
 Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai. 
-Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất* (*driection of steepest descent*). 
+Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất* (*direction of steepest descent*). 
 Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau 
 
 
