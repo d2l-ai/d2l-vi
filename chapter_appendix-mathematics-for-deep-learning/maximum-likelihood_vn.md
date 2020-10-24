@@ -544,7 +544,7 @@ $$
 Thus, if we take negative logarithms of this we obtain
 -->
 
-Do đó, nếu ta lấy trừ của logarit cho biểu thức này thì ta sẽ nhận được
+Do đó, nếu ta lấy đối của logarit cho biểu thức này thì ta sẽ nhận được
 
 $$
 \begin{aligned}
