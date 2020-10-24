@@ -80,7 +80,7 @@ do đó ta có thể bỏ qua nó mà không ảnh hưởng tới việc chọn 
 Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào là tốt hơn hết,
 vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
 Điều này là hợp lý chẳng hạn trong ví dụ lật đồng xu, ở đây xác suất để ra mặt ngửa có thể là
-bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ niềm tin nào trước đó rằng đồng xu có cân xứng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
+bất kỳ giá trị nào trong khoảng $[0,1]$ khi mà ta không có bất kỳ niềm tin nào trước đó rằng đồng xu có cân xứng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
 Do đó, ta thấy rằng việc áp dụng quy tắc Bayes sẽ chỉ ra lựa chọn tốt nhất cho $\boldsymbol{\theta}$ là ước lượng hợp lý cực đại cho $\boldsymbol{\theta}$:
 
 $$
