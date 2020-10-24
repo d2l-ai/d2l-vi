@@ -270,7 +270,7 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-Con số này hoàn toàn nằm trong một số thực dấu chấm động $32$-bit với độ chính xác đơn.
+Con số này hoàn toàn nằm trong khoảng giá trị của một số thực dấu phẩy động $32$-bit với độ chính xác đơn.
 Vì vậy, chúng ta nên xem xét *độ hợp lý thang log* (*log-likelihood*), chính là
 
 $$
