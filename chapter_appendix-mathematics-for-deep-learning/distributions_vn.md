@@ -5,7 +5,7 @@
 # Distributions
 -->
 
-# Phân phối
+# Các Phân phối Xác suất
 :label:`sec_distributions`
 
 
