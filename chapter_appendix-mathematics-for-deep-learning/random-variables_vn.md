@@ -1678,7 +1678,7 @@ $$
 This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 -->
 
-Con số này bây giờ nằm trong khoảng $-1$ và $1$ với $1$ mang ý nghĩa tương quan nhiều nhất và $-1$ mang ý nghĩa tương quan ít nhất.
+Đại lượng này bây giờ nằm trong khoảng $-1$ và $1$ với $1$ nghĩa là tương quan dương nhiều nhất, $-1$ nghĩa là tương quan âm nhiều nhất.
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
