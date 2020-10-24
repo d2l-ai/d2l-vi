@@ -44,7 +44,7 @@ based on the assumptions that the sample distribution can replicate the populati
 Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
 Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*. 
 Mẫu được lấy ra từ một *tổng thể* (*population*), là biểu diễn của toàn bộ những cá thể, đồ vật hay sự kiện tương tự nhau mà thí nghiệm của ta quan tâm.
-Trái với thống kê mô tả, *thống kê suy luận* dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, 
+Trái với thống kê mô tả, *suy luận thống kê* (*statistical inference*) dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, 
 dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối tổng thể. 
 
 
@@ -55,9 +55,9 @@ In contrast, machine learning emphasizes on making accurate predictions, without
 -->
 
 Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?". 
-Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận. 
+Về căn bản, thống kê tập trung vào các vấn đề suy luận. 
 Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B. 
-Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách rõ ràng và hiểu rõ chức năng của từng tham số. 
+Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách tưởng minh và hiểu rõ chức năng của từng tham số. 
 
 
 <!--
@@ -69,7 +69,7 @@ It is straightforward to extend to the case where $\theta$ is a vector or a tens
 
 Trong chương này, chúng tôi sẽ giới thiệu ba loại phương pháp thống kê suy luận: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy. 
 Các phương pháp này có thể giúp chúng ta suy luận những đặc tính của một tổng thể, hay nói cách khác, tham số thật $\theta$. 
-Để cho ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng. 
+Nói ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng. 
 Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là khá đơn giản nên chúng tôi sẽ không đề cập đến vấn đề này. 
 
 
