@@ -508,7 +508,7 @@ William Gosset who is the father of Student's t-distribution, and Ronald Fisher 
 Chủ đề thường gặp nhất trong suy luận thống kê là kiểm định giả thuyết.  
 Tuy kiểm định giả thuyết trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot từ tận những năm 1700. 
 John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng mỗi năm nhiều nam giới được sinh ra hơn so với nữ giới.
-Tiếp đó, phép thử nghiệm độ tin cậy hiện đại là di sản trí tuệ của Karl Pearson,
+Tiếp đó, phép thử nghiệm độ tin cậy ngày nay là di sản trí tuệ của Karl Pearson,
 người đã phát minh ra $p$-value (*trị số p*) và bài kiểm định Chi bình phương Pearson (*Pearson's chi-squared test*), William Gosses, 
 cha đẻ của phân phối Student và Ronald Fisher, người đã khởi xướng giả thuyết gốc và kiểm định độ tin cậy. 
 
@@ -565,7 +565,7 @@ Then, you can collect their performance and compare the results.
 In this case, our null hypothesis will be that there is no difference between the two groups, and our alternate will be that there is.
 -->
 
-Thứ hai, sau một thời gian sử dụng thuốc, bạn cần đo khả năng hiểu toán của hai nhóm trên bằng cùng tiêu chuẩn đo lường,
+Thứ hai, sau một thời gian sử dụng thuốc, bạn cần đo khả năng hiểu toán của hai nhóm trên bằng tiêu chuẩn đo lường chung,
 ví dụ như cho các tình nguyện viên làm cùng một bài kiểm tra sau khi học một công thức toán mới.
 Sau đó bạn có thể thu thập kết quả năng lực của họ và so sánh chúng.
 Trong trường hợp này, giả thuyết gốc của chúng ta đó là không có sự khác biệt nào giữa hai nhóm, và giả thuyết đối là có sự khác biệt.   
@@ -580,7 +580,7 @@ How long should you run the test? How do you decided if there is a difference be
 Do you care about the average performance only, or do you also the range of variation of the scores. And so on.
 -->
 
-Quy trình trên vẫn chưa được xem là chính thức. 
+Quy trình trên vẫn chưa hoàn toàn chính quy. 
 Có rất nhiều chi tiết mà bạn phải suy nghĩ cẩn trọng. 
 Ví dụ, đâu là tiêu chuẩn đo lường thích hợp để kiểm tra khả năng hiểu toán? 
 Bao nhiêu tình nguyện viên thực hiện bài kiểm tra là đủ để bạn có thể tự tin khẳng định sự hiệu quả của thuốc? 
@@ -601,7 +601,7 @@ Nếu chúng ta chứng minh được giả thuyết gốc khả năng rất cao
 To complete the story of how to work with hypothesis testing, we need to now introduce some additional terminology and make some of our concepts above formal.
 -->
 
-Để hiểu rõ hơn về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và hiểu các khái niệm một cách chính thức hơn. 
+Để hiểu rõ hơn về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và chính quy hóa các khái niệm ở trên. 
 
 
 <!--
@@ -614,7 +614,7 @@ To complete the story of how to work with hypothesis testing, we need to now int
 The *statistical significance* measures the probability of erroneously reject the null hypothesis, $H_0$, when it should not be rejected, i.e.,
 -->
 
-*Ý nghĩa thống kê* đo xác suất lỗi khi bác bỏ giả thuyết gốc, $H_0$, trong khi đúng ra không nên bác bỏ nó.
+*Ý nghĩa thống kê* (*statistical significance*) đo xác suất lỗi khi bác bỏ giả thuyết gốc, $H_0$, trong khi đúng ra không nên bác bỏ nó.
 
 
 $$ \text{ ý nghĩa thống kê }= 1 - \alpha = 1 - P(\text{ bác bỏ } H_0 \mid H_0 \text{ là đúng } ).$$
