@@ -1328,7 +1328,7 @@ $$
 Our density does not directly tell us about what happens in this case, we need to split into small intervals in $y$ as well, so we can write this as
 -->
 
-Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì, ta cũng cần chia nhỏ $y$ thành các khoảng nhỏ, do đó ta có thể viết lại hàm này như sau:
+Trong trường hợp này mật độ không trực tiếp cho ta biết điều gì, ta cũng cần chia $y$ thành các khoảng nhỏ, do đó ta có thể viết lại hàm này như sau:
 
 
 $$
@@ -1353,7 +1353,7 @@ Indeed, after canceling one factor of epsilon from both sides, and recognizing t
 -->
 
 Điều này tức là lấy tổng giá trị mật độ trên chuỗi các hình vuông theo cột như trong :numref:`fig_marginal`.
-Thực vậy, sau khi khử số hạng epsilon ở cả hai vế, tổng vế phải chính là tích phân theo $y$, ta có thể kết luận rằng:
+Thực vậy, sau khi khử số hạng epsilon ở cả hai vế, tổng vế phải chính là tích phân theo $y$ và ta có thể kết luận rằng:
 
 
 $$
@@ -1397,7 +1397,7 @@ When dealing with multiple random variables, there is one additional summary sta
 This measures the degree that two random variable fluctuate together.
 -->
 
-Khi làm việc với nhiều biến ngẫu nhiên, có thêm một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
+Khi làm việc với nhiều biến ngẫu nhiên, còn có một thông số thống kê nữa rất có ích: *hiệp phương sai (covariance)*.
 Thông số này đo mức độ biến thiên cùng nhau của hai biến ngẫu nhiên.
 
 
@@ -1421,7 +1421,7 @@ Suppose that we have the following probabilities
 -->
 
 Để hiểu một cách trực quan về công thức trên, xét cặp biến ngẫu nhiên:
-$X$ có giá trị $1$ và $3$, và $Y$ có giá trị $-1$ và $3$.
+$X$ có thể nhận giá trị $1$ và $3$, và $Y$ có thể nhận giá trị $-1$ và $3$.
 Giả sử ta có các xác suất sau:
 
 
@@ -1466,10 +1466,10 @@ Finally, when $p=1/2$ (the case where they are unrelated), the covariance is $0$
 Thus we see that the covariance measures how these two random variables are related.
 -->
 
-Khi $p=1$ (trường hợp mà trong cùng một thời điểm chúng cùng là giá trị lớn nhất hoặc nhỏ nhất) có hiệp phương sai bằng $2$.
+Khi $p=1$ (trường hợp mà trong cùng một thời điểm chúng cùng là giá trị lớn nhất hoặc nhỏ nhất) hiệp phương sai bằng $2$.
 Khi $p=0$ (trường hợp mà chúng ngược nhau) hiệp phương sai bằng $-2$.
 Cuối cùng, khi $p=1/2$ (trường hợp chúng không liên quan đến nhau), hiệp phương sai bằng $0$.
-Từ đó ta thấy rằng hiệp phương sai đo mức độ hai biến ngẫu nhiên này liên quan với nhau.
+Từ đó ta thấy rằng hiệp phương sai biểu thị quan hệ của hai biến ngẫu nhiên này với nhau.
 
 
 <!--
@@ -1478,9 +1478,9 @@ More complex relationships like $X = Y^2$ where $Y$ is randomly chosen from $\{-
 Indeed a quick computation shows that these random variables have covariance zero, despite one being a deterministic function of the other.
 -->
 
-Chú ý là hiệp phương sai chỉ đo mối quan hệ tuyến tính.
+Chú ý là hiệp phương sai chỉ biểu thị mối quan hệ tuyến tính.
 Các quan hệ phức tạp hơn như $X = Y^2$, trong đó $Y$ được chọn ngẫu nhiên với xác suất bằng nhau từ tập $\{-2, -1, 0, 1, 2\}$, có thể không được thể hiện.
-Quả thực qua tính toán có thể chỉ ra rằng hai biến ngẫu nhiên này có hiệp phương sai bằng không, mặc dù một biến là hàm tất định của biến còn lại.
+Quả thực ta có thể tính được hiệp phương sai của hai biến ngẫu nhiên này bằng không, mặc dù một biến là hàm tất định của biến còn lại.
 
 
 <!--
@@ -1489,8 +1489,8 @@ At this point, we are pretty comfortable with doing the transition between discr
 so we will provide the continuous analogue of :eqref:`eq_cov_def` without any derivation.
 -->
 
-Với biến ngẫu nhiên liên tục, mọi chuyện cũng tương tự.
-Lúc này ta dễ dàng biến đổi giữa rời rạc và liên tục,
+Với biến ngẫu nhiên liên tục, khái niệm hiệp phương sai không đổi.
+Lúc này ta đã quen với việc biến đổi giữa miền rời rạc và liên tục,
 nên chúng tôi sẽ chỉ cung cấp dạng liên tục của :eqref:`eq_cov_def` mà không giải thích thêm:
 
 
@@ -1607,7 +1607,7 @@ $$
 This allows us to generalize the variance summation rule for correlated random variables.
 -->
 
-Công thức này là dạng tổng quát của tổng phương sai cho các biến ngẫu nhiên tương quan.
+Công thức này là dạng tổng quát của quy tắc tính tổng phương sai cho các biến ngẫu nhiên tương quan.
 
 
 <!--
@@ -1629,7 +1629,7 @@ Như trong trường hợp của kỳ vọng và phương sai, hãy xét đến 
 Nếu $X$ được đo bằng một đơn vị (giả sử là inch), và $Y$ được đo bởi đơn vị khác (giả sử là đô-la),
 phương sai được tính bởi tích của hai đơn vị này $\text{inch} \times \text{đô-la}$.
 Những đơn vị này khó diễn giải, nên ta muốn có một phép đo sự tương quan mà không phụ thuộc vào đơn vị.
-Thật vậy, ta thường không quan tâm định lượng tương quan một cách chính xác, mà thường cân nhắc sự tương quan này cùng hay ngược hướng, và mối liên hệ mạnh như thế nào.
+Thật vậy, ta thường không quan tâm tới định lượng tương quan một cách chính xác, mà thường muốn biết sự tương quan này cùng hay ngược hướng, và mạnh như thế nào.
 
 
 <!--
@@ -1641,12 +1641,12 @@ Thus, to find our unit-invariant measure of correlation, we will need to divide 
 Indeed we have a clear candidate, the standard deviation! Indeed if we define the *correlation coefficient* to be
 -->
 
-Để cắt nghĩa, hãy thực hiện một thí nghiệm suy nghĩ.
-Giả sử ta chuyển đổi các biến ngẫu nhiên đơn vị inch và đô-la thành inch và xu.
+Để cắt nghĩa, hãy thực hiện một thí nghiệm tưởng tượng.
+Giả sử ta chuyển đổi các biến ngẫu nhiên có đơn vị inch và đô-la thành inch và xu.
 Trong trường hợp này biến ngẫu nhiên $Y$ được nhân thêm $100$. Theo định nghĩa, $\mathrm{Cov}(X, Y)$ cũng sẽ được nhân thêm $100$.
 Như vậy sự thay đổi đơn vị làm tăng hiệp phương sai $100$ lần.
-Do đó, để có độ tương quan không phụ thuộc vào đơn vị, ta cần chia cho một hạng tử nào đó cũng tăng $100$ lần.
-Ta có một ứng viên sáng giá, là độ lệch chuẩn! Có thể định nghĩa *hệ số tương quan - correlation coefficient* như sau:
+Do đó, để có độ tương quan không phụ thuộc vào đơn vị, ta cần chia cho một đại lượng nào đó cũng được tăng thêm $100$ lần.
+Một lựa chọn rõ ràng chính là độ lệch chuẩn! Có thể định nghĩa *hệ số tương quan - correlation coefficient* như sau:
 
 $$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
 :eqlabel:`eq_cor_def`
@@ -1657,7 +1657,7 @@ we see that this is a unit-less value. A little mathematics can show that this n
 between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $-1$ means maximally negatively correlated.
 -->
 
-ta thấy đây là giá trị không đơn vị. Một chút toán có thể chứng minh rằng $\rho(X, Y)$
+ta thấy đây là giá trị không phụ thuộc vào đơn vị. Một chút toán có thể chứng minh rằng $\rho(X, Y)$
 nằm giữa $-1$ và $1$ với $1$ ứng với tương quan cực đại dương, còn $-1$ ứng với tương quan cực đại âm. 
 
 
@@ -1666,7 +1666,7 @@ Returning to our explicit discrete example above, we can see that $\sigma_X = 1$
 so we can compute the correlation between the two random variables using :eqref:`eq_cor_def` to see that
 -->
 
-Quay lại ví dụ rời rạc rõ ràng ở phía trên, ta có $\sigma_X = 1$ và $\sigma_Y = 2$, 
+Quay lại ví dụ ở miền rời rạc phía trên, ta có $\sigma_X = 1$ và $\sigma_Y = 2$, 
 và tương quan giữa hai biến ngẫu nhiên có thể tính bằng :eqref:`eq_cor_def`:
 
 $$
@@ -1800,8 +1800,8 @@ As a final note, you may feel like some of these formulae are familiar.
 Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see that this is
 -->
 
-Lưu ý cuối cùng, bạn có thể thấy rằng một vài công thức khá giống nhau.
-Quả thực, nếu khai triển tất cả giả sử $\mu_X = \mu_Y = 0$, ta có:
+Lưu ý cuối cùng, bạn có thể thấy rằng một vài công thức trên khá quen thuộc.
+Quả thực, nếu khai triển tất cả với giả định $\mu_X = \mu_Y = 0$, ta có:
 
 
 $$
@@ -1829,7 +1829,7 @@ much of the intuition we have from geometry can be applied to thinking about ran
 -->
 
 Quả thực nếu nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và độ tương quan là cô-sin của các góc,
-các trực giác ta có từ hình học có thể được áp dụng vào tư duy về các biến ngẫu nhiên. 
+các trực giác ta có từ hình học có thể được áp dụng để tư duy về các biến ngẫu nhiên. 
 
 
 ## Tóm tắt
@@ -1858,11 +1858,11 @@ Chúng có một vài cản trở kỹ thuật khó giải quyết hơn so với
 Đây là một góc nhìn hữu ích để hợp nhất các biến rời rạc và liên tục.
 * Kỳ vọng là giá trị trung bình của một biến ngẫu nhiên.
 * Phương sai là trung bình bình phương sự chênh lệch giữa biến ngẫu nhiên và kỳ vọng của nó.
-* Độ lệch chuẩn là căn bậc hai của phương sai, đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
-* Bất đẳng thức Chebyshev chặt chẽ hóa điều này bằng cách đưa ra một khoảng rõ ràng mà biến ngẫu nhiên hầu hết sẽ rơi vào.
+* Độ lệch chuẩn là căn bậc hai của phương sai, được dùng để đo phạm vi giá trị mà biến ngẫu nhiên có thể nhận.
+* Bất đẳng thức Chebyshev chặt chẽ hóa điều này bằng cách đưa ra một khoảng tường minh mà hầu hết các giá trị của biến ngẫu nhiên sẽ rơi vào.
 * Mật độ kết hợp (*joint density*) cho phép ta làm việc với các biến ngẫu nhiên tương quan.
-Ta có thể loại bỏ mật độ kết hợp bằng cách tích phân trên miền của các biến ngẫu nhiên khác để có phân phối của biến ngẫu nhiên mong muốn.
-* Hiệp phương sai và hệ số tương quan là một cách đo bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên có tương quan.
+Ta có thể biên hóa mật độ kết hợp bằng cách lấy tích phân theo các biến ngẫu nhiên khác để thu được phân phối của biến ngẫu nhiên mong muốn.
+* Hiệp phương sai và hệ số tương quan là một cách đo bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên tương quan.
 
 
 ## Bài tập
