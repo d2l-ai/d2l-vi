@@ -17,7 +17,7 @@ the parameters which make the data have the highest probability are the most lik
 
 Một trong những cách tư duy thường thấy nhất trong học máy là quan điểm về hợp lý cực đại.
 Đây là khái niệm mà khi làm việc với một mô hình xác suất mà các tham số chưa biết,
-các tham số làm cho sự kiện có xác suất xảy ra cao nhất là những tham số hợp lý nhất.
+các tham số mà làm cho các điểm dữ liệu đã quan sát có xác suất xảy ra cao nhất là những tham số hợp lý nhất.
 
 
 <!--
