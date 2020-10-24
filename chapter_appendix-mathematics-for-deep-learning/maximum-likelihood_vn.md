@@ -75,7 +75,7 @@ any value in $[0,1]$ without any prior belief it is fair or not (often referred 
 Thus we see that our application of Bayes' rule shows that our best choice of $\boldsymbol{\theta}$ is the maximum likelihood estimate for $\boldsymbol{\theta}$:
 -->
 
-Biểu thức $P(X)$ là xác suất chưa biết tham số của dữ liệu đã có, và nó hoàn toàn không phụ thuộc vào tham số $\boldsymbol{\theta}$,
+Biểu thức $P(X)$ là xác suất sinh dữ liệu độc lập tham số, và nó hoàn toàn không phụ thuộc vào tham số $\boldsymbol{\theta}$,
 do đó ta có thể bỏ qua nó mà không ảnh hưởng tới việc chọn ra $\boldsymbol{\theta}$ tốt nhất.
 Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào là tốt hơn hết,
 vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
