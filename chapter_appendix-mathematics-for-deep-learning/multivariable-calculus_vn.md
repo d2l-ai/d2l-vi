@@ -14,8 +14,8 @@ Now that we have a fairly strong understanding of derivatives of a function of a
 let us return to our original question where we were considering a loss function of potentially billions of weights.
 -->
 
-Bây giờ chúng ta đã có hiểu biết vững chắc về đạo hàm của một hàm đơn biến,
-hãy cùng trở lại câu hỏi ban đầu về hàm mất mát của (nhiều khả năng là) hàng tỷ trọng số.
+Bây giờ chúng ta đã có hiểu biết vững chắc về đạo hàm của một hàm đơn biến, 
+hãy cùng trở lại câu hỏi ban đầu về hàm mất mát của (nhiều khả năng là) hàng tỷ trọng số. 
 
 
 <!--
@@ -30,8 +30,8 @@ What :numref:`sec_single_variable_calculus` tells us is that if we change a sing
 This is nothing more than a function of a single variable, so we can write
 -->
 
-Những gì được nói trong :numref:`sec_single_variable_calculus` là ta sẽ biết điều gì sẽ xảy ra nếu ta thay đổi chỉ một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại.
-Trường hợp này cũng không khác với một hàm đa biến là mấy, nên ta có thể viết
+Nhớ lại :numref:`sec_single_variable_calculus`, ta đã bàn luận về điều gì sẽ xảy ra nếu chỉ thay đổi một trong số hàng tỷ các trọng số và giữ nguyên những trọng số còn lại. 
+Điều này hoàn toàn không có gì khác với một hàm đơn biến, nên ta có thể viết 
 
 $$L(w_1+\epsilon_1, w_2, \ldots, w_N) \approx L(w_1, w_2, \ldots, w_N) + \epsilon_1 \frac{d}{dw_1} L(w_1, w_2, \ldots, w_N).$$
 :eqlabel:`eq_part_der`
@@ -42,8 +42,8 @@ We will call the derivative in one variable while fixing the other the *partial 
 and we will use the notation $\frac{\partial}{\partial w_1}$ for the derivative in :eqref:`eq_part_der`.
 -->
 
-Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_),
-và ta ký hiệu cho đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`.
+Chúng ta sẽ gọi đạo hàm của một biến trong khi không thay đổi những biến còn lại là *đạo hàm riêng* (_partial derivative_), 
+và ký hiệu đạo hàm này là $\frac{\partial}{\partial w_1}$ trong phương trình :eqref:`eq_part_der`. 
 
 <!--
 Now, let us take this and change $w_2$ a little bit to $w_2 + \epsilon_2$:
@@ -72,8 +72,8 @@ the same way we could discard $\epsilon^{2}$ in the previous section, along with
 By continuing in this manner, we may write that
 -->
 
-Một lần nữa, ta lại sử dụng những gì ta đã thấy ở :eqref:`eq_part_der` và ý tưởng rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước.
-Cứ tiếp tục theo cách này, ta có thể viết được
+Một lần nữa, ta lại sử dụng ý tưởng đã thấy ở :eqref:`eq_part_der` rằng $\epsilon_1\epsilon_2$ là một số hạng bậc cao và có thể được loại bỏ tương tự như cách mà ta có thể loại bỏ $\epsilon^{2}$ trong mục trước. 
+Cứ tiếp tục theo cách này, ta có
 
 
 $$
@@ -85,7 +85,7 @@ $$
 This may look like a mess, but we can make this more familiar by noting that the sum on the right looks exactly like a dot product, so if we let
 -->
 
-Thoạt nhìn có vẻ là một mớ hỗn độn, chú ý rằng phép tổng bên phải chính là biểu diễn của phép tích vô hướng và ta có thể khiến chúng trở nên quen thuộc hơn bằng cách cho
+Thoạt nhìn đây có vẻ là một mớ hỗn độn, tuy nhiên chú ý rằng phép tổng bên phải chính là biểu diễn của phép tích vô hướng và ta có thể khiến chúng trở nên quen thuộc hơn. Với
 
 
 $$
@@ -98,7 +98,7 @@ $$
 then
 -->
 
-thì
+ta có
 
 
 $$L(\mathbf{w} + \boldsymbol{\epsilon}) \approx L(\mathbf{w}) + \boldsymbol{\epsilon}\cdot \nabla_{\mathbf{w}} L(\mathbf{w}).$$
@@ -119,10 +119,10 @@ It allows us to tell approximately how the function $L$ will change given any pe
 As we will see in the next section, this will provide us with an important tool in understanding geometrically how we can learn using information contained in the gradient.
 -->
 
-Phương trình :eqref:`eq_nabla_use` đáng để ta xem xét thêm một chút.
-Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ là chúng ta chuyển tất cả về dạng vector và tích vô hướng.
-Nó cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với bất kỳ nhiễu loạn nào từ đầu vào.
-Như ta sẽ thấy trong mục tiếp theo, điều này sẽ cung cấp cho chúng ta một công cụ quan trọng để hiểu dưới dạng hình học cách ta có thể học từ thông tin chứa trong gradient.
+Phương trình :eqref:`eq_nabla_use` đáng để ta suy ngẫm.
+Nó có dạng đúng y như những gì ta đã thấy trong trường hợp một chiều, chỉ khác là tất cả đã được biến đổi về dạng vector và tích vô hướng.
+Điều này cho chúng ta biết một cách xấp xỉ hàm $L$ sẽ thay đổi như thế nào với một nhiễu loạn bất kỳ ở đầu vào. 
+Như ta sẽ thấy trong mục tiếp theo, đây sẽ là một công cụ quan trọng giúp chúng ta hiểu được cách học từ thông tin chứa trong gradient dưới góc nhìn hình học.
 
 
 <!--
@@ -131,7 +131,7 @@ Suppose that we are working with the function
 -->
 
 Nhưng trước tiên, hãy cùng kiểm tra phép xấp xỉ này với một ví dụ.
-Giả sử ta đang làm việc với hàm
+Giả sử ta đang làm việc với hàm 
 
 
 $$
@@ -143,7 +143,7 @@ $$
 If we look at a point like $(0, \log(2))$, we see that
 -->
 
-Nếu ta nhìn vào một điểm như $(0, \log(2))$, ta thấy được rằng
+Xét một điểm $(0, \log(2))$, ta có 
 
 
 $$
@@ -156,7 +156,7 @@ Thus, if we want to approximate $f$ at $(\epsilon_1, \log(2) + \epsilon_2)$,
 we see that we should have the specific instance of :eqref:`eq_nabla_use`:
 -->
 
-Vì thế, nếu muốn xấp xỉ $f$ tại $(\epsilon_1, \log(2) + \epsilon_2)$, ta thấy rằng ta sẽ có được một ví dụ cụ thể của :eqref:`eq_nabla_use`:
+Vì thế, nếu muốn tính xấp xỉ $f$ tại $(\epsilon_1, \log(2) + \epsilon_2)$, ta có một ví dụ cụ thể của :eqref:`eq_nabla_use`: 
 
 
 $$
@@ -168,7 +168,7 @@ $$
 We can test this in code to see how good the approximation is.
 -->
 
-Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác mức nào.
+Ta có thể kiểm tra với đoạn mã bên dưới để xem phép xấp xỉ chính xác tới mức nào.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -245,7 +245,7 @@ f'approximation: {grad_approx}, true Value: {true_value}'
 ## Geometry of Gradients and Gradient Descent
 -->
 
-## Hình học Gradient và Thuật toán Hạ Gradient
+## Ý nghĩa Hình học của Gradient và Thuật toán Hạ Gradient 
 
 
 <!--
@@ -266,9 +266,9 @@ Let us understand geometrically the algorithm of gradient descent first describe
 What we will do is the following:
 -->
 
-Giả sử ta muốn sử dụng thông tin gradient để cực tiểu hóa mất mát $L$.
-Hãy cùng tìm hiểu cách hoạt động về mặt hình học của thuật toán hạ gradient được mô tả lần đầu ở :numref:`sec_autograd`.
-Những bước của thuật toán được miêu tả như sau:
+Giả sử ta muốn sử dụng thông tin gradient để cực tiểu hóa mất mát $L$. 
+Hãy cùng tìm hiểu cách hoạt động về mặt hình học của thuật toán hạ gradient được mô tả lần đầu ở :numref:`sec_autograd`. 
+Các bước của thuật toán được miêu tả dưới đây:
 
 
 <!--
@@ -278,10 +278,10 @@ Những bước của thuật toán được miêu tả như sau:
 4. Repeat.
 -->
 
-1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
-2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất.
-3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$.
-4. Lặp lại.
+1. Bắt đầu với giá trị ban đầu ngẫu nhiên của tham số $\mathbf{w}$. 
+2. Tìm một hướng $\mathbf{v}$ tại $\mathbf{w}$ sao cho $L$ giảm một cách nhanh nhất. 
+3. Tiến một bước nhỏ về hướng đó: $\mathbf{w} \rightarrow \mathbf{w} + \epsilon\mathbf{v}$. 
+4. Lặp lại. 
 
 <!--
 The only thing we do not know exactly how to do is to compute the vector $\mathbf{v}$ in the second step.
@@ -289,9 +289,9 @@ We will call such a direction the *direction of steepest descent*.
 Using the geometric understanding of dot products from :numref:`sec_geometry-linear-algebraic-ops`, we see that we can rewrite :eqref:`eq_nabla_use` as
 -->
 
-Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai.
-Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất*.
-Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau
+Thứ duy nhất mà chúng ta không biết chính xác cách làm là cách tính toán vector $\mathbf{v}$ tại bước thứ hai. 
+Ta gọi $\mathbf{v}$ là *hướng hạ dốc nhất* (*direction of steepest descent*). 
+Sử dụng những hiểu biết về mặt hình học của phép tích vô hướng từ :numref:`sec_geometry-linear-algebraic-ops`, ta có thể viết lại :eqref:`eq_nabla_use` như sau 
 
 
 $$
@@ -309,12 +309,12 @@ The only way to achieve this is to head in the exact opposite direction:
 pick $\mathbf{v}$ to point in the exact opposite direction to $\nabla_{\mathbf{w}} L(\mathbf{w})$!
 -->
 
-Để thuận tiện, ta cho rằng hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$.
-Nếu ta muốn tìm hướng mà $L$ giảm càng nhanh, ta sẽ muốn biểu diễn trên trở nên càng âm.
-Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị cos này âm nhất có thể.
-Giờ, nhắc lại kiến thức của phép cô-sin, ta có thể biến nó trở nên âm nhất có thể bằng cách cho $\cos(\theta) = -1$ hoặc tương đương là khiến góc giữa vector gradient và hướng được chọn của ta là $\pi$ theo radian hay $180$ độ.
+Để thuận tiện, ta giả định hướng của chúng ta có độ dài bằng một và sử dụng $\theta$ để biểu diễn góc giữa $\mathbf{v}$ và $\nabla_{\mathbf{w}} L(\mathbf{w})$. 
+Nếu muốn $L$ giảm càng nhanh, ta sẽ muốn giá trị của biểu thức trên càng âm càng tốt. 
+Cách duy nhất để chọn hướng đi trong phương trình này là thông qua $\cos(\theta)$, vì thế ta sẽ muốn giá trị này âm nhất có thể. 
+Nhắc lại kiến thức của hàm cô-sin, giá trị âm nhất của hàm này là $\cos(\theta) = -1$, là khi góc giữa vector gradient và hướng cần chọn là $\pi$ radian hay $180$ độ. 
 Cách duy nhất để đạt được điều này là di chuyển theo hướng hoàn toàn ngược lại:
-chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều $\nabla_{\mathbf{w}} L(\mathbf{w})$!
+chọn $\mathbf{v}$ theo hướng hoàn toàn ngược chiều với $\nabla_{\mathbf{w}} L(\mathbf{w})$! 
 
 
 <!--
@@ -323,9 +323,9 @@ the direction of steepest decent points in the direction of $-\nabla_{\mathbf{w}
 Thus our informal algorithm can be rewritten as follows.
 -->
 
-Điều này dẫn ta đến với một trong những thuật toán quan trọng nhất của học máy:
+Điều này dẫn ta đến với một trong những thuật toán quan trọng nhất của học máy: 
 hướng hạ dốc nhất cùng hướng với $-\nabla_{\mathbf{w}}L(\mathbf{w})$.
-Vậy nên thuật toán của ta sẽ được viết lại như sau.
+Vậy nên thuật toán của ta sẽ được viết lại như sau. 
 
 
 <!--
@@ -335,10 +335,10 @@ Vậy nên thuật toán của ta sẽ được viết lại như sau.
 4. Repeat.
 -->
 
-1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$.
-2. Tính toán $\nabla_{\mathbf{w}} L(\mathbf{w})$.
-3. Tiến một bước nhỏ về hướng ngược lại của nó: $\mathbf{w} \rightarrow \mathbf{w} - \epsilon\nabla_{\mathbf{w}} L(\mathbf{w})$.
-4. Lặp lại.
+1. Bắt đầu với một lựa chọn ngẫu nhiên cho giá trị ban đầu của các tham số $\mathbf{w}$. 
+2. Tính toán $\nabla_{\mathbf{w}} L(\mathbf{w})$. 
+3. Tiến một bước nhỏ về hướng ngược lại của nó: $\mathbf{w} \rightarrow \mathbf{w} - \epsilon\nabla_{\mathbf{w}} L(\mathbf{w})$. 
+4. Lặp lại. 
 
 
 <!--
@@ -346,8 +346,8 @@ This basic algorithm has been modified and adapted many ways by many researchers
 Use the gradient to find the direction that decreases the loss as rapidly as possible, and update the parameters to take a step in that direction.
 -->
 
-Thuật toán cơ bản này dù đã được chỉnh sửa và kết hợp theo nhiều cách bởi các nhà nghiên cứu, nhưng khái niệm cốt lõi vẫn là như nhau.
-Sử dụng gradient để tìm hướng giảm mất mát nhanh nhất có thể và cập nhật các tham số để thực hiện di chuyển về hướng đó.
+Thuật toán cơ bản này dù đã được chỉnh sửa và kết hợp theo nhiều cách bởi các nhà nghiên cứu, nhưng khái niệm cốt lõi vẫn là như nhau. 
+Sử dụng gradient để tìm hướng giảm mất mát nhanh nhất có thể và cập nhật các tham số để dịch chuyển về hướng đó. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -365,14 +365,14 @@ Throughout this book, we focus squarely on numerical optimization techniques for
 we encounter in the deep learning setting are too complex to minimize explicitly.
 -->
 
-Xuyên suốt cuốn sách, ta chỉ tập trung vào những kỹ thuật tối ưu hóa số học vì một nguyên nhân thực tế là mọi hàm ta gặp phải trong học sâu quá phức tạp để có thể tối ưu hóa một cách tường minh.
+Xuyên suốt cuốn sách, ta chỉ tập trung vào những kỹ thuật tối ưu hóa số học vì một nguyên nhân thực tế là: mọi hàm ta gặp phải trong học sâu quá phức tạp để có thể tối ưu hóa một cách tường minh. 
 
 
 <!--
 However, it is a useful exercise to consider what the geometric understanding we obtained above tells us about optimizing functions directly.
 -->
 
-Tuy nhiên, rất hữu ích nếu hiểu được những kiến thức hình học ta có được ở trên nói gì về tối ưu hóa các hàm một cách trực tiếp.
+Tuy nhiên, sẽ rất hữu ích nếu hiểu được những kiến thức hình học ta có được ở trên nói gì về tối ưu hóa các hàm một cách trực tiếp. 
 
 
 <!--
@@ -381,9 +381,9 @@ Let us suppose that moreover someone gives us a value and tells us that it is th
 Is there anything we can check to see if their answer is even plausible?
 -->
 
-Giả sử ta muốn tìm giá trị của $\mathbf{x}_0$ giúp cực tiểu hóa một hàm $L(\mathbf{x})$ nào đó.
+Giả sử ta muốn tìm giá trị của $\mathbf{x}_0$ giúp cực tiểu hóa một hàm $L(\mathbf{x})$ nào đó. 
 Và có một người nào đó đưa ta một giá trị và cho rằng đây là giá trị giúp cực tiểu hóa $L$.
-Bằng cách nào ta có thể kiểm chứng rằng đáp án của họ là hợp lý?
+Bằng cách nào ta có thể kiểm chứng rằng đáp án của họ là hợp lý? 
 
 
 <!--
@@ -405,24 +405,24 @@ We can conclude that if $\mathbf{x}_0$ is a minimum, then $\nabla_{\mathbf{x}} L
 We call points with $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$ *critical points*.
 -->
 
-Nếu giá trị gradient khác không, ta biết rằng ta có thể bước một bước về hướng $-\epsilon \nabla_{\mathbf{x}} L(\mathbf{x}_0)$ để tìm một giá trị $L$ nhỏ hơn.
-Do đó, nếu ta thực sự ở điểm cực tiểu, sẽ không thể có trường hợp đó!
-Ta có thể kết luận rằng nếu $\mathbf{x}_0$ là một cực tiểu, thì $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$.
-Ta gọi những điểm mà tại đó $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$ là *các điểm tới hạn* (*critical points*).
+Nếu giá trị gradient khác không, ta biết rằng ta có thể bước một bước về hướng $-\epsilon \nabla_{\mathbf{x}} L(\mathbf{x}_0)$ để tìm một giá trị $L$ nhỏ hơn. 
+Do đó, nếu ta thực sự ở điểm cực tiểu, sẽ không thể có trường hợp đó! 
+Ta có thể kết luận rằng nếu $\mathbf{x}_0$ là một cực tiểu, thì $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$. 
+Ta gọi những điểm mà tại đó $\nabla_{\mathbf{x}} L(\mathbf{x}_0) = 0$ là *các điểm tới hạn* (*critical points*). 
 
 
 <!--
 This is nice, because in some rare settings, we *can* explicitly find all the points where the gradient is zero, and find the one with the smallest value.  
 -->
 
-Điều này là tốt, bởi vì trong một vài thiết lập hiếm gặp, ta *có thể* tìm các điểm có gradient bằng không một cách tường minh, và tìm điểm có giá trị nhỏ nhất.
+Điều này rất hữu ích, bởi vì trong một vài thiết lập hiếm gặp, ta *có thể* tìm được các điểm có gradient bằng không một cách tường minh, và từ đó tìm được điểm có giá trị nhỏ nhất.
 
 
 <!--
 For a concrete example, consider the function
 -->
 
-Với một ví dụ cụ thể, xét hàm
+Với một ví dụ cụ thể, xét hàm 
 
 
 $$
@@ -447,8 +447,8 @@ The only possible location of minima are at $x = -1, 0, 2$, where the function t
 and thus we can conclude that we minimize our function when $x = 2$. A quick plot confirms this.
 -->
 
-Các điểm cực trị duy nhất khả dĩ là tại $x = -1, 0, 2$, khi hàm lấy giá trị lần lượt là $-5,0, -32$,
-và do đó ta có thể kết luận rằng ta cực tiểu hóa hàm khi $x = 2$. Ta có thể kiểm chứng nhanh bằng đồ thị.
+Các điểm cực trị duy nhất khả dĩ là tại $x = -1, 0, 2$, khi hàm lấy giá trị lần lượt là $-5,0, -32$, 
+và do đó ta có thể kết luận rằng ta cực tiểu hóa hàm khi $x = 2$. Ta có thể kiểm chứng nhanh bằng đồ thị. 
 
 
 ```{.python .input}
@@ -481,9 +481,9 @@ the only possible points where we can minimize (or maximize) a function will hav
 however, not every point with gradient zero is the true *global* minimum (or maximum).
 -->
 
-Điều này nhấn mạnh một thực tế quan trọng cần biết kể cả khi làm việc dưới dạng lý thuyết hay số học:
-các điểm khả dĩ duy nhất mà tại đó hàm là cực tiểu (hoặc cực đại) sẽ có đạo hàm tại đó bằng không,
-tuy nhiên, không phải tất cả các điểm có đạo hàm bằng không sẽ là cực tiểu (hay cực đại) *toàn cục*.
+Điều này nhấn mạnh một thực tế quan trọng cần biết kể cả khi làm việc dưới dạng lý thuyết hay số học: 
+các điểm khả dĩ duy nhất mà tại đó hàm là cực tiểu (hoặc cực đại) sẽ có đạo hàm tại đó bằng không, 
+tuy nhiên, không phải tất cả các điểm có đạo hàm bằng không sẽ là cực tiểu (hay cực đại) *toàn cục*. 
 
 <!-- ===================== Kết thúc dịch Phần 3 ===================== -->
 
@@ -512,15 +512,15 @@ Such chains of equations are common when working with neural networks, so trying
 We can start to see visual hints of this connection in :numref:`fig_chain-1` if we take a look at what variables directly relate to one another.
 -->
 
-Các chuỗi phương trình như vậy là thông dụng khi ta làm việc với các mạng nơ-ron, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là thiết yếu.
-:numref:`fig_chain-1` biểu diễn trực quan mỗi liên hệ trực tiếp giữa biến này với biến khác.
+Các chuỗi phương trình như trên xuất hiện thường xuyên khi ta làm việc với các mạng nơ-ron, do đó cố gắng hiểu làm thế nào để tính gradient của các hàm này là thiết yếu. 
+:numref:`fig_chain-1` biểu diễn trực quan mỗi liên hệ trực tiếp giữa biến này với biến khác. 
 
 
 <!--
 ![The function relations above where nodes represent values and edges show functional dependence.](../img/ChainNet1.svg)
 -->
 
-![Các quan hệ của hàm ở trên với các nút biểu diễn giá trị, và cạnh cho biết sự phụ thuộc hàm.](../img/ChainNet1.svg)
+![Các quan hệ của hàm ở trên với các nút biểu diễn giá trị và mũi tên cho biết sự phụ thuộc hàm.](../img/ChainNet1.svg)
 :label:`fig_chain-1`
 
 
@@ -528,7 +528,7 @@ Các chuỗi phương trình như vậy là thông dụng khi ta làm việc v�
 Nothing stops us from just composing everything from :eqref:`eq_multi_func_def` and writing out that
 -->
 
-Ta có thể kết hợp các phương trình trong :eqref:`eq_multi_func_def` để có
+Ta có thể kết hợp các phương trình trong :eqref:`eq_multi_func_def` để có 
 
 
 $$
@@ -542,9 +542,9 @@ but if we did that we would quickly find ourself swamped with terms, many of whi
 Indeed, one can see that, for instance:
 -->
 
-Tiếp theo ta có thể lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến
-nhưng nếu làm vậy ta sẽ nhanh chóng bị ngợp trong các số hạng, nhiều trong số chúng là lặp lại!
-Thật vậy, như ta có thể thấy, chẳng hạn:
+Tiếp theo ta có thể lấy đạo hàm bằng cách chỉ sử dụng các đạo hàm đơn biến 
+nhưng nếu làm vậy ta sẽ nhanh chóng bị ngợp trong các số hạng, mà đa phần là bị lặp lại! 
+Thật vậy, ta có thể thấy ở ví dụ dưới đây:
 
 
 $$
@@ -565,8 +565,8 @@ the whole deep learning revolution would have stalled out before it began!
 
 Kế đến nếu ta cũng muốn tính $\frac{\partial f}{\partial x}$, ta sẽ lại kết thúc với một phương trình tương tự với nhiều thành phần bị lặp lại,
 và nhiều thành phần lặp lại *chung* giữa hai đạo hàm.
-Điều này thể hiện một lượng lớn việc lãng phí, và nếu ta tính các đạo hàm theo cách này,
-toàn bộ cuộc cách mạng học sâu sẽ chấm dứt trước khi nó bắt đầu!
+Điều này thể hiện một khối lượng lớn công việc bị lãng phí, và nếu ta tính các đạo hàm theo cách này, 
+toàn bộ cuộc cách mạng học sâu sẽ chấm dứt trước khi nó bắt đầu! 
 
 
 <!--
@@ -575,9 +575,9 @@ We will start by trying to understand how $f$ changes when we change $a$, essent
 We will reason as we did back when we worked with the gradient for the first time. Let us take $a$ and add a small amount $\epsilon$ to it.
 -->
 
-Ta hãy chia nhỏ vấn đề này.
-Ta sẽ bắt đầu bằng cách thử hiểu $f$ thay đổi thế nào khi $a$ thay đổi, giả sử cần thiết là tất cả $w, x, y$, và $z$ không tồn tại.
-Ta sẽ lập luận giống như lần đầu tiên ta làm việc với gradient. Hãy lấy $a$ và cộng một lượng nhỏ $\epsilon$ vào nó.
+Ta hãy chia nhỏ vấn đề này. 
+Ta sẽ bắt đầu bằng cách thử hiểu $f$ thay đổi thế nào khi $a$ thay đổi, giả định cần thiết là tất cả $w, x, y$, và $z$ không tồn tại. 
+Ta sẽ lập luận giống như lần đầu tiên ta làm việc với gradient. Hãy lấy $a$ và cộng một lượng nhỏ $\epsilon$ vào nó. 
 
 
 $$
@@ -595,9 +595,9 @@ It is notationally burdensome to track exactly where we evaluate every derivativ
 as in the expression $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, so we often abbreviate this to the much more memorable
 -->
 
-Dòng đầu tiên theo sau từ định nghĩa đạo hàm từng phần, và dòng thứ hai theo sau từ định nghĩa gradient.
+Dòng đầu tiên theo sau từ định nghĩa đạo hàm từng phần, và dòng thứ hai theo sau từ định nghĩa gradient. 
 Thật khó khăn để lần theo các biến khi tính đạo hàm,
-như trong biểu thức $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, cho nên ta thường rút gọn nó để dễ nhớ hơn
+như trong biểu thức $\frac{\partial f}{\partial u}(u(a, b), v(a, b))$, cho nên ta thường rút gọn nó để dễ nhớ hơn 
 
 
 
@@ -614,18 +614,18 @@ We can compute both of these contributions via the chain rule: $\frac{\partial w
 and $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respectively, and added up.
 -->
 
-Rất có ích khi suy nghĩ về ý nghĩa của biến đổi này.
-Ta đang cố gắng hiểu làm thế nào một hàm có dạng $f(u(a, b), v(a, b))$ thay đổi giá trị của nó khi $a$ thay đổi.
-Có hai hướng có thể xảy ra: $a \rightarrow u \rightarrow f$ và $a \rightarrow v \rightarrow f$.
-Ta có thể tính toán đóng góp của cả hai hướng này thông qua quy tắc dây chuyền: $\frac{\partial w}{\partial u} \cdot \frac{\partial u}{\partial x}$
-và $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$ respectively, và cộng gộp lại.
+Sẽ rất hữu ích khi ta suy nghĩ về ý nghĩa của biến đổi này.
+Ta đang cố gắng hiểu làm thế nào một hàm có dạng $f(u(a, b), v(a, b))$ thay đổi giá trị của nó khi $a$ thay đổi. 
+Có hai hướng có thể xảy ra: $a \rightarrow u \rightarrow f$ và $a \rightarrow v \rightarrow f$. 
+Ta có thể lần lượt tính toán đóng góp của cả hai hướng này thông qua quy tắc dây chuyền: $\frac{\partial w}{\partial u} \cdot \frac{\partial u}{\partial x}$ 
+và $\frac{\partial w}{\partial v} \cdot \frac{\partial v}{\partial x}$, rồi cộng gộp lại.
 
 
 <!--
 Imagine we have a different network of functions where the functions on the right depend on those that are connected to on the left as is shown in :numref:`fig_chain-2`.
 -->
 
-Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở bên phải phụ thuộc vào các hàm được kết nối ở bên trái như trong :numref:`fig_chain-2`.
+Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở bên phải phụ thuộc vào các hàm được kết nối ở bên trái như trong :numref:`fig_chain-2`. 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
 
@@ -643,7 +643,7 @@ Tưởng tượng ta có một mạng các hàm khác mà ở đó các hàm ở
 To compute something like $\frac{\partial f}{\partial y}$, we need to sum over all (in this case $3$) paths from $y$ to $f$ giving
 -->
 
-Để tính toán $\frac{\partial f}{\partial y}$, chúng ta cần tính tổng toàn bộ đường đi từ $y$ đến $f$ (trường hợp này có 3 đường đi):
+Để tính toán $\frac{\partial f}{\partial y}$, chúng ta cần tính tổng toàn bộ đường đi từ $y$ đến $f$ (trường hợp này có 3 đường đi): 
 
 
 $$
@@ -656,7 +656,7 @@ Understanding the chain rule in this way will pay great dividends when trying to
 and why various architectural choices like those in LSTMs (:numref:`sec_lstm`) or residual layers (:numref:`sec_resnet`) can help shape the learning process by controlling gradient flow.
 -->
 
-Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradient xuyên suốt mạng và vì sao một số lựa chọn kiến trúc như trong LSTM (:numref:`sec_lstm`) hoặc các tầng thặng dư (:numref:`sec_resnet`) có thể định hình quá trình học bằng cách kiểm soát dòng chảy gradient.
+Hiểu quy tắc dây chuyền theo cách này giúp chúng ta thấy được dòng chảy của gradient xuyên suốt mạng và vì sao một số lựa chọn kiến trúc như trong LSTM (:numref:`sec_lstm`) hoặc các tầng phần dư (:numref:`sec_resnet`) có thể định hình quá trình học bằng cách kiểm soát dòng chảy gradient. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
