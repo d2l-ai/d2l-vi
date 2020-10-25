@@ -668,7 +668,7 @@ The *statistical power* (or *sensitivity*) measures the probability of reject th
 $$ \text{statistical power }= 1 - \beta = 1 - P(\text{ fail to reject } H_0  \mid H_0 \text{ is false} ).$$
 -->
 
-$$ \text{ năng lực thống kê }= 1 - \beta = 1 - P(\text{ bác bỏ } H_0  \mid H_0 \text{ là sai } ).$$
+$$ \text{ năng lực thống kê }= 1 - \beta = 1 - P(\text{ không bác bỏ } H_0  \mid H_0 \text{ là sai } ).$$
 
 <!--
 Recall that a *type I error* is error caused by rejecting the null hypothesis when it is true, 
