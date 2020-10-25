@@ -86,3 +86,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
 
+*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
