@@ -13,7 +13,7 @@ Make sure you have Jupyter installed and downloaded the code as described in :re
 If you want to know more about Jupyter see the excellent tutorial in their [Documentation](https://jupyter.readthedocs.io/en/latest/).
 -->
 
-Mục này trình bày cách để thay đổi và chạy các đoạn mã nguồn trong các chương của cuốn sách này thông qua Jupyter Notebooks.
+Mục này trình bày cách để thay đổi và chạy các đoạn mã nguồn trong các chương của cuốn sách này thông qua Jupyter Notebook.
 Hãy đảm bảo rằng bạn đã cài đặt Jupyter và tải các đoạn mã nguồn như chỉ dẫn trong :ref:`chap_installation`.
 Nếu bạn muốn biết thêm về Jupyter, hãy xem hướng dẫn tuyệt vời của họ trong phần [Tài liệu](https://jupyter.readthedocs.io/en/latest/).
 
