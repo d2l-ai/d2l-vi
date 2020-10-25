@@ -642,7 +642,7 @@ This includes the disk, hence you cannot start it again.
 Only do this if you know that you will not need it in the future.
 -->
 
-Do dịch vụ đám mây tính hoá đơn theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
+Do dịch vụ đám mây tính phí theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
 Lưu ý rằng có các giải pháp thay thế khác: "Stop" một máy ảo nghĩa là bạn có thể khởi động nó lại được.
 Việc này khá giống với việc tắt nguồn máy chủ thông thường của bạn.
 Tuy nhiên, việc dừng một máy chủ vẫn sẽ tính một lượng nhỏ vào hoá đơn cho kích thước ổ cứng được giữ lại.
