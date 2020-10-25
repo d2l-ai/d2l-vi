@@ -560,7 +560,7 @@ This does not depend on the parameters $\boldsymbol{\theta}$ at all, so the opti
 If we demand four digits or four-hundred, the best choice of $\boldsymbol{\theta}$ remains the same, thus we may freely drop the epsilon to see that what we want to optimize is
 -->
 
-Nếu chúng ta xem xét biểu thức này, vị trí duy nhất mà $\epsilon$ xuất hiện là trong hằng số thêm vào $-N\log(\epsilon)$.
+Nếu chúng ta xem xét biểu thức này, vị trí duy nhất mà $\epsilon$ xuất hiện là trong hằng số cộng $-N\log(\epsilon)$.
 Hằng số này hoàn toàn không phụ thuộc vào các tham số $\boldsymbol{\theta}$, vì vậy lựa chọn tối ưu cho $\boldsymbol{\theta}$ không phụ thuộc vào việc lựa chọn $\epsilon$!
 Nếu ta muốn lấy bốn hoặc bốn trăm chữ số, lựa chọn $\boldsymbol{\theta}$ tốt nhất là  không đổi, do đó ta có thể loại bỏ hẳn epsilon để có được biểu thức mà ta muốn tối ưu là
 
