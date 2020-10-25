@@ -12,7 +12,7 @@ Another option is running this book on [Google Colab](https://colab.research.goo
 -->
 
 Chúng tôi đã giới thiệu cách chạy cuốn sách này trên AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
-Có một phương án khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nó cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
+Có một lựa chọn khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nền tảng cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
 
 
 <!--
