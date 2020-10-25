@@ -587,7 +587,7 @@ conversion of products to sums (and the resulting simplification of gradient com
 -->
 
 * Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra các điểm dữ liệu đó với xác suất cao nhất.
-* Tuy nhiên, thường thì mọi người hay làm việc với hàm đối log hợp lý vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và có liên hệ mật thiết về mặt lý thuyết với lý thuyết thông tin.
+* Tuy nhiên, thường thì mọi người hay làm việc với hàm đối log hợp lý vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ mật thiết về mặt lý thuyết với lý thuyết thông tin.
 * Trong khi áp dụng phương pháp này là đơn giản nhất trong trường hợp rời rạc, nó cũng có thể hoàn toàn tổng quát hóa cho trường hợp liên tục bằng cách cực đại hóa mật độ xác suất của các điểm dữ liệu.
 
 
