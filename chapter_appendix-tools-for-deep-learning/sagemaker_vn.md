@@ -17,7 +17,7 @@ This tutorial will guide you through Amazon SageMaker: a service that allows you
 
 Nhiều ứng dụng học sâu yêu cầu một lượng lớn các phép tính.
 Máy tính của bạn có thể quá chậm để giải quyết vấn đề này trong một khoảng thời gian hợp lý.
-Các dịch vụ điện toán đám mây cho phép bạn truy cập vào những máy tính mạnh mẽ hơn để chạy các phần yêu cầu GPU cao trong cuốn sách này.
+Các dịch vụ điện toán đám mây cho phép bạn truy cập vào những máy tính mạnh mẽ hơn để chạy các phần yêu cầu GPU trong cuốn sách này.
 Phần này sẽ cung cấp hướng dẫn về Amazon SageMaker: một dịch vụ cho phép bạn chạy các đoạn mã nguồn trong cuốn sách này một cách dễ dàng.
 
 
