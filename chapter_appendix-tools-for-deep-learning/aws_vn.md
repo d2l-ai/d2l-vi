@@ -559,7 +559,7 @@ pip install git+https://github.com/d2l-ai/d2l-en
 You can quickly test whether everything went well as follows:
 -->
 
-Bạn có thể nhanh chóng kiểm tra xem mọi thứ đã ổn chưa bằng cách:
+Bạn có thể nhanh chóng kiểm tra mọi thứ đã hoạt động bằng cách:
 
 
 ```
