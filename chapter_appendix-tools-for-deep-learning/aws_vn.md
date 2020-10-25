@@ -472,7 +472,7 @@ The download link and file name are subject to changes, so please go the Minicon
 ![Download Miniconda.](../img/miniconda.png)
 -->
 
-![Tải Miniconda về.](../img/miniconda.png)
+![Tải Miniconda.](../img/miniconda.png)
 :width:`700px`
 :label:`fig_miniconda`
 
