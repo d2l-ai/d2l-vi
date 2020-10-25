@@ -383,7 +383,7 @@ Lúc này máy chủ của bạn đã sẵn sàng.
 Before installing CUDA, be sure to update the instance with the latest drivers.
 -->
 
-Trước khi cài đặt CUDA, đừng quên cập nhật máy ảo với trình điều khiển mới nhất.
+Trước khi cài đặt CUDA, đừng quên cập nhật máy ảo với các trình điều khiển (*driver*) mới nhất.
 
 
 ```bash
@@ -397,7 +397,7 @@ to find the download link of CUDA 10.1 as shown in :numref:`fig_cuda`.
 -->
 
 Ở đây ta tải về CUDA 10.1. Truy cập [trang chứa chính thức](https://developer.nvidia.com/cuda-downloads) của NVIDIA
-để tìm đường dẫn tải về của CUDA 10.1 như chỉ ra trong :numref:`fig_cuda`.
+để tìm đường dẫn tải về của CUDA 10.1 như minh hoạ trong :numref:`fig_cuda`.
 
 
 <!--
@@ -432,7 +432,7 @@ sudo apt-get -y install cuda
 After installing the program, run the following command to view the GPUs.
 -->
 
-Sau khi cài đặt chương trình, chạy lệnh sau để xem các GPU.
+Sau khi cài đặt chương trình xong, chạy lệnh sau để xem các GPU.
 
 
 ```bash
@@ -444,7 +444,7 @@ nvidia-smi
 Finally, add CUDA to the library path to help other libraries find it.
 -->
 
-Cuối cùng, thêm CUDA vào đường dẫn thư viện để giúp các thư viện khác tìm đến nó.
+Cuối cùng, thêm CUDA vào đường dẫn thư viện để giúp các thư viện khác tìm được nó.
 
 
 ```bash
@@ -465,14 +465,14 @@ The download link and file name are subject to changes, so please go the Minicon
 -->
 
 Đầu tiên, để đơn giản hoá quá trình cài đặt, bạn cần cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html) cho Linux.
-Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như chỉ ra trong :numref:`fig_miniconda`.
+Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như minh hoạ trong :numref:`fig_miniconda`.
 
 
 <!--
 ![Download Miniconda.](../img/miniconda.png)
 -->
 
-![Tải Miniconda](../img/miniconda.png)
+![Tải Miniconda.](../img/miniconda.png)
 :width:`700px`
 :label:`fig_miniconda`
 
@@ -488,7 +488,7 @@ sh Miniconda3-latest-Linux-x86_64.sh -b
 After the Miniconda installation, run the following command to activate CUDA and conda.
 -->
 
-Sau khi cài đặt Miniconda, chạy lệnh sau để kích hoạt CUDA và conda.
+Sau khi cài đặt Miniconda xong, chạy lệnh sau để kích hoạt CUDA và conda.
 
 
 ```bash
@@ -501,7 +501,7 @@ source ~/.bashrc
 Next, download the code for this book.
 -->
 
-Tiếp theo, tải về mã nguồn của cuốn sách này.
+Tiếp theo, hãy tải về mã nguồn của cuốn sách này.
 
 
 ```bash
@@ -516,7 +516,7 @@ unzip d2l-en.zip && rm d2l-en.zip
 Then create the conda `d2l` environment and enter `y` to proceed with the installation.
 -->
 
-Sau đó tạo môi trường conda `d2l` và nhập `y` để tiến hành cài đặt.
+Sau đó tạo một môi trường conda `d2l` và nhập `y` để tiến hành cài đặt.
 
 
 ```bash
@@ -543,9 +543,9 @@ The postfix `cu101` means that this is the CUDA 10.1 variant.
 For different versions, say only CUDA 10.0, you would want to choose `cu100` instead.
 -->
 
-Cuối cùng, cài đặt MXNet và gói `d2l`.
-Hậu tố `cu101` nghĩa là đây là biến thể sử dụng CUDA 10.1.
-Với các phiên bản khác, giả sử như CUDA 10.0, bạn sẽ muốn thay bằng `cu100`.
+Cuối cùng, cài đặt MXNet và gói thư viện `d2l`.
+Hậu tố `cu101` nghĩa là đây là phiên bản sử dụng CUDA 10.1.
+Với các phiên bản khác, giả sử như CUDA 10.0, bạn sẽ thay bằng `cu100`.
 
 
 ```bash
@@ -559,7 +559,7 @@ pip install git+https://github.com/d2l-ai/d2l-en
 You can quickly test whether everything went well as follows:
 -->
 
-Bạn có thể nhanh chóng kiểm tra mọi thứ đều ổn như sau:
+Bạn có thể nhanh chóng kiểm tra mọi thứ đã hoạt động bằng cách:
 
 
 ```
@@ -585,9 +585,9 @@ After all, the server in the cloud does not have a monitor or keyboard.
 For this, log into your server from your desktop (or laptop) as follows.
 -->
 
-Để chạy Jupyter từ xa bạn cần sử dụng chuyển tiếp cổng SSH.
+Để chạy Jupyter từ xa bạn cần sử dụng phương thức chuyển tiếp cổng SSH.
 Suy cho cùng thì máy chủ trên đám mây không có màn hình hay bàn phím.
-Để thực hiện việc này, truy cập vào máy chủ của bạn từ máy tính (hay laptop) như sau.
+Để thực hiện việc này, hãy truy cập vào máy chủ của bạn từ máy tính bàn (hay laptop) như sau.
 
 
 ```
@@ -621,15 +621,15 @@ Since you used port forwarding to port 8889 you will need to replace the port nu
 and use the secret as given by Jupyter when opening the URL in your local browser.
 -->
 
-Do sử dụng chuyển tiếp cổng cho cổng 8889, bạn cần phải đổi chỉ số 8888 thành 8889
-và sử dụng token cho bởi Jupyter để mở URL trên trình duyệt web trong máy của bạn.
+Do sử dụng phương thức chuyển tiếp cổng cho cổng 8889, bạn cần phải đổi địa chỉ cổng 8888 thành 8889
+và sử dụng token được sinh bởi Jupyter để mở URL trên trình duyệt web trong máy của bạn.
 
 
 <!--
 ## Closing Unused Instances
 -->
 
-## Đóng Máy ảo Không dùng đến
+## Đóng Máy ảo Không Dùng đến
 
 
 <!--
@@ -642,12 +642,12 @@ This includes the disk, hence you cannot start it again.
 Only do this if you know that you will not need it in the future.
 -->
 
-Do dịch vụ đám mây tính hoá đơn theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
-Chú ý rằng có phương án thay thế: "stop" một máy ảo nghĩa là bạn có thể khởi động nó lại.
-Việc này khá giống với việc tắt nguồn máy chủ bình thường của bạn.
+Do dịch vụ đám mây tính phí theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
+Lưu ý rằng có các giải pháp thay thế khác: "Stop" một máy ảo nghĩa là bạn có thể khởi động nó lại được.
+Việc này khá giống với việc tắt nguồn máy chủ thông thường của bạn.
 Tuy nhiên, việc dừng một máy chủ vẫn sẽ tính một lượng nhỏ vào hoá đơn cho kích thước ổ cứng được giữ lại.
-"Terminate" xoá toàn bộ dữ liệu liên quan đến nó.
-Dữ liệu này bao gồm cả ổ cứng, vậy nên bạn sẽ không thể khởi động lại nó.
+Lựa chọn "Terminate" một máy ảo sẽ xoá toàn bộ dữ liệu liên quan đến nó.
+Dữ liệu này bao gồm cả ổ cứng, vậy nên bạn sẽ không thể khởi động nó lại được.
 Chỉ thực hiện thao tác này nếu bạn chắc rằng bạn sẽ không cần đến nó trong tương lai.
 
 
@@ -664,10 +664,10 @@ For example, you will not have to reinstall CUDA and other runtime environments.
 -->
 
 Nếu bạn muốn sử dụng máy ảo làm khuôn mẫu (*template*) cho nhiều máy ảo khác,
-nhấp chuột phải vào ví dụ trong :numref:`fig_connect` và chọn "Image" $\rightarrow$ "Create" để tạo một ảnh (*image*) của máy ảo này.
-Sau khi thao tác này hoàn thành, chọn "Instance State" $\rightarrow$ "Terminate" để xóa máy ảo này.
-Lần tiếp theo bạn muốn sử dụng máy ảo này, bạn có thể thực hiện theo các bước tạo và
-chạy một máy ảo EC2 như mô tả trong phần này để tạo một máy ảo dựa trên ảnh đã lưu.
+hãy nhấp chuột phải vào ví dụ trong :numref:`fig_connect` và chọn "Image" $\rightarrow$ "Create" để tạo một ảnh (*image*) của máy ảo này.
+Sau khi hoàn thành thao tác này, chọn "Instance State" $\rightarrow$ "Terminate" để xóa máy ảo này.
+Lần tiếp theo bạn muốn sử dụng máy ảo này, bạn có thể thực hiện theo các bước khởi tạo và
+chạy một máy ảo EC2 như minh hoạ trong phần này để tạo một máy ảo dựa trên ảnh đã lưu.
 Điểm khác biệt duy nhất nằm ở bước "1. Choose AMI" như trong :numref:`fig_ubuntu`,
 bạn phải chọn mục "My AMIs" phía bên trái để lựa chọn ảnh bạn đã lưu.
 Máy ảo được tạo ra sẽ giữ lại thông tin được lưu trên ảnh đĩa cứng.
@@ -682,7 +682,7 @@ Ví dụ, bạn sẽ không cần phải cài đặt lại CUDA và các môi tr
 -->
 
 * Bạn có thể khởi động và dừng các máy ảo tuỳ theo nhu cầu mà không cần phải mua và xây dựng máy tính riêng.
-* Bạn cần phải cài đặt trình điều khiển GPU phù hợp trước khi có thể sử dụng chúng.
+* Bạn cần phải cài đặt trình điều khiển GPU phù hợp trước khi sử dụng chúng.
 
 
 ## Bài tập
@@ -694,10 +694,10 @@ Find out how to launch [spot instances](https://aws.amazon.com/ec2/spot/) to see
 3. Experiment with multi-GPU servers. How well can you scale things up?
 -->
 
-1. Đám mây cung cấp sự thuận tiện, nhưng nó không hề rẻ.
-Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spot/) để xem làm thế nào để giảm giá thành.
+1. Dịch vụ đám mây cung cấp sự thuận tiện, nhưng nó không hề rẻ.
+Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spot/) để tìm hiểu cách giảm chi phí.
 2. Thử nghiệm với nhiều máy chủ GPU khác nhau. Chúng nhanh đến mức nào?
-3. Thử nghiệm với máy chủ đa GPU. Chúng có thể mở rộng mọi thứ tốt đến mức nào?
+3. Thử nghiệm với máy chủ đa GPU. Việc mở rộng giúp hoàn thành công việc tốt đến thế nào?
 
 
 <!-- ===================== Kết thúc dịch Phần 4 ===================== -->
