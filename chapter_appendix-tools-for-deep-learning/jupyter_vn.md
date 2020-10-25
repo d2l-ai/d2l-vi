@@ -13,8 +13,8 @@ Make sure you have Jupyter installed and downloaded the code as described in :re
 If you want to know more about Jupyter see the excellent tutorial in their [Documentation](https://jupyter.readthedocs.io/en/latest/).
 -->
 
-Mục này trình bày cách để thay đổi và chạy đoạn mã trong các chương của cuốn sách này thông qua Jupyter Notebooks.
-Hãy đảm bảo rằng bạn đã cài đặt Jupyter và tải các đoạn mã như chỉ dẫn trong :ref:`chap_installation`.
+Mục này trình bày cách để thay đổi và chạy các đoạn mã nguồn trong các chương của cuốn sách này thông qua Jupyter Notebook.
+Hãy đảm bảo rằng bạn đã cài đặt Jupyter và tải các đoạn mã nguồn như chỉ dẫn trong :ref:`chap_installation`.
 Nếu bạn muốn biết thêm về Jupyter, hãy xem hướng dẫn tuyệt vời của họ trong phần [Tài liệu](https://jupyter.readthedocs.io/en/latest/).
 
 
@@ -22,7 +22,7 @@ Nếu bạn muốn biết thêm về Jupyter, hãy xem hướng dẫn tuyệt v�
 ## Editing and Running the Code Locally
 -->
 
-## Chỉnh sửa và Chạy Mã nguồn dưới Máy
+## Chỉnh sửa và Chạy Mã nguồn trên Máy tính
 
 
 <!--
@@ -56,10 +56,10 @@ The content in the markdown cell includes "This is A Title" and "This is text".
 The code cell contains two lines of Python code.
 -->
 
-Bạn có thể truy cập tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web.
-Chúng thường có đuôi ".ipynb".
+Bạn có thể truy cập các tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web,
+chúng thường có đuôi ".ipynb".
 Để ngắn gọn, ta sẽ tạo một tệp tin tạm thời "test.ipynb".
-Phần nội dung hiển thị sau khi bạn nhấp vào nhìn sẽ giống như :numref:`fig_jupyter01`.
+Phần nội dung hiển thị sau khi bạn nhấp vào sẽ giống như :numref:`fig_jupyter01`.
 Notebook này bao gồm một ô markdown và một ô mã nguồn.
 Nội dung của ô markdown bao gồm "This is A Title" và "This is text".
 Ô mã nguồn chứa hai dòng mã Python.
@@ -80,14 +80,14 @@ Add a new text string "Hello world." at the end of the cell, as shown in :numref
 -->
 
 Nhấp đúp vào ô markdown để chuyển qua chế độ chỉnh sửa.
-Thêm một dòng văn bản mới "Hello world." vào phía cuối của ô, như minh họa trong :numref:`fig_jupyter02`.
+Thêm một đoạn văn bản mới "Hello world." vào phía cuối của ô, như minh họa trong :numref:`fig_jupyter02`.
 
 
 <!--
 ![Edit the markdown cell.](../img/jupyter02.png)
 -->
 
-![Chỉnh sửa ô markdown](../img/jupyter02.png)
+![Chỉnh sửa ô markdown.](../img/jupyter02.png)
 :width:`600px`
 :label:`fig_jupyter02`
 
@@ -103,7 +103,7 @@ Như minh họa trong :numref:`fig_jupyter03`, chọn "Cell" $\rightarrow$ "Run 
 ![Run the cell.](../img/jupyter03.png)
 -->
 
-![Chạy ô](../img/jupyter03.png)
+![Chạy ô.](../img/jupyter03.png)
 :width:`600px`
 :label:`fig_jupyter03`
 
@@ -119,7 +119,7 @@ Sau khi chạy, ô markdown sẽ trông như :numref:`fig_jupyter04`.
 ![The markdown cell after editing.](../img/jupyter04.png)
 -->
 
-![Ô markdown sau khi chỉnh sửa](../img/jupyter04.png)
+![Ô markdown sau khi chỉnh sửa.](../img/jupyter04.png)
 :width:`600px`
 :label:`fig_jupyter04`
 
@@ -151,7 +151,7 @@ You can also run the cell with a shortcut ("Ctrl + Enter" by default)
 and obtain the output result from :numref:`fig_jupyter06`.
 -->
 
-Bạn cũng có thể chạy ô này với một tổ hợp phím tắt ("Ctrl + Enter" theo mặc định) và nhận về kết quả đầu ra của :numref:`fig_jupyter06`.
+Bạn cũng có thể chạy ô này với một tổ hợp phím tắt ("Ctrl + Enter" theo mặc định) và nhận được kết quả đầu ra của :numref:`fig_jupyter06`.
 
 
 <!--
@@ -190,7 +190,7 @@ This is confusing for Git and it makes merging contributions very difficult.
 Fortunately there is an alternative---native editing in Markdown.
 -->
 
-Ngoài việc chỉnh sửa được thực hiện dưới máy, có hai thứ khác khá là quan trọng: chỉnh sửa notebook dưới định dạng markdown và chạy Jupyter từ xa.
+Ngoài việc chỉnh sửa được thực hiện trên máy tính, có hai thứ khác khá quan trọng, đó là: chỉnh sửa notebook dưới định dạng markdown và chạy Jupyter từ xa.
 Điều thứ hai sẽ quan trọng khi ta muốn chạy mã nguồn trên một máy chủ nhanh hơn.
 Điều thứ nhất sẽ quan trọng vì định dạng gốc `.ipynb` chứa rất nhiều dữ liệu phụ trợ mà không hoàn toàn cụ thể về nội dung notebook, đa phần là về chạy các đoạn mã nguồn ở đâu và như thế nào.
 Điều này khiến việc sử dụng Git để gộp các đóng góp là cực kỳ khó.
@@ -201,7 +201,7 @@ May thay có một cách làm khác---chỉnh sửa thuần dưới định dạ
 ### Markdown Files in Jupyter
 -->
 
-### Các tệp tin Markdown trong Jupyter
+### Các Tệp tin Markdown trong Jupyter
 
 
 <!--
@@ -244,7 +244,7 @@ jupyter notebook --generate-config
 Then, add the following line to the end of the Jupyter Notebook configuration file (for Linux/macOS, usually in the path `~/.jupyter/jupyter_notebook_config.py`):
 -->
 
-Tiếp đến, thêm dòng dưới vào cuối tệp cấu hình Jupyter Notebook (với Linux/macOS, tệp sẽ nằm ở `~/.jupyter/jupyter_notebook_config.py`):
+Tiếp đến, thêm dòng dưới vào cuối tệp cấu hình Jupyter Notebook (với Linux/macOS, đường dẫn của tệp sẽ là `~/.jupyter/jupyter_notebook_config.py`):
 
 
 ```
@@ -274,7 +274,7 @@ Sometimes, you may want to run Jupyter Notebook on a remote server and access it
 If Linux or MacOS is installed on your local machine (Windows can also support this function through third-party software such as PuTTY), you can use port forwarding:
 -->
 
-Đôi khi, bạn sẽ muốn chạy Jupyter Notebook trên một máy chủ từ xa và truy cập nó thông qua một trình duyệt dưới máy.
+Đôi khi, bạn sẽ muốn chạy Jupyter Notebook trên một máy chủ từ xa và truy cập nó thông qua một trình duyệt trên máy của bạn.
 Nếu hệ điều hành máy tính của bạn là Linux hoặc MacOS (Windows cũng có thể hỗ trợ tính năng này thông qua phần mềm bên thứ ba như PuTTY), bạn có thể sử dụng chuyển tiếp cổng (*port forwarding*):
 
 
@@ -289,16 +289,16 @@ Then we can use http://localhost:8888 to access the remote server `myserver` tha
 We will detail on how to run Jupyter Notebook on AWS instances in the next section.
 -->
 
-Ở trên là địa chỉ của máy chủ `myserver`.
-Tiếp đến ta có thể sử dụng http://localhost:8888 để truy cập máy chủ `myserver` để chạy Jupyter Notebook trên máy chủ này.
-Ta sẽ hướng dẫn chi tiết cách chạy Jupyter Notebook trên máy chủ AWS trong mục kế tiếp.
+Ở trên là địa chỉ của máy chủ từ xa `myserver`.
+Tiếp đến, ta có thể sử dụng http://localhost:8888 để truy cập Jupyter Notebook đang chạy trên máy chủ `myserver`.
+Ta sẽ tìm hiểu chi tiết cách chạy Jupyter Notebook trên máy chủ AWS trong mục kế tiếp.
 
 
 <!--
 ### Timing
 -->
 
-### Đo thời gian
+### Đo Thời gian
 
 
 <!--
@@ -307,7 +307,7 @@ Use the following commands to install the plugin:
 -->
 
 Ta có thể sử dụng plugin `ExecuteTime` để đo thời gian thực thi của mỗi ô mã nguồn trong Jupyter Notebook.
-Sử dụng lệnh dưới để cài đặt plugin:
+Sử dụng lệnh dưới để cài đặt plugin này:
 
 
 ```
@@ -336,7 +336,7 @@ jupyter nbextension enable execute_time/ExecuteTime
 3. Measure $\mathbf{A}^\top \mathbf{B}$ vs. $\mathbf{A} \mathbf{B}$ for two square matrices in $\mathbb{R}^{1024 \times 1024}$. Which one is faster?
 -->
 
-1. Hãy thử chỉnh sửa và chạy mã nguồn của cuốn sách này dưới máy.
+1. Hãy thử chỉnh sửa và chạy mã nguồn của cuốn sách này trên máy tính của bạn.
 2. Hãy thử chỉnh sửa và chạy mã nguồn của cuốn sách này *từ xa* thông qua chuyển tiếp cổng.
 3. Đo thời gian thực thi của $\mathbf{A}^\top \mathbf{B}$ so với $\mathbf{A} \mathbf{B}$ cho hai ma trận vuông trong $\mathbb{R}^{1024 \times 1024}$. Cách nào nhanh hơn?
 
