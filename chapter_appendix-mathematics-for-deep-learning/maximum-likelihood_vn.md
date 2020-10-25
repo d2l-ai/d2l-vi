@@ -600,7 +600,7 @@ You obtain a single observation from the random variable which is the number $3$
 What is the maximum likelihood estimate for the mean?
 -->
 
-1. Giả sử bạn biết rằng một biến ngẫu nhiên có mật độ bằng  $\frac{1}{\alpha}e^{-\alpha x}$ đối với một giá trị $\alpha$ nào đó.
+1. Giả sử bạn biết rằng một biến ngẫu nhiên có mật độ bằng $\frac{1}{\alpha}e^{-\alpha x}$ với một giá trị $\alpha$ nào đó.
 Bạn nhận được một quan sát duy nhất từ biến ngẫu nhiên này là số $3$. Giá trị ước lượng hợp lý cực đại cho $\alpha$ là bao nhiêu?
 2. Giả sử rằng bạn có tập dữ liệu với các mẫu $\{x_i\}_{i=1}^N$ được lấy từ một phân phối Gauss với giá trị trung bình chưa biết, nhưng phương sai bằng $1$.
 Giá trị ước lượng hợp lý cực đại của trung bình là bao nhiêu?
