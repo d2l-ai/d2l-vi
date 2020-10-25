@@ -56,8 +56,8 @@ The content in the markdown cell includes "This is A Title" and "This is text".
 The code cell contains two lines of Python code.
 -->
 
-Bạn có thể truy cập các tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web.
-Chúng thường có đuôi ".ipynb".
+Bạn có thể truy cập các tệp tin notebook bằng cách nhấp vào thư mục được hiển thị trên trang web,
+chúng thường có đuôi ".ipynb".
 Để ngắn gọn, ta sẽ tạo một tệp tin tạm thời "test.ipynb".
 Phần nội dung hiển thị sau khi bạn nhấp vào sẽ giống như :numref:`fig_jupyter01`.
 Notebook này bao gồm một ô markdown và một ô mã nguồn.
