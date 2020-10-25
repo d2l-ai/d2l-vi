@@ -530,7 +530,7 @@ As we have seen previously, this can be written as
 Giả sử rằng đối với các biến ngẫu nhiên liên tục, ta không còn muốn tính xác suất tại chính ngay mỗi giá trị,
 mà thay vào đó là tìm xác suất trong một phạm vi $\epsilon$ nào đó.
 Để đơn giản, ta giả định rằng dữ liệu là các mẫu quan sát lặp lại $x_1, \ldots, x_N$ của các biến ngẫu nhiên được phân phối giống nhau $X_1, \ldots, X_N$.
-Như chúng ta đã thấy trước đây, xác suất này có thể được biểu diễn như sau
+Như chúng ta đã thấy trước đây, giả định này có thể được biểu diễn như sau
 
 $$
 \begin{aligned}
