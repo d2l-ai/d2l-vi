@@ -54,7 +54,7 @@ Next, Colab will connect you to an instance to run this notebook. Specifically, 
 such as when invoking the `d2l.try_gpu()` function, we will request Colab to connect to a GPU instance automatically.
 -->
 
-Tiếp theo, Colab sẽ kết nối bạn tới một máy ảo để chạy notebook này.Cụ thể, nếu cần GPU,
+Tiếp theo, Colab sẽ kết nối bạn tới một máy ảo để chạy notebook này. Cụ thể, nếu cần GPU,
 ví dụ như khi gọi đến hàm `d2l.try_gpu()`, ta sẽ yêu cầu Colab tự động kết nối tới một máy ảo GPU.
 
 ## Tóm tắt
@@ -85,5 +85,4 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
-
 
