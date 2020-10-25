@@ -695,7 +695,7 @@ Find out how to launch [spot instances](https://aws.amazon.com/ec2/spot/) to see
 -->
 
 1. Dịch vụ đám mây cung cấp sự thuận tiện, nhưng nó không hề rẻ.
-Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spot/) để biết cách giảm chi phí.
+Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spot/) để tìm hiểu cách giảm chi phí.
 2. Thử nghiệm với nhiều máy chủ GPU khác nhau. Chúng nhanh đến mức nào?
 3. Thử nghiệm với máy chủ đa GPU. Bạn có mở rộng mọi thứ tốt đến mức nào?
 
