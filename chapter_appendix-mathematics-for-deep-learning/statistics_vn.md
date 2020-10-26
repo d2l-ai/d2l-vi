@@ -507,7 +507,7 @@ William Gosset who is the father of Student's t-distribution, and Ronald Fisher 
 
 Chủ đề thường gặp nhất trong suy luận thống kê là kiểm định giả thuyết.  
 Tuy kiểm định giả thuyết trở nên phổ biến từ đầu thế kỷ 20, trường hợp sử dụng đầu tiên được ghi nhận bởi John Arbuthnot từ tận những năm 1700. 
-John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng mỗi năm nhiều nam giới được sinh ra hơn so với nữ giới.
+John đã theo dõi hồ sơ khai sinh trong 80 năm ở London và kết luận rằng mỗi năm nhiều bé trai được sinh ra hơn so với bé gái.
 Tiếp đó, phép thử nghiệm độ tin cậy ngày nay là di sản trí tuệ của Karl Pearson,
 người đã phát minh ra $p$-value (*trị số p*) và bài kiểm định Chi bình phương Pearson (*Pearson's chi-squared test*), William Gosses, 
 cha đẻ của phân phối Student và Ronald Fisher, người đã khởi xướng giả thuyết gốc và kiểm định độ tin cậy. 
@@ -522,10 +522,10 @@ A null hypothesis is often stated in a declarative form which posits a relations
 It should reflect the brief as explicit as possible, and be testable by statistics theory.
 -->
 
-Một bài *kiểm định giả thuyết* là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể.
-Chúng ta gọi các mệnh đề mặc định là *giả thuyết gốc* $H_0$, giả thuyết mà chúng ta cố gắng bác bỏ thông qua các dữ liệu quan sát được.  
+Một bài *kiểm định giả thuyết* sẽ đánh giá các bằng chứng chống lại mệnh đề mặc định của một tổng thể.
+Chúng ta gọi các mệnh đề mặc định là *giả thuyết gốc - null hypothesis* $H_0$, giả thuyết mà chúng ta cố gắng bác bỏ thông qua các dữ liệu quan sát được.  
 Tại đây, chúng tả sử dụng $H_0$ là điểm bắt đầu cho việc thử nghiệm độ tin cậy thống kê. 
-*Giả thuyết đối* $H_A$ (hay $H_1$) là mệnh đề đối lập với giả thuyết gốc. 
+*Giả thuyết đối - alternative hypothesis* $H_A$ (hay $H_1$) là mệnh đề đối lập với giả thuyết gốc. 
 Giả thuyết gốc thường được định nghĩa dưới dạng khai báo mà mà ở đó nó ấn định mối quan hệ giữa các biến. 
 Nó nên phản ánh mệnh đề một cách rõ ràng nhất, và có thể kiểm chứng được bằng lý thuyết thống kê. 
 
@@ -536,7 +536,7 @@ To show its magic power, you need to test it.
 Naturally, you may need some volunteers to take the medicine and see whether it can help them learn math better. How do you get started?
 -->
 
-Hình dung rằng bạn là một nhà hóa học. Sau hàng ngàn giờ nghiên cứu trong phòng thí nghiệm,
+Tưởng tượng bạn là một nhà hóa học. Sau hàng ngàn giờ nghiên cứu trong phòng thí nghiệm,
 bạn đã phát triển được một loại thuốc mới giúp cải thiện đáng kể khả năng hiểu về toán của con người.
 Để chứng minh sức mạnh ma thuật của thuốc, bạn cần kiểm tra nó. 
 Thông thường, bạn cần một số tình nguyện viên sử dụng loại thuốc này để kiểm tra xem liệu nó có giúp họ học toán tốt hơn hay không. 
@@ -553,7 +553,7 @@ In this way, the influence of all the variables are minimized, except the impact
 
 Đầu tiên, bạn cần cẩn thận lựa chọn ngẫu nhiên hai nhóm tình nguyện viên để đảm bảo rằng không có sự khác biệt đáng kể dựa trên các tiêu chuẩn đo lường được về khả năng hiểu toán của họ.
 Hai nhóm này thường được gọi là nhóm thử nghiệm và nhóm kiểm soát.
-*Nhóm thử nghiệm* (hay *nhóm trị liệu*) là nhóm người được cho sử dụng thuốc, trong khi *nhóm kiểm soát* đại diện cho nhóm người dùng được đặt làm chuẩn;
+*Nhóm thử nghiệm* (hay *nhóm trị liệu*) là nhóm người được cho sử dụng thuốc, trong khi *nhóm kiểm soát* được đặt làm chuẩn so sánh;
 tức là, họ có các yếu tố môi trường giống hệt với nhóm thử nghiệm trừ việc sử dụng thuốc.
 Bằng cách này, sự ảnh hưởng của tất cả các biến được giảm thiểu, trừ sự tác động của biến độc lập trong quá trình điều trị. 
 
@@ -585,7 +585,7 @@ Có rất nhiều chi tiết mà bạn phải suy nghĩ cẩn trọng.
 Ví dụ, đâu là tiêu chuẩn đo lường thích hợp để kiểm tra khả năng hiểu toán? 
 Bao nhiêu tình nguyện viên thực hiện bài kiểm tra là đủ để bạn có thể tự tin khẳng định sự hiệu quả của thuốc? 
 Bài kiểm tra nên kéo dài trong bao lâu? Làm cách nào để bạn quyết định được có sự khác biệt rõ rệt giữa hai nhóm? 
-Bạn chỉ quan tâm đến hiệu suất trung bình hay cả phạm vi biến thiên của các điểm số, v.v... 
+Bạn chỉ quan tâm đến kết quả trung bình hay cả phạm vi biến thiên của các điểm số, v.v... 
 
 
 <!--
@@ -594,14 +594,14 @@ If we can now show that the null hypothesis is very unlikely to be true, we may 
 -->
 
 Bằng cách này, kiểm định giả thuyết cung cấp một khuôn khổ cho thiết kế thử nghiệm và cách suy luận về sự chắc chắn của những kết quả quan sát được. 
-Nếu chúng ta chứng minh được giả thuyết gốc khả năng rất cao là không đúng, thì chúng ta có thể tự tin bác bỏ nó.
+Nếu chứng minh được giả thuyết gốc khả năng rất cao là không đúng, thì chúng ta có thể tự tin bác bỏ nó.
 
 
 <!--
 To complete the story of how to work with hypothesis testing, we need to now introduce some additional terminology and make some of our concepts above formal.
 -->
 
-Để hiểu rõ hơn về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và chính quy hóa các khái niệm ở trên. 
+Để hiểu rõ hơn về cách làm việc với kiểm định giả thuyết, chúng ta cần bổ sung thêm một số thuật ngữ và toán học hóa các khái niệm ở trên. 
 
 
 <!--
@@ -637,7 +637,7 @@ Hence, there might be something wrong with the null hypothesis and we will rejec
 -->
 
 :numref:`fig_statistical_significance` thể hiện các giá trị quan sát và xác suất của một phân phối chuẩn trong một bài kiểm định giả thuyết thống kê hai mẫu. 
-Nếu các điểm dữ liệu quan sát nằm ngoài ngưỡng $95\%$, đó sẽ là một quan sát rất khó xảy ra dưới giả định của giả thuyết gốc. 
+Nếu các điểm dữ liệu quan sát nằm ngoài ngưỡng $95\%$, chúng sẽ rất khó xảy ra dưới giả định của giả thuyết gốc. 
 Do đó, giả thuyết gốc có điều gì đó không đúng và chúng ta sẽ bác bỏ nó. 
 
 
