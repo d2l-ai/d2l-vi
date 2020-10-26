@@ -13,9 +13,9 @@ However, it is often unclear when improvements are significant, or only the resu
 To be able to discuss uncertainty in estimated values, we must learn some statistics.
 -->
 
-Không có gì để tranh cãi, khả năng huấn luyện các mô hình hiện đại với độ chính xác cao là rất quan trọng trong việc trở thành một chuyên gia Học sâu hàng đầu.
-Tuy nhiên, thường khó có thể biết được những cải tiến trong mô hình là đáng kể hay chúng chỉ là kết quả của những biến động ngẫu nhiên trong quá trình huấn luyện.
-Để có thể thảo luận về tính bất định trong các giá trị ước lượng, chúng ta cần có hiểu biết về thống kê.
+Để trở thành chuyên gia Học sâu hàng đầu, điều kiện tiên quyết cần có là khả năng huấn luyện các mô hình hiện đại với độ chính xác cao.
+Tuy nhiên, thường khó có thể biết được những cải tiến trong mô hình là đáng kể, hay chúng chỉ là kết quả của những biến động ngẫu nhiên trong quá trình huấn luyện. 
+Để có thể thảo luận về tính bất định trong các giá trị ước lượng, chúng ta cần có hiểu biết về thống kê. 
 
 
 <!--
@@ -26,11 +26,11 @@ Today, statistics is the science subject that concerns the collection, processin
 What is more, the core theory of statistics has been widely used in the research within academia, industry, and government.
 -->
 
-Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ chín.
-Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần suất để giải mã những thông điệp mã hoá.
-Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế.
-Hiện nay, thống kê là chủ đề khoa học bao gồm việc thu thập, xử lý, phân tích, diễn dịch và biễu diễn dữ liệu. 
-Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ.
+Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ chín. 
+Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần suất để giải mã những thông điệp mã hoá. 
+Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế. 
+Hiện nay, khoa học thống kê quan tâm đến việc thu thập, xử lý, phân tích, diễn giải và biểu diễn dữ liệu. 
+Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ. 
 
 
 <!--
@@ -41,11 +41,11 @@ Contrary to descriptive statistics, *statistical inference* further deduces the 
 based on the assumptions that the sample distribution can replicate the population distribution at some degree.
 -->
 
-Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
-Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*.
+Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *suy luận thống kê* (*statistical inference*).
+Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*. 
 Mẫu được lấy ra từ một *tổng thể* (*population*), là biểu diễn của toàn bộ những cá thể, đồ vật hay sự kiện tương tự nhau mà thí nghiệm của ta quan tâm.
-Trái với thống kê mô tả, *thống kê suy luận* dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, 
-dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối tổng thể.
+Trái với thống kê mô tả, *suy luận thống kê* (*statistical inference*) dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, 
+dựa theo giả định phân phối mẫu là một biểu diễn tương đối hợp lý của phân phối tổng thể. 
 
 
 <!--
@@ -54,10 +54,10 @@ This type of problems includes modeling the relationship between the variables, 
 In contrast, machine learning emphasizes on making accurate predictions, without explicitly programming and understanding each parameter's functionality.
 -->
 
-Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?".
-Nói một cách cơ bản, thống kê tập trung vào các vấn đề suy luận.
-Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B.
-Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách rõ ràng và hiểu rõ chức năng của từng tham số.
+Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?". 
+Về căn bản, thống kê tập trung vào các vấn đề suy luận. 
+Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra ý nghĩa thống kê của các tham số mô hình, ví dụ như phép thử A/B. 
+Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách tường minh và hiểu rõ chức năng của từng tham số. 
 
 
 <!--
@@ -67,17 +67,17 @@ For brevity, we assume that the true parameter $\theta$ of a given population is
 It is straightforward to extend to the case where $\theta$ is a vector or a tensor, thus we omit it in our discussion.
 -->
 
-Trong chương này, chúng tôi sẽ giới thiệu ba loại phương pháp thống kê suy luận: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy.
-Những phương pháp này có thể giúp chúng ta suy luận ra những đặc tính của một tổng thể, hay nói cách khác, tham số thật $\theta$.
-Để cho ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng.
-Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là rất đơn giản nên chúng tôi sẽ không đề cập đến vấn đề này. 
+Trong chương này, chúng tôi sẽ giới thiệu ba loại suy luận thống kê: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy. 
+Các phương pháp này có thể giúp chúng ta suy luận những đặc tính của một tổng thể, hay nói cách khác, tham số thực $\theta$. 
+Nói ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng. 
+Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là khá đơn giản nên chúng tôi sẽ không đề cập ở đây. 
 
 
 <!--
 ## Evaluating and Comparing Estimators
 -->
 
-## Đánh giá và So sánh các Bộ ước lượng
+## Đánh giá và So sánh các Bộ ước lượng 
 
 
 <!--
@@ -86,8 +86,8 @@ We will write $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ for the estimate of $
 -->
 
 
-Trong thống kê, một *bộ ước lượng* là một hàm sử dụng những mẫu có sẵn để ước lượng giá trị thực của tham số $\theta$.
-Ta gọi $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ là ước lượng của $\theta$ sau khi quan sát các mẫu {$x_1, x_2, \ldots, x_n$}.
+Trong thống kê, một *bộ ước lượng* là một hàm sử dụng những mẫu có sẵn để ước lượng giá trị thực của tham số $\theta$. 
+Ta gọi $\hat{\theta}_n = \hat{f}(x_1, \ldots, x_n)$ là ước lượng của $\theta$ sau khi quan sát các mẫu {$x_1, x_2, \ldots, x_n$}. 
 
 
 <!--
@@ -98,11 +98,11 @@ Similarly, an exercise asked you to show that the maximum likelihood estimate of
 These estimators will almost never give the true value of the parameter, but ideally for a large number of samples the estimate will be close.
 -->
 
-Ta đã thấy nhiều ví dụ đơn giản của bộ ước lượng trong phần :numref:`sec_maximum_likelihood`.
+Ta đã thấy nhiều ví dụ đơn giản của bộ ước lượng trong phần :numref:`sec_maximum_likelihood`. 
 Nếu bạn có một số mẫu ngẫu nhiên từ phân phối Bernoulli, thì ước lượng hợp lý cực đại (*maximum likelihood estimate*) 
-cho xác xuất của biến ngẫu nhiên có thể có được bằng cách đếm số lần biến cố một xuất hiện và chia cho tổng số mẫu.
-Tương tự, một bài tập yêu cầu bạn chứng minh rằng ước lượng hợp lý cực đại của kỳ vọng của một phân phối Gauss với một số lượng mẫu cho trước là giá trị trung bình của tập mẫu.
-Các bộ ước lượng này dường như sẽ không bao giờ cho ra giá trị chính xác của tham số, nhưng với trường hợp số lượng mẫu lớn, ước lượng có được sẽ gần với giá trị thực.
+cho xác xuất của biến ngẫu nhiên có thể được tính bằng cách đếm số lần biến cố xuất hiện rồi chia cho tổng số mẫu.
+Tương tự, đã có một bài tập yêu cầu bạn chứng minh rằng ước lượng hợp lý cực đại của kỳ vọng phân phối Gauss với một số lượng mẫu cho trước là giá trị trung bình của tập mẫu đó. 
+Các bộ ước lượng này dường như sẽ không bao giờ cho ra giá trị chính xác của tham số, nhưng với số lượng mẫu đủ lớn, ước lượng có được sẽ gần với giá trị thực. 
 
 
 <!--
@@ -110,8 +110,8 @@ As an example, we show below the true density of a Gaussian random variable with
 We constructed the $y$ coordinate so every point is visible and the relationship to the original density is clearer.
 -->
 
-Như một ví dụ, bên dưới là mật độ của phân phối Gauss với kỳ vọng là không và phương sai là một, cùng với một tập các mẫu lấy ra từ phân phối đó.
-Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn. 
+Xét ví dụ sau, chúng tôi biểu diễn mật độ của phân phối Gauss với kỳ vọng là không và phương sai là một, cùng với một tập các mẫu lấy ra từ phân phối đó. 
+Tọa độ $y$ được xây dựng sao cho tất các điểm đều có thể nhìn thấy được và mối quan hệ giữa mật độ mẫu và mật độ gốc của phân phối có thể được nhìn thấy rõ hơn.  
 
 
 ```{.python .input}
@@ -193,8 +193,8 @@ There can be many ways to compute an estimator of a parameter $\hat{\theta}_n$.
 In this section, we introduce three common methods to evaluate and compare estimators: the mean squared error, the standard deviation, and statistical bias.
 -->
 
-Có thể có nhiều cách để tính toán một bộ ước lượng cho một tham số $\hat{\theta}_n$.
-Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đánh giá và so sánh các bộ ước lượng: trung bình bình phương sai số, độ lệch chuẩn và độ chệch thống kê.
+Có nhiều cách để tính toán một bộ ước lượng cho một tham số $\hat{\theta}_n$. 
+Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đánh giá và so sánh các bộ ước lượng: trung bình bình phương sai số, độ lệch chuẩn và độ chệch thống kê. 
 
 
 <!--
@@ -208,8 +208,8 @@ Trong phần này, ta sẽ điểm qua ba phương thức phổ biến để đ�
 Perhaps the simplest metric used to evaluate estimators is the *mean squared error (MSE)* (or *$l_2$ loss*) of an estimator can be defined as
 -->
 
-Có lẽ phép đo đơn giản nhất được sử dụng để đánh giá bộ ước lượng là *trung bình bình phương sai số (mean squared error -- MSE)* (hay *mất mát $l_2$*).
-Trung bình bình phương sai số của một bộ ước lượng được định nghĩa
+Có lẽ phép đo đơn giản nhất được sử dụng để đánh giá bộ ước lượng là *trung bình bình phương sai số (mean squared error -- MSE)* (hay *mất mát $l_2$*). 
+Trung bình bình phương sai số của một bộ ước lượng được định nghĩa 
 
 
 $$\mathrm{MSE} (\hat{\theta}_n, \theta) = E[(\hat{\theta}_n - \theta)^2].$$
@@ -222,10 +222,10 @@ MSE is always non-negative. If you have read :numref:`sec_linear_regression`, yo
 As a measure to evaluate an estimator, the closer its value to zero, the closer the estimator is close to the true parameter $\theta$.
 -->
 
-Điều này cho phép ta định lượng trung bình bình phương độ lệch so với giá trị thực.
-MSE là một đại lượng không âm.
-Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là hàm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy.
-Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không thì bộ ước lượng càng gần với tham số thực $\theta$.
+Phương pháp này cho phép ta định lượng trung bình bình phương độ lệch so với giá trị thực. 
+MSE là một đại lượng không âm. 
+Nếu đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra đây là hàm mất mát được sử dụng phổ biến nhất trong bài toán hồi quy. 
+Như một phép đo để đánh giá bộ ước lượng, giá trị của nó càng gần không thì bộ ước lượng càng gần với tham số thực $\theta$. 
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
