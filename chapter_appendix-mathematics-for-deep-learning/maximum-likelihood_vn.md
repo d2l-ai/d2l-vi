@@ -198,7 +198,7 @@ and finding the one that gives the highest probability. We compute:
 -->
 
 Xác suất này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$ như đã dự đoán.
-Để kiểm tra xem nó có nằm chính xác ở đó không, chúng ta có thể chuyển sang giải tích.
+Để kiểm tra xem nó có nằm chính xác ở đó không, chúng ta có thể nhờ đến giải tích.
 Chú ý rằng ở điểm cực đại, hàm này sẽ phẳng.
 Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ để đạo hàm bằng 0,
 rồi xem giá trị nào trả về xác suất cao nhất. Ta tính toán:
