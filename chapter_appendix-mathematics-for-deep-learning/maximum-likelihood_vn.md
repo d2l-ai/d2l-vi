@@ -15,9 +15,9 @@ This is the concept that when working with a probabilistic model with unknown pa
 the parameters which make the data have the highest probability are the most likely ones.
 -->
 
-Một trong những cách tư duy thường gặp nhất trong học máy là quan điểm về hợp lý cực đại.
-Đây là khái niệm mà khi làm việc với một mô hình xác suất với các tham số chưa biết,
-các tham số làm cho dữ liệu có xác suất cao nhất là những tham số hợp lý nhất.
+Một trong những cách tư duy thường thấy nhất trong học máy là quan điểm về hợp lý cực đại.
+Đây là khái niệm mà khi làm việc với một mô hình xác suất mà các tham số chưa biết,
+các tham số làm cho các điểm dữ liệu đã quan sát có xác suất xảy ra cao nhất là những tham số hợp lý nhất.
 
 
 <!--
@@ -35,7 +35,7 @@ and $X$ is a sequence of independent coin flips.
 We will look at this example in depth later.
 -->
 
-Nguyên lý này có cách hiểu theo hướng Bayes khá hữu ích.
+Nguyên lý này có cách diễn giải theo trường phái Bayes khá hữu ích.
 Giả sử rằng ta có một mô hình với các tham số $\boldsymbol{\theta}$ và một tập hợp các mẫu dữ liệu $X$.
 Cụ thể hơn, ta có thể tưởng tượng rằng $\boldsymbol{\theta}$ là một giá trị duy nhất đại diện cho xác suất một đồng xu ngửa khi tung,
 và $X$ là một chuỗi các lần tung đồng xu độc lập.
@@ -75,12 +75,12 @@ any value in $[0,1]$ without any prior belief it is fair or not (often referred 
 Thus we see that our application of Bayes' rule shows that our best choice of $\boldsymbol{\theta}$ is the maximum likelihood estimate for $\boldsymbol{\theta}$:
 -->
 
-Biểu thức $P(X)$ là xác suất tạo dữ liệu hoàn toàn không phụ thuộc vào tham số, tức $\boldsymbol{\theta}$,
-do đó ta có thể bỏ nó mà lựa chọn tốt nhất của $\boldsymbol{\theta}$ vẫn không thay đổi.
-Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào tốt hơn bất kỳ bộ tham số nào khác,
+Biểu thức $P(X)$ là xác suất sinh dữ liệu độc lập tham số, và nó hoàn toàn không phụ thuộc vào tham số $\boldsymbol{\theta}$,
+do đó ta có thể bỏ qua nó mà không ảnh hưởng tới việc chọn ra $\boldsymbol{\theta}$ tốt nhất.
+Tương tự, bây giờ ta có thể cho rằng chúng ta không có giả định trước về bộ tham số nào là tốt hơn hết thảy,
 vì vậy ta có thể phát biểu rằng $P(\boldsymbol{\theta})$ cũng không phụ thuộc vào theta!
-Điều này có vẻ hợp lý trong ví dụ lật đồng xu, trong đó xác suất để ra mặt ngửa có thể là
-bất kỳ giá trị nào trong khoảng $[0,1]$ mà không có bất kỳ sự tin tưởng nào trước đó rằng đồng xu có công bằng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
+Điều này hợp lý trong ví dụ tung đồng xu, ở đây xác suất để ra mặt ngửa có thể là
+bất kỳ giá trị nào trong khoảng $[0,1]$ khi mà ta không có bất kỳ niềm tin nào trước đó rằng đồng xu có cân xứng hay không (thường được gọi là *tiên nghiệm không chứa thông tin*).
 Do đó, ta thấy rằng việc áp dụng quy tắc Bayes sẽ chỉ ra lựa chọn tốt nhất cho $\boldsymbol{\theta}$ là ước lượng hợp lý cực đại cho $\boldsymbol{\theta}$:
 
 $$
@@ -92,7 +92,7 @@ $$
 As a matter of common terminology, the probability of the data given the parameters ($P(X \mid \boldsymbol{\theta})$) is referred to as the *likelihood*.
 -->
 
-Theo thuật ngữ thông thường, xác suất của dữ liệu biết các tham số ($P(X \mid \boldsymbol{\theta})$) được gọi là *độ hợp lý*.
+Theo thuật ngữ thông thường, xác suất của dữ liệu với các tham số đã cho ($P(X \mid \boldsymbol{\theta})$) được gọi là *độ hợp lý*.
 
 
 <!--
@@ -110,9 +110,9 @@ we can use the fact that independent probabilities multiply to see that
 -->
 
 Hãy cùng xem phương pháp này hoạt động như thế nào trong một ví dụ cụ thể.
-Giả sử rằng chúng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất tung đồng xu một lần được mặt ngửa.
-Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ của chúng ta là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
-chúng ta có thể tận dụng việc các xác suất độc lập nhân được với nhau để thấy
+Giả sử rằng ta có một tham số duy nhất $\theta$ biểu diễn cho xác suất tung đồng xu một lần được mặt ngửa.
+Khi đó, xác suất nhận được mặt sấp là $1-\theta$, và vì vậy nếu dữ liệu quan sát $X$ là một chuỗi có $n_H$ mặt ngửa và $n_T$ mặt sấp,
+ta có thể sử dụng tính chất tích các xác suất độc lập với nhau để có được
 
 
 $$
@@ -124,7 +124,7 @@ $$
 If we flip $13$ coins and get the sequence "HHHTHTTHHHHHT", which has $n_H = 9$ and $n_T = 4$, we see that this is
 -->
 
-Nếu chúng ta tung $ 13 $ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", có $n_H = 9$ và $n_T = 4$, chúng ta thấy rằng đây là
+Nếu ta tung $13$ đồng xu và nhận được chuỗi "HHHTHTTHHHHHT", tức ta có $n_H = 9$ và $n_T = 4$, thì ta nhận được ở đây là
 
 
 $$
@@ -139,7 +139,7 @@ everyone would correctly guess $9/13$.
 What this maximum likelihood method will give us is a way to get that number from first principals in a way that will generalize to vastly more complex situations.
 -->
 
-Một điều thú vị về ví dụ này là chúng ta biết trước câu trả lời.
+Một điều thú vị ở ví dụ này là ta biết trước câu trả lời.
 Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã tung 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất cho xác suất tung đồng xu được mặt ngửa là bao nhiêu?"
 mọi người sẽ đều đoán đúng $9/13$.
 Điều mà phương pháp khả năng hợp lý cực đại cung cấp cho chúng ta là một cách để thu được con số đó từ các nguyên tắc cơ bản sao cho có thể khái quát được cho các tình huống phức tạp hơn rất nhiều.
@@ -149,7 +149,7 @@ mọi người sẽ đều đoán đúng $9/13$.
 For our example, the plot of $P(X \mid \theta)$ is as follows:
 -->
 
-Với ví dụ của ta, đồ thị của $P(X \mid \theta)$ có dạng như sau:
+Với ví dụ này, đồ thị của $P(X \mid \theta)$ có dạng như sau:
 
 
 ```{.python .input}
@@ -198,9 +198,9 @@ and finding the one that gives the highest probability. We compute:
 -->
 
 Xác suất này có giá trị tối đa ở đâu đó gần $9/13 \approx 0.7\ldots$ như đã dự đoán.
-Để kiếm tra xem nó có nằm chính xác ở đó không, chúng ta có thể tận dụng giải tích.
-Chú ý rằng ở điểm cực đại, hàm số sẽ nằm ngang.
-Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ có đạo hàm bằng 0,
+Để kiểm tra xem nó có nằm chính xác ở đó không, chúng ta có thể nhờ đến giải tích.
+Chú ý rằng ở điểm cực đại, hàm này sẽ phẳng.
+Do đó, ta có thể tìm ước lượng hợp lý cực đại :eqref:`eq_max_like` bằng cách tìm các giá trị của $\theta$ để đạo hàm bằng 0,
 rồi xem giá trị nào trả về xác suất cao nhất. Ta tính toán:
 
 
@@ -221,8 +221,8 @@ The final value does *not* assign zero probability to our sequence, and thus mus
 -->
 
 Phương trình này có ba nghiệm: $0$, $1$ và $9/13$.
-Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng gán xác suất bằng $0$ cho chuỗi kết quả tung đồng xu.
-Giá trị cuối cùng *không* gán xác suất bằng 0 cho chuỗi và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
+Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đại vì chúng cho xác suất bằng $0$ đối với chuỗi kết quả tung đồng xu.
+Giá trị cuối cùng *không* cho xác suất bằng 0 với chuỗi đã cho và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -249,16 +249,16 @@ Indeed, each probability is in $[0,1]$, say typically of value about $1/2$, and 
 We cannot work with that directly.  
 -->
 
-Trước tiên, hãy lưu ý rằng, nếu ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
-thì chúng ta gần như không thể xem xét độ hợp lý vì nó là tích của nhiều xác suất.
-Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, ví dụ như $1/2$ và tích của $(1/2)^{1000000000}$ thấp hơn nhiều so với độ chính xác của máy. 
+Trước tiên, hãy lưu ý rằng, nếu chúng ta giả định rằng tất cả các mẫu dữ liệu là độc lập, 
+thì ta có thể không còn thấy tính khả thi từ độ hợp lý khi chính nó là tích của nhiều xác suất.
+Thật vậy, mỗi xác suất nằm trong đoạn $[0,1]$, giá trị thường là $1/2$ và tích của $(1/2)^{1000000000}$ nhỏ hơn nhiều so với độ chính xác của máy. 
 Ta không thể làm việc trực tiếp với biểu thức này.
 
 <!--
 However, recall that the logarithm turns products to sums, in which case 
 -->
 
-Tuy nhiên, hãy nhớ lại rằng hàm log biến đổi tích thành tổng, trong trường hợp đó thì
+Tuy nhiên, nhắc lại rằng hàm log chuyển đổi tích thành tổng, trong trường hợp này thì
 
 $$
 \log((1/2)^{1000000000}) = 1000000000\cdot\log(1/2) \approx -301029995.6\ldots
@@ -270,8 +270,8 @@ This number fits perfectly within even a single precision $32$-bit float.
 Thus, we should consider the *log-likelihood*, which is
 -->
 
-Con số này hoàn toàn nằm vừa trong một số thực $32$-bit với độ chính xác đơn.
-Vì vậy, chúng ta nên xem xét *log hợp lý* (*log-likelihood*), chính là
+Con số này hoàn toàn nằm trong khoảng giá trị của một số thực dấu phẩy động $32$-bit với độ chính xác đơn.
+Vì vậy, chúng ta nên xem xét *độ hợp lý thang log* (*log-likelihood*), chính là
 
 $$
 \log(P(X \mid \boldsymbol{\theta})).
@@ -284,22 +284,22 @@ Indeed in :numref:`sec_naive_bayes` we will see this reasoning applied when work
 -->
 
 Vì hàm $x \mapsto \log(x)$ đồng biến, việc cực đại hóa độ hợp lý đồng nghĩa với việc cực đại hóa log hợp lý.
-Thật vậy trong :numref:`sec_naive_bayes`, chúng ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể về bộ phân loại Naive Bayes.
+Thật vậy trong :numref:`sec_naive_bayes`, ta sẽ thấy lập luận này được áp dụng khi làm việc với ví dụ cụ thể cho bộ phân loại Naive Bayes.
 
 <!--
 We often work with loss functions, where we wish to minimize the loss.
 We may turn maximum likelihood into the minimization of a loss by taking $-\log(P(X \mid \boldsymbol{\theta}))$, which is the *negative log-likelihood*.
 -->
 
-Ta thường làm việc với các hàm mất mát, thứ mà ta muốn cực tiểu hóa.
-Ta có thể biến đổi hợp lý cực đại thành việc cực tiểu hóa mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
+Ta thường làm việc với các hàm mất mát, với mong muốn cực tiểu hóa chúng.
+Ta có thể đổi từ việc tìm hợp lý cực đại thành việc tìm cực tiểu mất mát bằng cách lấy $-\log(P(X \mid \boldsymbol{\theta}))$, tức *hàm đối log hợp lý (negative log-likelihood)*.
 
 
 <!--
 To illustrate this, consider the coin flipping problem from before, and pretend that we do not know the closed form solution. We may compute that
 -->
 
-Để minh họa điều này, hãy xem xét bài toán tung đồng xu trước đó và giả vờ rằng ta không biết nghiệm dạng đóng. Ta có thể tính ra
+Để minh họa điều này, hãy xem xét bài toán tung đồng xu trước đó và giả sử rằng ta không biết nghiệm dạng đóng. Ta có thể tính ra
 
 $$
 -\log(P(X \mid \boldsymbol{\theta})) = -\log(\theta^{n_H}(1-\theta)^{n_T}) = -(n_H\log(\theta) + n_T\log(1-\theta)).
@@ -310,7 +310,7 @@ $$
 This can be written into code, and freely optimized even for billions of coin flips.
 -->
 
-Đẳng thức này có thể được lập trình và được tối ưu hóa thoải mái ngay cả với hàng tỷ lần tung đồng xu.
+Đẳng thức này có thể được lập trình và được tối ưu hóa hoàn toàn ngay cả với hàng tỷ lần tung đồng xu.
 
 ```{.python .input}
 # Set up our data
@@ -381,8 +381,8 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-Sự thuận tiện số học chỉ là một lý do khiến mọi người thích dùng hàm đối log hợp lý.
-Thật vậy, còn có một số lý do khác cho việc nó được ưa chuộng.
+Sự thuận tiện số học chỉ là một trong những lý do khiến mọi người thích dùng hàm đối log hợp lý.
+Thật ra còn có một vài lý do khác mà nó có thể được lựa chọn.
 
 <!--
 The second reason we consider the log-likelihood is the simplified application of calculus rules.
@@ -400,7 +400,7 @@ $$
 <!--
 This means that if we directly apply the product rule to compute a derivative we get
 -->
-Đẳng thức này có nghĩa là nếu chúng ta áp dựng trực tiếp quy tắc nhân để tính đạo hàm thì ta sẽ có được
+Điều này có nghĩa là nếu ta áp dựng trực tiếp quy tắc nhân để tính đạo hàm thì ta sẽ có được
 
 $$
 \begin{aligned}
@@ -418,8 +418,8 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-Biểu thức này đòi hỏi $n(n-1)$ phép nhân, kèm với $(n-1)$ phép cộng, vì vậy thời gian chạy tỉ lệ bình phương so với số lượng đầu vào!
-Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp thời gian sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, cùng với $(n-1)$ phép cộng, vì vậy tổng thời gian chạy tỉ lệ bình phương với số lượng đầu vào!
+Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
 Đối với hàm đối log hợp lý, chúng ta có
 
 $$
@@ -431,7 +431,7 @@ $$
 which then gives
 -->
 
-sau đó nhận được kết quả là
+điều này đưa đến kết quả là
 
 $$
 - \frac{\partial}{\partial \boldsymbol{\theta}} \log\left(P(X\mid\boldsymbol{\theta})\right) = \frac{1}{P(x_1\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_1\mid\boldsymbol{\theta})\right) + \cdots + \frac{1}{P(x_n\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_n\mid\boldsymbol{\theta})\right).
@@ -445,7 +445,7 @@ $$
 This requires only $n$ divides and $n-1$ sums, and thus is linear time in the inputs.
 -->
 
-Đẳng thức này chỉ yêu cầu $n$ phép chia và $n-1$ phép cộng, và do đó thời gian chạy tỉ lệ tuyến tính so với số đầu vào.
+Đẳng thức này chỉ yêu cầu $n$ phép chia và $n-1$ phép cộng, và do đó thời gian chạy tỉ lệ tuyến tính với số đầu vào.
 
 <!--
 The third and final reason to consider the negative log-likelihood is the relationship to information theory, 
@@ -454,9 +454,9 @@ This is a rigorous mathematical theory which gives a way to measure the degree o
 The key object of study in that field is the entropy which is 
 -->
 
-Lý do thứ ba và cũng là cuối cùng để xem xét hàm đối log hợp lý đó là mối tương quan với lý thuyết thông tin,
+Lý do thứ ba và cũng là cuối cùng khi xem xét hàm đối log hợp lý đó là sự liên hệ với lý thuyết thông tin,
 mà chúng ta sẽ thảo luận chi tiết tại phần :numref:`sec_information_theory`.
-Đây là một lý thuyết toán học chặt chẽ đưa ra cách đo lường mức độ thông tin hoặc tính ngẫu nhiên trong một biến ngẫu nhiên.
+Đây là một lý thuyết toán học chặt chẽ đưa ra cách đo lường mức độ thông tin hoặc độ ngẫu nhiên của một biến ngẫu nhiên.
 Đối tượng nghiên cứu chính trong lĩnh vực đó là entropy
 
 
@@ -471,9 +471,9 @@ and thus if we take our negative log-likelihood and divide by the number of data
 This theoretical interpretation alone would be sufficiently compelling to motivate reporting the average negative log-likelihood over the dataset as a way of measuring model performance.
 -->
 
-công thức trên đo lường tính ngẫu nhiên của một nguồn. Cần lưu ý rằng đây chỉ là giá trị $-\log$ xác suất trung bình,
-và do đó, nếu chúng ta lấy hàm đối log hợp lý và chia cho số lượng mẫu dữ liệu, chúng ta sẽ nhận được một đại lượng liên quan khác được gọi là entropy chéo.
-Chỉ cần diễn giải lý thuyết này thôi cũng đủ thuyết phục để thúc đẩy việc sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
+công thức trên đo lường độ ngẫu nhiên của một nguồn. Hãy để ý rằng đây chỉ là giá trị trung bình của $-\log$ xác suất,
+và do đó, nếu ta lấy hàm đối log hợp lý và chia cho số lượng mẫu dữ liệu, ta sẽ nhận được một đại lượng liên quan được gọi là entropy chéo.
+Chỉ riêng việc diễn giải mang tính lý thuyết này thôi là đủ thuyết phục để ta sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
 
 
 <!--
@@ -487,15 +487,15 @@ Chỉ cần diễn giải lý thuyết này thôi cũng đủ thuyết phục đ
 Everything that we have done so far assumes we are working with discrete random variables, but what if we want to work with continuous ones?
 -->
 
-Tất cả những gì chúng ta đã làm vừa rồi đều giả định rằng ta đang làm việc vói biến ngẫu nhiên rời rạc, nhưng nếu chúng ta muốn làm việc với các biến liên tục thì sao?
+Tất cả những điều chúng ta đã làm ở trước đều giả định rằng ta đang làm việc với biến ngẫu nhiên rời rạc, nhưng nếu chúng ta muốn làm việc với các biến liên tục thì sao?
 
 <!--
 The short summary is that nothing at all changes, except we replace all the instances of the probability with the probability density.
 Recalling that we write densities with lower case $p$, this means that for example we now say
 -->
 
-Nói ngắn gọn thì không có điều gì thay đổi cả, trừ việc ta thay thế tất cả xác suất bằng mật độ xác suất.
-Hãy nhớ lại rằng chúng ta ký hiệu mật độ bằng chữ thường $p$, nghĩa là bây giờ ta sẽ có
+Nói ngắn gọn thì không có thứ gì thay đổi cả, ngoại trừ việc ta thay thế tất cả giá trị xác suất bằng mật độ xác suất.
+Nhắc lại rằng chúng ta ký hiệu mật độ bằng chữ thường $p$, nghĩa là bây giờ ta sẽ có
 
 $$
 -\log\left(p(X\mid\boldsymbol{\theta})\right) = -\log(p(x_1\mid\boldsymbol{\theta})) - \log(p(x_2\mid\boldsymbol{\theta})) \cdots - \log(p(x_n\mid\boldsymbol{\theta})) = -\sum_i \log(p(x_i \mid \theta)).
@@ -509,7 +509,7 @@ and thus is not the probability of generating our data for any set of parameters
 -->
 
 Câu hỏi lúc này trở thành, "Tại sao điều này lại ổn?"
-Rốt cuộc, lý do chúng ta đưa ra khái niệm mật độ là vì chính bản thân xác suất nhận được một kết quả cụ thể là bằng không,
+Rốt cuộc, lý do chúng ta đưa ra khái niệm mật độ là vì xác suất nhận được một kết quả cụ thể bằng không,
 và do đó chẳng phải xác suất sinh dữ liệu đối với tập hợp tham số bất kỳ sẽ bằng không sao?
 
 <!--
@@ -526,9 +526,9 @@ For simplicity, we assume our data is repeated observations $x_1, \ldots, x_N$ o
 As we have seen previously, this can be written as
 -->
 
-Đầu tiên hãy xác định lại mục tiêu của mình.
-Giả sử rằng đối với các biến ngẫu nhiên liên tục, chúng ta không còn muốn tính xác suất để nhận được một giá trị chính xác,
-nhưng thay vào đó ta sẽ tính xác suất trong một phạm vi $\epsilon$ nào đó.
+Đầu tiên hãy xác định lại mục tiêu của chúng ta.
+Giả sử rằng đối với các biến ngẫu nhiên liên tục, ta không còn muốn tính xác suất tại chính ngay mỗi giá trị,
+mà thay vào đó là tìm xác suất trong một phạm vi $\epsilon$ nào đó.
 Để đơn giản, ta giả định rằng dữ liệu là các mẫu quan sát lặp lại $x_1, \ldots, x_N$ của các biến ngẫu nhiên được phân phối giống nhau $X_1, \ldots, X_N$.
 Như chúng ta đã thấy trước đây, giả định này có thể được biểu diễn như sau
 
@@ -544,7 +544,7 @@ $$
 Thus, if we take negative logarithms of this we obtain
 -->
 
-Do đó, nếu ta lấy logarit âm cho kết quả này thì ta sẽ nhận được
+Do đó, nếu ta lấy đối của logarit cho biểu thức này thì ta sẽ nhận được
 
 $$
 \begin{aligned}
@@ -560,9 +560,9 @@ This does not depend on the parameters $\boldsymbol{\theta}$ at all, so the opti
 If we demand four digits or four-hundred, the best choice of $\boldsymbol{\theta}$ remains the same, thus we may freely drop the epsilon to see that what we want to optimize is
 -->
 
-Nếu chúng ta xem xét biểu thức này, vị trí duy nhất mà $\epsilon$ xuất hiện là tại hằng số cộng $-N\log(\epsilon)$.
-Phần tử này hoàn toàn không phụ thuộc vào các tham số $\boldsymbol{\theta}$, vì vậy lựa chọn tối ưu của $\boldsymbol{\theta}$ không phụ thuộc vào sự lựa chọn $\epsilon$!
-Dù ta có yêu cầu bốn hoặc bốn trăm chữ số, lựa chọn tốt nhất của $\boldsymbol{\theta}$ vẫn không thay đổi, do đó ta hoàn toàn có thể loại bỏ epsilon để thấy được thứ mà ta muốn tối ưu hóa là
+Nếu chúng ta xem xét biểu thức này, vị trí duy nhất mà $\epsilon$ xuất hiện là trong hằng số cộng $-N\log(\epsilon)$.
+Hằng số này hoàn toàn không phụ thuộc vào các tham số $\boldsymbol{\theta}$, vì vậy lựa chọn tối ưu cho $\boldsymbol{\theta}$ không phụ thuộc vào việc lựa chọn $\epsilon$!
+Dù ta muốn lấy bốn hoặc bốn trăm chữ số, lựa chọn $\boldsymbol{\theta}$ tốt nhất sẽ không đổi, do đó ta có thể loại bỏ hẳn epsilon để có được biểu thức mà ta muốn tối ưu là
 
 
 $$
@@ -586,9 +586,9 @@ conversion of products to sums (and the resulting simplification of gradient com
 * While simplest to motivate in the discrete setting, it may be freely generalized to the continuous setting as well by maximizing the probability density assigned to the datapoints.
 -->
 
-* Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra dữ liệu với xác suất cao nhất.
-* Thường thì mọi người hay làm việc với hàm đối log hợp lý hơn vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ về mặt lý thuyết tới lý thuyết thông tin.
-* Dù việc áp dụng phương pháp này trong tình huống rời rạc là đơn giản nhất, nó hoàn toàn có thể được tổng quát hóa cho tình huống liên tục bằng cách cực đại hóa mật độ xác suất được gán cho các điểm dữ liệu.
+* Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra các điểm dữ liệu đó với xác suất cao nhất.
+* Tuy nhiên, thường thì mọi người hay làm việc với hàm đối log hợp lý vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ mật thiết về mặt lý thuyết với lý thuyết thông tin.
+* Trong khi áp dụng phương pháp này là đơn giản nhất trong trường hợp rời rạc, nó cũng có thể hoàn toàn tổng quát hóa cho trường hợp liên tục bằng cách cực đại hóa mật độ xác suất của các điểm dữ liệu.
 
 
 ## Bài tập
@@ -600,8 +600,8 @@ You obtain a single observation from the random variable which is the number $3$
 What is the maximum likelihood estimate for the mean?
 -->
 
-1. Giả sử bạn biết rằng một biến ngẫu nhiên có mật độ bằng  $\frac{1}{\alpha}e^{-\alpha x}$ đối với một giá trị $\alpha$ nào đó.
-Bạn có được một quan sát duy nhất từ biến ngẫu nhiên là số $3$. Giá trị ước lượng hợp lý cực đại cho $\alpha$ là bao nhiêu?
+1. Giả sử bạn biết rằng một biến ngẫu nhiên có mật độ bằng $\frac{1}{\alpha}e^{-\alpha x}$ với một giá trị $\alpha$ nào đó.
+Bạn nhận được một quan sát duy nhất từ biến ngẫu nhiên này là số $3$. Giá trị ước lượng hợp lý cực đại cho $\alpha$ là bao nhiêu?
 2. Giả sử rằng bạn có tập dữ liệu với các mẫu $\{x_i\}_{i=1}^N$ được lấy từ một phân phối Gauss với giá trị trung bình chưa biết, nhưng phương sai bằng $1$.
 Giá trị ước lượng hợp lý cực đại của trung bình là bao nhiêu?
 
