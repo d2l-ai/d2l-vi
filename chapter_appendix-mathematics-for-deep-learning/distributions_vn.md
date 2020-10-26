@@ -18,7 +18,7 @@ Let us first import some common libraries.
 
 Lúc này ta đã hiểu cách làm việc với xác suất cho biến ngẫu nhiên rời rạc và liên tục, hãy làm quen với một số phân phối xác suất thường gặp.
 Tùy thuộc vào lĩnh vực học máy, ta có thể phải làm quen với nhiều phân phối hơn, hoặc đối với một số lĩnh vực trong học sâu thì có khả năng sẽ không gặp.
-Tuy nhiên, ta nên biết các phân phối cơ bản.
+Tuy nhiên, ta vẫn nên biết các phân phối cơ bản.
 Đầu tiên hãy nhập một số thư viện phổ biến.
 
 
@@ -193,7 +193,7 @@ We will denote a random variable $X$ with this distribution as
 
 Biến ngẫu nhiên thường gặp tiếp theo là biến phân phối đều rời rạc.
 Ta giả sử biến này được phân phối trên tập các số nguyên $\{1, 2, \ldots, n\}$, tuy nhiên, có thể chọn bất kỳ tập giá trị nào khác.
-Ý nghĩa của từ *đồng nhất* trong ngữ cảnh này là mọi giá trị đều có thể xảy ra với khả năng như nhau.
+Ý nghĩa của từ *đều* trong ngữ cảnh này là mọi giá trị đều có thể xảy ra với khả năng như nhau.
 Xác suất cho mỗi giá trị $i \in \{1, 2, 3, \ldots, n\}$ là $p_i = \frac{1}{n}$.
 Ta ký hiệu một biến ngẫu nhiên $X$ tuân theo phân phối này là:
 
@@ -464,7 +464,7 @@ This random variable originates from performing a sequence of $n$ independent ex
 each of which has probability $p$ of succeeding, and asking how many successes we expect to see.
 -->
 
-Biến ngẫu nhiên *nhị thức* phức tạp hơn một chút.
+Biến ngẫu nhiên *nhị thức* thì phức tạp hơn một chút.
 Biến ngẫu nhiên này bắt nguồn từ việc thực hiện liên tiếp $n$ thí nghiệm độc lập,
 mỗi thí nghiệm có xác suất thành công $p$, và hỏi xem số lần thành công kỳ vọng là bao nhiêu. 
 
