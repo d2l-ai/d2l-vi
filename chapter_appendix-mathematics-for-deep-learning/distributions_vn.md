@@ -621,7 +621,7 @@ While this result is not simple, the means and variances are.
 If $X \sim \mathrm{Binomial}(n, p)$, then:
 -->
 
-Dù không dễ để suy ra công thức, trung bình và phương sai của phân phối được tính như sau:
+Dù không dễ để suy ra công thức, kỳ vọng và phương sai của phân phối được tính như sau:
 
 * $\mu_X = np$,
 * $\sigma_X^2 = np(1-p)$.
@@ -722,7 +722,7 @@ This indicates that there *could be* some random variable we can define in this 
 -->
 
 Hãy xem xét các biến ngẫu nhiên này.
-Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có trung bình $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
+Ở mục trước, ta đã biết :eqref:`eq_eq_poisson_approx` có kỳ vọng $\mu_{X^{(n)}} = n(p/n) = p$, và phương sai $\sigma_{X^{(n)}}^2 = n(p/n)(1-(p/n)) = p(1-p/n)$.
 Nếu cho $n \rightarrow \infty$, ta có thể thấy rằng hai giá trị này dần tiến về $\mu_{X^{(\infty)}} = p$, và phương sai $\sigma_{X^{(\infty)}}^2 = p$.
 Điều này gợi ý rằng ta *có thể* định nghĩa thêm một biến ngẫu nhiên nào đó trong trường hợp việc chia nhỏ này tiến ra vô cùng. 
 
@@ -862,7 +862,7 @@ As we saw above, the means and variances are particularly concise.
 If $X \sim \mathrm{Poisson}(\lambda)$, then:
 -->
 
-Như ta thấy ở trên, trung bình và phương sai của phân phối này đặc biệt súc tích.
+Như ta thấy ở trên, kỳ vọng và phương sai của phân phối này đặc biệt súc tích.
 Nếu $X \sim \mathrm{Poisson}(\lambda)$:
 
 
