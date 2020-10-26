@@ -29,7 +29,7 @@ What is more, the core theory of statistics has been widely used in the research
 Tài liệu tham khảo đầu tiên về *thống kê* có thể được truy ngược về học giả người Ả Rập Al-Kindi từ thế kỉ thứ chín. 
 Ông đã đưa ra những mô tả chi tiết về cách sử dụng thống kê và phân tích tần suất để giải mã những thông điệp mã hoá. 
 Sau 800 năm, thống kê hiện đại trỗi dậy ở Đức vào những năm 1700, khi các nhà nghiên cứu tập trung vào việc thu thập và phân tích các dữ liệu nhân khẩu học và kinh tế. 
-Hiện nay, thống kê là chủ đề khoa học bao gồm việc thu thập, xử lý, phân tích, diễn dịch và biễu diễn dữ liệu. 
+Hiện nay, khoa học thống kê quan tâm đến việc thu thập, xử lý, phân tích, diễn giải và biểu diễn dữ liệu. 
 Hơn nữa, lý thuyết cốt lõi của thống kê đã được sử dụng rộng rãi cho nghiên cứu trong giới học thuật, doanh nghiệp và chính phủ. 
 
 
@@ -41,7 +41,7 @@ Contrary to descriptive statistics, *statistical inference* further deduces the 
 based on the assumptions that the sample distribution can replicate the population distribution at some degree.
 -->
 
-Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *thống kê suy luận* (*statistical inference*).
+Cụ thể hơn, thống kê có thể được chia thành *thống kê mô tả* (*descriptive statistic*) và *suy luận thống kê* (*statistical inference*).
 Thống kê mô tả đặt trọng tâm vào việc tóm tắt và minh hoạ những đặc trưng của một tập hợp những dữ liệu đã được quan sát - được gọi là *mẫu*. 
 Mẫu được lấy ra từ một *tổng thể* (*population*), là biểu diễn của toàn bộ những cá thể, đồ vật hay sự kiện tương tự nhau mà thí nghiệm của ta quan tâm.
 Trái với thống kê mô tả, *suy luận thống kê* (*statistical inference*) dự đoán những đặc điểm của một tổng thể qua những *mẫu* có sẵn, 
@@ -56,8 +56,8 @@ In contrast, machine learning emphasizes on making accurate predictions, without
 
 Bạn có thể tự hỏi: "Sự khác biệt cơ bản giữa học máy và thống kê là gì?". 
 Về căn bản, thống kê tập trung vào các vấn đề suy luận. 
-Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra những ý nghĩa về mặt thống kê trong các tham số của mô hình, ví dụ như phép thử A/B. 
-Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách tưởng minh và hiểu rõ chức năng của từng tham số. 
+Những vấn đề này bao gồm mô hình hoá mối quan hệ giữa các biến, ví dụ như suy luận nguyên nhân hoặc kiểm tra ý nghĩa thống kê của các tham số mô hình, ví dụ như phép thử A/B. 
+Ngược lại, học máy đề cao việc dự đoán chính xác mà không yêu cầu lập trình một cách tường minh và hiểu rõ chức năng của từng tham số. 
 
 
 <!--
@@ -67,10 +67,10 @@ For brevity, we assume that the true parameter $\theta$ of a given population is
 It is straightforward to extend to the case where $\theta$ is a vector or a tensor, thus we omit it in our discussion.
 -->
 
-Trong chương này, chúng tôi sẽ giới thiệu ba loại phương pháp thống kê suy luận: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy. 
-Các phương pháp này có thể giúp chúng ta suy luận những đặc tính của một tổng thể, hay nói cách khác, tham số thật $\theta$. 
+Trong chương này, chúng tôi sẽ giới thiệu ba loại suy luận thống kê: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết và xây dựng khoảng tin cậy. 
+Các phương pháp này có thể giúp chúng ta suy luận những đặc tính của một tổng thể, hay nói cách khác, tham số thực $\theta$. 
 Nói ngắn gọn, chúng tôi giả sử tham số thực $\theta$ của một tổng thể cho trước là một số vô hướng. 
-Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là khá đơn giản nên chúng tôi sẽ không đề cập đến vấn đề này. 
+Việc mở rộng ra các trường hợp $\theta$ là một vector hoặc tensor là khá đơn giản nên chúng tôi sẽ không đề cập ở đây. 
 
 
 <!--
