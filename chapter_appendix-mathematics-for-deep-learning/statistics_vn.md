@@ -748,7 +748,7 @@ Thường thì $T(X)$ (phân phối của tiêu chuẩn kiểm định dưới g
 tuân theo một phân phối phổ biến như phân phối chuẩn, khi được xem xét dưới giả thuyết gốc. 
 Nếu ta có thể chỉ rõ một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu,
 ta có thể yên tâm bác bỏ giả thuyết gốc nếu thống kê đó nằm xa bên ngoài khoảng mong đợi. 
-Việc đưa ra một con số như vậy dẫn đến ý tưởng của trị số $p$. 
+Định lượng hóa ý tưởng này đưa ta đến với khái niệm trị số $p$ (*$p$-values*). 
 
 
 <!--
