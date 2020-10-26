@@ -1164,7 +1164,6 @@ biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $
 Ban sẽ thấy một vài khoảng rất nhỏ cách xa khoảng chứa giá trị kỳ vọng thực $0$.
 Điều này có mâu thuẫn với việc diễn giải khoảng tin cậy không? Có đúng không khi sử dụng các khoảng nhỏ này để nói các ước lượng có độ chính xác cao? 
 
-
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
 
 ## Thảo luận
@@ -1184,5 +1183,6 @@ Bản dịch trong trang này được thực hiện bởi:
 * Mai Sơn Hải
 * Phạm Minh Đức
 * Nguyễn Cảnh Thướng
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
