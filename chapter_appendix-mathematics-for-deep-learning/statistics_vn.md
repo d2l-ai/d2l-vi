@@ -235,15 +235,15 @@ Như một phép đo để đánh giá bộ ước lượng, giá trị của n�
 ### Statistical Bias
 -->
 
-### Độ chệch thống kê
+### Độ chệch Thống kê
 
 <!--
 The MSE provides a natural metric, but we can easily imagine multiple different phenomena that might make it large.  
 Two that we will see are fundamentally important are the fluctuation in the estimator due to randomness in the dataset, and systematic error in the estimator due to the estimation procedure.
 -->
 
-MSE cung cấp một phép đo tự nhiên, nhưng ta có thể dễ dàng nghĩ tới những trường hợp khác nhau có thể làm cho giá trị MSE lớn.
-Hai trường hợp về cơ bản quan trọng mà ta sẽ thấy đó là biến động của bộ ước lượng do sự ngẫu nhiên trong bộ dữ liệu và sai số hệ thống của bộ ước lượng xảy ra trong quá trình ước lượng. 
+MSE cung cấp một phép đo tự nhiên, nhưng ta có thể dễ dàng nghĩ tới các trường hợp khác nhau mà ở đó giá trị MSE sẽ lớn.
+Ta sẽ bàn tới hai trường hợp cơ bản đó là biến động của bộ ước lượng do sự ngẫu nhiên trong bộ dữ liệu, và sai số hệ thống của bộ ước lượng xảy ra trong quá trình ước lượng. 
 
 
 <!--
@@ -252,7 +252,7 @@ For an estimator $\hat{\theta}_n$, the mathematical illustration of *statistical
 -->
 
 Đầu tiên, ta hãy đo sai số hệ thống.
-Với một bộ ước lượng $\hat{\theta}_n$, biểu diễn toán học của *độ chệch thống kê* được định nghĩa bởi
+Với một bộ ước lượng $\hat{\theta}_n$, biểu diễn toán học của *độ chệch thống kê* được định nghĩa
 
 
 $$\mathrm{bias}(\hat{\theta}_n) = E(\hat{\theta}_n - \theta) = E(\hat{\theta}_n) - \theta.$$
@@ -265,8 +265,9 @@ In this case, we say $\hat{\theta}_n$ is an unbiased estimator.
 In general, an unbiased estimator is better than a biased estimator since its expectation is the same as the true parameter.
 -->
 
-Lưu ý rằng khi $\mathrm{bias}(\hat{\theta}_n) = 0$, kỳ vọng của bộ ước lượng $\hat{\theta}_n$ sẽ bằng với giá trị thực của tham số.
-Nhìn chung, một bộ ước lượng không thiên lệch sẽ tốt hơn một bộ ước lượng thiên lệch vì kỳ vọng của nó sẽ bằng với tham số thực.
+Lưu ý rằng khi $\mathrm{bias}(\hat{\theta}_n) = 0$, kỳ vọng của bộ ước lượng $\hat{\theta}_n$ sẽ bằng với giá trị thực của tham số. 
+Trường hợp này, ta nói $\hat{\theta}_n$ là một bộ ước lượng không thiên lệch.
+Nhìn chung, một bộ ước lượng không thiên lệch sẽ tốt hơn một bộ ước lượng thiên lệch vì kỳ vọng của nó sẽ bằng với tham số thực. 
 
 
 <!--
@@ -276,10 +277,10 @@ This may seem like a significant flaw in an estimator, however the majority of e
 in the sense that the bias tends to zero as the number of available samples tends to infinity: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
 -->
 
-Cũng đáng để tâm rằng, dù vậy, những bộ ước lượng thiên lệch vẫn thường xuyên được sử dụng trong thực tế.
-Có những trường hợp các bộ ước lượng không thiên lệch không tồn tại nếu không có thêm giả định hoặc nó rất khó để tính toán.
+Tuy nhiên, những bộ ước lượng thiên lệch vẫn thường xuyên được sử dụng trong thực tế.  
+Có những trường hợp không tồn tại các bộ ước lượng không thiên lệch nếu không có thêm giả định, hoặc rất khó để tính toán. 
 Đây có thể xem như một khuyết điểm lớn trong bộ ước lượng, tuy nhiên phần lớn các bộ ước lượng gặp trong thực tiễn đều ít nhất tiệm cận 
-không thiên lệch theo nghĩa độ chệch có xu hướng tiến về không khi số lượng mẫu có được tiến về vô cực: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$.
+không thiên lệch theo nghĩa độ chệch có xu hướng tiến về không khi số lượng mẫu có được tiến về vô cực: $\lim_{n \rightarrow \infty} \mathrm{bias}(\hat{\theta}_n) = 0$. 
 
 
 <!--
@@ -294,9 +295,9 @@ Recall from :numref:`sec_random_variables`, the *standard deviation* (or *standa
 We may measure the degree of fluctuation of an estimator by measuring the standard deviation or variance of that estimator.
 -->
 
-Tiếp theo, cùng tính độ ngẫu nhiên trong bộ ước lượng.
-Nhắc lại từ :numref:`sec_random_variables`, *độ lệch chuẩn* (còn được gọi là *sai số chuẩn*) được định nghĩa là căn bậc hai của phương sai.
-Chúng ta có thể đo được độ dao động của bộ ước lượng bằng cách tính độ lệch chuẩn hoặc phương sai của bộ ước lượng đó.
+Tiếp theo, hãy cùng tính độ ngẫu nhiên trong bộ ước lượng. 
+Nhắc lại từ :numref:`sec_random_variables`, *độ lệch chuẩn* (*standard deviation*) (còn được gọi là *sai số chuẩn* -- *standard error*) được định nghĩa là căn bậc hai của phương sai.
+Chúng ta có thể đo được độ dao động của bộ ước lượng bằng cách tính độ lệch chuẩn hoặc phương sai của bộ ước lượng đó. 
 
 
 $$\sigma_{\hat{\theta}_n} = \sqrt{\mathrm{Var} (\hat{\theta}_n )} = \sqrt{E[(\hat{\theta}_n - E(\hat{\theta}_n))^2]}.$$
@@ -309,9 +310,9 @@ In this equation we do not compare to the true population value $\theta$, but in
 Thus we are not measuring how far the estimator tends to be from the true value, but instead we measuring the fluctuation of the estimator itself.
 -->
 
-So sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là một việc quan trọng.
-Trong công thức này, thay vì so sánh với giá trị tổng thể thực $\theta$, chúng ta sử dụng $E(\hat{\theta}_n)$, giá trị trung bình mẫu kỳ vọng.
-Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính nó (bộ ước lượng).
+So sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là một việc quan trọng. 
+Trong công thức này, thay vì so sánh với giá trị thực $\theta$ của tổng thể, chúng ta sử dụng $E(\hat{\theta}_n)$ là giá trị trung bình mẫu kỳ vọng. 
+Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính bộ ước lượng. 
 
 
 <!--
@@ -326,9 +327,9 @@ What is somewhat shocking is that we can show that this is actually a *decomposi
 That is to say that we can write the mean squared error as the sum of the variance and the square or the bias.
 -->
 
-Cả hai yếu tố trên rõ ràng đều ảnh hưởng đến trung bình bình phương sai số.
-Một điều ngạc nhiên là chúng ta có thể chứng minh trung bình bình phương sai số có thể phân tách thành hai thành phần đó. 
-Điều này có nghĩa là chúng ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch.
+Cả hai yếu tố trên rõ ràng đều ảnh hưởng đến trung bình bình phương sai số. 
+Một điều ngạc nhiên là chúng ta có thể chứng minh hai thành phần trên là *phân tách* của trung bình bình phương sai số.
+Điều này có nghĩa là ta có thể viết trung bình bình phương sai số bằng tổng của phương sai và bình phương độ chệch. 
 
 
 $$
@@ -354,13 +355,13 @@ If a model suffers from high variance, we often say it is *overfitting* and lack
 The irreducible error is the result from noise in the $\theta$ itself.
 -->
 
-Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*.
-Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành hai nguồn sai số khác nhau: sai số từ độ chệch cao và sai số từ phương sai cao.
-Sai số độ chệch thường xuất hiện ở mô hình đơn giản (ví dụ mô hình hồi quy tuyến tính), khi nó không thể chiết xuất những quan hệ đa chiều giữa các đặc trưng và đầu ra.
-Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* (*underfitting*) hoặc là thiếu sự *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`).
-Ngược lại, một mô hình *quá khớp* (*overfitting*) lại rất nhạy cảm với những dao động nhỏ trong dữ liệu.
-Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở (:numref:`sec_model_selection`).
-
+Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*. 
+Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành ba nguồn sai số khác nhau: sai số từ độ chệch cao, sai số từ phương sai cao và sai số không tránh được (*irreducible error*). 
+Sai số độ chệch thường xuất hiện ở các mô hình đơn giản (ví dụ như hồi quy tuyến tính), vì chúng không thể trích xuất những quan hệ đa chiều giữa các đặc trưng và đầu ra. 
+Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* (*underfitting*) hoặc là thiếu *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`). 
+Ngược lại, một mô hình *quá khớp* (*overfitting*) lại rất nhạy cảm với những dao động nhỏ trong dữ liệu. 
+Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở  (:numref:`sec_model_selection`). 
+Sai số không tránh được xuất phát từ nhiễu trong chính bản thân $\theta$.
 <!--
 ### Evaluating Estimators in Code
 -->
@@ -373,7 +374,7 @@ we will skip it but implement the statistical bias and the mean squared error in
 -->
 
 Vì độ lệch chuẩn của bộ ước lượng đã được triển khai trong MXNet bằng cách gọi `a.std()` của đối tượng `ndarray` "a", 
-chúng ta sẽ bỏ qua bước này và thực hiện tính độ chệch thống kê và trung bình bình phương sai số trong MXNet.
+chúng ta sẽ bỏ qua bước này và thực hiện tính độ chệch thống kê và trung bình bình phương sai số trong MXNet. 
 
 
 ```{.python .input}
@@ -412,10 +413,10 @@ Here, we use a $\theta = 1$ and $\sigma = 4$.
 As the estimator is a function of the given samples, here we use the mean of the samples as an estimator for true $\theta$ in this normal distribution $\mathcal{N}(\theta, \sigma^2)$ .
 -->
 
-Để minh họa cho phương trình sự đánh đổi độ chệch-phương sai, cùng giả lập một phân phối chuẩn $\mathcal{N}(\theta, \sigma^2)$ với $10,000$ mẫu.
-Ở đây, chúng ta sử dụng $\theta = 1$ và $\sigma = 4$.
+Để minh họa cho phương trình sự đánh đổi độ chệch-phương sai, cùng giả lập một phân phối chuẩn $\mathcal{N}(\theta, \sigma^2)$ với $10,000$ mẫu. 
+Ở đây, ta sử dụng $\theta = 1$ và $\sigma = 4$. 
 Với bộ ước lượng là một hàm số từ các mẫu đã cho, ở đây chúng ta sử dụng trung bình của các mẫu như là bộ ước lượng 
-cho giá trị thực $\theta$ trong phân phối chuẩn này $\mathcal{N}(\theta, \sigma^2)$.
+cho giá trị thực $\theta$ trong phân phối chuẩn này $\mathcal{N}(\theta, \sigma^2)$. 
 
 
 ```{.python .input}
@@ -452,8 +453,8 @@ theta_est
 Let's validate the trade-off equation by calculating the summation of the squared bias and the variance of our estimator. First, calculate the MSE of our estimator.
 -->
 
-Cùng xác định phương trình đánh đổi bằng cách tính tổng độ chệch bình phương và phương sai từ bộ ước lượng của chúng ta.
-Đầu tiên, tính trung bình bình phương sai số của bộ ước lượng:
+Cùng xác thực phương trình đánh đổi bằng cách tính tổng độ chệch bình phương và phương sai từ bộ ước lượng của chúng ta. 
+Đầu tiên, tính trung bình bình phương sai số của bộ ước lượng: 
 
 
 ```{.python .input}
@@ -466,7 +467,7 @@ mse(samples, theta_true)
 Next, we calculate $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ as below. As you can see, the two values agree to numerical precision.
 -->
 
-Tiếp theo, chúng ta tính $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy hai đại lượng có giá trị gần giống nhau.
+Tiếp theo, chúng ta tính $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy đại lượng này gần giống với trung bình bình phương sai số đã tính ở trên. 
 
 
 ```{.python .input}
