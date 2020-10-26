@@ -381,7 +381,7 @@ Numerical convenience is only one reason people like to use negative log-likelih
 Indeed, there are a several reasons that it can be preferable.
 -->
 
-Sự thuận tiện số học là lý do duy nhất khiến mọi người thích dùng hàm đối log hợp lý.
+Sự thuận tiện số học chỉ là một trong những lý do khiến mọi người thích dùng hàm đối log hợp lý.
 Thật ra còn có một vài lý do khác mà nó có thể được lựa chọn.
 
 <!--
@@ -471,9 +471,9 @@ and thus if we take our negative log-likelihood and divide by the number of data
 This theoretical interpretation alone would be sufficiently compelling to motivate reporting the average negative log-likelihood over the dataset as a way of measuring model performance.
 -->
 
-công thức trên đo lường độ ngẫu nhiên của một nguồn. Cần lưu ý rằng ở đây không có gì khác hơn ngoài việc lấy giá trị $-\log$ xác suất trung bình,
-và do đó, nếu ta lấy hàm đối log hợp lý và chia cho số lượng mẫu dữ liệu, ta sẽ nhận được một lượng entropy tương đối gọi là entropy chéo.
-Chỉ riêng việc diễn giải mang tính lý thuyết này thôi là đủ thuyết phục khiến ta sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
+công thức trên đo lường độ ngẫu nhiên của một nguồn. Hãy để ý rằng đây chỉ là giá trị trung bình của $-\log$ xác suất,
+và do đó, nếu ta lấy hàm đối log hợp lý và chia cho số lượng mẫu dữ liệu, ta sẽ nhận được một đại lượng liên quan được gọi là entropy chéo.
+Chỉ riêng việc diễn giải mang tính lý thuyết này thôi là đủ thuyết phục để ta sử dụng giá trị đối log hợp lý trung bình trên một tập dữ liệu như một cách đo lường chất lượng của mô hình.
 
 
 <!--
@@ -509,7 +509,7 @@ and thus is not the probability of generating our data for any set of parameters
 -->
 
 Câu hỏi lúc này trở thành, "Tại sao điều này lại ổn?"
-Rốt cuộc, lý do chúng ta đưa ra khái niệm mật độ là vì xác suất nhận được một kết quả cụ thể tự nó là bằng không,
+Rốt cuộc, lý do chúng ta đưa ra khái niệm mật độ là vì xác suất nhận được một kết quả cụ thể bằng không,
 và do đó chẳng phải xác suất sinh dữ liệu đối với tập hợp tham số bất kỳ sẽ bằng không sao?
 
 <!--
