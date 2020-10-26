@@ -897,7 +897,7 @@ Hãy cùng xem xét cách tính khoảng tin cậy.
 Mathematically, a *confidence interval* for the true parameter $\theta$ is an interval $C_n$ that computed from the sample data such that
 -->
 
-Về mặt toán học, một *khoảng tin cậy* của tham số thực $\theta$ là khoảng $C_n$ được tính từ dữ liệu mẫu sao cho: 
+Về mặt toán học, *khoảng tin cậy* $C_n$ của tham số thực $\theta$ được tính từ dữ liệu mẫu sao cho: 
 
 
 $$P_{\theta} (C_n \ni \theta) \geq 1 - \alpha, \forall \theta.$$
@@ -935,7 +935,7 @@ Thus a better interpretation would be to say that if you generated a large numbe
 $95\%$ of the generated intervals would contain the true parameter.
 -->
 
-Thật hấp dẫn khi cho rằng một khoảng tin cậy $95\%$ là tương đương với việc chắc chắn $95\%$ giá trị thật phân bố trong khoảng đó, tuy nhiên đáng buồn thay điều này lại không chính xác. 
+Rất dễ để cho rằng khoảng tin cậy $95\%$ tương đương với việc chắc chắn $95\%$ giá trị thật phân bố trong khoảng đó, tuy nhiên đáng buồn thay điều này lại không chính xác. 
 Tham số thật là cố định và khoảng tin cậy mới là ngẫu nhiên. 
 Vậy nên một cách diễn giải tốt hơn đó là nếu bạn tạo ra một số lượng lớn các khoảng tin cậy theo quy trình này, thì $95\%$ các khoảng được tạo sẽ chứa tham số thật. 
 
@@ -949,8 +949,8 @@ An in-depth discussion of these points can be found in :cite:`Morey.Hoekstra.Rou
 
 Điều này nghe có vẻ tiểu tiết, nhưng lại có một ý nghĩa quan trọng trong việc diễn giải các kết quả. 
 Cụ thể, chúng ta có thể thỏa mãn :eqref:`eq_confidence` bằng cách tạo ra các khoảng *gần như chắc chắn* không chứa tham số thật, miễn là số lượng các khoảng này đủ nhỏ. 
-Chúng ta kết luận mục này bằng cách đưa ra ba giả thuyết nghe hợp lý nhưng lại không chính xác. 
-Thảo luận sâu hơn về những điểm dưới đây có thể tham khảo thêm ở :cite:`Morey.Hoekstra.Rouder.ea.2016`. 
+Chúng ta kết thúc mục này bằng ba mệnh đề nghe hợp lý nhưng lại không chính xác. 
+Thảo luận sâu hơn về các mệnh đề này có thể tham khảo thêm ở :cite:`Morey.Hoekstra.Rouder.ea.2016`. 
 
 
 <!--
@@ -959,9 +959,9 @@ Thảo luận sâu hơn về những điểm dưới đây có thể tham khảo
 * **Fallacy 3**. The probability that a particular observed $95\%$ confidence interval contains the true value is $95\%$.
 -->
 
-* **Ngụy biện 1**: Khoảng tin cậy hẹp cho phép chúng ta dự đoán các giá trị một cách chính xác. 
-* **Ngụy biện 2**: Các giá trị nằm trong khoảng tin cậy có nhiều khả năng là giá trị thực hơn là các giá trị nằm bên ngoài.   
-* **Ngụy biện 3**: Xác xuất mà một khoảng được quan sát với độ tin cậy $95\%$ chứa các giá trị thực là $95\%$. 
+* **Sai lầm 1**: Khoảng tin cậy hẹp cho phép chúng ta dự đoán các giá trị một cách chính xác. 
+* **Sai lầm 2**: Các giá trị nằm trong khoảng tin cậy có nhiều khả năng là giá trị thực hơn là các giá trị nằm bên ngoài.   
+* **Sai lầm 3**: Xác xuất một khoảng tin cậy $95\%$ chứa các giá trị thực là $95\%$. 
 
 
 <!--
@@ -985,7 +985,7 @@ Suppose we collect $n$ samples $\{x_i\}_{i=1}^n$ from our Gaussian $\mathcal{N}(
 We can compute estimators for the mean and standard deviation by taking
 -->
 
-Cùng bàn về ví dụ kinh điển nhất, khoảng tin cậy cho giá trị trung bình của một phân phối Gaussian với trung bình và phương sai chưa xác định.  
+Cùng bàn về ví dụ kinh điển nhất, khoảng tin cậy cho giá trị trung bình của một phân phối Gaussian với kỳ vọng và phương sai chưa xác định.  
 Giả sử chúng ta thu thập $n$ mẫu $\{x_i\}_{i=1}^n$ từ phân phối Gaussian $\mathcal{N}(\mu, \sigma^2)$. 
 Chúng ta có thể tính bộ ước lượng cho giá trị trung bình và độ lệch chuẩn bằng công thức: 
 
@@ -1020,7 +1020,7 @@ For finite values of $n$, the interval needs to be somewhat larger, but are well
 -->
 
 Phân phối này đã được nghiên cứu rất chi tiết, và đã được chứng minh là khi $n\rightarrow \infty$, 
-nó xấp xỉ với một phân phối Gaussian tiêu chuẩn, và do đó bằng cách nhìn vào các giá trị phân phối tích lũy của Gausian trong bảng, 
+nó xấp xỉ với một phân phối Gauss tiêu chuẩn, và do đó bằng cách nhìn vào bảng giá trị phân phối tích lũy Gauss, 
 chúng ta có thể kết luận rằng giá trị $T$ nằm trong khoảng $[-1.96, 1.96]$ tối thiểu là $95\%$ các trường hợp.
 Với giá trị $n$ hữu hạn, khoảng tin cậy sẽ lớn hơn, nhưng chúng vẫn rõ ràng và thường được tính sẵn và trình bày thành bảng.
 
@@ -1041,7 +1041,7 @@ $$
 Rearranging this by multiplying both sides by $\hat\sigma_n/\sqrt{n}$ and then adding $\hat\mu_n$, we obtain
 -->
 
-Sắp xếp lại công thức này bằng cách nhân hai vế với $\hat\sigma_n/\sqrt{n}$ và thêm vào $\hat\mu_n$, ta có: 
+Sắp xếp lại công thức này bằng cách nhân hai vế với $\hat\sigma_n/\sqrt{n}$ và cộng thêm $\hat\mu_n$, ta có: 
 
 
 $$
@@ -1068,9 +1068,9 @@ Small values of $N$ should include the correct value of `t_star` obtained either
 -->
 
 Không quá khi nói rằng :eqref:`eq_gauss_confidence` là một trong những công thức sử dụng nhiều nhất trong thống kê. 
-Cùng kết thúc cuộc bàn luận về thống kê của chúng ta bằng cách thực hiện nó.
-Để cho đơn giản, hãy giả sử chúng ta đang làm việc ở vùng tiệm cận. 
-Các giá trị $N$ nhỏ nên bao gồm giá trị chính xác `t_star` xác định được bằng phương pháp lập trình hoặc trích xuất từ bảng-$t$. 
+Hãy kết thúc thảo luận về thống kê của chúng ta bằng cách lập trình tìm khoảng tin cậy.
+Để đơn giản, giả sử chúng ta đang làm việc ở vùng tiệm cận. 
+Khi $N$ nhỏ, nên xác định giá trị chính xác của `t_star` bằng phương pháp lập trình hoặc từ bảng tra phân phối tích lũy $t$ Student. 
 
 
 ```{.python .input}
@@ -1134,7 +1134,7 @@ sigma_hat = tf.math.reduce_std(samples)
 * Ba phương pháp suy luận thống kê thông dụng nhất: đánh giá và so sánh các bộ ước lượng, tiến hành kiểm định giả thuyết, và tạo các khoảng tin cậy.
 * Ba bộ ước lượng thông dụng nhất: độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số.  
 * Một khoảng tin cậy là khoảng ước tính của tập tham số thực mà chúng ta có thể tạo ra bằng các mẫu cho trước.
-* Kiểm định giả thuyết là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định của một tổng thể. 
+* Kiểm định giả thuyết là phương pháp để đánh giá các chứng cứ chống lại mệnh đề mặc định về một tổng thể. 
 
 
 ## Bài tập
@@ -1156,13 +1156,13 @@ Xét bộ ước lượng $\theta$ dưới đây:
 $$\hat{\theta} = \max \{X_1, X_2, \ldots, X_n \};$$
 $$\tilde{\theta} = 2 \bar{X_n} = \frac{2}{n} \sum_{i=1}^n X_i.$$
     * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số của $\hat{\theta}.$ 
-    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số $\tilde{\theta}.$ 
+    * Tìm độ chệch thống kê, độ lệch chuẩn, và trung bình bình phương sai số của $\tilde{\theta}.$ 
     * Bộ ước lượng nào tốt hơn? 
-2. Trở lại ví dụ về nhà hóa học của chúng ta ở phần mở đầu, liệt kê 5 bước để tiến hành kiểm định giả thuyết hai chiều?
-Cho biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $1 - \beta = 0.8$. 
+2. Trở lại ví dụ về nhà hóa học của chúng ta ở phần mở đầu, liệt kê 5 bước để tiến hành kiểm định giả thuyết hai chiều,
+biết mức ý nghĩa thống kê $\alpha = 0.05$ và năng lực thống kê $1 - \beta = 0.8$. 
 3. Chạy đoạn mã lập trình khoảng tin cậy biết $N=2$ và $\alpha = 0.5$ với $100$ dữ liệu được tạo độc lập, sau đó vẽ đồ thị các khoảng kết quả (trường hợp này `t_star = 1.0`). 
-Ban sẽ thấy một vài khoảng rất nhỏ nằm cách xa khoảng chứa trung bình thực $0$.
-Điều này có mâu thuẫn với việc diễn giải khoảng tin cậy không? Bạn có thoải mái khi sử dụng các khoảng nhỏ này để thực hiện các ước tính với độ chính xác cao? 
+Ban sẽ thấy một vài khoảng rất nhỏ cách xa khoảng chứa giá trị kỳ vọng thực $0$.
+Điều này có mâu thuẫn với việc diễn giải khoảng tin cậy không? Có đúng không khi sử dụng các khoảng nhỏ này để nói các ước lượng có độ chính xác cao? 
 
 
 <!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================-->
