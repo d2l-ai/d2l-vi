@@ -311,7 +311,7 @@ Thus we are not measuring how far the estimator tends to be from the true value,
 -->
 
 So sánh :eqref:`eq_var_est` và :eqref:`eq_mse_est` là một việc quan trọng. 
-Trong công thức này, thay vì so sánh với giá trị tổng thể thực $\theta$, chúng ta sử dụng $E(\hat{\theta}_n)$, giá trị trung bình mẫu kỳ vọng. 
+Trong công thức này, thay vì so sánh với giá trị thực $\theta$ của tổng thể, chúng ta sử dụng $E(\hat{\theta}_n)$ là giá trị trung bình mẫu kỳ vọng. 
 Do đó chúng ta không đo độ lệch của bộ ước lượng so với giá trị thực mà là độ dao động của chính bộ ước lượng. 
 
 
@@ -356,12 +356,12 @@ The irreducible error is the result from noise in the $\theta$ itself.
 -->
 
 Chúng tôi gọi công thức trên là *sự đánh đổi độ chệch-phương sai*. 
-Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành hai nguồn sai số khác nhau: sai số từ độ chệch cao và sai số từ phương sai cao. 
-Sai số độ chệch thường xuất hiện ở mô hình đơn giản (ví dụ mô hình hồi quy tuyến tính), khi nó không thể chiết xuất những quan hệ đa chiều giữa các đặc trưng và đầu ra. 
+Giá trị trung bình bình phương sai số có thể được phân tách chính xác thành ba nguồn sai số khác nhau: sai số từ độ chệch cao, sai số từ phương sai cao và sai số không tránh được (*irreducible error*). 
+Sai số độ chệch thường xuất hiện ở các mô hình đơn giản (ví dụ như hồi quy tuyến tính), vì chúng không thể trích xuất những quan hệ đa chiều giữa các đặc trưng và đầu ra. 
 Nếu một mô hình có độ chệch cao, chúng ta thường nói rằng nó *dưới khớp* (*underfitting*) hoặc là thiếu *tổng quát hóa* như đã giới thiệu ở (:numref:`sec_model_selection`). 
 Ngược lại, một mô hình *quá khớp* (*overfitting*) lại rất nhạy cảm với những dao động nhỏ trong dữ liệu. 
 Nếu một mô hình có phương sai cao, chúng ta thường nói rằng nó *quá khớp* và thiếu sự *uyển chuyển* như đã giới thiệu ở  (:numref:`sec_model_selection`). 
-
+Sai số không tránh được xuất phát từ nhiễu trong chính bản thân $\theta$.
 <!--
 ### Evaluating Estimators in Code
 -->
@@ -453,7 +453,7 @@ theta_est
 Let's validate the trade-off equation by calculating the summation of the squared bias and the variance of our estimator. First, calculate the MSE of our estimator.
 -->
 
-Cùng xác định phương trình đánh đổi bằng cách tính tổng độ chệch bình phương và phương sai từ bộ ước lượng của chúng ta. 
+Cùng xác thực phương trình đánh đổi bằng cách tính tổng độ chệch bình phương và phương sai từ bộ ước lượng của chúng ta. 
 Đầu tiên, tính trung bình bình phương sai số của bộ ước lượng: 
 
 
@@ -467,7 +467,7 @@ mse(samples, theta_true)
 Next, we calculate $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ as below. As you can see, the two values agree to numerical precision.
 -->
 
-Tiếp theo, chúng ta tính $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy hai đại lượng có giá trị gần giống nhau. 
+Tiếp theo, chúng ta tính $\mathrm{Var} (\hat{\theta}_n) + [\mathrm{bias} (\hat{\theta}_n)]^2$ như dưới đây. Các bạn có thể thấy đại lượng này gần giống với trung bình bình phương sai số đã tính ở trên. 
 
 
 ```{.python .input}
