@@ -676,7 +676,7 @@ whereas a *type II error* is resulted from failing to reject the null hypothesis
 A type II error is usually denoted as $\beta$, and hence the corresponding statistical power is $1-\beta$.
 -->
 
-Khi nhìn lại, *lỗi loại I* là lỗi do việc bác bỏ giả thuyết gốc khi nó đúng, còn *lỗi loại II* xảy ra do việc không bác bỏ giả thuyết gốc khi nó sai. 
+Nhớ lại *lỗi loại I* là lỗi do bác bỏ giả thuyết gốc khi nó đúng, còn *lỗi loại II* xảy ra do không bác bỏ giả thuyết gốc khi nó sai. 
 Lỗi loại II thường được kí hiệu là $\beta$, vậy nên năng lực thống kê tương ứng là $1-\beta$. 
 
 <!--
@@ -685,7 +685,7 @@ $80\%$ is a commonly used statistical power threshold. The higher the statistica
 -->
 
 Một cách trực quan, năng lực thống kê có thể được xem như khả năng phép kiểm định phát hiện được một sai lệch thực sự với độ lớn tối thiểu nào đó, ở một mức ý nghĩa thống kê mong muốn. 
-$80\%$ là một ngưỡng phổ biến cho năng lực thống kê. Năng lực thống kê càng cao, ta càng có nhiều khả năng phát hiện được những sai lệch thực sự. 
+$80\%$ là một ngưỡng năng lực thống kê phổ biến. Năng lực thống kê càng cao, ta càng có nhiều khả năng phát hiện được những sai lệch thực sự. 
 
 <!--
 One of the most common uses of statistical power is in determining the number of samples needed.  
@@ -698,12 +698,12 @@ However, if we think our sample population true mean is close to $0.01$, then we
 -->
 
 Một trong những ứng dụng phổ biến nhất của năng lực thống kê là để xác định số lượng mẫu cần thiết. 
-Xác suất bạn bác bỏ giả thuyết gốc khi nó sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *hệ số ảnh hưởng*) và số lượng mẫu bạn có. 
-Có thể đoán trước rằng hệ số ảnh hưởng nhỏ sẽ cần một số lượng mẫu rất lớn để có thể được phát hiện với xác suất cao. 
+Xác suất bạn bác bỏ giả thuyết gốc khi nó sai phụ thuộc vào mức độ sai của nó (hay còn gọi là *kích thước ảnh hưởng - effect size*) và số lượng mẫu bạn có. 
+Có thể đoán rằng sẽ cần một số lượng mẫu rất lớn để có thể phát hiện kích thước ảnh hưởng nhỏ với xác suất cao. 
 Việc đi sâu vào chi tiết nằm ngoài phạm vi của phần phụ lục ngắn gọn này, nhưng đây là một ví dụ. 
 Giả sử ta có giả thuyết gốc rằng các mẫu được lấy từ một phân phối Gauss với kỳ vọng là không và phương sai là một. 
 Nếu ta tin rằng giá trị trung bình của tập mẫu gần với một, ta chỉ cần $8$ mẫu là có thể bác bỏ giả thuyết gốc với tỉ lệ lỗi chấp nhận được. 
-Tuy nhiên, nếu ta cho rằng giá trị trung bình thực sự của tổng thể gần với $0.01$, thì ta cần cỡ mẫu khoảng $80000$ để có thể phát hiện được sự sai lệch. 
+Tuy nhiên, nếu ta cho rằng giá trị trung bình thực sự của tổng thể gần với $0.01$, thì ta cần cỡ khoảng $80000$ mẫu để có thể phát hiện được sự sai lệch. 
 
 <!--
 We can imagine the power as a water filter. In this analogy, a high power hypothesis test is like a high quality water filtration system 
@@ -713,9 +713,9 @@ Similarly, if the statistical power is not of enough high power, then the test m
 -->
 
 Ta có thể hình dung năng lực thống kê như một cái máy lọc nước.
-Trong phép so sánh này, một kiểm định với năng lực cao giống như một hệ thống lọc nước chất lượng tốt, loại bỏ được các chất nguy hiểm trong nước càng nhiều càng tốt. 
+Trong phép so sánh này, một kiểm định với năng lực cao giống như một hệ thống lọc nước chất lượng tốt, loại bỏ được các chất độc trong nước nhiều nhất có thể. 
 Ngược lại, các sai lệch nhỏ cũng giống các chất cặn bẩn nhỏ, một cái máy lọc chất lượng kém sẽ để lọt các chất bẩn nhỏ đó.
-Tương tự, nếu năng lực thống kê không đủ cao, thì kiểm định có thể không bắt được các sai lệch nhỏ. 
+Tương tự, nếu năng lực thống kê không đủ cao, phép kiểm định có thể không phát hiện được các sai lệch nhỏ.
 
 <!--
 ### Test Statistic
@@ -731,7 +731,7 @@ Different choices of test statistic can lead to statistical test with drasticall
 -->
 
 *Tiêu chuẩn kiểm định* $T(x)$ là một số vô hướng có khả năng khái quát một đặc tính nào đó của dữ liệu mẫu. 
-Mục đích của việc đặt ra một thống kê như vậy là để nó có thể giúp ta phân biệt giữa các phân phối khác nhau và tiến hành kiểm định thống kê. 
+Mục đích của việc đặt ra một tiêu chuẩn như vậy là để phân biệt các phân phối khác nhau và tiến hành kiểm định thống kê. 
 Nhìn lại ví dụ về nhà hóa học, nếu ta muốn chỉ ra rằng một tổng thể có chất lượng tốt hơn một tổng thể khác, việc lấy giá trị trung bình làm tiêu chuẩn kiểm định có vẻ hợp lý. 
 Các chọn lựa tiêu chuẩn kiểm định khác nhau có thể dẫn đến các phép kiểm định thống kê với năng lực thống kê khác nhau rõ rệt. 
 
@@ -746,7 +746,7 @@ Making this quantitative leads us to the notion of $p$-values.
 
 Thường thì $T(X)$ (phân phối của tiêu chuẩn kiểm định dưới giả thuyết gốc) sẽ (xấp xỉ) 
 tuân theo một phân phối phổ biến như phân phối chuẩn, khi được xem xét dưới giả thuyết gốc. 
-Nếu ta có thể rõ ràng chỉ ra một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu,
+Nếu ta có thể chỉ rõ một phân phối như vậy, và sau đó tính tiêu chuẩn kiểm định trên tập dữ liệu,
 ta có thể yên tâm bác bỏ giả thuyết gốc nếu thống kê đó nằm xa bên ngoài khoảng mong đợi. 
 Việc đưa ra một con số như vậy dẫn đến ý tưởng của trị số $p$. 
 
@@ -774,7 +774,7 @@ Otherwise, we will conclude that we are lack of evidence to reject the null hypo
 For a given population distribution, the *region of rejection* will be the interval contained of all the points which has a $p$-value smaller than the statistical significance level $\alpha$.
 -->
 
-Nếu trị số $p$ nhỏ hơn hoặc bằng một mức ý nghĩa thống kê cố định cho trước, ta có thể bác bỏ giả thuyết gốc. 
+Nếu trị số $p$ nhỏ hơn hoặc bằng một mức ý nghĩa thống kê cố định $\alpha$ cho trước, ta có thể bác bỏ giả thuyết gốc. 
 Còn nếu không, ta kết luận không có đủ bằng chứng để bác bỏ giả thuyết gốc. 
 Với một phân phối của tổng thể, *miền bác bỏ* là khoảng chứa tất cả các điểm có trị số $p$ nhỏ hơn mức ý nghĩa thống kê $\alpha$. 
 
@@ -845,7 +845,7 @@ If the test statistic falls within the reject region, we may reject the null hyp
 
 Để tiến hành kiểm định giả thuyết, ta bắt đầu với việc định nghĩa giả thuyết gốc và mức rủi ro chấp nhận được. 
 Sau đó ta tính tiêu chuẩn kiểm định của mẫu, lấy cực trị của tiêu chuẩn kiểm định làm bằng chứng để phủ định giả thuyết gốc. 
-Nếu tiêu chuẩn kiểm định rơi vào miền bác bỏ, ta có thể bác bỏ giả thuyết gốc và hướng sang giả thuyết đối. 
+Nếu tiêu chuẩn kiểm định rơi vào miền bác bỏ, ta có thể bác bỏ giả thuyết gốc và ủng hộ giả thuyết đối. 
 
 
 <!--
@@ -871,7 +871,7 @@ who first introduced the concept of confidence interval in 1937.
 -->
 
 Khi ước lượng giá trị của tham số $\theta$, sử dụng bộ ước lượng điểm như $\hat \theta$ bị hạn chế vì chúng không bao hàm sự bất định. 
-Thay vào đó, nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thật sự với xác suất cao sẽ tốt hơn nhiều. 
+Thay vào đó, sẽ tốt hơn nhiều nếu ta có thể tìm ra một khoảng chứa tham số $\theta$ thật sự với xác suất cao. 
 Nếu bạn hứng thú với những khái niệm từ một thế kỷ trước như thế này, có lẽ bạn nên đọc cuốn
 "Outline of a Theory of Statistical Estimation Based on the Classical Theory of Probability" (*Đại cương về Lý thuyết Ước lượng Thống kê dựa trên Lý thuyết Xác suất Cổ điển*)
 của Jerzy Neyman :cite:`Neyman.1937`, người đã đưa ra khái niệm về khoảng tin cậy vào năm 1937. 
