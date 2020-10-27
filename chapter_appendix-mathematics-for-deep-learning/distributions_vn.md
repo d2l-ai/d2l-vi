@@ -941,8 +941,8 @@ If we plot what these distributions look like, we will become even more convince
 -->
 
 
-Biến này được coi là có kỳ vọng là không và phương sai là một, và do đó là hợp lý để tin rằng nó sẽ hội tụ đến một phân phối giới hạn nào đó.
-Nếu vẽ phân phối này, ta có thể kiểm chứng giả thuyết trên.
+Biến này được coi là có kỳ vọng bằng không và phương sai bằng một, và do đó là hợp lý để tin rằng nó sẽ hội tụ đến một phân phối giới hạn nào đó.
+Nếu minh hoạ phân phối này, ta có thể kiểm chứng giả thuyết trên.
 
 
 ```{.python .input}
@@ -1019,7 +1019,7 @@ this will yield the Gaussian Distribution (or sometimes normal distribution).
 More explicitly, for any $a, b$:
 -->
 
-Suy luận ra kết quả sau cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm - central limit theorem* phát biểu rằng khi $n \rightarrow \infty $,
+Trình bày đầy đủ cách suy ra kết quả cuối cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm - central limit theorem* phát biểu rằng khi $n \rightarrow \infty $,
 giới hạn này sẽ tiến tới Phân phối Gauss (hoặc tên khác là phân phối chuẩn).
 Tường minh hơn, với bất kỳ $a, b$ nào:
 
@@ -1089,7 +1089,7 @@ We will use `erf` which provides a way to compute this integral numerically.
 -->
 
 Giờ hãy vẽ đồ thị hàm phân phối tích luỹ.
-Tuy nằm ngoài phạm vi của phụ lục này nhưng hàm phân phối tích lũy của phân phối Gauss không có công thức dạng đóng dưới dạng các hàm số sơ cấp.
+Tuy nằm ngoài phạm vi của phụ lục này nhưng hàm phân phối tích lũy của phân phối Gauss không có công thức dạng đóng dựa trên các hàm số sơ cấp.
 Ta sẽ sử dụng `erf` để tính toán xấp xỉ tích phân này.
 
 
@@ -1134,7 +1134,7 @@ Our choice of working with coin flips made computations shorter, but nothing abo
 Indeed, if we take any collection of independent identically distributed random variables $X_i$, and form
 -->
 
-Việc lựa chọn làm việc với tung đồng xu giúp tính toán ngắn hơn, nhưng không phải là nền tảng.
+Không có một lý do cơ sở nào để ta chọn mô tả bài toán bằng việc tung đồng xu ngoài việc nó giúp quá trình tính toán ngắn hơn.
 Thật vậy, nếu lấy bất kỳ tập các biến ngẫu nhiên độc lập có cùng phân phối $X_i$ nào, và gọi:
 
 
@@ -1249,7 +1249,7 @@ $$p(\mathbf{x} | \mathbf{\eta}) = h(\mathbf{x}) \cdot \mathrm{exp} \big{(} \eta^
 As this definition can be a little subtle, let us examine it closely.  
 -->
 
-Định nghĩa này có thể hơi khó hiểu, hãy cùng xem xét kĩ lưỡng hơn.
+Định nghĩa này có vài điểm khá tinh tế nên hãy cùng xem xét kĩ lưỡng hơn.
 
 
 <!--
@@ -1258,7 +1258,7 @@ This can be viewed as an original choice of measure we are modifying with our ex
 -->
 
 Đầu tiên, $h(\mathbf{x})$ được gọi là *phép đo cơ bản (underlying measure)* hay *phép đo cơ sở (base measure)*.
-Đây có thể coi là lựa chọn ban đầu khi điều chỉnh trọng số mũ.
+Đây có thể được coi là thang đo ban đầu mà chúng ta đang biến đổi khi điều chỉnh trọng số mũ.
 
 
 <!--
