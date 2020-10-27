@@ -383,7 +383,7 @@ As shown in :numref:`fig_git_newpr`, go to your fork of the repository on GitHub
 This will open up a screen that shows you the changes between your edits and what is current in the main repository of the book.
 -->
 
-Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản fork cho repo trên GitHub và chọn "New pull request".
+Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản fork của bạn trên GitHub và chọn "New pull request".
 Thao tác này sẽ mở ra một cửa sổ hiển thị những điểm khác nhau giữa bản chỉnh sửa của bạn và bản hiện trong repo chính của cuốn sách.
 
 
