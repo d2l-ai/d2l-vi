@@ -465,7 +465,7 @@ Learn how to do it with [Git branching](https://git-scm.com/book/en/v2/Git-Branc
 
 1. Star và tạo fork của repo `d2l-vn`.
 2. Tìm đoạn mã nào đó cần cải thiện và đăng một pull request.
-3. Tìm một tham khảo mà chúng tôi bỏ sót và đăng một pull request.
+3. Tìm một trích dẫn mà chúng tôi bỏ sót và đăng một pull request.
 4. Thường thì trong thực hành, tốt hơn hết là khi tạo một pull request thì sử dụng một nhánh (*branch*) mới.
 Hãy học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
