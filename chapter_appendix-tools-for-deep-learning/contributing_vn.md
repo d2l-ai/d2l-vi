@@ -25,7 +25,7 @@ phần mã nguồn không được thanh thoát hay có chỗ giải thích khô
 Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể tính bằng năm,
 thì thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào bản dịch này.
 Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của bản dịch này.
-Khi pull request của bạn được gộp vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
+Khi pull request của bạn được nhóm dịch gộp (*merge*) vào repo, bạn sẽ trở thành một người đóng góp (*contributor*).
 
 
 <!--
