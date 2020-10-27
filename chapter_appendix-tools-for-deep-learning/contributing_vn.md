@@ -448,7 +448,7 @@ Try not to submit huge pull requests since this makes them hard to understand an
 
 * Bạn có thể sử dụng GitHub để đóng góp cho bản dịch này.
 * Bạn có thể chỉnh sửa tệp trực tiếp trên GitHub với những thay đổi nhỏ.
-* Với một thay đổi lớn, xin vui lòng tạo fork cho repo này, tạo chỉnh sửa nội bộ và chỉ đóng góp về một khi bạn đã sẵn sàng.
+* Với một thay đổi lớn, xin vui lòng tạo fork cho repo này, tạo chỉnh sửa cục bộ và chỉ đóng góp một khi bạn đã sẵn sàng.
 * Pull request là cách mà các đóng góp được gói lại.
 Cố gắng đừng đăng một pull request quá lớn do điều này khiến chúng khó hiểu và khó để hợp nhất. Tốt hơn là gửi nhiều pull request nhỏ.
 
