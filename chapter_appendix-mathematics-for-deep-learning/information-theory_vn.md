@@ -220,7 +220,7 @@ We can calculate self information as shown below.
 Before that, let us first import all the necessary packages in this section.
 -->
 
-Chúng ta có thể tính toán lượng tin như hình dưới đây.
+Chúng ta có thể tính toán lượng tin như hình dưới đây. 
 Trước đó, hãy nhập tất cả các gói cần thiết trong phần này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
