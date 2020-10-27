@@ -20,12 +20,12 @@ When your pull request is merged into the code repository by the author, you wil
 -->
 
 Những đóng góp từ [cộng đồng](https://github.com/aivivn/d2l-vn/graphs/contributors) giúp chúng tôi cải thiện cuốn sách này.
-Nếu bạn tìm thấy một lỗi đánh máy, một đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
-phần mã nguồn không được thanh thoát hay một chỗ mà phần giải thích không rõ ràng, xin vui lòng đóng góp lại và giúp chúng tôi hỗ trợ các độc giả khác.
-Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể đếm bằng năm,
-thông thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào cuốn sách này.
-Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của cuốn sách này.
-Khi pull request của bạn được gộp vào kho lưu trữ mã nguồn bởi tác giả, bạn sẽ trở thành một người đóng góp.
+Nếu bạn tìm thấy có lỗi đánh máy, đường dẫn hết hạn, hay phần nào đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
+phần mã nguồn không được thanh thoát hay có chỗ giải thích không rõ ràng, xin vui lòng đóng góp và giúp chúng tôi hỗ trợ các độc giả khác.
+Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể tính bằng năm,
+thì thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào bản dịch này.
+Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của bản dịch này.
+Khi pull request của bạn được nhóm dịch gộp (*merge*) vào repo, bạn sẽ trở thành một người đóng góp (*contributor*).
 
 
 <!--
@@ -86,8 +86,8 @@ You can use any Markdown editors to open these files and make your changes.
 
 Nếu bạn có dự định cập nhật một phần lớn văn bản hay mã nguồn thì bạn cần phải biết thêm một chút về định dạng mà cuốn sách này sử dụng.
 Tệp nguồn được dựa trên [định dạng markdown](https://daringfireball.net/projects/markdown/syntax) với một tập
-các phần mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham chiếu đến phương trình, hình ảnh, chương và trích dẫn.
-Bạn có thể sử dụng bất kì trình chỉnh sửa Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
+các phần mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham chiếu đến phương trình, hình ảnh, chương mục và trích dẫn.
+Bạn có thể sử dụng bất kì trình biên tập Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
 
 
 <!--
@@ -107,7 +107,7 @@ so other framework implementations become Markdown code blocks and will not be e
 -->
 
 Một số phần có thể hỗ trợ lập trình đa framework, bạn có thể sử dụng `d2lbook` để kích hoạt một framework cụ thể,
-khi đó phần lập trình các framework khác trở thành đoạn mã Markdown và sẽ không được thực thi khi bạn "Run All" trong Jupyter. Nói một cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
+khi đó phần lập trình các framework khác trở thành khối mã Markdown và sẽ không được thực thi khi bạn chạy"Run All" trong Jupyter. Nói cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
 
 
 ```bash
@@ -133,7 +133,7 @@ d2lbook activate tensorflow chapter_multilayer-perceptrons/mlp-scratch.md
 Before submitting your changes, please clear all code block outputs and activate all by
 -->
 
-Trước khi đăng thay đổi của bạn lên, xin vui lòng xoá toàn bộ các ô đầu ra và kích hoạt tất cả bằng
+Trước khi đăng thay đổi của bạn lên, xin vui lòng xoá toàn bộ các ô kết quả và kích hoạt tất cả bằng
 
 
 ```bash
@@ -200,7 +200,7 @@ For concreteness we assume that the contributor's user name is "astonzhang".
 -->
 
 Chúng tôi sẽ hướng dẫn chi tiết từng bước. Nếu bạn quen thuộc với Git bạn có thể bỏ qua phần này.
-Để ngắn gọn chúng tôi giả sử tên người dùng của người đóng góp là "astonzhang".
+Để ngắn gọn chúng tôi giả sử người đóng góp có username là "astonzhang".
 
 
 <!--
@@ -237,8 +237,8 @@ This is now *your copy* and you can change it any way you want.
 -->
 
 Điền [địa chỉ](https://github.com/aivivn/d2l-vn/) của repo chứa mã nguồn bản dịch cuốn sách này vào trình duyệt web của bạn.
-Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao của repo của cuốn sách này.
-Đây giờ là *bản sao của bạn* và bạn có thể tuỳ ý thay đổi nó.
+Chọn nút `Fork` trong khung đỏ ở phía trên bên phải của :numref:`fig_git_fork`, để tạo một bản sao cho repo của cuốn sách này.
+Nó giờ đây là *bản sao của bạn* và bạn có thể tuỳ ý thay đổi nó.
 
 
 <!--
@@ -283,11 +283,11 @@ For now simply follow the instructions in :ref:`chap_installation` to get starte
 The main difference is that you are now downloading *your own fork* of the repository.
 -->
 
-Để clone một repo (tức là tạo bản sao nội bộ) ta cần phải có địa chỉ của repo đó.
+Để clone một repo (tức là tạo bản sao cục bộ) ta cần phải có địa chỉ của repo đó.
 Nút màu xanh trong :numref:`fig_git_clone` hiển thị địa chỉ này.
-Hãy đảm bảo rằng bản sao nội bộ của bạn cập nhật với repo chính nếu bạn quyết định giữ bản fork này lâu dài.
+Hãy đảm bảo rằng bản sao cục bộ của bạn cập nhật gần nhất với repo chính nếu bạn quyết định giữ bản fork này lâu dài.
 Còn bây giờ chỉ cần đơn giản làm theo các hướng dẫn trong :ref:`chap_installation` để bắt đầu.
-Điểm khác biệt chính ở đây là bạn đang tải về *bản fork của riêng bạn* của repo này.
+Điểm khác biệt chính ở đây là bạn đang tải về *bản fork của riêng bạn* cho repo này.
 
 
 <!--
@@ -332,7 +332,7 @@ Sau đó bạn có thể kiểm tra xem bạn đã sửa đổi những tệp n�
 At this point Git will prompt that the `chapter_appendix_tools/how-to-contribute.md` file has been modified.
 -->
 
-Vào thời điểm này Git sẽ thông báo là tệp `chapter_appendix_tools/how-to-contribute.md` đã được sửa đổi.
+Ở thời điểm này Git sẽ thông báo là tệp `chapter_appendix_tools/how-to-contribute.md` đã được sửa đổi.
 
 
 ```
@@ -367,8 +367,8 @@ The changed code will then be in your personal fork of the repository.
 To request the addition of your change, you have to create a pull request for the official repository of the book.
 -->
 
-Đoạn mã được chỉnh sửa lúc này sẽ nằm trong bản fork cá nhân của bạn của repo này.
-Để đề nghị thêm thay đổi của bạn, bạn cần phải tạo một pull request đối với repo chính thức của bản dịch.
+Đoạn mã được chỉnh sửa lúc này sẽ nằm trong bản fork cá nhân của bạn cho repo này.
+Để yêu cầu thay đổi thêm, bạn cần phải tạo một pull request đối với repo chính thức của bản dịch.
 
 
 <!--
@@ -383,7 +383,7 @@ As shown in :numref:`fig_git_newpr`, go to your fork of the repository on GitHub
 This will open up a screen that shows you the changes between your edits and what is current in the main repository of the book.
 -->
 
-Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản fork của repo trên GitHub và chọn "New pull request".
+Như chỉ ra trong :numref:`fig_git_newpr`, đi tới bản fork của bạn trên GitHub và chọn "New pull request".
 Thao tác này sẽ mở ra một cửa sổ hiển thị những điểm khác nhau giữa bản chỉnh sửa của bạn và bản hiện trong repo chính của cuốn sách.
 
 
@@ -415,7 +415,7 @@ Cuối cùng, đăng một pull request lên bằng cách nhấn vào nút như 
 Hãy đảm bảo mô tả các thay đổi bạn đã thực hiện trong pull request này.
 Việc này sẽ giúp nhóm dịch dễ dàng hơn trong việc kiểm tra và gộp vào bản dịch.
 Tuỳ thuộc vào các thay đổi, pull request này có thể được chấp thuận ngay lập tức, bác bỏ, hoặc khả năng cao hơn là bạn sẽ nhận được phản hồi trên các thay đổi này.
-Một khi bạn hợp nhất chúng, bạn đã sẵn sàng để tiến hành.
+Một khi bạn đã hợp nhất được chúng, chúc mừng bạn đã hoàn thành và hãy tiếp tục phát huy.
 
 
 <!--
@@ -448,7 +448,7 @@ Try not to submit huge pull requests since this makes them hard to understand an
 
 * Bạn có thể sử dụng GitHub để đóng góp cho bản dịch này.
 * Bạn có thể chỉnh sửa tệp trực tiếp trên GitHub với những thay đổi nhỏ.
-* Với một thay đổi lớn, xin vui lòng tạo fork của repo này, tạo chỉnh sửa nội bộ và chỉ đóng góp một khi bạn sẵn sàng.
+* Với một thay đổi lớn, xin vui lòng tạo fork cho repo này, tạo chỉnh sửa cục bộ và chỉ đóng góp một khi bạn đã sẵn sàng.
 * Pull request là cách mà các đóng góp được gói lại.
 Cố gắng đừng đăng một pull request quá lớn do điều này khiến chúng khó hiểu và khó để hợp nhất. Tốt hơn là gửi nhiều pull request nhỏ.
 
@@ -464,8 +464,8 @@ Learn how to do it with [Git branching](https://git-scm.com/book/en/v2/Git-Branc
 -->
 
 1. Star và tạo fork của repo `d2l-vn`.
-2. Tìm các đoạn mã cần cải thiện và đăng một pull request.
-3. Tìm một tham khảo mà chúng tôi bỏ qua và đăng một pull request.
+2. Tìm đoạn mã nào đó cần cải thiện và đăng một pull request.
+3. Tìm một trích dẫn mà chúng tôi bỏ sót và đăng một pull request.
 4. Thường thì trong thực hành, tốt hơn hết là khi tạo một pull request thì sử dụng một nhánh (*branch*) mới.
 Hãy học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
