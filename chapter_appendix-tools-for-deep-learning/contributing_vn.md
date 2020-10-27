@@ -200,7 +200,7 @@ For concreteness we assume that the contributor's user name is "astonzhang".
 -->
 
 Chúng tôi sẽ hướng dẫn chi tiết từng bước. Nếu bạn quen thuộc với Git bạn có thể bỏ qua phần này.
-Để ngắn gọn chúng tôi giả sử người đóng góp có tên sử dụng là "astonzhang".
+Để ngắn gọn chúng tôi giả sử người đóng góp có username là "astonzhang".
 
 
 <!--
