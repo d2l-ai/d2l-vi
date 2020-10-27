@@ -107,7 +107,7 @@ so other framework implementations become Markdown code blocks and will not be e
 -->
 
 Một số phần có thể hỗ trợ lập trình đa framework, bạn có thể sử dụng `d2lbook` để kích hoạt một framework cụ thể,
-khi đó phần lập trình các framework khác trở thành khối mã Markdown và sẽ không được thực thi khi bạn "Run All" trong Jupyter. Nói một cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
+khi đó phần lập trình các framework khác trở thành khối mã Markdown và sẽ không được thực thi khi bạn chạy"Run All" trong Jupyter. Nói cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
 
 
 ```bash
