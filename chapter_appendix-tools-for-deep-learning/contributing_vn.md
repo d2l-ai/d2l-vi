@@ -20,7 +20,7 @@ When your pull request is merged into the code repository by the author, you wil
 -->
 
 Những đóng góp từ [cộng đồng](https://github.com/aivivn/d2l-vn/graphs/contributors) giúp chúng tôi cải thiện cuốn sách này.
-Nếu bạn tìm thấy có lỗi đánh máy, đường dẫn hết hạn, hay thứ gì đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
+Nếu bạn tìm thấy có lỗi đánh máy, đường dẫn hết hạn, hay phần nào đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
 phần mã nguồn không được thanh thoát hay có chỗ giải thích không rõ ràng, xin vui lòng đóng góp và giúp chúng tôi hỗ trợ các độc giả khác.
 Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể tính bằng năm,
 thì thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào bản dịch này.
