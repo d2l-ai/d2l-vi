@@ -129,7 +129,7 @@ $2\text{ bits}$, $~5.7\text{ bits}$, and $~225.6\text{ bits}$ of information res
 -->
 
 Bất kỳ khái niệm thông tin nào chúng ta phát triển phải phù hợp với trực giác này.
-Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có $0\text{ bit}$, 
+Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có $0\text{ bit}$,
 $2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ của thông tin tương ứng.
 
 
