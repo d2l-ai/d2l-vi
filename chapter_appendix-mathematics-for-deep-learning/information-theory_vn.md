@@ -18,13 +18,13 @@ With information theory, we can measure and compare how much information is pres
 In this section, we will investigate the fundamental concepts of information theory and applications of information theory in machine learning.
 -->
 
-Chúng ta đang sống trong kỷ nguyên tràn ngập thông tin.
-Thông tin cung cấp một ngôn ngữ chung cho các lĩnh vực: từ thơ của Shakespeare đến các bài báo khoa học của các nhà nghiên cứu trên Cornell ArXiv,
+Vũ trụ mà chúng ta đang sống thì tràn ngập với thông tin. 
+Thông tin cung cấp một ngôn ngữ chung giúp vượt qua rào cản ngăn cách nhiều lĩnh vực riêng biệt: từ thơ của Shakespeare đến các bài báo khoa học của các nhà nghiên cứu trên Cornell ArXiv,
 từ bản in Đêm Đầy Sao của Van Gogh đến Bản Giao Hưởng Số 5 của Beethoven,
-từ ngôn ngữ lập trình đầu tiên Plankalkül đến các thuật toán học máy hiện đại nhất.
+từ ngôn ngữ lập trình đầu tiên Plankalkül đến các thuật toán học máy hiện đại nhất. 
 Mọi thứ phải tuân theo các quy tắc của lý thuyết thông tin, bất kể chúng ở định dạng nào.
 Với lý thuyết thông tin, chúng ta có thể đo lường và so sánh lượng thông tin có trong các tín hiệu khác nhau.
-Trong phần này, chúng ta sẽ nghiên cứu các khái niệm cơ bản của lý thuyết thông tin và các ứng dụng của lý thuyết thông tin trong học máy.
+Trong phần này, chúng ta sẽ nghiên cứu các khái niệm cơ bản của lý thuyết thông tin và các ứng dụng của lý thuyết thông tin trong học máy. 
 
 
 <!--
@@ -37,11 +37,11 @@ This loss can be directly derived from information theoretic considerations.
 -->
 
 Trước khi bắt đầu, chúng ta hãy phác thảo mối quan hệ giữa học máy và lý thuyết thông tin.
-Học máy nhằm mục đích trích xuất các đặc trưng thú vị từ dữ liệu và đưa ra các dự đoán quan trọng.
-Mặt khác, lý thuyết thông tin nghiên cứu mã hóa, giải mã, truyền và thao tác thông tin.
-Kết quả là, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống học máy.
+Mục tiêu của học máy là trích xuất các đặc trưng đáng chú ý từ dữ liệu và đưa ra các dự đoán quan trọng.
+Mặt khác, lý thuyết thông tin nghiên cứu vấn đề mã hóa, giải mã, truyền và thao tác với thông tin.
+Do vậy, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống học máy.
 Ví dụ: nhiều ứng dụng học máy sử dụng mất mát entropy chéo như được mô tả trong :numref:`sec_softmax`.
-Mất mát này có thể trực tiếp bắt nguồn từ lý thuyết thông tin.
+Mất mát này có thể được trực tiếp rút ra từ các quan điểm từ góc nhìn lý thuyết thông tin.
 
 
 <!--
@@ -59,9 +59,9 @@ What could be our starting point?
 -->
 
 Ta hãy bắt đầu với "linh hồn" của lý thuyết thông tin: thông tin.
-*Thông tin* có thể được mã hóa vào bất kỳ điều gì với một hoặc nhiều chuỗi định dạng mã hóa.
-Giả sử rằng chúng ta tự đặt nhiệm vụ cố gắng xác định một khái niệm thông tin.
-Điểm xuất phát của chúng ta có thể là gì?
+*Thông tin* có thể được mã hóa trong bất kỳ thứ gì với một hoặc nhiều chuỗi định dạng mã hóa.
+Ta giả sử thử chính mình đưa ra một định nghĩa cho khái niệm thông tin.
+Ta có thể bắt đầu từ đâu?
 
 
 <!--
@@ -71,10 +71,10 @@ They will shuffle the deck, flip over some cards, and tell us statements about t
 We will try to assess the information content of each statement.
 -->
 
-Hãy xem xét thí nghiệm suy nghĩ sau đây.
+Hãy xem thí nghiệm tưởng tượng sau đây.
 Ta có một người bạn với một bộ bài.
 Họ sẽ xáo trộn bộ bài, lật qua một số lá bài và cho chúng ta biết vài điều về các quân bài.
-Chúng ta sẽ cố gắng đánh giá nội dung thông tin của từng câu nói.
+Chúng ta sẽ thử đánh giá nội dung thông tin của từng phát biểu sau đây.
 
 <!--
 First, they flip over a card and tell us, "I see a card."
@@ -84,7 +84,7 @@ We were already certain that this was the case so we hope the information should
 
 Đầu tiên, họ lật một lá và nói, "Tôi thấy một lá bài."
 Điều này không cung cấp cho ta thông tin nào.
-Nên chúng ta hy vọng thông tin sẽ là 0.
+Rõ ràng là trong trường hợp này chúng ta đã biết chắc chắn mệnh đề trên là đúng nên lượng thông tin mà nó chứa sẽ là 0.
 
 
 <!--
@@ -94,8 +94,8 @@ We hope that whatever the measure of information, this event should have low inf
 -->
 
 Tiếp theo, họ lật một lá khác và nói, "Tôi thấy một lá cơ."
-Điều này cung cấp cho ta một số thông tin, nhưng trên thực tế chỉ có thể có $4$ chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
-Ta hy vọng rằng với bất kể hình thức đo đạc thông tin nào, sự kiện này nên có hàm lượng thông tin thấp.
+Điều này cung cấp cho ta một chút thông tin, mà trên thực tế chỉ có thể có $4$ loại chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
+Ta hy vọng rằng dù thông tin được đo đạc dưới bất kể hình thức nào, sự kiện này nên có hàm lượng thông tin thấp.
 
 
 <!--
@@ -103,8 +103,8 @@ Next, they flip over a card and say, "This is the $3$ of spades." This is more i
 Indeed there were $52$ equally likely possible outcomes, and our friend told us which one it was. This should be a medium amount of information.
 -->
 
-Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Có thêm thông tin.
-Quả thực có $52$ kết quả tương đương có thể xảy ra, và ta cho biết đó là kết quả nào. Đây là một lượng thông tin trung bình.
+Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Câu trên chứa nhiều thông tin hơn.
+Quả thực có $52$ kết quả tương đương có thể xảy ra, và ta đã được cho biết đó là lá bài nào. Đây là một lượng thông tin trung bình.
 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
@@ -118,8 +118,8 @@ There are $52!$ different orders to the deck, again all equally likely, so we ne
 -->
 
 Hãy đi đến cực hạn.
-Giả sử rằng cuối cùng người kia lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
-Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng ta có được rất nhiều thông tin từ câu nói trên.
+Giả sử rằng cuối cùng họ lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
+Có $52!$ các thứ tự khác nhau cho bộ bài với khả năng như nhau, vì vậy chúng ta cần rất nhiều thông tin để biết được chính xác trình tự rút bài.
 
 
 <!--
@@ -129,8 +129,8 @@ $2\text{ bits}$, $~5.7\text{ bits}$, and $~225.6\text{ bits}$ of information res
 -->
 
 Bất kỳ khái niệm thông tin nào chúng ta phát triển phải phù hợp với trực giác này.
-Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có $0\text{ bit}$, 
-$2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ của thông tin tương ứng.
+Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có tương ứng $0\text{ bit}$,
+$2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ thông tin.
 
 
 <!--
@@ -141,11 +141,11 @@ For example, if we want to describe an unusual event, we need a lot information.
 For a common event, we may not need much information.
 -->
 
-Nếu chúng ta đọc qua những thí nghiệm suy nghĩ này, chúng ta thấy một ý tưởng tự nhiên.
-Như một điểm khởi đầu, thay vì quan tâm đến kiến thức,
-chúng ta có thể xây dựng ý tưởng rằng thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
-Ví dụ, nếu chúng ta muốn mô tả một sự kiện bất thường, chúng ta cần rất nhiều thông tin.
-Đối với một sự kiện thông thường, chúng ta có thể không cần nhiều thông tin.
+Nếu đọc hết những thí nghiệm tưởng tượng này, chúng ta thấy một ý tưởng tự nhiên.
+Để khởi đầu, thay vì quan tâm đến kiến thức đã biết,
+chúng ta có thể xây dựng ý tưởng là thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
+Ví dụ, nếu chúng ta muốn mô tả một sự kiện hiếm gặp, chúng ta cần rất nhiều thông tin.
+Đối với một sự kiện phổ biến, chúng ta có thể không cần nhiều thông tin.
 
 
 <!--
@@ -153,8 +153,8 @@ In 1948, Claude E. Shannon published *A Mathematical Theory of Communication* :c
 In his article, Shannon introduced the concept of information entropy for the first time. We will begin our journey here.
 -->
 
-Năm 1948, Claude E. Shannon xuất bản *Lý thuyết Toán học về Truyền tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
-Trong bài báo của mình, Shannon lần đầu tiên giới thiệu khái niệm entropy thông tin. Chúng ta sẽ bắt đầu tại đây.
+Năm 1948, Claude E. Shannon thiết lập lĩnh vực lý thuyết thông tin qua bài báo khoa học *Lý thuyết Toán cho Truyền tải Thông tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` .
+Trong bài báo của mình, Shannon đưa ra khái niệm entropy thông tin. Chúng ta sẽ bắt đầu từ đây.
 
 
 <!--
@@ -173,12 +173,12 @@ In this way, any information is encoded by a series of $0$ and $1$.
 And hence, a series of binary digits of length $n$ contains $n$ bits of information.
 -->
 
-Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó với số lượng bit?
-Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu được tạo ra bởi John Tukey.
-Vậy "bit" là gì và tại sao chúng ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
-Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
+Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó thành số lượng bit?
+Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, mà ban đầu được đề xuất bởi John Tukey.
+Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong quá khứ, một máy phát tín hiệu chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
+Mà thật ra mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
 Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
-Và do đó, một chuỗi các chữ số nhị phân có độ dài $n$ chứa $n$ bit thông tin.
+Và do đó, một chuỗi các chữ số nhị phân (*binary*) có độ dài $n$ chứa $n$ bit thông tin.
 
 
 <!--
@@ -189,10 +189,10 @@ So, can we generalize to a math function which can transfer the probability $p$ 
 Shannon gave the answer by defining *self-information*
 -->
 
-Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, $0$ hoặc $1$ xuất hiện với xác suất là $\frac{1}{2}$.
+Bây giờ, giả sử rằng đối với bất kỳ chuỗi mã nào, mỗi giá trị $0$ hoặc $1$ xuất hiện với xác suất là $\frac{1}{2}$.
 Do đó, sự kiện $X$ với một chuỗi mã có độ dài $n$, xảy ra với xác suất $\frac{1}{2^n}$.
 Đồng thời, như chúng tôi đã đề cập trước đây, chuỗi số này chứa $n$ bit thông tin.
-Vì vậy, liệu có thể tổng quát hóa thành một hàm toán học ánh xạ xác suất $p$ thành số bit không?
+Vì vậy, liệu có thể tổng quát hóa thành một hàm toán học chuyển xác suất $p$ thành số lượng bit không?
 Shannon đưa ra câu trả lời bằng cách định nghĩa *lượng tin*
 
 
@@ -206,10 +206,10 @@ For the sake of simplicity, the rest of this section will omit the subscript 2 i
 For example, the code "0010" has a self-information
 -->
 
-như là các *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
+là số *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
 Lưu ý rằng ta sẽ luôn sử dụng logarit cơ số 2 trong phần này.
-Để đơn giản, phần còn lại của phần này sẽ bỏ qua chỉ số phụ 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
-Ví dụ: mã "0010" có thông tin tự thân
+Để đơn giản, phần còn lại của phần này sẽ bỏ qua cơ số 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
+Ví dụ: mã "0010" có lượng tin là
 
 
 $$I(\text{"0010"}) = - \log (p(\text{"0010"})) = - \log \left( \frac{1}{2^4} \right) = 4 \text{ bits}.$$
@@ -220,7 +220,7 @@ We can calculate self information as shown below.
 Before that, let us first import all the necessary packages in this section.
 -->
 
-Chúng ta có thể tính toán lượng tin như hình dưới đây.
+Chúng ta có thể tính toán lượng tin như phần dưới đây.
 Trước đó, hãy nhập tất cả các gói cần thiết trong phần này.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -286,7 +286,7 @@ As self-information only measures the information of a single discrete event,
 we need a more generalized measure for any random variable of either discrete or continuous distribution. 
 -->
 
-Do lượng tin (*self-information*) chỉ đo lường thông tin từ một biến cố rời rạc đơn lẻ, chúng ta cần một thước đo khái quát hơn cho một biến ngẫu nhiên cả liên tục và không liên tục bất kỳ.
+Do lượng tin chỉ đo lường thông tin từ một biến cố rời rạc đơn lẻ, chúng ta cần một thước đo khái quát hơn cho cả biến ngẫu nhiên có phân bố rời rạc và liên tục.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
