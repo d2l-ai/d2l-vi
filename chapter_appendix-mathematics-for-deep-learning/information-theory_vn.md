@@ -18,7 +18,7 @@ With information theory, we can measure and compare how much information is pres
 In this section, we will investigate the fundamental concepts of information theory and applications of information theory in machine learning.
 -->
 
-Chúng ta đang sống trong kỷ nguyên tràn ngập thông tin. 
+Vũ trụ mà chúng ta đang sống thì tràn ngập với thông tin. 
 Thông tin cung cấp một ngôn ngữ chung cho các lĩnh vực: từ thơ của Shakespeare đến các bài báo khoa học của các nhà nghiên cứu trên Cornell ArXiv,
 từ bản in Đêm Đầy Sao của Van Gogh đến Bản Giao Hưởng Số 5 của Beethoven,
 từ ngôn ngữ lập trình đầu tiên Plankalkül đến các thuật toán học máy hiện đại nhất. 
