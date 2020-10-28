@@ -981,7 +981,7 @@ This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as th
 we were surprised to see two outcomes occurring together compared to what we would expect if they were independent.
 -->
 
-Điều này cho phép ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
+Điều này cho phép ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như độ ngạc nhiên trung bình khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -1070,10 +1070,10 @@ and large and negative if we see the outcome far less than expected.
 In this way, we can interpret it as our *relative* surprise at observing the outcome compared to how surprised we would be observing it from our reference distribution.
 -->
 
-Như với thông tin tương hỗ theo từng điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể diễn giải thuật ngữ logarit:
+Như với thông tin tương hỗ theo từng điểm :eqref:`eq_pmi_def`, ta lại có thể diễn giải hạng tử logarit:
 $-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ xuất hiện thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
 và lớn và âm nếu chúng ta thấy kết quả ít hơn nhiều so với kỳ vọng.
-Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối* khi quan sát phân phối mục tiêu so với phân phối tham chiếu.
+Theo cách này, ta có thể hiểu nó là mức độ ngạc nhiên *tương đối* khi quan sát phân phối mục tiêu so với phân phối tham chiếu.
 
 
 <!--
@@ -1142,7 +1142,7 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
 -->
 
 * Phân kỳ KL là bất đối xứng, tức tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
-* Phân kỳ KL là không âm, tức $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
+* Phân kỳ KL có giá trị không âm, tức $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
 * Nếu tồn tại $x$ sao cho $p(x) > 0$ và $q(x) = 0$ thì $D_{\mathrm{KL}}(P\|Q) = \infty$.
 * Phân kỳ KL có mối quan hệ mật thiết với thông tin tương hỗ.
 Ngoài các dạng trong :numref:`fig_mutual_information`, thông tin tương hỗ $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
@@ -1153,7 +1153,7 @@ Ngoài các dạng trong :numref:`fig_mutual_information`, thông tin tương h�
     Với dạng đầu tiên, ta diễn giải thông tin tương hỗ dưới dạng phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
     đây là phép đo mức độ khác nhau của phân phối kết hợp so với phân phối khi hai biến là độc lập.
     Với dạng thứ hai, thông tin tương hỗ cho ta biết mức giảm trung bình trong độ bất định của $Y$
-    gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba cũng tương tự.
+    xảy ra do việc biết được giá trị trong phân phối của $X$. Dạng thứ ba cũng tương tự.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
