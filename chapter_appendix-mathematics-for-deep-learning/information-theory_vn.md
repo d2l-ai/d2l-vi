@@ -175,7 +175,7 @@ And hence, a series of binary digits of length $n$ contains $n$ bits of informat
 
 Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó thành số lượng bit?
 Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu do John Tukey tạo ra.
-Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong lịch sử, một máy phát cổ chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
+Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong quá khứ, một máy phát tín hiệu chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
 Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
 Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
 Và do đó, một chuỗi các chữ số nhị phân có độ dài $n$ chứa $n$ bit thông tin.
