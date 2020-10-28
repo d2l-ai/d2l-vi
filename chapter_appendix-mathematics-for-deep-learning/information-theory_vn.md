@@ -19,7 +19,7 @@ In this section, we will investigate the fundamental concepts of information the
 -->
 
 Vũ trụ mà chúng ta đang sống thì tràn ngập với thông tin. 
-Thông tin cung cấp một ngôn ngữ chung cho các lĩnh vực: từ thơ của Shakespeare đến các bài báo khoa học của các nhà nghiên cứu trên Cornell ArXiv,
+Thông tin cung cấp một ngôn ngữ chung giúp vượt qua rào cản ngăn cách nhiều lĩnh vực riêng biệt: từ thơ của Shakespeare đến các bài báo khoa học của các nhà nghiên cứu trên Cornell ArXiv,
 từ bản in Đêm Đầy Sao của Van Gogh đến Bản Giao Hưởng Số 5 của Beethoven,
 từ ngôn ngữ lập trình đầu tiên Plankalkül đến các thuật toán học máy hiện đại nhất. 
 Mọi thứ phải tuân theo các quy tắc của lý thuyết thông tin, bất kể chúng ở định dạng nào.
