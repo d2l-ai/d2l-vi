@@ -1228,8 +1228,8 @@ KL divergence between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 As you can see below, there is only a less than 3% off between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 -->
 
-Do $q_1$ và $q_2$ đối xứng qua trục y (có $x=0$), ta dự đoán
-giá trị phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là tương tự nhau.
+Do $q_1$ và $q_2$ đối xứng qua trục y (có $x=0$), ta kỳ vọng
+giá trị phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là như nhau.
 Như có thể thấy, $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ chỉ chênh nhau không đến 3%.
 
 
@@ -1247,7 +1247,7 @@ kl_pq1, kl_pq2, similar_percentage
 In contrast, you may find that $D_{\mathrm{KL}}(q_2 \|p)$ and $D_{\mathrm{KL}}(p \| q_2)$ are off a lot, with around 40% off as shown below.
 -->
 
-Trái lại, có thể tính ra $D_{\mathrm{KL}}(q_2 \|p)$ và $D_{\mathrm{KL}}(p \| q_2)$ chênh nhau nhiều, với sai khác khoảng 40% như dưới đây.
+Trái lại, giá trị $D_{\mathrm{KL}}(q_2 \|p)$ và $D_{\mathrm{KL}}(p \| q_2)$ chênh nhau khá nhiều, với sai khác tới khoảng 40% như dưới đây.
 
 
 ```{.python .input}
@@ -1274,7 +1274,7 @@ and the estimated distribution $Q$ with probability distribution $q(x)$, and we 
 
 Nếu bạn tò mò về ứng dụng của lý thuyết thông tin trong học sâu, đây là một ví dụ nhanh.
 Ta định nghĩa phân phối thực là $P$ với phân phối xác suất $p(x)$,
-và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$, và sử dụng chúng trong suốt phần còn lại.
+và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$. Ta sẽ sử dụng các định nghĩa này trong suốt phần còn lại.
 
 
 <!--
@@ -1287,8 +1287,8 @@ the probability to be classified as positive is $\pi_i= p_{\theta}(y_i = 1 \mid 
 Hence, the log-likelihood function would be
 -->
 
-Giả sử ta cần giải bài toán phân loại nhị phân dựa vào $n$ dữ liệu cho trước {$x_1, \ldots, x_n$}.
-Ta mã hoá $1$ và $0$ lần lượt là lớp dương và âm cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
+Giả sử ta cần giải bài toán phân loại nhị phân dựa vào $n$ điểm dữ liệu cho trước {$x_1, \ldots, x_n$}.
+Ta mã hoá $1$ và $0$ lần lượt là lớp dương tính và âm tính cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
 Nếu ta tập trung vào việc tìm $\theta$ tốt nhất sao cho $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
 việc áp dụng hướng tiếp cận log hợp lý cực đại (*maximum log-likelihood*) là hoàn toàn tự nhiên như ta thấy trong :numref:`sec_maximum_likelihood`.
 Cụ thể hơn, với nhãn thực $y_i$ và các dự đoán $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
@@ -1318,7 +1318,7 @@ where $y$ follows the true distribution $P$ and $\hat{y}$ follows the estimated 
 
 Việc cực đại hoá hàm log hợp lý $l(\theta)$ giống hệt với việc cực tiểu hoá $- l(\theta)$,
 và do đó ta có thể tìm $\theta$ tốt nhất từ đây.
-Để khái quát hoá hàm mất mát trên với mọi phân phối, ta gọi $-l(\theta)$ là *mất mát entropy chéo* $\mathrm{CE}(y, \hat{y})$,
+Để khái quát hoá hàm mất mát trên với mọi phân phối, ta gọi $-l(\theta)$ là *mất mát entropy chéo (cross entropy loss)* $\mathrm{CE}(y, \hat{y})$,
 trong đó $y$ tuân theo phân phối thực $P$ và $\hat{y}$ tuân theo phân phối ước lượng $Q$.
 
 
