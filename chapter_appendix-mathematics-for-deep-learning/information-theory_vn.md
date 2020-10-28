@@ -1228,9 +1228,9 @@ KL divergence between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 As you can see below, there is only a less than 3% off between $D_{\mathrm{KL}}(p\|q_1)$ and $D_{\mathrm{KL}}(p\|q_2)$.
 -->
 
-Do $q_1$ và $q_2$ đối xứng qua trục y (tức trục $x=0$), ta đoán rằng
-phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là tương tự nhau.
-Như bạn có thể thấy ở dưới, $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ chỉ chênh nhau không đến 3%.
+Do $q_1$ và $q_2$ đối xứng qua trục y (có $x=0$), ta kỳ vọng
+giá trị phân kỳ KL giữa $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ là như nhau.
+Như có thể thấy, $D_{\mathrm{KL}}(p\|q_1)$ và $D_{\mathrm{KL}}(p\|q_2)$ chỉ chênh nhau không đến 3%.
 
 
 ```{.python .input}
@@ -1247,7 +1247,7 @@ kl_pq1, kl_pq2, similar_percentage
 In contrast, you may find that $D_{\mathrm{KL}}(q_2 \|p)$ and $D_{\mathrm{KL}}(p \| q_2)$ are off a lot, with around 40% off as shown below.
 -->
 
-Trái lại, bạn có thể tính ra $D_{\mathrm{KL}}(q_2 \|p)$ và $D_{\mathrm{KL}}(p \| q_2)$ chênh nhau nhiều, với độ sai khác khoảng 40% như chỉ ra ở dưới.
+Trái lại, giá trị $D_{\mathrm{KL}}(q_2 \|p)$ và $D_{\mathrm{KL}}(p \| q_2)$ chênh nhau khá nhiều, với sai khác tới khoảng 40% như dưới đây.
 
 
 ```{.python .input}
@@ -1274,7 +1274,7 @@ and the estimated distribution $Q$ with probability distribution $q(x)$, and we 
 
 Nếu bạn tò mò về ứng dụng của lý thuyết thông tin trong học sâu, đây là một ví dụ nhanh.
 Ta định nghĩa phân phối thực là $P$ với phân phối xác suất $p(x)$,
-và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$, và ta sẽ sử dụng chúng trong suốt phần còn lại.
+và phân phối xấp xỉ là $Q$ với phân phối xác suất $q(x)$. Ta sẽ sử dụng các định nghĩa này trong suốt phần còn lại.
 
 
 <!--
@@ -1287,8 +1287,8 @@ the probability to be classified as positive is $\pi_i= p_{\theta}(y_i = 1 \mid 
 Hence, the log-likelihood function would be
 -->
 
-Coi rằng ta cần giải bài toán phân loại nhị phân dựa vào $n$ dữ liệu cho trước {$x_1, \ldots, x_n$}.
-Giả sử ta mã hoá $1$ và $0$ lần lượt là lớp dương và âm cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
+Giả sử ta cần giải bài toán phân loại nhị phân dựa vào $n$ điểm dữ liệu cho trước {$x_1, \ldots, x_n$}.
+Ta mã hoá $1$ và $0$ lần lượt là lớp dương tính và âm tính cho nhãn $y_i$, và mạng nơ-ron được tham số hoá bởi $\theta$.
 Nếu ta tập trung vào việc tìm $\theta$ tốt nhất sao cho $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
 việc áp dụng hướng tiếp cận log hợp lý cực đại (*maximum log-likelihood*) là hoàn toàn tự nhiên như ta thấy trong :numref:`sec_maximum_likelihood`.
 Cụ thể hơn, với nhãn thực $y_i$ và các dự đoán $\hat{y}_i= p_{\theta}(y_i \mid x_i)$,
@@ -1318,7 +1318,7 @@ where $y$ follows the true distribution $P$ and $\hat{y}$ follows the estimated 
 
 Việc cực đại hoá hàm log hợp lý $l(\theta)$ giống hệt với việc cực tiểu hoá $- l(\theta)$,
 và do đó ta có thể tìm $\theta$ tốt nhất từ đây.
-Để khái quát hoá mất mát trên với mọi phân phối, ta cũng có thể gọi $-l(\theta)$ là *mất mát entropy chéo* $\mathrm{CE}(y, \hat{y})$,
+Để khái quát hoá hàm mất mát trên với mọi phân phối, ta gọi $-l(\theta)$ là *mất mát entropy chéo (cross entropy loss)* $\mathrm{CE}(y, \hat{y})$,
 trong đó $y$ tuân theo phân phối thực $P$ và $\hat{y}$ tuân theo phân phối ước lượng $Q$.
 
 
@@ -1328,9 +1328,9 @@ However, if we look closely we can see that terms like $\log(\pi_i)$ have entere
 which is a solid indication that we can understand the expression from an information theoretic point of view.    
 -->
 
-Điều này hoàn toàn có thể được suy ra thông qua việc xét theo góc nhìn của hợp lý cực đại.
-Tuy nhiên, nếu quan sát kĩ hơn ta có thể thấy rằng các số hạng như $\log(\pi_i)$ có tham gia vào phép tính
-và đây là một dấu hiệu vững chắc cho thấy rằng ta có thể hiểu được biểu thức theo góc nhìn của lý thuyết thông tin.
+Điều này được suy ra theo góc nhìn của hợp lý cực đại.
+Tuy nhiên, nếu quan sát kĩ hơn ta có thể thấy rằng các số hạng như $\log(\pi_i)$ có tham gia vào phép tính,
+và đây là một dấu hiệu cho thấy ta có thể hiểu được biểu thức theo góc nhìn của lý thuyết thông tin.
 
 
 <!--
@@ -1355,7 +1355,7 @@ $$\mathrm{CE}(P, Q) = - E_{x \sim P} [\log(q(x))].$$
 By using properties of entropy discussed above, we can also interpret it as the summation of the entropy $H(P)$ and the KL divergence between $P$ and $Q$, i.e.,
 -->
 
-Bằng cách sử dụng các tính chất của entropy như đã bàn luận ở trên, ta cũng có thể giải thích công thức trên là tổng giữa entropy $H(P)$ và phân kỳ KL giữa $P$ và $Q$, tức
+Bằng cách sử dụng các tính chất của entropy đã liệt kê ở trên, ta có thể viết lại công thức trên dưới dạng tổng giữa entropy $H(P)$ và phân kỳ KL giữa $P$ và $Q$, tức
 
 
 $$\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q).$$
@@ -1393,7 +1393,7 @@ def cross_entropy(y_hat, y):
 Now define two tensors for the labels and predictions, and calculate the cross entropy loss of them.
 -->
 
-Giờ ta định nghĩa hai tensor cho nhãn và dự đoán, và tính mất mát entropy chéo của chúng.
+Giờ ta định nghĩa hai tensor cho nhãn và giá trị dự đoán, và tính mất mát entropy chéo của chúng.
 
 
 ```{.python .input}
@@ -1433,7 +1433,7 @@ It turns out that the following are equivalent:
 -->
 
 Như đã ám chỉ ở đoạn đầu của phần này, entropy chéo :eqref:`eq_ce_def` có thể được sử dụng để định nghĩa hàm mất mát trong bài toán tối ưu.
-Hoá ra rằng các mục tiêu sau là tương đương:
+Các mục tiêu sau là tương đương:
 
 
 <!--
