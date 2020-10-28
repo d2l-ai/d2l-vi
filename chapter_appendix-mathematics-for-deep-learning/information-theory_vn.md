@@ -41,7 +41,7 @@ Mục tiêu của học máy là trích xuất các đặc trưng đáng chú ý
 Mặt khác, lý thuyết thông tin nghiên cứu vấn đề mã hóa, giải mã, truyền và thao tác với thông tin.
 Do vậy, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống học máy.
 Ví dụ: nhiều ứng dụng học máy sử dụng mất mát entropy chéo như được mô tả trong :numref:`sec_softmax`.
-Mất mát này có thể trực tiếp rút ra từ các quan điểm lý thuyết thông tin.
+Mất mát này có thể được trực tiếp rút ra từ các quan điểm từ góc nhìn lý thuyết thông tin.
 
 
 <!--
@@ -60,8 +60,8 @@ What could be our starting point?
 
 Ta hãy bắt đầu với "linh hồn" của lý thuyết thông tin: thông tin.
 *Thông tin* có thể được mã hóa trong bất kỳ thứ gì với một hoặc nhiều chuỗi định dạng mã hóa.
-Giả sử chính chúng ta đề ra nhiệm vụ thử định nghĩa một khái niệm thông tin.
-Điểm chúng ta có thể bắt đầu là gì?
+Ta giả sử thử chính mình đưa ra một định nghĩa cho khái niệm thông tin.
+Ta có thể bắt đầu từ đâu?
 
 
 <!--
@@ -84,7 +84,7 @@ We were already certain that this was the case so we hope the information should
 
 Đầu tiên, họ lật một lá và nói, "Tôi thấy một lá bài."
 Điều này không cung cấp cho ta thông tin nào.
-Nên chúng ta rõ ràng chắc chắn rằng trong trường hợp này thông tin sẽ là 0.
+Rõ ràng là trong trường hợp này chúng ta đã biết chắc chắn mệnh đề trên là đúng nên lượng thông tin mà nó chứa sẽ là 0.
 
 
 <!--
@@ -95,7 +95,7 @@ We hope that whatever the measure of information, this event should have low inf
 
 Tiếp theo, họ lật một lá khác và nói, "Tôi thấy một lá cơ."
 Điều này cung cấp cho ta một chút thông tin, mà trên thực tế chỉ có thể có $4$ loại chất khác nhau , mỗi chất đều có khả năng như nhau, vì vậy ta không ngạc nhiên trước kết quả này.
-Ta hy vọng rằng với bất kể hình thức đo đạc thông tin nào, sự kiện này nên có hàm lượng thông tin thấp.
+Ta hy vọng rằng dù thông tin được đo đạc dưới bất kể hình thức nào, sự kiện này nên có hàm lượng thông tin thấp.
 
 
 <!--
@@ -103,7 +103,7 @@ Next, they flip over a card and say, "This is the $3$ of spades." This is more i
 Indeed there were $52$ equally likely possible outcomes, and our friend told us which one it was. This should be a medium amount of information.
 -->
 
-Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Đây là thông tin thêm.
+Tiếp theo, họ lật một lá và nói, "Đây là quân $3$ bích.". Câu trên chứa nhiều thông tin hơn.
 Quả thực có $52$ kết quả tương đương có thể xảy ra, và ta đã được cho biết đó là lá bài nào. Đây là một lượng thông tin trung bình.
 
 
@@ -119,7 +119,7 @@ There are $52!$ different orders to the deck, again all equally likely, so we ne
 
 Hãy đi đến cực hạn.
 Giả sử rằng cuối cùng họ lật từng lá bài từ bộ bài và đọc ra toàn bộ trình tự của bộ bài đã bị xáo trộn đó.
-Có $52!$ các thứ tự khác nhau cho bộ bài, một lần nữa tất cả đều có khả năng như nhau, vì vậy chúng ta cần rất nhiều thông tin để biết trình từ nào của việc rút bài xảy ra.
+Có $52!$ các thứ tự khác nhau cho bộ bài với khả năng như nhau, vì vậy chúng ta cần rất nhiều thông tin để biết được chính xác trình tự rút bài.
 
 
 <!--
@@ -129,8 +129,8 @@ $2\text{ bits}$, $~5.7\text{ bits}$, and $~225.6\text{ bits}$ of information res
 -->
 
 Bất kỳ khái niệm thông tin nào chúng ta phát triển phải phù hợp với trực giác này.
-Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có $0\text{ bit}$,
-$2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ của thông tin tương ứng.
+Thật vậy, trong phần tiếp theo, chúng ta sẽ học cách tính toán rằng các sự kiện trên có tương ứng $0\text{ bit}$,
+$2\text{ bit}$, $~5.7\text{ bit}$, và $~225.6\text{ bit}$ thông tin.
 
 
 <!--
@@ -142,10 +142,10 @@ For a common event, we may not need much information.
 -->
 
 Nếu đọc hết những thí nghiệm tưởng tượng này, chúng ta thấy một ý tưởng tự nhiên.
-Như một điểm khởi đầu, thay vì quan tâm đến điều đã biết,
+Để khởi đầu, thay vì quan tâm đến kiến thức đã biết,
 chúng ta có thể xây dựng ý tưởng là thông tin đại diện cho mức độ bất ngờ hoặc xác suất trừu tượng của sự kiện.
 Ví dụ, nếu chúng ta muốn mô tả một sự kiện hiếm gặp, chúng ta cần rất nhiều thông tin.
-Đối với một sự kiện thông thường, chúng ta có thể không cần nhiều thông tin.
+Đối với một sự kiện phổ biến, chúng ta có thể không cần nhiều thông tin.
 
 
 <!--
@@ -153,7 +153,7 @@ In 1948, Claude E. Shannon published *A Mathematical Theory of Communication* :c
 In his article, Shannon introduced the concept of information entropy for the first time. We will begin our journey here.
 -->
 
-Năm 1948, Claude E. Shannon xuất bản *Lý thuyết Toán cho Truyền tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` thiết lập lý thuyết thông tin.
+Năm 1948, Claude E. Shannon thiết lập lĩnh vực lý thuyết thông tin qua bài báo khoa học *Lý thuyết Toán cho Truyền tải Thông tin - A Mathematical Theory of Communication* :cite:`Shannon.1948` .
 Trong bài báo của mình, Shannon đưa ra khái niệm entropy thông tin. Chúng ta sẽ bắt đầu từ đây.
 
 
@@ -174,7 +174,7 @@ And hence, a series of binary digits of length $n$ contains $n$ bits of informat
 -->
 
 Vì thông tin biểu diễn xác suất trừu tượng của một sự kiện, làm thế nào để chúng ta ánh xạ xác suất đó thành số lượng bit?
-Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thuật ngữ này ban đầu do John Tukey tạo ra.
+Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, mà ban đầu được đề xuất bởi John Tukey.
 Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong quá khứ, một máy phát tín hiệu chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
 Mà thật ra mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
 Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
