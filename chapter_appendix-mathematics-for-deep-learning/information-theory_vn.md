@@ -178,7 +178,7 @@ Shannon đã giới thiệu thuật ngữ *bit* làm đơn vị thông tin, thu�
 Vậy "bit" là gì và tại sao ta sử dụng nó để đo lường thông tin? Trong quá khứ, một máy phát tín hiệu chỉ có thể gửi hoặc nhận hai loại mã: $0$ và $1$.
 Thật vậy, mã hóa nhị phân vẫn được sử dụng phổ biến trên tất cả các máy tính kỹ thuật số hiện đại.
 Bằng cách này, bất kỳ thông tin nào cũng được mã hóa bởi một chuỗi $0$ và $1$.
-Và do đó, một chuỗi các chữ số nhị phân có độ dài $n$ chứa $n$ bit thông tin.
+Và do đó, một chuỗi các chữ số nhị phân (*binary*) có độ dài $n$ chứa $n$ bit thông tin.
 
 
 <!--
