@@ -206,7 +206,7 @@ For the sake of simplicity, the rest of this section will omit the subscript 2 i
 For example, the code "0010" has a self-information
 -->
 
-như là số *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
+là số *bit* thông tin ta đã nhận cho sự kiện $X$ này. 
 Lưu ý rằng ta sẽ luôn sử dụng logarit cơ số 2 trong phần này.
 Để đơn giản, phần còn lại của phần này sẽ bỏ qua cơ số 2 trong ký hiệu logarit, tức là $\log(.)$ luôn có nghĩa là $\log_2(.)$.
 Ví dụ: mã "0010" có lượng tin là
