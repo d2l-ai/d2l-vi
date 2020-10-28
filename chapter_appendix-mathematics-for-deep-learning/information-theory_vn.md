@@ -667,21 +667,21 @@ Indeed, the image of a digit should already contain the information about what d
 Thus, to continue to extend our vocabulary of information theory, we need to be able to reason about the information content in a random variable conditional on another.
 -->
 
-Entropy đồng thời định nghĩa phía trên là lượng thông tin chứa đựng trong một cặp biến ngẫu nhiên.
+Entropy kết hợp định nghĩa phía trên là lượng thông tin chứa trong một cặp biến ngẫu nhiên.
 Đại lượng này khá hữu ích, nhưng thường nó không phải là thứ mà ta quan tâm. Hãy xem xét trong ngữ cảnh học máy.
 Gọi $X$ là biến ngẫu nhiên (hoặc vector biến ngẫu nhiên) mô tả giá trị các điểm ảnh trong một bức ảnh, và $Y$ là biến ngẫu nhiên mô tả nhãn lớp.
-$X$ nên chứa một lượng thông tin rất lớn---một bức ảnh tự nhiên là một thứ khá phức tạp.
-Tuy nhiên, lượng thông tin chứa đựng trong $Y$ nên nhỏ một khi ta đã thấy bức ảnh.
-Tất nhiên, bức ảnh chứa một chữ số cũng nên chứa thông tin về việc đó là chữ số nào, trừ khi chữ số trong ảnh không thể đọc được.
-Vì vậy, để tiếp tục mở rộng kho từ vựng về lý thuyết thông tin, ta cần phải suy luận được lượng thông tin trong một biến ngẫu nhiên khi nó phụ thuộc vào một biến khác.
+$X$ chứa một lượng thông tin rất lớn --- do một bức ảnh tự nhiên khá phức tạp.
+Tuy nhiên, lượng thông tin trong $Y$ khi ta đã thấy bức ảnh nên là nhỏ.
+Tất nhiên, bức ảnh chứa một chữ số cũng nên chứa thông tin đó là chữ số nào, trừ khi chữ số trong ảnh không thể đọc được.
+Vì vậy, để tiếp tục mở rộng lý thuyết thông tin, ta cần suy luận được lượng thông tin trong một biến ngẫu nhiên khi nó phụ thuộc vào một biến khác.
 
 <!--
 In the probability theory, we saw the definition of the *conditional probability* to measure the relationship between variables.
 We now want to analogously define the *conditional entropy* $H(Y \mid X)$.  We can write this as 
 -->
 
-Trong lý thuyết xác suất, ta đã thấy định nghĩa của *xác suất có điều kiện* dùng để đo lường mối quan hệ giữa các biến.
-Bây giờ ta muốn định nghĩa *entropy có điều kiện* (*conditional entropy*) $H(Y \mid X)$ theo một cách tương tự. Ta có thể viết nó dưới dạng
+Trong lý thuyết xác suất, *xác suất có điều kiện* đo mối quan hệ giữa các biến.
+Bây giờ ta muốn định nghĩa *entropy có điều kiện* (*conditional entropy*) $H(Y \mid X)$ theo cách tương tự dưới dạng:
 
 $$ H(Y \mid X) = - E_{(x, y) \sim P} [\log p(y \mid x)],$$
 :eqlabel:`eq_cond_ent_def`
@@ -693,7 +693,7 @@ Specifically, if $(X, Y)$ is a pair of discrete random variables, then
 -->
 
 trong đó $p(y \mid x) = \frac{p_{X, Y}(x, y)}{p_X(x)}$ là xác suất có điều kiện.
-Cụ thể, nếu $(X,Y)$ là một cặp biến ngẫu nhiên rời rạc, ta có
+Cụ thể, nếu $(X,Y)$ là rời rạc, ta có:
 
 $$H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log p(y \mid x).$$
 
@@ -702,7 +702,7 @@ $$H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log p(y \mid x).$$
 If $(X, Y)$ is a pair of continuous random variables, then the *differential conditional entropy* is similarly defined as 
 -->
 
-Nếu $(X,Y)$ là một cặp biến ngẫu nhiên liện tục, *entropy có điều kiện vi phân* được định nghĩa tương tự như sau
+Nếu $(X,Y)$ là liên tục, *entropy có điều kiện vi phân* được định nghĩa tương tự như sau:
 
 $$H(Y \mid X) = - \int_x \int_y p(x, y) \ \log p(y \mid x) \;dx \;dy.$$
 
@@ -712,7 +712,7 @@ It is now natural to ask, how does the *conditional entropy* $H(Y \mid X)$ relat
 Using the definitions above, we can express this cleanly:
 -->
 
-Bây giờ một câu hỏi tự nhiên là: *entropy có điều kiện* $H(Y \mid X)$ có mối quan hệ gì với entropy $H(X)$ và entropy đồng thời $H(X,Y)$?
+Bây giờ một câu hỏi tự nhiên là: *entropy có điều kiện* $H(Y \mid X)$ có mối quan hệ gì với entropy $H(X)$ và entropy kết hợp $H(X,Y)$?
 Sử dụng các định nghĩa ở trên, ta có thể biểu diễn mối quan hệ đó một cách gọn gàng:
 
 $$H(Y \mid X) = H(X, Y) - H(X).$$
@@ -728,7 +728,7 @@ This gives us the information in $Y$ which is not also represented in $X$.
 -->
 
 Điều này có thể được giải thích một cách trực quan như sau: thông tin trong $Y$ khi biết $X$ ($H(Y \mid X)$) bằng với thông tin trong cả $X$ và $Y$ ($H(X, Y)$) trừ đi thông tin đã có trong $X$.
-Nó cho ta biết thông tin có trong $Y$ mà không hiển thị trong $X$.
+Nó cho ta biết thông tin có trong $Y$ mà không chứa trong $X$.
 
 <!--
 Now, let us implement conditional entropy :eqref:`eq_cond_ent_def` from scratch.
@@ -787,8 +787,8 @@ Given the previous setting of random variables $(X, Y)$, you may wonder: "Now th
 can we similarly ask how much information is shared between $X$ and $Y$?" The answer will be the *mutual information* of $(X, Y)$, which we will write as $I(X, Y)$.  
 -->
 
-Với định nghĩa trước đó về các biến ngẫu nhiên $(X, Y)$, bạn có thể tự hỏi:" Giờ đây ta biết có bao nhiêu thông tin nằm trong Y nhưng không nằm ở trong X,
-liệu chúng ta có thể biết được có bao nhiêu thông tin giống nhau giữa $X$ và $Y$ không?". Đáp án cho câu hỏi trên chính là *thông tin tương hỗ* của $(X, Y)$, hay còn được viết dưới dạng $I(X, Y)$.
+Với định nghĩa trước đó về các biến ngẫu nhiên $(X, Y)$, bạn có thể tự hỏi:" Ta đã biết có bao nhiêu thông tin nằm trong Y nhưng không nằm ở trong X,
+liệu có thể biết được có bao nhiêu thông tin giống nhau giữa $X$ và $Y$ không?". Đại lượng đó là *thông tin tương hỗ* của $(X, Y)$, ký hiệu là $I(X, Y)$.
 
 
 <!--
@@ -803,14 +803,13 @@ As we saw in the previous section, this is given by $H(X \mid Y)$ and $H(Y \mid 
 Thus, we have that the mutual information should be
 -->
 
-Thay vì đề cập ngay đến định nghĩa chính thức, hãy cùng luyện tập trực giác của chúng ta bằng cách suy luận biểu thức thông tin tương hỗ dựa trên những khái niệm mà chúng ta đã xây dựng trước đó. 
+Thay vì đề cập ngay đến định nghĩa chính thức, hãy cùng luyện tập trực giác bằng cách suy luận biểu thức thông tin tương hỗ dựa trên những khái niệm mà chúng ta đã xây dựng trước đó. 
 Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa hai biến ngẫu nhiên. 
-Một cách mà chúng ta có thể thử đó là bắt đầu với tất cả những thông tin chứa trong cả biến $X$ and $Y$,
-sau đó bỏ đi những phần không giống nhau. 
-Thông tin chứa trong cả $X$ and $Y$ được viết dưới dạng $H(X, Y)$.
-Ta muốn lược bỏ đi thông tin nằm trong $X$ nhưng không nằm trong $Y$, cũng như thông tin nằm trong $Y$ nhưng không nằm trong $X$.
-Như chúng ta đã thấy trong mục trước, chúng được biểu diễn lần lượt là H(X \mid Y)$ và $H(Y \mid X)$.
-Do đó, ta có thông tin tương hỗ được tính như sau
+Ta có thể thử bắt đầu với thông tin chứa trong cả $X$ và $Y$,
+sau đó bỏ đi những thông tin không giống nhau. 
+Thông tin chứa trong cả $X$ và $Y$ là $H(X, Y)$.
+Thông tin nằm trong $X$ nhưng không nằm trong $Y$ là H(X \mid Y)$, tương tự, thông tin nằm trong $Y$ nhưng không nằm trong $X$ là $H(Y \mid X)$.
+Do đó, ta có thông tin tương hỗ như sau:
 
 
 $$
@@ -823,7 +822,8 @@ Indeed, this is a valid definition for the mutual information.
 If we expand out the definitions of these terms and combine them, a little algebra shows that this is the same as
 -->
 
-Thật vậy, đây là định nghĩa hợp lệ của thông tin tương hỗ. Mở rộng thêm định nghĩa của các khái niệm đó rồi tổng hợp lại, ta có biểu thức đại số tương tự sau
+Thật vậy, đây là định nghĩa hợp lệ của thông tin tương hỗ.
+Nếu ta thay các số hạng trên bằng định nghĩa của chúng, tổng hợp lại, rồi biến đổi đại số một chút, ta sẽ có:
 
 
 $$I(X, Y) = E_{x} E_{y} \left\{ p_{X, Y}(x, y) \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)} \right\}. $$
@@ -835,8 +835,8 @@ We can summarize all of these relationships in image :numref:`fig_mutual_informa
 It is an excellent test of intuition to see why the following statements are all also equivalent to $I(X, Y)$.
 -->
 
-Ta có thể rút gọn tất cả những mối quan hệ nêu trên ở hình :numref:`fig_mutual_information`. 
-Đây là một bài kiểm tra trực giác tuyệt vời để hiểu được tại sao các mệnh đề sau đây đều tương đương với $I(X, Y)$.
+Ta có thể tóm tắt tất cả những mối quan hệ nêu trên ở hình :numref:`fig_mutual_information`. 
+Đây là một minh họa trực quan tuyệt vời để hiểu tại sao các mệnh đề sau đây đều tương đương với $I(X, Y)$.
 
 
 * $H(X) − H(X \mid Y)$
@@ -848,7 +848,7 @@ Ta có thể rút gọn tất cả những mối quan hệ nêu trên ở hình 
 ![Mutual information's relationship with joint entropy and conditional entropy.](../img/mutual_information.svg)
 -->
 
-![Mối quan hệ giữa thông tin tương hỗ với entropy đồng thời và entropy có điều kiện.](../img/mutual_information.svg)
+![Mối quan hệ giữa thông tin tương hỗ với entropy kết hợp và entropy có điều kiện.](../img/mutual_information.svg)
 :label:`fig_mutual_information`
 
 
@@ -857,8 +857,8 @@ In many ways we can think of the mutual information :eqref:`eq_mut_ent_def` as p
 This allows us to ask not only for linear relationships between variables, but for the maximum information shared between the two random variables of any kind.
 -->
 
-Theo nhiều cách ta có thể xem thông tin tương hỗ :eqref:`eq_mut_ent_def` như là phần mở rộng nguyên thủy của hệ số tương quan trong :numref:`sec_random_variables`.
-Điều này cho phép chúng ta đặt câu hỏi không chỉ về mối quan hệ tuyến tính của các biến, mà còn cả lượng thông tin tối đa mà hai biến bất kì chia sẻ với nhau. 
+Theo nhiều cách ta có thể xem thông tin tương hỗ :eqref:`eq_mut_ent_def` như là phần mở rộng của hệ số tương quan trong :numref:`sec_random_variables`.
+Đại lượng này cho phép chúng ta hiểu không chỉ về mối quan hệ tuyến tính của các biến, mà còn cả lượng thông tin tối đa mà hai biến chia sẻ với nhau. 
 
 
 <!--
@@ -922,7 +922,7 @@ mutual_information(tf.constant([[0.1, 0.5], [0.1, 0.3]]),
 Rather than memorizing the definition of mutual information :eqref:`eq_mut_ent_def`, you only need to keep in mind its notable properties:
 -->
 
-Thay vì phải ghi nhớ định nghĩa thông tin tương hỗ :eqref:`eq_mut_ent_def`, bạn chỉ cần lưu ý những đặc tính nổi trội của nó:
+Thay vì ghi nhớ định nghĩa thông tin tương hỗ :eqref:`eq_mut_ent_def`, bạn chỉ cần lưu ý những tính chất nổi trội của nó:
 
 
 <!--
@@ -934,7 +934,7 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 -->
 
 * Thông tin tương hỗ có tính đối xứng: $I(X, Y) = I(Y, X)$.
-* Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$.
+* Thông tin tương hỗ có giá trị không âm: $I(X, Y) \geq 0$.
 * $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ độc lập thì việc biết thông tin của $Y$ không cho ta thông tin của $X$ và ngược lại, do đó thông tin tương hỗ của chúng bằng 0. 
 * Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung toàn bộ thông tin và $$I(X, Y) = H(Y) = H(X).$$
 
