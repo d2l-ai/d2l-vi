@@ -317,8 +317,8 @@ If they are independent, then it is exactly the sum.
 3.  The information gained when observing (nearly) certain events is (nearly) zero.
 -->
 
-1. Thông tin thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào cách gọi các yếu tố, hay sự xuất hiện của các yếu tố bổ sung mà có xác suất bằng 0.
-2. Thông tin thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin thu được khi cách quan sát chúng một cách riêng rẽ.
+1. Thông tin thu được bằng cách quan sát một biến ngẫu nhiên không phụ thuộc vào các yếu tố, hay sự xuất hiện của các yếu tố bổ sung mà có xác suất bằng 0.
+2. Thông tin thu được bằng cách quan sát hai biến ngẫu nhiên không lớn hơn tổng thông tin thu được khi quan sát chúng một cách riêng rẽ.
 Nếu hai biến ngẫu nhiên là độc lập thì thông tin thu được từ hai cách bằng nhau.
 3. Thông tin thu được khi quan sát những biến cố (gần như) chắc chắn thì (gần như) bằng 0.
 
@@ -330,7 +330,7 @@ we saw before that the information provided by a single fair coin flip is one bi
 -->
 
 Việc chứng minh các tiên đề trên nằm ngoài phạm vi của cuốn sách, điều quan trọng cần nhớ là chúng xác định một cách độc nhất hình thái mà entropy phải có.
-Chỉ có duy nhất một điều không xác định từ những phát biểu trên là về việc chọn đơn vị cho entropy, mà điều này thường được chuẩn hoá bằng cách đặt thông tin cung cấp bởi một lần lật đồng xu cân đối đồng chất là một bit, như đã thấy trước đó. 
+Chỉ có duy nhất một điều chưa xác định từ những phát biểu trên là về việc chọn đơn vị cho entropy, mà điều này thường được chuẩn hoá bằng cách đặt thông tin cung cấp bởi một lần lật đồng xu cân đối đồng chất là một bit, như đã thấy trước đó. 
 
 
 <!--
@@ -450,10 +450,10 @@ which will ideally be always positive (for nothing we observe should force us to
 Hence, we add a negative sign in front of $\log$ function.
 -->
 
-Tiếp theo, tại sao chúng ta sử dụng $\log$ *âm*? Một cách trực giác, những biến cố xảy ra thường xuyên sẽ chứa ít thông tin hơn những biến cố hiếm vì ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường.
+Tiếp theo, tại sao chúng ta sử dụng $\log$ *âm*? Một cách trực quan, những biến cố xảy ra thường xuyên sẽ chứa ít thông tin hơn những biến cố hiếm vì ta thường thu được nhiều thông tin hơn từ những trường hợp bất thường.
 Do đó, ta cần thiết lập mối quan hệ đơn điệu giảm giữa xác suất của biến cố và entropy của chúng, và muốn entropy luôn dương (vì các quan sát mới không nên buộc ta quên đi những gì đã biết).
 Tuy nhiên, hàm $\log$ lại là đơn điệu tăng, và có giá trị âm với xác suất trong đoạn $[0, 1]$.
-Vậy nên, ta thêm dấu âm vào trước hàm $\log$.
+Vậy nên ta thêm dấu âm vào trước hàm $\log$.
 
 
 <!--
@@ -466,7 +466,7 @@ Then the entropy of this system equals to the average self-information from obse
 -->
 
 Cuối cùng, hàm *kỳ vọng* đến từ đâu? Xét một biến ngẫu nhiên $X$.
-Ta có thể diễn giải lượng tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi thấy một kết quả cụ thể nào đó.
+Ta có thể diễn giải lượng tin (*self-information*) ($-\log(p)$) như mức độ *bất ngờ* khi quan sát được một kết quả cụ thể nào đó.
 Thật vậy, khi xác suất xấp xỉ bằng 0, mức độ bất ngờ tiến tới vô cùng.
 Tương tự, chúng ta có thể diễn giải entropy như mức độ bất ngờ trung bình từ việc quan sát $X$.
 Ví dụ, tưởng tượng một hệ thống máy đánh bạc đưa ra các ký hiệu độc lập ${s_1, \ldots, s_k}$ với xác suất lần lượt là ${p_1, \ldots, p_k}$. 
@@ -507,7 +507,7 @@ However, if we additionally impose that $P$ is supported on a finite interval (w
 then $P$ has the highest entropy if it is the uniform distribution on that interval.
 -->
 
-* Entropy là không âm, tức $H(X) \geq 0, \forall X$.
+* Entropy có giá trị không âm, tức $H(X) \geq 0, \forall X$.
 * Nếu $X \sim P$ có hàm mật độ xác suất hoặc hàm khối xác suất $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$, ta có:
 $$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
 Ngoài ra, $H(X)$ cho biết cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
