@@ -805,9 +805,9 @@ Thus, we have that the mutual information should be
 
 Thay vì đề cập ngay đến định nghĩa chính thức, hãy cùng luyện tập trực giác bằng cách suy luận biểu thức thông tin tương hỗ dựa trên những khái niệm mà chúng ta đã xây dựng trước đó. 
 Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa hai biến ngẫu nhiên. 
-Một cách có thể thử đó là bắt đầu với thông tin chứa trong cả $X$ và $Y$,
+Ta có thể thử bắt đầu với thông tin chứa trong cả $X$ và $Y$,
 sau đó bỏ đi những thông tin không giống nhau. 
-Thông tin chứa trong cả $X$ and $Y$ là $H(X, Y)$.
+Thông tin chứa trong cả $X$ và $Y$ là $H(X, Y)$.
 Thông tin nằm trong $X$ nhưng không nằm trong $Y$ là H(X \mid Y)$, tương tự, thông tin nằm trong $Y$ nhưng không nằm trong $X$ là $H(Y \mid X)$.
 Do đó, ta có thông tin tương hỗ như sau:
 
@@ -823,7 +823,7 @@ If we expand out the definitions of these terms and combine them, a little algeb
 -->
 
 Thật vậy, đây là định nghĩa hợp lệ của thông tin tương hỗ.
-Mở rộng bằng định nghĩa của các khái niệm đó, tổng hợp lại, rồi biến đổi đại số một chút, ta có:
+Nếu ta thay các số hạng trên bằng định nghĩa của chúng, tổng hợp lại, rồi biến đổi đại số một chút, ta sẽ có:
 
 
 $$I(X, Y) = E_{x} E_{y} \left\{ p_{X, Y}(x, y) \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)} \right\}. $$
@@ -934,7 +934,7 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 -->
 
 * Thông tin tương hỗ có tính đối xứng: $I(X, Y) = I(Y, X)$.
-* Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$. 
+* Thông tin tương hỗ có giá trị không âm: $I(X, Y) \geq 0$.
 * $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ độc lập thì việc biết thông tin của $Y$ không cho ta thông tin của $X$ và ngược lại, do đó thông tin tương hỗ của chúng bằng 0. 
 * Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung toàn bộ thông tin và $$I(X, Y) = H(Y) = H(X).$$
 
