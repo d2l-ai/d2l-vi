@@ -38,7 +38,7 @@ This loss can be directly derived from information theoretic considerations.
 
 Trước khi bắt đầu, chúng ta hãy phác thảo mối quan hệ giữa học máy và lý thuyết thông tin.
 Học máy nhằm mục đích trích xuất các đặc trưng đáng chú ý từ dữ liệu và đưa ra các dự đoán quan trọng.
-Mặt khác, lý thuyết thông tin nghiên cứu mã hóa, giải mã, truyền và thao tác thông tin.
+Mặt khác, lý thuyết thông tin nghiên cứu vấn đề mã hóa, giải mã, truyền và thao tác với thông tin.
 Kết quả là, lý thuyết thông tin cung cấp ngôn ngữ cơ bản để thảo luận về việc xử lý thông tin trong các hệ thống học máy.
 Ví dụ: nhiều ứng dụng học máy sử dụng mất mát entropy chéo như được mô tả trong :numref:`sec_softmax`.
 Mất mát này có thể trực tiếp rút ra từ các quan điểm lý thuyết thông tin.
