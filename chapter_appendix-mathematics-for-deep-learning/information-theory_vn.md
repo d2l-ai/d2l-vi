@@ -955,8 +955,8 @@ When we worked with entropy at the beginning of this chapter, we were able to pr
 We may give a similar interpretation to the logarithmic term in the mutual information, which is often referred to as the *pointwise mutual information*:
 -->
 
-Khi bắt đầu làm việc với entropy ở phần đầu của chương này, chúng ta đã cung cấp được một cách diễn giải cho $-\log(p_X(x))$ như mức độ *ngạc nhiên* với kết quả cụ thể của biến ngẫu nhiên. 
-Chúng ta có thể cung cấp một cách diễn giải tương tự với toán hạng logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ theo từng điểm*:
+Khi bắt đầu tìm hiểu về entropy ở đầu chương này, ta đã diễn giải $-\log(p_X(x))$ như mức độ *ngạc nhiên* với kết quả cụ thể của biến ngẫu nhiên. 
+Ta có thể diễn giải tương tự với logarit trong thông tin tương hỗ, thường được biết đến với cái tên *thông tin tương hỗ theo từng điểm (pointwise mutual information)*:
 
 
 $$\mathrm{pmi}(x, y) = \log\frac{p_{X, Y}(x, y)}{p_X(x) p_Y(y)}.$$
@@ -971,17 +971,17 @@ If it is large and positive, then these two specific outcomes occur much more fr
 whereas if it is large and negative it represents the two outcomes happening far less than we would expect by random chance.  
 -->
 
-Chúng ta có thể nghĩ về biểu thức :eqref:`eq_pmi_def` như là một cách để đo lường mức tăng/giảm độ hợp lý giữa các tổ hợp đầu ra $x$ và $y$ so với những gì ta mong đợi ở các đầu ra ngẫu nhiên độc lập. 
-Nếu kết quả lớn và là số dương, thì hai đầu ra cụ thể trên có xác suất xảy ra cao hơn nhiều so với xác suất được chia đều. 
+:eqref:`eq_pmi_def` so sánh xác suất $x$ và $y$ xảy ra đồng thời qua phân phối kết hợp với khi chúng cùng xảy ra qua 2 phân phối ngẫu nhiên độc lập. 
+Nếu kết quả lớn và dương, thì $x$ và $y$ có xác suất xảy ra đồng thời qua phân phối kết hợp cao hơn nhiều. 
 (*chú ý: mẫu số $p_X(x) p_Y(y)$ là xác suất của hai đầu ra độc lập*),
-ngược lại nếu kết quả lớn và là số âm, thì xác suất xảy ra của hai đầu ra cụ thể trên thấp hơn nhiều so với xác suất được chia đều.
+ngược lại nếu kết quả lớn và âm, thì xác suất xảy ra đồng thời qua phân phối kết hợp sẽ rất thấp.
 
 <!--
 This allows us to interpret the mutual information :eqref:`eq_mut_ent_def` as the average amount that 
 we were surprised to see two outcomes occurring together compared to what we would expect if they were independent.
 -->
 
-Điều này cho phép chúng ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như là trung bình độ ngạc nhiên của chúng ta khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
+Điều này cho phép ta diễn giải thông tin tương hỗ :eqref:`eq_mut_ent_def` như độ ngạc nhiên trung bình khi hai biến cố xảy ra đồng thời so với độ ngạc nhiên khi chúng là hai biến độc lập. 
 
 <!-- ===================== Kết thúc dịch Phần 8 ===================== -->
 
@@ -1002,9 +1002,9 @@ You may wonder whether the company Amazon has a building on fire, or the Amazon 
 -->
 
 Thông tin tương hỗ có thể hơi trừu tượng theo định nghĩa thuần túy, vậy nó liên quan như thế nào đến học máy? Trong xử lý ngôn ngữ tự nhiên,
-một trong những vấn đề khó khăn nhất là *giải quyết sự mơ hồ*, hoặc vấn đề về nghĩa của từ đang không rõ ràng so với ngữ cảnh.
-Ví dụ, gần đây một tiêu đề trong bản tin thông báo rằng "Amazon đang cháy".
-Bạn có thể tự hỏi là liệu công ty Amazon có một tòa nhà bị cháy, hay rừng Amazon đang bốc cháy.
+một trong những vấn đề khó khăn nhất là *giải quyết sự mơ hồ*, tức nghĩa của từ đang không rõ ràng trong ngữ cảnh.
+Ví dụ, gần đây có một tiêu đề trong bản tin thông báo rằng "Amazon đang cháy".
+Bạn có thể tự hỏi là liệu công ty Amazon có một tòa nhà bị cháy, hay rừng Amazon đang cháy.
 
 
 <!--
@@ -1015,11 +1015,11 @@ When we need to disambiguate "Amazon", we can compare which group has more occur
 In this case the article would go on to describe the forest, and make the context clear.
 -->
 
-Trong trường hợp này, thông tin tương hỗ có thể giúp ta giải quyết sự mơ hồ này.
-Đầu tiên, ta tìm nhóm từ mà mỗi từ có thông tin tương hỗ tương đối lớn tới công ty Amazon, chẳng hạn như thương mại điện tử, công nghệ và trực tuyến.
-Thứ hai, ta tìm thấy một nhóm từ khác mà mỗi từ có một thông tin tương hỗ tương đối lớn tới rừng mưa Amazon, chẳng hạn như mưa, rừng và nhiệt đới.
-Khi ta cần phân biệt "Amazon", chúng ta có thể so sánh nhóm nào xuất hiện nhiều hơn trong ngữ cảnh của từ Amazon.
-Trong trường hợp này, bài báo sẽ tiếp tục mô tả khu rừng và làm rõ bối cảnh.
+Thông tin tương hỗ có thể giúp ta giải quyết sự mơ hồ này.
+Đầu tiên, ta tìm nhóm từ có thông tin tương hỗ tương đối lớn tới công ty Amazon, chẳng hạn như thương mại điện tử, công nghệ và trực tuyến.
+Thứ hai, ta tìm một nhóm từ khác có một thông tin tương hỗ tương đối lớn tới rừng mưa Amazon, chẳng hạn như mưa, rừng và nhiệt đới.
+Khi cần phân biệt "Amazon", ta có thể so sánh nhóm nào xuất hiện nhiều hơn trong ngữ cảnh của từ này.
+Trong trường hợp này, bài báo sẽ tiếp tục mô tả khu rừng và ngữ cảnh sẽ được làm rõ.
 
 
 <!--
@@ -1036,10 +1036,10 @@ There are many ways to go about this, but information theory provides one of the
 We now explore the *Kullback–Leibler (KL) divergence*, which provides a way to measure if two distributions are close together or not. 
 -->
 
-Như những gì ta đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (*norms*) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
-Ta muốn có thể thực hiện một công việc tương tự với các phân phối xác suất.
+Như đã thảo luận trong :numref:`sec_linear-algebra`, ta có thể sử dụng chuẩn (*norms*) để đo khoảng cách giữa hai điểm trong không gian với số chiều bất kỳ.
+Ta muốn thực hiện công việc tương tự với các phân phối xác suất.
 Có nhiều cách để giải quyết vấn đề này, nhưng lý thuyết thông tin cung cấp một trong những cách tốt nhất.
-Bây giờ ta khảo sát *phân kỳ Kullback–Leibler (KL)* (*Kullback–Leibler divergence*), là phương pháp đo lường xem hai phân phối có gần nhau hay không.
+Bây giờ ta sẽ tìm hiểu về *phân kỳ Kullback–Leibler (KL)* (*Kullback–Leibler divergence*), là phương pháp đo lường xem hai phân phối có gần nhau hay không.
 
 
 <!--
@@ -1070,10 +1070,10 @@ and large and negative if we see the outcome far less than expected.
 In this way, we can interpret it as our *relative* surprise at observing the outcome compared to how surprised we would be observing it from our reference distribution.
 -->
 
-Như với thông tin tương hỗ theo từng điểm :eqref:`eq_pmi_def`, ta một lần nữa có thể cung cấp cách diễn giải thuật ngữ logarit:
+Như với thông tin tương hỗ theo từng điểm :eqref:`eq_pmi_def`, ta lại có thể diễn giải hạng tử logarit:
 $-\log \frac{q (x)}{p (x)} = -\log(q(x)) - (-\log(p(x)))$ sẽ lớn và dương nếu ta thấy $x$ xuất hiện thường xuyên hơn theo phân phối $P$ so với mức ta kỳ vọng cho phân phối $Q$,
 và lớn và âm nếu chúng ta thấy kết quả ít hơn nhiều so với kỳ vọng.
-Theo cách này, ta có thể hiểu nó là sự ngạc nhiên *tương đối* của ta khi quan sát kết quả so với mức độ ngạc nhiên khi ta quan sát nó từ phân phối tham chiếu.
+Theo cách này, ta có thể hiểu nó là mức độ ngạc nhiên *tương đối* khi quan sát phân phối mục tiêu so với phân phối tham chiếu.
 
 
 <!--
@@ -1141,19 +1141,19 @@ Besides the relationship shown in :numref:`fig_mutual_information`, $I(X, Y)$ is
   that results from learning the value of the $X$'s distribution. Similarly to the third term.
 -->
 
-* Phân kỳ KL là bất đối xứng, tức là tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
-* Phân kỳ KL là không âm, tức là $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
+* Phân kỳ KL là bất đối xứng, tức tồn tại $P,Q$ sao cho $$D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P).$$
+* Phân kỳ KL có giá trị không âm, tức $$D_{\mathrm{KL}}(P\|Q) \geq 0.$$ Chú ý rằng dấu bằng xảy ra chỉ khi $P = Q$.
 * Nếu tồn tại $x$ sao cho $p(x) > 0$ và $q(x) = 0$ thì $D_{\mathrm{KL}}(P\|Q) = \infty$.
 * Phân kỳ KL có mối quan hệ mật thiết với thông tin tương hỗ.
-Ngoài mối quan hệ đã chỉ ra trong :numref:`fig_mutual_information`, $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
+Ngoài các dạng trong :numref:`fig_mutual_information`, thông tin tương hỗ $I(X, Y)$ về mặt số học cũng tương đương với các dạng sau:
     1. $D_{\mathrm{KL}}(P(X, Y)  \ \| \ P(X)P(Y))$;
     2. $E_Y \{ D_{\mathrm{KL}}(P(X \mid Y) \ \| \ P(X)) \}$;
     3. $E_X \{ D_{\mathrm{KL}}(P(Y \mid X) \ \| \ P(Y)) \}$.
     
     Với dạng đầu tiên, ta diễn giải thông tin tương hỗ dưới dạng phân kỳ KL giữa $P(X, Y)$ và tích của $P(X)$ và $P(Y)$, 
-    do đó nó là phép đo mức độ khác nhau của phân phối đồng thời so với phân phối khi coi chúng là các biến cố độc lập.
+    đây là phép đo mức độ khác nhau của phân phối kết hợp so với phân phối khi hai biến là độc lập.
     Với dạng thứ hai, thông tin tương hỗ cho ta biết mức giảm trung bình trong độ bất định của $Y$
-    gây ra do việc học các giá trị trong phân phối của $X$. Dạng thứ ba cũng cung cấp một diễn giải tương tự.
+    xảy ra do việc biết được giá trị trong phân phối của $X$. Dạng thứ ba cũng tương tự.
 
 <!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
