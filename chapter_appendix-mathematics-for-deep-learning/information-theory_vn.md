@@ -1461,7 +1461,7 @@ The definition of cross entropy indirectly proves the equivalent relationship be
 ### Cross Entropy as An Objective Function of Multi-class Classification
 -->
 
-### Entropy Chéo như Hàm Mục tiêu của Phân loại Đa lớp
+### Hàm Mục tiêu Entropy Chéo khi Phân loại Đa lớp
 
 
 <!--
@@ -1469,7 +1469,7 @@ If we dive deep into the classification objective function with cross entropy lo
 we will find minimizing $\mathrm{CE}$ is equivalent to maximizing the log-likelihood function $L$.
 -->
 
-Nếu ta đi sâu vào hàm mục tiêu phân loại với mất mát entropy chéo $\mathrm{CE}$,
+Nếu đi sâu vào hàm mục tiêu mất mát entropy chéo $\mathrm{CE}$ cho bài toán phân loại,
 ta sẽ thấy rằng cực tiểu hoá $\mathrm{CE}$ tương đương với cực đại hoá hàm log hợp lý $L$.
 
 
@@ -1479,7 +1479,7 @@ For each data example $i$, we represent any $k$-class label $\mathbf{y}_i = (y_{
 To be specific, if the  example $i$ belongs to class $j$, then we set the $j$-th entry to $1$, and all other components to $0$, i.e., 
 -->
 
-Đề bắt đầu, giả sử rằng ta có tập dữ liệu với $n$ mẫu, và có thể được phân loại thành $k$ lớp.
+Đề bắt đầu, giả sử ta có tập dữ liệu với $n$ mẫu, được phân loại thành $k$ lớp.
 Với mỗi mẫu dữ liệu $i$, ta biểu diễn nhãn lớp $k$ bất kì $\mathbf{y}_i = (y_{i1}, \ldots, y_{ik})$ bằng *biểu diễn one-hot*.
 Cụ thể, nếu mẫu $i$ thuộc về lớp $j$ thì ta đặt phần tử thứ $j$ bằng $1$, và tât cả các phần tử khác bằng $0$, tức
 
@@ -1492,7 +1492,7 @@ For instance, if a multi-class classification problem contains three classes $A$
 then the labels $\mathbf{y}_i$ can be encoded in {$A: (1, 0, 0); B: (0, 1, 0); C: (0, 0, 1)$}.
 -->
 
-Ví dụ, nếu một bài toán phân loại đa lớp gồm có ba lớp $A$, $B$, và $C$,
+Ví dụ, nếu một bài toán phân loại gồm có ba lớp $A$, $B$, và $C$,
 thì các nhãn $\mathbf{y}_i$ có thể được mã hoá thành {$A: (1, 0, 0); B: (0, 1, 0); C: (0, 0, 1)$}.
 
 
@@ -1502,7 +1502,7 @@ For true label vectors $\mathbf{y}_i$ and predictions
 -->
 
 Giả sử mạng nơ-ron được tham số hoá bởi $\theta$.
-Với vector nhãn thực $\mathbf{y}_i$ và dự đoán
+Với vector nhãn gốc $\mathbf{y}_i$ và dự đoán
 
 
 $$\hat{\mathbf{y}}_i= p_{\theta}(\mathbf{y}_i \mid \mathbf{x}_i) = \sum_{j=1}^k y_{ij} p_{\theta} (y_{ij}  \mid  \mathbf{x}_i).$$
@@ -1535,11 +1535,11 @@ $$\mathbf{p}^\mathbf{z} = \prod_{j=1}^k p_{j}^{z_{j}}.$$
 -->
 
 Mặt khác, ta cũng có thể tiếp cận bài toán thông qua ước lượng hợp lý cực đại.
-Đề bắt đầu, hãy để chúng tôi giới thiệu nhanh về phân phối đa thức (*multinoulli distribution*) $k$ lớp.
-Đây là một dạng mở rộng của phân phối Bernoulli từ hai lớp thành nhiều lớp.
+Đề bắt đầu, chúng tôi sẽ giới thiệu nhanh về phân phối đa thức (*multinoulli distribution*) $k$ lớp.
+Đây là dạng mở rộng của phân phối Bernoulli từ hai lớp thành nhiều lớp.
 Nếu một biến ngẫu nhiên $\mathbf{z} = (z_{1}, \ldots, z_{k})$ tuân theo *phân phối đa thức* $k$ lớp với xác suất $\mathbf{p} =$ ($p_{1}, \ldots, p_{k}$), tức
-$$p(\mathbf{z}) = p(z_1, \ldots, z_k) = \mathrm{Multi} (p_1, \ldots, p_k), \text{ where } \sum_{i=1}^k p_i = 1,$$
-thì hàm khối xác suất (*probability mass function - p.m.f*) đồng thời của $\mathbf{z}$ bằng
+$$p(\mathbf{z}) = p(z_1, \ldots, z_k) = \mathrm{Multi} (p_1, \ldots, p_k), \text{ với } \sum_{i=1}^k p_i = 1,$$
+thì hàm khối xác suất (*probability mass function - p.m.f*) kết hợp của $\mathbf{z}$ bằng
 $$\mathbf{p}^\mathbf{z} = \prod_{j=1}^k p_{j}^{z_{j}}.$$
 
 
@@ -1550,9 +1550,9 @@ Therefore, the joint p.m.f. of each data example $\mathbf{y}_i$ is  $\mathbf{\pi
 Hence, the log-likelihood function would be
 -->
 
-Nó có thể được xem như nhãn của từng mẫu dữ liệu, $\mathbf{y}_i$,
+Có thể thấy nhãn của từng mẫu dữ liệu, $\mathbf{y}_i$,
 tuân theo một phân phối đa thức $k$ lớp với xác suất $\boldsymbol{\pi} =$ ($\pi_{1}, \ldots, \pi_{k}$).
-Do đó, hàm khối xác suất đồng thời của mỗi mẫu dữ liệu $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
+Do đó, hàm khối xác suất kết hợp của mỗi mẫu dữ liệu là $\mathbf{y}_i$ is  $\mathbf{\pi}^{\mathbf{y}_i} = \prod_{j=1}^k \pi_{j}^{y_{ij}}.$
 Từ đây, hàm log hợp lý sẽ là
 
 
@@ -1573,7 +1573,7 @@ Therefore, for any multi-class classification, maximizing the above log-likeliho
 -->
 
 Do trong ước lượng hợp lý cực đại, ta cực đại hoá hàm mục tiêu $l(\theta)$ với $\pi_{j} = p_{\theta} (y_{ij}  \mid  \mathbf{x}_i)$.
-Vậy nên với bài toán phân loại đa lớp bất kì, việc cực đại hoá hàm log hợp lý trên $l(\theta)$ tương đương với việc cực tiểu hoá mất mát CE $\mathrm{CE}(y, \hat{y})$.
+Vậy nên với bài toán phân loại đa lớp bất kì, việc cực đại hoá hàm log hợp lý trên $l(\theta)$ tương đương với việc cực tiểu hoá hàm mất mát CE $\mathrm{CE}(y, \hat{y})$.
 
 
 
@@ -1624,10 +1624,10 @@ loss
 Minimizing cross entropy loss is equivalent to maximizing the log-likelihood function.
 -->
 
-* Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và thao túng thông tin.
+* Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và xử lý thông tin.
 * Entropy là đơn vị đo lượng thông tin có trong các tín hiệu khác nhau.
-* Phân kỳ KL cũng có thể đo khoảng cách giữa hai phân phối.
-* Entropy Chéo có thể được coi như một hàm mục tiêu của phân loại đa lớp.
+* Phân kỳ KL có thể đo khoảng cách giữa hai phân phối.
+* Entropy Chéo có thể được coi như một hàm mục tiêu trong phân loại đa lớp.
 Việc cực tiểu hoá mất mát entropy chéo tương đương với việc cực đại hoá hàm log hợp lý.
 
 
@@ -1656,25 +1656,24 @@ Hint: use Jensen's inequality, i.e., use the fact that $-\log x$ is a convex fun
 5. What is the KL Divergence between the two Gaussian distributions $\mathcal{N}(\mu_1, \sigma_1^2)$ and $\mathcal{N}(\mu_2, \sigma_2^2)$?
 -->
 
-1. Kiểm chứng rằng ví dụ lá bài ở phần đầu quả thực là có entropy như đã nhận định.
-2. Chỉ ra rằng phân kỳ KL $D(p\|q)$ là không âm với mọi phân phối $p$ và $q$.
+1. Kiểm chứng rằng ví dụ lá bài ở phần đầu quả thực có entropy như đã nhận định.
+2. Chứng minh rằng phân kỳ KL $D(p\|q)$ là không âm với mọi phân phối $p$ và $q$.
 Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực tế là $-\log x$ là một hàm lồi.
 3. Hãy tính entropy từ một số nguồn dữ liệu sau:
-    * Giả sử bạn đang theo dõi văn bản sinh bởi một con khỉ với một máy đánh chữ.
-    Con khỉ nhấn bất kì phím ngẫu nhiên nào trong $44$ phím của máy đánh chữ (bạn có thể giả sử rằng nó chưa phát hiện ra bất kì phím đặc biệt nào hay phím shift).
-    Có bao nhiêu bit sự ngẫu nhiên trên mỗi kí tự bạn quan sát được?
-    * Không hài lòng với con khỉ, bạn thay thế nó với một máy xếp chữ say xỉn.
-    Nó có thể tạo ra các từ, mặc dù không được mạch lạc.
-    Thay vào đó, nó chọn một từ ngẫu nhiên trong bảng từ vựng gồm $2,000$ từ.
-    Hãy giả sử rằng độ dài trung bình của một từ là $4.5$ chữ cái trong Tiếng Anh.
-    Lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
-    * Vẫn không hài lòng với kết quả, bạn thay máy xếp chữ bằng một mô hình ngôn ngữ chất lượng cao.
-    Mô hình ngôn ngữ lúc này có thể thu được perplexity trên $15$ điểm cho mỗi từ.
-    *Perplexity* ký tự của một mô hình ngôn ngữ trên một từ kiểm tra được định nghĩa là tích của xác suất nghịch đảo của mỗi ký tự xuất hiện trong từ kiểm tra,
-    được chuẩn hoá bằng độ dài của từ, tức
+    * Giả sử bạn đang theo dõi văn bản sinh ra khi một con khỉ dùng máy đánh chữ.
+    Con khỉ nhấn ngẫu nhiên bất kì phím nào trong $44$ phím của máy đánh chữ (bạn có thể giả sử nó chưa phát hiện ra phím shift hay bất kì phím đặc biệt nào).
+    Mỗi kí tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
+    * Giả sử thay vì con khỉ, ta có một người đang say rượu đánh chữ.
+    Người đó có thể tạo ra các từ ngẫu nhiên trong bảng từ vựng gồm $2,000$ từ, mặc dù câu văn không được mạch lạc.
+    Giả sử độ dài trung bình của một từ là $4.5$ chữ cái Tiếng Anh.
+    Lúc này mỗi ký tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
+    * Vẫn không hài lòng với kết quả, bạn dùng một mô hình ngôn ngữ chất lượng cao,
+    có perplexity chỉ cỡ $15$ điểm cho mỗi từ.
+    *Perplexity* mức ký tự của một mô hình ngôn ngữ trên một từ được định nghĩa là tích của nghịch đảo xác suất của mỗi ký tự xuất hiện trong từ đó,
+    rồi được chuẩn hoá bằng độ dài của từ như sau
     $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
-    Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này có bao nhiêu bit sự ngẫu nhiên bạn quan sát được trên mỗi ký tự?
-4. Giải thích một cách trực quan tại sao $I(X, Y) = H(X) - H(X|Y)$. Sau đó, chỉ ra rằng biểu thức này là đúng bằng cách biểu diễn hai vế như một kỳ vọng so với phân phối đồng thời.
+    Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này mỗi ký tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
+4. Giải thích một cách trực quan tại sao $I(X, Y) = H(X) - H(X|Y)$. Sau đó, chứng minh biểu thức này đúng bằng cách biểu diễn hai vế theo kỳ vọng của phân phối kết hợp.
 5. Phân kỳ KL giữa hai phân phối Gauss $\mathcal{N}(\mu_1, \sigma_1^2)$ và $\mathcal{N}(\mu_2, \sigma_2^2)$ là gì?
 
 
@@ -1697,45 +1696,14 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
-
-<!-- Phần 2 -->
-* Trần Yến Thy
-
-<!-- Phần 3 -->
-* Nguyễn Thanh Hoà
-
-<!-- Phần 4 -->
 * Nguyễn Thanh Hòa
-
-<!-- Phần 5 -->
-* 
-
-<!-- Phần 6 -->
-* Phạm Minh Đức
-* Phạm Hồng Vinh
-
-<!-- Phần 7 -->
-* Nguyễn Lê Quang Nhật
-
-<!-- Phần 8 -->
+* Lê Khắc Hồng Phúc
 * Nguyễn Lê Quang Nhật
 * Phạm Hồng Vinh
 * Phạm Minh Đức
-
-<!-- Phần 9 -->
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 10 -->
 * Đỗ Trường Giang
-* Phạm Hồng Vinh
-
-<!-- Phần 11 -->
-* Đỗ Trường Giang
-
-<!-- Phần 12 -->
-* Đỗ Trường Giang
-
+* Nguyễn Văn Cường
 
 *Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 25/08/2020)*
