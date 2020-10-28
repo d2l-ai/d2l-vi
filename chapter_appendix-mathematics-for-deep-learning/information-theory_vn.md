@@ -1624,7 +1624,7 @@ loss
 Minimizing cross entropy loss is equivalent to maximizing the log-likelihood function.
 -->
 
-* Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và tận dụng thông tin.
+* Lý thuyết thông tin là một lĩnh vực nghiên cứu về mã hoá, giải mã, truyền phát và xử lý thông tin.
 * Entropy là đơn vị đo lượng thông tin có trong các tín hiệu khác nhau.
 * Phân kỳ KL có thể đo khoảng cách giữa hai phân phối.
 * Entropy Chéo có thể được coi như một hàm mục tiêu trong phân loại đa lớp.
@@ -1668,8 +1668,8 @@ Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực 
     Giả sử độ dài trung bình của một từ là $4.5$ chữ cái Tiếng Anh.
     Lúc này mỗi ký tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
     * Vẫn không hài lòng với kết quả, bạn dùng một mô hình ngôn ngữ chất lượng cao,
-    có perplexity chỉ cỡ $15$ cho mỗi từ.
-    *Perplexity* ký tự của một mô hình ngôn ngữ trên một từ được định nghĩa là tích của nghịch đảo xác suất của mỗi ký tự xuất hiện trong từ đó,
+    có perplexity chỉ cỡ $15$ điểm cho mỗi từ.
+    *Perplexity* mức ký tự của một mô hình ngôn ngữ trên một từ được định nghĩa là tích của nghịch đảo xác suất của mỗi ký tự xuất hiện trong từ đó,
     rồi được chuẩn hoá bằng độ dài của từ như sau
     $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
     Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này mỗi ký tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
