@@ -934,7 +934,7 @@ then knowing $Y$ does not give any information about $X$ and vice versa, so thei
 -->
 
 * Thông tin tương hỗ có tính đối xứng: $I(X, Y) = I(Y, X)$.
-* Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$.
+* Thông tin tương hỗ là giá trị không âm: $I(X, Y) \geq 0$. 
 * $I(X, Y) = 0$ khi và chỉ khi $X$ và $Y$ là hai biến độc lập. Ví dụ, nếu $X$ và $Y$ độc lập thì việc biết thông tin của $Y$ không cho ta thông tin của $X$ và ngược lại, do đó thông tin tương hỗ của chúng bằng 0. 
 * Ngoài ra, nếu $X$ là hàm nghịch đảo của $Y$, thì $Y$ và $X$ có chung toàn bộ thông tin và $$I(X, Y) = H(Y) = H(X).$$
 
