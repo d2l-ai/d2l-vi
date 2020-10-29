@@ -21,12 +21,12 @@ and [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvi
 -->
 
 
-Việc huấn luyện học sâu thông thường đòi hỏi một lượng lớn tính toán.
-Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng có hiệu quả về chi phí nhất cho việc học sâu.
-Cụ thể, so với CPU, GPU rẻ hơn và cung cấp hiệu suất cao hơn, thường là hơn một bậc.
-Hơn nữa, một máy chủ đơn có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
-Số GPU điển hình hơn là 4 cho một máy trạm kỹ thuật,
-vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt  vượt quá khả năng một tòa nhà văn phòng có thể cung cấp.
+Việc huấn luyện học sâu thông thường đòi hỏi một lượng lớn tài nguyên tính toán.
+Ở thời điểm hiện tại, GPU là công cụ tăng tốc phần cứng tiết kiệm chi phí nhất cho việc học sâu.
+Cụ thể, so với CPU, GPU rẻ hơn và thường cung cấp hiệu suất cao hơn một bậc.
+Hơn nữa, một máy chủ có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
+Số GPU điển hình là 4 cho một máy trạm kỹ thuật,
+vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt, vượt quá khả năng một tòa văn phòng có thể cung cấp.
 Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như các máy ảo [P3](https://aws.amazon.com/ec2/instance-types/p3/) và [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) của Amazon là một giải pháp thực tế hơn nhiều.
 
 
@@ -48,11 +48,10 @@ Follow the guidelines below if possible:
 -->
 
 Thông thường không cần mua các dòng CPU cao cấp với nhiều luồng vì phần lớn việc tính toán diễn ra trên GPU.
-Điều đó nói rằng, do Khóa trình thông dịch toàn cục (GIL) trong Python, hiệu suất đơn luồng của CPU có thể là vấn đề trong các tình huống mà chúng ta có 4-8 GPU.
-Tất cả mọi thứ đều bằng nhau, điều này cho thấy rằng các CPU với số lượng nhân nhỏ hơn nhưng có xung nhịp cao hơn có thể là sự lựa chọn kinh tế hơn.
-Chẳng hạn khi lựa chọn giữa CPU 6-nhân 4 GHz và 8-nhân 3.5 GHz, thì cái trước sẽ được ưu tiên chọn hơn nhiều, mặc dù tốc độ tổng hợp của nó thấp hơn.
-Một lưu ý quan trọng là các GPU sử dụng rất nhiều năng lượng và do đó tỏa nhiệt rất nhiều.
-Điều này đòi hỏi khả năng làm mát rất tốt và một khung máy đủ lớn để sử dụng các GPU đó.
+Đồng nghĩa với việc, với Khóa trình thông dịch toàn cục (GIL) trong Python, hiệu suất đơn luồng của CPU có thể là vấn đề trong các tình huống mà chúng ta có 4-8 GPU.
+Điều này cho thấy rằng các CPU với số lượng nhân nhỏ hơn nhưng có xung nhịp cao hơn có thể là sự lựa chọn ít tốn kém.
+Chẳng hạn khi lựa chọn giữa CPU 6-nhân 4 GHz và 8-nhân 3.5 GHz, thì cái trước sẽ được ưu tiên chọn hơn, mặc dù tốc độ chung có thể thấp.
+Một lưu ý quan trọng là các GPU sử dụng rất nhiều năng lượng và do đó tỏa nhiệt rất nhiều, đòi hỏi khả năng làm mát tốt và một khung máy đủ lớn để sử dụng các GPU đó.
 Tuân theo theo các nguyên tắc bên dưới nếu có thể:
 
 
@@ -75,18 +74,18 @@ This is partly due to the number of PCIe lanes that the CPU offers.
 
 
 1. **Bộ Nguồn Cấp Điện **. GPU sử dụng một lượng điện năng đáng kể.
-Nguồn cung lên đến 350W cho mỗi thiết bị (kiểm tra *công suất đỉnh* của card đồ họa thay vì công suất trung bình,
-vì mã nguồn hiệu quả có thể ngốn nhiều năng lượng).
+Nguồn cung lên đến 350W cho mỗi thiết bị (kiểm tra *công suất đỉnh* của card đồ họa thay vì công suất trung bình, 
+vì mã nguồn được tối ưu có thể ngốn nhiều năng lượng).
 Nếu nguồn điện của bạn không đáp ứng được nhu cầu, bạn sẽ thấy rằng hệ thống của mình trở nên không ổn định.
 2. **Kích thước khung chứa**. GPU có kích thước lớn và các đầu nối nguồn phụ trợ thường cần thêm không gian.
-Thêm nữa, khung máy lớn giúp dễ làm mát hơn.
+Thêm nữa, khung máy lớn giúp dễ làm mát hơn. 
 3. **Làm mát GPU**. Nếu bạn có số lượng lớn GPU, bạn có thể muốn đầu tư vào tản nhiệt nước.
-Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị.
+Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị. 
 Nếu bạn mua một GPU có nhiều quạt, nó có thể quá dày để nhận đủ không khí khi lắp đặt nhiều GPU và bạn sẽ gặp phải tình trạng khó tản nhiệt.
 4. **Khe cắm PCIe**. Việc dịich chuyển dữ liệu đến và đi từ GPU (và trao đổi giữa các GPU) đòi hỏi nhiều băng thông.
-Chúng tôi đề xuất khe cắm PCIe 3.0 với 16 làn. Nếu bạn lắp nhiều GPU, hãy đảm bảo là bạn đọc kỹ mô tả bo mạch chủ để chắc chắn 
+Chúng tôi đề xuất khe cắm PCIe 3.0 với 16 làn. Nếu bạn lắp nhiều GPU, hãy đảm bảo là bạn đọc kỹ mô tả bo mạch chủ để chắc chắn
 băng thông 16x đó vẫn khả dụng khi nhiều GPU được sử dụng cùng lúc và tốc độ PCIe là 3.0 thay vì PCIe cho các khe cắm bổ sung.
-Một số bo mạch chủ sẽ hạ xuống băng thông 8x hoặc thậm chí 4x khi nhiều GPU được cài đặt.
+Một số bo mạch chủ sẽ hạ xuống băng thông 8x hoặc thậm chí 4x khi nhiều GPU được cài đặt. 
 Điều này một phần là do số lượng làn PCIe mà CPU đó cung cấp.
 
 
@@ -94,7 +93,7 @@ Một số bo mạch chủ sẽ hạ xuống băng thông 8x hoặc thậm chí 
 In short, here are some recommendations for building a deep learning server:
 -->
 
-Tóm lại, dưới đây là một số khuyến nghị để bạn xây dựng một máy chủ học sâu:
+Tóm lại, dưới đây là một số khuyến nghị để bạn xây dựng một máy chủ học sâu: 
 
 <!--
 * **Beginner**. Buy a low end GPU with low power consumption (cheap gaming GPUs suitable for deep learning use 150-200W).
@@ -123,27 +122,27 @@ or lack of a suitable wiring harness (as one of the coauthors painfully discover
 
 
 * **Người mới bắt đầu**. Một GPU cấp thấp với mức tiêu thụ điện năng thấp (GPU dành cho chơi game giá rẻ phù hợp cho việc sử dụng học sâu 150-200W).
-Nếu bạn may mắn, máy tính hiện tại của bạn sẽ hỗ trợ nó.
-* **1  GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đáp ứng được.
- Hãy nhắm đến DRAM với ít nhất 32 GB và đầu tư vào một ổ SSD để truy cập dữ liệu cục bộ.
+Nếu may mắn, máy tính hiện tại của bạn sẽ thỏa mãn yêu cầu trên.
+* **1  GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đều đáp ứng được.
+ Hãy nhắm đến ít nhất 32 GB DRAM và đầu tư vào một ổ SSD để truy cập dữ liệu cục bộ. 
  Nên sử dụng nguồn cung cấp 600W là đủ. Mua GPU có nhiều quạt.
-* **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến DRAM 64 GB và đầu tư vào một ổ SSD.
+* **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến 64 GB DRAM và đầu tư vào một ổ SSD.
 Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạch chủ, hãy đảm bảo rằng chúng có *hai* khe cắm PCIe 3.0 x16.
-Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí.
+Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí. 
 Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
 * **4 GPU **. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
-Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một con AMD Threadripper.
+Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một con AMD Threadripper. 
 Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
-Mua GPU có thiết kế sẵn, hẹp và cho không khí đi giữa các GPU.
+Mua GPU có thiết kế sẵn, hẹp và cho không khí đi giữa các GPU. 
 Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
-Máy chủ này có thể sẽ tạo ra *tiếng ồn và nóng*. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn.
+Máy chủ này có thể sẽ tạo ra *tiếng ồn và tỏa nhiệt*. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn. 
 Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng theo cấu hình RAID để lưu trữ dữ liệu của bạn.
 * **8 GPU **. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
 Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
-và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *yếu tố vật lý* cho GPU hay không.
+và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *yếu tố vật lý* cho GPU hay không. 
 Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
 Điều này có nghĩa là bạn có thể không lắp đặt được GPU tiêu dùng vào máy chủ do không đủ khoảng trống cho cáp nguồn
-hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đau đớn phát hiện ra).
+hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đã phát hiện một cách đau đớn). 
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -163,7 +162,7 @@ Therefore, most buyers choose NVIDIA GPUs.
 -->
 
 Hiện nay, AMD và NVIDIA là hai nhà sản xuất GPU chính.
-NVIDIA là tiên phong trong tham gia lĩnh vực học sâu và cung cấp hỗ trợ tốt hơn cho các framework học sâu thông qua CUDA.
+NVIDIA là tiên phong trong tham gia lĩnh vực học sâu và cung cấp hỗ trợ tốt hơn cho các framework học sâu thông qua CUDA. 
 Do đó, phần lớn người mua chọn GPU của NVIDIA.
 
 
@@ -175,8 +174,8 @@ These GPUs are more suitable for data centers and usually cost ten times more th
 -->
 
 NVIDIA cung cấp hai loại GPU, nhắm tới người dùng đơn lẻ (ví dụ như dòng GTX và RTX) và người dùng doanh nghiệp (thông qua dòng Tesla của họ).
-Hai loại GPU cung cấp khả năng tính toán tương đương nhau.
-Tuy nhiên, GPU dành cho người dùng doanh nghiệp thường sử dụng tản nhiệt cưỡng bức (thụ động), nhiều bộ nhớ, và bộ nhớ ECC (sửa sai - *error correcting*).
+Hai loại GPU cung cấp khả năng tính toán tương đương nhau. 
+Tuy nhiên, GPU dành cho người dùng doanh nghiệp thường sử dụng tản nhiệt cưỡng ép (thụ động), nhiều bộ nhớ, và bộ nhớ ECC (sửa sai - *error correcting*).
 Những GPU này phù hợp hơn cho trung tâm dữ liệu và thường có giá cao hơn 10 lần so với GPU tiêu dùng.
 
 
@@ -187,7 +186,7 @@ You can buy preconfigured servers with Supermicro or Asus chassis that hold 4-8 
 -->
 
 Nếu bạn là một công ty lớn với 100+ máy chủ, bạn nên cân nhắc dòng NVIDIA Tesla hoặc thay thế bằng cách sử dụng máy chủ GPU trên đám mây.
-Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ sẽ có hiệu quả chi phí tốt nhất.
+Với phòng nghiên cứu hay một công ty trung bình với 10+ máy chủ, dòng NVIDIA RTX có lẽ sẽ có hiệu quả chi phí tốt nhất. 
 Bạn có thể mua máy chủ cấu hình sẵn với khung chứa Supermicro hay Asus, có thể chứa hiệu quả 4-8 GPU.
 
 
@@ -198,9 +197,9 @@ Each series offers several different models that provide different performance l
 GPU performance is primarily a combination of the following three parameters:
 -->
 
-Nhà cung cấp GPU thương ra mắt thế hệ mới mỗi 1-2 năm,
+Nhà cung cấp GPU thương ra mắt thế hệ mới mỗi 1-2 năm, 
 ví dụ như dòng GTX 1000 (Pascal) ra mắt vào 2017 và dòng RTX 2000 (Turing) ra mắt vào 2019.
-Mỗi dòng gồm có nhiều mẫu khác nhau cung cấp mức hiệu năng khác nhau.
+Mỗi dòng gồm có nhiều mẫu khác nhau cung cấp mức hiệu năng khác nhau. 
 Hiệu năng GPU chủ yếu là sự kết hợp của ba thông số sau:
 
 
@@ -217,13 +216,13 @@ Look for wide memory buses if using GDDR6.
 -->
 
 1. **Khả năng tính toán**. Thông thường ta tìm kiếm khả năng tính toán dấu phẩy động 32-bit (*32-bit floating-point*).
-Huấn luyện dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng đang phổ biến.
+Huấn luyện dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng đang phổ biến. 
 Nếu bản chỉ quan tâm đến tác vụ dự đoán, bạn cũng có thể sử dụng số nguyên 8-bit (*8-bit integer*).
-Thế hệ mới nhất của GPU Turing cung cấp tăng tốc 4-bit (*4-bit acceleration*).
+Thế hệ mới nhất của GPU Turing cung cấp tăng tốc 4-bit (*4-bit acceleration*). 
 Không may là hiện nay, các thuật toán huấn luyện với số thực độ chính xác thấp vẫn chưa được phổ biến.
-2. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay khi tăng kích thước batch khi huấn luyện , bạn sẽ cần nhiều bộ nhớ GPU hơn.
+2. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay khi tăng kích thước batch khi huấn luyện , bạn sẽ cần nhiều bộ nhớ GPU hơn. 
 Hãy kiểm tra HBM2 (Bộ nhớ Băng thông cao - *High Bandwidth Memory*) và GDDR6 (DDR Đồ hoạ - *Graphics DDR*). HBM2 nhanh hơn nhưng đắt hơn nhiều.
-3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ.
+3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ. 
 Hãy chọn bus bộ nhớ rộng nếu sử dụng GDDR6.
 
 
@@ -236,12 +235,12 @@ Try to avoid using the GPU also for displaying a GUI (use the built-in graphics 
 If you cannot avoid it, add an extra 2 GB of RAM for safety.
 -->
 
-Với phần lớn người dùng, nhìn vào khả năng tính toán là đủ.
-Chú ý rằng nhiều GPU cung cấp loại tăng tốc khác nhau.
+Với phần lớn người dùng, tập trung vào khả năng tính toán là đủ.
+Chú ý rằng nhiều GPU cung cấp loại tăng tốc khác nhau. 
 Ví dụ TensorCores của NVIDIA tăng tốc một tập con các toán tử lên 5x.
-Bảo đảm rằng thư viện của bạn hỗ trợ việc này. Bộ nhớ GPU không nên thấp hơn 4 GB (8 GB thì hơn).
+Bảo đảm rằng thư viện của bạn hỗ trợ việc này. Bộ nhớ GPU không nên thấp hơn 4 GB (8 GB thì hơn). 
 Hãy cố gắng tránh sử dụng GPU để hiện thị giao diện đồ họa người dùng (GUI), thay vào đó nếu cần hãy sử dụng card đồ hoạ tích hợp sẵn trong máy.
-Nếu bắt buộc phải dùng GPU để hiển thị GUI, hãy thêm vào 2 GB RAM cho an toàn.
+Nếu bắt buộc phải dùng GPU để hiển thị GUI, hãy thêm vào 2 GB RAM cho an toàn. 
 
 
 <!--
@@ -250,7 +249,7 @@ The prices are the suggested prices found on Wikipedia.
 -->
 
 :numref:`fig_flopsvsprice` so sánh khả năng tính toán dấu phẩy động 32-bit và giá của các mẫu khác nhau của các dòng GTX 900, GTX 1000 và RTX 2000.
-Bảng giá là giá đề xuất được tìm thấy trên Wikipedia.
+Bảng giá là giá đề xuất được tìm thấy trên Wikipedia. 
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -268,7 +267,7 @@ Bảng giá là giá đề xuất được tìm thấy trên Wikipedia.
 We can see a number of things:
 -->
 
-Bạn có thể thấy một số điểm sau:
+Bạn có thể thấy một số điểm sau: 
 
 
 <!--
@@ -282,12 +281,12 @@ However, this is due to the fact that they offer far superior low precision perf
 -->
 
 1. Trong cùng một dòng, giá và hiệu năng gần như tỉ lệ với nhau.
-Mẫu Titan yêu cầu một khoản tiền đáng kể để đổi lấy lợi ích của lượng lớn bộ nhớ GPU.
+Mẫu Titan yêu cầu một khoản tiền đáng kể để đổi lấy lợi ích của lượng lớn bộ nhớ GPU. 
 Tuy nhiên, những mẫu mới hơn cung cấp hiệu quả chi phí tốt hơn, như có thể thấy qua so sánh giữa 980 Ti và 1080 Ti.
-Giá dường như không cải thiện nhiều đối với dòng RTX 2000.
-Tuy nhiên, việc này là do chúng cung cấp hiệu năng hoàn toàn vượt trội đối với các giá trị có độ chính xác thấp  (FP16, INT8 và INT4).
-2. Tỉ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900.
-3. Với dòng RTX 2000, giá là một hàm *affine* của giá.
+Giá dường như không cải thiện nhiều đối với dòng RTX 2000. 
+Tuy nhiên, việc này là do chúng cung cấp hiệu năng hoàn toàn vượt trội đối với các giá trị có độ chính xác thấp (FP16, INT8 và INT4).
+2. Tỉ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900. 
+3. Với dòng RTX 2000, giá là một hàm *affine*.
 
 
 <!--
@@ -306,9 +305,9 @@ However, this is a consequence of the TensorCores which draw disproportionately 
 -->
 
 :numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỉ lệ tuyến tính với khối lượng tính toán.
-Thứ hai, các thế hệ sau có hiệu quả tốt hơn.
+Thứ hai, các thế hệ sau có hiệu quả tốt hơn. 
 Đồ thị của dòng RTX 2000 có vẻ như mâu thuẫn với điều này.
-Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn.
+Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn. 
 
 
 ## Tóm tắt
@@ -324,9 +323,9 @@ Check the mechanical and cooling specifications before you buy.
 
 * Chú ý nguồn, luồng bus PCIe, tốc độ CPU đơn luồng và tản nhiệt khi xây dựng máy chủ.
 * Bạn nên mua thế hệ GPU mới nhất nếu có thể.
-* Sử dụng đám mây để triển khai các dự án lớn.
+* Sử dụng đám mây để triển khai các dự án lớn. 
 * Máy chủ chạy nhiều ứng dụng có thể sẽ không tương thích với tất cả các GPU.
-Kiểm tra các thông số cơ học và tản nhiệt trước khi mua.
+Kiểm tra các thông số cơ học và tản nhiệt trước khi mua. 
 * Sử dụng FP16 hoặc độ chính xác thấp hơn để có được hiệu năng tốt hơn.
 
 
@@ -349,14 +348,8 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 -->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* 
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
 * Đỗ Trường Giang
 
 *Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
