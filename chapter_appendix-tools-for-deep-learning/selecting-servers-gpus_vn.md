@@ -126,7 +126,7 @@ Nếu may mắn, máy tính hiện tại của bạn sẽ thỏa mãn yêu cầu
 * **1 GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đều đáp ứng được.
  Hãy nhắm đến ít nhất 32 GB DRAM và đầu tư một ổ SSD để truy cập dữ liệu cục bộ. 
  Nên sử dụng nguồn cung cấp 600W là đủ. Mua GPU có nhiều quạt.
-* **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến 64 GB DRAM và đầu tư vào một ổ SSD.
+* **2 GPU**. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến 64 GB DRAM và đầu tư vào một ổ SSD.
 Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạch chủ, hãy đảm bảo rằng chúng có *hai* khe cắm PCIe 3.0 x16.
 Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí. 
 Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
