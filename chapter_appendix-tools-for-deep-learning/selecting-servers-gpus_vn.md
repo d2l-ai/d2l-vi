@@ -130,7 +130,7 @@ Nếu may mắn, máy tính hiện tại của bạn sẽ thỏa mãn yêu cầu
 Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạch chủ, hãy đảm bảo rằng chúng có *hai* khe cắm PCIe 3.0 x16.
 Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí. 
 Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
-* **4 GPU **. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
+* **4 GPU**. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
 Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một chip AMD Threadripper. 
 Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
 Hãy mua GPU có thiết kế tham khảo gốc vì nó hẹp hơn và cho phép không khí lưu thông giữa các GPU. 
