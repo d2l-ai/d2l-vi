@@ -123,7 +123,7 @@ or lack of a suitable wiring harness (as one of the coauthors painfully discover
 
 * **Người mới bắt đầu**. Một GPU cấp thấp với mức tiêu thụ điện năng thấp (GPU dành cho chơi game giá rẻ phù hợp cho việc sử dụng học sâu 150-200W).
 Nếu may mắn, máy tính hiện tại của bạn sẽ thỏa mãn yêu cầu trên.
-* **1  GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đều đáp ứng được.
+* **1 GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đều đáp ứng được.
  Hãy nhắm đến ít nhất 32 GB DRAM và đầu tư một ổ SSD để truy cập dữ liệu cục bộ. 
  Nên sử dụng nguồn cung cấp 600W là đủ. Mua GPU có nhiều quạt.
 * **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến 64 GB DRAM và đầu tư vào một ổ SSD.
