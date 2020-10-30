@@ -137,7 +137,7 @@ Hãy mua GPU có thiết kế tham khảo gốc vì nó hẹp hơn và cho phép
 Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
 Máy chủ này có thể sẽ *gây tiếng ồn và tỏa nhiệt* nhiều. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn. 
 Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng theo cấu hình RAID để lưu trữ dữ liệu của bạn.
-* **8 GPU **. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
+* **8 GPU**. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
 Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
 và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *hình dạng kích thước vật lý* của GPU hay không. 
 Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
