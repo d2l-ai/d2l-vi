@@ -124,18 +124,18 @@ or lack of a suitable wiring harness (as one of the coauthors painfully discover
 * **Người mới bắt đầu**. Một GPU cấp thấp với mức tiêu thụ điện năng thấp (GPU dành cho chơi game giá rẻ phù hợp cho việc sử dụng học sâu 150-200W).
 Nếu may mắn, máy tính hiện tại của bạn sẽ thỏa mãn yêu cầu trên.
 * **1  GPU**. Một CPU cấp thấp với 4 nhân sẽ là quá đủ và hầu hết các bo mạch chủ đều đáp ứng được.
- Hãy nhắm đến ít nhất 32 GB DRAM và đầu tư vào một ổ SSD để truy cập dữ liệu cục bộ. 
+ Hãy nhắm đến ít nhất 32 GB DRAM và đầu tư một ổ SSD để truy cập dữ liệu cục bộ. 
  Nên sử dụng nguồn cung cấp 600W là đủ. Mua GPU có nhiều quạt.
 * **2 GPU **. Một CPU cấp thấp với 4-6 nhân là đủ. Hãy nhắm đến 64 GB DRAM và đầu tư vào một ổ SSD.
 Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạch chủ, hãy đảm bảo rằng chúng có *hai* khe cắm PCIe 3.0 x16.
 Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí. 
 Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
 * **4 GPU **. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
-Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một con AMD Threadripper. 
+Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một chip AMD Threadripper. 
 Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
 Hãy mua GPU có thiết kế tham khảo gốc vì nó hẹp hơn và cho phép không khí lưu thông giữa các GPU. 
 Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
-Máy chủ này có thể sẽ tạo *tiếng ồn và tỏa nhiệt* nhiều. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn. 
+Máy chủ này có thể sẽ *gây tiếng ồn và tỏa nhiệt* nhiều. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn. 
 Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng theo cấu hình RAID để lưu trữ dữ liệu của bạn.
 * **8 GPU **. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
 Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
@@ -197,7 +197,7 @@ Each series offers several different models that provide different performance l
 GPU performance is primarily a combination of the following three parameters:
 -->
 
-Nhà cung cấp GPU thương ra mắt thế hệ mới mỗi 1-2 năm, 
+Nhà cung cấp GPU thường ra mắt thế hệ mới mỗi 1-2 năm, 
 ví dụ như dòng GTX 1000 (Pascal) ra mắt vào 2017 và dòng RTX 2000 (Turing) ra mắt vào 2019.
 Mỗi dòng gồm có nhiều mẫu khác nhau cung cấp mức hiệu năng khác nhau. 
 Hiệu năng GPU chủ yếu là sự kết hợp của ba thông số sau:
