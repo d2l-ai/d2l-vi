@@ -12,13 +12,9 @@
 * Bản tiếng Việt: https://d2l.aivivn.com/
 * Bản tiếng Anh: https://www.d2l.ai/
 
-## Hướng dẫn đóng góp vào dự án
-Mời bạn xem hướng dẫn chi tiết **[tại đây](CONTRIBUTING.md)**.
-
 ## Thảo luận cùng nhóm Dịch thuật
-Hiện nay chúng tôi có hai kênh trao đổi chính mà bạn có thể lựa chọn:
-* **Github Discussions** - dành cho những thảo luận về thuật ngữ, ngôn ngữ trong dịch thuật, và các vấn đề hỏi đáp liên quan trong khuôn khổ các nội dung mà dự án triển khai. Bạn có thể xem qua **[tại đây](https://github.com/aivivn/d2l-vn/discussions)**.
-* **Slack** - dành cho những cuộc hội thoại nhanh (quick chat), bạn có thể đăng ký **[tại đây](https://docs.google.com/forms/d/e/1FAIpQLScYforPRBn0oDhqSV_zTpzkxCAf0F7Cke13QS2tqXrJ8LxisQ/viewform)**.
+Bạn có thể bắt đầu một cuộc thảo luận mới **[tại đây](https://github.com/aivivn/d2l-vn/discussions)**.
+
 
 ## Bảng thuật ngữ
 Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đây](glossary.md)**.
@@ -33,7 +29,7 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 ## Mục lục
 
 <details>
-<summary>Các nội dung đã hoàn thành</summary>
+<summary>Nhấn vào để xem chi tiết</summary>
 
 * [x] [Lời nói đầu](chapter_preface/index_vn.md)
 * [x] [Cài đặt](chapter_install/index_vn.md)
@@ -177,32 +173,26 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
 * [x] 17. [Mạng Đối sinh](chapter_generative-adversarial-networks/index_vn.md)
     * [x] 17.1. [Mạng Đối sinh](chapter_generative-adversarial-networks/gan_vn.md)
     * [x] 17.2. [Mạng Đối sinh Tích chập Sâu](chapter_generative-adversarial-networks/dcgan_vn.md)
-</details>
-
-
-<details open>
-    <summary>Các nội dung đang triển khai</summary>
-
-* [-] 18. [Phụ lục: Toán học cho Học Sâu](chapter_appendix-mathematics-for-deep-learning/index_vn.md)
+* [x] 18. [Phụ lục: Toán học cho Học Sâu](chapter_appendix-mathematics-for-deep-learning/index_vn.md)
     * [x] 18.1. [Các phép toán Hình học và Đại số Tuyến tính](chapter_appendix-mathematics-for-deep-learning/geometry-linear-algebric-ops_vn.md)
     * [x] 18.2. [Phân tích trị riêng](chapter_appendix-mathematics-for-deep-learning/eigendecomposition_vn.md)
     * [x] 18.3. [Giải tích một biến](chapter_appendix-mathematics-for-deep-learning/single-variable-calculus_vn.md)
     * [x] 18.4. [Giải tích Nhiều biến](chapter_appendix-mathematics-for-deep-learning/multivariable-calculus_vn.md)
     * [x] 18.5. [Giải tích Tích phân](chapter_appendix-mathematics-for-deep-learning/integral-calculus_vn.md)
-    * [-] 18.6. [Random Variables](chapter_appendix-mathematics-for-deep-learning/random-variables_vn.md)
-    * [-] 18.7. [Maximum Likelihood](chapter_appendix-mathematics-for-deep-learning/maximum-likelihood_vn.md)
-    * [-] 18.8. [Distributions](chapter_appendix-mathematics-for-deep-learning/distributions_vn.md)
-    * [-] 18.9. [Naive Bayes](chapter_appendix-mathematics-for-deep-learning/naive-bayes_vn.md)
+    * [x] 18.6. [Random Variables](chapter_appendix-mathematics-for-deep-learning/random-variables_vn.md)
+    * [x] 18.7. [Maximum Likelihood](chapter_appendix-mathematics-for-deep-learning/maximum-likelihood_vn.md)
+    * [x] 18.8. [Distributions](chapter_appendix-mathematics-for-deep-learning/distributions_vn.md)
+    * [x] 18.9. [Naive Bayes](chapter_appendix-mathematics-for-deep-learning/naive-bayes_vn.md)
     * [x] 18.10. [Thống kê](chapter_appendix-mathematics-for-deep-learning/statistics_vn.md)
-    * [-] 18.11. [Information Theory](chapter_appendix-mathematics-for-deep-learning/information-theory_vn.md)
-* [ ] 19. [Phụ lục: Công cụ cho Học Sâu](chapter_appendix-tools-for-deep-learning/index_vn.md)
-    * [-] 19.1. [Sử dụng Jupyter](chapter_appendix-tools-for-deep-learning/jupyter_vn.md)
-    * [-] 19.2. [Sử dụng Amazon SageMaker](chapter_appendix-tools-for-deep-learning/sagemaker_vn.md)
-    * [-] 19.3. [Sử dụng AWS EC2 Instances](chapter_appendix-tools-for-deep-learning/aws_vn.md)
-    * [-] 19.4. [Sử dụng Google Colab](chapter_appendix-tools-for-deep-learning/colab_vn.md)
-    * [-] 19.5. [Lựa chọn Máy chủ & GPU](chapter_appendix-tools-for-deep-learning/selecting-servers-gpus_vn.md)
-    * [-] 19.6. [Đóng góp cho Quyển sách](chapter_appendix-tools-for-deep-learning/contributing_vn.md)
-    * [-] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
+    * [x] 18.11. [Information Theory](chapter_appendix-mathematics-for-deep-learning/information-theory_vn.md)
+* [x] 19. [Phụ lục: Công cụ cho Học Sâu](chapter_appendix-tools-for-deep-learning/index_vn.md)
+    * [x] 19.1. [Sử dụng Jupyter](chapter_appendix-tools-for-deep-learning/jupyter_vn.md)
+    * [x] 19.2. [Sử dụng Amazon SageMaker](chapter_appendix-tools-for-deep-learning/sagemaker_vn.md)
+    * [x] 19.3. [Sử dụng AWS EC2 Instances](chapter_appendix-tools-for-deep-learning/aws_vn.md)
+    * [x] 19.4. [Sử dụng Google Colab](chapter_appendix-tools-for-deep-learning/colab_vn.md)
+    * [x] 19.5. [Lựa chọn Máy chủ & GPU](chapter_appendix-tools-for-deep-learning/selecting-servers-gpus_vn.md)
+    * [x] 19.6. [Đóng góp cho Quyển sách](chapter_appendix-tools-for-deep-learning/contributing_vn.md)
+    * [x] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
 </details>
 
 
