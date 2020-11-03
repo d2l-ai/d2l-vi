@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Eigendecompositions
 -->
@@ -104,9 +101,6 @@ Once we find the eigenvalues, we can solve $\mathbf{A}\mathbf{v} = \lambda \math
 Do đó, ta có thể tìm các *trị riêng* bằng cách tìm giá trị $\lambda$ sao cho $\det(\mathbf{A}-\lambda \mathbf{I}) = 0$.
 Một khi tìm được các trị riêng, ta có thể giải phương trình $\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$ để tìm (các) *vector riêng* tương ứng.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### An Example
@@ -194,7 +188,7 @@ from d2l import tensorflow as d2l
 from IPython import display
 import tensorflow as tf
 
-tf.linalg.eigh(tf.constant([[2, 1], [2, 3]], dtype=tf.float64))
+tf.linalg.eig(tf.constant([[2, 1], [2, 3]], dtype=tf.float64))
 ```
 
 
@@ -278,9 +272,6 @@ will exist as long as we can find a full collection of linearly independent eige
 Trong phần tiếp theo ta sẽ thấy một số hệ quả thú vị từ diều này, nhưng hiện giờ bạn đọc chỉ cần biết rằng tồn tại phân rã như vậy 
 nếu ta có thể tìm tất cả các vector riêng độc lập tuyến tính (để ma trận $W$ khả nghịch). 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Operations on Eigendecompositions
@@ -344,7 +335,8 @@ This makes sense intuitively because whatever stretching $\mathbf{W}$ does, $W^{
 by multiplication by the diagonal matrix $\boldsymbol{\Sigma}$, which stretches volumes by the product of the diagonal elements.
 -->
 
-Điều này hợp lý về trực giác vì dù ma trận $\mathbf{W}$ có kéo giãn như thế nào thì $W^{-1}$ cũng sẽ hoàn tác hành động đó, vì thế cuối cùng phép kéo giãn duy nhất được áp dụng là nhân với ma trận đường chéo $\boldsymbol{\Sigma}$.
+Điều này hợp lý về trực giác vì dù ma trận $\mathbf{W}$ có kéo giãn như thế nào thì $W^{-1}$ cũng sẽ hoàn tác hành động đó, 
+vì thế cuối cùng phép kéo giãn duy nhất được áp dụng là nhân với ma trận đường chéo $\boldsymbol{\Sigma}$.
 Phép nhân này sẽ kéo giãn thể tích không gian với hệ số bằng tích của các phần tử trên đường chéo.
 
 
@@ -365,9 +357,6 @@ and is a fundamental operation underlying many numerical algorithms and much of 
 Trước khi tiếp tục, hy vọng bạn đọc đã hiểu được ý tưởng: phân rã trị riêng có thể đơn giản hóa nhiều phép tính đại số tuyến tính
 và là một phép toán cơ bản phía sau nhiều thuật toán số và phân tích trong đại số tuyến tính. 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Eigendecompositions of Symmetric Matrices
@@ -454,7 +443,7 @@ This can be a bit to unpack, so let us look at an example.
 Consider the matrix:
 -->
 
-Điều này hơi khó hiểu, nên hãy quan sát ví dụ sau.
+Điều này có thể hơi khó hiểu, nên hãy quan sát ví dụ sau.
 Xét ma trận:
 
 
@@ -548,9 +537,6 @@ it is good to get any intuitive grasp we can.
 Điều này tuy nhỏ nhưng với một chủ đề phức tạp và tinh vi như phân rã trị riêng,
 thật tốt nếu có thể hiểu bất kỳ điều gì theo cách trực quan.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ## A Useful Application: The Growth of Iterated Maps
@@ -627,9 +613,6 @@ A = tf.random.normal((k, k), dtype=tf.float64)
 A
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Behavior on Random Data
@@ -729,7 +712,7 @@ Indeed if we take the list of quotients, we will see a pattern.
 -->
 
 Giá trị chuẩn tăng một cách không thể kiểm soát được! 
-Quả thực, nếu ta lấy ra danh sách các tỉ số, ta sẽ thấy một khuôn mẫu.
+Quả thật, nếu ta lấy ra danh sách các tỉ số, ta sẽ thấy một khuôn mẫu.
 
 
 ```{.python .input}
@@ -774,9 +757,6 @@ ta có thể thấy rằng vector ngẫu nhiên bị kéo giãn với hệ số 
 với phần số thập phân ở cuối có thay đổi một chút,
 nhưng hệ số kéo giãn thì ổn định.
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ### Relating Back to Eigenvectors
@@ -798,7 +778,7 @@ we can measure that stretching factor. Let us also sort them.
 Ta đã thấy rằng vector riêng và trị riêng tương ứng với mức độ co giãn của thứ gì đó,
 nhưng chỉ đối với các vector cụ thể và các phép co giãn cụ thể.
 Hãy cùng xét xem chúng là gì đối với $\mathbf{A}$.
-Nói trước một chút: hoá ra là để có thể quan sát được mọi giá trị, ta cần xét tới số phức.
+Nói trước một chút: hóa ra là để có thể quan sát được mọi giá trị, ta cần xét tới số phức.
 Bạn có thể coi số phức như phép co giãn và phép quay.
 Bằng cách tính chuẩn của số phức (căn bậc hai của tổng bình phương phần thực và phần ảo),
 ta có thể đo hệ số co giãn. Hãy sắp xếp chúng theo thứ tự.
@@ -880,7 +860,7 @@ vector này gần như trở thành vector riêng chính.
 ### Fixing the Normalization
 -->
 
-### Khắc phục bằng Chuẩn hoá
+### Khắc phục bằng Chuẩn hóa
 
 
 <!--
@@ -892,7 +872,7 @@ Let us see what happens in this case.
 
 Từ phần thảo luận trên, lúc này ta kết luận rằng ta không hề muốn một vector ngẫu nhiên bị giãn hoặc co lại,
 mà ta muốn vector ngẫu nhiên giữ nguyên kích thước trong suốt toàn bộ quá trình tính toán.
-Để làm được điều đó, ta cần tái tỉ lệ ma trận bằng cách chia cho trị riêng chính, tức sao cho trị riêng lớn nhất giờ có giá trị 1.
+Để làm được điều đó, ta cần tái tỷ lệ ma trận bằng cách chia cho trị riêng chính, tức sao cho trị riêng lớn nhất giờ có giá trị 1.
 Hãy xem chuyện gì sẽ xảy ra trong trường hợp này.
 
 
@@ -948,11 +928,8 @@ d2l.plot(tf.range(0, 100), norm_list, 'Iteration', 'Value')
 We can also plot the ratio between consecutive norms as before and see that indeed it stabilizes.
 -->
 
-Ta cũng có thể vẽ đồ thị tỉ lệ các chuẩn liên tiếp như trước và quan sát được rằng nó đã ổn định. 
+Ta cũng có thể vẽ đồ thị tỷ lệ các chuẩn liên tiếp như trước và quan sát được rằng nó đã ổn định. 
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 ```{.python .input}
 # Also plot the ratio
@@ -998,9 +975,9 @@ has been shown to have deep connections to proper initialization of neural netwo
 -->
 
 Giờ ta có thể thấy được điều mà ta mong muốn!
-Sau khi chuẩn hoá ma trận bằng trị riêng chính, ta thấy rằng dữ liệu ngẫu nhiên không còn bùng nổ như trước nữa,
+Sau khi chuẩn hóa ma trận bằng trị riêng chính, ta thấy rằng dữ liệu ngẫu nhiên không còn bùng nổ như trước nữa,
 thay vào đó nó cân bằng quanh một giá trị nhất định.
-Sẽ thật tuyệt nếu ta có thể thực hiện việc này bằng các định đề cơ bản, và hoá ra là nếu ta tìm hiểu sâu về mặt toán học của nó,
+Sẽ thật tuyệt nếu ta có thể thực hiện việc này bằng các định đề cơ bản, và hóa ra là nếu ta tìm hiểu sâu về mặt toán học của nó,
 ta có thể thấy rằng trị riêng lớn nhất của một ma trận ngẫu nhiên lớn với các phần tử tuân theo phân phối Gauss một cách độc lập với kỳ vọng bằng 0,
 phương sai bằng 1, về trung bình sẽ xấp xỉ bằng $\sqrt{n}$, hay trong trường hợp của ta là $\sqrt{5} \approx 2.2$,
 tuân theo một định luật thú vị là *luật vòng tròn (circular law)* :cite:`Ginibre.1965`.
@@ -1066,10 +1043,6 @@ $$
 *Ghi chú*: bài tập này có thể nhẩm được trong đầu.
 
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 $$
 \mathbf{A} = \begin{bmatrix}
 3.0 & 0.1 & 0.3 & 1.0 \\
@@ -1087,12 +1060,6 @@ $$
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Trần Yến Thy
@@ -1100,6 +1067,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Đỗ Trường Giang
 * Phạm Minh Đức
 * Lê Khắc Hồng Phúc
-
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 24/07/2020)*

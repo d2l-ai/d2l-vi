@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Distributions
 -->
@@ -69,7 +66,7 @@ If we have a random variable $X$ with this distribution, we will write
 
 Đây là phân phối thường gặp đơn giản nhất.
 Giả sử khi tung một đồng xu, biến ngẫu nhiên $X$ tuân theo phân phối này lấy giá trị mặt ngửa $1$ với xác suất $p$ và mặt sấp $0$ với xác suất $1-p$.
-Ta viết: 
+Ta viết:
 
 $$
 X \sim \mathrm{Bernoulli}(p).
@@ -147,7 +144,7 @@ d2l.plot(x, tf.constant([F(y) for y in x]), 'x', 'c.d.f.')
 If $X \sim \mathrm{Bernoulli}(p)$, then:
 -->
 
-Nếu  $X \sim \mathrm{Bernoulli}(p)$, thì:
+Nếu $X \sim \mathrm{Bernoulli}(p)$, thì:
 
 
 * $\mu_X = p$,
@@ -300,9 +297,6 @@ torch.randint(1, n, size=(10, 10))
 tf.random.uniform((10, 10), 1, n, dtype=tf.int32)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Continuous Uniform
@@ -319,7 +313,8 @@ We will denote this distribution as
 -->
 
 Tiếp theo, hãy thảo luận về phân phối đều liên tục.
-Ý tưởng phía sau là nếu ta tăng $n$ trong phân phối đều rời rạc, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
+Ý tưởng phía sau là nếu ta tăng $n$ trong phân phối đều rời rạc, rồi biến đổi tỷ lệ để nó nằm trong đoạn $[a, b]$, 
+ta sẽ tiến đến một biến ngẫu nhiên liên tục mà mọi điểm bất kỳ trong $[a, b]$ đều có xác suất bằng nhau.
 Ta sẽ ký hiệu phân phối này bằng
 
 
@@ -550,7 +545,7 @@ def binom(n, k):
 
 pmf = torch.tensor([p**i * (1-p)**(n - i) * binom(n, i) for i in range(n + 1)])
 
-d2l.plt.stem([i for i in range(n + 1)], pmf, use_line_collection=True)
+pmf = d2l.tensor([p**i * (1-p)**(n - i) * binom(n, i) for i in range(n + 1)])
 d2l.plt.xlabel('x')
 d2l.plt.ylabel('p.m.f.')
 d2l.plt.show()
@@ -649,10 +644,6 @@ m.sample(sample_shape=(10, 10))
 m = tfp.distributions.Binomial(n, p)
 m.sample(sample_shape=(10, 10))
 ```
-
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Poisson
@@ -775,9 +766,6 @@ Let us first plot the probability mass function :eqref:`eq_poisson_mass`.
 
 Trước hết hãy vẽ hàm khối xác suất :eqref:`eq_poisson_mass`.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 ```{.python .input}
 lam = 5.0
@@ -892,9 +880,6 @@ m = tfp.distributions.Poisson(lam)
 m.sample((10, 10))
 ```
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Gaussian
@@ -1017,13 +1002,10 @@ this will yield the Gaussian Distribution (or sometimes normal distribution).
 More explicitly, for any $a, b$:
 -->
 
-Trình bày đầy đủ cách suy ra kết quả cuối cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm - central limit theorem* phát biểu rằng khi $n \rightarrow \infty $,
+Trình bày đầy đủ cách suy ra kết quả cuối cùng nằm ngoài phạm vi của tài liệu này, nhưng *định lý giới hạn trung tâm - central limit theorem* phát biểu rằng khi $n \rightarrow \infty$,
 giới hạn này sẽ tiến tới Phân phối Gauss (hoặc tên khác là phân phối chuẩn).
 Tường minh hơn, với bất kỳ $a, b$ nào:
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 $$
 \lim_{n \rightarrow \infty} P(Y^{(n)} \in [a, b]) = P(\mathcal{N}(0,1) \in [a, b]),
@@ -1101,7 +1083,7 @@ d2l.plot(x, np.array([phi(y) for y in x.tolist()]), 'x', 'c.d.f.')
 ```{.python .input}
 #@tab pytorch
 def phi(x):
-    return (1.0 + erf((x - mu) / (sigma * torch.sqrt(torch.tensor(2.))))) / 2.0
+    return (1.0 + erf((x - mu) / (sigma * torch.sqrt(d2l.tensor(2.))))) / 2.0
 
 d2l.plot(x, torch.tensor([phi(y) for y in x.tolist()]), 'x', 'c.d.f.')
 ```
@@ -1218,9 +1200,6 @@ torch.normal(mu, sigma, size=(10, 10))
 tf.random.normal((10, 10), mu, sigma)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ## Exponential Family
@@ -1299,9 +1278,6 @@ Assuming that $\mathbf{x}$ is an univariate variable, we saw that it had a densi
 Để ngắn gọn, ta xét phân phối Gauss.
 Giả sử $\mathbf{x}$ là đơn biến (*univariate variable*) và có mật độ là:
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
 
 $$
 \begin{aligned}
@@ -1340,7 +1316,7 @@ Indeed, the important feature is that the distribution can be expressed in this 
 -->
 
 Đáng chú ý rằng việc lựa chọn chính xác từng số hạng trên hơi có phần tuỳ ý.
-Quả thực, đặc trưng quan trọng nhất chính là việc phân phối có thể được biểu diễn ở dạng này, chứ không cần bất kỳ dạng chính xác nào.
+Quả thật, đặc trưng quan trọng nhất chính là việc phân phối có thể được biểu diễn ở dạng này, chứ không cần bất kỳ dạng chính xác nào.
 
 <!--
 As we allude to in :numref:`subsec_softmax_and_derivatives`, a widely used technique is to assume that the final output $\mathbf{y}$ follows an exponential family distribution.
@@ -1363,12 +1339,12 @@ Họ hàm mũ là một họ phân phối phổ biến và mạnh mẽ, bắt g�
 * All the above distributions belong to exponential family.
 -->
 
-* Phân phối Bernoulli có thể mô hình hoá sự kiện có kết quả có/không.
+* Phân phối Bernoulli có thể mô hình hóa sự kiện có kết quả có/không.
 * Phân phối đều rời rạc chọn từ một tập hữu hạn các khả năng.
 * Phân phối đều liên tục chọn từ một khoảng liên tục.
-* Phân phối nhị thức mô hình hoá một chuỗi các biến Bernoulli ngẫu nhiên, và đếm số kết quả.
-* Phân phối Poisson mô hình hoá các sự kiện hiếm khi xuất hiện.
-* Phân phối Gauss mô hình hoá kết quả của việc tính tổng một lượng lớn các biến ngẫu nhiên độc lập.
+* Phân phối nhị thức mô hình hóa một chuỗi các biến Bernoulli ngẫu nhiên, và đếm số kết quả.
+* Phân phối Poisson mô hình hóa các sự kiện hiếm khi xuất hiện.
+* Phân phối Gauss mô hình hóa kết quả của việc tính tổng một lượng lớn các biến ngẫu nhiên độc lập.
 * Tất cả các phân phối trên đều thuộc họ hàm mũ.
 
 
@@ -1387,10 +1363,6 @@ ta có thể chỉ ra rằng phân phối này xấp xỉ phân phối Gauss. T�
 3. Hàm khối xác suất của tổng của hai biến ngẫu nhiên rời rạc theo phân phối đều trên $n$ phần tử là gì?
 
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/417)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -1398,12 +1370,6 @@ ta có thể chỉ ra rằng phân phối này xấp xỉ phân phối Gauss. T�
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Mai Hoàng Long
@@ -1412,5 +1378,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*
