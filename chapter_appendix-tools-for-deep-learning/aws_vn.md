@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Using AWS EC2 Instances
 -->
@@ -115,7 +112,7 @@ Generally, it takes one business day to process an application.
 -->
 
 Trước khi chọn một máy ảo, hãy kiểm tra xem liệu AWS có hạn chế số lượng máy ảo đó không bằng cách nhấp vào nhãn "Limits" trong thanh bên trái như trong :numref:`fig_ec2`.
-:numref:`fig_limits` minh hoạ ví dụ về giới hạn như vậy.
+:numref:`fig_limits` minh họa ví dụ về giới hạn như vậy.
 Tài khoản hiện thời không thể mở máy ảo "p2.xlarge" trong khu vực đó.
 Nếu bạn cần mở một hoặc nhiều máy ảo, hãy nhấp vào "Request limit increase" để đăng ký số lượng máy ảo cao hơn.
 Nói chung, sẽ mất một ngày làm việc để xử lý đơn đăng ký.
@@ -129,9 +126,6 @@ Nói chung, sẽ mất một ngày làm việc để xử lý đơn đăng ký.
 :width:`700px`
 :label:`fig_limits`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Launching Instance
@@ -157,10 +151,10 @@ Nhập "Ubuntu" vào ô tìm kiếm (đánh dấu bởi khung đỏ trong :numre
 
 
 <!--
-![Choose an operating system.](../img/ubuntu_new.png)
+![Choose an operating system.](../img/ubuntu-new.png)
 -->
 
-![Chọn hệ điều hành.](../img/ubuntu_new.png)
+![Chọn hệ điều hành.](../img/ubuntu-new.png)
 :width:`700px`
 :label:`fig_ubuntu`
 
@@ -172,7 +166,7 @@ Here's a table of suitable machines:
 -->
 
 EC2 cung cấp rất nhiều cấu hình máy ảo khác nhau để bạn có thể lựa chọn.
-Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy choáng ngợp.
+Việc này đôi lúc khiến cho người mới bắt đầu cảm thấy chóang ngợp.
 Ở đây là bảng liệt kê các máy phù hợp:
 
 
@@ -205,7 +199,7 @@ For the purpose of illustration, a p2.xlarge will suffice (marked in red box of 
 Tất cả các máy chủ trên đều đa dạng về số lượng GPU được sử dụng.
 Ví dụ, một máy chủ p2.xlarge có 1 GPU và p2.16xlarge có 16 GPU và nhiều bộ nhớ hơn.
 Để biết thêm chi tiết, tham khảo [tài liệu về AWS EC2](https://aws.amazon.com/ec2/instance-types/) hoặc [trang tổng hợp](https://www.ec2instances.info).
-Nhằm mục đích minh hoạ, một máy chủ p2.xlarge là đủ (đánh dấu bởi khung đỏ trong :numref:`fig_p2x`).
+Nhằm mục đích minh họa, một máy chủ p2.xlarge là đủ (đánh dấu bởi khung đỏ trong :numref:`fig_p2x`).
 
 
 <!--
@@ -234,7 +228,7 @@ Tap on "4. Add Storage" and increase the default hard disk size to 64 GB (marked
 Note that CUDA by itself already takes up 4 GB.
 -->
 
-Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khởi động một máy ảo EC2, như minh hoạ trong :numref:`fig_disk`.
+Đến đây, chúng ta đã hoàn thành hai trong bảy bước để khởi động một máy ảo EC2, như minh họa trong :numref:`fig_disk`.
 Trong ví dụ này, ta giữ nguyên cấu hình mặc định trong bước "3. Configure Instance", "5. Add Tags", và "6. Configure Security Group".
 
 
@@ -256,9 +250,9 @@ Click "Launch Instances" to launch the created instance.
 -->
 
 Cuối cùng, đi tới bước "7. Review" và nhấp "Launch" để khởi động một máy ảo đã được cấu hình.
-Lúc này hệ thống sẽ nhắc bạn lựa chọn một cặp khoá để truy cập vào máy ảo.
-Nếu bạn không có cặp khoá nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khoá mới.
-Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong menu này và sau đó chọn cặp khoá vừa được tạo.
+Lúc này hệ thống sẽ nhắc bạn lựa chọn một cặp khóa để truy cập vào máy ảo.
+Nếu bạn không có cặp khóa nào, chọn "Create a new key pair" ở đầu bảng chọn trong :numref:`fig_keypair` để tạo một cặp khóa mới.
+Tiếp theo, bạn có thể chọn "Choose an existing key pair" trong menu này và sau đó chọn cặp khóa vừa được tạo.
 Nhấp "Launch Instances" để khởi động máy ảo vừa tạo.
 
 
@@ -266,7 +260,7 @@ Nhấp "Launch Instances" để khởi động máy ảo vừa tạo.
 ![Select a key pair.](../img/keypair.png)
 -->
 
-![Chọn một cặp khoá.](../img/keypair.png)
+![Chọn một cặp khóa.](../img/keypair.png)
 :width:`500px`
 :label:`fig_keypair`
 
@@ -277,9 +271,9 @@ This is your only way to SSH into the server.
 Click the instance ID shown in :numref:`fig_launching` to view the status of this instance.
 -->
 
-Đảm bảo rằng bạn sẽ tải cặp khoá về và lưu nó ở một thư mục an toàn nếu bạn tạo một cặp khoá mới.
+Đảm bảo rằng bạn sẽ tải cặp khóa về và lưu nó ở một thư mục an toàn nếu bạn tạo một cặp khóa mới.
 Đây là cách duy nhất để SSH vào máy chủ.
-Nhấp vào ID máy ảo như minh hoạ trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
+Nhấp vào ID máy ảo như minh họa trong :numref:`fig_launching` để quan sát trạng thái của máy ảo này.
 
 
 <!--
@@ -290,9 +284,6 @@ Nhấp vào ID máy ảo như minh hoạ trong :numref:`fig_launching` để qua
 :width:`700px`
 :label:`fig_launching`
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Connecting to the Instance
@@ -306,7 +297,7 @@ As shown in :numref:`fig_connect`, after the instance state turns green,
 right-click the instance and select `Connect` to view the instance access method.
 -->
 
-Như minh hoạ trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển sang màu xanh,
+Như minh họa trong :numref:`fig_connect`, sau khi trạng thái máy ảo chuyển sang màu xanh,
 hãy nhấp chuột phải vào máy ảo và chọn `Connect` để quan sát phương thức truy cập máy ảo.
 
 
@@ -324,8 +315,8 @@ If this is a new key, it must not be publicly viewable for SSH to work. Go to th
 (e.g., the Downloads folder) and make sure that the key is not publicly viewable.
 -->
 
-Nếu đây là một khoá mới, nó không thể xem được một cách công khai để SSH có thể hoạt động. Đi đến thư mục mà bạn lưu khoá `D2L_key.pem`
-(ví dụ như thư mục Downloads) và đảm bảo rằng khoá này không thể xem được một cách công khai.
+Nếu đây là một khóa mới, nó không thể xem được một cách công khai để SSH có thể hoạt động. Đi đến thư mục mà bạn lưu khóa `D2L_key.pem`
+(ví dụ như thư mục Downloads) và đảm bảo rằng khóa này không thể xem được một cách công khai.
 
 
 ```bash
@@ -368,9 +359,6 @@ Your server is ready now.
 
 Lúc này máy chủ của bạn đã sẵn sàng.
 
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Installing CUDA
@@ -397,7 +385,7 @@ to find the download link of CUDA 10.1 as shown in :numref:`fig_cuda`.
 -->
 
 Ở đây ta tải về CUDA 10.1. Truy cập [trang chứa chính thức](https://developer.nvidia.com/cuda-downloads) của NVIDIA
-để tìm đường dẫn tải về của CUDA 10.1 như minh hoạ trong :numref:`fig_cuda`.
+để tìm đường dẫn tải về của CUDA 10.1 như minh họa trong :numref:`fig_cuda`.
 
 
 <!--
@@ -464,8 +452,8 @@ First, to simplify the installation, you need to install [Miniconda](https://con
 The download link and file name are subject to changes, so please go the Miniconda website and click "Copy Link Address" as shown in :numref:`fig_miniconda`.
 -->
 
-Đầu tiên, để đơn giản hoá quá trình cài đặt, bạn cần cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html) cho Linux.
-Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như minh hoạ trong :numref:`fig_miniconda`.
+Đầu tiên, để đơn giản hóa quá trình cài đặt, bạn cần cài đặt [Miniconda](https://conda.io/en/latest/miniconda.html) cho Linux.
+Đường dẫn tải về và tên tệp có thể thay đổi, vậy nên vui lòng truy cập trang web Miniconda và chọn "Copy Link Address" như minh họa trong :numref:`fig_miniconda`.
 
 
 <!--
@@ -568,9 +556,6 @@ $ python
 >>> np.zeros((1024, 1024), ctx=npx.gpu())
 ```
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Running Jupyter
@@ -645,7 +630,7 @@ Only do this if you know that you will not need it in the future.
 Do dịch vụ đám mây tính phí theo thời gian sử dụng, bạn nên đóng những máy ảo hiện không sử dụng đến.
 Lưu ý rằng có các giải pháp thay thế khác: "Stop" một máy ảo nghĩa là bạn có thể khởi động nó lại được.
 Việc này khá giống với việc tắt nguồn máy chủ thông thường của bạn.
-Tuy nhiên, việc dừng một máy chủ vẫn sẽ tính một lượng nhỏ vào hoá đơn cho kích thước ổ cứng được giữ lại.
+Tuy nhiên, việc dừng một máy chủ vẫn sẽ tính một lượng nhỏ vào hóa đơn cho kích thước ổ cứng được giữ lại.
 Lựa chọn "Terminate" một máy ảo sẽ xoá toàn bộ dữ liệu liên quan đến nó.
 Dữ liệu này bao gồm cả ổ cứng, vậy nên bạn sẽ không thể khởi động nó lại được.
 Chỉ thực hiện thao tác này nếu bạn chắc rằng bạn sẽ không cần đến nó trong tương lai.
@@ -667,7 +652,7 @@ Nếu bạn muốn sử dụng máy ảo làm khuôn mẫu (*template*) cho nhi�
 hãy nhấp chuột phải vào ví dụ trong :numref:`fig_connect` và chọn "Image" $\rightarrow$ "Create" để tạo một ảnh (*image*) của máy ảo này.
 Sau khi hoàn thành thao tác này, chọn "Instance State" $\rightarrow$ "Terminate" để xóa máy ảo này.
 Lần tiếp theo bạn muốn sử dụng máy ảo này, bạn có thể thực hiện theo các bước khởi tạo và
-chạy một máy ảo EC2 như minh hoạ trong phần này để tạo một máy ảo dựa trên ảnh đã lưu.
+chạy một máy ảo EC2 như minh họa trong phần này để tạo một máy ảo dựa trên ảnh đã lưu.
 Điểm khác biệt duy nhất nằm ở bước "1. Choose AMI" như trong :numref:`fig_ubuntu`,
 bạn phải chọn mục "My AMIs" phía bên trái để lựa chọn ảnh bạn đã lưu.
 Máy ảo được tạo ra sẽ giữ lại thông tin được lưu trên ảnh đĩa cứng.
@@ -700,10 +685,6 @@ Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spo
 3. Thử nghiệm với máy chủ đa GPU. Việc mở rộng giúp hoàn thành công việc tốt đến thế nào?
 
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/423)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -711,26 +692,10 @@ Tìm hiểu cách khởi động [máy ảo spot](https://aws.amazon.com/ec2/spo
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
+* Nguyễn Văn Quang
+* Phạm Hồng Vinh
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 2 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-
-<!-- Phần 4 -->
-* Đỗ Trường Giang
-
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 02/09/2020)*

@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE BẮT ĐẦU =================================== -->
-
 <!--
 # Selecting Servers and GPUs
 -->
@@ -26,7 +23,7 @@ Việc huấn luyện học sâu thông thường đòi hỏi một lượng l�
 Cụ thể, so với CPU, GPU rẻ hơn và thường cung cấp hiệu suất cao hơn hàng chục lần.
 Hơn nữa, một máy chủ có thể hỗ trợ đa GPU, tới 8 GPU với các máy chủ cao cấp.
 Số GPU điển hình là 4 cho một máy trạm kỹ thuật,
-vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt, vượt quá khả năng một tòa văn phòng có thể cung cấp.
+vì vấn đề tỏa nhiệt, làm mát và lượng điện tiêu thụ sẽ tăng vọt, vượt quá khả năng một văn phòng có thể cung cấp.
 Để triển khai trên số lượng lớn hơn, điện toán đám mây, chẳng hạn như các máy ảo [P3](https://aws.amazon.com/ec2/instance-types/p3/) và [G4](https://aws.amazon.com/blogs/aws/in-the-works-ec2-instances-g4-with-nvidia-t4-gpus/) của Amazon là một giải pháp thực tế hơn nhiều.
 
 
@@ -73,14 +70,14 @@ This is partly due to the number of PCIe lanes that the CPU offers.
 -->
 
 
-1. **Bộ Nguồn Cấp Điện **. GPU sử dụng một lượng điện năng đáng kể.
+1. **Bộ Nguồn Cấp Điện**. GPU sử dụng một lượng điện năng đáng kể.
 Mỗi GPU có thể cần nguồn cấp lên đến 350W (kiểm tra *công suất đỉnh* của card đồ họa thay vì công suất trung bình, 
 vì mã nguồn được tối ưu có thể ngốn nhiều năng lượng).
 Nếu nguồn điện của bạn không đáp ứng được nhu cầu, hệ thống sẽ trở nên không ổn định.
 2. **Kích thước khung chứa**. GPU có kích thước lớn và các đầu nối nguồn phụ trợ thường cần thêm không gian.
 Thêm nữa, khung máy lớn giúp dễ làm mát hơn. 
 3. **Làm mát GPU**. Nếu bạn có số lượng lớn GPU, bạn có thể muốn đầu tư hệ thống tản nhiệt nước.
-Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị. 
+Ngoài ra, có thể sử dụng các *thiết kế tham khảo* ngay cả khi chúng có số quạt làm mát ít hơn, vì chúng đủ mỏng để cho phép thông gió giữa các thiết bị.
 Nếu bạn mua một GPU có nhiều quạt, nó có thể quá dày để nhận đủ không khí khi lắp đặt nhiều GPU và bạn sẽ gặp phải tình trạng khó tản nhiệt.
 4. **Khe cắm PCIe**. Việc chuyển dữ liệu đến và đi từ GPU (và trao đổi giữa các GPU) đòi hỏi nhiều băng thông.
 Chúng tôi đề xuất khe cắm PCIe 3.0 với 16 làn. Nếu bạn lắp nhiều GPU, hãy đảm bảo là bạn đọc kỹ mô tả bo mạch chủ để chắc chắn
@@ -131,22 +128,19 @@ Bạn sẽ cần nguồn tầm 1000W cho hai GPU cao cấp. Đối với bo mạ
 Nếu có thể, hãy mua một bo mạch chủ có hai khoảng trống (khoảng cách 60mm) giữa các khe PCIe 3.0 x16 để có thêm không khí. 
 Trong trường hợp này, hãy mua hai GPU có nhiều quạt.
 * **4 GPU**. Đảm bảo rằng bạn mua một CPU có tốc độ luồng đơn tương đối nhanh (cụ thể là tần số xung nhịp cao).
-Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một chip AMD Threadripper. 
+Bạn có thể sẽ cần một CPU có số lượng làn PCIe lớn hơn, chẳng hạn như một chip AMD Threadripper.
 Bạn có thể sẽ cần bo mạch chủ tương đối đắt tiền để có 4 khe cắm PCIe 3.0 x16 vì chúng có thể cần PLX để ghép kênh các làn PCIe.
-Hãy mua GPU có thiết kế tham khảo gốc vì nó hẹp hơn và cho phép không khí lưu thông giữa các GPU. 
+Hãy mua GPU có thiết kế tham khảo gốc vì nó hẹp hơn và cho phép không khí lưu thông giữa các GPU.
 Bạn cần nguồn điện tầm 1600-2000W và ổ cắm trong văn phòng của bạn có thể không hỗ trợ điều đó.
-Máy chủ này có thể sẽ *gây tiếng ồn và tỏa nhiệt* nhiều. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn. 
+Máy chủ này có thể sẽ *gây tiếng ồn và tỏa nhiệt* nhiều. Bạn hẳn là không muốn đặt nó dưới bàn làm việc của bạn.
 Khuyến nghị sử dụng 128 GB DRAM. Mua một ổ SSD (1-2 TB NVMe) để lưu trữ cục bộ và một số ổ cứng theo cấu hình RAID để lưu trữ dữ liệu của bạn.
 * **8 GPU**. Bạn cần mua khung máy chủ đa GPU chuyên dụng với nhiều nguồn điện dự phòng (chẳng hạn, 2 + 1 cho 1600W với mỗi bộ nguồn).
 Điều này sẽ yêu cầu CPU máy chủ có khe cắm kép, 256 GB ECC DRAM, một cạc mạng nhanh (khuyến nghị 10 GBE),
-và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *hình dạng kích thước vật lý* của GPU hay không. 
+và bạn sẽ cần kiểm tra liệu máy chủ có hỗ trợ *hình dạng kích thước vật lý* của GPU hay không.
 Luồng không khí và bố trí đi dây có sự khác biệt đáng kể giữa GPU tiêu dùng và GPU máy chủ (cụ thể ở đây là RTX 2080 so với Tesla V100).
 Điều này có nghĩa là bạn có thể không lắp đặt được GPU tiêu dùng vào máy chủ do không đủ khoảng trống cho cáp nguồn
-hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đã phát hiện ra một cách đau đớn). 
+hoặc thiếu dây nối phù hợp (như một trong các đồng tác giả đã đau khổ khi phát hiện ra).
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Selecting GPUs
@@ -216,13 +210,13 @@ Look for wide memory buses if using GDDR6.
 -->
 
 1. **Khả năng tính toán**. Thông thường ta quan tâm đến khả năng tính toán dấu phẩy động 32-bit (*32-bit floating-point*).
-Huấn luyện mô hình sử dụng dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng đang dần phổ biến. 
+Huấn luyện mô hình sử dụng dấu phẩy động 16-bit (FP16 - *16-bit floating point*) cũng đang dần phổ biến.
 Nếu chỉ quan tâm đến tác vụ dự đoán, bạn cũng có thể sử dụng số nguyên 8-bit (*8-bit integer*).
-Thế hệ mới nhất của GPU Turing còn cung cấp chế độ tăng tốc 4-bit (*4-bit acceleration*). 
+Thế hệ mới nhất của GPU Turing còn cung cấp chế độ tăng tốc 4-bit (*4-bit acceleration*).
 Không may là hiện nay, các thuật toán huấn luyện với số thực độ chính xác thấp vẫn chưa được phổ biến.
-2. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay khi tăng kích thước batch khi huấn luyện , bạn sẽ cần nhiều bộ nhớ GPU hơn. 
+1. **Kích thước bộ nhớ**. Khi các mô hình của bạn trở nên lớn hơn hay khi tăng kích thước batch khi huấn luyện, bạn sẽ cần nhiều bộ nhớ GPU hơn.
 Hãy kiểm tra HBM2 (Bộ nhớ Băng thông cao - *High Bandwidth Memory*) và GDDR6 (DDR Đồ hoạ - *Graphics DDR*). HBM2 nhanh hơn nhưng đắt hơn nhiều.
-3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ. 
+3. **Băng thông bộ nhớ**. Bạn chỉ có thể tận dụng tối đa khả năng tính toán nếu bạn có đủ băng thông bộ nhớ.
 Hãy chọn bus bộ nhớ rộng nếu sử dụng GDDR6.
 
 
@@ -240,7 +234,7 @@ Chú ý rằng các GPU khác nhau cung cấp các cách tăng tốc khác nhau,
 ví dụ như TensorCores của NVIDIA tăng tốc một tập con các toán tử lên tới gấp 5 lần.
 Vậy nên hãy đảm bảo rằng thư viện của bạn hỗ trợ việc này. Bộ nhớ GPU thì không nên ít hơn 4 GB (8 GB thì hơn). 
 Hãy cố gắng tránh sử dụng GPU để hiện thị giao diện đồ họa người dùng (GUI), thay vào đó nếu cần hãy sử dụng card đồ hoạ tích hợp sẵn trong máy.
-Nếu bắt buộc phải dùng GPU để hiển thị GUI, hãy thêm vào 2 GB RAM cho an toàn. 
+Nếu bắt buộc phải dùng GPU để hiển thị GUI, hãy thêm vào 2 GB RAM cho an toàn.
 
 
 <!--
@@ -249,11 +243,8 @@ The prices are the suggested prices found on Wikipedia.
 -->
 
 :numref:`fig_flopsvsprice` so sánh khả năng tính toán dấu phẩy động 32-bit và giá của các mẫu khác nhau của các dòng GTX 900, GTX 1000 và RTX 2000.
-Đây là bảng giá đề xuất có thể được tìm thấy trên Wikipedia. 
+Đây là bảng giá đề xuất có thể được tìm thấy trên Wikipedia.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ![Floating-point compute power and price comparison.](../img/flopsvsprice.svg)
@@ -280,12 +271,12 @@ However, this is due to the fact that they offer far superior low precision perf
 3. For the RTX 2000 series the price is an *affine* function of the price.
 -->
 
-1. Trong cùng một dòng, giá và hiệu năng gần như tỉ lệ với nhau.
+1. Trong cùng một dòng, giá và hiệu năng gần như tỷ lệ với nhau.
 Mẫu Titan yêu cầu một khoản tiền đáng kể để đổi lấy lợi ích của lượng lớn bộ nhớ GPU. 
 Tuy nhiên, những mẫu mới hơn cung cấp hiệu quả chi phí tốt hơn, như có thể thấy qua so sánh giữa 980 Ti và 1080 Ti.
 Giá dường như không cải thiện nhiều đối với dòng RTX 2000. 
 Tuy nhiên, việc này là do chúng cung cấp hiệu năng hoàn toàn vượt trội đối với các giá trị có độ chính xác thấp (FP16, INT8 và INT4).
-2. Tỉ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900. 
+2. tỷ lệ hiệu năng trên giá của dòng GTX 1000 lớn hơn khoảng 2 lần so với dòng 900. 
 3. Với dòng RTX 2000, giá là một hàm *affine* của hiệu năng.
 
 
@@ -304,10 +295,10 @@ This seems to be contradicted by the graph corresponding to the RTX 2000 series.
 However, this is a consequence of the TensorCores which draw disproportionately much energy.
 -->
 
-:numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỉ lệ tuyến tính với khối lượng tính toán.
-Thứ hai, các thế hệ sau có hiệu quả tốt hơn. 
+:numref:`fig_wattvsprice` chỉ ra lượng năng lượng tiêu hao chủ yếu tỷ lệ tuyến tính với khối lượng tính toán.
+Thứ hai, các thế hệ sau có hiệu quả tốt hơn.
 Đồ thị của dòng RTX 2000 có vẻ như mâu thuẫn với điều này.
-Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn. 
+Tuy nhiên, đây là hệ quả của TensorCore yêu cầu năng lượng rất lớn.
 
 
 ## Tóm tắt
@@ -329,10 +320,6 @@ Kiểm tra các thông số cơ học và tản nhiệt trước khi mua.
 * Sử dụng FP16 hoặc độ chính xác thấp hơn để có được hiệu năng tốt hơn.
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/425)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -340,17 +327,12 @@ Kiểm tra các thông số cơ học và tản nhiệt trước khi mua.
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
 * Lê Khắc Hồng Phúc
 * Phạm Hồng Vinh
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+* Phạm Minh Đức
+* Nguyễn Văn Quang
+* Nguyễn Mai Hoàng Long

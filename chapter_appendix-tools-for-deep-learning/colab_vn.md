@@ -12,7 +12,7 @@ Another option is running this book on [Google Colab](https://colab.research.goo
 -->
 
 Chúng tôi đã giới thiệu cách chạy cuốn sách này trên AWS trong :numref:`sec_sagemaker` và :numref:`sec_aws`.
-Có một lựa chọn khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nền tảng cung cấp GPU miễn phí miễn là bạn có một tài khoản Google.
+Có một lựa chọn khác là chạy cuốn sách này (bản tiếng Anh) trên [Google Colab](https://colab.research.google.com/), nền tảng cung cấp GPU miễn phí khi bạn có một tài khoản Google.
 
 
 <!--
@@ -85,5 +85,7 @@ Bản dịch trong trang này được thực hiện bởi:
 
 * Đoàn Võ Duy Thanh
 * Đỗ Trường Giang
+* Nguyễn Văn Quang
+* Nguyễn Văn Cường
 
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+*Lần cập nhật gần nhất: 03/11/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*

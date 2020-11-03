@@ -32,7 +32,8 @@ you will see the interface of Jupyter and all the folders containing the code of
 
 Giả sử đường dẫn tới mã nguồn của cuốn sách này là "xx/yy/d2l-en/".
 Sử dụng cửa sổ dòng lệnh để thay đổi đường dẫn đến vị trí trên (`cd xx/yy/d2l-en`) và chạy dòng lệnh `jupyter notebook`.
-Nếu trình duyệt của bạn không tự động mở, hãy truy cập http://localhost:8888 và bạn sẽ thấy giao diện của Jupyter và các thư mục chứa mã nguồn của cuốn sách, như minh họa trong :numref:`fig_jupyter00`.
+Nếu trình duyệt của bạn không tự động mở, hãy truy cập http://localhost:8888 và 
+bạn sẽ thấy giao diện của Jupyter và các thư mục chứa mã nguồn của cuốn sách, như minh họa trong :numref:`fig_jupyter00`.
 
 
 <!--
@@ -131,9 +132,6 @@ as shown in :numref:`fig_jupyter05`.
 Tiếp theo, nhấp vào ô mã nguồn.
 Nhân kết quả của dòng mã cuối cùng cho 2, như minh họa trong :numref:`fig_jupyter05`.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ![Edit the code cell.](../img/jupyter05.png)
@@ -249,9 +247,6 @@ Tiếp đến, thêm dòng dưới vào cuối tệp cấu hình Jupyter Noteboo
 c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 After that, you only need to run the `jupyter notebook` command to turn on the notedown plugin by default.
@@ -339,9 +334,6 @@ jupyter nbextension enable execute_time/ExecuteTime
 3. Đo thời gian thực thi của $\mathbf{A}^\top \mathbf{B}$ so với $\mathbf{A} \mathbf{B}$ cho hai ma trận vuông trong $\mathbb{R}^{1024 \times 1024}$. Cách nào nhanh hơn?
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-
 ## Thảo luận
 * Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/421)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -349,22 +341,8 @@ jupyter nbextension enable execute_time/ExecuteTime
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Phạm Hồng Vinh
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 30/06/2020)*
+* Nguyễn Văn Quang
