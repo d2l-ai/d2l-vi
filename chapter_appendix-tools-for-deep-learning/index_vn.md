@@ -14,7 +14,7 @@ Besides, if you would like to purchase your own GPUs, we also note down some pra
 If you are interested in being a contributor of this book, you may follow the instructions in :numref:`sec_how_to_contribute`.
 -->
 
-Trong chương này, ta sẽ duyệt qua một vài công cụ chính cho học sâu,
+Trong chương này, ta sẽ đi qua một vài công cụ chính dành cho học sâu,
 từ việc giới thiệu Jupyter Notebook trong :numref:`sec_jupyter` tới việc cho phép bạn huấn luyện mô hình trên mây sử dụng những dịch vụ như Amazon Sagemaker trong :numref:`sec_sagemaker`, Amazon EC2 trong :numref:`sec_aws` và Google Colab trong :numref:`sec_colab`.
 Bên cạnh đó, nếu bạn muốn sắm cho mình một GPU riêng, chúng tôi cũng đưa ra một vài lưu ý thiết thực trong :numref:`sec_buy_gpu`.
 Nếu bạn hứng thú với việc đóng góp cho cuốn sách này, bạn có thể làm theo hướng dẫn trong :numref:`sec_how_to_contribute`.
@@ -38,5 +38,3 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
 * Nguyễn Văn Cường
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 15/01/2020)*

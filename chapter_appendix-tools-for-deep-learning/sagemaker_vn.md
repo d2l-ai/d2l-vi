@@ -37,7 +37,7 @@ After logging into your AWS account, go to your [console](http://console.aws.ama
 and search for "SageMaker" (see :numref:`fig_sagemaker`) then click to open the SageMaker panel.
 -->
 
-Đầu tiên, ta cần đăng ký tài khoản tại [https://aws.amazon.com/](https://aws.amazon.com/).
+Đầu tiên, ta cần đăng ký tài khoản tại https://aws.amazon.com/.
 Chúng tôi khuyến khích sử dụng xác thực hai yếu tố để tăng cường bảo mật.
 Cũng là một ý tưởng tốt khi cài đặt thông tin thanh toán chi tiết và thông báo mức chi để tránh những chi phí ngoài ý muốn trong trường hợp bạn quên dừng máy ảo đang chạy.
 Lưu ý rằng bạn sẽ cần một thẻ tín dụng.
@@ -82,7 +82,7 @@ When creating an instance, we can specify the instance name and choose its type.
 In :numref:`fig_sagemaker-create-2`, we choose `ml.p3.2xlarge`. With one Tesla V100 GPU and an 8-core CPU, this instance is powerful enough for most chapters.
 -->
 
-Sagemaker cung cấp đa dạng [các loại máy ảo](https://aws.amazon.com/sagemaker/pricing/instance-types/) với sức mạnh tính toán và mức giá khác nhau.
+Sagemaker cung cấp đa dạng [các loại máy ảo](https://aws.amazon.com/sagemaker/pricing/instance-types/) với sức mạnh tính toán và mức chi phí khác nhau.
 Khi tạo một máy ảo, ta có thể nêu chi tiết tên máy ảo và lựa chọn loại máy ảo mong muốn.
 Trong :numref:`fig_sagemaker-create-2`, ta chọn `ml.p3.2xlarge`.
 Với một GPU Tesla V100 và một CPU 8-nhân, máy ảo này là đã đủ mạnh mẽ cho hầu hết các chương.
@@ -139,9 +139,6 @@ Ta có thể nêu chi tiết URL của Github repository này để Sagemaker cl
 :width:`400px`
 :label:`fig_sagemaker-create-3`
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Running and Stopping an Instance
@@ -314,9 +311,6 @@ git pull
 2. Truy cập vào thư mục mã nguồn thông qua cửa sổ dòng lệnh.
 
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-
 ## Thảo luận
 * Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/422)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -324,19 +318,8 @@ git pull
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Phạm Hồng Vinh
+* Nguyễn Văn Quang
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Phạm Hồng Vinh
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 22/08/2020)*

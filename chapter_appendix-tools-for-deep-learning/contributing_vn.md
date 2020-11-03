@@ -1,5 +1,3 @@
-
-
 <!--
 # Contributing to This Book
 -->
@@ -21,11 +19,13 @@ When your pull request is merged into the code repository by the author, you wil
 
 Những đóng góp từ [cộng đồng](https://github.com/aivivn/d2l-vn/graphs/contributors) giúp chúng tôi cải thiện cuốn sách này.
 Nếu bạn tìm thấy có lỗi đánh máy, đường dẫn hết hạn, hay phần nào đó mà bạn nghĩ chúng tôi thiếu trích dẫn,
-phần mã nguồn không được thanh thoát hay có chỗ giải thích không rõ ràng, xin vui lòng đóng góp và giúp chúng tôi hỗ trợ các độc giả khác.
-Trong khi với các quyển sách bình thường, khoảng cách giữa hai lần in (và do đó là giữa các lần sửa lỗi đánh máy) có thể tính bằng năm,
-thì thường chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào bản dịch này.
-Để có thể đóng góp bạn cần phải đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của bản dịch này.
+phần mã nguồn không được thanh thoát hay có chỗ giải thích không rõ ràng, xin vui lòng đóng góp và giúp chúng tôi hỗ trợ những độc giả khác.
+Trong khi với các quyển sách bình thường, khoảng cách giữa những lần xuất bản (đó là giữa các lần sửa lỗi đánh máy) có thể tính bằng năm,
+thì giờ đây chúng tôi chỉ cần vài giờ đến vài ngày để đưa một cải thiện vào bản dịch này.
+Để có thể đóng góp trực tiếp, bạn cần đăng một [pull request](https://github.com/aivivn/d2l-vn/pulls) lên GitHub của bản dịch này.
 Khi pull request của bạn được nhóm dịch gộp (*merge*) vào repo, bạn sẽ trở thành một người đóng góp (*contributor*).
+Một cách khác để bạn có thể đóng góp đơn giản hơn là tạo một [issues](https://github.com/aivivn/d2l-vn/issues) mới và báo cáo vấn đề bạn tìm thấy, 
+tạo một [thảo luận](https://github.com/aivivn/d2l-vn/discussions) mới để cùng trao đổi nhiều vấn đề hơn với nhóm dịch thuật.
 
 
 <!--
@@ -66,7 +66,7 @@ If everything is good, you can submit a pull request by clicking the "Create pul
 -->
 
 Sau khi hoàn thành, điền mô tả thay đổi của bạn vào ô "Propose file change" ở cuối trang và sau đó nhấn nút "Propose file change".
-Trang sẽ tự chuyển hướng đến một trang mới để bạn có thể kiểm tra lại thay đổi của bạn (:numref:`fig_git_createpr`).
+Trang sẽ được chuyển hướng đến một trang mới để bạn có thể kiểm tra lại thay đổi của bạn (:numref:`fig_git_createpr`).
 Nếu mọi thứ đều ổn, bạn có thể đăng một pull request bằng cách nhấn vào nút "Create pull request".
 
 
@@ -87,7 +87,7 @@ You can use any Markdown editors to open these files and make your changes.
 Nếu bạn có dự định cập nhật một phần lớn văn bản hay mã nguồn thì bạn cần phải biết thêm một chút về định dạng mà cuốn sách này sử dụng.
 Tệp nguồn được dựa trên [định dạng markdown](https://daringfireball.net/projects/markdown/syntax) với một tập
 các phần mở rộng thông qua gói [d2lbook](http://book.d2l.ai/user/markdown.html) ví dụ như tham chiếu đến phương trình, hình ảnh, chương mục và trích dẫn.
-Bạn có thể sử dụng bất kì trình biên tập Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
+Bạn có thể sử dụng bất kỳ trình biên tập Markdown nào để mở các tệp này và thực hiện chỉnh sửa.
 
 
 <!--
@@ -97,7 +97,7 @@ our CI system will execute the sections you updated to generate outputs.
 -->
 
 Nếu bạn muốn thay đổi mã nguồn, chúng tôi khuyến nghị các bạn sử dụng Jupyter để mở các tệp Markdown này như mô tả trong :numref:`sec_jupyter`.
-Nhờ đó bạn có thể chạy và kiểm tra thay đổi của bạn. Xin vui lòng xoá toàn bộ các ô kết quả trước khi đăng thay đổi của bạn,
+Nhờ đó bạn có thể chạy và kiểm tra thay đổi của bạn. Xin vui lòng xóa toàn bộ các ô kết quả trước khi đăng thay đổi của bạn,
 hệ thống CI của chúng tôi sẽ thực thi phần bạn cập nhật để sinh kết quả.
 
 
@@ -107,7 +107,8 @@ so other framework implementations become Markdown code blocks and will not be e
 -->
 
 Một số phần có thể hỗ trợ lập trình đa framework, bạn có thể sử dụng `d2lbook` để kích hoạt một framework cụ thể,
-khi đó phần lập trình các framework khác trở thành khối mã Markdown và sẽ không được thực thi khi bạn chạy"Run All" trong Jupyter. Nói cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
+khi đó phần lập trình các framework khác trở thành khối mã Markdown và sẽ không được thực thi khi bạn chạy"Run All" trong Jupyter. 
+Nói cách khác, đầu tiên cài đặt `d2lbook` bằng cách chạy
 
 
 ```bash
@@ -133,7 +134,7 @@ d2lbook activate tensorflow chapter_multilayer-perceptrons/mlp-scratch.md
 Before submitting your changes, please clear all code block outputs and activate all by
 -->
 
-Trước khi đăng thay đổi của bạn lên, xin vui lòng xoá toàn bộ các ô kết quả và kích hoạt tất cả bằng
+Trước khi đăng thay đổi của bạn lên, xin vui lòng xóa toàn bộ các ô kết quả và kích hoạt tất cả bằng
 
 
 ```bash
@@ -150,9 +151,6 @@ Nếu bạn thêm một khối mã nguồn mới không có trong cách lập tr
 Ví dụ, `#@tab pytorch` cho khối mã PyTorch, `#@tab tensorflow` cho khối mã TensorFlow, hoặc `#@tab all` cho khối mã được dùng chung cho tất cả các cách lập trình.
 Bạn có thể tham khảo [d2lbook](http://book.d2l.ai/user/code_tabs.html) để biết thêm thông tin.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## Adding a New Section or a New Framework Implementation
@@ -301,12 +299,9 @@ Còn bây giờ chỉ cần đơn giản làm theo các hướng dẫn trong :re
 
 ```
 # Replace your_github_username with your GitHub username
-git clone https://github.com/your_github_username/d2l-en.git
+git clone https://github.com/your_github_username/d2l-vn.git
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Editing the Book and Push
@@ -324,7 +319,7 @@ You can then check which files you have changed:
 
 Giờ là lúc để chỉnh sửa bản dịch. Tốt nhất là chỉnh sửa các notebook trên Jupyter theo hướng dẫn trong :numref:`sec_jupyter`.
 Tạo thay đổi và kiểm tra xem chúng ổn chưa.
-Giả sử bạn đã điều chỉnh một lỗi đánh máy trong tệp `~/d2l-en/chapter_appendix_tools/how-to-contribute.md`.
+Giả sử bạn đã điều chỉnh một lỗi đánh máy trong tệp `~/d2l-vn/chapter_appendix_tools/how-to-contribute.md`.
 Sau đó bạn có thể kiểm tra xem bạn đã sửa đổi những tệp nào.
 
 
@@ -336,7 +331,7 @@ At this point Git will prompt that the `chapter_appendix_tools/how-to-contribute
 
 
 ```
-mylaptop:d2l-en me$ git status
+mylaptop:d2l-vn me$ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
 
@@ -470,9 +465,6 @@ Learn how to do it with [Git branching](https://git-scm.com/book/en/v2/Git-Branc
 Hãy học cách thực hiện việc này với [Git branching](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell).
 
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-
 ## Thảo luận
 * Tiếng Anh: [Main Forum](https://discuss.d2l.ai/t/426)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -480,22 +472,8 @@ Hãy học cách thực hiện việc này với [Git branching](https://git-scm
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Đỗ Trường Giang
 * Nguyễn Văn Cường
-
-<!-- Phần 2 -->
-* Đỗ Trường Giang
-
-<!-- Phần 3 -->
-* Đỗ Trường Giang
-
-*Lần cập nhật gần nhất: 13/09/2020. (Cập nhật lần cuối từ nội dung gốc: 21/08/2020)*
+* Nguyễn Mai Hoàng Long
