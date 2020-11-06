@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Naive Bayes
 -->
@@ -27,8 +24,8 @@ The naive Bayes classifier, a popular and remarkably clear algorithm, assumes al
 In this section, we will apply this model to recognize characters in images.
 -->
 
-Quá trình học hoàn toàn xoay quanh việc đưa ra các giả định. Nếu muốn phân loại một mẫu dữ liệu mới
-chưa thấy bao giờ, ta cần phải đưa ra một giả định nào đó về sự tương đồng giữa các mẫu dữ liệu.
+Quá trình học hoàn toàn xoay quanh việc đưa ra các giả định.
+Nếu muốn phân loại một mẫu dữ liệu mới chưa thấy bao giờ, ta cần phải đưa ra một giả định nào đó về sự tương đồng giữa các mẫu dữ liệu.
 Bộ phân loại Naive Bayes, một thuật toán thông dụng và dễ hiểu, giả định rằng tất cả các đặc trưng đều độc lập với nhau nhằm đơn giản hóa việc tính toán.
 Trong phần này, chúng tôi sẽ sử dụng mô hình này để nhận dạng ký tự trong ảnh.
 
@@ -94,11 +91,9 @@ In addition, the dataset represents each pixel by an unsigned $8$-bit integer.
 We quantize them into binary features to simplify the problem.
 -->
 
-Gluon cung cấp lớp `MNIST` trong mô-đun `data.vision` để
-tự động lấy dữ liệu từ Internet. 
+Gluon cung cấp lớp `MNIST` trong mô-đun `data.vision` để tự động lấy dữ liệu từ Internet. 
 Sau đó, Gluon sẽ sử dụng dữ liệu đã được tải xuống.
-Chúng ta xác định rằng ta đang yêu cầu tập huấn luyện hay tập kiểm tra
-bằng cách đặt giá trị tham số `train` thành` True` hoặc `False` tương ứng.
+Chúng ta xác định rằng ta đang yêu cầu tập huấn luyện hay tập kiểm tra bằng cách đặt giá trị tham số `train` thành` True` hoặc `False` tương ứng.
 Mỗi hình ảnh là một ảnh xám có cả chiều rộng và chiều cao là $28$, kích thước ($28$,$28$,$1$).
 Ta sẽ sử dụng một phép biến đổi được tùy chỉnh để loại bỏ chiều của kênh cuối cùng.
 Ngoài ra, tập dữ liệu biểu diễn mỗi điểm ảnh bằng một số nguyên $8$-bit không âm.
@@ -127,7 +122,8 @@ mnist_test = torchvision.datasets.MNIST(
 
 ```{.python .input}
 #@tab tensorflow
-(train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
+((train_images, train_labels), (
+    test_images, test_labels)) = tf.keras.datasets.mnist.load_data()
 ```
 
 
@@ -231,9 +227,6 @@ Hãy cùng minh họa các mẫu trên.
 d2l.show_images(images, 2, 9);
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## The Probabilistic Model for Classification
@@ -376,9 +369,6 @@ an exponential dependence on the number of features $\mathcal{O}(2^dn)$ to a lin
 cho $y$ bất kỳ. Vì vậy, giả định của chúng ta về sự độc lập có điều kiện đã làm giảm độ phức tạp của mô hình từ
 phụ thuộc theo cấp số nhân vào số lượng các đặc trưng $\mathcal{O}(2^dn)$ thành phụ thuộc tuyến tính, tức là $\mathcal{O}(dn)$.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Training
@@ -506,6 +496,7 @@ Given $\mathbf x$, the following functions computes $p(\mathbf x \mid y)p(y)$ fo
 Giờ ta có thể sử dụng :eqref:`eq_naive_bayes_estimation` để dự đoán một hình ảnh mới.
 Cho $\mathbf x$, hàm sau sẽ tính $p(\mathbf x \mid y)p(y)$ với mỗi $y$.
 
+
 ```{.python .input}
 def bayes_pred(x):
     x = np.expand_dims(x, axis=0)  # (28, 28) -> (1, 28, 28)
@@ -554,7 +545,7 @@ We discussed this as a theoretical issue in :numref:`sec_maximum_likelihood`, bu
 Chúng thường mang giá trị từ $0.001$ đến $1$ và ta đang nhân $784$ con số như vậy.
 Ta đang tính những con số này trên máy tính, do đó sẽ có một phạm vi cố định cho số mũ.
 Ta đã gặp vấn đề *tràn số dưới (underflow)*, tức là tích tất cả các số nhỏ hơn một sẽ dẫn đến một số nhỏ dần cho đến khi kết quả được làm tròn thành 0.
-Ta đã thảo luận lý thuyết về vấn đề này trong: numref: `sec_maximum_likelihood`, và ở đây ta thấy hiện tượng này trong thực tế một cách rõ ràng.
+Ta đã thảo luận lý thuyết về vấn đề này trong :numref:`sec_maximum_likelihood`, và ở đây ta thấy hiện tượng này trong thực tế một cách rõ ràng.
 
 
 <!--
@@ -591,7 +582,7 @@ print('logarithm is normal:', 784*tf.math.log(a).numpy())
 Since the logarithm is an increasing function, we can rewrite :eqref:`eq_naive_bayes_estimation` as
 -->
 
-Vì logarit là một hàm tăng dần, ta có thể viết lại :eqref: `eq_naive_bayes_estimation` thành
+Vì logarit là một hàm tăng dần, ta có thể viết lại :eqref:`eq_naive_bayes_estimation` thành
 
 
 $$ \hat{y} = \mathrm{argmax}_y \> \sum_{i=1}^d \log P_{xy}[x_i, y] + \log P_y[y].$$
@@ -659,9 +650,6 @@ We may now check if the prediction is correct.
 
 Bây giờ ta có thể kiểm tra liệu dự đoán này có đúng hay không.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 ```{.python .input}
 # Convert label which is a scalar tensor of int32 dtype
@@ -716,7 +704,8 @@ def predict(X):
     return [tf.cast(tf.argmax(bayes_pred_stable(x), axis=0), tf.int32).numpy()
             for x in X]
 
-X = tf.stack([tf.cast(train_images[i], tf.float32) for i in range(10, 38)], axis=0)
+X = tf.stack(
+    [tf.cast(train_images[i], tf.float32) for i in range(10, 38)], axis=0)
 y = tf.constant([train_labels[i] for i in range(10, 38)])
 preds = predict(X)
 # TODO: The preds are not correct due to issues with bayes_pred_stable()
@@ -748,7 +737,8 @@ float((preds == y).sum()) / len(y)  # Validation accuracy
 
 ```{.python .input}
 #@tab tensorflow
-X = tf.stack([tf.cast(train_images[i], tf.float32) for i in range(len(test_images))], axis=0)
+X = tf.stack([tf.cast(train_images[i], tf.float32) for i in range(
+    len(test_images))], axis=0)
 y = tf.constant([train_labels[i] for i in range(len(test_images))])
 preds = tf.constant(predict(X), dtype=tf.int32)
 # TODO: The accuracy is not correct due to issues with bayes_pred_stable()
@@ -805,40 +795,19 @@ Mặc dù lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xe
 hãy giải thích tại sao việc đưa sự phụ thuộc tường minh giữa hai biến đầu vào trong mô hình XOR lại có thể tạo ra một bộ phân loại thành công.
 
 
-
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/418)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/418), [Pytorch](https://discuss.d2l.ai/t/1100), [Tensorflow](https://discuss.d2l.ai/t/1101)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
-* Trần Yến Thy
 * Lê Khắc Hồng Phúc
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Trần Yến Thy
-
-<!-- Phần 3 -->
+* Phạm Hồng Vinh
+* Nguyễn Văn Cường
+* Đỗ Trường Giang
 * Nguyễn Mai Hoàng Long
-
-<!-- Phần 4 -->
-* Trần Yến Thy
-* Lê Khắc Hồng Phúc
-* Phạm Minh Đức
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*

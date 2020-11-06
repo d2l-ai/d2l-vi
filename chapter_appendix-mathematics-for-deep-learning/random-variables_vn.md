@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Random Variables
 -->
@@ -33,7 +30,8 @@ As such, we will need to take some time to develop the theory.
 -->
 
 Biến ngẫu nhiên liên tục phức tạp hơn đáng kể so với biến ngẫu nhiên rời rạc.
-Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn tương tự như chuyển từ tính tổng dãy số sang tính tích phân hàm số.
+Từ làm việc với các biến rời rạc chuyển sang làm việc với các biến liên tục cũng đòi hòi một bước nhảy về kiến thức chuyên môn 
+tương tự như chuyển từ tính tổng dãy số sang tính tích phân hàm số.
 Như vậy, ta sẽ cần dành một chút thời gian để phát triển lý thuyết.
 
 
@@ -50,7 +48,7 @@ Suppose that we are throwing a dart at the dart board, and we want to know the p
 -->
 
 Để hiểu các thách thức kỹ thuật phát sinh khi làm việc với biến ngẫu nhiên liên tục, ta hãy thực hiện một thí nghiệm tưởng tượng sau đây.
-Giả sử ta chơi phóng phi tiêu vào một bảng phi tiêu, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$. 
+Giả sử ta chơi phóng phi tiêu vào một bảng phi tiêu, và muốn biết xác suất nó cắm chính xác vào điểm cách hồng tâm $2 \text{cm}$.
 
 
 <!--
@@ -92,7 +90,7 @@ It is fairly reasonable to assume that the ${k+1}^{\mathrm{th}}$ digit is essent
 At least, we cannot conceive of a physically meaningful process which would force the number of micrometers away form the center to prefer to end in a $7$ vs a $3$.
 -->
 
-Tuy nhiên, điều này chưa giải quyết bất cứ điều gì! Ta chỉ vừa đẩy vấn đề độ chính xác lên thêm một chữ số thập phân. Thay vào đó hãy trừu tượng hoá vấn đề lên một chút.
+Tuy nhiên, điều này chưa giải quyết bất cứ điều gì! Ta chỉ vừa đẩy vấn đề độ chính xác lên thêm một chữ số thập phân. Thay vào đó hãy trừu tượng hóa vấn đề lên một chút.
 Hình dung ta biết xác suất mà $k$ chữ số đầu tiên khớp với $2.00000\ldots$ và ta muốn biết xác suất nó khớp với $k+1$ chữ số đầu tiên.
 Khá hợp lý khi giả định là chữ số thứ $k+1$ có thể nhận giá trị ngẫu nhiên từ tập $\{0, 1, 2, \ldots, 9\}$.
 Ít nhất là ta không thể nghĩ ra được bất kỳ tác nhân vật lý có ý nghĩa nào mà lại có ảnh hưởng tới độ chính xác ở mức micro mét, để chữ số cuối cùng là chữ số $7$ thay vì chữ số $3$ chẳng hạn.
@@ -145,7 +143,7 @@ Thus, the value $p$ is not fixed, but rather should depend on the point $x$.
 This tells us that we should expect
 -->
 
-Ta hãy tổng quát hoá thêm một bước cuối.
+Ta hãy tổng quát hóa thêm một bước cuối.
 Ta hiện chỉ đang xét điểm $2$, chưa nghĩ đến các điểm khác.
 Về cơ bản, giá trị $p$ tại các điểm khác nhau có thể sẽ khác nhau.
 Ít nhất ta hy vọng rằng người ném phi tiêu nhiều khả năng sẽ ngắm trúng vùng gần tâm, $2 \text{cm}$ hơn là $20 \text{cm}$.
@@ -224,9 +222,6 @@ The low portions are areas where we are unlikely to find the random value.
 Các vị trí mà giá trị hàm lớn cho biết có nhiều khả năng giá trị ngẫu nhiên sẽ rơi vào đó.
 Các vùng giá trị thấp là những vùng tại đó ít có khả năng giá trị ngẫu nhiên xuất hiện.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ### Probability Density Functions
@@ -268,7 +263,7 @@ For each of these, we know from :eqref:`eq_pdf_def` the probability is approxima
 -->
 
 Thứ hai, hãy tưởng tượng việc cắt $\mathbb{R}$ thành vô số lát cắt có chiều rộng $\epsilon$, mỗi lát cắt là nửa khoảng $(\epsilon\cdot i, \epsilon \cdot (i + 1)]$.
-Đối với mỗi lắt cắt này, ta biết từ: eqref: `eq_pdf_def`, thì xác suất xấp xỉ
+Đối với mỗi lắt cắt này, ta biết từ :eqref:`eq_pdf_def`, thì xác suất xấp xỉ
 
 
 $$
@@ -492,9 +487,6 @@ Trong ví dụ này, ta thấy một trong các lợi ích của việc sử d�
 khả năng xử lý các biến ngẫu nhiên liên tục hoặc rời rạc với cùng một công cụ, hay thậm chí là hỗn hợp của cả hai
 (tung một đồng xu: nếu mặt ngửa thì trả về giá trị khi thả xúc xắc, nếu mặt sấp thì trả về khoảng cách ném phi tiêu từ tâm của bảng hồng tâm).
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ### Means
@@ -590,13 +582,6 @@ Tạo ra lợi nhuận $\$10 \pm \$1$ rất khác với việc tạo ra $\$10 \p
 Trường hợp thứ hai có mức độ dao động lớn hơn nhiều và do đó rủi ro cũng lớn hơn nhiều.
 Vì vậy, để hiểu hành vi của một biến ngẫu nhiên, ta sẽ cần thêm tối thiểu một thước đo nữa thể hiện biên độ dao động của biến ngẫu nhiên đó.
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Variances
@@ -714,9 +699,6 @@ Tuy nhiên, nếu xét đến phương sai, ta ngay lập tức gặp phải v�
 Điều này có nghĩa là bản thân phương sai không thể dùng để so sánh trong phép đo ban đầu.
 Để có thể diễn giải được nó, ta cần quay lại đơn vị gốc.
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 <!--
 ### Standard Deviations
@@ -794,6 +776,7 @@ This means, if we take Chebyshev's inequality :eqref:`eq_chebyshev` with $\alpha
 Ta có kỳ vọng là $a$ và độ lệch chuẩn là $2\sqrt{2p}$.
 Từ bất đẳng thức Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, ta có
 
+
 $$
 P\left(X \not\in [a - 4\sqrt{2p}, a + 4\sqrt{2p}]\right) \le \frac{1}{4}.
 $$
@@ -820,8 +803,9 @@ Let us visualize this. We will show the probability of getting the three values 
 The interval will be drawn as a horizontal line in the middle. The first plot shows what happens for $p > 1/8$ where the interval safely contains all points.
 -->
 
-Hãy cùng trực quan hoá điều này. Chúng ta sẽ đưa ra xác suất nhận được ba giá trị tương ứng là ba thanh dọc có chiều cao tỷ lệ với xác suất.
+Hãy cùng trực quan hóa điều này. Chúng ta sẽ đưa ra xác suất nhận được ba giá trị tương ứng là ba thanh dọc có chiều cao tỷ lệ với xác suất.
 Khoảng trên sẽ được biểu diễn dưới dạng một đường ngang ở giữa. Biểu đồ đầu tiên cho thấy khi $p> 1/8$, khoảng này chứa hoàn toàn các điểm.
+
 
 ```{.python .input}
 # Define a helper to plot these figures
@@ -897,6 +881,7 @@ This shows that the inequality is *sharp*, since no smaller interval could be ta
 Biểu đồ thứ hai cho thấy tại $p = 1/8$, khoảng này tiếp xúc với hai điểm.
 Khoảng này là *vừa đủ*, vì không thể chọn khoảng nhỏ hơn mà bất đẳng thức vẫn đúng.
 
+
 ```{.python .input}
 # Plot interval when p = 1/8
 plot_chebyshev(0.0, 0.125)
@@ -943,9 +928,6 @@ plot_chebyshev(0.0, torch.tensor(0.05))
 plot_chebyshev(0.0, tf.constant(0.05))
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
 ### Means and Variances in the Continuum
@@ -1074,7 +1056,7 @@ d2l.plot(x, p, 'x', 'p.d.f.')
 This function looks innocent, and indeed consulting a table of integrals will show it has area one under it, and thus it defines a continuous random variable.
 -->
 
-Hàm này nhìn có vẻ không có vấn đề gì, và quả thực tra cứu bảng tích phân chỉ ra rằng diện tích vùng dưới nó bằng 1, và do đó nó định nghĩa một biến ngẫu nhiên liên tục.
+Hàm này nhìn có vẻ không có vấn đề gì, và quả thật tra cứu bảng tích phân chỉ ra rằng diện tích vùng dưới nó bằng 1, và do đó nó định nghĩa một biến ngẫu nhiên liên tục.
 
 
 <!--
@@ -1127,7 +1109,7 @@ d2l.plot(x, p, 'x', 'integrand')
 This function clearly has infinite area under it since it is essentially the constant one with a small dip near zero, and indeed we could show that
 -->
 
-Hàm này rõ ràng có phần diện tích bên dưới là vô hạn do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thực:
+Hàm này rõ ràng có phần diện tích bên dưới là vô hạn do về cơ bản nó là hằng số 1 với một đoạn trũng xuống gần 0, và quả thật:
 
 
 $$
@@ -1146,7 +1128,8 @@ This means it does not have a well-defined finite variance.
 However, looking deeper shows an even more disturbing result.  Let us try to compute the mean using :eqref:`eq_exp_def`.  Using the change of variables formula, we see
 -->
 
-Tuy vậy, nếu quan sát kĩ hơn ta có thể thấy một kết quả khó hiểu hơn nhiều. Hãy thử tính kỳ vọng sử dụng :eqref:`eq_exp_def`. Sử dụng đổi biến, ta được:
+Tuy vậy, nếu quan sát kĩ hơn ta có thể thấy một kết quả khó hiểu hơn nhiều.
+Hãy thử tính kỳ vọng sử dụng :eqref:`eq_exp_def`. Sử dụng đổi biến, ta được:
 
 
 $$
@@ -1171,7 +1154,8 @@ getting large values are large enough to make things like the mean or variance u
 Các nhà khoa học học máy định nghĩa mô hình của họ để thường không phải đối mặt với những vấn đề này,
 và trong đại đa số các trường hợp, ta sẽ xử lý những biến ngẫu nhiên với kỳ vọng và phương sai xác định.
 Tuy vậy, đôi khi biến ngẫu nhiên với *đuôi nặng (heavy tails)* 
-(có xác suất thu được các giá trị lớn là đủ lớn để khiến kỳ vọng hay phương sai không xác định) vẫn có ích trong việc mô hình hoá những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
+(có xác suất thu được các giá trị lớn là đủ lớn để khiến kỳ vọng hay phương sai không xác định) 
+vẫn có ích trong việc mô hình hóa những hệ thống vật lý, vậy nên sự tồn tại của chúng đáng để biết tới.
 
 
 <!--
@@ -1195,9 +1179,9 @@ We need to develop the mathematical language to handle these correlated continuo
 Toàn bộ phần phía trên đều chỉ xét biến ngẫu nhiên đơn lẻ có giá trị thực.
 Trường hợp có hai hay nhiều biến ngẫu nhiên hơn, mà thường giữa chúng có mối tương quan cao, thì sao?
 Tình huống này rất hay gặp trong học máy: tưởng tượng biến ngẫu nhiên $R_{i, j}$
-mã hoá giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay biến $P_t$ biểu diễn giá chứng khoán tại thời điểm $t$.
+mã hóa giá trị màu đỏ của điểm ảnh tại toạ độ $(i, j)$ trong một ảnh, hay biến $P_t$ biểu diễn giá chứng khóan tại thời điểm $t$.
 Những điểm ảnh lân cận thường có màu tương tự, và giá tại các thời điểm lân cận thường tương tự.
-Ta không thể coi chúng như những biến ngẫu nhiên riêng biệt, và cũng không thể xây dựng một mô hình tốt
+Ta không thể xem chúng như những biến ngẫu nhiên riêng biệt, và cũng không thể xây dựng một mô hình tốt
 (trong :numref:`sec_naive_bayes` có ví dụ một mô hình hoạt động kém do giả sử như vậy).
 Ta cần phát triển lý thuyết toán học để làm việc với những biến ngẫu nhiên liên tục có tương quan với nhau như vậy.
 
@@ -1261,13 +1245,6 @@ Bằng cách này, ta có thể làm việc với nhiều biến ngẫu nhiên t
 Nếu số biến ngẫu nhiên nhiều hơn 2, ta có thể mở rộng hàm mật độ nhiều chiều: $p(\mathbf{x}) = p(x_1, \ldots, x_n)$.
 Những thuộc tính như không âm, có tổng tích phân bằng một vẫn đúng.
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 7 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Marginal Distributions
@@ -1338,10 +1315,10 @@ $$
 
 
 <!--
-![By summing along the columns of our array of probabilities, we are able to obtain the marginal distribution for just the random variable represented along the $x$-axis.](../img/Marginal.svg)
+![By summing along the columns of our array of probabilities, we are able to obtain the marginal distribution for just the random variable represented along the $x$-axis.](../img/marginal.svg)
 -->
 
-![Bằng cách lấy tổng theo cột trên mảng xác suất, ta có thể thu được phân phối biên cho biến ngẫu nhiên được biểu diễn theo trục $x$](../img/Marginal.svg)
+![Bằng cách lấy tổng theo cột trên mảng xác suất, ta có thể thu được phân phối biên cho biến ngẫu nhiên được biểu diễn theo trục $x$.](../img/marginal.svg)
 :label:`fig_marginal`
 
 
@@ -1351,7 +1328,7 @@ Indeed, after canceling one factor of epsilon from both sides, and recognizing t
 -->
 
 Điều này tức là lấy tổng giá trị mật độ trên chuỗi các hình vuông theo cột như trong :numref:`fig_marginal`.
-Thực vậy, sau khi khử số hạng epsilon ở cả hai vế, tổng vế phải chính là tích phân theo $y$ và ta có thể kết luận rằng:
+Thật vậy, sau khi khử số hạng epsilon ở cả hai vế, tổng vế phải chính là tích phân theo $y$ và ta có thể kết luận rằng:
 
 
 $$
@@ -1478,7 +1455,7 @@ Indeed a quick computation shows that these random variables have covariance zer
 
 Chú ý là hiệp phương sai chỉ biểu thị mối quan hệ tuyến tính.
 Các quan hệ phức tạp hơn như $X = Y^2$, trong đó $Y$ được chọn ngẫu nhiên với xác suất bằng nhau từ tập $\{-2, -1, 0, 1, 2\}$, có thể không được thể hiện.
-Quả thực ta có thể tính được hiệp phương sai của hai biến ngẫu nhiên này bằng không, mặc dù một biến là hàm tất định của biến còn lại.
+Quả thật ta có thể tính được hiệp phương sai của hai biến ngẫu nhiên này bằng không, mặc dù một biến là hàm tất định của biến còn lại.
 
 
 <!--
@@ -1503,7 +1480,6 @@ For visualization, let us take a look at a collection of random variables with t
 
 Để hiển thị, hãy quan sát tập các biến ngẫu nhiên có hiệp phương sai có thể điều chỉnh được.
 
-<!-- ===================== Kết thúc dịch Phần 7 ===================== -->
 
 ```{.python .input}
 # Plot a few random variables adjustable covariance
@@ -1555,7 +1531,6 @@ for i in range(3):
 d2l.plt.show()
 ```
 
-<!-- ===================== Bắt đầu dịch Phần 8 ===================== -->
 
 <!--
 Let us see some properties of covariances:
@@ -1593,7 +1568,8 @@ $$
 With knowledge of covariances, we can expand this relationship.  Indeed, some algebra can show that in general,
 -->
 
-Với kiến thức về hiệp phương sai, ta có thể khai triển hệ thức này. Quả nhiên, sử dụng đại số có thể chứng minh tổng quát rằng:
+Với kiến thức về hiệp phương sai, ta có thể khai triển hệ thức này.
+Quả nhiên, sử dụng đại số có thể chứng minh tổng quát rằng:
 
 
 $$
@@ -1646,6 +1622,7 @@ Như vậy sự thay đổi đơn vị làm tăng hiệp phương sai $100$ lầ
 Do đó, để có độ tương quan không phụ thuộc vào đơn vị, ta cần chia cho một đại lượng nào đó cũng được tăng thêm $100$ lần.
 Một lựa chọn rõ ràng chính là độ lệch chuẩn! Có thể định nghĩa *hệ số tương quan - correlation coefficient* như sau:
 
+
 $$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
 :eqlabel:`eq_cor_def`
 
@@ -1678,9 +1655,6 @@ This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning m
 
 Đại lượng này bây giờ nằm trong khoảng $-1$ và $1$ với $1$ nghĩa là tương quan dương nhiều nhất, $-1$ nghĩa là tương quan âm nhiều nhất.
 
-<!-- ===================== Kết thúc dịch Phần 8 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 9 ===================== -->
 
 <!--
 As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$. Then, one can compute that
@@ -1799,7 +1773,7 @@ Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see th
 -->
 
 Lưu ý cuối cùng, bạn có thể thấy rằng một vài công thức trên khá quen thuộc.
-Quả thực, nếu khai triển tất cả với giả định $\mu_X = \mu_Y = 0$, ta có:
+Quả thật, nếu khai triển tất cả với giả định $\mu_X = \mu_Y = 0$, ta có:
 
 
 $$
@@ -1826,7 +1800,7 @@ Indeed if we think of norms as being related to standard deviations, and correla
 much of the intuition we have from geometry can be applied to thinking about random variables.
 -->
 
-Quả thực nếu nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và độ tương quan là cô-sin của các góc,
+Quả thật nếu nghĩ chuẩn (*norm*) liên quan tới độ lệch chuẩn, và độ tương quan là cô-sin của các góc,
 các trực giác ta có từ hình học có thể được áp dụng để tư duy về các biến ngẫu nhiên. 
 
 
@@ -1886,23 +1860,13 @@ và tôi quan sát thấy $25\%$ các mẫu của tôi có giá trị lớn hơn
 $x, y \in [0,1]$, ngược lại $p_{XY}(x, y) = 0$. Hiệp phương sai của $X$ và $Y$ là bao nhiêu?
 
 
-<!-- ===================== Kết thúc dịch Phần 9 ===================== -->
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
-* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/415)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/415), [Pytorch](https://discuss.d2l.ai/t/1094), [Tensorflow](https://discuss.d2l.ai/t/1095)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Nguyễn Mai Hoàng Long
@@ -1913,6 +1877,3 @@ Tên đầy đủ của các reviewer có thể được tìm thấy tại https
 * Phạm Hồng Vinh
 * Phạm Minh Đức
 * Nguyễn Văn Cường
-
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 27/07/2020)*

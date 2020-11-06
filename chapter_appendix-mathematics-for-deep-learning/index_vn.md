@@ -22,7 +22,7 @@ neither should deep learning practitioners need to worry about the theoretical f
 -->
 
 Một trong những điểm tuyệt vời nhất của học sâu hiện đại là nó có thể được hiểu và sử dụng mà không cần hiểu cặn kẽ nền tảng toán học đằng sau.
-Đây là một dấu hiệu thể hiện lĩnh vực này đang trưởng này.
+Đây là một dấu hiệu thể hiện lĩnh vực này đang trưởng thành.
 Giống như hầu hết các nhà phát triển phần mềm không cần bận tâm đến lý thuyết hàm số khả tính,
 những người làm việc với học sâu cũng không cần bận tâm đến nền tảng lý thuyết của học hợp lý cực đại (maximum likelihood).
 
@@ -59,7 +59,7 @@ Phần phụ lục này nhằm cung cấp cho bạn nền tảng toán học c�
 lý thuyết cốt lõi của học sâu hiện đại, nhưng đây không phải là toàn bộ kiến
 thức cần thiết. Chúng ta sẽ bắt đầu xem xét đại số tuyến tính sâu hơn. Chúng tôi
 phát triển ý nghĩa hình học của các đại lượng và toán tử đại số tuyến tính,
-việc này cho phép chúng ta minh hoạ hiệu ứng của nhiều phép biến đổi dữ liệu.
+việc này cho phép chúng ta minh họa hiệu ứng của nhiều phép biến đổi dữ liệu.
 Một thành phần chủ chốt là sự phát triển của các kiến thức nền tảng liên quan tới phân tích trị riêng.
 
 <!--
@@ -130,5 +130,3 @@ Bản dịch trong trang này được thực hiện bởi:
 * Đoàn Võ Duy Thanh
 * Vũ Hữu Tiệp
 * Lê Khắc Hồng Phúc
-
-*Lần cập nhật gần nhất: 08/09/2020. (Cập nhật lần cuối từ nội dung gốc: 12/02/2020)*
