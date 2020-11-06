@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE - BẮT ĐẦU =================================== -->
-
 <!--
 # Maximum Likelihood
 -->
@@ -140,9 +137,11 @@ What this maximum likelihood method will give us is a way to get that number fro
 -->
 
 Một điều thú vị ở ví dụ này là ta biết trước câu trả lời.
-Thật vậy, nếu chúng ta phát biểu bằng lời, "Tôi đã tung 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất cho xác suất tung đồng xu được mặt ngửa là bao nhiêu?"
+Thật vậy, nếu chúng ta phát biểu bằng lời, 
+"Tôi đã tung 13 đồng xu và 9 đồng xu ra mặt ngửa, dự đoán tốt nhất cho xác suất tung đồng xu được mặt ngửa là bao nhiêu?"
 mọi người sẽ đều đoán đúng $9/13$.
-Điều mà phương pháp khả năng hợp lý cực đại cung cấp cho chúng ta là một cách để thu được con số đó từ các nguyên tắc cơ bản sao cho có thể khái quát được cho các tình huống phức tạp hơn rất nhiều.
+Điều mà phương pháp khả năng hợp lý cực đại cung cấp cho chúng ta là một cách để thu được con số đó 
+từ các nguyên tắc cơ bản sao cho có thể khái quát được cho các tình huống phức tạp hơn rất nhiều.
 
 
 <!--
@@ -225,15 +224,11 @@ Hai giá trị đầu tiên rõ ràng là cực tiểu, không phải cực đ�
 Giá trị cuối cùng *không* cho xác suất bằng 0 với chuỗi đã cho và do đó nó phải là ước lượng hợp lý cực đại $\hat \theta = 9/13$.
 
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 <!--
 ## Numerical Optimization and the Negative Log-Likelihood
 -->
 
-### Tối ưu hoá Số học và hàm Log hợp lí Âm
+### Tối ưu hóa Số học và hàm Log hợp lí Âm
 
 
 <!--
@@ -402,6 +397,7 @@ This means that if we directly apply the product rule to compute a derivative we
 -->
 Điều này có nghĩa là nếu ta áp dựng trực tiếp quy tắc nhân để tính đạo hàm thì ta sẽ có được
 
+
 $$
 \begin{aligned}
 \frac{\partial}{\partial \boldsymbol{\theta}} P(X\mid\boldsymbol{\theta}) & = \left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_1\mid\boldsymbol{\theta})\right)\cdot P(x_2\mid\boldsymbol{\theta})\cdots P(x_n\mid\boldsymbol{\theta}) \\
@@ -418,7 +414,7 @@ Sufficient cleverness in grouping terms will reduce this to linear time, but it 
 For the negative log-likelihood we have instead
 -->
 
-Biểu thức này đòi hỏi $n(n-1)$ phép nhân, cùng với $(n-1)$ phép cộng, vì vậy tổng thời gian chạy tỉ lệ bình phương với số lượng đầu vào!
+Biểu thức này đòi hỏi $n(n-1)$ phép nhân, cùng với $(n-1)$ phép cộng, vì vậy tổng thời gian chạy tỷ lệ bình phương với số lượng đầu vào!
 Nếu ta khôn khéo trong việc nhóm các phần tử thì độ phức tạp sẽ giảm xuống tuyến tính, nhưng việc này yêu cầu ta phải suy nghĩ một chút.
 Đối với hàm đối log hợp lý, chúng ta có
 
@@ -437,15 +433,12 @@ $$
 - \frac{\partial}{\partial \boldsymbol{\theta}} \log\left(P(X\mid\boldsymbol{\theta})\right) = \frac{1}{P(x_1\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_1\mid\boldsymbol{\theta})\right) + \cdots + \frac{1}{P(x_n\mid\boldsymbol{\theta})}\left(\frac{\partial}{\partial \boldsymbol{\theta}}P(x_n\mid\boldsymbol{\theta})\right).
 $$
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 This requires only $n$ divides and $n-1$ sums, and thus is linear time in the inputs.
 -->
 
-Đẳng thức này chỉ yêu cầu $n$ phép chia và $n-1$ phép cộng, và do đó thời gian chạy tỉ lệ tuyến tính với số đầu vào.
+Đẳng thức này chỉ yêu cầu $n$ phép chia và $n-1$ phép cộng, và do đó thời gian chạy tỷ lệ tuyến tính với số đầu vào.
 
 <!--
 The third and final reason to consider the negative log-likelihood is the relationship to information theory, 
@@ -587,8 +580,10 @@ conversion of products to sums (and the resulting simplification of gradient com
 -->
 
 * Nguyên lý hợp lý cực đại cho ta biết rằng mô hình phù hợp nhất cho một tập dữ liệu nhất định là mô hình tạo ra các điểm dữ liệu đó với xác suất cao nhất.
-* Tuy nhiên, thường thì mọi người hay làm việc với hàm đối log hợp lý vì nhiều lý do: tính ổn định số học, khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ mật thiết về mặt lý thuyết với lý thuyết thông tin.
-* Trong khi áp dụng phương pháp này là đơn giản nhất trong trường hợp rời rạc, nó cũng có thể hoàn toàn tổng quát hóa cho trường hợp liên tục bằng cách cực đại hóa mật độ xác suất của các điểm dữ liệu.
+* Tuy nhiên, thường thì mọi người hay làm việc với hàm đối log hợp lý vì nhiều lý do: tính ổn định số học, 
+khả năng biến đổi tích thành tổng (dẫn tới việc đơn giản hóa các phép tính gradient) và mối liên hệ mật thiết về mặt lý thuyết với lý thuyết thông tin.
+* Trong khi áp dụng phương pháp này là đơn giản nhất trong trường hợp rời rạc, 
+nó cũng có thể hoàn toàn tổng quát hóa cho trường hợp liên tục bằng cách cực đại hóa mật độ xác suất của các điểm dữ liệu.
 
 
 ## Bài tập
@@ -605,36 +600,17 @@ Bạn nhận được một quan sát duy nhất từ biến ngẫu nhiên này 
 2. Giả sử rằng bạn có tập dữ liệu với các mẫu $\{x_i\}_{i=1}^N$ được lấy từ một phân phối Gauss với giá trị trung bình chưa biết, nhưng phương sai bằng $1$.
 Giá trị ước lượng hợp lý cực đại của trung bình là bao nhiêu?
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-<!-- ========================================= REVISE - KẾT THÚC ===================================-->
-
 
 ## Thảo luận
-* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/416)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/416), [Pytorch](https://discuss.d2l.ai/t/1096), [Tensorflow](https://discuss.d2l.ai/t/1097)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
-<!-- Phần 1 -->
 * Trần Yến Thy
 * Phạm Minh Đức
-
-<!-- Phần 2 -->
 * Phạm Đăng Khoa
-* Phạm Minh Đức
 * Phạm Hồng Vinh
-
-<!-- Phần 3 -->
-* Phạm Đăng Khoa
-
-
-*Lần cập nhật gần nhất: 11/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*

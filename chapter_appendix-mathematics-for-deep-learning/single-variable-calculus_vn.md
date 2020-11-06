@@ -1,5 +1,3 @@
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Single Variable Calculus
 -->
@@ -34,7 +32,7 @@ Given a training dataset, we consider the loss of our neural network on this dat
 -->
 
 Giả sử chúng ta có một mạng nơ-ron sâu với các trọng số được biễu diễn bằng một vector duy nhất $\mathbf{w} = (w_1, \ldots, w_n)$.
-Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát $\mathcal{L}(\mathbf{w})$ của mạng nơ-ron trên tập huấn luyện đó. 
+Cho trước một tập huấn luyện, chúng ta sẽ tập trung vào giá trị mất mát $\mathcal{L}(\mathbf{w})$ của mạng nơ-ron trên tập huấn luyện đó.
 
 <!--
 This function is extraordinarily complex, encoding the performance of all possible models of the given architecture on this dataset, 
@@ -44,7 +42,7 @@ and then iteratively take small steps in the direction which makes the loss decr
 -->
 
 Đây là một hàm số cực kì phức tạp, biểu diễn chất lượng của tất cả các mô hình khả dĩ của một cấu trúc mạng cho trước trên tập dữ liệu này, 
-nên gần như không thể chỉ ra được ngay một tập các trọng số $\mathbf{w}$ để cực tiểu hoá mất mát.
+nên gần như không thể chỉ ra được ngay một tập các trọng số $\mathbf{w}$ để cực tiểu hóa mất mát.
 Do vậy trên thực tế, chúng ta thường bắt đầu bằng việc khởi tạo *ngẫu nhiên* các trọng số, và tiến từng bước nhỏ theo hướng mà sẽ giảm giá trị mất mát nhanh nhất có thể.
 
 <!--
@@ -64,7 +62,7 @@ To help us visualize what happens, Let us graph an example function, $f(x) = \si
 
 Hãy cùng tìm hiểu xem chuyện gì sẽ xảy ra khi ta lấy giá trị $x$ và thay đổi nó với một lượng rất nhỏ thành $x + \epsilon$.
 Nếu bạn muốn một con số rõ ràng, hãy nghĩ về một số như $\epsilon = 0.0000001$.
-Để minh hoạ chuyện gì sẽ diễn ra, hãy vẽ ví dụ đồ thị của hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
+Để minh họa chuyện gì sẽ diễn ra, hãy vẽ ví dụ đồ thị của hàm số $f(x) = \sin(x^x)$, trên khoảng $[0, 3]$.
 
 
 ```{.python .input}
@@ -143,7 +141,7 @@ d2l.plot(x_med, ys, 'x', 'f(x)')
 Taking this to an extreme, if we zoom into a tiny segment, the behavior becomes far simpler: it is just a straight line.
 -->
 
-Đỉnh điểm, nếu ta phóng gần vào một đoạn rất nhỏ, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: chỉ là một đường thẳng. 
+Đỉnh điểm, nếu ta phóng gần vào một đoạn rất nhỏ, cách hàm số biến đổi trở nên đơn giản hơn rất nhiều: chỉ là một đường thẳng.
 
 
 ```{.python .input}
@@ -179,13 +177,13 @@ Is it half as large?  Twice as large?"
 
 Đây là một trong những quan sát cốt lõi nhất trong giải tích: hành vi của các hàm số phổ biến có thể được mô hình hóa bằng một đường thẳng trên một khoảng đủ nhỏ.
 Điều này nghĩa là với hầu hết các hàm số, chúng ta có thể trông đợi rằng khi dịch chuyển $x$ một khoảng nhỏ, $f(x)$ cũng sẽ dịch chuyển một khoảng nhỏ.
-Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi của giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi của giá trị đầu vào? Bằng một nửa? Hay sẽ lớn gấp đôi?" 
+Câu hỏi duy nhất mà chúng ta cần trả lời là "Sự thay đổi của giá trị đầu ra lớn gấp bao nhiêu lần so với sự thay đổi của giá trị đầu vào? Bằng một nửa? Hay sẽ lớn gấp đôi?"
 
 <!--
 Thus, we can consider the ratio of the change in the output of a function for a small change in the input of the function.  We can write this formally as
 -->
 
-Ta cũng có thể xét nó như tỉ lệ giữa sự thay đổi của đầu ra so với sự thay đổi nhỏ trong đầu vào của một hàm số. Chúng ta có thể biễu diễn nó dưới dạng toán học là:
+Ta cũng có thể xét nó như tỷ lệ giữa sự thay đổi của đầu ra so với sự thay đổi nhỏ trong đầu vào của một hàm số. Chúng ta có thể biễu diễn nó dưới dạng toán học là:
 
 
 $$
@@ -221,7 +219,7 @@ The way that a mathematician encodes this fact is
 -->
 
 Nếu để ý kĩ, chúng ta sẽ nhận ra rằng kết quả của con số này xấp xỉ $8$.
-Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$. 
+Trong trường hợp ta giảm $\epsilon$ thì giá trị đầu ra ngày càng tiến gần đến $8$.
 Vì vậy chúng ta có thể kết luận một cách chính xác, rằng mức độ thay đổi của đầu ra khi đầu vào thay đổi là $8$ tại điểm $x=4$.
 Có thể viết dưới dạng toán học như sau:
 
@@ -241,22 +239,22 @@ It was not solved until 1986 that the *backpropagation algorithm* introduced in 
 a way to calculate how *any* change of the weights together would change the loss in the same computation time as a single prediction of the network over the dataset.
 -->
 
-Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của các nghiên cứu mạng nơ-ron, 
-các nhà khoa học đã sử dụng thuật toán này (*sai phân hữu hạn - finite differences*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ: 
-chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi. 
+Một chút bàn luận ngoài lề về lịch sử: trong những thập kỷ đầu tiên của các nghiên cứu mạng nơ-ron,
+các nhà khoa học đã sử dụng thuật toán này (*sai phân hữu hạn - finite differences*) để đánh giá một hàm mất mát dưới các nhiễu loạn nhỏ:
+chỉ cần thay đổi trọng số và xem cách thức mà hàm mất mát thay đổi.
 Đây là một cách tính toán không hiệu quả, đòi hỏi đến hai lần tính hàm mất mát để thấy được sự tác động của một thay đổi lên hàm mất mát đó.
-Thậm chí nếu chúng ta sử dụng phương pháp này với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi phải chạy mạng nơ-ron hàng nghìn lần trên toàn bộ dữ liệu. 
+Thậm chí nếu chúng ta sử dụng phương pháp này với vài nghìn tham số nhỏ, nó cũng sẽ đòi hỏi phải chạy mạng nơ-ron hàng nghìn lần trên toàn bộ dữ liệu.
 Phải đến năm 1986 thì vấn đề này với được giải quyết khi *thuật toán lan truyền ngược* (*backpropagation algorithm*) được giới thiệu ở :cite:`Rumelhart.Hinton.Williams.ea.1988` 
-đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát 
-với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu. 
+đã đem đến một giải pháp để tính toán sức ảnh hưởng của những thay đổi *bất kỳ* từ các trọng số lên hàm mất mát
+với thời gian tính toán chỉ bằng thời gian mô hình đưa ra dự đoán trên tập dữ liệu.
 
 <!--
 Back in our example, this value $8$ is different for different values of $x$, so it makes sense to define it as a function of $x$.  
 More formally, this value dependent rate of change is referred to as the *derivative* which is written as
 -->
 
-Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$. 
-Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là: 
+Quay lại với ví dụ của chúng ta, giá trị $8$ này biến thiên với các trị khác nhau của $x$, vậy nên sẽ là hợp lý nếu chúng ta định nghĩa nó như là một hàm của $x$.
+Một cách chính thống hơn, độ biến thiên của giá trị này được gọi là *đạo hàm* và được viết là:
 
 $$\frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon}.$$
 :eqlabel:`eq_der_def`
@@ -268,6 +266,7 @@ For instance, all of the below notations indicate the same thing:
 
 Các văn bản khác nhau sẽ sử dụng các ký hiệu khác nhau cho đạo hàm.
 Chẳng hạn, tất cả các ký hiệu dưới đây đều diễn giải cùng một ý nghĩa:
+
 
 $$
 \frac{df}{dx} = \frac{d}{dx}f = f' = \nabla_xf = D_xf = f_x.
@@ -297,7 +296,6 @@ Oftentimes, it is intuitively useful to unravel the definition of derivative :eq
 Đôi khi, việc sử dụng định nghĩa của đạo hàm :eqref:`eq_der_def` để thấy một cách trực quan cách một hàm thay đổi khi $x$ thay đổi một khoảng nhỏ là rất hữu ích:
 
 
-
 $$\begin{aligned} \frac{df}{dx}(x) = \lim_{\epsilon \rightarrow 0}\frac{f(x+\epsilon) - f(x)}{\epsilon} & \implies \frac{df}{dx}(x) \approx \frac{f(x+\epsilon) - f(x)}{\epsilon} \\ & \implies \epsilon \frac{df}{dx}(x) \approx f(x+\epsilon) - f(x) \\ & \implies f(x+\epsilon) \approx f(x) + \epsilon \frac{df}{dx}(x). \end{aligned}$$
 :eqlabel:`eq_small_change`
 
@@ -307,18 +305,14 @@ The last equation is worth explicitly calling out.
 It tells us that if you take any function and change the input by a small amount, the output would change by that small amount scaled by the derivative.
 -->
 
-Cần phải nói rõ hơn về phương trình cuối cùng. 
+Cần phải nói rõ hơn về phương trình cuối cùng.
 Nó cho chúng ta biết rằng nếu ta chọn một hàm số bất kỳ và thay đổi đầu vào một lượng nhỏ, sự thay đổi của đầu ra sẽ bằng với lượng nhỏ đó nhân với đạo hàm.
 
 <!--
 In this way, we can understand the derivative as the scaling factor that tells us how large of change we get in the output from a change in the input.
 -->
 
-Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra khi đầu vào thay đổi. 
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
+Bằng cách này, chúng ta có thể hiểu đạo hàm là hệ số tỷ lệ cho biết mức độ biến thiên của đầu ra khi đầu vào thay đổi.
 
 
 <!--
@@ -335,7 +329,7 @@ We will not indulge in this temptation here, but rather provide an understanding
 -->
 
 Bây giờ chúng ta sẽ học cách để tính đạo hàm của một hàm cụ thể.
-Dạy giải tích một cách chính quy sẽ phải chứng minh lại tất cả mọi thứ từ những định đề căn bản nhất. 
+Dạy giải tích một cách chính quy sẽ phải chứng minh lại tất cả mọi thứ từ những định đề căn bản nhất.
 Tuy nhiên chúng tôi sẽ không làm như vậy mà sẽ cung cấp các quy tắc tính đạo hàm phổ biến thường gặp.
 
 <!--
@@ -349,8 +343,8 @@ As was seen in :numref:`sec_calculus`, when computing derivatives one can oftent
 We repeat them here for ease of reference.
 -->
 
-Như ở :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ tính toán thành các hàm cơ bản. 
-Chúng tôi sẽ nhắc lại chúng ở đây để bạn đọc dễ tham khảo. 
+Như ở :numref:`sec_calculus`, khi tính đạo hàm ta có thể sử dụng một chuỗi các quy tắc để chia nhỏ tính toán thành các hàm cơ bản.
+Chúng tôi sẽ nhắc lại chúng ở đây để bạn đọc dễ tham khảo.
 
 <!--
 * **Derivative of constants.** $\frac{d}{dx}c = 0$.
@@ -545,12 +539,9 @@ Thankfully, these two facts together hint towards a way forward: this is a perfe
 Indeed backpropagation, which we will revisit later in this section, is exactly that.
 -->
 
-Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hoá bằng máy tính! 
+Rất may là hai điều này gộp chung lại gợi ý cho chúng ta một hướng phát triển: đây chính là cơ hội lý tưởng để tự động hóa bằng máy tính! 
 Thật vậy, kỹ thuật lan truyền ngược, mà chúng ta sẽ gặp lại sau ở mục này, là một cách hiện thực hóa ý tưởng này.
 
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Linear Approximation
@@ -642,7 +633,7 @@ To keep the notation clean, we will denote the $n$-th derivative as
 
 Tuy nhiên, vì bản thân đạo hàm $\frac{df}{dx}$ cũng là một hàm số, không có gì ngăn cản chúng ta tiếp tục tính đạo hàm của 
 $\frac{df}{dx}$ để có $\frac{d^2f}{dx^2} = \frac{df}{dx}\left(\frac{df}{dx}\right)$.
-Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$. 
+Chúng ta sẽ gọi đây là đạo hàm cấp hai của $f$.
 Hàm số này là tốc độ thay đổi của tốc độ thay đổi của $f$, hay nói cách khác, nó thể hiện tốc độ thay đổi của $f$ đang thay đổi như thế nào.
 Chúng ta có thể tiếp tục lấy đạo hàm như vậy thêm nhiều lần nữa để có được thứ gọi là đạo hàm cấp $n$.
 Để ký hiệu được gọn gàng, chúng ta sẽ biểu thị đạo hàm cấp $n$ như sau:
@@ -725,7 +716,7 @@ To summarize, the second derivative can be interpreted as describing the way tha
 A positive second derivative leads to a upwards curve, while a negative second derivative means that $f$ curves downwards, and a zero second derivative means that $f$ does not curve at all.
 -->
 
-Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$. 
+Tóm lại, đạo hàm bậc hai có thể được hiểu như một cách miêu tả đường cong của đồ thị hàm $f$.
 Đạo hàm bậc hai dương thì đồ thị cong lên, đạo hàm bậc hai âm thì hàm $f$ cong xuống, và nếu bằng không thì $f$ là một đường thẳng.
 
 
@@ -754,7 +745,7 @@ this construction provides the best approximation by a quadratic.  Let us visual
 
 Nếu đã có sẵn một hàm $f(x)$, ta có thể tính đạo hàm cấp một và cấp hai của nó để tìm các giá trị $a, b$, và $c$ thỏa mãn hệ phương trình này.
 Cũng giống như ở mục trước ta đã thấy đạo hàm bậc một cho ra xấp xỉ tốt nhất bằng một đường thẳng, đạo hàm bậc hai cung cấp một xấp xỉ tốt nhất bằng một parabol.
-Hãy minh hoạ với trường hợp $f(x) = \sin(x)$.
+Hãy minh họa với trường hợp $f(x) = \sin(x)$.
 
 
 ```{.python .input}
@@ -799,11 +790,8 @@ d2l.plot(xs, plots, 'x', 'f(x)', ylim=[-1.5, 1.5])
 We will extend this idea to the idea of a *Taylor series* in the next section.
 -->
 
-Ta sẽ mở rộng ý tưởng này thành ý tưởng của *chuỗi Taylor* trong mục tiếp theo. 
+Ta sẽ mở rộng ý tưởng này thành ý tưởng của *chuỗi Taylor* trong mục tiếp theo.
 
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================-->
 
 <!--
 ### Taylor Series
@@ -819,7 +807,7 @@ The idea will be to find a degree $n$ polynomial that matches all the given deri
 -->
 
 *Chuỗi Taylor* cung cấp một phương pháp để xấp xỉ phương trình $f(x)$ nếu ta đã biết trước giá trị của $n$ cấp đạo hàm đầu tiên tại điểm $x_0$:
-$\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$. 
+$\left\{ f(x_0), f^{(1)}(x_0), f^{(2)}(x_0), \ldots, f^{(n)}(x_0) \right\}$.
 Ý tưởng là tìm một đa thức bậc $n$ có các đạo hàm tại $x_0$ khớp với các đạo hàm đã biết.
 
 <!--
@@ -841,7 +829,7 @@ Same logic applies for the first derivative and the value itself.
 -->
 
 Như ta đã thấy ở trên, mẫu số $2$ là để rút gọn thừa số $2$ khi lấy đạo hàm bậc hai của $x^2$, các đạo hàm bậc cao hơn đều bằng không.
-Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị $f(x_0)$. 
+Cùng một cách lập luận cũng được áp dụng cho đạo hàm bậc một và phần giá trị $f(x_0)$.
 
 <!--
 If we push the logic further to $n=3$, we will conclude that
@@ -859,14 +847,14 @@ $$
 where the $6 = 3 \times 2 = 3!$ comes from the constant we get in front if we take three derivatives of $x^3$.
 -->
 
-với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được khi lấy đạo hàm bậc 3 của $x^3$. 
+với $6 = 3 \times 2 = 3!$ đến từ phần hằng số ta có được khi lấy đạo hàm bậc 3 của $x^3$.
 
 
 <!--
 Furthermore, we can get a degree $n$ polynomial by
 -->
 
-Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách 
+Hơn nữa, ta có thể lấy một đa thức bậc $n$ bằng cách
 
 
 $$
@@ -877,7 +865,7 @@ $$
 where the notation
 -->
 
-với quy ước 
+với quy ước
 
 
 $$
@@ -889,14 +877,14 @@ $$
 Indeed, $P_n(x)$ can be viewed as the best $n$-th degree polynomial approximation to our function $f(x)$.
 -->
 
-Quả thật, $P_n(x)$ có thể được xem là đa thức bậc $n$ xấp xỉ tốt nhất của hàm $f(x)$. 
+Quả thật, $P_n(x)$ có thể được xem là đa thức bậc $n$ xấp xỉ tốt nhất của hàm $f(x)$.
 
 <!--
 While we are not going to dive all the way into the error of the above approximations, it is worth mentioning the the infinite limit. 
 In this case, for well behaved functions (known as real analytic functions) like $\cos(x)$ or $e^{x}$, we can write out the infinite number of terms and approximate the exactly same function
 -->
 
-Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng. 
+Dù ta sẽ không tìm hiểu kỹ sai số của xấp xỉ này, ta cũng nên nhắc tới giới hạn vô cùng.
 Trong trường hợp này, các hàm khả vi vô hạn lần như $\cos(x)$ hoặc $e^{x}$ có thể được biểu diễn xấp xỉ bằng vô số các số hạng.
 
 
@@ -910,8 +898,8 @@ Take $f(x) = e^{x}$ as am example. Since $e^{x}$ is its own derivative, we know 
 Therefore, $e^{x}$ can be reconstructed by taking the Taylor series at $x_0 = 0$, i.e.,
 -->
 
-Lấy hàm $f(x) = e^{x}$ làm ví dụ. 
-Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$. 
+Lấy hàm $f(x) = e^{x}$ làm ví dụ.
+Vì $e^{x}$ là đạo hàm của chính nó, ta có $f^{(n)}(x) = e^{x}$.
 Do đó, hàm $e^{x}$ có thể được tái tạo bằng cách tính chuỗi Taylor tại $x_0 = 0$:
 
 
@@ -990,8 +978,8 @@ Taylor series are often helpful to answer such questions.
 
 2. *Ứng dụng số học*:
 Việc tính toán một số hàm như $e^x$ hoặc $\cos(x)$ không đơn giản đối với máy tính.
-Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy), 
-nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?". 
+Chúng có thể lưu trữ một bảng giá trị với độ chính xác nhất định (và thường thì chúng làm vậy),
+nhưng việc đó vẫn không giải quyết được những câu hỏi như "Chữ số thứ 1000 của $\cos(1)$ là gì?".
 Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như vậy.
 
 
@@ -1024,10 +1012,9 @@ Chuỗi Taylor thường có ích cho việc trả lời các câu hỏi như v�
 3. Đúng hay Sai: Nếu $f'(x) = 0$ thì $f$ có cực đại hoặc cực tiểu tại $x$?
 4. Cực tiểu của $f(x) = x\log(x)$ với $x\ge0$ ở đâu (ở đây ta giả sử rằng $f$ có giới hạn bằng $0$ tại $f(0)$)?
 
-<!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================-->
 
 ## Thảo luận
-* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/412)
+* Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/412), [Pytorch](https://discuss.d2l.ai/t/1088), [Tensorflow](https://discuss.d2l.ai/t/1089)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
 
 
@@ -1043,6 +1030,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Mai Sơn Hải
 * Phạm Minh Đức
 * Nguyễn Văn Tâm
-
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 05/08/2020)*
+* Nguyễn Văn Cường

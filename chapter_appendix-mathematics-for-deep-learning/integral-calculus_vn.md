@@ -1,6 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Integral Calculus
 -->
@@ -12,12 +9,12 @@
 <!--
 Differentiation only makes up half of the content of a traditional calculus education.
 The other pillar, integration, starts out seeming a rather disjoint question, "What is the area underneath this curve?"
-While seemingly unrelated, integration is tightly intertwined with the differentiation via what is known as the *fundamental theorem of calculus*.  
+While seemingly unrelated, integration is tightly intertwined with the differentiation via what is known as the *fundamental theorem of calculus*.
 -->
 
 Phép vi phân mới chỉ là một nửa nội dung của môn giải tích truyền thống.
 Một nửa quan trọng khác, phép tích phân, bắt nguồn từ một câu hỏi có vẻ không mấy liên quan, "Diện tích của phần bên dưới đường cong này là bao nhiêu?"
-Dù vậy, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua *định lý cơ bản của giải tích* (_fundamental theorem of calculus_).
+Dù vậy, phép tích phân lại liên hệ mật thiết tới phép vi phân thông qua *định lý cơ bản của giải tích* (*fundamental theorem of calculus*).
 
 
 <!--
@@ -158,7 +155,7 @@ The inner variable is a dummy variable, much like the index of a sum in a $\sum$
 and so this can be equivalently written with any inner value we like:
 -->
 
-Ta có thể sử dụng bất kỳ kí hiệu nào vì biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$:
+Ta có thể sử dụng bất kì ký hiệu nào vì biến tích phân bên trong là tùy ý, cũng giống như biến chỉ số của phép tổng trong $\sum$:
 
 
 $$
@@ -264,7 +261,7 @@ $$
 Anything somewhat more complex like our example from the code above
 -->
 
-Bất kì hàm số nào hơi phức tạp hơn một chút như trong ví dụ trình bày ở đoạn mã trên 
+Bất kì hàm số nào hơi phức tạp hơn một chút như trong ví dụ trình bày ở đoạn mã trên
 
 
 $$
@@ -276,7 +273,7 @@ $$
 is beyond what we can solve with such a direct method.
 -->
 
-nằm ngoài phạm vi ta có thể giải quyết bằng phương pháp này. 
+nằm ngoài phạm vi ta có thể giải quyết bằng phương pháp này.
 
 
 <!--
@@ -289,9 +286,6 @@ Thay vào đó, ta sẽ tiếp cận theo hướng khác.
 Ta sẽ làm việc một cách trực quan với khái niệm diện tích, và học công cụ tính toán chính được dùng để tính tích phân: *định lý cơ bản của giải tích*.
 Đây sẽ là nền tảng của ta trong quá trình học tích phân.
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
 <!--
 ## The Fundamental Theorem of Calculus
@@ -331,13 +325,15 @@ This is a mathematical encoding of the fact that we can measure the area out to 
 and then subtract off the area to the near end point as indicated in :numref:`fig_area-subtract`.
 -->
 
-Đây là một ký hiệu toán học biểu diễn diện tích khoảng giữa hai cận bằng hiệu diện tích của khoảng có cận xa hơn trừ đi diện tích của khoảng có cận gần hơn như trong :numref:`fig_area-subtract`.
+Đây là một ký hiệu toán học biểu diễn diện tích khoảng giữa hai cận bằng hiệu diện tích của khoảng có cận xa hơn 
+trừ đi diện tích của khoảng có cận gần hơn như trong :numref:`fig_area-subtract`.
+
 
 <!--
-![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/SubArea.svg)
+![Visualizing why we may reduce the problem of computing the area under a curve between two points to computing the area to the left of a point.](../img/sub-area.svg)
 -->
 
-![Minh họa tại sao ta có thể đơn giản bài toán tính diện tích dưới đường cong giữa hai điểm thành bài toán tính toán phần diện tích phía bên trái của một điểm](../img/SubArea.svg)
+![Minh họa tại sao ta có thể đơn giản bài toán tính diện tích dưới đường cong giữa hai điểm thành bài toán tính toán phần diện tích phía bên trái của một điểm.](../img/sub-area.svg)
 :label:`fig_area-subtract`
 
 
@@ -474,9 +470,6 @@ Every integration rule derives from this one fact.
 Bằng cách này, ta có thể phát triển toàn bộ lý thuyết tích phân bằng cách tự do tận dụng những ý tưởng từ giải tích vi phân.
 Mỗi quy tắc tích phân đều bắt nguồn từ đây.
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
 
 <!--
 ## Change of Variables
@@ -494,7 +487,8 @@ In this section, we will dive into what is arguably the most important from the 
 -->
 
 Cũng như vi phân, có một số quy tắc giúp việc tính tích phân dễ xử lý hơn.
-Thật ra, mọi quy tắc trong giải tích vi phân (như quy tắc tích, quy tắc tổng, và quy tắc dây chuyền) đều có một quy luật tương ứng cho giải tích tích phân (lần lượt là tích phân từng phần, tích phân của tổng, và quy tắc đổi biến số).
+Thật ra, mọi quy tắc trong giải tích vi phân (như quy tắc tích, quy tắc tổng, 
+và quy tắc dây chuyền) đều có một quy luật tương ứng cho giải tích tích phân (lần lượt là tích phân từng phần, tích phân của tổng, và quy tắc đổi biến số).
 Trong mục này, ta sẽ tìm hiểu quy tắc được cho là quan trọng nhất trong danh sách trên: quy tắc đổi biến số.
 
 
@@ -581,10 +575,10 @@ Do đó, để đồng hóa diện tích hai hình chữ nhật này, ta phải 
 
 
 <!--
-![Visualizing the transformation of a single thin rectangle under the change of variables.](../img/RectTrans.svg)
+![Visualizing the transformation of a single thin rectangle under the change of variables.](../img/rect-trans.svg)
 -->
 
-![Minh họa cho biến đổi của một hình chữ nhật mỏng dưới sự thay đổi biến số.](../img/RectTrans.svg)
+![Minh họa cho biến đổi của một hình chữ nhật mỏng dưới sự thay đổi biến số.](../img/rect-trans.svg)
 :label:`fig_rect-transform`
 
 
@@ -632,13 +626,6 @@ $$
 \int_0^{1} ye^{-y^2}\; dy = \frac{1-e^{-1}}{2}.
 $$
 
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
 
 <!--
 ## A Comment on Sign Conventions
@@ -731,6 +718,7 @@ and we want to know the volume under $f$ when $x$ ranges over $[a, b]$ and $y$ r
 
 Trong một số trường hợp, ta sẽ cần phải làm việc với số lượng chiều lớn hơn. Ví dụ: giả sử ta có một hàm hai biến $f(x, y)$
 và muốn biết thể tích phía dưới $f$ khi $x$ nằm trong đoạn $[a, b]$ và $y$ trong đoạn $[c, d]$.
+
 
 ```{.python .input}
 # Construct grid and compute function
@@ -845,7 +833,7 @@ This is illustrated in :numref:`fig_sum-order`. In particular, we can say that
 -->
 
 Một khi đã rời rạc hóa bài toán, ta có thể cộng dồn các giá trị trên các ô vuông này theo bất kỳ thứ tự nào mà không phải lo lắng về việc giá trị cuối cùng thay đổi.
-Điều này được minh họa trong: numref: `fig_sum-order`. Đặc biệt, có thể nói rằng
+Điều này được minh họa trong :numref:`fig_sum-order`. Đặc biệt, có thể nói rằng
 
 
 $$
@@ -853,10 +841,10 @@ $$
 $$
 
 <!--
-![Illustrating how to decompose a sum over many squares as a sum over first the columns (1), then adding the column sums together (2).](../img/SumOrder.svg)
+![Illustrating how to decompose a sum over many squares as a sum over first the columns (1), then adding the column sums together (2).](../img/sum-order.svg)
 -->
 
-![*Minh họa cách phân rã một tổng trên nhiều ô vuông dưới dạng tổng trên các cột (1), sau đó cộng các tổng của cột với nhau (2).*](../img/SumOrder.svg)
+![Minh họa cách phân rã một tổng trên nhiều ô vuông dưới dạng tổng trên các cột (1), sau đó cộng các tổng của cột với nhau (2).](../img/sum-order.svg)
 :label:`fig_sum-order`
 
 
@@ -959,7 +947,8 @@ To keep the expressions clean, we will assume that $\phi$ is *injective* which i
 
 Chúng ta cần một hàm để tái tham số hoá miền tích phân.
 Ta có thể coi hàm này là $\phi: \mathbb{R}^n \rightarrow \mathbb{R}^n$, nhận $n$ biến thực và trả về $n$ giá trị thực khác.
-Để giữ cho các biểu thức rõ ràng, ta giả sử $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
+Để giữ cho các biểu thức rõ ràng, ta giả sử $\phi$ là *đơn ánh (injective)* tức nó cho đầu ra khác nhau 
+với đầu vào khác nhau ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$).
 
 
 <!--
@@ -980,9 +969,6 @@ where $D\phi$ is the *Jacobian* of $\phi$, which is the matrix of partial deriva
 
 trong đó $D\phi$ là *Jacobian* của $\phi$, ma trận của các đạo hàm riêng của $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
 
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
 
 $$
 D\boldsymbol{\phi} = \begin{bmatrix}
@@ -1003,7 +989,7 @@ of a little square (or little *hyper-cube*) by applying $\boldsymbol{\phi}$.
 If $\boldsymbol{\phi}$ was the multiplication by a matrix, then we know how the determinant already gives the answer.  
 -->
 
-Xét kĩ hơn, ta nhận thấy điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
+Khi xét kĩ hơn, ta nhận thấy điều này tương tự như quy tắc dây chuyền đơn biến :eqref:`eq_change_var`,
 ngoại trừ việc ta đã thay thế $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$.
 Hãy cùng xem ta có thể giải thích hạng tử này như thế nào.
 Hãy nhớ lại rằng $\frac{du}{dx}(x)$ cho thấy việc áp dụng $u$ kéo dãn trục $x$ như thế nào.
@@ -1123,10 +1109,6 @@ and $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ to see they are 
 và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để thấy sự khác nhau giữa chúng.
 
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-
 ## Thảo luận
 * Tiếng Anh: [MXNet](https://discuss.d2l.ai/t/414)
 * Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l)
@@ -1134,17 +1116,9 @@ và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để thấy s�
 
 ## Những người thực hiện
 Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md
--->
 
 * Đoàn Võ Duy Thanh
 * Phạm Hồng Vinh
 * Phạm Đăng Khoa
 * Lê Khắc Hồng Phúc
 * Nguyễn Văn Cường
-
-*Lần cập nhật gần nhất: 10/09/2020. (Cập nhật lần cuối từ nội dung gốc: 26/07/2020)*
