@@ -41,15 +41,8 @@ Nội dung cuốn sách này rất phong phú và có nhiều bài tập ở cu�
 bạn có thể tham gia thảo luận nội dung và bài tập của cuốn sách
 **[tại đây](https://forum.machinelearningcoban.com/c/d2l)**.
 
-### Hướng dẫn đóng góp
-
-Chúng tôi mời bạn tham khảo hướng dẫn chi tiết **[tại đây](https://github.com/aivivn/d2l-vn/blob/master/CONTRIBUTING.md)**.
-
 ### Những câu hỏi thường gặp
-**Hỏi:** Cuốn sách này có bản song ngữ hay không?
-
-**Đáp:** Không, chúng tôi không có kế hoạch thực hiện bản song ngữ cho cuốn sách này.
-
-**Hỏi:** Cuốn sách này có bản PDF hay không?
-
-**Đáp:** Có, chúng tôi sẽ có bản PDF sau khi đã hoàn thiện toàn bộ nội dung cuốn sách này.
+#### 1. Cuốn sách này có bản song ngữ hay không?
+Không, chúng tôi không có kế hoạch thực hiện bản song ngữ cho cuốn sách này.
+#### 2. Cuốn sách này có bản PDF hay không?
+Có, chúng tôi sẽ có bản PDF sau khi đã hoàn thiện toàn bộ nội dung cuốn sách này.

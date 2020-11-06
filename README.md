@@ -195,6 +195,9 @@ Tra cứu các thuật ngữ được sử dụng trong nhóm dịch **[tại đ
     * [x] 19.7. [Tài liệu API của d2l](chapter_appendix-tools-for-deep-learning/d2l_vn.md)
 </details>
 
+## Maintainers
+* Vũ Hữu Tiệp [@tiepvupsu](https://github.com/tiepvupsun)
+* Đoàn Võ Duy Thanh [@duythanhvn](https://github.com/duythanhvn)
 
 ## Giấy phép
 
