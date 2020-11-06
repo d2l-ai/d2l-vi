@@ -36,6 +36,8 @@ chapter_natural-language-processing-pretraining/index_vn
 chapter_natural-language-processing-applications/index_vn
 chapter_recommender-systems/index_vn
 chapter_generative-adversarial-networks/index_vn
+chapter_appendix-mathematics-for-deep-learning/index_vn
+chapter_appendix-tools-for-deep-learning/index_vn
 ```
 
 ```toc
