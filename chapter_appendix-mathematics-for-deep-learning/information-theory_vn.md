@@ -496,11 +496,13 @@ then $P$ has the highest entropy if it is the uniform distribution on that inter
 
 * Entropy có giá trị không âm, tức $H(X) \geq 0, \forall X$.
 * Nếu $X \sim P$ có hàm mật độ xác suất hoặc hàm khối xác suất $p(x)$, và ta muốn ước lượng $P$ bằng một phân phối xác suất mới $Q$ với hàm mật độ xác suất hoặc hàm khối xác suất $q(x)$, ta có:
-$$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu bằng xảy ra khi và chỉ khi } P = Q.$$
+$$H(X) = - E_{x \sim P} [\log p(x)] \leq  - E_{x \sim P} [\log q(x)], \text{ dấu~bằng~xảy~ra~khi~và~chỉ~khi } P = Q.$$
+
 Ngoài ra, $H(X)$ cho biết cận dưới của số bit trung bình cần dùng để mã hóa các giá trị lấy từ $P$.
 * Nếu $X \sim P$, $x$ sẽ chứa lượng thông tin cực đại nếu mọi biến cố khả dĩ chứa lượng thông tin như nhau.
 Cụ thể, nếu $P$ là phân phối rời rạc với $k$ lớp $\{p_1, \ldots, p_k \}$:
-$$H(X) \leq \log(k), \text{ dấu bằng xảy ra khi và chỉ khi } p_i = \frac{1}{k}, \forall i.$$
+$$H(X) \leq \log(k), \text{ dấu~bằng~xảy~ra~khi~và~chỉ~khi } p_i = \frac{1}{k}, \forall i.$$
+
 Nếu $P$ là phân phối liên tục thì sẽ phức tạp hơn.
 Tuy nhiên, nếu ta giả sử thêm rằng $P$ có miền giá trị nằm trong một khoảng hữu hạn (với tất cả giá trị nằm trong khoảng $0$ và $1$),
 $P$ sẽ có entropy cực đại nếu nó là phân phối đều trong khoảng đó.
@@ -795,7 +797,7 @@ Mục tiêu của chúng ta là tìm được thông tin giống nhau giữa hai
 Ta có thể thử bắt đầu với thông tin chứa trong cả $X$ và $Y$,
 sau đó bỏ đi những thông tin không giống nhau. 
 Thông tin chứa trong cả $X$ và $Y$ là $H(X, Y)$.
-Thông tin nằm trong $X$ nhưng không nằm trong $Y$ là H(X \mid Y)$, tương tự, thông tin nằm trong $Y$ nhưng không nằm trong $X$ là $H(Y \mid X)$.
+Thông tin nằm trong $X$ nhưng không nằm trong $Y$ là $H(X \mid Y)$, tương tự, thông tin nằm trong $Y$ nhưng không nằm trong $X$ là $H(Y \mid X)$.
 Do đó, ta có thông tin tương hỗ như sau:
 
 
@@ -1501,6 +1503,7 @@ Mặt khác, ta cũng có thể tiếp cận bài toán thông qua ước lượ
 Đây là dạng mở rộng của phân phối Bernoulli từ hai lớp thành nhiều lớp.
 Nếu một biến ngẫu nhiên $\mathbf{z} = (z_{1}, \ldots, z_{k})$ tuân theo *phân phối đa thức* $k$ lớp với xác suất $\mathbf{p} =$ ($p_{1}, \ldots, p_{k}$), tức
 $$p(\mathbf{z}) = p(z_1, \ldots, z_k) = \mathrm{Multi} (p_1, \ldots, p_k), \text{ với } \sum_{i=1}^k p_i = 1,$$
+
 thì hàm khối xác suất (*probability mass function - p.m.f*) kết hợp của $\mathbf{z}$ bằng
 $$\mathbf{p}^\mathbf{z} = \prod_{j=1}^k p_{j}^{z_{j}}.$$
 
@@ -1635,6 +1638,7 @@ Gợi ý: sử dụng bất đẳng thức Jensen, tức là sử dụng thực 
     *Perplexity* mức ký tự của một mô hình ngôn ngữ trên một từ được định nghĩa là tích của nghịch đảo xác suất của mỗi ký tự xuất hiện trong từ đó,
     rồi được chuẩn hóa bằng độ dài của từ như sau
     $$PPL(\text{từ}) = \left[\prod_i p(\text{ký tự}_i)\right]^{ -\frac{1}{\text{length(từ)}} }.$$
+    
     Giả sử từ kiểm tra có $4.5$ chữ cái, lúc này mỗi ký tự ngẫu nhiên bạn quan sát được chứa bao nhiêu bit?
 4. Giải thích một cách trực quan tại sao $I(X, Y) = H(X) - H(X|Y)$. Sau đó, chứng minh biểu thức này đúng bằng cách biểu diễn hai vế theo kỳ vọng của phân phối kết hợp.
 5. Phân kỳ KL giữa hai phân phối Gauss $\mathcal{N}(\mu_1, \sigma_1^2)$ và $\mathcal{N}(\mu_2, \sigma_2^2)$ là gì?
