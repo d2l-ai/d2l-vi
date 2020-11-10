@@ -107,7 +107,7 @@ Hay nói cách khác, ta kỳ vọng là
 
 
 $$
-P(\text{khoảng cách là}\; 2.00\ldots, \;\text{đến}\; k \;\text{chữ số} ) \approx p\cdot10^{-k}.
+P(\text{khoảng~cách~là}\; 2.00\ldots, \;\text{đến}\; k \;\text{chữ~số} ) \approx p\cdot10^{-k}.
 $$
 
 
@@ -130,7 +130,7 @@ Do đó, nếu gọi độ dài của khoảng này là $\epsilon$, ta có:
 
 
 $$
-P(\text{khoảng cách nằm trong khoảng rộng}\; \epsilon\text{xung quanh}\; 2 ) \approx \epsilon \cdot p.
+P(\text{khoảng~cách~nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; 2 ) \approx \epsilon \cdot p.
 $$
 
 
@@ -151,7 +151,7 @@ Do đó, giá trị $p$ là không cố định, mà phụ thuộc vào điểm 
 Điều này cho thấy ta nên kỳ vọng:
 
 
-$$P(\text{khoảng cách nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(x).$$
+$$P(\text{khoảng~cách~nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; x ) \approx \epsilon \cdot p(x).$$
 :eqlabel:`eq_pdf_deriv`
 
 
@@ -239,7 +239,7 @@ Bây giờ ta hãy tìm hiểu sâu hơn.
 Chúng ta đã quan sát trực quan hàm mật độ xác suất $p(x)$ là gì đối với một biến ngẫu nhiên $X$, cụ thể:
 
 
-$$P(X \; \text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(x).$$
+$$P(X \; \text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; x ) \approx \epsilon \cdot p(x).$$
 :eqlabel:`eq_pdf_def`
 
 
@@ -267,7 +267,7 @@ Thứ hai, hãy tưởng tượng việc cắt $\mathbb{R}$ thành vô số lát
 
 
 $$
-P(X \; \text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x ) \approx \epsilon \cdot p(\epsilon \cdot i),
+P(X \; \text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; x ) \approx \epsilon \cdot p(\epsilon \cdot i),
 $$
 
 
@@ -567,8 +567,8 @@ Bởi sự hữu dụng của kỳ vọng, hãy tổng hợp một vài tính ch
 * If we have two random variables $X$ and $Y$, we have $\mu_{X+Y} = \mu_X+\mu_Y$.
 -->
 
-* Với bất kỳ biến ngẫu nhiên $X$ và hai số $a$ và $b$ nào, $\mu_{aX + b} = a\mu_X + b$.
-* Với hai biến ngẫu nhiên $X$ và $Y$, $\mu_{X + Y} = \mu_X+\mu_Y$.
+* Với biến ngẫu nhiên $X$ và hai số $a$, $b$ bất kỳ: $\mu_{aX + b} = a\mu_X + b$.
+* Với hai biến ngẫu nhiên $X$ và $Y$: $\mu_{X + Y} = \mu_X+\mu_Y$.
 
 <!--
 Means are useful for understanding the average behavior of a random variable, however the mean is not sufficient to even have a full intuitive understanding.
@@ -1202,7 +1202,7 @@ P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and}
 $$ -->
 
 $$
-P(X \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; y ).
+P(X \;\text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; x \; \text{và} \;Y \;\text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; y ).
 $$
 
 <!--
@@ -1217,7 +1217,7 @@ P(X \;\text{is in an}\; \epsilon \text{-sized interval around}\; x \; \text{and}
 $$ -->
 
 $$
-P(X \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; x \; \text{và} \;Y \;\text{nằm trong khoảng rộng}\; \epsilon \text{xung quanh}\; y ) \approx \epsilon^{2}p(x, y),
+P(X \;\text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; x \; \text{và} \;Y \;\text{nằm~trong~khoảng~rộng}\; \epsilon \; \text{xung~quanh}\; y ) \approx \epsilon^{2}p(x, y),
 $$
 
 
