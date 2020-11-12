@@ -53,7 +53,7 @@ Sau khi đăng nhập vào tài khoản AWS, đi tới [bảng điều khiển](
 :label:`fig_sagemaker`
 
 
-
+<!--
 ## Creating a SageMaker Instance
 -->
 
