@@ -8,15 +8,14 @@ assignees: 'duythanhvn'
 ---
 
 ### Mô tả lỗi
-Vui lòng cung cấp một mô tả ngắn gọn, rõ ràng về lỗi bạn gặp phải.
+*Vui lòng cung cấp một mô tả ngắn gọn, rõ ràng về lỗi bạn gặp phải.*
 
+### Đường dẫn đến nội dung có lỗi
+*Đây là yêu cầu bắt buộc*
 
 ### Ảnh chụp màn hình
-Hãy gửi cho chúng tôi ảnh chụp màn hình về lỗi bạn gặp phải.
-![](https://user-images.githubusercontent.com/499192/57450172-1a955f80-725e-11e9-9fed-267179bdab15.gif)
-> Cách gửi hình ảnh lên báo cáo này.
+*Hãy gửi cho chúng tôi ảnh chụp màn hình về lỗi bạn gặp phải.*
 
-Gửi tại đây: 
 
 ### **Desktop (Vui lòng hoàn thiện thông tin như hướng dẫn):**
  - OS: [Ví dụ: iOS]
@@ -28,9 +27,6 @@ Gửi tại đây:
  - OS: [Ví dụ: iOS 8.1]
  - Browser [Ví dụ: Opera, Safari]
  - Phiên bản [Ví dụ: 22]
-
-### Đường dẫn đến nội dung có lỗi
-- 
 
 ### Thông tin thêm
 Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi.
