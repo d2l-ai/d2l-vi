@@ -1,4 +1,4 @@
-Đắm mình vào học sâu
+Đắm mình vào Học Sâu
 ========================
 
 ```eval_rst
@@ -44,5 +44,6 @@ chapter_appendix-tools-for-deep-learning/index_vn
 :maxdepth: 1
 
 chapter_references/zreferences
+ACKNOWLEDGEMENT
 glossary
 ```
