@@ -1,5 +1,3 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ==================== -->
-
 <!--
 # Notation
 -->
@@ -11,7 +9,7 @@
 The notation used throughout this book is summarized below.
 -->
 
-Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dưới đây.
+Các ký hiệu sử dụng trong cuốn sách này được tổng hợp ở dưới đây.
 
 
 <!--
@@ -27,7 +25,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathsf{X}$: A tensor
 * $\mathbf{I}$: An identity matrix
 * $x_i$, $[\mathbf{x}]_i$: The $i^\mathrm{th}$ element of vector $\mathbf{x}$
-* $x_{ij}$, $[\mathbf{X}]_{ij}$: The element of matrix $\mathbf{X}$ at row $i$ and column $j$
+* $x_{ij}$, $x_{i,j}$,$[\mathbf{X}]_{ij}$, $[\mathbf{X}]_{i,j}$: The element of matrix $\mathbf{X}$ at row $i$ and column $j$
 -->
 
 * $x$: một số vô hướng
@@ -36,8 +34,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathsf{X}$: một tensor
 * $\mathbf{I}$: một ma trận đồng nhất
 * $x_i$, $[\mathbf{x}]_i$: phần tử thứ $i$ của vector $\mathbf{x}$
-* $x_{ij}$, $[\mathbf{X}]_{ij}$: phần tử ở hàng thứ $i$, cột thứ $j$ của ma trận $\mathbf{X}$
-
+* $x_{ij}$, $x_{i,j}$,$[\mathbf{X}]_{ij}$, $[\mathbf{X}]_{i,j}$: phần tử ở hàng thứ $i$, cột thứ $j$ của ma trận $\mathbf{X}$
 
 
 <!--
@@ -50,9 +47,11 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 <!--
 * $\mathcal{X}$: A set
 * $\mathbb{Z}$: The set of integers
+* $\mathbb{Z}^+$: The set of positive integers
 * $\mathbb{R}$: The set of real numbers
 * $\mathbb{R}^n$: The set of $n$-dimensional vectors of real numbers
 * $\mathbb{R}^{a\times b}$: The set of matrices of real numbers with $a$ rows and $b$ columns
+* $|\mathcal{X}|$: Cardinality (number of elements) of set $\mathcal{X}$
 * $\mathcal{A}\cup\mathcal{B}$: Union of sets $\mathcal{A}$ and $\mathcal{B}$
 * $\mathcal{A}\cap\mathcal{B}$: Intersection of sets $\mathcal{A}$ and $\mathcal{B}$
 * $\mathcal{A}\setminus\mathcal{B}$: Subtraction of set $\mathcal{B}$ from set $\mathcal{A}$
@@ -60,9 +59,11 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 
 * $\mathcal{X}$: một tập hợp
 * $\mathbb{Z}$: tập hợp các số nguyên
+* $\mathbb{Z}^+$: tập hợp các số nguyên dương
 * $\mathbb{R}$: tập hợp các số thực
 * $\mathbb{R}^n$: tập các vector thực trong không gian $n$ chiều
 * $\mathbb{R}^{a\times b}$: tâp hợp các ma trận thực với $a$ hàng và $b$ cột
+* $|\mathcal{X}|$: card (số phần tử) của tập $\mathcal{X}$
 * $\mathcal{A}\cup\mathcal{B}$: hợp của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
 * $\mathcal{A}\cap\mathcal{B}$: giao của hai tập hợp $\mathcal{A}$ và $\mathcal{B}$
 * $\mathcal{A}\setminus\mathcal{B}$: hiệu của tập $\mathcal{A}$ và tập $\mathcal{B}$ (là tập hợp gồm các phần tử thuộc $\mathcal{A}$ nhưng không thuộc $\mathcal{B}$)
@@ -83,12 +84,14 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathbf{(\cdot)}^\top$: Transpose of a vector or a matrix
 * $\mathbf{X}^{-1}$: Inverse of matrix $\mathbf{X}$
 * $\odot$: Hadamard (elementwise) product
+* $[\cdot, \cdot]$: Concatenation
 * $\lvert \mathcal{X} \rvert$: Cardinality of set $\mathcal{X}$
-* $\|\cdot\|_p$: $\ell_p$ norm
-* $\|\cdot\|$: $\ell_2$ norm
+* $\|\cdot\|_p$: $L_p$ norm
+* $\|\cdot\|$: $L_2$ norm
 * $\langle \mathbf{x}, \mathbf{y} \rangle$: Dot product of vectors $\mathbf{x}$ and $\mathbf{y}$
 * $\sum$: Series addition
 * $\prod$: Series multiplication
+* $\stackrel{\mathrm{def}}{=}$: Definition
 -->
 
 * $f(\cdot)$: một hàm số
@@ -98,12 +101,14 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathbf{(\cdot)}^\top$: chuyển vị của một vector hoặc một ma trận
 * $\mathbf{X}^{-1}$: nghịch đảo của ma trận $\mathbf{X}$
 * $\odot$: tích Hadamard (theo từng thành phần)
+* $[\cdot, \cdot]$: phép ghép
 * $\lvert \mathcal{X} \rvert$: card (số phần tử) của tập $\mathcal{X}$
-* $\|\cdot\|_p$: chuẩn $\ell_p$
-* $\|\cdot\|$: chuẩn $\ell_2$
+* $\|\cdot\|_p$: chuẩn $L_p$
+* $\|\cdot\|$: chuẩn $L_2$
 * $\langle \mathbf{x}, \mathbf{y} \rangle$: tích vô hướng của hai vector  $\mathbf{x}$ và $\mathbf{y}$
 * $\sum$: tổng của một dãy
 * $\prod$: tích của một dãy
+* $\stackrel{\mathrm{def}}{=}$: định nghĩa
 
 
 <!--
@@ -111,6 +116,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 -->
 
 ## Giải tích
+
 
 <!--
 * $\frac{dy}{dx}$: Derivative of $y$ with respect to $x$
@@ -125,6 +131,7 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\nabla_{\mathbf{x}} y$: Gradient của $y$ theo vector $\mathbf{x}$
 * $\int_a^b f(x) \;dx$: tích phân của $f$ từ $a$ đến $b$ theo $x$
 * $\int f(x) \;dx$: nguyên hàm của $f$ theo $x$
+
 
 <!--
 ## Probability and Information Theory
@@ -163,7 +170,6 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $D_{\mathrm{KL}}(P\|Q)$: phân kỳ KL của hai phân phối $P$ và $Q$
 
 
-
 <!--
 ## Complexity
 -->
@@ -177,31 +183,6 @@ Các ký hiệu sử dụng trong cuốn sách này được tổng hợp dướ
 * $\mathcal{O}$: Ký hiệu Big O
 
 
-<!--
-## [Discussions](https://discuss.mxnet.io/t/4367)
--->
-
 ## Thảo luận
-* [Tiếng Anh](https://discuss.mxnet.io/t/4367)
-* [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
-<!--
-![](../img/qr_notation.svg)
--->
-
-<!-- ===================== Kết thúc dịch Phần 1 ==================== -->
-
-## Những người thực hiện
-Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
--->
-
-<!-- Phần 1 -->
-* Vũ Hữu Tiệp
-* Đoàn Võ Duy Thanh
-* Lê Khắc Hồng Phúc
+* Tiếng Anh: [D2L.AI Discussion](https://discuss.d2l.ai/t/25)
+* Tiếng Việt: [Diễn đàn Machine Learning Cơ Bản](https://forum.machinelearningcoban.com/c/d2l), [Github Discussions](https://github.com/mlbvn/d2l-vn/discussions)

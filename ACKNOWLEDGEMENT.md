@@ -16,7 +16,7 @@ Chúng tôi hy vọng rằng cuốn sách này sẽ hữu ích với người h�
 |:-------------|:-----------|:---------------|:----------|:-------------------|
 | Lời nói đầu | Vũ Hữu Tiệp, Sẩm Thế Hải, Ngô Thế Anh Khoa, Trần Thị Hồng Hạnh | Lê Khắc Hồng Phúc, Hoàng Trọng Tuấn, Nguyễn Ngọc Thướng, Phạm Chí Thành, Vũ Đình Quyền | Đoàn Võ Duy Thanh, Lê Khắc Hồng Phúc | #50, #51, #53, #93, #96, #116, #351, #352, #353, #354, #355, #356, #3107 |
 | Cài đặt | Phạm Hồng Vinh, Sẩm Thế Hải, Đoàn Võ Duy Thanh | Lê Khắc Hồng Phúc, Nguyễn Ngọc Thướng, Vũ Hữu Tiệp | Vũ Hữu Tiệp | #108, #109, #125, #348, #2381, #3108 |
-| Ký hiệu | | | | |
+| Ký hiệu | Vũ Hữu Tiệp | Lê Khắc Hồng Phúc, Phạm Hồng Vinh | Đoàn Võ Duy Thanh | #365, #3112 |
 | Giới thiệu | | | | |
 
 ### Chương Sơ bộ
