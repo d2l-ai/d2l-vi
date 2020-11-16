@@ -1,5 +1,25 @@
 # Update Status
 
+### Introduce chapter
+| Files                            | Vietnamese   | Original     |
+|:---------------------------------|:-------------|:-------------|
+| Preface                          | Nov 15, 2020 | Nov 15, 2020 |
+| Installation                     | Nov 15, 2020 | Nov 05, 2020 |
+| Notation                         | Nov 16, 2020 | Aug 25, 2020 |
+| Introduction                     | Nov 17, 2020 | Nov 06, 2020 |
+
+### `chapter_preliminaries`
+| Files                            | Vietnamese   | Original     |
+|:---------------------------------|:-------------|:-------------|
+| index_vn                         |  |  |
+| ndarray_vn                       |  |  |
+| pandas_vn                        |  |  |
+| linear-algebra_vn                |  |  |
+| calculus_vn                      |  |  |
+| autograd_vn                      |  |  |
+| probability_vn                   |  |  |
+| lookup-api_vn                    |  |  |
+
 ### `chapter_appendix-mathematics-for-deep-learning`
 | Files                            | Vietnamese   | Original     |
 |:---------------------------------|:-------------|:-------------|
