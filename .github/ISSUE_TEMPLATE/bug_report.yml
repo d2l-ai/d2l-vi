@@ -1,49 +1,31 @@
-name: Bug Report
-about: File a bug report
+name: 🏷 Báo cáo lỗi
+about: Tạo một báo cáo lỗi để giúp chúng tôi cải thiện chất lượng dự án
 title: "[Bug]: "
-labels: "bug, triage"
-assignees: monalisa
+labels: "type: bug"
+assignees: duythanhvn
 issue_body: true
 inputs:
 - type: description
   attributes:
-    value: Thanks for taking the time to file a bug report! Please fill out this form as completely as possible.
+    value: Cảm ơn bạn đã dành thời gian báo cáo lỗi, lòng hoàn thiện biễu mẫu chi tiết dưới đây.
 - type: input
   attributes:
-    label: What version are you using?
+    label: Đường dẫn đến nội dung có lỗi
     required: true
 - type: dropdown
   attributes:
-    label: How did you download the software?
-    required: true
+    label: Chọn nền tảng bạn đang gặp vấn đề
     choices:
-      - Homebrew
-      - MacPorts
-      - apt-get
-      - Built from source
+      - macOS
+      - Linux/Ubuntu/...
+      - Windows
+      - Apple iOS
+      - Android
+- type: input
+  attributes:
+    label: Nhập thông tin trình duyệt (browsers) của bạn
 - type: textarea
   attributes:
-    label: Expected Behavior
-    description: What did you expect to happen?
-    required: true
-- type: textarea
-  attributes:
-    label: What actually happened?
-    required: true
-- type: multi_select
-  attributes:
-    label: What browsers are you seeing the problem on?
-    choices:
-    - Firefox
-    - Chrome
-    - Safari
-    - Microsoft Edge
-- type: checkboxes
-  attributes: 
-    label: Contributor Checklist
-    description: Please verify that you've followed these steps
-    choices:
-      - label: I have read the Code of Conduct
-        required: true
-      - label: I have read the Contributing Guidelines
-        required: true
+    label: Thông tin thêm
+    description: Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi. (VD: hình ảnh,...)
+
