@@ -27,5 +27,5 @@ inputs:
 - type: textarea
   attributes:
     label: Thông tin thêm
-    description: Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi. (VD: hình ảnh,...)
+    description: Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi, [như hình ảnh]..
 
