@@ -8,24 +8,37 @@ inputs:
 - type: description
   attributes:
     value: Cảm ơn bạn đã dành thời gian báo cáo lỗi, lòng hoàn thiện biễu mẫu chi tiết dưới đây.
+- type: dropdown
+  attributes:
+    label: Bạn gặp lỗi phát sinh từ đâu?
+    required: true
+    choices:
+      - Phiên bản web
+      - PDF
+      - Khác
+- type: description
+  attributes:
+    value: Điền trường thông tin này nếu bạn gặp vấn đề với nội dung trên website
 - type: input
   attributes:
     label: Đường dẫn đến nội dung có lỗi
-    required: true
 - type: dropdown
   attributes:
     label: Chọn nền tảng bạn đang gặp vấn đề
     choices:
       - macOS
-      - Linux/Ubuntu/...
+      - Linux
       - Windows
-      - Apple iOS
+      - iPhoneOS
       - Android
 - type: input
   attributes:
     label: Nhập thông tin trình duyệt (browsers) của bạn
+- type: description
+  attributes:
+    value: Điền trường thông tin này nếu bạn gặp vấn đề với nội dung trên PDF
 - type: textarea
   attributes:
     label: Thông tin thêm
-    description: Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi, [như hình ảnh]..
+    description: Vui lòng cung cấp thêm bất kỳ thông tin nào bạn tin là hữu ích cho chúng tôi, [như hình ảnh mô tả]..
 
