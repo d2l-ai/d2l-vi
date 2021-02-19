@@ -4,19 +4,20 @@ title: "[Bug]: "
 labels: "type: bug"
 assignees: duythanhvn
 issue_body: true
-inputs:
+body:
 - type: description
   attributes:
     value: Cảm ơn bạn đã dành thời gian báo cáo lỗi, lòng hoàn thiện biễu mẫu chi tiết dưới đây.
 - type: dropdown
   attributes:
     label: Bạn gặp lỗi phát sinh từ đâu?
-    required: true
     choices:
       - Phiên bản web
       - PDF
       - Khác
-- type: description
+  validations:
+    required: true
+- type: markdown
   attributes:
     value: Điền trường thông tin này nếu bạn gặp vấn đề với nội dung trên website
 - type: input
@@ -34,7 +35,7 @@ inputs:
 - type: input
   attributes:
     label: Nhập thông tin trình duyệt (browsers) của bạn
-- type: description
+- type: markdown
   attributes:
     value: Điền trường thông tin này nếu bạn gặp vấn đề với nội dung trên PDF
 - type: textarea
