@@ -1,11 +1,8 @@
-<!-- ===================== Bắt đầu dịch Phần 1 ===================== -->
-<!-- ========================================= REVISE PHẦN 1 - BẮT ĐẦU =================================== -->
-
 <!--
 # Implementation of Softmax Regression from Scratch
 -->
 
-# Lập trình Hồi quy Sofmax từ đầu
+# Lập trình Hồi quy Softmax từ đầu
 :label:`sec_softmax_scratch`
 
 <!--
@@ -87,10 +84,6 @@ W.attach_grad()
 b.attach_grad()
 ```
 
-<!-- ===================== Kết thúc dịch Phần 1 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
-
 <!--
 ## The Softmax
 -->
@@ -167,14 +160,6 @@ X_prob = softmax(X)
 X_prob, X_prob.sum(axis=1)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 2 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 3 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 2 - BẮT ĐẦU ===================================-->
-
 <!--
 ## The Model
 -->
@@ -237,10 +222,6 @@ Bây giờ chúng ta có thể lập trình hàm mất mát entropy chéo hiệu
 def cross_entropy(y_hat, y):
     return - np.log(y_hat[range(len(y_hat)), y])
 ```
-
-<!-- ===================== Kết thúc dịch Phần 3 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 4 ===================== -->
 
 <!--
 ## Classification Accuracy
@@ -362,14 +343,6 @@ Vì ta đã khởi tạo mô hình `net` với trọng số ngẫu nhiên nên �
 ```{.python .input  n=14}
 evaluate_accuracy(net, test_iter)
 ```
-
-<!-- ===================== Kết thúc dịch Phần 4 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 5 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================-->
-
-<!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================-->
 
 <!--
 ## Model Training
@@ -497,10 +470,6 @@ def updater(batch_size):
 train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, updater)
 ```
 
-<!-- ===================== Kết thúc dịch Phần 5 ===================== -->
-
-<!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
-
 <!--
 ## Prediction
 -->
@@ -568,10 +537,6 @@ Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý
 4. Việc trả về nhãn có khả năng nhất có phải lúc nào cũng là ý tưởng tốt không? Ví dụ, bạn có dùng phương pháp này cho chẩn đoán bệnh hay không?
 5. Giả sử rằng chúng ta muốn sử dụng hồi quy softmax để dự đoán từ tiếp theo dựa vào một số đặc trưng. Những vấn đề gì có thể xảy ra nếu dùng một tập từ vựng lớn?
 
-<!-- ===================== Kết thúc dịch Phần 6 ===================== -->
-
-<!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================-->
-
 <!--
 ## [Discussions](https://discuss.mxnet.io/t/2336)
 -->
@@ -580,22 +545,7 @@ Vấn đề gì có thể xảy ra với cách lập trình như vậy (gợi ý
 * [Tiếng Anh](https://discuss.mxnet.io/t/2336)
 * [Tiếng Việt](https://forum.machinelearningcoban.com/c/d2l)
 
-<!--
-![](../img/qr_softmax-regression-scratch.svg)
--->
-
 ## Những người thực hiện
-Bản dịch trong trang này được thực hiện bởi:
-<!--
-Tác giả của mỗi Pull Request điền tên mình và tên những người review mà bạn thấy
-hữu ích vào từng phần tương ứng. Mỗi dòng một tên, bắt đầu bằng dấu `*`.
-
-Lưu ý:
-* Nếu reviewer không cung cấp tên, bạn có thể dùng tên tài khoản GitHub của họ
-với dấu `@` ở đầu. Ví dụ: @aivivn.
-
-* Tên đầy đủ của các reviewer có thể được tìm thấy tại https://github.com/aivivn/d2l-vn/blob/master/docs/contributors_info.md.
--->
 
 * Đoàn Võ Duy Thanh
 * Bùi Nhật Quân
