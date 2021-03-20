@@ -23,7 +23,7 @@ Cuốn này hội tụ đủ các yếu tố: có giải thích toán dễ hiể
 cập nhật đầy đủ những khía cạnh của học sâu, và quan trọng nhất là không đòi hỏi bản quyền để dịch.
 Chúng tôi đã liên hệ với nhóm tác giả và họ rất vui mừng khi cuốn sách sắp được phổ biến rộng rãi hơn nữa.
 
-Hiện cuốn sách vẫn đang được thực hiện và cập nhật nội dụng dựa trên phiên bản `0.15.0` mới nhất.
+Hiện cuốn sách đang được cập nhật nội dụng dựa trên phiên bản `0.16.0` mới nhất.
 Chúng tôi cũng chọn bản này vì nó sử dụng thư viện chính là `Numpy` (được tích hợp trong MXNet), một thư viện xử lý mảng nhiều chiều phổ biến mà theo chúng tôi –
 người làm về học máy, học sâu và khoa học dữ liệu cần biết.
 Và chúng tôi cũng đang cập nhật dần những thư viện khác như `Pytorch` và `TensorFlow` vào nhằm đa dạng hóa lựa chọn hơn cho độc giả.
@@ -39,10 +39,3 @@ Các bạn có thể tham gia thảo luận nội dung và bài tập của cu�
 **[tại đây](https://forum.machinelearningcoban.com/c/d2l)**.
 
 Ngoài ra, bạn cũng có thể thảo luận với nhóm dịch ở trên **[Github Discussions](https://github.com/mlbvn/d2l-vn/discussions)**.
-
-### Những câu hỏi thường gặp
-#### 1. Cuốn sách này có bản song ngữ hay không?
-Không, chúng tôi không có kế hoạch thực hiện bản song ngữ cho cuốn sách này. Bạn có thể xem nội dung tiếng Anh **[tại đây](https://d2l.ai/)**.
-
-#### 2. Cuốn sách này có bản PDF hay không?
-Có, chúng tôi sẽ có bản PDF sau khi đã hoàn thiện toàn bộ nội dung cuốn sách này.
