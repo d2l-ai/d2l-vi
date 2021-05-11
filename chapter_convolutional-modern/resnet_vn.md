@@ -30,15 +30,17 @@ That is, for all $f \in \mathcal{F}$ there exists some set of parameters $W$ tha
 Let us assume that $f^*$ is the function that we really would like to find.
 If it is in $\mathcal{F}$, we are in good shape but typically we will not be quite so lucky.
 Instead, we will try to find some $f^*_\mathcal{F}$ which is our best bet within $\mathcal{F}$.
-For instance, we might try finding it by solving the following optimization problem:
+For instance, given a dataset with features $\mathbf{X}$ and labels $\mathbf{y}$,
+we might try finding it by solving the following optimization problem:
 -->
 
 Coi $\mathcal{F}$ là một lớp các hàm mà một kiến trúc mạng cụ thể (cùng với tốc độ học và các siêu tham số khác) có thể đạt được.
 Nói cách khác, với mọi hàm số $f \in \mathcal{F}$, luôn tồn tại một số tập tham số $W$ có thể tìm được bằng việc huấn luyện trên một tập dữ liệu phù hợp.
 Giả sử $f^*$ là hàm cần tìm.
-Sẽ rất thuận lợi nếu hàm này thuộc tập $\mathcal{F}$, nhưng thường không may mắn như vậy. 
-Thay vào đó, ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.  
-Ví dụ, có thể thử tìm $f^*_\mathcal{F}$ bằng cách giải bài toán tối ưu sau:
+Sẽ rất thuận lợi nếu hàm này thuộc tập $\mathcal{F}$, nhưng thường không may mắn như vậy.
+Thay vào đó, ta sẽ cố gắng tìm các hàm số $f^*_\mathcal{F}$ tốt nhất có thể trong tập $\mathcal{F}$.
+Ví dụ, với tập dữ liệu có đặc trưng $\mathbf{X}$ và nhãn $\mathbf{y}$,
+có thể thử tìm $f^*_\mathcal{F}$ bằng cách giải bài toán tối ưu sau:
 
 $$f^*_\mathcal{F} := \mathop{\mathrm{argmin}}_f L(X, Y, f) \text{ đối~tượng~thoả~mãn } f \in \mathcal{F}.$$
 
@@ -47,51 +49,47 @@ It is only reasonable to assume that if we design a different and more powerful 
 In other words, we would expect that $f^*_{\mathcal{F}'}$ is "better" than $f^*_{\mathcal{F}}$.
 However, if $\mathcal{F} \not\subseteq \mathcal{F}'$ there is no guarantee that this should even happen.
 In fact, $f^*_{\mathcal{F}'}$ might well be worse.
-This is a situation that we often encounter in practice---adding layers does not only make the network more expressive, it also changes it in sometimes not quite so predictable ways. :numref:`fig_functionclasses`illustrates this in slightly abstract terms.
+As illustrated by :numref:`fig_functionclasses`, for non-nested function classes, a larger function class does not always move closer to the "truth" function $f^*$.
+For instance, on the left of :numref:`fig_functionclasses`, though $\mathcal{F}_3$ is closer to $f^*$ than $\mathcal{F}_1$, $\mathcal{F}_6$ moves away and there is no guarantee that further increasing the complexity can reduce the distance from $f^*$.
+With nested function classes where $\mathcal{F}_1 \subseteq \ldots \subseteq \mathcal{F}_6$ on the right of :numref:`fig_functionclasses`, we can avoid the aforementioned issue from the non-nested function classes.
 -->
 
 Khá hợp lý khi giả sử rằng nếu thiết kế một kiến trúc khác $\mathcal{F}'$ mạnh mẽ hơn thì sẽ đạt được kết quả tốt hơn.
 Nói cách khác, ta kỳ vọng hàm số $f^*_{\mathcal{F}'}$ sẽ "tốt hơn" $f^*_{\mathcal{F}}$.
 Tuy nhiên, nếu $\mathcal{F} \not\subseteq \mathcal{F}'$, thì không khẳng định được $f^*_{\mathcal{F}'}$ "tốt hơn" $f^*_{\mathcal{F}}$.
 Trên thực tế, $f^*_{\mathcal{F}'}$ có thể còn tệ hơn.
-Và đây là trường hợp thường xuyên xảy ra --- việc thêm các tầng không phải lúc nào cũng tăng tính biểu diễn của mạng mà đôi khi còn tạo ra những thay đổi rất khó lường.
-:numref:`fig_functionclasses` minh hoạ rõ hơn điều này.
+Như minh họa trong :numref:`fig_functionclasses`, với các lớp hàm số tổng quát, phần lớn các lớp hàm số không phải lúc nào cũng tiến tới hàm "gốc" $f^*$.
+Ví dụ, như bên trái :numref:`fig_functionclasses`, dù $\mathcal{F}_3$ gần $f^*$ hơn so với $\mathcal{F}_1$, $\mathcal{F}_6$ lại cách xa hơn và không thể đảm bảo rằng việc tiếp tục tăng độ phức tạp có thể giảm khoảng cách tới $f^*$.
+Với các lớp hàm số lồng nhau khi $\mathcal{F}_1 \subseteq \ldots \subseteq \mathcal{F}_6$ như bên phải :numref:`fig_functionclasses`, ta có thể tránh vấn đề đối với các lớp hàm số tổng quát như đã nêu.
 
 <!--
-![Left: non-nested function classes. The distance may in fact increase as the complexity increases. Right: with nested function classes this does not happen.](../img/functionclasses.svg)
+![For non-nested function classes, a larger (indicated by area) function class does not guarantee to get closer to the "truth" function ($f^*$). This does not happen in nested function classes.](../img/functionclasses.svg)
 -->
 
-![Hình trái: Các lớp hàm số tổng quát. Khoảng cách đến hàm cần tìm $f^*$ (ngôi sao), trên thực tế có thể tăng khi độ phức tạp tăng lên. Hình phải: với các lớp hàm số lồng nhau, điều này không xảy ra.](../img/functionclasses.svg)
+![Với các hàm số tổng quát, phần lớn (biểu diễn bởi phần diện tích) lớp hàm số không đảm bảo sẽ tiến gần tới hàm "gốc" ($f^*$). Vấn đề này không xảy ra đối với các lớp hàm lồng nhau.](../img/functionclasses.svg)
 :label:`fig_functionclasses`
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
 <!-- ===================== Bắt đầu dịch Phần 2 ===================== -->
 
-<!--
-Only if larger function classes contain the smaller ones are we guaranteed that increasing them strictly increases the expressive power of the network.
-This is the question that He et al, 2016 considered when working on very deep computer vision models.
-At the heart of ResNet is the idea that every additional layer should contain the identity function as one of its elements.
-This means that if we can train the newly-added layer into an identity mapping $f(\mathbf{x}) = \mathbf{x}$, the new model will be as effective as the original model.
-As the new model may get a better solution to fit the training dataset, the added layer might make it easier to reduce training errors.
-Even better, the identity function rather than the null $f(\mathbf{x}) = 0$ should be the simplest function within a layer.
--->
+<!-- Thus, only if larger function classes contain the smaller ones are we guaranteed that increasing them strictly increases the expressive power of the network.
+For deep neural networks, if we can train the newly-added layer into an identity function $f(\mathbf{x}) = \mathbf{x}$, the new model will be as effective as the original model.
+As the new model may get a better solution to fit the training dataset, the added layer might make it easier to reduce training errors. -->
 
-Chỉ khi các lớp hàm lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của mạng.
-Đây là câu hỏi mà He và các cộng sự đã suy nghĩ khi nghiên cứu các mô hình thị giác sâu năm 2016.
-Ý tưởng trọng tâm của ResNet là mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất. 
-Điều này có nghĩa rằng, nếu ta huấn luyện tầng mới được thêm vào thành một ánh xạ đồng nhất $f(\mathbf{x}) = \mathbf{x}$, thì mô hình mới sẽ hiệu quả ít nhất bằng mô hình ban đầu.
-Vì tầng được thêm vào có thể khớp dữ liệu huấn luyện tốt hơn, dẫn đến sai số huấn luyện cũng nhỏ hơn.
-Tốt hơn nữa, hàm số đồng nhất nên là hàm đơn giản nhất trong một tầng thay vì hàm null $f(\mathbf{x}) = 0$.
+Do đó, chỉ khi các lớp hàm lớn hơn chứa các lớp nhỏ hơn, thì mới đảm bảo rằng việc tăng thêm các tầng sẽ tăng khả năng biểu diễn của mạng.
+Với mạng nơ-ron sâu, nếu ta có thể huấn luyện cho tầng mới được thêm vào thành hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$, mô hình mới sẽ có hiệu quả y hệt mô hình ban đầu.
+Do mô hình mới có thể tìm ra giải pháp tốt hơn nhằm khớp tập huấn luyện, tầng được thêm vào có lẽ sẽ giúp giảm lỗi huấn luyện.
 
-<!--
-These considerations are rather profound but they led to a surprisingly simple solution, a residual block.
-With it, :cite:`He.Zhang.Ren.ea.2016` won the ImageNet Visual Recognition Challenge in 2015.
-The design had a profound influence on how to build deep neural networks.
--->
+<!-- This is the question that He et al. considered when working on very deep computer vision models :cite:`He.Zhang.Ren.ea.2016`.
+At the heart of their proposed *residual network* (*ResNet*) is the idea that every additional layer should more easily contain the identity function as one of its elements.
+These considerations are rather profound but they led to a surprisingly simple solution, a *residual block*.
+With it, ResNet won the ImageNet Large Scale Visual Recognition Challenge in 2015. The design had a profound influence on how to build deep neural networks. -->
 
-Cách suy nghĩ này khá trừu tượng nhưng lại dẫn đến một lời giải đơn giản đáng ngạc nhiên, một khối phần dư (*residual block*).
-Với ý tưởng này, :cite:`He.Zhang.Ren.ea.2016` đã chiến thắng cuộc thi Nhận dạng Ảnh ImageNet năm 2015.
+Đây là câu hỏi mà He và các cộng sự đã suy nghĩ khi nghiên cứu các mô hình thị giác sâu :cite:`He.Zhang.Ren.ea.2016`.
+Ý tưởng trọng tâm của *mạng phần dư* (*residual network* - *ResNet*) là mỗi tầng được thêm vào nên có một thành phần là hàm số đồng nhất.
+Cách suy nghĩ này khá trừu tượng nhưng lại dẫn đến một lời giải đơn giản đáng ngạc nhiên, một *khối phần dư* (*residual block*).
+Với ý tưởng này, ResNet đã chiến thắng cuộc thi Nhận dạng Ảnh ImageNet năm 2015.
 Thiết kế này có ảnh hưởng sâu sắc tới việc xây dựng các mạng nơ-ron sâu.
 
 <!--
@@ -101,34 +99,31 @@ Thiết kế này có ảnh hưởng sâu sắc tới việc xây dựng các m�
 ## Khối phần dư
 
 <!--
-Let us focus on a local neural network, as depicted below.
+Let us focus on a local part of a neural network, as depicted in :numref:`fig_residual_block`.
 Denote the input by $\mathbf{x}$.
-We assume that the ideal mapping we want to obtain by learning is $f(\mathbf{x})$, to be used as the input to the activation function.
-The portion within the dotted-line box in the left image must directly fit the mapping $f(\mathbf{x})$.
-This can be tricky if we do not need that particular layer and we would much rather retain the input $\mathbf{x}$.
-The portion within the dotted-line box in the right image now only needs to parametrize the *deviation* from the identity, since we return $\mathbf{x} + f(\mathbf{x})$.
-In practice, the residual mapping is often easier to optimize.
-We only need to set $f(\mathbf{x}) = 0$.
-The right image in :numref:`fig_residual_block` illustrates the basic Residual Block of ResNet.
-Similar architectures were later proposed for sequence models which we will study later.
--->
+We assume that the desired underlying mapping we want to obtain by learning is $f(\mathbf{x})$, to be used as the input to the activation function on the top.
+On the left of :numref:`fig_residual_block`, the portion within the dotted-line box must directly learn the mapping $f(\mathbf{x})$.
+On the right, the portion within the dotted-line box needs to learn the *residual mapping* $f(\mathbf{x}) - \mathbf{x}$, which is how the residual block derives its name.
+If the identity mapping $f(\mathbf{x}) = \mathbf{x}$ is the desired underlying mapping, the residual mapping is easier to learn:
+we only need to push the weights and biases of the upper weight layer (e.g., fully-connected layer and convolutional layer) within the dotted-line box to zero.
+The right figure in :numref:`fig_residual_block` illustrates the  *residual block* of ResNet, where the solid line carrying the layer input $\mathbf{x}$ to the addition operator is called a *residual connection* (or *shortcut connection*).
+With residual blocks, inputs can forward propagate faster through the residual connections across layers. -->
 
-Bây giờ, hãy tập trung vào mạng nơ-ron dưới đây.
+Bây giờ, hãy tập trung vào một phần của mạng nơ-ron, như mô tả trong :numref:`fig_residual_block`.
 Ký hiệu đầu vào là $\mathbf{x}$.
-Giả sử ánh xạ lý tưởng muốn học được là $f(\mathbf{x})$, và được dùng làm đầu vào của hàm kích hoạt.
-Phần nằm trong viền nét đứt bên trái phải khớp trực tiếp với ánh xạ $f(\mathbf{x})$.
-Điều này có thể không đơn giản nếu chúng ta không cần khối đó và muốn giữ lại đầu vào $\mathbf{x}$.
-Khi đó, phần nằm trong viền nét đứt bên phải chỉ cần tham số hoá *độ lệch* khỏi giá trị $\mathbf{x}$, bởi vì ta đã trả về $\mathbf{x} + f(\mathbf{x})$.
-Trên thực tế, ánh xạ phần dư thường dễ tối ưu hơn,
-vì chỉ cần đặt $f(\mathbf{x}) = 0$.
-Nửa bên phải :numref:`fig_residual_block` mô tả khối phần dư cơ bản của ResNet.
-Về sau, những kiến trúc tương tự đã được đề xuất cho các mô hình chuỗi (*sequence model*), sẽ đề cập ở chương sau.
+Giả sử ánh xạ lý tưởng cơ bản ta muốn học là $f(\mathbf{x})$, và được dùng làm đầu vào của hàm kích hoạt.
+Bên trái :numref:`fig_residual_block`, phần nằm trong viền nét đứt phải khớp trực tiếp với ánh xạ $f(\mathbf{x})$.
+Phía bên phải, phần nằm trong viền nét đứt cần học *ánh xạ phần dư* $f(\mathbf{x}) - \mathbf{x}$, do đó khối phần dư được đặt tên như vậy.
+Nếu ánh xạ đồng nhất $f(\mathbf{x}) = \mathbf{x}$ là ánh xạ lý tưởng cơ bản, ánh xạ phần dư sẽ được học dễ dàng hơn:
+ta chỉ cần gán trọng số và độ chệch của tầng trọng số phía trên (tức là tầng kết nối đầy đủ và tầng tích chập) nằm trong viền nét đứt bằng 0.
+Bên phải hình vẽ trong :numref:`fig_residual_block` minh họa *khối phần dư* của ResNet, với đầu vào $\mathbf{x}$ đi theo đường liền nét tới phương tức cộng được gọi là *liên kết phần dư* (hay *liên kết tắt* - *shortcut connection*).
+Với các khối phần dư, đầu vào có thể được truyền xuôi nhanh hơn tới các liên kết phần dư giữa các tầng.
 
 <!--
-![The difference between a regular block (left) and a residual block (right). In the latter case, we can short-circuit the convolutions.](../img/residual-block.svg)
+![A regular block (left) and a residual block (right).](../img/residual-block.svg)
 -->
 
-![Sự khác biệt giữa một khối thông thường (trái) và một khối phần dư (phải). Trong khối phần dư, ta có thể nối tắt các tích chập.](../img/residual-block.svg)
+![Một khối bình thường (trái) và một khối phần dư (phải).](../img/residual-block.svg)
 :label:`fig_residual_block`
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
@@ -364,18 +359,16 @@ for layer in net:
 <!-- ===================== Bắt đầu dịch Phần 6 ===================== -->
 
 <!--
-## Data Acquisition and Training
+## Training
 -->
 
-## Thu thập dữ liệu và Huấn luyện 
+## Huấn luyện
 
 <!--
 We train ResNet on the Fashion-MNIST dataset, just like before.
-The only thing that has changed is the learning rate that decreased again, due to the more complex architecture.
 -->
 
 Giống như các phần trước, chúng ta huấn luyện ResNet trên bộ dữ liệu Fashion-MNIST.
-Thay đổi duy nhất là giảm tốc độ học lại do kiến trúc mạng phức tạp hơn.
 
 ```{.python .input}
 lr, num_epochs, batch_size = 0.05, 10, 256
@@ -390,15 +383,15 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Tóm tắt
 
 <!--
-* Residual blocks allow for a parametrization relative to the identity function $f(\mathbf{x}) = \mathbf{x}$.
-* Adding residual blocks increases the function complexity in a well-defined manner.
-* We can train an effective deep neural network by having residual blocks pass through cross-layer data channels.
+* Nested function classes are desirable. Learning an additional layer in deep neural networks as an identity function (though this is an extreme case) should be made easy.
+* The residual mapping can learn the identity function more easily, such as pushing parameters in the weight layer to zero.
+* We can train an effective deep neural network by having residual blocks. Inputs can forward propagate faster through the residual connections across layers.
 * ResNet had a major influence on the design of subsequent deep neural networks, both for convolutional and sequential nature.
 -->
 
-* Khối phần dư cho phép tham số hóa đến hàm đồng nhất $f(\mathbf{x}) = \mathbf{x}$.
-* Thêm các khối phần dư làm tăng độ phức tạp của hàm số theo một cách chủ đích.
-* Chúng ta có thể huấn luyện hiệu quả mạng nơ-ron sâu nhờ khối phần dư chuyển dữ liệu liên tầng.
+* Các lớp hàm số lồng nhau là lý tưởng. Việc học thêm một tầng trong mạng nơ-ron sâu ví dụ như hàm đồng nhất (dù đây là trường hợp cực hạn) nên được thực hiện một cách dễ dàng.
+* Ánh xạ phần dư có thể dễ dàng học hàm đồng nhất hơn, bằng cách gán cho các tham số của tầng trọng số bằng 0.
+* Chúng ta có thể huấn luyện mạng nơ-ron sâu một cách hiệu quả nhờ khối phần dư. Đầu vào có thể được truyền xuôi nhanh hơn thông qua các liên kết phần dư giữa các tầng.
 * ResNet có ảnh hưởng lớn đến thiết kế sau này của các mạng nơ-ron sâu, cả tích chập và tuần tự.
 
 <!--
@@ -408,18 +401,18 @@ d2l.train_ch6(net, train_iter, test_iter, num_epochs, lr)
 ## Bài tập
 
 <!--
-1. Refer to Table 1 in the :cite:`He.Zhang.Ren.ea.2016` to implement different variants.
-2. For deeper networks, ResNet introduces a "bottleneck" architecture to reduce model complexity. Try to implement it.
-3. In subsequent versions of ResNet, the author changed the "convolution, batch normalization, and activation" architecture to the "batch normalization,
+1. What are the major differences between the Inception block in :numref:`fig_inception` and the residual block? After removing some paths in the Inception block, how are they related to each other?
+2. Refer to Table 1 in the :cite:`He.Zhang.Ren.ea.2016` to implement different variants.
+3. For deeper networks, ResNet introduces a "bottleneck" architecture to reduce model complexity. Try to implement it.
+4. In subsequent versions of ResNet, the author changed the "convolution, batch normalization, and activation" architecture to the "batch normalization,
    activation, and convolution" architecture. Make this improvement yourself. See Figure 1 in :cite:`He.Zhang.Ren.ea.2016*1` for details.
-4. Prove that if $\mathbf{x}$ is generated by a ReLU, the ResNet block does indeed include the identity function.
 5. Why cannot we just increase the complexity of functions without bound, even if the function classes are nested?
 -->
 
-1. Tham khảo Bảng 1 trong :cite:`He.Zhang.Ren.ea.2016` để lập trình các biến thể khác nhau.
-2. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "thắt cổ chai" để giảm độ phức tạp của mô hình. Hãy thử lập trình kiến trúc đó.
-3. Trong các phiên bản sau của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình kiến trúc này. Xem hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
-4. Chứng minh rằng nếu $\mathbf{x}$ được tạo ra bởi ReLU thì khối ResNet sẽ bao gồm hàm số đồng nhất.
+1. Các sự khác nhau chính giữa khối Inception trong :numref:`fig_inception` và khối phần dư là gì? Sau khi loại bỏ một số đường trong khối Inception, chúng liên hệ với nhau như thế nào?
+2. Tham khảo Bảng 1 trong :cite:`He.Zhang.Ren.ea.2016` để lập trình các biến thể khác nhau.
+3. Đối với các mạng sâu hơn, ResNet giới thiệu kiến trúc "thắt cổ chai" để giảm độ phức tạp của mô hình. Hãy thử lập trình kiến trúc đó.
+4. Trong các phiên bản sau của ResNet, tác giả đã thay đổi kiến trúc "tích chập, chuẩn hóa theo batch, và hàm kích hoạt" thành "chuẩn hóa theo batch, hàm kích hoạt, và tích chập". Hãy tự lập trình kiến trúc này. Xem hình 1 trong :cite:`He.Zhang.Ren.ea.2016*1` để biết chi tiết.
 5. Tại sao không thể tăng không giới hạn độ phức tạp của các hàm số, ngay cả với các lớp hàm lồng nhau?
 
 <!-- ===================== Kết thúc dịch Phần 6 ===================== -->
@@ -440,3 +433,4 @@ Bản dịch trong trang này được thực hiện bởi:
 * Nguyễn Đình Nam
 * Phạm Minh Đức
 * Phạm Hồng Vinh
+* Đỗ Trường Giang
