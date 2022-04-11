@@ -6,44 +6,45 @@
    :file: frontpage.html
 ```
 
+
 ```toc
 :maxdepth: 1
 
-intro_vn
-chapter_preface/index_vn
-chapter_install/index_vn
-chapter_notation/index_vn
+chapter_preface/index
+chapter_installation/index
+chapter_notation/index
 ```
+
 
 ```toc
 :maxdepth: 2
 :numbered:
 
-chapter_introduction/index_vn
-chapter_preliminaries/index_vn
-chapter_linear-networks/index_vn
-chapter_multilayer-perceptrons/index_vn
-chapter_deep-learning-computation/index_vn
-chapter_convolutional-neural-networks/index_vn
-chapter_convolutional-modern/index_vn
-chapter_recurrent-neural-networks/index_vn
-chapter_recurrent-modern/index_vn
-chapter_attention-mechanisms/index_vn
-chapter_optimization/index_vn
-chapter_computational-performance/index_vn
-chapter_computer-vision/index_vn
-chapter_natural-language-processing-pretraining/index_vn
-chapter_natural-language-processing-applications/index_vn
-chapter_recommender-systems/index_vn
-chapter_generative-adversarial-networks/index_vn
-chapter_appendix-mathematics-for-deep-learning/index_vn
-chapter_appendix-tools-for-deep-learning/index_vn
+chapter_introduction/index
+chapter_preliminaries/index
+chapter_linear-networks/index
+chapter_multilayer-perceptrons/index
+chapter_deep-learning-computation/index
+chapter_convolutional-neural-networks/index
+chapter_convolutional-modern/index
+chapter_recurrent-neural-networks/index
+chapter_recurrent-modern/index
+chapter_attention-mechanisms/index
+chapter_optimization/index
+chapter_computational-performance/index
+chapter_computer-vision/index
+chapter_natural-language-processing-pretraining/index
+chapter_natural-language-processing-applications/index
+chapter_recommender-systems/index
+chapter_generative-adversarial-networks/index
+chapter_appendix-mathematics-for-deep-learning/index
+chapter_appendix-tools-for-deep-learning/index
+
 ```
+
 
 ```toc
 :maxdepth: 1
 
 chapter_references/zreferences
-ACKNOWLEDGEMENT
-glossary
 ```
