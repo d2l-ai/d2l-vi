@@ -172,7 +172,7 @@ Sau khi đã định nghĩa tất cả các hàm, ta tạo một lớp để bao
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 class RNNModelScratch:
     """A RNN Model based on scratch implementations."""
 
@@ -238,7 +238,7 @@ Hàm này dự đoán `num_predicts` ký tự tiếp theo dựa trên `prefix` (
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def predict_ch8(prefix, num_predicts, model, vocab, ctx):
     state = model.begin_state(batch_size=1, ctx=ctx)
     outputs = [vocab[prefix[0]]]
@@ -346,7 +346,7 @@ Lưu ý rằng ta tính chuẩn của gradient trên tất cả các tham số.
 
 
 ```{.python .input  n=10}
-# Saved in the d2l package for later use
+#@save
 def grad_clipping(model, theta):
     if isinstance(model, gluon.Block):
         params = [p.data() for p in model.collect_params().values()]
@@ -407,7 +407,7 @@ Giống như hàm `train_epoch_ch3` trong :numref:`sec_softmax_scratch`, ta sử
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def train_epoch_ch8(model, train_iter, loss, updater, ctx, use_random_iter):
     state, timer = None, d2l.Timer()
     metric = d2l.Accumulator(2)  # loss_sum, num_examples
@@ -439,7 +439,7 @@ Hàm huấn luyện này hỗ trợ cả mô hình sử dụng Gluon và mô hì
 
 
 ```{.python .input  n=11}
-# Saved in the d2l package for later use
+#@save
 def train_ch8(model, train_iter, vocab, lr, num_epochs, ctx,
               use_random_iter=False):
     # Initialize

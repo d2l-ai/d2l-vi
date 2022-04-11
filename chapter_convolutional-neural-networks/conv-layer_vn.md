@@ -99,8 +99,10 @@ Hàm này nhận mảng đầu vào `X` với mảng hạt nhân `K` và trả v
 from mxnet import autograd, np, npx
 from mxnet.gluon import nn
 npx.set_np()
+```
 
-# Saved in the d2l package for later use
+```{.python .input}
+#@save
 def corr2d(X, K):
     """Compute 2D cross-correlation."""
     h, w = K.shape

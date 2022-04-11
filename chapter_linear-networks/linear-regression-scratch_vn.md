@@ -81,7 +81,7 @@ Chúng ta sẽ mặc định các giả định tiêu chuẩn đều thỏa mãn
 Đoạn mã nguồn sau sẽ tạo ra tập dữ liệu tổng hợp:
 
 ```{.python .input  n=2}
-# Saved in the d2l package for later use
+#@save
 def synthetic_data(w, b, num_examples):
     """Generate y = X w + b + noise."""
     X = np.random.normal(0, 1, (num_examples, len(w)))
@@ -275,7 +275,7 @@ Nhắc lại rằng để tính đầu ra của một mô hình tuyến tính, t
 Nhắc lại rằng khi tính tổng vector và số vô hướng, thì số vô hướng sẽ được cộng vào từng phần tử của vector. 
 
 ```{.python .input  n=9}
-# Saved in the d2l package for later use
+#@save
 def linreg(X, w, b):
     return np.dot(X, w) + b
 ```
@@ -307,7 +307,7 @@ Trên thực tế, chúng ta cần chuyển đổi giá trị nhãn thật `y` s
 Hàm dưới đây sẽ trả về kết quả có kích thước tương đương với kích thước của `y_hat`.
 
 ```{.python .input  n=10}
-# Saved in the d2l package for later use
+#@save
 def squared_loss(y_hat, y):
     return (y_hat - y.reshape(y_hat.shape)) ** 2 / 2
 ```
@@ -353,7 +353,7 @@ Bởi vì các mất mát được tính dựa trên tổng các mẫu của bat
 
 
 ```{.python .input  n=11}
-# Saved in the d2l package for later use
+#@save
 def sgd(params, lr, batch_size):
     for param in params:
         param[:] = param - lr * param.grad / batch_size

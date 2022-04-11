@@ -665,7 +665,7 @@ Let's first implement a function to evaluate the loss on a given data.
 Trước tiên ta lập trình hàm để tính giá trị mất mát của dữ liệu cho trước.
 
 ```{.python .input  n=4}
-# Saved in the d2l package for later use
+#@save
 def evaluate_loss(net, data_iter, loss):
     """Evaluate the loss of a model on the given dataset."""
     metric = d2l.Accumulator(2)  # sum_loss, num_examples

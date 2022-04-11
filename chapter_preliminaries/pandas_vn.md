@@ -34,18 +34,18 @@ Nhiều kỹ thuật tiền xử lý dữ liệu khác sẽ được giới thi�
 As an example, we begin by creating an artificial dataset that is stored in a csv (comma-separated values) file `../data/house_tiny.csv`. 
 Data stored in other formats may be processed in similar ways. 
 The following `mkdir_if_not_exist` function ensures that the directory `../data` exists. 
-The comment `# Saved in the d2l package for later use` is a special mark where the following function, class, or import statements are also saved in the `d2l` package so that we can directly invoke `d2l.mkdir_if_not_exist()` later.
+The comment `#@save` is a special mark where the following function, class, or import statements are also saved in the `d2l` package so that we can directly invoke `d2l.mkdir_if_not_exist()` later.
 -->
 
 Để lấy ví dụ, ta bắt đầu bằng việc tạo một tập dữ liệu nhân tạo lưu trong file csv  `../data/house_tiny.csv` (csv - *comma-separated values - giá trị tách nhau bằng dấu phẩy*).
 Dữ liệu lưu ở các định dạng khác cũng có thể được xử lý tương tự.
 Hàm `mkdir_if_not_exist` dưới đây để đảm bảo rằng thư mục `../data` tồn tại.
-Chú thích `# Saved in the d2l package for later use` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh `import` được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
+Chú thích `#@save` (*Lưu lại trong gói d2l để dùng sau*) là kí hiệu đánh dấu các hàm, lớp hoặc các lệnh `import` được lưu trong gói `d2l`, để sau này ta có thể trực tiếp gọi hàm `d2l.mkdir_if_not_exist()`.
 
 ```{.python .input}
 import os
 
-# Saved in the d2l package for later use
+#@save
 def mkdir_if_not_exist(path):
     if not isinstance(path, str):
         path = os.path.join(*path)

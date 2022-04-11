@@ -52,8 +52,10 @@ Bộ mã hoá là một mạng nơ-ron thông thường, nhận đầu vào, ví
 
 ```{.python .input  n=2}
 from mxnet.gluon import nn
+```
 
-# Saved in the d2l package for later use
+```{.python .input}
+#@save
 class Encoder(nn.Block):
     """The base encoder interface for the encoder-decoder architecture."""
     def __init__(self, **kwargs):
@@ -82,7 +84,7 @@ Nó trả về đầu ra với trạng thái nhiều khả năng đã thay đổ
 
 
 ```{.python .input  n=3}
-# Saved in the d2l package for later use
+#@save
 class Decoder(nn.Block):
     """The base decoder interface for the encoder-decoder architecture."""
     def __init__(self, **kwargs):
@@ -119,7 +121,7 @@ Mô hình tính đầu ra của bộ mã hoá để khởi tạo trạng thái b
 
 
 ```{.python .input  n=4}
-# Saved in the d2l package for later use
+#@save
 class EncoderDecoder(nn.Block):
     """The base class for the encoder-decoder architecture."""
     def __init__(self, encoder, decoder, **kwargs):

@@ -61,11 +61,11 @@ import collections
 from d2l import mxnet as d2l
 import re
 
-# Saved in the d2l package for later use
+#@save
 d2l.DATA_HUB['time_machine'] = (d2l.DATA_URL + 'timemachine.txt',
                                 '090b5e7e70c295757f55df93cb0a180b9691891a')
 
-# Saved in the d2l package for later use
+#@save
 def read_time_machine():
     """Load the time machine book into a list of sentences."""
     with open(d2l.download('time_machine'), 'r') as f:
@@ -100,7 +100,7 @@ Hàm dưới đây làm nhiệm vụ tách một câu thành các từ hoặc c�
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def tokenize(lines, token='word'):
     """Split sentences into word or char tokens."""
     if token == 'word':
@@ -139,7 +139,7 @@ Chúng ta có thể tùy chọn thêm vào các token dự trữ, ví dụ token
 
 
 ```{.python .input  n=9}
-# Saved in the d2l package for later use
+#@save
 class Vocab:
     def __init__(self, tokens, min_freq=0, reserved_tokens=None):
         if reserved_tokens is None:
@@ -169,7 +169,6 @@ class Vocab:
             return self.idx_to_token[indices]
         return [self.idx_to_token[index] for index in indices]
 
-# Saved in the d2l package for later use
 def count_corpus(sentences):
     # Flatten a list of token lists into a list of tokens
     tokens = [tk for line in sentences for tk in line]
@@ -228,7 +227,7 @@ Bên cạnh đó, chúng ta sẽ sử dụng các token ký tự để đơn gi�
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def load_corpus_time_machine(max_tokens=-1):
     lines = read_time_machine()
     tokens = tokenize(lines, 'char')

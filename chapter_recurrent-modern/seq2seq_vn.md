@@ -123,7 +123,7 @@ Bộ mã hóa trả về cả đầu ra của LSTM, gồm các trạng thái ẩ
 
 
 ```{.python .input  n=2}
-# Saved in the d2l package for later use
+#@save
 class Seq2SeqEncoder(d2l.Encoder):
     def __init__(self, vocab_size, embed_size, num_hiddens, num_layers,
                  dropout=0, **kwargs):
@@ -237,7 +237,7 @@ Tầng này sẽ dự đoán điểm tin cậy cho mỗi từ.
 
 
 ```{.python .input  n=5}
-# Saved in the d2l package for later use
+#@save
 class Seq2SeqDecoder(d2l.Decoder):
     def __init__(self, vocab_size, embed_size, num_hiddens, num_layers,
                  dropout=0, **kwargs):
@@ -344,7 +344,7 @@ Vì vậy, hàm mất mát có mặt nạ sẽ có thêm đối số `valid_len`
 
 
 ```{.python .input  n=9}
-# Saved in the d2l package for later use
+#@save
 class MaskedSoftmaxCELoss(gluon.loss.SoftmaxCELoss):
     # pred shape: (batch_size, seq_len, vocab_size)
     # label shape: (batch_size, seq_len)
@@ -389,7 +389,7 @@ Trong quá trình huấn luyện, nếu chuỗi đích có độ dài $n$, ta s�
 
 
 ```{.python .input  n=11}
-# Saved in the d2l package for later use
+#@save
 def train_s2s_ch9(model, data_iter, lr, num_epochs, ctx):
     model.initialize(init.Xavier(), force_reinit=True, ctx=ctx)
     trainer = gluon.Trainer(model.collect_params(),
@@ -465,7 +465,7 @@ Token đầu vào cho các bước thời gian sau sẽ là token được dự 
 
 
 ```{.python .input  n=16}
-# Saved in the d2l package for later use
+#@save
 def predict_s2s_ch9(model, src_sentence, src_vocab, tgt_vocab, num_steps,
                     ctx):
     src_tokens = src_vocab[src_sentence.lower().split(' ')]

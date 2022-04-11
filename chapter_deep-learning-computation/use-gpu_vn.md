@@ -171,17 +171,18 @@ Now we define two convenient functions that allow us to run codes even if the re
 Bây giờ ta định nghĩa hai hàm chức năng thuận tiện cho việc chạy mã kể cả khi GPU được yêu cầu không tồn tại.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def try_gpu(i=0):
     """Return gpu(i) if exists, otherwise return cpu()."""
     return npx.gpu(i) if npx.num_gpus() >= i + 1 else npx.cpu()
 
-# Saved in the d2l package for later use
 def try_all_gpus():
     """Return all available GPUs, or [cpu(),] if no GPU exists."""
     ctxes = [npx.gpu(i) for i in range(npx.num_gpus())]
     return ctxes if ctxes else [npx.cpu()]
+```
 
+```{.python .input}
 try_gpu(), try_gpu(3), try_all_gpus()
 ```
 

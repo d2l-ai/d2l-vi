@@ -208,7 +208,7 @@ Ngoài ra, do tầng tập trung đa đầu giữ nguyên kích thước chiề
 
 
 ```{.python .input  n=2}
-# Saved in the d2l package for later use
+#@save
 class MultiHeadAttention(nn.Block):
     def __init__(self, num_hiddens, num_heads, dropout, use_bias=False, **kwargs):
         super(MultiHeadAttention, self).__init__(**kwargs)
@@ -257,7 +257,7 @@ Dưới đây là định nghĩa của hai hàm chuyển vị `transpose_qkv` v�
 
 
 ```{.python .input  n=3}
-# Saved in the d2l package for later use
+#@save
 def transpose_qkv(X, num_heads):
     # Input X shape: (batch_size, seq_len, num_hiddens).
     # Output X shape:
@@ -272,7 +272,7 @@ def transpose_qkv(X, num_heads):
     return output
 
 
-# Saved in the d2l package for later use
+#@save
 def transpose_output(X, num_heads):
     # A reversed version of transpose_qkv
     X = X.reshape(-1, num_heads, X.shape[1], X.shape[2])
@@ -332,7 +332,7 @@ Below, the `PositionWiseFFN` shows how to implement a position-wise FFN with two
 Lớp `PositionWiseFFN` dưới đây lập trình mạng truyền xuôi theo vị trí với hai tầng dày đặc có kích thước ẩn lần lượt là `ffn_num_hiddens` và `pw_num_outputs`.
 
 ```{.python .input  n=5}
-# Saved in the d2l package for later use
+#@save
 class PositionWiseFFN(nn.Block):
     def __init__(self, ffn_num_hiddens, pw_num_outputs, **kwargs):
         super(PositionWiseFFN, self).__init__(**kwargs)
@@ -412,7 +412,7 @@ Ngoài ra, ta cũng sẽ áp dụng dropout lên $Y$ để điều chuẩn.
 
 
 ```{.python .input  n=8}
-# Saved in the d2l package for later use
+#@save
 class AddNorm(nn.Block):
     def __init__(self, dropout, **kwargs):
         super(AddNorm, self).__init__(**kwargs)
@@ -502,7 +502,7 @@ với $i=0,\ldots, l-1$ và $j=0,\ldots,\lfloor(d-1)/2\rfloor$.
 
 
 ```{.python .input  n=10}
-# Saved in the d2l package for later use
+#@save
 class PositionalEncoding(nn.Block):
     def __init__(self, num_hiddens, dropout, max_len=1000):
         super(PositionalEncoding, self).__init__()
@@ -567,7 +567,7 @@ Trong mã nguồn, có thể thấy cả tầng tập trung và mạng truyền 
 
 
 ```{.python .input  n=12}
-# Saved in the d2l package for later use
+#@save
 class EncoderBlock(nn.Block):
     def __init__(self, num_hiddens, ffn_num_hiddens, num_heads, dropout,
                  use_bias=False, **kwargs):
@@ -616,7 +616,7 @@ Cũng lưu ý rằng ta nhân các embedding với $\sqrt{d}$ để tránh trư�
 
 
 ```{.python .input  n=14}
-# Saved in the d2l package for later use
+#@save
 class TransformerEncoder(d2l.Encoder):
     def __init__(self, vocab_size, num_hiddens, ffn_num_hiddens,
                  num_heads, num_layers, dropout, use_bias=False, **kwargs):

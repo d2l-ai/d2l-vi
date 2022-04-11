@@ -517,7 +517,7 @@ Since we will benchmark the running time frequently in this book, let's define a
 Vì ta sẽ cần đánh giá xếp hạng thời gian xử lý một cách thường xuyên trong cuốn sách này, ta sẽ định nghĩa một bộ tính giờ (sau đó có thể truy cập được thông qua gói `d2l` để theo dõi thời gian chạy).
 
 ```{.python .input  n=1}
-# Saved in the d2l package for later use
+#@save
 class Timer(object):
     """Record multiple running times."""
     def __init__(self):

@@ -289,7 +289,7 @@ Ta cần định nghĩa một số hàm để cấu hình thuộc tính của c�
 Trong đoạn mã sau, hàm `use_svg_display` chỉ định `matplotlib` tạo các biểu đồ ở dạng svg để có được chất lượng ảnh sắc nét hơn.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def use_svg_display():
     """Use the svg format to display a plot in Jupyter."""
     display.set_matplotlib_formats('svg')
@@ -303,7 +303,7 @@ Ta định nghĩa hàm `set_figsize` để chỉ định kích thước của bi
 Lưu ý rằng ở đây ta đang dùng trực tiếp `d2l.plt` do câu lệnh `from matplotlib import pyplot as plt` đã được đánh dấu để lưu vào gói `d2l` trong phần Lời nói đầu.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def set_figsize(figsize=(3.5, 2.5)):
     """Set the figure size for matplotlib."""
     use_svg_display()
@@ -317,7 +317,7 @@ The following `set_axes` function sets properties of axes of figures produced by
 Hàm `set_axes` sau cấu hình thuộc tính của các trục biểu đồ tạo bởi `matplotlib`.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend):
     """Set the axes for matplotlib."""
     axes.set_xlabel(xlabel)
@@ -341,7 +341,7 @@ since we will need to visualize many curves throughout the book.
 Với ba hàm cấu hình biểu đồ trên, ta định nghĩa hàm `plot` để vẽ nhiều đồ thị một cách nhanh chóng vì ta sẽ cần minh họa khá nhiều đồ thị xuyên suốt cuốn sách.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def plot(X, Y=None, xlabel=None, ylabel=None, legend=[], xlim=None,
          ylim=None, xscale='linear', yscale='linear',
          fmts=['-', 'm--', 'g-.', 'r:'], figsize=(3.5, 2.5), axes=None):

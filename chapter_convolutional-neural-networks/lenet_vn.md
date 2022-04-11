@@ -257,7 +257,7 @@ Việc này được thực hiện thông qua việc gọi hàm `as_in_ctx` đư
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def evaluate_accuracy_gpu(net, data_iter, ctx=None):
     if not ctx:  # Query the first device the first parameter is on
         ctx = list(net.collect_params().values())[0].list_ctx()[0]
@@ -293,7 +293,7 @@ Ta vẫn sử dụng hàm mất mát entropy chéo và thuật toán huấn luy�
 Với mỗi epoch tốn khoảng hàng chục giây để chạy, ta sẽ vẽ đường biểu diễn giá trị mất mát huấn luyện với nhiều giá trị chi tiết hơn. 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def train_ch6(net, train_iter, test_iter, num_epochs, lr, ctx=d2l.try_gpu()):
     net.initialize(force_reinit=True, ctx=ctx, init=init.Xavier())
     loss = gluon.loss.SoftmaxCrossEntropyLoss()

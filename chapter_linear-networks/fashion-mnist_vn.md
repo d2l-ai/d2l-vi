@@ -74,7 +74,7 @@ Các ảnh trong Fashion-MNIST tương ứng với các lớp: áo phông, quầ
 Hàm dưới đây giúp chuyển đổi các nhãn giá trị số thành tên của từng lớp.
 
 ```{.python .input  n=25}
-# Saved in the d2l package for later use
+#@save
 def get_fashion_mnist_labels(labels):
     text_labels = ['t-shirt', 'trouser', 'pullover', 'dress', 'coat',
                    'sandal', 'shirt', 'sneaker', 'bag', 'ankle boot']
@@ -88,7 +88,7 @@ We can now create a function to visualize these examples.
 Chúng ta có thể tạo một hàm để minh hoạ các mẫu này.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5):
     """Plot a list of images."""
     figsize = (num_cols * scale, num_rows * scale)
@@ -145,7 +145,7 @@ Ví dụ, chúng ta có thể dùng 4 tiến trình để đọc dữ liệu (th
 Vì tính năng này hiện tại không được hỗ trợ trên Windows, đoạn mã lập trình dưới đây sẽ kiểm tra nền tảng hệ điều hành để đảm bảo rằng chúng ta không làm phiền những người dùng Windows với các thông báo lỗi sau này.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def get_dataloader_workers(num_workers=4):
     # 0 means no additional process is used to speed up the reading of data.
     if sys.platform.startswith('win'):
@@ -212,7 +212,7 @@ Hàm này sẽ trả về các iterator cho dữ liệu của cả tập huấn 
 Thêm nữa, nó chấp nhận một tham số tùy chọn để thay đổi kích thước hình ảnh đầu vào.
 
 ```{.python .input  n=4}
-# Saved in the d2l package for later use
+#@save
 def load_data_fashion_mnist(batch_size, resize=None):
     """Download the Fashion-MNIST dataset and then load into memory."""
     dataset = gluon.data.vision

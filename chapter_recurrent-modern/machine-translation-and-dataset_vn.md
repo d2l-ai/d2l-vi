@@ -57,11 +57,10 @@ Có thể thấy mỗi dòng chứa một câu tiếng Anh cùng với bản d�
 
 
 ```{.python .input  n=2}
-# Saved in the d2l package for later use
+#@save
 d2l.DATA_HUB['fra-eng'] = (d2l.DATA_URL + 'fra-eng.zip',
                            '94646ad1522d915e7b0f9296181140edcf86a4f5')
 
-# Saved in the d2l package for later use
 def read_data_nmt():
     data_dir = d2l.download_extract('fra-eng')
     with open(os.path.join(data_dir, 'fra.txt'), 'r') as f:
@@ -78,7 +77,7 @@ We perform several preprocessing steps on the raw text data, including ignoring 
 Ta sẽ thực hiện một số bước tiền xử lý trên dữ liệu văn bản thô, bao gồm chuyển đổi tất cả ký tự sang chữ thường, thay thế các ký tự khoảng trắng không ngắt (*non-breaking space*) UTF-8 bằng dấu cách, thêm dấu cách vào giữa các từ và các dấu câu.
 
 ```{.python .input  n=3}
-# Saved in the d2l package for later use
+#@save
 def preprocess_nmt(text):
     def no_space(char, prev_char):
         return char in set(',.!') and prev_char != ' '
@@ -115,7 +114,7 @@ Hàm sau đây sẽ token hóa dữ liệu văn bản để trả về `source` 
 
 
 ```{.python .input  n=4}
-# Saved in the d2l package for later use
+#@save
 def tokenize_nmt(text, num_examples=None):
     source, target = [], []
     for i, line in enumerate(text.split('\n')):
@@ -195,7 +194,7 @@ Một cách giải quyết vấn đề này là nếu một câu dài hơn `num_
 Bằng cách này, ta có thể chuyển bất cứ câu nào về một độ dài cố định.
 
 ```{.python .input  n=7}
-# Saved in the d2l package for later use
+#@save
 def truncate_pad(line, num_steps, padding_token):
     if len(line) > num_steps:
         return line[:num_steps]  # Trim
@@ -221,7 +220,7 @@ Ngoài ra, ta sẽ thêm các token đặc biệt “&lt;bos&gt;” và “&lt;e
 
 
 ```{.python .input  n=8}
-# Saved in the d2l package for later use
+#@save
 def build_array(lines, vocab, num_steps, is_source):
     lines = [vocab[l] for l in lines]
     if not is_source:
@@ -253,7 +252,7 @@ Cuối cùng, ta định nghĩa hàm `load_data_nmt` để trả về iterator c
 
 
 ```{.python .input  n=9}
-# Saved in the d2l package for later use
+#@save
 def load_data_nmt(batch_size, num_steps, num_examples=1000):
     text = preprocess_nmt(read_data_nmt())
     source, target = tokenize_nmt(text, num_examples)

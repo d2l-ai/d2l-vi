@@ -446,7 +446,7 @@ Mục tiêu của ta là dự đoán phần tử tiếp theo dựa trên các ph
 
 
 ```{.python .input  n=1}
-# Saved in the d2l package for later use
+#@save
 def seq_data_iter_random(corpus, batch_size, num_steps):
     # Offset the iterator over the data for uniform starts
     corpus = corpus[random.randint(0, num_steps):]
@@ -505,7 +505,7 @@ In addition to random sampling of the original sequence, we can also make the po
 Ngoài phép lấy mẫu ngẫu nhiên từ chuỗi gốc, chúng ta cũng có thể làm hai minibatch ngẫu nhiên liên tiếp có vị trí liền kề nhau trong chuỗi gốc.
 
 ```{.python .input  n=7}
-# Saved in the d2l package for later use
+#@save
 def seq_data_iter_consecutive(corpus, batch_size, num_steps):
     # Offset for the iterator over the data for uniform starts
     offset = random.randint(0, num_steps)
@@ -542,7 +542,7 @@ Hãy gộp hai hàm lấy mẫu theo hai cách trên vào một lớp để duy�
 
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 class SeqDataLoader:
     """A iterator to load sequence data."""
     def __init__(self, batch_size, num_steps, use_random_iter, max_tokens):
@@ -565,7 +565,7 @@ Last, we define a function `load_data_time_machine` that returns both the data i
 Cuối cùng, ta sẽ viết hàm `load_data_time_machine` trả về cả iterator dữ liệu và bộ từ vựng để sử dụng như các hàm `load_data` khác.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 def load_data_time_machine(batch_size, num_steps, use_random_iter=False,
                            max_tokens=10000):
     data_iter = SeqDataLoader(

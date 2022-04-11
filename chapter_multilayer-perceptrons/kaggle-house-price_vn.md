@@ -55,10 +55,9 @@ from mxnet import gluon
 import zipfile
 import tarfile
 
-# Saved in the d2l package for later use
+```{.python .input}
+#@save
 DATA_HUB = dict()
-
-# Saved in the d2l package for later use
 DATA_URL = 'http://d2l-data.s3-accelerate.amazonaws.com/'
 ```
 
@@ -80,7 +79,7 @@ Nếu tệp trên đã tồn tại trong bộ nhớ đệm và SHA-1 của nó k
 Hàm `download` trả về tên của tệp được tải xuống.
 
 ```{.python .input  n=6}
-# Saved in the d2l package for later use
+#@save
 def download(name, cache_dir='../data'):
     """Download a file inserted into DATA_HUB, return the local filename."""
     assert name in DATA_HUB, "%s doesn't exist" % name
@@ -98,7 +97,7 @@ You may invoke the latter to download all these datasets once and for all if you
 Chúng ta cũng lập trình thêm hai hàm khác: một hàm để tải và giải nén tệp zip/tar, và hàm còn lại để tải tất cả các file từ `DATA_HUB` (chứa phần lớn các tập dữ liệu được sử dụng trong cuốn sách này) về bộ nhớ đệm. 
 Bạn có thể sử dụng hàm thứ hai để tải tất cả các tập dữ liệu này trong cùng một lần tải nếu kết nối mạng của bạn chậm.
 ```{.python .input  n=11}
-# Saved in the d2l package for later use
+#@save
 def download_extract(name, folder=None):
     """Download and extract a zip/tar file."""
     fname = download(name)
@@ -116,7 +115,6 @@ def download_extract(name, folder=None):
     else:
         return data_dir + '/'
 
-# Saved in the d2l package for later use
 def download_all():
     """Download all files in the DATA_HUB"""
     for name in DATA_HUB:
@@ -231,12 +229,11 @@ For convenience, we download and cache the Kaggle housing dataset from the `DATA
 Để thuận tiện, chúng ta sẽ tải và lưu tập dữ liệu giá nhà Kaggle từ trang web `DATA_URL`. Với những cuộc thi Kaggle khác, có thể bạn sẽ phải tải dữ liệu về theo cách thủ công.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 DATA_HUB['kaggle_house_train'] = (
     DATA_URL + 'kaggle_house_pred_train.csv',
     '585e9cc93e70b39160e7921475f9bcd7d31219ce')
 
-# Saved in the d2l package for later use
 DATA_HUB['kaggle_house_test'] = (
     DATA_URL + 'kaggle_house_pred_test.csv',
     'fa19780a7b011d9b009e8bff8e99922a8ee2eb90')

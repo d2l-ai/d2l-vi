@@ -98,7 +98,7 @@ Tương tự :numref:`sec_rnn_scratch`, ta định nghĩa khối `RNNModel` bằ
 Chú ý rằng `rnn_layer` chỉ chứa các tầng hồi tiếp ẩn và ta cần tạo riêng biệt một tầng đầu ra, trong khi ở phần trước tầng đầu ra được tích hợp sẵn trong khối `rnn`.
 
 ```{.python .input  n=39}
-# Saved in the d2l package for later use
+#@save
 class RNNModel(nn.Block):
     def __init__(self, rnn_layer, vocab_size, **kwargs):
         super(RNNModel, self).__init__(**kwargs)

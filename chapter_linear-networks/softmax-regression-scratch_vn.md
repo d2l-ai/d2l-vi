@@ -270,7 +270,7 @@ Kết quả sẽ là một `ndarray` chứa các giá trị 0 (false) và 1 (tru
 
 
 ```{.python .input  n=11}
-# Saved in the d2l package for later use
+#@save
 def accuracy(y_hat, y):
     if y_hat.shape[1] > 1:
         return float((y_hat.argmax(axis=1) == y.astype('float32')).sum())
@@ -302,7 +302,7 @@ Similarly, we can evaluate the accuracy for model `net` on the dataset (accessed
 Tương tự như trên, ta có thể đánh giá độ chính xác của mô hình `net` trên tập dữ liệu (được truy xuất thông qua `data_iter`).
 
 ```{.python .input  n=13}
-# Saved in the d2l package for later use
+#@save
 def evaluate_accuracy(net, data_iter):
     metric = Accumulator(2)  # num_corrected_examples, num_examples
     for X, y in data_iter:
@@ -317,7 +317,7 @@ Here `Accumulator` is a utility class to accumulated sum over multiple numbers.
 `Accumulator` ở đây là một lớp đa tiện ích, có tác dụng tính tổng tích lũy của nhiều số.
 
 ```{.python .input}
-# Saved in the d2l package for later use
+#@save
 class Accumulator(object):
     """Sum a list of numbers over time."""
 
@@ -365,7 +365,7 @@ Lưu ý rằng `updater` là một hàm tổng quát để cập nhật các tha
 Nó có thể là một wrapper của `d2l.sgd` hoặc là một đối tượng huấn luyện Gluon. 
 
 ```{.python .input  n=15}
-# Saved in the d2l package for later use
+#@save
 def train_epoch_ch3(net, train_iter, loss, updater):
     metric = Accumulator(3)  # train_loss_sum, train_acc_sum, num_examples
     if isinstance(updater, gluon.Trainer):
@@ -391,7 +391,7 @@ Trước khi xem đoạn mã thực hiện hàm huấn luyện, ta định nghĩ
 Mục đích của nó là đơn giản hoá các đoạn mã sẽ xuất hiện trong những chương sau. 
 
 ```{.python .input  n=16}
-# Saved in the d2l package for later use
+#@save
 class Animator(object):
     def __init__(self, xlabel=None, ylabel=None, legend=[], xlim=None,
                  ylim=None, xscale='linear', yscale='linear', fmts=None,
@@ -438,7 +438,7 @@ The training function then runs multiple epochs and visualize the training progr
 Hàm huấn luyện sau đó sẽ chạy qua nhiều epoch và trực quan hoá quá trình huấn luyện. 
 
 ```{.python .input  n=17}
-# Saved in the d2l package for later use
+#@save
 def train_ch3(net, train_iter, test_iter, loss, num_epochs, updater):
     animator = Animator(xlabel='epoch', xlim=[1, num_epochs],
                         ylim=[0.3, 0.9],
@@ -485,7 +485,7 @@ Giờ thì việc huấn luyện đã hoàn thành, mô hình của chúng ta đ
 Cho một loạt các ảnh, chúng ta sẽ so sánh các nhãn thật của chúng (dòng đầu tiên của văn bản đầu ra) với những dự đoán của mô hình (dòng thứ hai của văn bản đầu ra).
 
 ```{.python .input  n=19}
-# Saved in the d2l package for later use
+#@save
 def predict_ch3(net, test_iter, n=6):
     for X, y in test_iter:
         break

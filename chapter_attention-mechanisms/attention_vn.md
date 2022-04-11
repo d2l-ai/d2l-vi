@@ -130,7 +130,7 @@ Chúng ta lập trình hàm `masked_softmax` như sau.
 
 
 ```{.python .input  n=6}
-# Saved in the d2l package for later use
+#@save
 def masked_softmax(X, valid_len):
     # X: 3-D tensor, valid_len: 1-D or 2-D tensor
     if valid_len is None:
@@ -230,7 +230,7 @@ Với :eqref:`eq_alpha_QK`, chúng ta có thể lập trình tầng tập trung 
 Ngoài ra, chúng ta cũng dùng thêm một tầng dropout để điều chuẩn.
 
 ```{.python .input  n=5}
-# Saved in the d2l package for later use
+#@save
 class DotProductAttention(nn.Block):
     def __init__(self, dropout, **kwargs):
         super(DotProductAttention, self).__init__(**kwargs)
@@ -317,7 +317,7 @@ Giờ hãy lập trình một tầng tập trung perceptron đa tầng.
 
 
 ```{.python .input  n=7}
-# Saved in the d2l package for later use
+#@save
 class MLPAttention(nn.Block):
     def __init__(self, units, dropout, **kwargs):
         super(MLPAttention, self).__init__(**kwargs)

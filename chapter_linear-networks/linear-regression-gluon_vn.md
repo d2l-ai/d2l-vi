@@ -73,7 +73,7 @@ Tại đây, ta truyền vào hàm hai đối số là `features` và `labels`.
 Kế tiếp, ta sử dụng `ArrayDataset` để khởi tạo một` DataLoader`, lớp này yêu cầu ta truyền vào một giá trị `batch_size` và giá trị Boolean `shuffle` để cho biết chúng ta có muốn `DataLoader` xáo trộn dữ liệu trên mỗi epoch (một lần duyệt qua toàn bộ tập dữ liệu) hay không.
 
 ```{.python .input  n=3}
-# Saved in the d2l package for later use
+#@save
 def load_array(data_arrays, batch_size, is_train=True):
     """Construct a Gluon data loader"""
     dataset = gluon.data.ArrayDataset(*data_arrays)
