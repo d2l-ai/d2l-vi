@@ -1,3 +1,11 @@
+DATA_HUB = dict()
+DATA_URL = 'http://d2l-data.s3-accelerate.amazonaws.com/'
+
+import numpy as np
+import tensorflow as tf
+
+nn_Module = tf.keras.Model
+
 #################   WARNING   ################
 # The below part is generated automatically through:
 #    d2lbook build lib

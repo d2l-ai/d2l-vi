@@ -1,3 +1,16 @@
+USE_MXNET = True
+USE_PYTORCH = False
+USE_TENSORFLOW = False
+
+DATA_HUB = dict()
+DATA_URL = 'http://d2l-data.s3-accelerate.amazonaws.com/'
+
+from mxnet import autograd, context, gluon, image, init, np, npx
+from mxnet.gluon import nn, rnn
+from mxnet.gluon.data.vision import transforms
+
+nn_Module = nn.Block
+
 #################   WARNING   ################
 # The below part is generated automatically through:
 #    d2lbook build lib
