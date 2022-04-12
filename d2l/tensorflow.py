@@ -1507,6 +1507,8 @@ cosh = tf.cosh
 tanh = tf.tanh
 linspace = tf.linspace
 exp = tf.exp
+normal = tf.random.normal
+rand = tf.random.uniform
 matmul = tf.matmul
 reduce_sum = tf.reduce_sum
 argmax = tf.argmax
@@ -1518,7 +1520,7 @@ float32 = tf.float32
 transpose = tf.transpose
 concat = tf.concat
 stack = tf.stack
-normal = tf.random.normal
 abs = tf.abs
+eye = tf.eye
 numpy = lambda x, *args, **kwargs: x.numpy(*args, **kwargs)
 
