@@ -1,7 +1,7 @@
 # Thực hiện ngắn gọn về hồi quy Softmax
 :label:`sec_softmax_concise`
 
-(** Cũng giống như APIs cấp cao**) của các khuôn khổ học sâu (** làm cho nó dễ dàng hơn nhiều để thực hiện hồi quy tuyến tính**) trong :numref:`sec_linear_concise`, (** chúng tôi sẽ tìm thấy nó tương tự **) (~~here ~ ~) (hoặc có thể nhiều hơn) thuận tiện cho việc thực hiện các mô hình phân loại. Hãy để chúng tôi gắn bó với tập dữ liệu Fashion-MNIST và giữ kích thước lô ở mức 256 như trong :numref:`sec_softmax_scratch`.
+(** Cũng giống như APIs cấp cao**) của các khuôn khổ học sâu (** làm cho nó dễ dàng hơn nhiều để thực hiện hồi quy tuyến tính**) trong :numref:`sec_linear_concise`, (** chúng tôi sẽ tìm thấy nó tương tự **) (~~here~~) (hoặc có thể nhiều hơn) thuận tiện cho việc thực hiện các mô hình phân loại. Hãy để chúng tôi gắn bó với tập dữ liệu Fashion-MNIST và giữ kích thước lô ở mức 256 như trong :numref:`sec_softmax_scratch`.
 
 ```{.python .input}
 from d2l import mxnet as d2l

@@ -1,7 +1,7 @@
 # Tập dữ liệu phân loại hình ảnh
 :label:`sec_fashion_mnist`
 
-(~~Tập dữ liệu MNIST là một trong những tập dữ liệu được sử dụng rộng rãi để phân loại hình ảnh, trong khi nó quá đơn giản như một tập dữ liệu chuẩn. Chúng tôi sẽ sử dụng bộ dữ liệu Fashion-MNIST tương tự, nhưng phức tạp hơn ~ ~) 
+(~~Tập dữ liệu MNIST là một trong những tập dữ liệu được sử dụng rộng rãi để phân loại hình ảnh, trong khi nó quá đơn giản như một tập dữ liệu chuẩn. Chúng tôi sẽ sử dụng bộ dữ liệu Fashion-MNIST tương tự, nhưng phức tạp hơn~~) 
 
 Một trong những tập dữ liệu được sử dụng rộng rãi để phân loại hình ảnh là tập dữ liệu MNIST :cite:`LeCun.Bottou.Bengio.ea.1998`. Mặc dù nó có một chạy tốt như một tập dữ liệu chuẩn, thậm chí các mô hình đơn giản theo tiêu chuẩn ngày nay cũng đạt được độ chính xác phân loại trên 95%, khiến nó không phù hợp để phân biệt giữa các mô hình mạnh hơn và các mô hình yếu hơn. Ngày nay, MNIST phục vụ như là kiểm tra sự tỉnh táo hơn là một chuẩn mực. Để lên ante chỉ một chút, chúng tôi sẽ tập trung thảo luận của chúng tôi trong các phần sắp tới về chất lượng tương tự, nhưng tương đối phức tạp Fashion-MNIST dataset :cite:`Xiao.Rasul.Vollgraf.2017`, được phát hành vào năm 2017.
 
@@ -80,7 +80,7 @@ Chiều cao và chiều rộng của mỗi hình ảnh đầu vào đều là 28
 mnist_train[0][0].shape
 ```
 
-[~~Hai hàm tiện ích để hình dung tập dữ liệu ~~] 
+[~~Hai hàm tiện ích để hình dung tập dữ liệu~~] 
 
 Các hình ảnh trong Fashion-MNIST được liên kết với các loại sau: áo phông, quần tây, áo thun, váy, áo khoác, sandal, áo sơ mi, giày thể thao, túi xách và khởi động mắt cá chân. Hàm sau chuyển đổi giữa các chỉ số nhãn số và tên của chúng trong văn bản.
 

@@ -3,7 +3,7 @@
 
 Sự quan tâm rộng rãi và mãnh liệt trong việc học sâu trong nhiều năm qua đã truyền cảm hứng cho các công ty, học giả và những người có sở thích phát triển một loạt các khuôn khổ nguồn mở trưởng thành để tự động hóa công việc lặp đi lặp lại của việc thực hiện các thuật toán học tập dựa trên độ dốc. Năm :numref:`sec_linear_scratch`, chúng tôi chỉ dựa vào (i) hàng chục để lưu trữ dữ liệu và đại số tuyến tính; và (ii) tự động phân biệt để tính toán độ dốc. Trong thực tế, bởi vì các bộ lặp dữ liệu, chức năng mất mát, tối ưu hóa và các lớp mạng thần kinh rất phổ biến, các thư viện hiện đại cũng triển khai các thành phần này cho chúng ta. 
 
-Trong phần này, (**chúng tôi sẽ chỉ cho bạn cách thực hiện mô hình hồi quy tuyến tính**) từ :numref:`sec_linear_scratch` (** chính xác bằng cách sử dụng APIs** cấp cao) của các framework học sâu. 
+Trong phần này, (**chúng tôi sẽ chỉ cho bạn cách thực hiện mô hình hồi quy tuyến tính**) từ :numref:`sec_linear_scratch` (**chính xác bằng cách sử dụng APIs cấp cao**) của các framework học sâu. 
 
 ## Tạo tập dữ liệu
 
@@ -127,7 +127,7 @@ net.add(tf.keras.layers.Dense(1))
 
 ## Khởi tạo các tham số mô hình
 
-Trước khi sử dụng `net`, chúng ta cần (** khởi tạo các tham số model, **) chẳng hạn như trọng lượng và thiên vị trong mô hình hồi quy tuyến tính. Các khuôn khổ học sâu thường có cách xác định trước để khởi tạo các tham số. Ở đây chúng tôi chỉ định rằng mỗi tham số trọng lượng nên được lấy mẫu ngẫu nhiên từ phân phối bình thường với 0 trung bình và độ lệch chuẩn 0,01. Tham số thiên vị sẽ được khởi tạo thành 0.
+Trước khi sử dụng `net`, chúng ta cần (**khởi tạo các tham số model**) chẳng hạn như trọng lượng và thiên vị trong mô hình hồi quy tuyến tính. Các khuôn khổ học sâu thường có cách xác định trước để khởi tạo các tham số. Ở đây chúng tôi chỉ định rằng mỗi tham số trọng lượng nên được lấy mẫu ngẫu nhiên từ phân phối bình thường với 0 trung bình và độ lệch chuẩn 0,01. Tham số thiên vị sẽ được khởi tạo thành 0.
 
 :begin_tab:`mxnet`
 Chúng tôi sẽ nhập mô-đun `initializer` từ MXNet. mô-đun này cung cấp các phương pháp khác nhau để khởi tạo tham số mô hình. Gluon làm cho `init` có sẵn dưới dạng phím tắt (viết tắt) để truy cập gói `initializer`. Chúng tôi chỉ chỉ định cách khởi tạo trọng lượng bằng cách gọi `init.Normal(sigma=0.01)`. Các tham số thiên vị được khởi tạo thành 0 theo mặc định.
@@ -206,7 +206,7 @@ Minibatch stochastic gradient descent là một công cụ tiêu chuẩn để t
 :end_tab:
 
 :begin_tab:`pytorch`
-Minibatch stochastic gradient descent là một công cụ tiêu chuẩn để tối ưu hóa các mạng thần kinh và do đó PyTorch hỗ trợ nó cùng với một số biến thể trên thuật toán này trong mô-đun `optim`. Khi chúng ta (** khởi tạo một phiên bản `SGD`, **) chúng ta sẽ chỉ định các tham số để tối ưu hóa (có thể đạt được từ mạng của chúng tôi thông qua `net.parameters()`), với một từ điển các siêu tham số theo yêu cầu của thuật toán tối ưu hóa của chúng tôi. Minibatch stochastic gradient gốc chỉ yêu cầu chúng ta đặt giá trị `lr`, được đặt thành 0,03 ở đây.
+Minibatch stochastic gradient descent là một công cụ tiêu chuẩn để tối ưu hóa các mạng thần kinh và do đó PyTorch hỗ trợ nó cùng với một số biến thể trên thuật toán này trong mô-đun `optim`. Khi chúng ta (**khởi tạo một phiên bản `SGD`**) chúng ta sẽ chỉ định các tham số để tối ưu hóa (có thể đạt được từ mạng của chúng tôi thông qua `net.parameters()`), với một từ điển các siêu tham số theo yêu cầu của thuật toán tối ưu hóa của chúng tôi. Minibatch stochastic gradient gốc chỉ yêu cầu chúng ta đặt giá trị `lr`, được đặt thành 0,03 ở đây.
 :end_tab:
 
 :begin_tab:`tensorflow`
@@ -230,7 +230,7 @@ trainer = tf.keras.optimizers.SGD(learning_rate=0.03)
 
 ## Đào tạo
 
-Bạn có thể nhận thấy rằng thể hiện mô hình của chúng tôi thông qua các API cấp cao của một khuôn khổ học sâu đòi hỏi tương đối ít dòng mã. Chúng tôi không phải phân bổ các thông số riêng lẻ, xác định chức năng mất mát của chúng tôi hoặc thực hiện minibatch stochastic gradient descent. Khi chúng tôi bắt đầu làm việc với các mô hình phức tạp hơn nhiều, lợi thế của API cấp cao sẽ tăng lên đáng kể. Tuy nhiên, một khi chúng tôi có tất cả các phần cơ bản tại chỗ, [** bản thân vòng đào tạo rất giống với những gì chúng tôi đã làm khi thực hiện mọi thứ từ vết xước. **] 
+Bạn có thể nhận thấy rằng thể hiện mô hình của chúng tôi thông qua các API cấp cao của một khuôn khổ học sâu đòi hỏi tương đối ít dòng mã. Chúng tôi không phải phân bổ các thông số riêng lẻ, xác định chức năng mất mát của chúng tôi hoặc thực hiện minibatch stochastic gradient descent. Khi chúng tôi bắt đầu làm việc với các mô hình phức tạp hơn nhiều, lợi thế của API cấp cao sẽ tăng lên đáng kể. Tuy nhiên, một khi chúng tôi có tất cả các phần cơ bản tại chỗ, [** bản thân vòng đào tạo rất giống với những gì chúng tôi đã làm khi thực hiện mọi thứ từ vết xước.**] 
 
 Để làm mới bộ nhớ của bạn: đối với một số kỷ nguyên, chúng tôi sẽ thực hiện một vượt qua toàn bộ dữ liệu (`train_data`), lặp đi lặp lại lấy một minibatch đầu vào và các nhãn chân lý mặt đất tương ứng. Đối với mỗi minibatch, chúng tôi trải qua các nghi thức sau: 
 
@@ -278,7 +278,7 @@ for epoch in range(num_epochs):
     print(f'epoch {epoch + 1}, loss {l:f}')
 ```
 
-Dưới đây, chúng ta [** so sánh các tham số mô hình học được bằng cách đào tạo về dữ liệu hữu hạn và các tham số thực tế**] đã tạo ra tập dữ liệu của chúng tôi. Để truy cập các tham số, trước tiên chúng ta truy cập vào lớp mà chúng ta cần từ `net` và sau đó truy cập vào trọng lượng và thiên vị của lớp đó. Như trong triển khai từ đầu của chúng tôi, lưu ý rằng các thông số ước tính của chúng tôi gần với các đối tác thực tế mặt đất của chúng.
+Dưới đây, chúng ta [**so sánh các tham số mô hình học được bằng cách đào tạo về dữ liệu hữu hạn và các tham số thực tế**] đã tạo ra tập dữ liệu của chúng tôi. Để truy cập các tham số, trước tiên chúng ta truy cập vào lớp mà chúng ta cần từ `net` và sau đó truy cập vào trọng lượng và thiên vị của lớp đó. Như trong triển khai từ đầu của chúng tôi, lưu ý rằng các thông số ước tính của chúng tôi gần với các đối tác thực tế mặt đất của chúng.
 
 ```{.python .input}
 w = net[0].weight.data()

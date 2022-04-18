@@ -63,7 +63,7 @@ import tensorflow as tf
 tf.device('/CPU:0'), tf.device('/GPU:0'), tf.device('/GPU:1')
 ```
 
-Chúng tôi có thể (** truy vấn số lượng GPU có sẵn.**)
+Chúng tôi có thể (**truy vấn số lượng GPU có sẵn.**)
 
 ```{.python .input}
 npx.num_gpus()
@@ -130,7 +130,7 @@ try_gpu(), try_gpu(10), try_all_gpus()
 
 ## Tensors và GPU
 
-Theo mặc định, hàng chục được tạo trên CPU. Chúng ta có thể [** truy vấn thiết bị nơi tensor được đặt. **]
+Theo mặc định, hàng chục được tạo trên CPU. Chúng ta có thể [**truy vấn thiết bị nơi tensor được đặt.**]
 
 ```{.python .input}
 x = np.array([1, 2, 3])
@@ -153,7 +153,7 @@ x.device
 
 ### Lưu trữ trên GPU
 
-Có một số cách để [** lưu trữ một tensor trên GPU.**] Ví dụ: chúng ta có thể chỉ định một thiết bị lưu trữ khi tạo tensor. Tiếp theo, chúng ta tạo biến tensor `X` trên `gpu` đầu tiên. Tensor được tạo trên GPU chỉ tiêu thụ bộ nhớ của GPU này. Chúng ta có thể sử dụng lệnh `nvidia-smi` để xem mức sử dụng bộ nhớ GPU. Nói chung, chúng ta cần đảm bảo rằng chúng ta không tạo dữ liệu vượt quá giới hạn bộ nhớ GPU.
+Có một số cách để [**lưu trữ một tensor trên GPU.**] Ví dụ: chúng ta có thể chỉ định một thiết bị lưu trữ khi tạo tensor. Tiếp theo, chúng ta tạo biến tensor `X` trên `gpu` đầu tiên. Tensor được tạo trên GPU chỉ tiêu thụ bộ nhớ của GPU này. Chúng ta có thể sử dụng lệnh `nvidia-smi` để xem mức sử dụng bộ nhớ GPU. Nói chung, chúng ta cần đảm bảo rằng chúng ta không tạo dữ liệu vượt quá giới hạn bộ nhớ GPU.
 
 ```{.python .input}
 X = np.ones((2, 3), ctx=try_gpu())
@@ -173,7 +173,7 @@ with try_gpu():
 X
 ```
 
-Giả sử rằng bạn có ít nhất hai GPU, mã sau sẽ (** tạo tensor ngẫu nhiên trên GPU.** thứ hai)
+Giả sử rằng bạn có ít nhất hai GPU, mã sau sẽ (**tạo tensor ngẫu nhiên trên GPU. thứ hai**)
 
 ```{.python .input}
 Y = np.random.uniform(size=(2, 3), ctx=try_gpu(1))
@@ -223,7 +223,7 @@ print(X)
 print(Z)
 ```
 
-Bây giờ [** dữ liệu nằm trên cùng một GPU (cả `Z` và `Y` đều là), chúng ta có thể thêm chúng lên.**]
+Bây giờ [**dữ liệu nằm trên cùng một GPU (cả `Z` và `Y` đều là), chúng ta có thể thêm chúng lên.**]
 
 ```{.python .input}
 #@tab all
@@ -299,7 +299,7 @@ Khi đầu vào là một tensor trên GPU, mô hình sẽ tính toán kết qu�
 net(X)
 ```
 
-Hãy để chúng tôi (** xác nhận rằng các tham số mô hình được lưu trữ trên cùng một GPU.**)
+Hãy để chúng tôi (**xác nhận rằng các tham số mô hình được lưu trữ trên cùng một GPU.**)
 
 ```{.python .input}
 net[0].weight.data().ctx

@@ -61,7 +61,7 @@ F.one_hot(torch.tensor([0, 2]), len(vocab))
 tf.one_hot(tf.constant([0, 2]), len(vocab))
 ```
 
-(**Hình dạng của minibatch**) mà chúng tôi lấy mẫu mỗi lần (** là (kích thước lô, số bước thời gian). Hàm `one_hot` biến một minibatch như vậy thành một tensor ba chiều với chiều cuối cùng bằng với kích thước từ vựng (`len(vocab)`) .**) Chúng ta thường chuyển đổi đầu vào để chúng ta sẽ có được một đầu ra của hình dạng (số bước thời gian, kích thước lô, kích thước từ vựng). Điều này sẽ cho phép chúng tôi vòng lặp thuận tiện hơn thông qua kích thước ngoài cùng để cập nhật các trạng thái ẩn của một minibatch, từng bước từng bước.
+(**Hình dạng của minibatch**) mà chúng tôi lấy mẫu mỗi lần (**là (kích thước lô, số bước thời gian). Hàm `one_hot` biến một minibatch như vậy thành một tensor ba chiều với chiều cuối cùng bằng với kích thước từ vựng (`len(vocab)`).**) Chúng ta thường chuyển đổi đầu vào để chúng ta sẽ có được một đầu ra của hình dạng (số bước thời gian, kích thước lô, kích thước từ vựng). Điều này sẽ cho phép chúng tôi vòng lặp thuận tiện hơn thông qua kích thước ngoài cùng để cập nhật các trạng thái ẩn của một minibatch, từng bước từng bước.
 
 ```{.python .input}
 X = d2l.reshape(d2l.arange(10), (2, 5))
@@ -82,7 +82,7 @@ tf.one_hot(tf.transpose(X), 28).shape
 
 ## Khởi tạo các tham số mô hình
 
-Tiếp theo, chúng ta [** khởi tạo các tham số mô hình cho mô hình RNN**]. Số lượng các đơn vị ẩn `num_hiddens` là một siêu tham số có thể điều chỉnh. Khi đào tạo mô hình ngôn ngữ, các đầu vào và đầu ra là từ cùng một từ vựng. Do đó, chúng có cùng chiều, tương đương với kích thước từ vựng.
+Tiếp theo, chúng ta [**khởi tạo các tham số mô hình cho mô hình RNN**]. Số lượng các đơn vị ẩn `num_hiddens` là một siêu tham số có thể điều chỉnh. Khi đào tạo mô hình ngôn ngữ, các đầu vào và đầu ra là từ cùng một từ vựng. Do đó, chúng có cùng chiều, tương đương với kích thước từ vựng.
 
 ```{.python .input}
 def get_params(vocab_size, num_hiddens, device):
@@ -148,7 +148,7 @@ def get_params(vocab_size, num_hiddens):
 
 ## Mô hình RNN
 
-Để định nghĩa một mô hình RNN, trước tiên chúng ta cần [** một hàm `init_rnn_state` để trả về trạng thái ẩn lúc khởi hóa.**] Nó trả về một tensor chứa đầy 0 và với một hình dạng của (batch size, số đơn vị ẩn). Sử dụng các tuples làm cho nó dễ dàng hơn để xử lý các tình huống mà trạng thái ẩn chứa nhiều biến, mà chúng ta sẽ gặp phải trong các phần sau.
+Để định nghĩa một mô hình RNN, trước tiên chúng ta cần [**một hàm `init_rnn_state` để trả về trạng thái ẩn lúc khởi hóa.**] Nó trả về một tensor chứa đầy 0 và với một hình dạng của (batch size, số đơn vị ẩn). Sử dụng các tuples làm cho nó dễ dàng hơn để xử lý các tình huống mà trạng thái ẩn chứa nhiều biến, mà chúng ta sẽ gặp phải trong các phần sau.
 
 ```{.python .input}
 def init_rnn_state(batch_size, num_hiddens, device):
@@ -270,7 +270,7 @@ class RNNModelScratch: #@save
         return self.init_state(batch_size, self.num_hiddens)
 ```
 
-Hãy để chúng tôi [** kiểm tra xem các đầu ra có hình dạng chính xác**], ví dụ, để đảm bảo rằng chiều của trạng thái ẩn vẫn không thay đổi.
+Hãy để chúng tôi [**kiểm tra xem các đầu ra có hình dạng chính xác**], ví dụ, để đảm bảo rằng chiều của trạng thái ẩn vẫn không thay đổi.
 
 ```{.python .input}
 #@tab mxnet
@@ -311,7 +311,7 @@ Chúng ta có thể thấy rằng hình dạng đầu ra là (số bước thờ
 
 ## Prediction
 
-Hãy để chúng tôi [** đầu tiên xác định hàm dự đoán để tạo ra các ký tự mới sau `prefix`** người dùng cung cấp, đó là một chuỗi chứa một số ký tự. Khi lặp qua các ký tự bắt đầu này trong `prefix`, chúng tôi tiếp tục chuyển trạng thái ẩn sang bước thời gian tiếp theo mà không tạo ra bất kỳ đầu ra nào. Đây được gọi là khoảng thời gian *warm-up*, trong đó mô hình tự cập nhật (ví dụ: cập nhật trạng thái ẩn) nhưng không đưa ra dự đoán. Sau thời gian khởi động, trạng thái ẩn thường tốt hơn giá trị khởi tạo của nó ở đầu. Vì vậy, chúng tôi tạo ra các nhân vật dự đoán và phát ra chúng.
+Hãy để chúng tôi [**đầu tiên xác định hàm dự đoán để tạo ra các ký tự mới sau `prefix` người dùng cung cấp, đó là một chuỗi chứa một số ký tự.**] Khi lặp qua các ký tự bắt đầu này trong `prefix`, chúng tôi tiếp tục chuyển trạng thái ẩn sang bước thời gian tiếp theo mà không tạo ra bất kỳ đầu ra nào. Đây được gọi là khoảng thời gian *warm-up*, trong đó mô hình tự cập nhật (ví dụ: cập nhật trạng thái ẩn) nhưng không đưa ra dự đoán. Sau thời gian khởi động, trạng thái ẩn thường tốt hơn giá trị khởi tạo của nó ở đầu. Vì vậy, chúng tôi tạo ra các nhân vật dự đoán và phát ra chúng.
 
 ```{.python .input}
 def predict_ch8(prefix, num_preds, net, vocab, device):  #@save
@@ -447,7 +447,7 @@ def grad_clipping(grads, theta):  #@save
 
 ## Đào tạo
 
-Trước khi đào tạo mô hình, chúng ta hãy [** xác định một hàm để đào tạo mô hình trong một kỷ chức**]. Nó khác với cách chúng tôi đào tạo mô hình :numref:`sec_softmax_scratch` ở ba nơi: 
+Trước khi đào tạo mô hình, chúng ta hãy [**xác định một hàm để đào tạo mô hình trong một kỷ chức**]. Nó khác với cách chúng tôi đào tạo mô hình :numref:`sec_softmax_scratch` ở ba nơi: 
 
 1. Các phương pháp lấy mẫu khác nhau cho dữ liệu tuần tự (lấy mẫu ngẫu nhiên và phân vùng tuần tự) sẽ dẫn đến sự khác biệt trong việc khởi tạo các trạng thái ẩn.
 1. Chúng tôi kẹp các gradient trước khi cập nhật các tham số mô hình. Điều này đảm bảo rằng mô hình không phân kỳ ngay cả khi gradient thổi lên tại một số điểm trong quá trình đào tạo.
