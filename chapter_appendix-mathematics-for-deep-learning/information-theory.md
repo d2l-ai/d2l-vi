@@ -354,14 +354,14 @@ mutual_information(tf.constant([[0.1, 0.5], [0.1, 0.3]]),
                    tf.constant([0.2, 0.8]), tf.constant([[0.75, 0.25]]))
 ```
 
-### Thuộc tính của thông tin lẫn nhau
+### Properties of Mutual Information
 
-Thay vì ghi nhớ định nghĩa về thông tin lẫn nhau :eqref:`eq_mut_ent_def`, bạn chỉ cần ghi nhớ các thuộc tính đáng chú ý của nó: 
+Rather than memorizing the definition of mutual information :eqref:`eq_mut_ent_def`, you only need to keep in mind its notable properties:
 
-* Thông tin lẫn nhau là đối xứng, tức là $I(X, Y) = I(Y, X)$.
-* Thông tin lẫn nhau là không tiêu cực, tức là $I(X, Y) \geq 0$.
-* $I(X, Y) = 0$ nếu và chỉ khi $X$ và $Y$ độc lập. Ví dụ, nếu $X$ và $Y$ độc lập, thì biết $Y$ không cung cấp bất kỳ thông tin nào về $X$ và ngược lại, vì vậy thông tin lẫn nhau của chúng bằng không.
-* Ngoài ra, nếu $X$ là một chức năng đảo ngược của $Y$, thì $Y$ và $X$ chia sẻ tất cả thông tin và $$I(X, Y) = H(Y) = H(X).$ $
+* Mutual information is symmetric, i.e., $I(X, Y) = I(Y, X)$.
+* Mutual information is non-negative, i.e., $I(X, Y) \geq 0$.
+* $I(X, Y) = 0$ if and only if $X$ and $Y$ are independent. For example, if $X$ and $Y$ are independent, then knowing $Y$ does not give any information about $X$ and vice versa, so their mutual information is zero.
+* Alternatively, if $X$ is an invertible function of $Y$, then $Y$ and $X$ share all information and $$I(X, Y) = H(Y) = H(X).$$
 
 ### Pointwise Thông tin lẫn nhau
 
