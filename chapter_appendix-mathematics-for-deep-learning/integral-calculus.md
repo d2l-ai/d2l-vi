@@ -465,13 +465,13 @@ $$
 
 Chúng ta cần một chức năng reparameterizes miền tích hợp của chúng ta. Chúng ta có thể lấy điều này là $\phi : \mathbb{R}^n \rightarrow \mathbb{R}^n$, đó là bất kỳ chức năng mà mất trong $n$ biến thực và trả về $n$ khác. Để giữ cho các biểu thức sạch sẽ, chúng ta sẽ giả định rằng $\phi$ là * injective* đó là để nói rằng nó không bao giờ tự gấp lại ($\phi(\mathbf{x}) = \phi(\mathbf{y}) \implies \mathbf{x} = \mathbf{y}$). 
 
-Trong trường hợp này, chúng ta có thể nói rằng 
+In this case, we can say that
 
 $$
 \int _ {\phi(U)} f(\mathbf{x})\;d\mathbf{x} = \int _ {U} f(\phi(\mathbf{x})) \left|\det(D\phi(\mathbf{x}))\right|\;d\mathbf{x}.
 $$
 
-trong đó $D\phi$ là *Jacobian* của $\phi$, là ma trận của các dẫn xuất một phần của $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$, 
+where $D\phi$ is the *Jacobian* of $\phi$, which is the matrix of partial derivatives of $\boldsymbol{\phi} = (\phi_1(x_1, \ldots, x_n), \ldots, \phi_n(x_1, \ldots, x_n))$,
 
 $$
 D\boldsymbol{\phi} = \begin{bmatrix}
@@ -481,23 +481,23 @@ D\boldsymbol{\phi} = \begin{bmatrix}
 \end{bmatrix}.
 $$
 
-Nhìn kỹ, chúng ta thấy rằng điều này tương tự như quy tắc chuỗi biến duy nhất :eqref:`eq_change_var`, ngoại trừ chúng tôi đã thay thế thuật ngữ $\frac{du}{dx}(x)$ bằng $\left|\det(D\phi(\mathbf{x}))\right|$. Hãy để chúng tôi xem làm thế nào chúng ta có thể để giải thích thuật ngữ này. Nhớ lại rằng thuật ngữ $\frac{du}{dx}(x)$ tồn tại để nói bao nhiêu chúng tôi kéo dài $x$ trục của chúng tôi bằng cách áp dụng $u$. Quá trình tương tự trong các kích thước cao hơn là xác định bao nhiêu chúng ta kéo dài khu vực (hoặc khối lượng, hoặc siêu khối lượng) của một hình vuông nhỏ (hoặc ít * siêu khối lượng*) bằng cách áp dụng $\boldsymbol{\phi}$. Nếu $\boldsymbol{\phi}$ là phép nhân của một ma trận, thì chúng ta biết cách yếu tố quyết định đã đưa ra câu trả lời. 
+Looking closely, we see that this is similar to the single variable chain rule :eqref:`eq_change_var`, except we have replaced the term $\frac{du}{dx}(x)$ with $\left|\det(D\phi(\mathbf{x}))\right|$.  Let us see how we can to interpret this term.  Recall that the $\frac{du}{dx}(x)$ term existed to say how much we stretched our $x$-axis by applying $u$.  The same process in higher dimensions is to determine how much we stretch the area (or volume, or hyper-volume) of a little square (or little *hyper-cube*) by applying $\boldsymbol{\phi}$.  If $\boldsymbol{\phi}$ was the multiplication by a matrix, then we know how the determinant already gives the answer.
 
-Với một số công việc, người ta có thể chỉ ra rằng * Jacobian* cung cấp xấp xỉ tốt nhất cho một hàm đa biến $\boldsymbol{\phi}$ tại một điểm bởi một ma trận theo cùng một cách chúng ta có thể xấp xỉ bằng các đường hoặc mặt phẳng với các dẫn xuất và gradient. Do đó, yếu tố quyết định của Jacobian phản ánh chính xác yếu tố mở rộng quy mô mà chúng ta đã xác định trong một chiều. 
+With some work, one can show that the *Jacobian* provides the best approximation to a multivariable function $\boldsymbol{\phi}$ at a point by a matrix in the same way we could approximate by lines or planes with derivatives and gradients. Thus the determinant of the Jacobian exactly mirrors the scaling factor we identified in one dimension.
 
-Phải mất một số công việc để điền vào các chi tiết cho việc này, vì vậy đừng lo lắng nếu họ không rõ ràng bây giờ. Chúng ta hãy xem ít nhất một ví dụ chúng ta sẽ sử dụng sau này. Hãy xem xét tích phân 
+It takes some work to fill in the details to this, so do not worry if they are not clear now.  Let us see at least one example we will make use of later on.  Consider the integral
 
 $$
 \int _ {-\infty}^{\infty} \int _ {-\infty}^{\infty} e^{-x^{2}-y^{2}} \;dx\;dy.
 $$
 
-Chơi với tích phân này trực tiếp sẽ giúp chúng ta không có nơi nào, nhưng nếu chúng ta thay đổi biến, chúng ta có thể đạt được tiến bộ đáng kể. Nếu chúng ta để $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta),  r\sin(\theta))$ (có nghĩa là $x = r \cos(\theta)$, $y = r \sin(\theta)$), thì chúng ta có thể áp dụng sự thay đổi của công thức biến để thấy rằng đây là điều tương tự như 
+Playing with this integral directly will get us no-where, but if we change variables, we can make significant progress.  If we let $\boldsymbol{\phi}(r, \theta) = (r \cos(\theta),  r\sin(\theta))$ (which is to say that $x = r \cos(\theta)$, $y = r \sin(\theta)$), then we can apply the change of variable formula to see that this is the same thing as
 
 $$
 \int _ 0^\infty \int_0 ^ {2\pi} e^{-r^{2}} \left|\det(D\mathbf{\phi}(\mathbf{x}))\right|\;d\theta\;dr,
 $$
 
-Ở đâu 
+where
 
 $$
 \left|\det(D\mathbf{\phi}(\mathbf{x}))\right| = \left|\det\begin{bmatrix}
@@ -506,15 +506,15 @@ $$
 \end{bmatrix}\right| = r(\cos^{2}(\theta) + \sin^{2}(\theta)) = r.
 $$
 
-Như vậy, tích phân là 
+Thus, the integral is
 
 $$
 \int _ 0^\infty \int _ 0 ^ {2\pi} re^{-r^{2}} \;d\theta\;dr = 2\pi\int _ 0^\infty re^{-r^{2}} \;dr = \pi,
 $$
 
-trong đó sự bình đẳng cuối cùng theo sau bởi cùng một tính toán mà chúng tôi đã sử dụng trong phần :numref:`integral_example`. 
+where the final equality follows by the same computation that we used in section :numref:`integral_example`.
 
-Chúng ta sẽ gặp lại tích phân này khi chúng ta nghiên cứu các biến ngẫu nhiên liên tục trong :numref:`sec_random_variables`. 
+We will meet this integral again when we study continuous random variables in :numref:`sec_random_variables`.
 
 ## Tóm tắt
 
@@ -522,7 +522,11 @@ Chúng ta sẽ gặp lại tích phân này khi chúng ta nghiên cứu các bi�
 * Định lý cơ bản của giải tích cho phép chúng ta tận dụng kiến thức về các dẫn xuất để tính toán các khu vực thông qua quan sát rằng đạo hàm của khu vực lên đến một số điểm được đưa ra bởi giá trị của hàm được tích hợp.
 * Tích phân trong các kích thước cao hơn có thể được tính toán bằng cách lặp các tích phân biến đơn lẻ.
 
-## Bài tập 1. $\int_1^2 \frac{1}{x} \;dx$ là cái gì? 2. Sử dụng thay đổi công thức biến để tích hợp $\int_0^{\sqrt{\pi}}x\sin(x^2)\;dx$. $\int_{[0,1]^2} xy \;dx\;dy$ là cái gì? 4. Sử dụng thay đổi công thức biến để tính toán $\int_0^2\int_0^1xy(x^2-y^2)/(x^2+y^2)^3\;dy\;dx$ và $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ để thấy chúng khác nhau.
+## Exercises
+1. What is $\int_1^2 \frac{1}{x} \;dx$?
+2. Use the change of variables formula to integrate $\int_0^{\sqrt{\pi}}x\sin(x^2)\;dx$.
+3. What is $\int_{[0,1]^2} xy \;dx\;dy$?
+4. Use the change of variables formula to compute $\int_0^2\int_0^1xy(x^2-y^2)/(x^2+y^2)^3\;dy\;dx$ and $\int_0^1\int_0^2f(x, y) = xy(x^2-y^2)/(x^2+y^2)^3\;dx\;dy$ to see they are different.
 
 :begin_tab:`mxnet`
 [Discussions](https://discuss.d2l.ai/t/414)

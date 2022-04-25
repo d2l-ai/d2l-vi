@@ -11,11 +11,11 @@ Biến ngẫu nhiên liên tục là một chủ đề tinh tế hơn đáng k�
 
 Để hiểu những thách thức kỹ thuật bổ sung gặp phải khi làm việc với các biến ngẫu nhiên liên tục, chúng ta hãy thực hiện một thử nghiệm tư tưởng. Giả sử rằng chúng ta đang ném một phi tiêu vào bảng phi tiêu, và chúng tôi muốn biết xác suất rằng nó chạm chính xác $2 \text{cm}$ từ trung tâm của bảng. 
 
-Để bắt đầu, chúng tôi tưởng tượng việc đo một chữ số chính xác duy nhất, nghĩa là với các thùng cho $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, v.v. Chúng tôi ném nói $100$ phi tiêu vào bảng phi tiêu, và nếu $20$ trong số họ rơi vào thùng cho $2\text{cm}$, chúng tôi kết luận rằng $20\ %$ of the darts we throw hit the board $2\ văn bản {cm} $ cách trung tâm. 
+Để bắt đầu, chúng tôi tưởng tượng việc đo một chữ số chính xác duy nhất, nghĩa là với các thùng cho $0 \text{cm}$, $1 \text{cm}$, $2 \text{cm}$, v.v. Chúng tôi ném nói $100$ phi tiêu vào bảng phi tiêu, và nếu $20$ trong số họ rơi vào thùng cho $2\text{cm}$, chúng tôi kết luận rằng $20\%$ of the darts we throw hit the board $2\ văn bản {cm}$ cách trung tâm. 
 
 Tuy nhiên, khi chúng ta nhìn kỹ hơn, điều này không phù hợp với câu hỏi của chúng tôi! Chúng tôi muốn bình đẳng chính xác, trong khi những thùng chứa tất cả những gì rơi vào giữa $1.5\text{cm}$ và $2.5\text{cm}$. 
 
-Không ngăn cản, chúng tôi tiếp tục xa hơn. Chúng tôi đo thậm chí chính xác hơn, nói $1.9\text{cm}$, $2.0\text{cm}$, $2.1\text{cm}$, và bây giờ thấy rằng có lẽ $3$ của phi tiêu $100$ đánh vào bảng trong xô $2.0\text{cm}$. Vì vậy, chúng tôi kết luận xác suất là $3\ %$. 
+Không ngăn cản, chúng tôi tiếp tục xa hơn. Chúng tôi đo thậm chí chính xác hơn, nói $1.9\text{cm}$, $2.0\text{cm}$, $2.1\text{cm}$, và bây giờ thấy rằng có lẽ $3$ của phi tiêu $100$ đánh vào bảng trong xô $2.0\text{cm}$. Vì vậy, chúng tôi kết luận xác suất là $3\%$. 
 
 Tuy nhiên, điều này không giải quyết được bất cứ điều gì! Chúng tôi vừa đẩy vấn đề xuống một chữ số xa hơn. Hãy để chúng tôi trừu tượng một chút. Hãy tưởng tượng chúng ta biết xác suất $k$ chữ số đầu tiên khớp với $2.00000\ldots$ và chúng tôi muốn biết xác suất nó khớp với $k+1$ chữ số đầu tiên. Khá hợp lý khi giả định rằng chữ số ${k+1}^{\mathrm{th}}$ về cơ bản là một lựa chọn ngẫu nhiên từ bộ $\{0, 1, 2, \ldots, 9\}$. Ít nhất, chúng ta không thể hình thành một quá trình có ý nghĩa về thể chất, điều này sẽ buộc số lượng micromet tạo thành trung tâm thích kết thúc trong một $7$ so với $3$. 
 
@@ -302,7 +302,7 @@ Nó là tự nhiên tại thời điểm này để hỏi, “Nếu độ lệch
 $$P\left(X \not\in [\mu_X - \alpha\sigma_X, \mu_X + \alpha\sigma_X]\right) \le \frac{1}{\alpha^2}.$$
 :eqlabel:`eq_chebyshev`
 
-Hoặc để nêu nó bằng lời nói trong trường hợp $\alpha=10$, $99\ %$ of the samples from any random variable fall within $10$ độ lệch chuẩn của trung bình. Điều này đưa ra một giải thích ngay lập tức cho thống kê tóm tắt tiêu chuẩn của chúng tôi. 
+Or to state it verbally in the case of $\alpha=10$, $99\%$ of the samples from any random variable fall within $10$ standard deviations of the mean.  This gives an immediate interpretation to our standard summary statistics.
 
 Để xem cách tuyên bố này là khá tinh tế, chúng ta hãy xem xét ví dụ chạy của chúng tôi một lần nữa nơi $X$ là biến ngẫu nhiên mà lấy giá trị $a-2$ với xác suất $p$, $a+2$ với xác suất $p$ và $a$ với xác suất $1-2p$. Chúng tôi thấy rằng trung bình là $a$ và độ lệch chuẩn là $2\sqrt{2p}$. Điều này có nghĩa là, nếu chúng ta lấy sự bất bình đẳng của Chebyshev :eqref:`eq_chebyshev` với $\alpha = 2$, chúng ta thấy rằng biểu thức là 
 
@@ -310,7 +310,7 @@ $$
 P\left(X \not\in [a - 4\sqrt{2p}, a + 4\sqrt{2p}]\right) \le \frac{1}{4}.
 $$
 
-Điều này có nghĩa là $75\ %$ của thời gian, biến ngẫu nhiên này sẽ nằm trong khoảng thời gian này cho bất kỳ giá trị nào là $p$. Bây giờ, nhận thấy rằng như $p\ rightarrow 0$, this interval also converges to the single point $a$.  But we know that our random variable takes the values $a-2, a$, and $a+2$ only so eventually we can be certain $a-2$ and $a+2$ sẽ rơi ra ngoài khoảng thời gian! Câu hỏi đặt ra là, tại những gì $p$ làm điều đó xảy ra. Vì vậy, chúng tôi muốn giải quyết: cho những gì $p$ làm $a+4\sqrt{2p} = a+2$, được giải quyết khi $p=1/8$, đó là * chính xác* $p$ đầu tiên nơi nó có thể xảy ra mà không vi phạm tuyên bố của chúng tôi rằng không quá $1/4$ mẫu từ phân phối sẽ nằm ngoài khoảng thời gian ($1/8$ ở bên trái và $1/8$ bên phải). 
+This means that $75\%$ of the time, this random variable will fall within this interval for any value of $p$.  Now, notice that as $p \rightarrow 0$, this interval also converges to the single point $a$.  But we know that our random variable takes the values $a-2, a$, and $a+2$ only so eventually we can be certain $a-2$ and $a+2$ will fall outside the interval!  The question is, at what $p$ does that happen.  So we want to solve: for what $p$ does $a+4\sqrt{2p} = a+2$, which is solved when $p=1/8$, which is *exactly* the first $p$ where it could possibly happen without violating our claim that no more than $1/4$ of samples from the distribution would fall outside the interval ($1/8$ to the left, and $1/8$ to the right).
 
 Hãy để chúng tôi hình dung điều này. Chúng tôi sẽ hiển thị xác suất nhận được ba giá trị dưới dạng ba thanh dọc với chiều cao tỷ lệ thuận với xác suất. Khoảng thời gian sẽ được vẽ dưới dạng một đường ngang ở giữa. Cốt truyện đầu tiên cho thấy những gì xảy ra cho $p > 1/8$ trong đó khoảng thời gian an toàn chứa tất cả các điểm.
 
@@ -730,38 +730,35 @@ $$
 
 ### Tương quan
 
-Như chúng ta đã làm trong trường hợp phương tiện và phương sai, bây giờ chúng ta hãy xem xét các đơn vị. Nếu $X$ được đo bằng một đơn vị (nói inch) và $Y$ được đo bằng một đơn vị khác (ví dụ đô la), phương sai được đo bằng tích của hai đơn vị này $\text{inches} \times \text{dollars}$. Các đơn vị này có thể khó diễn giải. Những gì chúng ta thường muốn trong trường hợp này là một phép đo ít đơn vị về sự liên quan. Thật vậy, thường thì chúng ta không quan tâm đến mối tương quan định lượng chính xác, mà là hỏi xem mối tương quan có theo cùng một hướng hay không, và mối quan hệ mạnh mẽ như thế nào. 
+As we did in the case of means and variances, let us now consider units.  If $X$ is measured in one unit (say inches), and $Y$ is measured in another (say dollars), the covariance is measured in the product of these two units $\text{inches} \times \text{dollars}$.  These units can be hard to interpret.  What we will often want in this case is a unit-less measurement of relatedness.  Indeed, often we do not care about exact quantitative correlation, but rather ask if the correlation is in the same direction, and how strong the relationship is.
 
-Để xem điều gì có ý nghĩa, chúng ta hãy thực hiện một thí nghiệm suy nghĩ. Giả sử rằng chúng ta chuyển đổi các biến ngẫu nhiên của chúng tôi trong inch và đô la để được tính bằng inch và xu. Trong trường hợp này biến ngẫu nhiên $Y$ được nhân với $100$. Nếu chúng ta làm việc thông qua định nghĩa, điều này có nghĩa là $\mathrm{Cov}(X, Y)$ sẽ được nhân với $100$. Như vậy chúng ta thấy rằng trong trường hợp này, sự thay đổi của các đơn vị thay đổi phương sai theo hệ số $100$. Do đó, để tìm ra biện pháp tương quan bất biến đơn vị của chúng ta, chúng ta sẽ cần phải chia cho một cái gì đó khác cũng được thu nhỏ bởi $100$. Thật vậy, chúng tôi có một ứng cử viên rõ ràng, độ lệch chuẩn! Thật vậy nếu chúng ta định nghĩa hệ số tương quan *là 
+To see what makes sense, let us perform a thought experiment.  Suppose that we convert our random variables in inches and dollars to be in inches and cents.  In this case the random variable $Y$ is multiplied by $100$.  If we work through the definition, this means that $\mathrm{Cov}(X, Y)$ will be multiplied by $100$.  Thus we see that in this case a change of units change the covariance by a factor of $100$.  Thus, to find our unit-invariant measure of correlation, we will need to divide by something else that also gets scaled by $100$.  Indeed we have a clear candidate, the standard deviation!  Indeed if we define the *correlation coefficient* to be
 
-$$\rho(X, Y) = \frac{\mathrm{Cov}(X, Y)}{\sigma_{X}\sigma_{Y}},$$
-:eqlabel:`eq_cor_def`
+we see that this is a unit-less value.  A little mathematics can show that this number is between $-1$ and $1$ with $1$ meaning maximally positively correlated, whereas $-1$ means maximally negatively correlated.
 
-we see that this is a unit-lessđơn vị lessít hơn value giá trị. Một toán học nhỏ có thể chỉ ra rằng con số này nằm trong khoảng $-1$ và $1$ với $1$ có nghĩa là tương quan tích cực tối đa, trong khi $-1$ có nghĩa là tương quan tiêu cực tối đa. 
-
-Quay trở lại ví dụ riêng biệt rõ ràng của chúng tôi ở trên, chúng ta có thể thấy rằng $\sigma_X = 1$ và $\sigma_Y = 2$, vì vậy chúng ta có thể tính toán mối tương quan giữa hai biến ngẫu nhiên sử dụng :eqref:`eq_cor_def` để thấy rằng 
+Returning to our explicit discrete example above, we can see that $\sigma_X = 1$ and $\sigma_Y = 2$, so we can compute the correlation between the two random variables using :eqref:`eq_cor_def` to see that
 
 $$
 \rho(X, Y) = \frac{4p-2}{1\cdot 2} = 2p-1.
 $$
 
-Điều này hiện dao động trong khoảng $-1$ và $1$ với hành vi mong đợi là $1$ có nghĩa là tương quan nhất, và $-1$ có nghĩa là tương quan tối thiểu. 
+This now ranges between $-1$ and $1$ with the expected behavior of $1$ meaning most correlated, and $-1$ meaning minimally correlated.
 
-Như một ví dụ khác, coi $X$ là bất kỳ biến ngẫu nhiên nào, và $Y=aX+b$ như bất kỳ hàm xác định tuyến tính nào của $X$. Then, one can computetính toán that 
+As another example, consider $X$ as any random variable, and $Y=aX+b$ as any linear deterministic function of $X$.  Then, one can compute that
 
 $$\sigma_{Y} = \sigma_{aX+b} = |a|\sigma_{X},$$
 
 $$\mathrm{Cov}(X, Y) = \mathrm{Cov}(X, aX+b) = a\mathrm{Cov}(X, X) = a\mathrm{Var}(X),$$
 
-và do đó bởi :eqref:`eq_cor_def` 
+and thus by :eqref:`eq_cor_def` that
 
 $$
 \rho(X, Y) = \frac{a\mathrm{Var}(X)}{|a|\sigma_{X}^2} = \frac{a}{|a|} = \mathrm{sign}(a).
 $$
 
-Do đó, chúng ta thấy rằng mối tương quan là $+1$ cho bất kỳ $a > 0$ nào và $-1$ cho bất kỳ $a < 0$ nào minh họa rằng tương quan đo mức độ và định hướng của hai biến ngẫu nhiên có liên quan, chứ không phải quy mô mà biến thể mất. 
+Thus we see that the correlation is $+1$ for any $a > 0$, and $-1$ for any $a < 0$ illustrating that correlation measures the degree and directionality the two random variables are related, not the scale that the variation takes.
 
-Chúng ta hãy một lần nữa vẽ một tập hợp các biến ngẫu nhiên với tương quan điều chỉnh.
+Let us again plot a collection of random variables with tunable correlation.
 
 ```{.python .input}
 # Plot a few random variables adjustable correlations
@@ -815,19 +812,19 @@ for i in range(3):
 d2l.plt.show()
 ```
 
-Hãy để chúng tôi liệt kê một vài thuộc tính của mối tương quan dưới đây. 
+Let us list a few properties of the correlation below.
 
-* Đối với bất kỳ biến ngẫu nhiên $X$, $\rho(X, X) = 1$.
-* Đối với bất kỳ biến ngẫu nhiên $X, Y$ và số $a$ và $b$, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
-* Nếu $X$ và $Y$ độc lập với phương sai không thì $\rho(X, Y) = 0$.
+* For any random variable $X$, $\rho(X, X) = 1$.
+* For any random variables $X, Y$ and numbers $a$ and $b$, $\rho(aX+b, Y) = \rho(X, aY+b) = \rho(X, Y)$.
+* If $X$ and $Y$ are independent with non-zero variance then $\rho(X, Y) = 0$.
 
-Như một lưu ý cuối cùng, bạn có thể cảm thấy như một số công thức này quen thuộc. Thật vậy, nếu chúng ta mở rộng mọi thứ ra giả định rằng $\mu_X = \mu_Y = 0$, chúng ta thấy rằng đây là 
+As a final note, you may feel like some of these formulae are familiar.  Indeed, if we expand everything out assuming that $\mu_X = \mu_Y = 0$, we see that this is
 
 $$
 \rho(X, Y) = \frac{\sum_{i, j} x_iy_ip_{ij}}{\sqrt{\sum_{i, j}x_i^2 p_{ij}}\sqrt{\sum_{i, j}y_j^2 p_{ij}}}.
 $$
 
-Điều này trông giống như một tổng của một sản phẩm của các thuật ngữ chia cho căn bậc hai của các khoản tiền. Đây chính xác là công thức cho cosin của góc giữa hai vectơ $\mathbf{v}, \mathbf{w}$ với tọa độ khác nhau có trọng số bởi $p_{ij}$: 
+This looks like a sum of a product of terms divided by the square root of sums of terms.  This is exactly the formula for the cosine of the angle between two vectors $\mathbf{v}, \mathbf{w}$ with the different coordinates weighted by $p_{ij}$:
 
 $$
 \cos(\theta) = \frac{\mathbf{v}\cdot \mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|} = \frac{\sum_{i} v_iw_i}{\sqrt{\sum_{i}v_i^2}\sqrt{\sum_{i}w_i^2}}.
@@ -837,7 +834,11 @@ Thật vậy, nếu chúng ta nghĩ về các định mức là liên quan đế
 
 ## Tóm lượng* Biến ngẫu nhiên liên tục là các biến ngẫu nhiên có thể thực hiện một liên tục của các giá trị. Chúng có một số khó khăn kỹ thuật khiến chúng trở nên khó khăn hơn khi làm việc so với các biến ngẫu nhiên rời rạc * Hàm mật độ xác suất cho phép chúng ta làm việc với các biến ngẫu nhiên liên tục bằng cách đưa ra một hàm trong đó khu vực dưới đường cong trên một khoảng thời gian cho xác suất tìm thấy một điểm mẫu trong khoảng thời gian đó* Hàm phân phối tích lũy là xác suất quan sát biến ngẫu nhiên nhỏ hơn một ngưỡng nhất định. Nó có thể cung cấp một quan điểm thay thế hữu ích thống nhất các biến rời rạc và liên tục.* trung bình là giá trị trung bình của một biến ngẫu nhiên. * phương sai là bình phương dự kiến của sự khác biệt giữa biến ngẫu nhiên và trung bình của nó.* Độ lệch chuẩn là căn bậc hai của phương sai. Nó có thể được coi là đo phạm vi các giá trị mà biến ngẫu nhiên có thể mất. * Bất đẳng thức của Chebyshev cho phép chúng ta làm cho trực giác này nghiêm ngặt bằng cách đưa ra một khoảng rõ ràng chứa biến ngẫu nhiên hầu hết thời gian* Mật độ chung cho phép chúng ta làm việc với các biến ngẫu nhiên tương quan. Chúng ta có thể lề mật độ chung bằng cách tích hợp các biến ngẫu nhiên không mong muốn để có được sự phân bố của biến ngẫu nhiên mong muốn* hệ số đồng phương sai và hệ số tương quan cung cấp một cách để đo bất kỳ mối quan hệ tuyến tính nào giữa hai biến ngẫu nhiên tương quan. 
 
-## Bài tập 1. Giả sử rằng chúng ta có biến ngẫu nhiên với mật độ được đưa ra bởi $p(x) = \frac{1}{x^2}$ cho $x \ge 1$ và $p(x) = 0$ nếu không. $P(X > 2)$ là cái gì? 2. Phân bố Laplace là một biến ngẫu nhiên có mật độ được cho bởi $p(x = \frac{1}{2}e^{-|x|}$. Ý nghĩa và độ lệch chuẩn của chức năng này là gì? Như một gợi ý, $\int_0^\infty xe^{-x} \; dx = 1$ và $\int_0^\infty x^2e^{-x} \; dx = 2$. Tôi đi bộ đến bạn trên đường phố và nói “Tôi có một biến ngẫu nhiên với trung bình $1$, độ lệch chuẩn $2$, và tôi quan sát $25\ %$ of my samples taking a value larger than $9$.” Bạn có tin tôi không? Tại sao hoặc tại sao không? 4. Giả sử rằng bạn có hai biến ngẫu nhiên $X, Y$, với mật độ khớp được đưa ra bởi $p_{XY}(x, y) = 4xy$ cho $x, y \in [0,1]$ và $p_{XY}(x, y) = 0$ nếu không. Sự đồng phương sai của $X$ và $Y$ là gì?
+## Exercises
+1. Suppose that we have the random variable with density given by $p(x) = \frac{1}{x^2}$ for $x \ge 1$ and $p(x) = 0$ otherwise.  What is $P(X > 2)$?
+2. The Laplace distribution is a random variable whose density is given by $p(x = \frac{1}{2}e^{-|x|}$.  What is the mean and the standard deviation of this function?  As a hint, $\int_0^\infty xe^{-x} \; dx = 1$ and $\int_0^\infty x^2e^{-x} \; dx = 2$.
+3. I walk up to you on the street and say "I have a random variable with mean $1$, standard deviation $2$, and I observed $25\%$ of my samples taking a value larger than $9$."  Do you believe me?  Why or why not?
+4. Suppose that you have two random variables $X, Y$, with joint density given by $p_{XY}(x, y) = 4xy$ for $x, y \in [0,1]$ and $p_{XY}(x, y) = 0$ otherwise.  What is the covariance of $X$ and $Y$?
 
 :begin_tab:`mxnet`
 [Discussions](https://discuss.d2l.ai/t/415)

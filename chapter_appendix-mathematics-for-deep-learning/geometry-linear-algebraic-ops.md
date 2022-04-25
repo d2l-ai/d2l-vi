@@ -131,11 +131,32 @@ angle(tf.constant([0, 1, 2], dtype=tf.float32), tf.constant([2.0, 3, 4]))
 
 Chúng tôi sẽ không sử dụng nó ngay bây giờ, nhưng rất hữu ích khi biết rằng chúng ta sẽ đề cập đến các vectơ mà góc là $\pi/2$ (hoặc tương đương $90^{\circ}$) là * trực tho*. Bằng cách kiểm tra phương trình trên, chúng ta thấy rằng điều này xảy ra khi $\theta = \pi/2$, đó là điều tương tự như $\cos(\theta) = 0$. Cách duy nhất điều này có thể xảy ra là nếu bản thân sản phẩm chấm bằng 0, và hai vectơ là trực giao nếu và chỉ khi $\mathbf{v}\cdot\mathbf{w} = 0$. Điều này sẽ chứng minh là một công thức hữu ích khi hiểu các đối tượng về mặt hình học. 
 
-Nó là hợp lý để hỏi: tại sao tính toán góc hữu ích? Câu trả lời đến trong loại bất biến mà chúng tôi mong đợi dữ liệu sẽ có. Xem xét một hình ảnh, và một hình ảnh trùng lặp, trong đó mỗi giá trị pixel là như nhau nhưng $10\ %$ độ sáng. Các giá trị của các pixel riêng lẻ nói chung cách xa các giá trị ban đầu. Do đó, nếu một người tính toán khoảng cách giữa hình ảnh gốc và hình ảnh tối hơn, khoảng cách có thể lớn. Tuy nhiên, đối với hầu hết các ứng dụng ML, * nội dung* là như nhau - nó vẫn là một hình ảnh của một con mèo như xa như một phân loại mèo/chó có liên quan. Tuy nhiên, nếu chúng ta xem xét góc, nó không phải là khó để thấy rằng đối với bất kỳ vector $\mathbf{v}$, góc giữa $\mathbf{v}$ và $0.1\cdot\mathbf{v}$ là không. Điều này tương ứng với thực tế là các vectơ mở rộng giữ cùng một hướng và chỉ thay đổi chiều dài. Góc xem xét hình ảnh tối hơn giống hệt nhau. 
+It is reasonable to ask: why is computing the angle useful?
+The answer comes in the kind of invariance we expect data to have.
+Consider an image, and a duplicate image,
+where every pixel value is the same but $10\%$ the brightness.
+The values of the individual pixels are in general far from the original values.
+Thus, if one computed the distance between the original image and the darker one,
+the distance can be large.
+However, for most ML applications, the *content* is the same---it is still
+an image of a cat as far as a cat/dog classifier is concerned.
+However, if we consider the angle, it is not hard to see
+that for any vector $\mathbf{v}$, the angle
+between $\mathbf{v}$ and $0.1\cdot\mathbf{v}$ is zero.
+This corresponds to the fact that scaling vectors
+keeps the same direction and just changes the length.
+The angle considers the darker image identical. 
 
 Ví dụ như thế này ở khắp mọi nơi. Trong văn bản, chúng ta có thể muốn chủ đề được thảo luận không thay đổi nếu chúng ta viết dài gấp đôi tài liệu nói cùng một điều. Đối với một số mã hóa (chẳng hạn như đếm số lần xuất hiện của các từ trong một số từ vựng), điều này tương ứng với việc tăng gấp đôi vector mã hóa tài liệu, vì vậy một lần nữa chúng ta có thể sử dụng góc. 
 
-### Cosine tương tự Trong ngữ cảnh ML nơi góc được sử dụng để đo độ gần gũi của hai vectơ, các học viên áp dụng thuật ngữ * tương tự cosine* để chỉ phần $$\ cos (\ theta) =\ frac {\ mathbf {v\}\ cdot\ mathbf {w}} {\ |\ mathbf {v} |\ mathbf {w}\ |} . $$ 
+### Cosine Similarity
+In ML contexts where the angle is employed
+to measure the closeness of two vectors,
+practitioners adopt the term *cosine similarity*
+to refer to the portion
+$$
+\cos(\theta) = \frac{\mathbf{v}\cdot\mathbf{w}}{\|\mathbf{v}\|\|\mathbf{w}\|}.
+$$
 
 Cosin có giá trị lớn nhất là $1$ khi hai vectơ trỏ theo cùng một hướng, giá trị tối thiểu là $-1$ khi chúng chỉ theo hướng ngược lại, và giá trị $0$ khi hai vectơ là trực giao. Lưu ý rằng nếu các thành phần của vectơ chiều cao được lấy mẫu ngẫu nhiên với trung bình $0$, cosin của chúng gần như sẽ luôn gần với $0$. 
 
@@ -143,7 +164,10 @@ Cosin có giá trị lớn nhất là $1$ khi hai vectơ trỏ theo cùng một 
 
 Ngoài việc làm việc với các vectơ, một đối tượng chính khác mà bạn phải hiểu để đi xa trong đại số tuyến tính là * hyperplane*, một khái quát hóa cho các kích thước cao hơn của một đường thẳng (hai chiều) hoặc của một mặt phẳng (ba chiều). Trong một không gian vectơ $d$ chiều, một siêu phẳng có $d-1$ kích thước và chia không gian thành hai nửa không gian. 
 
-Hãy để chúng tôi bắt đầu với một ví dụ. Giả sử rằng chúng ta có một vector cột $\mathbf{w}=[2,1]^\top$. Chúng tôi muốn biết, “những điểm $\mathbf{v}$ với $\mathbf{w}\cdot\mathbf{v} = 1$ là gì?” Bằng cách nhớ lại kết nối giữa các sản phẩm chấm và góc trên :eqref:`eq_angle_forumla`, chúng ta có thể thấy rằng điều này tương đương với $$\ |\ mathbf {v}\ |\ mathbf {w}\ |\ cos (\ theta) = 1\;\ iff\;\ |\ mathbf {v}\ |\ cos (\ theta) = {\ frac {1}\ |\ mathbf {w}\ |} =\ frac {1} {\ sqrt {5}} . $$ 
+Hãy để chúng tôi bắt đầu với một ví dụ. Giả sử rằng chúng ta có một vector cột $\mathbf{w}=[2,1]^\top$. Chúng tôi muốn biết, “những điểm $\mathbf{v}$ với $\mathbf{w}\cdot\mathbf{v} = 1$ là gì?” Bằng cách nhớ lại kết nối giữa các sản phẩm chấm và góc trên :eqref:`eq_angle_forumla`, chúng ta có thể thấy rằng điều này tương đương với
+$$
+\|\mathbf{v}\|\|\mathbf{w}\|\cos(\theta) = 1 \; \iff \; \|\mathbf{v}\|\cos(\theta) = \frac{1}{\|\mathbf{w}\|} = \frac{1}{\sqrt{5}}.
+$$
 
 ![Recalling trigonometry, we see the formula $\|\mathbf{v}\|\cos(\theta)$ is the length of the projection of the vector $\mathbf{v}$ onto the direction of $\mathbf{w}$](../img/proj-vec.svg)
 :label:`fig_vector-project`
@@ -306,7 +330,9 @@ a & b \\ c & d
 \end{bmatrix}.
 $$
 
-Nếu chúng ta muốn áp dụng điều này cho một vector tùy ý $\mathbf{v} = [x, y]^\top$, chúng ta nhân lên và thấy rằng 
+If we want to apply this to an arbitrary vector
+$\mathbf{v} = [x, y]^\top$,
+we multiply and see that
 
 $$
 \begin{aligned}
@@ -674,7 +700,30 @@ Một trong hai ký hiệu cho phép đại diện ngắn gọn và hiệu quả
 
 ## Tóm tắt * Vectơ có thể được giải thích về mặt hình học như một trong hai điểm hoặc hướng trong không gian * Các sản phẩm chấm xác định khái niệm góc đến không gian chiều cao tùy ý. Chúng có thể được sử dụng để xác định các mặt phẳng quyết định thường được sử dụng như là bước cuối cùng trong một nhiệm vụ phân loại. * Phép nhân ma trận có thể được giải thích về mặt hình học là biến dạng thống nhất của tọa độ bên dưới. Chúng đại diện cho một cách rất hạn chế, nhưng về mặt toán học sạch, để biến đổi vectơ. * Phụ thuộc tuyến tính là một cách để biết khi một tập hợp các vectơ nằm trong một không gian chiều thấp hơn chúng ta mong đợi (giả sử bạn có $3$ vectơ sống trong một không gian $2$ chiều). Thứ hạng của ma trận là kích thước của tập hợp con lớn nhất của các cột của nó độc lập tuyến tính * Khi nghịch đảo của ma trận được xác định, đảo ngược ma trận cho phép chúng ta tìm một ma trận khác hoàn tác hành động của đầu tiên. Ma trận đảo ngược là hữu ích trong lý thuyết, nhưng đòi hỏi sự chăm sóc trong thực tế do sự bất ổn số.* yếu tố quyết định cho phép chúng ta đo lường bao nhiêu ma trận mở rộng hoặc ký hợp đồng một không gian. Một yếu tố quyết định nonzero ngụ ý một ma trận đảo ngược (không số ít) và một yếu tố xác định có giá trị không có nghĩa là ma trận không thể đảo ngược (số ít). * co thắt tensor và tổng kết Einstein cung cấp cho một ký hiệu gọn gàng và sạch sẽ để thể hiện nhiều tính toán được nhìn thấy trong học máy. 
 
-## Bài tập 1. Góc giữa $$\ vec v_1 =\ begin {bmatrix} 1\\ 0\\\ -1\\ 2\ end {bmatrix},\ qquad\ vec v_2 =\ begin {bmatrix} 3\\ 1\\ 0\\\ 1\\ 1\\ 1\ cuối {bmatrix}? $$ 2. Đúng hay sai: $\ begin {bmatrix} 1 & 2\\ 0&1\ end {bmatrix} $ and $\ begin {bmatrix} 1 & -2\\ 0&1\ end {bmatrix} $ là nghịch đảo của nhau? 3. Giả sử rằng chúng ta vẽ một hình dạng trong mặt phẳng với khu vực $100\mathrm{m}^2$. Khu vực sau khi biến hình bằng ma trận $$\ begin {bmatrix} 2 & 3\\ 1 & 2\ end {bmatrix}. $$ 4. Những bộ vectơ nào sau đây độc lập tuyến tính? * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$ * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$ * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$ 5. Giả sử rằng bạn có một ma trận được viết là $A =\ begin {bmatrix} c\\ d\ end {bmatrix}\ cdot\ begin {bmatrix} a & b\ end {bmatrix} $ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$? 6. Các vectơ $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ và $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ là trực giao. Điều kiện trên ma trận $A$ để $Ae_1$ và $Ae_2$ là trực giao là gì? 7. Làm thế nào bạn có thể viết $\mathrm{tr}(\mathbf{A}^4)$ trong ký hiệu Einstein cho một ma trận tùy ý $A$?
+## Exercises
+1. What is the angle between
+$$
+\vec v_1 = \begin{bmatrix}
+1 \\ 0 \\ -1 \\ 2
+\end{bmatrix}, \qquad \vec v_2 = \begin{bmatrix}
+3 \\ 1 \\ 0 \\ 1
+\end{bmatrix}?
+$$
+2. True or false: $\begin{bmatrix}1 & 2\\0&1\end{bmatrix}$ and $\begin{bmatrix}1 & -2\\0&1\end{bmatrix}$ are inverses of one another?
+3. Suppose that we draw a shape in the plane with area $100\mathrm{m}^2$.  What is the area after transforming the figure by the matrix
+$$
+\begin{bmatrix}
+2 & 3\\
+1 & 2
+\end{bmatrix}.
+$$
+4. Which of the following sets of vectors are linearly independent?
+ * $\left\{\begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}2\\1\\-1\end{pmatrix}, \begin{pmatrix}3\\1\\1\end{pmatrix}\right\}$
+ * $\left\{\begin{pmatrix}3\\1\\1\end{pmatrix}, \begin{pmatrix}1\\1\\1\end{pmatrix}, \begin{pmatrix}0\\0\\0\end{pmatrix}\right\}$
+ * $\left\{\begin{pmatrix}1\\1\\0\end{pmatrix}, \begin{pmatrix}0\\1\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix}\right\}$
+5. Suppose that you have a matrix written as $A = \begin{bmatrix}c\\d\end{bmatrix}\cdot\begin{bmatrix}a & b\end{bmatrix}$ for some choice of values $a, b, c$, and $d$.  True or false: the determinant of such a matrix is always $0$?
+6. The vectors $e_1 = \begin{bmatrix}1\\0\end{bmatrix}$ and $e_2 = \begin{bmatrix}0\\1\end{bmatrix}$ are orthogonal.  What is the condition on a matrix $A$ so that $Ae_1$ and $Ae_2$ are orthogonal?
+7. How can you write $\mathrm{tr}(\mathbf{A}^4)$ in Einstein notation for an arbitrary matrix $A$?
 
 :begin_tab:`mxnet`
 [Discussions](https://discuss.d2l.ai/t/410)

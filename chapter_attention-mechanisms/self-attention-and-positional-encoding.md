@@ -1,9 +1,23 @@
 # Tự ghi nhận và mã hóa vị trí
 :label:`sec_self-attention-and-positional-encoding`
 
-Trong học sâu, chúng ta thường sử dụng CNN hoặc RNNs để mã hóa một chuỗi. Bây giờ với các cơ chế chú ý, hãy tưởng tượng rằng chúng ta nuôi một chuỗi các mã thông báo vào tập hợp chú ý để cùng một bộ mã thông báo hoạt động như các truy vấn, khóa và giá trị. Cụ thể, mỗi truy vấn chú ý đến tất cả các cặp khóa-giá trị và tạo ra một đầu ra chú ý. Vì các truy vấn, khóa và giá trị đến từ cùng một nơi, điều này thực hiện
-*tự chú ý* :cite:`Lin.Feng.Santos.ea.2017,Vaswani.Shazeer.Parmar.ea.2017`, còn được gọi là * sự chú ý* :cite:`Cheng.Dong.Lapata.2016,Parikh.Tackstrom.Das.ea.2016,Paulus.Xiong.Socher.2017`.
-Trong phần này, chúng ta sẽ thảo luận về mã hóa chuỗi bằng cách sử dụng sự tự chú ý, bao gồm sử dụng thông tin bổ sung cho thứ tự trình tự.
+In deep learning,
+we often use CNNs or RNNs to encode a sequence.
+Now with attention mechanisms,
+imagine that we feed a sequence of tokens
+into attention pooling
+so that
+the same set of tokens
+act as queries, keys, and values.
+Specifically,
+each query attends to all the key-value pairs
+and generates one attention output.
+Since the queries, keys, and values
+come from the same place,
+this performs
+In this section,
+we will discuss sequence encoding using self-attention,
+including using additional information for the sequence order.
 
 ```{.python .input}
 from d2l import mxnet as d2l
@@ -30,11 +44,22 @@ import tensorflow as tf
 
 ## [**Self-Attention**]
 
-Với một chuỗi các mã thông báo đầu vào $\mathbf{x}_1, \ldots, \mathbf{x}_n$ trong đó bất kỳ $\mathbf{x}_i \in \mathbb{R}^d$ ($1 \leq i \leq n$), sự tự chú ý của nó xuất ra một chuỗi có cùng chiều dài $\mathbf{y}_1, \ldots, \mathbf{y}_n$, trong đó 
+Given a sequence of input tokens
+$\mathbf{x}_1, \ldots, \mathbf{x}_n$ where any $\mathbf{x}_i \in \mathbb{R}^d$ ($1 \leq i \leq n$),
+its self-attention outputs
+a sequence of the same length
+$\mathbf{y}_1, \ldots, \mathbf{y}_n$,
+where
 
 $$\mathbf{y}_i = f(\mathbf{x}_i, (\mathbf{x}_1, \mathbf{x}_1), \ldots, (\mathbf{x}_n, \mathbf{x}_n)) \in \mathbb{R}^d$$
 
-theo định nghĩa của sự chú ý tập hợp $f$ trong :eqref:`eq_attn-pooling`. Sử dụng sự chú ý nhiều đầu, đoạn mã sau sẽ tính toán sự tự chú ý của một tensor với hình dạng (kích thước lô, số bước thời gian hoặc độ dài chuỗi trong token, $d$). Tensor đầu ra có cùng hình dạng.
+according to the definition of attention pooling $f$ in
+:eqref:`eq_attn-pooling`.
+Using multi-head attention,
+the following code snippet
+computes the self-attention of a tensor
+with shape (batch size, number of time steps or sequence length in tokens, $d$).
+The output tensor has the same shape.
 
 ```{.python .input}
 num_hiddens, num_heads = 100, 5
@@ -90,14 +115,40 @@ Nói chung, cả CNN và sự tự chú ý đều được hưởng tính toán 
 ## [**Mã hóa vị trí**]
 :label:`subsec_positional-encoding`
 
-Không giống như các RNNs xử lý thường xuyên các token của một chuỗi một, tự chú ý mương các hoạt động tuần tự có lợi cho tính toán song song. Để sử dụng thông tin thứ tự trình tự, chúng ta có thể tiêm thông tin vị trí tuyệt đối hoặc tương đối bằng cách thêm * mã hóa vị trí* vào biểu diễn đầu vào. Mã hóa vị trí có thể được học hoặc cố định. Sau đây, chúng tôi mô tả một mã hóa vị trí cố định dựa trên các hàm sin và cosin :cite:`Vaswani.Shazeer.Parmar.ea.2017`. 
+Unlike RNNs that recurrently process
+tokens of a sequence one by one,
+self-attention ditches
+sequential operations in favor of 
+parallel computation.
+To use the sequence order information,
+we can inject
+absolute or relative
+positional information
+by adding *positional encoding*
+to the input representations.
+Positional encodings can be 
+either learned or fixed.
+In the following, 
+we describe a fixed positional encoding
+based on sine and cosine functions :cite:`Vaswani.Shazeer.Parmar.ea.2017`.
 
-Giả sử rằng biểu diễn đầu vào $\mathbf{X} \in \mathbb{R}^{n \times d}$ chứa các nhúng $d$ chiều cho mã thông báo $n$ của một chuỗi. Mã hóa vị trí đầu ra $\mathbf{X} + \mathbf{P}$ bằng cách sử dụng ma trận nhúng vị trí $\mathbf{P} \in \mathbb{R}^{n \times d}$ có cùng hình dạng, có phần tử trên hàng $i^\mathrm{th}$ và $(2j)^\mathrm{th}$ hoặc cột $(2j + 1)^\mathrm{th}$ là 
+Suppose that
+the input representation $\mathbf{X} \in \mathbb{R}^{n \times d}$ contains the $d$-dimensional embeddings for $n$ tokens of a sequence.
+The positional encoding outputs
+$\mathbf{X} + \mathbf{P}$
+using a positional embedding matrix $\mathbf{P} \in \mathbb{R}^{n \times d}$ of the same shape,
+whose element on the $i^\mathrm{th}$ row 
+and the $(2j)^\mathrm{th}$
+or the $(2j + 1)^\mathrm{th}$ column is
 
 $$\begin{aligned} p_{i, 2j} &= \sin\left(\frac{i}{10000^{2j/d}}\right),\\p_{i, 2j+1} &= \cos\left(\frac{i}{10000^{2j/d}}\right).\end{aligned}$$
 :eqlabel:`eq_positional-encoding-def`
 
-Thoạt nhìn, thiết kế chức năng lượng giác này trông kỳ lạ. Trước khi giải thích về thiết kế này, trước tiên chúng ta hãy thực hiện nó trong lớp `PositionalEncoding` sau.
+At first glance,
+this trigonometric-function
+design looks weird.
+Before explanations of this design,
+let us first implement it in the following `PositionalEncoding` class.
 
 ```{.python .input}
 #@save
@@ -160,7 +211,19 @@ class PositionalEncoding(tf.keras.layers.Layer):
         return self.dropout(X, **kwargs)
 ```
 
-Trong ma trận nhúng vị trí $\mathbf{P}$, [** hàng tương ứng với các vị trí trong một chuỗi và cột đại diện cho các kích thước mã hóa vị trí khác nhau**]. Trong ví dụ dưới đây, chúng ta có thể thấy rằng các cột $6^{\mathrm{th}}$ và $7^{\mathrm{th}}$ của ma trận nhúng vị trí có tần số cao hơn $8^{\mathrm{th}}$ và các cột $9^{\mathrm{th}}$. Sự bù đắp giữa $6^{\mathrm{th}}$ và $7^{\mathrm{th}}$ (tương tự cho các cột $8^{\mathrm{th}}$ và $9^{\mathrm{th}}$) là do sự xen kẽ của các hàm sin và cosin.
+In the positional embedding matrix $\mathbf{P}$,
+[**rows correspond to positions within a sequence
+and columns represent different positional encoding dimensions**].
+In the example below,
+we can see that
+the $6^{\mathrm{th}}$ and the $7^{\mathrm{th}}$
+columns of the positional embedding matrix 
+have a higher frequency than 
+the $8^{\mathrm{th}}$ and the $9^{\mathrm{th}}$
+columns.
+The offset between 
+the $6^{\mathrm{th}}$ and the $7^{\mathrm{th}}$ (same for the $8^{\mathrm{th}}$ and the $9^{\mathrm{th}}$) columns
+is due to the alternation of sine and cosine functions.
 
 ```{.python .input}
 encoding_dim, num_steps = 32, 60
@@ -227,9 +290,26 @@ d2l.show_heatmaps(P, xlabel='Column (encoding dimension)',
 
 ### Relative Positional Information
 
-Bên cạnh việc nắm bắt thông tin vị trí tuyệt đối, mã hóa vị trí trên cũng cho phép một mô hình dễ dàng học cách tham dự bởi các vị trí tương đối. Điều này là do đối với bất kỳ vị trí cố định bù đắp $\delta$, mã hóa vị trí tại vị trí $i + \delta$ có thể được biểu diễn bằng một phép chiếu tuyến tính đó ở vị trí $i$. 
+Besides capturing absolute positional information,
+the above positional encoding
+also allows
+a model to easily learn to attend by relative positions.
+This is because
+for any fixed position offset $\delta$,
+the positional encoding at position $i + \delta$
+can be represented by a linear projection
+of that at position $i$.
 
-Phép chiếu này có thể được giải thích về mặt toán học. Biểu thị $\omega_j = 1/10000^{2j/d}$, bất kỳ cặp $(p_{i, 2j}, p_{i, 2j+1})$ nào trong :eqref:`eq_positional-encoding-def` có thể được chiếu tuyến tính lên $(p_{i+\delta, 2j}, p_{i+\delta, 2j+1})$ cho bất kỳ bù đắp cố định nào $\delta$: 
+
+This projection can be explained
+mathematically.
+Denoting
+$\omega_j = 1/10000^{2j/d}$,
+any pair of $(p_{i, 2j}, p_{i, 2j+1})$ 
+in :eqref:`eq_positional-encoding-def`
+can 
+be linearly projected to $(p_{i+\delta, 2j}, p_{i+\delta, 2j+1})$
+for any fixed offset $\delta$:
 
 $$\begin{aligned}
 &\begin{bmatrix} \cos(\delta \omega_j) & \sin(\delta \omega_j) \\  -\sin(\delta \omega_j) & \cos(\delta \omega_j) \\ \end{bmatrix}
@@ -240,7 +320,7 @@ $$\begin{aligned}
 \begin{bmatrix} p_{i+\delta, 2j} \\  p_{i+\delta, 2j+1} \\ \end{bmatrix},
 \end{aligned}$$
 
-trong đó ma trận chiếu $2\times 2$ không phụ thuộc vào bất kỳ chỉ số vị trí nào $i$. 
+where the $2\times 2$ projection matrix does not depend on any position index $i$.
 
 ## Tóm tắt
 

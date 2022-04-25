@@ -87,7 +87,7 @@ apply(img, torchvision.transforms.RandomVerticalFlip())
 
 Trong hình ảnh ví dụ chúng tôi đã sử dụng, con mèo nằm ở giữa hình ảnh, nhưng điều này có thể không phải là trường hợp nói chung. Trong :numref:`sec_pooling`, chúng tôi giải thích rằng lớp tổng hợp có thể làm giảm độ nhạy của một lớp phức tạp đến vị trí mục tiêu. Ngoài ra, chúng ta cũng có thể cắt ngẫu nhiên hình ảnh để làm cho các đối tượng xuất hiện ở các vị trí khác nhau trong ảnh ở các thang đo khác nhau, điều này cũng có thể làm giảm độ nhạy của một mô hình đến vị trí mục tiêu. 
 
-Trong mã dưới đây, chúng ta [** ngẫu nhiên crop**] một khu vực có diện tích $10\%\ sim 100\ %$ of the original area each time, and the ratio of width to height of this area is randomly selected from $0.5\ sim 2$. Sau đó, chiều rộng và chiều cao của vùng đều được thu nhỏ thành 200 pixel. Trừ khi có quy định khác, số ngẫu nhiên giữa $a$ và $b$ trong phần này đề cập đến một giá trị liên tục thu được bằng cách lấy mẫu ngẫu nhiên và thống nhất từ khoảng $[a, b]$.
+Trong mã dưới đây, chúng ta [** ngẫu nhiên crop**] một khu vực có diện tích $10\% \sim 100 \%$ of the original area each time, and the ratio of width to height of this area is randomly selected from $0.5 \sim 2$. Sau đó, chiều rộng và chiều cao của vùng đều được thu nhỏ thành 200 pixel. Trừ khi có quy định khác, số ngẫu nhiên giữa $a$ và $b$ trong phần này đề cập đến một giá trị liên tục thu được bằng cách lấy mẫu ngẫu nhiên và thống nhất từ khoảng $[a, b]$.
 
 ```{.python .input}
 shape_aug = gluon.data.vision.transforms.RandomResizedCrop(

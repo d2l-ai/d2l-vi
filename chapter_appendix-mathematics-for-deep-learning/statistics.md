@@ -115,7 +115,7 @@ Có lẽ số liệu đơn giản nhất được sử dụng để đánh giá 
 $$\mathrm{MSE} (\hat{\theta}_n, \theta) = E[(\hat{\theta}_n - \theta)^2].$$
 :eqlabel:`eq_mse_est`
 
-Điều này cho phép chúng ta định lượng độ lệch bình phương trung bình so với giá trị thực. MSE luôn không tiêu cực. Nếu bạn đã đọc :numref:`sec_linear_regression`, bạn sẽ nhận ra nó là chức năng mất hồi quy được sử dụng phổ biến nhất. Là một biện pháp để đánh giá một ước tính, giá trị của nó càng gần bằng 0, nhà ước tính càng gần với tham số thực $\theta$. 
+This allows us to quantify the average squared deviation from the true value.  MSE is always non-negative. If you have read :numref:`sec_linear_regression`, you will recognize it as the most commonly used regression loss function. As a measure to evaluate an estimator, the closer its value to zero, the closer the estimator is close to the true parameter $\theta$.
 
 ### Thiên vị thống kê
 
@@ -267,28 +267,29 @@ Bằng cách này, thử nghiệm giả thuyết cung cấp một khuôn khổ c
 
 Để hoàn thành câu chuyện về cách làm việc với thử nghiệm giả thuyết, bây giờ chúng ta cần giới thiệu một số thuật ngữ bổ sung và đưa ra một số khái niệm của chúng tôi ở trên chính thức. 
 
-### Tầm quan trọng thống kê
+### Statistical Significance
 
-Ý nghĩa thống ký* đo lường xác suất từ chối sai lầm giả thuyết null, $H_0$, khi nó không nên bị từ chối, tức là, 
+The *statistical significance* measures the probability of erroneously rejecting the null hypothesis, $H_0$, when it should not be rejected, i.e.,
 
 $$ \text{statistical significance }= 1 - \alpha = 1 - P(\text{reject } H_0 \mid H_0 \text{ is true} ).$$
 
-Nó cũng được gọi là *loại I lỗi* hoặc * sai tích cực*. $\alpha$, được gọi là mức *tầm quan trọng* và giá trị thường được sử dụng của nó là $5\ %$, i.e., $1-\ alpha = 95\ %$. Mức độ quan trọng có thể được giải thích là mức độ rủi ro mà chúng ta sẵn sàng thực hiện, khi chúng ta từ chối một giả thuyết null thực sự. 
+It is also referred to as the *type I error* or *false positive*. The $\alpha$, is called as the *significance level* and its commonly used value is $5\%$, i.e., $1-\alpha = 95\%$. The significance level can be explained as the level of risk that we are willing to take, when we reject a true null hypothesis.
 
-:numref:`fig_statistical_significance` cho thấy các giá trị và xác suất của một phân bố bình thường nhất định trong một thử nghiệm giả thuyết hai mẫu. Nếu ví dụ dữ liệu quan sát nằm ngoài ngưỡng $95\ %$, nó sẽ là một quan sát rất khó xảy ra dưới giả định giả thuyết null. Do đó, có thể có một cái gì đó sai với giả thuyết null và chúng tôi sẽ từ chối nó. 
+:numref:`fig_statistical_significance` shows the observations' values and probability of a given normal distribution in a two-sample hypothesis test. If the observation data example is located outsides the $95\%$ threshold, it will be a very unlikely observation under the null hypothesis assumption. Hence, there might be something wrong with the null hypothesis and we will reject it.
 
 ![Statistical significance.](../img/statistical-significance.svg)
 :label:`fig_statistical_significance`
 
 ### Sức mạnh thống kê
 
-Sức mạnh thống thị* (hoặc *sensitivity*) đo xác suất từ chối giả thuyết null, $H_0$, khi nó nên bị từ chối, tức là, 
+The *statistical power* (or *sensitivity*) measures the probability of reject the null hypothesis, $H_0$, when it should be rejected, i.e.,
 
 $$ \text{statistical power }= 1 - \beta = 1 - P(\text{ fail to reject } H_0  \mid H_0 \text{ is false} ).$$
 
-Nhớ lại rằng lỗi *type I* là lỗi gây ra bởi từ chối giả thuyết null khi nó là đúng, trong khi một lỗi *type II* là kết quả của việc không từ chối giả thuyết null khi nó là sai. Một lỗi loại II thường được ký hiệu là $\beta$, và do đó sức mạnh thống kê tương ứng là $1-\beta$. 
+Recall that a *type I error* is error caused by rejecting the null hypothesis when it is true, whereas a *type II error* is resulted from failing to reject the null hypothesis when it is false. A type II error is usually denoted as $\beta$, and hence the corresponding statistical power is $1-\beta$.
 
-Về mặt trực giác, sức mạnh thống kê có thể được hiểu là khả năng thử nghiệm của chúng tôi sẽ phát hiện sự khác biệt thực sự của một số cường độ tối thiểu ở mức ý nghĩa thống kê mong muốn. $80\ %$ là ngưỡng công suất thống kê thường được sử dụng. Sức mạnh thống kê càng cao, chúng ta càng có nhiều khả năng phát hiện sự khác biệt thực sự. 
+
+Intuitively, statistical power can be interpreted as how likely our test will detect a real discrepancy of some minimum magnitude at a desired statistical significance level. $80\%$ is a commonly used statistical power threshold. The higher the statistical power, the more likely we are to detect true differences.
 
 Một trong những cách sử dụng phổ biến nhất của sức mạnh thống kê là xác định số lượng mẫu cần thiết. Xác suất bạn từ chối giả thuyết null khi nó là sai phụ thuộc vào mức độ sai (được gọi là *kích thước hiệu ứng*) và số lượng mẫu bạn có. Như bạn có thể mong đợi, kích thước hiệu ứng nhỏ sẽ yêu cầu một số lượng rất lớn các mẫu được phát hiện với xác suất cao. Trong khi vượt quá phạm vi của phụ lục ngắn gọn này để lấy ra chi tiết, như một ví dụ, muốn có thể từ chối một giả thuyết null rằng mẫu của chúng tôi đến từ một phương sai trung bình bằng 0 một Gaussian, và chúng tôi tin rằng trung bình mẫu của chúng tôi thực sự gần với một, chúng tôi có thể làm như vậy với tỷ lệ lỗi chấp nhận được với kích thước mẫu của chỉ $8$. Tuy nhiên, nếu chúng ta nghĩ rằng trung bình thực sự dân số mẫu của chúng ta gần $0.01$, thì chúng ta cần một kích thước mẫu gần $80000$ để phát hiện sự khác biệt. 
 
@@ -334,58 +335,60 @@ Khi ước tính giá trị của một tham số $\theta$, các chứng thực 
 
 ### Definition
 
-Về mặt toán học, một khoảng thời gian *niềm tin* cho tham số thật $\theta$ là khoảng $C_n$ được tính từ dữ liệu mẫu sao cho 
+Mathematically, a *confidence interval* for the true parameter $\theta$ is an interval $C_n$ that computed from the sample data such that
 
 $$P_{\theta} (C_n \ni \theta) \geq 1 - \alpha, \forall \theta.$$
 :eqlabel:`eq_confidence`
 
-Ở đây $\alpha \in (0, 1)$, và $1 - \alpha$ được gọi là mức độ tin tức* hoặc * bao bì* của khoảng thời gian. Đây là $\alpha$ giống như mức độ quan trọng như chúng ta đã thảo luận ở trên. 
+Here $\alpha \in (0, 1)$, and $1 - \alpha$ is called the *confidence level* or *coverage* of the interval. This is the same $\alpha$ as the significance level as we discussed about above.
 
-Lưu ý rằng :eqref:`eq_confidence` là về biến $C_n$, không phải về $\theta$ cố định. Để nhấn mạnh điều này, chúng tôi viết $P_{\theta} (C_n \ni \theta)$ thay vì $P_{\theta} (\theta \in C_n)$. 
+Note that :eqref:`eq_confidence` is about variable $C_n$, not about the fixed $\theta$. To emphasize this, we write $P_{\theta} (C_n \ni \theta)$ rather than $P_{\theta} (\theta \in C_n)$.
 
-### Phiên dịch
+### Interpretation
 
-Nó là rất hấp dẫn để giải thích một $95\ %$ confidence interval as an interval where you can be $95\ %$ sure the true parameter lies, however this is sadly not true.  The true parameter is fixed, and it is the interval that is random.  Thus a better interpretation would be to say that if you generated a large number of confidence intervals by this procedure, $95\ %$ của các khoảng được tạo ra sẽ chứa tham số đúng. 
+It is very tempting to interpret a $95\%$ confidence interval as an interval where you can be $95\%$ sure the true parameter lies, however this is sadly not true.  The true parameter is fixed, and it is the interval that is random.  Thus a better interpretation would be to say that if you generated a large number of confidence intervals by this procedure, $95\%$ of the generated intervals would contain the true parameter.
 
-Điều này có vẻ pedantic, nhưng nó có thể có ý nghĩa thực sự đối với việc giải thích kết quả. Đặc biệt, chúng tôi có thể đáp ứng :eqref:`eq_confidence` bằng cách xây dựng các khoảng thời gian mà chúng ta * gần như chắc chắn* không chứa giá trị thực, miễn là chúng ta chỉ làm như vậy hiếm khi đủ. Chúng tôi đóng phần này bằng cách cung cấp ba tuyên bố hấp dẫn nhưng sai. Một cuộc thảo luận chuyên sâu về những điểm này có thể được tìm thấy trong :cite:`Morey.Hoekstra.Rouder.ea.2016`. 
+This may seem pedantic, but it can have real implications for the interpretation of the results.  In particular, we may satisfy :eqref:`eq_confidence` by constructing intervals that we are *almost certain* do not contain the true value, as long as we only do so rarely enough.  We close this section by providing three tempting but false statements.  An in-depth discussion of these points can be found in :cite:`Morey.Hoekstra.Rouder.ea.2016`.
 
-* ** Fallacy 1**. Khoảng thời gian tin cậy hẹp có nghĩa là chúng ta có thể ước tính tham số một cách chính xác.
-* ** Fallacy 2**. Các giá trị bên trong khoảng tin cậy có nhiều khả năng là giá trị thực hơn giá trị ngoài khoảng thời gian.
-* ** Fallacy 3**. Xác suất mà một cụ thể quan sát $95\ %$ confidence interval contains the true value is $95\ %$.
+* **Fallacy 1**. Narrow confidence intervals mean we can estimate the parameter precisely.
+* **Fallacy 2**. The values inside the confidence interval are more likely to be the true value than those outside the interval.
+* **Fallacy 3**. The probability that a particular observed $95\%$ confidence interval contains the true value is $95\%$.
 
-Sufficed để nói, khoảng thời gian tự tin là những đối tượng tinh tế. Tuy nhiên, nếu bạn giữ cho việc giải thích rõ ràng, chúng có thể là những công cụ mạnh mẽ. 
+Sufficed to say, confidence intervals are subtle objects.  However, if you keep the interpretation clear, they can be powerful tools.
 
-### Một ví dụ Gaussian
+### A Gaussian Example
 
-Hãy để chúng tôi thảo luận về ví dụ cổ điển nhất, khoảng thời gian tin cậy cho trung bình của một Gaussian của trung bình và phương sai chưa biết. Giả sử chúng tôi thu thập $n$ mẫu $\{x_i\}_{i=1}^n$ từ Gaussian $\mathcal{N}(\mu, \sigma^2)$ của chúng tôi. Chúng ta có thể tính toán các dự án cho độ lệch trung bình và chuẩn bằng cách lấy 
+Let us discuss the most classical example, the confidence interval for the mean of a Gaussian of unknown mean and variance.  Suppose we collect $n$ samples $\{x_i\}_{i=1}^n$ from our Gaussian $\mathcal{N}(\mu, \sigma^2)$.  We can compute estimators for the mean and standard deviation by taking
 
 $$\hat\mu_n = \frac{1}{n}\sum_{i=1}^n x_i \;\text{and}\; \hat\sigma^2_n = \frac{1}{n-1}\sum_{i=1}^n (x_i - \hat\mu)^2.$$
 
-Nếu bây giờ chúng ta xem xét biến ngẫu nhiên 
+If we now consider the random variable
 
 $$
 T = \frac{\hat\mu_n - \mu}{\hat\sigma_n/\sqrt{n}},
 $$
 
-chúng ta có được một biến ngẫu nhiên sau một phân phối nổi tiếng gọi là phân phối t * của học sinh trên* $n-1$ * độ tự do*. 
+we obtain a random variable following a well-known distribution called the *Student's t-distribution on* $n-1$ *degrees of freedom*.
 
-Phân phối này được nghiên cứu rất tốt, và người ta biết, ví dụ, là $n\rightarrow \infty$, nó xấp xỉ một Gaussian tiêu chuẩn, và do đó bằng cách tìm kiếm các giá trị của Gaussian c.d.f. trong một bảng, chúng ta có thể kết luận rằng giá trị của $T$ nằm trong khoảng $[-1.96, 1.96]$ ít nhất $95\ %$ of the time.  For finite values of $n $, khoảng thời gian cần để có phần lớn hơn, nhưng được biết đến và tính toán trước trong các bảng. 
+This distribution is very well studied, and it is known, for instance, that as $n\rightarrow \infty$, it is approximately a standard Gaussian, and thus by looking up values of the Gaussian c.d.f. in a table, we may conclude that the value of $T$ is in the interval $[-1.96, 1.96]$ at least $95\%$ of the time.  For finite values of $n$, the interval needs to be somewhat larger, but are well known and precomputed in tables.
 
-Như vậy, chúng tôi có thể kết luận rằng đối với $n$lớn, 
+Thus, we may conclude that for large $n$,
 
 $$
 P\left(\frac{\hat\mu_n - \mu}{\hat\sigma_n/\sqrt{n}} \in [-1.96, 1.96]\right) \ge 0.95.
 $$
 
-Sắp xếp lại điều này bằng cách nhân cả hai bên với $\hat\sigma_n/\sqrt{n}$ và sau đó thêm $\hat\mu_n$, chúng tôi có được 
+Rearranging this by multiplying both sides by $\hat\sigma_n/\sqrt{n}$ and then adding $\hat\mu_n$, we obtain
 
 $$
 P\left(\mu \in \left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right]\right) \ge 0.95.
 $$
 
-Vì vậy, chúng tôi biết rằng chúng tôi đã tìm thấy khoảng thời gian tin cậy $95\ %$ của chúng tôi: $$\left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right].$$ :eqlabel:`eq_gauss_confidence` 
+Thus we know that we have found our $95\%$ confidence interval:
+$$\left[\hat\mu_n - 1.96\frac{\hat\sigma_n}{\sqrt{n}}, \hat\mu_n + 1.96\frac{\hat\sigma_n}{\sqrt{n}}\right].$$
+:eqlabel:`eq_gauss_confidence`
 
-Thật an toàn khi nói rằng :eqref:`eq_gauss_confidence` là một trong những công thức được sử dụng nhiều nhất trong thống kê. Hãy để chúng tôi đóng cuộc thảo luận của chúng tôi về số liệu thống kê bằng cách thực hiện nó. Để đơn giản, chúng tôi cho rằng chúng tôi đang ở trong chế độ tiệm cận. Các giá trị nhỏ của $N$ nên bao gồm giá trị chính xác của `t_star` thu được bằng lập trình hoặc từ bảng $t$-.
+It is safe to say that :eqref:`eq_gauss_confidence` is one of the most used formula in statistics.  Let us close our discussion of statistics by implementing it.  For simplicity, we assume we are in the asymptotic regime.  Small values of $N$ should include the correct value of `t_star` obtained either programmatically or from a $t$-table.
 
 ```{.python .input}
 # Number of samples

@@ -25,9 +25,13 @@ z^{(1)} &= \phi_1(\mathbf{U}_u, \mathbf{V}_i) = \left[ \mathbf{U}_u, \mathbf{V}_
 \end{aligned}
 $$
 
-trong đó $\mathbf{W}^*, \mathbf{b}^*$ và $\alpha^*$ biểu thị ma trận trọng lượng, vector thiên vị và chức năng kích hoạt. $\phi^*$ biểu thị hàm của lớp tương ứng. $\mathbf{z}^*$ biểu thị đầu ra của lớp tương ứng. 
+trong đó $\mathbf{W}^*, \mathbf{b}^*$ và $\alpha^*$ biểu thị ma trận trọng lượng, vector thiên vị và chức năng kích hoạt. $\phi^*$ biểu thị hàm của lớp tương ứng. $\mathbf{z}^*$ biểu thị đầu ra của lớp tương ứng.
 
-Để hợp nhất kết quả của GMF và MLP, thay vì bổ sung đơn giản, NeuMF nối các lớp cuối cùng thứ hai của hai mạng con để tạo ra một vectơ tính năng có thể được truyền đến các lớp tiếp theo. Sau đó, các đầu ra được chiếu với ma trận $\mathbf{h}$ và chức năng kích hoạt sigmoid. Lớp dự đoán được xây dựng là: $$\ hat {y} _ {ui} =\ sigma (\ mathbf {h} ^\ top [\ mathbf {x},\ phi^L (z^ {(L-1)})]) . $$ 
+Để hợp nhất kết quả của GMF và MLP, thay vì bổ sung đơn giản, NeuMF nối các lớp cuối cùng thứ hai của hai mạng con để tạo ra một vectơ tính năng có thể được truyền đến các lớp tiếp theo. Sau đó, các đầu ra được chiếu với ma trận $\mathbf{h}$ và chức năng kích hoạt sigmoid. Lớp dự đoán được xây dựng là:
+
+$$
+\hat{y}_{ui} = \sigma(\mathbf{h}^\top[\mathbf{x}, \phi^L(z^{(L-1)})]).
+$$
 
 Hình dưới đây minh họa kiến trúc mô hình của NeuMF. 
 

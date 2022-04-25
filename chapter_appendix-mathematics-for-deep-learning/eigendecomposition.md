@@ -467,7 +467,30 @@ Bây giờ chúng ta thấy chính xác những gì chúng tôi hy vọng! Sau k
 
 ## Tóm tắt * Eigenvectors là các vectơ được kéo dài bởi một ma trận mà không thay đổi hướng. * Eigenvalues là số tiền mà các eigenvectors được kéo dài bởi ứng dụng của ma trận. * Sự phân hủy của ma trận có thể cho phép nhiều phép toán được giảm xuống các hoạt động trên eigenvalues. Định lý vòng tròn Gershgorin có thể cung cấp các giá trị gần đúng cho eigenvalues của ma trận * hành vi của các công suất ma trận lặp lại phụ thuộc chủ yếu vào kích thước của eigenvalue lớn nhất. Sự hiểu biết này có nhiều ứng dụng trong lý thuyết khởi tạo mạng thần kinh. 
 
-## Bài tập 1. Eigenvalues và eigenvectors của $$\ mathbf {A} =\ begin {bmatrix} 2 & 1\\ 1 & 2\ end {bmatrix} là gì? $$ 1. Các giá trị eigenvalues và eigenvectors của ma trận sau là gì, và điều gì lạ về ví dụ này so với ví dụ trước? $$\ mathbf {A} =\ bắt đầu {bmatrix} 2 & 1\\ 0 & 2\ cuối {bmatrix}. $$ 1. Nếu không tính toán các giá trị eigenvalues, có thể là giá trị eigenvalue nhỏ nhất của ma trận sau là ít hơn $0.5$? *Lưu ý*: vấn đề này có thể được thực hiện trong đầu của bạn. $$\ mathbf {A} =\ begin {bmatrix} 3.0 & 0.1 & 0.3 & 1.0\ 0.1 & 1.0 & 0.1 & 0.2\\ 0.3 & 0.1 & 5.0 & 0.0\\ 1.0 & 0.2 & 0.0 & 1.8\ end {bmatrix} . $$
+## Exercises
+1. What are the eigenvalues and eigenvectors of
+$$
+\mathbf{A} = \begin{bmatrix}
+2 & 1 \\
+1 & 2
+\end{bmatrix}?
+$$
+1.  What are the eigenvalues and eigenvectors of the following matrix, and what is strange about this example compared to the previous one?
+$$
+\mathbf{A} = \begin{bmatrix}
+2 & 1 \\
+0 & 2
+\end{bmatrix}.
+$$
+1. Without computing the eigenvalues, is it possible that the smallest eigenvalue of the following matrix is less that $0.5$? *Note*: this problem can be done in your head.
+$$
+\mathbf{A} = \begin{bmatrix}
+3.0 & 0.1 & 0.3 & 1.0 \\
+0.1 & 1.0 & 0.1 & 0.2 \\
+0.3 & 0.1 & 5.0 & 0.0 \\
+1.0 & 0.2 & 0.0 & 1.8
+\end{bmatrix}.
+$$
 
 :begin_tab:`mxnet`
 [Discussions](https://discuss.d2l.ai/t/411)

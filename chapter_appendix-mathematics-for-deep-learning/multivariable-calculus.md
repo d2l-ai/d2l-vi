@@ -208,7 +208,8 @@ d2l.plot(x, f, 'x', 'f(x)')
 
 Điều này nhấn mạnh một thực tế quan trọng cần biết khi làm việc theo lý thuyết hoặc số: các điểm duy nhất có thể mà chúng ta có thể thu nhỏ (hoặc tối đa hóa) một hàm sẽ có gradient bằng 0, tuy nhiên, không phải mọi điểm có gradient 0 là đúng *toàn cầu* tối thiểu (hoặc tối đa). 
 
-## Quy tắc chuỗi đa biến Chúng ta hãy giả sử rằng chúng ta có một hàm gồm bốn biến ($w, x, y$, và $z$) mà chúng ta có thể thực hiện bằng cách soạn nhiều thuật ngữ: 
+## Multivariate Chain Rule
+Let us suppose that we have a function of four variables ($w, x, y$, and $z$) which we can make by composing many terms: 
 
 $$\begin{aligned}f(u, v) & = (u+v)^{2} \\u(a, b) & = (a+b)^{2}, \qquad v(a, b) = (a-b)^{2}, \\a(w, x, y, z) & = (w+x+y+z)^{2}, \qquad b(w, x, y, z) = (w+x-y-z)^2.\end{aligned}$$
 :eqlabel:`eq_multi_func_def`
@@ -514,7 +515,10 @@ $$
 f(x, y) = xe^{-x^2-y^2}.
 $$
 
-Người ta có thể tính toán rằng gradient và Hessian là $$\ nabla f (x, y) = e^ {-x^2-y^2}\ begin {pmatrix} 1-2x^2\\ -2xy\ end {pmatrix}\;\ text {and}\;\ mathbf {H} f (x, y) = e^ {-x^2-y^2} pmatrix} 4x^3 - 6x & 4x^2y - 2y\\ 4x^2y-2y &4xy^2-2x\ end {pmatrix} . $$ 
+One can compute that the gradient and Hessian are
+$$
+\nabla f(x, y) = e^{-x^2-y^2}\begin{pmatrix}1-2x^2 \\ -2xy\end{pmatrix} \; \text{and} \; \mathbf{H}f(x, y) = e^{-x^2-y^2}\begin{pmatrix} 4x^3 - 6x & 4x^2y - 2y \\ 4x^2y-2y &4xy^2-2x\end{pmatrix}.
+$$
 
 Và do đó, với một đại số nhỏ, thấy rằng bậc hai xấp xỉ tại $[-1,0]^\top$ là 
 

@@ -275,7 +275,7 @@ $$\begin{aligned}
 \end{aligned}
 $$
 
-Bây giờ chúng ta có thể áp dụng marginalization và quy tắc nhân: 
+Now we can apply marginalization and the multiplication rule:
 
 $$\begin{aligned}
 &P(D_1 = 1, D_2 = 1) \\
@@ -285,7 +285,7 @@ $$\begin{aligned}
 \end{aligned}
 $$
 
-Cuối cùng, xác suất bệnh nhân nhiễm HIV được đưa ra cả hai xét nghiệm dương tính là 
+In the end, the probability of the patient having HIV given both positive tests is
 
 $$\begin{aligned}
 &P(H = 1 \mid D_1 = 1, D_2 = 1)\\
