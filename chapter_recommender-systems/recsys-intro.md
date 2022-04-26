@@ -1,0 +1,31 @@
+# Tổng quan về hệ thống Recommender
+
+Trong thập kỷ qua, Internet đã phát triển thành một nền tảng cho các dịch vụ trực tuyến quy mô lớn, điều này đã thay đổi sâu sắc cách chúng ta giao tiếp, đọc tin tức, mua sản phẩm và xem phim. Trong khi đó, số lượng mặt hàng chưa từng có (chúng tôi sử dụng thuật ngữ *item* để chỉ phim, tin tức, sách và sản phẩm.) được cung cấp trực tuyến đòi hỏi một hệ thống có thể giúp chúng tôi khám phá các mặt hàng mà chúng tôi ưa thích. Do đó, hệ thống giới thiệu là các công cụ lọc thông tin mạnh mẽ có thể tạo điều kiện thuận lợi cho các dịch vụ được cá nhân hóa và cung cấp trải nghiệm phù hợp cho từng người dùng Nói tóm lại, các hệ thống giới thiệu đóng một vai trò quan trọng trong việc sử dụng sự giàu có của dữ liệu có sẵn để làm cho các lựa chọn có thể quản lý được. Ngày nay, các hệ thống giới thiệu là cốt lõi của một số nhà cung cấp dịch vụ trực tuyến như Amazon, Netflix và YouTube. Nhớ lại ví dụ về sách học sâu được Amazon đề xuất trong :numref:`subsec_recommender_systems`. Lợi ích của việc sử dụng các hệ thống giới thiệu là hai lần: Một mặt, nó chủ yếu có thể làm giảm nỗ lực của người dùng trong việc tìm kiếm các mục và giảm bớt vấn đề quá tải thông tin. Mặt khác, nó có thể thêm giá trị kinh doanh cho các nhà cung cấp dịch vụ trực tuyến và là một nguồn doanh thu quan trọng. Chương này sẽ giới thiệu các khái niệm cơ bản, mô hình cổ điển và những tiến bộ gần đây với học sâu trong lĩnh vực hệ thống giới thiệu, cùng với các ví dụ được thực hiện. 
+
+![Illustration of the Recommendation Process](../img/rec-intro.svg)
+
+## Lọc hợp tác
+
+Chúng tôi bắt đầu hành trình với khái niệm quan trọng trong hệ thống giới thiệu — lọc hợp tác (CF), lần đầu tiên được đặt ra bởi hệ thống Tapestry :cite:`Goldberg.Nichols.Oki.ea.1992`, đề cập đến “mọi người cộng tác để giúp đỡ lẫn nhau thực hiện quá trình lọc để xử lý một lượng lớn email và tin nhắn được đăng lên nhóm tin tức”. Thuật ngữ này đã được làm giàu với nhiều giác quan hơn. Theo nghĩa rộng, đó là quá trình lọc thông tin hoặc mẫu bằng cách sử dụng các kỹ thuật liên quan đến sự cộng tác giữa nhiều người dùng, đại lý và nguồn dữ liệu. CF có nhiều hình thức và nhiều phương pháp CF được đề xuất kể từ khi ra đời.   
+
+Nhìn chung, kỹ thuật CF có thể được phân loại into: memory-based CF, model-based CF, and their hybrid :cite:`Su.Khoshgoftaar.2009`. Các kỹ thuật CF dựa trên bộ nhớ đại diện là CF dựa trên lân cận gần nhất như CF dựa trên người dùng và CF :cite:`Sarwar.Karypis.Konstan.ea.2001` dựa trên mặt hàng. Các mô hình yếu tố tiềm ẩn như factorization ma trận là ví dụ về CF dựa trên mô hình. CF dựa trên bộ nhớ có những hạn chế trong việc xử lý dữ liệu thưa thớt và quy mô lớn vì nó tính toán các giá trị tương đồng dựa trên các mục phổ biến. Các phương pháp dựa trên mô hình trở nên phổ biến hơn với khả năng tốt hơn trong việc đối phó với sự thưa thớt và khả năng mở rộng. Nhiều phương pháp tiếp cận CF dựa trên mô hình có thể được mở rộng với các mạng thần kinh, dẫn đến các mô hình linh hoạt và có thể mở rộng hơn với khả năng tăng tốc tính toán trong deep learning :cite:`Zhang.Yao.Sun.ea.2019`. Nói chung, CF chỉ sử dụng dữ liệu tương tác mục người dùng để đưa ra dự đoán và khuyến nghị. Bên cạnh CF, các hệ thống giới thiệu dựa trên nội dung và bối cảnh cũng hữu ích trong việc kết hợp các mô tả nội dung của các mục/người dùng và các tín hiệu theo ngữ cảnh như dấu thời gian và địa điểm. Rõ ràng, chúng ta có thể cần phải điều chỉnh các loại/cấu trúc mô hình khi dữ liệu đầu vào khác nhau có sẵn. 
+
+## Phản hồi rõ ràng và phản hồi tiềm ẩn
+
+Để tìm hiểu sở thích của người dùng, hệ thống sẽ thu thập phản hồi từ họ. Phản hồi có thể là rõ ràng hoặc ngầm :cite:`Hu.Koren.Volinsky.2008`. Ví dụ, [IMDB](https://www.imdb.com/) thu thập xếp hạng sao khác nhau, từ một đến mười sao cho phim. YouTube cung cấp các nút thu nhỏ và ngón tay cái để người dùng hiển thị tùy chọn của họ. Rõ ràng là thu thập phản hồi rõ ràng đòi hỏi người dùng phải chủ động chỉ ra lợi ích của họ. Tuy nhiên, phản hồi rõ ràng không phải lúc nào cũng có sẵn vì nhiều người dùng có thể miễn cưỡng đánh giá sản phẩm. Tương đối nói, phản hồi ngầm thường có sẵn vì nó chủ yếu liên quan đến mô hình hóa hành vi ngầm như nhấp chuột của người dùng. Do đó, nhiều hệ thống giới thiệu tập trung vào phản hồi ngầm mà gián tiếp phản ánh ý kiến của người dùng thông qua việc quan sát hành vi của người dùng. Có nhiều hình thức phản hồi tiềm ẩn đa dạng bao gồm lịch sử mua hàng, lịch sử duyệt web, đồng hồ và thậm chí cả chuyển động chuột. Ví dụ, một người dùng đã mua nhiều cuốn sách của cùng một tác giả có thể thích tác giả đó. Lưu ý rằng phản hồi ngầm vốn là ồn ào. Chúng tôi chỉ có thể * đoán * sở thích và động cơ thực sự của họ. Một người dùng đã xem một bộ phim không nhất thiết phải chỉ ra một cái nhìn tích cực của bộ phim đó. 
+
+## Tác vụ đề xuất
+
+Một số nhiệm vụ đề xuất đã được điều tra trong những thập kỷ qua. Dựa trên tên miền của các ứng dụng, có giới thiệu phim, khuyến nghị tin tức, đề xuất điểm quan tâm :cite:`Ye.Yin.Lee.ea.2011` và vân vân. Cũng có thể phân biệt các nhiệm vụ dựa trên các loại phản hồi và dữ liệu đầu vào, ví dụ, nhiệm vụ dự đoán xếp hạng nhằm dự đoán xếp hạng rõ ràng. Đề xuất Top-$n$ (xếp hạng mục) xếp hạng tất cả các mục cho mỗi người dùng cá nhân dựa trên phản hồi ngầm. Nếu thông tin tem thời gian cũng được bao gồm, chúng tôi có thể xây dựng đề xuất nhận thức trình tự :cite:`Quadrana.Cremonesi.Jannach.2018`. Một nhiệm vụ phổ biến khác được gọi là dự đoán tỷ lệ nhấp, cũng dựa trên phản hồi ngầm, nhưng các tính năng phân loại khác nhau có thể được sử dụng. Đề xuất cho người dùng mới và đề xuất các mặt hàng mới cho người dùng hiện có được gọi là khuyến nghị khởi động lạnh :cite:`Schein.Popescul.Ungar.ea.2002`. 
+
+## Tóm tắt
+
+* Hệ thống giới thiệu rất quan trọng đối với người dùng cá nhân và ngành công nghiệp. Lọc hợp tác là một khái niệm chính trong đề xuất.
+* Có hai loại phản hồi: phản hồi ngầm và phản hồi rõ ràng. Một số nhiệm vụ đề xuất đã được khám phá trong thập kỷ qua.
+
+## Bài tập
+
+1. Bạn có thể giải thích cách các hệ thống giới thiệu ảnh hưởng đến cuộc sống hàng ngày của bạn?
+2. Những nhiệm vụ đề xuất thú vị nào bạn nghĩ có thể được điều tra?
+
+[Discussions](https://discuss.d2l.ai/t/398)

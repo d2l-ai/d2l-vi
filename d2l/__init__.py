@@ -7,6 +7,4 @@ from d2l import tensorflow as d2l  # Use TensorFlow as the backend
 
 """
 
-from .d2l import *
-
-__version__ = "0.14.3"
+__version__ = "0.15.0"
