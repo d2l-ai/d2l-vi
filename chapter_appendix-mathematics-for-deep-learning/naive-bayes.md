@@ -458,7 +458,11 @@ Các mạng sâu hiện đại đạt được tỷ lệ lỗi dưới $0.01$. H
 
 ## Tóm tắt * Sử dụng quy tắc của Bayes', một phân loại có thể được thực hiện bằng cách giả sử tất cả các tính năng quan sát là độc lập. * Phân loại này có thể được đào tạo trên một tập dữ liệu bằng cách đếm số lần xuất hiện của các kết hợp của nhãn và giá trị pixel * Phân loại này là tiêu chuẩn vàng trong nhiều thập kỷ cho các tác vụ như thư rác phát hiện. 
 
-## Bài tập 1. Xem xét tập dữ liệu $[[0,0], [0,1], [1,0], [1,1]]$ với các nhãn được đưa ra bởi XOR của hai phần tử $[0,1,1,0]$. Xác suất cho một phân loại ngây thơ Bayes được xây dựng trên bộ dữ liệu này là gì. Nó có phân loại thành công điểm của chúng tôi không? Nếu không, những giả định nào bị vi phạm? 1. Giả sử rằng chúng tôi đã không sử dụng Laplace làm mịn khi ước tính xác suất và một ví dụ dữ liệu đến lúc thử nghiệm trong đó có một giá trị không bao giờ quan sát thấy trong đào tạo. Sản lượng mô hình sẽ là gì? 1. Phân loại Bayes ngây thơ là một ví dụ cụ thể của một mạng Bayesian, trong đó sự phụ thuộc của các biến ngẫu nhiên được mã hóa bằng cấu trúc đồ thị. Trong khi lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xem :cite:`Koller.Friedman.2009` để biết chi tiết đầy đủ), giải thích tại sao cho phép phụ thuộc rõ ràng giữa hai biến đầu vào trong mô hình XOR cho phép tạo ra một phân loại thành công.
+## Bài tập
+
+1. Xem xét tập dữ liệu $[[0,0], [0,1], [1,0], [1,1]]$ với các nhãn được đưa ra bởi XOR của hai phần tử $[0,1,1,0]$. Xác suất cho một phân loại ngây thơ Bayes được xây dựng trên bộ dữ liệu này là gì. Nó có phân loại thành công điểm của chúng tôi không? Nếu không, những giả định nào bị vi phạm?
+1. Giả sử rằng chúng tôi đã không sử dụng Laplace làm mịn khi ước tính xác suất và một ví dụ dữ liệu đến lúc thử nghiệm trong đó có một giá trị không bao giờ quan sát thấy trong đào tạo. Sản lượng mô hình sẽ là gì?
+1. Phân loại Bayes ngây thơ là một ví dụ cụ thể của một mạng Bayesian, trong đó sự phụ thuộc của các biến ngẫu nhiên được mã hóa bằng cấu trúc đồ thị. Trong khi lý thuyết đầy đủ nằm ngoài phạm vi của phần này (xem :cite:`Koller.Friedman.2009` để biết chi tiết đầy đủ), giải thích tại sao cho phép phụ thuộc rõ ràng giữa hai biến đầu vào trong mô hình XOR cho phép tạo ra một phân loại thành công.
 
 :begin_tab:`mxnet`
 [Discussions](https://discuss.d2l.ai/t/418)
